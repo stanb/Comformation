@@ -1,4 +1,4 @@
-![AWS CloudFormation] (https://github.com/stanb/Comformation/blob/master/logo.png)
+![AWS CloudFormation](https://github.com/stanb/Comformation/blob/master/logo.png)
 # Comformation
 ### Compose AWS CloudFormation templates with .NET
 
