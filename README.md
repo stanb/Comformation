@@ -1,9 +1,10 @@
-![AWS CloudFormation](https://github.com/stanb/Comformation/blob/master/logo.png)
+![AWS CloudFormation](logo.png)
 # Comformation
 ### Compose AWS CloudFormation templates with .NET
 
-This library contains classes that describes __ALL__ resources available in AWS CloudFormation templates.
-Supports intrinsic functions.
-All properties are strong typed. No free dynamic or object types. Allowed types validated in compile time.
-Based on official AWS CloudFormation templates specification.
+This library helps you to compose AWS CloudFormation templates with C#.  
+It supports __ALL__ resources available in AWS CloudFormation templates.  
+Supports Intrinsic Functions.  
+All properties are strong typed. No open _dynamic_ or _object_ types. Allowed property types validated in compile time.  
+Based on official AWS CloudFormation templates specification.  
 
