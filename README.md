@@ -12,8 +12,13 @@ Based on official AWS CloudFormation templates specification.
 This is a sample of Comformation library usage.  
 The generated template plays arround mappings, input and output parameters.  
 The template creates S3 bucket whose name generated using combination of several intrinsic functions.  
-For a full code sample see https://github.com/stanb/Comformation/blob/master/src/Comformation.Tests/CreateStackTest.cs  
+For a full code sample see [CreateStackTest.cs](src/Comformation.Tests/CreateStackTest.cs)
 
+Install Nuget [package](https://www.nuget.org/packages/Comformation/)
+```
+Install-Package Comformation
+```
+then:
 ```charp
 var template = new Template
 {
