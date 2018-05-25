@@ -49,7 +49,7 @@ namespace Comformation.CodeBuild.Project
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> BadgeEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> BadgeEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
@@ -69,7 +69,7 @@ namespace Comformation.CodeBuild.Project
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes
             /// </summary>
-			public Union<int?, IntrinsicFunction> TimeoutInMinutes { get; set; }
+			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache

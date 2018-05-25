@@ -19,7 +19,7 @@ namespace Comformation.Kinesis.Stream
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
             /// </summary>
-			public Union<int?, IntrinsicFunction> RetentionPeriodHours { get; set; }
+			public Union<int, IntrinsicFunction> RetentionPeriodHours { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount

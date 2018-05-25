@@ -27,7 +27,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-replicacount
         /// </summary>
         [JsonProperty("ReplicaCount")]
-        public Union<int?, IntrinsicFunction> ReplicaCount { get; set; }
+        public Union<int, IntrinsicFunction> ReplicaCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-slots

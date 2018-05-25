@@ -15,7 +15,7 @@ namespace Comformation.Glue.Partition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-storedassubdirectories
         /// </summary>
         [JsonProperty("StoredAsSubDirectories")]
-        public Union<bool?, IntrinsicFunction> StoredAsSubDirectories { get; set; }
+        public Union<bool, IntrinsicFunction> StoredAsSubDirectories { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-parameters
@@ -45,7 +45,7 @@ namespace Comformation.Glue.Partition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-numberofbuckets
         /// </summary>
         [JsonProperty("NumberOfBuckets")]
-        public Union<int?, IntrinsicFunction> NumberOfBuckets { get; set; }
+        public Union<int, IntrinsicFunction> NumberOfBuckets { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-outputformat
@@ -75,7 +75,7 @@ namespace Comformation.Glue.Partition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-compressed
         /// </summary>
         [JsonProperty("Compressed")]
-        public Union<bool?, IntrinsicFunction> Compressed { get; set; }
+        public Union<bool, IntrinsicFunction> Compressed { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-location

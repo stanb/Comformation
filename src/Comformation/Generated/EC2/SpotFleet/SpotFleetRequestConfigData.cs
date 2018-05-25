@@ -36,16 +36,10 @@ namespace Comformation.EC2.SpotFleet
         public Union<List<SpotFleetLaunchSpecification>, IntrinsicFunction> LaunchSpecifications { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchtemplateconfigs
-        /// </summary>
-        [JsonProperty("LaunchTemplateConfigs")]
-        public Union<List<LaunchTemplateConfig>, IntrinsicFunction> LaunchTemplateConfigs { get; set; }
-
-        /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-replaceunhealthyinstances
         /// </summary>
         [JsonProperty("ReplaceUnhealthyInstances")]
-        public Union<bool?, IntrinsicFunction> ReplaceUnhealthyInstances { get; set; }
+        public Union<bool, IntrinsicFunction> ReplaceUnhealthyInstances { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice
@@ -63,7 +57,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-terminateinstanceswithexpiration
         /// </summary>
         [JsonProperty("TerminateInstancesWithExpiration")]
-        public Union<bool?, IntrinsicFunction> TerminateInstancesWithExpiration { get; set; }
+        public Union<bool, IntrinsicFunction> TerminateInstancesWithExpiration { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-type

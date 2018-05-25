@@ -15,7 +15,7 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies
         /// </summary>
         [JsonProperty("IncludeCookies")]
-        public Union<bool?, IntrinsicFunction> IncludeCookies { get; set; }
+        public Union<bool, IntrinsicFunction> IncludeCookies { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket

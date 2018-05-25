@@ -14,7 +14,7 @@ namespace Comformation.EC2.VPNGateway
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn
             /// </summary>
-			public Union<long?, IntrinsicFunction> AmazonSideAsn { get; set; }
+			public Union<long, IntrinsicFunction> AmazonSideAsn { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags

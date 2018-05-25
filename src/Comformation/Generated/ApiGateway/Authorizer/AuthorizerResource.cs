@@ -24,7 +24,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds
             /// </summary>
-			public Union<int?, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
+			public Union<int, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri

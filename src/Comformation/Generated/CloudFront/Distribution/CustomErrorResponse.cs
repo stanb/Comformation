@@ -15,13 +15,13 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode
         /// </summary>
         [JsonProperty("ResponseCode")]
-        public Union<int?, IntrinsicFunction> ResponseCode { get; set; }
+        public Union<int, IntrinsicFunction> ResponseCode { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl
         /// </summary>
         [JsonProperty("ErrorCachingMinTTL")]
-        public Union<double?, IntrinsicFunction> ErrorCachingMinTTL { get; set; }
+        public Union<double, IntrinsicFunction> ErrorCachingMinTTL { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode

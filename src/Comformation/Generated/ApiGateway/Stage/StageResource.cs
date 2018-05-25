@@ -14,7 +14,7 @@ namespace Comformation.ApiGateway.Stage
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> CacheClusterEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> CacheClusterEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize

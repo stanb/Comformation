@@ -39,12 +39,12 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetondemandcapacity
             /// </summary>
-			public Union<int?, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
+			public Union<int, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetspotcapacity
             /// </summary>
-			public Union<int?, IntrinsicFunction> TargetSpotCapacity { get; set; }
+			public Union<int, IntrinsicFunction> TargetSpotCapacity { get; set; }
 
         }
     

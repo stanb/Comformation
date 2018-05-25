@@ -21,7 +21,7 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized
         /// </summary>
         [JsonProperty("EbsOptimized")]
-        public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+        public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
     }
 }

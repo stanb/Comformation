@@ -21,7 +21,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein
         /// </summary>
         [JsonProperty("DisableScaleIn")]
-        public Union<bool?, IntrinsicFunction> DisableScaleIn { get; set; }
+        public Union<bool, IntrinsicFunction> DisableScaleIn { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-predefinedmetricspecification

@@ -21,7 +21,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsoptimized
         /// </summary>
         [JsonProperty("EbsOptimized")]
-        public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+        public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
     }
 }

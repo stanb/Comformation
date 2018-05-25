@@ -34,7 +34,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthcheckgraceperiod
             /// </summary>
-			public Union<int?, IntrinsicFunction> HealthCheckGracePeriod { get; set; }
+			public Union<int, IntrinsicFunction> HealthCheckGracePeriod { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthchecktype
@@ -85,6 +85,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-placementgroup
             /// </summary>
 			public Union<string, IntrinsicFunction> PlacementGroup { get; set; }
+
+            /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-servicelinkedrolearn
+            /// </summary>
+			public Union<string, IntrinsicFunction> ServiceLinkedRoleARN { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags

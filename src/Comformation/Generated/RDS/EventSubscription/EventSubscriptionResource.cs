@@ -14,7 +14,7 @@ namespace Comformation.RDS.EventSubscription
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-enabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories

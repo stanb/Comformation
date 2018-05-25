@@ -27,7 +27,7 @@ namespace Comformation.S3.Bucket
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitionindays
         /// </summary>
         [JsonProperty("TransitionInDays")]
-        public Union<int?, IntrinsicFunction> TransitionInDays { get; set; }
+        public Union<int, IntrinsicFunction> TransitionInDays { get; set; }
 
     }
 }

@@ -15,7 +15,7 @@ namespace Comformation.Batch.JobDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly
         /// </summary>
         [JsonProperty("ReadOnly")]
-        public Union<bool?, IntrinsicFunction> ReadOnly { get; set; }
+        public Union<bool, IntrinsicFunction> ReadOnly { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume

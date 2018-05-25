@@ -21,7 +21,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumesperinstance
         /// </summary>
         [JsonProperty("VolumesPerInstance")]
-        public Union<int?, IntrinsicFunction> VolumesPerInstance { get; set; }
+        public Union<int, IntrinsicFunction> VolumesPerInstance { get; set; }
 
     }
 }

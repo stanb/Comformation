@@ -44,7 +44,7 @@ namespace Comformation.OpsWorks.Instance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-ebsoptimized
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-elasticips
@@ -59,7 +59,7 @@ namespace Comformation.OpsWorks.Instance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-installupdatesonboot
             /// </summary>
-			public Union<bool?, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
+			public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-instancetype

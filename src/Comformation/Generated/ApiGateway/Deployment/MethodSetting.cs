@@ -15,25 +15,25 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-cachedataencrypted
         /// </summary>
         [JsonProperty("CacheDataEncrypted")]
-        public Union<bool?, IntrinsicFunction> CacheDataEncrypted { get; set; }
+        public Union<bool, IntrinsicFunction> CacheDataEncrypted { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-cachettlinseconds
         /// </summary>
         [JsonProperty("CacheTtlInSeconds")]
-        public Union<int?, IntrinsicFunction> CacheTtlInSeconds { get; set; }
+        public Union<int, IntrinsicFunction> CacheTtlInSeconds { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-cachingenabled
         /// </summary>
         [JsonProperty("CachingEnabled")]
-        public Union<bool?, IntrinsicFunction> CachingEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> CachingEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-datatraceenabled
         /// </summary>
         [JsonProperty("DataTraceEnabled")]
-        public Union<bool?, IntrinsicFunction> DataTraceEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> DataTraceEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-httpmethod
@@ -51,7 +51,7 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-metricsenabled
         /// </summary>
         [JsonProperty("MetricsEnabled")]
-        public Union<bool?, IntrinsicFunction> MetricsEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> MetricsEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-resourcepath
@@ -63,13 +63,13 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-throttlingburstlimit
         /// </summary>
         [JsonProperty("ThrottlingBurstLimit")]
-        public Union<int?, IntrinsicFunction> ThrottlingBurstLimit { get; set; }
+        public Union<int, IntrinsicFunction> ThrottlingBurstLimit { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-throttlingratelimit
         /// </summary>
         [JsonProperty("ThrottlingRateLimit")]
-        public Union<double?, IntrinsicFunction> ThrottlingRateLimit { get; set; }
+        public Union<double, IntrinsicFunction> ThrottlingRateLimit { get; set; }
 
     }
 }

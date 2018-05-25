@@ -15,13 +15,13 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-associatepublicipaddress
         /// </summary>
         [JsonProperty("AssociatePublicIpAddress")]
-        public Union<bool?, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
+        public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-deleteontermination
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
-        public Union<bool?, IntrinsicFunction> DeleteOnTermination { get; set; }
+        public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-description
@@ -33,7 +33,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-deviceindex
         /// </summary>
         [JsonProperty("DeviceIndex")]
-        public Union<int?, IntrinsicFunction> DeviceIndex { get; set; }
+        public Union<int, IntrinsicFunction> DeviceIndex { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-groups
@@ -45,7 +45,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-ipv6addresscount
         /// </summary>
         [JsonProperty("Ipv6AddressCount")]
-        public Union<int?, IntrinsicFunction> Ipv6AddressCount { get; set; }
+        public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-ipv6addresses
@@ -69,7 +69,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-secondaryprivateipaddresscount
         /// </summary>
         [JsonProperty("SecondaryPrivateIpAddressCount")]
-        public Union<int?, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
+        public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-subnetid

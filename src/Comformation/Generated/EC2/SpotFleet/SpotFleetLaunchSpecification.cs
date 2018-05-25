@@ -21,7 +21,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-ebsoptimized
         /// </summary>
         [JsonProperty("EbsOptimized")]
-        public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+        public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-iaminstanceprofile
@@ -111,7 +111,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-weightedcapacity
         /// </summary>
         [JsonProperty("WeightedCapacity")]
-        public Union<double?, IntrinsicFunction> WeightedCapacity { get; set; }
+        public Union<double, IntrinsicFunction> WeightedCapacity { get; set; }
 
     }
 }

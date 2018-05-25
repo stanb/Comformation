@@ -51,7 +51,7 @@ namespace Comformation.CodePipeline.Pipeline
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-runorder
         /// </summary>
         [JsonProperty("RunOrder")]
-        public Union<int?, IntrinsicFunction> RunOrder { get; set; }
+        public Union<int, IntrinsicFunction> RunOrder { get; set; }
 
     }
 }

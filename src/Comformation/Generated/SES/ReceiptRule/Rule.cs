@@ -15,7 +15,7 @@ namespace Comformation.SES.ReceiptRule
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-scanenabled
         /// </summary>
         [JsonProperty("ScanEnabled")]
-        public Union<bool?, IntrinsicFunction> ScanEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> ScanEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-recipients
@@ -33,7 +33,7 @@ namespace Comformation.SES.ReceiptRule
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-enabled
         /// </summary>
         [JsonProperty("Enabled")]
-        public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+        public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-name

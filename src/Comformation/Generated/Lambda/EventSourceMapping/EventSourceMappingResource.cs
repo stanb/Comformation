@@ -14,12 +14,12 @@ namespace Comformation.Lambda.EventSourceMapping
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> BatchSize { get; set; }
+			public Union<int, IntrinsicFunction> BatchSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn

@@ -39,7 +39,7 @@ namespace Comformation.OpsWorks.App
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-enablessl
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableSsl { get; set; }
+			public Union<bool, IntrinsicFunction> EnableSsl { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-environment

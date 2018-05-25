@@ -33,7 +33,7 @@ namespace Comformation.CodePipeline.CustomActionType
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-queryable
         /// </summary>
         [JsonProperty("Queryable")]
-        public Union<bool?, IntrinsicFunction> Queryable { get; set; }
+        public Union<bool, IntrinsicFunction> Queryable { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-required

@@ -33,13 +33,13 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-secondaryprivateipaddresscount
         /// </summary>
         [JsonProperty("SecondaryPrivateIpAddressCount")]
-        public Union<int?, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
+        public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount
         /// </summary>
         [JsonProperty("Ipv6AddressCount")]
-        public Union<int?, IntrinsicFunction> Ipv6AddressCount { get; set; }
+        public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups
@@ -51,7 +51,7 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex
         /// </summary>
         [JsonProperty("DeviceIndex")]
-        public Union<int?, IntrinsicFunction> DeviceIndex { get; set; }
+        public Union<int, IntrinsicFunction> DeviceIndex { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-subnetid
@@ -69,7 +69,7 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-associatepublicipaddress
         /// </summary>
         [JsonProperty("AssociatePublicIpAddress")]
-        public Union<bool?, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
+        public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid
@@ -81,7 +81,7 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deleteontermination
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
-        public Union<bool?, IntrinsicFunction> DeleteOnTermination { get; set; }
+        public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
     }
 }

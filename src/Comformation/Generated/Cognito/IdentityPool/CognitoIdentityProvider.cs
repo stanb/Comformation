@@ -15,7 +15,7 @@ namespace Comformation.Cognito.IdentityPool
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-serversidetokencheck
         /// </summary>
         [JsonProperty("ServerSideTokenCheck")]
-        public Union<bool?, IntrinsicFunction> ServerSideTokenCheck { get; set; }
+        public Union<bool, IntrinsicFunction> ServerSideTokenCheck { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-providername

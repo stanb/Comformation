@@ -33,7 +33,7 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate
         /// </summary>
         [JsonProperty("CloudFrontDefaultCertificate")]
-        public Union<bool?, IntrinsicFunction> CloudFrontDefaultCertificate { get; set; }
+        public Union<bool, IntrinsicFunction> CloudFrontDefaultCertificate { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn

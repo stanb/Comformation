@@ -21,13 +21,13 @@ namespace Comformation.ECS.TaskDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-cpu
         /// </summary>
         [JsonProperty("Cpu")]
-        public Union<int?, IntrinsicFunction> Cpu { get; set; }
+        public Union<int, IntrinsicFunction> Cpu { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-disablenetworking
         /// </summary>
         [JsonProperty("DisableNetworking")]
-        public Union<bool?, IntrinsicFunction> DisableNetworking { get; set; }
+        public Union<bool, IntrinsicFunction> DisableNetworking { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-dnssearchdomains
@@ -69,13 +69,19 @@ namespace Comformation.ECS.TaskDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-essential
         /// </summary>
         [JsonProperty("Essential")]
-        public Union<bool?, IntrinsicFunction> Essential { get; set; }
+        public Union<bool, IntrinsicFunction> Essential { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-extrahosts
         /// </summary>
         [JsonProperty("ExtraHosts")]
         public Union<List<HostEntry>, IntrinsicFunction> ExtraHosts { get; set; }
+
+        /// <summary>
+        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-healthcheck
+        /// </summary>
+        [JsonProperty("HealthCheck")]
+        public Union<HealthCheck, IntrinsicFunction> HealthCheck { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-hostname
@@ -111,13 +117,13 @@ namespace Comformation.ECS.TaskDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memory
         /// </summary>
         [JsonProperty("Memory")]
-        public Union<int?, IntrinsicFunction> Memory { get; set; }
+        public Union<int, IntrinsicFunction> Memory { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memoryreservation
         /// </summary>
         [JsonProperty("MemoryReservation")]
-        public Union<int?, IntrinsicFunction> MemoryReservation { get; set; }
+        public Union<int, IntrinsicFunction> MemoryReservation { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints
@@ -141,13 +147,13 @@ namespace Comformation.ECS.TaskDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-privileged
         /// </summary>
         [JsonProperty("Privileged")]
-        public Union<bool?, IntrinsicFunction> Privileged { get; set; }
+        public Union<bool, IntrinsicFunction> Privileged { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-readonlyrootfilesystem
         /// </summary>
         [JsonProperty("ReadonlyRootFilesystem")]
-        public Union<bool?, IntrinsicFunction> ReadonlyRootFilesystem { get; set; }
+        public Union<bool, IntrinsicFunction> ReadonlyRootFilesystem { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-ulimits

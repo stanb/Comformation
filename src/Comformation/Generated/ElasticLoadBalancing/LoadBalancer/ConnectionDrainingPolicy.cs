@@ -21,7 +21,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout
         /// </summary>
         [JsonProperty("Timeout")]
-        public Union<int?, IntrinsicFunction> Timeout { get; set; }
+        public Union<int, IntrinsicFunction> Timeout { get; set; }
 
     }
 }

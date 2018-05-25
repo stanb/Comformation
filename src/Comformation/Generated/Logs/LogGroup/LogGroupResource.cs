@@ -19,7 +19,7 @@ namespace Comformation.Logs.LogGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-retentionindays
             /// </summary>
-			public Union<int?, IntrinsicFunction> RetentionInDays { get; set; }
+			public Union<int, IntrinsicFunction> RetentionInDays { get; set; }
 
         }
     

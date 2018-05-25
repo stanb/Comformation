@@ -15,7 +15,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-iops
         /// </summary>
         [JsonProperty("Iops")]
-        public Union<int?, IntrinsicFunction> Iops { get; set; }
+        public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-sizeingb

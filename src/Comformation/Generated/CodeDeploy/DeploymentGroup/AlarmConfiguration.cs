@@ -21,13 +21,13 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-enabled
         /// </summary>
         [JsonProperty("Enabled")]
-        public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+        public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-ignorepollalarmfailure
         /// </summary>
         [JsonProperty("IgnorePollAlarmFailure")]
-        public Union<bool?, IntrinsicFunction> IgnorePollAlarmFailure { get; set; }
+        public Union<bool, IntrinsicFunction> IgnorePollAlarmFailure { get; set; }
 
     }
 }

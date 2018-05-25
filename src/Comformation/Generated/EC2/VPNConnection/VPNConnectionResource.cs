@@ -19,7 +19,7 @@ namespace Comformation.EC2.VPNConnection
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly
             /// </summary>
-			public Union<bool?, IntrinsicFunction> StaticRoutesOnly { get; set; }
+			public Union<bool, IntrinsicFunction> StaticRoutesOnly { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags

@@ -21,7 +21,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein
         /// </summary>
         [JsonProperty("DisableScaleIn")]
-        public Union<bool?, IntrinsicFunction> DisableScaleIn { get; set; }
+        public Union<bool, IntrinsicFunction> DisableScaleIn { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-predefinedmetricspecification
@@ -33,13 +33,13 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleincooldown
         /// </summary>
         [JsonProperty("ScaleInCooldown")]
-        public Union<int?, IntrinsicFunction> ScaleInCooldown { get; set; }
+        public Union<int, IntrinsicFunction> ScaleInCooldown { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleoutcooldown
         /// </summary>
         [JsonProperty("ScaleOutCooldown")]
-        public Union<int?, IntrinsicFunction> ScaleOutCooldown { get; set; }
+        public Union<int, IntrinsicFunction> ScaleOutCooldown { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-targetvalue

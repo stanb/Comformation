@@ -22,6 +22,11 @@ namespace Comformation.Batch.JobDefinition
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-timeout
+            /// </summary>
+			public Union<Timeout, IntrinsicFunction> Timeout { get; set; }
+
+            /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-containerproperties
             /// </summary>
 			public Union<ContainerProperties, IntrinsicFunction> ContainerProperties { get; set; }

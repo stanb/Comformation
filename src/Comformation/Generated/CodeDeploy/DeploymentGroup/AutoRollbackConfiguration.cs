@@ -15,7 +15,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-enabled
         /// </summary>
         [JsonProperty("Enabled")]
-        public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+        public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-events

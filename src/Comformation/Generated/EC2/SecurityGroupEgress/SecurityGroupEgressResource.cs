@@ -39,7 +39,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
             /// </summary>
-			public Union<int?, IntrinsicFunction> FromPort { get; set; }
+			public Union<int, IntrinsicFunction> FromPort { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
@@ -54,7 +54,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
             /// </summary>
-			public Union<int?, IntrinsicFunction> ToPort { get; set; }
+			public Union<int, IntrinsicFunction> ToPort { get; set; }
 
         }
     

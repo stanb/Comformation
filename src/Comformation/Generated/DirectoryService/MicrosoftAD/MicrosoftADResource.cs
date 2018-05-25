@@ -14,12 +14,17 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
             /// </summary>
-			public Union<bool?, IntrinsicFunction> CreateAlias { get; set; }
+			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
+
+            /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
+            /// </summary>
+			public Union<string, IntrinsicFunction> Edition { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableSso { get; set; }
+			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name

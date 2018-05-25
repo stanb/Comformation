@@ -15,7 +15,7 @@ namespace Comformation.EC2.SpotFleet
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-monitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled
         /// </summary>
         [JsonProperty("Enabled")]
-        public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+        public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
     }
 }

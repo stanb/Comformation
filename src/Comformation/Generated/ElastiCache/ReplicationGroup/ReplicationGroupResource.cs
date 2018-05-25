@@ -14,7 +14,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-atrestencryptionenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AtRestEncryptionEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> AtRestEncryptionEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-authtoken
@@ -24,12 +24,12 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-autominorversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-automaticfailoverenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AutomaticFailoverEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> AutomaticFailoverEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachenodetype
@@ -74,17 +74,17 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numcacheclusters
             /// </summary>
-			public Union<int?, IntrinsicFunction> NumCacheClusters { get; set; }
+			public Union<int, IntrinsicFunction> NumCacheClusters { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups
             /// </summary>
-			public Union<int?, IntrinsicFunction> NumNodeGroups { get; set; }
+			public Union<int, IntrinsicFunction> NumNodeGroups { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-port
             /// </summary>
-			public Union<int?, IntrinsicFunction> Port { get; set; }
+			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredcacheclusterazs
@@ -104,7 +104,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicaspernodegroup
             /// </summary>
-			public Union<int?, IntrinsicFunction> ReplicasPerNodeGroup { get; set; }
+			public Union<int, IntrinsicFunction> ReplicasPerNodeGroup { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupdescription
@@ -134,7 +134,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotretentionlimit
             /// </summary>
-			public Union<int?, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
+			public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotwindow
@@ -154,7 +154,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-transitencryptionenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> TransitEncryptionEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> TransitEncryptionEnabled { get; set; }
 
         }
     

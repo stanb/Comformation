@@ -15,13 +15,13 @@ namespace Comformation.ApiGateway.UsagePlan
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit
         /// </summary>
         [JsonProperty("Limit")]
-        public Union<int?, IntrinsicFunction> Limit { get; set; }
+        public Union<int, IntrinsicFunction> Limit { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset
         /// </summary>
         [JsonProperty("Offset")]
-        public Union<int?, IntrinsicFunction> Offset { get; set; }
+        public Union<int, IntrinsicFunction> Offset { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period

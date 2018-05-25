@@ -15,7 +15,7 @@ namespace Comformation.SSM.PatchBaseline
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity
         /// </summary>
         [JsonProperty("EnableNonSecurity")]
-        public Union<bool?, IntrinsicFunction> EnableNonSecurity { get; set; }
+        public Union<bool, IntrinsicFunction> EnableNonSecurity { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-patchfiltergroup
@@ -27,7 +27,7 @@ namespace Comformation.SSM.PatchBaseline
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
         /// </summary>
         [JsonProperty("ApproveAfterDays")]
-        public Union<int?, IntrinsicFunction> ApproveAfterDays { get; set; }
+        public Union<int, IntrinsicFunction> ApproveAfterDays { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-compliancelevel

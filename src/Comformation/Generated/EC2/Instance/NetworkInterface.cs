@@ -15,13 +15,13 @@ namespace Comformation.EC2.Instance
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip
         /// </summary>
         [JsonProperty("AssociatePublicIpAddress")]
-        public Union<bool?, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
+        public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-delete
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
-        public Union<bool?, IntrinsicFunction> DeleteOnTermination { get; set; }
+        public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-description
@@ -45,7 +45,7 @@ namespace Comformation.EC2.Instance
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresscount
         /// </summary>
         [JsonProperty("Ipv6AddressCount")]
-        public Union<int?, IntrinsicFunction> Ipv6AddressCount { get; set; }
+        public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresses
@@ -75,7 +75,7 @@ namespace Comformation.EC2.Instance
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-secondprivateip
         /// </summary>
         [JsonProperty("SecondaryPrivateIpAddressCount")]
-        public Union<int?, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
+        public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-subnetid

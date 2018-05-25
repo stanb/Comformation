@@ -39,7 +39,7 @@ namespace Comformation.SSM.PatchBaseline
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
+			public Union<bool, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules

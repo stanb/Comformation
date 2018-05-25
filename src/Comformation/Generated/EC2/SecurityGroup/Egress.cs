@@ -45,7 +45,7 @@ namespace Comformation.EC2.SecurityGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport
         /// </summary>
         [JsonProperty("FromPort")]
-        public Union<int?, IntrinsicFunction> FromPort { get; set; }
+        public Union<int, IntrinsicFunction> FromPort { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol
@@ -57,7 +57,7 @@ namespace Comformation.EC2.SecurityGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport
         /// </summary>
         [JsonProperty("ToPort")]
-        public Union<int?, IntrinsicFunction> ToPort { get; set; }
+        public Union<int, IntrinsicFunction> ToPort { get; set; }
 
     }
 }

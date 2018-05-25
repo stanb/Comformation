@@ -27,7 +27,7 @@ namespace Comformation.ECS.TaskDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled
         /// </summary>
         [JsonProperty("InitProcessEnabled")]
-        public Union<bool?, IntrinsicFunction> InitProcessEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> InitProcessEnabled { get; set; }
 
     }
 }

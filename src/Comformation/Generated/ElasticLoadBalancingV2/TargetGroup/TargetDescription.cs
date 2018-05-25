@@ -27,7 +27,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port
         /// </summary>
         [JsonProperty("Port")]
-        public Union<int?, IntrinsicFunction> Port { get; set; }
+        public Union<int, IntrinsicFunction> Port { get; set; }
 
     }
 }

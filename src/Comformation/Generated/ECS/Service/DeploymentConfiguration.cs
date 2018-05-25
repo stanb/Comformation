@@ -15,13 +15,13 @@ namespace Comformation.ECS.Service
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-maximumpercent
         /// </summary>
         [JsonProperty("MaximumPercent")]
-        public Union<int?, IntrinsicFunction> MaximumPercent { get; set; }
+        public Union<int, IntrinsicFunction> MaximumPercent { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-minimumhealthypercent
         /// </summary>
         [JsonProperty("MinimumHealthyPercent")]
-        public Union<int?, IntrinsicFunction> MinimumHealthyPercent { get; set; }
+        public Union<int, IntrinsicFunction> MinimumHealthyPercent { get; set; }
 
     }
 }

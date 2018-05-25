@@ -15,7 +15,7 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled
         /// </summary>
         [JsonProperty("CacheClusterEnabled")]
-        public Union<bool?, IntrinsicFunction> CacheClusterEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> CacheClusterEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize
@@ -27,19 +27,19 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted
         /// </summary>
         [JsonProperty("CacheDataEncrypted")]
-        public Union<bool?, IntrinsicFunction> CacheDataEncrypted { get; set; }
+        public Union<bool, IntrinsicFunction> CacheDataEncrypted { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds
         /// </summary>
         [JsonProperty("CacheTtlInSeconds")]
-        public Union<int?, IntrinsicFunction> CacheTtlInSeconds { get; set; }
+        public Union<int, IntrinsicFunction> CacheTtlInSeconds { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled
         /// </summary>
         [JsonProperty("CachingEnabled")]
-        public Union<bool?, IntrinsicFunction> CachingEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> CachingEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid
@@ -51,7 +51,7 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled
         /// </summary>
         [JsonProperty("DataTraceEnabled")]
-        public Union<bool?, IntrinsicFunction> DataTraceEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> DataTraceEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description
@@ -81,19 +81,19 @@ namespace Comformation.ApiGateway.Deployment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled
         /// </summary>
         [JsonProperty("MetricsEnabled")]
-        public Union<bool?, IntrinsicFunction> MetricsEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> MetricsEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit
         /// </summary>
         [JsonProperty("ThrottlingBurstLimit")]
-        public Union<int?, IntrinsicFunction> ThrottlingBurstLimit { get; set; }
+        public Union<int, IntrinsicFunction> ThrottlingBurstLimit { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit
         /// </summary>
         [JsonProperty("ThrottlingRateLimit")]
-        public Union<double?, IntrinsicFunction> ThrottlingRateLimit { get; set; }
+        public Union<double, IntrinsicFunction> ThrottlingRateLimit { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables

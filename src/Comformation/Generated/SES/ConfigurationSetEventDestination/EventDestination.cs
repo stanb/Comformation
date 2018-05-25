@@ -21,7 +21,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-enabled
         /// </summary>
         [JsonProperty("Enabled")]
-        public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+        public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-matchingeventtypes

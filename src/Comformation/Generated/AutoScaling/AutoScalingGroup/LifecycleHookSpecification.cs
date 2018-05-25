@@ -21,7 +21,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-heartbeattimeout
         /// </summary>
         [JsonProperty("HeartbeatTimeout")]
-        public Union<int?, IntrinsicFunction> HeartbeatTimeout { get; set; }
+        public Union<int, IntrinsicFunction> HeartbeatTimeout { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-lifecyclehookname

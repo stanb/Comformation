@@ -39,7 +39,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone
             /// </summary>
-			public Union<bool?, IntrinsicFunction> CrossZone { get; set; }
+			public Union<bool, IntrinsicFunction> CrossZone { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck

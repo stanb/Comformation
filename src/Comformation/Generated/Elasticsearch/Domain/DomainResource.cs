@@ -42,6 +42,11 @@ namespace Comformation.Elasticsearch.Domain
 			public Union<string, IntrinsicFunction> ElasticsearchVersion { get; set; }
 
             /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions
+            /// </summary>
+			public Union<EncryptionAtRestOptions, IntrinsicFunction> EncryptionAtRestOptions { get; set; }
+
+            /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions
             /// </summary>
 			public Union<SnapshotOptions, IntrinsicFunction> SnapshotOptions { get; set; }

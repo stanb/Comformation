@@ -21,7 +21,7 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-primary
         /// </summary>
         [JsonProperty("Primary")]
-        public Union<bool?, IntrinsicFunction> Primary { get; set; }
+        public Union<bool, IntrinsicFunction> Primary { get; set; }
 
     }
 }

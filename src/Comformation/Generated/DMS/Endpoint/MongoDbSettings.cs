@@ -45,7 +45,7 @@ namespace Comformation.DMS.Endpoint
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-port
         /// </summary>
         [JsonProperty("Port")]
-        public Union<int?, IntrinsicFunction> Port { get; set; }
+        public Union<int, IntrinsicFunction> Port { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-extractdocid

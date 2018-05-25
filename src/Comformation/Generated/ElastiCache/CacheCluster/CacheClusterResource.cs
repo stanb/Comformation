@@ -19,7 +19,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-autominorversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachenodetype
@@ -69,7 +69,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port
             /// </summary>
-			public Union<int?, IntrinsicFunction> Port { get; set; }
+			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzone
@@ -99,7 +99,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit
             /// </summary>
-			public Union<int?, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
+			public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotwindow

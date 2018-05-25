@@ -29,7 +29,7 @@ namespace Comformation.Glue.Job
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxretries
             /// </summary>
-			public Union<double?, IntrinsicFunction> MaxRetries { get; set; }
+			public Union<double, IntrinsicFunction> MaxRetries { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description
@@ -49,7 +49,7 @@ namespace Comformation.Glue.Job
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-allocatedcapacity
             /// </summary>
-			public Union<double?, IntrinsicFunction> AllocatedCapacity { get; set; }
+			public Union<double, IntrinsicFunction> AllocatedCapacity { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionproperty

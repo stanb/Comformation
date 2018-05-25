@@ -27,7 +27,7 @@ namespace Comformation.CodeBuild.Project
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode
         /// </summary>
         [JsonProperty("PrivilegedMode")]
-        public Union<bool?, IntrinsicFunction> PrivilegedMode { get; set; }
+        public Union<bool, IntrinsicFunction> PrivilegedMode { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image

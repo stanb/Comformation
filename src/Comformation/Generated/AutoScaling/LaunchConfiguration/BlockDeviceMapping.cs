@@ -27,7 +27,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-nodevice
         /// </summary>
         [JsonProperty("NoDevice")]
-        public Union<bool?, IntrinsicFunction> NoDevice { get; set; }
+        public Union<bool, IntrinsicFunction> NoDevice { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-virtualname

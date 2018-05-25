@@ -19,7 +19,7 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backuprententionperiod
             /// </summary>
-			public Union<int?, IntrinsicFunction> BackupRetentionPeriod { get; set; }
+			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusteridentifier
@@ -69,7 +69,7 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-port
             /// </summary>
-			public Union<int?, IntrinsicFunction> Port { get; set; }
+			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow
@@ -94,7 +94,7 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
             /// </summary>
-			public Union<bool?, IntrinsicFunction> StorageEncrypted { get; set; }
+			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-tags

@@ -79,7 +79,7 @@ namespace Comformation.Route53.RecordSet
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight
             /// </summary>
-			public Union<int?, IntrinsicFunction> Weight { get; set; }
+			public Union<int, IntrinsicFunction> Weight { get; set; }
 
         }
     

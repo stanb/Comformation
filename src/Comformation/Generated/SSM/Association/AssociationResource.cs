@@ -32,6 +32,11 @@ namespace Comformation.SSM.Association
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
+            /// </summary>
+			public Union<InstanceAssociationOutputLocation, IntrinsicFunction> OutputLocation { get; set; }
+
+            /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
             /// </summary>
 			public Union<Dictionary<string, ParameterValues>, IntrinsicFunction> Parameters { get; set; }

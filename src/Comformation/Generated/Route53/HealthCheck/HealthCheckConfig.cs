@@ -27,13 +27,13 @@ namespace Comformation.Route53.HealthCheck
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-enablesni
         /// </summary>
         [JsonProperty("EnableSNI")]
-        public Union<bool?, IntrinsicFunction> EnableSNI { get; set; }
+        public Union<bool, IntrinsicFunction> EnableSNI { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-failurethreshold
         /// </summary>
         [JsonProperty("FailureThreshold")]
-        public Union<int?, IntrinsicFunction> FailureThreshold { get; set; }
+        public Union<int, IntrinsicFunction> FailureThreshold { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-fullyqualifieddomainname
@@ -45,7 +45,7 @@ namespace Comformation.Route53.HealthCheck
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-healththreshold
         /// </summary>
         [JsonProperty("HealthThreshold")]
-        public Union<int?, IntrinsicFunction> HealthThreshold { get; set; }
+        public Union<int, IntrinsicFunction> HealthThreshold { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-ipaddress
@@ -63,19 +63,19 @@ namespace Comformation.Route53.HealthCheck
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-inverted
         /// </summary>
         [JsonProperty("Inverted")]
-        public Union<bool?, IntrinsicFunction> Inverted { get; set; }
+        public Union<bool, IntrinsicFunction> Inverted { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-measurelatency
         /// </summary>
         [JsonProperty("MeasureLatency")]
-        public Union<bool?, IntrinsicFunction> MeasureLatency { get; set; }
+        public Union<bool, IntrinsicFunction> MeasureLatency { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-port
         /// </summary>
         [JsonProperty("Port")]
-        public Union<int?, IntrinsicFunction> Port { get; set; }
+        public Union<int, IntrinsicFunction> Port { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-regions
@@ -87,7 +87,7 @@ namespace Comformation.Route53.HealthCheck
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-requestinterval
         /// </summary>
         [JsonProperty("RequestInterval")]
-        public Union<int?, IntrinsicFunction> RequestInterval { get; set; }
+        public Union<int, IntrinsicFunction> RequestInterval { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-resourcepath

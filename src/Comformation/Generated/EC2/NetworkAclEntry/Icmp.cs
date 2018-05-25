@@ -15,13 +15,13 @@ namespace Comformation.EC2.NetworkAclEntry
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-code
         /// </summary>
         [JsonProperty("Code")]
-        public Union<int?, IntrinsicFunction> Code { get; set; }
+        public Union<int, IntrinsicFunction> Code { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type
         /// </summary>
         [JsonProperty("Type")]
-        public Union<int?, IntrinsicFunction> Type { get; set; }
+        public Union<int, IntrinsicFunction> Type { get; set; }
 
     }
 }

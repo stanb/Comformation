@@ -21,7 +21,7 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumesperinstance
         /// </summary>
         [JsonProperty("VolumesPerInstance")]
-        public Union<int?, IntrinsicFunction> VolumesPerInstance { get; set; }
+        public Union<int, IntrinsicFunction> VolumesPerInstance { get; set; }
 
     }
 }

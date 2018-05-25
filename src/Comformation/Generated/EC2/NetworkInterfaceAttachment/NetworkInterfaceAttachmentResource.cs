@@ -14,7 +14,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm
             /// </summary>
-			public Union<bool?, IntrinsicFunction> DeleteOnTermination { get; set; }
+			public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex

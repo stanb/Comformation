@@ -34,7 +34,7 @@ namespace Comformation.OpsWorks.Stack
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ClonePermissions { get; set; }
+			public Union<bool, IntrinsicFunction> ClonePermissions { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-configmanager
@@ -124,12 +124,12 @@ namespace Comformation.OpsWorks.Stack
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks
             /// </summary>
-			public Union<bool?, IntrinsicFunction> UseCustomCookbooks { get; set; }
+			public Union<bool, IntrinsicFunction> UseCustomCookbooks { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-useopsworkssecuritygroups
             /// </summary>
-			public Union<bool?, IntrinsicFunction> UseOpsworksSecurityGroups { get; set; }
+			public Union<bool, IntrinsicFunction> UseOpsworksSecurityGroups { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-vpcid

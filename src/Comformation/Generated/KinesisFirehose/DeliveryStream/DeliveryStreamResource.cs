@@ -46,6 +46,11 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// </summary>
 			public Union<S3DestinationConfiguration, IntrinsicFunction> S3DestinationConfiguration { get; set; }
 
+            /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration
+            /// </summary>
+			public Union<SplunkDestinationConfiguration, IntrinsicFunction> SplunkDestinationConfiguration { get; set; }
+
         }
     
         public string Type { get; } = "AWS::KinesisFirehose::DeliveryStream";

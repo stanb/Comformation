@@ -15,7 +15,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-blockdurationminutes
         /// </summary>
         [JsonProperty("BlockDurationMinutes")]
-        public Union<int?, IntrinsicFunction> BlockDurationMinutes { get; set; }
+        public Union<int, IntrinsicFunction> BlockDurationMinutes { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutaction

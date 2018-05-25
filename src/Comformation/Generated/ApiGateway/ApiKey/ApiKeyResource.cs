@@ -24,12 +24,12 @@ namespace Comformation.ApiGateway.ApiKey
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid
             /// </summary>
-			public Union<bool?, IntrinsicFunction> GenerateDistinctId { get; set; }
+			public Union<bool, IntrinsicFunction> GenerateDistinctId { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name

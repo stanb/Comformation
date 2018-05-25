@@ -21,7 +21,7 @@ namespace Comformation.IAM.User
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired
         /// </summary>
         [JsonProperty("PasswordResetRequired")]
-        public Union<bool?, IntrinsicFunction> PasswordResetRequired { get; set; }
+        public Union<bool, IntrinsicFunction> PasswordResetRequired { get; set; }
 
     }
 }

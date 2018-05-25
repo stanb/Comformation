@@ -15,7 +15,7 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-compress
         /// </summary>
         [JsonProperty("Compress")]
-        public Union<bool?, IntrinsicFunction> Compress { get; set; }
+        public Union<bool, IntrinsicFunction> Compress { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-allowedmethods
@@ -39,7 +39,7 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-smoothstreaming
         /// </summary>
         [JsonProperty("SmoothStreaming")]
-        public Union<bool?, IntrinsicFunction> SmoothStreaming { get; set; }
+        public Union<bool, IntrinsicFunction> SmoothStreaming { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-targetoriginid
@@ -63,13 +63,13 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-minttl
         /// </summary>
         [JsonProperty("MinTTL")]
-        public Union<double?, IntrinsicFunction> MinTTL { get; set; }
+        public Union<double, IntrinsicFunction> MinTTL { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-maxttl
         /// </summary>
         [JsonProperty("MaxTTL")]
-        public Union<double?, IntrinsicFunction> MaxTTL { get; set; }
+        public Union<double, IntrinsicFunction> MaxTTL { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners
@@ -81,7 +81,7 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-defaultttl
         /// </summary>
         [JsonProperty("DefaultTTL")]
-        public Union<double?, IntrinsicFunction> DefaultTTL { get; set; }
+        public Union<double, IntrinsicFunction> DefaultTTL { get; set; }
 
     }
 }

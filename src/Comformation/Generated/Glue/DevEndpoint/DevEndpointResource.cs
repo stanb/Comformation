@@ -29,7 +29,7 @@ namespace Comformation.Glue.DevEndpoint
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
             /// </summary>
-			public Union<int?, IntrinsicFunction> NumberOfNodes { get; set; }
+			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid

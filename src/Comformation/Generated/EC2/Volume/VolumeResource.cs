@@ -14,7 +14,7 @@ namespace Comformation.EC2.Volume
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-autoenableio
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AutoEnableIO { get; set; }
+			public Union<bool, IntrinsicFunction> AutoEnableIO { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-availabilityzone
@@ -24,12 +24,12 @@ namespace Comformation.EC2.Volume
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-encrypted
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Encrypted { get; set; }
+			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-iops
             /// </summary>
-			public Union<int?, IntrinsicFunction> Iops { get; set; }
+			public Union<int, IntrinsicFunction> Iops { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-kmskeyid
@@ -39,7 +39,7 @@ namespace Comformation.EC2.Volume
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-size
             /// </summary>
-			public Union<int?, IntrinsicFunction> Size { get; set; }
+			public Union<int, IntrinsicFunction> Size { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-snapshotid

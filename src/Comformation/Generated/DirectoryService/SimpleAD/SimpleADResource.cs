@@ -14,7 +14,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias
             /// </summary>
-			public Union<bool?, IntrinsicFunction> CreateAlias { get; set; }
+			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
@@ -24,7 +24,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableSso { get; set; }
+			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name

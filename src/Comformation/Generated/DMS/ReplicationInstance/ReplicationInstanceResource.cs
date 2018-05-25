@@ -39,7 +39,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier
@@ -49,7 +49,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage
             /// </summary>
-			public Union<int?, IntrinsicFunction> AllocatedStorage { get; set; }
+			public Union<int, IntrinsicFunction> AllocatedStorage { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids
@@ -59,7 +59,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass
@@ -69,12 +69,12 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible
             /// </summary>
-			public Union<bool?, IntrinsicFunction> PubliclyAccessible { get; set; }
+			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
             /// </summary>
-			public Union<bool?, IntrinsicFunction> MultiAZ { get; set; }
+			public Union<bool, IntrinsicFunction> MultiAZ { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags

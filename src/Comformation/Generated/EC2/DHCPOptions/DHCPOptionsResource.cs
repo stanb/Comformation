@@ -29,7 +29,7 @@ namespace Comformation.EC2.DHCPOptions
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnodetype
             /// </summary>
-			public Union<int?, IntrinsicFunction> NetbiosNodeType { get; set; }
+			public Union<int, IntrinsicFunction> NetbiosNodeType { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers

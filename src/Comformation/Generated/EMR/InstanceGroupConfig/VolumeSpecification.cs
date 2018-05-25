@@ -15,7 +15,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification-iops
         /// </summary>
         [JsonProperty("Iops")]
-        public Union<int?, IntrinsicFunction> Iops { get; set; }
+        public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification-sizeingb

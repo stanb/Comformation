@@ -21,7 +21,7 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidpriceaspercentageofondemandprice
         /// </summary>
         [JsonProperty("BidPriceAsPercentageOfOnDemandPrice")]
-        public Union<double?, IntrinsicFunction> BidPriceAsPercentageOfOnDemandPrice { get; set; }
+        public Union<double, IntrinsicFunction> BidPriceAsPercentageOfOnDemandPrice { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-configurations
@@ -45,7 +45,7 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-weightedcapacity
         /// </summary>
         [JsonProperty("WeightedCapacity")]
-        public Union<int?, IntrinsicFunction> WeightedCapacity { get; set; }
+        public Union<int, IntrinsicFunction> WeightedCapacity { get; set; }
 
     }
 }

@@ -15,19 +15,19 @@ namespace Comformation.EC2.Instance
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-deleteontermination
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
-        public Union<bool?, IntrinsicFunction> DeleteOnTermination { get; set; }
+        public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-encrypted
         /// </summary>
         [JsonProperty("Encrypted")]
-        public Union<bool?, IntrinsicFunction> Encrypted { get; set; }
+        public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-iops
         /// </summary>
         [JsonProperty("Iops")]
-        public Union<int?, IntrinsicFunction> Iops { get; set; }
+        public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-snapshotid
@@ -39,7 +39,7 @@ namespace Comformation.EC2.Instance
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-volumesize
         /// </summary>
         [JsonProperty("VolumeSize")]
-        public Union<int?, IntrinsicFunction> VolumeSize { get; set; }
+        public Union<int, IntrinsicFunction> VolumeSize { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-volumetype

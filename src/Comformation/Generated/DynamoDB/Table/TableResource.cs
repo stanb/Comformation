@@ -32,6 +32,11 @@ namespace Comformation.DynamoDB.Table
 			public Union<List<LocalSecondaryIndex>, IntrinsicFunction> LocalSecondaryIndexes { get; set; }
 
             /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification
+            /// </summary>
+			public Union<PointInTimeRecoverySpecification, IntrinsicFunction> PointInTimeRecoverySpecification { get; set; }
+
+            /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput
             /// </summary>
 			public Union<ProvisionedThroughput, IntrinsicFunction> ProvisionedThroughput { get; set; }

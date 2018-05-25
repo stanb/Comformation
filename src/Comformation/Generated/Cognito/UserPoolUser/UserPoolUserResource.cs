@@ -39,7 +39,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-forcealiascreation
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ForceAliasCreation { get; set; }
+			public Union<bool, IntrinsicFunction> ForceAliasCreation { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes

@@ -39,7 +39,7 @@ namespace Comformation.RDS.OptionGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-port
         /// </summary>
         [JsonProperty("Port")]
-        public Union<int?, IntrinsicFunction> Port { get; set; }
+        public Union<int, IntrinsicFunction> Port { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-vpcsecuritygroupmemberships

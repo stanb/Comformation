@@ -19,12 +19,12 @@ namespace Comformation.EC2.VPC
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableDnsHostnames { get; set; }
+			public Union<bool, IntrinsicFunction> EnableDnsHostnames { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableDnsSupport { get; set; }
+			public Union<bool, IntrinsicFunction> EnableDnsSupport { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy

@@ -14,7 +14,7 @@ namespace Comformation.EC2.Subnet
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AssignIpv6AddressOnCreation { get; set; }
+			public Union<bool, IntrinsicFunction> AssignIpv6AddressOnCreation { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone
@@ -34,7 +34,7 @@ namespace Comformation.EC2.Subnet
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
             /// </summary>
-			public Union<bool?, IntrinsicFunction> MapPublicIpOnLaunch { get; set; }
+			public Union<bool, IntrinsicFunction> MapPublicIpOnLaunch { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags

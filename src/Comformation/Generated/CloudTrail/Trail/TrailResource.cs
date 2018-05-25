@@ -24,7 +24,7 @@ namespace Comformation.CloudTrail.Trail
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableLogFileValidation { get; set; }
+			public Union<bool, IntrinsicFunction> EnableLogFileValidation { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors
@@ -34,7 +34,7 @@ namespace Comformation.CloudTrail.Trail
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents
             /// </summary>
-			public Union<bool?, IntrinsicFunction> IncludeGlobalServiceEvents { get; set; }
+			public Union<bool, IntrinsicFunction> IncludeGlobalServiceEvents { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging
@@ -44,7 +44,7 @@ namespace Comformation.CloudTrail.Trail
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail
             /// </summary>
-			public Union<bool?, IntrinsicFunction> IsMultiRegionTrail { get; set; }
+			public Union<bool, IntrinsicFunction> IsMultiRegionTrail { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-kmskeyid

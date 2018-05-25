@@ -49,12 +49,12 @@ namespace Comformation.ApiGateway.RestApi
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarnings
             /// </summary>
-			public Union<bool?, IntrinsicFunction> FailOnWarnings { get; set; }
+			public Union<bool, IntrinsicFunction> FailOnWarnings { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MinimumCompressionSize { get; set; }
+			public Union<int, IntrinsicFunction> MinimumCompressionSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name
@@ -65,6 +65,11 @@ namespace Comformation.ApiGateway.RestApi
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-parameters
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
+
+            /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Policy { get; set; }
 
         }
     

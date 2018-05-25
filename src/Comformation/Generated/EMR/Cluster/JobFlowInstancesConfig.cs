@@ -93,7 +93,7 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-terminationprotected
         /// </summary>
         [JsonProperty("TerminationProtected")]
-        public Union<bool?, IntrinsicFunction> TerminationProtected { get; set; }
+        public Union<bool, IntrinsicFunction> TerminationProtected { get; set; }
 
     }
 }

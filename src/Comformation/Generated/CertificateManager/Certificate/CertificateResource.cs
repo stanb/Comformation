@@ -31,6 +31,11 @@ namespace Comformation.CertificateManager.Certificate
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
+            /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
+            /// </summary>
+			public Union<string, IntrinsicFunction> ValidationMethod { get; set; }
+
         }
     
         public string Type { get; } = "AWS::CertificateManager::Certificate";

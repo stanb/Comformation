@@ -27,7 +27,7 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
         /// </summary>
         [JsonProperty("EvaluationPeriods")]
-        public Union<int?, IntrinsicFunction> EvaluationPeriods { get; set; }
+        public Union<int, IntrinsicFunction> EvaluationPeriods { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-metricname

@@ -33,13 +33,13 @@ namespace Comformation.CodeBuild.Project
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth
         /// </summary>
         [JsonProperty("GitCloneDepth")]
-        public Union<int?, IntrinsicFunction> GitCloneDepth { get; set; }
+        public Union<int, IntrinsicFunction> GitCloneDepth { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl
         /// </summary>
         [JsonProperty("InsecureSsl")]
-        public Union<bool?, IntrinsicFunction> InsecureSsl { get; set; }
+        public Union<bool, IntrinsicFunction> InsecureSsl { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location

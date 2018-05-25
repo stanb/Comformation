@@ -54,7 +54,7 @@ namespace Comformation.DMS.ReplicationTask
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstarttime
             /// </summary>
-			public Union<double?, IntrinsicFunction> CdcStartTime { get; set; }
+			public Union<double, IntrinsicFunction> CdcStartTime { get; set; }
 
         }
     

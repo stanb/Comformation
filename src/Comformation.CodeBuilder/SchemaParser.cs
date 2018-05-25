@@ -122,7 +122,7 @@ namespace Comformation.CodeBuilder
             string type;
             if (property.PrimitiveType.HasValue)
             {
-                type = Parse(property.PrimitiveType.Value, required);
+                type = Parse(property.PrimitiveType.Value, true);
             }
             else
             {

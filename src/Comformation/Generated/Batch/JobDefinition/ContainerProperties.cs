@@ -45,7 +45,7 @@ namespace Comformation.Batch.JobDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-privileged
         /// </summary>
         [JsonProperty("Privileged")]
-        public Union<bool?, IntrinsicFunction> Privileged { get; set; }
+        public Union<bool, IntrinsicFunction> Privileged { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-environment
@@ -63,7 +63,7 @@ namespace Comformation.Batch.JobDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-readonlyrootfilesystem
         /// </summary>
         [JsonProperty("ReadonlyRootFilesystem")]
-        public Union<bool?, IntrinsicFunction> ReadonlyRootFilesystem { get; set; }
+        public Union<bool, IntrinsicFunction> ReadonlyRootFilesystem { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-ulimits

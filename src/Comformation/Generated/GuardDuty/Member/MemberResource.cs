@@ -34,7 +34,7 @@ namespace Comformation.GuardDuty.Member
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification
             /// </summary>
-			public Union<bool?, IntrinsicFunction> DisableEmailNotification { get; set; }
+			public Union<bool, IntrinsicFunction> DisableEmailNotification { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid

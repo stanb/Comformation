@@ -15,13 +15,13 @@ namespace Comformation.Cognito.UserPool
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-developeronlyattribute
         /// </summary>
         [JsonProperty("DeveloperOnlyAttribute")]
-        public Union<bool?, IntrinsicFunction> DeveloperOnlyAttribute { get; set; }
+        public Union<bool, IntrinsicFunction> DeveloperOnlyAttribute { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-mutable
         /// </summary>
         [JsonProperty("Mutable")]
-        public Union<bool?, IntrinsicFunction> Mutable { get; set; }
+        public Union<bool, IntrinsicFunction> Mutable { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-attributedatatype
@@ -39,7 +39,7 @@ namespace Comformation.Cognito.UserPool
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-required
         /// </summary>
         [JsonProperty("Required")]
-        public Union<bool?, IntrinsicFunction> Required { get; set; }
+        public Union<bool, IntrinsicFunction> Required { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-numberattributeconstraints

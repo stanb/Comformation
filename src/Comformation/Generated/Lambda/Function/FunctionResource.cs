@@ -49,12 +49,12 @@ namespace Comformation.Lambda.Function
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MemorySize { get; set; }
+			public Union<int, IntrinsicFunction> MemorySize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
             /// </summary>
-			public Union<int?, IntrinsicFunction> ReservedConcurrentExecutions { get; set; }
+			public Union<int, IntrinsicFunction> ReservedConcurrentExecutions { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role
@@ -74,7 +74,7 @@ namespace Comformation.Lambda.Function
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout
             /// </summary>
-			public Union<int?, IntrinsicFunction> Timeout { get; set; }
+			public Union<int, IntrinsicFunction> Timeout { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig

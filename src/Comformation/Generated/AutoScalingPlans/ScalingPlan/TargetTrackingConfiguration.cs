@@ -15,7 +15,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleoutcooldown
         /// </summary>
         [JsonProperty("ScaleOutCooldown")]
-        public Union<int?, IntrinsicFunction> ScaleOutCooldown { get; set; }
+        public Union<int, IntrinsicFunction> ScaleOutCooldown { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-targetvalue
@@ -33,19 +33,19 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-disablescalein
         /// </summary>
         [JsonProperty("DisableScaleIn")]
-        public Union<bool?, IntrinsicFunction> DisableScaleIn { get; set; }
+        public Union<bool, IntrinsicFunction> DisableScaleIn { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleincooldown
         /// </summary>
         [JsonProperty("ScaleInCooldown")]
-        public Union<int?, IntrinsicFunction> ScaleInCooldown { get; set; }
+        public Union<int, IntrinsicFunction> ScaleInCooldown { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-estimatedinstancewarmup
         /// </summary>
         [JsonProperty("EstimatedInstanceWarmup")]
-        public Union<int?, IntrinsicFunction> EstimatedInstanceWarmup { get; set; }
+        public Union<int, IntrinsicFunction> EstimatedInstanceWarmup { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-customizedscalingmetricspecification

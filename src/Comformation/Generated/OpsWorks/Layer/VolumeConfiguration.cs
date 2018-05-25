@@ -15,7 +15,7 @@ namespace Comformation.OpsWorks.Layer
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-iops
         /// </summary>
         [JsonProperty("Iops")]
-        public Union<int?, IntrinsicFunction> Iops { get; set; }
+        public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-mountpoint
@@ -27,19 +27,19 @@ namespace Comformation.OpsWorks.Layer
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-numberofdisks
         /// </summary>
         [JsonProperty("NumberOfDisks")]
-        public Union<int?, IntrinsicFunction> NumberOfDisks { get; set; }
+        public Union<int, IntrinsicFunction> NumberOfDisks { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-raidlevel
         /// </summary>
         [JsonProperty("RaidLevel")]
-        public Union<int?, IntrinsicFunction> RaidLevel { get; set; }
+        public Union<int, IntrinsicFunction> RaidLevel { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-size
         /// </summary>
         [JsonProperty("Size")]
-        public Union<int?, IntrinsicFunction> Size { get; set; }
+        public Union<int, IntrinsicFunction> Size { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-volumetype

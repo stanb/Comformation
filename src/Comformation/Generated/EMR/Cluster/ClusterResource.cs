@@ -44,7 +44,7 @@ namespace Comformation.EMR.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
             /// </summary>
-			public Union<int?, IntrinsicFunction> EbsRootVolumeSize { get; set; }
+			public Union<int, IntrinsicFunction> EbsRootVolumeSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances
@@ -94,7 +94,7 @@ namespace Comformation.EMR.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
             /// </summary>
-			public Union<bool?, IntrinsicFunction> VisibleToAllUsers { get; set; }
+			public Union<bool, IntrinsicFunction> VisibleToAllUsers { get; set; }
 
         }
     

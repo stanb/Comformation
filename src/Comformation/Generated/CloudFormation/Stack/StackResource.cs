@@ -34,7 +34,7 @@ namespace Comformation.CloudFormation.Stack
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-timeoutinminutes
             /// </summary>
-			public Union<int?, IntrinsicFunction> TimeoutInMinutes { get; set; }
+			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 
         }
     

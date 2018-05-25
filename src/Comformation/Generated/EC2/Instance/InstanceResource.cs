@@ -39,12 +39,12 @@ namespace Comformation.EC2.Instance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination
             /// </summary>
-			public Union<bool?, IntrinsicFunction> DisableApiTermination { get; set; }
+			public Union<bool, IntrinsicFunction> DisableApiTermination { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ebsoptimized
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticgpuspecifications
@@ -79,7 +79,7 @@ namespace Comformation.EC2.Instance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresscount
             /// </summary>
-			public Union<int?, IntrinsicFunction> Ipv6AddressCount { get; set; }
+			public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresses
@@ -97,9 +97,14 @@ namespace Comformation.EC2.Instance
 			public Union<string, IntrinsicFunction> KeyName { get; set; }
 
             /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate
+            /// </summary>
+			public Union<LaunchTemplateSpecification, IntrinsicFunction> LaunchTemplate { get; set; }
+
+            /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-monitoring
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Monitoring { get; set; }
+			public Union<bool, IntrinsicFunction> Monitoring { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-networkinterfaces
@@ -134,7 +139,7 @@ namespace Comformation.EC2.Instance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-sourcedestcheck
             /// </summary>
-			public Union<bool?, IntrinsicFunction> SourceDestCheck { get; set; }
+			public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ssmassociations

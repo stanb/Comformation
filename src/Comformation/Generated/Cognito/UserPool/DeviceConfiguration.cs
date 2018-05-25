@@ -15,13 +15,13 @@ namespace Comformation.Cognito.UserPool
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt
         /// </summary>
         [JsonProperty("DeviceOnlyRememberedOnUserPrompt")]
-        public Union<bool?, IntrinsicFunction> DeviceOnlyRememberedOnUserPrompt { get; set; }
+        public Union<bool, IntrinsicFunction> DeviceOnlyRememberedOnUserPrompt { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice
         /// </summary>
         [JsonProperty("ChallengeRequiredOnNewDevice")]
-        public Union<bool?, IntrinsicFunction> ChallengeRequiredOnNewDevice { get; set; }
+        public Union<bool, IntrinsicFunction> ChallengeRequiredOnNewDevice { get; set; }
 
     }
 }

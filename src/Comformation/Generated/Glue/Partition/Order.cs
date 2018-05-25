@@ -21,7 +21,7 @@ namespace Comformation.Glue.Partition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-sortorder
         /// </summary>
         [JsonProperty("SortOrder")]
-        public Union<int?, IntrinsicFunction> SortOrder { get; set; }
+        public Union<int, IntrinsicFunction> SortOrder { get; set; }
 
     }
 }

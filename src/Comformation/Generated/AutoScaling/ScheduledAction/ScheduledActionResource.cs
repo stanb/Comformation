@@ -19,7 +19,7 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity
             /// </summary>
-			public Union<int?, IntrinsicFunction> DesiredCapacity { get; set; }
+			public Union<int, IntrinsicFunction> DesiredCapacity { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime
@@ -29,12 +29,12 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MaxSize { get; set; }
+			public Union<int, IntrinsicFunction> MaxSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MinSize { get; set; }
+			public Union<int, IntrinsicFunction> MinSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence

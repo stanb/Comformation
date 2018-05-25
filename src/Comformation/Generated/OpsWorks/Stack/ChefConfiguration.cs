@@ -21,7 +21,7 @@ namespace Comformation.OpsWorks.Stack
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion
         /// </summary>
         [JsonProperty("ManageBerkshelf")]
-        public Union<bool?, IntrinsicFunction> ManageBerkshelf { get; set; }
+        public Union<bool, IntrinsicFunction> ManageBerkshelf { get; set; }
 
     }
 }

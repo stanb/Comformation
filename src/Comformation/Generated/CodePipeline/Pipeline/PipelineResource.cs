@@ -29,7 +29,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate
             /// </summary>
-			public Union<bool?, IntrinsicFunction> RestartExecutionOnUpdate { get; set; }
+			public Union<bool, IntrinsicFunction> RestartExecutionOnUpdate { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn

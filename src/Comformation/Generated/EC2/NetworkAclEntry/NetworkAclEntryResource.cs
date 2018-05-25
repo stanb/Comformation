@@ -19,7 +19,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Egress { get; set; }
+			public Union<bool, IntrinsicFunction> Egress { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp

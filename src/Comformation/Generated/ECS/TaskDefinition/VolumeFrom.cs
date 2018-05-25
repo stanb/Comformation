@@ -15,7 +15,7 @@ namespace Comformation.ECS.TaskDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-readonly
         /// </summary>
         [JsonProperty("ReadOnly")]
-        public Union<bool?, IntrinsicFunction> ReadOnly { get; set; }
+        public Union<bool, IntrinsicFunction> ReadOnly { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer

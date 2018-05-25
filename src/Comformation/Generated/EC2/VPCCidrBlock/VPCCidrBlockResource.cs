@@ -14,7 +14,7 @@ namespace Comformation.EC2.VPCCidrBlock
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AmazonProvidedIpv6CidrBlock { get; set; }
+			public Union<bool, IntrinsicFunction> AmazonProvidedIpv6CidrBlock { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock

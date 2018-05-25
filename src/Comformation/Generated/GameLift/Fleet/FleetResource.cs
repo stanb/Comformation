@@ -44,12 +44,12 @@ namespace Comformation.GameLift.Fleet
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MaxSize { get; set; }
+			public Union<int, IntrinsicFunction> MaxSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MinSize { get; set; }
+			public Union<int, IntrinsicFunction> MinSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name

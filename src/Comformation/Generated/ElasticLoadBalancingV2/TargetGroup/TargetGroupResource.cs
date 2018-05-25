@@ -14,7 +14,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds
             /// </summary>
-			public Union<int?, IntrinsicFunction> HealthCheckIntervalSeconds { get; set; }
+			public Union<int, IntrinsicFunction> HealthCheckIntervalSeconds { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckpath
@@ -34,12 +34,12 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthchecktimeoutseconds
             /// </summary>
-			public Union<int?, IntrinsicFunction> HealthCheckTimeoutSeconds { get; set; }
+			public Union<int, IntrinsicFunction> HealthCheckTimeoutSeconds { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount
             /// </summary>
-			public Union<int?, IntrinsicFunction> HealthyThresholdCount { get; set; }
+			public Union<int, IntrinsicFunction> HealthyThresholdCount { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-matcher
@@ -84,7 +84,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-unhealthythresholdcount
             /// </summary>
-			public Union<int?, IntrinsicFunction> UnhealthyThresholdCount { get; set; }
+			public Union<int, IntrinsicFunction> UnhealthyThresholdCount { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid

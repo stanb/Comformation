@@ -19,7 +19,7 @@ namespace Comformation.DMS.Endpoint
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port
             /// </summary>
-			public Union<int?, IntrinsicFunction> Port { get; set; }
+			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename

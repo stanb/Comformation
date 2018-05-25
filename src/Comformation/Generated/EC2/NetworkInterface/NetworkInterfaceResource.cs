@@ -29,7 +29,7 @@ namespace Comformation.EC2.NetworkInterface
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount
             /// </summary>
-			public Union<int?, IntrinsicFunction> Ipv6AddressCount { get; set; }
+			public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresses
@@ -49,12 +49,12 @@ namespace Comformation.EC2.NetworkInterface
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount
             /// </summary>
-			public Union<int?, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
+			public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck
             /// </summary>
-			public Union<bool?, IntrinsicFunction> SourceDestCheck { get; set; }
+			public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid

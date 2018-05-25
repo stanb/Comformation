@@ -14,7 +14,7 @@ namespace Comformation.ApiGateway.Method
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ApiKeyRequired { get; set; }
+			public Union<bool, IntrinsicFunction> ApiKeyRequired { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype

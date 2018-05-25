@@ -29,7 +29,7 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
             /// </summary>
-			public Union<int?, IntrinsicFunction> AutomaticStopTimeMinutes { get; set; }
+			public Union<int, IntrinsicFunction> AutomaticStopTimeMinutes { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-subnetid

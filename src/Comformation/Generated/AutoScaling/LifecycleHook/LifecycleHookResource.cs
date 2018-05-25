@@ -24,7 +24,7 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
             /// </summary>
-			public Union<int?, IntrinsicFunction> HeartbeatTimeout { get; set; }
+			public Union<int, IntrinsicFunction> HeartbeatTimeout { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname

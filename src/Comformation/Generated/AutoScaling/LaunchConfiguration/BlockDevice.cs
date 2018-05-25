@@ -15,19 +15,19 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-deleteonterm
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
-        public Union<bool?, IntrinsicFunction> DeleteOnTermination { get; set; }
+        public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-encrypted
         /// </summary>
         [JsonProperty("Encrypted")]
-        public Union<bool?, IntrinsicFunction> Encrypted { get; set; }
+        public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-iops
         /// </summary>
         [JsonProperty("Iops")]
-        public Union<int?, IntrinsicFunction> Iops { get; set; }
+        public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-snapshotid
@@ -39,7 +39,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-volumesize
         /// </summary>
         [JsonProperty("VolumeSize")]
-        public Union<int?, IntrinsicFunction> VolumeSize { get; set; }
+        public Union<int, IntrinsicFunction> VolumeSize { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-volumetype

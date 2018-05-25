@@ -27,13 +27,13 @@ namespace Comformation.AppSync.GraphQLApi
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl
         /// </summary>
         [JsonProperty("AuthTTL")]
-        public Union<double?, IntrinsicFunction> AuthTTL { get; set; }
+        public Union<double, IntrinsicFunction> AuthTTL { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl
         /// </summary>
         [JsonProperty("IatTTL")]
-        public Union<double?, IntrinsicFunction> IatTTL { get; set; }
+        public Union<double, IntrinsicFunction> IatTTL { get; set; }
 
     }
 }

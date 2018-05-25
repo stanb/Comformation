@@ -27,7 +27,7 @@ namespace Comformation.S3.Bucket
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationindays
         /// </summary>
         [JsonProperty("ExpirationInDays")]
-        public Union<int?, IntrinsicFunction> ExpirationInDays { get; set; }
+        public Union<int, IntrinsicFunction> ExpirationInDays { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-id
@@ -39,7 +39,7 @@ namespace Comformation.S3.Bucket
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpirationindays
         /// </summary>
         [JsonProperty("NoncurrentVersionExpirationInDays")]
-        public Union<int?, IntrinsicFunction> NoncurrentVersionExpirationInDays { get; set; }
+        public Union<int, IntrinsicFunction> NoncurrentVersionExpirationInDays { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition

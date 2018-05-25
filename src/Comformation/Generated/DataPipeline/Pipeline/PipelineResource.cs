@@ -14,7 +14,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Activate { get; set; }
+			public Union<bool, IntrinsicFunction> Activate { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description

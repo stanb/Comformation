@@ -15,7 +15,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-emitinterval
         /// </summary>
         [JsonProperty("EmitInterval")]
-        public Union<int?, IntrinsicFunction> EmitInterval { get; set; }
+        public Union<int, IntrinsicFunction> EmitInterval { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-enabled

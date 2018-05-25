@@ -21,7 +21,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsoptimized
         /// </summary>
         [JsonProperty("EbsOptimized")]
-        public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+        public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
     }
 }

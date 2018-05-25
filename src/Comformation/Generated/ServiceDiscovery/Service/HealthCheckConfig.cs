@@ -27,7 +27,7 @@ namespace Comformation.ServiceDiscovery.Service
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold
         /// </summary>
         [JsonProperty("FailureThreshold")]
-        public Union<double?, IntrinsicFunction> FailureThreshold { get; set; }
+        public Union<double, IntrinsicFunction> FailureThreshold { get; set; }
 
     }
 }

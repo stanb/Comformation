@@ -19,7 +19,7 @@ namespace Comformation.EC2.TrunkInterfaceAssociation
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-grekey
             /// </summary>
-			public Union<int?, IntrinsicFunction> GREKey { get; set; }
+			public Union<int, IntrinsicFunction> GREKey { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-trunkinterfaceid
@@ -29,7 +29,7 @@ namespace Comformation.EC2.TrunkInterfaceAssociation
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-vlanid
             /// </summary>
-			public Union<int?, IntrinsicFunction> VLANId { get; set; }
+			public Union<int, IntrinsicFunction> VLANId { get; set; }
 
         }
     

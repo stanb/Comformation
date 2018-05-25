@@ -21,7 +21,7 @@ namespace Comformation.CloudTrail.Trail
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-includemanagementevents
         /// </summary>
         [JsonProperty("IncludeManagementEvents")]
-        public Union<bool?, IntrinsicFunction> IncludeManagementEvents { get; set; }
+        public Union<bool, IntrinsicFunction> IncludeManagementEvents { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-readwritetype

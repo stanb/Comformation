@@ -54,7 +54,7 @@ namespace Comformation.OpsWorks.Layer
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot
             /// </summary>
-			public Union<bool?, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
+			public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration
@@ -99,7 +99,7 @@ namespace Comformation.OpsWorks.Layer
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances
             /// </summary>
-			public Union<bool?, IntrinsicFunction> UseEbsOptimizedInstances { get; set; }
+			public Union<bool, IntrinsicFunction> UseEbsOptimizedInstances { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations

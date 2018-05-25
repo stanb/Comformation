@@ -15,37 +15,37 @@ namespace Comformation.OpsWorks.Layer
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-cputhreshold
         /// </summary>
         [JsonProperty("CpuThreshold")]
-        public Union<double?, IntrinsicFunction> CpuThreshold { get; set; }
+        public Union<double, IntrinsicFunction> CpuThreshold { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-ignoremetricstime
         /// </summary>
         [JsonProperty("IgnoreMetricsTime")]
-        public Union<int?, IntrinsicFunction> IgnoreMetricsTime { get; set; }
+        public Union<int, IntrinsicFunction> IgnoreMetricsTime { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-instancecount
         /// </summary>
         [JsonProperty("InstanceCount")]
-        public Union<int?, IntrinsicFunction> InstanceCount { get; set; }
+        public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-loadthreshold
         /// </summary>
         [JsonProperty("LoadThreshold")]
-        public Union<double?, IntrinsicFunction> LoadThreshold { get; set; }
+        public Union<double, IntrinsicFunction> LoadThreshold { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-memorythreshold
         /// </summary>
         [JsonProperty("MemoryThreshold")]
-        public Union<double?, IntrinsicFunction> MemoryThreshold { get; set; }
+        public Union<double, IntrinsicFunction> MemoryThreshold { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-thresholdwaittime
         /// </summary>
         [JsonProperty("ThresholdsWaitTime")]
-        public Union<int?, IntrinsicFunction> ThresholdsWaitTime { get; set; }
+        public Union<int, IntrinsicFunction> ThresholdsWaitTime { get; set; }
 
     }
 }

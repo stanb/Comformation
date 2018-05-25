@@ -14,7 +14,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cf-as-launchconfig-associatepubip
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
+			public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-blockdevicemappings
@@ -34,7 +34,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-ebsoptimized
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-iaminstanceprofile
@@ -54,7 +54,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instancemonitoring
             /// </summary>
-			public Union<bool?, IntrinsicFunction> InstanceMonitoring { get; set; }
+			public Union<bool, IntrinsicFunction> InstanceMonitoring { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instancetype
@@ -70,6 +70,11 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-keyname
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyName { get; set; }
+
+            /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-autoscaling-launchconfig-launchconfigurationname
+            /// </summary>
+			public Union<string, IntrinsicFunction> LaunchConfigurationName { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-placementtenancy

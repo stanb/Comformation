@@ -15,13 +15,13 @@ namespace Comformation.Elasticsearch.Domain
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastercount
         /// </summary>
         [JsonProperty("DedicatedMasterCount")]
-        public Union<int?, IntrinsicFunction> DedicatedMasterCount { get; set; }
+        public Union<int, IntrinsicFunction> DedicatedMasterCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmasterenabled
         /// </summary>
         [JsonProperty("DedicatedMasterEnabled")]
-        public Union<bool?, IntrinsicFunction> DedicatedMasterEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> DedicatedMasterEnabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastertype
@@ -33,7 +33,7 @@ namespace Comformation.Elasticsearch.Domain
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instancecount
         /// </summary>
         [JsonProperty("InstanceCount")]
-        public Union<int?, IntrinsicFunction> InstanceCount { get; set; }
+        public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instnacetype
@@ -45,7 +45,7 @@ namespace Comformation.Elasticsearch.Domain
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-zoneawarenessenabled
         /// </summary>
         [JsonProperty("ZoneAwarenessEnabled")]
-        public Union<bool?, IntrinsicFunction> ZoneAwarenessEnabled { get; set; }
+        public Union<bool, IntrinsicFunction> ZoneAwarenessEnabled { get; set; }
 
     }
 }

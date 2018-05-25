@@ -21,7 +21,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-cooldown
         /// </summary>
         [JsonProperty("CoolDown")]
-        public Union<int?, IntrinsicFunction> CoolDown { get; set; }
+        public Union<int, IntrinsicFunction> CoolDown { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-scalingadjustment

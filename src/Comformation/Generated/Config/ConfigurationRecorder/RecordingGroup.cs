@@ -15,13 +15,13 @@ namespace Comformation.Config.ConfigurationRecorder
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-allsupported
         /// </summary>
         [JsonProperty("AllSupported")]
-        public Union<bool?, IntrinsicFunction> AllSupported { get; set; }
+        public Union<bool, IntrinsicFunction> AllSupported { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-includeglobalresourcetypes
         /// </summary>
         [JsonProperty("IncludeGlobalResourceTypes")]
-        public Union<bool?, IntrinsicFunction> IncludeGlobalResourceTypes { get; set; }
+        public Union<bool, IntrinsicFunction> IncludeGlobalResourceTypes { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-resourcetypes

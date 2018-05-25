@@ -22,6 +22,11 @@ namespace Comformation.IAM.Role
 			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
 
             /// <summary>
+            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration
+            /// </summary>
+			public Union<int, IntrinsicFunction> MaxSessionDuration { get; set; }
+
+            /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
@@ -46,5 +51,6 @@ namespace Comformation.IAM.Role
 	public static class RoleAttributes
 	{
         public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<string> RoleId = new ResourceAttribute<string>("RoleId");
 	}
 }

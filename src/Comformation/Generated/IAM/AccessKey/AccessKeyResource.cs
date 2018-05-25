@@ -14,7 +14,7 @@ namespace Comformation.IAM.AccessKey
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial
             /// </summary>
-			public Union<int?, IntrinsicFunction> Serial { get; set; }
+			public Union<int, IntrinsicFunction> Serial { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status

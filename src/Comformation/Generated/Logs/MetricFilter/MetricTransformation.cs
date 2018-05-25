@@ -12,6 +12,12 @@ namespace Comformation.Logs.MetricFilter
     {
 
         /// <summary>
+        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-defaultvalue
+        /// </summary>
+        [JsonProperty("DefaultValue")]
+        public Union<double, IntrinsicFunction> DefaultValue { get; set; }
+
+        /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricname
         /// </summary>
         [JsonProperty("MetricName")]

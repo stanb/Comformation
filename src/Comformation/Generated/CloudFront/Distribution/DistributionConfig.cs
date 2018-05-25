@@ -75,7 +75,7 @@ namespace Comformation.CloudFront.Distribution
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled
         /// </summary>
         [JsonProperty("IPV6Enabled")]
-        public Union<bool?, IntrinsicFunction> IPV6Enabled { get; set; }
+        public Union<bool, IntrinsicFunction> IPV6Enabled { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid

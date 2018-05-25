@@ -21,7 +21,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-ignoreapplicationstopfailures
         /// </summary>
         [JsonProperty("IgnoreApplicationStopFailures")]
-        public Union<bool?, IntrinsicFunction> IgnoreApplicationStopFailures { get; set; }
+        public Union<bool, IntrinsicFunction> IgnoreApplicationStopFailures { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision

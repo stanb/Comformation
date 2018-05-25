@@ -14,7 +14,7 @@ namespace Comformation.Cognito.UserPoolClient
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret
             /// </summary>
-			public Union<bool?, IntrinsicFunction> GenerateSecret { get; set; }
+			public Union<bool, IntrinsicFunction> GenerateSecret { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname
@@ -34,7 +34,7 @@ namespace Comformation.Cognito.UserPoolClient
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity
             /// </summary>
-			public Union<double?, IntrinsicFunction> RefreshTokenValidity { get; set; }
+			public Union<double, IntrinsicFunction> RefreshTokenValidity { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes

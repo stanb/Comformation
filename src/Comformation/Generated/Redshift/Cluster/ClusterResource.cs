@@ -14,12 +14,12 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-allowversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AllowVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AllowVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod
             /// </summary>
-			public Union<int?, IntrinsicFunction> AutomatedSnapshotRetentionPeriod { get; set; }
+			public Union<int, IntrinsicFunction> AutomatedSnapshotRetentionPeriod { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzone
@@ -69,7 +69,7 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Encrypted { get; set; }
+			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertidentifier
@@ -114,7 +114,7 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
             /// </summary>
-			public Union<int?, IntrinsicFunction> NumberOfNodes { get; set; }
+			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-owneraccount
@@ -124,7 +124,7 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-port
             /// </summary>
-			public Union<int?, IntrinsicFunction> Port { get; set; }
+			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-preferredmaintenancewindow
@@ -134,7 +134,7 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-publiclyaccessible
             /// </summary>
-			public Union<bool?, IntrinsicFunction> PubliclyAccessible { get; set; }
+			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotclusteridentifier

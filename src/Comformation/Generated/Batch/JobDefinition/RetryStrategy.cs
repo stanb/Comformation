@@ -15,7 +15,7 @@ namespace Comformation.Batch.JobDefinition
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html#cfn-batch-jobdefinition-retrystrategy-attempts
         /// </summary>
         [JsonProperty("Attempts")]
-        public Union<int?, IntrinsicFunction> Attempts { get; set; }
+        public Union<int, IntrinsicFunction> Attempts { get; set; }
 
     }
 }

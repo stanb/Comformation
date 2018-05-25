@@ -15,31 +15,31 @@ namespace Comformation.Cognito.UserPool
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requirenumbers
         /// </summary>
         [JsonProperty("RequireNumbers")]
-        public Union<bool?, IntrinsicFunction> RequireNumbers { get; set; }
+        public Union<bool, IntrinsicFunction> RequireNumbers { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-minimumlength
         /// </summary>
         [JsonProperty("MinimumLength")]
-        public Union<int?, IntrinsicFunction> MinimumLength { get; set; }
+        public Union<int, IntrinsicFunction> MinimumLength { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requireuppercase
         /// </summary>
         [JsonProperty("RequireUppercase")]
-        public Union<bool?, IntrinsicFunction> RequireUppercase { get; set; }
+        public Union<bool, IntrinsicFunction> RequireUppercase { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requirelowercase
         /// </summary>
         [JsonProperty("RequireLowercase")]
-        public Union<bool?, IntrinsicFunction> RequireLowercase { get; set; }
+        public Union<bool, IntrinsicFunction> RequireLowercase { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requiresymbols
         /// </summary>
         [JsonProperty("RequireSymbols")]
-        public Union<bool?, IntrinsicFunction> RequireSymbols { get; set; }
+        public Union<bool, IntrinsicFunction> RequireSymbols { get; set; }
 
     }
 }

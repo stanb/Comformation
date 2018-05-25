@@ -21,7 +21,7 @@ namespace Comformation.OpsWorks.App
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-secure
         /// </summary>
         [JsonProperty("Secure")]
-        public Union<bool?, IntrinsicFunction> Secure { get; set; }
+        public Union<bool, IntrinsicFunction> Secure { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#value

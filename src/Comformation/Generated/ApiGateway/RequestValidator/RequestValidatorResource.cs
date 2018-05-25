@@ -24,12 +24,12 @@ namespace Comformation.ApiGateway.RequestValidator
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ValidateRequestBody { get; set; }
+			public Union<bool, IntrinsicFunction> ValidateRequestBody { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ValidateRequestParameters { get; set; }
+			public Union<bool, IntrinsicFunction> ValidateRequestParameters { get; set; }
 
         }
     

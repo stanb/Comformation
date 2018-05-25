@@ -19,12 +19,12 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allowmajorversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-autominorversionupgrade
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-availabilityzone
@@ -44,7 +44,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-copytagstosnapshot
             /// </summary>
-			public Union<bool?, IntrinsicFunction> CopyTagsToSnapshot { get; set; }
+			public Union<bool, IntrinsicFunction> CopyTagsToSnapshot { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbclusteridentifier
@@ -109,7 +109,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-iops
             /// </summary>
-			public Union<int?, IntrinsicFunction> Iops { get; set; }
+			public Union<int, IntrinsicFunction> Iops { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-kmskeyid
@@ -134,7 +134,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringinterval
             /// </summary>
-			public Union<int?, IntrinsicFunction> MonitoringInterval { get; set; }
+			public Union<int, IntrinsicFunction> MonitoringInterval { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringrolearn
@@ -144,7 +144,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-multiaz
             /// </summary>
-			public Union<bool?, IntrinsicFunction> MultiAZ { get; set; }
+			public Union<bool, IntrinsicFunction> MultiAZ { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-optiongroupname
@@ -169,7 +169,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-publiclyaccessible
             /// </summary>
-			public Union<bool?, IntrinsicFunction> PubliclyAccessible { get; set; }
+			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier
@@ -184,7 +184,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storageencrypted
             /// </summary>
-			public Union<bool?, IntrinsicFunction> StorageEncrypted { get; set; }
+			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storagetype

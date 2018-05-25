@@ -45,7 +45,7 @@ namespace Comformation.S3.Bucket
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-maxage
         /// </summary>
         [JsonProperty("MaxAge")]
-        public Union<int?, IntrinsicFunction> MaxAge { get; set; }
+        public Union<int, IntrinsicFunction> MaxAge { get; set; }
 
     }
 }

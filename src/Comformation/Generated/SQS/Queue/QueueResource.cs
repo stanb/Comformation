@@ -14,22 +14,22 @@ namespace Comformation.SQS.Queue
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-contentbaseddeduplication
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ContentBasedDeduplication { get; set; }
+			public Union<bool, IntrinsicFunction> ContentBasedDeduplication { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-delayseconds
             /// </summary>
-			public Union<int?, IntrinsicFunction> DelaySeconds { get; set; }
+			public Union<int, IntrinsicFunction> DelaySeconds { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-fifoqueue
             /// </summary>
-			public Union<bool?, IntrinsicFunction> FifoQueue { get; set; }
+			public Union<bool, IntrinsicFunction> FifoQueue { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsdatakeyreuseperiodseconds
             /// </summary>
-			public Union<int?, IntrinsicFunction> KmsDataKeyReusePeriodSeconds { get; set; }
+			public Union<int, IntrinsicFunction> KmsDataKeyReusePeriodSeconds { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsmasterkeyid
@@ -39,12 +39,12 @@ namespace Comformation.SQS.Queue
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-maxmesgsize
             /// </summary>
-			public Union<int?, IntrinsicFunction> MaximumMessageSize { get; set; }
+			public Union<int, IntrinsicFunction> MaximumMessageSize { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-msgretentionperiod
             /// </summary>
-			public Union<int?, IntrinsicFunction> MessageRetentionPeriod { get; set; }
+			public Union<int, IntrinsicFunction> MessageRetentionPeriod { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-name
@@ -54,7 +54,7 @@ namespace Comformation.SQS.Queue
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-receivemsgwaittime
             /// </summary>
-			public Union<int?, IntrinsicFunction> ReceiveMessageWaitTimeSeconds { get; set; }
+			public Union<int, IntrinsicFunction> ReceiveMessageWaitTimeSeconds { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-redrive
@@ -64,7 +64,7 @@ namespace Comformation.SQS.Queue
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-visiblitytimeout
             /// </summary>
-			public Union<int?, IntrinsicFunction> VisibilityTimeout { get; set; }
+			public Union<int, IntrinsicFunction> VisibilityTimeout { get; set; }
 
         }
     

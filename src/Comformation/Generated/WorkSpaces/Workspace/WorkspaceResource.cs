@@ -24,7 +24,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> RootVolumeEncryptionEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> RootVolumeEncryptionEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
@@ -34,7 +34,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> UserVolumeEncryptionEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> UserVolumeEncryptionEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey

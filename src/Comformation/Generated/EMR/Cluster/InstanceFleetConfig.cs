@@ -33,13 +33,13 @@ namespace Comformation.EMR.Cluster
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-targetondemandcapacity
         /// </summary>
         [JsonProperty("TargetOnDemandCapacity")]
-        public Union<int?, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
+        public Union<int, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-targetspotcapacity
         /// </summary>
         [JsonProperty("TargetSpotCapacity")]
-        public Union<int?, IntrinsicFunction> TargetSpotCapacity { get; set; }
+        public Union<int, IntrinsicFunction> TargetSpotCapacity { get; set; }
 
     }
 }

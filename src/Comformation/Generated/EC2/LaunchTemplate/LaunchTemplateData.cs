@@ -63,7 +63,7 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized
         /// </summary>
         [JsonProperty("EbsOptimized")]
-        public Union<bool?, IntrinsicFunction> EbsOptimized { get; set; }
+        public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname
@@ -75,7 +75,7 @@ namespace Comformation.EC2.LaunchTemplate
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination
         /// </summary>
         [JsonProperty("DisableApiTermination")]
-        public Union<bool?, IntrinsicFunction> DisableApiTermination { get; set; }
+        public Union<bool, IntrinsicFunction> DisableApiTermination { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications

@@ -14,7 +14,7 @@ namespace Comformation.EFS.FileSystem
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Encrypted { get; set; }
+			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags

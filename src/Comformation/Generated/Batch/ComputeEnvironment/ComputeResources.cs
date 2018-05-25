@@ -27,7 +27,7 @@ namespace Comformation.Batch.ComputeEnvironment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-bidpercentage
         /// </summary>
         [JsonProperty("BidPercentage")]
-        public Union<int?, IntrinsicFunction> BidPercentage { get; set; }
+        public Union<int, IntrinsicFunction> BidPercentage { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-securitygroupids
@@ -87,7 +87,7 @@ namespace Comformation.Batch.ComputeEnvironment
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-desiredvcpus
         /// </summary>
         [JsonProperty("DesiredvCpus")]
-        public Union<int?, IntrinsicFunction> DesiredvCpus { get; set; }
+        public Union<int, IntrinsicFunction> DesiredvCpus { get; set; }
 
     }
 }

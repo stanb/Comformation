@@ -15,7 +15,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-timeoutseconds
         /// </summary>
         [JsonProperty("TimeoutSeconds")]
-        public Union<int?, IntrinsicFunction> TimeoutSeconds { get; set; }
+        public Union<int, IntrinsicFunction> TimeoutSeconds { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-comment

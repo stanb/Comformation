@@ -14,7 +14,7 @@ namespace Comformation.CloudWatch.Alarm
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-actionsenabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> ActionsEnabled { get; set; }
+			public Union<bool, IntrinsicFunction> ActionsEnabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmactions

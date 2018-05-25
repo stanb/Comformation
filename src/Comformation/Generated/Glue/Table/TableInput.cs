@@ -63,7 +63,7 @@ namespace Comformation.Glue.Table
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-retention
         /// </summary>
         [JsonProperty("Retention")]
-        public Union<int?, IntrinsicFunction> Retention { get; set; }
+        public Union<int, IntrinsicFunction> Retention { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-name

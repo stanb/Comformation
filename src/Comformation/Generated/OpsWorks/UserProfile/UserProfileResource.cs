@@ -14,7 +14,7 @@ namespace Comformation.OpsWorks.UserProfile
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement
             /// </summary>
-			public Union<bool?, IntrinsicFunction> AllowSelfManagement { get; set; }
+			public Union<bool, IntrinsicFunction> AllowSelfManagement { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn

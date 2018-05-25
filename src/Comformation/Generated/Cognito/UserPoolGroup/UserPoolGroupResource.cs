@@ -29,7 +29,7 @@ namespace Comformation.Cognito.UserPoolGroup
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
             /// </summary>
-			public Union<double?, IntrinsicFunction> Precedence { get; set; }
+			public Union<double, IntrinsicFunction> Precedence { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-rolearn

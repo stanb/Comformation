@@ -21,7 +21,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-cooldown
         /// </summary>
         [JsonProperty("Cooldown")]
-        public Union<int?, IntrinsicFunction> Cooldown { get; set; }
+        public Union<int, IntrinsicFunction> Cooldown { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-metricaggregationtype
@@ -33,7 +33,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-minadjustmentmagnitude
         /// </summary>
         [JsonProperty("MinAdjustmentMagnitude")]
-        public Union<int?, IntrinsicFunction> MinAdjustmentMagnitude { get; set; }
+        public Union<int, IntrinsicFunction> MinAdjustmentMagnitude { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustments

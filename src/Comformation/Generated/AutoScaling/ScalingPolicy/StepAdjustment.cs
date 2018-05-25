@@ -15,13 +15,13 @@ namespace Comformation.AutoScaling.ScalingPolicy
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-metricintervallowerbound
         /// </summary>
         [JsonProperty("MetricIntervalLowerBound")]
-        public Union<double?, IntrinsicFunction> MetricIntervalLowerBound { get; set; }
+        public Union<double, IntrinsicFunction> MetricIntervalLowerBound { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-metricintervalupperbound
         /// </summary>
         [JsonProperty("MetricIntervalUpperBound")]
-        public Union<double?, IntrinsicFunction> MetricIntervalUpperBound { get; set; }
+        public Union<double, IntrinsicFunction> MetricIntervalUpperBound { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-scalingadjustment

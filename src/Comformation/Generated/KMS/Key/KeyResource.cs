@@ -19,12 +19,12 @@ namespace Comformation.KMS.Key
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enablekeyrotation
             /// </summary>
-			public Union<bool?, IntrinsicFunction> EnableKeyRotation { get; set; }
+			public Union<bool, IntrinsicFunction> EnableKeyRotation { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keypolicy

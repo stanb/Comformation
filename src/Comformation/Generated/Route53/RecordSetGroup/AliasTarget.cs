@@ -21,7 +21,7 @@ namespace Comformation.Route53.RecordSetGroup
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth
         /// </summary>
         [JsonProperty("EvaluateTargetHealth")]
-        public Union<bool?, IntrinsicFunction> EvaluateTargetHealth { get; set; }
+        public Union<bool, IntrinsicFunction> EvaluateTargetHealth { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-hostedzoneid

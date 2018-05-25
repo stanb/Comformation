@@ -24,7 +24,7 @@ namespace Comformation.DMS.EventSubscription
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-enabled
             /// </summary>
-			public Union<bool?, IntrinsicFunction> Enabled { get; set; }
+			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-subscriptionname

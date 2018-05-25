@@ -14,7 +14,7 @@ namespace Comformation.CloudFormation.WaitCondition
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count
             /// </summary>
-			public Union<int?, IntrinsicFunction> Count { get; set; }
+			public Union<int, IntrinsicFunction> Count { get; set; }
 
             /// <summary>
             ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle

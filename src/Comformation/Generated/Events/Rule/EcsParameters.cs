@@ -15,7 +15,7 @@ namespace Comformation.Events.Rule
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount
         /// </summary>
         [JsonProperty("TaskCount")]
-        public Union<int?, IntrinsicFunction> TaskCount { get; set; }
+        public Union<int, IntrinsicFunction> TaskCount { get; set; }
 
         /// <summary>
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskdefinitionarn

@@ -27,7 +27,7 @@ namespace Comformation.IoT.TopicRule
         ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-usebase64
         /// </summary>
         [JsonProperty("UseBase64")]
-        public Union<bool?, IntrinsicFunction> UseBase64 { get; set; }
+        public Union<bool, IntrinsicFunction> UseBase64 { get; set; }
 
     }
 }
