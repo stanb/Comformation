@@ -5,7 +5,7 @@
     <RootNamespace>Comformation</RootNamespace>
     <Authors>Stan Belkin</Authors>
     <Description>Compose AWS CloudFormation templates with .NET</Description>
-    <PackageIconUrl>https://github.com/stanb/Comformation/blob/master/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/stanb/Comformation/master/logo.png</PackageIconUrl>
     <PackageLicenseUrl>https://github.com/stanb/Comformation/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/stanb/Comformation</PackageProjectUrl>
     <RepositoryUrl>https://github.com/stanb/Comformation</RepositoryUrl>
@@ -14,6 +14,7 @@
     <PackageId>Comformation</PackageId>
     <Product>Comformation.NET</Product>
     <PackageTags>cloudformation,aws-cloudformation,cloudformation-template,aws</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AWSSDK.Core" Version="3.3.22.5" />
