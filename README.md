@@ -1,5 +1,6 @@
 ![AWS CloudFormation](logo.png)
 # Comformation.NET
+[![NuGet](https://img.shields.io/nuget/v/Comformation.svg)](https://www.nuget.org/packages/Comformation/)
 ### Compose AWS CloudFormation templates with .NET
 
 This library helps you to compose AWS CloudFormation templates with C#.  
