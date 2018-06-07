@@ -5,24 +5,51 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Config.ConfigurationRecorder
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
+    /// AWS::Config::ConfigurationRecorder
+    /// The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records
+    /// configuration changes. The configuration recorder stores the configurations of the supported resources in your
+    /// account as configuration items.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
     /// </summary>
     public class ConfigurationRecorderResource : ResourceBase
     {
         public class ConfigurationRecorderProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-name
+            /// Name
+            /// A name for the configuration recorder. If you don't specify a name, AWS CloudFormation generates a
+            /// unique physical ID and uses that ID for the configuration recorder name. For more information, see
+            /// Name Type.
+            /// Note After you create a configuration recorder, you cannot rename it. If you don't want a name that
+            /// AWS CloudFormation generates, specify a value for this property.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup
+            /// RecordingGroup
+            /// Indicates whether to record configurations for all supported resources or for a list of resource
+            /// types. The resource types that you list must be supported by AWS Config.
+            /// Required: No
+            /// Type: AWS Config ConfigurationRecorder RecordingGroup
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup
             /// </summary>
 			public Union<RecordingGroup, IntrinsicFunction> RecordingGroup { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn
+            /// RoleARN
+            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to
+            /// make read or write requests to the delivery channel that you specify and to get configuration
+            /// details for supported AWS resources. For more information, see Permissions for the IAM Role Assigned
+            /// to AWS Config in the AWS Config Developer Guide.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 

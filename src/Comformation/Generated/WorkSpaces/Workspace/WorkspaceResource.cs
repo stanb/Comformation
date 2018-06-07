@@ -5,39 +5,84 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WorkSpaces.Workspace
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
+    /// AWS::WorkSpaces::Workspace
+    /// The AWS::WorkSpaces::Workspace resource creates an Amazon WorkSpaces workspace, which is a cloud-based desktop
+    /// experience for end users. Before creating a Workspace in CloudFormation, you must register a Directory Service
+    /// directory with Workspaces. This process is documented at Register a Directory with Amazon WorkSpaces. For more
+    /// information, see the Amazon WorkSpaces Administration Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
     /// </summary>
     public class WorkspaceResource : ResourceBase
     {
         public class WorkspaceProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
+            /// BundleId
+            /// The identifier of the bundle from which you want to create the workspace. A bundle specifies the
+            /// details of the workspace, such as the installed applications and the size of CPU, memory, and
+            /// storage. Use the DescribeWorkspaceBundles action to list the bundles that AWS offers.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Updates are not supported. . To update this property, you must also update another
+            /// property that triggers a replacement, such as the UserName property.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
             /// </summary>
 			public Union<string, IntrinsicFunction> BundleId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
+            /// DirectoryId
+            /// The identifier of the AWS Directory Service directory in which you want to create the workspace. The
+            /// directory must already be registered with Amazon WorkSpaces. Use the DescribeWorkspaceDirectories
+            /// action to list the directories that are available.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
             /// </summary>
 			public Union<string, IntrinsicFunction> DirectoryId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
+            /// RootVolumeEncryptionEnabled
+            /// Indicates whether Amazon WorkSpaces encrypts data stored on the root volume (C: drive).
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Updates are not supported. . To update this property, you must also update another
+            /// property that triggers a replacement, such as the UserName property.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> RootVolumeEncryptionEnabled { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
+            /// UserName
+            /// The name of the user to which the workspace is assigned. This user name must exist in the specified
+            /// AWS Directory Service directory.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
             /// </summary>
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
+            /// UserVolumeEncryptionEnabled
+            /// Indicates whether Amazon WorkSpaces encrypts data stored on the user volume (D: drive).
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Updates are not supported. . To update this property, you must also update another
+            /// property that triggers a replacement, such as the UserName property.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> UserVolumeEncryptionEnabled { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
+            /// VolumeEncryptionKey
+            /// The AWS Key Management Service (AWS KMS) key ID that Amazon WorkSpaces uses to encrypt data stored
+            /// on your workspace.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Updates are not supported. . To update this property, you must also update another
+            /// property that triggers a replacement, such as the UserName property.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeEncryptionKey { get; set; }
 

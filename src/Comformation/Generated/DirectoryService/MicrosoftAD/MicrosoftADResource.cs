@@ -5,44 +5,94 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DirectoryService.MicrosoftAD
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
+    /// AWS::DirectoryService::MicrosoftAD
+    /// The AWS::DirectoryService::MicrosoftAD resource creates an Enterprise Edition Microsoft Active Directory in
+    /// AWS so that your directory users and groups can access the AWS Management Console and AWS applications using
+    /// their existing credentials. At this time, AWS CloudFormation can't create a Standard Edition Microsoft Active
+    /// Directory. For more information, see What Is AWS Directory Service? in the AWS Directory Service
+    /// Administration Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
     /// </summary>
     public class MicrosoftADResource : ResourceBase
     {
         public class MicrosoftADProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
+            /// CreateAlias
+            /// A unique alias to assign to the Microsoft Active Directory in AWS. AWS Directory Service uses the
+            /// alias to construct the access URL for the directory, such as http://alias. awsapps. com. By default,
+            /// AWS CloudFormation does not create an alias.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
             /// </summary>
 			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
+            /// Edition
+            /// The AWS Microsoft AD edition. Valid values include Standard and Enterprise. The default is
+            /// Enterprise.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
             /// </summary>
 			public Union<string, IntrinsicFunction> Edition { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
+            /// EnableSso
+            /// Whether to enable single sign-on for a Microsoft Active Directory in AWS. Single sign-on allows
+            /// users in your directory to access certain AWS services from a computer joined to the directory
+            /// without having to enter their credentials separately. If you don't specify a value, AWS
+            /// CloudFormation disables single sign-on by default.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
+            /// Name
+            /// The fully qualified name for the Microsoft Active Directory in AWS, such as corp. example. com. The
+            /// name doesn't need to be publicly resolvable; it will resolve inside your VPC only.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
+            /// Password
+            /// The password for the default administrative user, Admin.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
             /// </summary>
 			public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
+            /// ShortName
+            /// The NetBIOS name for your domain, such as CORP. If you don't specify a value, AWS Directory Service
+            /// uses the first part of your directory DNS server name. For example, if your directory DNS server
+            /// name is corp. example. com, AWS Directory Service specifies CORP for the NetBIOS name.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
             /// </summary>
 			public Union<string, IntrinsicFunction> ShortName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
+            /// VpcSettings
+            /// Specifies the VPC settings of the Microsoft Active Directory server in AWS.
+            /// Required: Yes
+            /// Type: AWS Directory Service MicrosoftAD VpcSettings
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
             /// </summary>
 			public Union<VpcSettings, IntrinsicFunction> VpcSettings { get; set; }
 

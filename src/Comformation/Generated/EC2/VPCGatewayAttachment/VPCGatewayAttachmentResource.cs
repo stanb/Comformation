@@ -5,24 +5,41 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.VPCGatewayAttachment
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
+    /// AWS::EC2::VPCGatewayAttachment
+    /// Attaches a gateway to a VPC.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
     /// </summary>
     public class VPCGatewayAttachmentResource : ResourceBase
     {
         public class VPCGatewayAttachmentProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid
+            /// InternetGatewayId
+            /// The ID of the Internet gateway.
+            /// Required: Conditional You must specify either InternetGatewayId or VpnGatewayId, but not both.
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> InternetGatewayId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid
+            /// VpcId
+            /// The ID of the VPC to associate with this gateway.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid
+            /// VpnGatewayId
+            /// The ID of the virtual private network (VPN) gateway to attach to the VPC.
+            /// Required: Conditional You must specify either InternetGatewayId or VpnGatewayId, but not both.
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 

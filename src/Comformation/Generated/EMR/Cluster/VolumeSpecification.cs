@@ -12,19 +12,19 @@ namespace Comformation.EMR.Cluster
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-iops
+        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-iops
         /// </summary>
         [JsonProperty("Iops")]
         public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-sizeingb
+        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-sizeingb
         /// </summary>
         [JsonProperty("SizeInGB")]
         public Union<int, IntrinsicFunction> SizeInGB { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-volumetype
+        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-volumetype
         /// </summary>
         [JsonProperty("VolumeType")]
         public Union<string, IntrinsicFunction> VolumeType { get; set; }

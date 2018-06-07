@@ -5,24 +5,44 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.NetworkInterfacePermission
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html
+    /// AWS::EC2::NetworkInterfacePermission
+    /// The AWS::EC2::NetworkInterfacePermission resource specifies a permission for an Amazon EC2 network interface.
+    /// For example, you can grant an AWS authorized partner account permission to attach the specified network
+    /// interface to an instance in their account. For more information, see CreateNetworkInterfacePermission and
+    /// NetworkInterfacePermission in the Amazon EC2 API Reference.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html
     /// </summary>
     public class NetworkInterfacePermissionResource : ResourceBase
     {
         public class NetworkInterfacePermissionProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid
+            /// AwsAccountId
+            /// The AWS account ID.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid
             /// </summary>
 			public Union<string, IntrinsicFunction> AwsAccountId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
+            /// NetworkInterfaceId
+            /// The ID of the network interface.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
+            /// Permission
+            /// The type of permission to grant: INSTANCE-ATTACH or EIP-ASSOCIATE.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
             /// </summary>
 			public Union<string, IntrinsicFunction> Permission { get; set; }
 

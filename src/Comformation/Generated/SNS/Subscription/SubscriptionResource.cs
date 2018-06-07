@@ -5,24 +5,46 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SNS.Subscription
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
+    /// AWS::SNS::Subscription
+    /// The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon
+    /// SNS) topic. The owner of the endpoint must confirm the subscription before Amazon SNS creates the
+    /// subscription.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
     /// </summary>
     public class SubscriptionResource : ResourceBase
     {
         public class SubscriptionProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
+            /// Endpoint
+            /// The endpoint that receives notifications from the Amazon SNS topic. The endpoint value depends on
+            /// the protocol that you specify. For more information, see the Subscribe Endpoint parameter in the
+            /// Amazon Simple Notification Service API Reference.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
             /// </summary>
 			public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
+            /// Protocol
+            /// The subscription's protocol. For more information, see the Subscribe Protocol parameter in the
+            /// Amazon Simple Notification Service API Reference.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
+            /// TopicArn
+            /// The Amazon Resource Name (ARN) of the topic to subscribe to.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-topicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> TopicArn { get; set; }
 

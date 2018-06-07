@@ -5,14 +5,23 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptFilter
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
+    /// AWS::SES::ReceiptFilter
+    /// The AWS::SES::ReceiptFilter resource whether to accept or reject mail originating from an IP address or range
+    /// of IP addresses for Amazon SES. For more information, see Creating IP Address Filters for Amazon SES Email
+    /// Receiving in the Amazon Simple Email Service Developer Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
     /// </summary>
     public class ReceiptFilterResource : ResourceBase
     {
         public class ReceiptFilterProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
+            /// Filter
+            /// The IP addresses to block or allow, and whether to block or allow incoming mail from them.
+            /// Required: Yes
+            /// Type: Amazon SES ReceiptFilter Filter
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
             /// </summary>
 			public Union<Filter, IntrinsicFunction> Filter { get; set; }
 

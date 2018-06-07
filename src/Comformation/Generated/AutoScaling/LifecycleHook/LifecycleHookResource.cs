@@ -5,49 +5,104 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.LifecycleHook
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
+    /// AWS::AutoScaling::LifecycleHook
+    /// Controls the state of an instance in an Auto Scaling group after it is launched or terminated. When you use a
+    /// lifecycle hook, the Auto Scaling group either pauses the instance after it is launched (before it is put into
+    /// service) or pauses the instance as it is terminated (before it is fully terminated). For more information, see
+    /// Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
     /// </summary>
     public class LifecycleHookResource : ResourceBase
     {
         public class LifecycleHookProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
+            /// AutoScalingGroupName
+            /// The name of the Auto Scaling group for the lifecycle hook.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
+            /// DefaultResult
+            /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
+            /// failure occurs. Valid values are CONTINUE (default) and ABANDON.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultResult { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
+            /// HeartbeatTimeout
+            /// The amount of time that can elapse before the lifecycle hook times out. When the lifecycle hook
+            /// times out, Auto Scaling performs the action that you specified in the DefaultResult property.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
             /// </summary>
 			public Union<int, IntrinsicFunction> HeartbeatTimeout { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname
+            /// LifecycleHookName
+            /// The name of the lifecycle hook. Length Constraints: Minimum length of 1. Maximum length of 255.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecyclehookname
             /// </summary>
 			public Union<string, IntrinsicFunction> LifecycleHookName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
+            /// LifecycleTransition
+            /// The state of the Amazon EC2 instance to which you want to attach the lifecycle hook. For valid
+            /// values, see the LifecycleTransition content for the LifecycleHook data type in the Amazon EC2 Auto
+            /// Scaling API Reference.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
             /// </summary>
 			public Union<string, IntrinsicFunction> LifecycleTransition { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
+            /// NotificationMetadata
+            /// Additional information that you want to include when Auto Scaling sends a message to the
+            /// notification target.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationMetadata { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
+            /// NotificationTargetARN
+            /// The Amazon resource name (ARN) of the notification target that Auto Scaling uses to notify you when
+            /// an instance is in the transition state for the lifecycle hook. You can specify an Amazon SQS queue
+            /// or an Amazon SNS topic. The notification message includes the following information: lifecycle
+            /// action token, user account ID, Auto Scaling group name, lifecycle hook name, instance ID, lifecycle
+            /// transition, and notification metadata.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationTargetARN { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
+            /// RoleARN
+            /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+            /// target. The role requires permissions to Amazon SNS and Amazon SQS.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 

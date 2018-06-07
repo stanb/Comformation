@@ -5,29 +5,56 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Redshift.ClusterParameterGroup
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
+    /// AWS::Redshift::ClusterParameterGroup
+    /// Creates an Amazon Redshift parameter group that you can associate with an Amazon Redshift cluster. The
+    /// parameters in the group apply to all the databases that you create in the cluster.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
     /// </summary>
     public class ClusterParameterGroupResource : ResourceBase
     {
         public class ClusterParameterGroupProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
+            /// Description
+            /// A description of the parameter group.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
+            /// ParameterGroupFamily
+            /// The Amazon Redshift engine version that applies to this cluster parameter group. The cluster engine
+            /// version determines the set of parameters that you can specify in the Parameters property.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
             /// </summary>
 			public Union<string, IntrinsicFunction> ParameterGroupFamily { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
+            /// Parameters
+            /// A list of parameter names and values that are allowed by the Amazon Redshift engine version that you
+            /// specified in the ParameterGroupFamily property. For more information, see Amazon Redshift Parameter
+            /// Groups in the Amazon Redshift Cluster Management Guide.
+            /// Required: No
+            /// Type: Amazon Redshift Parameter Type
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
             /// </summary>
 			public Union<List<Parameter>, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
+            /// Tags
+            /// Specifies an arbitrary set of tags (key–value pairs) to associate with this parameter group. Use
+            /// tags to manage your resources.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

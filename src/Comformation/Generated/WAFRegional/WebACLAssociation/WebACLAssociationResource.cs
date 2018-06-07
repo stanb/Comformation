@@ -5,19 +5,32 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WAFRegional.WebACLAssociation
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
+    /// AWS::WAFRegional::WebACLAssociation
+    /// The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL)
+    /// with a resource. For more information, see AssociateWebACL in the AWS WAF Regional API Reference.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
     /// </summary>
     public class WebACLAssociationResource : ResourceBase
     {
         public class WebACLAssociationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn
+            /// ResourceArn
+            /// The Amazon Resource Name (ARN) of the resource to protect with the web ACL.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceArn { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid
+            /// WebACLId
+            /// A unique identifier (ID) for the web ACL.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid
             /// </summary>
 			public Union<string, IntrinsicFunction> WebACLId { get; set; }
 

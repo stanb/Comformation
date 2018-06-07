@@ -5,29 +5,54 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.RDS.DBSubnetGroup
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html
+    /// AWS::RDS::DBSubnetGroup
+    /// The AWS::RDS::DBSubnetGroup type creates an RDS database subnet group. Subnet groups must contain at least two
+    /// subnets in two different Availability Zones in the same region.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
     {
         public class DBSubnetGroupProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription
+            /// DBSubnetGroupDescription
+            /// The description for the DB Subnet Group.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname
+            /// DBSubnetGroupName
+            /// The name for the DB Subnet Group. This value is stored as a lowercase string.
+            /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
+            /// hyphens. Must not be default.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids
+            /// SubnetIds
+            /// The EC2 Subnet IDs for the DB Subnet Group.
+            /// Required: Yes
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-tags
+            /// Tags
+            /// The tags that you want to attach to the RDS database subnet group.
+            /// Required: No
+            /// Type: A list of resource tags in key-value format.
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

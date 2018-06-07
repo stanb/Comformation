@@ -5,24 +5,45 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
+    /// AWS::SES::ReceiptRule
+    /// The AWS::SES::ReceiptRule resource specifies which actions Amazon SES should take when it receives mail on
+    /// behalf of one or more email addresses or domains that you own. For more information, see Creating Receipt
+    /// Rules for Amazon SES Email Receiving in the Amazon Simple Email Service Developer Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
     /// </summary>
     public class ReceiptRuleResource : ResourceBase
     {
         public class ReceiptRuleProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after
+            /// After
+            /// The name of an existing rule after which the new rule will be placed. If this parameter is null, the
+            /// new rule will be inserted at the beginning of the rule list.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after
             /// </summary>
 			public Union<string, IntrinsicFunction> After { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
+            /// Rule
+            /// The specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS
+            /// policy.
+            /// Required: Yes
+            /// Type: Amazon SES ReceiptRule Rule
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
             /// </summary>
 			public Union<Rule, IntrinsicFunction> Rule { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
+            /// RuleSetName
+            /// The name of the rule set that the receipt rule will be added to.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 

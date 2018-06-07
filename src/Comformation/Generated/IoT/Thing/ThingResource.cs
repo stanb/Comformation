@@ -5,19 +5,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.Thing
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html
+    /// AWS::IoT::Thing
+    /// Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html
     /// </summary>
     public class ThingResource : ResourceBase
     {
         public class ThingProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload
+            /// AttributePayload
+            /// The attribute payload.
+            /// Required: No
+            /// Type: AWS IoT Thing AttributePayload
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload
             /// </summary>
 			public Union<AttributePayload, IntrinsicFunction> AttributePayload { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
+            /// ThingName
+            /// The name (the physical ID) of the AWS IoT thing.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
             /// </summary>
 			public Union<string, IntrinsicFunction> ThingName { get; set; }
 

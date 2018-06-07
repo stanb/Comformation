@@ -5,24 +5,43 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Redshift.ClusterSubnetGroup
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
+    /// AWS::Redshift::ClusterSubnetGroup
+    /// Creates an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing
+    /// Amazon VPC when creating an Amazon Redshift subnet group.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
     /// </summary>
     public class ClusterSubnetGroupResource : ResourceBase
     {
         public class ClusterSubnetGroupProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
+            /// Description
+            /// A description of the subnet group.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
+            /// SubnetIds
+            /// A list of VPC subnet IDs. You can modify a maximum of 20 subnets.
+            /// Required: Yes
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
+            /// Tags
+            /// Specifies an arbitrary set of tags (key–value pairs) to associate with this subnet group. Use tags
+            /// to manage your resources.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

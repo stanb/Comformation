@@ -5,24 +5,42 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.UsagePlanKey
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
+    /// AWS::ApiGateway::UsagePlanKey
+    /// The AWS::ApiGateway::UsagePlanKey resource associates an Amazon API Gateway API key with an API Gateway usage
+    /// plan. This association determines which users the usage plan is applied to.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
     /// </summary>
     public class UsagePlanKeyResource : ResourceBase
     {
         public class UsagePlanKeyProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid
+            /// KeyId
+            /// The ID of the usage plan key.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-keyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keytype
+            /// KeyType
+            /// The type of usage plan key. Currently, the valid key type is API_KEY.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-keytype
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyType { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid
+            /// UsagePlanId
+            /// The value of the usage plan key.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplanid
             /// </summary>
 			public Union<string, IntrinsicFunction> UsagePlanId { get; set; }
 

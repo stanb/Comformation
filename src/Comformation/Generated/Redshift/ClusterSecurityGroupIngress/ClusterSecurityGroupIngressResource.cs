@@ -5,29 +5,53 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Redshift.ClusterSecurityGroupIngress
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
+    /// AWS::Redshift::ClusterSecurityGroupIngress
+    /// Specifies inbound (ingress) rules for an Amazon Redshift security group.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
     /// </summary>
     public class ClusterSecurityGroupIngressResource : ResourceBase
     {
         public class ClusterSecurityGroupIngressProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip
+            /// CIDRIP
+            /// The IP address range that has inbound access to the Amazon Redshift security group.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip
             /// </summary>
 			public Union<string, IntrinsicFunction> CIDRIP { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
+            /// ClusterSecurityGroupName
+            /// The name of the Amazon Redshift security group that will be associated with the ingress rule.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterSecurityGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
+            /// EC2SecurityGroupName
+            /// The Amazon EC2 security group that will be added the Amazon Redshift security group.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
+            /// EC2SecurityGroupOwnerId
+            /// The 12-digit AWS account number of the owner of the Amazon EC2 security group that is specified by
+            /// the EC2SecurityGroupName parameter.
+            /// Required: Conditional. If you specify the EC2SecurityGroupName property, you must specify this
+            /// property.
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 

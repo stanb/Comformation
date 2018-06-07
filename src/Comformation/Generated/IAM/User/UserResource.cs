@@ -5,39 +5,87 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IAM.User
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
+    /// AWS::IAM::User
+    /// The AWS::IAM::User type creates a user.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
     /// </summary>
     public class UserResource : ResourceBase
     {
         public class UserProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups
+            /// Groups
+            /// A name of a group to which you want to add the user.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile
+            /// LoginProfile
+            /// Creates a login profile so that the user can access the AWS Management Console.
+            /// Required: No
+            /// Type: IAM User LoginProfile
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile
             /// </summary>
 			public Union<LoginProfile, IntrinsicFunction> LoginProfile { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns
+            /// ManagedPolicyArns
+            /// One or more managed policy ARNs to attach to this user.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path
+            /// Path
+            /// The path for the user name. For more information about paths, see IAM Identifiers in the IAM User
+            /// Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies
+            /// Policies
+            /// The policies to associate with this user. For information about policies, see Overview of IAM
+            /// Policies in the IAM User Guide.
+            /// Note If you specify multiple polices, specify unique values for the policy name. If you don't,
+            /// updates to the IAM user will fail.
+            /// Required: No
+            /// Type: List of IAM Policies
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies
             /// </summary>
 			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username
+            /// UserName
+            /// A name for the IAM user. For valid values, see the UserName parameter for the CreateUser action in
+            /// the IAM API Reference. If you don't specify a name, AWS CloudFormation generates a unique physical
+            /// ID and uses that ID for the user name.
+            /// Important If you specify a name, you cannot perform updates that require replacement of this
+            /// resource. You can perform updates that require no or some interruption. If you must replace the
+            /// resource, specify a new name.
+            /// If you specify a name, you must specify the CAPABILITY_NAMED_IAM value to acknowledge your
+            /// template's capabilities. For more information, see Acknowledging IAM Resources in AWS CloudFormation
+            /// Templates.
+            /// Warning Naming an IAM resource can cause an unrecoverable error if you reuse the same template in
+            /// multiple regions. To prevent this, we recommend using Fn::Join and AWS::Region to create a
+            /// region-specific name, as in the following example: {"Fn::Join": ["", [{"Ref": "AWS::Region"},
+            /// {"Ref": "MyResourceName"}]]}.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username
             /// </summary>
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 

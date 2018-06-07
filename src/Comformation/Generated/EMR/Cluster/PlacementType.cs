@@ -12,7 +12,7 @@ namespace Comformation.EMR.Cluster
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html#cfn-elasticmapreduce-cluster-placementtype-availabilityzone
+        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html#cfn-emr-cluster-placementtype-availabilityzone
         /// </summary>
         [JsonProperty("AvailabilityZone")]
         public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }

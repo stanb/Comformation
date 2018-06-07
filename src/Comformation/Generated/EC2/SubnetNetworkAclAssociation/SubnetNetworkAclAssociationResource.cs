@@ -5,19 +5,32 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SubnetNetworkAclAssociation
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
+    /// AWS::EC2::SubnetNetworkAclAssociation
+    /// Associates a subnet with a network ACL. For more information, see ReplaceNetworkAclAssociation in the Amazon
+    /// EC2 API Reference.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
     /// </summary>
     public class SubnetNetworkAclAssociationResource : ResourceBase
     {
         public class SubnetNetworkAclAssociationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
+            /// NetworkAclId
+            /// The ID of the new ACL to associate with the subnet.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkAclId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid
+            /// SubnetId
+            /// The ID representing the current association between the original network ACL and the subnet.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 

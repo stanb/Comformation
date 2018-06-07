@@ -5,204 +5,586 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.RDS.DBInstance
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html
+    /// AWS::RDS::DBInstance
+    /// The AWS::RDS::DBInstance type creates an Amazon Relational Database Service (Amazon RDS) DB instance. For
+    /// detailed information about configuring RDS DB instances, see CreateDBInstance.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html
     /// </summary>
     public class DBInstanceResource : ResourceBase
     {
         public class DBInstanceProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allocatedstorage
+            /// AllocatedStorage
+            /// The allocated storage size, specified in gigabytes (GB).
+            /// If any value is set in the Iops parameter, AllocatedStorage must be at least 100 GB, which
+            /// corresponds to the minimum Iops value of 1,000. If you increase the Iops value (in 1,000 IOPS
+            /// increments), then you must also increase the AllocatedStorage value (in 100-GB increments).
+            /// Required: Conditional. This property is required except when you specify the DBClusterIdentifier
+            /// property or when you create a read replica from AWS CloudFormation by using the AWS::RDS::DBInstance
+            /// resource. In these cases, don't specify this property.
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allocatedstorage
             /// </summary>
 			public Union<string, IntrinsicFunction> AllocatedStorage { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allowmajorversionupgrade
+            /// AllowMajorVersionUpgrade
+            /// If you update the EngineVersion property to a version that's different from the DB instance's
+            /// current major version, set this property to true. For more information, see ModifyDBInstance in the
+            /// Amazon Relational Database Service API Reference.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allowmajorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-autominorversionupgrade
+            /// AutoMinorVersionUpgrade
+            /// Indicates that minor engine upgrades are applied automatically to the DB instance during the
+            /// maintenance window. The default value is true.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
+            /// in the Amazon Relational Database Service API Reference.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-autominorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-availabilityzone
+            /// AvailabilityZone
+            /// The name of the Availability Zone where the DB instance is located. You can't set the
+            /// AvailabilityZone parameter if the MultiAZ parameter is set to true.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-backupretentionperiod
+            /// BackupRetentionPeriod
+            /// The number of days during which automatic DB snapshots are retained.
+            /// Important If this DB instance is deleted or replaced during an update, AWS CloudFormation deletes
+            /// all automated snapshots. However, it retains manual DB snapshots.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
+            /// in the Amazon Relational Database Service API Reference.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-backupretentionperiod
             /// </summary>
 			public Union<string, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-charactersetname
+            /// CharacterSetName
+            /// For supported engines, specifies the character set to associate with the DB instance. For more
+            /// information, see Appendix: Oracle Character Sets Supported in Amazon RDS in the Amazon Relational
+            /// Database Service User Guide.
+            /// If you specify the DBSnapshotIdentifier or SourceDBInstanceIdentifier property, don't specify this
+            /// property. The value is inherited from the snapshot or source DB instance.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-charactersetname
             /// </summary>
 			public Union<string, IntrinsicFunction> CharacterSetName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-copytagstosnapshot
+            /// CopyTagsToSnapshot
+            /// Indicates whether to copy all of the user-defined tags from the DB instance to snapshots of the DB
+            /// instance. By default, Amazon RDS doesn't copy tags to snapshots. Amazon RDS doesn't copy tags with
+            /// the aws:: prefix unless it's the DB instance's final snapshot (the snapshot when you delete the DB
+            /// instance).
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-copytagstosnapshot
             /// </summary>
 			public Union<bool, IntrinsicFunction> CopyTagsToSnapshot { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbclusteridentifier
+            /// DBClusterIdentifier
+            /// The name of an existing DB cluster that this instance is associated with. If you specify this
+            /// property, specify aurora for the Engine property and don't specify any of the following properties:
+            /// AllocatedStorage, BackupRetentionPeriod, CharacterSetName, DBName, DBSecurityGroups, MasterUsername,
+            /// MasterUserPassword, OptionGroupName, PreferredBackupWindow, PreferredMaintenanceWindow, Port,
+            /// SourceDBInstanceIdentifier, StorageType, or VPCSecurityGroups.
+            /// Amazon RDS assigns the first DB instance in the cluster as the primary, and additional DB instances
+            /// as replicas.
+            /// If you specify this property, the default deletion policy is Delete. Otherwise, the default deletion
+            /// policy is Snapshot.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbclusteridentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbinstanceclass
+            /// DBInstanceClass
+            /// The name of the compute and memory capacity classes of the DB instance.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Some interruptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbinstanceclass
             /// </summary>
 			public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbinstanceidentifier
+            /// DBInstanceIdentifier
+            /// A name for the DB instance. If you specify a name, AWS CloudFormation converts it to lowercase. If
+            /// you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the
+            /// DB instance. For more information, see Name Type.
+            /// Important If you specify a name, you cannot perform updates that require replacement of this
+            /// resource. You can perform updates that require no or some interruption. If you must replace the
+            /// resource, specify a new name.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbinstanceidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBInstanceIdentifier { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbname
+            /// DBName
+            /// The name of the DB instance that was provided at the time of creation, if one was specified. This
+            /// same name is returned for the life of the DB instance.
+            /// Important If you specify the DBSnapshotIdentifier property, AWS CloudFormation ignores this
+            /// property. If you restore DB instances from snapshots, this property doesn't apply to the MySQL,
+            /// PostgreSQL, or MariaDB engines.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbparametergroupname
+            /// DBParameterGroupName
+            /// The name of an existing DB parameter group or a reference to an AWS::RDS::DBParameterGroup resource
+            /// created in the template.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption or some interruptions. If any of the data members of the referenced
+            /// parameter group are changed during an update, the DB instance might need to be restarted, which
+            /// causes some interruption. If the parameter group contains static parameters, whether they were
+            /// changed or not, an update triggers a reboot.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBParameterGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsecuritygroups
+            /// DBSecurityGroups
+            /// A list of the DB security groups to assign to the DB instance. The list can include both the name of
+            /// existing DB security groups or references to AWS::RDS::DBSecurityGroup resources created in the
+            /// template.
+            /// If you set DBSecurityGroups, you must not set VPCSecurityGroups, and vice versa. Also, note that the
+            /// EC2VpcId property exists only for backwards compatibility with older regions and is no longer
+            /// recommended for providing security information to an RDS DB instance. Instead, use
+            /// VPCSecurityGroups.
+            /// Important If you specify this property, AWS CloudFormation sends only the following properties (if
+            /// specified) to Amazon RDS: AllocatedStorage AutoMinorVersionUpgrade AvailabilityZone
+            /// BackupRetentionPeriod CharacterSetName DBInstanceClass DBName DBParameterGroupName DBSecurityGroups
+            /// DBSubnetGroupName Engine EngineVersion Iops LicenseModel MasterUsername MasterUserPassword MultiAZ
+            /// OptionGroupName PreferredBackupWindow PreferredMaintenanceWindow All other properties are ignored.
+            /// Specify a virtual private cloud (VPC) security group if you want to submit other properties, such as
+            /// StorageType, StorageEncrypted, or KmsKeyId. If you're already using the DBSecurityGroups property,
+            /// you can't use these other properties by updating your DB instance to use a VPC security group. You
+            /// must recreate the DB instance.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsecuritygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> DBSecurityGroups { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsnapshotidentifier
+            /// DBSnapshotIdentifier
+            /// The name or Amazon Resource Name (ARN) of the DB snapshot that's used to restore the DB instance. If
+            /// you're restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.
+            /// By specifying this property, you can create a DB instance from the specified DB snapshot. If the
+            /// DBSnapshotIdentifier property is an empty string or the AWS::RDS::DBInstance declaration has no
+            /// DBSnapshotIdentifier property, AWS CloudFormation creates a new database. If the property contains a
+            /// value (other than an empty string), AWS CloudFormation creates a database from the specified
+            /// snapshot. If a snapshot with the specified name doesn't exist, AWS CloudFormation can't create the
+            /// database and it rolls back the stack.
+            /// Some DB instance properties aren't valid when you restore from a snapshot, such as the
+            /// MasterUsername and MasterUserPassword properties. For information about the properties that you can
+            /// specify, see the RestoreDBInstanceFromDBSnapshot action in the Amazon Relational Database Service
+            /// API Reference.
+            /// Important If you specify this property, AWS CloudFormation ignores the DBName property.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsnapshotidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSnapshotIdentifier { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsubnetgroupname
+            /// DBSubnetGroupName
+            /// A DB subnet group to associate with the DB instance. If you update this value, the new subnet group
+            /// must be a subnet group in a new VPC.
+            /// If there's no DB subnet group, then the instance isn't a VPC DB instance.
+            /// For more information about using Amazon RDS in a VPC, see Using Amazon RDS with Amazon Virtual
+            /// Private Cloud (VPC) in the Amazon Relational Database Service Developer Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domain
+            /// Domain
+            /// For an Amazon RDS DB instance that's running Microsoft SQL Server, the Active Directory directory ID
+            /// to create the instance in. Amazon RDS uses Windows Authentication to authenticate users that connect
+            /// to the DB instance. For more information, see Using Windows Authentication with an Amazon RDS DB
+            /// Instance Running Microsoft SQL Server in the Amazon Relational Database Service User Guide.
+            /// If you specify this property, you must specify a SQL Server engine for the Engine property.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domain
             /// </summary>
 			public Union<string, IntrinsicFunction> Domain { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domainiamrolename
+            /// DomainIAMRoleName
+            /// The name of an IAM role that Amazon RDS uses when calling the AWS Directory Service APIs.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domainiamrolename
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainIAMRoleName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engine
+            /// Engine
+            /// The database engine that the DB instance uses. This property is optional when you specify the
+            /// DBSnapshotIdentifier property to create DB instances.
+            /// For valid values, see the Engine parameter of the CreateDBInstance action in the Amazon Relational
+            /// Database Service API Reference.
+            /// If you specify aurora as the database engine, you must also specify the DBClusterIdentifier
+            /// property.
+            /// Note If you've specified oracle-se or oracle-se1 as the database engine, you can update the database
+            /// engine to oracle-se2 without the database instance being replaced. For information on the
+            /// deprecation of support for Oracle version 12. 1. 0. 1, see Deprecation of Oracle 12. 1. 0. 1 in the
+            /// Amazon Relational Database Service User Guide.
+            /// Required: Conditional
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engine
             /// </summary>
 			public Union<string, IntrinsicFunction> Engine { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engineversion
+            /// EngineVersion
+            /// The version number of the database engine that the DB instance uses.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Some interruptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engineversion
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-iops
+            /// Iops
+            /// The number of I/O operations per second (IOPS) that the database provisions. The value must be equal
+            /// to or greater than 1000.
+            /// If you specify this property, you must follow the range of allowed ratios of your requested IOPS
+            /// rate to the amount of storage that you allocate (IOPS to allocated storage). For example, you can
+            /// provision an Oracle database instance with 1000 IOPS and 200 GB of storage (a ratio of 5:1), or
+            /// specify 2000 IOPS with 200 GB of storage (a ratio of 10:1). For more information, see Amazon RDS
+            /// Provisioned IOPS Storage to Improve Performance in the Amazon Relational Database Service User
+            /// Guide.
+            /// Required: Conditional. If you specify io1 for the StorageType property, you must specify this
+            /// property.
+            /// Type: Number
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-iops
             /// </summary>
 			public Union<int, IntrinsicFunction> Iops { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-kmskeyid
+            /// KmsKeyId
+            /// The ARN of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the DB
+            /// instance, such as arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. If
+            /// you enable the StorageEncrypted property but don't specify this property, AWS CloudFormation uses
+            /// the default master key. If you specify this property, you must set the StorageEncrypted property to
+            /// true.
+            /// If you specify the SourceDBInstanceIdentifier property, the value is inherited from the source DB
+            /// instance if the read replica is created in the same region. If you specify this property when you
+            /// create a read replica from an unencrypted DB instance, the read replica is encrypted.
+            /// If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key
+            /// for the destination AWS Region. KMS encryption keys are specific to the region that they're created
+            /// in, and you can't use encryption keys from one region in another region.
+            /// If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To specify both a
+            /// security group and this property, you must use a VPC security group. For more information about
+            /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon Relational Database Service
+            /// User Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-licensemodel
+            /// LicenseModel
+            /// The license model of the DB instance.
+            /// Note If DBSecurityGroups is specified, updating the license model requires its replacement.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-licensemodel
             /// </summary>
 			public Union<string, IntrinsicFunction> LicenseModel { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masteruserpassword
+            /// MasterUserPassword
+            /// The master password for the DB instance.
+            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don't specify
+            /// this property. The value is inherited from the source DB instance or snapshot.
+            /// Required: Conditional
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masteruserpassword
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masterusername
+            /// MasterUsername
+            /// The master user name for the DB instance.
+            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don't specify
+            /// this property. The value is inherited from the source DB instance or snapshot.
+            /// Required: Conditional
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masterusername
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringinterval
+            /// MonitoringInterval
+            /// The interval, in seconds, between points when Amazon RDS collects enhanced monitoring metrics for
+            /// the DB instance. To disable metrics collection, specify 0.
+            /// For default and valid values, see the MonitoringInterval parameter for the CreateDBInstance action
+            /// in the Amazon Relational Database Service API Reference.
+            /// Required: Conditional. If you specify the MonitoringRoleArn property, specify a value other than 0
+            /// for MonitoringInterval.
+            /// Type: Integer
+            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
+            /// in the Amazon Relational Database Service API Reference.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringinterval
             /// </summary>
 			public Union<int, IntrinsicFunction> MonitoringInterval { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringrolearn
+            /// MonitoringRoleArn
+            /// The ARN of the AWS Identity and Access Management (IAM) role that permits Amazon RDS to send
+            /// enhanced monitoring metrics to Amazon CloudWatch, for example,
+            /// arn:aws:iam::123456789012:role/emaccess. For information on creating a monitoring role, see To
+            /// create an IAM role for Amazon RDS Enhanced Monitoring in the Amazon Relational Database Service User
+            /// Guide.
+            /// Required: Conditional. If you specify a value other than 0 for the MonitoringInterval property,
+            /// specify a value for MonitoringRoleArn.
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringrolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> MonitoringRoleArn { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-multiaz
+            /// MultiAZ
+            /// Specifies if the database instance is a multiple Availability Zone deployment. You can't set the
+            /// AvailabilityZone parameter if the MultiAZ parameter is set to true. Amazon Aurora storage is
+            /// replicated across all the Availability Zones and doesn't require the MultiAZ option to be set.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-multiaz
             /// </summary>
 			public Union<bool, IntrinsicFunction> MultiAZ { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-optiongroupname
+            /// OptionGroupName
+            /// The option group that this DB instance is associated with.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-optiongroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> OptionGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-port
+            /// Port
+            /// The port for the instance.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-port
             /// </summary>
 			public Union<string, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredbackupwindow
+            /// PreferredBackupWindow
+            /// The daily time range during which automated backups are performed if automated backups are enabled,
+            /// as determined by the BackupRetentionPeriod property. For valid values, see the PreferredBackupWindow
+            /// parameter for the CreateDBInstance action in the Amazon Relational Database Service API Reference.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredbackupwindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredmaintenancewindow
+            /// PreferredMaintenanceWindow
+            /// The weekly time range (in UTC) during which system maintenance can occur. For valid values, see the
+            /// PreferredMaintenanceWindow parameter for the CreateDBInstance action in the Amazon Relational
+            /// Database Service API Reference.
+            /// Note This property applies when AWS CloudFormation initially creates the DB instance. If you use AWS
+            /// CloudFormation to update the DB instance, those updates are applied immediately.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
+            /// in the Amazon Relational Database Service API Reference.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-publiclyaccessible
+            /// PubliclyAccessible
+            /// Indicates whether the DB instance is an internet-facing instance. If you specify true, AWS
+            /// CloudFormation creates an instance with a publicly resolvable DNS name, which resolves to a public
+            /// IP address. If you specify false, AWS CloudFormation creates an internal instance with a DNS name
+            /// that resolves to a private IP address.
+            /// The default behavior value depends on your VPC setup and the database subnet group. For more
+            /// information, see the PubliclyAccessible parameter in CreateDBInstance in the Amazon Relational
+            /// Database Service API Reference.
+            /// If this resource has a public IP address and is also in a VPC that is defined in the same template,
+            /// you must use the DependsOn attribute to declare a dependency on the VPC-gateway attachment. For more
+            /// information, see DependsOn Attribute.
+            /// Note If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To specify a
+            /// security group and this property, you must use a VPC security group. For more information about
+            /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon Relational Database Service
+            /// User Guide.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-publiclyaccessible
             /// </summary>
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier
+            /// SourceDBInstanceIdentifier
+            /// If you want to create a read replica DB instance, specify the ID of the source DB instance. Each DB
+            /// instance can have a limited number of read replicas. For more information, see Working with Read
+            /// Replicas in the Amazon Relational Database Service Developer Guide.
+            /// The SourceDBInstanceIdentifier property determines whether a DB instance is a read replica. If you
+            /// remove the SourceDBInstanceIdentifier property from your template and then update your stack, AWS
+            /// CloudFormation deletes the read replica and creates a new DB instance (not a read replica).
+            /// Important If you specify a source DB instance that uses VPC security groups, we recommend that you
+            /// specify the VPCSecurityGroups property. If you don't specify the property, the read replica inherits
+            /// the value of the VPCSecurityGroups property from the source DB when you create the replica. However,
+            /// if you update the stack, AWS CloudFormation reverts the replica's VPCSecurityGroups property to the
+            /// default value because it's not defined in the stack's template. This change might cause unexpected
+            /// issues. Read replicas don't support deletion policies. AWS CloudFormation ignores any deletion
+            /// policy that's associated with a read replica. If you specify SourceDBInstanceIdentifier, don't set
+            /// the MultiAZ property to true, and don't specify the DBSnapshotIdentifier property. You can't deploy
+            /// read replicas in multiple Availability Zones, and you can't create a read replica from a snapshot.
+            /// Don't set the BackupRetentionPeriod, DBName, MasterUsername, MasterUserPassword, and
+            /// PreferredBackupWindow properties. The database attributes are inherited from the source DB instance,
+            /// and backups are disabled for read replicas. If the source DB instance is in a different region than
+            /// the read replica, specify an ARN for a valid DB instance. For more information, see Constructing a
+            /// Amazon RDS Amazon Resource Name (ARN) in the Amazon Relational Database Service User Guide. For DB
+            /// instances in Amazon Aurora clusters, don't specify this property. Amazon RDS automatically assigns
+            /// writer and reader DB instances.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceDBInstanceIdentifier { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourceregion
+            /// SourceRegion
+            /// The ID of the region that contains the source DB instance for the read replica.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourceregion
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceRegion { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storageencrypted
+            /// StorageEncrypted
+            /// Indicates whether the DB instance is encrypted.
+            /// If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier
+            /// property, don't specify this property. The value is inherited from the cluster, snapshot, or source
+            /// DB instance.
+            /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storageencrypted
             /// </summary>
 			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storagetype
+            /// StorageType
+            /// The storage type associated with this DB instance.
+            /// For the default and valid values, see the StorageType parameter of the CreateDBInstance action in
+            /// the Amazon Relational Database Service API Reference.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Some interruptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storagetype
             /// </summary>
 			public Union<string, IntrinsicFunction> StorageType { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-tags
+            /// Tags
+            /// An arbitrary set of tags (key–value pairs) for this DB instance.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-timezone
+            /// Timezone
+            /// The time zone of the DB instance, which you can specify to match the time zone of your applications.
+            /// To see which engines support time zones, see the Timezone parameter for the CreateDBInstance action
+            /// in the Amazon Relational Database Service API Reference.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-timezone
             /// </summary>
 			public Union<string, IntrinsicFunction> Timezone { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-vpcsecuritygroups
+            /// VPCSecurityGroups
+            /// A list of the VPC security group IDs to assign to the DB instance. The list can include both the
+            /// physical IDs of existing VPC security groups and references to AWS::EC2::SecurityGroup resources
+            /// created in the template.
+            /// If you set VPCSecurityGroups, you must not set DBSecurityGroups, and vice versa.
+            /// Important You can migrate a DB instance in your stack from an RDS DB security group to a VPC
+            /// security group, but keep the following in mind: You can't revert to using an RDS security group
+            /// after you establish a VPC security group membership. When you migrate your DB instance to VPC
+            /// security groups, if your stack update rolls back because the DB instance update fails or because an
+            /// update fails in another AWS CloudFormation resource, the rollback fails because it can't revert to
+            /// an RDS security group. To use the properties that are available when you use a VPC security group,
+            /// you must recreate the DB instance. If you don't, AWS CloudFormation submits only the property values
+            /// that are listed in the DBSecurityGroups property. To avoid this situation, migrate your DB instance
+            /// to using VPC security groups only when that is the only change in your stack template.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-vpcsecuritygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VPCSecurityGroups { get; set; }
 

@@ -5,14 +5,23 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html
+    /// AWS::CloudFront::CloudFrontOriginAccessIdentity
+    /// The AWS::CloudFront::CloudFrontOriginAccessIdentity resource specifies the CloudFront origin access identity
+    /// to associate with the origin of a CloudFront distribution. For more information, see OriginAccessIdentity in
+    /// the Amazon CloudFront API Reference.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html
     /// </summary>
     public class CloudFrontOriginAccessIdentityResource : ResourceBase
     {
         public class CloudFrontOriginAccessIdentityProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig
+            /// CloudFrontOriginAccessIdentityConfig
+            /// The configuration of the CloudFront origin access identity.
+            /// Required: Yes
+            /// Type: CloudFrontOriginAccessIdentityConfig
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig
             /// </summary>
 			public Union<CloudFrontOriginAccessIdentityConfig, IntrinsicFunction> CloudFrontOriginAccessIdentityConfig { get; set; }
 

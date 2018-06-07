@@ -5,34 +5,63 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GuardDuty.IPSet
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html
+    /// AWS::GuardDuty::IPSet
+    /// The AWS::GuardDuty::IPSet resource creates an Amazon GuardDuty IP set. An IP set is a list of trusted IP
+    /// addresses that have been whitelisted for secure communication with your AWS environment.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html
     /// </summary>
     public class IPSetResource : ResourceBase
     {
         public class IPSetProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-format
+            /// Format
+            /// The format of the file that contains the IP set. Valid values are TXT, STIX, and OTX_CSV.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-format
             /// </summary>
 			public Union<string, IntrinsicFunction> Format { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-activate
+            /// Activate
+            /// A Boolean value that indicates whether GuardDuty is to start using the uploaded IP set.
+            /// Required: Yes
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-activate
             /// </summary>
 			public Union<bool, IntrinsicFunction> Activate { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-detectorid
+            /// DetectorId
+            /// The detector ID that specifies the GuardDuty service for which an IP set is to be created.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-detectorid
             /// </summary>
 			public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-name
+            /// Name
+            /// The friendly name to identify the IP set. This name is displayed in all findings that are triggered
+            /// by activity that involves IP addresses included in this IP set.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-location
+            /// Location
+            /// The URI of the file that contains the IP set.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-location
             /// </summary>
 			public Union<string, IntrinsicFunction> Location { get; set; }
 

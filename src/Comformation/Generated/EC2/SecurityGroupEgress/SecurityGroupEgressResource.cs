@@ -5,54 +5,111 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SecurityGroupEgress
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
+    /// AWS::EC2::SecurityGroupEgress
+    /// The AWS::EC2::SecurityGroupEgress resource adds an egress rule to an Amazon VPC security group.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
     /// </summary>
     public class SecurityGroupEgressResource : ResourceBase
     {
         public class SecurityGroupEgressProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip
+            /// CidrIp
+            /// An IPv4 CIDR range.
+            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6
+            /// CidrIpv6
+            /// An IPv6 CIDR range.
+            /// Type: String
+            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description
+            /// Description
+            /// Description of the egress rule.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid
+            /// DestinationPrefixListId
+            /// The AWS service prefix of an Amazon VPC endpoint. For more information, see VPC Endpoints in the
+            /// Amazon VPC User Guide.
+            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationPrefixListId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid
+            /// DestinationSecurityGroupId
+            /// Specifies the group ID of the destination Amazon VPC security group.
+            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationSecurityGroupId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
+            /// FromPort
+            /// Start of port range for the TCP and UDP protocols, or an ICMP type number. If you specify icmp for
+            /// the IpProtocol property, you can specify -1 as a wildcard (i. e. , any ICMP type number).
+            /// Required: Yes
+            /// Type: Integer
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
             /// </summary>
 			public Union<int, IntrinsicFunction> FromPort { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
+            /// GroupId
+            /// ID of the Amazon VPC security group to modify. This value can be a reference to an
+            /// AWS::EC2::SecurityGroup resource that has a valid VpcId property or the ID of an existing Amazon VPC
+            /// security group.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol
+            /// IpProtocol
+            /// IP protocol name or number. For valid values, see the IpProtocol parameter in
+            /// AuthorizeSecurityGroupIngress
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol
             /// </summary>
 			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
+            /// ToPort
+            /// End of port range for the TCP and UDP protocols, or an ICMP code. If you specify icmp for the
+            /// IpProtocol property, you can specify -1 as a wildcard (i. e. , any ICMP code).
+            /// Required: Yes
+            /// Type: Integer
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
             /// </summary>
 			public Union<int, IntrinsicFunction> ToPort { get; set; }
 

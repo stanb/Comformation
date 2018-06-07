@@ -5,24 +5,43 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Resource
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
+    /// AWS::ApiGateway::Resource
+    /// The AWS::ApiGateway::Resource resource creates a resource in an Amazon API Gateway (API Gateway) API.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
     /// </summary>
     public class ResourceResource : ResourceBase
     {
         public class ResourceProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-parentid
+            /// ParentId
+            /// If you want to create a child resource, the ID of the parent resource. For resources without a
+            /// parent, specify the RestApi root resource ID, such as { "Fn::GetAtt": ["MyRestApi",
+            /// "RootResourceId"] }.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-parentid
             /// </summary>
 			public Union<string, IntrinsicFunction> ParentId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart
+            /// PathPart
+            /// A path name for the resource.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart
             /// </summary>
 			public Union<string, IntrinsicFunction> PathPart { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-restapiid
+            /// RestApiId
+            /// The ID of the RestApi resource in which you want to create this resource.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-resapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 

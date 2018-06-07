@@ -5,24 +5,46 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WAF.Rule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html
+    /// AWS::WAF::Rule
+    /// The AWS::WAF::Rule resource creates an AWS WAF rule that specifies a combination of IPSet, ByteMatchSet, and
+    /// SqlInjectionMatchSet objects that identify the web requests to allow, block, or count. To implement rules, you
+    /// must associate them with a web ACL.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
     {
         public class RuleProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-metricname
+            /// MetricName
+            /// A friendly name or description for the metrics of the rule. For valid values, see the MetricName
+            /// parameter for the CreateRule action in the AWS WAF API Reference.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-metricname
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name
+            /// Name
+            /// A friendly name or description of the rule.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-predicates
+            /// Predicates
+            /// The ByteMatchSet, IPSet, SizeConstraintSet, SqlInjectionMatchSet, or XssMatchSet objects to include
+            /// in a rule. If you add more than one predicate to a rule, a request must match all conditions in
+            /// order to be allowed or blocked.
+            /// Required: No
+            /// Type: List of AWS WAF Rule Predicates
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-predicates
             /// </summary>
 			public Union<List<Predicate>, IntrinsicFunction> Predicates { get; set; }
 

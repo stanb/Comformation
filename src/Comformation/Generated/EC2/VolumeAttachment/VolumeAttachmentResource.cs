@@ -5,24 +5,45 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.VolumeAttachment
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html
+    /// AWS::EC2::VolumeAttachment
+    /// Attaches an Amazon EBS volume to a running instance and exposes it to the instance with the specified device
+    /// name.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html
     /// </summary>
     public class VolumeAttachmentResource : ResourceBase
     {
         public class VolumeAttachmentProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-device
+            /// Device
+            /// How the device is exposed to the instance (e. g. , /dev/sdh, or xvdh).
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-device
             /// </summary>
 			public Union<string, IntrinsicFunction> Device { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-instanceid
+            /// InstanceId
+            /// The ID of the instance to which the volume attaches. This value can be a reference to an
+            /// AWS::EC2::Instance resource, or it can be the physical ID of an existing EC2 instance.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-volumeid
+            /// VolumeId
+            /// The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone.
+            /// This value can be a reference to an AWS::EC2::Volume resource, or it can be the volume ID of an
+            /// existing Amazon EBS volume.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-volumeid
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeId { get; set; }
 

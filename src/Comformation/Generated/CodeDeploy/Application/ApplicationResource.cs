@@ -5,19 +5,36 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.Application
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
+    /// AWS::CodeDeploy::Application
+    /// The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In AWS CodeDeploy, an
+    /// application is a name that functions as a container to ensure that the correct combination of revision,
+    /// deployment configuration, and deployment group are referenced during a deployment. You can use the
+    /// AWS::CodeDeploy::DeploymentGroup resource to associate the application with an AWS CodeDeploy deployment
+    /// group. For more information, see AWS CodeDeploy Deployments in the AWS CodeDeploy User Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
     {
         public class ApplicationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
+            /// ApplicationName
+            /// A name for the application. If you don't specify a name, AWS CloudFormation generates a unique
+            /// physical ID and uses that ID for the application name. For more information, see Name Type.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
+            /// ComputePlatform
+            /// The compute platform that AWS CodeDeploy deploys the application to.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
             /// </summary>
 			public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
 

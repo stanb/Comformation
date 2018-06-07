@@ -5,14 +5,24 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRuleSet
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html
+    /// AWS::SES::ReceiptRuleSet
+    /// The AWS::SES::ReceiptRuleSet resource specifies an empty rule set for Amazon SES. For more information, see
+    /// CreateReceiptRuleSet in the Amazon Simple Email Service API Reference.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html
     /// </summary>
     public class ReceiptRuleSetResource : ResourceBase
     {
         public class ReceiptRuleSetProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname
+            /// RuleSetName
+            /// The name of the rule set to create. The name must:
+            /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Start and end
+            /// with a letter or number. Contain less than 64 characters.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 

@@ -5,19 +5,33 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Logs.LogStream
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html
+    /// AWS::Logs::LogStream
+    /// The AWS::Logs::LogStream resource creates an Amazon CloudWatch Logs log stream in a log group. A log stream
+    /// represents the sequence of events coming from an application instance or resource that you are monitoring. For
+    /// more information, see Monitoring Log Files in the Amazon CloudWatch User Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html
     /// </summary>
     public class LogStreamResource : ResourceBase
     {
         public class LogStreamProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-loggroupname
+            /// LogGroupName
+            /// The name of the log group where the log stream is created.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-loggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-logstreamname
+            /// LogStreamName
+            /// The name of the log stream to create. The name must be unique within the log group.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-logstreamname
             /// </summary>
 			public Union<string, IntrinsicFunction> LogStreamName { get; set; }
 

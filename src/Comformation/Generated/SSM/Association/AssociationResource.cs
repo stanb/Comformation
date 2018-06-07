@@ -5,49 +5,93 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.Association
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
+    /// AWS::SSM::Association
+    /// The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with EC2 instances that
+    /// contain a configuration agent to process the document.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
     /// </summary>
     public class AssociationResource : ResourceBase
     {
         public class AssociationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
+            /// AssociationName
+            /// The name of the association.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
             /// </summary>
 			public Union<string, IntrinsicFunction> AssociationName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
+            /// DocumentVersion
+            /// The version of the SSM document to associate with the target.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentationversion
             /// </summary>
 			public Union<string, IntrinsicFunction> DocumentVersion { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
+            /// InstanceId
+            /// The ID of the instance that the SSM document is associated with.
+            /// Required: Conditional. You must specify the InstanceId or Targets property.
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
+            /// Name
+            /// The name of the SSM document.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
+            /// OutputLocation
+            /// An Amazon S3 bucket where you want to store the results of this request.
+            /// Required: No
+            /// Type: Systems Manager Association InstanceAssociationOutputLocation
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
             /// </summary>
 			public Union<InstanceAssociationOutputLocation, IntrinsicFunction> OutputLocation { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
+            /// Parameters
+            /// Parameter values that the SSM document uses at runtime.
+            /// Required: No
+            /// Type: String to list-of-strings map
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
             /// </summary>
 			public Union<Dictionary<string, ParameterValues>, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
+            /// ScheduleExpression
+            /// A Cron expression that specifies when the association is applied to the target. For more on working
+            /// with Cron expressions, see Working with Cron and Rate Expressions for Systems Manager.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
             /// </summary>
 			public Union<string, IntrinsicFunction> ScheduleExpression { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
+            /// Targets
+            /// The targets that the SSM document sends commands to.
+            /// Required: Conditional. You must specify the InstanceId or Targets property.
+            /// Type: List of AWS Systems Manager Association Targets
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
             /// </summary>
 			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
 

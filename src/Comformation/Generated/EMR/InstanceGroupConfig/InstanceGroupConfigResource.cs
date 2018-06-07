@@ -5,59 +5,121 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
+    /// AWS::EMR::InstanceGroupConfig
+    /// The AWS::EMR::InstanceGroupConfig resource configures a task instance group for an Amazon EMR cluster.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
     /// </summary>
     public class InstanceGroupConfigResource : ResourceBase
     {
         public class InstanceGroupConfigProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
+            /// AutoScalingPolicy
+            /// An automatic scaling policy for a core instance group or task instance group in an Amazon EMR
+            /// cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates
+            /// EC2 instances in response to the value of a CloudWatch metric. For more information, see
+            /// PutAutoScalingPolicy in the Amazon EMR API Reference.
+            /// Required: No
+            /// Type: Amazon EMR InstanceGroupConfig AutoScalingPolicy
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
             /// </summary>
 			public Union<AutoScalingPolicy, IntrinsicFunction> AutoScalingPolicy { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
+            /// BidPrice
+            /// The bid price in USD for each Amazon EC2 instance in the instance group when launching instances
+            /// (nodes) as Spot Instances.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
             /// </summary>
 			public Union<string, IntrinsicFunction> BidPrice { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
+            /// Configurations
+            /// A list of configurations to apply to this instance group. For more information see, Configuring
+            /// Applications in the Amazon EMR Release Guide.
+            /// Required: No
+            /// Type: List of Amazon EMR Cluster Configurations
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
             /// </summary>
 			public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
+            /// EbsConfiguration
+            /// Configures Amazon Elastic Block Store (Amazon EBS) storage volumes to attach to your instances.
+            /// Required: No
+            /// Type: Amazon EMR EbsConfiguration
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
             /// </summary>
 			public Union<EbsConfiguration, IntrinsicFunction> EbsConfiguration { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-
+            /// InstanceCount
+            /// The number of instances to launch in the instance group.
+            /// Required: Yes
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancecount
             /// </summary>
 			public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
+            /// InstanceRole
+            /// The role of the servers in the Amazon EMR cluster, such as TASK. For more information, see Instance
+            /// Groups in the Amazon EMR Management Guide.
+            /// Note Currently, the only valid value is TASK. You configure the master and core instance groups as
+            /// part of the AWS::EMR::Cluster resource.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceRole { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
+            /// InstanceType
+            /// The EC2 instance type for all instances in the instance group. For more information, see Instance
+            /// Configurations in the Amazon EMR Management Guide.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
+            /// JobFlowId
+            /// The ID of an Amazon EMR cluster that you want to associate this instance group with.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
             /// </summary>
 			public Union<string, IntrinsicFunction> JobFlowId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
+            /// Market
+            /// The type of marketplace from which your instances are provisioned into this group, either ON_DEMAND
+            /// or SPOT. For more information, see Amazon EC2 Purchasing Options.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
             /// </summary>
 			public Union<string, IntrinsicFunction> Market { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
+            /// Name
+            /// A name for the instance group.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

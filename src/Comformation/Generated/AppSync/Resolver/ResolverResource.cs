@@ -5,49 +5,96 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.Resolver
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
+    /// AWS::AppSync::Resolver
+    /// The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you will attach to fields in a
+    /// schema. Request and Response templates for resolvers are written in Apache Velocity Template Language (VTL)
+    /// format. More information on resolvers can be found in the Resolver Mapping Template Reference.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
     /// </summary>
     public class ResolverResource : ResourceBase
     {
         public class ResolverProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
+            /// ResponseMappingTemplateS3Location
+            /// A location of a response mapping template on an S3 bucket if you wish to provision with the template
+            /// file living in S3 rather than embedded in your CloudFormation template.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
             /// </summary>
 			public Union<string, IntrinsicFunction> ResponseMappingTemplateS3Location { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
+            /// TypeName
+            /// The GraphQL type that will invoke this resolver.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
             /// </summary>
 			public Union<string, IntrinsicFunction> TypeName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
+            /// DataSourceName
+            /// The AWS AppSync data source that this resolver will run against in order to return data to the
+            /// caller.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
             /// </summary>
 			public Union<string, IntrinsicFunction> DataSourceName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
+            /// RequestMappingTemplate
+            /// The resolver’s request mapping template, written in text within the CloudFormation template.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
             /// </summary>
 			public Union<string, IntrinsicFunction> RequestMappingTemplate { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
+            /// ResponseMappingTemplate
+            /// The resolver’s response mapping template, written in text within the CloudFormation template.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
             /// </summary>
 			public Union<string, IntrinsicFunction> ResponseMappingTemplate { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
+            /// RequestMappingTemplateS3Location
+            /// A location of a request mapping template on an S3 bucket if you wish to provision with the template
+            /// file living in S3 rather than embedded in your CloudFormation template.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
             /// </summary>
 			public Union<string, IntrinsicFunction> RequestMappingTemplateS3Location { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
+            /// ApiId
+            /// The AWS AppSync GraphQL API which you will attach this resolver.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
+            /// FieldName
+            /// The GraphQL field on a type that will invoke the resolver.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
             /// </summary>
 			public Union<string, IntrinsicFunction> FieldName { get; set; }
 

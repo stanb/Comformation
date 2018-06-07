@@ -5,24 +5,43 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.VPCCidrBlock
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
+    /// AWS::EC2::VPCCidrBlock
+    /// The AWS::EC2::VPCCidrBlock resource associates a single Amazon-provided IPv6 CIDR block or a single
+    /// user-specified IPv4 CIDR block with a Virtual Private Cloud (VPC).
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
     /// </summary>
     public class VPCCidrBlockResource : ResourceBase
     {
         public class VPCCidrBlockProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
+            /// AmazonProvidedIpv6CidrBlock
+            /// Whether to request an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You
+            /// can't specify the range of IPv6 addresses or the size of the CIDR block.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
             /// </summary>
 			public Union<bool, IntrinsicFunction> AmazonProvidedIpv6CidrBlock { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
+            /// CidrBlock
+            /// An IPv4 CIDR block to associate with the VPC.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
+            /// VpcId
+            /// The ID of the VPC to associate the Amazon-provided IPv6 CIDR block with.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

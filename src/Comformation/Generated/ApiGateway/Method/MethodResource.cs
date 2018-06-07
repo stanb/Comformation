@@ -5,69 +5,141 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Method
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
+    /// AWS::ApiGateway::Method
+    /// The AWS::ApiGateway::Method resource creates Amazon API Gateway (API Gateway) methods that define the
+    /// parameters and body that clients must send in their requests.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
     /// </summary>
     public class MethodResource : ResourceBase
     {
         public class MethodProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired
+            /// ApiKeyRequired
+            /// Indicates whether the method requires clients to submit a valid API key.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired
             /// </summary>
 			public Union<bool, IntrinsicFunction> ApiKeyRequired { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype
+            /// AuthorizationType
+            /// The method's authorization type.
+            /// Required: Yes. If you specify the AuthorizerId property, specify CUSTOM for this property.
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthorizationType { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid
+            /// AuthorizerId
+            /// The identifier of the authorizer to use on this method. If you specify this property, specify CUSTOM
+            /// for the AuthorizationType property.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthorizerId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod
+            /// HttpMethod
+            /// The HTTP method that clients use to call this method.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod
             /// </summary>
 			public Union<string, IntrinsicFunction> HttpMethod { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration
+            /// Integration
+            /// The backend system that the method calls when it receives a request.
+            /// Required: No
+            /// Type: Amazon API Gateway Method Integration
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration
             /// </summary>
 			public Union<Integration, IntrinsicFunction> Integration { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses
+            /// MethodResponses
+            /// The responses that can be sent to the client who calls the method.
+            /// Required: No
+            /// Type: List of Amazon API Gateway Method MethodResponse property types.
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses
             /// </summary>
 			public Union<List<MethodResponse>, IntrinsicFunction> MethodResponses { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-operationname
+            /// OperationName
+            /// A friendly operation name for the method. For example, you can assign the OperationName of ListPets
+            /// for the GET /pets method.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-operationname
             /// </summary>
 			public Union<string, IntrinsicFunction> OperationName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels
+            /// RequestModels
+            /// The resources that are used for the response's content type. Specify response models as key-value
+            /// pairs (string-to-string mapping), with a content type as the key and a Model resource name as the
+            /// value.
+            /// Required: No
+            /// Type: Mapping of key-value pairs
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> RequestModels { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters
+            /// RequestParameters
+            /// The request parameters that API Gateway accepts. Specify request parameters as key-value pairs
+            /// (string-to-Boolean mapping), with a source as the key and a Boolean as the value. The Boolean
+            /// specifies whether a parameter is required. A source must match the format method. request. location.
+            /// name, where the location is querystring, path, or header, and name is a valid, unique parameter
+            /// name.
+            /// Required: No
+            /// Type: Mapping of key-value pairs
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters
             /// </summary>
 			public Union<Dictionary<string, bool>, IntrinsicFunction> RequestParameters { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestvalidatorid
+            /// RequestValidatorId
+            /// The ID of the associated request validator.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestvalidatorid
             /// </summary>
 			public Union<string, IntrinsicFunction> RequestValidatorId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid
+            /// ResourceId
+            /// The ID of an API Gateway resource. For root resource methods, specify the RestApi root resource ID,
+            /// such as { "Fn::GetAtt": ["MyRestApi", "RootResourceId"] }.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid
+            /// RestApiId
+            /// The ID of the RestApi resource in which API Gateway creates the method.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 

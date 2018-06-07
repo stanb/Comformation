@@ -5,29 +5,54 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.RequestValidator
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
+    /// AWS::ApiGateway::RequestValidator
+    /// The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your
+    /// API Gateway API. For more information, see Enable Basic Request Validation for an API in API Gateway in the
+    /// API Gateway Developer Guide.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
     /// </summary>
     public class RequestValidatorResource : ResourceBase
     {
         public class RequestValidatorProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
+            /// Name
+            /// The name of this request validator.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
+            /// RestApiId
+            /// The identifier of the targeted API entity.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
+            /// ValidateRequestBody
+            /// Indicates whether to validate the request body according to the configured schema for the targeted
+            /// API and method.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
             /// </summary>
 			public Union<bool, IntrinsicFunction> ValidateRequestBody { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
+            /// ValidateRequestParameters
+            /// Indicates whether to validate request parameters.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
             /// </summary>
 			public Union<bool, IntrinsicFunction> ValidateRequestParameters { get; set; }
 

@@ -5,14 +5,22 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.ClientCertificate
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html
+    /// AWS::ApiGateway::ClientCertificate
+    /// The AWS::ApiGateway::ClientCertificate resource creates a client certificate that Amazon API Gateway (API
+    /// Gateway) uses to configure client-side SSL authentication for sending requests to the integration endpoint.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html
     /// </summary>
     public class ClientCertificateResource : ResourceBase
     {
         public class ClientCertificateProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description
+            /// Description
+            /// A description of the client certificate.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 

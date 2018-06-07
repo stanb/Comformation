@@ -5,24 +5,44 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.GraphQLSchema
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
+    /// AWS::AppSync::GraphQLSchema
+    /// The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema which controls the data
+    /// model for your API. Schema files are text written in Schema Definition Language (SDL) format. You can find
+    /// information on schema authoring at Designing a GraphQL API.
+    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
     /// </summary>
     public class GraphQLSchemaResource : ResourceBase
     {
         public class GraphQLSchemaProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
+            /// Definition
+            /// The text representation of a GraphQL schema in SDL format.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
             /// </summary>
 			public Union<string, IntrinsicFunction> Definition { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
+            /// DefinitionS3Location
+            /// A location of a GraphQL schema file on an S3 bucket if you wish to provision with the schema living
+            /// in S3 rather than embedded in your CloudFormation template.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
             /// </summary>
 			public Union<string, IntrinsicFunction> DefinitionS3Location { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
+            /// ApiId
+            /// The AWS AppSync GraphQL API identifier to which you will apply this schema.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
