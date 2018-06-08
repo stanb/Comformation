@@ -9,7 +9,7 @@ namespace Comformation.Logs.LogGroup
     /// The AWS::Logs::LogGroup resource creates an Amazon CloudWatch Logs log group that defines common properties
     /// for log streams, such as their retention and access control rules. Each log stream must belong to one log
     /// group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html
     /// </summary>
     public class LogGroupResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.Logs.LogGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-loggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
@@ -37,7 +36,6 @@ namespace Comformation.Logs.LogGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-retentionindays
             /// </summary>
 			public Union<int, IntrinsicFunction> RetentionInDays { get; set; }
 

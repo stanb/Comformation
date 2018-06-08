@@ -8,7 +8,7 @@ namespace Comformation.GuardDuty.ThreatIntelSet
     /// AWS::GuardDuty::ThreatIntelSet
     /// The AWS::GuardDuty::ThreatIntelSet resource creates a ThreatIntelSet. A ThreatIntelSet consists of known
     /// malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html
     /// </summary>
     public class ThreatIntelSetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.GuardDuty.ThreatIntelSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-format
             /// </summary>
 			public Union<string, IntrinsicFunction> Format { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.GuardDuty.ThreatIntelSet
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-activate
             /// </summary>
 			public Union<bool, IntrinsicFunction> Activate { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.GuardDuty.ThreatIntelSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-detectorid
             /// </summary>
 			public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.GuardDuty.ThreatIntelSet
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.GuardDuty.ThreatIntelSet
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-location
             /// </summary>
 			public Union<string, IntrinsicFunction> Location { get; set; }
 

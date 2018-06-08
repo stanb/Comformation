@@ -9,7 +9,7 @@ namespace Comformation.RDS.DBCluster
     /// The AWS::RDS::DBCluster resource creates a cluster, such as an Aurora for Amazon RDS (Amazon Aurora) DB
     /// cluster. Amazon Aurora is a fully managed, MySQL-compatible, relational database engine. For more information,
     /// see Aurora on Amazon RDS in the Amazon Relational Database Service User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-availabilityzones
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.RDS.DBCluster
             /// Type: Integer
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
             /// in the Amazon Relational Database Service API Reference.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backuprententionperiod
             /// </summary>
 			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusteridentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusterparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
 
@@ -70,7 +66,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
@@ -82,7 +77,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-databasename
             /// </summary>
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
@@ -94,7 +88,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine
             /// </summary>
 			public Union<string, IntrinsicFunction> Engine { get; set; }
 
@@ -104,7 +97,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
@@ -120,7 +112,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -131,7 +122,6 @@ namespace Comformation.RDS.DBCluster
             /// property. In that case, do not specify this property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
 
@@ -142,7 +132,6 @@ namespace Comformation.RDS.DBCluster
             /// property. In that case, do not specify this property.
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusername
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
@@ -152,7 +141,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -165,7 +153,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
@@ -178,7 +165,6 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
             /// in the Amazon Relational Database Service API Reference.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -189,7 +175,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationSourceIdentifier { get; set; }
 
@@ -199,7 +184,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-snapshotidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
@@ -211,7 +195,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
             /// Type: Boolean
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
             /// </summary>
 			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
@@ -221,7 +204,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: A list of resource tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -231,7 +213,6 @@ namespace Comformation.RDS.DBCluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-vpcsecuritygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
 

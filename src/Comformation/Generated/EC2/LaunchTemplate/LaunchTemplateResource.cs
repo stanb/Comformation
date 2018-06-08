@@ -9,7 +9,7 @@ namespace Comformation.EC2.LaunchTemplate
     /// The AWS::EC2::LaunchTemplate resource creates a launch template for an Amazon EC2 instance. A launch template
     /// contains the parameters to launch an instance. For more information, see CreateLaunchTemplate in the Amazon
     /// EC2 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html
     /// </summary>
     public class LaunchTemplateResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.EC2.LaunchTemplate
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename
             /// </summary>
 			public Union<string, IntrinsicFunction> LaunchTemplateName { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EC2.LaunchTemplate
             /// Required: No
             /// Type: Amazon EC2 LaunchTemplate LaunchTemplateData
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
             /// </summary>
 			public Union<LaunchTemplateData, IntrinsicFunction> LaunchTemplateData { get; set; }
 

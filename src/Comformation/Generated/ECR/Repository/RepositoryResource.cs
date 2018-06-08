@@ -9,7 +9,7 @@ namespace Comformation.ECR.Repository
     /// The AWS::ECR::Repository resource creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
     /// users can push and pull Docker images. For more information, see Amazon ECR Repositories in the Amazon Elastic
     /// Container Registry User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html
     /// </summary>
     public class RepositoryResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ECR.Repository
             /// Required: No
             /// Type: Amazon ECR Repository LifecyclePolicy
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy
             /// </summary>
 			public Union<LifecyclePolicy, IntrinsicFunction> LifecyclePolicy { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.ECR.Repository
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname
             /// </summary>
 			public Union<string, IntrinsicFunction> RepositoryName { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.ECR.Repository
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RepositoryPolicyText { get; set; }
 

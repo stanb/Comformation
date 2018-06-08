@@ -7,7 +7,7 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
     /// <summary>
     /// AWS::EC2::VPCDHCPOptionsAssociation
     /// Associates a set of DHCP options (that you've previously created) with the specified VPC.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
     /// </summary>
     public class VPCDHCPOptionsAssociationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid
             /// </summary>
 			public Union<string, IntrinsicFunction> DhcpOptionsId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

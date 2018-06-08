@@ -8,7 +8,7 @@ namespace Comformation.IAM.InstanceProfile
     /// AWS::IAM::InstanceProfile
     /// The AWS::IAM::InstanceProfile resource creates an AWS Identity and Access Management (IAM) instance profile
     /// that can be used with IAM roles for EC2 instances.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
     /// </summary>
     public class InstanceProfileResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.IAM.InstanceProfile
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceProfileName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.IAM.InstanceProfile
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.IAM.InstanceProfile
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
 

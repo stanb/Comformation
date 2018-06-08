@@ -10,7 +10,7 @@ namespace Comformation.DirectoryService.SimpleAD
     /// AD) in AWS so that your directory users and groups can access the AWS Management Console and AWS applications
     /// using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory. For more
     /// information, see What Is AWS Directory Service? in the AWS Directory Service Administration Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
     /// </summary>
     public class SimpleADResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias
             /// </summary>
 			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
             /// </summary>
 			public Union<string, IntrinsicFunction> Password { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
             /// </summary>
 			public Union<string, IntrinsicFunction> ShortName { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size
             /// </summary>
 			public Union<string, IntrinsicFunction> Size { get; set; }
 
@@ -97,7 +90,6 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Required: Yes
             /// Type: AWS Directory Service SimpleAD VpcSettings
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings
             /// </summary>
 			public Union<VpcSettings, IntrinsicFunction> VpcSettings { get; set; }
 

@@ -10,7 +10,7 @@ namespace Comformation.CertificateManager.Certificate
     /// you can use with AWS services to enable secure connections. For example, you can deploy an ACM certificate to
     /// an Elastic Load Balancing load balancer to enable HTTPS support. For more information, see the
     /// RequestCertificate action in the AWS Certificate Manager API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
     {
@@ -27,7 +27,6 @@ namespace Comformation.CertificateManager.Certificate
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
@@ -39,7 +38,6 @@ namespace Comformation.CertificateManager.Certificate
             /// Required: No
             /// Type: List of AWS Certificate Manager Certificate DomainValidationOption
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions
             /// </summary>
 			public Union<List<DomainValidationOption>, IntrinsicFunction> DomainValidationOptions { get; set; }
 
@@ -51,7 +49,6 @@ namespace Comformation.CertificateManager.Certificate
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubjectAlternativeNames { get; set; }
 
@@ -61,12 +58,11 @@ namespace Comformation.CertificateManager.Certificate
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
+            /// ValidationMethod
             /// </summary>
 			public Union<string, IntrinsicFunction> ValidationMethod { get; set; }
 

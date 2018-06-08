@@ -9,7 +9,7 @@ namespace Comformation.CodePipeline.Pipeline
     /// The AWS::CodePipeline::Pipeline resource creates an AWS CodePipeline pipeline that describes how software
     /// changes go through a release process. For more information, see What Is AWS CodePipeline? in the AWS
     /// CodePipeline User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.CodePipeline.Pipeline
             /// Required: Yes
             /// Type: AWS CodePipeline Pipeline ArtifactStore
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore
             /// </summary>
 			public Union<ArtifactStore, IntrinsicFunction> ArtifactStore { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.CodePipeline.Pipeline
             /// Required: No
             /// Type: List of AWS CodePipeline Pipeline DisableInboundStageTransitions
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions
             /// </summary>
 			public Union<List<StageTransition>, IntrinsicFunction> DisableInboundStageTransitions { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.CodePipeline.Pipeline
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.CodePipeline.Pipeline
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate
             /// </summary>
 			public Union<bool, IntrinsicFunction> RestartExecutionOnUpdate { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.CodePipeline.Pipeline
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.CodePipeline.Pipeline
             /// Required: Yes
             /// Type: AWS CodePipeline Pipeline Stages
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages
             /// </summary>
 			public Union<List<StageDeclaration>, IntrinsicFunction> Stages { get; set; }
 

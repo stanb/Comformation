@@ -7,7 +7,7 @@ namespace Comformation.Cognito.IdentityPool
     /// <summary>
     /// AWS::Cognito::IdentityPool
     /// The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
     /// </summary>
     public class IdentityPoolResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: Amazon Cognito IdentityPool PushSync
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
             /// </summary>
 			public Union<PushSync, IntrinsicFunction> PushSync { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: An array of Amazon Cognito IdentityPool CognitoIdentityProvider.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
             /// </summary>
 			public Union<List<CognitoIdentityProvider>, IntrinsicFunction> CognitoIdentityProviders { get; set; }
 
@@ -39,7 +37,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: String to String map
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CognitoEvents { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Update requires: No interruption
             /// MinLength: 1
             /// MaxLength: 100
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername
             /// </summary>
 			public Union<string, IntrinsicFunction> DeveloperProviderName { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: Amazon Cognito IdentityPool CognitoStreams
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams
             /// </summary>
 			public Union<CognitoStreams, IntrinsicFunction> CognitoStreams { get; set; }
 
@@ -75,7 +70,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Update requires: No interruption
             /// MinLength: 1
             /// MaxLength: 128
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
             /// </summary>
 			public Union<string, IntrinsicFunction> IdentityPoolName { get; set; }
 
@@ -85,7 +79,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowUnauthenticatedIdentities { get; set; }
 
@@ -95,7 +88,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: String to String map
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SupportedLoginProviders { get; set; }
 
@@ -105,7 +97,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SamlProviderARNs { get; set; }
 
@@ -115,7 +106,6 @@ namespace Comformation.Cognito.IdentityPool
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> OpenIdConnectProviderARNs { get; set; }
 

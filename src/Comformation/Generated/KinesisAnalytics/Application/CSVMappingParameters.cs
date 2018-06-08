@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html
+    /// Amazon Kinesis Data Analytics Application CSVMappingParameters
+    /// The CSVMappingParameters property type specifies additional mapping information when the record format uses
+    /// delimiters, such as CSV.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html
     /// </summary>
     public class CSVMappingParameters
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordrowdelimiter
+        /// RecordRowDelimiter
+        /// The row delimiter. For example, in a CSV format, "\n" is the typical row delimiter.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordRowDelimiter")]
         public Union<string, IntrinsicFunction> RecordRowDelimiter { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordcolumndelimiter
+        /// RecordColumnDelimiter
+        /// The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumnDelimiter")]
         public Union<string, IntrinsicFunction> RecordColumnDelimiter { get; set; }

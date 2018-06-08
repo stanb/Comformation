@@ -9,7 +9,7 @@ namespace Comformation.SES.ConfigurationSet
     /// The AWS::SES::ConfigurationSet resource let syou create groups of rules that you can apply to the emails you
     /// send using Amazon SES. For more information about using configuration sets, see Using Amazon SES Configuration
     /// Sets in the Amazon Simple Email Service Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html
     /// </summary>
     public class ConfigurationSetResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.SES.ConfigurationSet
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

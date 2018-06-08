@@ -8,7 +8,7 @@ namespace Comformation.ApiGateway.DomainName
     /// AWS::ApiGateway::DomainName
     /// The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in Amazon API Gateway
     /// (API Gateway).
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html
     /// </summary>
     public class DomainNameResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.ApiGateway.DomainName
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateArn { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.ApiGateway.DomainName
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.ApiGateway.DomainName
             /// Required: No
             /// Type: API Gateway DomainName EndpointConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration
             /// </summary>
 			public Union<EndpointConfiguration, IntrinsicFunction> EndpointConfiguration { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.ApiGateway.DomainName
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RegionalCertificateArn { get; set; }
 

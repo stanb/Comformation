@@ -9,7 +9,7 @@ namespace Comformation.Route53.RecordSet
     /// The AWS::Route53::RecordSet type can be used as a standalone resource or as an embedded property in the
     /// AWS::Route53::RecordSetGroup type. Note that some AWS::Route53::RecordSet properties are valid only when used
     /// within AWS::Route53::RecordSetGroup.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
     /// </summary>
     public class RecordSetResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: Conditional. Required if you are creating an alias resource record set.
             /// Type: AliasTarget
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-aliastarget
             /// </summary>
 			public Union<AliasTarget, IntrinsicFunction> AliasTarget { get; set; }
 
@@ -37,7 +36,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-comment
             /// </summary>
 			public Union<string, IntrinsicFunction> Comment { get; set; }
 
@@ -52,7 +50,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-failover
             /// </summary>
 			public Union<string, IntrinsicFunction> Failover { get; set; }
 
@@ -63,7 +60,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: No
             /// Type: Route 53 Record Set GeoLocation Property
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-geolocation
             /// </summary>
 			public Union<GeoLocation, IntrinsicFunction> GeoLocation { get; set; }
 
@@ -74,7 +70,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-healthcheckid
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckId { get; set; }
 
@@ -85,7 +80,6 @@ namespace Comformation.Route53.RecordSet
             /// specify both. If this record set is part of a record set group, do not specify this property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-hostedzoneid
             /// </summary>
 			public Union<string, IntrinsicFunction> HostedZoneId { get; set; }
 
@@ -102,7 +96,6 @@ namespace Comformation.Route53.RecordSet
             /// specify both. If this record set is part of a record set group, do not specify this property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-hostedzonename
             /// </summary>
 			public Union<string, IntrinsicFunction> HostedZoneName { get; set; }
 
@@ -113,7 +106,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -135,7 +127,6 @@ namespace Comformation.Route53.RecordSet
             /// both weighted and latency resource record sets that have the same values for the Name and Type
             /// elements. This property is not compatible with the GeoLocation property.
             /// To see a list of regions by service, see Regions and Endpoints in the AWS General Reference.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-region
             /// </summary>
 			public Union<string, IntrinsicFunction> Region { get; set; }
 
@@ -149,7 +140,6 @@ namespace Comformation.Route53.RecordSet
             /// property. If you are creating an alias resource record set, do not specify this property.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-resourcerecords
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ResourceRecords { get; set; }
 
@@ -162,7 +152,6 @@ namespace Comformation.Route53.RecordSet
             /// For more information, see the SetIdentifier content in the Route 53 Developer Guide.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-setidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> SetIdentifier { get; set; }
 
@@ -176,7 +165,6 @@ namespace Comformation.Route53.RecordSet
             /// property. If you are creating an alias resource record set, do not specify this property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-ttl
             /// </summary>
 			public Union<string, IntrinsicFunction> TTL { get; set; }
 
@@ -192,7 +180,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -206,7 +193,6 @@ namespace Comformation.Route53.RecordSet
             /// Required: Conditional. Required if you are creating a weighted resource record set.
             /// Type: Number. Weight expects integer values.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight
             /// </summary>
 			public Union<int, IntrinsicFunction> Weight { get; set; }
 

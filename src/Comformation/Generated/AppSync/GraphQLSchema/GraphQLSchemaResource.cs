@@ -9,7 +9,7 @@ namespace Comformation.AppSync.GraphQLSchema
     /// The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema which controls the data
     /// model for your API. Schema files are text written in Schema Definition Language (SDL) format. You can find
     /// information on schema authoring at Designing a GraphQL API.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
     /// </summary>
     public class GraphQLSchemaResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.AppSync.GraphQLSchema
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
             /// </summary>
 			public Union<string, IntrinsicFunction> Definition { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.AppSync.GraphQLSchema
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
             /// </summary>
 			public Union<string, IntrinsicFunction> DefinitionS3Location { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.AppSync.GraphQLSchema
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 

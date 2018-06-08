@@ -8,7 +8,7 @@ namespace Comformation.Redshift.ClusterSubnetGroup
     /// AWS::Redshift::ClusterSubnetGroup
     /// Creates an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing
     /// Amazon VPC when creating an Amazon Redshift subnet group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
     /// </summary>
     public class ClusterSubnetGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

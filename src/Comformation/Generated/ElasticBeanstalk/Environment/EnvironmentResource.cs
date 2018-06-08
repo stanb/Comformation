@@ -7,7 +7,7 @@ namespace Comformation.ElasticBeanstalk.Environment
     /// <summary>
     /// AWS::ElasticBeanstalk::Environment
     /// Creates or updates an AWS Elastic Beanstalk environment.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html
     /// </summary>
     public class EnvironmentResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-cnameprefix
             /// </summary>
 			public Union<string, IntrinsicFunction> CNAMEPrefix { get; set; }
 
@@ -39,7 +37,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-name
             /// </summary>
 			public Union<string, IntrinsicFunction> EnvironmentName { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: Yes. The IamInstanceProfile and ServiceRole options are required.
             /// Type: List of Elastic Beanstalk Environment OptionSetting
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-optionsettings
             /// </summary>
 			public Union<List<OptionSetting>, IntrinsicFunction> OptionSettings { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Update requires: No interruption
             /// Example: "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/PHP 5. 4 running on 64bit
             /// Amazon Linux/2. 4. 4"
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-platformarn
             /// </summary>
 			public Union<string, IntrinsicFunction> PlatformArn { get; set; }
 
@@ -93,7 +87,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-solutionstackname
             /// </summary>
 			public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
 
@@ -104,7 +97,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: You can update tags only if you update another property that requires that the
             /// environment be replaced, such as the ApplicationName property.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -115,7 +107,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-templatename
             /// </summary>
 			public Union<string, IntrinsicFunction> TemplateName { get; set; }
 
@@ -127,7 +118,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: Elastic Beanstalk Environment Tier Property Type
             /// Update requires: See Elastic Beanstalk Environment Tier Property Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-tier
             /// </summary>
 			public Union<Tier, IntrinsicFunction> Tier { get; set; }
 
@@ -137,7 +127,6 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-versionlabel
             /// </summary>
 			public Union<string, IntrinsicFunction> VersionLabel { get; set; }
 

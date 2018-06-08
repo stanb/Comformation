@@ -9,7 +9,7 @@ namespace Comformation.CloudWatch.Dashboard
     /// The AWS::CloudWatch::Dashboard resource creates an Amazon CloudWatch dashboard. A dashboard is a customizable
     /// home page in the CloudWatch console that you can use to monitor your AWS resources in a single view. Each
     /// metric, graph, alarm, or text block on a dashboard is called a widget.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dashboard.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dashboard.html
     /// </summary>
     public class DashboardResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.CloudWatch.Dashboard
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dashboard.html#cfn-cloudwatch-dashboard-name
             /// </summary>
 			public Union<string, IntrinsicFunction> DashboardName { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.CloudWatch.Dashboard
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dashboard.html#cfn-cloudwatch-dashboard-body
             /// </summary>
 			public Union<string, IntrinsicFunction> DashboardBody { get; set; }
 

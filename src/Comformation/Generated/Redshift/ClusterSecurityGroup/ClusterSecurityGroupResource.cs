@@ -8,7 +8,7 @@ namespace Comformation.Redshift.ClusterSecurityGroup
     /// AWS::Redshift::ClusterSecurityGroup
     /// Creates an Amazon Redshift security group. You use security groups to control access to Amazon Redshift
     /// clusters that are not in a VPC.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html
     /// </summary>
     public class ClusterSecurityGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Redshift.ClusterSecurityGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Redshift.ClusterSecurityGroup
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

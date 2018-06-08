@@ -8,7 +8,7 @@ namespace Comformation.EC2.NetworkAclEntry
     /// AWS::EC2::NetworkAclEntry
     /// Creates an entry (i. e. , a rule) in a network ACL with a rule number you specify. Each network ACL has a set
     /// of numbered ingress rules and a separate set of numbered egress rules.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html
     /// </summary>
     public class NetworkAclEntryResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Conditional. You must specify the CidrBlock or Ipv6CidrBlock property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress
             /// </summary>
 			public Union<bool, IntrinsicFunction> Egress { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Conditional required if specifying 1 (ICMP) for the protocol parameter.
             /// Type: EC2 NetworkAclEntry Icmp
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp
             /// </summary>
 			public Union<Icmp, IntrinsicFunction> Icmp { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Conditional. You must specify the CidrBlock or Ipv6CidrBlock property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> Ipv6CidrBlock { get; set; }
 
@@ -61,7 +57,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkAclId { get; set; }
 
@@ -71,7 +66,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Conditional Required if specifying 6 (TCP) or 17 (UDP) for the protocol parameter.
             /// Type: EC2 NetworkAclEntry PortRange
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-portrange
             /// </summary>
 			public Union<PortRange, IntrinsicFunction> PortRange { get; set; }
 
@@ -83,7 +77,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Yes
             /// Type: Number
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol
             /// </summary>
 			public Union<int, IntrinsicFunction> Protocol { get; set; }
 
@@ -93,7 +86,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleAction { get; set; }
 
@@ -106,7 +98,6 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Required: Yes
             /// Type: Number
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber
             /// </summary>
 			public Union<int, IntrinsicFunction> RuleNumber { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
     /// AWS::ElasticLoadBalancingV2::ListenerCertificate
     /// The AWS::ElasticLoadBalancingV2::ListenerCertificate resource specifies certificates for an Elastic Load
     /// Balancing secure listener. For more information, see Getting Started in the Elastic Load Balancing User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html
     /// </summary>
     public class ListenerCertificateResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
             /// Required: Yes
             /// Type: List of Elastic Load Balancing ListenerCertificate Certificate
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates
             /// </summary>
 			public Union<List<Certificate>, IntrinsicFunction> Certificates { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn
             /// </summary>
 			public Union<string, IntrinsicFunction> ListenerArn { get; set; }
 

@@ -11,7 +11,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
     /// their existing credentials. At this time, AWS CloudFormation can't create a Standard Edition Microsoft Active
     /// Directory. For more information, see What Is AWS Directory Service? in the AWS Directory Service
     /// Administration Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
     /// </summary>
     public class MicrosoftADResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
             /// </summary>
 			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
             /// </summary>
 			public Union<string, IntrinsicFunction> Edition { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -70,7 +66,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
             /// </summary>
 			public Union<string, IntrinsicFunction> Password { get; set; }
 
@@ -82,7 +77,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
             /// </summary>
 			public Union<string, IntrinsicFunction> ShortName { get; set; }
 
@@ -92,7 +86,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Required: Yes
             /// Type: AWS Directory Service MicrosoftAD VpcSettings
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
             /// </summary>
 			public Union<VpcSettings, IntrinsicFunction> VpcSettings { get; set; }
 

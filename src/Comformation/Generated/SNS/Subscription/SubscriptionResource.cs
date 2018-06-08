@@ -9,7 +9,7 @@ namespace Comformation.SNS.Subscription
     /// The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon
     /// SNS) topic. The owner of the endpoint must confirm the subscription before Amazon SNS creates the
     /// subscription.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
     /// </summary>
     public class SubscriptionResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.SNS.Subscription
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
             /// </summary>
 			public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.SNS.Subscription
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.SNS.Subscription
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-topicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> TopicArn { get; set; }
 

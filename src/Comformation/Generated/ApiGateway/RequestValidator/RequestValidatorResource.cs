@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.RequestValidator
     /// The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your
     /// API Gateway API. For more information, see Enable Basic Request Validation for an API in API Gateway in the
     /// API Gateway Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
     /// </summary>
     public class RequestValidatorResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
             /// </summary>
 			public Union<bool, IntrinsicFunction> ValidateRequestBody { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
             /// </summary>
 			public Union<bool, IntrinsicFunction> ValidateRequestParameters { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.DynamoDB.Table
     /// AWS::DynamoDB::Table
     /// The AWS::DynamoDB::Table resource creates a DynamoDB table. For more information, see CreateTable in the
     /// Amazon DynamoDB API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html
     /// </summary>
     public class TableResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: Yes
             /// Type: List of DynamoDB Table AttributeDefinition
             /// Update requires: Some interruptions. Replacement if you edit an existing AttributeDefinition.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef
             /// </summary>
 			public Union<List<AttributeDefinition>, IntrinsicFunction> AttributeDefinitions { get; set; }
 
@@ -43,7 +42,6 @@ namespace Comformation.DynamoDB.Table
             /// table without interruption. You can delete or add one global secondary index without interruption.
             /// If you do both in the same update (for example, by changing the index's logical ID), the update
             /// fails.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi
             /// </summary>
 			public Union<List<GlobalSecondaryIndex>, IntrinsicFunction> GlobalSecondaryIndexes { get; set; }
 
@@ -54,7 +52,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: Yes
             /// Type: List of DynamoDB Table KeySchema
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema
             /// </summary>
 			public Union<List<KeySchema>, IntrinsicFunction> KeySchema { get; set; }
 
@@ -65,7 +62,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: List of DynamoDB Table LocalSecondaryIndex
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi
             /// </summary>
 			public Union<List<LocalSecondaryIndex>, IntrinsicFunction> LocalSecondaryIndexes { get; set; }
 
@@ -75,7 +71,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: DynamoDB Table PointInTimeRecoverySpecification
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification
             /// </summary>
 			public Union<PointInTimeRecoverySpecification, IntrinsicFunction> PointInTimeRecoverySpecification { get; set; }
 
@@ -87,7 +82,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: Yes
             /// Type: DynamoDB Table ProvisionedThroughput
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput
             /// </summary>
 			public Union<ProvisionedThroughput, IntrinsicFunction> ProvisionedThroughput { get; set; }
 
@@ -97,7 +91,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: DynamoDB SSESpecification
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification
             /// </summary>
 			public Union<SSESpecification, IntrinsicFunction> SSESpecification { get; set; }
 
@@ -107,7 +100,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: DynamoDB Table StreamSpecification
             /// Update requires: No interruption to the table. However, the stream is replaced.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification
             /// </summary>
 			public Union<StreamSpecification, IntrinsicFunction> StreamSpecification { get; set; }
 
@@ -122,7 +114,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename
             /// </summary>
 			public Union<string, IntrinsicFunction> TableName { get; set; }
 
@@ -133,7 +124,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -143,7 +133,6 @@ namespace Comformation.DynamoDB.Table
             /// Required: No
             /// Type: DynamoDB Table TimeToLiveSpecification
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification
             /// </summary>
 			public Union<TimeToLiveSpecification, IntrinsicFunction> TimeToLiveSpecification { get; set; }
 

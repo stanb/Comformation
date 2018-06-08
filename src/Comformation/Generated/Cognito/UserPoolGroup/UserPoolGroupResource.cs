@@ -7,7 +7,7 @@ namespace Comformation.Cognito.UserPoolGroup
     /// <summary>
     /// AWS::Cognito::UserPoolGroup
     /// The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
     /// </summary>
     public class UserPoolGroupResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-groupname
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Type: String
             /// Update requires: No interruption
             /// MaxLength: 2048
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-userpoolid
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Required: No
             /// Type: Number
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
             /// </summary>
 			public Union<double, IntrinsicFunction> Precedence { get; set; }
 
@@ -69,7 +65,6 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 

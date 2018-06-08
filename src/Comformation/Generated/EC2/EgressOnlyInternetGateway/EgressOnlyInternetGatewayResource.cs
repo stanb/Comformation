@@ -10,7 +10,7 @@ namespace Comformation.EC2.EgressOnlyInternetGateway
     /// IPv6 only). An egress-only Internet gateway enables outbound communication over IPv6 from instances in your
     /// VPC to the Internet. It also prevents hosts outside of your VPC from initiating an IPv6 connection with your
     /// instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html
     /// </summary>
     public class EgressOnlyInternetGatewayResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EC2.EgressOnlyInternetGateway
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html#cfn-ec2-egressonlyinternetgateway-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

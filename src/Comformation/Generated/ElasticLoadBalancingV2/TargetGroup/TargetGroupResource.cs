@@ -9,7 +9,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
     /// The AWS::ElasticLoadBalancingV2::TargetGroup resource creates an Elastic Load Balancing target group that
     /// routes requests to one or more registered targets, such as EC2 instances. For more information, see Getting
     /// Started in the Elastic Load Balancing User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
     /// </summary>
     public class TargetGroupResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthCheckIntervalSeconds { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckpath
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckPath { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckport
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckPort { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckprotocol
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckProtocol { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthchecktimeoutseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthCheckTimeoutSeconds { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthyThresholdCount { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: Elastic Load Balancing TargetGroup Matcher
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-matcher
             /// </summary>
 			public Union<Matcher, IntrinsicFunction> Matcher { get; set; }
 
@@ -100,7 +93,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -110,7 +102,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: Yes
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -120,7 +111,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
 
@@ -130,7 +120,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -140,7 +129,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: List of Elastic Load Balancing TargetGroup TargetGroupAttributes
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targetattributes
             /// </summary>
 			public Union<List<TargetGroupAttribute>, IntrinsicFunction> TargetGroupAttributes { get; set; }
 
@@ -151,7 +139,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetType { get; set; }
 
@@ -161,7 +148,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: List of Elastic Load Balancing TargetGroup TargetDescription
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targets
             /// </summary>
 			public Union<List<TargetDescription>, IntrinsicFunction> Targets { get; set; }
 
@@ -172,7 +158,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-unhealthythresholdcount
             /// </summary>
 			public Union<int, IntrinsicFunction> UnhealthyThresholdCount { get; set; }
 
@@ -182,7 +167,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

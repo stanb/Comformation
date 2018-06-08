@@ -9,7 +9,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
     /// The AWS::SES::ConfigurationSetEventDestination resource specifies a configuration set event destination for
     /// Amazon SES. For more information, see CreateConfigurationSetEventDestination in the Amazon Simple Email
     /// Service API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html
     /// </summary>
     public class ConfigurationSetEventDestinationResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.SES.ConfigurationSetEventDestination
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname
             /// </summary>
 			public Union<string, IntrinsicFunction> ConfigurationSetName { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.SES.ConfigurationSetEventDestination
             /// Required: Yes
             /// Type: Amazon SES ConfigurationSetEventDestination EventDestination
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination
             /// </summary>
 			public Union<EventDestination, IntrinsicFunction> EventDestination { get; set; }
 

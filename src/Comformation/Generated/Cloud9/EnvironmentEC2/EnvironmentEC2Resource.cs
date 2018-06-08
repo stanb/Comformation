@@ -8,7 +8,7 @@ namespace Comformation.Cloud9.EnvironmentEC2
     /// AWS::Cloud9::EnvironmentEC2
     /// The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9. For more
     /// information, see Creating an Environment in the AWS Cloud9 User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html
     /// </summary>
     public class EnvironmentEC2Resource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: No
             /// Type: List of AWS Cloud9 EnvironmentEC2 Repository
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-repositories
             /// </summary>
 			public Union<List<Repository>, IntrinsicFunction> Repositories { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-ownerarn
             /// </summary>
 			public Union<string, IntrinsicFunction> OwnerArn { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
             /// </summary>
 			public Union<int, IntrinsicFunction> AutomaticStopTimeMinutes { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -72,7 +67,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
@@ -82,7 +76,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

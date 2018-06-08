@@ -8,7 +8,7 @@ namespace Comformation.Batch.JobDefinition
     /// AWS::Batch::JobDefinition
     /// The AWS::Batch::JobDefinition resource specifies the parameters for an AWS Batch job definition. For more
     /// information, see Job Definitions in the AWS Batch User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html
     /// </summary>
     public class JobDefinitionResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Batch.JobDefinition
             /// Required: yes
             /// Type: String
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -31,12 +30,11 @@ namespace Comformation.Batch.JobDefinition
             /// Required: yes
             /// Type: JSON object
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-parameters
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-timeout
+            /// Timeout
             /// </summary>
 			public Union<Timeout, IntrinsicFunction> Timeout { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.Batch.JobDefinition
             /// Required: yes
             /// Type: AWS Batch JobDefinition ContainerProperties
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-containerproperties
             /// </summary>
 			public Union<ContainerProperties, IntrinsicFunction> ContainerProperties { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.Batch.JobDefinition
             /// Required: no
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-jobdefinitionname
             /// </summary>
 			public Union<string, IntrinsicFunction> JobDefinitionName { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.Batch.JobDefinition
             /// Required: no
             /// Type: AWS Batch JobDefinition RetryStrategy
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-retrystrategy
             /// </summary>
 			public Union<RetryStrategy, IntrinsicFunction> RetryStrategy { get; set; }
 

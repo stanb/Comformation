@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
     /// AWS::ServiceCatalog::CloudFormationProduct
     /// Creates the specified product for AWS Service Catalog. For more information, see CreateProduct in the AWS
     /// Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
     /// </summary>
     public class CloudFormationProductResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
             /// </summary>
 			public Union<string, IntrinsicFunction> Owner { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> SupportDescription { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
             /// </summary>
 			public Union<string, IntrinsicFunction> Distributor { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
             /// </summary>
 			public Union<string, IntrinsicFunction> SupportEmail { get; set; }
 
@@ -70,7 +65,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -80,7 +74,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
             /// </summary>
 			public Union<string, IntrinsicFunction> SupportUrl { get; set; }
 
@@ -90,7 +83,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: No
             /// Type: List of Resource Tag property types
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -100,7 +92,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -111,7 +102,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Type: List of AWS Service Catalog CloudFormationProduct ProvisioningArtifactProperties property
             /// types
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
             /// </summary>
 			public Union<List<ProvisioningArtifactProperties>, IntrinsicFunction> ProvisioningArtifactParameters { get; set; }
 

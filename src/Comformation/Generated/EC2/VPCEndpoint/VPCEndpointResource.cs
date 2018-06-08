@@ -9,7 +9,7 @@ namespace Comformation.EC2.VPCEndpoint
     /// The AWS::EC2::VPCEndpoint resource creates a VPC endpoint that you can use to establish a private connection
     /// between your VPC and another AWS service without requiring access over the Internet, a VPN connection, or AWS
     /// Direct Connect.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html
     /// </summary>
     public class VPCEndpointResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.EC2.VPCEndpoint
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-policydocument
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EC2.VPCEndpoint
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-routetableids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> RouteTableIds { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.EC2.VPCEndpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceName { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.EC2.VPCEndpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

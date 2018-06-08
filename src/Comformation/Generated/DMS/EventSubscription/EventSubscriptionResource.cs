@@ -9,7 +9,7 @@ namespace Comformation.DMS.EventSubscription
     /// Use the AWS::DMS::EventSubscription resource to get notifications for AWS Database Migration Service events
     /// through the Amazon Simple Notification Service. For more information, see Using AWS DMS Event Notification in
     /// the AWS Database Migration Service User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html
     /// </summary>
     public class EventSubscriptionResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.DMS.EventSubscription
             /// this property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-sourcetype
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceType { get; set; }
 
@@ -38,7 +37,6 @@ namespace Comformation.DMS.EventSubscription
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-eventcategories
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> EventCategories { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.DMS.EventSubscription
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-enabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.DMS.EventSubscription
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-subscriptionname
             /// </summary>
 			public Union<string, IntrinsicFunction> SubscriptionName { get; set; }
 
@@ -70,7 +66,6 @@ namespace Comformation.DMS.EventSubscription
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-snstopicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> SnsTopicArn { get; set; }
 
@@ -83,7 +78,6 @@ namespace Comformation.DMS.EventSubscription
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-sourceids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SourceIds { get; set; }
 
@@ -93,7 +87,6 @@ namespace Comformation.DMS.EventSubscription
             /// Required: No
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

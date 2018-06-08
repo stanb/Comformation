@@ -9,7 +9,7 @@ namespace Comformation.ECS.Cluster
     /// The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS) cluster. This resource
     /// has no properties; use the Amazon ECS container agent to connect to the cluster. For more information, see
     /// Amazon ECS Container Agent in the Amazon Elastic Container Service Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.ECS.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 

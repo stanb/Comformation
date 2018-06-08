@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html
+    /// Amazon S3 Bucket DataExport
+    /// The DataExport property type specifies how data related to the storage class analysis should be exported for
+    /// an Amazon S3 bucket.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html
     /// </summary>
     public class DataExport
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-destination
+        /// Destination
+        /// Information about where to publish the analytics results.
+        /// Required: Yes
+        /// Type: Amazon S3 Bucket Destination
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destination")]
         public Union<Destination, IntrinsicFunction> Destination { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-outputschemaversion
+        /// OutputSchemaVersion
+        /// The version of the output schema to use when exporting data. Must be V_1.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputSchemaVersion")]
         public Union<string, IntrinsicFunction> OutputSchemaVersion { get; set; }

@@ -7,7 +7,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer
     /// The AWS::ElasticLoadBalancing::LoadBalancer type creates a LoadBalancer.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: Elastic Load Balancing AccessLoggingPolicy
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy
             /// </summary>
 			public Union<AccessLoggingPolicy, IntrinsicFunction> AccessLoggingPolicy { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: A list of AppCookieStickinessPolicy objects.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy
             /// </summary>
 			public Union<List<AppCookieStickinessPolicy>, IntrinsicFunction> AppCookieStickinessPolicy { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of String values
             /// Update requires: Replacement if you did not have an Availability Zone specified and you are adding
             /// one or if you are removing all Availability Zones. Otherwise, update requires no interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: Elastic Load Balancing ConnectionDrainingPolicy
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy
             /// </summary>
 			public Union<ConnectionDrainingPolicy, IntrinsicFunction> ConnectionDrainingPolicy { get; set; }
 
@@ -64,7 +60,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: Elastic Load Balancing ConnectionSettings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings
             /// </summary>
 			public Union<ConnectionSettings, IntrinsicFunction> ConnectionSettings { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone
             /// </summary>
 			public Union<bool, IntrinsicFunction> CrossZone { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: ElasticLoadBalancing LoadBalancer HealthCheck.
             /// Update requires: Replacement if you did not have a health check specified and you are adding one or
             /// if you are removing a health check. Otherwise, update requires no interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck
             /// </summary>
 			public Union<HealthCheck, IntrinsicFunction> HealthCheck { get; set; }
 
@@ -97,7 +90,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Instances { get; set; }
 
@@ -109,7 +101,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: A list of LBCookieStickinessPolicy objects.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy
             /// </summary>
 			public Union<List<LBCookieStickinessPolicy>, IntrinsicFunction> LBCookieStickinessPolicy { get; set; }
 
@@ -124,7 +115,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: Yes
             /// Type: A list of ElasticLoadBalancing Listener Property Type objects.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners
             /// </summary>
 			public Union<List<Listeners>, IntrinsicFunction> Listeners { get; set; }
 
@@ -141,7 +131,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-elbname
             /// </summary>
 			public Union<string, IntrinsicFunction> LoadBalancerName { get; set; }
 
@@ -153,7 +142,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: A list of ElasticLoadBalancing policy objects.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies
             /// </summary>
 			public Union<List<Policies>, IntrinsicFunction> Policies { get; set; }
 
@@ -168,7 +156,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-scheme
             /// </summary>
 			public Union<string, IntrinsicFunction> Scheme { get; set; }
 
@@ -178,7 +165,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: A list of security groups assigned to your load balancer within your virtual private cloud
             /// (VPC).
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-securitygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
@@ -196,7 +182,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// balancer to another subnet that is in the same Availability Zone, you must do two updates. You must
             /// first update the load balancer to use a subnet in different Availability Zone. After the update is
             /// complete, update the load balancer to use the new subnet that is in the original Availability Zone.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-subnets
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
 
@@ -206,7 +191,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

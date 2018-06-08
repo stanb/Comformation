@@ -9,7 +9,7 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
     /// The AWS::ServiceDiscovery::PublicDnsNamespace resource specifies information about 		a public namespace for
     /// Amazon Route 53. Use a public namespace when you want to route internet traffic to your resources. 		For more
     /// information, see CreatePublicDnsNamespace 		in the Amazon Route 53 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html
     /// </summary>
     public class PublicDnsNamespaceResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -42,7 +41,6 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.ApiKey
     /// The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing
     /// Amazon API Gateway (API Gateway) Method resources that require an API key. To specify which API key clients
     /// must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html
     /// </summary>
     public class ApiKeyResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.ApiKey
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-customerid
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomerId { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApiGateway.ApiKey
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.ApiGateway.ApiKey
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.ApiGateway.ApiKey
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid
             /// </summary>
 			public Union<bool, IntrinsicFunction> GenerateDistinctId { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.ApiGateway.ApiKey
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -75,7 +70,6 @@ namespace Comformation.ApiGateway.ApiKey
             /// Required: No
             /// Type: List of Amazon API Gateway ApiKey StageKey property types
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys
             /// </summary>
 			public Union<List<StageKey>, IntrinsicFunction> StageKeys { get; set; }
 

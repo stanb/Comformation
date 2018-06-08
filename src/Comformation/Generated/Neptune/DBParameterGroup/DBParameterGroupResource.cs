@@ -7,7 +7,7 @@ namespace Comformation.Neptune.DBParameterGroup
     /// <summary>
     /// AWS::Neptune::DBParameterGroup
     /// Creates a custom parameter group for DB instances.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html
     /// </summary>
     public class DBParameterGroupResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Update requires: No interruption or Some interruptions. Changes to dynamic parameters are applied
             /// immediately. During an update, if you have static parameters (whether they were changed or not),
             /// triggers AWS CloudFormation to reboot the associated DB instance without failover.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-parameters
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-family
             /// </summary>
 			public Union<string, IntrinsicFunction> Family { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Required: No
             /// Type: A list of resource tags.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

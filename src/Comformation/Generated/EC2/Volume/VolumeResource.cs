@@ -7,7 +7,7 @@ namespace Comformation.EC2.Volume
     /// <summary>
     /// AWS::EC2::Volume
     /// The AWS::EC2::Volume type creates a new Amazon Elastic Block Store (Amazon EBS) volume.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html
     /// </summary>
     public class VolumeResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.EC2.Volume
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-autoenableio
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoEnableIO { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.EC2.Volume
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.EC2.Volume
             /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
             /// Type: Boolean
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-encrypted
             /// </summary>
 			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
@@ -61,7 +58,6 @@ namespace Comformation.EC2.Volume
             /// Required: Conditional. Required when the volume type is io1; not used with other volume types.
             /// Type: Number
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-iops
             /// </summary>
 			public Union<int, IntrinsicFunction> Iops { get; set; }
 
@@ -74,7 +70,6 @@ namespace Comformation.EC2.Volume
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -88,7 +83,6 @@ namespace Comformation.EC2.Volume
             /// this property.
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-size
             /// </summary>
 			public Union<int, IntrinsicFunction> Size { get; set; }
 
@@ -98,7 +92,6 @@ namespace Comformation.EC2.Volume
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-snapshotid
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotId { get; set; }
 
@@ -108,7 +101,6 @@ namespace Comformation.EC2.Volume
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -119,7 +111,6 @@ namespace Comformation.EC2.Volume
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-volumetype
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeType { get; set; }
 

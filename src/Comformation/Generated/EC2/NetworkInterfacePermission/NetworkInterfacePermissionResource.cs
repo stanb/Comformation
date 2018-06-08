@@ -10,7 +10,7 @@ namespace Comformation.EC2.NetworkInterfacePermission
     /// For example, you can grant an AWS authorized partner account permission to attach the specified network
     /// interface to an instance in their account. For more information, see CreateNetworkInterfacePermission and
     /// NetworkInterfacePermission in the Amazon EC2 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html
     /// </summary>
     public class NetworkInterfacePermissionResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EC2.NetworkInterfacePermission
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid
             /// </summary>
 			public Union<string, IntrinsicFunction> AwsAccountId { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.EC2.NetworkInterfacePermission
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.EC2.NetworkInterfacePermission
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
             /// </summary>
 			public Union<string, IntrinsicFunction> Permission { get; set; }
 

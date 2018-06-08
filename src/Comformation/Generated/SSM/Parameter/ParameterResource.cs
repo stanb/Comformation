@@ -7,7 +7,7 @@ namespace Comformation.SSM.Parameter
     /// <summary>
     /// AWS::SSM::Parameter
     /// The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html
     /// </summary>
     public class ParameterResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.SSM.Parameter
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.SSM.Parameter
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.SSM.Parameter
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-allowedpattern
             /// </summary>
 			public Union<string, IntrinsicFunction> AllowedPattern { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.SSM.Parameter
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value
             /// </summary>
 			public Union<string, IntrinsicFunction> Value { get; set; }
 
@@ -61,7 +57,6 @@ namespace Comformation.SSM.Parameter
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

@@ -6,61 +6,93 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html
+    /// AWS IoT TopicRule DynamoDBAction
+    /// DynamoDB is a property of the Actions property that describes an AWS IoT action that writes data to a DynamoDB
+    /// table.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html
     /// </summary>
     public class DynamoDBAction
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-hashkeyfield
+        /// HashKeyField
+        /// The name of the hash key.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("HashKeyField")]
         public Union<string, IntrinsicFunction> HashKeyField { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-hashkeytype
+        /// HashKeyType
+        /// The data type of the hash key (also called the partition key). Valid values are: "STRING" or
+        /// "NUMBER".
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("HashKeyType")]
         public Union<string, IntrinsicFunction> HashKeyType { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-hashkeyvalue
+        /// HashKeyValue
+        /// The value of the hash key.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("HashKeyValue")]
         public Union<string, IntrinsicFunction> HashKeyValue { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-payloadfield
+        /// PayloadField
+        /// The name of the column in the DynamoDB table that contains the result of the query. You can
+        /// customize this name.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("PayloadField")]
         public Union<string, IntrinsicFunction> PayloadField { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyfield
+        /// RangeKeyField
+        /// The name of the range key.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("RangeKeyField")]
         public Union<string, IntrinsicFunction> RangeKeyField { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeytype
+        /// RangeKeyType
+        /// The data type of the range key (also called the sort key). Valid values are: "STRING" or "NUMBER".
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("RangeKeyType")]
         public Union<string, IntrinsicFunction> RangeKeyType { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyvalue
+        /// RangeKeyValue
+        /// The value of the range key.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("RangeKeyValue")]
         public Union<string, IntrinsicFunction> RangeKeyValue { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rolearn
+        /// RoleArn
+        /// The ARN of the IAM role that grants access to the DynamoDB table.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-tablename
+        /// TableName
+        /// The name of the DynamoDB table.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("TableName")]
         public Union<string, IntrinsicFunction> TableName { get; set; }

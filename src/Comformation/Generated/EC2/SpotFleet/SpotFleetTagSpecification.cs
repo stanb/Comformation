@@ -6,13 +6,21 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html
+    /// Amazon Elastic Compute Cloud SpotFleet SpotFleetTagSpecification
+    /// SpotFleetTagSpecification is a property of the Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications
+    /// property that specifies the tags for a Spot fleet resource.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html
     /// </summary>
     public class SpotFleetTagSpecification
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html#cfn-ec2-spotfleet-spotfleettagspecification-resourcetype
+        /// ResourceType
+        /// The type of resource.
+        /// For valid resource types, see SpotFleetTagSpecification operation in the Amazon EC2 API Reference
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceType")]
         public Union<string, IntrinsicFunction> ResourceType { get; set; }

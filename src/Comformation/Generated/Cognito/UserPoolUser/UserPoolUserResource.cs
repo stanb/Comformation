@@ -7,7 +7,7 @@ namespace Comformation.Cognito.UserPoolUser
     /// <summary>
     /// AWS::Cognito::UserPoolUser
     /// The AWS::Cognito::UserPoolUser resource creates an Amazon Cognito user pool user.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html
     /// </summary>
     public class UserPoolUserResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: No
             /// Type: List of Amazon Cognito UserPoolUser AttributeType
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-validationdata
             /// </summary>
 			public Union<List<AttributeType>, IntrinsicFunction> ValidationData { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userpoolid
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-username
             /// </summary>
 			public Union<string, IntrinsicFunction> Username { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-messageaction
             /// </summary>
 			public Union<string, IntrinsicFunction> MessageAction { get; set; }
 
@@ -71,7 +67,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-desireddeliverymediums
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> DesiredDeliveryMediums { get; set; }
 
@@ -88,7 +83,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-forcealiascreation
             /// </summary>
 			public Union<bool, IntrinsicFunction> ForceAliasCreation { get; set; }
 
@@ -102,7 +96,6 @@ namespace Comformation.Cognito.UserPoolUser
             /// Required: No
             /// Type: List of Amazon Cognito UserPoolUser AttributeType
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes
             /// </summary>
 			public Union<List<AttributeType>, IntrinsicFunction> UserAttributes { get; set; }
 

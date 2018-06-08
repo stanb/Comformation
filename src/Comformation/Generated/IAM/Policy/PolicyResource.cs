@@ -8,7 +8,7 @@ namespace Comformation.IAM.Policy
     /// AWS::IAM::Policy
     /// The AWS::IAM::Policy resource associates an IAM policy with IAM users, roles, or groups. For more information
     /// about IAM policies, see Overview of IAM Policies in the IAM User Guide guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
     /// </summary>
     public class PolicyResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.IAM.Policy
             /// Users.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-groups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.IAM.Policy
             /// templates formatted in YAML, you can create an IAM policy in either JSON or YAML format. AWS
             /// CloudFormation always converts a policy to JSON format before submitting it to IAM.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.IAM.Policy
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policyname
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
@@ -61,7 +58,6 @@ namespace Comformation.IAM.Policy
             /// Users.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-roles
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.IAM.Policy
             /// Users.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-users
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Users { get; set; }
 

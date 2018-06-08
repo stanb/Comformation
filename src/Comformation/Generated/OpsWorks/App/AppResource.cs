@@ -8,7 +8,7 @@ namespace Comformation.OpsWorks.App
     /// AWS::OpsWorks::App
     /// Defines an AWS OpsWorks app for an AWS OpsWorks stack. The app specifies the code that you want to run on an
     /// application server.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html
     /// </summary>
     public class AppResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: AWS OpsWorks Source Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-appsource
             /// </summary>
 			public Union<Source, IntrinsicFunction> AppSource { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: A list of key-value pairs
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-attributes
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: List of AWS OpsWorks App DataSource
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-datasources
             /// </summary>
 			public Union<List<DataSource>, IntrinsicFunction> DataSources { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -61,7 +57,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-domains
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Domains { get; set; }
 
@@ -71,7 +66,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-enablessl
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableSsl { get; set; }
 
@@ -81,7 +75,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: List of AWS OpsWorks App Environment
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-environment
             /// </summary>
 			public Union<List<EnvironmentVariable>, IntrinsicFunction> Environment { get; set; }
 
@@ -91,7 +84,6 @@ namespace Comformation.OpsWorks.App
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -101,7 +93,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-shortname
             /// </summary>
 			public Union<string, IntrinsicFunction> Shortname { get; set; }
 
@@ -111,7 +102,6 @@ namespace Comformation.OpsWorks.App
             /// Required: No
             /// Type: AWS OpsWorks SslConfiguration Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-sslconfig
             /// </summary>
 			public Union<SslConfiguration, IntrinsicFunction> SslConfiguration { get; set; }
 
@@ -121,7 +111,6 @@ namespace Comformation.OpsWorks.App
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-stackid
             /// </summary>
 			public Union<string, IntrinsicFunction> StackId { get; set; }
 
@@ -132,7 +121,6 @@ namespace Comformation.OpsWorks.App
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 

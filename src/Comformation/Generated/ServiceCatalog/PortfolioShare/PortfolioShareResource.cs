@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.PortfolioShare
     /// AWS::ServiceCatalog::PortfolioShare
     /// Shares the specified portfolio for AWS Service Catalog with the specified account. For more information, see
     /// CreatePortfolioShare in the AWS Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html
     /// </summary>
     public class PortfolioShareResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-accountid
             /// </summary>
 			public Union<string, IntrinsicFunction> AccountId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-portfolioid
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 

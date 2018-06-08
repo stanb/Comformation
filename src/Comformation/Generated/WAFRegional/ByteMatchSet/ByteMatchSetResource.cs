@@ -9,7 +9,7 @@ namespace Comformation.WAFRegional.ByteMatchSet
     /// The AWS::WAFRegional::ByteMatchSet resource creates an AWS WAF Regional ByteMatchSet that identifies a part of
     /// a web request that you want to inspect. For more information, see CreateByteMatchSet in the AWS WAF Regional
     /// API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html
     /// </summary>
     public class ByteMatchSetResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.WAFRegional.ByteMatchSet
             /// Required: No
             /// Type: List of AWS WAF Regional ByteMatchSet ByteMatchTuples
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-bytematchtuples
             /// </summary>
 			public Union<List<ByteMatchTuple>, IntrinsicFunction> ByteMatchTuples { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.WAFRegional.ByteMatchSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

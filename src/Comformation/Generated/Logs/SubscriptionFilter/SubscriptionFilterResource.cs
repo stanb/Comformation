@@ -9,7 +9,7 @@ namespace Comformation.Logs.SubscriptionFilter
     /// The AWS::Logs::SubscriptionFilter resource creates an Amazon CloudWatch Logs (CloudWatch Logs) subscription
     /// filter that defines which log events are delivered to your Kinesis stream or AWS Lambda (Lambda) function and
     /// where to send them.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
     /// </summary>
     public class SubscriptionFilterResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-destinationarn
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationArn { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern
             /// </summary>
 			public Union<string, IntrinsicFunction> FilterPattern { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
@@ -58,7 +55,6 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 

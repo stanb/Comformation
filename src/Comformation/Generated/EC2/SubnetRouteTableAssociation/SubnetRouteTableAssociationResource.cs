@@ -7,7 +7,7 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
     /// <summary>
     /// AWS::EC2::SubnetRouteTableAssociation
     /// Associates a subnet with a route table.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html
     /// </summary>
     public class SubnetRouteTableAssociationResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
             /// Type: String
             /// Update requires: No interruption. However, the physical ID changes when the route table ID is
             /// changed.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-routetableid
             /// </summary>
 			public Union<string, IntrinsicFunction> RouteTableId { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 

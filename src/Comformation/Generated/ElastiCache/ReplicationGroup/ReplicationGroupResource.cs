@@ -9,7 +9,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
     /// The AWS::ElastiCache::ReplicationGroup resource creates an Amazon ElastiCache Redis replication group. A
     /// replication group is a collection of cache clusters, where one of the clusters is a primary read-write cluster
     /// and the others are read-only replicas.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html
     /// </summary>
     public class ReplicationGroupResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-atrestencryptionenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> AtRestEncryptionEnabled { get; set; }
 
@@ -37,7 +36,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-authtoken
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthToken { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-autominorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -69,7 +66,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-automaticfailoverenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutomaticFailoverEnabled { get; set; }
 
@@ -80,7 +76,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachenodetype
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
 
@@ -91,7 +86,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cacheparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
 
@@ -104,7 +98,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachesecuritygroupnames
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> CacheSecurityGroupNames { get; set; }
 
@@ -114,7 +107,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachesubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
 
@@ -125,7 +117,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engine
             /// </summary>
 			public Union<string, IntrinsicFunction> Engine { get; set; }
 
@@ -135,7 +126,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engineversion
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
@@ -148,7 +138,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: List of Amazon ElastiCache ReplicationGroup NodeGroupConfiguration
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-nodegroupconfiguration
             /// </summary>
 			public Union<List<NodeGroupConfiguration>, IntrinsicFunction> NodeGroupConfiguration { get; set; }
 
@@ -159,7 +148,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-notificationtopicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationTopicArn { get; set; }
 
@@ -176,7 +164,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numcacheclusters
             /// </summary>
 			public Union<int, IntrinsicFunction> NumCacheClusters { get; set; }
 
@@ -190,7 +177,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups
             /// </summary>
 			public Union<int, IntrinsicFunction> NumNodeGroups { get; set; }
 
@@ -200,7 +186,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -213,7 +198,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredcacheclusterazs
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> PreferredCacheClusterAZs { get; set; }
 
@@ -225,7 +209,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -240,7 +223,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// or ReplicasPerNodeGroup properties.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-primaryclusterid
             /// </summary>
 			public Union<string, IntrinsicFunction> PrimaryClusterId { get; set; }
 
@@ -251,7 +233,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicaspernodegroup
             /// </summary>
 			public Union<int, IntrinsicFunction> ReplicasPerNodeGroup { get; set; }
 
@@ -264,7 +245,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationGroupDescription { get; set; }
 
@@ -275,7 +255,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupid
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationGroupId { get; set; }
 
@@ -289,7 +268,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-securitygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
@@ -302,7 +280,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SnapshotArns { get; set; }
 
@@ -312,7 +289,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotname
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotName { get; set; }
 
@@ -322,7 +298,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotrentionlimit
             /// </summary>
 			public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
 
@@ -333,7 +308,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotwindow
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotWindow { get; set; }
 
@@ -344,7 +318,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshottingclusterid
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshottingClusterId { get; set; }
 
@@ -354,7 +327,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -367,7 +339,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-transitencryptionenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> TransitEncryptionEnabled { get; set; }
 

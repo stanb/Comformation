@@ -7,7 +7,7 @@ namespace Comformation.SNS.Topic
     /// <summary>
     /// AWS::SNS::Topic
     /// The AWS::SNS::Topic type creates an Amazon Simple Notification Service (Amazon SNS) topic.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
     /// </summary>
     public class TopicResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.SNS.Topic
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-displayname
             /// </summary>
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.SNS.Topic
             /// Required: No
             /// Type: List of SNS Subscriptions
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-subscription
             /// </summary>
 			public Union<List<Subscription>, IntrinsicFunction> Subscription { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.SNS.Topic
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-name
             /// </summary>
 			public Union<string, IntrinsicFunction> TopicName { get; set; }
 

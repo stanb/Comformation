@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.RestApi
     /// The AWS::ApiGateway::RestApi resource contains a collection of Amazon API Gateway resources and methods that
     /// can be invoked through HTTPS endpoints. For more information, see restapi:create in the Amazon API Gateway
     /// REST API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
     /// </summary>
     public class RestApiResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-apikeysourcetype
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiKeySourceType { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> BinaryMediaTypes { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Body { get; set; }
 
@@ -58,7 +55,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: Amazon API Gateway RestApi S3Location
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location
             /// </summary>
 			public Union<S3Location, IntrinsicFunction> BodyS3Location { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-clonefrom
             /// </summary>
 			public Union<string, IntrinsicFunction> CloneFrom { get; set; }
 
@@ -78,7 +73,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -89,7 +83,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: API Gateway RestApi EndpointConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration
             /// </summary>
 			public Union<EndpointConfiguration, IntrinsicFunction> EndpointConfiguration { get; set; }
 
@@ -100,7 +93,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarning
             /// </summary>
 			public Union<bool, IntrinsicFunction> FailOnWarnings { get; set; }
 
@@ -113,7 +105,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize
             /// </summary>
 			public Union<int, IntrinsicFunction> MinimumCompressionSize { get; set; }
 
@@ -123,7 +114,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: Conditional. Required if you don't specify a OpenAPI definition.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -135,7 +125,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: String to String map
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-parameters
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
 
@@ -145,7 +134,6 @@ namespace Comformation.ApiGateway.RestApi
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Policy { get; set; }
 

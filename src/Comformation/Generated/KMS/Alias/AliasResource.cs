@@ -10,7 +10,7 @@ namespace Comformation.KMS.Alias
     /// Service (AWS KMS). Using an alias to refer to a key can help you simplify key management. For example, when
     /// rotating keys, you can just update the alias mapping instead of tracking and changing key IDs. For more
     /// information, see Working with Aliases in the AWS Key Management Service Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html
     /// </summary>
     public class AliasResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.KMS.Alias
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-aliasname
             /// </summary>
 			public Union<string, IntrinsicFunction> AliasName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.KMS.Alias
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-targetkeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetKeyId { get; set; }
 

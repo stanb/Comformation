@@ -7,7 +7,7 @@ namespace Comformation.StepFunctions.StateMachine
     /// <summary>
     /// AWS::StepFunctions::StateMachine
     /// Use the AWS::StepFunctions::StateMachine resource to create an AWS Step Functions state machine.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html
     /// </summary>
     public class StateMachineResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.StepFunctions.StateMachine
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionstring
             /// </summary>
 			public Union<string, IntrinsicFunction> DefinitionString { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.StepFunctions.StateMachine
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionname
             /// </summary>
 			public Union<string, IntrinsicFunction> StateMachineName { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.StepFunctions.StateMachine
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 

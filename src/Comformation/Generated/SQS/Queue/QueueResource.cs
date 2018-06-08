@@ -7,7 +7,7 @@ namespace Comformation.SQS.Queue
     /// <summary>
     /// AWS::SQS::Queue
     /// The AWS::SQS::Queue resource creates an Amazon Simple Queue Service (Amazon SQS) queue.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html
     /// </summary>
     public class QueueResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#cfn-sqs-queue-contentbaseddeduplication
             /// </summary>
 			public Union<bool, IntrinsicFunction> ContentBasedDeduplication { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-delayseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> DelaySeconds { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#cfn-sqs-queue-fifoqueue
             /// </summary>
 			public Union<bool, IntrinsicFunction> FifoQueue { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsdatakeyreuseperiodseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> KmsDataKeyReusePeriodSeconds { get; set; }
 
@@ -74,7 +70,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsmasterkeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsMasterKeyId { get; set; }
 
@@ -86,7 +81,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-maxmsgsize
             /// </summary>
 			public Union<int, IntrinsicFunction> MaximumMessageSize { get; set; }
 
@@ -97,7 +91,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-msgretentionperiod
             /// </summary>
 			public Union<int, IntrinsicFunction> MessageRetentionPeriod { get; set; }
 
@@ -114,7 +107,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-name
             /// </summary>
 			public Union<string, IntrinsicFunction> QueueName { get; set; }
 
@@ -127,7 +119,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-receivemsgwaittime
             /// </summary>
 			public Union<int, IntrinsicFunction> ReceiveMessageWaitTimeSeconds { get; set; }
 
@@ -138,7 +129,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Amazon SQS RedrivePolicy
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-redrive
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RedrivePolicy { get; set; }
 
@@ -154,7 +144,6 @@ namespace Comformation.SQS.Queue
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-visibilitytimeout
             /// </summary>
 			public Union<int, IntrinsicFunction> VisibilityTimeout { get; set; }
 

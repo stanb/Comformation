@@ -8,7 +8,7 @@ namespace Comformation.RDS.DBParameterGroup
     /// AWS::RDS::DBParameterGroup
     /// Creates a custom parameter group for an RDS database family. For more information about RDS parameter groups,
     /// see Working with DB Parameter Groups in the Amazon Relational Database Service User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html
     /// </summary>
     public class DBParameterGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.RDS.DBParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.RDS.DBParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family
             /// </summary>
 			public Union<string, IntrinsicFunction> Family { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.RDS.DBParameterGroup
             /// Update requires: No interruption or Some interruptions. Changes to dynamic parameters are applied
             /// immediately. During an update, if you have static parameters (whether they were changed or not),
             /// triggers AWS CloudFormation to reboot the associated DB instance without failover.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-parameters
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.RDS.DBParameterGroup
             /// Required: No
             /// Type: A list of resource tags.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

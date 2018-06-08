@@ -6,19 +6,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Lambda.Function
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html
+    /// AWS Lambda Function VpcConfig
+    /// VpcConfig is a property of the AWS::Lambda::Function resource that enables your AWS Lambda (Lambda) function
+    /// to access resources in a VPC. For more information, see Configuring a Lambda Function to Access Resources in
+    /// an Amazon VPC in the AWS Lambda Developer Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html
     /// </summary>
     public class VpcConfig
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-securitygroupids
+        /// SecurityGroupIds
+        /// A list of one or more security groups IDs in the VPC that includes the resources to which your
+        /// Lambda function requires access.
+        /// Required: Yes
+        /// Type: List of String values
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
         public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids
+        /// SubnetIds
+        /// A list of one or more subnet IDs in the VPC that includes the resources to which your Lambda
+        /// function requires access.
+        /// Required: Yes
+        /// Type: List of String values
         /// </summary>
         [JsonProperty("SubnetIds")]
         public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }

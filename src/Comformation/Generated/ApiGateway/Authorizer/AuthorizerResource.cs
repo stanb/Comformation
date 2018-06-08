@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.Authorizer
     /// The AWS::ApiGateway::Authorizer resource creates an authorization layer that Amazon API Gateway (API Gateway)
     /// activates for methods that have authorization enabled. API Gateway activates the authorizer when a client
     /// calls those methods.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html
     /// </summary>
     public class AuthorizerResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authtype
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthType { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizercredentials
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthorizerCredentials { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: Conditional. Specify this property for Lambda functions only.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthorizerUri { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identitysource
             /// </summary>
 			public Union<string, IntrinsicFunction> IdentitySource { get; set; }
 
@@ -85,7 +80,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identityvalidationexpression
             /// </summary>
 			public Union<string, IntrinsicFunction> IdentityValidationExpression { get; set; }
 
@@ -95,7 +89,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -107,7 +100,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ProviderARNs { get; set; }
 
@@ -117,7 +109,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
@@ -129,7 +120,6 @@ namespace Comformation.ApiGateway.Authorizer
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 

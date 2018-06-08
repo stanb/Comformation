@@ -11,7 +11,7 @@ namespace Comformation.GuardDuty.Member
     /// member account is only created. If the value of the Status property is set to INVITED, a member account is
     /// created and invited. AWS::GuardDuty::Member resource has to be created with the Status property set to INVITED
     /// before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html
     /// </summary>
     public class MemberResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.GuardDuty.Member
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-status
             /// </summary>
 			public Union<string, IntrinsicFunction> Status { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.GuardDuty.Member
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-memberid
             /// </summary>
 			public Union<string, IntrinsicFunction> MemberId { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.GuardDuty.Member
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email
             /// </summary>
 			public Union<string, IntrinsicFunction> Email { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.GuardDuty.Member
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-message
             /// </summary>
 			public Union<string, IntrinsicFunction> Message { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.GuardDuty.Member
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification
             /// </summary>
 			public Union<bool, IntrinsicFunction> DisableEmailNotification { get; set; }
 
@@ -78,7 +73,6 @@ namespace Comformation.GuardDuty.Member
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid
             /// </summary>
 			public Union<string, IntrinsicFunction> DetectorId { get; set; }
 

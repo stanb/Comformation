@@ -7,7 +7,7 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
     /// <summary>
     /// AWS::ElasticBeanstalk::ApplicationVersion
     /// Creates an application version, an iteration of deployable code, for an Elastic Beanstalk application.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html
     /// </summary>
     public class ApplicationVersionResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -39,7 +37,6 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Required: Yes
             /// Type: Source Bundle
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
             /// </summary>
 			public Union<SourceBundle, IntrinsicFunction> SourceBundle { get; set; }
 

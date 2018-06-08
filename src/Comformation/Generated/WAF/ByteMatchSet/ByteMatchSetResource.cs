@@ -8,7 +8,7 @@ namespace Comformation.WAF.ByteMatchSet
     /// AWS::WAF::ByteMatchSet
     /// The AWS::WAF::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request
     /// that you want to inspect. For more information, see CreateByteMatchSet in the AWS WAF API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html
     /// </summary>
     public class ByteMatchSetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.WAF.ByteMatchSet
             /// Required: No
             /// Type: List of AWS WAF ByteMatchSet ByteMatchTuples
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-bytematchtuples
             /// </summary>
 			public Union<List<ByteMatchTuple>, IntrinsicFunction> ByteMatchTuples { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.WAF.ByteMatchSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

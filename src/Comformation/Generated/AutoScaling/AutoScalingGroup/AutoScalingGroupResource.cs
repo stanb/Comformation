@@ -7,7 +7,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup
     /// Creates an Auto Scaling group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html
     /// </summary>
     public class AutoScalingGroupResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-autoscalinggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// property.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-availabilityzones
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-cooldown
             /// </summary>
 			public Union<string, IntrinsicFunction> Cooldown { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-desiredcapacity
             /// </summary>
 			public Union<string, IntrinsicFunction> DesiredCapacity { get; set; }
 
@@ -71,7 +67,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthcheckgraceperiod
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthCheckGracePeriod { get; set; }
 
@@ -82,7 +77,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthchecktype
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckType { get; set; }
 
@@ -99,7 +93,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// or LaunchTemplate.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -117,7 +110,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// with the configuration that they were originally launched with. To update existing instances,
             /// specify an update policy attribute for this Auto Scaling group. For more information, see
             /// UpdatePolicy.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-launchconfigurationname
             /// </summary>
 			public Union<string, IntrinsicFunction> LaunchConfigurationName { get; set; }
 
@@ -129,7 +121,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup LifecycleHookSpecification
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist
             /// </summary>
 			public Union<List<LifecycleHookSpecification>, IntrinsicFunction> LifecycleHookSpecificationList { get; set; }
 
@@ -140,7 +131,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-loadbalancernames
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> LoadBalancerNames { get; set; }
 
@@ -150,7 +140,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxsize
             /// </summary>
 			public Union<string, IntrinsicFunction> MaxSize { get; set; }
 
@@ -160,7 +149,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: A list of Amazon EC2 Auto Scaling AutoScalingGroup MetricsCollection
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-metricscollection
             /// </summary>
 			public Union<List<MetricsCollection>, IntrinsicFunction> MetricsCollection { get; set; }
 
@@ -170,7 +158,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-minsize
             /// </summary>
 			public Union<string, IntrinsicFunction> MinSize { get; set; }
 
@@ -181,7 +168,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup NotificationConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations
             /// </summary>
 			public Union<List<NotificationConfiguration>, IntrinsicFunction> NotificationConfigurations { get; set; }
 
@@ -193,7 +179,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-placementgroup
             /// </summary>
 			public Union<string, IntrinsicFunction> PlacementGroup { get; set; }
 
@@ -207,7 +192,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-servicelinkedrolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceLinkedRoleARN { get; set; }
 
@@ -218,7 +202,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup TagProperty
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags
             /// </summary>
 			public Union<List<TagProperty>, IntrinsicFunction> Tags { get; set; }
 
@@ -228,7 +211,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-targetgrouparns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> TargetGroupARNs { get; set; }
 
@@ -242,7 +224,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-termpolicy
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> TerminationPolicies { get; set; }
 
@@ -258,7 +239,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of String values
             /// Update requires: Some interruptions
             /// Note When you update VPCZoneIdentifier, the instances are replaced, but not the Auto Scaling group.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-vpczoneidentifier
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VPCZoneIdentifier { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.Config.DeliveryChannel
     /// AWS::Config::DeliveryChannel
     /// The AWS::Config::DeliveryChannel resource describes where AWS Config sends notifications and updated
     /// configuration states for AWS resources.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html
     /// </summary>
     public class DeliveryChannelResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Config.DeliveryChannel
             /// Required: No
             /// Type: AWS Config DeliveryChannel ConfigSnapshotDeliveryProperties
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties
             /// </summary>
 			public Union<ConfigSnapshotDeliveryProperties, IntrinsicFunction> ConfigSnapshotDeliveryProperties { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Config.DeliveryChannel
             /// Update requires: Updates are not supported. To change the name, you must run two separate updates.
             /// In the first update, delete this resource, and then recreate it with a new name in the second
             /// update.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.Config.DeliveryChannel
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3bucketname
             /// </summary>
 			public Union<string, IntrinsicFunction> S3BucketName { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.Config.DeliveryChannel
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3keyprefix
             /// </summary>
 			public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.Config.DeliveryChannel
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-snstopicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> SnsTopicARN { get; set; }
 

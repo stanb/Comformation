@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
     /// AWS::ServiceCatalog::LaunchTemplateConstraint
     /// Creates a template constraint for AWS Service Catalog. For more information, see CreateConstraint in the AWS
     /// Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html
     /// </summary>
     public class LaunchTemplateConstraintResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-portfolioid
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-productid
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-rules
             /// </summary>
 			public Union<string, IntrinsicFunction> Rules { get; set; }
 

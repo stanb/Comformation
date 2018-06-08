@@ -7,7 +7,7 @@ namespace Comformation.DAX.Cluster
     /// <summary>
     /// AWS::DAX::Cluster
     /// Use the AWS::DAX::Cluster resource to create a DAX cluster for use with Amazon DynamoDB.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.DAX.Cluster
             /// Required: Yes
             /// Type: Integer
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replication-factor
             /// </summary>
 			public Union<int, IntrinsicFunction> ReplicationFactor { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parameter-group-name
             /// </summary>
 			public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availability-zones
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.DAX.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-node-type
             /// </summary>
 			public Union<string, IntrinsicFunction> NodeType { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.DAX.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iam-role-arn
             /// </summary>
 			public Union<string, IntrinsicFunction> IAMRoleARN { get; set; }
 
@@ -88,7 +82,6 @@ namespace Comformation.DAX.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnet-group-name
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
 
@@ -98,7 +91,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-cluster-name
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
@@ -114,7 +106,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferred-maintenance-window
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -125,7 +116,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notification-topic-arn
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationTopicARN { get; set; }
 
@@ -137,7 +127,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-security-group-ids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
@@ -147,7 +136,6 @@ namespace Comformation.DAX.Cluster
             /// Required: No
             /// Type: String to String map
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-tags
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 

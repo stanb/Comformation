@@ -9,7 +9,7 @@ namespace Comformation.Lambda.Version
     /// The AWS::Lambda::Version resource publishes a specified version of an AWS Lambda (Lambda) function. When
     /// publishing a new version of your function, Lambda copies the latest version of your function. For more
     /// information, see Introduction to AWS Lambda Versioning in the AWS Lambda Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html
     /// </summary>
     public class VersionResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.Lambda.Version
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
             /// </summary>
 			public Union<string, IntrinsicFunction> CodeSha256 { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Lambda.Version
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.Lambda.Version
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 

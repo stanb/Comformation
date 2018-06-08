@@ -9,7 +9,7 @@ namespace Comformation.Events.Rule
     /// The AWS::Events::Rule resource creates a rule that matches incoming Amazon CloudWatch Events (CloudWatch
     /// Events) events and routes them to one or more targets for processing. For more information, see Using
     /// CloudWatch Events in the Amazon CloudWatch User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Events.Rule
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.Events.Rule
             /// Required: Conditional. You must specify this property, the ScheduleExpression property, or both.
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> EventPattern { get; set; }
 
@@ -47,12 +45,11 @@ namespace Comformation.Events.Rule
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-rolearn
+            /// RoleArn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
@@ -63,7 +60,6 @@ namespace Comformation.Events.Rule
             /// Required: Conditional. You must specify this property, the EventPattern property, or both.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-scheduleexpression
             /// </summary>
 			public Union<string, IntrinsicFunction> ScheduleExpression { get; set; }
 
@@ -74,7 +70,6 @@ namespace Comformation.Events.Rule
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state
             /// </summary>
 			public Union<string, IntrinsicFunction> State { get; set; }
 
@@ -87,7 +82,6 @@ namespace Comformation.Events.Rule
             /// Required: No
             /// Type: List of Amazon CloudWatch Events Rule Target
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets
             /// </summary>
 			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
 

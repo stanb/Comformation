@@ -6,13 +6,20 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html
+    /// AWS Systems Manager PatchBaseline RuleGroup
+    /// The RuleGroup property type specifies a set of rules that define the approval rules for a AWS Systems Manager
+    /// patch baseline.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html
     /// </summary>
     public class RuleGroup
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules
+        /// PatchRules
+        /// The rules that make up the rule group.
+        /// Required: No
+        /// Type: List of Systems Manager PatchBaseline Rule
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchRules")]
         public Union<List<Rule>, IntrinsicFunction> PatchRules { get; set; }

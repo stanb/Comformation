@@ -8,7 +8,7 @@ namespace Comformation.DAX.SubnetGroup
     /// AWS::DAX::SubnetGroup
     /// Use the AWS CloudFormation AWS::DAX::SubnetGroup resource to create a subnet group for use with DAX (DynamoDB
     /// Accelerator).
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html
     /// </summary>
     public class SubnetGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.DAX.SubnetGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.DAX.SubnetGroup
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-name
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.DAX.SubnetGroup
             /// Required: No
             /// Type: List of String values;
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-name-values
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 

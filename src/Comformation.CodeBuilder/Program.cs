@@ -12,7 +12,7 @@ namespace Comformation.CodeBuilder
     class Program
     {
         static async Task Main(string[] args)
-        {
+        { 
             NLog.LogManager.LoadConfiguration("nlog.config");
             var logger = NLog.LogManager.GetCurrentClassLogger();
             var missingDocumentationLogger = NLog.LogManager.GetLogger("MissingDocumentation");
@@ -24,15 +24,32 @@ namespace Comformation.CodeBuilder
                 var schemaBuilder = new SchemaLoader();
                 var schema = await schemaBuilder.Load(url);
                 var schemaParser = new SchemaParser();
-                var codeUnits = schemaParser.Parse(schema);
+                (var propertyTypes, var resources) = schemaParser.Parse(schema);
 
                 var propertyTypeTemplate = await ReadTemplate("Comformation.CodeBuilder.PropertyTypeTemplate.liquid");
                 var resourceTypeTemplate = await ReadTemplate("Comformation.CodeBuilder.ResourceTypeTemplate.liquid");
 
                 var counter = 1;
-
-                foreach (var clazz in codeUnits.OfType<PropertyTypeClass>())
+                logger.Trace("Generating Property Types...");
+                foreach (var clazz in propertyTypes)
                 {
+                    logger.Trace($"{counter++:000}: {clazz.Namespace}.{clazz.Name}");
+                    
+                    var docParser = await DocumentationParser.Parse(clazz.Documentation);
+                    string[] classDesc = null;
+                    if (docParser == null)
+                    {
+                        missingDocumentationLogger.Warn($"{clazz.Namespace}.{clazz.Name}, {clazz.Documentation}, ");
+                        classDesc = new[] { $"Missing documentation {clazz.Documentation}" };
+                    }
+                    else
+                    {
+                        classDesc = docParser.GetResourceDocumentation();
+                        if (classDesc == null)
+                        {
+                        }
+                    }
+
                     var classContent = propertyTypeTemplate.Render(Hash.FromAnonymousObject(
                         new
                         {
@@ -40,14 +57,19 @@ namespace Comformation.CodeBuilder
                             {
                                 clazz.Name,
                                 clazz.Namespace,
-                                clazz.Documentation,
+                                Documentation = classDesc,
                                 clazz.Path,
-                                Properties = clazz.Properties.Select(prop => new
+                                Properties = clazz.Properties.Select(prop =>
                                 {
-                                    prop.Name,
-                                    prop.Type,
-                                    prop.Documentation,
-                                    prop.JsonProperty
+                                    var propDoc = docParser != null ? docParser.GetPropertyDocumentation(prop.Name) : new[] { prop.Name };
+                                    var x = new
+                                    {
+                                        prop.Name,
+                                        prop.Type,
+                                        Documentation = propDoc,
+                                        prop.JsonProperty
+                                    };
+                                    return x;
                                 }).ToArray()
                             }
                         }));
@@ -57,17 +79,26 @@ namespace Comformation.CodeBuilder
                     File.WriteAllText(path, classContent);
                 }
 
-                foreach (var clazz in codeUnits.OfType<ResourceClass>())
+                logger.Trace("Generating Resources Types...");
+                foreach (var clazz in resources)
                 {
-                    logger.Trace($"{counter++:000}: {clazz.Namespace}.{clazz.Name} => {clazz.Documentation}");
+                    logger.Trace($"{counter++:000}: {clazz.Namespace}.{clazz.Name}Resource");
 
                     var docParser = await DocumentationParser.Parse(clazz.Documentation);
-                    var classDesc = docParser.GetResourceDocumentation();
-                    if (classDesc == null)
+                    string[] classDesc = null;
+                    if (docParser == null)
                     {
-                        missingDocumentationLogger.Warn($"{clazz.Namespace}.{clazz.Name}\n{clazz.Documentation}");
+                        missingDocumentationLogger.Warn($"{clazz.Namespace}.{clazz.Name}, {clazz.Documentation}, ");
                         classDesc = new[] { $"Missing documentation {clazz.Documentation}" };
                     }
+                    else
+                    {
+                        classDesc = docParser.GetResourceDocumentation();
+                        if (classDesc == null)
+                        {
+                        }
+                    }
+
                     var classContent = resourceTypeTemplate.Render(Hash.FromAnonymousObject(
                         new
                         {
@@ -80,12 +111,7 @@ namespace Comformation.CodeBuilder
                                 clazz.Type,
                                 Properties = clazz.Properties.Select(prop =>
                                 {
-                                    var propDoc = docParser.GetPropertyDocumentation(prop.Documentation.Split("#")[1]);
-                                    if (propDoc == null)
-                                    {
-                                        missingDocumentationLogger.Warn($"{clazz.Namespace}.{prop.Name}\n{prop.Documentation}");
-                                        propDoc = new[] { $"Missing documentation {prop.Documentation}" };
-                                    }
+                                    var propDoc = docParser != null ? docParser.GetPropertyDocumentation(prop.Name) : new[] { prop.Name };
                                     var x = new
                                     {
                                         prop.Name,

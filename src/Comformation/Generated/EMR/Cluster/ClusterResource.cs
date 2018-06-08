@@ -9,7 +9,7 @@ namespace Comformation.EMR.Cluster
     /// The AWS::EMR::Cluster resource creates an Amazon EMR cluster. This cluster is a collection of EC2 instances
     /// that you can run big data frameworks on to process and analyze vast amounts of data. For more information, see
     /// Plan an Amazon EMR Cluster in the Amazon EMR Management Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: JSON object
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-additionalinfo
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AdditionalInfo { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: List of Amazon EMR Cluster Application property types
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-applications
             /// </summary>
 			public Union<List<Application>, IntrinsicFunction> Applications { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-autoscalingrole
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingRole { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: List of Amazon EMR Cluster BootstrapActionConfig property types
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-bootstrapactions
             /// </summary>
 			public Union<List<BootstrapActionConfig>, IntrinsicFunction> BootstrapActions { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: List of Amazon EMR Cluster Configurations property types
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-configurations
             /// </summary>
 			public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.EMR.Cluster
             /// Type: String
             /// Update requires: Replacement
             /// Example: "CustomAmiId" : "ami-7fb3bc69"
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-elasticmapreduce-cluster-customamiid
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomAmiId { get; set; }
 
@@ -88,7 +82,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
             /// </summary>
 			public Union<int, IntrinsicFunction> EbsRootVolumeSize { get; set; }
 
@@ -98,7 +91,6 @@ namespace Comformation.EMR.Cluster
             /// Required: Yes
             /// Type: Amazon EMR Cluster JobFlowInstancesConfig
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-instances
             /// </summary>
 			public Union<JobFlowInstancesConfig, IntrinsicFunction> Instances { get; set; }
 
@@ -110,7 +102,6 @@ namespace Comformation.EMR.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-jobflowrole
             /// </summary>
 			public Union<string, IntrinsicFunction> JobFlowRole { get; set; }
 
@@ -121,7 +112,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-loguri
             /// </summary>
 			public Union<string, IntrinsicFunction> LogUri { get; set; }
 
@@ -131,7 +121,6 @@ namespace Comformation.EMR.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -144,7 +133,6 @@ namespace Comformation.EMR.Cluster
             /// Required: Conditional. If you specify the Applications property, you must specify this property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-releaselabel
             /// </summary>
 			public Union<string, IntrinsicFunction> ReleaseLabel { get; set; }
 
@@ -155,7 +143,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-scaledownbehavior
             /// </summary>
 			public Union<string, IntrinsicFunction> ScaleDownBehavior { get; set; }
 
@@ -165,7 +152,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-securityconfiguration
             /// </summary>
 			public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
 
@@ -176,7 +162,6 @@ namespace Comformation.EMR.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-servicerole
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
@@ -186,7 +171,6 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -199,7 +183,6 @@ namespace Comformation.EMR.Cluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// Default value: false
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-visibletoallusers
             /// </summary>
 			public Union<bool, IntrinsicFunction> VisibleToAllUsers { get; set; }
 

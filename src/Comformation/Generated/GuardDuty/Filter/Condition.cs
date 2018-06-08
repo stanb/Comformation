@@ -6,37 +6,64 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
+    /// GuardDuty Filter Condition
+    /// The Condition property type specifies the condition to be applied to a single field when filtering through
+    /// GuardDuty findings.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
     /// </summary>
     public class Condition
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lt
+        /// Lt
+        /// Represents the "less than" condition to be applied to a single field when filtering through
+        /// findings.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Lt")]
         public Union<int, IntrinsicFunction> Lt { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gte
+        /// Gte
+        /// Represents the "greater than equal" condition to be applied to a single field when filtering through
+        /// findings.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Gte")]
         public Union<int, IntrinsicFunction> Gte { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-neq
+        /// Neq
+        /// Represents the "not equal to" condition to be applied to a single field when filtering through
+        /// findings.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Neq")]
         public Union<List<string>, IntrinsicFunction> Neq { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-eq
+        /// Eq
+        /// Represents the "equal to" condition to be applied to a single field when filtering through findings.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Eq")]
         public Union<List<string>, IntrinsicFunction> Eq { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lte
+        /// Lte
+        /// Represents the "less than equal" condition to be applied to a single field when filtering through
+        /// findings.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Lte")]
         public Union<int, IntrinsicFunction> Lte { get; set; }

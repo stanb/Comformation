@@ -11,7 +11,7 @@ namespace Comformation.Lambda.Alias
     /// applications invoke. Those services or applications can use your function's alias so that they don't need to
     /// be updated whenever you release a new version of your function. For more information, see Introduction to AWS
     /// Lambda Aliases in the AWS Lambda Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html
     /// </summary>
     public class AliasResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.Lambda.Alias
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Lambda.Alias
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.Lambda.Alias
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionVersion { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.Lambda.Alias
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.Lambda.Alias
             /// Required: No
             /// Type: AWS Lambda Alias AliasRoutingConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig
             /// </summary>
 			public Union<AliasRoutingConfiguration, IntrinsicFunction> RoutingConfig { get; set; }
 

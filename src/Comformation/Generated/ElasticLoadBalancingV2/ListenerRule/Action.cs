@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html
+    /// Elastic Load Balancing ListenerRule Actions
+    /// Actions is a property of the AWS::ElasticLoadBalancingV2::ListenerRule resource that specifies the actions an
+    /// Elastic Load Balancing listener takes when an incoming request meets a listener rule's condition.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html
     /// </summary>
     public class Action
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-targetgrouparn
+        /// TargetGroupArn
+        /// The Amazon Resource Name (ARN) of the target group to which Elastic Load Balancing routes the
+        /// traffic.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("TargetGroupArn")]
         public Union<string, IntrinsicFunction> TargetGroupArn { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-type
+        /// Type
+        /// The type of action. For valid values, see the Type contents for the Action data type in the Elastic
+        /// Load Balancing API Reference version 2015-12-01.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }

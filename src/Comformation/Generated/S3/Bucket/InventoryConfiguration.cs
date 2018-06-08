@@ -6,49 +6,82 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html
+    /// Amazon S3 Bucket InventoryConfiguration
+    /// The InventoryConfiguration property type specifies the inventory configuration for an Amazon S3 bucket.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html
     /// </summary>
     public class InventoryConfiguration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-destination
+        /// Destination
+        /// Information about where to publish the inventory results.
+        /// Required: Yes
+        /// Type: Amazon S3 Bucket Destination
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destination")]
         public Union<Destination, IntrinsicFunction> Destination { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-enabled
+        /// Enabled
+        /// Specifies whether the inventory is enabled or disabled. If set to True, an inventory list is
+        /// generated. If set to False, no inventory list is generated.
+        /// Required: Yes
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-id
+        /// Id
+        /// The ID that identifies the inventory configuration.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Id")]
         public Union<string, IntrinsicFunction> Id { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-includedobjectversions
+        /// IncludedObjectVersions
+        /// Object versions to include in the inventory list. If set to All, the list includes all the object
+        /// versions, which adds the version related fields VersionId, IsLatest, and DeleteMarker to the list.
+        /// If set to Current, the list does not contain these version related fields.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludedObjectVersions")]
         public Union<string, IntrinsicFunction> IncludedObjectVersions { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-optionalfields
+        /// OptionalFields
+        /// The optional fields that are included in the inventory results.
+        /// Required: No
+        /// Type: StringList
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OptionalFields")]
         public Union<List<string>, IntrinsicFunction> OptionalFields { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-prefix
+        /// Prefix
+        /// The prefix that is prepended to all inventory results.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Prefix")]
         public Union<string, IntrinsicFunction> Prefix { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-schedulefrequency
+        /// ScheduleFrequency
+        /// The frequency of inventory results generation.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ScheduleFrequency")]
         public Union<string, IntrinsicFunction> ScheduleFrequency { get; set; }

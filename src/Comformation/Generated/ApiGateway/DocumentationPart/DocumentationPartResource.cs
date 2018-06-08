@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.DocumentationPart
     /// The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an Amazon API Gateway API
     /// entity. For more information, see Representation of API Documentation in API Gateway in the API Gateway
     /// Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html
     /// </summary>
     public class DocumentationPartResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.DocumentationPart
             /// Required: Yes
             /// Type: Amazon API Gateway DocumentationPart Location
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location
             /// </summary>
 			public Union<Location, IntrinsicFunction> Location { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApiGateway.DocumentationPart
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties
             /// </summary>
 			public Union<string, IntrinsicFunction> Properties { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.ApiGateway.DocumentationPart
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 

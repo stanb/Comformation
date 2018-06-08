@@ -10,7 +10,7 @@ namespace Comformation.CodePipeline.CustomActionType
     /// in the AWS CodePipeline default actions, such as running an internally developed build process or a test
     /// suite. You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a
     /// Custom Action in AWS CodePipeline in the AWS CodePipeline User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html
     /// </summary>
     public class CustomActionTypeResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
             /// </summary>
 			public Union<string, IntrinsicFunction> Category { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: No
             /// Type: List of AWS CodePipeline CustomActionType ConfigurationProperties
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties
             /// </summary>
 			public Union<List<ConfigurationProperties>, IntrinsicFunction> ConfigurationProperties { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: Yes
             /// Type: AWS CodePipeline CustomActionType ArtifactDetails
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
             /// </summary>
 			public Union<ArtifactDetails, IntrinsicFunction> InputArtifactDetails { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: Yes
             /// Type: AWS CodePipeline CustomActionType ArtifactDetails
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
             /// </summary>
 			public Union<ArtifactDetails, IntrinsicFunction> OutputArtifactDetails { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
             /// </summary>
 			public Union<string, IntrinsicFunction> Provider { get; set; }
 
@@ -73,7 +68,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: No
             /// Type: AWS CodePipeline CustomActionType Settings
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings
             /// </summary>
 			public Union<Settings, IntrinsicFunction> Settings { get; set; }
 
@@ -83,7 +77,6 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
             /// </summary>
 			public Union<string, IntrinsicFunction> Version { get; set; }
 

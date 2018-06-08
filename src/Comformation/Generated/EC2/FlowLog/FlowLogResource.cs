@@ -11,7 +11,7 @@ namespace Comformation.EC2.FlowLog
     /// (CloudWatch Logs) to help troubleshoot connection issues. For example, you can use a flow log to investigate
     /// why certain traffic isn't reaching an instance, which can help you diagnose overly restrictive security group
     /// rules. For more information, see VPC Flow Logs in the Amazon VPC User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html
     /// </summary>
     public class FlowLogResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.EC2.FlowLog
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn
             /// </summary>
 			public Union<string, IntrinsicFunction> DeliverLogsPermissionArn { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.EC2.FlowLog
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-loggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.EC2.FlowLog
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.EC2.FlowLog
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceType { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.EC2.FlowLog
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype
             /// </summary>
 			public Union<string, IntrinsicFunction> TrafficType { get; set; }
 

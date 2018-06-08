@@ -11,7 +11,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
     /// the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing
     /// your database is running on the Internet. For more information about DB security groups, see Working with DB
     /// security groups
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html
     /// </summary>
     public class DBSecurityGroupIngressResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// For an overview of CIDR ranges, go to the Wikipedia Tutorial.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-cidrip
             /// </summary>
 			public Union<string, IntrinsicFunction> CIDRIP { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Required: Yes
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSecurityGroupName { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Required: No
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupid
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupId { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Required: No
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
@@ -70,7 +66,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Required: No
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupownerid
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 

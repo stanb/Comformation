@@ -6,43 +6,70 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Connection
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html
+    /// AWS Glue Connection ConnectionInput
+    /// The ConnectionInput property type specifies the AWS Glue connection to create.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html
     /// </summary>
     public class ConnectionInput
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-description
+        /// Description
+        /// The description of the connection.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Description")]
         public Union<string, IntrinsicFunction> Description { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectiontype
+        /// ConnectionType
+        /// The type of the connection. Valid values are JDBC or SFTP.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConnectionType")]
         public Union<string, IntrinsicFunction> ConnectionType { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-matchcriteria
+        /// MatchCriteria
+        /// A list of UTF-8 strings that specify the criteria that you can use in selecting this connection.
+        /// Required: Yes
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MatchCriteria")]
         public Union<List<string>, IntrinsicFunction> MatchCriteria { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-physicalconnectionrequirements
+        /// PhysicalConnectionRequirements
+        /// A map of physical connection requirements that are needed to make the connection, such as VPC and
+        /// SecurityGroup.
+        /// Required: Yes
+        /// Type: AWS Glue Connection PhysicalConnectionRequirements
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PhysicalConnectionRequirements")]
         public Union<PhysicalConnectionRequirements, IntrinsicFunction> PhysicalConnectionRequirements { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectionproperties
+        /// ConnectionProperties
+        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the parameters for this connection.
+        /// Required: Yes
+        /// Type: JSON object
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConnectionProperties")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ConnectionProperties { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-name
+        /// Name
+        /// The name of the connection.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

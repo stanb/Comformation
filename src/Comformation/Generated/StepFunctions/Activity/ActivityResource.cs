@@ -7,7 +7,7 @@ namespace Comformation.StepFunctions.Activity
     /// <summary>
     /// AWS::StepFunctions::Activity
     /// Use the AWS::StepFunctions::Activity resource to create an AWS Step Functions activity.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
     /// </summary>
     public class ActivityResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.StepFunctions.Activity
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

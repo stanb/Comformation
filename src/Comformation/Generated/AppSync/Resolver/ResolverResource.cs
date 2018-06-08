@@ -9,7 +9,7 @@ namespace Comformation.AppSync.Resolver
     /// The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you will attach to fields in a
     /// schema. Request and Response templates for resolvers are written in Apache Velocity Template Language (VTL)
     /// format. More information on resolvers can be found in the Resolver Mapping Template Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
     /// </summary>
     public class ResolverResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
             /// </summary>
 			public Union<string, IntrinsicFunction> ResponseMappingTemplateS3Location { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
             /// </summary>
 			public Union<string, IntrinsicFunction> TypeName { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
             /// </summary>
 			public Union<string, IntrinsicFunction> DataSourceName { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
             /// </summary>
 			public Union<string, IntrinsicFunction> RequestMappingTemplate { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
             /// </summary>
 			public Union<string, IntrinsicFunction> ResponseMappingTemplate { get; set; }
 
@@ -74,7 +69,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
             /// </summary>
 			public Union<string, IntrinsicFunction> RequestMappingTemplateS3Location { get; set; }
 
@@ -84,7 +78,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
@@ -94,7 +87,6 @@ namespace Comformation.AppSync.Resolver
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
             /// </summary>
 			public Union<string, IntrinsicFunction> FieldName { get; set; }
 

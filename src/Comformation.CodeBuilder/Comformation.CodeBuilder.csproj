@@ -13,10 +13,14 @@
     <PackageReference Include="System.Net.Http" Version="4.3.3" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="fixed_urls.csv" />
     <None Remove="nlog.config" />
     <None Remove="PropertyTypeTemplate.liquid" />
     <EmbeddedResource Include="PropertyTypeTemplate.liquid" />
     <None Remove="ResourceTypeTemplate.liquid" />
+    <Content Include="fixed_urls.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

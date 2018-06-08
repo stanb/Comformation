@@ -7,7 +7,7 @@ namespace Comformation.IoT.Policy
     /// <summary>
     /// AWS::IoT::Policy
     /// Use the AWS::IoT::Policy resource to declare an AWS IoT policy.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html
     /// </summary>
     public class PolicyResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.IoT.Policy
             /// Required: Yes
             /// Type: JSON object
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.IoT.Policy
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyName { get; set; }
 

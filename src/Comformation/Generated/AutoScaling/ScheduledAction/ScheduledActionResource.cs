@@ -8,7 +8,7 @@ namespace Comformation.AutoScaling.ScheduledAction
     /// AWS::AutoScaling::ScheduledAction
     /// Creates a scheduled scaling action for an Auto Scaling group, changing the number of servers available for
     /// your application in response to predictable load changes.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html
     /// </summary>
     public class ScheduledActionResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity
             /// </summary>
 			public Union<int, IntrinsicFunction> DesiredCapacity { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: No
             /// Type: Time stamp
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime
             /// </summary>
 			public Union<string, IntrinsicFunction> EndTime { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize
             /// </summary>
 			public Union<int, IntrinsicFunction> MaxSize { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize
             /// </summary>
 			public Union<int, IntrinsicFunction> MinSize { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence
             /// </summary>
 			public Union<string, IntrinsicFunction> Recurrence { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Required: No
             /// Type: Time stamp
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime
             /// </summary>
 			public Union<string, IntrinsicFunction> StartTime { get; set; }
 

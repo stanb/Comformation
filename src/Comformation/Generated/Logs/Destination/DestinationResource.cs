@@ -10,7 +10,7 @@ namespace Comformation.Logs.Destination
     /// enables you to specify a physical resource (such as an Kinesis stream) that subscribes to CloudWatch Logs log
     /// events from another AWS account. For more information, see Cross-Account Log Data Sharing with Subscriptions
     /// in the Amazon CloudWatch User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
     /// </summary>
     public class DestinationResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.Logs.Destination
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationname
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationName { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.Logs.Destination
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationpolicy
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationPolicy { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.Logs.Destination
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.Logs.Destination
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetArn { get; set; }
 

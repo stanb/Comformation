@@ -9,7 +9,7 @@ namespace Comformation.CloudFront.Distribution
     /// Creates an Amazon CloudFront web distribution. For general information about CloudFront distributions, see the
     /// Introduction to Amazon CloudFront in the Amazon CloudFront Developer Guide. For specific information about
     /// creating CloudFront web distributions, see CreateDistribution in the Amazon CloudFront API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
     /// </summary>
     public class DistributionResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.CloudFront.Distribution
             /// Required: Yes
             /// Type: DistributionConfig type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig
             /// </summary>
 			public Union<DistributionConfig, IntrinsicFunction> DistributionConfig { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.CloudFront.Distribution
             /// Type: List of
             /// Update requires: No interruption
             /// Duplicates not allowed.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

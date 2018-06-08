@@ -8,7 +8,7 @@ namespace Comformation.GuardDuty.Filter
     /// AWS::GuardDuty::Filter
     /// You can use the AWS::GuardDuty::Filter resource to create a GuardDuty filter using the specified finding
     /// criteria.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
     /// </summary>
     public class FilterResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.GuardDuty.Filter
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action
             /// </summary>
 			public Union<string, IntrinsicFunction> Action { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.GuardDuty.Filter
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.GuardDuty.Filter
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid
             /// </summary>
 			public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.GuardDuty.Filter
             /// Required: Yes
             /// Type: GuardDuty Filter FindingCriteria
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria
             /// </summary>
 			public Union<FindingCriteria, IntrinsicFunction> FindingCriteria { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.GuardDuty.Filter
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank
             /// </summary>
 			public Union<int, IntrinsicFunction> Rank { get; set; }
 
@@ -72,7 +67,6 @@ namespace Comformation.GuardDuty.Filter
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

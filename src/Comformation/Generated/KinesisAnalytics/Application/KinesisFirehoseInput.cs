@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html
+    /// Amazon Kinesis Data Analytics Application KinesisFirehoseInput
+    /// The KinesisFirehoseInput property type identifies an Amazon Kinesis Data Firehose delivery stream as the
+    /// streaming source for an Amazon Kinesis Data Analytics application.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html
     /// </summary>
     public class KinesisFirehoseInput
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-resourcearn
+        /// ResourceARN
+        /// The Amazon Resource Name (ARN) of the input Kinesis Firehose delivery stream.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]
         public Union<string, IntrinsicFunction> ResourceARN { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-rolearn
+        /// RoleARN
+        /// The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream on your behalf.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]
         public Union<string, IntrinsicFunction> RoleARN { get; set; }

@@ -9,7 +9,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
     /// Use the AWS CloudFormation AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to add a reference
     /// data source to an existing Amazon Kinesis Data Analytics application. For more information, see
     /// AddApplicationReferenceDataSource in the Amazon Kinesis Data Analytics Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html
     /// </summary>
     public class ApplicationReferenceDataSourceResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
             /// Required: Yes
             /// Type: Kinesis Data Analytics ApplicationReferenceDataSource ReferenceDataSource
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource
             /// </summary>
 			public Union<ReferenceDataSource, IntrinsicFunction> ReferenceDataSource { get; set; }
 

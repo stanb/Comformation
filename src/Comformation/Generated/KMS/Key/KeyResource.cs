@@ -10,7 +10,7 @@ namespace Comformation.KMS.Key
     /// (customers) can use the master key to encrypt their data stored in AWS services that are integrated with AWS
     /// KMS or within their applications. For more information, see What is the AWS Key Management Service? in the AWS
     /// Key Management Service Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html
     /// </summary>
     public class KeyResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.KMS.Key
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.KMS.Key
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enablekeyrotation
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableKeyRotation { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.KMS.Key
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
@@ -56,12 +53,11 @@ namespace Comformation.KMS.Key
             /// Required: Yes
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keypolicy
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> KeyPolicy { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keyusage
+            /// KeyUsage
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyUsage { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.KMS.Key
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.CloudFormation.CustomResource
     /// AWS::CloudFormation::CustomResource
     /// In an AWS CloudFormation template, you use the AWS::CloudFormation::CustomResource or Custom::String resource
     /// type to specify custom resources.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html
     /// </summary>
     public class CustomResourceResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.CloudFormation.CustomResource
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceToken { get; set; }
 

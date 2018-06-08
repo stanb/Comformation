@@ -10,7 +10,7 @@ namespace Comformation.EFS.FileSystem
     /// You must create a mount target (AWS::EFS::MountTarget) to mount your Amazon EFS file system on an Amazon
     /// Elastic Compute Cloud (Amazon EC2) instance. For more information, see the CreateFileSystem API in the Amazon
     /// Elastic File System User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html
     /// </summary>
     public class FileSystemResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.EFS.FileSystem
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted
             /// </summary>
 			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EFS.FileSystem
             /// Required: No
             /// Type: Amazon Elastic File System FileSystem FileSystemTags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags
             /// </summary>
 			public Union<List<ElasticFileSystemTag>, IntrinsicFunction> FileSystemTags { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.EFS.FileSystem
             /// Required: Conditional. This parameter is required if you use a non-default CMK.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -58,7 +55,6 @@ namespace Comformation.EFS.FileSystem
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode
             /// </summary>
 			public Union<string, IntrinsicFunction> PerformanceMode { get; set; }
 

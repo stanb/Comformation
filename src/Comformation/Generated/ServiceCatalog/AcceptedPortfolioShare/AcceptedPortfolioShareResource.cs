@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
     /// AWS::ServiceCatalog::AcceptedPortfolioShare
     /// Accepts an offer to share the specified portfolio for AWS Service Catalog. For more information, see
     /// AcceptPortfolioShare in the AWS Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html
     /// </summary>
     public class AcceptedPortfolioShareResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-portfolioid
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 

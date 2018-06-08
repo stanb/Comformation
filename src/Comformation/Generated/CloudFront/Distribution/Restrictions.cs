@@ -6,13 +6,19 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
+    /// CloudFront Distribution Restrictions
+    /// Restrictions is a property of the CloudFront Distribution DistributionConfig property type that lets you limit
+    /// which viewers can access your content.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
     /// </summary>
     public class Restrictions
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction
+        /// GeoRestriction
+        /// The countries in which viewers are able to access your content.
+        /// Required: Yes
+        /// Type: CloudFront Distribution GeoRestriction
         /// </summary>
         [JsonProperty("GeoRestriction")]
         public Union<GeoRestriction, IntrinsicFunction> GeoRestriction { get; set; }

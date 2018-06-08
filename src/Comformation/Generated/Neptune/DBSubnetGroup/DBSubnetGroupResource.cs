@@ -8,7 +8,7 @@ namespace Comformation.Neptune.DBSubnetGroup
     /// AWS::Neptune::DBSubnetGroup
     /// The AWS::Neptune::DBSubnetGroup type creates a Neptune DB subnet group. Subnet groups must contain at least
     /// two subnets in two different Availability Zones in the same region.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-subnetids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Required: No
             /// Type: A list of resource tags in key-value format.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

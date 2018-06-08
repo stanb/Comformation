@@ -8,7 +8,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
     /// AWS::AutoScaling::LaunchConfiguration
     /// Creates an Auto Scaling launch configuration that can be used by an Auto Scaling group to configure Auto
     /// Scaling instances.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html
     /// </summary>
     public class LaunchConfigurationResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cf-as-launchconfig-associatepubip
             /// </summary>
 			public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: A list of BlockDeviceMappings.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-blockdevicemappings
             /// </summary>
 			public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-classiclinkvpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> ClassicLinkVPCId { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// property.
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-classiclinkvpcsecuritygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ClassicLinkVPCSecurityGroups { get; set; }
 
@@ -75,7 +71,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No If this property is not specified, "false" is used.
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-ebsoptimized
             /// </summary>
 			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
@@ -86,7 +81,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String (1–1600 chars)
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-iaminstanceprofile
             /// </summary>
 			public Union<string, IntrinsicFunction> IamInstanceProfile { get; set; }
 
@@ -96,7 +90,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-imageid
             /// </summary>
 			public Union<string, IntrinsicFunction> ImageId { get; set; }
 
@@ -110,7 +103,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -125,7 +117,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instancemonitoring
             /// </summary>
 			public Union<bool, IntrinsicFunction> InstanceMonitoring { get; set; }
 
@@ -135,7 +126,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
@@ -145,7 +135,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-kernelid
             /// </summary>
 			public Union<string, IntrinsicFunction> KernelId { get; set; }
 
@@ -155,7 +144,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-keyname
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyName { get; set; }
 
@@ -167,7 +155,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-autoscaling-launchconfig-launchconfigurationname
             /// </summary>
 			public Union<string, IntrinsicFunction> LaunchConfigurationName { get; set; }
 
@@ -183,7 +170,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-placementtenancy
             /// </summary>
 			public Union<string, IntrinsicFunction> PlacementTenancy { get; set; }
 
@@ -195,7 +181,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-ramdiskid
             /// </summary>
 			public Union<string, IntrinsicFunction> RamDiskId { get; set; }
 
@@ -207,7 +192,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: A list of security groups.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-securitygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
@@ -225,7 +209,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Note When you change your bid price by creating a new launch configuration, running instances will
             /// continue to run as long as the bid price for those running instances is higher than the current Spot
             /// price.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-spotprice
             /// </summary>
 			public Union<string, IntrinsicFunction> SpotPrice { get; set; }
 
@@ -235,7 +218,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-userdata
             /// </summary>
 			public Union<string, IntrinsicFunction> UserData { get; set; }
 

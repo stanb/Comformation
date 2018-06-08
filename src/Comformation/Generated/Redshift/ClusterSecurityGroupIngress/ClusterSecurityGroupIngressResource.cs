@@ -7,7 +7,7 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
     /// <summary>
     /// AWS::Redshift::ClusterSecurityGroupIngress
     /// Specifies inbound (ingress) rules for an Amazon Redshift security group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
     /// </summary>
     public class ClusterSecurityGroupIngressResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip
             /// </summary>
 			public Union<string, IntrinsicFunction> CIDRIP { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterSecurityGroupName { get; set; }
 
@@ -39,7 +37,6 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
             /// property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 

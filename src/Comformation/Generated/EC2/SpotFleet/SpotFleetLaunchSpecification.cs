@@ -6,109 +6,177 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html
+    /// Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications
+    /// LaunchSpecifications is a property of the Amazon EC2 SpotFleet SpotFleetRequestConfigData property that
+    /// defines the launch specifications for the Spot fleet request.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html
     /// </summary>
     public class SpotFleetLaunchSpecification
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-blockdevicemappings
+        /// BlockDeviceMappings
+        /// Defines the block devices that are mapped to the Spot instances.
+        /// Required: No
+        /// Type: List of Amazon Elastic Compute Cloud SpotFleet BlockDeviceMappings
         /// </summary>
         [JsonProperty("BlockDeviceMappings")]
         public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-ebsoptimized
+        /// EbsOptimized
+        /// Indicates whether the instances are optimized for Amazon Elastic Block Store (Amazon EBS) I/O. This
+        /// optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to
+        /// provide optimal EBS I/O performance. This optimization isn't available with all instance types.
+        /// Additional usage charges apply when you use an Amazon EBS-optimized instance.
+        /// Required: No
+        /// Type: Boolean
         /// </summary>
         [JsonProperty("EbsOptimized")]
         public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-iaminstanceprofile
+        /// IamInstanceProfile
+        /// Defines the AWS Identity and Access Management (IAM) instance profile to associate with the
+        /// instances.
+        /// Required: No
+        /// Type: Amazon Elastic Compute Cloud SpotFleet IamInstanceProfile
         /// </summary>
         [JsonProperty("IamInstanceProfile")]
         public Union<IamInstanceProfileSpecification, IntrinsicFunction> IamInstanceProfile { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-imageid
+        /// ImageId
+        /// The unique ID of the Amazon Machine Image (AMI) to launch on the instances.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("ImageId")]
         public Union<string, IntrinsicFunction> ImageId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-instancetype
+        /// InstanceType
+        /// Specifies the instance type of the EC2 instances.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("InstanceType")]
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-kernelid
+        /// KernelId
+        /// The ID of the kernel that is associated with the Amazon Elastic Compute Cloud (Amazon EC2) AMI.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("KernelId")]
         public Union<string, IntrinsicFunction> KernelId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-keyname
+        /// KeyName
+        /// An Amazon EC2 key pair to associate with the instances.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("KeyName")]
         public Union<string, IntrinsicFunction> KeyName { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-monitoring
+        /// Monitoring
+        /// Enable or disable monitoring for the instances.
+        /// Required: No
+        /// Type: Amazon EC2 SpotFleet Monitoring
         /// </summary>
         [JsonProperty("Monitoring")]
         public Union<SpotFleetMonitoring, IntrinsicFunction> Monitoring { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-networkinterfaces
+        /// NetworkInterfaces
+        /// The network interfaces to associate with the instances.
+        /// Required: No
+        /// Type: List of Amazon Elastic Compute Cloud SpotFleet NetworkInterfaces
         /// </summary>
         [JsonProperty("NetworkInterfaces")]
         public Union<List<InstanceNetworkInterfaceSpecification>, IntrinsicFunction> NetworkInterfaces { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-placement
+        /// Placement
+        /// Defines a placement group, which is a logical grouping of instances within a single Availability
+        /// Zone (AZ).
+        /// Required: No
+        /// Type: Amazon Elastic Compute Cloud SpotFleet Placement
         /// </summary>
         [JsonProperty("Placement")]
         public Union<SpotPlacement, IntrinsicFunction> Placement { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-ramdiskid
+        /// RamdiskId
+        /// The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the
+        /// kernel requirements for information about whether you need to specify a RAM disk. To find kernel
+        /// requirements, refer to the AWS Resource Center and search for the kernel ID.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("RamdiskId")]
         public Union<string, IntrinsicFunction> RamdiskId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-securitygroups
+        /// SecurityGroups
+        /// One or more security group IDs to associate with the instances.
+        /// Required: No
+        /// Type: List of Amazon Elastic Compute Cloud SpotFleet SecurityGroups
         /// </summary>
         [JsonProperty("SecurityGroups")]
         public Union<List<GroupIdentifier>, IntrinsicFunction> SecurityGroups { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-spotprice
+        /// SpotPrice
+        /// The bid price per unit hour for the specified instance type. If you don't specify a value, Amazon
+        /// EC2 uses the Spot bid price for the fleet. For more information, see How Spot Fleet Works in the
+        /// Amazon EC2 User Guide for Linux Instances.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("SpotPrice")]
         public Union<string, IntrinsicFunction> SpotPrice { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-subnetid
+        /// SubnetId
+        /// The ID of the subnet in which to launch the instances.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("SubnetId")]
         public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-tagspecifications
+        /// TagSpecifications
+        /// The tags to apply during creation.
+        /// Required: No
+        /// Type: List of Amazon EC2 SpotFleet SpotFleetTagSpecification
         /// </summary>
         [JsonProperty("TagSpecifications")]
         public Union<List<SpotFleetTagSpecification>, IntrinsicFunction> TagSpecifications { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-userdata
+        /// UserData
+        /// Base64-encoded MIME user data that instances use when starting up.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("UserData")]
         public Union<string, IntrinsicFunction> UserData { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-weightedcapacity
+        /// WeightedCapacity
+        /// The number of units provided by the specified instance type. These units are the same units that you
+        /// chose to set the target capacity in terms of instances or a performance characteristic, such as
+        /// vCPUs, memory, or I/O. For more information, see How Spot Fleet Works in the Amazon EC2 User Guide
+        /// for Linux Instances.
+        /// If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+        /// instances to the next whole number.
+        /// Required: No
+        /// Type: Number
         /// </summary>
         [JsonProperty("WeightedCapacity")]
         public Union<double, IntrinsicFunction> WeightedCapacity { get; set; }

@@ -9,7 +9,7 @@ namespace Comformation.RDS.DBSecurityGroup
     /// The AWS::RDS::DBSecurityGroup type is used to create or update an Amazon RDS DB Security Group. For more
     /// information about DB security groups, see Working with DB Security Groups in the Amazon Relational Database
     /// Service Developer Guide. For details on the settings for DB security groups, see CreateDBSecurityGroup.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
     /// </summary>
     public class DBSecurityGroupResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: List of RDS Security Group Rules.
             /// Required: Yes
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress
             /// </summary>
 			public Union<List<Ingress>, IntrinsicFunction> DBSecurityGroupIngress { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Required: Conditional. Must be specified to create a DB Security Group for a VPC; may not be
             /// specified otherwise.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2VpcId { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: String
             /// Required: Yes
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupDescription { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Required: No
             /// Type: A list of resource tags.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

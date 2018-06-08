@@ -6,25 +6,40 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html
+    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource ReferenceSchema
+    /// The ReferenceSchema property type specifies the format of the data in the streaming source, and how each data
+    /// element maps to corresponding columns created in the in-application stream.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html
     /// </summary>
     public class ReferenceSchema
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalytics-applicationreferencedatasource-referenceschema-recordencoding
+        /// RecordEncoding
+        /// Specifies the encoding of the records in the streaming source; For example, UTF-8.
+        /// Required: No
+        /// Type: String;
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordEncoding")]
         public Union<string, IntrinsicFunction> RecordEncoding { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalytics-applicationreferencedatasource-referenceschema-recordcolumns
+        /// RecordColumns
+        /// A list of Amazon Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn objects.
+        /// Required: Yes
+        /// Type: List of Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumns")]
         public Union<List<RecordColumn>, IntrinsicFunction> RecordColumns { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalytics-applicationreferencedatasource-referenceschema-recordformat
+        /// RecordFormat
+        /// Specifies the format of the records on the streaming source.
+        /// Required: Yes
+        /// Type: Kinesis Data Analytics ApplicationReferenceDataSource RecordFormat
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormat")]
         public Union<RecordFormat, IntrinsicFunction> RecordFormat { get; set; }

@@ -6,37 +6,62 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html
+    /// Application Auto Scaling ScalingPolicy CustomizedMetricSpecification
+    /// The CustomizedMetricSpecification property configures a customized metric for a target tracking policy in
+    /// Application Auto Scaling. CustomizedMetricSpecification is a subproperty of the Application Auto Scaling
+    /// ScalingPolicy TargetTrackingScalingPolicyConfiguration property.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html
     /// </summary>
     public class CustomizedMetricSpecification
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-dimensions
+        /// Dimensions
+        /// The dimensions of the metric. Duplicates not allowed.
+        /// Required: No
+        /// Type: List of Application Auto Scaling ScalingPolicy MetricDimension
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]
         public Union<List<MetricDimension>, IntrinsicFunction> Dimensions { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-metricname
+        /// MetricName
+        /// The name of the metric.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricName")]
         public Union<string, IntrinsicFunction> MetricName { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-namespace
+        /// Namespace
+        /// The namespace of the metric.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Namespace")]
         public Union<string, IntrinsicFunction> Namespace { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-statistic
+        /// Statistic
+        /// The statistic of the metric.
+        /// For valid values, see CustomizedMetricSpecification in the Application Auto Scaling API Reference.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]
         public Union<string, IntrinsicFunction> Statistic { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-unit
+        /// Unit
+        /// The unit of the metric.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Unit")]
         public Union<string, IntrinsicFunction> Unit { get; set; }

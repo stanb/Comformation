@@ -9,7 +9,7 @@ namespace Comformation.Route53.RecordSetGroup
     /// The AWS::Route53::RecordSetGroup resource creates record sets for a hosted zone. For more information about
     /// constraints and values for each property, see POST CreateHostedZone for hosted zones and POST
     /// ChangeResourceRecordSet for resource record sets.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordsetgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordsetgroup.html
     /// </summary>
     public class RecordSetGroupResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Route53.RecordSetGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment
             /// </summary>
 			public Union<string, IntrinsicFunction> Comment { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.Route53.RecordSetGroup
             /// specify both.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid
             /// </summary>
 			public Union<string, IntrinsicFunction> HostedZoneId { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.Route53.RecordSetGroup
             /// specify both.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename
             /// </summary>
 			public Union<string, IntrinsicFunction> HostedZoneName { get; set; }
 
@@ -63,7 +60,6 @@ namespace Comformation.Route53.RecordSetGroup
             /// com"] }, { "Name" : "mysite. example. com. ", "Type" : "CNAME", "TTL" : "900", "SetIdentifier" :
             /// "Frontend Two", "Weight" : "6", "ResourceRecords" : ["example-ec2-larger. amazonaws. com"] } ]
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets
             /// </summary>
 			public Union<List<RecordSet>, IntrinsicFunction> RecordSets { get; set; }
 

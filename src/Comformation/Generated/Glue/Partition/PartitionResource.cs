@@ -8,7 +8,7 @@ namespace Comformation.Glue.Partition
     /// AWS::Glue::Partition
     /// The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data. For
     /// more information, see CreatePartition Action and Partition Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html
     /// </summary>
     public class PartitionResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Glue.Partition
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename
             /// </summary>
 			public Union<string, IntrinsicFunction> TableName { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Glue.Partition
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename
             /// </summary>
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.Glue.Partition
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.Glue.Partition
             /// Required: Yes
             /// Type: AWS Glue Partition PartitionInput
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput
             /// </summary>
 			public Union<PartitionInput, IntrinsicFunction> PartitionInput { get; set; }
 

@@ -10,7 +10,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
     /// delivery stream that delivers real-time streaming data to an Amazon Simple Storage Service (Amazon S3), Amazon
     /// Redshift, or Amazon Elasticsearch Service (Amazon ES) destination. For more information, see Creating an
     /// Amazon Kinesis Firehose Delivery Stream in the Amazon Kinesis Firehose Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html
     /// </summary>
     public class DeliveryStreamResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname
             /// </summary>
 			public Union<string, IntrinsicFunction> DeliveryStreamName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype
             /// </summary>
 			public Union<string, IntrinsicFunction> DeliveryStreamType { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: Kinesis Firehose DeliveryStream ElasticsearchDestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon ES
             /// destination to an Amazon S3 or Amazon Redshift destination, update requires some interruptions.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration
             /// </summary>
 			public Union<ElasticsearchDestinationConfiguration, IntrinsicFunction> ElasticsearchDestinationConfiguration { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: Kinesis Firehose DeliveryStream ExtendedS3DestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration
             /// </summary>
 			public Union<ExtendedS3DestinationConfiguration, IntrinsicFunction> ExtendedS3DestinationConfiguration { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Required: No
             /// Type: Kinesis Data Firehose DeliveryStream KinesisStreamSourceConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration
             /// </summary>
 			public Union<KinesisStreamSourceConfiguration, IntrinsicFunction> KinesisStreamSourceConfiguration { get; set; }
 
@@ -79,7 +74,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration
             /// </summary>
 			public Union<RedshiftDestinationConfiguration, IntrinsicFunction> RedshiftDestinationConfiguration { get; set; }
 
@@ -90,7 +84,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon S3
             /// destination to an Amazon ES destination, update requires some interruptions.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration
             /// </summary>
 			public Union<S3DestinationConfiguration, IntrinsicFunction> S3DestinationConfiguration { get; set; }
 
@@ -100,7 +93,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Required: No
             /// Type: Kinesis Data Firehose DeliveryStream SplunkDestinationConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration
             /// </summary>
 			public Union<SplunkDestinationConfiguration, IntrinsicFunction> SplunkDestinationConfiguration { get; set; }
 

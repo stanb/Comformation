@@ -8,7 +8,7 @@ namespace Comformation.S3.Bucket
     /// AWS::S3::Bucket
     /// The AWS::S3::Bucket resource creates an Amazon Simple Storage Service (Amazon S3) bucket in the same AWS
     /// Region where you create the AWS CloudFormation stack.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
     /// </summary>
     public class BucketResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket AccelerateConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration
             /// </summary>
 			public Union<AccelerateConfiguration, IntrinsicFunction> AccelerateConfiguration { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.S3.Bucket
             /// Valid values: AuthenticatedRead | AwsExecRead | BucketOwnerRead | BucketOwnerFullControl |
             /// LogDeliveryWrite | Private | PublicRead | PublicReadWrite
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol
             /// </summary>
 			public Union<string, IntrinsicFunction> AccessControl { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: List of Amazon S3 Bucket AnalyticsConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
             /// </summary>
 			public Union<List<AnalyticsConfiguration>, IntrinsicFunction> AnalyticsConfigurations { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket BucketEncryption
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-bucketencryption
             /// </summary>
 			public Union<BucketEncryption, IntrinsicFunction> BucketEncryption { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name
             /// </summary>
 			public Union<string, IntrinsicFunction> BucketName { get; set; }
 
@@ -83,7 +78,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket CorsConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-crossoriginconfig
             /// </summary>
 			public Union<CorsConfiguration, IntrinsicFunction> CorsConfiguration { get; set; }
 
@@ -93,7 +87,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: List of Amazon S3 Bucket InventoryConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations
             /// </summary>
 			public Union<List<InventoryConfiguration>, IntrinsicFunction> InventoryConfigurations { get; set; }
 
@@ -104,7 +97,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket LifecycleConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-lifecycleconfig
             /// </summary>
 			public Union<LifecycleConfiguration, IntrinsicFunction> LifecycleConfiguration { get; set; }
 
@@ -114,7 +106,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket LoggingConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-loggingconfig
             /// </summary>
 			public Union<LoggingConfiguration, IntrinsicFunction> LoggingConfiguration { get; set; }
 
@@ -125,7 +116,6 @@ namespace Comformation.S3.Bucket
             /// Type: List of Amazon S3 Bucket MetricsConfiguration
             /// Update requires: No interruption
             /// Duplicates not allowed.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-metricsconfigurations
             /// </summary>
 			public Union<List<MetricsConfiguration>, IntrinsicFunction> MetricsConfigurations { get; set; }
 
@@ -135,7 +125,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket NotificationConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-notification
             /// </summary>
 			public Union<NotificationConfiguration, IntrinsicFunction> NotificationConfiguration { get; set; }
 
@@ -148,7 +137,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket ReplicationConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-replicationconfiguration
             /// </summary>
 			public Union<ReplicationConfiguration, IntrinsicFunction> ReplicationConfiguration { get; set; }
 
@@ -161,7 +149,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -173,7 +160,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Amazon S3 Bucket VersioningConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-versioning
             /// </summary>
 			public Union<VersioningConfiguration, IntrinsicFunction> VersioningConfiguration { get; set; }
 
@@ -184,7 +170,6 @@ namespace Comformation.S3.Bucket
             /// Required: No
             /// Type: Website Configuration Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-websiteconfiguration
             /// </summary>
 			public Union<WebsiteConfiguration, IntrinsicFunction> WebsiteConfiguration { get; set; }
 

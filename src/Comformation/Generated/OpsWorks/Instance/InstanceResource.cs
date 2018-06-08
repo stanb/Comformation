@@ -8,7 +8,7 @@ namespace Comformation.OpsWorks.Instance
     /// AWS::OpsWorks::Instance
     /// Creates an Amazon Elastic Compute Cloud (Amazon EC2) instance for an AWS OpsWorks stack. Instances for AWS
     /// OpsWorks stacks handle the work of serving applications and balancing traffic, for example.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html
     /// </summary>
     public class InstanceResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-agentversion
             /// </summary>
 			public Union<string, IntrinsicFunction> AgentVersion { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-amiid
             /// </summary>
 			public Union<string, IntrinsicFunction> AmiId { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-architecture
             /// </summary>
 			public Union<string, IntrinsicFunction> Architecture { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-autoscalingtype
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingType { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -79,7 +74,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: List of AWS OpsWorks Instance BlockDeviceMapping
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-blockdevicemappings
             /// </summary>
 			public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
 
@@ -91,7 +85,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-ebsoptimized
             /// </summary>
 			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
@@ -101,7 +94,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-elasticips
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ElasticIps { get; set; }
 
@@ -111,7 +103,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-hostname
             /// </summary>
 			public Union<string, IntrinsicFunction> Hostname { get; set; }
 
@@ -121,7 +112,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: Boolean
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-installupdatesonboot
             /// </summary>
 			public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
 
@@ -135,7 +125,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
@@ -145,7 +134,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-layerids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> LayerIds { get; set; }
 
@@ -156,7 +144,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-os
             /// </summary>
 			public Union<string, IntrinsicFunction> Os { get; set; }
 
@@ -166,7 +153,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-rootdevicetype
             /// </summary>
 			public Union<string, IntrinsicFunction> RootDeviceType { get; set; }
 
@@ -176,7 +162,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-sshkeyname
             /// </summary>
 			public Union<string, IntrinsicFunction> SshKeyName { get; set; }
 
@@ -186,7 +171,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-stackid
             /// </summary>
 			public Union<string, IntrinsicFunction> StackId { get; set; }
 
@@ -198,7 +182,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -209,7 +192,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-tenancy
             /// </summary>
 			public Union<string, IntrinsicFunction> Tenancy { get; set; }
 
@@ -219,7 +201,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: AWS OpsWorks TimeBasedAutoScaling Type
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-timebasedautoscaling
             /// </summary>
 			public Union<TimeBasedAutoScaling, IntrinsicFunction> TimeBasedAutoScaling { get; set; }
 
@@ -229,7 +210,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-virtualizationtype
             /// </summary>
 			public Union<string, IntrinsicFunction> VirtualizationType { get; set; }
 
@@ -240,7 +220,6 @@ namespace Comformation.OpsWorks.Instance
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-volumes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Volumes { get; set; }
 

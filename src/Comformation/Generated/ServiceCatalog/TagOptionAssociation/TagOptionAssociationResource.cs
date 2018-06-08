@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
     /// AWS::ServiceCatalog::TagOptionAssociation
     /// Associates the specified TagOption with the specified AWS Service Catalog resource. For more information, see
     /// AWS Service Catalog TagOptionLibrary in the AWS Service Catalog Administrator Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html
     /// </summary>
     public class TagOptionAssociationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-tagoptionid
             /// </summary>
 			public Union<string, IntrinsicFunction> TagOptionId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-resourceid
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceId { get; set; }
 

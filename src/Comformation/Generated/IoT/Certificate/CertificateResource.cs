@@ -7,7 +7,7 @@ namespace Comformation.IoT.Certificate
     /// <summary>
     /// AWS::IoT::Certificate
     /// Use the AWS::IoT::Certificate resource to declare an X. 509 certificate.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.IoT.Certificate
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateSigningRequest { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.IoT.Certificate
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status
             /// </summary>
 			public Union<string, IntrinsicFunction> Status { get; set; }
 

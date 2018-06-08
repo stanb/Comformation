@@ -6,25 +6,38 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html
+    /// AWS OpsWorks Stack RdsDbInstance
+    /// RdsDbInstance is a property of the AWS::OpsWorks::Stack resource that registers an Amazon Relational Database
+    /// Service (Amazon RDS) DB instance with an AWS OpsWorks stack.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html
     /// </summary>
     public class RdsDbInstance
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
+        /// DbPassword
+        /// The password of the registered database.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("DbPassword")]
         public Union<string, IntrinsicFunction> DbPassword { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
+        /// DbUser
+        /// The master user name of the registered database.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("DbUser")]
         public Union<string, IntrinsicFunction> DbUser { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
+        /// RdsDbInstanceArn
+        /// The Amazon Resource Name (ARN) of the Amazon RDS DB instance to register with the AWS OpsWorks
+        /// stack.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("RdsDbInstanceArn")]
         public Union<string, IntrinsicFunction> RdsDbInstanceArn { get; set; }

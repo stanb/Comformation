@@ -8,7 +8,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
     /// AWS::ApplicationAutoScaling::ScalingPolicy
     /// The AWS::ApplicationAutoScaling::ScalingPolicy resource defines an Application Auto Scaling scaling policy
     /// that Application Auto Scaling uses to adjust your application resources.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html
     /// </summary>
     public class ScalingPolicyResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policyname
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policytype
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyType { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// ScalableDimension, and ServiceNamespace properties, don't specify the ScalingTargetId property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-resourceid
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// ScalableDimension, and ServiceNamespace properties, don't specify the ScalingTargetId property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalabledimension
             /// </summary>
 			public Union<string, IntrinsicFunction> ScalableDimension { get; set; }
 
@@ -74,7 +70,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// ResourceId, ScalableDimension, and ServiceNamespace properties.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalingtargetid
             /// </summary>
 			public Union<string, IntrinsicFunction> ScalingTargetId { get; set; }
 
@@ -87,7 +82,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// ScalableDimension, and ServiceNamespace properties, don't specify the ScalingTargetId property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-servicenamespace
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceNamespace { get; set; }
 
@@ -98,7 +92,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Required: No
             /// Type: Application Auto Scaling ScalingPolicy StepScalingPolicyConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration
             /// </summary>
 			public Union<StepScalingPolicyConfiguration, IntrinsicFunction> StepScalingPolicyConfiguration { get; set; }
 
@@ -110,7 +103,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Required: No
             /// Type: Application Auto Scaling ScalingPolicy TargetTrackingScalingPolicyConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration
             /// </summary>
 			public Union<TargetTrackingScalingPolicyConfiguration, IntrinsicFunction> TargetTrackingScalingPolicyConfiguration { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
     /// AWS::ServiceCatalog::PortfolioProductAssociation
     /// Associates the specified product with the specified portfolio for AWS Service Catalog. For more information,
     /// see AssociateProductWithPortfolio in the AWS Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html
     /// </summary>
     public class PortfolioProductAssociationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-sourceportfolioid
             /// </summary>
 			public Union<string, IntrinsicFunction> SourcePortfolioId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-portfolioid
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-productid
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
 

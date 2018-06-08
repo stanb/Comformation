@@ -8,7 +8,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
     /// AWS::DMS::ReplicationSubnetGroup
     /// The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group. Subnet groups must
     /// contain at least two subnets in two different Availability Zones in the same region.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html
     /// </summary>
     public class ReplicationSubnetGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationSubnetGroupDescription { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationSubnetGroupIdentifier { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html#cfn-dms-replicationsubnetgroup-subnetids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Required: No
             /// Type: A list of resource tags in key-value format.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html#cfn-dms-replicationsubnetgroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

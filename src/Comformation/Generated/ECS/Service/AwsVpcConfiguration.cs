@@ -6,25 +6,41 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.Service
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html
+    /// Amazon Elastic Container Service Service AwsVpcConfiguration
+    /// AwsVpcConfiguration is a property of the AWS::ECS::Service resource that specifies the subnets and security
+    /// groups for an Amazon Elastic Container Service (Amazon ECS) task or service.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html
     /// </summary>
     public class AwsVpcConfiguration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-assignpublicip
+        /// AssignPublicIp
+        /// Valid values include ENABLED and DISABLED.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AssignPublicIp")]
         public Union<string, IntrinsicFunction> AssignPublicIp { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-securitygroups
+        /// SecurityGroups
+        /// The security groups associated with the task or service. If you do not specify a security group, the
+        /// default security group for the VPC is used.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroups")]
         public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-subnets
+        /// Subnets
+        /// The subnets associated with the Amazon ECS task or service.
+        /// Required: Yes
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Subnets")]
         public Union<List<string>, IntrinsicFunction> Subnets { get; set; }

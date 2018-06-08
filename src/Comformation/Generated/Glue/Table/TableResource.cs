@@ -8,7 +8,7 @@ namespace Comformation.Glue.Table
     /// AWS::Glue::Table
     /// The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog. For more information, see
     /// Defining Tables in the AWS Glue Data Catalog and Table Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html
     /// </summary>
     public class TableResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Glue.Table
             /// Required: Yes
             /// Type: AWS Glue Table TableInput
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-tableinput
             /// </summary>
 			public Union<TableInput, IntrinsicFunction> TableInput { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Glue.Table
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-databasename
             /// </summary>
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.Glue.Table
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-catalogid
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 

@@ -10,7 +10,7 @@ namespace Comformation.AutoScaling.LifecycleHook
     /// lifecycle hook, the Auto Scaling group either pauses the instance after it is launched (before it is put into
     /// service) or pauses the instance as it is terminated (before it is fully terminated). For more information, see
     /// Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
     /// </summary>
     public class LifecycleHookResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultResult { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
             /// </summary>
 			public Union<int, IntrinsicFunction> HeartbeatTimeout { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecyclehookname
             /// </summary>
 			public Union<string, IntrinsicFunction> LifecycleHookName { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
             /// </summary>
 			public Union<string, IntrinsicFunction> LifecycleTransition { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationMetadata { get; set; }
 
@@ -91,7 +85,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationTargetARN { get; set; }
 
@@ -102,7 +95,6 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 

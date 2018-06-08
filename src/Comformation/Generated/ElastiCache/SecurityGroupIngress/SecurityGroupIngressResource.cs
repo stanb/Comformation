@@ -9,7 +9,7 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
     /// The AWS::ElastiCache::SecurityGroupIngress type authorizes ingress to a cache security group from hosts in
     /// specified Amazon EC2 security groups. For more information about ElastiCache security group ingress, go to
     /// AuthorizeCacheSecurityGroupIngress in the Amazon ElastiCache API Reference Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html
     /// </summary>
     public class SecurityGroupIngressResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// Type: String
             /// Required: Yes
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-cachesecuritygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheSecurityGroupName { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// Type: String
             /// Required: Yes
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// Type: String
             /// Required: No
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupownerid
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 

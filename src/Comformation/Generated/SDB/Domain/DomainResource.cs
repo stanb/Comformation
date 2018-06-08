@@ -8,7 +8,7 @@ namespace Comformation.SDB.Domain
     /// AWS::SDB::Domain
     /// Use the AWS::SDB::Domain resource to declare an Amazon SimpleDB domain. When you specify AWS::SDB::Domain as
     /// an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html
     /// </summary>
     public class DomainResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.SDB.Domain
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html#cfn-sdb-domain-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 

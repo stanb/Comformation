@@ -8,7 +8,7 @@ namespace Comformation.EMR.InstanceFleetConfig
     /// AWS::EMR::InstanceFleetConfig
     /// Use the AWS::EMR::InstanceFleetConfig resource to configure a Spot Instance fleet for an Amazon EMR cluster.
     /// For more information, see Configure Instance Fleets in the Amazon EMR Management Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html
     /// </summary>
     public class InstanceFleetConfigResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-clusterid
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancefleettype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceFleetType { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: No
             /// Type: List of Amazon EMR InstanceFleetConfig InstanceTypeConfig
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfigs
             /// </summary>
 			public Union<List<InstanceTypeConfig>, IntrinsicFunction> InstanceTypeConfigs { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: No
             /// Type: Amazon EMR InstanceFleetConfig InstanceFleetProvisioningSpecifications
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-launchspecifications
             /// </summary>
 			public Union<InstanceFleetProvisioningSpecifications, IntrinsicFunction> LaunchSpecifications { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -74,7 +69,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetondemandcapacity
             /// </summary>
 			public Union<int, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
 
@@ -85,7 +79,6 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetspotcapacity
             /// </summary>
 			public Union<int, IntrinsicFunction> TargetSpotCapacity { get; set; }
 

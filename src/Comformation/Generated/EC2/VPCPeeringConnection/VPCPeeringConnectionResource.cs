@@ -9,7 +9,7 @@ namespace Comformation.EC2.VPCPeeringConnection
     /// A VPC peering connection enables a network connection between two virtual private clouds (VPCs) so that you
     /// can route traffic between them using a private IP address. For more information about VPC peering and its
     /// limitations, see VPC Peering Overview in the Amazon VPC Peering Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
     /// </summary>
     public class VPCPeeringConnectionResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid
             /// </summary>
 			public Union<string, IntrinsicFunction> PeerOwnerId { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> PeerRoleArn { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> PeerVpcId { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

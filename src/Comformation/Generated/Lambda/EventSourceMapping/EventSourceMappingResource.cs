@@ -10,7 +10,7 @@ namespace Comformation.Lambda.EventSourceMapping
     /// function. The stream can be an Kinesis stream or an Amazon DynamoDB (DynamoDB) stream. Lambda invokes the
     /// associated function when records are posted to the stream. For more information, see CreateEventSourceMapping
     /// in the AWS Lambda Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html
     /// </summary>
     public class EventSourceMappingResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.Lambda.EventSourceMapping
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize
             /// </summary>
 			public Union<int, IntrinsicFunction> BatchSize { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Lambda.EventSourceMapping
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.Lambda.EventSourceMapping
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn
             /// </summary>
 			public Union<string, IntrinsicFunction> EventSourceArn { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.Lambda.EventSourceMapping
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.Lambda.EventSourceMapping
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition
             /// </summary>
 			public Union<string, IntrinsicFunction> StartingPosition { get; set; }
 

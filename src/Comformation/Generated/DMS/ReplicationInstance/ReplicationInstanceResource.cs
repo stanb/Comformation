@@ -7,7 +7,7 @@ namespace Comformation.DMS.ReplicationInstance
     /// <summary>
     /// AWS::DMS::ReplicationInstance
     /// The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html
     /// </summary>
     public class ReplicationInstanceResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationInstanceIdentifier { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -60,7 +57,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -76,7 +72,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -87,7 +82,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -97,7 +91,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationSubnetGroupIdentifier { get; set; }
 
@@ -107,23 +100,16 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage
             /// </summary>
 			public Union<int, IntrinsicFunction> AllocatedStorage { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
-            /// Specifies the VPC security group to be used with the replication instance. The VPC security group
-            /// must work with the VPC containing the replication instance.
-            /// Required: No
-            /// Type: List of String values
-            /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
+            /// AllowMajorVersionUpgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
@@ -136,7 +122,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationInstanceClass { get; set; }
 
@@ -148,7 +133,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible
             /// </summary>
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
@@ -159,7 +143,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
             /// </summary>
 			public Union<bool, IntrinsicFunction> MultiAZ { get; set; }
 
@@ -169,7 +152,6 @@ namespace Comformation.DMS.ReplicationInstance
             /// Required: No
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

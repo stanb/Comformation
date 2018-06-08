@@ -8,7 +8,7 @@ namespace Comformation.OpsWorks.Layer
     /// AWS::OpsWorks::Layer
     /// Creates an AWS OpsWorks layer. A layer defines, for example, which packages and applications are installed and
     /// how they are configured.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html
     /// </summary>
     public class LayerResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: A list of key-value pairs
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoAssignElasticIps { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoAssignPublicIps { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custinstanceprofilearn
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomInstanceProfileArn { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.OpsWorks.Layer
             /// OpsWorks Stacks API Reference.
             /// Required: No
             /// Type: JSON object
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
 
@@ -73,7 +68,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: AWS OpsWorks Recipes Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes
             /// </summary>
 			public Union<Recipes, IntrinsicFunction> CustomRecipes { get; set; }
 
@@ -83,7 +77,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custsecuritygroupnids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> CustomSecurityGroupIds { get; set; }
 
@@ -93,7 +86,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableAutoHealing { get; set; }
 
@@ -103,7 +95,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot
             /// </summary>
 			public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
 
@@ -113,7 +104,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: AWS OpsWorks Layer LifeCycleConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration
             /// </summary>
 			public Union<LifecycleEventConfiguration, IntrinsicFunction> LifecycleEventConfiguration { get; set; }
 
@@ -123,7 +113,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: AWS OpsWorks LoadBasedAutoScaling Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling
             /// </summary>
 			public Union<LoadBasedAutoScaling, IntrinsicFunction> LoadBasedAutoScaling { get; set; }
 
@@ -133,7 +122,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -143,7 +131,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Packages { get; set; }
 
@@ -158,7 +145,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
             /// </summary>
 			public Union<string, IntrinsicFunction> Shortname { get; set; }
 
@@ -168,7 +154,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
             /// </summary>
 			public Union<string, IntrinsicFunction> StackId { get; set; }
 
@@ -179,7 +164,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -193,12 +177,11 @@ namespace Comformation.OpsWorks.Layer
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances
+            /// UseEbsOptimizedInstances
             /// </summary>
 			public Union<bool, IntrinsicFunction> UseEbsOptimizedInstances { get; set; }
 
@@ -208,7 +191,6 @@ namespace Comformation.OpsWorks.Layer
             /// Required: No
             /// Type: A list of AWS OpsWorks VolumeConfiguration Type
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volconfig
             /// </summary>
 			public Union<List<VolumeConfiguration>, IntrinsicFunction> VolumeConfigurations { get; set; }
 

@@ -9,7 +9,7 @@ namespace Comformation.WAF.SqlInjectionMatchSet
     /// The AWS::WAF::SqlInjectionMatchSet resource creates an AWS WAF SqlInjectionMatchSet, which you use to allow,
     /// block, or count requests that contain malicious SQL code in a specific part of web requests. For more
     /// information, see CreateSqlInjectionMatchSet in the AWS WAF API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html
     /// </summary>
     public class SqlInjectionMatchSetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.WAF.SqlInjectionMatchSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.WAF.SqlInjectionMatchSet
             /// Required: No
             /// Type: List of AWS WAF SqlInjectionMatchSet SqlInjectionMatchTuples
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples
             /// </summary>
 			public Union<List<SqlInjectionMatchTuple>, IntrinsicFunction> SqlInjectionMatchTuples { get; set; }
 

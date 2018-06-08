@@ -8,7 +8,7 @@ namespace Comformation.OpsWorks.Stack
     /// AWS::OpsWorks::Stack
     /// Creates an AWS OpsWorks stack. An AWS OpsWorks stack represents a set of instances that you want to manage
     /// collectively, typically because they have a common purpose such as serving PHP applications.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html
     /// </summary>
     public class StackResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-agentversion
             /// </summary>
 			public Union<string, IntrinsicFunction> AgentVersion { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: A list of key-value pairs
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-attributes
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: AWS OpsWorks ChefConfiguration Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-chefconfiguration
             /// </summary>
 			public Union<ChefConfiguration, IntrinsicFunction> ChefConfiguration { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-cloneappids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> CloneAppIds { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions
             /// </summary>
 			public Union<bool, IntrinsicFunction> ClonePermissions { get; set; }
 
@@ -78,7 +73,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: AWS OpsWorks StackConfigurationManager Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-configmanager
             /// </summary>
 			public Union<StackConfigurationManager, IntrinsicFunction> ConfigurationManager { get; set; }
 
@@ -88,7 +82,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: AWS OpsWorks Source Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-custcookbooksource
             /// </summary>
 			public Union<Source, IntrinsicFunction> CustomCookbooksSource { get; set; }
 
@@ -103,7 +96,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-custjson
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
 
@@ -113,7 +105,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultaz
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultAvailabilityZone { get; set; }
 
@@ -124,7 +115,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultinstanceprof
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultInstanceProfileArn { get; set; }
 
@@ -135,7 +125,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultos
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultOs { get; set; }
 
@@ -147,7 +136,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultrootdevicetype
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultRootDeviceType { get; set; }
 
@@ -158,7 +146,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultsshkeyname
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultSshKeyName { get; set; }
 
@@ -169,7 +156,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: Conditional. If you specify the VpcId property, you must specify this property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultsubnet
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultSubnetId { get; set; }
 
@@ -182,7 +168,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-ecsclusterarn
             /// </summary>
 			public Union<string, IntrinsicFunction> EcsClusterArn { get; set; }
 
@@ -194,7 +179,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: List of AWS OpsWorks Stack ElasticIp
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-elasticips
             /// </summary>
 			public Union<List<ElasticIp>, IntrinsicFunction> ElasticIps { get; set; }
 
@@ -206,7 +190,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-hostnametheme
             /// </summary>
 			public Union<string, IntrinsicFunction> HostnameTheme { get; set; }
 
@@ -216,7 +199,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -229,7 +211,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: List of AWS OpsWorks Stack RdsDbInstance
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-rdsdbinstances
             /// </summary>
 			public Union<List<RdsDbInstance>, IntrinsicFunction> RdsDbInstances { get; set; }
 
@@ -240,7 +221,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-servicerolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
@@ -250,7 +230,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-sourcestackid
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceStackId { get; set; }
 
@@ -261,7 +240,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -271,7 +249,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-usecustcookbooks
             /// </summary>
 			public Union<bool, IntrinsicFunction> UseCustomCookbooks { get; set; }
 
@@ -281,7 +258,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-useopsworkssecuritygroups
             /// </summary>
 			public Union<bool, IntrinsicFunction> UseOpsworksSecurityGroups { get; set; }
 
@@ -293,7 +269,6 @@ namespace Comformation.OpsWorks.Stack
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

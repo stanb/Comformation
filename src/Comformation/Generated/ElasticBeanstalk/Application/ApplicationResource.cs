@@ -7,7 +7,7 @@ namespace Comformation.ElasticBeanstalk.Application
     /// <summary>
     /// AWS::ElasticBeanstalk::Application
     /// Creates an Elastic Beanstalk application.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html
     /// </summary>
     public class ApplicationResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.ElasticBeanstalk.Application
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.ElasticBeanstalk.Application
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.ElasticBeanstalk.Application
             /// Required: No
             /// Type: Elastic Beanstalk Application ApplicationResourceLifecycleConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
             /// </summary>
 			public Union<ApplicationResourceLifecycleConfig, IntrinsicFunction> ResourceLifecycleConfig { get; set; }
 

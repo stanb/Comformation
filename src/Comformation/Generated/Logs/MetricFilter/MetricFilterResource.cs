@@ -10,7 +10,7 @@ namespace Comformation.Logs.MetricFilter
     /// extracts information from logs that you specify and transforms it into Amazon CloudWatch metrics. If you have
     /// multiple metric filters that are associated with a log group, all the filters are applied to the log streams
     /// in that group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html
     /// </summary>
     public class MetricFilterResource : ResourceBase
     {
@@ -27,7 +27,6 @@ namespace Comformation.Logs.MetricFilter
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-filterpattern
             /// </summary>
 			public Union<string, IntrinsicFunction> FilterPattern { get; set; }
 
@@ -37,7 +36,6 @@ namespace Comformation.Logs.MetricFilter
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-loggroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.Logs.MetricFilter
             /// Important Currently, you can specify only one metric transformation for each metric filter. If you
             /// want to specify multiple metric transformations, you must specify multiple metric filters.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations
             /// </summary>
 			public Union<List<MetricTransformation>, IntrinsicFunction> MetricTransformations { get; set; }
 

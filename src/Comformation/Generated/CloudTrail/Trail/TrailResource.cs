@@ -9,7 +9,7 @@ namespace Comformation.CloudTrail.Trail
     /// Use the AWS::CloudTrail::Trail resource to create a trail and specify where logs are published. An AWS
     /// CloudTrail (CloudTrail) trail can capture AWS API calls made by your AWS account and publish the logs to an
     /// Amazon S3 bucket. For more information, see What is AWS CloudTrail? in the AWS CloudTrail User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
     /// </summary>
     public class TrailResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: Conditional. This property is required if you specify the CloudWatchLogsRoleArn property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsloggrouparn
             /// </summary>
 			public Union<string, IntrinsicFunction> CloudWatchLogsLogGroupArn { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsrolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> CloudWatchLogsRoleArn { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableLogFileValidation { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: List of CloudTrail Trail EventSelector
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors
             /// </summary>
 			public Union<List<EventSelector>, IntrinsicFunction> EventSelectors { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents
             /// </summary>
 			public Union<bool, IntrinsicFunction> IncludeGlobalServiceEvents { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging
             /// </summary>
 			public Union<bool, IntrinsicFunction> IsLogging { get; set; }
 
@@ -89,7 +83,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail
             /// </summary>
 			public Union<bool, IntrinsicFunction> IsMultiRegionTrail { get; set; }
 
@@ -101,7 +94,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KMSKeyId { get; set; }
 
@@ -111,7 +103,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3bucketname
             /// </summary>
 			public Union<string, IntrinsicFunction> S3BucketName { get; set; }
 
@@ -121,7 +112,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3keyprefix
             /// </summary>
 			public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
 
@@ -131,7 +121,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-snstopicname
             /// </summary>
 			public Union<string, IntrinsicFunction> SnsTopicName { get; set; }
 
@@ -141,7 +130,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -152,7 +140,6 @@ namespace Comformation.CloudTrail.Trail
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-trailname
             /// </summary>
 			public Union<string, IntrinsicFunction> TrailName { get; set; }
 

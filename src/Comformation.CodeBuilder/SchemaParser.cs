@@ -11,12 +11,11 @@ namespace Comformation.CodeBuilder
     {
         private const string BaseNamespace = "Comformation";
 
-        public IEnumerable<CodeUnit> Parse(Schema schema)
+        public (IEnumerable<PropertyTypeClass>, IEnumerable<ResourceClass>) Parse(Schema schema)
         {
             var propertyTypes = Parse(schema.PropertyTypes);
             var resources = Parse(schema.ResourceTypes);
-            return propertyTypes.AsEnumerable<CodeUnit>()
-                .Concat(resources.AsEnumerable<CodeUnit>());
+            return (propertyTypes, resources);
         }
 
         private IEnumerable<PropertyTypeClass> Parse(IDictionary<string, PropertySpec> propertySpecs)
@@ -47,20 +46,24 @@ namespace Comformation.CodeBuilder
                     Name = className,
                     Namespace = namespaceName,
                     Path = path,
-                    Documentation = x.Value.Documentation,
+                    Documentation = FixUrl(x.Value.Documentation),
                     Properties = Parse(x.Value.Properties)
                 };
                 FixPropertyNames(propertyClass);
 
                 return propertyClass;
-            }).ToList();
+            })
+            .OrderBy(x => $"{x.Namespace}.{x.Name}")
+            .ToList();
 
             return propertyClasses;
         }
 
         private IEnumerable<ResourceClass> Parse(IDictionary<string, ResourceSpec> resourceSpecs)
         {
-            var resourceClasses = resourceSpecs.Select(x => Parse(x.Key, x.Value)).ToList();
+            var resourceClasses = resourceSpecs.Select(x => Parse(x.Key, x.Value))
+                .OrderBy(x => x.Namespace)
+                .ToList();
             return resourceClasses;
         }
 
@@ -70,7 +73,6 @@ namespace Comformation.CodeBuilder
             var className = nameParts.Last();
             var namespaceName = string.Join(".", nameParts.Prepend(BaseNamespace));
             var path = Path.ChangeExtension(Path.Combine(Path.Combine(nameParts.ToArray()), className + "Resource"), ".cs");
-            //var documentation = DocumentationParser.Parse(resourceSpec.Documentation);
 
             var resourceClass = new ResourceClass
             {
@@ -116,7 +118,6 @@ namespace Comformation.CodeBuilder
                 {
                     JsonProperty = property.Key,
                     Name = property.Key,
-                    Documentation = FixUrl(property.Value.Documentation),
                     Type = ParsePropertyType(property.Value, property.Value.Required)
                 }).ToList();
             return members;
@@ -180,95 +181,9 @@ namespace Comformation.CodeBuilder
             }
         }
 
-        private static string FixUrl(string key)
+        private static string FixUrl(string url)
         {
-            var parts = key.Split("#");
-            parts[0] = Fix(parts[0]);
-            if (parts.Length > 1)
-                parts[1] = FixHashtag(parts[1]);
-            return string.Join("#", parts);
-        }
-
-        private static string Fix(string key)
-        {
-            key = key
-                .Replace("aws-resource-elasticbeanstalk", "aws-resource-beanstalk")
-                .Replace("aws-resource-cloudwatch-dashboard", "aws-properties-cw-dashboard")
-                .Replace("aws-resource-elasticmapreduce-cluster", "aws-resource-emr-cluster")
-                .Replace("aws-resource-dms-replicationsubnetgroup", "aws-resource-dms-replicationsubnet-group")
-                .Replace("aws-resource-route53-recordsetgroup", "aws-properties-route53-recordsetgroup");
-
-            return key;
-        }
-
-        private static string FixHashtag(string key)
-        {
-            if (key.Equals("topicarn"))
-                return "cfn-sns-topicarn";
-
-            key = key
-                .Replace("aws-sqs-queue-contentbaseddeduplication", "cfn-sqs-queue-contentbaseddeduplication")
-                .Replace("aws-sqs-queue-fifoqueue", "cfn-sqs-queue-fifoqueue")
-                .Replace("aws-sqs-queue-maxmesgsize", "aws-sqs-queue-maxmsgsize")
-                .Replace("aws-sqs-queue-visiblitytimeout", "aws-sqs-queue-visibilitytimeout")
-                .Replace("cfn-cloudwatch-dashboard-dashboardname", "cfn-cloudwatch-dashboard-name")
-                .Replace("cfn-cloudwatch-dashboard-dashboardbody", "cfn-cloudwatch-dashboard-body")
-                .Replace("cfn-elasticmapreduce-cluster", "cfn-emr-cluster")
-                .Replace("cfn-emr-cluster-customamiid", "cfn-elasticmapreduce-cluster-customamiid")
-                .Replace("cfn-emr-cluster-ebsrootvolumesize", "cfn-elasticmapreduce-cluster-ebsrootvolumesize")
-                .Replace("cfn-sns-topic-topicname", "cfn-sns-topic-name")
-                .Replace("cfn-cloudwatch-alarms-dimension", "cfn-cloudwatch-alarms-dimensions")
-                .Replace("cfn-redshift-cluster-HsmConfigurationIdentifier", "cfn-redshift-cluster-hsmconfigidentifier")
-                .Replace("cfn-opsworks-app-sslconfiguration", "cfn-opsworks-app-sslconfig")
-                .Replace("cfn-elasticloadbalancing-loadbalancer-tags", "cfn-ec2-elb-tags")
-                .Replace("cfn-opsworks-layer-custominstanceprofilearn", "cfn-opsworks-layer-custinstanceprofilearn")
-                .Replace("cfn-opsworks-layer-customsecuritygroupids", "cfn-opsworks-layer-custsecuritygroupnids")
-                .Replace("cfn-opsworks-layer-volumeconfigurations", "cfn-opsworks-layer-volconfig")
-                .Replace("cfn-apigateway-resource-restapiid", "cfn-apigateway-resource-resapiid")
-                .Replace("cfn-dax-subnetgroup-subnetgroupname", "cfn-dax-subnetgroup-name")
-                .Replace("cfn-dax-subnetgroup-subnetids", "cfn-dax-subnetgroup-name-values")
-                .Replace("defaultsubnet", "cfn-opsworks-stack-defaultsubnet")
-                .Replace("usecustcookbooks", "cfn-opsworks-stack-usecustcookbooks")
-                .Replace("cfn-stepfunctions-statemachine-statemachinename", "cfn-stepfunctions-statemachine-definitionname")
-                .Replace("cfn-dax-parametergroup-parameternamevalues", "cfn-dax-parametergroup-name-values")
-                .Replace("cfn-dax-parametergroup-parametergroupname", "cfn-dax-parametergroup-name")
-                .Replace("cfn-emr-instancegroupconfiginstancecount-", "cfn-emr-instancegroupconfig-instancecount")
-                .Replace("cfn-autoscaling-lifecyclehook-lifecyclehookname", "cfn-as-lifecyclehook-lifecyclehookname")
-                .Replace("cfn-elasticache-replicationgroup-snapshotretentionlimit", "cfn-elasticache-replicationgroup-snapshotrentionlimit")
-                .Replace("cfn-apigateway-restapi-failonwarnings", "cfn-apigateway-restapi-failonwarning")
-                .Replace("cfn-dax-cluster-replicationfactor", "cfn-dax-cluster-replication-factor")
-                .Replace("cfn-dax-cluster-parametergroupname", "cfn-dax-cluster-parameter-group-name")
-                .Replace("cfn-dax-cluster-availabilityzones", "cfn-dax-cluster-availability-zones")
-                .Replace("cfn-dax-cluster-nodetype", "cfn-dax-cluster-node-type")
-                .Replace("cfn-dax-cluster-iamrolearn", "cfn-dax-cluster-iam-role-arn")
-                .Replace("cfn-dax-cluster-subnetgroupname", "cfn-dax-cluster-subnet-group-name")
-                .Replace("cfn-dax-cluster-clustername", "cfn-dax-cluster-cluster-name")
-                .Replace("cfn-dax-cluster-preferredmaintenancewindow", "cfn-dax-cluster-preferred-maintenance-window")
-                .Replace("cfn-dax-cluster-notificationtopicarn", "cfn-dax-cluster-notification-topic-arn")
-                .Replace("cfn-dax-cluster-securitygroupids", "cfn-dax-cluster-security-group-ids")
-                .Replace("cfn-elasticmapreduce-step-", "cfn-emr-step-")
-                .Replace("cfn-elasticbeanstalk-environment-tags", "cfn-beanstalk-environment-tags")
-                .Replace("cfn-neptune-dbcluster-backupretentionperiod", "cfn-neptune-dbcluster-backuprententionperiod")
-                .Replace("cfn-cognito-userpool-userpoolname", "cfn-cognito-userpool-poolname")
-                .Replace("cfn-ec2-dhcpoptions-path", "cfn-iam-managedpolicy-path")
-                .Replace("cfn-ecs-taskdefinition-containerdefinitions", "cfn-ecs-taskdefinition-containerdefinition")
-                .Replace("cfn-elasticache-cachecluster-snapshotarns", "cfn-elasticache-cachecluster-snapshotarn")
-                .Replace("cfn-elasticloadbalancingv2-targetgroup-targetgroupattributes", "cfn-elasticloadbalancingv2-targetgroup-targetattributes")
-                .Replace("cfn-ssm-association-documentversion", "cfn-ssm-association-documentationversion")
-                .Replace("aws-properties-s3-policy-", "cfn-s3-bucketpolicy-")
-                .Replace("cfn-dms-replicationtask-replicationtasksettings", "cfn-dms-replicationtask-replicationstasksettings")
-                .Replace("cfn-apigateway-usageplankey-", "cfn-apigateway-")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                //.Replace("", "")
-                ;
-            return key;
+            return url;
         }
     }
 }

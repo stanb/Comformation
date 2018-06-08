@@ -7,7 +7,7 @@ namespace Comformation.EC2.SecurityGroupEgress
     /// <summary>
     /// AWS::EC2::SecurityGroupEgress
     /// The AWS::EC2::SecurityGroupEgress resource adds an egress rule to an Amazon VPC security group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
     /// </summary>
     public class SecurityGroupEgressResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationPrefixListId { get; set; }
 
@@ -64,7 +60,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationSecurityGroupId { get; set; }
 
@@ -75,7 +70,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Required: Yes
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
             /// </summary>
 			public Union<int, IntrinsicFunction> FromPort { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupId { get; set; }
 
@@ -98,7 +91,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol
             /// </summary>
 			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
@@ -109,7 +101,6 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Required: Yes
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
             /// </summary>
 			public Union<int, IntrinsicFunction> ToPort { get; set; }
 

@@ -10,7 +10,7 @@ namespace Comformation.GuardDuty.Master
     /// managed by a GuardDuty master account. The GuardDuty master account must have already invited the current
     /// account (by calling the InviteMembers API operation or by creating an AWS::GuardDuty::Member resource) before
     /// the current account can use the AWS::GuardDuty::Master resource to accept the master account's invitation.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html
     /// </summary>
     public class MasterResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.GuardDuty.Master
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-detectorid
             /// </summary>
 			public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.GuardDuty.Master
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-masterid
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterId { get; set; }
 
@@ -54,7 +52,6 @@ namespace Comformation.GuardDuty.Master
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid
             /// </summary>
 			public Union<string, IntrinsicFunction> InvitationId { get; set; }
 

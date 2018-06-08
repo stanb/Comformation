@@ -9,7 +9,7 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
     /// The AWS::CloudFront::CloudFrontOriginAccessIdentity resource specifies the CloudFront origin access identity
     /// to associate with the origin of a CloudFront distribution. For more information, see OriginAccessIdentity in
     /// the Amazon CloudFront API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html
     /// </summary>
     public class CloudFrontOriginAccessIdentityResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
             /// Required: Yes
             /// Type: CloudFrontOriginAccessIdentityConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig
             /// </summary>
 			public Union<CloudFrontOriginAccessIdentityConfig, IntrinsicFunction> CloudFrontOriginAccessIdentityConfig { get; set; }
 

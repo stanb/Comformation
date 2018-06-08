@@ -8,7 +8,7 @@ namespace Comformation.EMR.Step
     /// AWS::EMR::Step
     /// The AWS::EMR::Step resource creates a unit of work (a job flow step) that you submit to an Amazon EMR (Amazon
     /// EMR) cluster. The job flow step contains instructions for processing data on the cluster.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html
     /// </summary>
     public class StepResource : ResourceBase
     {
@@ -27,7 +27,6 @@ namespace Comformation.EMR.Step
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-actiononfailure
             /// </summary>
 			public Union<string, IntrinsicFunction> ActionOnFailure { get; set; }
 
@@ -37,7 +36,6 @@ namespace Comformation.EMR.Step
             /// Required: Yes
             /// Type: Amazon EMR Step HadoopJarStepConfig
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-hadoopjarstep
             /// </summary>
 			public Union<HadoopJarStepConfig, IntrinsicFunction> HadoopJarStep { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.EMR.Step
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-jobflowid
             /// </summary>
 			public Union<string, IntrinsicFunction> JobFlowId { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.EMR.Step
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

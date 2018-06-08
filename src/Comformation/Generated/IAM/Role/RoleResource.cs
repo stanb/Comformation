@@ -8,7 +8,7 @@ namespace Comformation.IAM.Role
     /// AWS::IAM::Role
     /// Creates an AWS Identity and Access Management (IAM) role. Use an IAM role to enable applications running on an
     /// EC2 instance to securely access your AWS resources.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
     /// </summary>
     public class RoleResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.IAM.Role
             /// templates formatted in YAML, you can create an IAM policy in either JSON or YAML format. AWS
             /// CloudFormation always converts a policy to JSON format before submitting it to IAM.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssumeRolePolicyDocument { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.IAM.Role
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managepolicyarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.IAM.Role
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration
             /// </summary>
 			public Union<int, IntrinsicFunction> MaxSessionDuration { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.IAM.Role
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
@@ -77,7 +73,6 @@ namespace Comformation.IAM.Role
             /// Required: No
             /// Type: List of IAM Policies
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies
             /// </summary>
 			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
 
@@ -99,7 +94,6 @@ namespace Comformation.IAM.Role
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleName { get; set; }
 

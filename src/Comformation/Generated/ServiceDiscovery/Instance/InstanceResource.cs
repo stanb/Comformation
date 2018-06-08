@@ -8,7 +8,7 @@ namespace Comformation.ServiceDiscovery.Instance
     /// AWS::ServiceDiscovery::Instance
     /// The AWS::ServiceDiscovery::Instance resource specifies information about an instance that 		Amazon Route 53
     /// creates. For more information, see 		Instance in the Amazon Route 53 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html
     /// </summary>
     public class InstanceResource : ResourceBase
     {
@@ -36,7 +36,6 @@ namespace Comformation.ServiceDiscovery.Instance
             /// 					
             /// Update requires: No interruption
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceattributes
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InstanceAttributes { get; set; }
 
@@ -55,7 +54,6 @@ namespace Comformation.ServiceDiscovery.Instance
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -71,7 +69,6 @@ namespace Comformation.ServiceDiscovery.Instance
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-serviceid
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceId { get; set; }
 

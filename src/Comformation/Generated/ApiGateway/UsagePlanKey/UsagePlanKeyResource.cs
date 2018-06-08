@@ -8,7 +8,7 @@ namespace Comformation.ApiGateway.UsagePlanKey
     /// AWS::ApiGateway::UsagePlanKey
     /// The AWS::ApiGateway::UsagePlanKey resource associates an Amazon API Gateway API key with an API Gateway usage
     /// plan. This association determines which users the usage plan is applied to.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
     /// </summary>
     public class UsagePlanKeyResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ApiGateway.UsagePlanKey
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-keyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ApiGateway.UsagePlanKey
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-keytype
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyType { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ApiGateway.UsagePlanKey
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplanid
             /// </summary>
 			public Union<string, IntrinsicFunction> UsagePlanId { get; set; }
 

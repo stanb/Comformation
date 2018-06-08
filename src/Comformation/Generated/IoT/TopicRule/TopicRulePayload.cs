@@ -6,37 +6,61 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
+    /// AWS IoT TopicRule TopicRulePayload
+    /// TopicRulePayload is a property of the AWS::IoT::TopicRule resource that describes the payload of an AWS IoT
+    /// rule.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
     /// </summary>
     public class TopicRulePayload
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-actions
+        /// Actions
+        /// The actions associated with the rule.
+        /// Required: Yes
+        /// Type: Array of Action objects
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Actions")]
         public Union<List<Action>, IntrinsicFunction> Actions { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-awsiotsqlversion
+        /// AwsIotSqlVersion
+        /// The version of the SQL rules engine to use when evaluating the rule.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsIotSqlVersion")]
         public Union<string, IntrinsicFunction> AwsIotSqlVersion { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-description
+        /// Description
+        /// The description of the rule.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Description")]
         public Union<string, IntrinsicFunction> Description { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-ruledisabled
+        /// RuleDisabled
+        /// Specifies whether the rule is disabled.
+        /// Required: Yes
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RuleDisabled")]
         public Union<bool, IntrinsicFunction> RuleDisabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-sql
+        /// Sql
+        /// The SQL statement that queries the topic. For more information, see Rules for AWS IoT in the AWS IoT
+        /// Developer Guide.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Sql")]
         public Union<string, IntrinsicFunction> Sql { get; set; }

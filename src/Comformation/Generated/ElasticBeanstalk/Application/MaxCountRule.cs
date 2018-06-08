@@ -6,25 +6,41 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.Application
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html
+    /// AWS Elastic Beanstalk Application MaxCountRule
+    /// The MaxCountRule property type specifies a lifecycle rule that deletes the oldest application version when the
+    /// maximum count is exceeded for an AWS Elastic Beanstalk application.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html
     /// </summary>
     public class MaxCountRule
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-deletesourcefroms3
+        /// DeleteSourceFromS3
+        /// Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the
+        /// application version.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeleteSourceFromS3")]
         public Union<bool, IntrinsicFunction> DeleteSourceFromS3 { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled
+        /// Enabled
+        /// Specify true to apply the rule, or false to disable it.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount
+        /// MaxCount
+        /// Specify the maximum number of application versions to retain.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxCount")]
         public Union<int, IntrinsicFunction> MaxCount { get; set; }

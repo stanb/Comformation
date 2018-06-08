@@ -8,7 +8,7 @@ namespace Comformation.Batch.ComputeEnvironment
     /// AWS::Batch::ComputeEnvironment
     /// The AWS::Batch::ComputeEnvironment resource to define your AWS Batch compute environment. For more
     /// information, see Compute Environments in the AWS Batch User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
     /// </summary>
     public class ComputeEnvironmentResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Required: yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Required: yes
             /// Type: String
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-servicerole
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Required: no
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeenvironmentname
             /// </summary>
 			public Union<string, IntrinsicFunction> ComputeEnvironmentName { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Required: yes
             /// Type: AWS Batch ComputeEnvironment ComputeResources
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources
             /// </summary>
 			public Union<ComputeResources, IntrinsicFunction> ComputeResources { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Required: no
             /// Type: String
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-state
             /// </summary>
 			public Union<string, IntrinsicFunction> State { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// AWS::Cognito::UserPool
     /// The AWS::Cognito::UserPool resource creates an Amazon Cognito user pool. For more information on working with
     /// Amazon Cognito user pools, see Amazon Cognito User Pools and CreateUserPool.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html
     /// </summary>
     public class UserPoolResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: String to String map
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltags
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> UserPoolTags { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: Amazon Cognito UserPool Policies
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies
             /// </summary>
 			public Union<Policies, IntrinsicFunction> Policies { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
             /// </summary>
 			public Union<string, IntrinsicFunction> MfaConfiguration { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: List of SchemaAttribute
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
             /// </summary>
 			public Union<List<SchemaAttribute>, IntrinsicFunction> Schema { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: Amazon Cognito UserPool AdminCreateUserConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig
             /// </summary>
 			public Union<AdminCreateUserConfig, IntrinsicFunction> AdminCreateUserConfig { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage
             /// </summary>
 			public Union<string, IntrinsicFunction> SmsAuthenticationMessage { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-poolname
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolName { get; set; }
 
@@ -97,7 +90,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage
             /// </summary>
 			public Union<string, IntrinsicFunction> SmsVerificationMessage { get; set; }
 
@@ -107,7 +99,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: Amazon Cognito UserPool EmailConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration
             /// </summary>
 			public Union<EmailConfiguration, IntrinsicFunction> EmailConfiguration { get; set; }
 
@@ -117,7 +108,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: Amazon Cognito UserPool SmsConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration
             /// </summary>
 			public Union<SmsConfiguration, IntrinsicFunction> SmsConfiguration { get; set; }
 
@@ -128,7 +118,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AliasAttributes { get; set; }
 
@@ -138,7 +127,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject
             /// </summary>
 			public Union<string, IntrinsicFunction> EmailVerificationSubject { get; set; }
 
@@ -148,12 +136,11 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: Amazon Cognito UserPool LambdaConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig
             /// </summary>
 			public Union<LambdaConfig, IntrinsicFunction> LambdaConfig { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes
+            /// UsernameAttributes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> UsernameAttributes { get; set; }
 
@@ -163,7 +150,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AutoVerifiedAttributes { get; set; }
 
@@ -173,7 +159,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: Amazon Cognito UserPool DeviceConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration
             /// </summary>
 			public Union<DeviceConfiguration, IntrinsicFunction> DeviceConfiguration { get; set; }
 
@@ -183,7 +168,6 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage
             /// </summary>
 			public Union<string, IntrinsicFunction> EmailVerificationMessage { get; set; }
 

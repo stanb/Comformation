@@ -7,7 +7,7 @@ namespace Comformation.EC2.SubnetCidrBlock
     /// <summary>
     /// AWS::EC2::SubnetCidrBlock
     /// The AWS::EC2::SubnetCidrBlock resource associates a single IPv6 CIDR block with an Amazon VPC subnet.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html
     /// </summary>
     public class SubnetCidrBlockResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.EC2.SubnetCidrBlock
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-ipv6cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> Ipv6CidrBlock { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.EC2.SubnetCidrBlock
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 

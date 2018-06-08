@@ -7,7 +7,7 @@ namespace Comformation.EC2.SecurityGroup
     /// <summary>
     /// AWS::EC2::SecurityGroup
     /// Creates an Amazon EC2 security group. To create a VPC security group, use the VpcId property.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
     /// </summary>
     public class SecurityGroupResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.EC2.SecurityGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupDescription { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.EC2.SecurityGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.EC2.SecurityGroup
             /// Required: No
             /// Type: List of EC2 Security Group Rule
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress
             /// </summary>
 			public Union<List<Egress>, IntrinsicFunction> SecurityGroupEgress { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.EC2.SecurityGroup
             /// Required: No
             /// Type: List of EC2 Security Group Rule
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress
             /// </summary>
 			public Union<List<Ingress>, IntrinsicFunction> SecurityGroupIngress { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.EC2.SecurityGroup
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -79,7 +74,6 @@ namespace Comformation.EC2.SecurityGroup
             /// Update requires: Replacement
             /// Note For more information about VPC security groups, see Security Groups in the Amazon VPC User
             /// Guide.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

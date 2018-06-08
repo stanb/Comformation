@@ -8,7 +8,7 @@ namespace Comformation.WAFRegional.WebACLAssociation
     /// AWS::WAFRegional::WebACLAssociation
     /// The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL)
     /// with a resource. For more information, see AssociateWebACL in the AWS WAF Regional API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
     /// </summary>
     public class WebACLAssociationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.WAFRegional.WebACLAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceArn { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.WAFRegional.WebACLAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid
             /// </summary>
 			public Union<string, IntrinsicFunction> WebACLId { get; set; }
 

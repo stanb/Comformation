@@ -7,7 +7,7 @@ namespace Comformation.EC2.CustomerGateway
     /// <summary>
     /// AWS::EC2::CustomerGateway
     /// Provides information to AWS about your VPN customer gateway device.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html
     /// </summary>
     public class CustomerGatewayResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.EC2.CustomerGateway
             /// Required: Yes
             /// Type: Number BgpAsn is always an integer value.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn
             /// </summary>
 			public Union<int, IntrinsicFunction> BgpAsn { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.EC2.CustomerGateway
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress
             /// </summary>
 			public Union<string, IntrinsicFunction> IpAddress { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.EC2.CustomerGateway
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags.
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.EC2.CustomerGateway
             /// Type: String
             /// Update requires: Replacement
             /// Example: ipsec. 1
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 

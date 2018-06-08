@@ -9,7 +9,7 @@ namespace Comformation.SSM.PatchBaseline
     /// The AWS::SSM::PatchBaseline resource defines the basic information for an AWS Systems Manager patch baseline.
     /// A patch baseline defines which patches are approved for installation on your instances. For more information,
     /// see CreatePatchBaseline in the AWS Systems Manager API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html
     /// </summary>
     public class PatchBaselineResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-operatingsystem
             /// </summary>
 			public Union<string, IntrinsicFunction> OperatingSystem { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ApprovedPatches { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> PatchGroups { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -66,12 +62,11 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel
             /// </summary>
 			public Union<string, IntrinsicFunction> ApprovedPatchesComplianceLevel { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity
+            /// ApprovedPatchesEnableNonSecurity
             /// </summary>
 			public Union<bool, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: Systems Manager PatchBaseline RuleGroup
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules
             /// </summary>
 			public Union<RuleGroup, IntrinsicFunction> ApprovalRules { get; set; }
 
@@ -91,12 +85,11 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: Systems Manager PatchBaseline PatchFilterGroup
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters
             /// </summary>
 			public Union<PatchFilterGroup, IntrinsicFunction> GlobalFilters { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources
+            /// Sources
             /// </summary>
 			public Union<List<PatchSource>, IntrinsicFunction> Sources { get; set; }
 
@@ -106,7 +99,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -116,7 +108,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> RejectedPatches { get; set; }
 

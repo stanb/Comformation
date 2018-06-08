@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.VpcLink
     /// The AWS::ApiGateway::VpcLink resource specifies an API Gateway VPC link for a AWS::ApiGateway::RestApi to
     /// access resources in an Amazon Virtual Private Cloud (VPC). For more information, see vpclink:create in the
     /// Amazon API Gateway REST API Reference
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html
     /// </summary>
     public class VpcLinkResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.VpcLink
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.ApiGateway.VpcLink
             /// Required: Yes
             /// List of Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> TargetArns { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.ApiGateway.VpcLink
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

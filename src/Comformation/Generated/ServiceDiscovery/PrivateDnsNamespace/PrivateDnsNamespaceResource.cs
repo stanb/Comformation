@@ -9,7 +9,7 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
     /// The AWS::ServiceDiscovery::PrivateDnsNamespace resource specifies information about 		a private namespace for
     /// Amazon Route 53. Use a private namespace when you want to route traffic inside an Amazon VPC. 		For more
     /// information, see CreatePrivateDnsNamespace 		in the Amazon Route 53 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html
     /// </summary>
     public class PrivateDnsNamespaceResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +40,6 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-vpc
             /// </summary>
 			public Union<string, IntrinsicFunction> Vpc { get; set; }
 
@@ -57,7 +55,6 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

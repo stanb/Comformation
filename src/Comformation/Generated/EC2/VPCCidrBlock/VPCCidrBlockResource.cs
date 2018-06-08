@@ -8,7 +8,7 @@ namespace Comformation.EC2.VPCCidrBlock
     /// AWS::EC2::VPCCidrBlock
     /// The AWS::EC2::VPCCidrBlock resource associates a single Amazon-provided IPv6 CIDR block or a single
     /// user-specified IPv4 CIDR block with a Virtual Private Cloud (VPC).
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
     /// </summary>
     public class VPCCidrBlockResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.EC2.VPCCidrBlock
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
             /// </summary>
 			public Union<bool, IntrinsicFunction> AmazonProvidedIpv6CidrBlock { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.EC2.VPCCidrBlock
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.EC2.VPCCidrBlock
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

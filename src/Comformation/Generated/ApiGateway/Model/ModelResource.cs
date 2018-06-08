@@ -8,7 +8,7 @@ namespace Comformation.ApiGateway.Model
     /// AWS::ApiGateway::Model
     /// The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an Amazon API
     /// Gateway (API Gateway) method.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html
     /// </summary>
     public class ModelResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ApiGateway.Model
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-contenttype
             /// </summary>
 			public Union<string, IntrinsicFunction> ContentType { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ApiGateway.Model
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.ApiGateway.Model
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.ApiGateway.Model
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.ApiGateway.Model
             /// Required: Yes
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-schema
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
 

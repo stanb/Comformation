@@ -9,7 +9,7 @@ namespace Comformation.AppSync.DataSource
     /// The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as
     /// Amazon DynamoDB, AWS Lambda, and Amazon Elasticserach Service. Resolvers use these data sources to fetch data
     /// when clients make GraphQL calls.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
     /// </summary>
     public class DataSourceResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-servicerolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: No
             /// Type: AWS AppSync DataSource LambdaConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig
             /// </summary>
 			public Union<LambdaConfig, IntrinsicFunction> LambdaConfig { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-apiid
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
@@ -72,7 +67,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -82,7 +76,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: No
             /// Type: AWS AppSync DataSource DynamoDBConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig
             /// </summary>
 			public Union<DynamoDBConfig, IntrinsicFunction> DynamoDBConfig { get; set; }
 
@@ -92,7 +85,6 @@ namespace Comformation.AppSync.DataSource
             /// Required: No
             /// Type: AWS AppSync DataSource ElasticsearchConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig
             /// </summary>
 			public Union<ElasticsearchConfig, IntrinsicFunction> ElasticsearchConfig { get; set; }
 

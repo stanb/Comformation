@@ -8,7 +8,7 @@ namespace Comformation.Glue.Crawler
     /// AWS::Glue::Crawler
     /// The AWS::Glue::Crawler resource specifies an AWS Glue crawler. For more information, see Cataloging Tables
     /// with a Crawler and Crawler Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html
     /// </summary>
     public class CrawlerResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Glue.Crawler
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
             /// </summary>
 			public Union<string, IntrinsicFunction> Role { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Glue.Crawler
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Classifiers { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.Glue.Crawler
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.Glue.Crawler
             /// Required: No
             /// Type: AWS Glue Crawler SchemaChangePolicy
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy
             /// </summary>
 			public Union<SchemaChangePolicy, IntrinsicFunction> SchemaChangePolicy { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.Glue.Crawler
             /// Required: No
             /// Type: AWS Glue Crawler Schedule
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule
             /// </summary>
 			public Union<Schedule, IntrinsicFunction> Schedule { get; set; }
 
@@ -72,7 +67,6 @@ namespace Comformation.Glue.Crawler
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename
             /// </summary>
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
@@ -82,7 +76,6 @@ namespace Comformation.Glue.Crawler
             /// Required: Yes
             /// Type: AWS Glue Crawler Targets
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets
             /// </summary>
 			public Union<Targets, IntrinsicFunction> Targets { get; set; }
 
@@ -92,7 +85,6 @@ namespace Comformation.Glue.Crawler
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix
             /// </summary>
 			public Union<string, IntrinsicFunction> TablePrefix { get; set; }
 
@@ -103,7 +95,6 @@ namespace Comformation.Glue.Crawler
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

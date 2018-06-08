@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
     /// AWS::ServiceCatalog::CloudFormationProvisionedProduct
     /// Provisions the specified product for AWS Service Catalog. For more information, see ProvisionProduct in the
     /// AWS Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html
     /// </summary>
     public class CloudFormationProvisionedProductResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathid
             /// </summary>
 			public Union<string, IntrinsicFunction> PathId { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Type: List of AWS Service Catalog CloudFormationProvisionedProduct ProvisioningParameter property
             /// types
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters
             /// </summary>
 			public Union<List<ProvisioningParameter>, IntrinsicFunction> ProvisioningParameters { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductName { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname
             /// </summary>
 			public Union<string, IntrinsicFunction> ProvisioningArtifactName { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-notificationarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> NotificationArns { get; set; }
 
@@ -73,7 +68,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -83,7 +77,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
 
@@ -93,7 +86,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: List of property types
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -104,7 +96,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname
             /// </summary>
 			public Union<string, IntrinsicFunction> ProvisionedProductName { get; set; }
 
@@ -115,7 +106,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactid
             /// </summary>
 			public Union<string, IntrinsicFunction> ProvisioningArtifactId { get; set; }
 

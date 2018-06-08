@@ -7,7 +7,7 @@ namespace Comformation.ApiGateway.Stage
     /// <summary>
     /// AWS::ApiGateway::Stage
     /// The AWS::ApiGateway::Stage resource creates a stage for an Amazon API Gateway (API Gateway) deployment.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html
     /// </summary>
     public class StageResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> CacheClusterEnabled { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheClusterSize { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid
             /// </summary>
 			public Union<string, IntrinsicFunction> ClientCertificateId { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid
             /// </summary>
 			public Union<string, IntrinsicFunction> DeploymentId { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -69,7 +64,6 @@ namespace Comformation.ApiGateway.Stage
             /// The version identifier of the API documentation snapshot.
             /// Required: No
             /// Type: String
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion
             /// </summary>
 			public Union<string, IntrinsicFunction> DocumentationVersion { get; set; }
 
@@ -79,7 +73,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: No
             /// Type: List of API Gateway Stage MethodSetting
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings
             /// </summary>
 			public Union<List<MethodSetting>, IntrinsicFunction> MethodSettings { get; set; }
 
@@ -89,7 +82,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
@@ -100,7 +92,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename
             /// </summary>
 			public Union<string, IntrinsicFunction> StageName { get; set; }
 
@@ -112,7 +103,6 @@ namespace Comformation.ApiGateway.Stage
             /// Required: No
             /// Type: Mapping of key-value pairs
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Variables { get; set; }
 

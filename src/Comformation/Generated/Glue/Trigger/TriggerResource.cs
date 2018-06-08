@@ -8,7 +8,7 @@ namespace Comformation.Glue.Trigger
     /// AWS::Glue::Trigger
     /// The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs. For more information, see
     /// Triggering Jobs in AWS Glue and Trigger Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html
     /// </summary>
     public class TriggerResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Glue.Trigger
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.Glue.Trigger
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.Glue.Trigger
             /// Required: Yes
             /// Type: List of AWS Glue Trigger Action
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
             /// </summary>
 			public Union<List<Action>, IntrinsicFunction> Actions { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.Glue.Trigger
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule
             /// </summary>
 			public Union<string, IntrinsicFunction> Schedule { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.Glue.Trigger
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -70,7 +65,6 @@ namespace Comformation.Glue.Trigger
             /// Required: No
             /// Type: AWS Glue Trigger Predicate
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate
             /// </summary>
 			public Union<Predicate, IntrinsicFunction> Predicate { get; set; }
 

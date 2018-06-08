@@ -8,7 +8,7 @@ namespace Comformation.Budgets.Budget
     /// AWS::Budgets::Budget
     /// The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management. For
     /// more information, see Managing Your Costs with Budgets in the AWS Billing and Cost Management User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html
     /// </summary>
     public class BudgetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Budgets.Budget
             /// Required: No
             /// Type: List of Billing and Cost Management Budget NotificationWithSubscribers property types
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers
             /// </summary>
 			public Union<List<NotificationWithSubscribers>, IntrinsicFunction> NotificationsWithSubscribers { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.Budgets.Budget
             /// Required: Yes
             /// Type: Billing and Cost Management Budget BudgetData
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-budget
             /// </summary>
 			public Union<BudgetData, IntrinsicFunction> Budget { get; set; }
 

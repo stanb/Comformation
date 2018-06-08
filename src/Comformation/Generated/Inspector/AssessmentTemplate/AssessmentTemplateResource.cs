@@ -8,7 +8,7 @@ namespace Comformation.Inspector.AssessmentTemplate
     /// AWS::Inspector::AssessmentTemplate
     /// The AWS::Inspector::AssessmentTemplate resource creates an Amazon Inspector assessment template - a resource
     /// that contains information about an Amazon Inspector assessment template.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html
     /// </summary>
     public class AssessmentTemplateResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-assessmenttargetarn
             /// </summary>
 			public Union<string, IntrinsicFunction> AssessmentTargetArn { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Required: Yes
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-durationinseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> DurationInSeconds { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-assessmenttemplatename
             /// </summary>
 			public Union<string, IntrinsicFunction> AssessmentTemplateName { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-rulespackagearns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> RulesPackageArns { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Required: No
             /// Type: List of AWS CloudFormation Resource Tags
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-userattributesforfindings
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> UserAttributesForFindings { get; set; }
 

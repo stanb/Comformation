@@ -8,7 +8,7 @@ namespace Comformation.Lambda.Function
     /// AWS::Lambda::Function
     /// The AWS::Lambda::Function resource creates an AWS Lambda (Lambda) function that can run code in response to
     /// events. For more information, see CreateFunction in the AWS Lambda Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html
     /// </summary>
     public class FunctionResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Lambda.Function
             /// Required: Yes
             /// Type: AWS Lambda Function Code
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code
             /// </summary>
 			public Union<Code, IntrinsicFunction> Code { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: AWS Lambda Function DeadLetterConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig
             /// </summary>
 			public Union<DeadLetterConfig, IntrinsicFunction> DeadLetterConfig { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: AWS Lambda Function Environment
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment
             /// </summary>
 			public Union<Environment, IntrinsicFunction> Environment { get; set; }
 
@@ -69,7 +65,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
@@ -82,7 +77,6 @@ namespace Comformation.Lambda.Function
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler
             /// </summary>
 			public Union<string, IntrinsicFunction> Handler { get; set; }
 
@@ -93,7 +87,6 @@ namespace Comformation.Lambda.Function
             /// Type: String
             /// Required: No
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyArn { get; set; }
 
@@ -109,7 +102,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize
             /// </summary>
 			public Union<int, IntrinsicFunction> MemorySize { get; set; }
 
@@ -120,7 +112,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
             /// </summary>
 			public Union<int, IntrinsicFunction> ReservedConcurrentExecutions { get; set; }
 
@@ -131,7 +122,6 @@ namespace Comformation.Lambda.Function
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role
             /// </summary>
 			public Union<string, IntrinsicFunction> Role { get; set; }
 
@@ -145,7 +135,6 @@ namespace Comformation.Lambda.Function
             /// Note Because Node. js 0. 10. 32 has been deprecated, you can no longer roll back a template that
             /// uses Node. js 0. 10. 32. If you update a stack to Node. js 0. 10. 32 and the update fails, AWS
             /// CloudFormation won't roll it back.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
             /// </summary>
 			public Union<string, IntrinsicFunction> Runtime { get; set; }
 
@@ -155,7 +144,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -167,7 +155,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout
             /// </summary>
 			public Union<int, IntrinsicFunction> Timeout { get; set; }
 
@@ -179,7 +166,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: AWS Lambda Function TracingConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig
             /// </summary>
 			public Union<TracingConfig, IntrinsicFunction> TracingConfig { get; set; }
 
@@ -200,7 +186,6 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: AWS Lambda Function VpcConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig
             /// </summary>
 			public Union<VpcConfig, IntrinsicFunction> VpcConfig { get; set; }
 

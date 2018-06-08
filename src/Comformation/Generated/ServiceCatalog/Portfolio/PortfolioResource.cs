@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.Portfolio
     /// AWS::ServiceCatalog::Portfolio
     /// Creates a portfolio for AWS Service Catalog. For more information, see CreatePortfolio in the AWS Service
     /// Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
     /// </summary>
     public class PortfolioResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-providername
             /// </summary>
 			public Union<string, IntrinsicFunction> ProviderName { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-displayname
             /// </summary>
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

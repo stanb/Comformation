@@ -10,7 +10,7 @@ namespace Comformation.EC2.NatGateway
     /// subnet. Use a NAT gateway to allow instances in a private subnet to connect to the Internet or to other AWS
     /// services, but prevent the Internet from initiating a connection with those instances. For more information and
     /// a sample architectural diagram, see NAT Gateways in the Amazon VPC User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html
     /// </summary>
     public class NatGatewayResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.EC2.NatGateway
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid
             /// </summary>
 			public Union<string, IntrinsicFunction> AllocationId { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EC2.NatGateway
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.EC2.NatGateway
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

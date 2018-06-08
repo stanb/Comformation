@@ -9,7 +9,7 @@ namespace Comformation.ServiceDiscovery.Service
     /// The AWS::ServiceDiscovery::Service resource defines a template for up to five records and an 		optional health
     /// check that you want Amazon Route 53 to create when you register an instance. For more information, see
     /// 		CreateService 		in the Amazon Route 53 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html
     /// </summary>
     public class ServiceResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Update requires: No interruption
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -42,7 +41,6 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Update requires: No interruption
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig
             /// </summary>
 			public Union<DnsConfig, IntrinsicFunction> DnsConfig { get; set; }
 
@@ -59,7 +57,6 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Update requires: No interruption
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig
             /// </summary>
 			public Union<HealthCheckConfig, IntrinsicFunction> HealthCheckConfig { get; set; }
 
@@ -74,7 +71,6 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Update requires: Replacement
             /// 				
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

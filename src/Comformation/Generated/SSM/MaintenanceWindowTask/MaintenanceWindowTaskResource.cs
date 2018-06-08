@@ -9,7 +9,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
     /// The AWS::SSM::MaintenanceWindowTask resource defines information about a task for a Maintenance Window for AWS
     /// Systems Manager. For more information, see RegisterTaskWithMaintenanceWindow in the AWS Systems Manager API
     /// Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html
     /// </summary>
     public class MaintenanceWindowTaskResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxerrors
             /// </summary>
 			public Union<string, IntrinsicFunction> MaxErrors { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority
             /// </summary>
 			public Union<int, IntrinsicFunction> Priority { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxconcurrency
             /// </summary>
 			public Union<string, IntrinsicFunction> MaxConcurrency { get; set; }
 
@@ -74,7 +69,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: List of Systems Manager MaintenanceWindowTask Target
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-targets
             /// </summary>
 			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
 
@@ -84,7 +78,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -98,7 +91,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
             /// </summary>
 			public Union<string, IntrinsicFunction> TaskArn { get; set; }
 
@@ -108,7 +100,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: No
             /// Type: Systems Manager MaintenanceWindowTask TaskInvocationParameters
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters
             /// </summary>
 			public Union<TaskInvocationParameters, IntrinsicFunction> TaskInvocationParameters { get; set; }
 
@@ -118,7 +109,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid
             /// </summary>
 			public Union<string, IntrinsicFunction> WindowId { get; set; }
 
@@ -132,7 +122,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskparameters
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> TaskParameters { get; set; }
 
@@ -142,7 +131,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
             /// </summary>
 			public Union<string, IntrinsicFunction> TaskType { get; set; }
 
@@ -156,7 +144,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Required: No
             /// Type: Systems Manager MaintenanceWindowTask LoggingInfo
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-logginginfo
             /// </summary>
 			public Union<LoggingInfo, IntrinsicFunction> LoggingInfo { get; set; }
 

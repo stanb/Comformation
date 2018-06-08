@@ -9,7 +9,7 @@ namespace Comformation.WAF.SizeConstraintSet
     /// The AWS::WAF::SizeConstraintSet resource specifies a size constraint that AWS WAF uses to check the size of a
     /// web request and which parts of the request to check. For more information, see CreateSizeConstraintSet in the
     /// AWS WAF API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html
     /// </summary>
     public class SizeConstraintSetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.WAF.SizeConstraintSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.WAF.SizeConstraintSet
             /// Required: Yes
             /// Type: List of AWS WAF SizeConstraintSet SizeConstraint
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints
             /// </summary>
 			public Union<List<SizeConstraint>, IntrinsicFunction> SizeConstraints { get; set; }
 

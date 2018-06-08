@@ -8,7 +8,7 @@ namespace Comformation.OpsWorks.Volume
     /// AWS::OpsWorks::Volume
     /// The AWS::OpsWorks::Volume resource registers an Amazon Elastic Block Store (Amazon EBS) volume with an AWS
     /// OpsWorks stack.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html
     /// </summary>
     public class VolumeResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.OpsWorks.Volume
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-ec2volumeid
             /// </summary>
 			public Union<string, IntrinsicFunction> Ec2VolumeId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.OpsWorks.Volume
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-mountpoint
             /// </summary>
 			public Union<string, IntrinsicFunction> MountPoint { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.OpsWorks.Volume
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.OpsWorks.Volume
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-stackid
             /// </summary>
 			public Union<string, IntrinsicFunction> StackId { get; set; }
 

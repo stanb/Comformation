@@ -6,31 +6,50 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html
+    /// AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters
+    /// The TaskInvocationParameters property type specifies the task execution parameters for a Maintenance Window
+    /// task in AWS Systems Manager.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html
     /// </summary>
     public class TaskInvocationParameters
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowruncommandparameters
+        /// MaintenanceWindowRunCommandParameters
+        /// The parameters for a RUN_COMMAND task type.
+        /// Required: No
+        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowRunCommandParameters
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowRunCommandParameters")]
         public Union<MaintenanceWindowRunCommandParameters, IntrinsicFunction> MaintenanceWindowRunCommandParameters { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowautomationparameters
+        /// MaintenanceWindowAutomationParameters
+        /// The parameters for an AUTOMATION task type.
+        /// Required: No
+        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowAutomationParameters
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowAutomationParameters")]
         public Union<MaintenanceWindowAutomationParameters, IntrinsicFunction> MaintenanceWindowAutomationParameters { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowstepfunctionsparameters
+        /// MaintenanceWindowStepFunctionsParameters
+        /// The parameters for a STEP_FUNCTION task type.
+        /// Required: No
+        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowStepFunctionsParameters
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowStepFunctionsParameters")]
         public Union<MaintenanceWindowStepFunctionsParameters, IntrinsicFunction> MaintenanceWindowStepFunctionsParameters { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowlambdaparameters
+        /// MaintenanceWindowLambdaParameters
+        /// The parameters for a LAMBDA task type.
+        /// Required: No
+        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowLambdaParameters
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowLambdaParameters")]
         public Union<MaintenanceWindowLambdaParameters, IntrinsicFunction> MaintenanceWindowLambdaParameters { get; set; }

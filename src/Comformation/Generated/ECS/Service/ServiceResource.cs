@@ -8,7 +8,7 @@ namespace Comformation.ECS.Service
     /// AWS::ECS::Service
     /// The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amazon ECS) service that runs and
     /// maintains the requested number of tasks and associated load balancers.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html
     /// </summary>
     public class ServiceResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-cluster
             /// </summary>
 			public Union<string, IntrinsicFunction> Cluster { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: Amazon Elastic Container Service Service DeploymentConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentconfiguration
             /// </summary>
 			public Union<DeploymentConfiguration, IntrinsicFunction> DeploymentConfiguration { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.ECS.Service
             /// Required: Conditional. Required only when creating an Amazon ECS Service.
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount
             /// </summary>
 			public Union<int, IntrinsicFunction> DesiredCount { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthCheckGracePeriodSeconds { get; set; }
 
@@ -64,7 +60,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
             /// </summary>
 			public Union<string, IntrinsicFunction> LaunchType { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.ECS.Service
             /// Required: Conditional
             /// Type: List of Amazon Elastic Container Service Service LoadBalancers
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-loadbalancers
             /// </summary>
 			public Union<List<LoadBalancer>, IntrinsicFunction> LoadBalancers { get; set; }
 
@@ -90,7 +84,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: Amazon ECS Service NetworkConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration
             /// </summary>
 			public Union<NetworkConfiguration, IntrinsicFunction> NetworkConfiguration { get; set; }
 
@@ -100,7 +93,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: Amazon Elastic Container Service Service PlacementConstraint
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementconstraints
             /// </summary>
 			public Union<List<PlacementConstraint>, IntrinsicFunction> PlacementConstraints { get; set; }
 
@@ -110,7 +102,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: Amazon Elastic Container Service Service PlacementStrategies
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies
             /// </summary>
 			public Union<List<PlacementStrategy>, IntrinsicFunction> PlacementStrategies { get; set; }
 
@@ -121,7 +112,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-platformversion
             /// </summary>
 			public Union<string, IntrinsicFunction> PlatformVersion { get; set; }
 
@@ -134,7 +124,6 @@ namespace Comformation.ECS.Service
             /// Required: Conditional. Required only if you specify the LoadBalancers property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role
             /// </summary>
 			public Union<string, IntrinsicFunction> Role { get; set; }
 
@@ -146,7 +135,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-servicename
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceName { get; set; }
 
@@ -156,7 +144,6 @@ namespace Comformation.ECS.Service
             /// Required: No
             /// Type: Amazon ECS Service ServiceRegistry
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries
             /// </summary>
 			public Union<List<ServiceRegistry>, IntrinsicFunction> ServiceRegistries { get; set; }
 
@@ -169,7 +156,6 @@ namespace Comformation.ECS.Service
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
             /// </summary>
 			public Union<string, IntrinsicFunction> TaskDefinition { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.Kinesis.Stream
     /// AWS::Kinesis::Stream
     /// Creates an Kinesis stream that captures and transports data records that are emitted from data sources. For
     /// information about creating streams, see CreateStream in the Amazon Kinesis API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
     /// </summary>
     public class StreamResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.Kinesis.Stream
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.Kinesis.Stream
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
             /// </summary>
 			public Union<int, IntrinsicFunction> RetentionPeriodHours { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.Kinesis.Stream
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
             /// </summary>
 			public Union<int, IntrinsicFunction> ShardCount { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.Kinesis.Stream
             /// Required: No
             /// Type: Kinesis StreamEncryption
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption
             /// </summary>
 			public Union<StreamEncryption, IntrinsicFunction> StreamEncryption { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.Kinesis.Stream
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

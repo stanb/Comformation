@@ -11,7 +11,7 @@ namespace Comformation.Config.ConfigRule
     /// Config detects a configuration change or delivers a configuration snapshot. The resources this function
     /// evaluates must be in the recording group. For more information, see Evaluating AWS Resource Configurations
     /// with AWS Config in the AWS Config Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html
     /// </summary>
     public class ConfigRuleResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.Config.ConfigRule
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-configrulename
             /// </summary>
 			public Union<string, IntrinsicFunction> ConfigRuleName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Config.ConfigRule
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.Config.ConfigRule
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-inputparameters
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InputParameters { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.Config.ConfigRule
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-maximumexecutionfrequency
             /// </summary>
 			public Union<string, IntrinsicFunction> MaximumExecutionFrequency { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.Config.ConfigRule
             /// Required: No
             /// Type: AWS Config ConfigRule Scope
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-scope
             /// </summary>
 			public Union<Scope, IntrinsicFunction> Scope { get; set; }
 
@@ -83,7 +78,6 @@ namespace Comformation.Config.ConfigRule
             /// Required: Yes
             /// Type: AWS Config ConfigRule Source
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-source
             /// </summary>
 			public Union<Source, IntrinsicFunction> Source { get; set; }
 

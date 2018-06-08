@@ -80,7 +80,6 @@ namespace Comformation.CodeBuilder
         public string JsonProperty { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        public string Documentation { get; set; }
     }
 
     public class PropertyTypeClass : CodeUnit

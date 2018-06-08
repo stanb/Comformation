@@ -8,7 +8,7 @@ namespace Comformation.EC2.VPC
     /// AWS::EC2::VPC
     /// Creates a Virtual Private Cloud (VPC) with the CIDR block that you specify. To name a VPC resource, use the
     /// Tags property and specify a value for the Name key.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
     /// </summary>
     public class VPCResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.VPC
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EC2.VPC
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableDnsHostnames { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.EC2.VPC
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport
             /// </summary>
 			public Union<bool, IntrinsicFunction> EnableDnsSupport { get; set; }
 
@@ -61,7 +58,6 @@ namespace Comformation.EC2.VPC
             /// Type: String
             /// Valid values: "default" or "dedicated"
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceTenancy { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.EC2.VPC
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

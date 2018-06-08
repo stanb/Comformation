@@ -6,14 +6,18 @@ using Comformation.IntrinsicFunctions;
 namespace {{ propertyType.Namespace }}
 {
     /// <summary>
-    ///  {{ propertyType.Documentation }}
+{% for line in propertyType.Documentation -%}
+    /// {{ line }}
+{% endfor -%}
     /// </summary>
     public class {{ propertyType.Name }}
     {
 
 {%  for property in propertyType.Properties -%}
         /// <summary>
-        ///  {{ property.Documentation }}
+{% for line in property.Documentation -%}
+        /// {{ line }}
+{% endfor -%}
         /// </summary>
         [JsonProperty("{{ property.JsonProperty }}")]
         public Union<{{ property.Type }}, IntrinsicFunction> {{ property.Name }} { get; set; }

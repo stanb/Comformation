@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
     /// AWS::Cognito::UserPoolUserToGroupAttachment
     /// The AWS::Cognito::UserPoolUserToGroupAttachment resource attaches a user to an Amazon Cognito user pool user
     /// group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html
     /// </summary>
     public class UserPoolUserToGroupAttachmentResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-groupname
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-userpoolid
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-username
             /// </summary>
 			public Union<string, IntrinsicFunction> Username { get; set; }
 

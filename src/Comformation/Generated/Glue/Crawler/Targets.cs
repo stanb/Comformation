@@ -6,19 +6,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Crawler
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
+    /// AWS Glue Crawler Targets
+    /// The Targets property type specifies AWS Glue crawler targets.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
     /// </summary>
     public class Targets
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
+        /// S3Targets
+        /// The Amazon S3 crawler targets.
+        /// Required: No
+        /// Type: List of AWS Glue Crawler S3Target
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Targets")]
         public Union<List<S3Target>, IntrinsicFunction> S3Targets { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
+        /// JdbcTargets
+        /// The JDBC crawler targets.
+        /// Required: No
+        /// Type: List of AWS Glue Crawler JdbcTarget
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("JdbcTargets")]
         public Union<List<JdbcTarget>, IntrinsicFunction> JdbcTargets { get; set; }

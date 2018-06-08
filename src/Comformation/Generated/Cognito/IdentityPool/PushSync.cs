@@ -6,19 +6,28 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
+    /// Amazon Cognito IdentityPool PushSync
+    /// PushSync is a property of the AWS::Cognito::IdentityPool resource that defines the configuration options to be
+    /// applied to an Amazon Cognito identity pool.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
     /// </summary>
     public class PushSync
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-applicationarns
+        /// ApplicationArns
+        /// List of Amazon SNS platform application ARNs that could be used by clients.
+        /// Type: List of String values
+        /// Required: No
         /// </summary>
         [JsonProperty("ApplicationArns")]
         public Union<List<string>, IntrinsicFunction> ApplicationArns { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-rolearn
+        /// RoleArn
+        /// An IAM role configured to allow Amazon Cognito to call SNS on behalf of the developer.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }

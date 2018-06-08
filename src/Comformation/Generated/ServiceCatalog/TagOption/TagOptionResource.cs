@@ -9,7 +9,7 @@ namespace Comformation.ServiceCatalog.TagOption
     /// A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS
     /// tag. For more information, see AWS Service Catalog TagOptionLibrary in the AWS Service Catalog Administrator
     /// Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html
     /// </summary>
     public class TagOptionResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ServiceCatalog.TagOption
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-active
             /// </summary>
 			public Union<bool, IntrinsicFunction> Active { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ServiceCatalog.TagOption
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-value
             /// </summary>
 			public Union<string, IntrinsicFunction> Value { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.ServiceCatalog.TagOption
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-key
             /// </summary>
 			public Union<string, IntrinsicFunction> Key { get; set; }
 

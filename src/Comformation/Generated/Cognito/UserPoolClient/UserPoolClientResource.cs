@@ -7,7 +7,7 @@ namespace Comformation.Cognito.UserPoolClient
     /// <summary>
     /// AWS::Cognito::UserPoolClient
     /// The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html
     /// </summary>
     public class UserPoolClientResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret
             /// </summary>
 			public Union<bool, IntrinsicFunction> GenerateSecret { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Update requires: No interruption
             /// MinLength: 1
             /// MaxLength: 128
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname
             /// </summary>
 			public Union<string, IntrinsicFunction> ClientName { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-userpoolid
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Required: No
             /// Type: List of Strings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ExplicitAuthFlows { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity
             /// </summary>
 			public Union<double, IntrinsicFunction> RefreshTokenValidity { get; set; }
 
@@ -72,7 +67,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Required: No
             /// Type: List of Strings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ReadAttributes { get; set; }
 
@@ -82,7 +76,6 @@ namespace Comformation.Cognito.UserPoolClient
             /// Required: No
             /// Type: List of Strings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-writeattributes
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> WriteAttributes { get; set; }
 

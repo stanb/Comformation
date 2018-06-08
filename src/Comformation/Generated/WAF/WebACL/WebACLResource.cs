@@ -9,7 +9,7 @@ namespace Comformation.WAF.WebACL
     /// The AWS::WAF::WebACL resource creates an AWS WAF web access control group (ACL) containing the rules that
     /// identify the Amazon CloudFront (CloudFront) web requests that you want to allow, block, or count. For more
     /// information, see CreateWebACL in the AWS WAF API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html
     /// </summary>
     public class WebACLResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.WAF.WebACL
             /// Required: Yes
             /// Type: AWS WAF WebACL Action
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-defaultaction
             /// </summary>
 			public Union<WafAction, IntrinsicFunction> DefaultAction { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.WAF.WebACL
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.WAF.WebACL
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.WAF.WebACL
             /// Required: No
             /// Type: List of AWS WAF WebACL Rules
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules
             /// </summary>
 			public Union<List<ActivatedRule>, IntrinsicFunction> Rules { get; set; }
 

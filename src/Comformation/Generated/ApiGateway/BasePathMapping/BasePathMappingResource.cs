@@ -8,7 +8,7 @@ namespace Comformation.ApiGateway.BasePathMapping
     /// AWS::ApiGateway::BasePathMapping
     /// The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your Amazon API
     /// Gateway API must use in the invocation URL.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html
     /// </summary>
     public class BasePathMappingResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath
             /// </summary>
 			public Union<string, IntrinsicFunction> BasePath { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage
             /// </summary>
 			public Union<string, IntrinsicFunction> Stage { get; set; }
 

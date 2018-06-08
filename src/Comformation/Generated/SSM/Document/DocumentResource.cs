@@ -8,7 +8,7 @@ namespace Comformation.SSM.Document
     /// AWS::SSM::Document
     /// The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that describes an instance
     /// configuration, which you can use to set up and run commands on your instances.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html
     /// </summary>
     public class DocumentResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.SSM.Document
             /// Required: Yes
             /// Type: JSON object
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Content { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.SSM.Document
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
             /// </summary>
 			public Union<string, IntrinsicFunction> DocumentType { get; set; }
 
@@ -46,7 +44,6 @@ namespace Comformation.SSM.Document
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

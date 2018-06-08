@@ -9,7 +9,7 @@ namespace Comformation.Lambda.Permission
     /// The AWS::Lambda::Permission resource associates a policy statement with a specific AWS Lambda (Lambda)
     /// function's access policy. The function policy grants a specific AWS service or application permission to
     /// invoke the function. For more information, see AddPermission in the AWS Lambda Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
     /// </summary>
     public class PermissionResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.Lambda.Permission
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
             /// </summary>
 			public Union<string, IntrinsicFunction> Action { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Lambda.Permission
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
             /// </summary>
 			public Union<string, IntrinsicFunction> EventSourceToken { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.Lambda.Permission
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
@@ -58,7 +55,6 @@ namespace Comformation.Lambda.Permission
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
             /// </summary>
 			public Union<string, IntrinsicFunction> Principal { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.Lambda.Permission
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceAccount { get; set; }
 
@@ -87,7 +82,6 @@ namespace Comformation.Lambda.Permission
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceArn { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.Athena.NamedQuery
     /// AWS::Athena::NamedQuery
     /// The AWS::Athena::NamedQuery resource creates an Amazon Athena query. For more information, see
     /// CreateNamedQuery in the Amazon Athena Documentation.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html
     /// </summary>
     public class NamedQueryResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Athena.NamedQuery
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.Athena.NamedQuery
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-querystring
             /// </summary>
 			public Union<string, IntrinsicFunction> QueryString { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.Athena.NamedQuery
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-database
             /// </summary>
 			public Union<string, IntrinsicFunction> Database { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.Athena.NamedQuery
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

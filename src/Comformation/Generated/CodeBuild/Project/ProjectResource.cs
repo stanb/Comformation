@@ -8,7 +8,7 @@ namespace Comformation.CodeBuild.Project
     /// AWS::CodeBuild::Project
     /// The AWS::CodeBuild::Project resource configures how AWS CodeBuild builds your source code. For example, it
     /// tells AWS CodeBuild where to get the source code and which build environment to use.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
     /// </summary>
     public class ProjectResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: AWS CodeBuild Project VpcConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig
             /// </summary>
 			public Union<VpcConfig, IntrinsicFunction> VpcConfig { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey
             /// </summary>
 			public Union<string, IntrinsicFunction> EncryptionKey { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: AWS CodeBuild Project ProjectTriggers
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers
             /// </summary>
 			public Union<ProjectTriggers, IntrinsicFunction> Triggers { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: Yes
             /// Type: AWS CodeBuild Project Source
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source
             /// </summary>
 			public Union<Source, IntrinsicFunction> Source { get; set; }
 
@@ -75,7 +70,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -85,7 +79,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: Yes
             /// Type: AWS CodeBuild Project Artifacts
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
             /// </summary>
 			public Union<Artifacts, IntrinsicFunction> Artifacts { get; set; }
 
@@ -96,7 +89,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> BadgeEnabled { get; set; }
 
@@ -106,7 +98,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
@@ -117,7 +108,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: Yes
             /// Type: AWS CodeBuild Project Environment
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment
             /// </summary>
 			public Union<Environment, IntrinsicFunction> Environment { get; set; }
 
@@ -127,7 +117,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -138,7 +127,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes
             /// </summary>
 			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 
@@ -148,7 +136,6 @@ namespace Comformation.CodeBuild.Project
             /// Required: No
             /// Type: AWS CodeBuild Project ProjectCache
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache
             /// </summary>
 			public Union<ProjectCache, IntrinsicFunction> Cache { get; set; }
 

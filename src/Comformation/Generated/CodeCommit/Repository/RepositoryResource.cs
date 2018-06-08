@@ -8,7 +8,7 @@ namespace Comformation.CodeCommit.Repository
     /// AWS::CodeCommit::Repository
     /// The AWS::CodeCommit::Repository resource creates an AWS CodeCommit repository that is hosted by Amazon Web
     /// Services. For more information, see Create an AWS CodeCommit Repository in the AWS CodeCommit User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html
     /// </summary>
     public class RepositoryResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.CodeCommit.Repository
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname
             /// </summary>
 			public Union<string, IntrinsicFunction> RepositoryName { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.CodeCommit.Repository
             /// Required: No
             /// Type: List of AWS CodeCommit Repository Trigger
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-triggers
             /// </summary>
 			public Union<List<RepositoryTrigger>, IntrinsicFunction> Triggers { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.CodeCommit.Repository
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription
             /// </summary>
 			public Union<string, IntrinsicFunction> RepositoryDescription { get; set; }
 

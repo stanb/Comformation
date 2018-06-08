@@ -9,7 +9,7 @@ namespace Comformation.EMR.SecurityConfiguration
     /// The AWS::EMR::SecurityConfiguration resource creates a security configuration that is stored in the Amazon EMR
     /// web service. You can specify the security configuration when creating a cluster. For more information, see
     /// Specifying Amazon EMR Encryption Options Using a Security Configuration in the Amazon EMR Release Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
     /// </summary>
     public class SecurityConfigurationResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EMR.SecurityConfiguration
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.EMR.SecurityConfiguration
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SecurityConfiguration { get; set; }
 

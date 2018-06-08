@@ -8,7 +8,7 @@ namespace Comformation.EC2.Route
     /// AWS::EC2::Route
     /// The AWS::EC2::Route resource creates a new route in a route table within a VPC. The route's target can be
     /// either a gateway attached to the VPC or a NAT instance in the VPC.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
     /// </summary>
     public class RouteResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EC2.Route
             /// property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.EC2.Route
             /// property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationIpv6CidrBlock { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.EC2.Route
             /// Egress-Only Internet Gateway.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> EgressOnlyInternetGatewayId { get; set; }
 
@@ -62,7 +59,6 @@ namespace Comformation.EC2.Route
             /// VpcPeeringConnectionId.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> GatewayId { get; set; }
 
@@ -74,7 +70,6 @@ namespace Comformation.EC2.Route
             /// VpcPeeringConnectionId.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -86,7 +81,6 @@ namespace Comformation.EC2.Route
             /// VpcPeeringConnectionId.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> NatGatewayId { get; set; }
 
@@ -98,7 +92,6 @@ namespace Comformation.EC2.Route
             /// VpcPeeringConnectionId.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
@@ -108,7 +101,6 @@ namespace Comformation.EC2.Route
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid
             /// </summary>
 			public Union<string, IntrinsicFunction> RouteTableId { get; set; }
 
@@ -120,7 +112,6 @@ namespace Comformation.EC2.Route
             /// VpcPeeringConnectionId.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcPeeringConnectionId { get; set; }
 

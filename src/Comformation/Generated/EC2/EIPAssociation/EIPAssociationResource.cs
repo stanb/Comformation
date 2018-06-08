@@ -9,7 +9,7 @@ namespace Comformation.EC2.EIPAssociation
     /// The AWS::EC2::EIPAssociation resource type associates an Elastic IP address with an Amazon EC2 instance. The
     /// Elastic IP address can be an existing Elastic IP address or an Elastic IP address allocated through an
     /// AWS::EC2::EIP resource.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html
     /// </summary>
     public class EIPAssociationResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Replacement if you also change the InstanceId or NetworkInterfaceId property. If
             /// not, update requires No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-allocationid
             /// </summary>
 			public Union<string, IntrinsicFunction> AllocationId { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Replacement if you also change the InstanceId or NetworkInterfaceId property. If
             /// not, update requires No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip
             /// </summary>
 			public Union<string, IntrinsicFunction> EIP { get; set; }
 
@@ -51,7 +49,6 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Replacement if you also change the AllocationId or EIP property. If not, update
             /// requires No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -64,7 +61,6 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Replacement if you also change the AllocationId or EIP property. If not, update
             /// requires No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-networkinterfaceid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
@@ -77,7 +73,6 @@ namespace Comformation.EC2.EIPAssociation
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress
             /// </summary>
 			public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 

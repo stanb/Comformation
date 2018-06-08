@@ -9,7 +9,7 @@ namespace Comformation.ApiGateway.UsagePlan
     /// The AWS::ApiGateway::UsagePlan resource specifies a usage plan for deployed Amazon API Gateway (API Gateway)
     /// APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information,
     /// see Creating and Using API Usage Plans in Amazon API Gateway in the API Gateway Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
     /// </summary>
     public class UsagePlanResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Required: No
             /// Type: List of Amazon API Gateway UsagePlan ApiStage
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
             /// </summary>
 			public Union<List<ApiStage>, IntrinsicFunction> ApiStages { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Required: No
             /// Type: Amazon API Gateway UsagePlan QuotaSettings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota
             /// </summary>
 			public Union<QuotaSettings, IntrinsicFunction> Quota { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Required: No
             /// Type: Amazon API Gateway UsagePlan ThrottleSettings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle
             /// </summary>
 			public Union<ThrottleSettings, IntrinsicFunction> Throttle { get; set; }
 
@@ -61,7 +57,6 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname
             /// </summary>
 			public Union<string, IntrinsicFunction> UsagePlanName { get; set; }
 

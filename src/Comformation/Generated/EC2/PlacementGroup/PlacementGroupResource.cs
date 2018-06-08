@@ -9,7 +9,7 @@ namespace Comformation.EC2.PlacementGroup
     /// The AWS::EC2::PlacementGroup resource is a logical grouping of instances within a single Availability Zone
     /// (AZ) that enables applications to participate in a low-latency, 10 Gbps network. You create a placement group
     /// first, and then you can launch instances in the placement group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html
     /// </summary>
     public class PlacementGroupResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.EC2.PlacementGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
             /// </summary>
 			public Union<string, IntrinsicFunction> Strategy { get; set; }
 

@@ -7,7 +7,7 @@ namespace Comformation.EC2.VPCGatewayAttachment
     /// <summary>
     /// AWS::EC2::VPCGatewayAttachment
     /// Attaches a gateway to a VPC.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
     /// </summary>
     public class VPCGatewayAttachmentResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.EC2.VPCGatewayAttachment
             /// Required: Conditional You must specify either InternetGatewayId or VpnGatewayId, but not both.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> InternetGatewayId { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.EC2.VPCGatewayAttachment
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
@@ -39,7 +37,6 @@ namespace Comformation.EC2.VPCGatewayAttachment
             /// Required: Conditional You must specify either InternetGatewayId or VpnGatewayId, but not both.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 

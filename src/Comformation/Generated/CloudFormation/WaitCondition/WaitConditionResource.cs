@@ -9,7 +9,7 @@ namespace Comformation.CloudFormation.WaitCondition
     /// Important For Amazon EC2 and Auto Scaling resources, we recommend that you use a CreationPolicy attribute
     /// instead of wait conditions. Add a CreationPolicy attribute to those resources, and use the cfn-signal helper
     /// script to signal when an instance creation process has completed successfully.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
     /// </summary>
     public class WaitConditionResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Required: No
             /// Type: Integer
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count
             /// </summary>
 			public Union<int, IntrinsicFunction> Count { get; set; }
 
@@ -40,7 +39,6 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle
             /// </summary>
 			public Union<string, IntrinsicFunction> Handle { get; set; }
 
@@ -53,7 +51,6 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-timeout
             /// </summary>
 			public Union<string, IntrinsicFunction> Timeout { get; set; }
 

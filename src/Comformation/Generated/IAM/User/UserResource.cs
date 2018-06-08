@@ -7,7 +7,7 @@ namespace Comformation.IAM.User
     /// <summary>
     /// AWS::IAM::User
     /// The AWS::IAM::User type creates a user.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
     /// </summary>
     public class UserResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.IAM.User
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.IAM.User
             /// Required: No
             /// Type: IAM User LoginProfile
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile
             /// </summary>
 			public Union<LoginProfile, IntrinsicFunction> LoginProfile { get; set; }
 
@@ -39,7 +37,6 @@ namespace Comformation.IAM.User
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.IAM.User
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.IAM.User
             /// Required: No
             /// Type: List of IAM Policies
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies
             /// </summary>
 			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
 
@@ -85,7 +80,6 @@ namespace Comformation.IAM.User
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username
             /// </summary>
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 

@@ -9,7 +9,7 @@ namespace Comformation.Glue.Classifier
     /// The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies
     /// schemas. For more information, see Adding Classifiers to a Crawler and Classifier Structure in the AWS Glue
     /// Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html
     /// </summary>
     public class ClassifierResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Glue.Classifier
             /// Required: No
             /// Type: AWS Glue Classifier GrokClassifier
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier
             /// </summary>
 			public Union<GrokClassifier, IntrinsicFunction> GrokClassifier { get; set; }
 

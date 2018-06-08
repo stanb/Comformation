@@ -6,25 +6,37 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html
+    /// AWS CodePipeline Pipeline Stages
+    /// Stages is a property of the AWS::CodePipeline::Pipeline resource that specifies a sequence of tasks for AWS
+    /// CodePipeline to complete on an artifact.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html
     /// </summary>
     public class StageDeclaration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-actions
+        /// Actions
+        /// The actions to include in this stage.
+        /// Required: Yes
+        /// Type: List of AWS CodePipeline Pipeline Stages Actions
         /// </summary>
         [JsonProperty("Actions")]
         public Union<List<ActionDeclaration>, IntrinsicFunction> Actions { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-blockers
+        /// Blockers
+        /// The gates included in a stage.
+        /// Required: No
+        /// Type: List of AWS CodePipeline Pipeline Stages Blockers
         /// </summary>
         [JsonProperty("Blockers")]
         public Union<List<BlockerDeclaration>, IntrinsicFunction> Blockers { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-name
+        /// Name
+        /// A name for this stage.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

@@ -8,7 +8,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
     /// AWS::ElasticLoadBalancingV2::LoadBalancer
     /// The AWS::ElasticLoadBalancingV2::LoadBalancer resource creates an Elastic Load Balancing Application or
     /// Network Load Balancer. For more information, see Getting Started in the Elastic Load Balancing User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: String
             /// Update requires: No interruption
             /// Note If Scheme is internal, then IpAddressType must be ipv4.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipaddresstype
             /// </summary>
 			public Union<string, IntrinsicFunction> IpAddressType { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: A list of Elastic Load Balancing LoadBalancer LoadBalancerAttributes
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes
             /// </summary>
 			public Union<List<LoadBalancerAttribute>, IntrinsicFunction> LoadBalancerAttributes { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -65,7 +62,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme
             /// </summary>
 			public Union<string, IntrinsicFunction> Scheme { get; set; }
 
@@ -76,7 +72,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-securitygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
@@ -91,7 +86,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: List of Elastic Load Balancing LoadBalancer SubnetMapping
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings
             /// </summary>
 			public Union<List<SubnetMapping>, IntrinsicFunction> SubnetMappings { get; set; }
 
@@ -103,7 +97,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
 
@@ -114,7 +107,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -125,7 +117,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 

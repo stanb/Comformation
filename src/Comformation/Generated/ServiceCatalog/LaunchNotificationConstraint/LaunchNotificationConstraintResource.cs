@@ -8,7 +8,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
     /// AWS::ServiceCatalog::LaunchNotificationConstraint
     /// Creates a notification constraint for AWS Service Catalog. For more information, see CreateConstraint in the
     /// AWS Service Catalog Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html
     /// </summary>
     public class LaunchNotificationConstraintResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-notificationarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> NotificationArns { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-acceptlanguage
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-portfolioid
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-productid
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
 

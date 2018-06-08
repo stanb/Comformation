@@ -8,7 +8,7 @@ namespace Comformation.Glue.DevEndpoint
     /// AWS::Glue::DevEndpoint
     /// The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL
     /// scripts for AWS Glue. For more information, see DevEndpoint Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html
     /// </summary>
     public class DevEndpointResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtraJarsS3Path { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname
             /// </summary>
 			public Union<string, IntrinsicFunction> EndpointName { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey
             /// </summary>
 			public Union<string, IntrinsicFunction> PublicKey { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
             /// </summary>
 			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -75,7 +70,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtraPythonLibsS3Path { get; set; }
 
@@ -85,7 +79,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
@@ -96,7 +89,6 @@ namespace Comformation.Glue.DevEndpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 

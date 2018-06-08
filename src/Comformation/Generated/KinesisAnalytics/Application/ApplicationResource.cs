@@ -8,7 +8,7 @@ namespace Comformation.KinesisAnalytics.Application
     /// AWS::KinesisAnalytics::Application
     /// The AWS::KinesisAnalytics::Application resource creates an Amazon Kinesis Data Analytics application. For more
     /// information, see the Amazon Kinesis Data Analytics Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.KinesisAnalytics.Application
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.KinesisAnalytics.Application
             /// Required: Yes
             /// Type: List of Kinesis Data Analytics Application Input
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-inputs
             /// </summary>
 			public Union<List<Input>, IntrinsicFunction> Inputs { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.KinesisAnalytics.Application
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationDescription { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.KinesisAnalytics.Application
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationcode
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationCode { get; set; }
 

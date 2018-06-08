@@ -9,7 +9,7 @@ namespace Comformation.IAM.ManagedPolicy
     /// AWS::IAM::ManagedPolicy creates an AWS Identity and Access Management (IAM) managed policy for your AWS
     /// account, which you can use to apply permissions to IAM users, groups, and roles. For more information about
     /// managed policies, see Managed Policies and Inline Policies in the IAM User Guide guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html
     /// </summary>
     public class ManagedPolicyResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname
             /// </summary>
 			public Union<string, IntrinsicFunction> ManagedPolicyName { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
@@ -73,7 +69,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// templates formatted in YAML, you can create an IAM policy in either JSON or YAML format. AWS
             /// CloudFormation always converts a policy to JSON format before submitting it to IAM.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-policydocument
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
@@ -88,7 +83,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
 
@@ -98,7 +92,6 @@ namespace Comformation.IAM.ManagedPolicy
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Users { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.Neptune.DBCluster
     /// AWS::Neptune::DBCluster
     /// The AWS::Neptune::DBCluster resource creates a Amazon Neptune DB Cluster. Neptune is a fully managed graph
     /// database. .
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
             /// Type: Boolean
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted
             /// </summary>
 			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
@@ -38,7 +37,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
 
@@ -58,7 +55,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
@@ -92,7 +86,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -101,7 +94,6 @@ namespace Comformation.Neptune.DBCluster
             /// Enable IAM authentication and authoriation on this cluster.
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> IamAuthEnabled { get; set; }
 
@@ -111,7 +103,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
@@ -123,7 +114,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
@@ -133,7 +123,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
 
@@ -143,7 +132,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
 
@@ -154,7 +142,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backuprententionperiod
             /// </summary>
 			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
@@ -164,7 +151,6 @@ namespace Comformation.Neptune.DBCluster
             /// Required: No
             /// Type: A list of resource tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

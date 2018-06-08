@@ -9,7 +9,7 @@ namespace Comformation.SES.Template
     /// The AWS::SES::Template resource specifies the content of an email (composed of a subject line, an HTML part,
     /// and a text-only part) for Amazon SES. For more information, see Template in the Amazon Simple Email Service
     /// API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html
     /// </summary>
     public class TemplateResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.SES.Template
             /// Required: No
             /// Type: Amazon SES Template Template
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-template
             /// </summary>
 			public Union<Template, IntrinsicFunction> Template { get; set; }
 

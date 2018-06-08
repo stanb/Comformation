@@ -8,7 +8,7 @@ namespace Comformation.EC2.InternetGateway
     /// AWS::EC2::InternetGateway
     /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to
     /// a VPC.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html
     /// </summary>
     public class InternetGatewayResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.InternetGateway
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html#cfn-ec2-internetgateway-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

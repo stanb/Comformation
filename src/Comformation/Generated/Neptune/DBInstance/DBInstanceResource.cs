@@ -7,7 +7,7 @@ namespace Comformation.Neptune.DBInstance
     /// <summary>
     /// AWS::Neptune::DBInstance
     /// The AWS::Neptune::DBInstance type creates an Neptune DB instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html
     /// </summary>
     public class DBInstanceResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.Neptune.DBInstance
             /// parameter group are changed during an update, the DB instance might need to be restarted, which
             /// causes some interruption. If the parameter group contains static parameters, whether they were
             /// changed or not, an update triggers a reboot.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBParameterGroupName { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceclass
             /// </summary>
 			public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-allowmajorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
@@ -56,7 +53,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbclusteridentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
             /// in the .
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -92,7 +86,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption or some interruptions.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-autominorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -103,7 +96,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
@@ -118,7 +110,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBInstanceIdentifier { get; set; }
 
@@ -135,7 +126,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsnapshotidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> DBSnapshotIdentifier { get; set; }
 
@@ -145,7 +135,6 @@ namespace Comformation.Neptune.DBInstance
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

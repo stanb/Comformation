@@ -7,7 +7,7 @@ namespace Comformation.CloudFormation.Stack
     /// <summary>
     /// AWS::CloudFormation::Stack
     /// The AWS::CloudFormation::Stack type nests a stack as a resource in a top-level template.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html
     /// </summary>
     public class StackResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.CloudFormation.Stack
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-notificationarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> NotificationARNs { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.CloudFormation.Stack
             /// Type: AWS CloudFormation Stack Parameters
             /// Update requires: Whether an update causes interruptions depends on the resources that are being
             /// updated. An update never causes a nested stack to be replaced.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-parameters
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.CloudFormation.Stack
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.CloudFormation.Stack
             /// Type: String
             /// Update requires: Whether an update causes interruptions depends on the resources that are being
             /// updated. An update never causes a nested stack to be replaced.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-templateurl
             /// </summary>
 			public Union<string, IntrinsicFunction> TemplateURL { get; set; }
 
@@ -72,7 +68,6 @@ namespace Comformation.CloudFormation.Stack
             /// Required: No
             /// Type: Integer
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-timeoutinminutes
             /// </summary>
 			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 

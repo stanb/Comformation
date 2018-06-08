@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html
+    /// Amazon EMR EbsConfiguration EbsBlockDeviceConfigs
+    /// EbsBlockDeviceConfigs is a property of the Amazon EMR EbsConfiguration property that defines the settings for
+    /// the Amazon Elastic Block Store (Amazon EBS) volumes that Amazon EMR (Amazon EMR) associates with your
+    /// instances.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html
     /// </summary>
     public class EbsBlockDeviceConfig
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-emr-cluster-ebsblockdeviceconfig-volumespecification
+        /// VolumeSpecification
+        /// The settings for the Amazon EBS volumes.
+        /// Required: Yes
+        /// Type: Amazon EMR EbsConfiguration EbsBlockDeviceConfig VolumeSpecification
         /// </summary>
         [JsonProperty("VolumeSpecification")]
         public Union<VolumeSpecification, IntrinsicFunction> VolumeSpecification { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-emr-cluster-ebsblockdeviceconfig-volumesperinstance
+        /// VolumesPerInstance
+        /// The number of Amazon EBS volumes that you want to create for each instance in the EMR cluster or
+        /// instance group. The number cannot be 0.
+        /// Required: No
+        /// Type: Integer
         /// </summary>
         [JsonProperty("VolumesPerInstance")]
         public Union<int, IntrinsicFunction> VolumesPerInstance { get; set; }

@@ -7,7 +7,7 @@ namespace Comformation.CloudWatch.Alarm
     /// <summary>
     /// AWS::CloudWatch::Alarm
     /// The AWS::CloudWatch::Alarm type creates a CloudWatch alarm.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
     /// </summary>
     public class AlarmResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-actionsenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> ActionsEnabled { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmactions
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AlarmActions { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmdescription
             /// </summary>
 			public Union<string, IntrinsicFunction> AlarmDescription { get; set; }
 
@@ -58,7 +55,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmname
             /// </summary>
 			public Union<string, IntrinsicFunction> AlarmName { get; set; }
 
@@ -71,7 +67,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-comparisonoperator
             /// </summary>
 			public Union<string, IntrinsicFunction> ComparisonOperator { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: List of Metric Dimension
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-dimensions
             /// </summary>
 			public Union<List<Dimension>, IntrinsicFunction> Dimensions { get; set; }
 
@@ -92,7 +86,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluatelowsamplecountpercentile
             /// </summary>
 			public Union<string, IntrinsicFunction> EvaluateLowSampleCountPercentile { get; set; }
 
@@ -102,7 +95,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluationperiods
             /// </summary>
 			public Union<int, IntrinsicFunction> EvaluationPeriods { get; set; }
 
@@ -112,7 +104,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Conditional. You must specify either the ExtendedStatistic or the Statistic property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-extendedstatistic
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtendedStatistic { get; set; }
 
@@ -124,7 +115,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-insufficientdataactions
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> InsufficientDataActions { get; set; }
 
@@ -136,7 +126,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-metricname
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
 
@@ -146,7 +135,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-namespace
             /// </summary>
 			public Union<string, IntrinsicFunction> Namespace { get; set; }
 
@@ -158,7 +146,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-okactions
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> OKActions { get; set; }
 
@@ -168,7 +155,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-period
             /// </summary>
 			public Union<int, IntrinsicFunction> Period { get; set; }
 
@@ -179,7 +165,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Conditional. You must specify either the ExtendedStatistic or the Statistic property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-statistic
             /// </summary>
 			public Union<string, IntrinsicFunction> Statistic { get; set; }
 
@@ -189,7 +174,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: Yes
             /// Type: Double
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-threshold
             /// </summary>
 			public Union<double, IntrinsicFunction> Threshold { get; set; }
 
@@ -203,7 +187,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-treatmissingdata
             /// </summary>
 			public Union<string, IntrinsicFunction> TreatMissingData { get; set; }
 
@@ -218,7 +201,6 @@ namespace Comformation.CloudWatch.Alarm
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-unit
             /// </summary>
 			public Union<string, IntrinsicFunction> Unit { get; set; }
 

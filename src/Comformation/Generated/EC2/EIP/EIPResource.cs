@@ -8,7 +8,7 @@ namespace Comformation.EC2.EIP
     /// AWS::EC2::EIP
     /// The AWS::EC2::EIP resource allocates an Elastic IP (EIP) address and can, optionally, associate it with an
     /// Amazon EC2 instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
     /// </summary>
     public class EIPResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.EC2.EIP
             /// Required: Conditional. Required when allocating an address to a VPC
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain
             /// </summary>
 			public Union<string, IntrinsicFunction> Domain { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.EC2.EIP
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 

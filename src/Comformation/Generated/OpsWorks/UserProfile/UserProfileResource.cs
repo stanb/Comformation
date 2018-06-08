@@ -8,7 +8,7 @@ namespace Comformation.OpsWorks.UserProfile
     /// AWS::OpsWorks::UserProfile
     /// The AWS::OpsWorks::UserProfile resource configures SSH access for users who require access to instances in an
     /// AWS OpsWorks stack.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html
     /// </summary>
     public class UserProfileResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.OpsWorks.UserProfile
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowSelfManagement { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.OpsWorks.UserProfile
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
             /// </summary>
 			public Union<string, IntrinsicFunction> IamUserArn { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.OpsWorks.UserProfile
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
             /// </summary>
 			public Union<string, IntrinsicFunction> SshPublicKey { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.OpsWorks.UserProfile
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
             /// </summary>
 			public Union<string, IntrinsicFunction> SshUsername { get; set; }
 

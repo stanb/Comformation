@@ -9,7 +9,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
     /// Creates a configuration template for an Elastic Beanstalk application. You can use configuration templates to
     /// deploy different versions of an application by using the configuration settings that you define in the
     /// configuration template.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html
     /// </summary>
     public class ConfigurationTemplateResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: String
             /// Required: No
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: String
             /// Required: Conditional
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid
             /// </summary>
 			public Union<string, IntrinsicFunction> EnvironmentId { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: List of Elastic Beanstalk ConfigurationTemplate ConfigurationOptionSetting
             /// Required: No
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings
             /// </summary>
 			public Union<List<ConfigurationOptionSetting>, IntrinsicFunction> OptionSettings { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-platformarn
             /// </summary>
 			public Union<string, IntrinsicFunction> PlatformArn { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: String
             /// Required: Conditional
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname
             /// </summary>
 			public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
 
@@ -96,7 +90,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: Elastic Beanstalk ConfigurationTemplate SourceConfiguration
             /// Required: Conditional
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration
             /// </summary>
 			public Union<SourceConfiguration, IntrinsicFunction> SourceConfiguration { get; set; }
 

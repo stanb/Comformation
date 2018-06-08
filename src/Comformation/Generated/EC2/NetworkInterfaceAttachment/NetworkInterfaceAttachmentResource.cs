@@ -8,7 +8,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
     /// AWS::EC2::NetworkInterfaceAttachment
     /// Attaches an elastic network interface (ENI) to an Amazon EC2 instance. You can use this resource type to
     /// attach additional network interfaces to an instances without interruption.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html
     /// </summary>
     public class NetworkInterfaceAttachmentResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Required: No
             /// Type: Boolean.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm
             /// </summary>
 			public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Required: Yes.
             /// Type: String.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex
             /// </summary>
 			public Union<string, IntrinsicFunction> DeviceIndex { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Required: Yes.
             /// Type: String.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Required: Yes.
             /// Type: String.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 

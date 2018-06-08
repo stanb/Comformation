@@ -9,7 +9,7 @@ namespace Comformation.WAFRegional.SizeConstraintSet
     /// The AWS::WAFRegional::SizeConstraintSet resource specifies a size constraint that AWS WAF uses to check the
     /// size of a web request and which parts of the request to check. For more information, see
     /// CreateSizeConstraintSet in the AWS WAF Regional API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html
     /// </summary>
     public class SizeConstraintSetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.WAFRegional.SizeConstraintSet
             /// Required: Yes
             /// Type: List of AWS WAF Regional SizeConstraintSet SizeConstraint
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints
             /// </summary>
 			public Union<List<SizeConstraint>, IntrinsicFunction> SizeConstraints { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.WAFRegional.SizeConstraintSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

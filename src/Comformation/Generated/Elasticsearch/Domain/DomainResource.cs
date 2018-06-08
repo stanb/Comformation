@@ -9,7 +9,7 @@ namespace Comformation.Elasticsearch.Domain
     /// The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES) domain that
     /// encapsulates the Amazon ES engine instances. For more information, see CreateElasticsearchDomain in the Amazon
     /// Elasticsearch Service Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html
     /// </summary>
     public class DomainResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-accesspolicies
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AccessPolicies { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: A JSON object that consists of a string key-value pair, such as:
             /// { "rest. action. multi. allow_explicit_index": "true" }
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedoptions
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> AdvancedOptions { get; set; }
 
@@ -51,7 +49,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainname
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
@@ -63,7 +60,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: Amazon ES Domain EBSOptions
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-ebsoptions
             /// </summary>
 			public Union<EBSOptions, IntrinsicFunction> EBSOptions { get; set; }
 
@@ -75,7 +71,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: Amazon ES Domain ElasticsearchClusterConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchclusterconfig
             /// </summary>
 			public Union<ElasticsearchClusterConfig, IntrinsicFunction> ElasticsearchClusterConfig { get; set; }
 
@@ -87,7 +82,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
             /// </summary>
 			public Union<string, IntrinsicFunction> ElasticsearchVersion { get; set; }
 
@@ -98,7 +92,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: Amazon ES Domain EncryptionAtRestOptions
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions
             /// </summary>
 			public Union<EncryptionAtRestOptions, IntrinsicFunction> EncryptionAtRestOptions { get; set; }
 
@@ -108,7 +101,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: Amazon ES Domain SnapshotOptions
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions
             /// </summary>
 			public Union<SnapshotOptions, IntrinsicFunction> SnapshotOptions { get; set; }
 
@@ -118,7 +110,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -130,7 +121,6 @@ namespace Comformation.Elasticsearch.Domain
             /// Required: No
             /// Type: Amazon ES Domain VPCOptions
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions
             /// </summary>
 			public Union<VPCOptions, IntrinsicFunction> VPCOptions { get; set; }
 

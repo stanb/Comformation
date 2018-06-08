@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -11,18 +12,46 @@ namespace Comformation.CodeBuilder
 {
     public class DocumentationParser
     {
-        private static readonly HttpClient _client = new HttpClient();
+        private static readonly HttpClient _client = new HttpClient(new HttpClientHandler() { AllowAutoRedirect = false });
         private readonly HtmlDocument _doc;
         private readonly Uri _uri;
 
+        private static Lazy<Dictionary<string, string>> _fixedUrls = new Lazy<Dictionary<string, string>>(LoadFixedUrls);
+
+        private static Dictionary<string, string> LoadFixedUrls()
+        {
+            var fixedUrls = new Dictionary<string, string>();
+            var lines = File.ReadAllLines("fixed_urls.csv");
+            foreach (var line in lines)
+            {
+                var parts = line.Split(",");
+                if (parts.Length == 3 && !string.IsNullOrWhiteSpace(parts[2]))
+                    fixedUrls.Add(parts[1].Trim(), parts[2].Trim());
+            }
+            return fixedUrls;
+        }
+
         public static async Task<DocumentationParser> Parse(string url)
         {
-            var uri = new Uri(url);
-            using (var stream = await _client.GetStreamAsync(uri))
+            if(!_fixedUrls.Value.TryGetValue(url, out string fixedUrl))
             {
-                var doc = new HtmlDocument();
-                doc.Load(stream);
-                return new DocumentationParser(uri, doc);
+                fixedUrl = url.Replace("http://", "https://");
+            }
+
+            var uri = new Uri(fixedUrl);
+
+            try
+            {
+                using (var stream = await _client.GetStreamAsync(uri))
+                {
+                    var doc = new HtmlDocument();
+                    doc.Load(stream);
+                    return new DocumentationParser(uri, doc);
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
 
@@ -39,34 +68,28 @@ namespace Comformation.CodeBuilder
             if (titleNode == null)
                 return null;
 
-            var title = titleNode.InnerText;
+            var title = WordWrap(Strip(titleNode.InnerText), 110);
             var descNode = titleNode.NextSibling.NextSibling;
             var desc = WordWrap(Strip(descNode.InnerText), 110);
-            var lines = desc.Prepend(title).Append(_uri.OriginalString).ToArray();
+            var lines = title.Concat(desc).Append(_uri.OriginalString).ToArray();
             return lines;
         }
 
-        public string[] GetPropertyDocumentation(string hashtag)
+        public string[] GetPropertyDocumentation(string propName)
         {
-            var node = _doc.GetElementbyId(hashtag);
-            if (node == null)
-                return null;
+            var propTitleNode = _doc.DocumentNode.SelectNodes($"//div[@class='variablelist']/dl/dt/span/code")
+                .FirstOrDefault(node => node.InnerText == propName);
+            if (propTitleNode == null)
+                return new[] { propName };
 
-            var dtNode = node.ParentNode;
-            var ddNode = dtNode.NextSibling.NextSibling;
-            var title = node.NextSibling.ChildNodes.First().InnerText;
-
+            var ddNode = propTitleNode.ParentNode.ParentNode.NextSibling.NextSibling;
             var lines = new List<string>();
-            lines.Add(title);
-
+            lines.Add(propName);
             foreach (var prop in ddNode.ChildNodes)
             {
                 var text = WordWrap(Strip(prop.InnerText), 100);
                 lines.AddRange(text);
             }
-
-            lines.Add($"{_uri.OriginalString}#{hashtag}");
-
             return lines.ToArray();
         }
 
@@ -108,45 +131,5 @@ namespace Comformation.CodeBuilder
                 yield return sb.ToString();
             yield break;
         }
-
-
-        //private static string Fix(string key)
-        //{
-        //    key = key
-        //        .Replace("aws-resource-elasticbeanstalk", "aws-resource-beanstalk")
-        //        .Replace("aws-resource-cloudwatch-dashboard", "aws-properties-cw-dashboard")
-        //        .Replace("aws-resource-elasticmapreduce-cluster", "aws-resource-emr-cluster")
-        //        .Replace("aws-resource-dms-replicationsubnetgroup", "aws-resource-dms-replicationsubnet-group")
-        //        .Replace("aws-resource-route53-recordsetgroup", "aws-properties-route53-recordsetgroup");
-
-        //    return key;
-        //}
-
-        //private static string FixHashtag(string key)
-        //{
-        //    if (key.Equals("topicarn"))
-        //        return "cfn-sns-topicarn";
-        //    key = key
-        //        .Replace("aws-sqs-queue", "cfn-sqs-queue")
-        //        .Replace("cfn-cloudwatch-dashboard-dashboard", "cfn-cloudwatch-dashboard-")
-        //        .Replace("cfn-elasticmapreduce-cluster", "cfn-emr-cluster")
-        //        .Replace("cfn-sns-topic-topicname", "cfn-sns-topic-name")
-        //        .Replace("cfn-cloudwatch-alarms-dimension", "cfn-cloudwatch-alarms-dimensions")
-        //        .Replace("cfn-redshift-cluster-HsmConfigurationIdentifier", "cfn-redshift-cluster-hsmconfigidentifier")
-        //        .Replace("cfn-opsworks-app-sslconfiguration", "cfn-opsworks-app-sslconfig")
-        //        .Replace("cfn-elasticloadbalancing-loadbalancer-tags", "cfn-ec2-elb-tags")
-        //        .Replace("cfn-opsworks-layer-custominstanceprofilearn", "cfn-opsworks-layer-custinstanceprofilearn")
-        //        .Replace("cfn-opsworks-layer-customsecuritygroupids", "cfn-opsworks-layer-custsecuritygroupnids")
-        //        .Replace("cfn-opsworks-layer-volumeconfigurations", "cfn-opsworks-layer-volconfig")
-        //        .Replace("cfn-apigateway-resource-restapiid", "cfn-apigateway-resource-resapiid")
-        //        //.Replace("", "")
-        //        //.Replace("", "")
-        //        //.Replace("", "")
-        //        //.Replace("", "")
-        //        //.Replace("", "")
-        //        //.Replace("", "")
-        //        ;
-        //    return key;
-        //}
     }
 }

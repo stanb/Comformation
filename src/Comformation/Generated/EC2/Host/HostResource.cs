@@ -10,7 +10,7 @@ namespace Comformation.EC2.Host
     /// the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by
     /// allowing you to use your existing server-bound software licenses. For more information, see Dedicated Hosts in
     /// the Amazon EC2 User Guide for Linux Instances.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html
     /// </summary>
     public class HostResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.EC2.Host
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoPlacement { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.EC2.Host
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.EC2.Host
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 

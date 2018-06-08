@@ -9,7 +9,7 @@ namespace Comformation.ECS.TaskDefinition
     /// The AWS::ECS::TaskDefinition resource describes the container and volume definitions of an Amazon Elastic
     /// Container Service (Amazon ECS) task. You can specify which Docker images to use, the required resources, and
     /// other configurations related to launching the task definition through an Amazon ECS service or task.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html
     /// </summary>
     public class TaskDefinitionResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: Yes
             /// Type: List of Amazon Elastic Container Service TaskDefinition ContainerDefinition
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-containerdefinition
             /// </summary>
 			public Union<List<ContainerDefinition>, IntrinsicFunction> ContainerDefinitions { get; set; }
 
@@ -38,7 +37,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu
             /// </summary>
 			public Union<string, IntrinsicFunction> Cpu { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-executionrolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ExecutionRoleArn { get; set; }
 
@@ -64,7 +61,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family
             /// </summary>
 			public Union<string, IntrinsicFunction> Family { get; set; }
 
@@ -81,7 +77,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory
             /// </summary>
 			public Union<string, IntrinsicFunction> Memory { get; set; }
 
@@ -95,7 +90,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-networkmode
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkMode { get; set; }
 
@@ -105,7 +99,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: Amazon Elastic Container Service Service PlacementConstraint
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints
             /// </summary>
 			public Union<List<TaskDefinitionPlacementConstraint>, IntrinsicFunction> PlacementConstraints { get; set; }
 
@@ -116,7 +109,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: List of Strings
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-requirescompatibilities
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> RequiresCompatibilities { get; set; }
 
@@ -128,7 +120,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> TaskRoleArn { get; set; }
 
@@ -139,7 +130,6 @@ namespace Comformation.ECS.TaskDefinition
             /// Required: No
             /// Type: List of Amazon Elastic Container Service TaskDefinition Volumes
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-volumes
             /// </summary>
 			public Union<List<Volume>, IntrinsicFunction> Volumes { get; set; }
 

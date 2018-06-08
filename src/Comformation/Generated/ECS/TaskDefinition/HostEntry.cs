@@ -6,19 +6,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html
+    /// Amazon Elastic Container Service TaskDefinition HostEntry
+    /// HostEntry is a property of the Amazon Elastic Container Service TaskDefinition ContainerDefinition property
+    /// that specifies the hostnames and IP address entries to add to the Amazon Elastic Container Service (Amazon
+    /// ECS) container's /etc/hosts file.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html
     /// </summary>
     public class HostEntry
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-hostname
+        /// Hostname
+        /// The hostname to use in the /etc/hosts file.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Hostname")]
         public Union<string, IntrinsicFunction> Hostname { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-ipaddress
+        /// IpAddress
+        /// The IP address to use in the /etc/hosts file.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("IpAddress")]
         public Union<string, IntrinsicFunction> IpAddress { get; set; }

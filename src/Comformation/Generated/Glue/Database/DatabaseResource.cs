@@ -8,7 +8,7 @@ namespace Comformation.Glue.Database
     /// AWS::Glue::Database
     /// The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue. For more information, see
     /// Defining a Database in Your Data Catalog and Database Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html
     /// </summary>
     public class DatabaseResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Glue.Database
             /// Required: Yes
             /// Type: AWS Glue Database DatabaseInput
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-databaseinput
             /// </summary>
 			public Union<DatabaseInput, IntrinsicFunction> DatabaseInput { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.Glue.Database
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 

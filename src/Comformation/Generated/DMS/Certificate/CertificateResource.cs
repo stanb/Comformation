@@ -8,7 +8,7 @@ namespace Comformation.DMS.Certificate
     /// AWS::DMS::Certificate
     /// The AWS::DMS::Certificate resource creates an SSL certificate that encrypts connections between AWS DMS
     /// endpoints and the replication instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.DMS.Certificate
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificateidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateIdentifier { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.DMS.Certificate
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatepem
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificatePem { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.DMS.Certificate
             /// Required: No
             /// Type: Base64-encoded binary data object
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatewallet
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateWallet { get; set; }
 

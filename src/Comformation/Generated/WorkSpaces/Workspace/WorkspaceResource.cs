@@ -10,7 +10,7 @@ namespace Comformation.WorkSpaces.Workspace
     /// experience for end users. Before creating a Workspace in CloudFormation, you must register a Directory Service
     /// directory with Workspaces. This process is documented at Register a Directory with Amazon WorkSpaces. For more
     /// information, see the Amazon WorkSpaces Administration Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
     /// </summary>
     public class WorkspaceResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.WorkSpaces.Workspace
             /// Type: String
             /// Update requires: Updates are not supported. . To update this property, you must also update another
             /// property that triggers a replacement, such as the UserName property.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
             /// </summary>
 			public Union<string, IntrinsicFunction> BundleId { get; set; }
 
@@ -37,7 +36,6 @@ namespace Comformation.WorkSpaces.Workspace
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
             /// </summary>
 			public Union<string, IntrinsicFunction> DirectoryId { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.WorkSpaces.Workspace
             /// Type: Boolean
             /// Update requires: Updates are not supported. . To update this property, you must also update another
             /// property that triggers a replacement, such as the UserName property.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> RootVolumeEncryptionEnabled { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.WorkSpaces.Workspace
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
             /// </summary>
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 
@@ -70,7 +66,6 @@ namespace Comformation.WorkSpaces.Workspace
             /// Type: Boolean
             /// Update requires: Updates are not supported. . To update this property, you must also update another
             /// property that triggers a replacement, such as the UserName property.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> UserVolumeEncryptionEnabled { get; set; }
 
@@ -82,7 +77,6 @@ namespace Comformation.WorkSpaces.Workspace
             /// Type: String
             /// Update requires: Updates are not supported. . To update this property, you must also update another
             /// property that triggers a replacement, such as the UserName property.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeEncryptionKey { get; set; }
 

@@ -9,7 +9,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
     /// The AWS::CodeDeploy::DeploymentGroup resource creates an AWS CodeDeploy deployment group that specifies which
     /// instances your application revisions are deployed to, along with other deployment options. For more
     /// information, see CreateDeploymentGroup in the AWS CodeDeploy API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html
     /// </summary>
     public class DeploymentGroupResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup AlarmConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration
             /// </summary>
 			public Union<AlarmConfiguration, IntrinsicFunction> AlarmConfiguration { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup AutoRollbackConfiguration
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration
             /// </summary>
 			public Union<AutoRollbackConfiguration, IntrinsicFunction> AutoRollbackConfiguration { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AutoScalingGroups { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup Deployment
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment
             /// </summary>
 			public Union<Deployment, IntrinsicFunction> Deployment { get; set; }
 
@@ -78,7 +73,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname
             /// </summary>
 			public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
 
@@ -92,7 +86,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> DeploymentGroupName { get; set; }
 
@@ -107,7 +100,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup DeploymentStyle
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle
             /// </summary>
 			public Union<DeploymentStyle, IntrinsicFunction> DeploymentStyle { get; set; }
 
@@ -119,7 +111,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: List of AWS CodeDeploy DeploymentGroup Ec2TagFilters
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters
             /// </summary>
 			public Union<List<EC2TagFilter>, IntrinsicFunction> Ec2TagFilters { get; set; }
 
@@ -130,7 +121,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup LoadBalancerInfo
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo
             /// </summary>
 			public Union<LoadBalancerInfo, IntrinsicFunction> LoadBalancerInfo { get; set; }
 
@@ -144,7 +134,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: List of AWS CodeDeploy DeploymentGroup OnPremisesInstanceTagFilters
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters
             /// </summary>
 			public Union<List<TagFilter>, IntrinsicFunction> OnPremisesInstanceTagFilters { get; set; }
 
@@ -158,7 +147,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
@@ -168,7 +156,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Required: No
             /// Type: List of AWS CodeDeploy DeploymentGroup TriggerConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations
             /// </summary>
 			public Union<List<TriggerConfig>, IntrinsicFunction> TriggerConfigurations { get; set; }
 

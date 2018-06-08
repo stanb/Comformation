@@ -8,7 +8,7 @@ namespace Comformation.Glue.Connection
     /// AWS::Glue::Connection
     /// The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source. For more information,
     /// see Adding a Connection to Your Data Store and Connection Structure in the AWS Glue Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html
     /// </summary>
     public class ConnectionResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Glue.Connection
             /// Required: Yes
             /// Type: AWS Glue Connection ConnectionInput
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-connectioninput
             /// </summary>
 			public Union<ConnectionInput, IntrinsicFunction> ConnectionInput { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.Glue.Connection
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 

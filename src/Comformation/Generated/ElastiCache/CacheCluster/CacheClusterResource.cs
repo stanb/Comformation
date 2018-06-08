@@ -7,7 +7,7 @@ namespace Comformation.ElastiCache.CacheCluster
     /// <summary>
     /// AWS::ElastiCache::CacheCluster
     /// The AWS::ElastiCache::CacheCluster type creates an Amazon ElastiCache cache cluster.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html
     /// </summary>
     public class CacheClusterResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// property, you must specify cross Availability Zones for this property.
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-azmode
             /// </summary>
 			public Union<string, IntrinsicFunction> AZMode { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: Boolean
             /// Default: true
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-autominorversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachenodetype
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cacheparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: Conditional: If your cache cluster isn't in a VPC, you must specify this property.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesecuritygroupnames
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> CacheSecurityGroupNames { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
 
@@ -92,7 +86,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-clustername
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
@@ -102,7 +95,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engine
             /// </summary>
 			public Union<string, IntrinsicFunction> Engine { get; set; }
 
@@ -112,7 +104,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engineversion
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
@@ -123,7 +114,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-notificationtopicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> NotificationTopicArn { get; set; }
 
@@ -135,7 +125,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Update requires: No interruption. However, if the PreferredAvailabilityZone and
             /// PreferredAvailabilityZones properties were not previously specified and you don't specify any new
             /// values, an update requires replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes
             /// </summary>
 			public Union<int, IntrinsicFunction> NumCacheNodes { get; set; }
 
@@ -145,7 +134,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -155,7 +143,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredAvailabilityZone { get; set; }
 
@@ -176,7 +163,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// PreferredAvailabilityZones property was already specified and you're updating its values (regardless
             /// of whether you specify the same Availability Zones), the update requires some interruptions.
             /// All other updates require replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzones
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> PreferredAvailabilityZones { get; set; }
 
@@ -186,7 +172,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -198,7 +183,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotarn
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SnapshotArns { get; set; }
 
@@ -208,7 +192,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotname
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotName { get; set; }
 
@@ -220,7 +203,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit
             /// </summary>
 			public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
 
@@ -231,7 +213,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotwindow
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotWindow { get; set; }
 
@@ -241,7 +222,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -257,7 +237,6 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: Conditional: If your cache cluster is in a VPC, you must specify this property.
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-vpcsecuritygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
 

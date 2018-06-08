@@ -7,7 +7,7 @@ namespace Comformation.DMS.Endpoint
     /// <summary>
     /// AWS::DMS::Endpoint
     /// The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html
     /// </summary>
     public class EndpointResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -42,7 +40,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename
             /// </summary>
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: AWS DMS Endpoint S3Settings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-s3settings
             /// </summary>
 			public Union<S3Settings, IntrinsicFunction> S3Settings { get; set; }
 
@@ -65,7 +61,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineName { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: AWS DMS Endpoint DynamoDBSettings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings
             /// </summary>
 			public Union<DynamoDbSettings, IntrinsicFunction> DynamoDbSettings { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-username
             /// </summary>
 			public Union<string, IntrinsicFunction> Username { get; set; }
 
@@ -99,7 +92,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode
             /// </summary>
 			public Union<string, IntrinsicFunction> SslMode { get; set; }
 
@@ -109,7 +101,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername
             /// </summary>
 			public Union<string, IntrinsicFunction> ServerName { get; set; }
 
@@ -119,7 +110,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtraConnectionAttributes { get; set; }
 
@@ -129,7 +119,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype
             /// </summary>
 			public Union<string, IntrinsicFunction> EndpointType { get; set; }
 
@@ -139,7 +128,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -150,7 +138,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> EndpointIdentifier { get; set; }
 
@@ -162,7 +149,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password
             /// </summary>
 			public Union<string, IntrinsicFunction> Password { get; set; }
 
@@ -172,7 +158,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-certificatearn
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateArn { get; set; }
 
@@ -184,7 +169,6 @@ namespace Comformation.DMS.Endpoint
             /// Required: No
             /// Type: AWS DMS Endpoint MongoDbSettings
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings
             /// </summary>
 			public Union<MongoDbSettings, IntrinsicFunction> MongoDbSettings { get; set; }
 

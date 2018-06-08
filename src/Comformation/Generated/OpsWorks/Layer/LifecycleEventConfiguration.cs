@@ -6,13 +6,19 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html
+    /// AWS OpsWorks Layer LifeCycleConfiguration
+    /// LifeCycleConfiguration is property of the AWS::OpsWorks::Layer resource that specifies the lifecycle event
+    /// configuration for the layer.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html
     /// </summary>
     public class LifecycleEventConfiguration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration
+        /// ShutdownEventConfiguration
+        /// Specifies the shutdown event configuration for a layer.
+        /// Required: No
+        /// Type: AWS OpsWorks Layer LifeCycleConfiguration ShutdownEventConfiguration
         /// </summary>
         [JsonProperty("ShutdownEventConfiguration")]
         public Union<ShutdownEventConfiguration, IntrinsicFunction> ShutdownEventConfiguration { get; set; }

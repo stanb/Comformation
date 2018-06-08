@@ -9,7 +9,7 @@ namespace Comformation.SES.ReceiptRule
     /// The AWS::SES::ReceiptRule resource specifies which actions Amazon SES should take when it receives mail on
     /// behalf of one or more email addresses or domains that you own. For more information, see Creating Receipt
     /// Rules for Amazon SES Email Receiving in the Amazon Simple Email Service Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
     /// </summary>
     public class ReceiptRuleResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.SES.ReceiptRule
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after
             /// </summary>
 			public Union<string, IntrinsicFunction> After { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.SES.ReceiptRule
             /// Required: Yes
             /// Type: Amazon SES ReceiptRule Rule
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
             /// </summary>
 			public Union<Rule, IntrinsicFunction> Rule { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.SES.ReceiptRule
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 

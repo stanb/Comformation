@@ -8,7 +8,7 @@ namespace Comformation.SSM.Association
     /// AWS::SSM::Association
     /// The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with EC2 instances that
     /// contain a configuration agent to process the document.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
     /// </summary>
     public class AssociationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.SSM.Association
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
             /// </summary>
 			public Union<string, IntrinsicFunction> AssociationName { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.SSM.Association
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentationversion
             /// </summary>
 			public Union<string, IntrinsicFunction> DocumentVersion { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.SSM.Association
             /// Required: Conditional. You must specify the InstanceId or Targets property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -50,7 +47,6 @@ namespace Comformation.SSM.Association
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -60,7 +56,6 @@ namespace Comformation.SSM.Association
             /// Required: No
             /// Type: Systems Manager Association InstanceAssociationOutputLocation
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
             /// </summary>
 			public Union<InstanceAssociationOutputLocation, IntrinsicFunction> OutputLocation { get; set; }
 
@@ -70,7 +65,6 @@ namespace Comformation.SSM.Association
             /// Required: No
             /// Type: String to list-of-strings map
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
             /// </summary>
 			public Union<Dictionary<string, ParameterValues>, IntrinsicFunction> Parameters { get; set; }
 
@@ -81,7 +75,6 @@ namespace Comformation.SSM.Association
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
             /// </summary>
 			public Union<string, IntrinsicFunction> ScheduleExpression { get; set; }
 
@@ -91,7 +84,6 @@ namespace Comformation.SSM.Association
             /// Required: Conditional. You must specify the InstanceId or Targets property.
             /// Type: List of AWS Systems Manager Association Targets
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
             /// </summary>
 			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
 

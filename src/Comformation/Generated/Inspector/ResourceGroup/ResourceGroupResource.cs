@@ -8,7 +8,7 @@ namespace Comformation.Inspector.ResourceGroup
     /// AWS::Inspector::ResourceGroup
     /// The AWS::Inspector::ResourceGroup resource is used to create Amazon Inspector resource groups. A resource
     /// group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html
     /// </summary>
     public class ResourceGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Inspector.ResourceGroup
             /// Required: Yes
             /// Type: List of AWS CloudFormation Resource Tags
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html#cfn-inspector-resourcegroup-resourcegrouptags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> ResourceGroupTags { get; set; }
 

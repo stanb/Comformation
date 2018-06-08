@@ -9,7 +9,7 @@ namespace Comformation.WAFRegional.WebACL
     /// The AWS::WAFRegional::WebACL resource creates an AWS WAF Regional web access control group (ACL) containing
     /// the rules that identify the Amazon CloudFront (CloudFront) web requests that you want to allow, block, or
     /// count. For more information, see CreateWebACL in the AWS WAF Regional API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html
     /// </summary>
     public class WebACLResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.WAFRegional.WebACL
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-metricname
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.WAFRegional.WebACL
             /// Required: Yes
             /// Type: AWS WAF Regional WebACL Action
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-defaultaction
             /// </summary>
 			public Union<Action, IntrinsicFunction> DefaultAction { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.WAFRegional.WebACL
             /// Required: No
             /// Type: List of AWS WAF Regional WebACL Rules
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-rules
             /// </summary>
 			public Union<List<Rule>, IntrinsicFunction> Rules { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.WAFRegional.WebACL
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

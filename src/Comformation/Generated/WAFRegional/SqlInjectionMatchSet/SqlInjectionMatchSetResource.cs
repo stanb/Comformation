@@ -9,7 +9,7 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
     /// The AWS::WAFRegional::SqlInjectionMatchSet resource creates an AWS WAF Regional SqlInjectionMatchSet, which
     /// you use to allow, block, or count requests that contain malicious SQL code in a specific part of web requests.
     /// For more information, see CreateSqlInjectionMatchSet in the AWS WAF Regional API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html
     /// </summary>
     public class SqlInjectionMatchSetResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
             /// Required: No
             /// Type: List of AWS WAF Regional SqlInjectionMatchSet SqlInjectionMatchTuples
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples
             /// </summary>
 			public Union<List<SqlInjectionMatchTuple>, IntrinsicFunction> SqlInjectionMatchTuples { get; set; }
 
@@ -32,7 +31,6 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

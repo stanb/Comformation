@@ -9,7 +9,7 @@ namespace Comformation.RDS.EventSubscription
     /// Use the AWS::RDS::EventSubscription resource to get notifications for Amazon Relational Database Service
     /// events through the Amazon Simple Notification Service. For more information, see Using Amazon RDS Event
     /// Notification in the Amazon Relational Database Service User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html
     /// </summary>
     public class EventSubscriptionResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.RDS.EventSubscription
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-enabled
             /// </summary>
 			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.RDS.EventSubscription
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> EventCategories { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.RDS.EventSubscription
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn
             /// </summary>
 			public Union<string, IntrinsicFunction> SnsTopicArn { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.RDS.EventSubscription
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SourceIds { get; set; }
 
@@ -73,7 +69,6 @@ namespace Comformation.RDS.EventSubscription
             /// Type: String
             /// Update requires: Replacement if you're removing this property after it was previously specified. All
             /// other updates require no interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceType { get; set; }
 

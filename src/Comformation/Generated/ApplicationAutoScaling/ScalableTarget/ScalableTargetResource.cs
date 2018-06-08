@@ -9,7 +9,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
     /// The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling
     /// can scale up or down. For more information, see the RegisterScalableTarget action in the Application Auto
     /// Scaling API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
     /// </summary>
     public class ScalableTargetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
             /// </summary>
 			public Union<int, IntrinsicFunction> MaxCapacity { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
             /// </summary>
 			public Union<int, IntrinsicFunction> MinCapacity { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 
@@ -68,7 +64,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension
             /// </summary>
 			public Union<string, IntrinsicFunction> ScalableDimension { get; set; }
 
@@ -78,7 +73,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: No
             /// Type: List of Application Auto Scaling ScalableTarget ScheduledAction property types
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions
             /// </summary>
 			public Union<List<ScheduledAction>, IntrinsicFunction> ScheduledActions { get; set; }
 
@@ -89,7 +83,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceNamespace { get; set; }
 

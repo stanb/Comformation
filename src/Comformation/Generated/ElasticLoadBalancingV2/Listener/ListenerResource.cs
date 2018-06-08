@@ -9,7 +9,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
     /// The AWS::ElasticLoadBalancingV2::Listener resource creates a listener for an Elastic Load Balancing
     /// Application or Network load balancer. The listener checks for connection requests and forwards them to one or
     /// more target groups. For more information, see Getting Started in the Elastic Load Balancing User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
     /// </summary>
     public class ListenerResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Required: Conditional. If you specify HTTPS for the Protocol property, specify a certificate.
             /// Type: List of Elastic Load Balancing Listener Certificate
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
             /// </summary>
 			public Union<List<Certificate>, IntrinsicFunction> Certificates { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Required: Yes
             /// Type: List of Elastic Load Balancing Listener Action
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
             /// </summary>
 			public Union<List<Action>, IntrinsicFunction> DefaultActions { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn
             /// </summary>
 			public Union<string, IntrinsicFunction> LoadBalancerArn { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -69,7 +65,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
 
@@ -79,7 +74,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy
             /// </summary>
 			public Union<string, IntrinsicFunction> SslPolicy { get; set; }
 

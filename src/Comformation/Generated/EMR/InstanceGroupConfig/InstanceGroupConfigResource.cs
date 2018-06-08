@@ -7,7 +7,7 @@ namespace Comformation.EMR.InstanceGroupConfig
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig
     /// The AWS::EMR::InstanceGroupConfig resource configures a task instance group for an Amazon EMR cluster.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
     /// </summary>
     public class InstanceGroupConfigResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: No
             /// Type: Amazon EMR InstanceGroupConfig AutoScalingPolicy
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
             /// </summary>
 			public Union<AutoScalingPolicy, IntrinsicFunction> AutoScalingPolicy { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
             /// </summary>
 			public Union<string, IntrinsicFunction> BidPrice { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: No
             /// Type: List of Amazon EMR Cluster Configurations
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
             /// </summary>
 			public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: No
             /// Type: Amazon EMR EbsConfiguration
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
             /// </summary>
 			public Union<EbsConfiguration, IntrinsicFunction> EbsConfiguration { get; set; }
 
@@ -64,7 +60,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancecount
             /// </summary>
 			public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceRole { get; set; }
 
@@ -88,7 +82,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
@@ -98,7 +91,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
             /// </summary>
 			public Union<string, IntrinsicFunction> JobFlowId { get; set; }
 
@@ -109,7 +101,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
             /// </summary>
 			public Union<string, IntrinsicFunction> Market { get; set; }
 
@@ -119,7 +110,6 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

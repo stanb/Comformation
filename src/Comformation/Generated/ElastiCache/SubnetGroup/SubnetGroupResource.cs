@@ -5,10 +5,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElastiCache.SubnetGroup
 {
     /// <summary>
-    /// AWS::ElastiCache::SubnetGroup 
+    /// AWS::ElastiCache::SubnetGroup
     /// Creates a cache subnet group. For more information about cache subnet groups, go to Cache Subnet Groups in the
     /// Amazon ElastiCache User Guide or go to CreateCacheSubnetGroup in the Amazon ElastiCache API Reference Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html
     /// </summary>
     public class SubnetGroupResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Type: String
             /// Required: Yes
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Type: String list
             /// Required: Yes
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
 

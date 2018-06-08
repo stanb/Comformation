@@ -11,7 +11,7 @@ namespace Comformation.CodeDeploy.Application
     /// deployment configuration, and deployment group are referenced during a deployment. You can use the
     /// AWS::CodeDeploy::DeploymentGroup resource to associate the application with an AWS CodeDeploy deployment
     /// group. For more information, see AWS CodeDeploy Deployments in the AWS CodeDeploy User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
     {
@@ -24,7 +24,6 @@ namespace Comformation.CodeDeploy.Application
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.CodeDeploy.Application
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
             /// </summary>
 			public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
 

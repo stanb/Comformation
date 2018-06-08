@@ -9,7 +9,7 @@ namespace Comformation.EFS.MountTarget
     /// The AWS::EFS::MountTarget resource creates a mount target for an Amazon Elastic File System (Amazon EFS) file
     /// system (AWS::EFS::FileSystem). Use the mount target to mount file systems on Amazon Elastic Compute Cloud
     /// (Amazon EC2) instances.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html
     /// </summary>
     public class MountTargetResource : ResourceBase
     {
@@ -26,7 +26,6 @@ namespace Comformation.EFS.MountTarget
             /// mount target is replaced. If you don't stop and restart them, instances or applications that are
             /// using those mounts might be disrupted when the mount target is deleted (uncommitted writes might be
             /// lost).
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid
             /// </summary>
 			public Union<string, IntrinsicFunction> FileSystemId { get; set; }
 
@@ -43,7 +42,6 @@ namespace Comformation.EFS.MountTarget
             /// mount target is replaced. If you don't stop and restart them, instances or applications that are
             /// using those mounts might be disrupted when the mount target is deleted (uncommitted writes might be
             /// lost).
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress
             /// </summary>
 			public Union<string, IntrinsicFunction> IpAddress { get; set; }
 
@@ -55,7 +53,6 @@ namespace Comformation.EFS.MountTarget
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-securitygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
@@ -74,7 +71,6 @@ namespace Comformation.EFS.MountTarget
             /// mount target is replaced. If you don't stop and restart them, instances or applications that are
             /// using those mounts might be disrupted when the mount target is deleted (uncommitted writes might be
             /// lost).
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 

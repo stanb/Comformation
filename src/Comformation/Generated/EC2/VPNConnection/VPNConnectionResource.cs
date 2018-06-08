@@ -7,7 +7,7 @@ namespace Comformation.EC2.VPNConnection
     /// <summary>
     /// AWS::EC2::VPNConnection
     /// Creates a new VPN connection between an existing virtual private gateway and a VPN customer gateway.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
     /// </summary>
     public class VPNConnectionResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.VPNConnection
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomerGatewayId { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.EC2.VPNConnection
             /// Border Gateway Protocol (BGP), you must specify true.
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly
             /// </summary>
 			public Union<bool, IntrinsicFunction> StaticRoutesOnly { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.EC2.VPNConnection
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.EC2.VPNConnection
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.EC2.VPNConnection
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid
             /// </summary>
 			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 
@@ -73,7 +68,6 @@ namespace Comformation.EC2.VPNConnection
             /// Required: No
             /// Type: List of EC2 VPNConnection VpnTunnelOptionsSpecification
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
             /// </summary>
 			public Union<List<VpnTunnelOptionsSpecification>, IntrinsicFunction> VpnTunnelOptionsSpecifications { get; set; }
 

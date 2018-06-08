@@ -9,7 +9,7 @@ namespace Comformation.Config.ConfigurationRecorder
     /// The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records
     /// configuration changes. The configuration recorder stores the configurations of the supported resources in your
     /// account as configuration items.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
     /// </summary>
     public class ConfigurationRecorderResource : ResourceBase
     {
@@ -25,7 +25,6 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -36,7 +35,6 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Required: No
             /// Type: AWS Config ConfigurationRecorder RecordingGroup
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup
             /// </summary>
 			public Union<RecordingGroup, IntrinsicFunction> RecordingGroup { get; set; }
 
@@ -49,7 +47,6 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 

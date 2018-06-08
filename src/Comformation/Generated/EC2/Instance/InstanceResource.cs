@@ -7,7 +7,7 @@ namespace Comformation.EC2.Instance
     /// <summary>
     /// AWS::EC2::Instance
     /// The AWS::EC2::Instance resource creates an EC2 instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
     /// </summary>
     public class InstanceResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: Some interruptions for Amazon EBS-backed instances Update requires: Replacement for
             /// instance store-backed instances
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-additionalinfo
             /// </summary>
 			public Union<string, IntrinsicFunction> AdditionalInfo { get; set; }
 
@@ -35,7 +34,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-affinity
             /// </summary>
 			public Union<string, IntrinsicFunction> Affinity { get; set; }
 
@@ -48,7 +46,6 @@ namespace Comformation.EC2.Instance
             /// the load balancing criteria for the region.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -61,7 +58,6 @@ namespace Comformation.EC2.Instance
             /// Type: A list of Amazon EC2 Block Device Mapping Property.
             /// Update requires: Replacement. If you change only the DeleteOnTermination property for one or more
             /// block devices, update requires No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-blockdevicemappings
             /// </summary>
 			public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
 
@@ -71,7 +67,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: Amazon EC2 Instance CreditSpecification.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification
             /// </summary>
 			public Union<CreditSpecification, IntrinsicFunction> CreditSpecification { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination
             /// </summary>
 			public Union<bool, IntrinsicFunction> DisableApiTermination { get; set; }
 
@@ -98,7 +92,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: Some interruptions for Amazon EBS-backed instances Update requires: Replacement for
             /// instance store-backed instances
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ebsoptimized
             /// </summary>
 			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
@@ -110,7 +103,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: List of Amazon EC2 Instance ElasticGpuSpecification
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticgpuspecifications
             /// </summary>
 			public Union<List<ElasticGpuSpecification>, IntrinsicFunction> ElasticGpuSpecifications { get; set; }
 
@@ -124,7 +116,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostid
             /// </summary>
 			public Union<string, IntrinsicFunction> HostId { get; set; }
 
@@ -136,7 +127,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile
             /// </summary>
 			public Union<string, IntrinsicFunction> IamInstanceProfile { get; set; }
 
@@ -146,7 +136,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-imageid
             /// </summary>
 			public Union<string, IntrinsicFunction> ImageId { get; set; }
 
@@ -158,7 +147,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instanceinitiatedshutdownbehavior
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceInitiatedShutdownBehavior { get; set; }
 
@@ -171,7 +159,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: Some interruptions for Amazon EBS-backed instances Update requires: Replacement for
             /// instance store-backed instances
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
@@ -185,7 +172,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresscount
             /// </summary>
 			public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
@@ -199,7 +185,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: List of EC2 NetworkInterface Ipv6Addresses
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresses
             /// </summary>
 			public Union<List<InstanceIpv6Address>, IntrinsicFunction> Ipv6Addresses { get; set; }
 
@@ -211,7 +196,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: Some interruptions for Amazon EBS-backed instances Update requires: Replacement for
             /// instance store-backed instances
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-kernelid
             /// </summary>
 			public Union<string, IntrinsicFunction> KernelId { get; set; }
 
@@ -221,7 +205,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-keyname
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyName { get; set; }
 
@@ -231,7 +214,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: Amazon EC2 Instance LaunchTemplateSpecification
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate
             /// </summary>
 			public Union<LaunchTemplateSpecification, IntrinsicFunction> LaunchTemplate { get; set; }
 
@@ -241,7 +223,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-monitoring
             /// </summary>
 			public Union<bool, IntrinsicFunction> Monitoring { get; set; }
 
@@ -256,7 +237,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: A list of EC2 NetworkInterface Embedded Property Type
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-networkinterfaces
             /// </summary>
 			public Union<List<NetworkInterface>, IntrinsicFunction> NetworkInterfaces { get; set; }
 
@@ -267,7 +247,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-placementgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> PlacementGroupName { get; set; }
 
@@ -285,7 +264,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-privateipaddress
             /// </summary>
 			public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 
@@ -299,7 +277,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: Some interruptions for Amazon EBS-backed instances Update requires: Replacement for
             /// instance store-backed instances
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ramdiskid
             /// </summary>
 			public Union<string, IntrinsicFunction> RamdiskId { get; set; }
 
@@ -312,7 +289,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: No interruption for instances that are in a VPC. Update requires: Replacement for
             /// instances that are not in a VPC.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
@@ -324,7 +300,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
@@ -338,7 +313,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-sourcedestcheck
             /// </summary>
 			public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
 
@@ -351,7 +325,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: List of Amazon EC2 Instance SsmAssociations.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ssmassociations
             /// </summary>
 			public Union<List<SsmAssociation>, IntrinsicFunction> SsmAssociations { get; set; }
 
@@ -362,7 +335,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -372,7 +344,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -386,7 +357,6 @@ namespace Comformation.EC2.Instance
             /// Update requires:
             /// Update requires: No interruption if this property was set to dedicated and you change it to host or
             /// vice versa. Update requires: Replacement for all other changes.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tenancy
             /// </summary>
 			public Union<string, IntrinsicFunction> Tenancy { get; set; }
 
@@ -400,7 +370,6 @@ namespace Comformation.EC2.Instance
             /// changing the UserData stops and then starts the instance; however, Amazon EC2 doesn't automatically
             /// run the updated UserData. To update configurations on your instance, use the cfn-hup helper script.
             /// Update requires: Replacement for instance store-backed instances.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-userdata
             /// </summary>
 			public Union<string, IntrinsicFunction> UserData { get; set; }
 
@@ -412,7 +381,6 @@ namespace Comformation.EC2.Instance
             /// Required: No
             /// Type: A list of EC2 MountPoints.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-volumes
             /// </summary>
 			public Union<List<Volume>, IntrinsicFunction> Volumes { get; set; }
 

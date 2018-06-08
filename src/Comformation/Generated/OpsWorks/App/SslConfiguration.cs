@@ -6,25 +6,36 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.App
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html
+    /// AWS OpsWorks SslConfiguration Type
+    /// Describes an SSL configuration for the AWS::OpsWorks::App resource type.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html
     /// </summary>
     public class SslConfiguration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-certificate
+        /// Certificate
+        /// The contents of the certificate's domain. crt file.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Certificate")]
         public Union<string, IntrinsicFunction> Certificate { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-chain
+        /// Chain
+        /// An intermediate certificate authority key or client authentication.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Chain")]
         public Union<string, IntrinsicFunction> Chain { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-privatekey
+        /// PrivateKey
+        /// The private key; the contents of the certificate's domain. kex file.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("PrivateKey")]
         public Union<string, IntrinsicFunction> PrivateKey { get; set; }

@@ -10,7 +10,7 @@ namespace Comformation.EKS.Cluster
     /// plane consists of control plane instances that run the Kubernetes software, like etcd and the Kubernetes API
     /// server. The control plane runs in an account managed by AWS, and the Kubernetes API is exposed via the Amazon
     /// EKS endpoint associated with your cluster. For more information, see Clusters in the Amazon EKS User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EKS.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
             /// </summary>
 			public Union<string, IntrinsicFunction> Version { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EKS.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
@@ -45,7 +43,6 @@ namespace Comformation.EKS.Cluster
             /// Required: Yes
             /// Type: EKS Cluster ResourcesVpcConfig
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig
             /// </summary>
 			public Union<ResourcesVpcConfig, IntrinsicFunction> ResourcesVpcConfig { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.EKS.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

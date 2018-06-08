@@ -6,79 +6,141 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html
+    /// CloudFront Distribution DefaultCacheBehavior
+    /// DefaultCacheBehavior is a property of the DistributionConfig property that describes the default cache
+    /// behavior for an Amazon CloudFront distribution.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html
     /// </summary>
     public class DefaultCacheBehavior
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-compress
+        /// Compress
+        /// Indicates whether CloudFront automatically compresses certain files for this cache behavior. For
+        /// more information, see Serving Compressed Files in the Amazon CloudFront Developer Guide.
+        /// Required: No
+        /// Type: Boolean
         /// </summary>
         [JsonProperty("Compress")]
         public Union<bool, IntrinsicFunction> Compress { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-allowedmethods
+        /// AllowedMethods
+        /// HTTP methods that CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
+        /// In AWS CloudFormation templates, you can specify ["HEAD", "GET"], ["GET", "HEAD", "OPTIONS"], or
+        /// ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]. If you don't specify a value, AWS
+        /// CloudFormation specifies ["HEAD", "GET"].
+        /// Required: No
+        /// Type: List of String values
         /// </summary>
         [JsonProperty("AllowedMethods")]
         public Union<List<string>, IntrinsicFunction> AllowedMethods { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-cachedmethods
+        /// CachedMethods
+        /// HTTP methods for which CloudFront caches responses. In AWS CloudFormation templates, you can specify
+        /// ["HEAD", "GET"] or ["GET", "HEAD", "OPTIONS"]. If you don't specify a value, AWS CloudFormation
+        /// specifies ["HEAD", "GET"].
+        /// Required: No
+        /// Type: List of String values
         /// </summary>
         [JsonProperty("CachedMethods")]
         public Union<List<string>, IntrinsicFunction> CachedMethods { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-lambdafunctionassociations
+        /// LambdaFunctionAssociations
+        /// Lambda function associations for the Amazon CloudFront distribution.
+        /// Required: No
+        /// Type: List of CloudFront Distribution LambdaFunctionAssociation
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaFunctionAssociations")]
         public Union<List<LambdaFunctionAssociation>, IntrinsicFunction> LambdaFunctionAssociations { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-smoothstreaming
+        /// SmoothStreaming
+        /// Indicates whether to use the origin that is associated with this cache behavior to distribute media
+        /// files in the Microsoft Smooth Streaming format.
+        /// Required: No
+        /// Type: Boolean
         /// </summary>
         [JsonProperty("SmoothStreaming")]
         public Union<bool, IntrinsicFunction> SmoothStreaming { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-targetoriginid
+        /// TargetOriginId
+        /// The value of ID for the origin that CloudFront routes requests to when the default cache behavior is
+        /// applied to a request.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("TargetOriginId")]
         public Union<string, IntrinsicFunction> TargetOriginId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-viewerprotocolpolicy
+        /// ViewerProtocolPolicy
+        /// The protocol that users can use to access the files in the origin that you specified in the
+        /// TargetOriginId property when the default cache behavior is applied to a request. For more
+        /// information about the valid values, see the ViewerProtocolPolicy content for the
+        /// DefaultCacheBehavior data type in the Amazon CloudFront API Reference.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("ViewerProtocolPolicy")]
         public Union<string, IntrinsicFunction> ViewerProtocolPolicy { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-forwardedvalues
+        /// ForwardedValues
+        /// Specifies how CloudFront handles query strings or cookies.
+        /// Required: Yes
+        /// Type: ForwardedValues type
         /// </summary>
         [JsonProperty("ForwardedValues")]
         public Union<ForwardedValues, IntrinsicFunction> ForwardedValues { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-minttl
+        /// MinTTL
+        /// The minimum amount of time that you want objects to stay in the cache before CloudFront queries your
+        /// origin to see whether the object has been updated.
+        /// Required: No
+        /// Type: Number
         /// </summary>
         [JsonProperty("MinTTL")]
         public Union<double, IntrinsicFunction> MinTTL { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-maxttl
+        /// MaxTTL
+        /// The maximum time in seconds that objects stay in CloudFront caches before CloudFront forwards
+        /// another request to your custom origin to determine whether the object has been updated. This value
+        /// applies only when your custom origin adds HTTP headers, such as Cache-Control max-age, Cache-Control
+        /// s-maxage, and Expires to objects.
+        /// By default, AWS CloudFormation specifies 31536000 seconds (one year). If the value of the MinTTL or
+        /// DefaultTTL property is greater than the maximum value, CloudFront uses the default TTL value.
+        /// Required: No
+        /// Type: Number
         /// </summary>
         [JsonProperty("MaxTTL")]
         public Union<double, IntrinsicFunction> MaxTTL { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners
+        /// TrustedSigners
+        /// A list of AWS accounts that can create signed URLs in order to access private content.
+        /// Required: No
+        /// Type: List of String values
         /// </summary>
         [JsonProperty("TrustedSigners")]
         public Union<List<string>, IntrinsicFunction> TrustedSigners { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-defaultttl
+        /// DefaultTTL
+        /// The default time in seconds that objects stay in CloudFront caches before CloudFront forwards
+        /// another request to your custom origin to determine whether the object has been updated. This value
+        /// applies only when your custom origin does not add HTTP headers, such as Cache-Control max-age,
+        /// Cache-Control s-maxage, and Expires to objects.
+        /// By default, AWS CloudFormation specifies 86400 seconds (one day). If the value of the MinTTL
+        /// property is greater than the default value, CloudFront uses the minimum Time To Live (TTL) value.
+        /// Required: No
+        /// Type: Number
         /// </summary>
         [JsonProperty("DefaultTTL")]
         public Union<double, IntrinsicFunction> DefaultTTL { get; set; }

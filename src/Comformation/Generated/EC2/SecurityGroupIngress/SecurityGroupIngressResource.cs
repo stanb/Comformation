@@ -8,7 +8,7 @@ namespace Comformation.EC2.SecurityGroupIngress
     /// AWS::EC2::SecurityGroupIngress
     /// The AWS::EC2::SecurityGroupIngress resource adds an ingress rule to an Amazon EC2 or Amazon VPC security
     /// group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html
     /// </summary>
     public class SecurityGroupIngressResource : ResourceBase
     {
@@ -22,7 +22,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
             /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-cidrip
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
             /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-cidripv6
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: Integer
             /// Required: Yes, for ICMP and any protocol that uses ports.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-fromport
             /// </summary>
 			public Union<int, IntrinsicFunction> FromPort { get; set; }
 
@@ -66,7 +62,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// groups that are in a VPC, you must use the GroupId property. For example, EC2-VPC accounts must use
             /// the GroupId property.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupid
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupId { get; set; }
 
@@ -80,7 +75,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// groups that are in a VPC, you must use the GroupId property. For example, EC2-VPC accounts must use
             /// the GroupId property.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupname
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
@@ -91,7 +85,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Required: Yes
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-ipprotocol
             /// </summary>
 			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
@@ -103,7 +96,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
             /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupid
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupId { get; set; }
 
@@ -116,7 +108,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
             /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupName { get; set; }
 
@@ -129,7 +120,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// different account than the account creating the stack, you must specify the
             /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupownerid
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupOwnerId { get; set; }
 
@@ -140,7 +130,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: Integer
             /// Required: Yes, for ICMP and any protocol that uses ports.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-toport
             /// </summary>
 			public Union<int, IntrinsicFunction> ToPort { get; set; }
 

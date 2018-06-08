@@ -6,19 +6,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html
+    /// AWS Batch JobDefinition Environment
+    /// The Environment property type specifies environment variables to use in a job definition.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html
     /// </summary>
     public class Environment
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html#cfn-batch-jobdefinition-environment-value
+        /// Value
+        /// The value of the environment variable.
+        /// Required: no
+        /// Type: String
+        /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html#cfn-batch-jobdefinition-environment-name
+        /// Name
+        /// The name of the environment variable.
+        /// Required: no
+        /// Type: String
+        /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

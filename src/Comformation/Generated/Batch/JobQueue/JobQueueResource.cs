@@ -8,7 +8,7 @@ namespace Comformation.Batch.JobQueue
     /// AWS::Batch::JobQueue
     /// The AWS::Batch::JobQueue resource defines your AWS Batch job queue. For more information, see Job Queues in
     /// the AWS Batch User Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html
     /// </summary>
     public class JobQueueResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.Batch.JobQueue
             /// Required: yes
             /// Type: List of AWS Batch JobQueue ComputeEnvironmentOrder
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-computeenvironmentorder
             /// </summary>
 			public Union<List<ComputeEnvironmentOrder>, IntrinsicFunction> ComputeEnvironmentOrder { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Batch.JobQueue
             /// Required: yes
             /// Type: Integer
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-priority
             /// </summary>
 			public Union<int, IntrinsicFunction> Priority { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.Batch.JobQueue
             /// Required: no
             /// Type: String
             /// Update requires: No Interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-state
             /// </summary>
 			public Union<string, IntrinsicFunction> State { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.Batch.JobQueue
             /// Required: no
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-jobqueuename
             /// </summary>
 			public Union<string, IntrinsicFunction> JobQueueName { get; set; }
 

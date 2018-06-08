@@ -6,19 +6,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html
+    /// Amazon EMR InstanceGroupConfig ScalingAction
+    /// The ScalingAction property type specifies the scaling actions for an Auto Scaling group policy. ScalingAction
+    /// is the property type for the Action subproperty of the Amazon EMR InstanceGroupConfig ScalingRule property
+    /// type.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html
     /// </summary>
     public class ScalingAction
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-market
+        /// Market
+        /// Not available for instance groups. Instance groups use the market type specified for the group.
+        /// Valid values: ON_DEMAND or SPOT.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Market")]
         public Union<string, IntrinsicFunction> Market { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-simplescalingpolicyconfiguration
+        /// SimpleScalingPolicyConfiguration
+        /// The type of adjustment that the automatic scaling activity makes when triggered, and the periodicity
+        /// of the adjustment.
+        /// Required: Yes
+        /// Type: Amazon EMR InstanceGroupConfig SimpleScalingPolicyConfiguration
         /// </summary>
         [JsonProperty("SimpleScalingPolicyConfiguration")]
         public Union<SimpleScalingPolicyConfiguration, IntrinsicFunction> SimpleScalingPolicyConfiguration { get; set; }

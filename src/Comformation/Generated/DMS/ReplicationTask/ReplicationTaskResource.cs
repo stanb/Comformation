@@ -7,7 +7,7 @@ namespace Comformation.DMS.ReplicationTask
     /// <summary>
     /// AWS::DMS::ReplicationTask
     /// The AWS::DMS::ReplicationTask resource creates an AWS DMS replication task.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html
     /// </summary>
     public class ReplicationTaskResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationstasksettings
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationTaskSettings { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tablemappings
             /// </summary>
 			public Union<string, IntrinsicFunction> TableMappings { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationTaskIdentifier { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-sourceendpointarn
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceEndpointArn { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-migrationtype
             /// </summary>
 			public Union<string, IntrinsicFunction> MigrationType { get; set; }
 
@@ -72,7 +67,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-targetendpointarn
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetEndpointArn { get; set; }
 
@@ -82,7 +76,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationinstancearn
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationInstanceArn { get; set; }
 
@@ -92,7 +85,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: No
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -102,7 +94,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Required: No
             /// Type: Number, epic value in milliseconds
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstarttime
             /// </summary>
 			public Union<double, IntrinsicFunction> CdcStartTime { get; set; }
 

@@ -7,7 +7,7 @@ namespace Comformation.EC2.VPNGateway
     /// <summary>
     /// AWS::EC2::VPNGateway
     /// Creates a virtual private gateway. A virtual private gateway is the VPC-side endpoint for your VPN connection.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html
     /// </summary>
     public class VPNGatewayResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.EC2.VPNGateway
             /// Required: No
             /// Type: Long
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn
             /// </summary>
 			public Union<long, IntrinsicFunction> AmazonSideAsn { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.EC2.VPNGateway
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.EC2.VPNGateway
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.EC2.NetworkInterface
     /// AWS::EC2::NetworkInterface
     /// Describes a network interface in an Elastic Compute Cloud (EC2) instance for AWS CloudFormation. This is
     /// provided in a list in the NetworkInterfaces property of AWS::EC2::Instance.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html
     /// </summary>
     public class NetworkInterfaceResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: String
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,12 +29,11 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: List of strings.
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> GroupSet { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype
+            /// InterfaceType
             /// </summary>
 			public Union<string, IntrinsicFunction> InterfaceType { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount
             /// </summary>
 			public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
@@ -59,7 +56,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: List of EC2 NetworkInterface Ipv6Addresses
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresses
             /// </summary>
 			public Union<InstanceIpv6Address, IntrinsicFunction> Ipv6Addresses { get; set; }
 
@@ -70,7 +66,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddress
             /// </summary>
 			public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 
@@ -86,7 +81,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: list of PrivateIpAddressSpecification.
             /// Update requires: Replacement if you change the primary private IP address. If not, update requires
             /// No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses
             /// </summary>
 			public Union<List<PrivateIpAddressSpecification>, IntrinsicFunction> PrivateIpAddresses { get; set; }
 
@@ -103,7 +97,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: Integer.
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount
             /// </summary>
 			public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
@@ -113,7 +106,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck
             /// </summary>
 			public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
 
@@ -123,7 +115,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -133,7 +124,6 @@ namespace Comformation.EC2.NetworkInterface
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

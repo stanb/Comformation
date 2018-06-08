@@ -8,7 +8,7 @@ namespace Comformation.Inspector.AssessmentTarget
     /// AWS::Inspector::AssessmentTarget
     /// The AWS::Inspector::AssessmentTarget resource creates an Amazon Inspector assessment target - a resource that
     /// contains information about an Amazon Inspector application.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html
     /// </summary>
     public class AssessmentTargetResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Inspector.AssessmentTarget
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-assessmenttargetname
             /// </summary>
 			public Union<string, IntrinsicFunction> AssessmentTargetName { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.Inspector.AssessmentTarget
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn
             /// </summary>
 			public Union<string, IntrinsicFunction> ResourceGroupArn { get; set; }
 

@@ -7,7 +7,7 @@ namespace Comformation.IoT.TopicRule
     /// <summary>
     /// AWS::IoT::TopicRule
     /// Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
     /// </summary>
     public class TopicRuleResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.IoT.TopicRule
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-rulename
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleName { get; set; }
 
@@ -29,7 +28,6 @@ namespace Comformation.IoT.TopicRule
             /// Required: Yes
             /// Type: TopicRulePayload object
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload
             /// </summary>
 			public Union<TopicRulePayload, IntrinsicFunction> TopicRulePayload { get; set; }
 

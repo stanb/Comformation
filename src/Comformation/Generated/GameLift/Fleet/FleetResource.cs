@@ -9,7 +9,7 @@ namespace Comformation.GameLift.Fleet
     /// The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift) fleet to host game servers. A fleet is
     /// a set of EC2 instances, each of which is a host in the fleet. For more information, see the CreateFleet action
     /// in the Amazon GameLift API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html
     /// </summary>
     public class FleetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid
             /// </summary>
 			public Union<string, IntrinsicFunction> BuildId { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
             /// </summary>
 			public Union<int, IntrinsicFunction> DesiredEC2Instances { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: No
             /// Type: List of Amazon GameLift Fleet EC2InboundPermission
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions
             /// </summary>
 			public Union<List<IpPermission>, IntrinsicFunction> EC2InboundPermissions { get; set; }
 
@@ -64,7 +60,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2InstanceType { get; set; }
 
@@ -76,7 +71,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-logpaths
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> LogPaths { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
             /// </summary>
 			public Union<int, IntrinsicFunction> MaxSize { get; set; }
 
@@ -98,7 +91,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
             /// </summary>
 			public Union<int, IntrinsicFunction> MinSize { get; set; }
 
@@ -108,7 +100,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -119,7 +110,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchparameters
             /// </summary>
 			public Union<string, IntrinsicFunction> ServerLaunchParameters { get; set; }
 
@@ -131,7 +121,6 @@ namespace Comformation.GameLift.Fleet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchpath
             /// </summary>
 			public Union<string, IntrinsicFunction> ServerLaunchPath { get; set; }
 

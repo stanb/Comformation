@@ -7,7 +7,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
     /// <summary>
     /// AWS::Neptune::DBClusterParameterGroup
     /// The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html
     /// </summary>
     public class DBClusterParameterGroupResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: A JSON object consisting of string key-value pairs, as shown in the following example:
             /// "Parameters" : { "Key1" : "Value1", "Key2" : "Value2", "Key3" : "Value3" }
             /// Update requires: No interruption or some interruptions, depending on the parameters that you update.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-parameters
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-family
             /// </summary>
 			public Union<string, IntrinsicFunction> Family { get; set; }
 
@@ -53,7 +50,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Required: No
             /// Type: A list of resource tags
             /// Update requires: Updates are not supported.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -63,7 +59,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

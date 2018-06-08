@@ -7,7 +7,7 @@ namespace Comformation.IAM.UserToGroupAddition
     /// <summary>
     /// AWS::IAM::UserToGroupAddition
     /// The AWS::IAM::UserToGroupAddition type adds AWS Identity and Access Management (IAM) users to a group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
     /// </summary>
     public class UserToGroupAdditionResource : ResourceBase
     {
@@ -19,7 +19,6 @@ namespace Comformation.IAM.UserToGroupAddition
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-groupname
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
@@ -28,7 +27,6 @@ namespace Comformation.IAM.UserToGroupAddition
             /// Required: Yes
             /// Type: List of users
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Users { get; set; }
 

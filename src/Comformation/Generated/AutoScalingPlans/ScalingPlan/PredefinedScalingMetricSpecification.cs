@@ -6,19 +6,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html
+    /// AWS Auto Scaling ScalingPlan PredefinedScalingMetricSpecification
+    /// The PredefinedScalingMetricSpecification property type specifies a predefined metric for a target tracking
+    /// policy for an AWS Auto Scaling scaling plan.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html
     /// </summary>
     public class PredefinedScalingMetricSpecification
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-resourcelabel
+        /// ResourceLabel
+        /// Identifies the resource associated with the metric type.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceLabel")]
         public Union<string, IntrinsicFunction> ResourceLabel { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-predefinedscalingmetrictype
+        /// PredefinedScalingMetricType
+        /// The metric type. For more information, see PredefinedScalingMetricSpecification in the AWS Auto
+        /// Scaling API Reference.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedScalingMetricType")]
         public Union<string, IntrinsicFunction> PredefinedScalingMetricType { get; set; }

@@ -9,7 +9,7 @@ namespace Comformation.Redshift.Cluster
     /// Use the AWS::Redshift::Cluster resource to create an Amazon Redshift cluster. A cluster is a fully managed
     /// data warehouse that consists of a set of compute nodes. For more information about default and valid values,
     /// see CreateCluster in the Amazon Redshift API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-allowversionupgrade
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowVersionUpgrade { get; set; }
 
@@ -34,7 +33,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod
             /// </summary>
 			public Union<int, IntrinsicFunction> AutomatedSnapshotRetentionPeriod { get; set; }
 
@@ -47,7 +45,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzone
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -57,7 +54,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusteridentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterIdentifier { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterparametergroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterParameterGroupName { get; set; }
 
@@ -77,7 +72,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersecuritygroups
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ClusterSecurityGroups { get; set; }
 
@@ -87,7 +81,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersubnetgroupname
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterSubnetGroupName { get; set; }
 
@@ -97,7 +90,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustertype
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterType { get; set; }
 
@@ -107,7 +99,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterversion
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterVersion { get; set; }
 
@@ -117,7 +108,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-dbname
             /// </summary>
 			public Union<string, IntrinsicFunction> DBName { get; set; }
 
@@ -127,7 +117,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-elasticip
             /// </summary>
 			public Union<string, IntrinsicFunction> ElasticIp { get; set; }
 
@@ -137,7 +126,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted
             /// </summary>
 			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
@@ -148,7 +136,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> HsmClientCertificateIdentifier { get; set; }
 
@@ -159,7 +146,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmconfigidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> HsmConfigurationIdentifier { get; set; }
 
@@ -172,7 +158,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-iamroles
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> IamRoles { get; set; }
 
@@ -183,7 +168,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-kmskeyid
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
@@ -194,7 +178,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: Amazon Redshift LoggingProperties
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties
             /// </summary>
 			public Union<LoggingProperties, IntrinsicFunction> LoggingProperties { get; set; }
 
@@ -207,7 +190,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masteruserpassword
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
 
@@ -220,7 +202,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masterusername
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
@@ -230,17 +211,17 @@ namespace Comformation.Redshift.Cluster
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
             /// </summary>
 			public Union<string, IntrinsicFunction> NodeType { get; set; }
 
             /// <summary>
-            /// NodeType
-            /// The node type that is provisioned for this cluster.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
+            /// NumberOfNodes
+            /// The number of compute nodes in the cluster. If you specify multi-node for the ClusterType parameter,
+            /// you must specify a number greater than 1.
+            /// Important You can't specify this parameter for a single-node cluster.
+            /// Required: Conditional
+            /// Type: Integer
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
@@ -251,7 +232,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-owneraccount
             /// </summary>
 			public Union<string, IntrinsicFunction> OwnerAccount { get; set; }
 
@@ -261,7 +241,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-port
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
@@ -272,7 +251,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-preferredmaintenancewindow
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -282,7 +260,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-publiclyaccessible
             /// </summary>
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
@@ -296,7 +273,6 @@ namespace Comformation.Redshift.Cluster
             /// cluster name and the resource element specifies anything other than the wildcard character (*) for
             /// the cluster name.
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotclusteridentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotClusterIdentifier { get; set; }
 
@@ -307,7 +283,6 @@ namespace Comformation.Redshift.Cluster
             /// this property.
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotidentifier
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
@@ -318,7 +293,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
@@ -328,7 +302,6 @@ namespace Comformation.Redshift.Cluster
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-vpcsecuritygroupids
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
 

@@ -7,7 +7,7 @@ namespace Comformation.IAM.Group
     /// <summary>
     /// AWS::IAM::Group
     /// The AWS::IAM::Group resource creates an AWS Identity and Access Management (IAM) group.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html
     /// </summary>
     public class GroupResource : ResourceBase
     {
@@ -31,7 +31,6 @@ namespace Comformation.IAM.Group
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-groupname
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
@@ -41,7 +40,6 @@ namespace Comformation.IAM.Group
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-managepolicyarns
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
 
@@ -51,7 +49,6 @@ namespace Comformation.IAM.Group
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-path
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
@@ -62,7 +59,6 @@ namespace Comformation.IAM.Group
             /// Required: No
             /// Type: List of IAM Policies
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-policies
             /// </summary>
 			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
 

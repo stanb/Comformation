@@ -8,7 +8,7 @@ namespace Comformation.AppSync.GraphQLApi
     /// AWS::AppSync::GraphQLApi
     /// The AWS::AppSync::GraphQLApi resource will create a new AWS AppSync GraphQL API. This is the top level
     /// construct for your application. For more information see Quickstart Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
     /// </summary>
     public class GraphQLApiResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.AppSync.GraphQLApi
             /// Required: No
             /// Type: AWS AppSync GraphQLApi OpenId Connect Config
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig
             /// </summary>
 			public Union<OpenIDConnectConfig, IntrinsicFunction> OpenIDConnectConfig { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.AppSync.GraphQLApi
             /// Required: No
             /// Type: AWS AppSync GraphQLApi UserPoolConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig
             /// </summary>
 			public Union<UserPoolConfig, IntrinsicFunction> UserPoolConfig { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.AppSync.GraphQLApi
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -52,7 +49,6 @@ namespace Comformation.AppSync.GraphQLApi
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
 
@@ -62,7 +58,6 @@ namespace Comformation.AppSync.GraphQLApi
             /// Required: No
             /// Type: AWS AppSync GraphQLApi LogConfig
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig
             /// </summary>
 			public Union<LogConfig, IntrinsicFunction> LogConfig { get; set; }
 

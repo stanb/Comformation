@@ -12,22 +12,22 @@ namespace Comformation.EC2.TrunkInterfaceAssociation
         public class TrunkInterfaceAssociationProperties
         {
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-branchinterfaceid
+            /// BranchInterfaceId
             /// </summary>
 			public Union<string, IntrinsicFunction> BranchInterfaceId { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-grekey
+            /// GREKey
             /// </summary>
 			public Union<int, IntrinsicFunction> GREKey { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-trunkinterfaceid
+            /// TrunkInterfaceId
             /// </summary>
 			public Union<string, IntrinsicFunction> TrunkInterfaceId { get; set; }
 
             /// <summary>
-            /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-vlanid
+            /// VLANId
             /// </summary>
 			public Union<int, IntrinsicFunction> VLANId { get; set; }
 

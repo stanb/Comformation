@@ -8,7 +8,7 @@ namespace Comformation.AppSync.ApiKey
     /// AWS::AppSync::ApiKey
     /// The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing
     /// GraphQL operations with AWS AppSync that require an API key.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html
     /// </summary>
     public class ApiKeyResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.AppSync.ApiKey
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.AppSync.ApiKey
             /// Required: Yes
             /// Type: Number
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires
             /// </summary>
 			public Union<double, IntrinsicFunction> Expires { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.AppSync.ApiKey
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
     /// AWS::Redshift::ClusterParameterGroup
     /// Creates an Amazon Redshift parameter group that you can associate with an Amazon Redshift cluster. The
     /// parameters in the group apply to all the databases that you create in the cluster.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
     /// </summary>
     public class ClusterParameterGroupResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
             /// </summary>
 			public Union<string, IntrinsicFunction> ParameterGroupFamily { get; set; }
 
@@ -43,7 +41,6 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Required: No
             /// Type: Amazon Redshift Parameter Type
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
             /// </summary>
 			public Union<List<Parameter>, IntrinsicFunction> Parameters { get; set; }
 
@@ -54,7 +51,6 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Required: No
             /// Type: AWS CloudFormation Resource Tags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

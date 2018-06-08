@@ -10,7 +10,7 @@ namespace Comformation.DataPipeline.Pipeline
     /// pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources. For
     /// information about pipeline objects and components that you can use, see Pipeline Object Reference in the AWS
     /// Data Pipeline Developer Guide.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
     {
@@ -23,7 +23,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
             /// </summary>
 			public Union<bool, IntrinsicFunction> Activate { get; set; }
 
@@ -33,7 +32,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Required: No
             /// Type: String
             /// Update requires: Replacement.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -44,7 +42,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -55,7 +52,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Required: No
             /// Type: AWS Data Pipeline Pipeline ParameterObjects
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects
             /// </summary>
 			public Union<List<ParameterObject>, IntrinsicFunction> ParameterObjects { get; set; }
 
@@ -67,7 +63,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Required: No
             /// Type: AWS Data Pipeline Pipeline ParameterValues
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues
             /// </summary>
 			public Union<List<ParameterValue>, IntrinsicFunction> ParameterValues { get; set; }
 
@@ -81,7 +76,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Update requires: Some interruptions. Not all objects, fields, and values can be updated.
             /// Restrictions on what can be updated are documented in Editing Your Pipelines in the AWS Data
             /// Pipeline Developer Guide.
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects
             /// </summary>
 			public Union<List<PipelineObject>, IntrinsicFunction> PipelineObjects { get; set; }
 
@@ -93,7 +87,6 @@ namespace Comformation.DataPipeline.Pipeline
             /// Required: No
             /// Type: AWS Data Pipeline Pipeline PipelineTags
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags
             /// </summary>
 			public Union<List<PipelineTag>, IntrinsicFunction> PipelineTags { get; set; }
 

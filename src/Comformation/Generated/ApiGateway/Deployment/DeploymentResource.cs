@@ -8,7 +8,7 @@ namespace Comformation.ApiGateway.Deployment
     /// AWS::ApiGateway::Deployment
     /// The AWS::ApiGateway::Deployment resource deploys an Amazon API Gateway (API Gateway) RestApi resource to a
     /// stage so that clients can call the API over the Internet. The stage acts as an environment.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html
     /// </summary>
     public class DeploymentResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.ApiGateway.Deployment
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.ApiGateway.Deployment
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
@@ -40,7 +38,6 @@ namespace Comformation.ApiGateway.Deployment
             /// Required: No
             /// Type: Amazon API Gateway Deployment StageDescription
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription
             /// </summary>
 			public Union<StageDescription, IntrinsicFunction> StageDescription { get; set; }
 
@@ -51,7 +48,6 @@ namespace Comformation.ApiGateway.Deployment
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename
             /// </summary>
 			public Union<string, IntrinsicFunction> StageName { get; set; }
 

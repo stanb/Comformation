@@ -7,7 +7,7 @@ namespace Comformation.ApiGateway.Resource
     /// <summary>
     /// AWS::ApiGateway::Resource
     /// The AWS::ApiGateway::Resource resource creates a resource in an Amazon API Gateway (API Gateway) API.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
     /// </summary>
     public class ResourceResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.ApiGateway.Resource
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-parentid
             /// </summary>
 			public Union<string, IntrinsicFunction> ParentId { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.ApiGateway.Resource
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart
             /// </summary>
 			public Union<string, IntrinsicFunction> PathPart { get; set; }
 
@@ -41,7 +39,6 @@ namespace Comformation.ApiGateway.Resource
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-resapiid
             /// </summary>
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 

@@ -8,7 +8,7 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
     /// AWS::EC2::SubnetNetworkAclAssociation
     /// Associates a subnet with a network ACL. For more information, see ReplaceNetworkAclAssociation in the Amazon
     /// EC2 API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
     /// </summary>
     public class SubnetNetworkAclAssociationResource : ResourceBase
     {
@@ -20,7 +20,6 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkAclId { get; set; }
 
@@ -30,7 +29,6 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 

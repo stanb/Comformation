@@ -6,55 +6,82 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.UserPool
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
+    /// Amazon Cognito UserPool LambdaConfig
+    /// LambdaConfig is a property of the AWS::Cognito::UserPool resource that defines the AWS Lambda configuration of
+    /// an Amazon Cognito User Pool.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
     /// </summary>
     public class LambdaConfig
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-createauthchallenge
+        /// CreateAuthChallenge
+        /// Creates an authentication challenge.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("CreateAuthChallenge")]
         public Union<string, IntrinsicFunction> CreateAuthChallenge { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-preauthentication
+        /// PreAuthentication
+        /// A pre-authentication AWS Lambda trigger.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("PreAuthentication")]
         public Union<string, IntrinsicFunction> PreAuthentication { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-defineauthchallenge
+        /// DefineAuthChallenge
+        /// Defines the authentication challenge.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("DefineAuthChallenge")]
         public Union<string, IntrinsicFunction> DefineAuthChallenge { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-presignup
+        /// PreSignUp
+        /// A pre-registration AWS Lambda trigger.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("PreSignUp")]
         public Union<string, IntrinsicFunction> PreSignUp { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-postauthentication
+        /// PostAuthentication
+        /// A post-authentication AWS Lambda trigger.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("PostAuthentication")]
         public Union<string, IntrinsicFunction> PostAuthentication { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-postconfirmation
+        /// PostConfirmation
+        /// A post-confirmation AWS Lambda trigger.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("PostConfirmation")]
         public Union<string, IntrinsicFunction> PostConfirmation { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-custommessage
+        /// CustomMessage
+        /// A custom Message AWS Lambda trigger.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("CustomMessage")]
         public Union<string, IntrinsicFunction> CustomMessage { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-verifyauthchallengeresponse
+        /// VerifyAuthChallengeResponse
+        /// Verifies the authentication challenge response.
+        /// Type: String
+        /// Required: No
         /// </summary>
         [JsonProperty("VerifyAuthChallengeResponse")]
         public Union<string, IntrinsicFunction> VerifyAuthChallengeResponse { get; set; }

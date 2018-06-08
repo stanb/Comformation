@@ -9,7 +9,7 @@ namespace Comformation.WAF.XssMatchSet
     /// The AWS::WAF::XssMatchSet resource specifies the parts of web requests that you want AWS WAF to inspect for
     /// cross-site scripting attacks and the name of the header to inspect. For more information, see XssMatchSet in
     /// the AWS WAF API Reference.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html
     /// </summary>
     public class XssMatchSetResource : ResourceBase
     {
@@ -21,7 +21,6 @@ namespace Comformation.WAF.XssMatchSet
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-name
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -31,7 +30,6 @@ namespace Comformation.WAF.XssMatchSet
             /// Required: No
             /// Type: List of AWS WAF XssMatchSet XssMatchTuple
             /// Update requires: No interruption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples
             /// </summary>
 			public Union<List<XssMatchTuple>, IntrinsicFunction> XssMatchTuples { get; set; }
 

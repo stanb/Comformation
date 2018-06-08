@@ -10,7 +10,7 @@ namespace Comformation.CloudFormation.WaitConditionHandle
     /// instead of wait conditions. Add a CreationPolicy attribute to those resources, and use the cfn-signal helper
     /// script to signal when an instance creation process has completed successfully. For more information, see
     /// Deploying Applications on Amazon EC2 with AWS CloudFormation.
-    /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitconditionhandle.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitconditionhandle.html
     /// </summary>
     public class WaitConditionHandleResource : ResourceBase
     {
