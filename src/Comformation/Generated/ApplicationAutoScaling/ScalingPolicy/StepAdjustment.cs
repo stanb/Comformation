@@ -9,7 +9,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
     /// Application Auto Scaling ScalingPolicy StepScalingPolicyConfiguration StepAdjustment
     /// StepAdjustment is a property of the Application Auto Scaling ScalingPolicy StepScalingPolicyConfiguration
     /// property that configures a scaling adjustment based on the difference between the value of the aggregated
-    /// CloudWatch metric and the breach threshold that you've defined for the alarm (the size of the breach). For
+    /// CloudWatch metric and the breach threshold that you&#39;ve defined for the alarm (the size of the breach). For
     /// more information, see Step Adjustments in the Amazon EC2 Auto Scaling User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html
     /// </summary>

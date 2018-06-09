@@ -41,7 +41,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Ipv6AddressCount
             /// The number of IPv6 addresses to associate with the network interface. EC2 automatically selects the
             /// IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the Ipv6Addresses
-            /// property and don't specify this property.
+            /// property and don&#39;t specify this property.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -51,8 +51,8 @@ namespace Comformation.EC2.NetworkInterface
             /// <summary>
             /// Ipv6Addresses
             /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with
-            /// the network interface. If you're specifying a number of IPv6 addresses, use the Ipv6AddressCount
-            /// property and don't specify this property.
+            /// the network interface. If you&#39;re specifying a number of IPv6 addresses, use the Ipv6AddressCount
+            /// property and don&#39;t specify this property.
             /// Required: No
             /// Type: List of EC2 NetworkInterface Ipv6Addresses
             /// Update requires: No interruption
@@ -88,7 +88,7 @@ namespace Comformation.EC2.NetworkInterface
             /// SecondaryPrivateIpAddressCount
             /// The number of secondary private IP addresses that EC2 automatically assigns to the network
             /// interface. EC2 uses the value of the PrivateIpAddress property as the primary private IP address. If
-            /// you don't specify that property, EC2 automatically assigns both the primary and secondary private IP
+            /// you don&#39;t specify that property, EC2 automatically assigns both the primary and secondary private IP
             /// addresses.
             /// If you want to specify your own list of private IP addresses, use the PrivateIpAddresses property
             /// and do not specify this property.

@@ -15,7 +15,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordRowPath
-        /// Path to the top-level parent that contains the records (e. g. , "$". )
+        /// Path to the top-level parent that contains the records (e. g. , &quot;$&quot;. )
         /// Required: Yes
         /// Type: String;
         /// Update requires: No interruption

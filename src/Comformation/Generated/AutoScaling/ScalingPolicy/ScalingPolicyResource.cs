@@ -99,7 +99,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// (when the PercentChangeInCapacity value is specified). A positive value adds to the current capacity
             /// and a negative value subtracts from the current capacity. For exact capacity, you must specify a
             /// positive value.
-            /// Required: Conditional. This property is required if the policy type is SimpleScaling. This property
+            /// Required: Conditional. This property is required if the policy type is&#160;SimpleScaling. This property
             /// is not supported with any other policy type.
             /// Type: Integer
             /// Update requires: No interruption
@@ -109,7 +109,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// <summary>
             /// StepAdjustments
             /// A set of adjustments that enable you to scale based on the size of the alarm breach.
-            /// Required: Conditional. This property is required if the policy type is StepScaling. This property is
+            /// Required: Conditional. This property is required if the policy type is&#160;StepScaling. This property is
             /// not supported with any other policy type.
             /// Type: List of Amazon EC2 Auto Scaling ScalingPolicy StepAdjustments
             /// Update requires: No interruption

@@ -25,7 +25,7 @@ namespace Comformation.ApiGateway.Method
 
             /// <summary>
             /// AuthorizationType
-            /// The method's authorization type.
+            /// The method&#39;s authorization type.
             /// Required: Yes. If you specify the AuthorizerId property, specify CUSTOM for this property.
             /// Type: String
             /// Update requires: No interruption
@@ -81,7 +81,7 @@ namespace Comformation.ApiGateway.Method
 
             /// <summary>
             /// RequestModels
-            /// The resources that are used for the response's content type. Specify response models as key-value
+            /// The resources that are used for the response&#39;s content type. Specify response models as key-value
             /// pairs (string-to-string mapping), with a content type as the key and a Model resource name as the
             /// value.
             /// Required: No
@@ -115,7 +115,7 @@ namespace Comformation.ApiGateway.Method
             /// <summary>
             /// ResourceId
             /// The ID of an API Gateway resource. For root resource methods, specify the RestApi root resource ID,
-            /// such as { "Fn::GetAtt": ["MyRestApi", "RootResourceId"] }.
+            /// such as { &quot;Fn::GetAtt&quot;: [&quot;MyRestApi&quot;, &quot;RootResourceId&quot;] }.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

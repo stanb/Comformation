@@ -16,7 +16,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// Primary
         /// Sets the private IP address as the primary private address. You can set only one primary private IP
-        /// address. If you don't specify a primary private IP address, Amazon EC2 automatically assigns a
+        /// address. If you don&#39;t specify a primary private IP address, Amazon EC2 automatically assigns a
         /// primary private IP address.
         /// Required: Yes
         /// Type: Boolean

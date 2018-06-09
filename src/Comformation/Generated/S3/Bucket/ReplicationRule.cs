@@ -26,7 +26,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Id
-        /// A unique identifier for the rule. If you don't specify a value, AWS CloudFormation generates a
+        /// A unique identifier for the rule. If you don&#39;t specify a value, AWS CloudFormation generates a
         /// random ID.
         /// Required: No
         /// Type: String

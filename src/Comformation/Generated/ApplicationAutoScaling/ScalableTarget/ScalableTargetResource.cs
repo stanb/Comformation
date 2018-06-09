@@ -57,7 +57,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
             /// <summary>
             /// ScalableDimension
-            /// The scalable dimension that's associated with the scalable target. Specify the service namespace,
+            /// The scalable dimension that&#39;s associated with the scalable target. Specify the service namespace,
             /// resource type, and scaling property—for example, ecs:service:DesiredCount for the desired task count
             /// of an Amazon Elastic Container Service service. For valid values, see the ScalableDimension content
             /// for the ScalingPolicy data type in the Application Auto Scaling API Reference.
@@ -69,7 +69,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
             /// <summary>
             /// ScheduledActions
-            /// The scheduled actions for the scalable target. Duplicates aren't allowed.
+            /// The scheduled actions for the scalable target. Duplicates aren&#39;t allowed.
             /// Required: No
             /// Type: List of Application Auto Scaling ScalableTarget ScheduledAction property types
             /// Update requires: No interruption

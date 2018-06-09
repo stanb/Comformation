@@ -17,10 +17,10 @@ namespace Comformation.Config.ConfigurationRecorder
         {
             /// <summary>
             /// Name
-            /// A name for the configuration recorder. If you don't specify a name, AWS CloudFormation generates a
+            /// A name for the configuration recorder. If you don&#39;t specify a name, AWS CloudFormation generates a
             /// unique physical ID and uses that ID for the configuration recorder name. For more information, see
             /// Name Type.
-            /// Note After you create a configuration recorder, you cannot rename it. If you don't want a name that
+            /// Note After you create a configuration recorder, you cannot rename it. If you don&#39;t want a name that
             /// AWS CloudFormation generates, specify a value for this property.
             /// Required: No
             /// Type: String

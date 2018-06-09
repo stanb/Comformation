@@ -17,7 +17,7 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// SourcePath
         /// The data volume path on the host container instance.
-        /// If you don't specify this parameter, the Docker daemon assigns a path for you, but the data volume
+        /// If you don&#39;t specify this parameter, the Docker daemon assigns a path for you, but the data volume
         /// might not persist after the associated container stops running. If you do specify a path, the data
         /// volume persists at that location on the host container instance until you manually delete it.
         /// Required: No

@@ -16,7 +16,7 @@ namespace Comformation.ApiGateway.Method
 
         /// <summary>
         /// ResponseModels
-        /// The resources used for the response's content type. Specify response models as key-value pairs
+        /// The resources used for the response&#39;s content type. Specify response models as key-value pairs
         /// (string-to-string maps), with a content type as the key and a Model resource name as the value.
         /// Required: No
         /// Type: Mapping of key-value pairs
@@ -39,7 +39,7 @@ namespace Comformation.ApiGateway.Method
 
         /// <summary>
         /// StatusCode
-        /// The method response's status code, which you map to an IntegrationResponse.
+        /// The method response&#39;s status code, which you map to an IntegrationResponse.
         /// Required: Yes
         /// Type: String
         /// </summary>

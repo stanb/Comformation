@@ -37,7 +37,7 @@ namespace Comformation.KinesisAnalytics.Application
 
         /// <summary>
         /// KinesisStreamsInput
-        /// If the streaming source is an Amazon Kinesis stream, identifies the stream's ARN and an IAM role
+        /// If the streaming source is an Amazon Kinesis stream, identifies the stream&#39;s ARN and an IAM role
         /// that enables Kinesis Data Analytics to access the stream on your behalf.
         /// Required: No
         /// Type: Kinesis Data Analytics Application KinesisStreamsInput
@@ -49,7 +49,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// <summary>
         /// KinesisFirehoseInput
         /// If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the delivery
-        /// stream's Amazon Resource Name (ARN) and an IAM role that enables Kinesis Data Analytics to access
+        /// stream&#39;s Amazon Resource Name (ARN) and an IAM role that enables Kinesis Data Analytics to access
         /// the stream on your behalf.
         /// Required: No
         /// Type: Kinesis Data Analytics Application KinesisFirehoseInput
@@ -61,7 +61,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// <summary>
         /// InputProcessingConfiguration
         /// The input processing configuration for the input. An input processor transforms records as they are
-        /// received from the stream, before the application's SQL code executes. Currently, the only input
+        /// received from the stream, before the application&#39;s SQL code executes. Currently, the only input
         /// processing configuration available is InputLambdaProcessor.
         /// Required: No
         /// Type: Kinesis Data Analytics Application InputProcessingConfiguration

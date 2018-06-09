@@ -19,7 +19,7 @@ namespace Comformation.CodeDeploy.Application
         {
             /// <summary>
             /// ApplicationName
-            /// A name for the application. If you don't specify a name, AWS CloudFormation generates a unique
+            /// A name for the application. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the application name. For more information, see Name Type.
             /// Required: No
             /// Type: String

@@ -35,7 +35,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
             /// <summary>
             /// ServiceRoleArn
-            /// The role that's used when the task is executed.
+            /// The role that&#39;s used when the task is executed.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -114,7 +114,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
             /// <summary>
             /// TaskParameters
-            /// The parameters to pass to the task when it's executed.
+            /// The parameters to pass to the task when it&#39;s executed.
             /// Note TaskParameters has been deprecated. To specify parameters to pass to a task when it runs,
             /// instead use the Parameters option in the TaskInvocationParameters structure. For information about
             /// how Systems Manager handles these options for the supported Maintenance Window task types, see AWS

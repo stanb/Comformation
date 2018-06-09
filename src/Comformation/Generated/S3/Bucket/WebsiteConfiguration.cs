@@ -33,7 +33,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// RedirectAllRequestsTo
-        /// The redirect behavior for every request to this bucket's website endpoint.
+        /// The redirect behavior for every request to this bucket&#39;s website endpoint.
         /// Important If you specify this property, you cannot specify any other property.
         /// Required: No
         /// Type: Amazon S3 Website Configuration Redirect All Requests To Property

@@ -33,8 +33,8 @@ namespace Comformation.EC2.VPNGateway
 
             /// <summary>
             /// Type
-            /// The type of VPN connection this virtual private gateway supports. The only valid value is "ipsec.
-            /// 1".
+            /// The type of VPN connection this virtual private gateway supports. The only valid value is &quot;ipsec.
+            /// 1&quot;.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

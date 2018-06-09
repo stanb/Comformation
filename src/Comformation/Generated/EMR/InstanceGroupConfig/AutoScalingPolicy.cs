@@ -18,7 +18,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// <summary>
         /// Constraints
         /// The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling
-        /// activity doesn't cause an instance group to grow above or below these limits.
+        /// activity doesn&#39;t cause an instance group to grow above or below these limits.
         /// Required: Yes
         /// Type: Amazon EMR InstanceGroupConfig ScalingConstraints
         /// Update requires: No interruption

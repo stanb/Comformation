@@ -27,7 +27,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
 
         /// <summary>
         /// Value
-        /// A brief string that the claim must match, for example, "paid" or "yes. "
+        /// A brief string that the claim must match, for example, &quot;paid&quot; or &quot;yes. &quot;
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -37,7 +37,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
 
         /// <summary>
         /// Claim
-        /// The claim name that must be present in the token, for example, "isAdmin" or "paid. "
+        /// The claim name that must be present in the token, for example, &quot;isAdmin&quot; or &quot;paid. &quot;
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

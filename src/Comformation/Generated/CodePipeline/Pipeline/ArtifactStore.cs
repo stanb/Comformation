@@ -17,7 +17,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// <summary>
         /// EncryptionKey
         /// The encryption key AWS CodePipeline uses to encrypt the data in the artifact store, such as an AWS
-        /// Key Management Service (AWS KMS) key. If you don't specify a key, AWS CodePipeline uses the default
+        /// Key Management Service (AWS KMS) key. If you don&#39;t specify a key, AWS CodePipeline uses the default
         /// key for Amazon Simple Storage Service (Amazon S3).
         /// Required: No
         /// Type: AWS CodePipeline Pipeline ArtifactStore EncryptionKey

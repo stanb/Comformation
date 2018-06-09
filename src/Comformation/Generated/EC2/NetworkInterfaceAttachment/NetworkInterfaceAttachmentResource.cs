@@ -26,7 +26,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
 
             /// <summary>
             /// DeviceIndex
-            /// The network interface's position in the attachment order. For example, the first attached network
+            /// The network interface&#39;s position in the attachment order. For example, the first attached network
             /// interface has a DeviceIndex of 0.
             /// Required: Yes.
             /// Type: String.

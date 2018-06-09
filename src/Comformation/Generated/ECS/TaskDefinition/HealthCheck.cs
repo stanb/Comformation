@@ -9,7 +9,7 @@ namespace Comformation.ECS.TaskDefinition
     /// Amazon Elastic Container Service TaskDefinition HealthCheck
     /// The HealthCheck property type specifies a container health check. Health check parameters that are specified
     /// in a container definition override any Docker health checks that exist in the container image (such as those
-    /// specified in a parent image or from the image's Dockerfile).
+    /// specified in a parent image or from the image&#39;s Dockerfile).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html
     /// </summary>
     public class HealthCheck
@@ -19,8 +19,8 @@ namespace Comformation.ECS.TaskDefinition
         /// Command
         /// A string array representing the command that the container runs to determine if it is healthy. The
         /// string array must start with CMD to execute the command arguments directly, or CMD-SHELL to run the
-        /// command with the container's default shell. For example:
-        /// [ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]
+        /// command with the container&#39;s default shell. For example:
+        /// [ &quot;CMD-SHELL&quot;, &quot;curl -f http://localhost/ || exit 1&quot; ]
         /// An exit code of 0 indicates success, and non-zero exit code indicates failure.
         /// Required: Yes
         /// Type: List of String values

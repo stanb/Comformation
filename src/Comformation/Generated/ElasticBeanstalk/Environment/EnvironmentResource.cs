@@ -42,7 +42,7 @@ namespace Comformation.ElasticBeanstalk.Environment
 
             /// <summary>
             /// EnvironmentName
-            /// A name for the Elastic Beanstalk environment. If you don't specify a name, AWS CloudFormation
+            /// A name for the Elastic Beanstalk environment. If you don&#39;t specify a name, AWS CloudFormation
             /// generates a unique physical ID and uses that ID for the environment name. For more information, see
             /// Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
@@ -70,12 +70,12 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// PlatformArn
             /// The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more
             /// information, see Custom Platforms in the AWS Elastic Beanstalk Developer Guide.
-            /// Note If you specify PlatformArn, then don't specify SolutionStackName.
+            /// Note If you specify PlatformArn, then don&#39;t specify SolutionStackName.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
-            /// Example: "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/PHP 5. 4 running on 64bit
-            /// Amazon Linux/2. 4. 4"
+            /// Example: &quot;PlatformArn&quot;: &quot;arn:aws:elasticbeanstalk:us-east-1::platform/PHP 5. 4 running on 64bit
+            /// Amazon Linux/2. 4. 4&quot;
             /// </summary>
 			public Union<string, IntrinsicFunction> PlatformArn { get; set; }
 
@@ -83,7 +83,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// SolutionStackName
             /// The name of an Elastic Beanstalk solution stack that this configuration will use. For more
             /// information, see Supported Platforms in the AWS Elastic Beanstalk Developer Guide.
-            /// Note If you specify SolutionStackName, then don't specify PlatformArn or TemplateName.
+            /// Note If you specify SolutionStackName, then don&#39;t specify PlatformArn or TemplateName.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -103,7 +103,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// <summary>
             /// TemplateName
             /// The name of the Elastic Beanstalk configuration template to use with the environment.
-            /// Note If you specify TemplateName, then don't specify SolutionStackName.
+            /// Note If you specify TemplateName, then don&#39;t specify SolutionStackName.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions

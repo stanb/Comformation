@@ -38,7 +38,7 @@ namespace Comformation.DirectoryService.SimpleAD
 
             /// <summary>
             /// EnableSso
-            /// Whether to enable single sign-on for a directory. If you don't specify a value, AWS CloudFormation
+            /// Whether to enable single sign-on for a directory. If you don&#39;t specify a value, AWS CloudFormation
             /// disables single sign-on by default.
             /// Required: No
             /// Type: Boolean

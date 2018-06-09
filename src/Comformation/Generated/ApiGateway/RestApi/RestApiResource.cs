@@ -111,7 +111,7 @@ namespace Comformation.ApiGateway.RestApi
             /// <summary>
             /// Name
             /// A name for the API Gateway RestApi resource.
-            /// Required: Conditional. Required if you don't specify a OpenAPI definition.
+            /// Required: Conditional. Required if you don&#39;t specify a OpenAPI definition.
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

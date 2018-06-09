@@ -19,7 +19,7 @@ namespace Comformation.KMS.Alias
             /// <summary>
             /// AliasName
             /// The name of the alias. The name must start with alias followed by a forward slash, such as alias/.
-            /// You can't specify aliases that begin with alias/AWS. These aliases are reserved.
+            /// You can&#39;t specify aliases that begin with alias/AWS. These aliases are reserved.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -28,8 +28,8 @@ namespace Comformation.KMS.Alias
 
             /// <summary>
             /// TargetKeyId
-            /// The ID of the key for which you are creating the alias. Specify the key's globally unique identifier
-            /// or Amazon Resource Name (ARN). You can't specify another alias.
+            /// The ID of the key for which you are creating the alias. Specify the key&#39;s globally unique identifier
+            /// or Amazon Resource Name (ARN). You can&#39;t specify another alias.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

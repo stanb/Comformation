@@ -28,11 +28,11 @@ namespace Comformation.DynamoDB.Table
             /// Global secondary indexes to be created on the table. You can create up to 5 global secondary
             /// indexes.
             /// Important If you update a table to include a new global secondary index, AWS CloudFormation
-            /// initiates the index creation and then proceeds with the stack update. AWS CloudFormation doesn't
+            /// initiates the index creation and then proceeds with the stack update. AWS CloudFormation doesn&#39;t
             /// wait for the index to complete creation because the backfilling phase can take a long time,
-            /// depending on the size of the table. You can't use the index or update the table until the index's
+            /// depending on the size of the table. You can&#39;t use the index or update the table until the index&#39;s
             /// status is ACTIVE. You can track its status by using the DynamoDB DescribeTable command. If you add
-            /// or delete an index during an update, we recommend that you don't update any other resources. If your
+            /// or delete an index during an update, we recommend that you don&#39;t update any other resources. If your
             /// stack fails to update and is rolled back while adding a new index, you must manually delete the
             /// index.
             /// Required: No
@@ -40,7 +40,7 @@ namespace Comformation.DynamoDB.Table
             /// Update requires: Updates are not supported. The following are exceptions:
             /// If you update only the provisioned throughput values of global secondary indexes, you can update the
             /// table without interruption. You can delete or add one global secondary index without interruption.
-            /// If you do both in the same update (for example, by changing the index's logical ID), the update
+            /// If you do both in the same update (for example, by changing the index&#39;s logical ID), the update
             /// fails.
             /// </summary>
 			public Union<List<GlobalSecondaryIndex>, IntrinsicFunction> GlobalSecondaryIndexes { get; set; }
@@ -105,7 +105,7 @@ namespace Comformation.DynamoDB.Table
 
             /// <summary>
             /// TableName
-            /// A name for the table. If you don't specify a name, AWS CloudFormation generates a unique physical ID
+            /// A name for the table. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
             /// and uses that ID for the table name. For more information, see Name Type.
             /// 			
             /// Important If you specify a name, you cannot perform updates that require replacement of this

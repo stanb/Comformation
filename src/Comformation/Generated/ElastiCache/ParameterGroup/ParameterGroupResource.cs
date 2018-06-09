@@ -37,7 +37,7 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// A comma-delimited list of parameter name/value pairs. For more information, go to
             /// ModifyCacheParameterGroup in the Amazon ElastiCache API Reference Guide.
             /// Example:
-            /// "Properties" : { "cas_disabled" : "1", "chunk_size_growth_factor" : "1. 02" }
+            /// &quot;Properties&quot; : { &quot;cas_disabled&quot; : &quot;1&quot;, &quot;chunk_size_growth_factor&quot; : &quot;1. 02&quot; }
             /// Required: No
             /// Type: Mapping of key-value pairs
             /// Update requires: Updates are not supported.

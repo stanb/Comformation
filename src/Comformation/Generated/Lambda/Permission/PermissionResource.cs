@@ -7,7 +7,7 @@ namespace Comformation.Lambda.Permission
     /// <summary>
     /// AWS::Lambda::Permission
     /// The AWS::Lambda::Permission resource associates a policy statement with a specific AWS Lambda (Lambda)
-    /// function's access policy. The function policy grants a specific AWS service or application permission to
+    /// function&#39;s access policy. The function policy grants a specific AWS service or application permission to
     /// invoke the function. For more information, see AddPermission in the AWS Lambda Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
     /// </summary>
@@ -39,7 +39,7 @@ namespace Comformation.Lambda.Permission
             /// <summary>
             /// FunctionName
             /// The name (physical ID), Amazon Resource Name (ARN), or alias ARN of the Lambda function that you
-            /// want to associate with this statement. Lambda adds this statement to the function's access policy.
+            /// want to associate with this statement. Lambda adds this statement to the function&#39;s access policy.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -61,7 +61,7 @@ namespace Comformation.Lambda.Permission
             /// <summary>
             /// SourceAccount
             /// The AWS account ID (without hyphens) of the source owner. For example, if you specify an S3 bucket
-            /// in the SourceArn property, this value is the bucket owner's account ID. You can use this property to
+            /// in the SourceArn property, this value is the bucket owner&#39;s account ID. You can use this property to
             /// ensure that all source principals are owned by a specific account.
             /// Important This property is not supported by all event sources. For more information, see the
             /// SourceAccount parameter for the AddPermission action in the AWS Lambda Developer Guide.

@@ -26,7 +26,7 @@ namespace Comformation.Config.DeliveryChannel
 
             /// <summary>
             /// Name
-            /// A name for the delivery channel. If you don't specify a name, AWS CloudFormation generates a unique
+            /// A name for the delivery channel. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the delivery channel name. For more information, see Name Type.
             /// Required: No
             /// Type: String

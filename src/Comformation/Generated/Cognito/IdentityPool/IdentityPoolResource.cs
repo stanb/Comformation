@@ -42,7 +42,7 @@ namespace Comformation.Cognito.IdentityPool
 
             /// <summary>
             /// DeveloperProviderName
-            /// The "domain" by which Amazon Cognito will refer to your users. This name acts as a placeholder that
+            /// The &quot;domain&quot; by which Amazon Cognito will refer to your users. This name acts as a placeholder that
             /// allows your backend and the Amazon Cognito service to communicate about the developer provider. For
             /// the DeveloperProviderName, you can use letters and periods (. ), underscores (_), and dashes (-).
             /// Required: No

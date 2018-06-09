@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53.HostedZone
 {
     /// <summary>
-    /// Route 53 HostedZoneVPCs
+    /// Route&#160;53 HostedZoneVPCs
     /// The HostedZoneVPCs property is part of the AWS::Route53::HostedZone resource that specifies the VPCs to
     /// associate with the hosted zone.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html

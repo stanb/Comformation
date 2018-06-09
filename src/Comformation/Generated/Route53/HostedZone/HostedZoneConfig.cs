@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53.HostedZone
 {
     /// <summary>
-    /// Route 53 HostedZoneConfig Property
+    /// Route&#160;53 HostedZoneConfig Property
     /// The HostedZoneConfig property is part of the AWS::Route53::HostedZone resource that can contain a comment
     /// about the hosted zone.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html

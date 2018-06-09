@@ -54,7 +54,7 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// CustomJson
-            /// A custom stack configuration and deployment attributes that AWS OpsWorks installs on the layer's
+            /// A custom stack configuration and deployment attributes that AWS OpsWorks installs on the layer&#39;s
             /// instances. For more information, see the CustomJson parameter for the CreateLayer action in the AWS
             /// OpsWorks Stacks API Reference.
             /// Required: No
@@ -139,7 +139,7 @@ namespace Comformation.OpsWorks.Layer
             /// The layer short name, which is used internally by AWS OpsWorks and by Chef recipes. The short name
             /// is also used as the name for the directory where your app files are installed.
             /// The name can have a maximum of 200 characters, which are limited to the alphanumeric characters,
-            /// '-', '_', and '. '.
+            /// &#39;-&#39;, &#39;_&#39;, and &#39;. &#39;.
             /// Important If you update a property that requires the layer to be replaced, you must specify a new
             /// short name. You cannot have multiple layers with the same short name.
             /// Required: Yes

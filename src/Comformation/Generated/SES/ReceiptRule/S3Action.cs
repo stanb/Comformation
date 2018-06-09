@@ -33,9 +33,9 @@ namespace Comformation.SES.ReceiptRule
         /// arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses. For example, if your AWS account ID is
         /// 123456789012 and you want to use the default master key in the US West (Oregon) region, the ARN of
         /// the default master key would be arn:aws:kms:us-west-2:123456789012:alias/aws/ses. If you use the
-        /// default master key, you don't need to perform any extra steps to give Amazon SES permission to use
+        /// default master key, you don&#39;t need to perform any extra steps to give Amazon SES permission to use
         /// the key. To use a custom master key you created in AWS KMS, provide the ARN of the master key and
-        /// ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For
+        /// ensure that you add a statement to your key&#39;s policy to give Amazon SES permission to use it. For
         /// more information about giving permissions, see Giving Permissions to Amazon SES for Email Receiving
         /// in the Amazon Simple Email Service Developer Guide.
         /// For more information about key policies, see AWS Key Management Service Concepts in the AWS Key

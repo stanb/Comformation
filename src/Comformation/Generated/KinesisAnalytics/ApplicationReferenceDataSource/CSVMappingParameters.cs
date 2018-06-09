@@ -16,7 +16,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordRowDelimiter
-        /// The row delimiter. For example, in a CSV format, "\n" is the typical row delimiter.
+        /// The row delimiter. For example, in a CSV format, &quot;\n&quot; is the typical row delimiter.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordColumnDelimiter
-        /// The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.
+        /// The column delimiter. For example, in a CSV format, a comma (&quot;,&quot;) is the typical column delimiter.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

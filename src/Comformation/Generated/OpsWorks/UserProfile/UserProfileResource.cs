@@ -17,7 +17,7 @@ namespace Comformation.OpsWorks.UserProfile
             /// <summary>
             /// AllowSelfManagement
             /// Indicates whether users can use the AWS OpsWorks My Settings page to specify their own SSH public
-            /// key. For more information, see Setting an IAM User's Public SSH Key in the AWS OpsWorks User Guide.
+            /// key. For more information, see Setting an IAM User&#39;s Public SSH Key in the AWS OpsWorks User Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -46,7 +46,7 @@ namespace Comformation.OpsWorks.UserProfile
 
             /// <summary>
             /// SshUsername
-            /// The user's SSH user name.
+            /// The user&#39;s SSH user name.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

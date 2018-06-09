@@ -26,7 +26,7 @@ namespace Comformation.EC2.SecurityGroup
             /// GroupName
             /// The name of the security group. For valid values, see the GroupName parameter of the
             /// CreateSecurityGroup action in the Amazon EC2 API Reference.
-            /// If you don't specify a GroupName, AWS CloudFormation generates a unique physical ID and uses that ID
+            /// If you don&#39;t specify a GroupName, AWS CloudFormation generates a unique physical ID and uses that ID
             /// for the group name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -67,7 +67,7 @@ namespace Comformation.EC2.SecurityGroup
             /// <summary>
             /// VpcId
             /// The physical ID of the VPC. You can obtain the physical ID by using a reference to an AWS::EC2::VPC,
-            /// such as: { "Ref" : "myVPC" }.
+            /// such as: { &quot;Ref&quot; : &quot;myVPC&quot; }.
             /// For more information about using the Ref function, see Ref.
             /// Required: Yes, for VPC security groups without a default VPC
             /// Type: String

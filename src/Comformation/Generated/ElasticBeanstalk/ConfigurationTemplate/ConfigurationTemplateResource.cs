@@ -36,7 +36,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// <summary>
             /// EnvironmentId
             /// An environment whose settings you want to use to create the configuration template. You must specify
-            /// this property if you don't specify the SolutionStackName or SourceConfiguration properties.
+            /// this property if you don&#39;t specify the SolutionStackName or SourceConfiguration properties.
             /// Type: String
             /// Required: Conditional
             /// Update requires: Replacement
@@ -58,7 +58,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// PlatformArn
             /// The Amazon Resource Name (ARN) of the custom platform. For more information, see Custom Platforms in
             /// the AWS Elastic Beanstalk Developer Guide.
-            /// Note If you specify PlatformArn, then don't specify SolutionStackName.
+            /// Note If you specify PlatformArn, then don&#39;t specify SolutionStackName.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -71,7 +71,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// specifies the operating system, architecture, and application server for a configuration template,
             /// such as 64bit Amazon Linux 2013. 09 running Tomcat 7 Java 7. For more information, see Supported
             /// Platforms in the AWS Elastic Beanstalk Developer Guide.
-            /// You must specify this property if you don't specify the PlatformArn, EnvironmentId, or
+            /// You must specify this property if you don&#39;t specify the PlatformArn, EnvironmentId, or
             /// SourceConfiguration properties.
             /// Type: String
             /// Required: Conditional
@@ -85,7 +85,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// specify the SolutionStackName property and the SourceConfiguration property, the solution stack in
             /// the source configuration template must match the value that you specified for the SolutionStackName
             /// property.
-            /// You must specify this property if you don't specify the EnvironmentId or SolutionStackName
+            /// You must specify this property if you don&#39;t specify the EnvironmentId or SolutionStackName
             /// properties.
             /// Type: Elastic Beanstalk ConfigurationTemplate SourceConfiguration
             /// Required: Conditional

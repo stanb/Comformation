@@ -8,7 +8,7 @@ namespace Comformation.DynamoDB.Table
     /// <summary>
     /// Amazon DynamoDB Table StreamSpecification
     /// StreamSpecification is a property of the AWS::DynamoDB::Table resource that defines the settings of a DynamoDB
-    /// table's stream.
+    /// table&#39;s stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html
     /// </summary>
     public class StreamSpecification

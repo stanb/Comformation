@@ -45,7 +45,7 @@ namespace Comformation.EC2.VPNConnection
             /// <summary>
             /// Type
             /// The type of VPN connection this virtual private gateway supports.
-            /// Example: "ipsec. 1"
+            /// Example: &quot;ipsec. 1&quot;
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

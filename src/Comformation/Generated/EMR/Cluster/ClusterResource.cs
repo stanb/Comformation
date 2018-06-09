@@ -71,13 +71,13 @@ namespace Comformation.EMR.Cluster
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// Example: "CustomAmiId" : "ami-7fb3bc69"
+            /// Example: &quot;CustomAmiId&quot; : &quot;ami-7fb3bc69&quot;
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomAmiId { get; set; }
 
             /// <summary>
             /// EbsRootVolumeSize
-            /// The size, in GiB, of the EBS root device volume of the Linux AMI that's used for each EC2 instance.
+            /// The size, in GiB, of the EBS root device volume of the Linux AMI that&#39;s used for each EC2 instance.
             /// Currently, AWS CloudFormation supports only Amazon EMR 4. 0 and later software releases.
             /// Required: No
             /// Type: Integer
@@ -96,7 +96,7 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// JobFlowRole
-            /// (Also called instance profile and EC2 role. ) Accepts an instance profile that's associated with the
+            /// (Also called instance profile and EC2 role. ) Accepts an instance profile that&#39;s associated with the
             /// role that you want to use. All EC2 instances in the cluster assume this role. For more information,
             /// see Create and Use IAM Roles for Amazon EMR in the Amazon EMR Management Guide.
             /// Required: Yes
@@ -107,8 +107,8 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// LogUri
-            /// An S3 bucket location that Amazon EMR writes logs files to from a job flow. If you don't specify a
-            /// value, Amazon EMR doesn't write any log files.
+            /// An S3 bucket location that Amazon EMR writes logs files to from a job flow. If you don&#39;t specify a
+            /// value, Amazon EMR doesn&#39;t write any log files.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -148,7 +148,7 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// SecurityConfiguration
-            /// The name of the security configuration that's applied to the cluster.
+            /// The name of the security configuration that&#39;s applied to the cluster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

@@ -27,7 +27,7 @@ namespace Comformation.SES.ReceiptRule
 
             /// <summary>
             /// Rule
-            /// The specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS
+            /// The specified rule&#39;s name, actions, recipients, domains, enabled status, scan status, and TLS
             /// policy.
             /// Required: Yes
             /// Type: Amazon SES ReceiptRule Rule

@@ -27,7 +27,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             /// AvailabilityZones
             /// Contains a list of availability zones for the group.
-            /// Required: Conditional. If you don't specify the VPCZoneIdentifier property, you must specify this
+            /// Required: Conditional. If you don&#39;t specify the VPCZoneIdentifier property, you must specify this
             /// property.
             /// Type: List of String values
             /// Update requires: No interruption
@@ -234,7 +234,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// reside in those Availability Zones.
             /// For more information, see Launching Auto Scaling Instances in a VPC in the Amazon EC2 Auto Scaling
             /// User Guide.
-            /// Required: Conditional. If you don't specify the AvailabilityZones property, you must specify this
+            /// Required: Conditional. If you don&#39;t specify the AvailabilityZones property, you must specify this
             /// property.
             /// Type: List of String values
             /// Update requires: Some interruptions

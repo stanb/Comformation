@@ -17,7 +17,7 @@ namespace Comformation.Events.Rule
         {
             /// <summary>
             /// Description
-            /// A description of the rule's purpose.
+            /// A description of the rule&#39;s purpose.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -37,7 +37,7 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// Name
-            /// A name for the rule. If you don't specify a name, AWS CloudFormation generates a unique physical ID
+            /// A name for the rule. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
             /// and uses that ID for the rule name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the

@@ -15,7 +15,7 @@ namespace Comformation.ElasticBeanstalk.Application
         {
             /// <summary>
             /// ApplicationName
-            /// A name for the Elastic Beanstalk application. If you don't specify a name, AWS CloudFormation
+            /// A name for the Elastic Beanstalk application. If you don&#39;t specify a name, AWS CloudFormation
             /// generates a unique physical ID and uses that ID for the application name. For more information, see
             /// Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
@@ -42,7 +42,7 @@ namespace Comformation.ElasticBeanstalk.Application
             /// Elastic Beanstalk assumes in order to apply lifecycle settings.
             /// Required: No
             /// Type: Elastic Beanstalk Application ApplicationResourceLifecycleConfig
-            /// Update requires: No interruption
+            /// Update requires:&#160;No interruption
             /// </summary>
 			public Union<ApplicationResourceLifecycleConfig, IntrinsicFunction> ResourceLifecycleConfig { get; set; }
 

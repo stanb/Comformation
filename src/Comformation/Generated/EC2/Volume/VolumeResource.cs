@@ -16,9 +16,9 @@ namespace Comformation.EC2.Volume
             /// <summary>
             /// AutoEnableIO
             /// Indicates whether the volume is auto-enabled for I/O operations. By default, Amazon EBS disables I/O
-            /// to the volume from attached EC2 instances when it determines that a volume's data is potentially
+            /// to the volume from attached EC2 instances when it determines that a volume&#39;s data is potentially
             /// inconsistent. If the consistency of the volume is not a concern, and you prefer that the volume be
-            /// made available immediately if it's impaired, you can configure the volume to automatically enable
+            /// made available immediately if it&#39;s impaired, you can configure the volume to automatically enable
             /// I/O. For more information, see Working with the AutoEnableIO Volume Attribute in the Amazon EC2 User
             /// Guide for Linux Instances.
             /// Required: No
@@ -40,7 +40,7 @@ namespace Comformation.EC2.Volume
             /// Encrypted
             /// Indicates whether the volume is encrypted. You can attach encrypted Amazon EBS volumes only to
             /// instance types that support Amazon EBS encryption. Volumes that are created from encrypted snapshots
-            /// are automatically encrypted. You can't create an encrypted volume from an unencrypted snapshot, or
+            /// are automatically encrypted. You can&#39;t create an encrypted volume from an unencrypted snapshot, or
             /// vice versa. If your AMI uses encrypted volumes, you can launch the AMI only on supported instance
             /// types. For more information, see Amazon EBS encryption in the Amazon EC2 User Guide for Linux
             /// Instances.
@@ -66,7 +66,7 @@ namespace Comformation.EC2.Volume
             /// The Amazon Resource Name (ARN) of the AWS Key Management Service master key that is used to create
             /// the encrypted volume, such as
             /// arn:aws:kms:us-east-2:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. If you create an
-            /// encrypted volume and don't specify this property, AWS CloudFormation uses the default master key.
+            /// encrypted volume and don&#39;t specify this property, AWS CloudFormation uses the default master key.
             /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
@@ -78,8 +78,8 @@ namespace Comformation.EC2.Volume
             /// The size of the volume, in gibibytes (GiBs). For more information about the valid sizes for each
             /// volume type, see the Size parameter for the CreateVolume action in the Amazon EC2 API Reference.
             /// If you specify the SnapshotId property, specify a size that is equal to or greater than the size of
-            /// the snapshot. If you don't specify a size, EC2 uses the size of the snapshot as the volume size.
-            /// Required: Conditional. If you don't specify a value for the SnapshotId property, you must specify
+            /// the snapshot. If you don&#39;t specify a size, EC2 uses the size of the snapshot as the volume size.
+            /// Required: Conditional. If you don&#39;t specify a value for the SnapshotId property, you must specify
             /// this property.
             /// Type: Integer
             /// Update requires: No interruption

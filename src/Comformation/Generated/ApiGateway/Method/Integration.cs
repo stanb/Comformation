@@ -37,7 +37,7 @@ namespace Comformation.ApiGateway.Method
         /// Specifies how to handle request payload content type conversions. Valid values are:
         /// CONVERT_TO_BINARY: Converts a request payload from a base64-encoded string to a binary blob.
         /// CONVERT_TO_TEXT: Converts a request payload from a binary blob to a base64-encoded string.
-        /// If this property isn't defined, the request payload is passed through from the method request to the
+        /// If this property isn&#39;t defined, the request payload is passed through from the method request to the
         /// integration request without modification, provided that the PassthroughBehaviors property is
         /// configured to support payload pass-through.
         /// Required: No
@@ -50,10 +50,10 @@ namespace Comformation.ApiGateway.Method
         /// <summary>
         /// Credentials
         /// The credentials that are required for the integration. To specify an AWS Identity and Access
-        /// Management (IAM) role that API Gateway assumes, specify the role's Amazon Resource Name (ARN). To
-        /// require that the caller's identity be passed through from the request, specify
+        /// Management (IAM) role that API Gateway assumes, specify the role&#39;s Amazon Resource Name (ARN). To
+        /// require that the caller&#39;s identity be passed through from the request, specify
         /// arn:aws:iam::*:user/*.
-        /// To use resource-based permissions on the AWS Lambda (Lambda) function, don't specify this property.
+        /// To use resource-based permissions on the AWS Lambda (Lambda) function, don&#39;t specify this property.
         /// Use the AWS::Lambda::Permission resource to permit API Gateway to call the function. For more
         /// information, see Allow Amazon API Gateway to Invoke a Lambda Function in the AWS Lambda Developer
         /// Guide.
@@ -65,7 +65,7 @@ namespace Comformation.ApiGateway.Method
 
         /// <summary>
         /// IntegrationHttpMethod
-        /// The integration's HTTP method type.
+        /// The integration&#39;s HTTP method type.
         /// Required: Conditional. For the Type property, if you specify MOCK, this property is optional. For
         /// all other types, you must specify this property.
         /// Type: String
@@ -75,7 +75,7 @@ namespace Comformation.ApiGateway.Method
 
         /// <summary>
         /// IntegrationResponses
-        /// The response that API Gateway provides after a method's backend completes processing a request. API
+        /// The response that API Gateway provides after a method&#39;s backend completes processing a request. API
         /// Gateway intercepts the response from the backend so that you can control how API Gateway surfaces
         /// backend responses. For example, you can map the backend status codes to codes that you define.
         /// Required: No
@@ -87,7 +87,7 @@ namespace Comformation.ApiGateway.Method
         /// <summary>
         /// PassthroughBehavior
         /// Indicates when API Gateway passes requests to the targeted backend. This behavior depends on the
-        /// request's Content-Type header and whether you defined a mapping template for it.
+        /// request&#39;s Content-Type header and whether you defined a mapping template for it.
         /// For more information and valid values, see the passthroughBehavior field in the API Gateway API
         /// Reference.
         /// Required: No
@@ -115,10 +115,10 @@ namespace Comformation.ApiGateway.Method
         /// <summary>
         /// RequestTemplates
         /// A map of Apache Velocity templates that are applied on the request payload. The template that API
-        /// Gateway uses is based on the value of the Content-Type header that's sent by the client. The content
+        /// Gateway uses is based on the value of the Content-Type header that&#39;s sent by the client. The content
         /// type value is the key, and the template is the value (specified as a string), such as the following
         /// snippet:
-        /// "application/json": "{\n \"statusCode\": \"200\"\n}"
+        /// &quot;application/json&quot;: &quot;{\n \&quot;statusCode\&quot;: \&quot;200\&quot;\n}&quot;
         /// For more information about templates, see API Gateway API Request and Response Payload-Mapping
         /// Template Reference in the API Gateway Developer Guide.
         /// Required: No
@@ -141,7 +141,7 @@ namespace Comformation.ApiGateway.Method
         /// Uri
         /// The Uniform Resource Identifier (URI) for the integration.
         /// If you specify HTTP for the Type property, specify the API endpoint URL.
-        /// If you specify MOCK for the Type property, don't specify this property.
+        /// If you specify MOCK for the Type property, don&#39;t specify this property.
         /// If you specify AWS for the Type property, specify an AWS service that follows this form:
         /// arn:aws:apigateway:region:subdomain. service|service:path|action/service_api. For example, a Lambda
         /// function URI follows this form: arn:aws:apigateway:region:lambda:path/path. The path is usually in

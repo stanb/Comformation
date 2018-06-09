@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53.HostedZone
 {
     /// <summary>
-    /// Amazon Route 53 HostedZoneTags
+    /// Amazon Route&#160;53 HostedZoneTags
     /// The HostedZoneTags property describes key-value pairs that are associated with an AWS::Route53::HostedZone
     /// resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetags.html

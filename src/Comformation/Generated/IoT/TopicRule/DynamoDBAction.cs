@@ -25,8 +25,8 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// HashKeyType
-        /// The data type of the hash key (also called the partition key). Valid values are: "STRING" or
-        /// "NUMBER".
+        /// The data type of the hash key (also called the partition key). Valid values are: &quot;STRING&quot; or
+        /// &quot;NUMBER&quot;.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -63,7 +63,7 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// RangeKeyType
-        /// The data type of the range key (also called the sort key). Valid values are: "STRING" or "NUMBER".
+        /// The data type of the range key (also called the sort key). Valid values are: &quot;STRING&quot; or &quot;NUMBER&quot;.
         /// Required: No
         /// Type: String
         /// </summary>

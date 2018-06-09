@@ -6,7 +6,7 @@ namespace Comformation.EC2.Route
 {
     /// <summary>
     /// AWS::EC2::Route
-    /// The AWS::EC2::Route resource creates a new route in a route table within a VPC. The route's target can be
+    /// The AWS::EC2::Route resource creates a new route in a route table within a VPC. The route&#39;s target can be
     /// either a gateway attached to the VPC or a NAT instance in the VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
     /// </summary>

@@ -28,7 +28,7 @@ namespace Comformation.CodeBuild.Project
         /// Auth
         /// Information about the authorization settings for AWS CodeBuild to access the source code to be
         /// built.
-        /// Note Your code shouldn't get or set this information directly unless the project's source type is
+        /// Note Your code shouldn&#39;t get or set this information directly unless the project&#39;s source type is
         /// GITHUB.
         /// Required: No
         /// Type: AWS CodeBuild Project SourceAuth
@@ -78,7 +78,7 @@ namespace Comformation.CodeBuild.Project
         /// Location
         /// The location of the source code in the specified repository type. For more information, see the
         /// source-location field in the AWS CodeBuild User Guide.
-        /// Required: Conditional. If you specify CODEPIPELINE for the Type property, don't specify this
+        /// Required: Conditional. If you specify CODEPIPELINE for the Type property, don&#39;t specify this
         /// property. For all of the other types, you must specify this property.
         /// Type: String
         /// </summary>

@@ -57,7 +57,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// Ipv6AddressCount
         /// The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the
-        /// IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6
+        /// IPv6 addresses from the subnet range. You can&#39;t use this option if specifying specific IPv6
         /// addresses.
         /// Required: No
         /// Type: Integer
@@ -98,8 +98,8 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// Ipv6Addresses
-        /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use
-        /// this option if you're specifying a number of IPv6 addresses.
+        /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can&#39;t use
+        /// this option if you&#39;re specifying a number of IPv6 addresses.
         /// Required: No
         /// Type: List of Amazon EC2 LaunchTemplate Ipv6Add
         /// Update requires: No interruption

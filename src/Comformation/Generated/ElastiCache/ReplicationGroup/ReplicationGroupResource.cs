@@ -28,7 +28,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
             /// <summary>
             /// AuthToken
-            /// The password that's used to access a password-protected server. For constraints, see
+            /// The password that&#39;s used to access a password-protected server. For constraints, see
             /// CreateReplicationGroup in the Amazon ElastiCache API Reference.
             /// AuthToken can be specified only on replication groups where TransitEncryptionEnabled is true.
             /// Important For HIPAA compliance, you must specify TransitEncryptionEnabled as true, an AuthToken, and
@@ -41,7 +41,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Currently, this property isn't used by ElastiCache.
+            /// Currently, this property isn&#39;t used by ElastiCache.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -92,7 +92,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             /// CacheSecurityGroupNames
             /// A list of cache security group names to associate with this replication group.
-            /// Important If you specify the CacheSecurityGroupNames property, don't also specify the
+            /// Important If you specify the CacheSecurityGroupNames property, don&#39;t also specify the
             /// SecurityGroupIds property. The SecurityGroupIds property is only for Amazon Virtual Private Cloud
             /// (Amazon VPC) security groups. If you specify an Amazon VPC security group, the deployment fails.
             /// Required: No
@@ -250,7 +250,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
             /// <summary>
             /// ReplicationGroupId
-            /// An ID for the replication group. If you don't specify an ID, AWS CloudFormation generates a unique
+            /// An ID for the replication group. If you don&#39;t specify an ID, AWS CloudFormation generates a unique
             /// physical ID. For more information, see Name Type.
             /// Required: No
             /// Type: String
@@ -262,7 +262,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// SecurityGroupIds
             /// A list of Amazon Virtual Private Cloud (Amazon VPC) security groups to associate with this
             /// replication group.
-            /// Important If you specify the SecurityGroupIds property, don't also specify the
+            /// Important If you specify the SecurityGroupIds property, don&#39;t also specify the
             /// CacheSecurityGroupNames property. The CacheSecurityGroupNames property is only for EC2-Classic
             /// security groups. If you specify an EC2-Classic security group, the deployment fails.
             /// Required: No

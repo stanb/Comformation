@@ -17,7 +17,7 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// <summary>
             /// BasePath
             /// The base path name that callers of the API must provide in the URL after the domain name. If you
-            /// specify this property, it can't be an empty string.
+            /// specify this property, it can&#39;t be an empty string.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -44,7 +44,7 @@ namespace Comformation.ApiGateway.BasePathMapping
 
             /// <summary>
             /// Stage
-            /// The name of the API's stage.
+            /// The name of the API&#39;s stage.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

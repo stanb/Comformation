@@ -16,7 +16,7 @@ namespace Comformation.Cloud9.EnvironmentEC2
 
         /// <summary>
         /// PathComponent
-        /// The path within the development environment's default filesystem location to clone the AWS
+        /// The path within the development environment&#39;s default filesystem location to clone the AWS
         /// CodeCommit repository into. For example, /repository-name would clone the repository into the
         /// /home/ec2-user/environment/repository-name directory in the environment.
         /// Required: Yes

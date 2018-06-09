@@ -58,7 +58,7 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The name of the Availability Zone where the DB instance is located. You can't set the
+            /// The name of the Availability Zone where the DB instance is located. You can&#39;t set the
             /// AvailabilityZone parameter if the MultiAZ parameter is set to true.
             /// Required: No
             /// Type: String
@@ -102,7 +102,7 @@ namespace Comformation.Neptune.DBInstance
             /// <summary>
             /// DBInstanceIdentifier
             /// A name for the DB instance. If you specify a name, AWS CloudFormation converts it to lowercase. If
-            /// you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the
+            /// you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the
             /// DB instance. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -115,13 +115,13 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// DBSnapshotIdentifier
-            /// The name or Amazon Resource Name (ARN) of the DB snapshot that's used to restore the DB instance. If
-            /// you're restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.
+            /// The name or Amazon Resource Name (ARN) of the DB snapshot that&#39;s used to restore the DB instance. If
+            /// you&#39;re restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.
             /// By specifying this property, you can create a DB instance from the specified DB snapshot. If the
             /// DBSnapshotIdentifier property is an empty string or the AWS::Neptune::DBInstance declaration has no
             /// DBSnapshotIdentifier property, AWS CloudFormation creates a new database. If the property contains a
             /// value (other than an empty string), AWS CloudFormation creates a database from the specified
-            /// snapshot. If a snapshot with the specified name doesn't exist, AWS CloudFormation can't create the
+            /// snapshot. If a snapshot with the specified name doesn&#39;t exist, AWS CloudFormation can&#39;t create the
             /// database and it rolls back the stack.
             /// Required: No
             /// Type: String

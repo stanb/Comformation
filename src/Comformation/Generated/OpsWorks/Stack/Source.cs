@@ -27,7 +27,7 @@ namespace Comformation.OpsWorks.Stack
 
         /// <summary>
         /// Revision
-        /// The application's version. With AWS OpsWorks, you can deploy new versions of an application. One of
+        /// The application&#39;s version. With AWS OpsWorks, you can deploy new versions of an application. One of
         /// the simplest approaches is to have branches or revisions in your repository that represent different
         /// versions that can potentially be deployed.
         /// Required: No
@@ -38,13 +38,13 @@ namespace Comformation.OpsWorks.Stack
 
         /// <summary>
         /// SshKey
-        /// The repository's SSH key. For more information, see Using Git Repository SSH Keys in the AWS
+        /// The repository&#39;s SSH key. For more information, see Using Git Repository SSH Keys in the AWS
         /// OpsWorks User Guide.
         /// To pass in an SSH key as a parameter, see the following example:
-        /// "Parameters" : { "GitSSHKey" : { "Description" : "Change SSH key newlines to commas. ", "Type" :
-        /// "CommaDelimitedList", "NoEcho" : "true" }, . . . "CustomCookbooksSource": { "Revision" : { "Ref":
-        /// "GitRevision"}, "SshKey" : { "Fn::Join" : [ "\n", { "Ref": "GitSSHKey"} ] }, "Type": "git", "Url": {
-        /// "Ref": "GitURL"} } . . .
+        /// &quot;Parameters&quot; : { &quot;GitSSHKey&quot; : { &quot;Description&quot; : &quot;Change SSH key newlines to commas. &quot;, &quot;Type&quot; :
+        /// &quot;CommaDelimitedList&quot;, &quot;NoEcho&quot; : &quot;true&quot; }, . . . &quot;CustomCookbooksSource&quot;: { &quot;Revision&quot; : { &quot;Ref&quot;:
+        /// &quot;GitRevision&quot;}, &quot;SshKey&quot; : { &quot;Fn::Join&quot; : [ &quot;\n&quot;, { &quot;Ref&quot;: &quot;GitSSHKey&quot;} ] }, &quot;Type&quot;: &quot;git&quot;, &quot;Url&quot;: {
+        /// &quot;Ref&quot;: &quot;GitURL&quot;} } . . .
         /// Required: No
         /// Type: String
         /// </summary>

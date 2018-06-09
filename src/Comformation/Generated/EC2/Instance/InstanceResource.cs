@@ -109,7 +109,7 @@ namespace Comformation.EC2.Instance
             /// <summary>
             /// HostId
             /// If you specify host for the Affinity property, the ID of a dedicated host that the instance is
-            /// associated with. If you don't specify an ID, Amazon EC2 launches the instance onto any available,
+            /// associated with. If you don&#39;t specify an ID, Amazon EC2 launches the instance onto any available,
             /// compatible dedicated host in your account. This type of launch is called an untargeted launch. Note
             /// that for untargeted launches, you must have a compatible, dedicated host available to successfully
             /// launch instances.
@@ -142,7 +142,7 @@ namespace Comformation.EC2.Instance
             /// <summary>
             /// InstanceInitiatedShutdownBehavior
             /// Indicates whether an instance stops or terminates when you shut down the instance from the
-            /// instance's operating system shutdown command. You can specify stop or terminate. For more
+            /// instance&#39;s operating system shutdown command. You can specify stop or terminate. For more
             /// information, see the RunInstances command in the Amazon EC2 API Reference.
             /// Required: No
             /// Type: String
@@ -152,7 +152,7 @@ namespace Comformation.EC2.Instance
 
             /// <summary>
             /// InstanceType
-            /// The instance type, such as t2. micro. The default type is "m3. medium". For a list of instance
+            /// The instance type, such as t2. micro. The default type is &quot;m3. medium&quot;. For a list of instance
             /// types, see Instance Families and Types.
             /// Required: No
             /// Type: String
@@ -164,9 +164,9 @@ namespace Comformation.EC2.Instance
 
             /// <summary>
             /// Ipv6AddressCount
-            /// The number of IPv6 addresses to associate with the instance's primary network interface. Amazon EC2
+            /// The number of IPv6 addresses to associate with the instance&#39;s primary network interface. Amazon EC2
             /// automatically selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses,
-            /// use the Ipv6Addresses property and don't specify this property.
+            /// use the Ipv6Addresses property and don&#39;t specify this property.
             /// For restrictions on which instance types support IPv6 addresses, see the RunInstances action in the
             /// Amazon EC2 API Reference.
             /// Required: No
@@ -178,8 +178,8 @@ namespace Comformation.EC2.Instance
             /// <summary>
             /// Ipv6Addresses
             /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with
-            /// the instance's primary network interface. To specify a number of IPv6 addresses, use the
-            /// Ipv6AddressCount property and don't specify this property.
+            /// the instance&#39;s primary network interface. To specify a number of IPv6 addresses, use the
+            /// Ipv6AddressCount property and don&#39;t specify this property.
             /// For information about restrictions on which instance types support IPv6 addresses, see the
             /// RunInstances action in the Amazon EC2 API Reference.
             /// Required: No
@@ -254,11 +254,11 @@ namespace Comformation.EC2.Instance
             /// PrivateIpAddress
             /// The private IP address for this instance.
             /// Important If you make an update to an instance that requires replacement, you must assign a new
-            /// private IP address. During a replacement, AWS CloudFormation creates a new instance but doesn't
+            /// private IP address. During a replacement, AWS CloudFormation creates a new instance but doesn&#39;t
             /// delete the old instance until the stack has successfully updated. If the stack update fails, AWS
             /// CloudFormation uses the old instance in order to roll back the stack to the previous working state.
             /// The old and new instances cannot have the same private IP address.
-            /// (Optional) If you're using Amazon VPC, you can use this parameter to assign the instance a specific
+            /// (Optional) If you&#39;re using Amazon VPC, you can use this parameter to assign the instance a specific
             /// available IP address from the subnet (for example, 10. 0. 0. 25). By default, Amazon VPC selects an
             /// IP address from the subnet for the instance.
             /// Required: No
@@ -307,8 +307,8 @@ namespace Comformation.EC2.Instance
             /// SourceDestCheck
             /// Controls whether source/destination checking is enabled on the instance. Also determines if an
             /// instance in a VPC will perform network address translation (NAT).
-            /// A value of "true" means that source/destination checking is enabled, and a value of "false" means
-            /// that checking is disabled. For the instance to perform NAT, the value must be "false". For more
+            /// A value of &quot;true&quot; means that source/destination checking is enabled, and a value of &quot;false&quot; means
+            /// that checking is disabled. For the instance to perform NAT, the value must be &quot;false&quot;. For more
             /// information, see NAT Instances in the Amazon Virtual Private Cloud User Guide.
             /// Required: No
             /// Type: Boolean
@@ -330,7 +330,7 @@ namespace Comformation.EC2.Instance
 
             /// <summary>
             /// SubnetId
-            /// If you're using Amazon VPC, this property specifies the ID of the subnet that you want to launch the
+            /// If you&#39;re using Amazon VPC, this property specifies the ID of the subnet that you want to launch the
             /// instance into. If you specified the NetworkInterfaces property, do not specify this property.
             /// Required: No
             /// Type: String
@@ -367,7 +367,7 @@ namespace Comformation.EC2.Instance
             /// Type: String
             /// Update requires:
             /// Update requires: Some interruptions for Amazon EBS-backed instances. Note For EBS-backed instances,
-            /// changing the UserData stops and then starts the instance; however, Amazon EC2 doesn't automatically
+            /// changing the UserData stops and then starts the instance; however, Amazon EC2 doesn&#39;t automatically
             /// run the updated UserData. To update configurations on your instance, use the cfn-hup helper script.
             /// Update requires: Replacement for instance store-backed instances.
             /// </summary>
@@ -377,7 +377,7 @@ namespace Comformation.EC2.Instance
             /// Volumes
             /// The Amazon EBS volumes to attach to the instance.
             /// Note Before detaching a volume, unmount any file systems on the device within your operating system.
-            /// If you don't unmount the file system, a volume might get stuck in a busy state while detaching.
+            /// If you don&#39;t unmount the file system, a volume might get stuck in a busy state while detaching.
             /// Required: No
             /// Type: A list of EC2 MountPoints.
             /// Update requires: No interruption

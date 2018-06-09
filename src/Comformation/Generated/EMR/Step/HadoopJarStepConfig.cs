@@ -16,7 +16,7 @@ namespace Comformation.EMR.Step
 
         /// <summary>
         /// Args
-        /// A list of command line arguments passed to the JAR file's main function when the function is
+        /// A list of command line arguments passed to the JAR file&#39;s main function when the function is
         /// executed.
         /// Required: No
         /// Type: List of String values
@@ -35,8 +35,8 @@ namespace Comformation.EMR.Step
 
         /// <summary>
         /// MainClass
-        /// The name of the main class in the specified JAR file. If you don't specify a value, you must specify
-        /// a main class in the JAR file's manifest file.
+        /// The name of the main class in the specified JAR file. If you don&#39;t specify a value, you must specify
+        /// a main class in the JAR file&#39;s manifest file.
         /// Required: No
         /// Type: String
         /// </summary>

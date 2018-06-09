@@ -16,7 +16,7 @@ namespace Comformation.SNS.Topic
 
         /// <summary>
         /// Endpoint
-        /// The subscription's endpoint (format depends on the protocol). For more information, see the
+        /// The subscription&#39;s endpoint (format depends on the protocol). For more information, see the
         /// Subscribe Endpoint parameter in the Amazon Simple Notification Service API Reference.
         /// Required: Yes
         /// Type: String
@@ -26,7 +26,7 @@ namespace Comformation.SNS.Topic
 
         /// <summary>
         /// Protocol
-        /// The subscription's protocol. For more information, see the Subscribe Protocol parameter in the
+        /// The subscription&#39;s protocol. For more information, see the Subscribe Protocol parameter in the
         /// Amazon Simple Notification Service API Reference.
         /// Required: Yes
         /// Type: String

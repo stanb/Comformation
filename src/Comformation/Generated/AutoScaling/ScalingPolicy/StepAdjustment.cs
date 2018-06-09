@@ -9,7 +9,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
     /// Amazon EC2 Auto Scaling ScalingPolicy StepAdjustments
     /// StepAdjustments is a property of the AWS::AutoScaling::ScalingPolicy resource that describes a scaling
     /// adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach
-    /// threshold that you've defined for the alarm. For more information, see StepAdjustment in the Amazon EC2 Auto
+    /// threshold that you&#39;ve defined for the alarm. For more information, see StepAdjustment in the Amazon EC2 Auto
     /// Scaling API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html
     /// </summary>

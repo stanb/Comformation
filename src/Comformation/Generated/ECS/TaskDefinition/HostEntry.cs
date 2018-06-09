@@ -9,7 +9,7 @@ namespace Comformation.ECS.TaskDefinition
     /// Amazon Elastic Container Service TaskDefinition HostEntry
     /// HostEntry is a property of the Amazon Elastic Container Service TaskDefinition ContainerDefinition property
     /// that specifies the hostnames and IP address entries to add to the Amazon Elastic Container Service (Amazon
-    /// ECS) container's /etc/hosts file.
+    /// ECS) container&#39;s /etc/hosts file.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html
     /// </summary>
     public class HostEntry

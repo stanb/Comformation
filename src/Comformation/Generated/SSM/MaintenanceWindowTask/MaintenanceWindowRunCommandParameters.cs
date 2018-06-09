@@ -16,7 +16,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// TimeoutSeconds
-        /// If this time is reached and the command hasn't already started executing, it doesn't execute.
+        /// If this time is reached and the command hasn&#39;t already started executing, it doesn&#39;t execute.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -66,7 +66,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// ServiceRoleArn
-        /// The IAM service role that's used during task execution.
+        /// The IAM service role that&#39;s used during task execution.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

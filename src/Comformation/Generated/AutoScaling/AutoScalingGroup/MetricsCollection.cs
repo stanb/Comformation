@@ -28,7 +28,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Metrics
-        /// The list of metrics to collect. If you don't specify any metrics, all metrics are enabled.
+        /// The list of metrics to collect. If you don&#39;t specify any metrics, all metrics are enabled.
         /// Required: No
         /// Type: List of String values
         /// </summary>

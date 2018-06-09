@@ -16,7 +16,7 @@ namespace Comformation.EC2.VPC
         {
             /// <summary>
             /// CidrBlock
-            /// The CIDR block you want the VPC to cover. For example: "10. 0. 0. 0/16".
+            /// The CIDR block you want the VPC to cover. For example: &quot;10. 0. 0. 0/16&quot;.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -49,14 +49,14 @@ namespace Comformation.EC2.VPC
             /// <summary>
             /// InstanceTenancy
             /// The allowed tenancy of instances launched into the VPC.
-            /// "default": Instances can be launched with any tenancy. "dedicated": Any instance launched into the
+            /// &quot;default&quot;: Instances can be launched with any tenancy. &quot;dedicated&quot;: Any instance launched into the
             /// VPC automatically has dedicated tenancy, unless you launch it with the default tenancy.
             /// Update: Conditional. Updating InstanceTenancy requires no replacement only if you are updating its
-            /// value from "dedicated" to "default". Updating InstanceTenancy from "default" to "dedicated" requires
+            /// value from &quot;dedicated&quot; to &quot;default&quot;. Updating InstanceTenancy from &quot;default&quot; to &quot;dedicated&quot; requires
             /// replacement.
             /// Required: No
             /// Type: String
-            /// Valid values: "default" or "dedicated"
+            /// Valid values: &quot;default&quot; or &quot;dedicated&quot;
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceTenancy { get; set; }

@@ -8,7 +8,7 @@ namespace Comformation.WAF.WebACL
     /// <summary>
     /// AWS WAF WebACL Rules
     /// Rules is a property of the AWS::WAF::WebACL resource that specifies the rule to associate with an AWS WAF web
-    /// access control list (ACL) and the rule's settings.
+    /// access control list (ACL) and the rule&#39;s settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html
     /// </summary>
     public class ActivatedRule

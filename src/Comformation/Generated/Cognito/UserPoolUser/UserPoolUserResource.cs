@@ -15,10 +15,10 @@ namespace Comformation.Cognito.UserPoolUser
         {
             /// <summary>
             /// ValidationData
-            /// The user's validation data. This is a list of name-value pairs that contain user attributes and
+            /// The user&#39;s validation data. This is a list of name-value pairs that contain user attributes and
             /// attribute values that you can use for custom validation, such as restricting the types of user
             /// accounts that can be registered. For example, you might choose to allow or disallow user sign-up
-            /// based on the user's domain.
+            /// based on the user&#39;s domain.
             /// To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool. The
             /// Lambda trigger receives the validation data and uses it in the validation process. For more
             /// information, see Customizing User Pool Workflows by Using AWS Lambda Triggers in the Amazon Cognito
@@ -41,7 +41,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// <summary>
             /// Username
             /// The user name for the user. Username must be unique within the user pool. It must be a UTF-8 string
-            /// between 1 and 128 characters. You can't change the username.
+            /// between 1 and 128 characters. You can&#39;t change the username.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -50,9 +50,9 @@ namespace Comformation.Cognito.UserPoolUser
 
             /// <summary>
             /// MessageAction
-            /// Specifies the action you'd like to take for the message. Valid values are RESEND and SUPPRESS.
+            /// Specifies the action you&#39;d like to take for the message. Valid values are RESEND and SUPPRESS.
             /// To resend the invitation message to a user that already exists and reset the expiration limit on the
-            /// user's account, set this parameter to RESEND. To suppress sending the message, set it to SUPPRESS.
+            /// user&#39;s account, set this parameter to RESEND. To suppress sending the message, set it to SUPPRESS.
             /// You can specify only one value.
             /// Required: No
             /// Type: String

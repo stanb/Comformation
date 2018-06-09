@@ -53,7 +53,7 @@ namespace Comformation.ApiGateway.ApiKey
 
             /// <summary>
             /// Name
-            /// A name for the API key. If you don't specify a name, AWS CloudFormation generates a unique physical
+            /// A name for the API key. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
             /// ID and uses that ID for the API key name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the

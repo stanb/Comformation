@@ -19,7 +19,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Required: Conditional; see note.
             /// Type: String
             /// Update requires: Replacement
-            /// Example: "example. com"
+            /// Example: &quot;example. com&quot;
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
@@ -29,9 +29,9 @@ namespace Comformation.EC2.DHCPOptions
             /// Required: Conditional; see note.
             /// Type: List of String values
             /// Update requires: Replacement
-            /// Example: "DomainNameServers" : [ "10. 0. 0. 1", "10. 0. 0. 2" ]
+            /// Example: &quot;DomainNameServers&quot; : [ &quot;10. 0. 0. 1&quot;, &quot;10. 0. 0. 2&quot; ]
             /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
-            /// "DomainNameServers" : [ "10. 0. 0. 1, 10. 0. 0. 2" ]
+            /// &quot;DomainNameServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> DomainNameServers { get; set; }
 
@@ -41,23 +41,23 @@ namespace Comformation.EC2.DHCPOptions
             /// Required: Conditional; see note.
             /// Type: List of String values
             /// Update requires: Replacement
-            /// Example: "NetbiosNameServers" : [ "10. 0. 0. 1", "10. 0. 0. 2" ]
+            /// Example: &quot;NetbiosNameServers&quot; : [ &quot;10. 0. 0. 1&quot;, &quot;10. 0. 0. 2&quot; ]
             /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
-            /// "NetbiosNameServers" : [ "10. 0. 0. 1, 10. 0. 0. 2" ]
+            /// &quot;NetbiosNameServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> NetbiosNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNodeType
             /// An integer value indicating the NetBIOS node type:
-            /// 1: Broadcast ("B") 2: Point-to-point ("P") 4: Mixed mode ("M") 8: Hybrid ("H")
+            /// 1: Broadcast (&quot;B&quot;) 2: Point-to-point (&quot;P&quot;) 4: Mixed mode (&quot;M&quot;) 8: Hybrid (&quot;H&quot;)
             /// For more information about these values and about NetBIOS node types, see RFC 2132, RFC 1001, and
             /// RFC 1002. We recommend that you use only the value 2 at this time (broadcast and multicast are not
             /// currently supported).
             /// Required: Required if NetBiosNameServers is specified; optional otherwise.
             /// Type: List of numbers
             /// Update requires: Replacement
-            /// Example: "NetbiosNodeType" : 2
+            /// Example: &quot;NetbiosNodeType&quot; : 2
             /// </summary>
 			public Union<int, IntrinsicFunction> NetbiosNodeType { get; set; }
 
@@ -67,9 +67,9 @@ namespace Comformation.EC2.DHCPOptions
             /// Required: Conditional; see note.
             /// Type: List of String values
             /// Update requires: Replacement
-            /// Example: "NtpServers" : [ "10. 0. 0. 1" ]
+            /// Example: &quot;NtpServers&quot; : [ &quot;10. 0. 0. 1&quot; ]
             /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
-            /// "NtpServers" : [ "10. 0. 0. 1, 10. 0. 0. 2" ]
+            /// &quot;NtpServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> NtpServers { get; set; }
 

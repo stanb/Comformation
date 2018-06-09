@@ -7,7 +7,7 @@ namespace Comformation.Glue.Table
 {
     /// <summary>
     /// AWS Glue Table TableInput
-    /// The TableInput property type specifies the metadata that's used to create or update an AWS Glue table.
+    /// The TableInput property type specifies the metadata that&#39;s used to create or update an AWS Glue table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html
     /// </summary>
     public class TableInput
@@ -26,7 +26,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// ViewOriginalText
-        /// The original text of the view, if the table is a view. Otherwise, it's null.
+        /// The original text of the view, if the table is a view. Otherwise, it&#39;s null.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -68,7 +68,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// ViewExpandedText
-        /// The expanded text of the view, if the table is a view. Otherwise it's null.
+        /// The expanded text of the view, if the table is a view. Otherwise it&#39;s null.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

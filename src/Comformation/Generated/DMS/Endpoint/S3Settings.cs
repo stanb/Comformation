@@ -34,8 +34,8 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// BucketFolder
         /// An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the
-        /// path &lt;bucketFolder&gt;/&lt;schema_name&gt;/&lt;table_name&gt;/. If this parameter is not
-        /// specified, then the path used is &lt;schema_name&gt;/&lt;table_name&gt;/.
+        /// path &amp;lt;bucketFolder&amp;gt;/&amp;lt;schema_name&amp;gt;/&amp;lt;table_name&amp;gt;/. If this parameter is not
+        /// specified, then the path used is &amp;lt;schema_name&amp;gt;/&amp;lt;table_name&amp;gt;/.
         /// Required: No
         /// Type: String
         /// </summary>

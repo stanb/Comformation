@@ -24,7 +24,7 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// CacheClusterSize
-            /// The stage's cache cluster size.
+            /// The stage&#39;s cache cluster size.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -52,7 +52,7 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// Description
-            /// A description of the stage's purpose.
+            /// A description of the stage&#39;s purpose.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -78,7 +78,7 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// RestApiId
-            /// The ID of the RestApi resource that you're deploying with this stage.
+            /// The ID of the RestApi resource that you&#39;re deploying with this stage.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -99,7 +99,7 @@ namespace Comformation.ApiGateway.Stage
             /// Variables
             /// A map (string-to-string map) that defines the stage variables, where the variable name is the key
             /// and the variable value is the value. Variable names are limited to alphanumeric characters. Values
-            /// must match the following regular expression: [A-Za-z0-9-. _~:/?#&amp;amp;=,]+.
+            /// must match the following regular expression: [A-Za-z0-9-. _~:/?#&amp;amp;amp;=,]+.
             /// Required: No
             /// Type: Mapping of key-value pairs
             /// Update requires: No interruption

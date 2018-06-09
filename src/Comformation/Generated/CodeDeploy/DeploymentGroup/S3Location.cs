@@ -35,7 +35,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// ETag
-        /// The Amazon S3 ETag (a file checksum) of the application revision. If you don't specify a value, AWS
+        /// The Amazon S3 ETag (a file checksum) of the application revision. If you don&#39;t specify a value, AWS
         /// CodeDeploy skips the ETag validation of your application revision.
         /// Required: No
         /// Type: String

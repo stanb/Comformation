@@ -17,7 +17,7 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// Events
         /// The repository events for which AWS CodeCommit sends information to the target, which you specified
-        /// in the DestinationArn property. If you don't specify events, the trigger runs for all repository
+        /// in the DestinationArn property. If you don&#39;t specify events, the trigger runs for all repository
         /// events. For valid values, see the RepositoryTrigger data type in the AWS CodeCommit API Reference.
         /// Required: No
         /// Type: List of String values
@@ -28,7 +28,7 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// Branches
         /// The names of the branches in the AWS CodeCommit repository that contain events that you want to
-        /// include in the trigger. If you don't specify at least one branch, the trigger applies to all
+        /// include in the trigger. If you don&#39;t specify at least one branch, the trigger applies to all
         /// branches.
         /// Required: No
         /// Type: List of String values

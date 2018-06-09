@@ -99,7 +99,7 @@ namespace Comformation.SQS.Queue
             /// A name for the queue. To create a FIFO queue, the name of your FIFO queue must end with the . fifo
             /// suffix. For more information, see FIFO (First-In-First-Out) Queues in the Amazon Simple Queue
             /// Service Developer Guide.
-            /// If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
             /// the queue name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -114,7 +114,7 @@ namespace Comformation.SQS.Queue
             /// ReceiveMessageWaitTimeSeconds
             /// Specifies the duration, in seconds, that the ReceiveMessage action call waits until a message is in
             /// the queue in order to include it in the response, as opposed to returning an empty response if a
-            /// message isn't yet available. You can specify an integer from 1 to 20. The short polling is used as
+            /// message isn&#39;t yet available. You can specify an integer from 1 to 20. The short polling is used as
             /// the default or when you specify 0 for this property. For more information, see Amazon SQS Long Poll.
             /// Required: No
             /// Type: Integer
@@ -137,7 +137,7 @@ namespace Comformation.SQS.Queue
             /// The length of time during which a message will be unavailable after a message is delivered from the
             /// queue. This blocks other components from receiving the same message and gives the initial component
             /// time to process and delete the message from the queue.
-            /// Values must be from 0 to 43200 seconds (12 hours). If you don't specify a value, AWS CloudFormation
+            /// Values must be from 0 to 43200 seconds (12 hours). If you don&#39;t specify a value, AWS CloudFormation
             /// uses the default value of 30 seconds.
             /// For more information about Amazon SQS queue visibility timeouts, see Visibility Timeout in the
             /// Amazon Simple Queue Service Developer Guide.

@@ -25,7 +25,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// RevisionType
-        /// The application revision's location, such as in an S3 bucket or GitHub repository. For valid values,
+        /// The application revision&#39;s location, such as in an S3 bucket or GitHub repository. For valid values,
         /// see RevisionLocation in the AWS CodeDeploy API Reference.
         /// Required: No
         /// Type: String

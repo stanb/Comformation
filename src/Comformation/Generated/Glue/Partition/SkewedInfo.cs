@@ -26,7 +26,7 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SkewedColumnValues
-        /// A list of UTF-8 strings that specify values that appear so frequently that they're considered to be
+        /// A list of UTF-8 strings that specify values that appear so frequently that they&#39;re considered to be
         /// skewed.
         /// Required: No
         /// Type: List of String values

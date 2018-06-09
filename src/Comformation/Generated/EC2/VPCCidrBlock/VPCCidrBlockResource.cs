@@ -17,7 +17,7 @@ namespace Comformation.EC2.VPCCidrBlock
             /// <summary>
             /// AmazonProvidedIpv6CidrBlock
             /// Whether to request an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You
-            /// can't specify the range of IPv6 addresses or the size of the CIDR block.
+            /// can&#39;t specify the range of IPv6 addresses or the size of the CIDR block.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement

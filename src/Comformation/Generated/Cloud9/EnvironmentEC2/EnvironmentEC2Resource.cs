@@ -26,7 +26,7 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// <summary>
             /// OwnerArn
             /// The Amazon Resource Name (ARN) of the environment owner. If this value is not specified, the ARN
-            /// defaults to this environment's creator.
+            /// defaults to this environment&#39;s creator.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

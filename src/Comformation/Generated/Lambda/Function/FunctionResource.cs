@@ -26,7 +26,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// DeadLetterConfig
-            /// Configures how Lambda handles events that it can't process. If you don't specify a Dead Letter Queue
+            /// Configures how Lambda handles events that it can&#39;t process. If you don&#39;t specify a Dead Letter Queue
             /// (DLQ) configuration, Lambda discards events after the maximum number of retries. For more
             /// information, see Dead Letter Queues in the AWS Lambda Developer Guide.
             /// Required: No
@@ -57,8 +57,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// FunctionName
-            /// A name for the function. If you don't specify a name, AWS CloudFormation generates a unique physical
-            /// ID and uses that ID for the function's name. For more information, see Name Type.
+            /// A name for the function. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
+            /// ID and uses that ID for the function&#39;s name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
@@ -134,7 +134,7 @@ namespace Comformation.Lambda.Function
             /// Update requires: No interruption
             /// Note Because Node. js 0. 10. 32 has been deprecated, you can no longer roll back a template that
             /// uses Node. js 0. 10. 32. If you update a stack to Node. js 0. 10. 32 and the update fails, AWS
-            /// CloudFormation won't roll it back.
+            /// CloudFormation won&#39;t roll it back.
             /// </summary>
 			public Union<string, IntrinsicFunction> Runtime { get; set; }
 
@@ -150,7 +150,7 @@ namespace Comformation.Lambda.Function
             /// <summary>
             /// Timeout
             /// The function execution time (in seconds) after which Lambda terminates the function. Because the
-            /// execution time affects cost, set this value based on the function's expected execution time. By
+            /// execution time affects cost, set this value based on the function&#39;s expected execution time. By
             /// default, Timeout is set to 3 seconds. For more information, see the FAQs.
             /// Required: No
             /// Type: Integer
@@ -160,7 +160,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// TracingConfig
-            /// The parent object that contains your Lambda function's tracing settings. By default, the Mode
+            /// The parent object that contains your Lambda function&#39;s tracing settings. By default, the Mode
             /// property is set to PassThrough. For valid values, see the TracingConfig data type in the AWS Lambda
             /// Developer Guide.
             /// Required: No
@@ -173,8 +173,8 @@ namespace Comformation.Lambda.Function
             /// VpcConfig
             /// If the Lambda function requires access to resources in a VPC, specify a VPC configuration that
             /// Lambda uses to set up an elastic network interface (ENI). The ENI enables your function to connect
-            /// to other resources in your VPC, but it doesn't provide public Internet access. If your function
-            /// requires Internet access (for example, to access AWS services that don't have VPC endpoints),
+            /// to other resources in your VPC, but it doesn&#39;t provide public Internet access. If your function
+            /// requires Internet access (for example, to access AWS services that don&#39;t have VPC endpoints),
             /// configure a Network Address Translation (NAT) instance inside your VPC or use an Amazon Virtual
             /// Private Cloud (Amazon VPC) NAT gateway. For more information, see NAT Gateways in the Amazon VPC
             /// User Guide.

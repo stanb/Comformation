@@ -16,7 +16,7 @@ namespace Comformation.Glue.Job
         {
             /// <summary>
             /// Role
-            /// The role that's associated with the job.
+            /// The role that&#39;s associated with the job.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

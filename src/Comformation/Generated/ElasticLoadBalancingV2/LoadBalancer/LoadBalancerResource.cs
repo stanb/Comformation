@@ -16,7 +16,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
         {
             /// <summary>
             /// IpAddressType
-            /// [Application Load Balancers] The type of IP addresses that are used by the load balancer's subnets,
+            /// [Application Load Balancers] The type of IP addresses that are used by the load balancer&#39;s subnets,
             /// such as ipv4 (for IPv4 addresses) or dualstack (for IPv4 and IPv6 addresses). For valid values, see
             /// the IpAddressType parameter for the CreateLoadBalancer action in the Elastic Load Balancing API
             /// Reference version 2015-12-01. The default value is ipv4.
@@ -39,7 +39,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// <summary>
             /// Name
             /// Specifies a name for the load balancer. This name must be unique within your AWS account and can
-            /// have a maximum of 32 alphanumeric characters and hyphens. A name can't begin or end with a hyphen.
+            /// have a maximum of 32 alphanumeric characters and hyphens. A name can&#39;t begin or end with a hyphen.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.

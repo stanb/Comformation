@@ -18,7 +18,7 @@ namespace Comformation.CodeDeploy.DeploymentConfig
         {
             /// <summary>
             /// DeploymentConfigName
-            /// A name for the deployment configuration. If you don't specify a name, AWS CloudFormation generates a
+            /// A name for the deployment configuration. If you don&#39;t specify a name, AWS CloudFormation generates a
             /// unique physical ID and uses that ID for the deployment configuration name. For more information, see
             /// Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this

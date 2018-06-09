@@ -16,7 +16,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// <summary>
         /// CookieExpirationPeriod
         /// The time period, in seconds, after which the cookie should be considered stale. If this parameter
-        /// isn't specified, the sticky session will last for the duration of the browser session.
+        /// isn&#39;t specified, the sticky session will last for the duration of the browser session.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -27,7 +27,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// PolicyName
         /// The name of the policy being created. The name must be unique within the set of policies for this
         /// load balancer.
-        /// Note To associate this policy with a listener, include the policy name in the listener's PolicyNames
+        /// Note To associate this policy with a listener, include the policy name in the listener&#39;s PolicyNames
         /// property.
         /// </summary>
         [JsonProperty("PolicyName")]

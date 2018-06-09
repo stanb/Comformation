@@ -25,7 +25,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Configuration
-        /// The action's configuration. These are key-value pairs that specify input values for an action. For
+        /// The action&#39;s configuration. These are key-value pairs that specify input values for an action. For
         /// more information, see Action Structure Requirements in AWS CodePipeline in the AWS CodePipeline User
         /// Guide.
         /// Required: No
@@ -63,7 +63,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) of a service role that the action uses. The pipeline's role assumes
+        /// The Amazon Resource Name (ARN) of a service role that the action uses. The pipeline&#39;s role assumes
         /// this role.
         /// Required: No
         /// Type: String

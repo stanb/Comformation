@@ -35,7 +35,7 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// Separator
-        /// A character separator that's used to separate records written to the Kinesis Data Firehose stream.
+        /// A character separator that&#39;s used to separate records written to the Kinesis Data Firehose stream.
         /// For valid values, see Firehose Action in the AWS IoT Developer Guide.
         /// Required: No
         /// Type: String

@@ -17,7 +17,7 @@ namespace Comformation.CloudFront.Distribution
         {
             /// <summary>
             /// DistributionConfig
-            /// The distribution's configuration information.
+            /// The distribution&#39;s configuration information.
             /// Required: Yes
             /// Type: DistributionConfig type
             /// Update requires: No interruption

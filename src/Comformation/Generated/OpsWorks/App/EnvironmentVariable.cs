@@ -28,7 +28,7 @@ namespace Comformation.OpsWorks.App
         /// <summary>
         /// Secure
         /// Indicates whether the value of the environment variable is concealed, such as with a DescribeApps
-        /// response. To conceal an environment variable's value, set the value to true.
+        /// response. To conceal an environment variable&#39;s value, set the value to true.
         /// Required: No
         /// Type: Boolean
         /// </summary>

@@ -66,7 +66,7 @@ namespace Comformation.Glue.DevEndpoint
             /// The path to one or more Python libraries in an Amazon S3 bucket to load in your endpoint.
             /// 				
             /// Note You can currently use only pure Python libraries on a DevEndpoint. Libraries that rely on C
-            /// extensions, such as the pandas Python data analysis library, aren't supported yet.
+            /// extensions, such as the pandas Python data analysis library, aren&#39;t supported yet.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

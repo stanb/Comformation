@@ -6,7 +6,7 @@ namespace Comformation.CodePipeline.CustomActionType
 {
     /// <summary>
     /// AWS::CodePipeline::CustomActionType
-    /// The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included
+    /// The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren&#39;t included
     /// in the AWS CodePipeline default actions, such as running an internally developed build process or a test
     /// suite. You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a
     /// Custom Action in AWS CodePipeline in the AWS CodePipeline User Guide.

@@ -16,7 +16,7 @@ namespace Comformation.ElastiCache.SubnetGroup
         {
             /// <summary>
             /// CacheSubnetGroupName
-            /// A name for the cache subnet group. If you don't specify a name, AWS CloudFormation generates a
+            /// A name for the cache subnet group. If you don&#39;t specify a name, AWS CloudFormation generates a
             /// unique physical ID. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the

@@ -9,7 +9,7 @@ namespace Comformation.GuardDuty.Master
     /// You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation to be
     /// managed by a GuardDuty master account. The GuardDuty master account must have already invited the current
     /// account (by calling the InviteMembers API operation or by creating an AWS::GuardDuty::Member resource) before
-    /// the current account can use the AWS::GuardDuty::Master resource to accept the master account's invitation.
+    /// the current account can use the AWS::GuardDuty::Master resource to accept the master account&#39;s invitation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html
     /// </summary>
     public class MasterResource : ResourceBase
@@ -28,7 +28,7 @@ namespace Comformation.GuardDuty.Master
 
             /// <summary>
             /// MasterId
-            /// The account ID of the master GuardDuty account whose invitation you're accepting.
+            /// The account ID of the master GuardDuty account whose invitation you&#39;re accepting.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -39,7 +39,7 @@ namespace Comformation.GuardDuty.Master
             /// InvitationId
             /// The ID of the invitation that is sent to the AWS account by the GuardDuty master account. There are
             /// several ways to retrieve the invitationId:
-            /// By calling the ListInvitation API operation with the GuardDuty member account's credentials. (You
+            /// By calling the ListInvitation API operation with the GuardDuty member account&#39;s credentials. (You
             /// can also run the following CLI command: aws guardduty list-invitations. ) In the returned results,
             /// locate the invitation details (including the invitationID) from the GuardDuty master account ID that
             /// you would like to accept. The email account associated with the GuardDuty member account should have

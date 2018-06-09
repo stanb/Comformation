@@ -6,7 +6,7 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
 {
     /// <summary>
     /// AWS::EC2::VPCDHCPOptionsAssociation
-    /// Associates a set of DHCP options (that you've previously created) with the specified VPC.
+    /// Associates a set of DHCP options (that you&#39;ve previously created) with the specified VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
     /// </summary>
     public class VPCDHCPOptionsAssociationResource : ResourceBase

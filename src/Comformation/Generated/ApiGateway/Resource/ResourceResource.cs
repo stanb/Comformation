@@ -16,8 +16,8 @@ namespace Comformation.ApiGateway.Resource
             /// <summary>
             /// ParentId
             /// If you want to create a child resource, the ID of the parent resource. For resources without a
-            /// parent, specify the RestApi root resource ID, such as { "Fn::GetAtt": ["MyRestApi",
-            /// "RootResourceId"] }.
+            /// parent, specify the RestApi root resource ID, such as { &quot;Fn::GetAtt&quot;: [&quot;MyRestApi&quot;,
+            /// &quot;RootResourceId&quot;] }.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

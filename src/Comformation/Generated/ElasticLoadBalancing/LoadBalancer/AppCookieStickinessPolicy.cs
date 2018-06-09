@@ -27,7 +27,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// PolicyName
         /// The name of the policy being created. The name must be unique within the set of policies for this
         /// Load Balancer.
-        /// Note To associate this policy with a listener, include the policy name in the listener's PolicyNames
+        /// Note To associate this policy with a listener, include the policy name in the listener&#39;s PolicyNames
         /// property.
         /// Required: Yes
         /// Type: String

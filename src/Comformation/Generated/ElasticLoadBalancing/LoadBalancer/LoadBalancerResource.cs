@@ -122,7 +122,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// LoadBalancerName
             /// A name for the load balancer. For valid values, see the LoadBalancerName parameter for the
             /// CreateLoadBalancer action in the Elastic Load Balancing API Reference version 2012-06-01.
-            /// If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
             /// the load balancer. The name must be unique within your set of load balancers. For more information,
             /// see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this

@@ -16,7 +16,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Lt
-        /// Represents the "less than" condition to be applied to a single field when filtering through
+        /// Represents the &quot;less than&quot; condition to be applied to a single field when filtering through
         /// findings.
         /// Required: No
         /// Type: Integer
@@ -27,7 +27,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Gte
-        /// Represents the "greater than equal" condition to be applied to a single field when filtering through
+        /// Represents the &quot;greater than equal&quot; condition to be applied to a single field when filtering through
         /// findings.
         /// Required: No
         /// Type: Integer
@@ -38,7 +38,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Neq
-        /// Represents the "not equal to" condition to be applied to a single field when filtering through
+        /// Represents the &quot;not equal to&quot; condition to be applied to a single field when filtering through
         /// findings.
         /// Required: No
         /// Type: List of String values
@@ -49,7 +49,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Eq
-        /// Represents the "equal to" condition to be applied to a single field when filtering through findings.
+        /// Represents the &quot;equal to&quot; condition to be applied to a single field when filtering through findings.
         /// Required: No
         /// Type: List of String values
         /// Update requires: No interruption
@@ -59,7 +59,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Lte
-        /// Represents the "less than equal" condition to be applied to a single field when filtering through
+        /// Represents the &quot;less than equal&quot; condition to be applied to a single field when filtering through
         /// findings.
         /// Required: No
         /// Type: Integer

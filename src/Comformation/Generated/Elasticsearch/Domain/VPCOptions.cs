@@ -17,7 +17,7 @@ namespace Comformation.Elasticsearch.Domain
         /// <summary>
         /// SecurityGroupIds
         /// The list of security group IDs that are associated with the VPC endpoints for the domain. If you
-        /// don't provide a security group ID, Amazon ES uses the default security group for the VPC. To learn
+        /// don&#39;t provide a security group ID, Amazon ES uses the default security group for the VPC. To learn
         /// more, see Security Groups for your VPC in the Amazon VPC User Guide.
         /// Required: No
         /// Type: List of String values

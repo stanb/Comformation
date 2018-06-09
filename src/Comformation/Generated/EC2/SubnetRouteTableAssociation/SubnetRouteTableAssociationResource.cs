@@ -17,7 +17,7 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
             /// RouteTableId
             /// The ID of the route table. This is commonly written as a reference to a route table declared
             /// elsewhere in the template. For example:
-            /// "RouteTableId" : { "Ref" : "myRouteTable" }
+            /// &quot;RouteTableId&quot; : { &quot;Ref&quot; : &quot;myRouteTable&quot; }
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption. However, the physical ID changes when the route table ID is
@@ -29,7 +29,7 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
             /// SubnetId
             /// The ID of the subnet. This is commonly written as a reference to a subnet declared elsewhere in the
             /// template. For example:
-            /// "SubnetId" : { "Ref" : "mySubnet" }
+            /// &quot;SubnetId&quot; : { &quot;Ref&quot; : &quot;mySubnet&quot; }
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

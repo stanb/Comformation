@@ -38,7 +38,7 @@ namespace Comformation.EC2.Subnet
 
             /// <summary>
             /// CidrBlock
-            /// The CIDR block that you want the subnet to cover (for example, "10. 0. 0. 0/24").
+            /// The CIDR block that you want the subnet to cover (for example, &quot;10. 0. 0. 0/24&quot;).
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -80,7 +80,7 @@ namespace Comformation.EC2.Subnet
             /// <summary>
             /// VpcId
             /// A Ref structure that contains the ID of the VPC on which you want to create the subnet. The VPC ID
-            /// is provided as the value of the "Ref" property, as: { "Ref": "VPCID" }.
+            /// is provided as the value of the &quot;Ref&quot; property, as: { &quot;Ref&quot;: &quot;VPCID&quot; }.
             /// Required: Yes
             /// Type: Ref ID
             /// Update requires: Replacement

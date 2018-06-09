@@ -46,7 +46,7 @@ namespace Comformation.CodeBuilder
                     Name = className,
                     Namespace = namespaceName,
                     Path = path,
-                    Documentation = FixUrl(x.Value.Documentation),
+                    Documentation = x.Value.Documentation,
                     Properties = Parse(x.Value.Properties)
                 };
                 FixPropertyNames(propertyClass);
@@ -80,7 +80,7 @@ namespace Comformation.CodeBuilder
                 Name = className,
                 Namespace = namespaceName,
                 Path = path,
-                Documentation = FixUrl(resourceSpec.Documentation),
+                Documentation = resourceSpec.Documentation,
                 Attributes = Parse(resourceSpec.Attributes),
                 Properties = Parse(resourceSpec.Properties)
             };
@@ -179,11 +179,6 @@ namespace Comformation.CodeBuilder
                 default:
                     throw new Exception();
             }
-        }
-
-        private static string FixUrl(string url)
-        {
-            return url;
         }
     }
 }

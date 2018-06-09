@@ -27,7 +27,7 @@ namespace Comformation.EC2.SpotFleet
         /// EbsOptimized
         /// Indicates whether the instances are optimized for Amazon Elastic Block Store (Amazon EBS) I/O. This
         /// optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to
-        /// provide optimal EBS I/O performance. This optimization isn't available with all instance types.
+        /// provide optimal EBS I/O performance. This optimization isn&#39;t available with all instance types.
         /// Additional usage charges apply when you use an Amazon EBS-optimized instance.
         /// Required: No
         /// Type: Boolean
@@ -131,7 +131,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// SpotPrice
-        /// The bid price per unit hour for the specified instance type. If you don't specify a value, Amazon
+        /// The bid price per unit hour for the specified instance type. If you don&#39;t specify a value, Amazon
         /// EC2 uses the Spot bid price for the fleet. For more information, see How Spot Fleet Works in the
         /// Amazon EC2 User Guide for Linux Instances.
         /// Required: No

@@ -27,7 +27,7 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// LambdaFunctionARN
-        /// The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a
+        /// The ARN of the Lambda function. You must specify the ARN of a function version; you can&#39;t specify a
         /// Lambda alias or $LATEST.
         /// Required: No
         /// Type: String

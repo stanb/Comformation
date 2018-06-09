@@ -21,7 +21,7 @@ namespace Comformation.Logs.MetricFilter
             /// Describes the pattern that CloudWatch Logs follows to interpret each entry in a log. A log entry
             /// might contain fields such as timestamps, IP addresses, error codes, bytes transferred, and so on.
             /// You use the pattern to specify those fields and to specify what to look for in the log file. For
-            /// example, if you're interested in error codes that begin with 1234, your filter pattern might be
+            /// example, if you&#39;re interested in error codes that begin with 1234, your filter pattern might be
             /// [timestamps, ip_addresses, error_codes = 1234*, size, . . . ]. For more information, see Filter and
             /// Pattern Syntax in the Amazon CloudWatch User Guide.
             /// Required: Yes

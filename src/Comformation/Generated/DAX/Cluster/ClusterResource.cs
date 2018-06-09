@@ -67,7 +67,7 @@ namespace Comformation.DAX.Cluster
             /// <summary>
             /// IAMRoleARN
             /// A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this
-            /// role and use the role's permissions to access DynamoDB on your behalf.
+            /// role and use the role&#39;s permissions to access DynamoDB on your behalf.
             /// Required: Yes
             /// Type: String
             /// Update requires: Updates are not supported.
@@ -101,7 +101,7 @@ namespace Comformation.DAX.Cluster
             /// window is a 60 minute period. Valid values for ddd are:
             /// sun mon tue wed thu fri sat
             /// Example: sun:05:00-sun:09:00
-            /// Note If you don't specify a preferred maintenance window when you create or modify a cache cluster,
+            /// Note If you don&#39;t specify a preferred maintenance window when you create or modify a cache cluster,
             /// DAX assigns a 60-minute maintenance window on a randomly selected day of the week.
             /// Required: No
             /// Type: String

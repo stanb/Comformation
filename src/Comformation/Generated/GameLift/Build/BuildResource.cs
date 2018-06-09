@@ -16,7 +16,7 @@ namespace Comformation.GameLift.Build
         {
             /// <summary>
             /// Name
-            /// An identifier to associate with this build. Build names don't need to be unique.
+            /// An identifier to associate with this build. Build names don&#39;t need to be unique.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.GameLift.Build
             /// <summary>
             /// StorageLocation
             /// The Amazon Simple Storage Service (Amazon S3) location where your build package files are located.
-            /// Required: No, but we recommend that you specify a location. If you don't specify this property, you
+            /// Required: No, but we recommend that you specify a location. If you don&#39;t specify this property, you
             /// must manually upload your build package files to GameLift.
             /// Type: Amazon GameLift Build StorageLocation
             /// Update requires: Replacement
@@ -36,7 +36,7 @@ namespace Comformation.GameLift.Build
             /// <summary>
             /// Version
             /// A version to associate with this build. Version is useful if you want to track updates to your build
-            /// package files. Versions don't need to be unique.
+            /// package files. Versions don&#39;t need to be unique.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

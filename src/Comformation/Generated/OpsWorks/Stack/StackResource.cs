@@ -48,7 +48,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// CloneAppIds
-            /// If you're cloning an AWS OpsWorks stack, a list of AWS OpsWorks application stack IDs from the
+            /// If you&#39;re cloning an AWS OpsWorks stack, a list of AWS OpsWorks application stack IDs from the
             /// source stack to include in the cloned stack.
             /// Required: No
             /// Type: List of String values
@@ -58,7 +58,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// ClonePermissions
-            /// If you're cloning an AWS OpsWorks stack, indicates whether to clone the source stack's permissions.
+            /// If you&#39;re cloning an AWS OpsWorks stack, indicates whether to clone the source stack&#39;s permissions.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -101,7 +101,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// DefaultAvailabilityZone
-            /// The stack's default Availability Zone, which must be in the specified region.
+            /// The stack&#39;s default Availability Zone, which must be in the specified region.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -111,7 +111,7 @@ namespace Comformation.OpsWorks.Stack
             /// <summary>
             /// DefaultInstanceProfileArn
             /// The Amazon Resource Name (ARN) of an IAM instance profile that is the default profile for all of the
-            /// stack's Amazon EC2 instances.
+            /// stack&#39;s Amazon EC2 instances.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -120,7 +120,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// DefaultOs
-            /// The stack's default operating system. For more information, see CreateStack in the AWS OpsWorks
+            /// The stack&#39;s default operating system. For more information, see CreateStack in the AWS OpsWorks
             /// Stacks API Reference.
             /// Required: No
             /// Type: String
@@ -151,7 +151,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// DefaultSubnetId
-            /// The stack's default subnet ID. All instances are launched into this subnet unless you specify
+            /// The stack&#39;s default subnet ID. All instances are launched into this subnet unless you specify
             /// another subnet ID when you create the instance.
             /// Required: Conditional. If you specify the VpcId property, you must specify this property.
             /// Type: String
@@ -163,7 +163,7 @@ namespace Comformation.OpsWorks.Stack
             /// EcsClusterArn
             /// The Amazon Resource Name (ARN) of the Amazon Elastic Container Service (Amazon ECS) cluster to
             /// register with the AWS OpsWorks stack.
-            /// Note If you specify a cluster that's registered with another AWS OpsWorks stack, AWS CloudFormation
+            /// Note If you specify a cluster that&#39;s registered with another AWS OpsWorks stack, AWS CloudFormation
             /// deregisters the existing association before registering the cluster.
             /// Required: No
             /// Type: String
@@ -174,7 +174,7 @@ namespace Comformation.OpsWorks.Stack
             /// <summary>
             /// ElasticIps
             /// A list of Elastic IP addresses to register with the AWS OpsWorks stack.
-            /// Note If you specify an IP address that's registered with another AWS OpsWorks stack, AWS
+            /// Note If you specify an IP address that&#39;s registered with another AWS OpsWorks stack, AWS
             /// CloudFormation deregisters the existing association before registering the IP address.
             /// Required: No
             /// Type: List of AWS OpsWorks Stack ElasticIp
@@ -184,8 +184,8 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// HostnameTheme
-            /// The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host
-            /// names for the stack's instances. For more information, see CreateStack in the AWS OpsWorks Stacks
+            /// The stack&#39;s host name theme, with spaces replaced by underscores. The theme is used to generate host
+            /// names for the stack&#39;s instances. For more information, see CreateStack in the AWS OpsWorks Stacks
             /// API Reference.
             /// Required: No
             /// Type: String
@@ -206,7 +206,7 @@ namespace Comformation.OpsWorks.Stack
             /// RdsDbInstances
             /// The Amazon Relational Database Service (Amazon RDS) DB instance to register with the AWS OpsWorks
             /// stack.
-            /// Note If you specify a DB instance that's registered with another AWS OpsWorks stack, AWS
+            /// Note If you specify a DB instance that&#39;s registered with another AWS OpsWorks stack, AWS
             /// CloudFormation deregisters the existing association before registering the DB instance.
             /// Required: No
             /// Type: List of AWS OpsWorks Stack RdsDbInstance
@@ -226,7 +226,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// SourceStackId
-            /// If you're cloning an AWS OpsWorks stack, the stack ID of the source AWS OpsWorks stack to clone.
+            /// If you&#39;re cloning an AWS OpsWorks stack, the stack ID of the source AWS OpsWorks stack to clone.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -254,7 +254,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// UseOpsworksSecurityGroups
-            /// Whether to associate the AWS OpsWorks built-in security groups with the stack's layers.
+            /// Whether to associate the AWS OpsWorks built-in security groups with the stack&#39;s layers.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

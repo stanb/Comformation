@@ -16,7 +16,7 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// CloudWatchLogsRoleArn
-        /// The IAM role that will allow publishing CloudWatch logs into the customer's account.
+        /// The IAM role that will allow publishing CloudWatch logs into the customer&#39;s account.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

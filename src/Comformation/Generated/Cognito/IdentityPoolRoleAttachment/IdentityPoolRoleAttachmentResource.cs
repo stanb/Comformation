@@ -17,8 +17,8 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
             /// <summary>
             /// RoleMappings
             /// How users for a specific identity provider are to mapped to roles. This is a string to RoleMapping
-            /// object map. The string identifies the identity provider, for example, "graph. facebook. com" or
-            /// "cognito-idp-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id"
+            /// object map. The string identifies the identity provider, for example, &quot;graph. facebook. com&quot; or
+            /// &quot;cognito-idp-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id&quot;
             /// Required: No
             /// Type: String to Amazon Cognito IdentityPoolRoleAttachment RoleMapping object map.
             /// Update requires: No interruption
@@ -36,8 +36,8 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
 
             /// <summary>
             /// Roles
-            /// The map of roles associated with this pool. For a given role, the key will be either "authenticated"
-            /// or "unauthenticated" and the value will be the Role ARN.
+            /// The map of roles associated with this pool. For a given role, the key will be either &quot;authenticated&quot;
+            /// or &quot;unauthenticated&quot; and the value will be the Role ARN.
             /// Required: No
             /// Type: String to string map
             /// Update requires: No interruption

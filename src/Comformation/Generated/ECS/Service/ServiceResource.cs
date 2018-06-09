@@ -119,7 +119,7 @@ namespace Comformation.ECS.Service
             /// Role
             /// The name or ARN of an AWS Identity and Access Management (IAM) role that allows your Amazon ECS
             /// container agent to make calls to your load balancer.
-            /// Note In some cases, you might need to add a dependency on the service role's policy. For more
+            /// Note In some cases, you might need to add a dependency on the service role&#39;s policy. For more
             /// information, see IAM role policy in DependsOn Attribute.
             /// Required: Conditional. Required only if you specify the LoadBalancers property.
             /// Type: String
@@ -150,9 +150,9 @@ namespace Comformation.ECS.Service
             /// <summary>
             /// TaskDefinition
             /// The ARN of the task definition (including the revision number) that you want to run on the cluster,
-            /// such as arn:aws:ecs:us-east-1:123456789012:task-definition/mytask:3. You can't use :latest to
-            /// specify a revision because it's ambiguous. For example, if AWS CloudFormation needed to roll back an
-            /// update, it wouldn't know which revision to roll back to.
+            /// such as arn:aws:ecs:us-east-1:123456789012:task-definition/mytask:3. You can&#39;t use :latest to
+            /// specify a revision because it&#39;s ambiguous. For example, if AWS CloudFormation needed to roll back an
+            /// update, it wouldn&#39;t know which revision to roll back to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Some interruptions

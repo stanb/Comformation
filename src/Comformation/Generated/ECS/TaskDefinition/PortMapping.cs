@@ -29,9 +29,9 @@ namespace Comformation.ECS.TaskDefinition
         /// specify a non-reserved host port for your container port mapping, omit the host port, or set the
         /// host port to 0. If you specify a container port but no host port, your container host port is
         /// assigned automatically .
-        /// Don't specify a host port in the 49153 to 65535 port range; these ports are reserved for automatic
+        /// Don&#39;t specify a host port in the 49153 to 65535 port range; these ports are reserved for automatic
         /// assignment. Other reserved ports include 22 for SSH, 2375 and 2376 for Docker, and 51678 for the
-        /// Amazon Elastic Container Service container agent. Don't specify a host port that is being used for a
+        /// Amazon Elastic Container Service container agent. Don&#39;t specify a host port that is being used for a
         /// task—that port is reserved while the task is running.
         /// Required: No
         /// Type: Integer

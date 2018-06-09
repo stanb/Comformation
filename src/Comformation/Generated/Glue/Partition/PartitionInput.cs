@@ -7,7 +7,7 @@ namespace Comformation.Glue.Partition
 {
     /// <summary>
     /// AWS Glue Partition PartitionInput
-    /// The PartitionInput property type specifies the metadata that's used to create or update an AWS Glue partition.
+    /// The PartitionInput property type specifies the metadata that&#39;s used to create or update an AWS Glue partition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
     /// </summary>
     public class PartitionInput

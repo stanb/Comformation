@@ -131,8 +131,8 @@ namespace Comformation.Batch.ComputeEnvironment
         /// <summary>
         /// Tags
         /// Key-value pair tags to be applied to instances that are launched in the compute environment. For AWS
-        /// Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the
-        /// tag value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
+        /// Batch, these take the form of &quot;String1&quot;: &quot;String2&quot;, where String1 is the tag key and String2 is the
+        /// tag value—for example, { &quot;Name&quot;: &quot;AWS Batch Instance - C4OnDemand&quot; }.
         /// Required: No
         /// Type: JSON object
         /// Update requires: Replacement

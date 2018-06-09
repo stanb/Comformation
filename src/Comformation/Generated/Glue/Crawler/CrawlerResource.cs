@@ -16,7 +16,7 @@ namespace Comformation.Glue.Crawler
         {
             /// <summary>
             /// Role
-            /// The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as
+            /// The Amazon Resource Name (ARN) of an IAM role that&#39;s used to access customer resources, such as
             /// Amazon S3 data.
             /// Required: Yes
             /// Type: String
@@ -63,7 +63,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// DatabaseName
-            /// The name of the database where the crawler's output is stored.
+            /// The name of the database where the crawler&#39;s output is stored.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -81,7 +81,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// TablePrefix
-            /// The table prefix that's used for catalog tables that are created.
+            /// The table prefix that&#39;s used for catalog tables that are created.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

@@ -28,7 +28,7 @@ namespace Comformation.SNS.Subscription
 
             /// <summary>
             /// Protocol
-            /// The subscription's protocol. For more information, see the Subscribe Protocol parameter in the
+            /// The subscription&#39;s protocol. For more information, see the Subscribe Protocol parameter in the
             /// Amazon Simple Notification Service API Reference.
             /// Required: Yes
             /// Type: String

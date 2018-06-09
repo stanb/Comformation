@@ -60,7 +60,7 @@ namespace Comformation.GuardDuty.Member
             /// <summary>
             /// DisableEmailNotification
             /// Specifies whether an email notification is sent to the accounts that you want to invite to GuardDuty
-            /// as members. When set to 'True', email notification is not sent to the invitees.
+            /// as members. When set to &#39;True&#39;, email notification is not sent to the invitees.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

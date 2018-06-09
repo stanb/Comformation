@@ -16,7 +16,7 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// IamCertificateId
-        /// If you're using an alternate domain name, the ID of a server certificate that was purchased from a
+        /// If you&#39;re using an alternate domain name, the ID of a server certificate that was purchased from a
         /// certificate authority. This ID is the ServerCertificateId value, which AWS Identity and Access
         /// Management (IAM) returns when the certificate is added to the IAM certificate store, such as
         /// ASCACKCEVSQ6CEXAMPLE1.
@@ -65,7 +65,7 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// AcmCertificateArn
-        /// If you're using an alternate domain name, the Amazon Resource Name (ARN) of an AWS Certificate
+        /// If you&#39;re using an alternate domain name, the Amazon Resource Name (ARN) of an AWS Certificate
         /// Manager (ACM) certificate. Use the ACM service to provision and manage your certificates. For more
         /// information, see the AWS Certificate Manager User Guide.
         /// Note Currently, you can specify only certificates that are in the US East (N. Virginia) region.

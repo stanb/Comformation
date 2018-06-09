@@ -184,7 +184,7 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             /// MasterUserPassword
             /// The password associated with the master user account for this cluster.
-            /// You must specify values for MasterUserName and MasterUserPassword. However, if you're restoring from
+            /// You must specify values for MasterUserName and MasterUserPassword. However, if you&#39;re restoring from
             /// an Amazon Redshift snapshot, AWS CloudFormation ignores the specified values and uses the values
             /// that are stored in the snapshot.
             /// Required: Yes
@@ -196,7 +196,7 @@ namespace Comformation.Redshift.Cluster
             /// <summary>
             /// MasterUsername
             /// The user name that is associated with the master user account for this cluster.
-            /// You must specify values for MasterUserName and MasterUserPassword. However, if you're restoring from
+            /// You must specify values for MasterUserName and MasterUserPassword. However, if you&#39;re restoring from
             /// an Amazon Redshift snapshot, AWS CloudFormation ignores the specified values and uses the values
             /// that are stored in the snapshot.
             /// Required: Yes
@@ -218,7 +218,7 @@ namespace Comformation.Redshift.Cluster
             /// NumberOfNodes
             /// The number of compute nodes in the cluster. If you specify multi-node for the ClusterType parameter,
             /// you must specify a number greater than 1.
-            /// Important You can't specify this parameter for a single-node cluster.
+            /// Important You can&#39;t specify this parameter for a single-node cluster.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: Some interruptions

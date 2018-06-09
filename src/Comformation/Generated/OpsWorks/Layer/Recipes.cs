@@ -17,7 +17,7 @@ namespace Comformation.OpsWorks.Layer
 
         /// <summary>
         /// Configure
-        /// Custom recipe names to be run following a Configure event. The event occurs on all of the stack's
+        /// Custom recipe names to be run following a Configure event. The event occurs on all of the stack&#39;s
         /// instances when an instance enters or leaves the online state.
         /// Required: No
         /// Type: List of String values

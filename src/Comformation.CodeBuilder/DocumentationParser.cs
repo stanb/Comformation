@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -49,7 +50,7 @@ namespace Comformation.CodeBuilder
                     return new DocumentationParser(uri, doc);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -71,7 +72,10 @@ namespace Comformation.CodeBuilder
             var title = WordWrap(Strip(titleNode.InnerText), 110);
             var descNode = titleNode.NextSibling.NextSibling;
             var desc = WordWrap(Strip(descNode.InnerText), 110);
-            var lines = title.Concat(desc).Append(_uri.OriginalString).ToArray();
+            var lines = title.Concat(desc)
+                .Append(_uri.OriginalString)
+                .Select(line => WebUtility.HtmlEncode(line))
+                .ToArray();
             return lines;
         }
 
@@ -90,7 +94,9 @@ namespace Comformation.CodeBuilder
                 var text = WordWrap(Strip(prop.InnerText), 100);
                 lines.AddRange(text);
             }
-            return lines.ToArray();
+            return lines
+                .Select(line => WebUtility.HtmlEncode(line))
+                .ToArray();
         }
 
         private static Regex _regex = new Regex(" {2,}", RegexOptions.Multiline | RegexOptions.Compiled);

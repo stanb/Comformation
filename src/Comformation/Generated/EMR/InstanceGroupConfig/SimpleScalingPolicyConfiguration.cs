@@ -40,7 +40,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// <summary>
         /// ScalingAdjustment
         /// The amount by which to scale the instance group, based on the specified AdjustmentType. A positive
-        /// value adds to the instance group's EC2 instance count. A negative number removes instances. If
+        /// value adds to the instance group&#39;s EC2 instance count. A negative number removes instances. If
         /// AdjustmentType is set to EXACT_CAPACITY, specify only a positive integer. If AdjustmentType is set
         /// to PERCENT_CHANGE_IN_CAPACITY, express the value of the percentage as a decimal. For example, -0. 20
         /// indicates a decrease in 20% increments of cluster capacity.

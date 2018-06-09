@@ -26,7 +26,7 @@ namespace Comformation.GameLift.Alias
 
             /// <summary>
             /// Name
-            /// An identifier to associate with this alias. Alias names don't need to be unique.
+            /// An identifier to associate with this alias. Alias names don&#39;t need to be unique.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

@@ -8,7 +8,7 @@ namespace Comformation.ApiGateway.Method
     /// <summary>
     /// Amazon API Gateway Method Integration IntegrationResponse
     /// IntegrationResponse is a property of the Amazon API Gateway Method Integration property type that specifies
-    /// the response that Amazon API Gateway (API Gateway) sends after a method's backend finishes processing a
+    /// the response that Amazon API Gateway (API Gateway) sends after a method&#39;s backend finishes processing a
     /// request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html
     /// </summary>
@@ -20,7 +20,7 @@ namespace Comformation.ApiGateway.Method
         /// Specifies how to handle request payload content type conversions. Valid values are:
         /// CONVERT_TO_BINARY: Converts a request payload from a base64-encoded string to a binary blob.
         /// CONVERT_TO_TEXT: Converts a request payload from a binary blob to a base64-encoded string.
-        /// If this property isn't defined, the request payload is passed through from the method request to the
+        /// If this property isn&#39;t defined, the request payload is passed through from the method request to the
         /// integration request without modification.
         /// Required: No
         /// Type: String

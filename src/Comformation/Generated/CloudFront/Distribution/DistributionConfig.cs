@@ -82,7 +82,7 @@ namespace Comformation.CloudFront.Distribution
         /// <summary>
         /// DefaultCacheBehavior
         /// The default cache behavior that is triggered if you do not specify the CacheBehavior property or if
-        /// files don't match any of the values of PathPattern in the CacheBehavior property.
+        /// files don&#39;t match any of the values of PathPattern in the CacheBehavior property.
         /// Required: Yes
         /// Type: DefaultCacheBehavior type
         /// </summary>
@@ -145,7 +145,7 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// HttpVersion
-        /// The latest HTTP version that viewers can use to communicate with CloudFront. Viewers that don't
+        /// The latest HTTP version that viewers can use to communicate with CloudFront. Viewers that don&#39;t
         /// support the latest version automatically use an earlier HTTP version. By default, AWS CloudFormation
         /// specifies http1. 1.
         /// For valid values, see the HttpVersion content for the DistributionConfig data type in the Amazon

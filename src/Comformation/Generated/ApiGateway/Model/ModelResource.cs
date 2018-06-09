@@ -34,7 +34,7 @@ namespace Comformation.ApiGateway.Model
 
             /// <summary>
             /// Name
-            /// A name for the model. If you don't specify a name, AWS CloudFormation generates a unique physical ID
+            /// A name for the model. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
             /// and uses that ID for the model name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -56,7 +56,7 @@ namespace Comformation.ApiGateway.Model
 
             /// <summary>
             /// Schema
-            /// The schema to use to transform data to one or more output formats. Specify null ({}) if you don't
+            /// The schema to use to transform data to one or more output formats. Specify null ({}) if you don&#39;t
             /// want to specify a schema.
             /// Required: Yes
             /// Type: JSON object

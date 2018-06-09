@@ -16,7 +16,7 @@ namespace Comformation.ElasticBeanstalk.Application
 
         /// <summary>
         /// DeleteSourceFromS3
-        /// Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the
+        /// Set to true to delete a version&#39;s source bundle from Amazon S3 when Elastic Beanstalk deletes the
         /// application version.
         /// Required: No
         /// Type: Boolean

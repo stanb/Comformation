@@ -55,10 +55,10 @@ namespace Comformation.Route53.RecordSetGroup
             /// List of resource record sets to add. The maximum number of records is 1,000.
             /// Required: Yes
             /// Type:: List of AWS::Route53::RecordSet objects, as shown in the following example:
-            /// "RecordSets" : [ { "Name" : "mysite. example. com. ", "Type" : "CNAME", "TTL" : "900",
-            /// "SetIdentifier" : "Frontend One", "Weight" : "4", "ResourceRecords" : ["example-ec2. amazonaws.
-            /// com"] }, { "Name" : "mysite. example. com. ", "Type" : "CNAME", "TTL" : "900", "SetIdentifier" :
-            /// "Frontend Two", "Weight" : "6", "ResourceRecords" : ["example-ec2-larger. amazonaws. com"] } ]
+            /// &quot;RecordSets&quot; : [ { &quot;Name&quot; : &quot;mysite. example. com. &quot;, &quot;Type&quot; : &quot;CNAME&quot;, &quot;TTL&quot; : &quot;900&quot;,
+            /// &quot;SetIdentifier&quot; : &quot;Frontend One&quot;, &quot;Weight&quot; : &quot;4&quot;, &quot;ResourceRecords&quot; : [&quot;example-ec2. amazonaws.
+            /// com&quot;] }, { &quot;Name&quot; : &quot;mysite. example. com. &quot;, &quot;Type&quot; : &quot;CNAME&quot;, &quot;TTL&quot; : &quot;900&quot;, &quot;SetIdentifier&quot; :
+            /// &quot;Frontend Two&quot;, &quot;Weight&quot; : &quot;6&quot;, &quot;ResourceRecords&quot; : [&quot;example-ec2-larger. amazonaws. com&quot;] } ]
             /// Update requires: No interruption
             /// </summary>
 			public Union<List<RecordSet>, IntrinsicFunction> RecordSets { get; set; }

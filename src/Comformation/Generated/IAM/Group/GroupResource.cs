@@ -16,18 +16,18 @@ namespace Comformation.IAM.Group
             /// <summary>
             /// GroupName
             /// A name for the IAM group. For valid values, see the GroupName parameter for the CreateGroup action
-            /// in the IAM API Reference. If you don't specify a name, AWS CloudFormation generates a unique
+            /// in the IAM API Reference. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the group name.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
             /// If you specify a name, you must specify the CAPABILITY_NAMED_IAM value to acknowledge your
-            /// template's capabilities. For more information, see Acknowledging IAM Resources in AWS CloudFormation
+            /// template&#39;s capabilities. For more information, see Acknowledging IAM Resources in AWS CloudFormation
             /// Templates.
             /// Warning Naming an IAM resource can cause an unrecoverable error if you reuse the same template in
             /// multiple regions. To prevent this, we recommend using Fn::Join and AWS::Region to create a
-            /// region-specific name, as in the following example: {"Fn::Join": ["", [{"Ref": "AWS::Region"},
-            /// {"Ref": "MyResourceName"}]]}.
+            /// region-specific name, as in the following example: {&quot;Fn::Join&quot;: [&quot;&quot;, [{&quot;Ref&quot;: &quot;AWS::Region&quot;},
+            /// {&quot;Ref&quot;: &quot;MyResourceName&quot;}]]}.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

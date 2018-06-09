@@ -37,7 +37,7 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// MaxPrice
-        /// The maximum hourly price you're willing to pay for the Spot Instances.
+        /// The maximum hourly price you&#39;re willing to pay for the Spot Instances.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

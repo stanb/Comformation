@@ -18,7 +18,7 @@ namespace Comformation.EC2.Instance
         /// AssociatePublicIpAddress
         /// Indicates whether the network interface receives a public IP address. You can associate a public IP
         /// address with a network interface only if it has a device index of eth0 and if it is a new network
-        /// interface (not an existing one). In other words, if you specify true, don't specify a network
+        /// interface (not an existing one). In other words, if you specify true, don&#39;t specify a network
         /// interface ID. For more information, see Amazon EC2 Instance IP Addressing.
         /// Required: No
         /// Type: Boolean.
@@ -46,7 +46,7 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// DeviceIndex
-        /// The network interface's position in the attachment order.
+        /// The network interface&#39;s position in the attachment order.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -66,7 +66,7 @@ namespace Comformation.EC2.Instance
         /// Ipv6AddressCount
         /// The number of IPv6 addresses to associate with the network interface. Amazon EC2 automatically
         /// selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the
-        /// Ipv6Addresses property and don't specify this property.
+        /// Ipv6Addresses property and don&#39;t specify this property.
         /// For restrictions on which instance types support IPv6 addresses, see the RunInstances action in the
         /// Amazon EC2 API Reference.
         /// Required: No
@@ -79,7 +79,7 @@ namespace Comformation.EC2.Instance
         /// Ipv6Addresses
         /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with
         /// the network interface. To specify a number of IPv6 addresses, use the Ipv6AddressCount property and
-        /// don't specify this property.
+        /// don&#39;t specify this property.
         /// For information about restrictions on which instance types support IPv6 addresses, see the
         /// RunInstances action in the Amazon EC2 API Reference.
         /// Required: No
@@ -91,7 +91,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// NetworkInterfaceId
         /// An existing network interface ID.
-        /// Required: Conditional. If you don't specify the SubnetId property, you must specify this property.
+        /// Required: Conditional. If you don&#39;t specify the SubnetId property, you must specify this property.
         /// Type: String
         /// </summary>
         [JsonProperty("NetworkInterfaceId")]
@@ -125,7 +125,7 @@ namespace Comformation.EC2.Instance
         /// SecondaryPrivateIpAddressCount
         /// The number of secondary private IP addresses that Amazon EC2 auto assigns to the network interface.
         /// Amazon EC2 uses the value of the PrivateIpAddress property as the primary private IP address. If you
-        /// don't specify that property, Amazon EC2 auto assigns both the primary and secondary private IP
+        /// don&#39;t specify that property, Amazon EC2 auto assigns both the primary and secondary private IP
         /// addresses.
         /// If you want to specify your own list of private IP addresses, use the PrivateIpAddresses property
         /// and do not specify this property.
@@ -140,7 +140,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// SubnetId
         /// The ID of the subnet to associate with the network interface.
-        /// Required: Conditional. If you don't specify the NetworkInterfaceId property, you must specify this
+        /// Required: Conditional. If you don&#39;t specify the NetworkInterfaceId property, you must specify this
         /// property.
         /// Type: String
         /// </summary>

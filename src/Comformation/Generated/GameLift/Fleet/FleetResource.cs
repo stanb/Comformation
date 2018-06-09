@@ -45,7 +45,7 @@ namespace Comformation.GameLift.Fleet
             /// <summary>
             /// EC2InboundPermissions
             /// The incoming traffic, expressed as IP ranges and port numbers, that is permitted to access the game
-            /// server. If you don't specify values, no traffic is permitted to your game servers.
+            /// server. If you don&#39;t specify values, no traffic is permitted to your game servers.
             /// Required: No
             /// Type: List of Amazon GameLift Fleet EC2InboundPermission
             /// Update requires: No interruption
@@ -55,7 +55,7 @@ namespace Comformation.GameLift.Fleet
             /// <summary>
             /// EC2InstanceType
             /// The type of EC2 instances that the fleet uses. EC2 instance types define the CPU, memory, storage,
-            /// and networking capacity of the fleet's hosts. For more information about the instance types that are
+            /// and networking capacity of the fleet&#39;s hosts. For more information about the instance types that are
             /// supported by GameLift, see the EC2InstanceType parameter in the Amazon GameLift API Reference.
             /// Required: Yes
             /// Type: String
@@ -96,7 +96,7 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// Name
-            /// An identifier to associate with this fleet. Fleet names don't need to be unique.
+            /// An identifier to associate with this fleet. Fleet names don&#39;t need to be unique.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

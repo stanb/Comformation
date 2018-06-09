@@ -21,7 +21,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// If you specify this property, do not specify the TTL property. The alias uses a TTL value from the
         /// alias target record.
         /// For more information about alias resource record sets, see Creating Alias Resource Record Sets in
-        /// the Route 53 Developer Guide and POST ChangeResourceRecordSets in the Route 53 API reference.
+        /// the Route&#160;53 Developer Guide and POST ChangeResourceRecordSets in the Route&#160;53 API reference.
         /// Required: Conditional. Required if you are creating an alias resource record set.
         /// Type: AliasTarget
         /// Update requires: No interruption
@@ -32,7 +32,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// Comment
         /// Any comments that you want to include about the hosted zone.
-        /// Important If the record set is part of a record set group, this property isn't valid. Don't specify
+        /// Important If the record set is part of a record set group, this property isn&#39;t valid. Don&#39;t specify
         /// this property.
         /// Required: No
         /// Type: String
@@ -44,10 +44,10 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// Failover
         /// Designates the record set as a PRIMARY or SECONDARY failover record set. When you have more than one
-        /// resource performing the same function, you can configure Route 53 to check the health of your
+        /// resource performing the same function, you can configure Route&#160;53 to check the health of your
         /// resources and use only health resources to respond to DNS queries. You cannot create nonfailover
         /// resource record sets that have the same Name and Type property values as failover resource record
-        /// sets. For more information, see the Failover content in the Amazon Route 53 API Reference.
+        /// sets. For more information, see the Failover content in the Amazon Route&#160;53 API Reference.
         /// If you specify this property, you must specify the SetIdentifier property.
         /// Required: No
         /// Type: String
@@ -58,10 +58,10 @@ namespace Comformation.Route53.RecordSetGroup
 
         /// <summary>
         /// GeoLocation
-        /// Describes how Route 53 responds to DNS queries based on the geographic origin of the query. This
+        /// Describes how Route&#160;53 responds to DNS queries based on the geographic origin of the query. This
         /// property is not compatible with the Region property.
         /// Required: No
-        /// Type: Route 53 Record Set GeoLocation Property
+        /// Type: Route&#160;53 Record Set GeoLocation Property
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GeoLocation")]
@@ -69,7 +69,7 @@ namespace Comformation.Route53.RecordSetGroup
 
         /// <summary>
         /// HealthCheckId
-        /// The health check ID that you want to apply to this record set. Route 53 returns this resource record
+        /// The health check ID that you want to apply to this record set. Route&#160;53 returns this resource record
         /// set in response to a DNS query only while record set is healthy.
         /// Required: No
         /// Type: String
@@ -109,7 +109,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// Name
         /// The name of the domain. You must specify a fully qualified domain name that ends with a period as
-        /// the last label indication. If you omit the final period, Route 53 adds it.
+        /// the last label indication. If you omit the final period, Route&#160;53 adds it.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement
@@ -123,14 +123,14 @@ namespace Comformation.Route53.RecordSetGroup
         /// this resource record set resides. The resource typically is an AWS resource, for example, Amazon EC2
         /// instance or an Elastic Load Balancing load balancer, and is referred to by an IP address or a DNS
         /// domain name, depending on the record type.
-        /// When Route 53 receives a DNS query for a domain name and type for which you have created latency
-        /// resource record sets, Route 53 selects the latency resource record set that has the lowest latency
-        /// between the end user and the associated Amazon EC2 region. Route 53 then returns the value that is
+        /// When Route&#160;53 receives a DNS query for a domain name and type for which you have created latency
+        /// resource record sets, Route&#160;53 selects the latency resource record set that has the lowest latency
+        /// between the end user and the associated Amazon EC2 region. Route&#160;53 then returns the value that is
         /// associated with the selected resource record set.
         /// The following restrictions must be followed:
         /// You can only specify one resource record per latency resource record set. You can only create one
         /// latency resource record set for each Amazon EC2 region. You are not required to create latency
-        /// resource record sets for all Amazon EC2 regions. Route 53 will choose the region with the best
+        /// resource record sets for all Amazon EC2 regions. Route&#160;53 will choose the region with the best
         /// latency from among the regions for which you create latency resource record sets. You cannot create
         /// both weighted and latency resource record sets that have the same values for the Name and Type
         /// elements. This property is not compatible with the GeoLocation property.
@@ -143,9 +143,9 @@ namespace Comformation.Route53.RecordSetGroup
         /// ResourceRecords
         /// List of resource records to add. Each record should be in the format appropriate for the record type
         /// specified by the Type property. For information about different record types and their record
-        /// formats, see Values for Basic Resource Record Sets and Appendix: Domain Name Format in the Route 53
+        /// formats, see Values for Basic Resource Record Sets and Appendix: Domain Name Format in the Route&#160;53
         /// Developer Guide.
-        /// Required: Conditional. If you don't specify the AliasTarget property, you must specify this
+        /// Required: Conditional. If you don&#39;t specify the AliasTarget property, you must specify this
         /// property. If you are creating an alias resource record set, do not specify this property.
         /// Type: List of String values
         /// Update requires: No interruption
@@ -159,7 +159,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// combination of DNS name and type.
         /// Required: Conditional. Required if you are creating a weighted, latency, failover, or geolocation
         /// resource record set.
-        /// For more information, see the SetIdentifier content in the Route 53 Developer Guide.
+        /// For more information, see the SetIdentifier content in the Route&#160;53 Developer Guide.
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -172,7 +172,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// specify the AliasTarget property. For alias target records, the alias uses a TTL value from the
         /// target.
         /// If you specify this property, you must specify the ResourceRecords property.
-        /// Required: Conditional. If you don't specify the AliasTarget property, you must specify this
+        /// Required: Conditional. If you don&#39;t specify the AliasTarget property, you must specify this
         /// property. If you are creating an alias resource record set, do not specify this property.
         /// Type: String
         /// Update requires: No interruption
@@ -182,10 +182,10 @@ namespace Comformation.Route53.RecordSetGroup
 
         /// <summary>
         /// Type
-        /// The type of records to add. For valid values, see the Type content in the Amazon Route 53 API
+        /// The type of records to add. For valid values, see the Type content in the Amazon Route&#160;53 API
         /// Reference.
         /// In AWS CloudFormation, you cannot modify the NS and SOA records for a hosted zone created
-        /// automatically by Route 53. Specifically, you can't create or delete NS or SOA records for the root
+        /// automatically by Route&#160;53. Specifically, you can&#39;t create or delete NS or SOA records for the root
         /// domain of your hosted zone, but you can create them for subdomains to delegate. For example, for
         /// hosted zone mydomain. net, you cannot create an NS record for mydomain. net but you can create an NS
         /// record for nnnn. mydomain. net for delegation.
@@ -202,7 +202,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// name and type, a value that determines what portion of traffic for the current resource record set
         /// is routed to the associated location.
         /// For more information about weighted resource record sets, see Setting Up Weighted Resource Record
-        /// Sets in the Route 53 Developer Guide.
+        /// Sets in the Route&#160;53 Developer Guide.
         /// Required: Conditional. Required if you are creating a weighted resource record set.
         /// Type: Number. Weight expects integer values.
         /// Update requires: No interruption

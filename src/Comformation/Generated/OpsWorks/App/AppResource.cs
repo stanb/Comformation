@@ -52,8 +52,8 @@ namespace Comformation.OpsWorks.App
 
             /// <summary>
             /// Domains
-            /// The app virtual host settings, with multiple domains separated by commas. For example, 'www.
-            /// example. com, example. com'.
+            /// The app virtual host settings, with multiple domains separated by commas. For example, &#39;www.
+            /// example. com, example. com&#39;.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption

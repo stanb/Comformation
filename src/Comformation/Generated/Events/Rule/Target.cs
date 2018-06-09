@@ -45,7 +45,7 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// Input
         /// A JSON-formatted text string that is passed to the target. This value overrides the matched event.
-        /// Required: No. If you don't specify both this property and the InputPath property, CloudWatch Events
+        /// Required: No. If you don&#39;t specify both this property and the InputPath property, CloudWatch Events
         /// passes the entire matched event to the target.
         /// Type: String
         /// </summary>
@@ -54,9 +54,9 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// InputPath
-        /// When you don't want to pass the entire matched event, the JSONPath that describes which part of the
+        /// When you don&#39;t want to pass the entire matched event, the JSONPath that describes which part of the
         /// event to pass to the target.
-        /// Required: No. If you don't specify both this property and the Input property, CloudWatch Events
+        /// Required: No. If you don&#39;t specify both this property and the Input property, CloudWatch Events
         /// passes the entire matched event to the target.
         /// Type: String
         /// </summary>
@@ -75,7 +75,7 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// KinesisParameters
-        /// Settings that control shard assignment, when the target is a Kinesis stream. If you don't include
+        /// Settings that control shard assignment, when the target is a Kinesis stream. If you don&#39;t include
         /// this parameter, eventId is used as the partition key.
         /// Required: No
         /// Type: CloudWatch Events Rule KinesisParameters

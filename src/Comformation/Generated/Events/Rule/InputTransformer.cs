@@ -17,7 +17,7 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// InputPathsMap
         /// The map of JSON paths to extract from the event, as key-value pairs where each value is a JSON path.
-        /// You must use JSON dot notation, not bracket notation. Duplicates aren't allowed.
+        /// You must use JSON dot notation, not bracket notation. Duplicates aren&#39;t allowed.
         /// Required: No
         /// Type: String-to-string map
         /// Update requires: No interruption
@@ -28,7 +28,7 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// InputTemplate
         /// The input template where you can use the values of the keys from InputPathsMap to customize the data
-        /// that's sent to the target.
+        /// that&#39;s sent to the target.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

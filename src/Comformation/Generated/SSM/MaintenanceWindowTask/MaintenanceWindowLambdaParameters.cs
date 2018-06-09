@@ -16,7 +16,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// ClientContext
-        /// Client-specific information to pass to the Lambda function that you're invoking. You can then use
+        /// Client-specific information to pass to the Lambda function that you&#39;re invoking. You can then use
         /// the context variable to process the client information in your Lambda function.
         /// Required: No
         /// Type: String

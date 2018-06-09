@@ -8,7 +8,7 @@ namespace Comformation.Lambda.Alias
     /// AWS::Lambda::Alias
     /// The AWS::Lambda::Alias resource creates an alias that points to the version of an AWS Lambda (Lambda) function
     /// that you specify. Use aliases when you want to control which version of your function other services or
-    /// applications invoke. Those services or applications can use your function's alias so that they don't need to
+    /// applications invoke. Those services or applications can use your function&#39;s alias so that they don&#39;t need to
     /// be updated whenever you release a new version of your function. For more information, see Introduction to AWS
     /// Lambda Aliases in the AWS Lambda Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html
@@ -28,7 +28,7 @@ namespace Comformation.Lambda.Alias
 
             /// <summary>
             /// FunctionName
-            /// The Lambda function that you want to associate with this alias. You can specify the function's name
+            /// The Lambda function that you want to associate with this alias. You can specify the function&#39;s name
             /// or its Amazon Resource Name (ARN).
             /// Required: Yes
             /// Type: String

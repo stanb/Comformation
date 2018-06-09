@@ -48,7 +48,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// TagFilters
         /// The tags to use when evaluating an analytics filter.
-        /// The analytics only includes objects that meet the filter's criteria. If no filter is speciified, all
+        /// The analytics only includes objects that meet the filter&#39;s criteria. If no filter is speciified, all
         /// of the contents of the bucket are included in the analysis.
         /// Required: No
         /// Type: List of Amazon S3 Bucket TagFilter

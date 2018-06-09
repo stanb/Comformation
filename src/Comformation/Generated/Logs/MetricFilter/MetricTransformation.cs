@@ -44,8 +44,8 @@ namespace Comformation.Logs.MetricFilter
 
         /// <summary>
         /// MetricValue
-        /// The value that is published to the CloudWatch metric. For example, if you're counting the
-        /// occurrences of a particular term like Error, specify 1 for the metric value. If you're counting the
+        /// The value that is published to the CloudWatch metric. For example, if you&#39;re counting the
+        /// occurrences of a particular term like Error, specify 1 for the metric value. If you&#39;re counting the
         /// number of bytes transferred, reference the value that is in the log event by using $ followed by the
         /// name of the field that you specified in the filter pattern, such as $size.
         /// Required: Yes

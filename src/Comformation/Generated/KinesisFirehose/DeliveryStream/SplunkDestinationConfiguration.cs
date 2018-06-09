@@ -80,7 +80,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// RetryOptions
         /// The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it
-        /// doesn't receive an acknowledgment of receipt from Splunk.
+        /// doesn&#39;t receive an acknowledgment of receipt from Splunk.
         /// Required: No
         /// Type: Kinesis Data Firehose DeliveryStream SplunkRetryOptions
         /// Update requires: No interruption

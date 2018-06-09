@@ -28,7 +28,7 @@ namespace Comformation.Lambda.Version
 
             /// <summary>
             /// Description
-            /// A description of the version you are publishing. If you don't specify a value, Lambda copies the
+            /// A description of the version you are publishing. If you don&#39;t specify a value, Lambda copies the
             /// description from the $LATEST version of the function.
             /// Required: No
             /// Type: String
@@ -38,7 +38,7 @@ namespace Comformation.Lambda.Version
 
             /// <summary>
             /// FunctionName
-            /// The Lambda function for which you want to publish a version. You can specify the function's name or
+            /// The Lambda function for which you want to publish a version. You can specify the function&#39;s name or
             /// its Amazon Resource Name (ARN).
             /// Required: Yes
             /// Type: String

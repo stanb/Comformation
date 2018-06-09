@@ -45,7 +45,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// DeviceIndex
-        /// The network interface's position in the attachment order.
+        /// The network interface&#39;s position in the attachment order.
         /// Required: No
         /// Type: Integer
         /// </summary>
@@ -65,7 +65,7 @@ namespace Comformation.EC2.SpotFleet
         /// Ipv6AddressCount
         /// The number of IPv6 addresses to associate with the network interface. Amazon Elastic Compute Cloud
         /// automatically selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses,
-        /// use the Ipv6Addresses property and don't specify this property.
+        /// use the Ipv6Addresses property and don&#39;t specify this property.
         /// Required: No
         /// Type: Integer
         /// </summary>
@@ -76,7 +76,7 @@ namespace Comformation.EC2.SpotFleet
         /// Ipv6Addresses
         /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with
         /// the network interface. To specify a number of IPv6 addresses, use the Ipv6AddressCount property and
-        /// don't specify this property.
+        /// don&#39;t specify this property.
         /// Required: No
         /// Type: List of EC2 NetworkInterface Ipv6Addresses
         /// </summary>
@@ -114,7 +114,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// SubnetId
         /// The ID of the subnet to associate with the network interface.
-        /// Required: Conditional. If you don't specify the NetworkInterfaceId property, you must specify this
+        /// Required: Conditional. If you don&#39;t specify the NetworkInterfaceId property, you must specify this
         /// property.
         /// Type: String
         /// </summary>

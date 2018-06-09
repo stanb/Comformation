@@ -8,7 +8,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
     /// <summary>
     /// ElasticLoadBalancing Policy Type
     /// The ElasticLoadBalancing policy type is an embedded property of the AWS::ElasticLoadBalancing::LoadBalancer
-    /// resource. You associate policies with a listener by referencing a policy's name in the listener's PolicyNames
+    /// resource. You associate policies with a listener by referencing a policy&#39;s name in the listener&#39;s PolicyNames
     /// property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html
     /// </summary>
@@ -17,7 +17,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// Attributes
-        /// A list of arbitrary attributes for this policy. If you don't need to specify any policy attributes,
+        /// A list of arbitrary attributes for this policy. If you don&#39;t need to specify any policy attributes,
         /// specify an empty list ([]).
         /// Required: Yes
         /// Type: List of JSON name-value pairs.

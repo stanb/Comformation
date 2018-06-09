@@ -47,7 +47,7 @@ namespace Comformation.CodePipeline.CustomActionType
         /// <summary>
         /// ThirdPartyConfigurationUrl
         /// The URL of a sign-up page where users can sign up for an external service and specify the initial
-        /// configurations for the service's action.
+        /// configurations for the service&#39;s action.
         /// Required: No
         /// Type: String
         /// </summary>

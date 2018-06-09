@@ -19,7 +19,7 @@ namespace Comformation.Config.ConfigRule
         {
             /// <summary>
             /// ConfigRuleName
-            /// A name for the AWS Config rule. If you don't specify a name, AWS CloudFormation generates a unique
+            /// A name for the AWS Config rule. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the rule name. For more information, see Name Type.
             /// Required: No
             /// Type: String
@@ -64,7 +64,7 @@ namespace Comformation.Config.ConfigRule
             /// Defines which AWS resources will trigger an evaluation when their configurations change. The scope
             /// can include one or more resource types, a combination of a tag key and value, or a combination of
             /// one resource type and one resource ID. Specify a scope to constrain the resources that are
-            /// evaluated. If you don't specify a scope, the rule evaluates all resources in the recording group.
+            /// evaluated. If you don&#39;t specify a scope, the rule evaluates all resources in the recording group.
             /// Required: No
             /// Type: AWS Config ConfigRule Scope
             /// Update requires: No interruption

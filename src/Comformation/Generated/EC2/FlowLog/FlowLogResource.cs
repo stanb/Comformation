@@ -9,7 +9,7 @@ namespace Comformation.EC2.FlowLog
     /// The AWS::EC2::FlowLog resource creates an Amazon Elastic Compute Cloud (Amazon EC2) flow log that captures IP
     /// traffic for a specified network interface, subnet, or VPC. To view the log data, use Amazon CloudWatch Logs
     /// (CloudWatch Logs) to help troubleshoot connection issues. For example, you can use a flow log to investigate
-    /// why certain traffic isn't reaching an instance, which can help you diagnose overly restrictive security group
+    /// why certain traffic isn&#39;t reaching an instance, which can help you diagnose overly restrictive security group
     /// rules. For more information, see VPC Flow Logs in the Amazon VPC User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html
     /// </summary>

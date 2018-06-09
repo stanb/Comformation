@@ -38,7 +38,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// ManagedPolicyName
             /// A custom, friendly name for your IAM managed policy. For valid values, see the PolicyName parameter
             /// of the CreatePolicy action in the IAM API Reference.
-            /// If you don't specify a PolicyName, AWS CloudFormation generates a unique physical ID and uses that
+            /// If you don&#39;t specify a PolicyName, AWS CloudFormation generates a unique physical ID and uses that
             /// ID for the policy name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -77,9 +77,9 @@ namespace Comformation.IAM.ManagedPolicy
             /// The names of IAM roles to attach to this policy.
             /// Note If a policy has a Ref to a role and if a resource (such as AWS::ECS::Service) also has a Ref to
             /// the same role, add a DependsOn attribute to the resource so that the resource depends on the policy.
-            /// This dependency ensures that the role's policy is available throughout the resource's lifecycle. For
+            /// This dependency ensures that the role&#39;s policy is available throughout the resource&#39;s lifecycle. For
             /// example, when you delete a stack with an AWS::ECS::Service resource, the DependsOn attribute ensures
-            /// that the AWS::ECS::Service resource can complete its deletion before its role's policy is deleted.
+            /// that the AWS::ECS::Service resource can complete its deletion before its role&#39;s policy is deleted.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption

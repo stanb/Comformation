@@ -25,7 +25,7 @@ namespace Comformation.Cognito.IdentityPool
 
         /// <summary>
         /// StreamName
-        /// The name of the Amazon Cognito stream to receive updates. This stream must be in the developer's
+        /// The name of the Amazon Cognito stream to receive updates. This stream must be in the developer&#39;s
         /// account and in the same region as the identity pool.
         /// Type: String
         /// Required: No

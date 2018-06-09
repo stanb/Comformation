@@ -28,7 +28,7 @@ namespace Comformation.Kinesis.Stream
         /// KeyId
         /// The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
         /// identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by
-        /// "alias/". You can also use a master key owned by Kinesis Streams by specifying the alias
+        /// &quot;alias/&quot;. You can also use a master key owned by Kinesis Streams by specifying the alias
         /// aws/kinesis.
         /// Key ARN example: arn:aws: kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012 Alias
         /// ARN example: arn:aws:kms:us-east-1:123456789012:alias/MyAliasName Globally unique key ID example:

@@ -82,8 +82,8 @@ namespace Comformation.CloudFront.Distribution
         /// <summary>
         /// AllowedMethods
         /// HTTP methods that CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
-        /// You can specify ["HEAD", "GET"], ["GET", "HEAD", "OPTIONS"], or ["DELETE", "GET", "HEAD", "OPTIONS",
-        /// "PATCH", "POST", "PUT"]. If you don't specify a value, AWS CloudFormation specifies ["HEAD", "GET"].
+        /// You can specify [&quot;HEAD&quot;, &quot;GET&quot;], [&quot;GET&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;], or [&quot;DELETE&quot;, &quot;GET&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;,
+        /// &quot;PATCH&quot;, &quot;POST&quot;, &quot;PUT&quot;]. If you don&#39;t specify a value, AWS CloudFormation specifies [&quot;HEAD&quot;, &quot;GET&quot;].
         /// Required: No
         /// Type: List of String values
         /// </summary>
@@ -103,8 +103,8 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// CachedMethods
-        /// HTTP methods for which CloudFront caches responses. You can specify ["HEAD", "GET"] or ["GET",
-        /// "HEAD", "OPTIONS"]. If you don't specify a value, AWS CloudFormation specifies ["HEAD", "GET"].
+        /// HTTP methods for which CloudFront caches responses. You can specify [&quot;HEAD&quot;, &quot;GET&quot;] or [&quot;GET&quot;,
+        /// &quot;HEAD&quot;, &quot;OPTIONS&quot;]. If you don&#39;t specify a value, AWS CloudFormation specifies [&quot;HEAD&quot;, &quot;GET&quot;].
         /// Required: No
         /// Type: List of String values
         /// </summary>

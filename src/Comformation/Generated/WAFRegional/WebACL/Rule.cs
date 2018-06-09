@@ -8,7 +8,7 @@ namespace Comformation.WAFRegional.WebACL
     /// <summary>
     /// AWS WAF Regional WebACL Rules
     /// Rules is a property of the AWS::WAFRegional::WebACL resource that specifies the rule to associate with an AWS
-    /// WAF Regional web access control list (ACL) and the rule's settings.
+    /// WAF Regional web access control list (ACL) and the rule&#39;s settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rules.html
     /// </summary>
     public class Rule

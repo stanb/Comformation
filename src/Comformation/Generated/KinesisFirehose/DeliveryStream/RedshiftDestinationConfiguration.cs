@@ -76,8 +76,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3Configuration
         /// The S3 bucket where Kinesis Firehose first delivers data. After the data is in the bucket, Kinesis
         /// Firehose uses the COPY command to load the data into the Amazon Redshift cluster. For the Amazon S3
-        /// bucket's compression format, don't specify SNAPPY or ZIP because the Amazon Redshift COPY command
-        /// doesn't support them.
+        /// bucket&#39;s compression format, don&#39;t specify SNAPPY or ZIP because the Amazon Redshift COPY command
+        /// doesn&#39;t support them.
         /// Required: Yes
         /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
         /// </summary>

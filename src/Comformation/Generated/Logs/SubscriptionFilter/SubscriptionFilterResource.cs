@@ -50,7 +50,7 @@ namespace Comformation.Logs.SubscriptionFilter
             /// <summary>
             /// RoleArn
             /// An IAM role that grants CloudWatch Logs permission to put data into the specified Kinesis stream.
-            /// For Lambda and CloudWatch Logs destinations, don't specify this property because CloudWatch Logs
+            /// For Lambda and CloudWatch Logs destinations, don&#39;t specify this property because CloudWatch Logs
             /// gets the necessary permissions from the destination resource.
             /// Required: No
             /// Type: String

@@ -41,7 +41,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Scaling API Reference.
             /// Required: Conditional. You must specify either the ScalingTargetId property or the ResourceId,
             /// ScalableDimension, and ServiceNamespace properties. If you specify the ResourceId,
-            /// ScalableDimension, and ServiceNamespace properties, don't specify the ScalingTargetId property.
+            /// ScalableDimension, and ServiceNamespace properties, don&#39;t specify the ScalingTargetId property.
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -54,7 +54,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// ecs:service:DesiredCount for the desired task count of an Amazon ECS service.
             /// Required: Conditional. You must specify either the ScalingTargetId property or the ResourceId,
             /// ScalableDimension, and ServiceNamespace properties. If you specify the ResourceId,
-            /// ScalableDimension, and ServiceNamespace properties, don't specify the ScalingTargetId property.
+            /// ScalableDimension, and ServiceNamespace properties, don&#39;t specify the ScalingTargetId property.
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -66,7 +66,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// information about the ID, see the Return Value section of the
             /// AWS::ApplicationAutoScaling::ScalableTarget resource.
             /// Required: Conditional. You must specify either the ScalingTargetId property or the ResourceId,
-            /// ScalableDimension, and ServiceNamespace properties. If you specify this property, don't specify the
+            /// ScalableDimension, and ServiceNamespace properties. If you specify this property, don&#39;t specify the
             /// ResourceId, ScalableDimension, and ServiceNamespace properties.
             /// Type: String
             /// Update requires: Replacement
@@ -79,7 +79,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// service namespaces, see AWS Service Namespaces in the AWS General Reference.
             /// Required: Conditional. You must specify either the ScalingTargetId property or the ResourceId,
             /// ScalableDimension, and ServiceNamespace properties. If you specify the ResourceId,
-            /// ScalableDimension, and ServiceNamespace properties, don't specify the ScalingTargetId property.
+            /// ScalableDimension, and ServiceNamespace properties, don&#39;t specify the ScalingTargetId property.
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

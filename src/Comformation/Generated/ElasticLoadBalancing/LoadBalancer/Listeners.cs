@@ -15,7 +15,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// InstancePort
-        /// Specifies the TCP port on which the instance server listens. You can't modify this property during
+        /// Specifies the TCP port on which the instance server listens. You can&#39;t modify this property during
         /// the life of the load balancer.
         /// Required: Yes
         /// Type: String
@@ -26,7 +26,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// <summary>
         /// InstanceProtocol
         /// Specifies the protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.
-        /// You can't modify this property during the life of the load balancer.
+        /// You can&#39;t modify this property during the life of the load balancer.
         /// Required: No
         /// Type: String
         /// Note If the front-end protocol is HTTP or HTTPS, InstanceProtocol must be on the same protocol layer
@@ -42,7 +42,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// LoadBalancerPort
-        /// Specifies the external load balancer port number. You can't modify this property during the life of
+        /// Specifies the external load balancer port number. You can&#39;t modify this property during the life of
         /// the load balancer.
         /// Required: Yes
         /// Type: String
@@ -69,7 +69,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// <summary>
         /// Protocol
         /// Specifies the load balancer transport protocol to use for routing: HTTP, HTTPS, TCP or SSL. You
-        /// can't modify this property during the life of the load balancer.
+        /// can&#39;t modify this property during the life of the load balancer.
         /// Required: Yes
         /// Type: String
         /// </summary>

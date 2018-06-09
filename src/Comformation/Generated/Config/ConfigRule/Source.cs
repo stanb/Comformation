@@ -37,7 +37,7 @@ namespace Comformation.Config.ConfigRule
         /// SourceIdentifier
         /// For AWS managed rules, the identifier of the rule. For a list of identifiers, see AWS Managed Rules
         /// in the AWS Config Developer Guide.
-        /// For customer managed rules, the Amazon Resource Name (ARN) of the rule's Lambda function.
+        /// For customer managed rules, the Amazon Resource Name (ARN) of the rule&#39;s Lambda function.
         /// Required: Yes
         /// Type: String
         /// </summary>

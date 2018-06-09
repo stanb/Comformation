@@ -51,9 +51,9 @@ namespace Comformation.IAM.Policy
             /// The names of AWS::IAM::Roles to which this policy will be attached.
             /// Note If a policy has a Ref to a role and if a resource (such as AWS::ECS::Service) also has a Ref to
             /// the same role, add a DependsOn attribute to the resource so that the resource depends on the policy.
-            /// This dependency ensures that the role's policy is available throughout the resource's lifecycle. For
+            /// This dependency ensures that the role&#39;s policy is available throughout the resource&#39;s lifecycle. For
             /// example, when you delete a stack with an AWS::ECS::Service resource, the DependsOn attribute ensures
-            /// that the AWS::ECS::Service resource can complete its deletion before its role's policy is deleted.
+            /// that the AWS::ECS::Service resource can complete its deletion before its role&#39;s policy is deleted.
             /// Required: Conditional. You must specify at least one of the following properties: Groups, Roles, or
             /// Users.
             /// Type: List of String values

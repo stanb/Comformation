@@ -36,7 +36,7 @@ namespace Comformation.CodeBuild.Project
             /// <summary>
             /// EncryptionKey
             /// The alias or Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master
-            /// key (CMK) that AWS CodeBuild uses to encrypt the build output. If you don't specify a value, AWS
+            /// key (CMK) that AWS CodeBuild uses to encrypt the build output. If you don&#39;t specify a value, AWS
             /// CodeBuild uses the AWS-managed CMK for Amazon Simple Storage Service.
             /// Required: No
             /// Type: String
@@ -57,7 +57,7 @@ namespace Comformation.CodeBuild.Project
 
             /// <summary>
             /// Source
-            /// The source code settings for the project, such as the source code's repository type and location.
+            /// The source code settings for the project, such as the source code&#39;s repository type and location.
             /// Required: Yes
             /// Type: AWS CodeBuild Project Source
             /// Update requires: No interruption
@@ -84,7 +84,7 @@ namespace Comformation.CodeBuild.Project
 
             /// <summary>
             /// BadgeEnabled
-            /// Indicates whether AWS CodeBuild generates a publicly accessible URL for your project's build badge.
+            /// Indicates whether AWS CodeBuild generates a publicly accessible URL for your project&#39;s build badge.
             /// For more information, see Build Badges Sample in the AWS CodeBuild User Guide.
             /// Required: No
             /// Type: Boolean
@@ -122,7 +122,7 @@ namespace Comformation.CodeBuild.Project
 
             /// <summary>
             /// TimeoutInMinutes
-            /// The number of minutes after which AWS CodeBuild stops the build if it's not complete. For valid
+            /// The number of minutes after which AWS CodeBuild stops the build if it&#39;s not complete. For valid
             /// values, see the timeoutInMinutes field in the AWS CodeBuild User Guide.
             /// Required: No
             /// Type: Integer

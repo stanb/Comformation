@@ -47,7 +47,7 @@ namespace Comformation.CodeBuild.Project
         /// Location
         /// The location where AWS CodeBuild saves the build output artifacts. For valid values, see the
         /// artifacts-location field in the AWS CodeBuild User Guide.
-        /// Required: Conditional. If you specify CODEPIPELINE or NO_ARTIFACTS for the Type property, don't
+        /// Required: Conditional. If you specify CODEPIPELINE or NO_ARTIFACTS for the Type property, don&#39;t
         /// specify this property. For all of the other types, you must specify this property.
         /// Type: String
         /// </summary>
@@ -58,7 +58,7 @@ namespace Comformation.CodeBuild.Project
         /// Name
         /// The name of the build output folder where AWS CodeBuild saves the build output artifacts. For . zip
         /// packages, the name of the build output . zip file that contains the build output artifacts.
-        /// Required: Conditional. If you specify CODEPIPELINE or NO_ARTIFACTS for the Type property, don't
+        /// Required: Conditional. If you specify CODEPIPELINE or NO_ARTIFACTS for the Type property, don&#39;t
         /// specify this property. For all of the other types, you must specify this property.
         /// Type: String
         /// </summary>

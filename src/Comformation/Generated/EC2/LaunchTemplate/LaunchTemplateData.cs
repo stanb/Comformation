@@ -109,7 +109,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// EbsOptimized
         /// Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
         /// throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
-        /// performance. This optimization isn't available with all instance types. Additional usage charges
+        /// performance. This optimization isn&#39;t available with all instance types. Additional usage charges
         /// apply when using an EBS-optimized instance.
         /// Required: No
         /// Type: Boolean
@@ -122,7 +122,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// KeyName
         /// The name of the key pair. For information on creating a key pair, see CreateKeyPair or ImportKeyPair
         /// in the Amazon EC2 API Reference.
-        /// Important If you do not specify a key pair, you can't connect to the instance unless you choose an
+        /// Important If you do not specify a key pair, you can&#39;t connect to the instance unless you choose an
         /// AMI that is configured to allow users another way to log in.
         /// Required: No
         /// Type: String
@@ -133,7 +133,7 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// DisableApiTermination
-        /// If set to true, you can't terminate the instance using the Amazon EC2 console, CLI, or API.
+        /// If set to true, you can&#39;t terminate the instance using the Amazon EC2 console, CLI, or API.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

@@ -8,8 +8,8 @@ namespace Comformation.S3.Bucket
     /// <summary>
     /// Amazon S3 Bucket MetricsConfiguration
     /// The MetricsConfiguration property type specifies a metrics configuration for the CloudWatch request metrics
-    /// (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics
-    /// configuration, note that this is a full replacement of the existing metrics configuration. If you don't
+    /// (specified by the metrics configuration ID) from an Amazon S3 bucket. If you&#39;re updating an existing metrics
+    /// configuration, note that this is a full replacement of the existing metrics configuration. If you don&#39;t
     /// include the elements you want to keep, they are erased. For more information, see PUT Bucket metrics in the
     /// Amazon Simple Storage Service (Amazon S3) API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html
@@ -40,7 +40,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// TagFilters
         /// Specifies a list of tag filters to use as a metrics configuration filter. The metrics configuration
-        /// includes only objects that meet the filter's criteria.
+        /// includes only objects that meet the filter&#39;s criteria.
         /// Required: No
         /// Type: List of Amazon S3 Bucket TagFilter
         /// Update requires: No interruption

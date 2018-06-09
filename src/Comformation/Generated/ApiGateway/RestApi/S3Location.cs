@@ -26,7 +26,7 @@ namespace Comformation.ApiGateway.RestApi
 
         /// <summary>
         /// ETag
-        /// The Amazon S3 ETag (a file checksum) of the OpenAPI file. If you don't specify a value, API Gateway
+        /// The Amazon S3 ETag (a file checksum) of the OpenAPI file. If you don&#39;t specify a value, API Gateway
         /// skips ETag validation of your OpenAPI file.
         /// Required: No
         /// Type: String

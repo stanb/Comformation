@@ -19,7 +19,7 @@ namespace Comformation.EC2.Host
             /// <summary>
             /// AutoPlacement
             /// Indicates if the host accepts EC2 instances with only matching configurations or if instances must
-            /// also specify the host ID. Instances that don't specify a host ID can't launch onto a host with
+            /// also specify the host ID. Instances that don&#39;t specify a host ID can&#39;t launch onto a host with
             /// AutoPlacement set to off. By default, AWS CloudFormation sets this property to on. For more
             /// information, see Understanding Instance Placement and Host Affinity in the Amazon EC2 User Guide for
             /// Linux Instances.

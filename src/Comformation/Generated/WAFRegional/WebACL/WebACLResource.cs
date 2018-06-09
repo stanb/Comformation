@@ -27,7 +27,7 @@ namespace Comformation.WAFRegional.WebACL
 
             /// <summary>
             /// DefaultAction
-            /// The action that you want AWS WAF to take when a request doesn't match the criteria in any of the
+            /// The action that you want AWS WAF to take when a request doesn&#39;t match the criteria in any of the
             /// rules that are associated with the web ACL.
             /// Required: Yes
             /// Type: AWS WAF Regional WebACL Action

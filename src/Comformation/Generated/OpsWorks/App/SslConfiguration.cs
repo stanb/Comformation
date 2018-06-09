@@ -15,7 +15,7 @@ namespace Comformation.OpsWorks.App
 
         /// <summary>
         /// Certificate
-        /// The contents of the certificate's domain. crt file.
+        /// The contents of the certificate&#39;s domain. crt file.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -33,7 +33,7 @@ namespace Comformation.OpsWorks.App
 
         /// <summary>
         /// PrivateKey
-        /// The private key; the contents of the certificate's domain. kex file.
+        /// The private key; the contents of the certificate&#39;s domain. kex file.
         /// Required: Yes
         /// Type: String
         /// </summary>

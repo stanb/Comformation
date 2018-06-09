@@ -16,7 +16,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             /// ReplicationInstanceIdentifier
             /// A name for the replication instance. If you specify a name, AWS CloudFormation converts it to lower
-            /// case. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that
+            /// case. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that
             /// ID for the replication instance identifier. For more information, see Name Type.
             /// Constraints:
             /// Must contain from 1 to 63 alphanumeric characters or hyphens. First character must be a letter.
@@ -52,7 +52,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             /// AvailabilityZone
             /// The EC2 Availability Zone that the replication instance will be created in. The default value is a
-            /// random, system-chosen Availability Zone in the endpoint's region.
+            /// random, system-chosen Availability Zone in the endpoint&#39;s region.
             /// Example: us-east-1d
             /// Required: No
             /// Type: String

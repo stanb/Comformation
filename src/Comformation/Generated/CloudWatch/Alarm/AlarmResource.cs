@@ -15,7 +15,7 @@ namespace Comformation.CloudWatch.Alarm
         {
             /// <summary>
             /// ActionsEnabled
-            /// Indicates whether actions should be executed during changes to the CloudWatch alarm's state.
+            /// Indicates whether actions should be executed during changes to the CloudWatch alarm&#39;s state.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -47,7 +47,7 @@ namespace Comformation.CloudWatch.Alarm
 
             /// <summary>
             /// AlarmName
-            /// A name for the alarm. If you don't specify a name, AWS CloudFormation generates a unique physical ID
+            /// A name for the alarm. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
             /// and uses that ID for the alarm name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -160,7 +160,7 @@ namespace Comformation.CloudWatch.Alarm
 
             /// <summary>
             /// Statistic
-            /// The statistic to apply to the alarm's associated metric.
+            /// The statistic to apply to the alarm&#39;s associated metric.
             /// You can specify the following values: SampleCount, Average, Sum, Minimum, or Maximum.
             /// Required: Conditional. You must specify either the ExtendedStatistic or the Statistic property.
             /// Type: String

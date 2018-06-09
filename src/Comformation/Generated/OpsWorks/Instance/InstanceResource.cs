@@ -176,8 +176,8 @@ namespace Comformation.OpsWorks.Instance
 
             /// <summary>
             /// SubnetId
-            /// The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to
-            /// override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a
+            /// The ID of the instance&#39;s subnet. If the stack is running in a VPC, you can use this parameter to
+            /// override the stack&#39;s default subnet ID value and direct AWS OpsWorks to launch the instance in a
             /// different subnet.
             /// Required: No
             /// Type: String
@@ -206,7 +206,7 @@ namespace Comformation.OpsWorks.Instance
 
             /// <summary>
             /// VirtualizationType
-            /// The instance's virtualization type, paravirtual or hvm.
+            /// The instance&#39;s virtualization type, paravirtual or hvm.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

@@ -17,7 +17,7 @@ namespace Comformation.RDS.OptionGroup
         /// <summary>
         /// DBSecurityGroupMemberships
         /// A list of database security group names for this option. If the option requires access to a port,
-        /// the security groups must allow access to that port. If you specify this property, don't specify the
+        /// the security groups must allow access to that port. If you specify this property, don&#39;t specify the
         /// VPCSecurityGroupMemberships property.
         /// Required: No
         /// Type: List of String values
@@ -65,7 +65,7 @@ namespace Comformation.RDS.OptionGroup
         /// <summary>
         /// VpcSecurityGroupMemberships
         /// A list of VPC security group IDs for this option. If the option requires access to a port, the
-        /// security groups must allow access to that port. If you specify this property, don't specify the
+        /// security groups must allow access to that port. If you specify this property, don&#39;t specify the
         /// DBSecurityGroupMemberships property.
         /// Required: No
         /// Type: List of String values

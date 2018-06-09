@@ -36,7 +36,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// <summary>
             /// AutoRollbackConfiguration
             /// Information about the automatic rollback configuration that is associated with the deployment group.
-            /// If you specify this property, don't specify the Deployment property.
+            /// If you specify this property, don&#39;t specify the Deployment property.
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup AutoRollbackConfiguration
             /// Update requires: No interruption
@@ -57,7 +57,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Deployment
             /// The application revision to deploy to this deployment group. If you specify this property, your
             /// target application revision will be deployed as soon as the provisioning process is complete. If you
-            /// specify this property, don't specify the AutoRollbackConfiguration property.
+            /// specify this property, don&#39;t specify the AutoRollbackConfiguration property.
             /// Required: No
             /// Type: AWS CodeDeploy DeploymentGroup Deployment
             /// Update requires: No interruption
@@ -78,7 +78,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
             /// <summary>
             /// DeploymentGroupName
-            /// A name for the deployment group. If you don't specify a name, AWS CloudFormation generates a unique
+            /// A name for the deployment group. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the deployment group name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -93,7 +93,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// DeploymentStyle
             /// Attributes that determine the type of deployment to run and whether to route deployment traffic
             /// behind a load balancer.
-            /// If you specify this property with a blue/green deployment type, don't specify the AutoScalingGroups,
+            /// If you specify this property with a blue/green deployment type, don&#39;t specify the AutoScalingGroups,
             /// LoadBalancerInfo, or Deployment properties.
             /// Note For blue/green deployments, AWS CloudFormation supports deployments on AWS Lambda compute
             /// platforms only.
@@ -142,7 +142,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// A service role Amazon Resource Name (ARN) that grants AWS CodeDeploy permission to make calls to AWS
             /// services on your behalf. For more information, see Create a Service Role for AWS CodeDeploy in the
             /// AWS CodeDeploy User Guide.
-            /// Note In some cases, you might need to add a dependency on the service role's policy. For more
+            /// Note In some cases, you might need to add a dependency on the service role&#39;s policy. For more
             /// information, see IAM role policy in DependsOn Attribute.
             /// Required: Yes
             /// Type: String

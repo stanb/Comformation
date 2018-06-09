@@ -34,7 +34,7 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
 
             /// <summary>
             /// Username
-            /// The user's user name.
+            /// The user&#39;s user name.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

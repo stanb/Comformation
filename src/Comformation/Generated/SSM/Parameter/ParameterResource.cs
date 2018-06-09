@@ -16,7 +16,7 @@ namespace Comformation.SSM.Parameter
             /// <summary>
             /// Type
             /// The type of parameter. Valid values include the following: String or StringList.
-            /// Note AWS CloudFormation doesn't support the SecureString parameter type.
+            /// Note AWS CloudFormation doesn&#39;t support the SecureString parameter type.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

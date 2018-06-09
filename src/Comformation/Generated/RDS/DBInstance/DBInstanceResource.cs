@@ -22,7 +22,7 @@ namespace Comformation.RDS.DBInstance
             /// increments), then you must also increase the AllocatedStorage value (in 100-GB increments).
             /// Required: Conditional. This property is required except when you specify the DBClusterIdentifier
             /// property or when you create a read replica from AWS CloudFormation by using the AWS::RDS::DBInstance
-            /// resource. In these cases, don't specify this property.
+            /// resource. In these cases, don&#39;t specify this property.
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -30,7 +30,7 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// AllowMajorVersionUpgrade
-            /// If you update the EngineVersion property to a version that's different from the DB instance's
+            /// If you update the EngineVersion property to a version that&#39;s different from the DB instance&#39;s
             /// current major version, set this property to true. For more information, see ModifyDBInstance in the
             /// Amazon Relational Database Service API Reference.
             /// Required: No
@@ -52,7 +52,7 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The name of the Availability Zone where the DB instance is located. You can't set the
+            /// The name of the Availability Zone where the DB instance is located. You can&#39;t set the
             /// AvailabilityZone parameter if the MultiAZ parameter is set to true.
             /// Required: No
             /// Type: String
@@ -77,7 +77,7 @@ namespace Comformation.RDS.DBInstance
             /// For supported engines, specifies the character set to associate with the DB instance. For more
             /// information, see Appendix: Oracle Character Sets Supported in Amazon RDS in the Amazon Relational
             /// Database Service User Guide.
-            /// If you specify the DBSnapshotIdentifier or SourceDBInstanceIdentifier property, don't specify this
+            /// If you specify the DBSnapshotIdentifier or SourceDBInstanceIdentifier property, don&#39;t specify this
             /// property. The value is inherited from the snapshot or source DB instance.
             /// Required: No
             /// Type: String
@@ -88,8 +88,8 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// CopyTagsToSnapshot
             /// Indicates whether to copy all of the user-defined tags from the DB instance to snapshots of the DB
-            /// instance. By default, Amazon RDS doesn't copy tags to snapshots. Amazon RDS doesn't copy tags with
-            /// the aws:: prefix unless it's the DB instance's final snapshot (the snapshot when you delete the DB
+            /// instance. By default, Amazon RDS doesn&#39;t copy tags to snapshots. Amazon RDS doesn&#39;t copy tags with
+            /// the aws:: prefix unless it&#39;s the DB instance&#39;s final snapshot (the snapshot when you delete the DB
             /// instance).
             /// Required: No
             /// Type: Boolean
@@ -100,7 +100,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// DBClusterIdentifier
             /// The name of an existing DB cluster that this instance is associated with. If you specify this
-            /// property, specify aurora for the Engine property and don't specify any of the following properties:
+            /// property, specify aurora for the Engine property and don&#39;t specify any of the following properties:
             /// AllocatedStorage, BackupRetentionPeriod, CharacterSetName, DBName, DBSecurityGroups, MasterUsername,
             /// MasterUserPassword, OptionGroupName, PreferredBackupWindow, PreferredMaintenanceWindow, Port,
             /// SourceDBInstanceIdentifier, StorageType, or VPCSecurityGroups.
@@ -126,7 +126,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// DBInstanceIdentifier
             /// A name for the DB instance. If you specify a name, AWS CloudFormation converts it to lowercase. If
-            /// you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the
+            /// you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the
             /// DB instance. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -142,7 +142,7 @@ namespace Comformation.RDS.DBInstance
             /// The name of the DB instance that was provided at the time of creation, if one was specified. This
             /// same name is returned for the life of the DB instance.
             /// Important If you specify the DBSnapshotIdentifier property, AWS CloudFormation ignores this
-            /// property. If you restore DB instances from snapshots, this property doesn't apply to the MySQL,
+            /// property. If you restore DB instances from snapshots, this property doesn&#39;t apply to the MySQL,
             /// PostgreSQL, or MariaDB engines.
             /// Required: No
             /// Type: String
@@ -178,8 +178,8 @@ namespace Comformation.RDS.DBInstance
             /// DBSubnetGroupName Engine EngineVersion Iops LicenseModel MasterUsername MasterUserPassword MultiAZ
             /// OptionGroupName PreferredBackupWindow PreferredMaintenanceWindow All other properties are ignored.
             /// Specify a virtual private cloud (VPC) security group if you want to submit other properties, such as
-            /// StorageType, StorageEncrypted, or KmsKeyId. If you're already using the DBSecurityGroups property,
-            /// you can't use these other properties by updating your DB instance to use a VPC security group. You
+            /// StorageType, StorageEncrypted, or KmsKeyId. If you&#39;re already using the DBSecurityGroups property,
+            /// you can&#39;t use these other properties by updating your DB instance to use a VPC security group. You
             /// must recreate the DB instance.
             /// Required: No
             /// Type: List of String values
@@ -189,15 +189,15 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// DBSnapshotIdentifier
-            /// The name or Amazon Resource Name (ARN) of the DB snapshot that's used to restore the DB instance. If
-            /// you're restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.
+            /// The name or Amazon Resource Name (ARN) of the DB snapshot that&#39;s used to restore the DB instance. If
+            /// you&#39;re restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.
             /// By specifying this property, you can create a DB instance from the specified DB snapshot. If the
             /// DBSnapshotIdentifier property is an empty string or the AWS::RDS::DBInstance declaration has no
             /// DBSnapshotIdentifier property, AWS CloudFormation creates a new database. If the property contains a
             /// value (other than an empty string), AWS CloudFormation creates a database from the specified
-            /// snapshot. If a snapshot with the specified name doesn't exist, AWS CloudFormation can't create the
+            /// snapshot. If a snapshot with the specified name doesn&#39;t exist, AWS CloudFormation can&#39;t create the
             /// database and it rolls back the stack.
-            /// Some DB instance properties aren't valid when you restore from a snapshot, such as the
+            /// Some DB instance properties aren&#39;t valid when you restore from a snapshot, such as the
             /// MasterUsername and MasterUserPassword properties. For information about the properties that you can
             /// specify, see the RestoreDBInstanceFromDBSnapshot action in the Amazon Relational Database Service
             /// API Reference.
@@ -212,7 +212,7 @@ namespace Comformation.RDS.DBInstance
             /// DBSubnetGroupName
             /// A DB subnet group to associate with the DB instance. If you update this value, the new subnet group
             /// must be a subnet group in a new VPC.
-            /// If there's no DB subnet group, then the instance isn't a VPC DB instance.
+            /// If there&#39;s no DB subnet group, then the instance isn&#39;t a VPC DB instance.
             /// For more information about using Amazon RDS in a VPC, see Using Amazon RDS with Amazon Virtual
             /// Private Cloud (VPC) in the Amazon Relational Database Service Developer Guide.
             /// Required: No
@@ -223,7 +223,7 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// Domain
-            /// For an Amazon RDS DB instance that's running Microsoft SQL Server, the Active Directory directory ID
+            /// For an Amazon RDS DB instance that&#39;s running Microsoft SQL Server, the Active Directory directory ID
             /// to create the instance in. Amazon RDS uses Windows Authentication to authenticate users that connect
             /// to the DB instance. For more information, see Using Windows Authentication with an Amazon RDS DB
             /// Instance Running Microsoft SQL Server in the Amazon Relational Database Service User Guide.
@@ -251,7 +251,7 @@ namespace Comformation.RDS.DBInstance
             /// Database Service API Reference.
             /// If you specify aurora as the database engine, you must also specify the DBClusterIdentifier
             /// property.
-            /// Note If you've specified oracle-se or oracle-se1 as the database engine, you can update the database
+            /// Note If you&#39;ve specified oracle-se or oracle-se1 as the database engine, you can update the database
             /// engine to oracle-se2 without the database instance being replaced. For information on the
             /// deprecation of support for Oracle version 12. 1. 0. 1, see Deprecation of Oracle 12. 1. 0. 1 in the
             /// Amazon Relational Database Service User Guide.
@@ -289,17 +289,17 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// KmsKeyId
-            /// The ARN of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the DB
+            /// The ARN of the AWS Key Management Service (AWS KMS) master key that&#39;s used to encrypt the DB
             /// instance, such as arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. If
-            /// you enable the StorageEncrypted property but don't specify this property, AWS CloudFormation uses
+            /// you enable the StorageEncrypted property but don&#39;t specify this property, AWS CloudFormation uses
             /// the default master key. If you specify this property, you must set the StorageEncrypted property to
             /// true.
             /// If you specify the SourceDBInstanceIdentifier property, the value is inherited from the source DB
             /// instance if the read replica is created in the same region. If you specify this property when you
             /// create a read replica from an unencrypted DB instance, the read replica is encrypted.
             /// If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key
-            /// for the destination AWS Region. KMS encryption keys are specific to the region that they're created
-            /// in, and you can't use encryption keys from one region in another region.
+            /// for the destination AWS Region. KMS encryption keys are specific to the region that they&#39;re created
+            /// in, and you can&#39;t use encryption keys from one region in another region.
             /// If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To specify both a
             /// security group and this property, you must use a VPC security group. For more information about
             /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon Relational Database Service
@@ -323,7 +323,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// MasterUserPassword
             /// The master password for the DB instance.
-            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don't specify
+            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don&#39;t specify
             /// this property. The value is inherited from the source DB instance or snapshot.
             /// Required: Conditional
             /// Type: String
@@ -334,7 +334,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// MasterUsername
             /// The master user name for the DB instance.
-            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don't specify
+            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don&#39;t specify
             /// this property. The value is inherited from the source DB instance or snapshot.
             /// Required: Conditional
             /// Type: String
@@ -372,9 +372,9 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// MultiAZ
-            /// Specifies if the database instance is a multiple Availability Zone deployment. You can't set the
+            /// Specifies if the database instance is a multiple Availability Zone deployment. You can&#39;t set the
             /// AvailabilityZone parameter if the MultiAZ parameter is set to true. Amazon Aurora storage is
-            /// replicated across all the Availability Zones and doesn't require the MultiAZ option to be set.
+            /// replicated across all the Availability Zones and doesn&#39;t require the MultiAZ option to be set.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -455,20 +455,20 @@ namespace Comformation.RDS.DBInstance
             /// remove the SourceDBInstanceIdentifier property from your template and then update your stack, AWS
             /// CloudFormation deletes the read replica and creates a new DB instance (not a read replica).
             /// Important If you specify a source DB instance that uses VPC security groups, we recommend that you
-            /// specify the VPCSecurityGroups property. If you don't specify the property, the read replica inherits
+            /// specify the VPCSecurityGroups property. If you don&#39;t specify the property, the read replica inherits
             /// the value of the VPCSecurityGroups property from the source DB when you create the replica. However,
-            /// if you update the stack, AWS CloudFormation reverts the replica's VPCSecurityGroups property to the
-            /// default value because it's not defined in the stack's template. This change might cause unexpected
-            /// issues. Read replicas don't support deletion policies. AWS CloudFormation ignores any deletion
-            /// policy that's associated with a read replica. If you specify SourceDBInstanceIdentifier, don't set
-            /// the MultiAZ property to true, and don't specify the DBSnapshotIdentifier property. You can't deploy
-            /// read replicas in multiple Availability Zones, and you can't create a read replica from a snapshot.
-            /// Don't set the BackupRetentionPeriod, DBName, MasterUsername, MasterUserPassword, and
+            /// if you update the stack, AWS CloudFormation reverts the replica&#39;s VPCSecurityGroups property to the
+            /// default value because it&#39;s not defined in the stack&#39;s template. This change might cause unexpected
+            /// issues. Read replicas don&#39;t support deletion policies. AWS CloudFormation ignores any deletion
+            /// policy that&#39;s associated with a read replica. If you specify SourceDBInstanceIdentifier, don&#39;t set
+            /// the MultiAZ property to true, and don&#39;t specify the DBSnapshotIdentifier property. You can&#39;t deploy
+            /// read replicas in multiple Availability Zones, and you can&#39;t create a read replica from a snapshot.
+            /// Don&#39;t set the BackupRetentionPeriod, DBName, MasterUsername, MasterUserPassword, and
             /// PreferredBackupWindow properties. The database attributes are inherited from the source DB instance,
             /// and backups are disabled for read replicas. If the source DB instance is in a different region than
             /// the read replica, specify an ARN for a valid DB instance. For more information, see Constructing a
             /// Amazon RDS Amazon Resource Name (ARN) in the Amazon Relational Database Service User Guide. For DB
-            /// instances in Amazon Aurora clusters, don't specify this property. Amazon RDS automatically assigns
+            /// instances in Amazon Aurora clusters, don&#39;t specify this property. Amazon RDS automatically assigns
             /// writer and reader DB instances.
             /// Required: No
             /// Type: String
@@ -489,7 +489,7 @@ namespace Comformation.RDS.DBInstance
             /// StorageEncrypted
             /// Indicates whether the DB instance is encrypted.
             /// If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier
-            /// property, don't specify this property. The value is inherited from the cluster, snapshot, or source
+            /// property, don&#39;t specify this property. The value is inherited from the cluster, snapshot, or source
             /// DB instance.
             /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
             /// Type: Boolean
@@ -535,12 +535,12 @@ namespace Comformation.RDS.DBInstance
             /// created in the template.
             /// If you set VPCSecurityGroups, you must not set DBSecurityGroups, and vice versa.
             /// Important You can migrate a DB instance in your stack from an RDS DB security group to a VPC
-            /// security group, but keep the following in mind: You can't revert to using an RDS security group
+            /// security group, but keep the following in mind: You can&#39;t revert to using an RDS security group
             /// after you establish a VPC security group membership. When you migrate your DB instance to VPC
             /// security groups, if your stack update rolls back because the DB instance update fails or because an
-            /// update fails in another AWS CloudFormation resource, the rollback fails because it can't revert to
+            /// update fails in another AWS CloudFormation resource, the rollback fails because it can&#39;t revert to
             /// an RDS security group. To use the properties that are available when you use a VPC security group,
-            /// you must recreate the DB instance. If you don't, AWS CloudFormation submits only the property values
+            /// you must recreate the DB instance. If you don&#39;t, AWS CloudFormation submits only the property values
             /// that are listed in the DBSecurityGroups property. To avoid this situation, migrate your DB instance
             /// to using VPC security groups only when that is the only change in your stack template.
             /// Required: No

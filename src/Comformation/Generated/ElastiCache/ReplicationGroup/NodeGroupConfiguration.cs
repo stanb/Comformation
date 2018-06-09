@@ -16,7 +16,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
         /// <summary>
         /// PrimaryAvailabilityZone
-        /// The Availability Zone where ElastiCache launches the node group's primary node.
+        /// The Availability Zone where ElastiCache launches the node group&#39;s primary node.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -26,8 +26,8 @@ namespace Comformation.ElastiCache.ReplicationGroup
         /// <summary>
         /// ReplicaAvailabilityZones
         /// A list of Availability Zones where ElastiCache launches the read replicas. The number of
-        /// Availability Zones must match the value of the ReplicaCount property or, if you don't specify the
-        /// ReplicaCount property, the replication group's ReplicasPerNodeGroup property.
+        /// Availability Zones must match the value of the ReplicaCount property or, if you don&#39;t specify the
+        /// ReplicaCount property, the replication group&#39;s ReplicasPerNodeGroup property.
         /// Required: No
         /// Type: List of String values
         /// </summary>
@@ -48,7 +48,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
         /// A string of comma-separated values where the first set of values are the slot numbers (zero based),
         /// and the second set of values are the keyspaces for each slot. The following example specifies three
         /// slots (numbered 0, 1, and 2): 0,1,2,0-4999,5000-9999,10000-16,383.
-        /// If you don't specify a value, ElastiCache allocates keys equally among each slot.
+        /// If you don&#39;t specify a value, ElastiCache allocates keys equally among each slot.
         /// Required: No
         /// Type: String
         /// </summary>

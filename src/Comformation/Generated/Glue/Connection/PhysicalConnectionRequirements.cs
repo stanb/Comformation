@@ -16,7 +16,7 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// AvailabilityZone
-        /// The connection's Availability Zone. It must match the single-line string pattern:
+        /// The connection&#39;s Availability Zone. It must match the single-line string pattern:
         /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
         /// Required: Yes
         /// Type: String
@@ -37,7 +37,7 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// SubnetId
-        /// The subnet ID that's used by the connection. It must match the single-line string pattern:
+        /// The subnet ID that&#39;s used by the connection. It must match the single-line string pattern:
         /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
         /// Required: Yes
         /// Type: String

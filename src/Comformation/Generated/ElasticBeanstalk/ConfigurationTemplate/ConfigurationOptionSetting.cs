@@ -16,7 +16,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
 
         /// <summary>
         /// Namespace
-        /// A unique namespace that identifies the option's associated AWS resource. For a list of namespaces
+        /// A unique namespace that identifies the option&#39;s associated AWS resource. For a list of namespaces
         /// that you can use, see Configuration Options in the AWS Elastic Beanstalk Developer Guide.
         /// Required: Yes
         /// Type: String

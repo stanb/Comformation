@@ -26,9 +26,9 @@ namespace Comformation.Route53.RecordSetGroup
 
         /// <summary>
         /// EvaluateTargetHealth
-        /// Whether Route 53 checks the health of the resource record sets in the alias target when responding
+        /// Whether Route&#160;53 checks the health of the resource record sets in the alias target when responding
         /// to DNS queries. For more information about using this property, see EvaluateTargetHealth in the
-        /// Amazon Route 53 API Reference.
+        /// Amazon Route&#160;53 API Reference.
         /// Type: Boolean
         /// Required: No
         /// </summary>
@@ -38,7 +38,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// HostedZoneId
         /// The hosted zone ID. For load balancers, use the canonical hosted zone ID of the load balancer. For
-        /// Amazon S3, use the hosted zone ID for your bucket's website endpoint. For CloudFront, use
+        /// Amazon S3, use the hosted zone ID for your bucket&#39;s website endpoint. For CloudFront, use
         /// Z2FDTNDATAQYW2. For a list of hosted zone IDs of other services, see the relevant service in the AWS
         /// Regions and Endpoints.
         /// Type: String

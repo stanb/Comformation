@@ -8,7 +8,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
     /// <summary>
     /// AWS CodeDeploy DeploymentGroup AutoRollbackConfiguration
     /// The AutoRollbackConfiguration property type configures automatic rollback for an AWS CodeDeploy deployment
-    /// group when a deployment doesn't complete successfully. For more information, see Automatic Rollbacks in the
+    /// group when a deployment doesn&#39;t complete successfully. For more information, see Automatic Rollbacks in the
     /// AWS CodeDeploy User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html
     /// </summary>

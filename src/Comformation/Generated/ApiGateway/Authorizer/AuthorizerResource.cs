@@ -17,7 +17,7 @@ namespace Comformation.ApiGateway.Authorizer
         {
             /// <summary>
             /// AuthType
-            /// An optional customer-defined field that's used in Swagger imports and exports without functional
+            /// An optional customer-defined field that&#39;s used in Swagger imports and exports without functional
             /// impact.
             /// Required: No
             /// Type: String
@@ -28,7 +28,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// <summary>
             /// AuthorizerCredentials
             /// The credentials that are required for the authorizer. To specify an AWS Identity and Access
-            /// Management (IAM) role that API Gateway assumes, specify the role's Amazon Resource Name (ARN). To
+            /// Management (IAM) role that API Gateway assumes, specify the role&#39;s Amazon Resource Name (ARN). To
             /// use resource-based permissions on the AWS Lambda (Lambda) function, specify null.
             /// Required: No
             /// Type: String
@@ -49,7 +49,7 @@ namespace Comformation.ApiGateway.Authorizer
 
             /// <summary>
             /// AuthorizerUri
-            /// The authorizer's Uniform Resource Identifier (URI). If you specify TOKEN for the authorizer's Type
+            /// The authorizer&#39;s Uniform Resource Identifier (URI). If you specify TOKEN for the authorizer&#39;s Type
             /// property, specify a Lambda function URI that has the form
             /// arn:aws:apigateway:region:lambda:path/path. The path usually has the form
             /// /2015-03-31/functions/LambdaFunctionARN/invocations.
@@ -61,7 +61,7 @@ namespace Comformation.ApiGateway.Authorizer
 
             /// <summary>
             /// IdentitySource
-            /// The source of the identity in an incoming request. If you specify TOKEN for the authorizer's Type
+            /// The source of the identity in an incoming request. If you specify TOKEN for the authorizer&#39;s Type
             /// property, specify a mapping expression. The custom header mapping expression has the form method.
             /// request. header. name, where name is the name of a custom authorization header that clients submit
             /// as part of their requests.
@@ -73,9 +73,9 @@ namespace Comformation.ApiGateway.Authorizer
 
             /// <summary>
             /// IdentityValidationExpression
-            /// A validation expression for the incoming identity. If you specify TOKEN for the authorizer's Type
+            /// A validation expression for the incoming identity. If you specify TOKEN for the authorizer&#39;s Type
             /// property, specify a regular expression. API Gateway uses the expression to attempt to match the
-            /// incoming client token, and proceeds if the token matches. If the token doesn't match, API Gateway
+            /// incoming client token, and proceeds if the token matches. If the token doesn&#39;t match, API Gateway
             /// responds with a 401 (unauthorized request) error code.
             /// Required: No
             /// Type: String

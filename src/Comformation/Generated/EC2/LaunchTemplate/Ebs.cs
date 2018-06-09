@@ -48,7 +48,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// Encrypted
         /// Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances
-        /// that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify
+        /// that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can&#39;t specify
         /// an encryption value.
         /// Required: No
         /// Type: Boolean
@@ -76,7 +76,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// VolumeSize
         /// The size of the volume, in GiB.
-        /// Default: If you're creating the volume from a snapshot and don't specify a volume size, the default
+        /// Default: If you&#39;re creating the volume from a snapshot and don&#39;t specify a volume size, the default
         /// is the snapshot size.
         /// Required: No
         /// Type: Integer

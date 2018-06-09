@@ -15,7 +15,7 @@ namespace Comformation.EC2.CustomerGateway
         {
             /// <summary>
             /// BgpAsn
-            /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
+            /// The customer gateway&#39;s Border Gateway Protocol (BGP) Autonomous System Number (ASN).
             /// Required: Yes
             /// Type: Number BgpAsn is always an integer value.
             /// Update requires: Replacement
@@ -24,7 +24,7 @@ namespace Comformation.EC2.CustomerGateway
 
             /// <summary>
             /// IpAddress
-            /// The internet-routable IP address for the customer gateway's outside interface. The address must be
+            /// The internet-routable IP address for the customer gateway&#39;s outside interface. The address must be
             /// static.
             /// Required: Yes
             /// Type: String

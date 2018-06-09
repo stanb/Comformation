@@ -26,7 +26,7 @@ namespace Comformation.Glue.Classifier
 
         /// <summary>
         /// GrokPattern
-        /// The grok pattern that's used by this classifier. It must match the Logstash grok string pattern:
+        /// The grok pattern that&#39;s used by this classifier. It must match the Logstash grok string pattern:
         /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\t]*
         /// Required: Yes
         /// Type: String

@@ -17,7 +17,7 @@ namespace Comformation.CodeBuild.Project
         /// <summary>
         /// Type
         /// The type of cache for the build project to use. Valid values are:
-        /// NO_CACHE: The build project doesn't use any cache. S3: The build project reads from and writes to
+        /// NO_CACHE: The build project doesn&#39;t use any cache. S3: The build project reads from and writes to
         /// Amazon S3.
         /// Required: Yes
         /// Type: String

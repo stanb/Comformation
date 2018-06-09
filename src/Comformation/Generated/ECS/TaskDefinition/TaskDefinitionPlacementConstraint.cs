@@ -17,7 +17,7 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// Expression
         /// A cluster query language expression to apply to the constraint. If the constraint type is
-        /// distinctInstance, you can't specify an expression. For more information, see Cluster Query Language
+        /// distinctInstance, you can&#39;t specify an expression. For more information, see Cluster Query Language
         /// in the Amazon Elastic Container Service Developer Guide.
         /// Required: No
         /// Type: String

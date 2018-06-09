@@ -16,7 +16,7 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// HeaderValue
-        /// Must be less than 2048 characters, and must not contain newline characters ("\r" or "\n").
+        /// Must be less than 2048 characters, and must not contain newline characters (&quot;\r&quot; or &quot;\n&quot;).
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

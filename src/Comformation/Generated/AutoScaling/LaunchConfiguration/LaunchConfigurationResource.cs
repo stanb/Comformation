@@ -68,7 +68,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Additional fees are incurred when using EBS-optimized instances. For more information about fees and
             /// supported instance types, see EBS-Optimized Instances in the Amazon EC2 User Guide for Linux
             /// Instances.
-            /// Required: No If this property is not specified, "false" is used.
+            /// Required: No If this property is not specified, &quot;false&quot; is used.
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
@@ -200,7 +200,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// The spot price for this Auto Scaling group. If a spot price is set, then the Auto Scaling group will
             /// launch when the current spot price is less than the amount specified in the template.
             /// When you have specified a spot price for an auto scaling group, the group will only launch when the
-            /// spot price has been met, regardless of the setting in the Auto Scaling group's DesiredCapacity.
+            /// spot price has been met, regardless of the setting in the Auto Scaling group&#39;s DesiredCapacity.
             /// For more information about configuring a spot price for an Auto Scaling group, see Launching Spot
             /// Instances in your Auto Scaling Group in the Amazon EC2 Auto Scaling User Guide.
             /// Required: No

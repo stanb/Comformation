@@ -56,7 +56,7 @@ namespace Comformation.ECS.TaskDefinition
             /// of a task definition. Amazon ECS gives the first task definition that you registered to a family a
             /// revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you
             /// add.
-            /// Note To use revision numbers when you update a task definition, specify this property. If you don't
+            /// Note To use revision numbers when you update a task definition, specify this property. If you don&#39;t
             /// specify a value, AWS CloudFormation generates a new task definition each time that you update it.
             /// Required: No
             /// Type: String
@@ -85,7 +85,7 @@ namespace Comformation.ECS.TaskDefinition
             /// The Docker networking mode to use for the containers in the task, such as none, bridge, or host. For
             /// information about network modes, see NetworkMode in the Task Definition Parameters topic in the
             /// Amazon Elastic Container Service Developer Guide.
-            /// For Fargate launch types, you can specify awsvpc only. The none, bridge, or host option won't work
+            /// For Fargate launch types, you can specify awsvpc only. The none, bridge, or host option won&#39;t work
             /// for Fargate launch types.
             /// Required: No
             /// Type: String

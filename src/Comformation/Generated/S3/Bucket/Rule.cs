@@ -81,7 +81,7 @@ namespace Comformation.S3.Bucket
         /// NoncurrentVersionTransition
         /// For buckets with versioning enabled (or suspended), specifies when non-current objects transition to
         /// a specified storage class. If you specify a transition and expiration time, the expiration time must
-        /// be later than the transition time. If you specify this property, don't specify the
+        /// be later than the transition time. If you specify this property, don&#39;t specify the
         /// NoncurrentVersionTransitions property.
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
@@ -96,7 +96,7 @@ namespace Comformation.S3.Bucket
         /// For buckets with versioning enabled (or suspended), one or more transition rules that specify when
         /// non-current objects transition to a specified storage class. If you specify a transition and
         /// expiration time, the expiration time must be later than the transition time. If you specify this
-        /// property, don't specify the NoncurrentVersionTransition property.
+        /// property, don&#39;t specify the NoncurrentVersionTransition property.
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
@@ -138,7 +138,7 @@ namespace Comformation.S3.Bucket
         /// Transition
         /// Specifies when an object transitions to a specified storage class. If you specify an expiration and
         /// transition time, you must use the same time unit for both properties (either in days or by date).
-        /// The expiration time must also be later than the transition time. If you specify this property, don't
+        /// The expiration time must also be later than the transition time. If you specify this property, don&#39;t
         /// specify the Transitions property.
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
@@ -153,7 +153,7 @@ namespace Comformation.S3.Bucket
         /// One or more transition rules that specify when an object transitions to a specified storage class.
         /// If you specify an expiration and transition time, you must use the same time unit for both
         /// properties (either in days or by date). The expiration time must also be later than the transition
-        /// time. If you specify this property, don't specify the Transition property.
+        /// time. If you specify this property, don&#39;t specify the Transition property.
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.

@@ -129,7 +129,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// ValidUntil
         /// The end date and time of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ). After the end date and
-        /// time, Amazon EC2 doesn't request new Spot instances or enable them to fulfill the request.
+        /// time, Amazon EC2 doesn&#39;t request new Spot instances or enable them to fulfill the request.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

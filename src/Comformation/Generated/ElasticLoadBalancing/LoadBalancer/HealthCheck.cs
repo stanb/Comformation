@@ -37,7 +37,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// Target
-        /// Specifies the instance's protocol and port to check. The protocol can be TCP, HTTP, HTTPS, or SSL.
+        /// Specifies the instance&#39;s protocol and port to check. The protocol can be TCP, HTTP, HTTPS, or SSL.
         /// The range of valid ports is 1 through 65535.
         /// Required: Yes
         /// Type: String

@@ -32,7 +32,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Advanced Options in the Amazon Elasticsearch Service Developer Guide.
             /// Required: No
             /// Type: A JSON object that consists of a string key-value pair, such as:
-            /// { "rest. action. multi. allow_explicit_index": "true" }
+            /// { &quot;rest. action. multi. allow_explicit_index&quot;: &quot;true&quot; }
             /// Update requires: Replacement
             /// </summary>
 			public Union<Dictionary<string, string>, IntrinsicFunction> AdvancedOptions { get; set; }
@@ -41,7 +41,7 @@ namespace Comformation.Elasticsearch.Domain
             /// DomainName
             /// A name for the Amazon ES domain. For valid values, see the DomainName data type in the Amazon
             /// Elasticsearch Service Developer Guide.
-            /// If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
             /// the domain name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the

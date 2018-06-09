@@ -16,7 +16,7 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// MaximumPercent
-        /// The maximum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount
+        /// The maximum number of tasks, specified as a percentage of the Amazon ECS service&#39;s DesiredCount
         /// value, that can run in a service during a deployment. To calculate the maximum number of tasks,
         /// Amazon ECS uses this formula: the value of DesiredCount * (the value of the MaximumPercent/100),
         /// rounded down to the nearest integer value.
@@ -28,7 +28,7 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// MinimumHealthyPercent
-        /// The minimum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount
+        /// The minimum number of tasks, specified as a percentage of the Amazon ECS service&#39;s DesiredCount
         /// value, that must continue to run and remain healthy during a deployment. To calculate the minimum
         /// number of tasks, Amazon ECS uses this formula: the value of DesiredCount * (the value of the
         /// MinimumHealthyPercent/100), rounded up to the nearest integer value.

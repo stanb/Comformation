@@ -155,7 +155,7 @@ namespace Comformation.Cognito.UserPool
 
             /// <summary>
             /// DeviceConfiguration
-            /// The type of configuration for the user pool's device tracking.
+            /// The type of configuration for the user pool&#39;s device tracking.
             /// Required: No
             /// Type: Amazon Cognito UserPool DeviceConfiguration
             /// Update requires: No interruption

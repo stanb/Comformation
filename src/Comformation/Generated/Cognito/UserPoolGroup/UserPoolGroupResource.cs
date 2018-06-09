@@ -47,11 +47,11 @@ namespace Comformation.Cognito.UserPoolGroup
             /// that a user can belong to in the user pool. Zero is the highest Precedence value. Groups with lower
             /// Precedence values take precedence over groups with higher or null Precedence values. If a user
             /// belongs to two or more groups, the role ARN of the group with the lowest precedence value is used in
-            /// the cognito:roles and cognito:preferred_role claims in the user's tokens.
+            /// the cognito:roles and cognito:preferred_role claims in the user&#39;s tokens.
             /// Two groups can have the same Precedence value. If this happens, neither group takes precedence over
             /// the other. If two groups with the same Precedence value have the same role ARN, that role is used in
             /// the cognito:preferred_role claim in tokens for users in each group. If the two groups have different
-            /// role ARNs, the cognito:preferred_role claim is not set in users' tokens.
+            /// role ARNs, the cognito:preferred_role claim is not set in users&#39; tokens.
             /// The default Precedence value is null.
             /// Required: No
             /// Type: Number

@@ -27,7 +27,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
         /// <summary>
         /// Info
         /// The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
-        /// "LoadTemplateFromURL": "https://s3. amazonaws. com/cf-templates-ozkq9d3hgiq2-us-east-1/. . . "
+        /// &quot;LoadTemplateFromURL&quot;: &quot;https://s3. amazonaws. com/cf-templates-ozkq9d3hgiq2-us-east-1/. . . &quot;
         /// Required: Yes
         /// Type: Json
         /// Update requires: No interruption

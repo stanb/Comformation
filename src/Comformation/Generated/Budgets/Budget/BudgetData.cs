@@ -32,10 +32,10 @@ namespace Comformation.Budgets.Budget
         /// TimePeriod
         /// The period of time covered by a budget. Has a start date and an end date. The start date must come
         /// before the end date. There are no restrictions on the end date.
-        /// If you create your budget and don't specify a start date, AWS defaults to the start of your chosen
+        /// If you create your budget and don&#39;t specify a start date, AWS defaults to the start of your chosen
         /// time period (i. e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you create your budget on
-        /// January 24th 2018, choose DAILY, and don't set a start date, AWS sets your start date to 01/24/18
-        /// 00:00 UTC. If you choose MONTHLY, AWS sets your start date to 01/01/18 00:00 UTC. If you don't
+        /// January 24th 2018, choose DAILY, and don&#39;t set a start date, AWS sets your start date to 01/24/18
+        /// 00:00 UTC. If you choose MONTHLY, AWS sets your start date to 01/01/18 00:00 UTC. If you don&#39;t
         /// specify an end date, AWS sets your end date to 06/15/87 00:00 UTC.
         /// After the end date, AWS deletes the budget and all associated notifications and subscribers.
         /// Required: No

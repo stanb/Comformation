@@ -42,7 +42,7 @@ namespace Comformation.ECS.TaskDefinition
         /// processes. This maps to the --init option to docker run.
         /// This property requires at least version 1. 25 of the Docker Remote API on your container instance.
         /// To check the API version on your container instance, log in to your container instance and run the
-        /// following command: sudo docker version | grep "Server API version"
+        /// following command: sudo docker version | grep &quot;Server API version&quot;
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement

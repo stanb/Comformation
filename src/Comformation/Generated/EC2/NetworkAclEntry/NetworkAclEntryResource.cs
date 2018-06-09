@@ -82,7 +82,7 @@ namespace Comformation.EC2.NetworkAclEntry
 
             /// <summary>
             /// RuleAction
-            /// Whether to allow or deny traffic that matches the rule; valid values are "allow" or "deny".
+            /// Whether to allow or deny traffic that matches the rule; valid values are &quot;allow&quot; or &quot;deny&quot;.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -92,7 +92,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// <summary>
             /// RuleNumber
             /// Rule number to assign to the entry, such as 100. ACL entries are processed in ascending order by
-            /// rule number. Entries can't use the same rule number unless one is an egress rule and the other is an
+            /// rule number. Entries can&#39;t use the same rule number unless one is an egress rule and the other is an
             /// ingress rule. For valid values, see the CreateNetworkAclEntry action in the Amazon EC2 API
             /// Reference.
             /// Required: Yes

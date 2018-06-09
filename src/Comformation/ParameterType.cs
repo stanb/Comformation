@@ -33,9 +33,9 @@ namespace Comformation
         /// For example, users could specify "8888".
         /// </summary>
         public static readonly ParameterType Number = new ParameterType("Number");
-        
+
         /// <summary>
-        /// List<Number>
+        /// List&lt;Number&gt;
         /// An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers; however, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.
         /// For example, users could specify "80,20", and a Ref would result in ["80","20"].
         /// </summary>

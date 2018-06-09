@@ -23,7 +23,7 @@ namespace Comformation.EFS.MountTarget
             /// Update requires: Replacement
             /// Before updating this property, stop EC2 instances that are using this mount target, and then restart
             /// them after the update is complete. This allows the instances to unmount the file system before the
-            /// mount target is replaced. If you don't stop and restart them, instances or applications that are
+            /// mount target is replaced. If you don&#39;t stop and restart them, instances or applications that are
             /// using those mounts might be disrupted when the mount target is deleted (uncommitted writes might be
             /// lost).
             /// </summary>
@@ -32,14 +32,14 @@ namespace Comformation.EFS.MountTarget
             /// <summary>
             /// IpAddress
             /// An IPv4 address that is within the address range of the subnet that is specified in the SubnetId
-            /// property. If you don't specify an IP address, Amazon EFS automatically assigns an address that is
+            /// property. If you don&#39;t specify an IP address, Amazon EFS automatically assigns an address that is
             /// within the range of the subnet.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// Before updating this property, stop EC2 instances that are using this mount target, and then restart
             /// them after the update is complete. This allows the instances to unmount the file system before the
-            /// mount target is replaced. If you don't stop and restart them, instances or applications that are
+            /// mount target is replaced. If you don&#39;t stop and restart them, instances or applications that are
             /// using those mounts might be disrupted when the mount target is deleted (uncommitted writes might be
             /// lost).
             /// </summary>
@@ -68,7 +68,7 @@ namespace Comformation.EFS.MountTarget
             /// Update requires: Replacement
             /// Before updating this property, stop EC2 instances that are using this mount target and then restart
             /// them after the update is complete. That way the instances can unmount the file system before the
-            /// mount target is replaced. If you don't stop and restart them, instances or applications that are
+            /// mount target is replaced. If you don&#39;t stop and restart them, instances or applications that are
             /// using those mounts might be disrupted when the mount target is deleted (uncommitted writes might be
             /// lost).
             /// </summary>

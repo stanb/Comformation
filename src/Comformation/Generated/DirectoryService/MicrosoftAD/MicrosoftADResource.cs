@@ -8,7 +8,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
     /// AWS::DirectoryService::MicrosoftAD
     /// The AWS::DirectoryService::MicrosoftAD resource creates an Enterprise Edition Microsoft Active Directory in
     /// AWS so that your directory users and groups can access the AWS Management Console and AWS applications using
-    /// their existing credentials. At this time, AWS CloudFormation can't create a Standard Edition Microsoft Active
+    /// their existing credentials. At this time, AWS CloudFormation can&#39;t create a Standard Edition Microsoft Active
     /// Directory. For more information, see What Is AWS Directory Service? in the AWS Directory Service
     /// Administration Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
@@ -42,7 +42,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// EnableSso
             /// Whether to enable single sign-on for a Microsoft Active Directory in AWS. Single sign-on allows
             /// users in your directory to access certain AWS services from a computer joined to the directory
-            /// without having to enter their credentials separately. If you don't specify a value, AWS
+            /// without having to enter their credentials separately. If you don&#39;t specify a value, AWS
             /// CloudFormation disables single sign-on by default.
             /// Required: No
             /// Type: Boolean
@@ -53,7 +53,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// <summary>
             /// Name
             /// The fully qualified name for the Microsoft Active Directory in AWS, such as corp. example. com. The
-            /// name doesn't need to be publicly resolvable; it will resolve inside your VPC only.
+            /// name doesn&#39;t need to be publicly resolvable; it will resolve inside your VPC only.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -71,7 +71,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
             /// <summary>
             /// ShortName
-            /// The NetBIOS name for your domain, such as CORP. If you don't specify a value, AWS Directory Service
+            /// The NetBIOS name for your domain, such as CORP. If you don&#39;t specify a value, AWS Directory Service
             /// uses the first part of your directory DNS server name. For example, if your directory DNS server
             /// name is corp. example. com, AWS Directory Service specifies CORP for the NetBIOS name.
             /// Required: No

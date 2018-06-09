@@ -7,8 +7,8 @@ namespace Comformation.ServiceDiscovery.Service
     /// <summary>
     /// AWS::ServiceDiscovery::Service
     /// The AWS::ServiceDiscovery::Service resource defines a template for up to five records and an 		optional health
-    /// check that you want Amazon Route 53 to create when you register an instance. For more information, see
-    /// 		CreateService 		in the Amazon Route 53 API Reference.
+    /// check that you want Amazon Route&#160;53 to create when you register an instance. For more information, see
+    /// 		CreateService 		in the Amazon Route&#160;53 API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html
     /// </summary>
     public class ServiceResource : ResourceBase
@@ -32,12 +32,12 @@ namespace Comformation.ServiceDiscovery.Service
             /// <summary>
             /// DnsConfig
             /// 					
-            /// A complex type that contains information about the resource record sets that you want Route 53 to
+            /// A complex type that contains information about the resource record sets that you want Route&#160;53 to
             /// create 						when you register an instance.
             /// 					
             /// Required: Yes
             /// 					
-            /// Type: Amazon Route 53 ServiceDiscovery DnsConfig
+            /// Type: Amazon Route&#160;53 ServiceDiscovery DnsConfig
             /// 					
             /// Update requires: No interruption
             /// 				
@@ -48,12 +48,12 @@ namespace Comformation.ServiceDiscovery.Service
             /// HealthCheckConfig
             /// 					
             /// A complex type that contains settings for an optional health check. If you specify settings for a
-            /// health check, 						Route 53 associates the health check with all the resource record sets that you
+            /// health check, 						Route&#160;53 associates the health check with all the resource record sets that you
             /// specify in DnsConfig.
             /// 					
             /// Required: No
             /// 					
-            /// Type: Amazon Route 53 ServiceDiscovery HealthCheckConfig
+            /// Type: Amazon Route&#160;53 ServiceDiscovery HealthCheckConfig
             /// 					
             /// Update requires: No interruption
             /// 				

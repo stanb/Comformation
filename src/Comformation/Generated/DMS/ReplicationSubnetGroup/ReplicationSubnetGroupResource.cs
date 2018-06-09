@@ -25,7 +25,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
 
             /// <summary>
             /// ReplicationSubnetGroupIdentifier
-            /// The identifier for the replication subnet group. If you don't specify a name, AWS CloudFormation
+            /// The identifier for the replication subnet group. If you don&#39;t specify a name, AWS CloudFormation
             /// generates a unique physical ID and uses that ID for the identifier.
             /// Required: No
             /// Type: String

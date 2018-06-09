@@ -128,7 +128,7 @@ namespace Comformation.ECS.TaskDefinition
         /// HealthCheck
         /// A container health check. Health check parameters that are specified in a container definition
         /// override any Docker health checks that exist in the container image (such as those specified in a
-        /// parent image or from the image's Dockerfile).
+        /// parent image or from the image&#39;s Dockerfile).
         /// Required: No
         /// Type: Amazon ECS TaskDefinition HealthCheckAmazon SageMaker Endpoint TagAmazon SageMaker
         /// EndpointConfig ProductionVariantAmazon SageMaker NotebookInstanceLifecycleConfig
@@ -250,7 +250,7 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// ReadonlyRootFilesystem
-        /// Indicates whether the container's root file system is mounted as read only.
+        /// Indicates whether the container&#39;s root file system is mounted as read only.
         /// Required: No
         /// Type: Boolean
         /// </summary>
@@ -260,7 +260,7 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// Ulimits
         /// A list of ulimits to set in the container. The ulimits set constraints on how many resources a
-        /// container can consume so that it doesn't deplete all available resources on the host.
+        /// container can consume so that it doesn&#39;t deplete all available resources on the host.
         /// Required: No
         /// Type: List of Amazon ECS TaskDefinition Ulimit property types
         /// </summary>

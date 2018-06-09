@@ -59,7 +59,7 @@ namespace Comformation.S3.Bucket
 
             /// <summary>
             /// BucketName
-            /// A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique physical
+            /// A name for the bucket. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
             /// ID and uses that ID for the bucket name. For more information, see Name Type. The bucket name must
             /// contain only lowercase letters, numbers, periods (. ), and dashes (-).
             /// Important If you specify a name, you cannot perform updates that require replacement of this

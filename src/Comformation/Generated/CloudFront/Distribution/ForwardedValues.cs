@@ -29,8 +29,8 @@ namespace Comformation.CloudFront.Distribution
         /// Specifies the headers that you want Amazon CloudFront to forward to the origin for this cache
         /// behavior (whitelisted headers). For the headers that you specify, Amazon CloudFront also caches
         /// separate versions of a specified object that is based on the header values in viewer requests.
-        /// For custom origins, if you specify a single asterisk (["*"]), all headers are forwarded. If you
-        /// don't specify a value, only the default headers are forwarded. For Amazon S3 origins, you can
+        /// For custom origins, if you specify a single asterisk ([&quot;*&quot;]), all headers are forwarded. If you
+        /// don&#39;t specify a value, only the default headers are forwarded. For Amazon S3 origins, you can
         /// forward only selected headers; specifying * is not supported. For more information, see Configuring
         /// CloudFront to Cache Objects Based on Request Headers in the Amazon CloudFront Developer Guide.
         /// Required: No

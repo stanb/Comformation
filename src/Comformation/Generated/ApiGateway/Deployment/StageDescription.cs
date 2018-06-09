@@ -25,7 +25,7 @@ namespace Comformation.ApiGateway.Deployment
 
         /// <summary>
         /// CacheClusterSize
-        /// The size of the stage's cache cluster.
+        /// The size of the stage&#39;s cache cluster.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -111,7 +111,7 @@ namespace Comformation.ApiGateway.Deployment
 
         /// <summary>
         /// MethodSettings
-        /// Configures settings for all of the stage's methods.
+        /// Configures settings for all of the stage&#39;s methods.
         /// Required: No
         /// Type: List of API Gateway Deployment MethodSetting
         /// </summary>
@@ -152,7 +152,7 @@ namespace Comformation.ApiGateway.Deployment
         /// <summary>
         /// Variables
         /// A map that defines the stage variables. Variable names must consist of alphanumeric characters, and
-        /// the values must match the following regular expression: [A-Za-z0-9-. _~:/?#&amp;amp;=,]+.
+        /// the values must match the following regular expression: [A-Za-z0-9-. _~:/?#&amp;amp;amp;=,]+.
         /// Required: No
         /// Type: Mapping of key-value pairs
         /// </summary>

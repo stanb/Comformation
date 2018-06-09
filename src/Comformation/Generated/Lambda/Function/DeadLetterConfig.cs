@@ -8,7 +8,7 @@ namespace Comformation.Lambda.Function
     /// <summary>
     /// AWS Lambda Function DeadLetterConfig
     /// DeadLetterConfig is a property of the AWS::Lambda::Function resource that specifies a Dead Letter Queue (DLQ)
-    /// that AWS Lambda (Lambda) sends events to when it can't process them. For example, you can send unprocessed
+    /// that AWS Lambda (Lambda) sends events to when it can&#39;t process them. For example, you can send unprocessed
     /// events to an Amazon Simple Notification Service (Amazon SNS) topic, where you can take further action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html
     /// </summary>

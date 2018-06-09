@@ -16,8 +16,8 @@ namespace Comformation.IoT.TopicRule
         /// <summary>
         /// TableName
         /// The name of the DynamoDB table.
-        /// Note The MQTT message payload must contain a root-level key that matches the table's primary
-        /// partition key and a root-level key that matches the table's primary sort key, if one is defined.
+        /// Note The MQTT message payload must contain a root-level key that matches the table&#39;s primary
+        /// partition key and a root-level key that matches the table&#39;s primary sort key, if one is defined.
         /// 				 For more information, see DynamoDBv2 Action in the AWS IoT Developer Guide. .
         /// Required: Yes
         /// Type: String

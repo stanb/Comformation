@@ -16,7 +16,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// <summary>
             /// AZMode
             /// For Memcached cache clusters, indicates whether the nodes are created in a single Availability Zone
-            /// or across multiple Availability Zones in the cluster's region. For valid values, see
+            /// or across multiple Availability Zones in the cluster&#39;s region. For valid values, see
             /// CreateCacheCluster in the Amazon ElastiCache API Reference.
             /// Required: Conditional. If you specify multiple Availability Zones in the PreferredAvailabilityZones
             /// property, you must specify cross Availability Zones for this property.
@@ -58,7 +58,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// CacheSecurityGroupNames
             /// A list of cache security group names that are associated with this cache cluster. If your cache
             /// cluster is in a VPC, specify the VpcSecurityGroupIds property instead.
-            /// Required: Conditional: If your cache cluster isn't in a VPC, you must specify this property.
+            /// Required: Conditional: If your cache cluster isn&#39;t in a VPC, you must specify this property.
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
@@ -76,7 +76,7 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// ClusterName
-            /// A name for the cache cluster. If you don't specify a name, AWS CloudFormation generates a unique
+            /// A name for the cache cluster. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the cache cluster. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
@@ -123,7 +123,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption. However, if the PreferredAvailabilityZone and
-            /// PreferredAvailabilityZones properties were not previously specified and you don't specify any new
+            /// PreferredAvailabilityZones properties were not previously specified and you don&#39;t specify any new
             /// values, an update requires replacement.
             /// </summary>
 			public Union<int, IntrinsicFunction> NumCacheNodes { get; set; }
@@ -150,17 +150,17 @@ namespace Comformation.ElastiCache.CacheCluster
             /// PreferredAvailabilityZones
             /// For Memcached cache clusters, the list of Availability Zones in which cache nodes are created. The
             /// number of Availability Zones listed must equal the number of cache nodes. For example, if you want
-            /// to create three nodes in two different Availability Zones, you can specify ["us-east-1a",
-            /// "us-east-1a", "us-east-1b"], which would create two nodes in us-east-1a and one node in us-east-1b.
-            /// If you specify a subnet group and you're creating your cache cluster in a VPC, you must specify
-            /// Availability Zones that are associated with the subnets in the subnet group that you've chosen.
+            /// to create three nodes in two different Availability Zones, you can specify [&quot;us-east-1a&quot;,
+            /// &quot;us-east-1a&quot;, &quot;us-east-1b&quot;], which would create two nodes in us-east-1a and one node in us-east-1b.
+            /// If you specify a subnet group and you&#39;re creating your cache cluster in a VPC, you must specify
+            /// Availability Zones that are associated with the subnets in the subnet group that you&#39;ve chosen.
             /// If you want all the nodes in the same Availability Zone, use the PreferredAvailabilityZone property
             /// or repeat the Availability Zone multiple times in the list.
             /// Required: No
             /// Type: List of String values
             /// If you specify an Availability Zone that was previously specified in the template, such as in the
             /// PreferredAvailabilityZone property, the update requires some interruptions. Also, if the
-            /// PreferredAvailabilityZones property was already specified and you're updating its values (regardless
+            /// PreferredAvailabilityZones property was already specified and you&#39;re updating its values (regardless
             /// of whether you specify the same Availability Zones), the update requires some interruptions.
             /// All other updates require replacement.
             /// </summary>
@@ -227,7 +227,7 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// VpcSecurityGroupIds
-            /// A list of VPC security group IDs. If your cache cluster isn't in a VPC, specify the
+            /// A list of VPC security group IDs. If your cache cluster isn&#39;t in a VPC, specify the
             /// CacheSecurityGroupNames property instead.
             /// Note You must use the AWS::EC2::SecurityGroup resource instead of the
             /// AWS::ElastiCache::SecurityGroup resource in order to specify an ElastiCache security group that is
