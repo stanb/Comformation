@@ -6,19 +6,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html
+    /// Amazon Simple Email Service ReceiptRule AddHeaderAction
+    /// The AddHeaderAction property type add a header to email it recieves on behalf of one or more email addresses
+    /// or domains that you own.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html
     /// </summary>
     public class AddHeaderAction
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headervalue
+        /// HeaderValue
+        /// Must be less than 2048 characters, and must not contain newline characters (&quot;\r&quot; or &quot;\n&quot;).
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HeaderValue")]
         public Union<string, IntrinsicFunction> HeaderValue { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headername
+        /// HeaderName
+        /// The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of
+        /// alphanumeric (a-z, A-Z, 0-9) characters and dashes only.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HeaderName")]
         public Union<string, IntrinsicFunction> HeaderName { get; set; }

@@ -6,67 +6,70 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html
+    /// Amazon API Gateway Method MethodResponse
+    /// MethodResponse is a property of the AWS::ApiGateway::Method resource that defines the responses that can be
+    /// sent to the client who calls an Amazon API Gateway (API Gateway) method.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html
     /// </summary>
     public class MethodSetting
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachedataencrypted
+        /// CacheDataEncrypted
         /// </summary>
         [JsonProperty("CacheDataEncrypted")]
         public Union<bool, IntrinsicFunction> CacheDataEncrypted { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachettlinseconds
+        /// CacheTtlInSeconds
         /// </summary>
         [JsonProperty("CacheTtlInSeconds")]
         public Union<int, IntrinsicFunction> CacheTtlInSeconds { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachingenabled
+        /// CachingEnabled
         /// </summary>
         [JsonProperty("CachingEnabled")]
         public Union<bool, IntrinsicFunction> CachingEnabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-datatraceenabled
+        /// DataTraceEnabled
         /// </summary>
         [JsonProperty("DataTraceEnabled")]
         public Union<bool, IntrinsicFunction> DataTraceEnabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-httpmethod
+        /// HttpMethod
         /// </summary>
         [JsonProperty("HttpMethod")]
         public Union<string, IntrinsicFunction> HttpMethod { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-logginglevel
+        /// LoggingLevel
         /// </summary>
         [JsonProperty("LoggingLevel")]
         public Union<string, IntrinsicFunction> LoggingLevel { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-metricsenabled
+        /// MetricsEnabled
         /// </summary>
         [JsonProperty("MetricsEnabled")]
         public Union<bool, IntrinsicFunction> MetricsEnabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-resourcepath
+        /// ResourcePath
         /// </summary>
         [JsonProperty("ResourcePath")]
         public Union<string, IntrinsicFunction> ResourcePath { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingburstlimit
+        /// ThrottlingBurstLimit
         /// </summary>
         [JsonProperty("ThrottlingBurstLimit")]
         public Union<int, IntrinsicFunction> ThrottlingBurstLimit { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingratelimit
+        /// ThrottlingRateLimit
         /// </summary>
         [JsonProperty("ThrottlingRateLimit")]
         public Union<double, IntrinsicFunction> ThrottlingRateLimit { get; set; }

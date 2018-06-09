@@ -5,19 +5,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.VPCDHCPOptionsAssociation
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
+    /// AWS::EC2::VPCDHCPOptionsAssociation
+    /// Associates a set of DHCP options (that you&#39;ve previously created) with the specified VPC.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
     /// </summary>
     public class VPCDHCPOptionsAssociationResource : ResourceBase
     {
         public class VPCDHCPOptionsAssociationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid
+            /// DhcpOptionsId
+            /// The ID of the DHCP options you want to associate with the VPC. Specify default if you want the VPC
+            /// to use no DHCP options.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DhcpOptionsId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid
+            /// VpcId
+            /// The ID of the VPC to associate with this DHCP options set.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

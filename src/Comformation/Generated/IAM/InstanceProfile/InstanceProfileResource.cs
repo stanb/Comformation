@@ -5,24 +5,44 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IAM.InstanceProfile
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
+    /// AWS::IAM::InstanceProfile
+    /// The AWS::IAM::InstanceProfile resource creates an AWS Identity and Access Management (IAM) instance profile
+    /// that can be used with IAM roles for EC2 instances.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
     /// </summary>
     public class InstanceProfileResource : ResourceBase
     {
         public class InstanceProfileProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename
+            /// InstanceProfileName
+            /// The name of the instance profile that you want to create. This parameter allows (per its regex
+            /// pattern) a string consisting of upper and lowercase alphanumeric characters with no spaces. You can
+            /// also include any of the following characters: = , . @ -.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceProfileName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path
+            /// Path
+            /// The path associated with this IAM instance profile. For information about IAM paths, see Friendly
+            /// Names and Paths in the AWS Identity and Access Management User Guide.
+            /// By default, AWS CloudFormation specifies / for the path.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
+            /// Roles
+            /// The name of an existing IAM role to associate with this instance profile. Currently, you can assign
+            /// a maximum of one role to an instance profile.
+            /// Required: Yes
+            /// Type: List of String values
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
 

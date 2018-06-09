@@ -5,34 +5,58 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
+    /// AWS::ApiGateway::UsagePlan
+    /// The AWS::ApiGateway::UsagePlan resource specifies a usage plan for deployed Amazon API Gateway (API Gateway)
+    /// APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information,
+    /// see Creating and Using API Usage Plans in Amazon API Gateway in the API Gateway Developer Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
     /// </summary>
     public class UsagePlanResource : ResourceBase
     {
         public class UsagePlanProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
+            /// ApiStages
+            /// The API stages to associate with this usage plan.
+            /// Required: No
+            /// Type: List of Amazon API Gateway UsagePlan ApiStage
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<ApiStage>, IntrinsicFunction> ApiStages { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description
+            /// Description
+            /// The purpose of this usage plan.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota
+            /// Quota
+            /// Configures the number of requests that users can make within a given interval.
+            /// Required: No
+            /// Type: Amazon API Gateway UsagePlan QuotaSettings
+            /// Update requires: No interruption
             /// </summary>
 			public Union<QuotaSettings, IntrinsicFunction> Quota { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle
+            /// Throttle
+            /// Configures the overall request rate (average requests per second) and burst capacity.
+            /// Required: No
+            /// Type: Amazon API Gateway UsagePlan ThrottleSettings
+            /// Update requires: No interruption
             /// </summary>
 			public Union<ThrottleSettings, IntrinsicFunction> Throttle { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname
+            /// UsagePlanName
+            /// A name for this usage plan.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> UsagePlanName { get; set; }
 

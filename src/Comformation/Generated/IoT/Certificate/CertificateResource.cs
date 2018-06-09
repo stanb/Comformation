@@ -5,19 +5,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.Certificate
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
+    /// AWS::IoT::Certificate
+    /// Use the AWS::IoT::Certificate resource to declare an X. 509 certificate.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
     {
         public class CertificateProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
+            /// CertificateSigningRequest
+            /// The certificate signing request (CSR).
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateSigningRequest { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status
+            /// Status
+            /// The status of the certificate.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Status { get; set; }
 

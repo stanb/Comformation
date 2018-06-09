@@ -5,24 +5,40 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.ApiKey
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html
+    /// AWS::AppSync::ApiKey
+    /// The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing
+    /// GraphQL operations with AWS AppSync that require an API key.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html
     /// </summary>
     public class ApiKeyResource : ResourceBase
     {
         public class ApiKeyProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description
+            /// Description
+            /// Unique description of your API Key.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires
+            /// Expires
+            /// Expiration time of the API Key in seconds (using Unix Epoch time), with a minimum of 1 day and a
+            /// maximum of 365 days.
+            /// Required: Yes
+            /// Type: Number
+            /// Update requires: No interruption
             /// </summary>
 			public Union<double, IntrinsicFunction> Expires { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid
+            /// ApiId
+            /// Unique AWS AppSync GraphQL API Identifier for this API Key.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 

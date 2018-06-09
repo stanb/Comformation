@@ -6,127 +6,230 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html
+    /// Amazon EC2 LaunchTemplate LaunchTemplateData
+    /// The LaunchTemplateData property type specifies the information to include the launch template for an Amazon
+    /// EC2 instance.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html
     /// </summary>
     public class LaunchTemplateData
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroups
+        /// SecurityGroups
+        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use
+        /// security group IDs instead. You cannot specify both a security group ID and security name in the
+        /// same request.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroups")]
         public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications
+        /// TagSpecifications
+        /// The tags to apply to the resources during launch. You can tag instances and volumes. The specified
+        /// tags are applied to all instances or volumes that are created during launch.
+        /// Required: No
+        /// Type: List of Amazon EC2 LaunchTemplate TagSpecification
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagSpecifications")]
         public Union<List<TagSpecification>, IntrinsicFunction> TagSpecifications { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
+        /// UserData
+        /// The Base64-encoded user data to make available to the instance. For more information, see Running
+        /// Commands on Your Linux Instance at Launch in the Amazon EC2 User Guide for Linux Instances and
+        /// Adding User Data in the Amazon EC2 User Guide for Windows Instances.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UserData")]
         public Union<string, IntrinsicFunction> UserData { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior
+        /// InstanceInitiatedShutdownBehavior
+        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance
+        /// (using the operating system command for system shutdown).
+        /// Valid values include stop and terminate. The default is stop.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceInitiatedShutdownBehavior")]
         public Union<string, IntrinsicFunction> InstanceInitiatedShutdownBehavior { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings
+        /// BlockDeviceMappings
+        /// The block device mapping.
+        /// Required: No
+        /// Type: List of Amazon EC2 LaunchTemplate BlockDeviceMapping
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BlockDeviceMappings")]
         public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile
+        /// IamInstanceProfile
+        /// The IAM instance profile.
+        /// Required: No
+        /// Type: Amazon EC2 LaunchTemplate IamInstanceProfile
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IamInstanceProfile")]
         public Union<IamInstanceProfile, IntrinsicFunction> IamInstanceProfile { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid
+        /// KernelId
+        /// The ID of the kernel.
+        /// Important We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
+        /// see User Provided Kernels in the Amazon EC2 User Guide for Linux Instances.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KernelId")]
         public Union<string, IntrinsicFunction> KernelId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids
+        /// SecurityGroupIds
+        /// One or more security group IDs. You cannot specify both a security group ID and security name in the
+        /// same request. For information on creating a security group, see CreateSecurityGroup in the Amazon
+        /// EC2 API Reference.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
         public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized
+        /// EbsOptimized
+        /// Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+        /// throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
+        /// performance. This optimization isn&#39;t available with all instance types. Additional usage charges
+        /// apply when using an EBS-optimized instance.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EbsOptimized")]
         public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname
+        /// KeyName
+        /// The name of the key pair. For information on creating a key pair, see CreateKeyPair or ImportKeyPair
+        /// in the Amazon EC2 API Reference.
+        /// Important If you do not specify a key pair, you can&#39;t connect to the instance unless you choose an
+        /// AMI that is configured to allow users another way to log in.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeyName")]
         public Union<string, IntrinsicFunction> KeyName { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination
+        /// DisableApiTermination
+        /// If set to true, you can&#39;t terminate the instance using the Amazon EC2 console, CLI, or API.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DisableApiTermination")]
         public Union<bool, IntrinsicFunction> DisableApiTermination { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications
+        /// ElasticGpuSpecifications
+        /// An elastic GPU to associate with the instance.
+        /// Required: No
+        /// Type: List of Amazon EC2 LaunchTemplate ElasticGpuSpecification
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ElasticGpuSpecifications")]
         public Union<List<ElasticGpuSpecification>, IntrinsicFunction> ElasticGpuSpecifications { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement
+        /// Placement
+        /// The placement for the instance.
+        /// Required: No
+        /// Type: Amazon EC2 LaunchTemplate Placement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Placement")]
         public Union<Placement, IntrinsicFunction> Placement { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions
+        /// InstanceMarketOptions
+        /// The market (purchasing) option for the instances.
+        /// Required: No
+        /// Type: Amazon EC2 LaunchTemplate InstanceMarketOptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceMarketOptions")]
         public Union<InstanceMarketOptions, IntrinsicFunction> InstanceMarketOptions { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
+        /// NetworkInterfaces
+        /// One or more network interfaces.
+        /// Required: No
+        /// Type: List of Amazon EC2 LaunchTemplate NetworkInterface
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NetworkInterfaces")]
         public Union<List<NetworkInterface>, IntrinsicFunction> NetworkInterfaces { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid
+        /// ImageId
+        /// The ID of the AMI. For more information, see DescribeImages in the Amazon EC2 API Reference.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ImageId")]
         public Union<string, IntrinsicFunction> ImageId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype
+        /// InstanceType
+        /// The instance type. For a list of valid values, see RequestLaunchTemplateData in the Amazon EC2 API
+        /// Reference.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceType")]
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid
+        /// RamDiskId
+        /// The ID of the RAM disk.
+        /// Important We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
+        /// see User Provided Kernels in the Amazon EC2 User Guide for Linux Instances.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RamDiskId")]
         public Union<string, IntrinsicFunction> RamDiskId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring
+        /// Monitoring
+        /// The monitoring for the instance.
+        /// Required: No
+        /// Type: Amazon EC2 LaunchTemplate Monitoring
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Monitoring")]
         public Union<Monitoring, IntrinsicFunction> Monitoring { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification
+        /// CreditSpecification
+        /// The credit option for CPU usage of the instance. Valid for T2 instances only.
+        /// Required: No
+        /// Type: Amazon EC2 LaunchTemplate CreditSpecification
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CreditSpecification")]
         public Union<CreditSpecification, IntrinsicFunction> CreditSpecification { get; set; }

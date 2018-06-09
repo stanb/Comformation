@@ -5,19 +5,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
+    /// AWS::IoT::TopicRule
+    /// Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
     /// </summary>
     public class TopicRuleResource : ResourceBase
     {
         public class TopicRuleProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-rulename
+            /// RuleName
+            /// The name (the physical ID) of the AWS IoT rule.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload
+            /// TopicRulePayload
+            /// The actions associated with the AWS IoT rule.
+            /// Required: Yes
+            /// Type: TopicRulePayload object
+            /// Update requires: No interruption
             /// </summary>
 			public Union<TopicRulePayload, IntrinsicFunction> TopicRulePayload { get; set; }
 

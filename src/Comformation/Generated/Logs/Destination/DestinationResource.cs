@@ -5,29 +5,52 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Logs.Destination
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
+    /// AWS::Logs::Destination
+    /// The AWS::Logs::Destination resource creates an Amazon CloudWatch Logs (CloudWatch Logs) destination, which
+    /// enables you to specify a physical resource (such as an Kinesis stream) that subscribes to CloudWatch Logs log
+    /// events from another AWS account. For more information, see Cross-Account Log Data Sharing with Subscriptions
+    /// in the Amazon CloudWatch User Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
     /// </summary>
     public class DestinationResource : ResourceBase
     {
         public class DestinationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationname
+            /// DestinationName
+            /// The name of the CloudWatch Logs destination.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationpolicy
+            /// DestinationPolicy
+            /// An AWS Identity and Access Management (IAM) policy that specifies who can write to your destination.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationPolicy { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn
+            /// RoleArn
+            /// The Amazon Resource Name (ARN) of an IAM role that permits CloudWatch Logs to send data to the
+            /// specified AWS resource (TargetArn).
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn
+            /// TargetArn
+            /// The ARN of the AWS resource that receives log events. Currently, you can specify only an Kinesis
+            /// stream.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetArn { get; set; }
 

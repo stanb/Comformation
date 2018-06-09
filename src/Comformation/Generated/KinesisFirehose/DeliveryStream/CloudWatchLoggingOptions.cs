@@ -6,25 +6,39 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html
+    /// Amazon Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+    /// The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs) logging options
+    /// that Amazon Kinesis Firehose (Kinesis Firehose) uses for the delivery stream.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html
     /// </summary>
     public class CloudWatchLoggingOptions
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-enabled
+        /// Enabled
+        /// Indicates whether CloudWatch Logs logging is enabled.
+        /// Required: No
+        /// Type: Boolean
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-loggroupname
+        /// LogGroupName
+        /// The name of the CloudWatch Logs log group that contains the log stream that Kinesis Firehose will
+        /// use.
+        /// Required: Conditional. If you enable logging, you must specify this property.
+        /// Type: String
         /// </summary>
         [JsonProperty("LogGroupName")]
         public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname
+        /// LogStreamName
+        /// The name of the CloudWatch Logs log stream that Kinesis Firehose uses to send logs about data
+        /// delivery.
+        /// Required: Conditional. If you enable logging, you must specify this property.
+        /// Type: String
         /// </summary>
         [JsonProperty("LogStreamName")]
         public Union<string, IntrinsicFunction> LogStreamName { get; set; }

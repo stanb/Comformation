@@ -5,19 +5,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.ThingPrincipalAttachment
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html
+    /// AWS::IoT::ThingPrincipalAttachment
+    /// Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X. 509 certificate or another
+    /// credential) to a thing.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html
     /// </summary>
     public class ThingPrincipalAttachmentResource : ResourceBase
     {
         public class ThingPrincipalAttachmentProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-principal
+            /// Principal
+            /// The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or
+            /// an Amazon Cognito ID.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Principal { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-thingname
+            /// ThingName
+            /// The name of the AWS IoT thing.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ThingName { get; set; }
 

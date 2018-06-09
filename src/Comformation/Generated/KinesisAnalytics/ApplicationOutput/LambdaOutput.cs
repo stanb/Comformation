@@ -6,19 +6,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html
+    /// Amazon Kinesis Data Analytics ApplicationOutput LambdaOutput
+    /// The LambdaOutput property type specifies a Lambda function as the destination when you are configuring
+    /// application output.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html
     /// </summary>
     public class LambdaOutput
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-resourcearn
+        /// ResourceARN
+        /// The Amazon Resource Name (ARN) of the destination Amazon Lambda function to write to.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]
         public Union<string, IntrinsicFunction> ResourceARN { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn
+        /// RoleARN
+        /// The ARN of the IAM role that Amazon Kinesis Data Analytics can assume to write to the destination
+        /// function on your behalf.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]
         public Union<string, IntrinsicFunction> RoleARN { get; set; }

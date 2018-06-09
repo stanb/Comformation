@@ -6,25 +6,37 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
+    /// Amazon S3 Bucket NotificationConfiguration
+    /// Describes the notification configuration for an AWS::S3::Bucket resource.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
     /// </summary>
     public class NotificationConfiguration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig
+        /// LambdaConfigurations
+        /// The AWS Lambda functions to invoke and the events for which to invoke the functions.
+        /// Required: No
+        /// Type: Amazon S3 Bucket LambdaConfiguration
         /// </summary>
         [JsonProperty("LambdaConfigurations")]
         public Union<List<LambdaConfiguration>, IntrinsicFunction> LambdaConfigurations { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig
+        /// QueueConfigurations
+        /// The Amazon Simple Queue Service queues to publish messages to and the events for which to publish
+        /// messages.
+        /// Required: No
+        /// Type: Amazon S3 Bucket QueueConfiguration
         /// </summary>
         [JsonProperty("QueueConfigurations")]
         public Union<List<QueueConfiguration>, IntrinsicFunction> QueueConfigurations { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig
+        /// TopicConfigurations
+        /// The topic to which notifications are sent and the events for which notification are generated.
+        /// Required: No
+        /// Type: Amazon S3 Bucket TopicConfiguration
         /// </summary>
         [JsonProperty("TopicConfigurations")]
         public Union<List<TopicConfiguration>, IntrinsicFunction> TopicConfigurations { get; set; }

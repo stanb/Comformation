@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html
+    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource CSVMappingParameters
+    /// In AWS CloudFormation, use the CSVMappingParameters property to specify additional mapping information when
+    /// the record format uses delimiters, such as CSV.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html
     /// </summary>
     public class CSVMappingParameters
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-csvmappingparameters-recordrowdelimiter
+        /// RecordRowDelimiter
+        /// The row delimiter. For example, in a CSV format, &quot;\n&quot; is the typical row delimiter.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordRowDelimiter")]
         public Union<string, IntrinsicFunction> RecordRowDelimiter { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-csvmappingparameters-recordcolumndelimiter
+        /// RecordColumnDelimiter
+        /// The column delimiter. For example, in a CSV format, a comma (&quot;,&quot;) is the typical column delimiter.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumnDelimiter")]
         public Union<string, IntrinsicFunction> RecordColumnDelimiter { get; set; }

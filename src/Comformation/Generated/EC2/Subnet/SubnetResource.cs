@@ -5,44 +5,86 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Subnet
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
+    /// AWS::EC2::Subnet
+    /// Creates a subnet in an existing VPC.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
     /// </summary>
     public class SubnetResource : ResourceBase
     {
         public class SubnetProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
+            /// AssignIpv6AddressOnCreation
+            /// Indicates whether a network interface created in this subnet receives an IPv6 address. The default
+            /// value is false.
+            /// Required: Conditional. If you specify a true or false value for AssignIpv6AddressOnCreation,
+            /// Ipv6CidrBlock must also be specified.
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// Note If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
             /// </summary>
 			public Union<bool, IntrinsicFunction> AssignIpv6AddressOnCreation { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone
+            /// AvailabilityZone
+            /// The availability zone in which you want the subnet. Default: AWS selects a zone for you
+            /// (recommended).
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// Note If you update this property, you must also update the CidrBlock property.
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock
+            /// CidrBlock
+            /// The CIDR block that you want the subnet to cover (for example, &quot;10. 0. 0. 0/24&quot;).
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// Note If you update this property, you must also update the AvailabilityZone property.
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock
+            /// Ipv6CidrBlock
+            /// The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix
+            /// length.
+            /// Required: Conditional. If you specify a true or false value for AssignIpv6AddressOnCreation,
+            /// Ipv6CidrBlock must be specified.
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Ipv6CidrBlock { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
+            /// MapPublicIpOnLaunch
+            /// Indicates whether instances that are launched in this subnet receive a public IP address. By
+            /// default, the value is false.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// Note If MapPublicIpOnLaunch is specified. AssignIpv6AddressOnCreation cannot be specified.
             /// </summary>
 			public Union<bool, IntrinsicFunction> MapPublicIpOnLaunch { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags
+            /// Tags
+            /// An arbitrary set of tags (key–value pairs) for this subnet.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-awsec2subnet-prop-vpcid
+            /// VpcId
+            /// A Ref structure that contains the ID of the VPC on which you want to create the subnet. The VPC ID
+            /// is provided as the value of the &quot;Ref&quot; property, as: { &quot;Ref&quot;: &quot;VPCID&quot; }.
+            /// Required: Yes
+            /// Type: Ref ID
+            /// Update requires: Replacement
+            /// Note If you update this property, you must also update the CidrBlock property.
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

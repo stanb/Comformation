@@ -6,19 +6,28 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html
+    /// AWS OpsWorks Stack ElasticIp
+    /// ElasticIps is a property of the AWS::OpsWorks::Stack resource that registers an Elastic IP address with an AWS
+    /// OpsWorks stack.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html
     /// </summary>
     public class ElasticIp
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-ip
+        /// Ip
+        /// The Elastic IP address.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Ip")]
         public Union<string, IntrinsicFunction> Ip { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-name
+        /// Name
+        /// A name for the Elastic IP address.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

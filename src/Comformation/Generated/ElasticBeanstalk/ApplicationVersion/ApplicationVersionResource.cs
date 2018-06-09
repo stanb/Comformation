@@ -5,24 +5,38 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.ApplicationVersion
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html
+    /// AWS::ElasticBeanstalk::ApplicationVersion
+    /// Creates an application version, an iteration of deployable code, for an Elastic Beanstalk application.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html
     /// </summary>
     public class ApplicationVersionResource : ResourceBase
     {
         public class ApplicationVersionProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname
+            /// ApplicationName
+            /// Name of the Elastic Beanstalk application that is associated with this application version.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-description
+            /// Description
+            /// A description of this application version.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
+            /// SourceBundle
+            /// The location of the source bundle for this version.
+            /// Required: Yes
+            /// Type: Source Bundle
+            /// Update requires: Replacement
             /// </summary>
 			public Union<SourceBundle, IntrinsicFunction> SourceBundle { get; set; }
 

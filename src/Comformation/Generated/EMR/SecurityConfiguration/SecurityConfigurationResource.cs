@@ -5,19 +5,32 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.SecurityConfiguration
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
+    /// AWS::EMR::SecurityConfiguration
+    /// The AWS::EMR::SecurityConfiguration resource creates a security configuration that is stored in the Amazon EMR
+    /// web service. You can specify the security configuration when creating a cluster. For more information, see
+    /// Specifying Amazon EMR Encryption Options Using a Security Configuration in the Amazon EMR Release Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
     /// </summary>
     public class SecurityConfigurationResource : ResourceBase
     {
         public class SecurityConfigurationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name
+            /// Name
+            /// The name of the security configuration. For a list of valid parameters for encryption settings, see
+            /// AWS CLI Security Configuration JSON Reference in the Amazon EMR Release Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration
+            /// SecurityConfiguration
+            /// The security configuration details in JSON format.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SecurityConfiguration { get; set; }
 

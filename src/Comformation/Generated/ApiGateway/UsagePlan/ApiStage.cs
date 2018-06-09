@@ -6,19 +6,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
+    /// Amazon API Gateway UsagePlan ApiStage
+    /// ApiStage is a property of the AWS::ApiGateway::UsagePlan resource that specifies which Amazon API Gateway (API
+    /// Gateway) stages and APIs to associate with a usage plan.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
     /// </summary>
     public class ApiStage
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid
+        /// ApiId
+        /// The ID of an API that is in the specified Stage property that you want to associate with the usage
+        /// plan.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("ApiId")]
         public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage
+        /// Stage
+        /// The name of an API Gateway stage to associate with the usage plan.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Stage")]
         public Union<string, IntrinsicFunction> Stage { get; set; }

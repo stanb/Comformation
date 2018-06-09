@@ -6,25 +6,44 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Table
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html
+    /// AWS Glue Table SerdeInfo
+    /// The SerdeInfo property type specifies information about a serialization/deserialization program (SerDe), which
+    /// serves as an extractor and loader for an AWS Glue table.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html
     /// </summary>
     public class SerdeInfo
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-parameters
+        /// Parameters
+        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the initialization parameters for the
+        /// SerDe.
+        /// Required: No
+        /// Type: JSON object
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-serializationlibrary
+        /// SerializationLibrary
+        /// The serialization library. This is usually the class that implements the SerDe, such as org. apache.
+        /// hadoop. hive. serde2. columnar. ColumnarSerDe. It must match the single-line string pattern:
+        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SerializationLibrary")]
         public Union<string, IntrinsicFunction> SerializationLibrary { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-name
+        /// Name
+        /// The name of the SerDe. It must match the single-line string pattern:
+        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

@@ -6,19 +6,33 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html
+    /// Amazon Kinesis Firehose DeliveryStream BufferingHints
+    /// The BufferingHints property type specifies how Amazon Kinesis Firehose (Kinesis Firehose) buffers incoming
+    /// data before delivering it to the destination. The first buffer condition that is satisfied triggers Kinesis
+    /// Firehose to deliver the data.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html
     /// </summary>
     public class BufferingHints
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-intervalinseconds
+        /// IntervalInSeconds
+        /// The length of time, in seconds, that Kinesis Firehose buffers incoming data before delivering it to
+        /// the destination. For valid values, see the IntervalInSeconds content for the BufferingHints data
+        /// type in the Amazon Kinesis Firehose API Reference.
+        /// Required: Yes
+        /// Type: Integer
         /// </summary>
         [JsonProperty("IntervalInSeconds")]
         public Union<int, IntrinsicFunction> IntervalInSeconds { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-sizeinmbs
+        /// SizeInMBs
+        /// The size of the buffer, in MBs, that Kinesis Firehose uses for incoming data before delivering it to
+        /// the destination. For valid values, see the SizeInMBs content for the BufferingHints data type in the
+        /// Amazon Kinesis Firehose API Reference.
+        /// Required: Yes
+        /// Type: Integer
         /// </summary>
         [JsonProperty("SizeInMBs")]
         public Union<int, IntrinsicFunction> SizeInMBs { get; set; }

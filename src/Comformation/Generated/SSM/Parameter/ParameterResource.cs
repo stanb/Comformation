@@ -5,34 +5,58 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.Parameter
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html
+    /// AWS::SSM::Parameter
+    /// The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html
     /// </summary>
     public class ParameterResource : ResourceBase
     {
         public class ParameterProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type
+            /// Type
+            /// The type of parameter. Valid values include the following: String or StringList.
+            /// Note AWS CloudFormation doesn&#39;t support the SecureString parameter type.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-description
+            /// Description
+            /// Information about the parameter that you want to add to the system.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-allowedpattern
+            /// AllowedPattern
+            /// A regular expression used to validate the parameter value. For example, for String types with values
+            /// restricted to numbers, you can specify the following: AllowedPattern=^\d+$
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AllowedPattern { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value
+            /// Value
+            /// The parameter value. Value must not nest another parameter. Do not use {{}} in the value.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Value { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-name
+            /// Name
+            /// The name of the parameter. Names must not be prefixed with aws or ssm.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

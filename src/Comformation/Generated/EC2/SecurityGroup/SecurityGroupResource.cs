@@ -5,39 +5,75 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SecurityGroup
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
+    /// AWS::EC2::SecurityGroup
+    /// Creates an Amazon EC2 security group. To create a VPC security group, use the VpcId property.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
     /// </summary>
     public class SecurityGroupResource : ResourceBase
     {
         public class SecurityGroupProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription
+            /// GroupDescription
+            /// A description of the security group.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupDescription { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname
+            /// GroupName
+            /// The name of the security group. For valid values, see the GroupName parameter of the
+            /// CreateSecurityGroup action in the Amazon EC2 API Reference.
+            /// If you don&#39;t specify a GroupName, AWS CloudFormation generates a unique physical ID and uses that ID
+            /// for the group name. For more information, see Name Type.
+            /// Important If you specify a name, you cannot perform updates that require replacement of this
+            /// resource. You can perform updates that require no or some interruption. If you must replace the
+            /// resource, specify a new name.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress
+            /// SecurityGroupEgress
+            /// A list of Amazon EC2 security group egress rules.
+            /// Required: No
+            /// Type: List of EC2 Security Group Rule
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Egress>, IntrinsicFunction> SecurityGroupEgress { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress
+            /// SecurityGroupIngress
+            /// A list of Amazon EC2 security group ingress rules.
+            /// Required: No
+            /// Type: List of EC2 Security Group Rule
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Ingress>, IntrinsicFunction> SecurityGroupIngress { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags
+            /// Tags
+            /// The tags that you want to attach to the resource.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid
+            /// VpcId
+            /// The physical ID of the VPC. You can obtain the physical ID by using a reference to an AWS::EC2::VPC,
+            /// such as: { &quot;Ref&quot; : &quot;myVPC&quot; }.
+            /// For more information about using the Ref function, see Ref.
+            /// Required: Yes, for VPC security groups without a default VPC
+            /// Type: String
+            /// Update requires: Replacement
+            /// Note For more information about VPC security groups, see Security Groups in the Amazon VPC User
+            /// Guide.
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

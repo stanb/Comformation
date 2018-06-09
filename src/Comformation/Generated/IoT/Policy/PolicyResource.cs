@@ -5,19 +5,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.Policy
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html
+    /// AWS::IoT::Policy
+    /// Use the AWS::IoT::Policy resource to declare an AWS IoT policy.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html
     /// </summary>
     public class PolicyResource : ResourceBase
     {
         public class PolicyProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
+            /// PolicyDocument
+            /// The JSON document that describes the policy.
+            /// Required: Yes
+            /// Type: JSON object
+            /// Update requires: Replacement
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname
+            /// PolicyName
+            /// The name (the physical ID) of the AWS IoT policy.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyName { get; set; }
 

@@ -6,25 +6,40 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html
+    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource S3ReferenceDataSource
+    /// The S3ReferenceDataSource property type specifies the Amazon S3 bucket and object that contains the reference
+    /// data for Amazon Kinesis Data Analytics.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html
     /// </summary>
     public class S3ReferenceDataSource
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-s3referencedatasource-bucketarn
+        /// BucketARN
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket.
+        /// Required: Yes
+        /// Type: String;
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BucketARN")]
         public Union<string, IntrinsicFunction> BucketARN { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-s3referencedatasource-filekey
+        /// FileKey
+        /// The object key name containing reference data.
+        /// Required: Yes
+        /// Type: String;
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FileKey")]
         public Union<string, IntrinsicFunction> FileKey { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-s3referencedatasource-referencerolearn
+        /// ReferenceRoleARN
+        /// The ARN of the IAM role that the service can assume to read data on your behalf.
+        /// Required: Yes
+        /// Type: String;
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReferenceRoleARN")]
         public Union<string, IntrinsicFunction> ReferenceRoleARN { get; set; }

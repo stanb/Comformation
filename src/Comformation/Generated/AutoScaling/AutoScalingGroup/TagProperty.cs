@@ -6,25 +6,38 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
+    /// Amazon EC2 Auto Scaling AutoScalingGroup TagProperty
+    /// The TagProperty property type adds tags to all associated instances in an Auto Scaling group.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
     /// </summary>
     public class TagProperty
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Key
+        /// Key
+        /// The key name of the tag.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch
+        /// PropagateAtLaunch
+        /// Set to true if you want AWS CloudFormation to copy the tag to EC2 instances that are launched as
+        /// part of the auto scaling group. Set to false if you want the tag attached only to the auto scaling
+        /// group and not copied to any instances launched as part of the auto scaling group.
+        /// Required: Yes
+        /// Type: Boolean
         /// </summary>
         [JsonProperty("PropagateAtLaunch")]
         public Union<bool, IntrinsicFunction> PropagateAtLaunch { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Value
+        /// Value
+        /// The value for the tag.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }

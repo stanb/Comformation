@@ -5,14 +5,20 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.StepFunctions.Activity
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
+    /// AWS::StepFunctions::Activity
+    /// Use the AWS::StepFunctions::Activity resource to create an AWS Step Functions activity.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
     /// </summary>
     public class ActivityResource : ResourceBase
     {
         public class ActivityProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name
+            /// Name
+            /// The name of the activity to create. This name must be unique for your AWS account and region.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

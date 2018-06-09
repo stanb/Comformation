@@ -5,59 +5,107 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
+    /// AWS::Cognito::IdentityPool
+    /// The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
     /// </summary>
     public class IdentityPoolResource : ResourceBase
     {
         public class IdentityPoolProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
+            /// PushSync
+            /// Configuration options to be applied to the identity pool.
+            /// Required: No
+            /// Type: Amazon Cognito IdentityPool PushSync
+            /// Update requires: No interruption
             /// </summary>
 			public Union<PushSync, IntrinsicFunction> PushSync { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
+            /// CognitoIdentityProviders
+            /// An array of Amazon Cognito user pools and their client IDs.
+            /// Required: No
+            /// Type: An array of Amazon Cognito IdentityPool CognitoIdentityProvider.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<CognitoIdentityProvider>, IntrinsicFunction> CognitoIdentityProviders { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents
+            /// CognitoEvents
+            /// The events to configure.
+            /// Required: No
+            /// Type: String to String map
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CognitoEvents { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername
+            /// DeveloperProviderName
+            /// The &quot;domain&quot; by which Amazon Cognito will refer to your users. This name acts as a placeholder that
+            /// allows your backend and the Amazon Cognito service to communicate about the developer provider. For
+            /// the DeveloperProviderName, you can use letters and periods (. ), underscores (_), and dashes (-).
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// MinLength: 1
+            /// MaxLength: 100
             /// </summary>
 			public Union<string, IntrinsicFunction> DeveloperProviderName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams
+            /// CognitoStreams
+            /// Configuration options for configuring Amazon Cognito streams.
+            /// Required: No
+            /// Type: Amazon Cognito IdentityPool CognitoStreams
+            /// Update requires: No interruption
             /// </summary>
 			public Union<CognitoStreams, IntrinsicFunction> CognitoStreams { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
+            /// IdentityPoolName
+            /// The name of your Amazon Cognito identity pool.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// MinLength: 1
+            /// MaxLength: 128
             /// </summary>
 			public Union<string, IntrinsicFunction> IdentityPoolName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
+            /// AllowUnauthenticatedIdentities
+            /// Specifies whether the identity pool supports unauthenticated logins.
+            /// Required: Yes
+            /// Type: Boolean
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowUnauthenticatedIdentities { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders
+            /// SupportedLoginProviders
+            /// Key-value pairs that map provider names to provider app IDs.
+            /// Required: No
+            /// Type: String to String map
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SupportedLoginProviders { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns
+            /// SamlProviderARNs
+            /// A list of Amazon Resource Names (ARNs) of Security Assertion Markup Language (SAML) providers.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SamlProviderARNs { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
+            /// OpenIdConnectProviderARNs
+            /// A list of ARNs for the OpendID Connect provider.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> OpenIdConnectProviderARNs { get; set; }
 

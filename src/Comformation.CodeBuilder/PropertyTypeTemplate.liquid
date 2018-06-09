@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Comformation.IntrinsicFunctions;
+
+namespace {{ propertyType.Namespace }}
+{
+    /// <summary>
+{% for line in propertyType.Documentation -%}
+    /// {{ line }}
+{% endfor -%}
+    /// </summary>
+    public class {{ propertyType.Name }}
+    {
+
+{%  for property in propertyType.Properties -%}
+        /// <summary>
+{% for line in property.Documentation -%}
+        /// {{ line }}
+{% endfor -%}
+        /// </summary>
+        [JsonProperty("{{ property.JsonProperty }}")]
+        public Union<{{ property.Type }}, IntrinsicFunction> {{ property.Name }} { get; set; }
+
+{%  endfor -%}
+    }
+}

@@ -6,19 +6,27 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.RDS.OptionGroup
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html
+    /// Amazon Relational Database Service OptionGroup OptionSetting
+    /// Use the OptionSettings property to specify settings for an option in the OptionConfigurations property.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html
     /// </summary>
     public class OptionSetting
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-name
+        /// Name
+        /// The name of the option setting that you want to specify.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value
+        /// Value
+        /// The value of the option setting.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }

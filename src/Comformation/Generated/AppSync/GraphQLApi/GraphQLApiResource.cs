@@ -5,34 +5,59 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
+    /// AWS::AppSync::GraphQLApi
+    /// The AWS::AppSync::GraphQLApi resource will create a new AWS AppSync GraphQL API. This is the top level
+    /// construct for your application. For more information see Quickstart Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
     /// </summary>
     public class GraphQLApiResource : ResourceBase
     {
         public class GraphQLApiProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig
+            /// OpenIDConnectConfig
+            /// Optional authorization configuration for using an OpenId Connect compliant service with your GraphQL
+            /// endpoint.
+            /// Required: No
+            /// Type: AWS AppSync GraphQLApi OpenId Connect Config
+            /// Update requires: No interruption
             /// </summary>
 			public Union<OpenIDConnectConfig, IntrinsicFunction> OpenIDConnectConfig { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig
+            /// UserPoolConfig
+            /// Optional authorization configuration for using Amazon Cognito User Pools with your GraphQL endpoint.
+            /// Required: No
+            /// Type: AWS AppSync GraphQLApi UserPoolConfig
+            /// Update requires: No interruption
             /// </summary>
 			public Union<UserPoolConfig, IntrinsicFunction> UserPoolConfig { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name
+            /// Name
+            /// Friendly name for your GraphQL API in AWS AppSync.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype
+            /// AuthenticationType
+            /// Security configuration for your GraphQL API. For allowed values (such as API_KEY, AWS_IAM, or
+            /// AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT), see Security in the AWS AppSync Developer Guide.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig
+            /// LogConfig
+            /// Logging configuration when writing GraphQL operations and tracing to Amazon Cloudwatch.
+            /// Required: No
+            /// Type: AWS AppSync GraphQLApi LogConfig
+            /// Update requires: No interruption
             /// </summary>
 			public Union<LogConfig, IntrinsicFunction> LogConfig { get; set; }
 

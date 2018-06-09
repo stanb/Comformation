@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html
+    /// AWS Systems Manager MaintenanceWindowTask MaintenanceWindowAutomationParameters
+    /// The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type
+    /// for a Maintenance Window task in AWS Systems Manager .
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html
     /// </summary>
     public class MaintenanceWindowAutomationParameters
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowautomationparameters-parameters
+        /// Parameters
+        /// The parameters for the AUTOMATION task.
+        /// Required: No
+        /// Type: JSON object
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowautomationparameters-documentversion
+        /// DocumentVersion
+        /// The version of an Automation document to use during task execution.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentVersion")]
         public Union<string, IntrinsicFunction> DocumentVersion { get; set; }

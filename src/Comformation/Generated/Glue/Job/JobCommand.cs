@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Job
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html
+    /// AWS Glue Job JobCommand
+    /// The JobCommand property type specifies code that executes an AWS Glue job.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html
     /// </summary>
     public class JobCommand
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-scriptlocation
+        /// ScriptLocation
+        /// The location of a script that executes a job.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ScriptLocation")]
         public Union<string, IntrinsicFunction> ScriptLocation { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-name
+        /// Name
+        /// The name of the job command.
+        /// Required: No
+        /// Type: String
+        /// Valid values: glueetl
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

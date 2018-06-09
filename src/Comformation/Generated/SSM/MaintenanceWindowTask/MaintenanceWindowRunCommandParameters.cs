@@ -6,61 +6,101 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
+    /// AWS Systems Manager MaintenanceWindowTask MaintenanceWindowRunCommandParameters
+    /// The MaintenanceWindowRunCommandParameters property type specifies the parameters for a RUN_COMMAND task type
+    /// for a Maintenance Window task in AWS Systems Manager.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
     /// </summary>
     public class MaintenanceWindowRunCommandParameters
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-timeoutseconds
+        /// TimeoutSeconds
+        /// If this time is reached and the command hasn&#39;t already started executing, it doesn&#39;t execute.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimeoutSeconds")]
         public Union<int, IntrinsicFunction> TimeoutSeconds { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-comment
+        /// Comment
+        /// Information about the command or commands to execute.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Comment")]
         public Union<string, IntrinsicFunction> Comment { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix
+        /// OutputS3KeyPrefix
+        /// The Amazon S3 bucket subfolder.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputS3KeyPrefix")]
         public Union<string, IntrinsicFunction> OutputS3KeyPrefix { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-parameters
+        /// Parameters
+        /// The parameters for the RUN_COMMAND task execution.
+        /// Required: No
+        /// Type: JSON object
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype
+        /// DocumentHashType
+        /// The SHA-256 or SHA-1 hash type. SHA-1 hashes are deprecated.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentHashType")]
         public Union<string, IntrinsicFunction> DocumentHashType { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-servicerolearn
+        /// ServiceRoleArn
+        /// The IAM service role that&#39;s used during task execution.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ServiceRoleArn")]
         public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-notificationconfig
+        /// NotificationConfig
+        /// Configurations for sending notifications about command status changes on a per-instance basis.
+        /// Required: No
+        /// Type: Systems Manager MaintenanceWindowTask NotificationConfig
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationConfig")]
         public Union<NotificationConfig, IntrinsicFunction> NotificationConfig { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname
+        /// OutputS3BucketName
+        /// The name of the Amazon S3 bucket.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputS3BucketName")]
         public Union<string, IntrinsicFunction> OutputS3BucketName { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthash
+        /// DocumentHash
+        /// The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes are
+        /// deprecated.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentHash")]
         public Union<string, IntrinsicFunction> DocumentHash { get; set; }

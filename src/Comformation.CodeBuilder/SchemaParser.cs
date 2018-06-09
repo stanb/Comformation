@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Comformation.CodeBuilder
 {
@@ -10,11 +11,11 @@ namespace Comformation.CodeBuilder
     {
         private const string BaseNamespace = "Comformation";
 
-        public IEnumerable<CodeUnit> Parse(Schema schema)
+        public (IEnumerable<PropertyTypeClass>, IEnumerable<ResourceClass>) Parse(Schema schema)
         {
-            return Parse(schema.PropertyTypes)
-                .AsEnumerable<CodeUnit>().
-                Concat(Parse(schema.ResourceTypes).AsEnumerable<CodeUnit>());
+            var propertyTypes = Parse(schema.PropertyTypes);
+            var resources = Parse(schema.ResourceTypes);
+            return (propertyTypes, resources);
         }
 
         private IEnumerable<PropertyTypeClass> Parse(IDictionary<string, PropertySpec> propertySpecs)
@@ -51,33 +52,39 @@ namespace Comformation.CodeBuilder
                 FixPropertyNames(propertyClass);
 
                 return propertyClass;
-            }).ToList();
+            })
+            .OrderBy(x => $"{x.Namespace}.{x.Name}")
+            .ToList();
 
             return propertyClasses;
         }
 
         private IEnumerable<ResourceClass> Parse(IDictionary<string, ResourceSpec> resourceSpecs)
         {
-            var resourceClasses = resourceSpecs.Select(x =>
-            {
-                var nameParts = x.Key.Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries).Skip(1);
-                var className = nameParts.Last();
-                var namespaceName = string.Join(".", nameParts.Prepend(BaseNamespace));
-                var path = Path.ChangeExtension(Path.Combine(Path.Combine(nameParts.ToArray()), className + "Resource"), ".cs");
-
-                var resourceClass = new ResourceClass
-                {
-                    Type = x.Key,
-                    Name = className,
-                    Namespace = namespaceName,
-                    Path = path,
-                    Documentation = x.Value.Documentation,
-                    Attributes = Parse(x.Value.Attributes),
-                    Properties = Parse(x.Value.Properties)
-                };
-                return resourceClass;
-            }).ToList();
+            var resourceClasses = resourceSpecs.Select(x => Parse(x.Key, x.Value))
+                .OrderBy(x => x.Namespace)
+                .ToList();
             return resourceClasses;
+        }
+
+        private ResourceClass Parse(string type, ResourceSpec resourceSpec)
+        {
+            var nameParts = type.Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries).Skip(1);
+            var className = nameParts.Last();
+            var namespaceName = string.Join(".", nameParts.Prepend(BaseNamespace));
+            var path = Path.ChangeExtension(Path.Combine(Path.Combine(nameParts.ToArray()), className + "Resource"), ".cs");
+
+            var resourceClass = new ResourceClass
+            {
+                Type = type,
+                Name = className,
+                Namespace = namespaceName,
+                Path = path,
+                Documentation = resourceSpec.Documentation,
+                Attributes = Parse(resourceSpec.Attributes),
+                Properties = Parse(resourceSpec.Properties)
+            };
+            return resourceClass;
         }
 
         private void FixPropertyNames(PropertyTypeClass propertyClass)
@@ -111,7 +118,6 @@ namespace Comformation.CodeBuilder
                 {
                     JsonProperty = property.Key,
                     Name = property.Key,
-                    Documentation = property.Value.Documentation,
                     Type = ParsePropertyType(property.Value, property.Value.Required)
                 }).ToList();
             return members;

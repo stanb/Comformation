@@ -5,34 +5,57 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceCatalog.Portfolio
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
+    /// AWS::ServiceCatalog::Portfolio
+    /// Creates a portfolio for AWS Service Catalog. For more information, see CreatePortfolio in the AWS Service
+    /// Catalog Developer Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
     /// </summary>
     public class PortfolioResource : ResourceBase
     {
         public class PortfolioProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-providername
+            /// ProviderName
+            /// The name of the portfolio provider.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProviderName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-description
+            /// Description
+            /// The description of the portfolio.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-displayname
+            /// DisplayName
+            /// The name to use for display purposes.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-acceptlanguage
+            /// AcceptLanguage
+            /// The language code.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags
+            /// Tags
+            /// One or more tags.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

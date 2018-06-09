@@ -5,19 +5,32 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
+    /// AWS::CloudFront::Distribution
+    /// Creates an Amazon CloudFront web distribution. For general information about CloudFront distributions, see the
+    /// Introduction to Amazon CloudFront in the Amazon CloudFront Developer Guide. For specific information about
+    /// creating CloudFront web distributions, see CreateDistribution in the Amazon CloudFront API Reference.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
     /// </summary>
     public class DistributionResource : ResourceBase
     {
         public class DistributionProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig
+            /// DistributionConfig
+            /// The distribution&#39;s configuration information.
+            /// Required: Yes
+            /// Type: DistributionConfig type
+            /// Update requires: No interruption
             /// </summary>
 			public Union<DistributionConfig, IntrinsicFunction> DistributionConfig { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags
+            /// Tags
+            /// An arbitrary set of tags (key–value pairs) to associate with a CloudFront distribution.
+            /// Required: No
+            /// Type: List of
+            /// Update requires: No interruption
+            /// Duplicates not allowed.
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

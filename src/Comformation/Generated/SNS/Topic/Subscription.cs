@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SNS.Topic
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
+    /// Amazon SNS Subscription Property Type
+    /// Subscription is an embedded property of the AWS::SNS::Topic resource that describes the subscription endpoints
+    /// for an Amazon Simple Notification Service (Amazon SNS) topic.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
     /// </summary>
     public class Subscription
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-endpoint
+        /// Endpoint
+        /// The subscription&#39;s endpoint (format depends on the protocol). For more information, see the
+        /// Subscribe Endpoint parameter in the Amazon Simple Notification Service API Reference.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Endpoint")]
         public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol
+        /// Protocol
+        /// The subscription&#39;s protocol. For more information, see the Subscribe Protocol parameter in the
+        /// Amazon Simple Notification Service API Reference.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("Protocol")]
         public Union<string, IntrinsicFunction> Protocol { get; set; }

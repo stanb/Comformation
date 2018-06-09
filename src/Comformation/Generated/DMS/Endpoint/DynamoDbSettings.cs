@@ -6,13 +6,19 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DMS.Endpoint
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-dynamodbsettings.html
+    /// AWS DMS Endpoint DynamoDBSettings
+    /// Use the DynamoDBSettings property to specify settings for an DynamoDB endpoint for an AWS::DMS::Endpoint
+    /// resource.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-dynamodbsettings.html
     /// </summary>
     public class DynamoDbSettings
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-dynamodbsettings.html#cfn-dms-endpoint-dynamodbsettings-serviceaccessrolearn
+        /// ServiceAccessRoleArn
+        /// The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("ServiceAccessRoleArn")]
         public Union<string, IntrinsicFunction> ServiceAccessRoleArn { get; set; }

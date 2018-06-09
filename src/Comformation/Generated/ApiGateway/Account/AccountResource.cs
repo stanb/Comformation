@@ -5,14 +5,22 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Account
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html
+    /// AWS::ApiGateway::Account
+    /// The AWS::ApiGateway::Account resource specifies the AWS Identity and Access Management (IAM) role that Amazon
+    /// API Gateway (API Gateway) uses to write API logs to Amazon CloudWatch Logs (CloudWatch Logs).
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html
     /// </summary>
     public class AccountResource : ResourceBase
     {
         public class AccountProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn
+            /// CloudWatchRoleArn
+            /// The Amazon Resource Name (ARN) of an IAM role that has write access to CloudWatch Logs in your
+            /// account.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CloudWatchRoleArn { get; set; }
 

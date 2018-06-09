@@ -5,29 +5,48 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html
+    /// AWS::ServiceCatalog::PortfolioPrincipalAssociation
+    /// Associates the specified principal with the specified portfolio for AWS Service Catalog. For more information,
+    /// see AssociatePrincipalWithPortfolio in the AWS Service Catalog Developer Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html
     /// </summary>
     public class PortfolioPrincipalAssociationResource : ResourceBase
     {
         public class PortfolioPrincipalAssociationProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principalarn
+            /// PrincipalARN
+            /// The ARN of the principal (IAM user, role, or group).
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PrincipalARN { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-acceptlanguage
+            /// AcceptLanguage
+            /// The language code.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-portfolioid
+            /// PortfolioId
+            /// The portfolio identifier.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principaltype
+            /// PrincipalType
+            /// The principal type (IAM).
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PrincipalType { get; set; }
 

@@ -6,19 +6,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html
+    /// AWS Auto Scaling ScalingPlan TagFilter
+    /// The TagFilter property type specifies a tag for an application source for an AWS Auto Scaling scaling plan.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html
     /// </summary>
     public class TagFilter
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-values
+        /// Values
+        /// The tag values (0 to 20).
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Values")]
         public Union<List<string>, IntrinsicFunction> Values { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-key
+        /// Key
+        /// The tag key.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }

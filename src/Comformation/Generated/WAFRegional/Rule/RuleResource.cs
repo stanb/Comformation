@@ -5,24 +5,43 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WAFRegional.Rule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html
+    /// AWS::WAFRegional::Rule
+    /// The AWS::WAFRegional::Rule resource creates an AWS WAF Regional rule that specifies a combination of IPSet,
+    /// ByteMatchSet, and SqlInjectionMatchSet objects that identify the web requests to allow, block, or count. To
+    /// implement rules, you must associate them with a web ACL.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
     {
         public class RuleProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-metricname
+            /// MetricName
+            /// A friendly name or description for the metrics of the rule. For valid values, see the MetricName
+            /// parameter for the CreateRule action in the AWS WAF Regional API Reference.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-predicates
+            /// Predicates
+            /// The ByteMatchSet, IPSet, SizeConstraintSet, SqlInjectionMatchSet, or XssMatchSet objects to include
+            /// in a rule. If you add more than one predicate to a rule, a request must match all conditions in
+            /// order to be allowed or blocked.
+            /// Required: No
+            /// Type: List of AWS WAF Regional Rule Predicates
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Predicate>, IntrinsicFunction> Predicates { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-name
+            /// Name
+            /// A friendly name or description of the rule.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

@@ -6,49 +6,83 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html
+    /// Amazon Simple Email Service ReceiptRule Action
+    /// The Action property type specifies an action for Amazon SES to take when it receives an email on behalf of one
+    /// or more email addresses or domains that you own.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html
     /// </summary>
     public class Action
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-bounceaction
+        /// BounceAction
+        /// Rejects the received email by returning a bounce response to the sender and, optionally, publishes a
+        /// notification to Amazon SNS.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule BounceAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BounceAction")]
         public Union<BounceAction, IntrinsicFunction> BounceAction { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-s3action
+        /// S3Action
+        /// Saves the received message to an Amazon S3 bucket and, optionally, publishes a notification to
+        /// Amazon SNS.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule S3Action
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Action")]
         public Union<S3Action, IntrinsicFunction> S3Action { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-stopaction
+        /// StopAction
+        /// Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon
+        /// SNS.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule StopAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StopAction")]
         public Union<StopAction, IntrinsicFunction> StopAction { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-snsaction
+        /// SNSAction
+        /// Publishes the email content within a notification to Amazon SNS.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule SNSAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SNSAction")]
         public Union<SNSAction, IntrinsicFunction> SNSAction { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-workmailaction
+        /// WorkmailAction
+        /// Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule WorkmailAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("WorkmailAction")]
         public Union<WorkmailAction, IntrinsicFunction> WorkmailAction { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-addheaderaction
+        /// AddHeaderAction
+        /// Adds a header to the received email.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule AddHeaderAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AddHeaderAction")]
         public Union<AddHeaderAction, IntrinsicFunction> AddHeaderAction { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-lambdaaction
+        /// LambdaAction
+        /// Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.
+        /// Required: No
+        /// Type: Amazon SES ReceiptRule LambdaAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaAction")]
         public Union<LambdaAction, IntrinsicFunction> LambdaAction { get; set; }

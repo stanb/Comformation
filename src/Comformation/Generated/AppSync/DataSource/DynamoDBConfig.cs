@@ -6,25 +6,40 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
+    /// AWS AppSync DataSource DynamoDBConfig
+    /// The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your
+    /// account for an AWS AppSync data source.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
     /// </summary>
     public class DynamoDBConfig
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename
+        /// TableName
+        /// The table name.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TableName")]
         public Union<string, IntrinsicFunction> TableName { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-awsregion
+        /// AwsRegion
+        /// The AWS region.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsRegion")]
         public Union<string, IntrinsicFunction> AwsRegion { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-usecallercredentials
+        /// UseCallerCredentials
+        /// Set to TRUE to use Amazon Cognito credentials with this data source.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UseCallerCredentials")]
         public Union<bool, IntrinsicFunction> UseCallerCredentials { get; set; }

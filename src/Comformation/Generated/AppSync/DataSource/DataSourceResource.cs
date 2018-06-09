@@ -5,49 +5,86 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
+    /// AWS::AppSync::DataSource
+    /// The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as
+    /// Amazon DynamoDB, AWS Lambda, and Amazon Elasticserach Service. Resolvers use these data sources to fetch data
+    /// when clients make GraphQL calls.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
     /// </summary>
     public class DataSourceResource : ResourceBase
     {
         public class DataSourceProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type
+            /// Type
+            /// Mandatory resource to return data from in customer AWS account. You can also specify NONE to use
+            /// Local Resolvers. See Local Resolvers Tutorial for more information.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description
+            /// Description
+            /// Friendly description for this data source.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-servicerolearn
+            /// ServiceRoleArn
+            /// IAM role ARN which the data source will use to connect to a resource.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig
+            /// LambdaConfig
+            /// A valid ARN of a Lambda function in your account.
+            /// Required: No
+            /// Type: AWS AppSync DataSource LambdaConfig
+            /// Update requires: No interruption
             /// </summary>
 			public Union<LambdaConfig, IntrinsicFunction> LambdaConfig { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-apiid
+            /// ApiId
+            /// Unique AWS AppSync GraphQL API Identifier where this data source will be created.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-name
+            /// Name
+            /// Friendly name for you to identify your AppSync data source after creation.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig
+            /// DynamoDBConfig
+            /// AwsRegion and TableName for an Amazon DynamoDB table in your account.
+            /// Required: No
+            /// Type: AWS AppSync DataSource DynamoDBConfig
+            /// Update requires: No interruption
             /// </summary>
 			public Union<DynamoDBConfig, IntrinsicFunction> DynamoDBConfig { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig
+            /// ElasticsearchConfig
+            /// AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account.
+            /// Required: No
+            /// Type: AWS AppSync DataSource ElasticsearchConfig
+            /// Update requires: No interruption
             /// </summary>
 			public Union<ElasticsearchConfig, IntrinsicFunction> ElasticsearchConfig { get; set; }
 

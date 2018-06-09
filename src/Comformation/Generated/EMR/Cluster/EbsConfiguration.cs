@@ -6,19 +6,30 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html
+    /// Amazon EMR InstanceFleetConfig EbsConfiguration
+    /// Use the EbsConfiguration property to specify the Amazon EBS configuration of an Amazon EMR fleet instance.
+    /// EbsConfiguration is a subproperty of the Amazon EMR InstanceFleetConfig InstanceTypeConfig property.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html
     /// </summary>
     public class EbsConfiguration
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsblockdeviceconfigs
+        /// EbsBlockDeviceConfigs
+        /// A list of Amazon EBS volume specifications that are attached to an instance. Duplicates not allowed.
+        /// Required: No
+        /// Type: List of Amazon EMR InstanceFleetConfig EbsBlockDeviceConfig
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsBlockDeviceConfigs")]
         public Union<List<EbsBlockDeviceConfig>, IntrinsicFunction> EbsBlockDeviceConfigs { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized
+        /// EbsOptimized
+        /// Indicates whether an Amazon EBS volume is EBS-optimized.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsOptimized")]
         public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }

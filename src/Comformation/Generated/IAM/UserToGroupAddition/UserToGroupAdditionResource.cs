@@ -5,19 +5,28 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IAM.UserToGroupAddition
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
+    /// AWS::IAM::UserToGroupAddition
+    /// The AWS::IAM::UserToGroupAddition type adds AWS Identity and Access Management (IAM) users to a group.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
     /// </summary>
     public class UserToGroupAdditionResource : ResourceBase
     {
         public class UserToGroupAdditionProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-groupname
+            /// GroupName
+            /// The name of group to add users to.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users
+            /// Users
+            /// Required: Yes
+            /// Type: List of users
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Users { get; set; }
 

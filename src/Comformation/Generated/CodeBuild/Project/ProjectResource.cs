@@ -5,74 +5,137 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
+    /// AWS::CodeBuild::Project
+    /// The AWS::CodeBuild::Project resource configures how AWS CodeBuild builds your source code. For example, it
+    /// tells AWS CodeBuild where to get the source code and which build environment to use.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
     /// </summary>
     public class ProjectResource : ResourceBase
     {
         public class ProjectProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description
+            /// Description
+            /// A description of the project. Use the description to identify the purpose of the project.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig
+            /// VpcConfig
+            /// Settings that enable AWS CodeBuild to access resources in an Amazon VPC. For more information, see
+            /// Use AWS CodeBuild with Amazon Virtual Private Cloud in the AWS CodeBuild User Guide.
+            /// Required: No
+            /// Type: AWS CodeBuild Project VpcConfig
+            /// Update requires: No interruption
             /// </summary>
 			public Union<VpcConfig, IntrinsicFunction> VpcConfig { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey
+            /// EncryptionKey
+            /// The alias or Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master
+            /// key (CMK) that AWS CodeBuild uses to encrypt the build output. If you don&#39;t specify a value, AWS
+            /// CodeBuild uses the AWS-managed CMK for Amazon Simple Storage Service.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EncryptionKey { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers
+            /// Triggers
+            /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository,
+            /// enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
+            /// pushed to the repository.
+            /// Required: No
+            /// Type: AWS CodeBuild Project ProjectTriggers
+            /// Update requires: No interruption
             /// </summary>
 			public Union<ProjectTriggers, IntrinsicFunction> Triggers { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source
+            /// Source
+            /// The source code settings for the project, such as the source code&#39;s repository type and location.
+            /// Required: Yes
+            /// Type: AWS CodeBuild Project Source
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Source, IntrinsicFunction> Source { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name
+            /// Name
+            /// A name for the project. The name must be unique across all of the projects in your AWS account.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
+            /// Artifacts
+            /// The output settings for artifacts that the project generates during a build.
+            /// Required: Yes
+            /// Type: AWS CodeBuild Project Artifacts
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Artifacts, IntrinsicFunction> Artifacts { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
+            /// BadgeEnabled
+            /// Indicates whether AWS CodeBuild generates a publicly accessible URL for your project&#39;s build badge.
+            /// For more information, see Build Badges Sample in the AWS CodeBuild User Guide.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> BadgeEnabled { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
+            /// ServiceRole
+            /// The ARN of the service role that AWS CodeBuild uses to interact with services on your behalf.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment
+            /// Environment
+            /// The build environment settings for the project, such as the environment type or the environment
+            /// variables to use for the build environment.
+            /// Required: Yes
+            /// Type: AWS CodeBuild Project Environment
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Environment, IntrinsicFunction> Environment { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags
+            /// Tags
+            /// An arbitrary set of tags (key-value pairs) for the AWS CodeBuild project.
+            /// Required: No
+            /// Type: AWS CloudFormation Resource Tags
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes
+            /// TimeoutInMinutes
+            /// The number of minutes after which AWS CodeBuild stops the build if it&#39;s not complete. For valid
+            /// values, see the timeoutInMinutes field in the AWS CodeBuild User Guide.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache
+            /// Cache
+            /// Settings that AWS CodeBuild uses to store and reuse build dependencies.
+            /// Required: No
+            /// Type: AWS CodeBuild Project ProjectCache
+            /// Update requires: No interruption
             /// </summary>
 			public Union<ProjectCache, IntrinsicFunction> Cache { get; set; }
 

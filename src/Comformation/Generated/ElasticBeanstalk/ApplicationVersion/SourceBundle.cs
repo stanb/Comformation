@@ -6,19 +6,27 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.ApplicationVersion
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html
+    /// Elastic Beanstalk SourceBundle Property Type
+    /// The SourceBundle property is an embedded property of the AWS::ElasticBeanstalk::ApplicationVersion resource.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html
     /// </summary>
     public class SourceBundle
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3bucket
+        /// S3Bucket
+        /// The Amazon S3 bucket where the data is located.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("S3Bucket")]
         public Union<string, IntrinsicFunction> S3Bucket { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key
+        /// S3Key
+        /// The Amazon S3 key where the data is located.
+        /// Required: Yes
+        /// Type: String
         /// </summary>
         [JsonProperty("S3Key")]
         public Union<string, IntrinsicFunction> S3Key { get; set; }

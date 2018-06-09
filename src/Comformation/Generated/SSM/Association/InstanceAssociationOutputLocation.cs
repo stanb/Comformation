@@ -6,13 +6,20 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.Association
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html
+    /// AWS Systems Manager Association InstanceAssociationOutputLocation
+    /// InstanceAssociationOutputLocation is a property of the AWS::SSM::Association resource that specifies an Amazon
+    /// S3 bucket where you want to store the results of this association request.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html
     /// </summary>
     public class InstanceAssociationOutputLocation
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location
+        /// S3Location
+        /// An Amazon S3 bucket where you want to store the results of this request.
+        /// Required: No
+        /// Type: Systems Manager Association S3OutputLocation
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Location")]
         public Union<S3OutputLocation, IntrinsicFunction> S3Location { get; set; }

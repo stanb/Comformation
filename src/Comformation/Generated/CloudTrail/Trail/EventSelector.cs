@@ -6,25 +6,43 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudTrail.Trail
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html
+    /// AWS CloudTrail Trail EventSelector
+    /// The EventSelector property type configures logging of management events and data events for an AWS CloudTrail
+    /// trail. For more information, see PutEventSelectors in the AWS CloudTrail API Reference.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html
     /// </summary>
     public class EventSelector
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-dataresources
+        /// DataResources
+        /// The resources for data events. CloudTrail supports logging data events for Amazon S3 objects only.
+        /// For more information, see Data Events in the AWS CloudTrail User Guide.
+        /// Required: No
+        /// Type: List of CloudTrail Trail DataResource
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataResources")]
         public Union<List<DataResource>, IntrinsicFunction> DataResources { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-includemanagementevents
+        /// IncludeManagementEvents
+        /// Specifies whether the event selector includes management events for the trail. The default value is
+        /// true. For more information, see Management Events in the AWS CloudTrail User Guide.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeManagementEvents")]
         public Union<bool, IntrinsicFunction> IncludeManagementEvents { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-readwritetype
+        /// ReadWriteType
+        /// Specifies whether to log read-only events, write-only events, or all events. The default value is
+        /// All.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReadWriteType")]
         public Union<string, IntrinsicFunction> ReadWriteType { get; set; }

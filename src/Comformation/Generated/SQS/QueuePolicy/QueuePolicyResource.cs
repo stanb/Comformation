@@ -5,19 +5,32 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SQS.QueuePolicy
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html
+    /// AWS::SQS::QueuePolicy
+    /// The AWS::SQS::QueuePolicy type applies a policy to Amazon SQS queues.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html
     /// </summary>
     public class QueuePolicyResource : ResourceBase
     {
         public class QueuePolicyProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-policydoc
+            /// PolicyDocument
+            /// A policy document that contains the permissions for the specified Amazon SQS queues. For more
+            /// information about Amazon SQS policies, see Creating Custom Policies Using the Access Policy Language
+            /// in the Amazon Simple Queue Service Developer Guide.
+            /// Required: Yes
+            /// Type: JSON object
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-queues
+            /// Queues
+            /// The URLs of the queues to which you want to add the policy. You can use the Ref function to specify
+            /// an AWS::SQS::Queue resource.
+            /// Required: Yes
+            /// Type: List of String values
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Queues { get; set; }
 

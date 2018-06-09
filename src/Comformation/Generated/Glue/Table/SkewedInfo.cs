@@ -6,25 +6,42 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Table
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html
+    /// AWS Glue Table SkewedInfo
+    /// The SkewedInfo property type specifies skewed values (values that occur with very high frequency) in an AWS
+    /// Glue table.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html
     /// </summary>
     public class SkewedInfo
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnnames
+        /// SkewedColumnNames
+        /// A list of UTF-8 strings that specify the names of columns that contain skewed values.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnNames")]
         public Union<List<string>, IntrinsicFunction> SkewedColumnNames { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvalues
+        /// SkewedColumnValues
+        /// A list of UTF-8 strings that specify values that appear so frequently that they&#39;re considered to be
+        /// skewed.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnValues")]
         public Union<List<string>, IntrinsicFunction> SkewedColumnValues { get; set; }
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvaluelocationmaps
+        /// SkewedColumnValueLocationMaps
+        /// UTF-8 string–to–UTF-8 string key-value pairs that map skewed values to the columns that contain
+        /// them.
+        /// Required: No
+        /// Type: JSON object
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnValueLocationMaps")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SkewedColumnValueLocationMaps { get; set; }

@@ -5,49 +5,90 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.DevEndpoint
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html
+    /// AWS::Glue::DevEndpoint
+    /// The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL
+    /// scripts for AWS Glue. For more information, see DevEndpoint Structure in the AWS Glue Developer Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html
     /// </summary>
     public class DevEndpointResource : ResourceBase
     {
         public class DevEndpointProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path
+            /// ExtraJarsS3Path
+            /// The path to one or more Java Jars in an Amazon S3 bucket to load in your endpoint.
+            /// 				
+            /// Note You can currently use only pure Java/Scala libraries on a DevEndpoint.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtraJarsS3Path { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname
+            /// EndpointName
+            /// The name of the endpoint.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EndpointName { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey
+            /// PublicKey
+            /// The public key for the endpoint to use for authentication.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PublicKey { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
+            /// NumberOfNodes
+            /// The number of nodes that the endpoint uses.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid
+            /// SubnetId
+            /// The subnet ID for the endpoint.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path
+            /// ExtraPythonLibsS3Path
+            /// The path to one or more Python libraries in an Amazon S3 bucket to load in your endpoint.
+            /// 				
+            /// Note You can currently use only pure Python libraries on a DevEndpoint. Libraries that rely on C
+            /// extensions, such as the pandas Python data analysis library, aren&#39;t supported yet.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtraPythonLibsS3Path { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids
+            /// SecurityGroupIds
+            /// A list of UTF-8 strings that specify the security group IDs for the endpoint.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
+            /// RoleArn
+            /// The Amazon Resource Name (ARN) of the IAM role for the endpoint. It must match the AWS ARN string
+            /// pattern: arn:aws:iam::\d{12}:role/. *
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 

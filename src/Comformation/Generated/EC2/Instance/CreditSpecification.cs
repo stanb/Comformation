@@ -6,13 +6,19 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
+    /// Amazon EC2 Instance CreditSpecification
+    /// The CreditSpecification property type specifies the credit option for CPU usage of a T2 instance.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
     /// </summary>
     public class CreditSpecification
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits
+        /// CPUCredits
+        /// The credit option for CPU usage of a T2 instance.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CPUCredits")]
         public Union<string, IntrinsicFunction> CPUCredits { get; set; }

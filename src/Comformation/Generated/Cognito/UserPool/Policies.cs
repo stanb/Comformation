@@ -6,13 +6,19 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.UserPool
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html
+    /// Amazon Cognito UserPool Policies
+    /// Policies is a property of the AWS::Cognito::UserPool resource that defines the password policies of an Amazon
+    /// Cognito User Pool.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html
     /// </summary>
     public class Policies
     {
 
         /// <summary>
-        ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html#cfn-cognito-userpool-policies-passwordpolicy
+        /// PasswordPolicy
+        /// Specifies information about the user pool password policy.
+        /// Type: Amazon Cognito UserPool PasswordPolicy
+        /// Required: No
         /// </summary>
         [JsonProperty("PasswordPolicy")]
         public Union<PasswordPolicy, IntrinsicFunction> PasswordPolicy { get; set; }

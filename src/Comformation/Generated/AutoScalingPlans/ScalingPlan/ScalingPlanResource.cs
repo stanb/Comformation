@@ -5,19 +5,29 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html
+    /// AWS::AutoScalingPlans::ScalingPlan
+    /// Creates a scaling plan for AWS Auto Scaling. For more information, see the AWS Auto Scaling User Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html
     /// </summary>
     public class ScalingPlanResource : ResourceBase
     {
         public class ScalingPlanProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-applicationsource
+            /// ApplicationSource
+            /// A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
+            /// Required: Yes
+            /// Type: AWS Auto Scaling ScalingPlan ApplicationSource
+            /// Update requires: No interruption
             /// </summary>
 			public Union<ApplicationSource, IntrinsicFunction> ApplicationSource { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions
+            /// ScalingInstructions
+            /// The scaling instructions.
+            /// Required: Yes
+            /// Type: List of AWS Auto Scaling ScalingPlan ScalingInstruction property types
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<ScalingInstruction>, IntrinsicFunction> ScalingInstructions { get; set; }
 

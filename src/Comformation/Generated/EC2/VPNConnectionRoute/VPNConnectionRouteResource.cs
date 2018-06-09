@@ -5,19 +5,31 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.VPNConnectionRoute
 {
     /// <summary>
-    ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html
+    /// AWS::EC2::VPNConnectionRoute
+    /// A static route that is associated with a VPN connection between an existing virtual private gateway and a VPN
+    /// customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN
+    /// customer gateway.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html
     /// </summary>
     public class VPNConnectionRouteResource : ResourceBase
     {
         public class VPNConnectionRouteProperties
         {
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock
+            /// DestinationCidrBlock
+            /// The CIDR block that is associated with the local subnet of the customer network.
+            /// Required: Yes.
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
 
             /// <summary>
-            ///  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid
+            /// VpnConnectionId
+            /// The ID of the VPN connection.
+            /// Required: Yes.
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> VpnConnectionId { get; set; }
 
