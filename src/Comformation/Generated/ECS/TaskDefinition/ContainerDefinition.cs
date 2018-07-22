@@ -130,8 +130,8 @@ namespace Comformation.ECS.TaskDefinition
         /// override any Docker health checks that exist in the container image (such as those specified in a
         /// parent image or from the image&#39;s Dockerfile).
         /// Required: No
-        /// Type: Amazon ECS TaskDefinition HealthCheckAmazon SageMaker Endpoint TagAmazon SageMaker
-        /// EndpointConfig ProductionVariantAmazon SageMaker NotebookInstanceLifecycleConfig
+        /// Type: AWS Batch JobDefinition TimeoutAmazon ECS TaskDefinition HealthCheckAmazon SageMaker Endpoint
+        /// TagAmazon SageMaker EndpointConfig ProductionVariantAmazon SageMaker NotebookInstanceLifecycleConfig
         /// NotebookInstanceLifecycleHook
         /// </summary>
         [JsonProperty("HealthCheck")]

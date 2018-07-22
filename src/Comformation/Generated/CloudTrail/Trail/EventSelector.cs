@@ -16,8 +16,8 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// DataResources
-        /// The resources for data events. CloudTrail supports logging data events for Amazon S3 objects only.
-        /// For more information, see Data Events in the AWS CloudTrail User Guide.
+        /// The resources for data events. CloudTrail supports logging data events for Amazon S3 objects and AWS
+        /// Lambda functions. For more information, see Data Events in the AWS CloudTrail User Guide.
         /// Required: No
         /// Type: List of CloudTrail Trail DataResource
         /// Update requires: No interruption

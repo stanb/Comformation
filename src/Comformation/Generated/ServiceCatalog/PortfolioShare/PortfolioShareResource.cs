@@ -16,7 +16,7 @@ namespace Comformation.ServiceCatalog.PortfolioShare
         {
             /// <summary>
             /// AccountId
-            /// The language code.
+            /// The AWS account ID.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +25,7 @@ namespace Comformation.ServiceCatalog.PortfolioShare
 
             /// <summary>
             /// AcceptLanguage
-            /// The AWS account ID.
+            /// The language code.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

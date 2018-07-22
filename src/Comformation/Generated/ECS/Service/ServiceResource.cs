@@ -121,7 +121,7 @@ namespace Comformation.ECS.Service
             /// container agent to make calls to your load balancer.
             /// Note In some cases, you might need to add a dependency on the service role&#39;s policy. For more
             /// information, see IAM role policy in DependsOn Attribute.
-            /// Required: Conditional. Required only if you specify the LoadBalancers property.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

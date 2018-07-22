@@ -69,5 +69,11 @@ namespace Comformation.CodeBuild.Project
         [JsonProperty("ComputeType")]
         public Union<string, IntrinsicFunction> ComputeType { get; set; }
 
+        /// <summary>
+        /// Certificate
+        /// </summary>
+        [JsonProperty("Certificate")]
+        public Union<string, IntrinsicFunction> Certificate { get; set; }
+
     }
 }

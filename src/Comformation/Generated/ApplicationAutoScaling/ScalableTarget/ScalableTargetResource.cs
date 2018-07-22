@@ -78,8 +78,9 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
             /// <summary>
             /// ServiceNamespace
-            /// The AWS service namespace of the scalable target. For a list of service namespaces, see AWS Service
-            /// Namespaces in the AWS General Reference.
+            /// The namespace of the AWS service that provides the resource or custom-resource for a resource
+            /// provided by your own application or service. For valid AWS service namespace values, see the
+            /// RegisterScalableTarget action in the Application Auto Scaling API Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

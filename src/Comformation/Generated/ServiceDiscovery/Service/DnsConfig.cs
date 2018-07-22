@@ -31,6 +31,12 @@ namespace Comformation.ServiceDiscovery.Service
         public Union<List<DnsRecord>, IntrinsicFunction> DnsRecords { get; set; }
 
         /// <summary>
+        /// RoutingPolicy
+        /// </summary>
+        [JsonProperty("RoutingPolicy")]
+        public Union<string, IntrinsicFunction> RoutingPolicy { get; set; }
+
+        /// <summary>
         /// NamespaceId
         /// 					
         /// The ID of the namespace that you want to use for DNS configuration.

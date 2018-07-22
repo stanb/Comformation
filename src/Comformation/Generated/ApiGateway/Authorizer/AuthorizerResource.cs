@@ -114,9 +114,10 @@ namespace Comformation.ApiGateway.Authorizer
 
             /// <summary>
             /// Type
-            /// The type of authorizer:
-            /// For a custom authorizer that uses a Lambda function, use TOKEN. For an authorizer that uses Amazon
-            /// Cognito user pools, use COGNITO_USER_POOLS.
+            /// The type of authorizer. Valid values include:
+            /// TOKEN: A custom authorizer that uses a Lambda function. COGNITO_USER_POOLS: An authorizer that uses
+            /// Amazon Cognito user pools. REQUEST: An authorizer that uses a Lambda function using incoming request
+            /// parameters.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

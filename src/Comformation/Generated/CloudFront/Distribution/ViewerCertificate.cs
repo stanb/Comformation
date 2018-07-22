@@ -23,6 +23,7 @@ namespace Comformation.CloudFront.Distribution
         /// Required: Conditional. You must specify one of the following properties: AcmCertificateArn,
         /// CloudFrontDefaultCertificate, or IamCertificateId.
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IamCertificateId")]
         public Union<string, IntrinsicFunction> IamCertificateId { get; set; }
@@ -33,6 +34,7 @@ namespace Comformation.CloudFront.Distribution
         /// for the ViewerCertificate data type in the Amazon CloudFront API Reference.
         /// Required: Conditional. Required if you specified the IamCertificateId or AcmCertificateArn property.
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SslSupportMethod")]
         public Union<string, IntrinsicFunction> SslSupportMethod { get; set; }
@@ -46,8 +48,10 @@ namespace Comformation.CloudFront.Distribution
         /// AWS CloudFormation specifies SSLv3 by default. However, if you specify the IamCertificateId or
         /// AcmCertificateArn property and specify SNI only for the SslSupportMethod property, AWS
         /// CloudFormation specifies TLSv1 for the minimum protocol version.
+        /// Note On the CloudFront console, this setting is called Security policy.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MinimumProtocolVersion")]
         public Union<string, IntrinsicFunction> MinimumProtocolVersion { get; set; }
@@ -59,6 +63,7 @@ namespace Comformation.CloudFront.Distribution
         /// Required: Conditional. You must specify one of the following properties: AcmCertificateArn,
         /// CloudFrontDefaultCertificate, or IamCertificateId.
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudFrontDefaultCertificate")]
         public Union<bool, IntrinsicFunction> CloudFrontDefaultCertificate { get; set; }
@@ -72,6 +77,7 @@ namespace Comformation.CloudFront.Distribution
         /// Required: Conditional. You must specify one of the following properties: AcmCertificateArn,
         /// CloudFrontDefaultCertificate, or IamCertificateId.
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AcmCertificateArn")]
         public Union<string, IntrinsicFunction> AcmCertificateArn { get; set; }
