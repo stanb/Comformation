@@ -44,6 +44,15 @@ namespace Comformation.AppSync.DataSource
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
+            /// HttpConfig
+            /// Endpoints for an HTTP DataSource.
+            /// Required: No
+            /// Type: AWS AppSync DataSource HttpConfig
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<HttpConfig, IntrinsicFunction> HttpConfig { get; set; }
+
+            /// <summary>
             /// LambdaConfig
             /// A valid ARN of a Lambda function in your account.
             /// Required: No

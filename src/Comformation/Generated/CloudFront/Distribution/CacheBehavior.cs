@@ -80,6 +80,17 @@ namespace Comformation.CloudFront.Distribution
         public Union<double, IntrinsicFunction> DefaultTTL { get; set; }
 
         /// <summary>
+        /// FieldLevelEncryptionId
+        /// The value of ID for the field-level encryption configuration that you want CloudFront to use for
+        /// encrypting specific fields of data for a cache behavior in your distribution. The default is an
+        /// empty string.
+        /// Required: No
+        /// Type: String
+        /// </summary>
+        [JsonProperty("FieldLevelEncryptionId")]
+        public Union<string, IntrinsicFunction> FieldLevelEncryptionId { get; set; }
+
+        /// <summary>
         /// AllowedMethods
         /// HTTP methods that CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
         /// You can specify [&quot;HEAD&quot;, &quot;GET&quot;], [&quot;GET&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;], or [&quot;DELETE&quot;, &quot;GET&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;,

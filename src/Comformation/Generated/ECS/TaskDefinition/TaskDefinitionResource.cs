@@ -26,10 +26,10 @@ namespace Comformation.ECS.TaskDefinition
 
             /// <summary>
             /// Cpu
-            /// The number of cpu units used by the task. If using the EC2 launch type, this field is optional and
-            /// any value can be used. If you are using the Fargate launch type, this field is required and you must
-            /// use one of the following values, which determines your range of valid values for the memory
-            /// parameter:
+            /// The number of cpu units used by the task. If using the EC2 launch type, this field is optional.
+            /// Supported values are between 128 CPU units (0. 125 vCPUs) and 10240 CPU units (10 vCPUs). If you are
+            /// using the Fargate launch type, this field is required and you must use one of the following values,
+            /// which determines your range of valid values for the memory parameter:
             /// 256 (. 25 vCPU) - Available memory values: 0. 5GB, 1GB, 2GB 512 (. 5 vCPU) - Available memory
             /// values: 1GB, 2GB, 3GB, 4GB 1024 (1 vCPU) - Available memory values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
             /// 8GB 2048 (2 vCPU) - Available memory values: Between 4GB and 16GB in 1GB increments 4096 (4 vCPU) -

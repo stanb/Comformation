@@ -32,7 +32,7 @@ namespace Comformation.RDS.DBInstance
             /// AllowMajorVersionUpgrade
             /// If you update the EngineVersion property to a version that&#39;s different from the DB instance&#39;s
             /// current major version, set this property to true. For more information, see ModifyDBInstance in the
-            /// Amazon Relational Database Service API Reference.
+            /// Amazon RDS API Reference.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -46,7 +46,7 @@ namespace Comformation.RDS.DBInstance
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -68,15 +68,15 @@ namespace Comformation.RDS.DBInstance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// </summary>
 			public Union<string, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
             /// <summary>
             /// CharacterSetName
             /// For supported engines, specifies the character set to associate with the DB instance. For more
-            /// information, see Appendix: Oracle Character Sets Supported in Amazon RDS in the Amazon Relational
-            /// Database Service User Guide.
+            /// information, see Appendix: Oracle Character Sets Supported in Amazon RDS in the Amazon RDS User
+            /// Guide.
             /// If you specify the DBSnapshotIdentifier or SourceDBInstanceIdentifier property, don&#39;t specify this
             /// property. The value is inherited from the snapshot or source DB instance.
             /// Required: No
@@ -199,8 +199,7 @@ namespace Comformation.RDS.DBInstance
             /// database and it rolls back the stack.
             /// Some DB instance properties aren&#39;t valid when you restore from a snapshot, such as the
             /// MasterUsername and MasterUserPassword properties. For information about the properties that you can
-            /// specify, see the RestoreDBInstanceFromDBSnapshot action in the Amazon Relational Database Service
-            /// API Reference.
+            /// specify, see the RestoreDBInstanceFromDBSnapshot action in the Amazon RDS API Reference.
             /// Important If you specify this property, AWS CloudFormation ignores the DBName property.
             /// Required: No
             /// Type: String
@@ -226,7 +225,7 @@ namespace Comformation.RDS.DBInstance
             /// For an Amazon RDS DB instance that&#39;s running Microsoft SQL Server, the Active Directory directory ID
             /// to create the instance in. Amazon RDS uses Windows Authentication to authenticate users that connect
             /// to the DB instance. For more information, see Using Windows Authentication with an Amazon RDS DB
-            /// Instance Running Microsoft SQL Server in the Amazon Relational Database Service User Guide.
+            /// Instance Running Microsoft SQL Server in the Amazon RDS User Guide.
             /// If you specify this property, you must specify a SQL Server engine for the Engine property.
             /// Required: No
             /// Type: String
@@ -247,8 +246,8 @@ namespace Comformation.RDS.DBInstance
             /// Engine
             /// The database engine that the DB instance uses. This property is optional when you specify the
             /// DBSnapshotIdentifier property to create DB instances.
-            /// For valid values, see the Engine parameter of the CreateDBInstance action in the Amazon Relational
-            /// Database Service API Reference.
+            /// For valid values, see the Engine parameter of the CreateDBInstance action in the Amazon RDS API
+            /// Reference.
             /// If you specify aurora as the database engine, you must also specify the DBClusterIdentifier
             /// property.
             /// Note If you&#39;ve specified oracle-se or oracle-se1 as the database engine, you can update the database
@@ -264,6 +263,9 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// EngineVersion
             /// The version number of the database engine that the DB instance uses.
+            /// Note To prevent automatic upgrades, be sure to specify the full version number (for example, 5. 6.
+            /// 13). If the default version for the database engine changes and you specify only the major version
+            /// (for example, 5. 6), your DB instance will be upgraded to use the latest default version.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
@@ -278,8 +280,7 @@ namespace Comformation.RDS.DBInstance
             /// rate to the amount of storage that you allocate (IOPS to allocated storage). For example, you can
             /// provision an Oracle database instance with 1000 IOPS and 200 GB of storage (a ratio of 5:1), or
             /// specify 2000 IOPS with 200 GB of storage (a ratio of 10:1). For more information, see Amazon RDS
-            /// Provisioned IOPS Storage to Improve Performance in the Amazon Relational Database Service User
-            /// Guide.
+            /// Provisioned IOPS Storage to Improve Performance in the Amazon RDS User Guide.
             /// Required: Conditional. If you specify io1 for the StorageType property, you must specify this
             /// property.
             /// Type: Number
@@ -302,8 +303,7 @@ namespace Comformation.RDS.DBInstance
             /// in, and you can&#39;t use encryption keys from one region in another region.
             /// If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To specify both a
             /// security group and this property, you must use a VPC security group. For more information about
-            /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon Relational Database Service
-            /// User Guide.
+            /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon RDS User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -347,12 +347,12 @@ namespace Comformation.RDS.DBInstance
             /// The interval, in seconds, between points when Amazon RDS collects enhanced monitoring metrics for
             /// the DB instance. To disable metrics collection, specify 0.
             /// For default and valid values, see the MonitoringInterval parameter for the CreateDBInstance action
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// Required: Conditional. If you specify the MonitoringRoleArn property, specify a value other than 0
             /// for MonitoringInterval.
             /// Type: Integer
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// </summary>
 			public Union<int, IntrinsicFunction> MonitoringInterval { get; set; }
 
@@ -361,8 +361,7 @@ namespace Comformation.RDS.DBInstance
             /// The ARN of the AWS Identity and Access Management (IAM) role that permits Amazon RDS to send
             /// enhanced monitoring metrics to Amazon CloudWatch, for example,
             /// arn:aws:iam::123456789012:role/emaccess. For information on creating a monitoring role, see To
-            /// create an IAM role for Amazon RDS Enhanced Monitoring in the Amazon Relational Database Service User
-            /// Guide.
+            /// create an IAM role for Amazon RDS Enhanced Monitoring in the Amazon RDS User Guide.
             /// Required: Conditional. If you specify a value other than 0 for the MonitoringInterval property,
             /// specify a value for MonitoringRoleArn.
             /// Type: String
@@ -403,7 +402,7 @@ namespace Comformation.RDS.DBInstance
             /// PreferredBackupWindow
             /// The daily time range during which automated backups are performed if automated backups are enabled,
             /// as determined by the BackupRetentionPeriod property. For valid values, see the PreferredBackupWindow
-            /// parameter for the CreateDBInstance action in the Amazon Relational Database Service API Reference.
+            /// parameter for the CreateDBInstance action in the Amazon RDS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -413,14 +412,14 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// PreferredMaintenanceWindow
             /// The weekly time range (in UTC) during which system maintenance can occur. For valid values, see the
-            /// PreferredMaintenanceWindow parameter for the CreateDBInstance action in the Amazon Relational
-            /// Database Service API Reference.
+            /// PreferredMaintenanceWindow parameter for the CreateDBInstance action in the Amazon RDS API
+            /// Reference.
             /// Note This property applies when AWS CloudFormation initially creates the DB instance. If you use AWS
             /// CloudFormation to update the DB instance, those updates are applied immediately.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
@@ -431,15 +430,14 @@ namespace Comformation.RDS.DBInstance
             /// IP address. If you specify false, AWS CloudFormation creates an internal instance with a DNS name
             /// that resolves to a private IP address.
             /// The default behavior value depends on your VPC setup and the database subnet group. For more
-            /// information, see the PubliclyAccessible parameter in CreateDBInstance in the Amazon Relational
-            /// Database Service API Reference.
+            /// information, see the PubliclyAccessible parameter in CreateDBInstance in the Amazon RDS API
+            /// Reference.
             /// If this resource has a public IP address and is also in a VPC that is defined in the same template,
             /// you must use the DependsOn attribute to declare a dependency on the VPC-gateway attachment. For more
             /// information, see DependsOn Attribute.
             /// Note If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To specify a
             /// security group and this property, you must use a VPC security group. For more information about
-            /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon Relational Database Service
-            /// User Guide.
+            /// Amazon RDS and VPC, see Using Amazon RDS with Amazon VPC in the Amazon RDS User Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -467,9 +465,9 @@ namespace Comformation.RDS.DBInstance
             /// PreferredBackupWindow properties. The database attributes are inherited from the source DB instance,
             /// and backups are disabled for read replicas. If the source DB instance is in a different region than
             /// the read replica, specify an ARN for a valid DB instance. For more information, see Constructing a
-            /// Amazon RDS Amazon Resource Name (ARN) in the Amazon Relational Database Service User Guide. For DB
-            /// instances in Amazon Aurora clusters, don&#39;t specify this property. Amazon RDS automatically assigns
-            /// writer and reader DB instances.
+            /// Amazon RDS Amazon Resource Name (ARN) in the Amazon RDS User Guide. For DB instances in Amazon
+            /// Aurora clusters, don&#39;t specify this property. Amazon RDS automatically assigns writer and reader DB
+            /// instances.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -501,7 +499,7 @@ namespace Comformation.RDS.DBInstance
             /// StorageType
             /// The storage type associated with this DB instance.
             /// For the default and valid values, see the StorageType parameter of the CreateDBInstance action in
-            /// the Amazon Relational Database Service API Reference.
+            /// the Amazon RDS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
@@ -521,7 +519,7 @@ namespace Comformation.RDS.DBInstance
             /// Timezone
             /// The time zone of the DB instance, which you can specify to match the time zone of your applications.
             /// To see which engines support time zones, see the Timezone parameter for the CreateDBInstance action
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

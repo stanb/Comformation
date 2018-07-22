@@ -141,6 +141,11 @@ namespace Comformation.Cognito.UserPool
 
             /// <summary>
             /// UsernameAttributes
+            /// Specifies whether email addresses or phone numbers can be specified as usernames when a user signs
+            /// up. Possible values: phone_number or email.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> UsernameAttributes { get; set; }
 

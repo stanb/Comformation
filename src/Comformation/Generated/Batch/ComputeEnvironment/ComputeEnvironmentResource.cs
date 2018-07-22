@@ -17,7 +17,7 @@ namespace Comformation.Batch.ComputeEnvironment
             /// <summary>
             /// Type
             /// The type of the compute environment.
-            /// Required: yes
+            /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -27,16 +27,16 @@ namespace Comformation.Batch.ComputeEnvironment
             /// ServiceRole
             /// The service role associated with the compute environment that allows AWS Batch to make calls to AWS
             /// API operations on your behalf.
-            /// Required: yes
+            /// Required: Yes
             /// Type: String
-            /// Update requires: No Interruption
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
             /// <summary>
             /// ComputeEnvironmentName
             /// The name of the compute environment.
-            /// Required: no
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -45,9 +45,9 @@ namespace Comformation.Batch.ComputeEnvironment
             /// <summary>
             /// ComputeResources
             /// The compute resources defined for the compute environment.
-            /// Required: yes
+            /// Required: Yes
             /// Type: AWS Batch ComputeEnvironment ComputeResources
-            /// Update requires: No Interruption
+            /// Update requires: No interruption
             /// </summary>
 			public Union<ComputeResources, IntrinsicFunction> ComputeResources { get; set; }
 
@@ -56,9 +56,9 @@ namespace Comformation.Batch.ComputeEnvironment
             /// The state of the compute environment. The valid values are ENABLED or DISABLED. An ENABLED state
             /// indicates that you can register instances with the compute environment and that the associated
             /// instances can accept jobs.
-            /// Required: no
+            /// Required: No
             /// Type: String
-            /// Update requires: No Interruption
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> State { get; set; }
 

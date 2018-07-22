@@ -6,7 +6,8 @@ namespace Comformation.EC2.SecurityGroupEgress
 {
     /// <summary>
     /// AWS::EC2::SecurityGroupEgress
-    /// The AWS::EC2::SecurityGroupEgress resource adds an egress rule to an Amazon VPC security group.
+    /// The AWS::EC2::SecurityGroupEgress resource adds an egress rule to an Amazon VPC security group. When you use
+    /// the AWS::EC2::SecurityGroupEgress resource, the default rule is removed from the security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
     /// </summary>
     public class SecurityGroupEgressResource : ResourceBase

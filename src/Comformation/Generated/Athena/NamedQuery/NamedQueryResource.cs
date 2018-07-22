@@ -28,7 +28,7 @@ namespace Comformation.Athena.NamedQuery
             /// The SQL query statements that comprise the query.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> QueryString { get; set; }
 

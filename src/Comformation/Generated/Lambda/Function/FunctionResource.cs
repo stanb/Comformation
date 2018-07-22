@@ -98,7 +98,7 @@ namespace Comformation.Lambda.Function
             /// Your function use case determines your CPU and memory requirements. For example, a database
             /// operation might need less memory than an image processing function. You must specify a value that is
             /// greater than or equal to 128, and it must be a multiple of 64. You cannot specify a size larger than
-            /// 1536. The default value is 128 MB.
+            /// 3008. The default value is 128 MB.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption

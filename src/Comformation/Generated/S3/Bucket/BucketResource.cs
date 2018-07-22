@@ -49,8 +49,8 @@ namespace Comformation.S3.Bucket
 
             /// <summary>
             /// BucketEncryption
-            /// Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys
-            /// SSE-S3 or AWS KMS-managed Keys (SSE-KMS) bucket. .
+            /// Specifies default encryption for a bucket using server-side encryption with either Amazon S3-managed
+            /// keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS).
             /// Required: No
             /// Type: Amazon S3 Bucket BucketEncryption
             /// Update requires: No interruption

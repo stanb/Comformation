@@ -25,6 +25,16 @@ namespace Comformation.CodeBuild.Project
         public Union<string, IntrinsicFunction> Type { get; set; }
 
         /// <summary>
+        /// ReportBuildStatus
+        /// This specifies whether to send your source provider the status of a build&#39;s start and completion. If
+        /// you set this with a source provider other than GitHub, an invalidInputException is thrown.
+        /// Required: No
+        /// Type: Boolean
+        /// </summary>
+        [JsonProperty("ReportBuildStatus")]
+        public Union<bool, IntrinsicFunction> ReportBuildStatus { get; set; }
+
+        /// <summary>
         /// Auth
         /// Information about the authorization settings for AWS CodeBuild to access the source code to be
         /// built.
