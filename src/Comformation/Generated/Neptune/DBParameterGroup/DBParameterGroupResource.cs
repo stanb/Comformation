@@ -28,8 +28,8 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Required: No
             /// Type: A JSON object consisting of string key-value pairs, as shown in the following example:
             /// &quot;Parameters&quot; : { &quot;Key1&quot; : &quot;Value1&quot;, &quot;Key2&quot; : &quot;Value2&quot;, &quot;Key3&quot; : &quot;Value3&quot; }
-            /// Update requires: No interruption or Some interruptions. Changes to dynamic parameters are applied
-            /// immediately. During an update, if you have static parameters (whether they were changed or not),
+            /// Update requires: No interruption or some interruption. Changes to dynamic parameters are applied
+            /// immediately. During an update, if you have static parameters (whether they were changed or not), it
             /// triggers AWS CloudFormation to reboot the associated DB instance without failover.
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }

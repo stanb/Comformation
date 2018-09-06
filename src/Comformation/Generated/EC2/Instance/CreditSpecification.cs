@@ -15,7 +15,8 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// CPUCredits
-        /// The credit option for CPU usage of a T2 instance.
+        /// The credit option for CPU usage of a T2 instance. Valid values are standard and unlimited. By
+        /// default, standard is specified.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

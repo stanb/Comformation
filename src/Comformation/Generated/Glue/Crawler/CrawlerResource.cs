@@ -53,6 +53,16 @@ namespace Comformation.Glue.Crawler
 			public Union<SchemaChangePolicy, IntrinsicFunction> SchemaChangePolicy { get; set; }
 
             /// <summary>
+            /// Configuration
+            /// Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+            /// crawler&#39;s behavior. For more information, see Configuring a Crawler. .
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> Configuration { get; set; }
+
+            /// <summary>
             /// Schedule
             /// The schedule for the crawler.
             /// Required: No

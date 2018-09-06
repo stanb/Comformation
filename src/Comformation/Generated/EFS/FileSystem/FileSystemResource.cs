@@ -58,6 +58,32 @@ namespace Comformation.EFS.FileSystem
             /// </summary>
 			public Union<string, IntrinsicFunction> PerformanceMode { get; set; }
 
+            /// <summary>
+            /// ProvisionedThroughputInMibps
+            /// The throughput, measured in MiB/s, that you want to provision for a file system that you&#39;re
+            /// creating. The limit on throughput is 1024 MiB/s. You can get these limits increased by contacting
+            /// AWS Support. For more information, see Amazon EFS Limits That You Can Increase in the Amazon Elastic
+            /// File System User Guide.
+            /// Valid Range: Minimum value of 0. 0.
+            /// Required: No
+            /// Type: Double
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<double, IntrinsicFunction> ProvisionedThroughputInMibps { get; set; }
+
+            /// <summary>
+            /// ThroughputMode
+            /// The throughput mode for the file system to be created. There are two throughput modes to choose from
+            /// for your file system: bursting and provisioned. You can decrease your file system&#39;s throughput in
+            /// Provisioned Throughput mode or change between the throughput modes as long as it’s been more than 24
+            /// hours since the last decrease or throughput mode change.
+            /// Valid Values: bursting and provisioned.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> ThroughputMode { get; set; }
+
         }
     
         public string Type { get; } = "AWS::EFS::FileSystem";

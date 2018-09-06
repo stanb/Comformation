@@ -16,6 +16,16 @@ namespace Comformation.SNS.Subscription
         public class SubscriptionProperties
         {
             /// <summary>
+            /// DeliveryPolicy
+            /// The JSON serialization of the subscription&#39;s delivery policy. For more information, see
+            /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
+            /// Required: No
+            /// Type: JSON object
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DeliveryPolicy { get; set; }
+
+            /// <summary>
             /// Endpoint
             /// The endpoint that receives notifications from the Amazon SNS topic. The endpoint value depends on
             /// the protocol that you specify. For more information, see the Subscribe Endpoint parameter in the
@@ -27,6 +37,16 @@ namespace Comformation.SNS.Subscription
 			public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
             /// <summary>
+            /// FilterPolicy
+            /// The filter policy JSON that is assigned to the subscription. For more information, see
+            /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
+            /// Required: No
+            /// Type: JSON object
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> FilterPolicy { get; set; }
+
+            /// <summary>
             /// Protocol
             /// The subscription&#39;s protocol. For more information, see the Subscribe Protocol parameter in the
             /// Amazon Simple Notification Service API Reference.
@@ -35,6 +55,26 @@ namespace Comformation.SNS.Subscription
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
+
+            /// <summary>
+            /// RawMessageDelivery
+            /// true if raw message delivery is enabled for the subscription. Raw messages are free of JSON
+            /// formatting and can be sent to HTTP/S and Amazon SQS endpoints. For more information, see
+            /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> RawMessageDelivery { get; set; }
+
+            /// <summary>
+            /// Region
+            /// The region in which the topic resides.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> Region { get; set; }
 
             /// <summary>
             /// TopicArn

@@ -30,19 +30,6 @@ namespace Comformation.Glue.Job
             /// that AWS Glue itself consumes. For information about how to specify and consume your own Job
             /// arguments, see the Passing and Accessing Python Parameters in AWS Glue in the AWS Glue Developer
             /// Guide.
-            /// AWS Glue consumes the following arguments to set up the Job script environment:
-            /// --scriptLocation — The Amazon S3 location where your ETL script is located (in a form like
-            /// s3://path/to/my/script. py). --extra-py-files — Amazon S3 path(s) to additional Python modules that
-            /// AWS Glue adds to the Python path before executing your script. Multiple values must be complete
-            /// paths separated by a comma (,). Note that only pure Python modules will work currently. Extension
-            /// modules written in C or other languages are not supported. --extra-jars — Amazon S3 path(s) to
-            /// additional Java . jar file(s) that AWS Glue adds to the Java classpath before executing your script.
-            /// Multiple values must be complete paths separated by a comma (,). --extra-files — Amazon S3 path(s)
-            /// to additional files such as configuration files) that AWS Glue copies to the working directory of
-            /// your script before executing it. Multiple values must be complete paths separated by a comma (,).
-            /// There are several argument names used by AWS Glue internally that you should never set:
-            /// --conf — Internal to AWS Glue. Do not set! --debug — Internal to AWS Glue. Do not set! --mode —
-            /// Internal to AWS Glue. Do not set! --JOB_NAME — Internal to AWS Glue. Do not set!
             /// Required: No
             /// Type: JSON object
             /// Update requires: No interruption

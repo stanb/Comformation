@@ -177,11 +177,11 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Balancing in Amazon VPC in the Elastic Load Balancing Developer Guide.
             /// Required: No
             /// Type: List of String values
-            /// Update requires: Replacement if you did not have an subnet specified and you are adding one or if
-            /// you are removing all subnets. Otherwise, update requires no interruption. To update the load
-            /// balancer to another subnet that is in the same Availability Zone, you must do two updates. You must
-            /// first update the load balancer to use a subnet in different Availability Zone. After the update is
-            /// complete, update the load balancer to use the new subnet that is in the original Availability Zone.
+            /// Update requires: Replacement if you did not have a subnet specified and you are adding one or if you
+            /// are removing all subnets. Otherwise, update requires no interruption. To update the load balancer to
+            /// another subnet that is in the same Availability Zone, you must do two updates. You must first update
+            /// the load balancer to use a subnet in different Availability Zone. After the update is complete,
+            /// update the load balancer to use the new subnet that is in the original Availability Zone.
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
 

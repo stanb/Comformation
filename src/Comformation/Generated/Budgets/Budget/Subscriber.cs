@@ -15,7 +15,7 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// SubscriptionType
-        /// The type of notification that AWS sends to a subscriber, such as email or SNS.
+        /// The type of notification that AWS sends to a subscriber, such as EMAIL or SNS.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

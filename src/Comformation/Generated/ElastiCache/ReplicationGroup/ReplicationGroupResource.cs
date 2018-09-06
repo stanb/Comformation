@@ -114,7 +114,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Engine
             /// The name of the cache engine to use for the cache clusters in this replication group. Currently, you
             /// can specify only redis.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -170,7 +170,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// <summary>
             /// NumNodeGroups
             /// The number of node groups (shards) for this Redis (clustered mode enabled) replication group. For
-            /// Redis (clustered mode disabled), omit this property.
+            /// Redis (clustered mode disabled), either omit this property or set it to 1.
             /// Important If you specify the PrimaryClusterId, you can use only the following additional parameters:
             /// AutomaticFailoverEnabled NodeGroupConfiguration NumCacheClusters NumNodeGroups
             /// PreferredCacheClusterAZs ReplicationGroupDescription

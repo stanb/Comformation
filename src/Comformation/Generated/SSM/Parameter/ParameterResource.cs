@@ -53,7 +53,9 @@ namespace Comformation.SSM.Parameter
 
             /// <summary>
             /// Name
-            /// The name of the parameter. Names must not be prefixed with aws or ssm.
+            /// The name of the parameter.
+            /// For information about valid values for parameter names, see Requirements and Constraints for
+            /// Parameter Names in the AWS Systems Manager User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

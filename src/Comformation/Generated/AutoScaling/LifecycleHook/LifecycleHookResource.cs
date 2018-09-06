@@ -37,8 +37,9 @@ namespace Comformation.AutoScaling.LifecycleHook
 
             /// <summary>
             /// HeartbeatTimeout
-            /// The amount of time that can elapse before the lifecycle hook times out. When the lifecycle hook
-            /// times out, Auto Scaling performs the action that you specified in the DefaultResult property.
+            /// The amount of time (in seconds) that can elapse before the lifecycle hook times out. When the
+            /// lifecycle hook times out, Auto Scaling performs the action that you specified in the DefaultResult
+            /// property.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption

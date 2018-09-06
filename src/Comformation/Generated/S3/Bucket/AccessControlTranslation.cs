@@ -16,7 +16,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Owner
-        /// Specifies the replica ownership.
+        /// Specifies the replica ownership. For default and valid values, see PUT bucket replication in the
+        /// Amazon Simple Storage Service API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

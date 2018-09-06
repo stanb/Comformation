@@ -7,10 +7,10 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS Billing and Cost Management Budget BudgetData
-    /// The BudgetData property type specifies all of the parameters that CloudFront uses to create the budget. These
-    /// parameters include the time period that the budget covers, the amount that the budget is for, the name of the
-    /// budget, what costs, usage, or RI utilization the Billing and Cost Management budget is for, and whether the
-    /// budget tracks what you have spent or what you are forecast to spend.
+    /// The BudgetData property type specifies all of the parameters that AWS CloudFormation uses to create the
+    /// budget. These parameters include the time period that the budget covers, the amount that the budget is for,
+    /// the name of the budget, what costs, usage, or RI utilization the Billing and Cost Management budget is for,
+    /// and whether the budget tracks what you have spent or what you are forecast to spend.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html
     /// </summary>
     public class BudgetData

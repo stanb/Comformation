@@ -26,8 +26,9 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// <summary>
             /// PolicyType
             /// An Application Auto Scaling policy type.
-            /// Note For DynamoDB, only TargetTrackingScaling is supported. For any other service, only StepScaling
-            /// is supported.
+            /// Note For DynamoDB, only TargetTrackingScaling is supported. For Amazon ECS, Spot Fleet, and Amazon
+            /// RDS, both StepScaling and TargetTrackingScaling are supported. For any other service, only
+            /// StepScaling is supported.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

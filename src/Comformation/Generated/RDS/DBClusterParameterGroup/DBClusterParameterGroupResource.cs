@@ -8,7 +8,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
     /// AWS::RDS::DBClusterParameterGroup
     /// The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon Relational Database Service (Amazon RDS)
     /// database (DB) cluster parameter group. For more information about DB cluster parameter groups, see Appendix:
-    /// DB Cluster and DB Instance Parameters in the Amazon Relational Database Service User Guide.
+    /// DB Cluster and DB Instance Parameters in the Amazon RDS User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html
     /// </summary>
     public class DBClusterParameterGroupResource : ResourceBase
@@ -36,8 +36,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// <summary>
             /// Parameters
             /// The parameters to set for this DB cluster parameter group. For a list of parameter keys, see
-            /// Appendix: DB Cluster and DB Instance Parameters in the Amazon Relational Database Service User
-            /// Guide.
+            /// Appendix: DB Cluster and DB Instance Parameters in the Amazon RDS User Guide.
             /// Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot
             /// without failover to the DB instance that is associated with the parameter group before the change
             /// can take effect.
@@ -53,7 +52,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// The tags that you want to attach to this parameter group.
             /// Required: No
             /// Type: A list of resource tags
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

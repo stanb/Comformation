@@ -73,8 +73,9 @@ namespace Comformation.CodePipeline.CustomActionType
 
             /// <summary>
             /// Version
-            /// The version number of this custom action.
-            /// Required: No
+            /// The version number of this custom action. For length constraints, see the version parameter of the
+            /// CreateCustomActionType action in the AWS CodePipeline API Reference.
+            /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

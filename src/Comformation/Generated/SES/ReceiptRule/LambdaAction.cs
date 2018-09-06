@@ -41,8 +41,7 @@ namespace Comformation.SES.ReceiptRule
         /// The invocation type of the AWS Lambda function. An invocation type of RequestResponse means that the
         /// execution of the function will immediately result in a response, and a value of Event means that the
         /// function will be invoked asynchronously. The default value is Event. For information about AWS
-        /// Lambda invocation types, see Creating Receipt Rules for Amazon SES Email Receiving in the AWS Lambda
-        /// Developer Guide.
+        /// Lambda invocation types, see Invoke in the AWS Lambda Developer Guide.
         /// Valid values include Event and RequestResponse.
         /// Important There is a 30-second timeout on RequestResponse invocations. You should use Event
         /// invocation in most cases. Use RequestResponse only when you want to make a mail flow decision, such

@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream ProcessingConfiguration
-    /// The ProcessingConfiguration property configures data processing for an Amazon Kinesis Firehose delivery
+    /// Amazon Kinesis Data Firehose DeliveryStream ProcessingConfiguration
+    /// The ProcessingConfiguration property configures data processing for an Amazon Kinesis Data Firehose delivery
     /// stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html
     /// </summary>
@@ -28,7 +28,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Processors
         /// The data processors.
         /// Required: Yes
-        /// Type: List of Kinesis Firehose DeliveryStream Processor
+        /// Type: List of Kinesis Data Firehose DeliveryStream Processor
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Processors")]

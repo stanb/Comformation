@@ -15,6 +15,12 @@ namespace Comformation.SSM.PatchBaseline
 
         /// <summary>
         /// EnableNonSecurity
+        /// For instances identified by the approval rule filters, enables a patch baseline to apply
+        /// non-security updates available in the specified repository. The default value is false. Applies to
+        /// Linux instances only.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EnableNonSecurity")]
         public Union<bool, IntrinsicFunction> EnableNonSecurity { get; set; }
@@ -44,7 +50,7 @@ namespace Comformation.SSM.PatchBaseline
         /// <summary>
         /// ComplianceLevel
         /// A compliance severity level for all approved patches in a patch baseline. Valid compliance severity
-        /// levels include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+        /// levels include the following: UNSPECIFIED, CRITICAL, HIGH, MEDIUM, LOW, and INFORMATIONAL.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

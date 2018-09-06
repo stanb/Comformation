@@ -17,7 +17,7 @@ namespace Comformation.Batch.JobDefinition
             /// <summary>
             /// Type
             /// The type of job definition.
-            /// Required: yes
+            /// Required: Yes
             /// Type: String
             /// Update requires: No Interruption
             /// </summary>
@@ -26,8 +26,9 @@ namespace Comformation.Batch.JobDefinition
             /// <summary>
             /// Parameters
             /// Default parameters or parameter substitution placeholders that are set in the job definition.
-            /// Parameters are specified as a key-value pair mapping.
-            /// Required: yes
+            /// Parameters are specified as a key-value pair mapping. For more information about specifying
+            /// parameters, see Job Definition Parameters in the AWS Batch User Guide.
+            /// Required: Yes
             /// Type: JSON object
             /// Update requires: No Interruption
             /// </summary>
@@ -35,13 +36,17 @@ namespace Comformation.Batch.JobDefinition
 
             /// <summary>
             /// Timeout
+            /// Specifies a job timeout configuration.
+            /// Required: No
+            /// Type: AWS Batch JobDefinition Timeout
+            /// Update requires: No Interruption
             /// </summary>
 			public Union<Timeout, IntrinsicFunction> Timeout { get; set; }
 
             /// <summary>
             /// ContainerProperties
             /// An object with various properties specific to container-based jobs.
-            /// Required: yes
+            /// Required: Yes
             /// Type: AWS Batch JobDefinition ContainerProperties
             /// Update requires: No Interruption
             /// </summary>
@@ -50,7 +55,7 @@ namespace Comformation.Batch.JobDefinition
             /// <summary>
             /// JobDefinitionName
             /// The name of the job definition.
-            /// Required: no
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -59,7 +64,7 @@ namespace Comformation.Batch.JobDefinition
             /// <summary>
             /// RetryStrategy
             /// The retry strategy to use for failed jobs that are submitted with this job definition.
-            /// Required: no
+            /// Required: No
             /// Type: AWS Batch JobDefinition RetryStrategy
             /// Update requires: No Interruption
             /// </summary>

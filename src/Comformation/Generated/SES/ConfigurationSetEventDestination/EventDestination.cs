@@ -62,7 +62,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// KinesisFirehoseDestination
-        /// Contains the delivery stream ARN and the IAM role ARN associated with an Kinesis Firehose event
+        /// Contains the delivery stream ARN and the IAM role ARN associated with an Kinesis Data Firehose event
         /// destination.
         /// Required: No
         /// Type: Amazon SES ConfigurationSetEventDestination KinesisFirehoseDestination

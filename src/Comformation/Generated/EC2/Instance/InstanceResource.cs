@@ -152,8 +152,8 @@ namespace Comformation.EC2.Instance
 
             /// <summary>
             /// InstanceType
-            /// The instance type, such as t2. micro. The default type is &quot;m3. medium&quot;. For a list of instance
-            /// types, see Instance Families and Types.
+            /// The instance type, such as t2. micro. The default type is m1. small. For a list of instance types,
+            /// see Instance Families and Types.
             /// Required: No
             /// Type: String
             /// Update requires:

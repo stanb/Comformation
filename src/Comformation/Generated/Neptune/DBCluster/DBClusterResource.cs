@@ -6,8 +6,8 @@ namespace Comformation.Neptune.DBCluster
 {
     /// <summary>
     /// AWS::Neptune::DBCluster
-    /// The AWS::Neptune::DBCluster resource creates a Amazon Neptune DB Cluster. Neptune is a fully managed graph
-    /// database. .
+    /// The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster. Neptune is a fully managed graph
+    /// database.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
@@ -21,14 +21,14 @@ namespace Comformation.Neptune.DBCluster
             /// from the snapshot DB cluster.
             /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
             /// Type: Boolean
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
             /// KmsKeyId
-            /// The Amazon Resource Name (ARN) of the AWS Key Management Service master key that is used to encrypt
-            /// the database instances in the DB cluster, such as
+            /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that is used
+            /// to encrypt the database instances in the DB cluster, such as
             /// arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. If you enable the
             /// StorageEncrypted property but don&#39;t specify this property, the default master key is used. If you
             /// specify this property, you must set the StorageEncrypted property to true.
@@ -42,7 +42,7 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// AvailabilityZones
-            /// A list of Availability Zones (AZs) in which DB instances in the cluster can be created.
+            /// A list of Availability Zones in which DB instances in the cluster can be created.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -85,13 +85,13 @@ namespace Comformation.Neptune.DBCluster
             /// For valid values, see the PreferredMaintenanceWindow parameter of the CreateDBInstance action.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance.
+            /// Update requires: No interruption or some interruption. For more information, see ModifyDBInstance.
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// IamAuthEnabled
-            /// Enable IAM authentication and authoriation on this cluster.
+            /// Enable IAM authentication and authorization on this cluster.
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
@@ -108,9 +108,9 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// PreferredBackupWindow
-            /// if automated backups are enabled (see the BackupRetentionPeriod property), the daily time range in
+            /// If automated backups are enabled (see the BackupRetentionPeriod property), the daily time range in
             /// UTC during which you want to create automated backups.
-            /// For valid values, see the PreferredBackupWindow parameter of the CreateDBInstance action. .
+            /// For valid values, see the PreferredBackupWindow parameter of the CreateDBInstance action.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -138,10 +138,11 @@ namespace Comformation.Neptune.DBCluster
             /// <summary>
             /// BackupRetentionPeriod
             /// The number of days for which automatic backups are retained. For more information, see
-            /// CreateDBCluster.
+            /// CreateDBCluster in the Amazon Neptune User Guide.
             /// Required: No
             /// Type: Integer
-            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance.
+            /// Update requires: No interruption or some interruption. For more information, see ModifyDBInstance in
+            /// the Amazon Neptune User Guide.
             /// </summary>
 			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
@@ -149,7 +150,7 @@ namespace Comformation.Neptune.DBCluster
             /// Tags
             /// The tags that you want to attach to this DB cluster.
             /// Required: No
-            /// Type: A list of resource tags
+            /// Type: A list of resource tags.
             /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }

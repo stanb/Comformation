@@ -21,6 +21,7 @@ namespace Comformation.CloudFront.Distribution
         /// property.
         /// Required: No
         /// Type: Logging type
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Logging")]
         public Union<Logging, IntrinsicFunction> Logging { get; set; }
@@ -32,6 +33,7 @@ namespace Comformation.CloudFront.Distribution
         /// the comment at any time.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Comment")]
         public Union<string, IntrinsicFunction> Comment { get; set; }
@@ -43,6 +45,7 @@ namespace Comformation.CloudFront.Distribution
         /// Note Specifying a default root object avoids exposing the contents of your distribution.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefaultRootObject")]
         public Union<string, IntrinsicFunction> DefaultRootObject { get; set; }
@@ -53,6 +56,7 @@ namespace Comformation.CloudFront.Distribution
         /// an Amazon S3 or custom origin.
         /// Required: Yes
         /// Type: List of Origins.
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Origins")]
         public Union<List<Origin>, IntrinsicFunction> Origins { get; set; }
@@ -62,6 +66,7 @@ namespace Comformation.CloudFront.Distribution
         /// The certificate to use when viewers use HTTPS to request objects.
         /// Required: No
         /// Type: CloudFront Distribution ViewerCertificate
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ViewerCertificate")]
         public Union<ViewerCertificate, IntrinsicFunction> ViewerCertificate { get; set; }
@@ -75,6 +80,7 @@ namespace Comformation.CloudFront.Distribution
         /// data type in the Amazon CloudFront API Reference.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PriceClass")]
         public Union<string, IntrinsicFunction> PriceClass { get; set; }
@@ -85,6 +91,7 @@ namespace Comformation.CloudFront.Distribution
         /// files don&#39;t match any of the values of PathPattern in the CacheBehavior property.
         /// Required: Yes
         /// Type: DefaultCacheBehavior type
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefaultCacheBehavior")]
         public Union<DefaultCacheBehavior, IntrinsicFunction> DefaultCacheBehavior { get; set; }
@@ -95,6 +102,7 @@ namespace Comformation.CloudFront.Distribution
         /// before returning the response to the viewer.
         /// Required: No
         /// Type List of CloudFront Distribution CustomErrorResponse
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomErrorResponses")]
         public Union<List<CustomErrorResponse>, IntrinsicFunction> CustomErrorResponses { get; set; }
@@ -104,6 +112,7 @@ namespace Comformation.CloudFront.Distribution
         /// Controls whether the distribution is enabled to accept end user requests for content.
         /// Required: Yes
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }
@@ -113,6 +122,7 @@ namespace Comformation.CloudFront.Distribution
         /// CNAMEs (alternate domain names), if any, for the distribution.
         /// Required: No
         /// Type: List of String values
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Aliases")]
         public Union<List<string>, IntrinsicFunction> Aliases { get; set; }
@@ -139,6 +149,7 @@ namespace Comformation.CloudFront.Distribution
         /// specify, such as the IP addresses from which requests originate or the values of query strings.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("WebACLId")]
         public Union<string, IntrinsicFunction> WebACLId { get; set; }
@@ -152,6 +163,7 @@ namespace Comformation.CloudFront.Distribution
         /// CloudFront API Reference.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HttpVersion")]
         public Union<string, IntrinsicFunction> HttpVersion { get; set; }
@@ -161,6 +173,7 @@ namespace Comformation.CloudFront.Distribution
         /// Specifies restrictions on who or how viewers can access your content.
         /// Required: No
         /// Type: CloudFront Distribution Restrictions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Restrictions")]
         public Union<Restrictions, IntrinsicFunction> Restrictions { get; set; }
@@ -170,6 +183,7 @@ namespace Comformation.CloudFront.Distribution
         /// A list of CacheBehavior types for the distribution.
         /// Required: No
         /// Type: List of CloudFront Distribution CacheBehavior
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheBehaviors")]
         public Union<List<CacheBehavior>, IntrinsicFunction> CacheBehaviors { get; set; }

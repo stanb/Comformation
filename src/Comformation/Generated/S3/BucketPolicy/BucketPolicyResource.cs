@@ -15,7 +15,7 @@ namespace Comformation.S3.BucketPolicy
         {
             /// <summary>
             /// Bucket
-            /// The Amazon S3 bucket that the policy applies to.
+            /// The name of the Amazon S3 bucket to which the policy applies.
             /// Required: Yes
             /// Type: String
             /// You cannot update this property. If you want to add or remove a bucket from a bucket policy, you

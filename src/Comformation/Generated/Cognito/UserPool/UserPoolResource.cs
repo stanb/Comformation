@@ -113,11 +113,11 @@ namespace Comformation.Cognito.UserPool
 
             /// <summary>
             /// AliasAttributes
-            /// Attributes supported as an alias for this user pool. Possible values: phone_number, email, and/or
+            /// Attributes supported as an alias for this user pool. Possible values: phone_number, email, or
             /// preferred_username.
             /// Required: No
             /// Type: List of String values
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> AliasAttributes { get; set; }
 
@@ -141,12 +141,17 @@ namespace Comformation.Cognito.UserPool
 
             /// <summary>
             /// UsernameAttributes
+            /// Specifies whether email addresses or phone numbers can be specified as usernames when a user signs
+            /// up. Possible values: phone_number or email.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: Replacement
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> UsernameAttributes { get; set; }
 
             /// <summary>
             /// AutoVerifiedAttributes
-            /// The attributes to be auto-verified. Possible values: email and/or phone_number.
+            /// The attributes to be auto-verified. Possible values: email or phone_number.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption

@@ -30,6 +30,23 @@ namespace Comformation.ServiceDiscovery.Service
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
+            /// HealthCheckCustomConfig
+            /// 					
+            /// Specifies information about an optional custom health check.
+            /// 					
+            /// If you specify a health check configuration, you can specify either HealthCheckCustomConfig or
+            /// HealthCheckConfig but not both.
+            /// 					
+            /// Required: No
+            /// 					
+            /// Type: Route&#160;53 ServiceDiscovery Service HealthCheckCustomConfig
+            /// 					
+            /// Update requires: No interruption
+            /// 				
+            /// </summary>
+			public Union<HealthCheckCustomConfig, IntrinsicFunction> HealthCheckCustomConfig { get; set; }
+
+            /// <summary>
             /// DnsConfig
             /// 					
             /// A complex type that contains information about the resource record sets that you want Route&#160;53 to
@@ -50,6 +67,9 @@ namespace Comformation.ServiceDiscovery.Service
             /// A complex type that contains settings for an optional health check. If you specify settings for a
             /// health check, 						Route&#160;53 associates the health check with all the resource record sets that you
             /// specify in DnsConfig.
+            /// 					
+            /// If you specify a health check configuration, you can specify either HealthCheckCustomConfig or
+            /// HealthCheckConfig but not both.
             /// 					
             /// Required: No
             /// 					

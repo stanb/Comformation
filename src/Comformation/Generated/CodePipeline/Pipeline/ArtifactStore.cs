@@ -27,7 +27,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Location
-        /// The location where AWS CodePipeline stores artifacts for a pipeline, such as an S3 bucket.
+        /// The name of the S3 bucket where AWS CodePipeline stores artifacts for a pipeline.
         /// Required: Yes
         /// Type: String
         /// </summary>

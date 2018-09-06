@@ -14,6 +14,15 @@ namespace Comformation.DAX.Cluster
         public class ClusterProperties
         {
             /// <summary>
+            /// SSESpecification
+            /// Whether server-side encryption is enabled or not.
+            /// Required: No
+            /// Type: DAX Cluster SSESpecification
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<SSESpecification, IntrinsicFunction> SSESpecification { get; set; }
+
+            /// <summary>
             /// Description
             /// A description of the cluster.
             /// Required: No
@@ -56,15 +65,6 @@ namespace Comformation.DAX.Cluster
 			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
 
             /// <summary>
-            /// NodeType
-            /// The compute and memory capacity of the nodes in the cluster.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Updates are not supported.
-            /// </summary>
-			public Union<string, IntrinsicFunction> NodeType { get; set; }
-
-            /// <summary>
             /// IAMRoleARN
             /// A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this
             /// role and use the role&#39;s permissions to access DynamoDB on your behalf.
@@ -84,15 +84,6 @@ namespace Comformation.DAX.Cluster
             /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
-
-            /// <summary>
-            /// ClusterName
-            /// The cluster identifier. This parameter is stored as a lowercase string.
-            /// Required: No
-            /// Type: String
-            /// Update requires: Updates are not supported.
-            /// </summary>
-			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -129,6 +120,24 @@ namespace Comformation.DAX.Cluster
             /// Update requires: No interruption
             /// </summary>
 			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+
+            /// <summary>
+            /// NodeType
+            /// The compute and memory capacity of the nodes in the cluster.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// </summary>
+			public Union<string, IntrinsicFunction> NodeType { get; set; }
+
+            /// <summary>
+            /// ClusterName
+            /// The cluster identifier. This parameter is stored as a lowercase string.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// </summary>
+			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
             /// <summary>
             /// Tags

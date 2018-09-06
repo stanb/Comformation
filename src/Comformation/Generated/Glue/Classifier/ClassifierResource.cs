@@ -16,6 +16,24 @@ namespace Comformation.Glue.Classifier
         public class ClassifierProperties
         {
             /// <summary>
+            /// XMLClassifier
+            /// A classifier for XML content.
+            /// Required: No
+            /// Type: AWS Glue Classifier XMLClassifier
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<XMLClassifier, IntrinsicFunction> XMLClassifier { get; set; }
+
+            /// <summary>
+            /// JsonClassifier
+            /// A classifier for JSON content.
+            /// Required: No
+            /// Type: AWS Glue Classifier JsonClassifier
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<JsonClassifier, IntrinsicFunction> JsonClassifier { get; set; }
+
+            /// <summary>
             /// GrokClassifier
             /// A classifier that uses grok.
             /// Required: No

@@ -6,9 +6,9 @@ namespace Comformation.EC2.VPCEndpoint
 {
     /// <summary>
     /// AWS::EC2::VPCEndpoint
-    /// The AWS::EC2::VPCEndpoint resource creates a VPC endpoint that you can use to establish a private connection
-    /// between your VPC and another AWS service without requiring access over the Internet, a VPN connection, or AWS
-    /// Direct Connect.
+    /// Creates a VPC endpoint that you can use to establish a private connection between your VPC and another AWS
+    /// service without requiring access over the Internet, a VPN connection, or AWS Direct Connect. For more
+    /// information, see CreateVpcEndpoint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html
     /// </summary>
     public class VPCEndpointResource : ResourceBase
@@ -16,15 +16,13 @@ namespace Comformation.EC2.VPCEndpoint
         public class VPCEndpointProperties
         {
             /// <summary>
-            /// PolicyDocument
-            /// A policy to attach to the endpoint that controls access to the service. The policy must be valid
-            /// JSON. The default policy allows full access to the AWS service. For more information, see
-            /// Controlling Access to Services in the Amazon VPC User Guide.
-            /// Required: No
-            /// Type: JSON object
-            /// Update requires: No interruption
+            /// VpcId
+            /// The ID of the VPC in which the endpoint will be used.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
             /// <summary>
             /// RouteTableIds
@@ -37,8 +35,8 @@ namespace Comformation.EC2.VPCEndpoint
 
             /// <summary>
             /// ServiceName
-            /// The AWS service to which you want to establish a connection. Specify the service name in the form of
-            /// com. amazonaws. region. service.
+            /// The name of the service. To get a list of available services, use DescribeVpcEndpointServices or get
+            /// the name from the service provider.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -46,13 +44,44 @@ namespace Comformation.EC2.VPCEndpoint
 			public Union<string, IntrinsicFunction> ServiceName { get; set; }
 
             /// <summary>
-            /// VpcId
-            /// The ID of the VPC in which the endpoint is used.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
+            /// PolicyDocument
+            /// [Gateway endpoint] A policy to attach to the endpoint that controls access to the service. The
+            /// policy must be valid JSON. The default policy allows full access to the AWS service. For more
+            /// information, see Controlling Access to Services in the Amazon VPC User Guide.
+            /// Required: No
+            /// Type: JSON object
+            /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+
+            /// <summary>
+            /// IsPrivateDnsEnabled
+            /// </summary>
+			public Union<bool, IntrinsicFunction> IsPrivateDnsEnabled { get; set; }
+
+            /// <summary>
+            /// SubnetIds
+            /// [Interface endpoint] The ID of one or more subnets in which to create an endpoint network interface.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+
+            /// <summary>
+            /// SecurityGroupIds
+            /// [Interface endpoint] The ID of one or more security groups to associate with the endpoint network
+            /// interface.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+
+            /// <summary>
+            /// VPCEndpointType
+            /// </summary>
+			public Union<string, IntrinsicFunction> VPCEndpointType { get; set; }
 
         }
     

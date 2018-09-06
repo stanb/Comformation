@@ -77,7 +77,10 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// Matcher
-            /// The HTTP codes that a healthy target uses when responding to a health check.
+            /// The HTTP codes that a healthy target uses when responding to a health check. If you specify TCP for
+            /// the Protocol property, you must specify the range 200-399 for the Matcher property.
+            /// For more information about specifying this property, see Matcher in the Elastic Load Balancing API
+            /// Reference version 2015-12-01.
             /// Required: No
             /// Type: Elastic Load Balancing TargetGroup Matcher
             /// Update requires: No interruption
@@ -88,7 +91,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Name
             /// A name for the target group.
             /// Important This name must be unique per account, per region. The target group name should be shorter
-            /// than 22 characters because AWS CloudFormation uses the target group name to create the name of the
+            /// than 32 characters because AWS CloudFormation uses the target group name to create the name of the
             /// load balancer.
             /// Required: No
             /// Type: String

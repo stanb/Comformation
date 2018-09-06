@@ -8,7 +8,7 @@ namespace Comformation.RDS.DBCluster
     /// AWS::RDS::DBCluster
     /// The AWS::RDS::DBCluster resource creates a cluster, such as an Aurora for Amazon RDS (Amazon Aurora) DB
     /// cluster. Amazon Aurora is a fully managed, MySQL-compatible, relational database engine. For more information,
-    /// see Aurora on Amazon RDS in the Amazon Relational Database Service User Guide.
+    /// see Aurora on Amazon RDS in the Amazon RDS User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
@@ -27,11 +27,10 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// BackupRetentionPeriod
             /// The number of days for which automatic backups are retained. For more information, see
-            /// CreateDBCluster in the Amazon Relational Database Service API Reference.
+            /// CreateDBCluster in the Amazon RDS API Reference.
             /// Required: No
             /// Type: Integer
-            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon Relational Database Service API Reference.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
@@ -42,7 +41,7 @@ namespace Comformation.RDS.DBCluster
             /// Must contain from 1 to 63 letters, numbers, or hyphens. First character must be a letter. Cannot end
             /// with a hyphen or contain two consecutive hyphens.
             /// For additional information, see the DBClusterIdentifier parameter of the CreateDBCluster action in
-            /// the Amazon Relational Database Service API Reference.
+            /// the Amazon RDS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -51,9 +50,9 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// DBClusterParameterGroupName
-            /// The name of the DB cluster parameter group to associate with this DB cluster. For the default value,
-            /// see the DBClusterParameterGroupName parameter of the CreateDBCluster action in the Amazon Relational
-            /// Database Service API Reference.
+            /// The name of the DB cluster parameter group to associate with this DB cluster.
+            /// Note If this argument is omitted, default. aurora5. 6 is used. If default. aurora5. 6 is used,
+            /// specifying aurora-mysql or aurora-postgresql for the Engine property might result in an error.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
@@ -73,7 +72,7 @@ namespace Comformation.RDS.DBCluster
             /// DatabaseName
             /// The name of your database. If you don&#39;t provide a name, Amazon Relational Database Service (Amazon
             /// RDS) won&#39;t create a database in this DB cluster. For naming constraints, see Naming Constraints in
-            /// Amazon RDS in the Amazon Relational Database Service User Guide.
+            /// Amazon RDS in the Amazon RDS User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -83,8 +82,10 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// Engine
             /// The name of the database engine that you want to use for this DB cluster.
-            /// For valid values, see the Engine parameter of the CreateDBCluster action in the Amazon Relational
-            /// Database Service API Reference.
+            /// For valid values, see the Engine parameter of the CreateDBCluster action in the Amazon RDS API
+            /// Reference.
+            /// Note If you don&#39;t specify a value for the DBClusterParameterGroupName property and default. aurora5.
+            /// 6 is used, specifying aurora. mysql or aurora-postgresql for this property might result in an error.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -137,7 +138,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// Port
-            /// The port number on which the DB instances in the cluster can accept connections.
+            /// The port number on which the DB instances in the cluster can accept connections. If this argument is
+            /// omitted, 3306 is used.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -149,7 +151,7 @@ namespace Comformation.RDS.DBCluster
             /// if automated backups are enabled (see the BackupRetentionPeriod property), the daily time range in
             /// UTC during which you want to create automated backups.
             /// For valid values, see the PreferredBackupWindow parameter of the CreateDBInstance action in the
-            /// Amazon Relational Database Service API Reference.
+            /// Amazon RDS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -160,17 +162,17 @@ namespace Comformation.RDS.DBCluster
             /// PreferredMaintenanceWindow
             /// The weekly time range (in UTC) during which system maintenance can occur.
             /// For valid values, see the PreferredMaintenanceWindow parameter of the CreateDBInstance action in the
-            /// Amazon Relational Database Service API Reference.
+            /// Amazon RDS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon Relational Database Service API Reference.
+            /// in the Amazon RDS API Reference.
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// ReplicationSourceIdentifier
-            /// The Amazon Resource Name (ARN) of the source Amazon RDS MySQL DB instance or DB cluster, if this DB
+            /// The Amazon Resource Name (ARN) of the source Amazon RDS DB instance or DB cluster, if this DB
             /// cluster is created as a Read Replica.
             /// Required: No
             /// Type: String

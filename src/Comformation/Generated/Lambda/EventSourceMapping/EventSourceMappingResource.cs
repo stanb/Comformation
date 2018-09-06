@@ -7,9 +7,8 @@ namespace Comformation.Lambda.EventSourceMapping
     /// <summary>
     /// AWS::Lambda::EventSourceMapping
     /// The AWS::Lambda::EventSourceMapping resource specifies a stream as an event source for an AWS Lambda (Lambda)
-    /// function. The stream can be an Kinesis stream or an Amazon DynamoDB (DynamoDB) stream. Lambda invokes the
-    /// associated function when records are posted to the stream. For more information, see CreateEventSourceMapping
-    /// in the AWS Lambda Developer Guide.
+    /// function. Lambda invokes the associated function when records are posted to the stream. For more information,
+    /// see CreateEventSourceMapping in the AWS Lambda Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html
     /// </summary>
     public class EventSourceMappingResource : ResourceBase
@@ -38,9 +37,9 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// EventSourceArn
-            /// The Amazon Resource Name (ARN) of the Kinesis or DynamoDB stream that is the source of events. Any
-            /// record added to this stream can invoke the Lambda function. For more information, see
-            /// CreateEventSourceMapping in the AWS Lambda Developer Guide.
+            /// The Amazon Resource Name (ARN) of the event source. Any record added to this stream can invoke the
+            /// Lambda function. For more information, see CreateEventSourceMapping in the AWS Lambda Developer
+            /// Guide.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -58,8 +57,9 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// StartingPosition
-            /// The position in the stream where Lambda starts reading. For valid values, see
-            /// CreateEventSourceMapping in the AWS Lambda Developer Guide.
+            /// The position in a DynamoDB or Kinesis stream where Lambda starts reading. Not required if you set an
+            /// Amazon SQS queue as the event source. The AT_TIMESTAMP value is supported only for Kinesis streams.
+            /// For valid values, see CreateEventSourceMapping in the AWS Lambda Developer Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
