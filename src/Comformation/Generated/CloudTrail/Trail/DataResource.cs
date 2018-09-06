@@ -18,7 +18,8 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// Type
-        /// The resource type to log data events for. You can specify only the following value: AWS::S3::Object.
+        /// The resource type to log data events for. You can specify the following values: AWS::S3::Object or
+        /// AWS::Lambda::Function.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

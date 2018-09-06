@@ -42,6 +42,7 @@ namespace Comformation.CloudTrail.Trail
         /// All.
         /// Required: No
         /// Type: String
+        /// Valid values: ReadOnly | WriteOnly | All
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReadWriteType")]

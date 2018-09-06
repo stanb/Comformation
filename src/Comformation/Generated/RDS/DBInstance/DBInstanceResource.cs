@@ -173,14 +173,19 @@ namespace Comformation.RDS.DBInstance
             /// recommended for providing security information to an RDS DB instance. Instead, use
             /// VPCSecurityGroups.
             /// Important If you specify this property, AWS CloudFormation sends only the following properties (if
-            /// specified) to Amazon RDS: AllocatedStorage AutoMinorVersionUpgrade AvailabilityZone
-            /// BackupRetentionPeriod CharacterSetName DBInstanceClass DBName DBParameterGroupName DBSecurityGroups
-            /// DBSubnetGroupName Engine EngineVersion Iops LicenseModel MasterUsername MasterUserPassword MultiAZ
-            /// OptionGroupName PreferredBackupWindow PreferredMaintenanceWindow All other properties are ignored.
-            /// Specify a virtual private cloud (VPC) security group if you want to submit other properties, such as
-            /// StorageType, StorageEncrypted, or KmsKeyId. If you&#39;re already using the DBSecurityGroups property,
-            /// you can&#39;t use these other properties by updating your DB instance to use a VPC security group. You
-            /// must recreate the DB instance.
+            /// specified) to Amazon RDS during create operations: AllocatedStorage AutoMinorVersionUpgrade
+            /// AvailabilityZone BackupRetentionPeriod CharacterSetName DBInstanceClass DBName DBParameterGroupName
+            /// DBSecurityGroups DBSubnetGroupName Engine EngineVersion Iops LicenseModel MasterUsername
+            /// MasterUserPassword MultiAZ OptionGroupName PreferredBackupWindow PreferredMaintenanceWindow If you
+            /// specify this property, AWS CloudFormation sends only the following properties (if specified) to
+            /// Amazon RDS during updates: AllocatedStorage AutoMinorVersionUpgrade AllowMajorVersionUpgrade
+            /// BackupRetentionPeriod DBInstanceClass DBParameterGroupName DBSecurityGroups DBInstanceIdentifier
+            /// EngineVersion Iops MasterUserPassword MultiAZ OptionGroupName PreferredBackupWindow
+            /// PreferredMaintenanceWindow All other properties are ignored. Specify a virtual private cloud (VPC)
+            /// security group if you want to submit other properties, such as StorageType, StorageEncrypted, or
+            /// KmsKeyId. If you&#39;re already using the DBSecurityGroups property, you can&#39;t use these other
+            /// properties by updating your DB instance to use a VPC security group. You must recreate the DB
+            /// instance.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -313,10 +318,11 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// LicenseModel
             /// The license model of the DB instance.
-            /// Note If DBSecurityGroups is specified, updating the license model requires its replacement.
+            /// Note If you&#39;ve specified DBSecurityGroups and then you update the license model, AWS CloudFormation
+            /// replaces the underlying EC2 host. This will incur some interruptions to database availability.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> LicenseModel { get; set; }
 

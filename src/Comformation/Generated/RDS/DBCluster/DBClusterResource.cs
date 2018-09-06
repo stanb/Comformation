@@ -172,7 +172,7 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// ReplicationSourceIdentifier
-            /// The Amazon Resource Name (ARN) of the source Amazon RDS MySQL DB instance or DB cluster, if this DB
+            /// The Amazon Resource Name (ARN) of the source Amazon RDS DB instance or DB cluster, if this DB
             /// cluster is created as a Read Replica.
             /// Required: No
             /// Type: String

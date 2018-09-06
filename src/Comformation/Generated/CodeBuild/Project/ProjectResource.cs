@@ -86,6 +86,9 @@ namespace Comformation.CodeBuild.Project
             /// BadgeEnabled
             /// Indicates whether AWS CodeBuild generates a publicly accessible URL for your project&#39;s build badge.
             /// For more information, see Build Badges Sample in the AWS CodeBuild User Guide.
+            /// Note Including build badges with your project is currently not supported if the source type is AWS
+            /// CodePipeline. If you specify CODEPIPELINE for the Source property, don&#39;t specify the BadgeEnabled
+            /// property.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

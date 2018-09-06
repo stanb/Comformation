@@ -6,7 +6,7 @@ namespace Comformation.SES.ConfigurationSet
 {
     /// <summary>
     /// AWS::SES::ConfigurationSet
-    /// The AWS::SES::ConfigurationSet resource let syou create groups of rules that you can apply to the emails you
+    /// The AWS::SES::ConfigurationSet resource lets you create groups of rules that you can apply to the emails you
     /// send using Amazon SES. For more information about using configuration sets, see Using Amazon SES Configuration
     /// Sets in the Amazon Simple Email Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html

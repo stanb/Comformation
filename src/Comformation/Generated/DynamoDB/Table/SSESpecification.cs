@@ -18,7 +18,7 @@ namespace Comformation.DynamoDB.Table
         /// SSEEnabled
         /// Whether server-side encryption is enabled or not.
         /// Required: Yes
-        /// Type: String
+        /// Type: Boolean
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SSEEnabled")]

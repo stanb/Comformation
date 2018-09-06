@@ -106,6 +106,16 @@ namespace Comformation.EMR.Cluster
 			public Union<string, IntrinsicFunction> JobFlowRole { get; set; }
 
             /// <summary>
+            /// KerberosAttributes
+            /// Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+            /// configuration.
+            /// Required: No
+            /// Type: Amazon EMR Cluster KerberosAttributes
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<KerberosAttributes, IntrinsicFunction> KerberosAttributes { get; set; }
+
+            /// <summary>
             /// LogUri
             /// An S3 bucket location that Amazon EMR writes logs files to from a job flow. If you don&#39;t specify a
             /// value, Amazon EMR doesn&#39;t write any log files.

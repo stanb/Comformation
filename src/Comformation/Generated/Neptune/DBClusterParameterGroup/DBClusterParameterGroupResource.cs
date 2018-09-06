@@ -31,7 +31,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Required: Yes
             /// Type: A JSON object consisting of string key-value pairs, as shown in the following example:
             /// &quot;Parameters&quot; : { &quot;Key1&quot; : &quot;Value1&quot;, &quot;Key2&quot; : &quot;Value2&quot;, &quot;Key3&quot; : &quot;Value3&quot; }
-            /// Update requires: No interruption or some interruptions, depending on the parameters that you update.
+            /// Update requires: No interruption or some interruption, depending on the parameters that you update.
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 

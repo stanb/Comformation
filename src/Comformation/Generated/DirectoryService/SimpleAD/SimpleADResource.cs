@@ -18,9 +18,9 @@ namespace Comformation.DirectoryService.SimpleAD
         {
             /// <summary>
             /// CreateAlias
-            /// A unique alias to assign to the directory. AWS Directory Service uses the alias to construct the
-            /// access URL for the directory, such as http://alias. awsapps. com. By default, AWS CloudFormation
-            /// does not create an alias.
+            /// If set to true, creates an alias for a directory and assigns the alias to the directory. AWS
+            /// Directory Service uses the alias to construct the access URL for the directory, such as
+            /// http://alias. awsapps. com. By default, this property is set to false.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement

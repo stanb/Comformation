@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+    /// Amazon Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
     /// The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs) logging options
-    /// that Amazon Kinesis Firehose (Kinesis Firehose) uses for the delivery stream.
+    /// that Amazon Kinesis Data Firehose (Kinesis Data Firehose) uses for the delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html
     /// </summary>
     public class CloudWatchLoggingOptions
@@ -25,8 +25,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// LogGroupName
-        /// The name of the CloudWatch Logs log group that contains the log stream that Kinesis Firehose will
-        /// use.
+        /// The name of the CloudWatch Logs log group that contains the log stream that Kinesis Data Firehose
+        /// will use.
         /// Required: Conditional. If you enable logging, you must specify this property.
         /// Type: String
         /// </summary>
@@ -35,7 +35,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// LogStreamName
-        /// The name of the CloudWatch Logs log stream that Kinesis Firehose uses to send logs about data
+        /// The name of the CloudWatch Logs log stream that Kinesis Data Firehose uses to send logs about data
         /// delivery.
         /// Required: Conditional. If you enable logging, you must specify this property.
         /// Type: String

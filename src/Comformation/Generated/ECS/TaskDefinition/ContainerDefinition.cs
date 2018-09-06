@@ -187,8 +187,8 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Memory
-        /// The number of MiB of memory to reserve for the container. If your container attempts to exceed the
-        /// allocated memory, the container is terminated.
+        /// The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed
+        /// the allocated memory, the container is terminated.
         /// Required: Conditional. You must specify one or both of the Memory or MemoryReservation properties.
         /// If you specify both, the value for the Memory property must be greater than the value of the
         /// MemoryReservation property.
@@ -199,10 +199,10 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// MemoryReservation
-        /// The number of MiB of memory to reserve for the container. When system memory is under contention,
-        /// Docker attempts to keep the container memory within the limit. If the container requires more
-        /// memory, it can consume up to the value specified by the Memory property or all of the available
-        /// memory on the container instance—whichever comes first. This is called a soft limit.
+        /// The soft limit (in MiB) of memory to reserve for the container. When system memory is under
+        /// contention, Docker attempts to keep the container memory within the limit. If the container requires
+        /// more memory, it can consume up to the value specified by the Memory property or all of the available
+        /// memory on the container instance—whichever comes first.
         /// Required: Conditional. You must specify one or both of the Memory or MemoryReservation properties.
         /// If you specify both, the value for the Memory property must be greater than the value of the
         /// MemoryReservation property.

@@ -6,10 +6,9 @@ namespace Comformation.DirectoryService.MicrosoftAD
 {
     /// <summary>
     /// AWS::DirectoryService::MicrosoftAD
-    /// The AWS::DirectoryService::MicrosoftAD resource creates an Enterprise Edition Microsoft Active Directory in
-    /// AWS so that your directory users and groups can access the AWS Management Console and AWS applications using
-    /// their existing credentials. At this time, AWS CloudFormation can&#39;t create a Standard Edition Microsoft Active
-    /// Directory. For more information, see What Is AWS Directory Service? in the AWS Directory Service
+    /// The AWS::DirectoryService::MicrosoftAD resource creates a Microsoft Active Directory in AWS so that your
+    /// directory users and groups can access the AWS Management Console and AWS applications using their existing
+    /// credentials. For more information, see What Is AWS Directory Service? in the AWS Directory Service
     /// Administration Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
     /// </summary>

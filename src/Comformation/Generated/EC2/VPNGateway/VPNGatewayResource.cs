@@ -18,7 +18,7 @@ namespace Comformation.EC2.VPNGateway
             /// The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
             /// Required: No
             /// Type: Long
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<long, IntrinsicFunction> AmazonSideAsn { get; set; }
 

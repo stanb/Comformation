@@ -112,7 +112,7 @@ namespace Comformation.EC2.Instance
         /// Assigns a list of private IP addresses to the network interface. You can specify a primary private
         /// IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification
         /// property. If you want Amazon EC2 to automatically assign private IP addresses, use the
-        /// SecondaryPrivateIpCount property and do not specify this property.
+        /// SecondaryPrivateIpAddressCount property and do not specify this property.
         /// For information about the maximum number of private IP addresses, see Private IP Addresses Per ENI
         /// Per Instance Type in the Amazon EC2 User Guide for Linux Instances.
         /// Required: No

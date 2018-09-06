@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream ExtendedS3DestinationConfiguration
+    /// Amazon Kinesis Data Firehose DeliveryStream ExtendedS3DestinationConfiguration
     /// The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis
-    /// Firehose delivery stream. ExtendedS3DestinationConfiguration is a property of the
+    /// Data Firehose delivery stream. ExtendedS3DestinationConfiguration is a property of the
     /// AWS::KinesisFirehose::DeliveryStream resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html
     /// </summary>
@@ -18,7 +18,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// BucketARN
         /// The Amazon Resource Name (ARN) of the Amazon S3 bucket. For constraints, see
-        /// ExtendedS3DestinationConfiguration in the Amazon Kinesis Firehose API Reference.
+        /// ExtendedS3DestinationConfiguration in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -30,7 +30,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// BufferingHints
         /// The buffering option.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream BufferingHints
+        /// Type: Kinesis Data Firehose DeliveryStream BufferingHints
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BufferingHints")]
@@ -38,9 +38,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// CloudWatchLoggingOptions
-        /// The CloudWatch logging options for the Kinesis Firehose delivery stream.
+        /// The CloudWatch logging options for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
@@ -48,9 +48,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// CompressionFormat
-        /// The compression format for the Kinesis Firehose delivery stream. The default value is UNCOMPRESSED.
-        /// For valid values, see ExtendedS3DestinationConfiguration in the Amazon Kinesis Firehose API
-        /// Reference.
+        /// The compression format for the Kinesis Data Firehose delivery stream. The default value is
+        /// UNCOMPRESSED. For valid values, see ExtendedS3DestinationConfiguration in the Amazon Kinesis Data
+        /// Firehose API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -60,10 +60,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// EncryptionConfiguration
-        /// The encryption configuration for the Kinesis Firehose delivery stream. The default value is
+        /// The encryption configuration for the Kinesis Data Firehose delivery stream. The default value is
         /// NoEncryption.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream EncryptionConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream EncryptionConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
@@ -72,7 +72,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// Prefix
         /// The YYYY/MM/DD/HH time format prefix is automatically used for delivered Amazon S3 files. For more
-        /// information, see ExtendedS3DestinationConfiguration in the Amazon Kinesis Firehose API Reference.
+        /// information, see ExtendedS3DestinationConfiguration in the Amazon Kinesis Data Firehose API
+        /// Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -82,9 +83,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// ProcessingConfiguration
-        /// The data processing configuration for the Kinesis Firehose delivery stream.
+        /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream ProcessingConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
@@ -93,7 +94,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// RoleARN
         /// The ARN of the AWS credentials. For constraints, see ExtendedS3DestinationConfiguration in the
-        /// Amazon Kinesis Firehose API Reference.
+        /// Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -105,7 +106,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3BackupConfiguration
         /// The configuration for backup in Amazon S3.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupConfiguration")]
@@ -114,7 +115,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// S3BackupMode
         /// The Amazon S3 backup mode. For valid values, see ExtendedS3DestinationConfiguration in the Amazon
-        /// Kinesis Firehose API Reference.
+        /// Kinesis Data Firehose API Reference.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

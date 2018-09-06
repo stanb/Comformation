@@ -16,7 +16,7 @@ namespace Comformation.KinesisAnalytics.Application
 
         /// <summary>
         /// ResourceARN
-        /// The Amazon Resource Name (ARN) of the input Kinesis Firehose delivery stream.
+        /// The Amazon Resource Name (ARN) of the input Kinesis Data Firehose delivery stream.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

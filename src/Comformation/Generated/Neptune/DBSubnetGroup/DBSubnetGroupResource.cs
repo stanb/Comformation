@@ -6,8 +6,8 @@ namespace Comformation.Neptune.DBSubnetGroup
 {
     /// <summary>
     /// AWS::Neptune::DBSubnetGroup
-    /// The AWS::Neptune::DBSubnetGroup type creates a Neptune DB subnet group. Subnet groups must contain at least
-    /// two subnets in two different Availability Zones in the same region.
+    /// The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group. Subnet groups must contain at
+    /// least two subnets in two different Availability Zones in the same AWS Region.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.Neptune.DBSubnetGroup
         {
             /// <summary>
             /// DBSubnetGroupName
-            /// The name for the DB Subnet Group. This value is stored as a lowercase string.
+            /// The name for the DB subnet group. This value is stored as a lowercase string.
             /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
             /// hyphens. Must not be default.
             /// Required: No
@@ -27,7 +27,7 @@ namespace Comformation.Neptune.DBSubnetGroup
 
             /// <summary>
             /// DBSubnetGroupDescription
-            /// The description for the DB Subnet Group.
+            /// The description for the DB subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -36,7 +36,7 @@ namespace Comformation.Neptune.DBSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// The EC2 Subnet IDs for the DB Subnet Group.
+            /// The Amazon EC2 subnet IDs for the DB subnet group.
             /// Required: Yes
             /// Type: List of String values
             /// Update requires: No interruption
@@ -45,7 +45,7 @@ namespace Comformation.Neptune.DBSubnetGroup
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the RDS database subnet group.
+            /// The tags that you want to attach to the Amazon RDS database subnet group.
             /// Required: No
             /// Type: A list of resource tags in key-value format.
             /// Update requires: No interruption

@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream CopyCommand
-    /// The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Firehose
-    /// (Kinesis Firehose) uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
+    /// Amazon Kinesis Data Firehose DeliveryStream CopyCommand
+    /// The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose
+    /// (Kinesis Data Firehose) uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html
     /// </summary>
     public class CopyCommand
@@ -17,7 +17,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// CopyOptions
         /// Parameters to use with the Amazon Redshift COPY command. For examples, see the CopyOptions content
-        /// for the CopyCommand data type in the Amazon Kinesis Firehose API Reference.
+        /// for the CopyCommand data type in the Amazon Kinesis Data Firehose API Reference.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -26,7 +26,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// DataTableColumns
-        /// A comma-separated list of the column names in the table that Kinesis Firehose copies data to.
+        /// A comma-separated list of the column names in the table that Kinesis Data Firehose copies data to.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -35,7 +35,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// DataTableName
-        /// The name of the table where Kinesis Firehose adds the copied data.
+        /// The name of the table where Kinesis Data Firehose adds the copied data.
         /// Required: Yes
         /// Type: String
         /// </summary>

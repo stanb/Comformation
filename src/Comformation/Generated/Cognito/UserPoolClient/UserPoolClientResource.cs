@@ -44,8 +44,8 @@ namespace Comformation.Cognito.UserPoolClient
 
             /// <summary>
             /// ExplicitAuthFlows
-            /// The explicit authentication flows, which can be one of the following: ADMIN_NO_SRP_AUTH or
-            /// CUSTOM_AUTH_FLOW_ONLY.
+            /// The explicit authentication flows, which can be one of the following: ADMIN_NO_SRP_AUTH,
+            /// CUSTOM_AUTH_FLOW_ONLY, or USER_PASSWORD_AUTH.
             /// Required: No
             /// Type: List of Strings
             /// Update requires: No interruption

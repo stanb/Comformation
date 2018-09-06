@@ -25,6 +25,16 @@ namespace Comformation.EC2.VPCPeeringConnection
 			public Union<string, IntrinsicFunction> PeerOwnerId { get; set; }
 
             /// <summary>
+            /// PeerRegion
+            /// The region code for the accepter VPC, if the accepter VPC is located in a region other than the
+            /// region in which you make the request. The default is the region in which you make the request.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> PeerRegion { get; set; }
+
+            /// <summary>
             /// PeerRoleArn
             /// The Amazon Resource Name (ARN) of the VPC peer role for the peering connection in another AWS
             /// account.

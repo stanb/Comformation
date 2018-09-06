@@ -60,6 +60,16 @@ namespace Comformation.EC2.SpotFleet
         public Union<List<SpotFleetLaunchSpecification>, IntrinsicFunction> LaunchSpecifications { get; set; }
 
         /// <summary>
+        /// LaunchTemplateConfigs
+        /// Describes a launch template and overrides.
+        /// Required: No
+        /// Type: List of Amazon EC2 SpotFleet LaunchTemplateConfig
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("LaunchTemplateConfigs")]
+        public Union<List<LaunchTemplateConfig>, IntrinsicFunction> LaunchTemplateConfigs { get; set; }
+
+        /// <summary>
         /// ReplaceUnhealthyInstances
         /// Indicates whether the Spot fleet should replace unhealthy instances.
         /// Required: No

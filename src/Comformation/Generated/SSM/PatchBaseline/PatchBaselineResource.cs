@@ -18,8 +18,8 @@ namespace Comformation.SSM.PatchBaseline
             /// <summary>
             /// OperatingSystem
             /// Defines the operating system that the patch baseline applies to. Supported operating systems include
-            /// WINDOWS, AMAZON_LINUX, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, and CENTOS. The default value is
-            /// WINDOWS.
+            /// WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, and CENTOS. The
+            /// default value is WINDOWS.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

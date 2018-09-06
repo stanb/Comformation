@@ -17,8 +17,10 @@ namespace Comformation.AppSync.DataSource
         {
             /// <summary>
             /// Type
-            /// Mandatory resource to return data from in customer AWS account. You can also specify NONE to use
-            /// Local Resolvers. See Local Resolvers Tutorial for more information.
+            /// Mandatory resource to return data from in customer AWS account. For a complete list of values, see
+            /// CreateDataSource in the AWS AppSync API Reference for more information.
+            /// You can also specify NONE to use local resolvers. See Local Resolvers Tutorial in the AWS AppSync
+            /// Developer Guide for more information.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -36,8 +38,10 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// ServiceRoleArn
-            /// IAM role ARN which the data source will use to connect to a resource.
-            /// Required: No
+            /// The Amazon Resource Name (ARN) of the IAM role which the data source will use to connect to a
+            /// resource.
+            /// Required: Conditional. Required if Type is specified as AWS_LAMBDA, AMAZON_DYNAMODB, or
+            /// AMAZON_ELASTICSEARCH.
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

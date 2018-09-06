@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream ProcessorParameter
-    /// The ProcessorParameter property specifies a processor parameter in a data processor for an Amazon Kinesis
+    /// Amazon Kinesis Data Firehose DeliveryStream ProcessorParameter
+    /// The ProcessorParameter property specifies a processor parameter in a data processor for an Amazon Kinesis Data
     /// Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html
     /// </summary>

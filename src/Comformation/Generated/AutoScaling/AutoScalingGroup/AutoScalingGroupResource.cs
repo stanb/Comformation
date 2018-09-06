@@ -114,6 +114,19 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 			public Union<string, IntrinsicFunction> LaunchConfigurationName { get; set; }
 
             /// <summary>
+            /// LaunchTemplate
+            /// The launch template to use to launch instances.
+            /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName,
+            /// or LaunchTemplate.
+            /// Type: Amazon EC2 Auto Scaling AutoScalingGroup LaunchTemplateSpecification
+            /// Update requires: No interruption
+            /// Important When you update the LaunchTemplate, existing Amazon EC2 instances continue to run with the
+            /// configuration that they were originally launched with. To update existing instances, specify an
+            /// update policy attribute for this Auto Scaling group. For more information, see UpdatePolicy.
+            /// </summary>
+			public Union<LaunchTemplateSpecification, IntrinsicFunction> LaunchTemplate { get; set; }
+
+            /// <summary>
             /// LifecycleHookSpecificationList
             /// The lifecycle hooks for the group, which specify actions to perform when Auto Scaling launches or
             /// terminates instances. For more information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the

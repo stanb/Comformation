@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream S3DestinationConfiguration
+    /// Amazon Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
     /// The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3)
-    /// destination to which Amazon Kinesis Firehose (Kinesis Firehose) delivers data.
+    /// destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html
     /// </summary>
     public class S3DestinationConfiguration
@@ -25,9 +25,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// BufferingHints
-        /// Configures how Kinesis Firehose buffers incoming data while delivering it to the Amazon S3 bucket.
+        /// Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon S3
+        /// bucket.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream BufferingHints
+        /// Type: Kinesis Data Firehose DeliveryStream BufferingHints
         /// </summary>
         [JsonProperty("BufferingHints")]
         public Union<BufferingHints, IntrinsicFunction> BufferingHints { get; set; }
@@ -36,16 +37,16 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The Amazon CloudWatch Logs logging options for the delivery stream.
         /// Required: No
-        /// Type: Amazon Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: Amazon Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// CompressionFormat
-        /// The type of compression that Kinesis Firehose uses to compress the data that it delivers to the
+        /// The type of compression that Kinesis Data Firehose uses to compress the data that it delivers to the
         /// Amazon S3 bucket. For valid values, see the CompressionFormat content for the
-        /// S3DestinationConfiguration data type in the Amazon Kinesis Firehose API Reference.
+        /// S3DestinationConfiguration data type in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -54,18 +55,19 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// EncryptionConfiguration
-        /// Configures Amazon Simple Storage Service (Amazon S3) server-side encryption. Kinesis Firehose uses
-        /// AWS Key Management Service (AWS KMS) to encrypt the data that it delivers to your Amazon S3 bucket.
+        /// Configures Amazon Simple Storage Service (Amazon S3) server-side encryption. Kinesis Data Firehose
+        /// uses AWS Key Management Service (AWS KMS) to encrypt the data that it delivers to your Amazon S3
+        /// bucket.
         /// Required: No
-        /// Type: Amazon Kinesis Firehose DeliveryStream EncryptionConfiguration
+        /// Type: Amazon Kinesis Data Firehose DeliveryStream EncryptionConfiguration
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
         public Union<EncryptionConfiguration, IntrinsicFunction> EncryptionConfiguration { get; set; }
 
         /// <summary>
         /// Prefix
-        /// A prefix that Kinesis Firehose adds to the files that it delivers to the Amazon S3 bucket. The
-        /// prefix helps you identify the files that Kinesis Firehose delivered.
+        /// A prefix that Kinesis Data Firehose adds to the files that it delivers to the Amazon S3 bucket. The
+        /// prefix helps you identify the files that Kinesis Data Firehose delivered.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -74,10 +76,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// RoleARN
-        /// The ARN of an AWS Identity and Access Management (IAM) role that grants Kinesis Firehose access to
-        /// your Amazon S3 bucket and AWS KMS (if you enable data encryption).
-        /// For more information, see Grant Kinesis Firehose Access to an Amazon S3 Destination in the Amazon
-        /// Kinesis Firehose Developer Guide.
+        /// The ARN of an AWS Identity and Access Management (IAM) role that grants Kinesis Data Firehose access
+        /// to your Amazon S3 bucket and AWS KMS (if you enable data encryption).
+        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon S3 Destination in the
+        /// Amazon Kinesis Data Firehose Developer Guide.
         /// Required: Yes
         /// Type: String
         /// </summary>

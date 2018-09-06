@@ -63,6 +63,21 @@ namespace Comformation.CertificateManager.Certificate
 
             /// <summary>
             /// ValidationMethod
+            /// The method you want to use if you are requesting a public certificate to validate that you own or
+            /// control a domain. Valid values include EMAIL or DNS. We recommend that you use DNS validation. The
+            /// default is EMAIL.
+            /// ACM uses CNAME (Canonical Name) records to validate that you own or control a domain. When you
+            /// choose DNS validation, ACM provides you one or more CNAME records to insert into your DNS database.
+            /// During stack creation, CloudFormation emits a CREATE_IN_PROGRESS event which lists these CNAME
+            /// records. They are displayed in the Status reason column on the Events page for the stack. In order
+            /// for CloudFormation to complete stack creation, you must add the CNAME records to your DNS database.
+            /// For more information, see Use DNS to Validate Domain Ownership in the AWS Certificate Manager User
+            /// Guide.
+            /// For more information on email validation, see Use Email to Validate Domain Ownership in the AWS
+            /// Certificate Manager User Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ValidationMethod { get; set; }
 

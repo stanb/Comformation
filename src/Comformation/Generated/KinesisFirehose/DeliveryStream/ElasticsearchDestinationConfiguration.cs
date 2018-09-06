@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream ElasticsearchDestinationConfiguration
+    /// Amazon Kinesis Data Firehose DeliveryStream ElasticsearchDestinationConfiguration
     /// The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES)
-    /// domain that Amazon Kinesis Firehose (Kinesis Firehose) delivers data to.
+    /// domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html
     /// </summary>
     public class ElasticsearchDestinationConfiguration
@@ -16,9 +16,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// BufferingHints
-        /// Configures how Kinesis Firehose buffers incoming data while delivering it to the Amazon ES domain.
+        /// Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon ES
+        /// domain.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream ElasticsearchBufferingHints
+        /// Type: Kinesis Data Firehose DeliveryStream ElasticsearchBufferingHints
         /// </summary>
         [JsonProperty("BufferingHints")]
         public Union<ElasticsearchBufferingHints, IntrinsicFunction> BufferingHints { get; set; }
@@ -27,14 +28,14 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The Amazon CloudWatch Logs logging options for the delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// DomainARN
-        /// The Amazon Resource Name (ARN) of the Amazon ES domain that Kinesis Firehose delivers data to.
+        /// The Amazon Resource Name (ARN) of the Amazon ES domain that Kinesis Data Firehose delivers data to.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -43,7 +44,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// IndexName
-        /// The name of the Elasticsearch index to which Kinesis Firehose adds data for indexing.
+        /// The name of the Elasticsearch index to which Kinesis Data Firehose adds data for indexing.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -52,10 +53,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// IndexRotationPeriod
-        /// The frequency of Elasticsearch index rotation. If you enable index rotation, Kinesis Firehose
+        /// The frequency of Elasticsearch index rotation. If you enable index rotation, Kinesis Data Firehose
         /// appends a portion of the UTC arrival timestamp to the specified index name, and rotates the appended
         /// timestamp accordingly. For more information, see Index Rotation for the Amazon ES Destination in the
-        /// Amazon Kinesis Firehose Developer Guide.
+        /// Amazon Kinesis Data Firehose Developer Guide.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -64,29 +65,29 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// ProcessingConfiguration
-        /// The data processing configuration for the Kinesis Firehose delivery stream.
+        /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream ProcessingConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
         public Union<ProcessingConfiguration, IntrinsicFunction> ProcessingConfiguration { get; set; }
 
         /// <summary>
         /// RetryOptions
-        /// The retry behavior when Kinesis Firehose is unable to deliver data to Amazon ES.
+        /// The retry behavior when Kinesis Data Firehose is unable to deliver data to Amazon ES.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream ElasticsearchRetryOptions
+        /// Type: Kinesis Data Firehose DeliveryStream ElasticsearchRetryOptions
         /// </summary>
         [JsonProperty("RetryOptions")]
         public Union<ElasticsearchRetryOptions, IntrinsicFunction> RetryOptions { get; set; }
 
         /// <summary>
         /// RoleARN
-        /// The ARN of the AWS Identity and Access Management (IAM) role that grants Kinesis Firehose access to
-        /// your Amazon S3 bucket, AWS KMS (if you enable data encryption), and Amazon CloudWatch Logs (if you
-        /// enable logging).
-        /// For more information, see Grant Kinesis Firehose Access to an Amazon Elasticsearch Service
-        /// Destination in the Amazon Kinesis Firehose Developer Guide.
+        /// The ARN of the AWS Identity and Access Management (IAM) role that grants Kinesis Data Firehose
+        /// access to your Amazon S3 bucket, AWS KMS (if you enable data encryption), and Amazon CloudWatch Logs
+        /// (if you enable logging).
+        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon Elasticsearch Service
+        /// Destination in the Amazon Kinesis Data Firehose Developer Guide.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -95,11 +96,11 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3BackupMode
-        /// The condition under which Kinesis Firehose delivers data to Amazon Simple Storage Service (Amazon
-        /// S3). You can send Amazon S3 all documents (all data) or only the documents that Kinesis Firehose
-        /// could not deliver to the Amazon ES destination. For more information and valid values, see the
-        /// S3BackupMode content for the ElasticsearchDestinationConfiguration data type in the Amazon Kinesis
-        /// Firehose API Reference.
+        /// The condition under which Kinesis Data Firehose delivers data to Amazon Simple Storage Service
+        /// (Amazon S3). You can send Amazon S3 all documents (all data) or only the documents that Kinesis Data
+        /// Firehose could not deliver to the Amazon ES destination. For more information and valid values, see
+        /// the S3BackupMode content for the ElasticsearchDestinationConfiguration data type in the Amazon
+        /// Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -108,9 +109,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3Configuration
-        /// The S3 bucket where Kinesis Firehose backs up incoming data.
+        /// The S3 bucket where Kinesis Data Firehose backs up incoming data.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
         /// </summary>
         [JsonProperty("S3Configuration")]
         public Union<S3DestinationConfiguration, IntrinsicFunction> S3Configuration { get; set; }

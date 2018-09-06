@@ -59,7 +59,7 @@ namespace Comformation.EC2.SecurityGroup
             /// Tags
             /// The tags that you want to attach to the resource.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags.
+            /// Type: List of AWS CloudFormation Resource Tags
             /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }

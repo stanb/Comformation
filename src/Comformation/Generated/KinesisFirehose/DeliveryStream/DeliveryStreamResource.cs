@@ -6,10 +6,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream
-    /// The AWS::KinesisFirehose::DeliveryStream resource creates an Amazon Kinesis Firehose (Kinesis Firehose)
-    /// delivery stream that delivers real-time streaming data to an Amazon Simple Storage Service (Amazon S3), Amazon
-    /// Redshift, or Amazon Elasticsearch Service (Amazon ES) destination. For more information, see Creating an
-    /// Amazon Kinesis Firehose Delivery Stream in the Amazon Kinesis Firehose Developer Guide.
+    /// The AWS::KinesisFirehose::DeliveryStream resource creates an Amazon Kinesis Data Firehose (Kinesis Data
+    /// Firehose) delivery stream that delivers real-time streaming data to an Amazon Simple Storage Service (Amazon
+    /// S3), Amazon Redshift, or Amazon Elasticsearch Service (Amazon ES) destination. For more information, see
+    /// Creating an Amazon Kinesis Data Firehose Delivery Stream in the Amazon Kinesis Data Firehose Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html
     /// </summary>
     public class DeliveryStreamResource : ResourceBase
@@ -40,7 +40,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// ElasticsearchDestinationConfiguration
             /// An Amazon ES destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Firehose DeliveryStream ElasticsearchDestinationConfiguration
+            /// Type: Kinesis Data Firehose DeliveryStream ElasticsearchDestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon ES
             /// destination to an Amazon S3 or Amazon Redshift destination, update requires some interruptions.
             /// </summary>
@@ -50,7 +50,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// ExtendedS3DestinationConfiguration
             /// An Amazon S3 destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Firehose DeliveryStream ExtendedS3DestinationConfiguration
+            /// Type: Kinesis Data Firehose DeliveryStream ExtendedS3DestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
@@ -71,7 +71,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// RedshiftDestinationConfiguration
             /// An Amazon Redshift destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration
+            /// Type: Kinesis Data Firehose DeliveryStream RedshiftDestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
@@ -81,7 +81,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// S3DestinationConfiguration
             /// An Amazon S3 destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
+            /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon S3
             /// destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>

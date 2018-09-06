@@ -45,8 +45,9 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 
             /// <summary>
             /// ProvisioningArtifactName
-            /// The name of the provisioning artifact. This name must be unique for the product. You must specify
-            /// either the name or the ID of the provisioning artifact, but not both.
+            /// The name of the provisioning artifact (also known as a version) for the product. This name must be
+            /// unique for the product. You must specify either the name or the ID of the provisioning artifact, but
+            /// not both.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -101,8 +102,8 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 
             /// <summary>
             /// ProvisioningArtifactId
-            /// The identifier of the provisioning artifact. You must specify either the ID or the name of the
-            /// provisioning artifact, but not both.
+            /// The identifier of the provisioning artifact (also known as a version) for the product. You must
+            /// specify either the ID or the name of the provisioning artifact, but not both.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

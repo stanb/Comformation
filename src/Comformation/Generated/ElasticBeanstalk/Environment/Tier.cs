@@ -37,7 +37,10 @@ namespace Comformation.ElasticBeanstalk.Environment
 
         /// <summary>
         /// Version
-        /// The version of this environment tier.
+        /// The version of this environment tier. If you don&#39;t specify this member, the latest compatible worker
+        /// tier version is used.
+        /// Note This member is deprecated. Any specific version that you specify may become outdated. We
+        /// recommend leaving this unspecified.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

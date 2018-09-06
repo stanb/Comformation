@@ -48,7 +48,7 @@ namespace Comformation.KinesisAnalytics.Application
 
         /// <summary>
         /// KinesisFirehoseInput
-        /// If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the delivery
+        /// If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery
         /// stream&#39;s Amazon Resource Name (ARN) and an IAM role that enables Kinesis Data Analytics to access
         /// the stream on your behalf.
         /// Required: No

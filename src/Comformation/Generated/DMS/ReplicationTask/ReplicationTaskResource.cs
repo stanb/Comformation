@@ -92,7 +92,7 @@ namespace Comformation.DMS.ReplicationTask
             /// CdcStartTime
             /// The start time for the Change Data Capture (CDC) operation.
             /// Required: No
-            /// Type: Number, epic value in milliseconds
+            /// Type: Number, epoch value in milliseconds
             /// Update requires: No interruption
             /// </summary>
 			public Union<double, IntrinsicFunction> CdcStartTime { get; set; }

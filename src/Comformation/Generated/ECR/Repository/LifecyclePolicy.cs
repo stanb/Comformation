@@ -27,8 +27,8 @@ namespace Comformation.ECR.Repository
 
         /// <summary>
         /// RegistryId
-        /// The AWS account ID that&#39;s associated with the registry that contains the repository. If you
-        /// do&amp;#x2028;n&#39;t specify a registry, the default registry is used.
+        /// The AWS account ID that&#39;s associated with the registry that contains the repository. If you don&#39;t
+        /// specify a registry, the default registry is used.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

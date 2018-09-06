@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration
+    /// Amazon Kinesis Data Firehose DeliveryStream RedshiftDestinationConfiguration
     /// The RedshiftDestinationConfiguration property type specifies an Amazon Redshift cluster to which Amazon
-    /// Kinesis Firehose (Kinesis Firehose) delivers data.
+    /// Kinesis Data Firehose (Kinesis Data Firehose) delivers data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html
     /// </summary>
     public class RedshiftDestinationConfiguration
@@ -18,14 +18,14 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The Amazon CloudWatch Logs logging options for the delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// ClusterJDBCURL
-        /// The connection string that Kinesis Firehose uses to connect to the Amazon Redshift cluster.
+        /// The connection string that Kinesis Data Firehose uses to connect to the Amazon Redshift cluster.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -34,10 +34,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// CopyCommand
-        /// Configures the Amazon Redshift COPY command that Kinesis Firehose uses to load data into the cluster
-        /// from the Amazon S3 bucket.
+        /// Configures the Amazon Redshift COPY command that Kinesis Data Firehose uses to load data into the
+        /// cluster from the Amazon S3 bucket.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream CopyCommand
+        /// Type: Kinesis Data Firehose DeliveryStream CopyCommand
         /// </summary>
         [JsonProperty("CopyCommand")]
         public Union<CopyCommand, IntrinsicFunction> CopyCommand { get; set; }
@@ -53,19 +53,19 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// ProcessingConfiguration
-        /// The data processing configuration for the Kinesis Firehose delivery stream.
+        /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream ProcessingConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
         public Union<ProcessingConfiguration, IntrinsicFunction> ProcessingConfiguration { get; set; }
 
         /// <summary>
         /// RoleARN
-        /// The ARN of the AWS Identity and Access Management (IAM) role that grants Kinesis Firehose access to
-        /// your Amazon S3 bucket and AWS KMS (if you enable data encryption).
-        /// For more information, see Grant Kinesis Firehose Access to an Amazon Redshift Destination in the
-        /// Amazon Kinesis Firehose Developer Guide.
+        /// The ARN of the AWS Identity and Access Management (IAM) role that grants Kinesis Data Firehose
+        /// access to your Amazon S3 bucket and AWS KMS (if you enable data encryption).
+        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon Redshift Destination in
+        /// the Amazon Kinesis Data Firehose Developer Guide.
         /// Required: Yes
         /// Type: String
         /// </summary>
@@ -74,12 +74,12 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3Configuration
-        /// The S3 bucket where Kinesis Firehose first delivers data. After the data is in the bucket, Kinesis
-        /// Firehose uses the COPY command to load the data into the Amazon Redshift cluster. For the Amazon S3
-        /// bucket&#39;s compression format, don&#39;t specify SNAPPY or ZIP because the Amazon Redshift COPY command
-        /// doesn&#39;t support them.
+        /// The S3 bucket where Kinesis Data Firehose first delivers data. After the data is in the bucket,
+        /// Kinesis Data Firehose uses the COPY command to load the data into the Amazon Redshift cluster. For
+        /// the Amazon S3 bucket&#39;s compression format, don&#39;t specify SNAPPY or ZIP because the Amazon Redshift
+        /// COPY command doesn&#39;t support them.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
         /// </summary>
         [JsonProperty("S3Configuration")]
         public Union<S3DestinationConfiguration, IntrinsicFunction> S3Configuration { get; set; }

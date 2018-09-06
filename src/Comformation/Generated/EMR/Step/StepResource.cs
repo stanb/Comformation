@@ -19,9 +19,9 @@ namespace Comformation.EMR.Step
             /// The action to take if the job flow step fails. Currently, AWS CloudFormation supports CONTINUE and
             /// CANCEL_AND_WAIT.
             /// 		
-            /// 		 		 		 TERMINATE_CLUSTER indicates that all associated cluster resources terminate if the step
-            /// fails, and no subsequent steps or jobs are attempted. 		 		 CANCEL_AND_WAIT indicates that the step
-            /// is canceled, and all subsequent steps and jobs are attempted. 		
+            /// 		 		 		 CANCEL_AND_WAIT: If the step fails, cancel the remaining steps. If the cluster has
+            /// auto-terminate disabled, the cluster will not terminate. 		 CONTINUE: If the step fails, continue to
+            /// the next step. 		
             /// 		
             /// For more information, see Managing Cluster Termination in the Amazon EMR Management Guide.
             /// Required: Yes

@@ -34,6 +34,17 @@ namespace Comformation.CodeBuild.Project
         public Union<string, IntrinsicFunction> Type { get; set; }
 
         /// <summary>
+        /// OverrideArtifactName
+        /// If set to true a name specified in the buildspec file overrides the artifact name. The name
+        /// specified in a buildspec file is calculated at build time and uses the Shell command language. For
+        /// example, you can append a date and time to your artifact name so that it is always unique.
+        /// Required: No
+        /// Type: Boolean
+        /// </summary>
+        [JsonProperty("OverrideArtifactName")]
+        public Union<bool, IntrinsicFunction> OverrideArtifactName { get; set; }
+
+        /// <summary>
         /// Packaging
         /// Indicates how AWS CodeBuild packages the build output artifacts. For valid values, see the packaging
         /// field in the AWS CodeBuild User Guide.
@@ -42,6 +53,17 @@ namespace Comformation.CodeBuild.Project
         /// </summary>
         [JsonProperty("Packaging")]
         public Union<string, IntrinsicFunction> Packaging { get; set; }
+
+        /// <summary>
+        /// EncryptionDisabled
+        /// If set to true, then the build output artifacts are not encrypted. This option is only valid if your
+        /// artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException
+        /// will be thrown.
+        /// Required: No
+        /// Type: Boolean
+        /// </summary>
+        [JsonProperty("EncryptionDisabled")]
+        public Union<bool, IntrinsicFunction> EncryptionDisabled { get; set; }
 
         /// <summary>
         /// Location

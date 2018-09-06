@@ -133,6 +133,15 @@ namespace Comformation.SQS.Queue
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RedrivePolicy { get; set; }
 
             /// <summary>
+            /// Tags
+            /// The tags that you want to attach to this queue.
+            /// Required: No
+            /// Type: A list of resource tags
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+
+            /// <summary>
             /// VisibilityTimeout
             /// The length of time during which a message will be unavailable after a message is delivered from the
             /// queue. This blocks other components from receiving the same message and gives the initial component

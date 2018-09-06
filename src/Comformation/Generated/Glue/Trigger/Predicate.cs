@@ -18,7 +18,8 @@ namespace Comformation.Glue.Trigger
         /// Logical
         /// The logical operator for the predicate.
         /// Valid values: AND
-        /// Required: No
+        /// Required: Optional field if only one condition is listed. If multiple conditions are listed, then
+        /// this field is required.
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

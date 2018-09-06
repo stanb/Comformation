@@ -52,7 +52,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// The tags that you want to attach to this parameter group.
             /// Required: No
             /// Type: A list of resource tags
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
 

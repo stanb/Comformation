@@ -16,7 +16,7 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// AllAwsRegions
-        /// If true aggreagate existing AWS Config regions and future regions.
+        /// If true, aggregate existing AWS Config regions and future regions.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

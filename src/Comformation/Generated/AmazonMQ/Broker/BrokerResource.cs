@@ -53,16 +53,6 @@ namespace Comformation.AmazonMQ.Broker
 			public Union<MaintenanceWindow, IntrinsicFunction> MaintenanceWindowStartTime { get; set; }
 
             /// <summary>
-            /// DeploymentMode
-            /// The deployment mode of the broker. SINGLE_INSTANCE creates a single-instance broker in a single
-            /// Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby broker for high availability.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-			public Union<string, IntrinsicFunction> DeploymentMode { get; set; }
-
-            /// <summary>
             /// HostInstanceType
             /// The broker&#39;s instance type. For more information, see Instance Types in the Amazon MQ Developer
             /// Guide.
@@ -71,16 +61,6 @@ namespace Comformation.AmazonMQ.Broker
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> HostInstanceType { get; set; }
-
-            /// <summary>
-            /// EngineType
-            /// The type of broker engine.
-            /// Note Currently, Amazon MQ supports only ACTIVEMQ.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-			public Union<string, IntrinsicFunction> EngineType { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
@@ -103,13 +83,13 @@ namespace Comformation.AmazonMQ.Broker
 			public Union<List<User>, IntrinsicFunction> Users { get; set; }
 
             /// <summary>
-            /// PubliclyAccessible
-            /// Enables connections from applications outside of the VPC that hosts the broker&#39;s subnets.
-            /// Required: Yes
-            /// Type: Boolean
-            /// Update requires: Replacement
+            /// Logs
+            /// The Amazon CloudWatch Logs configuration for the broker.
+            /// Required: No
+            /// Type: Amazon MQ Broker LogsConfiguration
+            /// Update requires: Some interruptions
             /// </summary>
-			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
+			public Union<LogList, IntrinsicFunction> Logs { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -132,6 +112,35 @@ namespace Comformation.AmazonMQ.Broker
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> BrokerName { get; set; }
+
+            /// <summary>
+            /// DeploymentMode
+            /// The deployment mode of the broker. SINGLE_INSTANCE creates a single-instance broker in a single
+            /// Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby broker for high availability.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> DeploymentMode { get; set; }
+
+            /// <summary>
+            /// EngineType
+            /// The type of broker engine.
+            /// Note Currently, Amazon MQ supports only ACTIVEMQ.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> EngineType { get; set; }
+
+            /// <summary>
+            /// PubliclyAccessible
+            /// Enables connections from applications outside of the VPC that hosts the broker&#39;s subnets.
+            /// Required: Yes
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
         }
     

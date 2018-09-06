@@ -80,4 +80,9 @@ namespace Comformation.CodePipeline.Pipeline
         
         public PipelineProperties Properties { get; } = new PipelineProperties();
     }
+
+	public static class PipelineAttributes
+	{
+        public static readonly ResourceAttribute<string> Version = new ResourceAttribute<string>("Version");
+	}
 }

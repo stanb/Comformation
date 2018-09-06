@@ -31,7 +31,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// <summary>
         /// Key
         /// User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-        /// tag:Amazon EC2 tagor InstanceIds. For more information about how to send commands that target
+        /// tag:Amazon EC2 tag or InstanceIds. For more information about how to send commands that target
         /// instances by using Key,Value parameters, see Sending Commands to a Fleet in the AWS Systems Manager
         /// User Guide.
         /// Required: Yes

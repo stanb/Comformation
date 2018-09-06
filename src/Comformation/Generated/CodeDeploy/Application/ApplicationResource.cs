@@ -29,7 +29,8 @@ namespace Comformation.CodeDeploy.Application
 
             /// <summary>
             /// ComputePlatform
-            /// The compute platform that AWS CodeDeploy deploys the application to.
+            /// The compute platform that AWS CodeDeploy deploys the application to. For valid values see
+            /// CreateApplication in the AWS CodeDeploy API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

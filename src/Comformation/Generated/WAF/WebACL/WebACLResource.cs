@@ -48,7 +48,7 @@ namespace Comformation.WAF.WebACL
             /// Rules
             /// The rules to associate with the web ACL and the settings for each rule.
             /// Required: No
-            /// Type: List of AWS WAF WebACL Rules
+            /// Type: List of AWS WAF WebACL ActivatedRule
             /// Update requires: No interruption
             /// </summary>
 			public Union<List<ActivatedRule>, IntrinsicFunction> Rules { get; set; }

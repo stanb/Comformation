@@ -18,7 +18,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The CloudWatch logging options for your delivery stream.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
@@ -71,7 +71,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// ProcessingConfiguration
         /// The data processing configuration.
         /// Required: No
-        /// Type: Kinesis Firehose DeliveryStream ProcessingConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
@@ -106,7 +106,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3Configuration
         /// The configuration for the backup Amazon S3 location.
         /// Required: Yes
-        /// Type: Kinesis Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Configuration")]

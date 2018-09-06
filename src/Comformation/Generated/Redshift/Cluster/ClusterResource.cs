@@ -259,7 +259,7 @@ namespace Comformation.Redshift.Cluster
             /// Indicates whether the cluster can be accessed from a public network.
             /// Required: No
             /// Type: Boolean
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 

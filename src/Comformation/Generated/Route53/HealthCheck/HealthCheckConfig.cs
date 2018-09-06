@@ -183,8 +183,9 @@ namespace Comformation.Route53.HealthCheck
         /// <summary>
         /// Type
         /// The type of health check that you want to create. This indicates how Route&#160;53 determines whether an
-        /// endpoint is healthy. You can specify HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, or TCP. For
-        /// information about the different types, see the Type element in the Amazon Route&#160;53 API Reference.
+        /// endpoint is healthy. You can specify HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP,
+        /// CLOUDWATCH_METRIC, or CALCULATED. For information about the different types, see the Type element in
+        /// the Amazon Route&#160;53 API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement
