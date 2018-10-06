@@ -5,7 +5,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.VPCEndpointConnectionNotification
 {
     /// <summary>
-    /// AWS::EC2:: VPCEndpointConnectionNotification
+    /// AWS::EC2::VPCEndpointConnectionNotification
     /// Creates a connection notification for the specified VPC endpoint or VPC endpoint service. A connection
     /// notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications.
     /// For more information, see CreateVpcEndpointConnectionNotification.
@@ -23,7 +23,7 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ConnectionEvents { get; set; }
+			public List<Union<string, IntrinsicFunction>> ConnectionEvents { get; set; }
 
             /// <summary>
             /// VPCEndpointId
@@ -57,5 +57,6 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
         public string Type { get; } = "AWS::EC2::VPCEndpointConnectionNotification";
         
         public VPCEndpointConnectionNotificationProperties Properties { get; } = new VPCEndpointConnectionNotificationProperties();
+
     }
 }

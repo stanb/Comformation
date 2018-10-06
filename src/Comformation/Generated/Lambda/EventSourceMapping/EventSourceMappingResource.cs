@@ -71,5 +71,6 @@ namespace Comformation.Lambda.EventSourceMapping
         public string Type { get; } = "AWS::Lambda::EventSourceMapping";
         
         public EventSourceMappingProperties Properties { get; } = new EventSourceMappingProperties();
+
     }
 }

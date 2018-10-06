@@ -22,7 +22,7 @@ namespace Comformation.ECS.TaskDefinition
             /// Type: List of Amazon Elastic Container Service TaskDefinition ContainerDefinition
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<ContainerDefinition>, IntrinsicFunction> ContainerDefinitions { get; set; }
+			public List<ContainerDefinition> ContainerDefinitions { get; set; }
 
             /// <summary>
             /// Cpu
@@ -100,7 +100,7 @@ namespace Comformation.ECS.TaskDefinition
             /// Type: Amazon Elastic Container Service Service PlacementConstraint
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<TaskDefinitionPlacementConstraint>, IntrinsicFunction> PlacementConstraints { get; set; }
+			public List<TaskDefinitionPlacementConstraint> PlacementConstraints { get; set; }
 
             /// <summary>
             /// RequiresCompatibilities
@@ -110,7 +110,7 @@ namespace Comformation.ECS.TaskDefinition
             /// Type: List of Strings
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> RequiresCompatibilities { get; set; }
+			public List<Union<string, IntrinsicFunction>> RequiresCompatibilities { get; set; }
 
             /// <summary>
             /// TaskRoleArn
@@ -131,12 +131,13 @@ namespace Comformation.ECS.TaskDefinition
             /// Type: List of Amazon Elastic Container Service TaskDefinition Volumes
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Volume>, IntrinsicFunction> Volumes { get; set; }
+			public List<Volume> Volumes { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ECS::TaskDefinition";
         
         public TaskDefinitionProperties Properties { get; } = new TaskDefinitionProperties();
+
     }
 }

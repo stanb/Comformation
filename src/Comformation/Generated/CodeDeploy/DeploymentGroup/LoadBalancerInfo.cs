@@ -24,7 +24,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ElbInfoList")]
-        public Union<List<ELBInfo>, IntrinsicFunction> ElbInfoList { get; set; }
+        public List<ELBInfo> ElbInfoList { get; set; }
 
         /// <summary>
         /// TargetGroupInfoList
@@ -36,7 +36,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetGroupInfoList")]
-        public Union<List<TargetGroupInfo>, IntrinsicFunction> TargetGroupInfoList { get; set; }
+        public List<TargetGroupInfo> TargetGroupInfoList { get; set; }
 
     }
 }

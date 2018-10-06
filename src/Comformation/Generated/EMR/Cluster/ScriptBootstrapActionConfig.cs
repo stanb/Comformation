@@ -22,7 +22,7 @@ namespace Comformation.EMR.Cluster
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Args")]
-        public Union<List<string>, IntrinsicFunction> Args { get; set; }
+        public List<Union<string, IntrinsicFunction>> Args { get; set; }
 
         /// <summary>
         /// Path

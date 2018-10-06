@@ -64,7 +64,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetTrackingConfigurations")]
-        public Union<List<TargetTrackingConfiguration>, IntrinsicFunction> TargetTrackingConfigurations { get; set; }
+        public List<TargetTrackingConfiguration> TargetTrackingConfigurations { get; set; }
 
         /// <summary>
         /// MaxCapacity

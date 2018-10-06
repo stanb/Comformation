@@ -36,7 +36,7 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Type: AWS Config ConfigurationRecorder RecordingGroup
             /// Update requires: No interruption
             /// </summary>
-			public Union<RecordingGroup, IntrinsicFunction> RecordingGroup { get; set; }
+			public RecordingGroup RecordingGroup { get; set; }
 
             /// <summary>
             /// RoleARN
@@ -55,5 +55,6 @@ namespace Comformation.Config.ConfigurationRecorder
         public string Type { get; } = "AWS::Config::ConfigurationRecorder";
         
         public ConfigurationRecorderProperties Properties { get; } = new ConfigurationRecorderProperties();
+
     }
 }

@@ -42,22 +42,23 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Type: Amazon Redshift Parameter Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Parameter>, IntrinsicFunction> Parameters { get; set; }
+			public List<Parameter> Parameters { get; set; }
 
             /// <summary>
             /// Tags
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this parameter group. Use
             /// tags to manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Redshift::ClusterParameterGroup";
         
         public ClusterParameterGroupProperties Properties { get; } = new ClusterParameterGroupProperties();
+
     }
 }

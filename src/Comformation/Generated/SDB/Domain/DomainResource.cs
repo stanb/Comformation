@@ -28,5 +28,6 @@ namespace Comformation.SDB.Domain
         public string Type { get; } = "AWS::SDB::Domain";
         
         public DomainProperties Properties { get; } = new DomainProperties();
+
     }
 }

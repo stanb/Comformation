@@ -94,7 +94,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Type: Application Auto Scaling ScalingPolicy StepScalingPolicyConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<StepScalingPolicyConfiguration, IntrinsicFunction> StepScalingPolicyConfiguration { get; set; }
+			public StepScalingPolicyConfiguration StepScalingPolicyConfiguration { get; set; }
 
             /// <summary>
             /// TargetTrackingScalingPolicyConfiguration
@@ -105,12 +105,13 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Type: Application Auto Scaling ScalingPolicy TargetTrackingScalingPolicyConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<TargetTrackingScalingPolicyConfiguration, IntrinsicFunction> TargetTrackingScalingPolicyConfiguration { get; set; }
+			public TargetTrackingScalingPolicyConfiguration TargetTrackingScalingPolicyConfiguration { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ApplicationAutoScaling::ScalingPolicy";
         
         public ScalingPolicyProperties Properties { get; } = new ScalingPolicyProperties();
+
     }
 }

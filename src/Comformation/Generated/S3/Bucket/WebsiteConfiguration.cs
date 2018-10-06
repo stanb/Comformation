@@ -39,7 +39,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Website Configuration Redirect All Requests To Property
         /// </summary>
         [JsonProperty("RedirectAllRequestsTo")]
-        public Union<RedirectAllRequestsTo, IntrinsicFunction> RedirectAllRequestsTo { get; set; }
+        public RedirectAllRequestsTo RedirectAllRequestsTo { get; set; }
 
         /// <summary>
         /// RoutingRules
@@ -48,7 +48,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of Amazon S3 Website Configuration Routing Rules Property
         /// </summary>
         [JsonProperty("RoutingRules")]
-        public Union<List<RoutingRule>, IntrinsicFunction> RoutingRules { get; set; }
+        public List<RoutingRule> RoutingRules { get; set; }
 
     }
 }

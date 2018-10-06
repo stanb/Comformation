@@ -73,7 +73,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ClusterSecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> ClusterSecurityGroups { get; set; }
 
             /// <summary>
             /// ClusterSubnetGroupName
@@ -159,7 +159,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> IamRoles { get; set; }
+			public List<Union<string, IntrinsicFunction>> IamRoles { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -179,7 +179,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Amazon Redshift LoggingProperties
             /// Update requires: No interruption
             /// </summary>
-			public Union<LoggingProperties, IntrinsicFunction> LoggingProperties { get; set; }
+			public LoggingProperties LoggingProperties { get; set; }
 
             /// <summary>
             /// MasterUserPassword
@@ -291,10 +291,10 @@ namespace Comformation.Redshift.Cluster
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this cluster. Use tags to
             /// manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -303,18 +303,19 @@ namespace Comformation.Redshift.Cluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Redshift::Cluster";
         
         public ClusterProperties Properties { get; } = new ClusterProperties();
+
     }
 
 	public static class ClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> Endpoint_Address = new ResourceAttribute<string>("Endpoint", "Address");
-        public static readonly ResourceAttribute<string> Endpoint_Port = new ResourceAttribute<string>("Endpoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Port");
 	}
 }

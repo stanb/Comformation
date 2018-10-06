@@ -21,7 +21,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("WhitelistedNames")]
-        public Union<List<string>, IntrinsicFunction> WhitelistedNames { get; set; }
+        public List<Union<string, IntrinsicFunction>> WhitelistedNames { get; set; }
 
         /// <summary>
         /// Forward

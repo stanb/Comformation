@@ -4,12 +4,17 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AWSSDK.CloudFormation" Version="3.3.11" />
-    <PackageReference Include="AWSSDK.IdentityManagement" Version="3.3.6.3" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.18.2" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="AWSSDK.CloudFormation" Version="3.3.11.14" />
+    <PackageReference Include="AWSSDK.EC2" Version="3.3.64.1" />
+    <PackageReference Include="AWSSDK.IdentityManagement" Version="3.3.7.10" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.24.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="SSH.NET.Fork" Version="2018.8.25.2" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Comformation\Comformation.csproj" />

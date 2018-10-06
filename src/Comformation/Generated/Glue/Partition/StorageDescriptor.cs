@@ -42,7 +42,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BucketColumns")]
-        public Union<List<string>, IntrinsicFunction> BucketColumns { get; set; }
+        public List<Union<string, IntrinsicFunction>> BucketColumns { get; set; }
 
         /// <summary>
         /// SkewedInfo
@@ -52,7 +52,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedInfo")]
-        public Union<SkewedInfo, IntrinsicFunction> SkewedInfo { get; set; }
+        public SkewedInfo SkewedInfo { get; set; }
 
         /// <summary>
         /// InputFormat
@@ -96,7 +96,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Columns")]
-        public Union<List<Column>, IntrinsicFunction> Columns { get; set; }
+        public List<Column> Columns { get; set; }
 
         /// <summary>
         /// SerdeInfo
@@ -107,7 +107,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SerdeInfo")]
-        public Union<SerdeInfo, IntrinsicFunction> SerdeInfo { get; set; }
+        public SerdeInfo SerdeInfo { get; set; }
 
         /// <summary>
         /// SortColumns
@@ -117,7 +117,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SortColumns")]
-        public Union<List<Order>, IntrinsicFunction> SortColumns { get; set; }
+        public List<Order> SortColumns { get; set; }
 
         /// <summary>
         /// Compressed

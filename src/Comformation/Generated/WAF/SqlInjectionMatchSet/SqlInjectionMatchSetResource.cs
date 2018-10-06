@@ -32,12 +32,13 @@ namespace Comformation.WAF.SqlInjectionMatchSet
             /// Type: List of AWS WAF SqlInjectionMatchSet SqlInjectionMatchTuples
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<SqlInjectionMatchTuple>, IntrinsicFunction> SqlInjectionMatchTuples { get; set; }
+			public List<SqlInjectionMatchTuple> SqlInjectionMatchTuples { get; set; }
 
         }
     
         public string Type { get; } = "AWS::WAF::SqlInjectionMatchSet";
         
         public SqlInjectionMatchSetProperties Properties { get; } = new SqlInjectionMatchSetProperties();
+
     }
 }

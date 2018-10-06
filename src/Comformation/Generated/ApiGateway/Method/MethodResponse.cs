@@ -22,7 +22,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("ResponseModels")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> ResponseModels { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> ResponseModels { get; set; }
 
         /// <summary>
         /// ResponseParameters
@@ -35,7 +35,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("ResponseParameters")]
-        public Union<Dictionary<string, bool>, IntrinsicFunction> ResponseParameters { get; set; }
+        public Dictionary<string, Union<bool, IntrinsicFunction>> ResponseParameters { get; set; }
 
         /// <summary>
         /// StatusCode

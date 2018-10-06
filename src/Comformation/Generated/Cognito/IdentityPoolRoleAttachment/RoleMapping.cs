@@ -49,7 +49,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RulesConfiguration")]
-        public Union<RulesConfigurationType, IntrinsicFunction> RulesConfiguration { get; set; }
+        public RulesConfigurationType RulesConfiguration { get; set; }
 
     }
 }

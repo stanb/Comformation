@@ -29,5 +29,6 @@ namespace Comformation.ApiGateway.Account
         public string Type { get; } = "AWS::ApiGateway::Account";
         
         public AccountProperties Properties { get; } = new AccountProperties();
+
     }
 }

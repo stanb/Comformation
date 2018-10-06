@@ -80,7 +80,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -97,5 +97,6 @@ namespace Comformation.Glue.DevEndpoint
         public string Type { get; } = "AWS::Glue::DevEndpoint";
         
         public DevEndpointProperties Properties { get; } = new DevEndpointProperties();
+
     }
 }

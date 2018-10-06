@@ -24,7 +24,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MappingParameters")]
-        public Union<MappingParameters, IntrinsicFunction> MappingParameters { get; set; }
+        public MappingParameters MappingParameters { get; set; }
 
         /// <summary>
         /// RecordFormatType

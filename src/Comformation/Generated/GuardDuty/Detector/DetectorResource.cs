@@ -28,5 +28,6 @@ namespace Comformation.GuardDuty.Detector
         public string Type { get; } = "AWS::GuardDuty::Detector";
         
         public DetectorProperties Properties { get; } = new DetectorProperties();
+
     }
 }

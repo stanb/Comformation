@@ -22,7 +22,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AWS CodeDeploy DeploymentGroup AlarmConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<AlarmConfiguration, IntrinsicFunction> AlarmConfiguration { get; set; }
+			public AlarmConfiguration AlarmConfiguration { get; set; }
 
             /// <summary>
             /// ApplicationName
@@ -41,7 +41,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AWS CodeDeploy DeploymentGroup AutoRollbackConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<AutoRollbackConfiguration, IntrinsicFunction> AutoRollbackConfiguration { get; set; }
+			public AutoRollbackConfiguration AutoRollbackConfiguration { get; set; }
 
             /// <summary>
             /// AutoScalingGroups
@@ -51,7 +51,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AutoScalingGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> AutoScalingGroups { get; set; }
 
             /// <summary>
             /// Deployment
@@ -62,7 +62,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AWS CodeDeploy DeploymentGroup Deployment
             /// Update requires: No interruption
             /// </summary>
-			public Union<Deployment, IntrinsicFunction> Deployment { get; set; }
+			public Deployment Deployment { get; set; }
 
             /// <summary>
             /// DeploymentConfigName
@@ -101,18 +101,30 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AWS CodeDeploy DeploymentGroup DeploymentStyle
             /// Update requires: No interruption
             /// </summary>
-			public Union<DeploymentStyle, IntrinsicFunction> DeploymentStyle { get; set; }
+			public DeploymentStyle DeploymentStyle { get; set; }
 
             /// <summary>
             /// Ec2TagFilters
             /// The EC2 tags that are already applied to EC2 instances that you want to include in the deployment
             /// group. AWS CodeDeploy includes all EC2 instances identified by any of the tags you specify in this
             /// deployment group. Duplicates are not allowed.
+            /// You can specify EC2TagFilters or Ec2TagSet, but not both.
             /// Required: No
             /// Type: List of AWS CodeDeploy DeploymentGroup Ec2TagFilters
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<EC2TagFilter>, IntrinsicFunction> Ec2TagFilters { get; set; }
+			public List<EC2TagFilter> Ec2TagFilters { get; set; }
+
+            /// <summary>
+            /// Ec2TagSet
+            /// Specifies information about groups of tags applied to EC2 instances. The deployment group will
+            /// include only EC2 instances identified by all the tag groups.
+            /// You can specify EC2TagFilters or Ec2TagSet, but not both.
+            /// Required: No
+            /// Type: AWS CodeDeploy DeploymentGroup EC2TagSet
+            /// Update requires: No interruption
+            /// </summary>
+			public EC2TagSet Ec2TagSet { get; set; }
 
             /// <summary>
             /// LoadBalancerInfo
@@ -122,7 +134,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AWS CodeDeploy DeploymentGroup LoadBalancerInfo
             /// Update requires: No interruption
             /// </summary>
-			public Union<LoadBalancerInfo, IntrinsicFunction> LoadBalancerInfo { get; set; }
+			public LoadBalancerInfo LoadBalancerInfo { get; set; }
 
             /// <summary>
             /// OnPremisesInstanceTagFilters
@@ -131,11 +143,17 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// tags you specify in this deployment group. To register on-premises instances with AWS CodeDeploy,
             /// see Working with On-Premises Instances for AWS CodeDeploy in the AWS CodeDeploy User Guide.
             /// Duplicates are not allowed.
+            /// You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
             /// Required: No
-            /// Type: List of AWS CodeDeploy DeploymentGroup OnPremisesInstanceTagFilters
+            /// Type: List of AWS CodeDeploy DeploymentGroup TagFilters
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<TagFilter>, IntrinsicFunction> OnPremisesInstanceTagFilters { get; set; }
+			public List<TagFilter> OnPremisesInstanceTagFilters { get; set; }
+
+            /// <summary>
+            /// OnPremisesTagSet
+            /// </summary>
+			public OnPremisesTagSet OnPremisesTagSet { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -157,12 +175,13 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: List of AWS CodeDeploy DeploymentGroup TriggerConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<TriggerConfig>, IntrinsicFunction> TriggerConfigurations { get; set; }
+			public List<TriggerConfig> TriggerConfigurations { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CodeDeploy::DeploymentGroup";
         
         public DeploymentGroupProperties Properties { get; } = new DeploymentGroupProperties();
+
     }
 }

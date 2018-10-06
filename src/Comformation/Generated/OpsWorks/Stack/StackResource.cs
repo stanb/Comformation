@@ -32,7 +32,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: A list of key-value pairs
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// ChefConfiguration
@@ -44,7 +44,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: AWS OpsWorks ChefConfiguration Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<ChefConfiguration, IntrinsicFunction> ChefConfiguration { get; set; }
+			public ChefConfiguration ChefConfiguration { get; set; }
 
             /// <summary>
             /// CloneAppIds
@@ -54,7 +54,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> CloneAppIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> CloneAppIds { get; set; }
 
             /// <summary>
             /// ClonePermissions
@@ -74,7 +74,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: AWS OpsWorks StackConfigurationManager Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<StackConfigurationManager, IntrinsicFunction> ConfigurationManager { get; set; }
+			public StackConfigurationManager ConfigurationManager { get; set; }
 
             /// <summary>
             /// CustomCookbooksSource
@@ -83,7 +83,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: AWS OpsWorks Source Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<Source, IntrinsicFunction> CustomCookbooksSource { get; set; }
+			public Source CustomCookbooksSource { get; set; }
 
             /// <summary>
             /// CustomJson
@@ -180,7 +180,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of AWS OpsWorks Stack ElasticIp
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ElasticIp>, IntrinsicFunction> ElasticIps { get; set; }
+			public List<ElasticIp> ElasticIps { get; set; }
 
             /// <summary>
             /// HostnameTheme
@@ -212,7 +212,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of AWS OpsWorks Stack RdsDbInstance
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<RdsDbInstance>, IntrinsicFunction> RdsDbInstances { get; set; }
+			public List<RdsDbInstance> RdsDbInstances { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -238,10 +238,10 @@ namespace Comformation.OpsWorks.Stack
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this AWS OpsWorks stack. Use
             /// tags to manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// UseCustomCookbooks
@@ -277,5 +277,6 @@ namespace Comformation.OpsWorks.Stack
         public string Type { get; } = "AWS::OpsWorks::Stack";
         
         public StackProperties Properties { get; } = new StackProperties();
+
     }
 }

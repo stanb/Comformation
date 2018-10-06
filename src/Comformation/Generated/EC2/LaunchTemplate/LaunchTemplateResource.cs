@@ -33,18 +33,19 @@ namespace Comformation.EC2.LaunchTemplate
             /// Type: Amazon EC2 LaunchTemplate LaunchTemplateData
             /// Update requires: No interruption
             /// </summary>
-			public Union<LaunchTemplateData, IntrinsicFunction> LaunchTemplateData { get; set; }
+			public LaunchTemplateData LaunchTemplateData { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::LaunchTemplate";
         
         public LaunchTemplateProperties Properties { get; } = new LaunchTemplateProperties();
+
     }
 
 	public static class LaunchTemplateAttributes
 	{
-        public static readonly ResourceAttribute<string> LatestVersionNumber = new ResourceAttribute<string>("LatestVersionNumber");
-        public static readonly ResourceAttribute<string> DefaultVersionNumber = new ResourceAttribute<string>("DefaultVersionNumber");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionNumber = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionNumber");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultVersionNumber = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultVersionNumber");
 	}
 }

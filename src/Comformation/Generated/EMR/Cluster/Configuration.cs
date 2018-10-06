@@ -33,7 +33,7 @@ namespace Comformation.EMR.Cluster
         /// Type: String-to-string map
         /// </summary>
         [JsonProperty("ConfigurationProperties")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> ConfigurationProperties { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> ConfigurationProperties { get; set; }
 
         /// <summary>
         /// Configurations
@@ -44,7 +44,7 @@ namespace Comformation.EMR.Cluster
         /// Type: List of Amazon EMR Cluster Configurations
         /// </summary>
         [JsonProperty("Configurations")]
-        public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
+        public List<Configuration> Configurations { get; set; }
 
     }
 }

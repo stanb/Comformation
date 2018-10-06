@@ -47,5 +47,6 @@ namespace Comformation.ServiceCatalog.TagOption
         public string Type { get; } = "AWS::ServiceCatalog::TagOption";
         
         public TagOptionProperties Properties { get; } = new TagOptionProperties();
+
     }
 }

@@ -32,12 +32,13 @@ namespace Comformation.SQS.QueuePolicy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Queues { get; set; }
+			public List<Union<string, IntrinsicFunction>> Queues { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SQS::QueuePolicy";
         
         public QueuePolicyProperties Properties { get; } = new QueuePolicyProperties();
+
     }
 }

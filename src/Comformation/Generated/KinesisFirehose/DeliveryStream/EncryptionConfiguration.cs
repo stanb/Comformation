@@ -21,7 +21,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Amazon Kinesis Data Firehose DeliveryStream KMSEncryptionConfig
         /// </summary>
         [JsonProperty("KMSEncryptionConfig")]
-        public Union<KMSEncryptionConfig, IntrinsicFunction> KMSEncryptionConfig { get; set; }
+        public KMSEncryptionConfig KMSEncryptionConfig { get; set; }
 
         /// <summary>
         /// NoEncryptionConfig

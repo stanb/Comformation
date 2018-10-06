@@ -22,7 +22,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
         /// Type: List of String values
         /// </summary>
         [JsonProperty("SubnetIds")]
-        public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         /// <summary>
         /// VpcId

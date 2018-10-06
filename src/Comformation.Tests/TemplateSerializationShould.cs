@@ -168,7 +168,7 @@ namespace Comformation.Tests
                                 }
                             }.ToJson()),
                             Path = "/",
-                            ManagedPolicyArns = new List<string>
+                            ManagedPolicyArns = new List<Union<string, IntrinsicFunction>>
                             {
                                 "arn:aws:iam::aws:policy/PowerUserAccess",
                                 "arn:aws:iam::aws:policy/IAMFullAccess"

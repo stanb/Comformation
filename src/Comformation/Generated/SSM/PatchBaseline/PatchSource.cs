@@ -15,7 +15,7 @@ namespace Comformation.SSM.PatchBaseline
         /// Products
         /// </summary>
         [JsonProperty("Products")]
-        public Union<List<string>, IntrinsicFunction> Products { get; set; }
+        public List<Union<string, IntrinsicFunction>> Products { get; set; }
 
         /// <summary>
         /// Configuration

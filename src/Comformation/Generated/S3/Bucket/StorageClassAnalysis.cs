@@ -22,7 +22,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataExport")]
-        public Union<DataExport, IntrinsicFunction> DataExport { get; set; }
+        public DataExport DataExport { get; set; }
 
     }
 }

@@ -44,10 +44,11 @@ namespace Comformation.Logs.LogGroup
         public string Type { get; } = "AWS::Logs::LogGroup";
         
         public LogGroupProperties Properties { get; } = new LogGroupProperties();
+
     }
 
 	public static class LogGroupAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

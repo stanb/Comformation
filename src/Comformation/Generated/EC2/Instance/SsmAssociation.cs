@@ -21,7 +21,7 @@ namespace Comformation.EC2.Instance
         /// Type: List of Amazon EC2 Instance SsmAssociations AssociationParameters
         /// </summary>
         [JsonProperty("AssociationParameters")]
-        public Union<List<AssociationParameter>, IntrinsicFunction> AssociationParameters { get; set; }
+        public List<AssociationParameter> AssociationParameters { get; set; }
 
         /// <summary>
         /// DocumentName

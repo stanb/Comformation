@@ -31,7 +31,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ProvisioningParameter>, IntrinsicFunction> ProvisioningParameters { get; set; }
+			public List<ProvisioningParameter> ProvisioningParameters { get; set; }
 
             /// <summary>
             /// ProductName
@@ -61,7 +61,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> NotificationArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -85,10 +85,10 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Tags
             /// One or more tags.
             /// Required: No
-            /// Type: List of property types
+            /// Type: List of Resource Tag property types
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// ProvisionedProductName
@@ -115,11 +115,12 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         public string Type { get; } = "AWS::ServiceCatalog::CloudFormationProvisionedProduct";
         
         public CloudFormationProvisionedProductProperties Properties { get; } = new CloudFormationProvisionedProductProperties();
+
     }
 
 	public static class CloudFormationProvisionedProductAttributes
 	{
-        public static readonly ResourceAttribute<string> CloudformationStackArn = new ResourceAttribute<string>("CloudformationStackArn");
-        public static readonly ResourceAttribute<string> RecordId = new ResourceAttribute<string>("RecordId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CloudformationStackArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("CloudformationStackArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RecordId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RecordId");
 	}
 }

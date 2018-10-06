@@ -19,6 +19,7 @@ namespace Comformation.EC2.SpotFleet
         /// The Availability Zone (AZ) of the placement group.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AvailabilityZone")]
         public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
@@ -28,9 +29,21 @@ namespace Comformation.EC2.SpotFleet
         /// The name of the placement group (for cluster instances).
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GroupName")]
         public Union<string, IntrinsicFunction> GroupName { get; set; }
+
+        /// <summary>
+        /// Tenancy
+        /// The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+        /// dedicated runs on single-tenant hardware. The host tenancy is not supported for Spot Instances.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Tenancy")]
+        public Union<string, IntrinsicFunction> Tenancy { get; set; }
 
     }
 }

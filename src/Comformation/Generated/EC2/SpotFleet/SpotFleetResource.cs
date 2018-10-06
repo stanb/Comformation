@@ -22,12 +22,13 @@ namespace Comformation.EC2.SpotFleet
             /// Type: Amazon EC2 SpotFleet SpotFleetRequestConfigData
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<SpotFleetRequestConfigData, IntrinsicFunction> SpotFleetRequestConfigData { get; set; }
+			public SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::SpotFleet";
         
         public SpotFleetProperties Properties { get; } = new SpotFleetProperties();
+
     }
 }

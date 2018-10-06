@@ -27,10 +27,11 @@ namespace Comformation.StepFunctions.Activity
         public string Type { get; } = "AWS::StepFunctions::Activity";
         
         public ActivityProperties Properties { get; } = new ActivityProperties();
+
     }
 
 	public static class ActivityAttributes
 	{
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

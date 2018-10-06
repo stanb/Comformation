@@ -23,7 +23,7 @@ namespace Comformation.Route53.HealthCheck
         /// Required: No
         /// </summary>
         [JsonProperty("AlarmIdentifier")]
-        public Union<AlarmIdentifier, IntrinsicFunction> AlarmIdentifier { get; set; }
+        public AlarmIdentifier AlarmIdentifier { get; set; }
 
         /// <summary>
         /// ChildHealthChecks
@@ -33,7 +33,7 @@ namespace Comformation.Route53.HealthCheck
         /// Type: List of String values
         /// </summary>
         [JsonProperty("ChildHealthChecks")]
-        public Union<List<string>, IntrinsicFunction> ChildHealthChecks { get; set; }
+        public List<Union<string, IntrinsicFunction>> ChildHealthChecks { get; set; }
 
         /// <summary>
         /// EnableSNI
@@ -144,7 +144,7 @@ namespace Comformation.Route53.HealthCheck
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Regions")]
-        public Union<List<string>, IntrinsicFunction> Regions { get; set; }
+        public List<Union<string, IntrinsicFunction>> Regions { get; set; }
 
         /// <summary>
         /// RequestInterval

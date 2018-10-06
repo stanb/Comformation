@@ -21,7 +21,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: List of String values
         /// </summary>
         [JsonProperty("CacheKeyParameters")]
-        public Union<List<string>, IntrinsicFunction> CacheKeyParameters { get; set; }
+        public List<Union<string, IntrinsicFunction>> CacheKeyParameters { get; set; }
 
         /// <summary>
         /// CacheNamespace
@@ -31,6 +31,29 @@ namespace Comformation.ApiGateway.Method
         /// </summary>
         [JsonProperty("CacheNamespace")]
         public Union<string, IntrinsicFunction> CacheNamespace { get; set; }
+
+        /// <summary>
+        /// ConnectionId
+        /// The ID of the VpcLink used for the integration when connectionType=VPC_LINK and undefined,
+        /// otherwise.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ConnectionId")]
+        public Union<string, IntrinsicFunction> ConnectionId { get; set; }
+
+        /// <summary>
+        /// ConnectionType
+        /// The type of the network connection to the integration endpoint. The valid value is INTERNET for
+        /// connections through the public routable internet or VPC_LINK for private connections between API
+        /// Gateway and a network load balancer in a VPC. The default value is INTERNET.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ConnectionType")]
+        public Union<string, IntrinsicFunction> ConnectionType { get; set; }
 
         /// <summary>
         /// ContentHandling
@@ -82,7 +105,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: List of Amazon API Gateway Method Integration IntegrationResponse property types
         /// </summary>
         [JsonProperty("IntegrationResponses")]
-        public Union<List<IntegrationResponse>, IntrinsicFunction> IntegrationResponses { get; set; }
+        public List<IntegrationResponse> IntegrationResponses { get; set; }
 
         /// <summary>
         /// PassthroughBehavior
@@ -110,7 +133,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("RequestParameters")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> RequestParameters { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> RequestParameters { get; set; }
 
         /// <summary>
         /// RequestTemplates
@@ -125,7 +148,18 @@ namespace Comformation.ApiGateway.Method
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("RequestTemplates")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> RequestTemplates { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> RequestTemplates { get; set; }
+
+        /// <summary>
+        /// TimeoutInMillis
+        /// Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29
+        /// seconds.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TimeoutInMillis")]
+        public Union<int, IntrinsicFunction> TimeoutInMillis { get; set; }
 
         /// <summary>
         /// Type

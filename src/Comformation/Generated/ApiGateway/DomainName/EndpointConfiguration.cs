@@ -23,7 +23,7 @@ namespace Comformation.ApiGateway.DomainName
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Types")]
-        public Union<List<string>, IntrinsicFunction> Types { get; set; }
+        public List<Union<string, IntrinsicFunction>> Types { get; set; }
 
     }
 }

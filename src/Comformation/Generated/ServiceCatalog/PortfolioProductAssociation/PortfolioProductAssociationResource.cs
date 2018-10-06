@@ -55,5 +55,6 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
         public string Type { get; } = "AWS::ServiceCatalog::PortfolioProductAssociation";
         
         public PortfolioProductAssociationProperties Properties { get; } = new PortfolioProductAssociationProperties();
+
     }
 }

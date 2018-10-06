@@ -20,7 +20,7 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: Amazon Cognito IdentityPool PushSync
             /// Update requires: No interruption
             /// </summary>
-			public Union<PushSync, IntrinsicFunction> PushSync { get; set; }
+			public PushSync PushSync { get; set; }
 
             /// <summary>
             /// CognitoIdentityProviders
@@ -29,7 +29,7 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: An array of Amazon Cognito IdentityPool CognitoIdentityProvider.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<CognitoIdentityProvider>, IntrinsicFunction> CognitoIdentityProviders { get; set; }
+			public List<CognitoIdentityProvider> CognitoIdentityProviders { get; set; }
 
             /// <summary>
             /// CognitoEvents
@@ -60,7 +60,7 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: Amazon Cognito IdentityPool CognitoStreams
             /// Update requires: No interruption
             /// </summary>
-			public Union<CognitoStreams, IntrinsicFunction> CognitoStreams { get; set; }
+			public CognitoStreams CognitoStreams { get; set; }
 
             /// <summary>
             /// IdentityPoolName
@@ -98,7 +98,7 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SamlProviderARNs { get; set; }
+			public List<Union<string, IntrinsicFunction>> SamlProviderARNs { get; set; }
 
             /// <summary>
             /// OpenIdConnectProviderARNs
@@ -107,17 +107,18 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> OpenIdConnectProviderARNs { get; set; }
+			public List<Union<string, IntrinsicFunction>> OpenIdConnectProviderARNs { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Cognito::IdentityPool";
         
         public IdentityPoolProperties Properties { get; } = new IdentityPoolProperties();
+
     }
 
 	public static class IdentityPoolAttributes
 	{
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

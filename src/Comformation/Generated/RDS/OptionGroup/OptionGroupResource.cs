@@ -40,7 +40,7 @@ namespace Comformation.RDS.OptionGroup
             /// Type: List of Amazon RDS OptionGroup OptionConfiguration
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<OptionConfiguration>, IntrinsicFunction> OptionConfigurations { get; set; }
+			public List<OptionConfiguration> OptionConfigurations { get; set; }
 
             /// <summary>
             /// OptionGroupDescription
@@ -55,15 +55,16 @@ namespace Comformation.RDS.OptionGroup
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this option group.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::OptionGroup";
         
         public OptionGroupProperties Properties { get; } = new OptionGroupProperties();
+
     }
 }

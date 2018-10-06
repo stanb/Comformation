@@ -32,7 +32,7 @@ namespace Comformation.SSM.Association
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Values")]
-        public Union<List<string>, IntrinsicFunction> Values { get; set; }
+        public List<Union<string, IntrinsicFunction>> Values { get; set; }
 
     }
 }

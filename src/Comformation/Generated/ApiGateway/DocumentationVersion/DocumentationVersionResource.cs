@@ -47,5 +47,6 @@ namespace Comformation.ApiGateway.DocumentationVersion
         public string Type { get; } = "AWS::ApiGateway::DocumentationVersion";
         
         public DocumentationVersionProperties Properties { get; } = new DocumentationVersionProperties();
+
     }
 }

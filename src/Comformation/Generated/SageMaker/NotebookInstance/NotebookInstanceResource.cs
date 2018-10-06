@@ -85,7 +85,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Type: List of Strings
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -104,20 +104,21 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Tags
             /// A list of tags to associate with the notebook instance.
             /// Required: No
-            /// Type: List of Amazon SageMaker NotebookInstance Tag
+            /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SageMaker::NotebookInstance";
         
         public NotebookInstanceProperties Properties { get; } = new NotebookInstanceProperties();
+
     }
 
 	public static class NotebookInstanceAttributes
 	{
-        public static readonly ResourceAttribute<string> NotebookInstanceName = new ResourceAttribute<string>("NotebookInstanceName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NotebookInstanceName = new ResourceAttribute<Union<string, IntrinsicFunction>>("NotebookInstanceName");
 	}
 }

@@ -22,7 +22,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnNames")]
-        public Union<List<string>, IntrinsicFunction> SkewedColumnNames { get; set; }
+        public List<Union<string, IntrinsicFunction>> SkewedColumnNames { get; set; }
 
         /// <summary>
         /// SkewedColumnValues
@@ -33,7 +33,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnValues")]
-        public Union<List<string>, IntrinsicFunction> SkewedColumnValues { get; set; }
+        public List<Union<string, IntrinsicFunction>> SkewedColumnValues { get; set; }
 
         /// <summary>
         /// SkewedColumnValueLocationMaps

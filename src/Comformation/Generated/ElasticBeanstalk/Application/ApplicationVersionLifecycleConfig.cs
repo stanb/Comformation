@@ -24,7 +24,7 @@ namespace Comformation.ElasticBeanstalk.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxAgeRule")]
-        public Union<MaxAgeRule, IntrinsicFunction> MaxAgeRule { get; set; }
+        public MaxAgeRule MaxAgeRule { get; set; }
 
         /// <summary>
         /// MaxCountRule
@@ -35,7 +35,7 @@ namespace Comformation.ElasticBeanstalk.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxCountRule")]
-        public Union<MaxCountRule, IntrinsicFunction> MaxCountRule { get; set; }
+        public MaxCountRule MaxCountRule { get; set; }
 
     }
 }

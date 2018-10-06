@@ -23,7 +23,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SseKmsEncryptedObjects")]
-        public Union<SseKmsEncryptedObjects, IntrinsicFunction> SseKmsEncryptedObjects { get; set; }
+        public SseKmsEncryptedObjects SseKmsEncryptedObjects { get; set; }
 
     }
 }

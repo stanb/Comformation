@@ -65,5 +65,6 @@ namespace Comformation.GuardDuty.IPSet
         public string Type { get; } = "AWS::GuardDuty::IPSet";
         
         public IPSetProperties Properties { get; } = new IPSetProperties();
+
     }
 }

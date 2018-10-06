@@ -21,7 +21,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
             /// Type: List of Elastic Load Balancing ListenerCertificate Certificate
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Certificate>, IntrinsicFunction> Certificates { get; set; }
+			public List<Certificate> Certificates { get; set; }
 
             /// <summary>
             /// ListenerArn
@@ -37,5 +37,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::ListenerCertificate";
         
         public ListenerCertificateProperties Properties { get; } = new ListenerCertificateProperties();
+
     }
 }

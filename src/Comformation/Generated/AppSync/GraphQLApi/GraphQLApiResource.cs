@@ -22,7 +22,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: AWS AppSync GraphQLApi OpenId Connect Config
             /// Update requires: No interruption
             /// </summary>
-			public Union<OpenIDConnectConfig, IntrinsicFunction> OpenIDConnectConfig { get; set; }
+			public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
 
             /// <summary>
             /// UserPoolConfig
@@ -31,7 +31,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: AWS AppSync GraphQLApi UserPoolConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<UserPoolConfig, IntrinsicFunction> UserPoolConfig { get; set; }
+			public UserPoolConfig UserPoolConfig { get; set; }
 
             /// <summary>
             /// Name
@@ -59,19 +59,20 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: AWS AppSync GraphQLApi LogConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<LogConfig, IntrinsicFunction> LogConfig { get; set; }
+			public LogConfig LogConfig { get; set; }
 
         }
     
         public string Type { get; } = "AWS::AppSync::GraphQLApi";
         
         public GraphQLApiProperties Properties { get; } = new GraphQLApiProperties();
+
     }
 
 	public static class GraphQLApiAttributes
 	{
-        public static readonly ResourceAttribute<string> GraphQLUrl = new ResourceAttribute<string>("GraphQLUrl");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> ApiId = new ResourceAttribute<string>("ApiId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> GraphQLUrl = new ResourceAttribute<Union<string, IntrinsicFunction>>("GraphQLUrl");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ApiId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ApiId");
 	}
 }

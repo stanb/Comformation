@@ -22,7 +22,7 @@ namespace Comformation.Config.DeliveryChannel
             /// Type: AWS Config DeliveryChannel ConfigSnapshotDeliveryProperties
             /// Update requires: No interruption
             /// </summary>
-			public Union<ConfigSnapshotDeliveryProperties, IntrinsicFunction> ConfigSnapshotDeliveryProperties { get; set; }
+			public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties { get; set; }
 
             /// <summary>
             /// Name
@@ -69,5 +69,6 @@ namespace Comformation.Config.DeliveryChannel
         public string Type { get; } = "AWS::Config::DeliveryChannel";
         
         public DeliveryChannelProperties Properties { get; } = new DeliveryChannelProperties();
+
     }
 }

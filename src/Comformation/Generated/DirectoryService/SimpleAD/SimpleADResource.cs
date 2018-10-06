@@ -91,18 +91,19 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Type: AWS Directory Service SimpleAD VpcSettings
             /// Update requires: Replacement
             /// </summary>
-			public Union<VpcSettings, IntrinsicFunction> VpcSettings { get; set; }
+			public VpcSettings VpcSettings { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DirectoryService::SimpleAD";
         
         public SimpleADProperties Properties { get; } = new SimpleADProperties();
+
     }
 
 	public static class SimpleADAttributes
 	{
-        public static readonly ResourceAttribute<string> Alias = new ResourceAttribute<string>("Alias");
-        public static readonly ResourceAttribute<List<string>> DnsIpAddresses = new ResourceAttribute<List<string>>("DnsIpAddresses");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Alias = new ResourceAttribute<Union<string, IntrinsicFunction>>("Alias");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> DnsIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("DnsIpAddresses");
 	}
 }

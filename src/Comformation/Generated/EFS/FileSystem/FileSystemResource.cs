@@ -33,7 +33,7 @@ namespace Comformation.EFS.FileSystem
             /// Type: Amazon Elastic File System FileSystem FileSystemTags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ElasticFileSystemTag>, IntrinsicFunction> FileSystemTags { get; set; }
+			public List<ElasticFileSystemTag> FileSystemTags { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -89,5 +89,6 @@ namespace Comformation.EFS.FileSystem
         public string Type { get; } = "AWS::EFS::FileSystem";
         
         public FileSystemProperties Properties { get; } = new FileSystemProperties();
+
     }
 }

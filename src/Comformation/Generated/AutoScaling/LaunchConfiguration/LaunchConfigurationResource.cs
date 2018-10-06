@@ -36,7 +36,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Type: A list of BlockDeviceMappings.
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
+			public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
 
             /// <summary>
             /// ClassicLinkVPCId
@@ -58,7 +58,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ClassicLinkVPCSecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> ClassicLinkVPCSecurityGroups { get; set; }
 
             /// <summary>
             /// EbsOptimized
@@ -193,7 +193,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// Type: A list of security groups.
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// SpotPrice
@@ -226,5 +226,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         public string Type { get; } = "AWS::AutoScaling::LaunchConfiguration";
         
         public LaunchConfigurationProperties Properties { get; } = new LaunchConfigurationProperties();
+
     }
 }

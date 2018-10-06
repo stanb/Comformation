@@ -24,7 +24,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReferenceSchema")]
-        public Union<ReferenceSchema, IntrinsicFunction> ReferenceSchema { get; set; }
+        public ReferenceSchema ReferenceSchema { get; set; }
 
         /// <summary>
         /// TableName
@@ -45,7 +45,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3ReferenceDataSource")]
-        public Union<S3ReferenceDataSource, IntrinsicFunction> S3ReferenceDataSource { get; set; }
+        public S3ReferenceDataSource S3ReferenceDataSource { get; set; }
 
     }
 }

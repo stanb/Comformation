@@ -21,7 +21,7 @@ namespace Comformation.DataPipeline.Pipeline
         /// Type: AWS Data Pipeline Parameter Objects Attributes
         /// </summary>
         [JsonProperty("Attributes")]
-        public Union<List<ParameterAttribute>, IntrinsicFunction> Attributes { get; set; }
+        public List<ParameterAttribute> Attributes { get; set; }
 
         /// <summary>
         /// Id

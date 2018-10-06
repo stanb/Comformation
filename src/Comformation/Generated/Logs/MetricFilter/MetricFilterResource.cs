@@ -48,12 +48,13 @@ namespace Comformation.Logs.MetricFilter
             /// want to specify multiple metric transformations, you must specify multiple metric filters.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<MetricTransformation>, IntrinsicFunction> MetricTransformations { get; set; }
+			public List<MetricTransformation> MetricTransformations { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Logs::MetricFilter";
         
         public MetricFilterProperties Properties { get; } = new MetricFilterProperties();
+
     }
 }

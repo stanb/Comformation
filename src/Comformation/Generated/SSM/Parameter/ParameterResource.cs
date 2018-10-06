@@ -67,11 +67,12 @@ namespace Comformation.SSM.Parameter
         public string Type { get; } = "AWS::SSM::Parameter";
         
         public ParameterProperties Properties { get; } = new ParameterProperties();
+
     }
 
 	public static class ParameterAttributes
 	{
-        public static readonly ResourceAttribute<string> Type = new ResourceAttribute<string>("Type");
-        public static readonly ResourceAttribute<string> Value = new ResourceAttribute<string>("Value");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Type = new ResourceAttribute<Union<string, IntrinsicFunction>>("Type");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Value = new ResourceAttribute<Union<string, IntrinsicFunction>>("Value");
 	}
 }

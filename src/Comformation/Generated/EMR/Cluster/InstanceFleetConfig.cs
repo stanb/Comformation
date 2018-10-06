@@ -25,7 +25,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceTypeConfigs")]
-        public Union<List<InstanceTypeConfig>, IntrinsicFunction> InstanceTypeConfigs { get; set; }
+        public List<InstanceTypeConfig> InstanceTypeConfigs { get; set; }
 
         /// <summary>
         /// LaunchSpecifications
@@ -35,7 +35,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchSpecifications")]
-        public Union<InstanceFleetProvisioningSpecifications, IntrinsicFunction> LaunchSpecifications { get; set; }
+        public InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
 
         /// <summary>
         /// Name

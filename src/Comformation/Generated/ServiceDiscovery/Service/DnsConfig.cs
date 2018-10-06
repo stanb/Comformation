@@ -28,7 +28,7 @@ namespace Comformation.ServiceDiscovery.Service
         /// 				
         /// </summary>
         [JsonProperty("DnsRecords")]
-        public Union<List<DnsRecord>, IntrinsicFunction> DnsRecords { get; set; }
+        public List<DnsRecord> DnsRecords { get; set; }
 
         /// <summary>
         /// RoutingPolicy

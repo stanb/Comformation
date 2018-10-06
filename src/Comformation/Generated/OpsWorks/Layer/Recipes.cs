@@ -23,7 +23,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Configure")]
-        public Union<List<string>, IntrinsicFunction> Configure { get; set; }
+        public List<Union<string, IntrinsicFunction>> Configure { get; set; }
 
         /// <summary>
         /// Deploy
@@ -33,7 +33,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Deploy")]
-        public Union<List<string>, IntrinsicFunction> Deploy { get; set; }
+        public List<Union<string, IntrinsicFunction>> Deploy { get; set; }
 
         /// <summary>
         /// Setup
@@ -43,7 +43,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Setup")]
-        public Union<List<string>, IntrinsicFunction> Setup { get; set; }
+        public List<Union<string, IntrinsicFunction>> Setup { get; set; }
 
         /// <summary>
         /// Shutdown
@@ -53,7 +53,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Shutdown")]
-        public Union<List<string>, IntrinsicFunction> Shutdown { get; set; }
+        public List<Union<string, IntrinsicFunction>> Shutdown { get; set; }
 
         /// <summary>
         /// Undeploy
@@ -63,7 +63,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Undeploy")]
-        public Union<List<string>, IntrinsicFunction> Undeploy { get; set; }
+        public List<Union<string, IntrinsicFunction>> Undeploy { get; set; }
 
     }
 }

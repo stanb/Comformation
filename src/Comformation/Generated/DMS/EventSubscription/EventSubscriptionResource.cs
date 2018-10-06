@@ -38,7 +38,7 @@ namespace Comformation.DMS.EventSubscription
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> EventCategories { get; set; }
+			public List<Union<string, IntrinsicFunction>> EventCategories { get; set; }
 
             /// <summary>
             /// Enabled
@@ -79,7 +79,7 @@ namespace Comformation.DMS.EventSubscription
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SourceIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SourceIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -88,12 +88,13 @@ namespace Comformation.DMS.EventSubscription
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DMS::EventSubscription";
         
         public EventSubscriptionProperties Properties { get; } = new EventSubscriptionProperties();
+
     }
 }

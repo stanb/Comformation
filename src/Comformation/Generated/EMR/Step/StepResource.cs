@@ -37,7 +37,7 @@ namespace Comformation.EMR.Step
             /// Type: Amazon EMR Step HadoopJarStepConfig
             /// Update requires: Replacement
             /// </summary>
-			public Union<HadoopJarStepConfig, IntrinsicFunction> HadoopJarStep { get; set; }
+			public HadoopJarStepConfig HadoopJarStep { get; set; }
 
             /// <summary>
             /// JobFlowId
@@ -62,5 +62,6 @@ namespace Comformation.EMR.Step
         public string Type { get; } = "AWS::EMR::Step";
         
         public StepProperties Properties { get; } = new StepProperties();
+
     }
 }

@@ -84,7 +84,7 @@ namespace Comformation.Glue.Table
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageDescriptor")]
-        public Union<StorageDescriptor, IntrinsicFunction> StorageDescriptor { get; set; }
+        public StorageDescriptor StorageDescriptor { get; set; }
 
         /// <summary>
         /// PartitionKeys
@@ -94,7 +94,7 @@ namespace Comformation.Glue.Table
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PartitionKeys")]
-        public Union<List<Column>, IntrinsicFunction> PartitionKeys { get; set; }
+        public List<Column> PartitionKeys { get; set; }
 
         /// <summary>
         /// Retention

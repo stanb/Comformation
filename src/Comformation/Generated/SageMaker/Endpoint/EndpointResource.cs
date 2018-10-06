@@ -40,20 +40,21 @@ namespace Comformation.SageMaker.Endpoint
             /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
             /// and Cost Management User Guide.
             /// Required: Yes
-            /// Type: List of Amazon SageMaker Endpoint Tag
+            /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SageMaker::Endpoint";
         
         public EndpointProperties Properties { get; } = new EndpointProperties();
+
     }
 
 	public static class EndpointAttributes
 	{
-        public static readonly ResourceAttribute<string> EndpointName = new ResourceAttribute<string>("EndpointName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> EndpointName = new ResourceAttribute<Union<string, IntrinsicFunction>>("EndpointName");
 	}
 }

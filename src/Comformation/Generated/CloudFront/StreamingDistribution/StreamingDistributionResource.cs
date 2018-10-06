@@ -23,27 +23,28 @@ namespace Comformation.CloudFront.StreamingDistribution
             /// Type: CloudFront StreamingDistribution StreamingDistributionConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<StreamingDistributionConfig, IntrinsicFunction> StreamingDistributionConfig { get; set; }
+			public StreamingDistributionConfig StreamingDistributionConfig { get; set; }
 
             /// <summary>
             /// Tags
             /// Key-value tags to assign to this streaming distribution.
             /// Required: Yes
-            /// Type: List of CloudFront StreamingDistribution Tag
+            /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// Duplicates not allowed.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CloudFront::StreamingDistribution";
         
         public StreamingDistributionProperties Properties { get; } = new StreamingDistributionProperties();
+
     }
 
 	public static class StreamingDistributionAttributes
 	{
-        public static readonly ResourceAttribute<string> DomainName = new ResourceAttribute<string>("DomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
 	}
 }

@@ -23,7 +23,7 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
             /// Type: List of Amazon SageMaker NotebookInstanceLifecycleConfig NotebookInstanceLifecycleHook
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<NotebookInstanceLifecycleHook>, IntrinsicFunction> OnStart { get; set; }
+			public List<NotebookInstanceLifecycleHook> OnStart { get; set; }
 
             /// <summary>
             /// NotebookInstanceLifecycleConfigName
@@ -41,17 +41,18 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
             /// Type: List of Amazon SageMaker NotebookInstanceLifecycleConfig NotebookInstanceLifecycleHook
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<NotebookInstanceLifecycleHook>, IntrinsicFunction> OnCreate { get; set; }
+			public List<NotebookInstanceLifecycleHook> OnCreate { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SageMaker::NotebookInstanceLifecycleConfig";
         
         public NotebookInstanceLifecycleConfigProperties Properties { get; } = new NotebookInstanceLifecycleConfigProperties();
+
     }
 
 	public static class NotebookInstanceLifecycleConfigAttributes
 	{
-        public static readonly ResourceAttribute<string> NotebookInstanceLifecycleConfigName = new ResourceAttribute<string>("NotebookInstanceLifecycleConfigName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NotebookInstanceLifecycleConfigName = new ResourceAttribute<Union<string, IntrinsicFunction>>("NotebookInstanceLifecycleConfigName");
 	}
 }

@@ -21,7 +21,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: Elastic Load Balancing AccessLoggingPolicy
             /// Update requires: No interruption
             /// </summary>
-			public Union<AccessLoggingPolicy, IntrinsicFunction> AccessLoggingPolicy { get; set; }
+			public AccessLoggingPolicy AccessLoggingPolicy { get; set; }
 
             /// <summary>
             /// AppCookieStickinessPolicy
@@ -31,7 +31,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: A list of AppCookieStickinessPolicy objects.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<AppCookieStickinessPolicy>, IntrinsicFunction> AppCookieStickinessPolicy { get; set; }
+			public List<AppCookieStickinessPolicy> AppCookieStickinessPolicy { get; set; }
 
             /// <summary>
             /// AvailabilityZones
@@ -43,7 +43,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Update requires: Replacement if you did not have an Availability Zone specified and you are adding
             /// one or if you are removing all Availability Zones. Otherwise, update requires no interruption.
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
+			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// ConnectionDrainingPolicy
@@ -52,7 +52,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: Elastic Load Balancing ConnectionDrainingPolicy
             /// Update requires: No interruption
             /// </summary>
-			public Union<ConnectionDrainingPolicy, IntrinsicFunction> ConnectionDrainingPolicy { get; set; }
+			public ConnectionDrainingPolicy ConnectionDrainingPolicy { get; set; }
 
             /// <summary>
             /// ConnectionSettings
@@ -61,7 +61,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: Elastic Load Balancing ConnectionSettings
             /// Update requires: No interruption
             /// </summary>
-			public Union<ConnectionSettings, IntrinsicFunction> ConnectionSettings { get; set; }
+			public ConnectionSettings ConnectionSettings { get; set; }
 
             /// <summary>
             /// CrossZone
@@ -82,7 +82,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Update requires: Replacement if you did not have a health check specified and you are adding one or
             /// if you are removing a health check. Otherwise, update requires no interruption.
             /// </summary>
-			public Union<HealthCheck, IntrinsicFunction> HealthCheck { get; set; }
+			public HealthCheck HealthCheck { get; set; }
 
             /// <summary>
             /// Instances
@@ -91,7 +91,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Instances { get; set; }
+			public List<Union<string, IntrinsicFunction>> Instances { get; set; }
 
             /// <summary>
             /// LBCookieStickinessPolicy
@@ -102,7 +102,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: A list of LBCookieStickinessPolicy objects.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<LBCookieStickinessPolicy>, IntrinsicFunction> LBCookieStickinessPolicy { get; set; }
+			public List<LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
 
             /// <summary>
             /// Listeners
@@ -116,7 +116,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: A list of ElasticLoadBalancing Listener Property Type objects.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Listeners>, IntrinsicFunction> Listeners { get; set; }
+			public List<Listeners> Listeners { get; set; }
 
             /// <summary>
             /// LoadBalancerName
@@ -143,7 +143,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: A list of ElasticLoadBalancing policy objects.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Policies>, IntrinsicFunction> Policies { get; set; }
+			public List<Policies> Policies { get; set; }
 
             /// <summary>
             /// Scheme
@@ -166,7 +166,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// (VPC).
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// Subnets
@@ -183,30 +183,31 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// the load balancer to use a subnet in different Availability Zone. After the update is complete,
             /// update the load balancer to use the new subnet that is in the original Availability Zone.
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
+			public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key-value pairs) for this load balancer.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElasticLoadBalancing::LoadBalancer";
         
         public LoadBalancerProperties Properties { get; } = new LoadBalancerProperties();
+
     }
 
 	public static class LoadBalancerAttributes
 	{
-        public static readonly ResourceAttribute<string> CanonicalHostedZoneName = new ResourceAttribute<string>("CanonicalHostedZoneName");
-        public static readonly ResourceAttribute<string> CanonicalHostedZoneNameID = new ResourceAttribute<string>("CanonicalHostedZoneNameID");
-        public static readonly ResourceAttribute<string> DNSName = new ResourceAttribute<string>("DNSName");
-        public static readonly ResourceAttribute<string> SourceSecurityGroup_GroupName = new ResourceAttribute<string>("SourceSecurityGroup", "GroupName");
-        public static readonly ResourceAttribute<string> SourceSecurityGroup_OwnerAlias = new ResourceAttribute<string>("SourceSecurityGroup", "OwnerAlias");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CanonicalHostedZoneName = new ResourceAttribute<Union<string, IntrinsicFunction>>("CanonicalHostedZoneName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CanonicalHostedZoneNameID = new ResourceAttribute<Union<string, IntrinsicFunction>>("CanonicalHostedZoneNameID");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DNSName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DNSName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SourceSecurityGroup_GroupName = new ResourceAttribute<Union<string, IntrinsicFunction>>("SourceSecurityGroup", "GroupName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SourceSecurityGroup_OwnerAlias = new ResourceAttribute<Union<string, IntrinsicFunction>>("SourceSecurityGroup", "OwnerAlias");
 	}
 }

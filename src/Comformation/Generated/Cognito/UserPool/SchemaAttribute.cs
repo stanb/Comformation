@@ -49,7 +49,7 @@ namespace Comformation.Cognito.UserPool
         /// Required: No
         /// </summary>
         [JsonProperty("StringAttributeConstraints")]
-        public Union<StringAttributeConstraints, IntrinsicFunction> StringAttributeConstraints { get; set; }
+        public StringAttributeConstraints StringAttributeConstraints { get; set; }
 
         /// <summary>
         /// Required
@@ -68,7 +68,7 @@ namespace Comformation.Cognito.UserPool
         /// Required: No
         /// </summary>
         [JsonProperty("NumberAttributeConstraints")]
-        public Union<NumberAttributeConstraints, IntrinsicFunction> NumberAttributeConstraints { get; set; }
+        public NumberAttributeConstraints NumberAttributeConstraints { get; set; }
 
         /// <summary>
         /// Name

@@ -90,5 +90,6 @@ namespace Comformation.SNS.Subscription
         public string Type { get; } = "AWS::SNS::Subscription";
         
         public SubscriptionProperties Properties { get; } = new SubscriptionProperties();
+
     }
 }

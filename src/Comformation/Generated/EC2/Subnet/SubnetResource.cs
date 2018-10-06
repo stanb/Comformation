@@ -72,10 +72,10 @@ namespace Comformation.EC2.Subnet
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this subnet.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -93,13 +93,14 @@ namespace Comformation.EC2.Subnet
         public string Type { get; } = "AWS::EC2::Subnet";
         
         public SubnetProperties Properties { get; } = new SubnetProperties();
+
     }
 
 	public static class SubnetAttributes
 	{
-        public static readonly ResourceAttribute<string> AvailabilityZone = new ResourceAttribute<string>("AvailabilityZone");
-        public static readonly ResourceAttribute<List<string>> Ipv6CidrBlocks = new ResourceAttribute<List<string>>("Ipv6CidrBlocks");
-        public static readonly ResourceAttribute<string> NetworkAclAssociationId = new ResourceAttribute<string>("NetworkAclAssociationId");
-        public static readonly ResourceAttribute<string> VpcId = new ResourceAttribute<string>("VpcId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AvailabilityZone = new ResourceAttribute<Union<string, IntrinsicFunction>>("AvailabilityZone");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> Ipv6CidrBlocks = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("Ipv6CidrBlocks");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NetworkAclAssociationId = new ResourceAttribute<Union<string, IntrinsicFunction>>("NetworkAclAssociationId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> VpcId = new ResourceAttribute<Union<string, IntrinsicFunction>>("VpcId");
 	}
 }

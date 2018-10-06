@@ -22,7 +22,7 @@ namespace Comformation.SES.ReceiptFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IpFilter")]
-        public Union<IpFilter, IntrinsicFunction> IpFilter { get; set; }
+        public IpFilter IpFilter { get; set; }
 
         /// <summary>
         /// Name

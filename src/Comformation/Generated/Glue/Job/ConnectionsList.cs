@@ -21,7 +21,7 @@ namespace Comformation.Glue.Job
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Connections")]
-        public Union<List<string>, IntrinsicFunction> Connections { get; set; }
+        public List<Union<string, IntrinsicFunction>> Connections { get; set; }
 
     }
 }

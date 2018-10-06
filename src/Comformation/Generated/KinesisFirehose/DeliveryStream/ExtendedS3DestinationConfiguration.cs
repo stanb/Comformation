@@ -34,7 +34,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BufferingHints")]
-        public Union<BufferingHints, IntrinsicFunction> BufferingHints { get; set; }
+        public BufferingHints BufferingHints { get; set; }
 
         /// <summary>
         /// CloudWatchLoggingOptions
@@ -44,7 +44,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
-        public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// CompressionFormat
@@ -67,7 +67,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
-        public Union<EncryptionConfiguration, IntrinsicFunction> EncryptionConfiguration { get; set; }
+        public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
         /// Prefix
@@ -89,7 +89,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
-        public Union<ProcessingConfiguration, IntrinsicFunction> ProcessingConfiguration { get; set; }
+        public ProcessingConfiguration ProcessingConfiguration { get; set; }
 
         /// <summary>
         /// RoleARN
@@ -110,7 +110,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupConfiguration")]
-        public Union<S3DestinationConfiguration, IntrinsicFunction> S3BackupConfiguration { get; set; }
+        public S3DestinationConfiguration S3BackupConfiguration { get; set; }
 
         /// <summary>
         /// S3BackupMode

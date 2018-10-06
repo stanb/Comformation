@@ -23,7 +23,7 @@ namespace Comformation.WAF.ByteMatchSet
         /// Type: AWS WAF ByteMatchSet ByteMatchTuples FieldToMatch
         /// </summary>
         [JsonProperty("FieldToMatch")]
-        public Union<FieldToMatch, IntrinsicFunction> FieldToMatch { get; set; }
+        public FieldToMatch FieldToMatch { get; set; }
 
         /// <summary>
         /// PositionalConstraint

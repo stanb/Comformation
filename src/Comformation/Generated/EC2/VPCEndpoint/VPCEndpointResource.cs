@@ -16,13 +16,24 @@ namespace Comformation.EC2.VPCEndpoint
         public class VPCEndpointProperties
         {
             /// <summary>
-            /// VpcId
-            /// The ID of the VPC in which the endpoint will be used.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
+            /// PolicyDocument
+            /// [Gateway endpoint] A policy to attach to the endpoint that controls access to the service. The
+            /// policy must be valid JSON. The default policy allows full access to the AWS service. For more
+            /// information, see Controlling Access to Services in the Amazon VPC User Guide.
+            /// Required: No
+            /// Type: JSON object
+            /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+
+            /// <summary>
+            /// PrivateDnsEnabled
+            /// [Interface endpoint] Indicates whether to associate a private hosted zone with the specified VPC.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> PrivateDnsEnabled { get; set; }
 
             /// <summary>
             /// RouteTableIds
@@ -31,7 +42,17 @@ namespace Comformation.EC2.VPCEndpoint
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> RouteTableIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> RouteTableIds { get; set; }
+
+            /// <summary>
+            /// SecurityGroupIds
+            /// [Interface endpoint] The ID of one or more security groups to associate with the endpoint network
+            /// interface.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// ServiceName
@@ -44,49 +65,40 @@ namespace Comformation.EC2.VPCEndpoint
 			public Union<string, IntrinsicFunction> ServiceName { get; set; }
 
             /// <summary>
-            /// PolicyDocument
-            /// [Gateway endpoint] A policy to attach to the endpoint that controls access to the service. The
-            /// policy must be valid JSON. The default policy allows full access to the AWS service. For more
-            /// information, see Controlling Access to Services in the Amazon VPC User Guide.
-            /// Required: No
-            /// Type: JSON object
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
-
-            /// <summary>
-            /// IsPrivateDnsEnabled
-            /// </summary>
-			public Union<bool, IntrinsicFunction> IsPrivateDnsEnabled { get; set; }
-
-            /// <summary>
             /// SubnetIds
             /// [Interface endpoint] The ID of one or more subnets in which to create an endpoint network interface.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
-
-            /// <summary>
-            /// SecurityGroupIds
-            /// [Interface endpoint] The ID of one or more security groups to associate with the endpoint network
-            /// interface.
-            /// Required: No
-            /// Type: List of String values
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// VPCEndpointType
             /// </summary>
 			public Union<string, IntrinsicFunction> VPCEndpointType { get; set; }
 
+            /// <summary>
+            /// VpcId
+            /// The ID of the VPC in which the endpoint will be used.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> VpcId { get; set; }
+
         }
     
         public string Type { get; } = "AWS::EC2::VPCEndpoint";
         
         public VPCEndpointProperties Properties { get; } = new VPCEndpointProperties();
+
     }
+
+	public static class VPCEndpointAttributes
+	{
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CreationTimestamp = new ResourceAttribute<Union<string, IntrinsicFunction>>("CreationTimestamp");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> DnsEntries = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("DnsEntries");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> NetworkInterfaceIds = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("NetworkInterfaceIds");
+	}
 }

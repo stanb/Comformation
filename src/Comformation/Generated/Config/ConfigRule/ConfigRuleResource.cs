@@ -69,7 +69,7 @@ namespace Comformation.Config.ConfigRule
             /// Type: AWS Config ConfigRule Scope
             /// Update requires: No interruption
             /// </summary>
-			public Union<Scope, IntrinsicFunction> Scope { get; set; }
+			public Scope Scope { get; set; }
 
             /// <summary>
             /// Source
@@ -79,19 +79,20 @@ namespace Comformation.Config.ConfigRule
             /// Type: AWS Config ConfigRule Source
             /// Update requires: No interruption
             /// </summary>
-			public Union<Source, IntrinsicFunction> Source { get; set; }
+			public Source Source { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Config::ConfigRule";
         
         public ConfigRuleProperties Properties { get; } = new ConfigRuleProperties();
+
     }
 
 	public static class ConfigRuleAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> Compliance_Type = new ResourceAttribute<string>("Compliance", "Type");
-        public static readonly ResourceAttribute<string> ConfigRuleId = new ResourceAttribute<string>("ConfigRuleId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Compliance_Type = new ResourceAttribute<Union<string, IntrinsicFunction>>("Compliance", "Type");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigRuleId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigRuleId");
 	}
 }

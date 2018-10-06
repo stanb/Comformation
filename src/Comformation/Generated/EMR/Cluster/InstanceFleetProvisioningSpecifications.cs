@@ -25,7 +25,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SpotSpecification")]
-        public Union<SpotProvisioningSpecification, IntrinsicFunction> SpotSpecification { get; set; }
+        public SpotProvisioningSpecification SpotSpecification { get; set; }
 
     }
 }

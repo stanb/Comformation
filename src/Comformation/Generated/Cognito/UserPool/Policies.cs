@@ -21,7 +21,7 @@ namespace Comformation.Cognito.UserPool
         /// Required: No
         /// </summary>
         [JsonProperty("PasswordPolicy")]
-        public Union<PasswordPolicy, IntrinsicFunction> PasswordPolicy { get; set; }
+        public PasswordPolicy PasswordPolicy { get; set; }
 
     }
 }

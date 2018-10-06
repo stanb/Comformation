@@ -22,7 +22,7 @@ namespace Comformation.WAF.ByteMatchSet
             /// Type: List of AWS WAF ByteMatchSet ByteMatchTuples
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ByteMatchTuple>, IntrinsicFunction> ByteMatchTuples { get; set; }
+			public List<ByteMatchTuple> ByteMatchTuples { get; set; }
 
             /// <summary>
             /// Name
@@ -38,5 +38,6 @@ namespace Comformation.WAF.ByteMatchSet
         public string Type { get; } = "AWS::WAF::ByteMatchSet";
         
         public ByteMatchSetProperties Properties { get; } = new ByteMatchSetProperties();
+
     }
 }

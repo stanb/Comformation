@@ -32,7 +32,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaFunctionAssociations")]
-        public Union<List<LambdaFunctionAssociation>, IntrinsicFunction> LambdaFunctionAssociations { get; set; }
+        public List<LambdaFunctionAssociation> LambdaFunctionAssociations { get; set; }
 
         /// <summary>
         /// TargetOriginId
@@ -63,7 +63,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("TrustedSigners")]
-        public Union<List<string>, IntrinsicFunction> TrustedSigners { get; set; }
+        public List<Union<string, IntrinsicFunction>> TrustedSigners { get; set; }
 
         /// <summary>
         /// DefaultTTL
@@ -100,7 +100,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("AllowedMethods")]
-        public Union<List<string>, IntrinsicFunction> AllowedMethods { get; set; }
+        public List<Union<string, IntrinsicFunction>> AllowedMethods { get; set; }
 
         /// <summary>
         /// CachedMethods
@@ -111,7 +111,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("CachedMethods")]
-        public Union<List<string>, IntrinsicFunction> CachedMethods { get; set; }
+        public List<Union<string, IntrinsicFunction>> CachedMethods { get; set; }
 
         /// <summary>
         /// SmoothStreaming
@@ -130,7 +130,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: ForwardedValues type
         /// </summary>
         [JsonProperty("ForwardedValues")]
-        public Union<ForwardedValues, IntrinsicFunction> ForwardedValues { get; set; }
+        public ForwardedValues ForwardedValues { get; set; }
 
         /// <summary>
         /// MinTTL

@@ -30,7 +30,7 @@ namespace Comformation.KinesisAnalytics.Application
             /// Type: List of Kinesis Data Analytics Application Input
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Input>, IntrinsicFunction> Inputs { get; set; }
+			public List<Input> Inputs { get; set; }
 
             /// <summary>
             /// ApplicationDescription
@@ -55,5 +55,6 @@ namespace Comformation.KinesisAnalytics.Application
         public string Type { get; } = "AWS::KinesisAnalytics::Application";
         
         public ApplicationProperties Properties { get; } = new ApplicationProperties();
+
     }
 }

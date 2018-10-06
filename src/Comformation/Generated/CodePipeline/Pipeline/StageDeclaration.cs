@@ -21,7 +21,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Type: List of AWS CodePipeline Pipeline Stages Actions
         /// </summary>
         [JsonProperty("Actions")]
-        public Union<List<ActionDeclaration>, IntrinsicFunction> Actions { get; set; }
+        public List<ActionDeclaration> Actions { get; set; }
 
         /// <summary>
         /// Blockers
@@ -30,7 +30,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Type: List of AWS CodePipeline Pipeline Stages Blockers
         /// </summary>
         [JsonProperty("Blockers")]
-        public Union<List<BlockerDeclaration>, IntrinsicFunction> Blockers { get; set; }
+        public List<BlockerDeclaration> Blockers { get; set; }
 
         /// <summary>
         /// Name

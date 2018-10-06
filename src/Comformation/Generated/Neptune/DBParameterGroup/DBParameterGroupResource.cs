@@ -50,7 +50,7 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Type: A list of resource tags.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -66,5 +66,6 @@ namespace Comformation.Neptune.DBParameterGroup
         public string Type { get; } = "AWS::Neptune::DBParameterGroup";
         
         public DBParameterGroupProperties Properties { get; } = new DBParameterGroupProperties();
+
     }
 }

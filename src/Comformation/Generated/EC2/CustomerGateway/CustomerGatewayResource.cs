@@ -36,10 +36,10 @@ namespace Comformation.EC2.CustomerGateway
             /// Tags
             /// The tags that you want to attach to the resource.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags.
+            /// Type: Resource Tag.
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
@@ -56,5 +56,6 @@ namespace Comformation.EC2.CustomerGateway
         public string Type { get; } = "AWS::EC2::CustomerGateway";
         
         public CustomerGatewayProperties Properties { get; } = new CustomerGatewayProperties();
+
     }
 }

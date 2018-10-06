@@ -23,7 +23,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BounceAction")]
-        public Union<BounceAction, IntrinsicFunction> BounceAction { get; set; }
+        public BounceAction BounceAction { get; set; }
 
         /// <summary>
         /// S3Action
@@ -34,7 +34,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Action")]
-        public Union<S3Action, IntrinsicFunction> S3Action { get; set; }
+        public S3Action S3Action { get; set; }
 
         /// <summary>
         /// StopAction
@@ -45,7 +45,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StopAction")]
-        public Union<StopAction, IntrinsicFunction> StopAction { get; set; }
+        public StopAction StopAction { get; set; }
 
         /// <summary>
         /// SNSAction
@@ -55,7 +55,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SNSAction")]
-        public Union<SNSAction, IntrinsicFunction> SNSAction { get; set; }
+        public SNSAction SNSAction { get; set; }
 
         /// <summary>
         /// WorkmailAction
@@ -65,7 +65,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("WorkmailAction")]
-        public Union<WorkmailAction, IntrinsicFunction> WorkmailAction { get; set; }
+        public WorkmailAction WorkmailAction { get; set; }
 
         /// <summary>
         /// AddHeaderAction
@@ -75,7 +75,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AddHeaderAction")]
-        public Union<AddHeaderAction, IntrinsicFunction> AddHeaderAction { get; set; }
+        public AddHeaderAction AddHeaderAction { get; set; }
 
         /// <summary>
         /// LambdaAction
@@ -85,7 +85,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaAction")]
-        public Union<LambdaAction, IntrinsicFunction> LambdaAction { get; set; }
+        public LambdaAction LambdaAction { get; set; }
 
     }
 }

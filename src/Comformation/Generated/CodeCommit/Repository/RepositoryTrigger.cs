@@ -23,7 +23,7 @@ namespace Comformation.CodeCommit.Repository
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Events")]
-        public Union<List<string>, IntrinsicFunction> Events { get; set; }
+        public List<Union<string, IntrinsicFunction>> Events { get; set; }
 
         /// <summary>
         /// Branches
@@ -34,7 +34,7 @@ namespace Comformation.CodeCommit.Repository
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Branches")]
-        public Union<List<string>, IntrinsicFunction> Branches { get; set; }
+        public List<Union<string, IntrinsicFunction>> Branches { get; set; }
 
         /// <summary>
         /// CustomData

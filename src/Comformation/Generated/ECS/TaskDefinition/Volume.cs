@@ -15,6 +15,17 @@ namespace Comformation.ECS.TaskDefinition
     {
 
         /// <summary>
+        /// DockerVolumeConfiguration
+        /// Specifies the configuration of a Docker volume. This parameter is specified when using Docker
+        /// volumes. Docker volumes are only supported when using the EC2 launch type. Windows containers only
+        /// support the use of the local driver. To use bind mounts, specify a host instead.
+        /// Required: No
+        /// Type: Amazon ECS TaskDefinition DockerVolumeConfiguration
+        /// </summary>
+        [JsonProperty("DockerVolumeConfiguration")]
+        public DockerVolumeConfiguration DockerVolumeConfiguration { get; set; }
+
+        /// <summary>
         /// Host
         /// Determines whether your data volume persists on the host container instance and at the location
         /// where it is stored.
@@ -22,7 +33,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: Amazon Elastic Container Service TaskDefinition Volumes Host
         /// </summary>
         [JsonProperty("Host")]
-        public Union<HostVolumeProperties, IntrinsicFunction> Host { get; set; }
+        public HostVolumeProperties Host { get; set; }
 
         /// <summary>
         /// Name

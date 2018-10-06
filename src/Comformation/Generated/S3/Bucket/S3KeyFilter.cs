@@ -21,7 +21,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of Amazon S3 Bucket FilterRule
         /// </summary>
         [JsonProperty("Rules")]
-        public Union<List<FilterRule>, IntrinsicFunction> Rules { get; set; }
+        public List<FilterRule> Rules { get; set; }
 
     }
 }

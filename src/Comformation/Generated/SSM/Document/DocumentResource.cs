@@ -42,15 +42,16 @@ namespace Comformation.SSM.Document
             /// AWS CloudFormation resource tags to apply to the document, which can help you identify and
             /// categorize these resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SSM::Document";
         
         public DocumentProperties Properties { get; } = new DocumentProperties();
+
     }
 }

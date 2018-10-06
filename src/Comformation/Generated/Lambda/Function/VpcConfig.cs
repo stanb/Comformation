@@ -23,7 +23,7 @@ namespace Comformation.Lambda.Function
         /// Type: List of String values
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
         /// <summary>
         /// SubnetIds
@@ -33,7 +33,7 @@ namespace Comformation.Lambda.Function
         /// Type: List of String values
         /// </summary>
         [JsonProperty("SubnetIds")]
-        public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
     }
 }

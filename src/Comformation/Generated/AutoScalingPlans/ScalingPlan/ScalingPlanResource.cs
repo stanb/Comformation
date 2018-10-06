@@ -20,7 +20,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
             /// Type: AWS Auto Scaling ScalingPlan ApplicationSource
             /// Update requires: No interruption
             /// </summary>
-			public Union<ApplicationSource, IntrinsicFunction> ApplicationSource { get; set; }
+			public ApplicationSource ApplicationSource { get; set; }
 
             /// <summary>
             /// ScalingInstructions
@@ -29,12 +29,13 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
             /// Type: List of AWS Auto Scaling ScalingPlan ScalingInstruction property types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ScalingInstruction>, IntrinsicFunction> ScalingInstructions { get; set; }
+			public List<ScalingInstruction> ScalingInstructions { get; set; }
 
         }
     
         public string Type { get; } = "AWS::AutoScalingPlans::ScalingPlan";
         
         public ScalingPlanProperties Properties { get; } = new ScalingPlanProperties();
+
     }
 }

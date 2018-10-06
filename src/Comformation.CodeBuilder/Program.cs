@@ -109,6 +109,8 @@ namespace Comformation.CodeBuilder
                                 Documentation = classDesc,
                                 clazz.Path,
                                 clazz.Type,
+                                clazz.HasCreationPolicy,
+                                clazz.HasUpdatePolicy,
                                 Properties = clazz.Properties.Select(prop =>
                                 {
                                     var propDoc = docParser != null ? docParser.GetPropertyDocumentation(prop.Name) : new[] { prop.Name };

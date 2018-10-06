@@ -95,12 +95,13 @@ namespace Comformation.AppSync.Resolver
         public string Type { get; } = "AWS::AppSync::Resolver";
         
         public ResolverProperties Properties { get; } = new ResolverProperties();
+
     }
 
 	public static class ResolverAttributes
 	{
-        public static readonly ResourceAttribute<string> TypeName = new ResourceAttribute<string>("TypeName");
-        public static readonly ResourceAttribute<string> ResolverArn = new ResourceAttribute<string>("ResolverArn");
-        public static readonly ResourceAttribute<string> FieldName = new ResourceAttribute<string>("FieldName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> TypeName = new ResourceAttribute<Union<string, IntrinsicFunction>>("TypeName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ResolverArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("ResolverArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FieldName = new ResourceAttribute<Union<string, IntrinsicFunction>>("FieldName");
 	}
 }

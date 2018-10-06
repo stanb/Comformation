@@ -31,7 +31,7 @@ namespace Comformation.Config.ConfigRule
         /// Type: List of AWS Config ConfigRule SourceDetails
         /// </summary>
         [JsonProperty("SourceDetails")]
-        public Union<List<SourceDetail>, IntrinsicFunction> SourceDetails { get; set; }
+        public List<SourceDetail> SourceDetails { get; set; }
 
         /// <summary>
         /// SourceIdentifier

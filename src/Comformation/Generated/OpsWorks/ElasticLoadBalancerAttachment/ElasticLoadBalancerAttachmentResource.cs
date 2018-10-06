@@ -36,5 +36,6 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
         public string Type { get; } = "AWS::OpsWorks::ElasticLoadBalancerAttachment";
         
         public ElasticLoadBalancerAttachmentProperties Properties { get; } = new ElasticLoadBalancerAttachmentProperties();
+
     }
 }

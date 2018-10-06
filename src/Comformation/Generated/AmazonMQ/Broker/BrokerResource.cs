@@ -20,7 +20,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// EngineVersion
@@ -41,7 +41,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Type: Amazon MQ Broker ConfigurationId
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<ConfigurationId, IntrinsicFunction> Configuration { get; set; }
+			public ConfigurationId Configuration { get; set; }
 
             /// <summary>
             /// MaintenanceWindowStartTime
@@ -50,7 +50,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Type: Amazon MQ Broker MaintenanceWindow
             /// Update requires: Replacement
             /// </summary>
-			public Union<MaintenanceWindow, IntrinsicFunction> MaintenanceWindowStartTime { get; set; }
+			public MaintenanceWindow MaintenanceWindowStartTime { get; set; }
 
             /// <summary>
             /// HostInstanceType
@@ -80,7 +80,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Type: List of Amazon MQ Broker User property types
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<List<User>, IntrinsicFunction> Users { get; set; }
+			public List<User> Users { get; set; }
 
             /// <summary>
             /// Logs
@@ -89,7 +89,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Type: Amazon MQ Broker LogsConfiguration
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<LogList, IntrinsicFunction> Logs { get; set; }
+			public LogList Logs { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -100,7 +100,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// BrokerName
@@ -147,10 +147,11 @@ namespace Comformation.AmazonMQ.Broker
         public string Type { get; } = "AWS::AmazonMQ::Broker";
         
         public BrokerProperties Properties { get; } = new BrokerProperties();
+
     }
 
 	public static class BrokerAttributes
 	{
-        public static readonly ResourceAttribute<string> BrokerId = new ResourceAttribute<string>("BrokerId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> BrokerId = new ResourceAttribute<Union<string, IntrinsicFunction>>("BrokerId");
 	}
 }

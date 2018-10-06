@@ -23,7 +23,7 @@ namespace Comformation.CloudTrail.Trail
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataResources")]
-        public Union<List<DataResource>, IntrinsicFunction> DataResources { get; set; }
+        public List<DataResource> DataResources { get; set; }
 
         /// <summary>
         /// IncludeManagementEvents

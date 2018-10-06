@@ -59,10 +59,11 @@ namespace Comformation.Logs.Destination
         public string Type { get; } = "AWS::Logs::Destination";
         
         public DestinationProperties Properties { get; } = new DestinationProperties();
+
     }
 
 	public static class DestinationAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

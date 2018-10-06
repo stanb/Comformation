@@ -55,5 +55,6 @@ namespace Comformation.Athena.NamedQuery
         public string Type { get; } = "AWS::Athena::NamedQuery";
         
         public NamedQueryProperties Properties { get; } = new NamedQueryProperties();
+
     }
 }

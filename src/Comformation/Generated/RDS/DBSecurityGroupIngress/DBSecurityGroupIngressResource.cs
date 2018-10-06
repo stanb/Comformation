@@ -74,5 +74,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
         public string Type { get; } = "AWS::RDS::DBSecurityGroupIngress";
         
         public DBSecurityGroupIngressProperties Properties { get; } = new DBSecurityGroupIngressProperties();
+
     }
 }

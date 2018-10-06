@@ -33,7 +33,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of Amazon S3 Bucket ReplicationRule
         /// </summary>
         [JsonProperty("Rules")]
-        public Union<List<ReplicationRule>, IntrinsicFunction> Rules { get; set; }
+        public List<ReplicationRule> Rules { get; set; }
 
     }
 }

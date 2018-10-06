@@ -26,10 +26,10 @@ namespace Comformation.EC2.VPNGateway
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this resource.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
@@ -46,5 +46,6 @@ namespace Comformation.EC2.VPNGateway
         public string Type { get; } = "AWS::EC2::VPNGateway";
         
         public VPNGatewayProperties Properties { get; } = new VPNGatewayProperties();
+
     }
 }

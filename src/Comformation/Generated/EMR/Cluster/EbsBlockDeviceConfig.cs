@@ -22,7 +22,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR EbsConfiguration EbsBlockDeviceConfig VolumeSpecification
         /// </summary>
         [JsonProperty("VolumeSpecification")]
-        public Union<VolumeSpecification, IntrinsicFunction> VolumeSpecification { get; set; }
+        public VolumeSpecification VolumeSpecification { get; set; }
 
         /// <summary>
         /// VolumesPerInstance

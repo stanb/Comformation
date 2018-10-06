@@ -57,5 +57,6 @@ namespace Comformation.ApiGateway.RequestValidator
         public string Type { get; } = "AWS::ApiGateway::RequestValidator";
         
         public RequestValidatorProperties Properties { get; } = new RequestValidatorProperties();
+
     }
 }

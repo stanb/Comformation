@@ -23,7 +23,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomizedMetricSpecification")]
-        public Union<CustomizedMetricSpecification, IntrinsicFunction> CustomizedMetricSpecification { get; set; }
+        public CustomizedMetricSpecification CustomizedMetricSpecification { get; set; }
 
         /// <summary>
         /// DisableScaleIn
@@ -44,7 +44,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedMetricSpecification")]
-        public Union<PredefinedMetricSpecification, IntrinsicFunction> PredefinedMetricSpecification { get; set; }
+        public PredefinedMetricSpecification PredefinedMetricSpecification { get; set; }
 
         /// <summary>
         /// TargetValue

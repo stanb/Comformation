@@ -26,11 +26,11 @@ namespace Comformation.Route53.RecordSet
             /// Type: AliasTarget
             /// Update requires: No interruption
             /// </summary>
-			public Union<AliasTarget, IntrinsicFunction> AliasTarget { get; set; }
+			public AliasTarget AliasTarget { get; set; }
 
             /// <summary>
             /// Comment
-            /// Any comments that you want to include about the hosted zone.
+            /// Any comments that you want to include about the change batch.
             /// Important If the record set is part of a record set group, this property isn&#39;t valid. Don&#39;t specify
             /// this property.
             /// Required: No
@@ -61,7 +61,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: Route&#160;53 Record Set GeoLocation Property
             /// Update requires: No interruption
             /// </summary>
-			public Union<GeoLocation, IntrinsicFunction> GeoLocation { get; set; }
+			public GeoLocation GeoLocation { get; set; }
 
             /// <summary>
             /// HealthCheckId
@@ -141,7 +141,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ResourceRecords { get; set; }
+			public List<Union<string, IntrinsicFunction>> ResourceRecords { get; set; }
 
             /// <summary>
             /// SetIdentifier
@@ -201,5 +201,6 @@ namespace Comformation.Route53.RecordSet
         public string Type { get; } = "AWS::Route53::RecordSet";
         
         public RecordSetProperties Properties { get; } = new RecordSetProperties();
+
     }
 }

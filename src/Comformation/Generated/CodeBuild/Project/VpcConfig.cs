@@ -21,7 +21,7 @@ namespace Comformation.CodeBuild.Project
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Subnets")]
-        public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
+        public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
         /// <summary>
         /// VpcId
@@ -41,7 +41,7 @@ namespace Comformation.CodeBuild.Project
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
     }
 }

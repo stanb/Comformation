@@ -34,7 +34,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: A list of Elastic Load Balancing LoadBalancer LoadBalancerAttributes
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<LoadBalancerAttribute>, IntrinsicFunction> LoadBalancerAttributes { get; set; }
+			public List<LoadBalancerAttribute> LoadBalancerAttributes { get; set; }
 
             /// <summary>
             /// Name
@@ -73,7 +73,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// SubnetMappings
@@ -87,7 +87,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: List of Elastic Load Balancing LoadBalancer SubnetMapping
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<SubnetMapping>, IntrinsicFunction> SubnetMappings { get; set; }
+			public List<SubnetMapping> SubnetMappings { get; set; }
 
             /// <summary>
             /// Subnets
@@ -98,17 +98,17 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
+			public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
             /// <summary>
             /// Tags
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this load balancer. Use tags
             /// to manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
@@ -125,14 +125,15 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::LoadBalancer";
         
         public LoadBalancerProperties Properties { get; } = new LoadBalancerProperties();
+
     }
 
 	public static class LoadBalancerAttributes
 	{
-        public static readonly ResourceAttribute<string> CanonicalHostedZoneID = new ResourceAttribute<string>("CanonicalHostedZoneID");
-        public static readonly ResourceAttribute<string> DNSName = new ResourceAttribute<string>("DNSName");
-        public static readonly ResourceAttribute<string> LoadBalancerFullName = new ResourceAttribute<string>("LoadBalancerFullName");
-        public static readonly ResourceAttribute<string> LoadBalancerName = new ResourceAttribute<string>("LoadBalancerName");
-        public static readonly ResourceAttribute<List<string>> SecurityGroups = new ResourceAttribute<List<string>>("SecurityGroups");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CanonicalHostedZoneID = new ResourceAttribute<Union<string, IntrinsicFunction>>("CanonicalHostedZoneID");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DNSName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DNSName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoadBalancerFullName = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoadBalancerFullName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoadBalancerName = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoadBalancerName");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> SecurityGroups = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("SecurityGroups");
 	}
 }

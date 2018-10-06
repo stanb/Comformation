@@ -22,7 +22,7 @@ namespace Comformation.IAM.Policy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
+			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// PolicyDocument
@@ -59,7 +59,7 @@ namespace Comformation.IAM.Policy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
+			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
             /// <summary>
             /// Users
@@ -69,12 +69,13 @@ namespace Comformation.IAM.Policy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Users { get; set; }
+			public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
     
         public string Type { get; } = "AWS::IAM::Policy";
         
         public PolicyProperties Properties { get; } = new PolicyProperties();
+
     }
 }

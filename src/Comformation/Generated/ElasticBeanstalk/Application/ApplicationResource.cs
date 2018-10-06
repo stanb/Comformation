@@ -44,12 +44,13 @@ namespace Comformation.ElasticBeanstalk.Application
             /// Type: Elastic Beanstalk Application ApplicationResourceLifecycleConfig
             /// Update requires:&#160;No interruption
             /// </summary>
-			public Union<ApplicationResourceLifecycleConfig, IntrinsicFunction> ResourceLifecycleConfig { get; set; }
+			public ApplicationResourceLifecycleConfig ResourceLifecycleConfig { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElasticBeanstalk::Application";
         
         public ApplicationProperties Properties { get; } = new ApplicationProperties();
+
     }
 }

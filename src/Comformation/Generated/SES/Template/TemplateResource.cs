@@ -22,12 +22,13 @@ namespace Comformation.SES.Template
             /// Type: Amazon SES Template Template
             /// Update requires: No interruption
             /// </summary>
-			public Union<Template, IntrinsicFunction> Template { get; set; }
+			public Template Template { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SES::Template";
         
         public TemplateProperties Properties { get; } = new TemplateProperties();
+
     }
 }

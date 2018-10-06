@@ -38,5 +38,6 @@ namespace Comformation.IoT.ThingPrincipalAttachment
         public string Type { get; } = "AWS::IoT::ThingPrincipalAttachment";
         
         public ThingPrincipalAttachmentProperties Properties { get; } = new ThingPrincipalAttachmentProperties();
+
     }
 }

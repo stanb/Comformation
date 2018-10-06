@@ -15,6 +15,15 @@ namespace Comformation.ApiGateway.Deployment
         public class DeploymentProperties
         {
             /// <summary>
+            /// DeploymentCanarySettings
+            /// Specifies settings for the canary deployment.
+            /// Required: No
+            /// Type: API Gateway Deployment DeploymentCanarySettings
+            /// Update requires: Replacement
+            /// </summary>
+			public DeploymentCanarySettings DeploymentCanarySettings { get; set; }
+
+            /// <summary>
             /// Description
             /// A description of the purpose of the API Gateway deployment.
             /// Required: No
@@ -39,7 +48,7 @@ namespace Comformation.ApiGateway.Deployment
             /// Type: Amazon API Gateway Deployment StageDescription
             /// Update requires: No interruption
             /// </summary>
-			public Union<StageDescription, IntrinsicFunction> StageDescription { get; set; }
+			public StageDescription StageDescription { get; set; }
 
             /// <summary>
             /// StageName
@@ -56,5 +65,6 @@ namespace Comformation.ApiGateway.Deployment
         public string Type { get; } = "AWS::ApiGateway::Deployment";
         
         public DeploymentProperties Properties { get; } = new DeploymentProperties();
+
     }
 }

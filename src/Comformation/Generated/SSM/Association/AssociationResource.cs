@@ -57,7 +57,7 @@ namespace Comformation.SSM.Association
             /// Type: Systems Manager Association InstanceAssociationOutputLocation
             /// Update requires: No interruption
             /// </summary>
-			public Union<InstanceAssociationOutputLocation, IntrinsicFunction> OutputLocation { get; set; }
+			public InstanceAssociationOutputLocation OutputLocation { get; set; }
 
             /// <summary>
             /// Parameters
@@ -66,7 +66,7 @@ namespace Comformation.SSM.Association
             /// Type: String to list-of-strings map
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, ParameterValues>, IntrinsicFunction> Parameters { get; set; }
+			public Dictionary<string, ParameterValues> Parameters { get; set; }
 
             /// <summary>
             /// ScheduleExpression
@@ -85,12 +85,13 @@ namespace Comformation.SSM.Association
             /// Type: List of AWS Systems Manager Association Targets
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
+			public List<Target> Targets { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SSM::Association";
         
         public AssociationProperties Properties { get; } = new AssociationProperties();
+
     }
 }

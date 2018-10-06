@@ -37,10 +37,11 @@ namespace Comformation.Inspector.AssessmentTarget
         public string Type { get; } = "AWS::Inspector::AssessmentTarget";
         
         public AssessmentTargetProperties Properties { get; } = new AssessmentTargetProperties();
+
     }
 
 	public static class AssessmentTargetAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

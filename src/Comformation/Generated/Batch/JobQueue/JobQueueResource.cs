@@ -22,7 +22,7 @@ namespace Comformation.Batch.JobQueue
             /// Type: List of AWS Batch JobQueue ComputeEnvironmentOrder
             /// Update requires: No Interruption
             /// </summary>
-			public Union<List<ComputeEnvironmentOrder>, IntrinsicFunction> ComputeEnvironmentOrder { get; set; }
+			public List<ComputeEnvironmentOrder> ComputeEnvironmentOrder { get; set; }
 
             /// <summary>
             /// Priority
@@ -56,5 +56,6 @@ namespace Comformation.Batch.JobQueue
         public string Type { get; } = "AWS::Batch::JobQueue";
         
         public JobQueueProperties Properties { get; } = new JobQueueProperties();
+
     }
 }

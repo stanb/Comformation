@@ -25,7 +25,7 @@ namespace Comformation.EKS.Cluster
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
         /// <summary>
         /// SubnetIds
@@ -37,7 +37,7 @@ namespace Comformation.EKS.Cluster
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubnetIds")]
-        public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
     }
 }

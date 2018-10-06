@@ -45,7 +45,7 @@ namespace Comformation.Config.ConfigurationRecorder
         /// Type: List of String values
         /// </summary>
         [JsonProperty("ResourceTypes")]
-        public Union<List<string>, IntrinsicFunction> ResourceTypes { get; set; }
+        public List<Union<string, IntrinsicFunction>> ResourceTypes { get; set; }
 
     }
 }

@@ -23,7 +23,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR Cluster ScalingConstraints
         /// </summary>
         [JsonProperty("Constraints")]
-        public Union<ScalingConstraints, IntrinsicFunction> Constraints { get; set; }
+        public ScalingConstraints Constraints { get; set; }
 
         /// <summary>
         /// Rules
@@ -32,7 +32,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR Cluster ScalingRule
         /// </summary>
         [JsonProperty("Rules")]
-        public Union<List<ScalingRule>, IntrinsicFunction> Rules { get; set; }
+        public List<ScalingRule> Rules { get; set; }
 
     }
 }

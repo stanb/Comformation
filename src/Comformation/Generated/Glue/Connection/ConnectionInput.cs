@@ -41,7 +41,7 @@ namespace Comformation.Glue.Connection
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MatchCriteria")]
-        public Union<List<string>, IntrinsicFunction> MatchCriteria { get; set; }
+        public List<Union<string, IntrinsicFunction>> MatchCriteria { get; set; }
 
         /// <summary>
         /// PhysicalConnectionRequirements
@@ -52,7 +52,7 @@ namespace Comformation.Glue.Connection
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PhysicalConnectionRequirements")]
-        public Union<PhysicalConnectionRequirements, IntrinsicFunction> PhysicalConnectionRequirements { get; set; }
+        public PhysicalConnectionRequirements PhysicalConnectionRequirements { get; set; }
 
         /// <summary>
         /// ConnectionProperties

@@ -31,12 +31,13 @@ namespace Comformation.SES.ConfigurationSetEventDestination
             /// Type: Amazon SES ConfigurationSetEventDestination EventDestination
             /// Update requires: No interruption
             /// </summary>
-			public Union<EventDestination, IntrinsicFunction> EventDestination { get; set; }
+			public EventDestination EventDestination { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SES::ConfigurationSetEventDestination";
         
         public ConfigurationSetEventDestinationProperties Properties { get; } = new ConfigurationSetEventDestinationProperties();
+
     }
 }

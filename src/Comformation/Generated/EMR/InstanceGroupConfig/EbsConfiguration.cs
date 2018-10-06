@@ -22,7 +22,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// Type: List of Amazon EMR EbsConfiguration EbsBlockDeviceConfigs
         /// </summary>
         [JsonProperty("EbsBlockDeviceConfigs")]
-        public Union<List<EbsBlockDeviceConfig>, IntrinsicFunction> EbsBlockDeviceConfigs { get; set; }
+        public List<EbsBlockDeviceConfig> EbsBlockDeviceConfigs { get; set; }
 
         /// <summary>
         /// EbsOptimized

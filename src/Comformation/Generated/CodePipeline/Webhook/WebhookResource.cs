@@ -23,7 +23,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Type: AWS CodePipeline Webhook WebhookAuthConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<WebhookAuthConfiguration, IntrinsicFunction> AuthenticationConfiguration { get; set; }
+			public WebhookAuthConfiguration AuthenticationConfiguration { get; set; }
 
             /// <summary>
             /// Filters
@@ -33,7 +33,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Type: List of AWS CodePipeline Webhook WebhookFilterRule property types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<WebhookFilterRule>, IntrinsicFunction> Filters { get; set; }
+			public List<WebhookFilterRule> Filters { get; set; }
 
             /// <summary>
             /// Authentication
@@ -98,10 +98,11 @@ namespace Comformation.CodePipeline.Webhook
         public string Type { get; } = "AWS::CodePipeline::Webhook";
         
         public WebhookProperties Properties { get; } = new WebhookProperties();
+
     }
 
 	public static class WebhookAttributes
 	{
-        public static readonly ResourceAttribute<string> Url = new ResourceAttribute<string>("Url");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Url = new ResourceAttribute<Union<string, IntrinsicFunction>>("Url");
 	}
 }

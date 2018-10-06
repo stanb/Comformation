@@ -56,7 +56,7 @@ namespace Comformation.Batch.ComputeEnvironment
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
         /// <summary>
         /// Subnets
@@ -66,7 +66,7 @@ namespace Comformation.Batch.ComputeEnvironment
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Subnets")]
-        public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
+        public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
         /// <summary>
         /// Type
@@ -116,7 +116,7 @@ namespace Comformation.Batch.ComputeEnvironment
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceTypes")]
-        public Union<List<string>, IntrinsicFunction> InstanceTypes { get; set; }
+        public List<Union<string, IntrinsicFunction>> InstanceTypes { get; set; }
 
         /// <summary>
         /// Ec2KeyPair

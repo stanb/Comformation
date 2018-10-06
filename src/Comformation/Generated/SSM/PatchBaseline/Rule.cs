@@ -33,7 +33,7 @@ namespace Comformation.SSM.PatchBaseline
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchFilterGroup")]
-        public Union<PatchFilterGroup, IntrinsicFunction> PatchFilterGroup { get; set; }
+        public PatchFilterGroup PatchFilterGroup { get; set; }
 
         /// <summary>
         /// ApproveAfterDays

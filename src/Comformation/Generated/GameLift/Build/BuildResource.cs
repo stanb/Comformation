@@ -31,7 +31,7 @@ namespace Comformation.GameLift.Build
             /// Type: Amazon GameLift Build StorageLocation
             /// Update requires: Replacement
             /// </summary>
-			public Union<S3Location, IntrinsicFunction> StorageLocation { get; set; }
+			public S3Location StorageLocation { get; set; }
 
             /// <summary>
             /// Version
@@ -48,5 +48,6 @@ namespace Comformation.GameLift.Build
         public string Type { get; } = "AWS::GameLift::Build";
         
         public BuildProperties Properties { get; } = new BuildProperties();
+
     }
 }

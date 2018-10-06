@@ -54,7 +54,7 @@ namespace Comformation.EFS.MountTarget
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -79,5 +79,6 @@ namespace Comformation.EFS.MountTarget
         public string Type { get; } = "AWS::EFS::MountTarget";
         
         public MountTargetProperties Properties { get; } = new MountTargetProperties();
+
     }
 }

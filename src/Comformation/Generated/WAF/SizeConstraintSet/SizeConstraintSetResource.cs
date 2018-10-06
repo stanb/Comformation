@@ -31,12 +31,13 @@ namespace Comformation.WAF.SizeConstraintSet
             /// Type: List of AWS WAF SizeConstraintSet SizeConstraint
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<SizeConstraint>, IntrinsicFunction> SizeConstraints { get; set; }
+			public List<SizeConstraint> SizeConstraints { get; set; }
 
         }
     
         public string Type { get; } = "AWS::WAF::SizeConstraintSet";
         
         public SizeConstraintSetProperties Properties { get; } = new SizeConstraintSetProperties();
+
     }
 }

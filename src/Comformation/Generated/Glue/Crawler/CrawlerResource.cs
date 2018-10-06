@@ -31,7 +31,7 @@ namespace Comformation.Glue.Crawler
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Classifiers { get; set; }
+			public List<Union<string, IntrinsicFunction>> Classifiers { get; set; }
 
             /// <summary>
             /// Description
@@ -50,7 +50,7 @@ namespace Comformation.Glue.Crawler
             /// Type: AWS Glue Crawler SchemaChangePolicy
             /// Update requires: No interruption
             /// </summary>
-			public Union<SchemaChangePolicy, IntrinsicFunction> SchemaChangePolicy { get; set; }
+			public SchemaChangePolicy SchemaChangePolicy { get; set; }
 
             /// <summary>
             /// Configuration
@@ -69,7 +69,7 @@ namespace Comformation.Glue.Crawler
             /// Type: AWS Glue Crawler Schedule
             /// Update requires: No interruption
             /// </summary>
-			public Union<Schedule, IntrinsicFunction> Schedule { get; set; }
+			public Schedule Schedule { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -87,7 +87,7 @@ namespace Comformation.Glue.Crawler
             /// Type: AWS Glue Crawler Targets
             /// Update requires: No interruption
             /// </summary>
-			public Union<Targets, IntrinsicFunction> Targets { get; set; }
+			public Targets Targets { get; set; }
 
             /// <summary>
             /// TablePrefix
@@ -113,5 +113,6 @@ namespace Comformation.Glue.Crawler
         public string Type { get; } = "AWS::Glue::Crawler";
         
         public CrawlerProperties Properties { get; } = new CrawlerProperties();
+
     }
 }

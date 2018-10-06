@@ -34,7 +34,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsAccountNumbers")]
-        public Union<List<string>, IntrinsicFunction> AwsAccountNumbers { get; set; }
+        public List<Union<string, IntrinsicFunction>> AwsAccountNumbers { get; set; }
 
     }
 }

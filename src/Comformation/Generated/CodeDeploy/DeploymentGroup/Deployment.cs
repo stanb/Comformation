@@ -44,7 +44,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Type: AWS CodeDeploy DeploymentGroup Deployment Revision
         /// </summary>
         [JsonProperty("Revision")]
-        public Union<RevisionLocation, IntrinsicFunction> Revision { get; set; }
+        public RevisionLocation Revision { get; set; }
 
     }
 }

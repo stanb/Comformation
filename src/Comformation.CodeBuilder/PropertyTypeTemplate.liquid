@@ -20,7 +20,7 @@ namespace {{ propertyType.Namespace }}
 {% endfor -%}
         /// </summary>
         [JsonProperty("{{ property.JsonProperty }}")]
-        public Union<{{ property.Type }}, IntrinsicFunction> {{ property.Name }} { get; set; }
+        public {{ property.Type }} {{ property.Name }} { get; set; }
 
 {%  endfor -%}
     }

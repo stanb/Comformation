@@ -32,7 +32,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumns")]
-        public Union<List<RecordColumn>, IntrinsicFunction> RecordColumns { get; set; }
+        public List<RecordColumn> RecordColumns { get; set; }
 
         /// <summary>
         /// RecordFormat
@@ -42,7 +42,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormat")]
-        public Union<RecordFormat, IntrinsicFunction> RecordFormat { get; set; }
+        public RecordFormat RecordFormat { get; set; }
 
     }
 }

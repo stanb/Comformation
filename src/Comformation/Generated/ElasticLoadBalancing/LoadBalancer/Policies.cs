@@ -23,7 +23,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// Type: List of JSON name-value pairs.
         /// </summary>
         [JsonProperty("Attributes")]
-        public Union<List<Newtonsoft.Json.Linq.JToken>, IntrinsicFunction> Attributes { get; set; }
+        public List<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>> Attributes { get; set; }
 
         /// <summary>
         /// InstancePorts
@@ -32,7 +32,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("InstancePorts")]
-        public Union<List<string>, IntrinsicFunction> InstancePorts { get; set; }
+        public List<Union<string, IntrinsicFunction>> InstancePorts { get; set; }
 
         /// <summary>
         /// LoadBalancerPorts
@@ -42,7 +42,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("LoadBalancerPorts")]
-        public Union<List<string>, IntrinsicFunction> LoadBalancerPorts { get; set; }
+        public List<Union<string, IntrinsicFunction>> LoadBalancerPorts { get; set; }
 
         /// <summary>
         /// PolicyName

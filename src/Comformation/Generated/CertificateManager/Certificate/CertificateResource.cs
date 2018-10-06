@@ -39,7 +39,7 @@ namespace Comformation.CertificateManager.Certificate
             /// Type: List of AWS Certificate Manager Certificate DomainValidationOption
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<DomainValidationOption>, IntrinsicFunction> DomainValidationOptions { get; set; }
+			public List<DomainValidationOption> DomainValidationOptions { get; set; }
 
             /// <summary>
             /// SubjectAlternativeNames
@@ -50,16 +50,16 @@ namespace Comformation.CertificateManager.Certificate
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubjectAlternativeNames { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubjectAlternativeNames { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this ACM certificate.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// ValidationMethod
@@ -86,5 +86,6 @@ namespace Comformation.CertificateManager.Certificate
         public string Type { get; } = "AWS::CertificateManager::Certificate";
         
         public CertificateProperties Properties { get; } = new CertificateProperties();
+
     }
 }

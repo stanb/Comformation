@@ -24,9 +24,24 @@ namespace Comformation.ApiGateway.Method
 			public Union<bool, IntrinsicFunction> ApiKeyRequired { get; set; }
 
             /// <summary>
+            /// AuthorizationScopes
+            /// A list of authorization scopes configured on the method. The scopes are used with a
+            /// COGNITO_USER_POOLS authorizer to authorize the method invocation. The authorization works by
+            /// matching the method scopes against the scopes parsed from the access token in the incoming request.
+            /// The method invocation is authorized if any method scopes matches a claimed scope in the access
+            /// token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
+            /// must provide an access token instead of an identity token for authorization purposes.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> AuthorizationScopes { get; set; }
+
+            /// <summary>
             /// AuthorizationType
-            /// The method&#39;s authorization type.
-            /// Required: Yes. If you specify the AuthorizerId property, specify CUSTOM for this property.
+            /// The method&#39;s authorization type. For valid values, see Method in the API Gateway API Reference.
+            /// Note If you specify the AuthorizerId property, specify CUSTOM for this property.
+            /// Required: Yes.
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -58,7 +73,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: Amazon API Gateway Method Integration
             /// Update requires: No interruption
             /// </summary>
-			public Union<Integration, IntrinsicFunction> Integration { get; set; }
+			public Integration Integration { get; set; }
 
             /// <summary>
             /// MethodResponses
@@ -67,7 +82,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: List of Amazon API Gateway Method MethodResponse property types.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<MethodResponse>, IntrinsicFunction> MethodResponses { get; set; }
+			public List<MethodResponse> MethodResponses { get; set; }
 
             /// <summary>
             /// OperationName
@@ -88,7 +103,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: Mapping of key-value pairs
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> RequestModels { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> RequestModels { get; set; }
 
             /// <summary>
             /// RequestParameters
@@ -101,7 +116,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: Mapping of key-value pairs
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, bool>, IntrinsicFunction> RequestParameters { get; set; }
+			public Dictionary<string, Union<bool, IntrinsicFunction>> RequestParameters { get; set; }
 
             /// <summary>
             /// RequestValidatorId
@@ -136,5 +151,6 @@ namespace Comformation.ApiGateway.Method
         public string Type { get; } = "AWS::ApiGateway::Method";
         
         public MethodProperties Properties { get; } = new MethodProperties();
+
     }
 }

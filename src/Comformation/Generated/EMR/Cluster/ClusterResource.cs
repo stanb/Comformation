@@ -33,7 +33,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of Amazon EMR Cluster Application property types
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Application>, IntrinsicFunction> Applications { get; set; }
+			public List<Application> Applications { get; set; }
 
             /// <summary>
             /// AutoScalingRole
@@ -53,7 +53,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of Amazon EMR Cluster BootstrapActionConfig property types
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<BootstrapActionConfig>, IntrinsicFunction> BootstrapActions { get; set; }
+			public List<BootstrapActionConfig> BootstrapActions { get; set; }
 
             /// <summary>
             /// Configurations
@@ -62,7 +62,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of Amazon EMR Cluster Configurations property types
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
+			public List<Configuration> Configurations { get; set; }
 
             /// <summary>
             /// CustomAmiId
@@ -92,7 +92,7 @@ namespace Comformation.EMR.Cluster
             /// Type: Amazon EMR Cluster JobFlowInstancesConfig
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<JobFlowInstancesConfig, IntrinsicFunction> Instances { get; set; }
+			public JobFlowInstancesConfig Instances { get; set; }
 
             /// <summary>
             /// JobFlowRole
@@ -113,7 +113,7 @@ namespace Comformation.EMR.Cluster
             /// Type: Amazon EMR Cluster KerberosAttributes
             /// Update requires: Replacement
             /// </summary>
-			public Union<KerberosAttributes, IntrinsicFunction> KerberosAttributes { get; set; }
+			public KerberosAttributes KerberosAttributes { get; set; }
 
             /// <summary>
             /// LogUri
@@ -179,10 +179,10 @@ namespace Comformation.EMR.Cluster
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to help you identify the Amazon EMR cluster.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VisibleToAllUsers
@@ -201,10 +201,11 @@ namespace Comformation.EMR.Cluster
         public string Type { get; } = "AWS::EMR::Cluster";
         
         public ClusterProperties Properties { get; } = new ClusterProperties();
+
     }
 
 	public static class ClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> MasterPublicDNS = new ResourceAttribute<string>("MasterPublicDNS");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MasterPublicDNS = new ResourceAttribute<Union<string, IntrinsicFunction>>("MasterPublicDNS");
 	}
 }

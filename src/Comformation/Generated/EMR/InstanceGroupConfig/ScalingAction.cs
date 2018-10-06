@@ -33,7 +33,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// Type: Amazon EMR InstanceGroupConfig SimpleScalingPolicyConfiguration
         /// </summary>
         [JsonProperty("SimpleScalingPolicyConfiguration")]
-        public Union<SimpleScalingPolicyConfiguration, IntrinsicFunction> SimpleScalingPolicyConfiguration { get; set; }
+        public SimpleScalingPolicyConfiguration SimpleScalingPolicyConfiguration { get; set; }
 
     }
 }

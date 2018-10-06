@@ -48,10 +48,11 @@ namespace Comformation.StepFunctions.StateMachine
         public string Type { get; } = "AWS::StepFunctions::StateMachine";
         
         public StateMachineProperties Properties { get; } = new StateMachineProperties();
+
     }
 
 	public static class StateMachineAttributes
 	{
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

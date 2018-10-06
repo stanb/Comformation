@@ -27,7 +27,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: List of Amazon Cognito UserPoolUser AttributeType
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<AttributeType>, IntrinsicFunction> ValidationData { get; set; }
+			public List<AttributeType> ValidationData { get; set; }
 
             /// <summary>
             /// UserPoolId
@@ -68,7 +68,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> DesiredDeliveryMediums { get; set; }
+			public List<Union<string, IntrinsicFunction>> DesiredDeliveryMediums { get; set; }
 
             /// <summary>
             /// ForceAliasCreation
@@ -97,12 +97,13 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: List of Amazon Cognito UserPoolUser AttributeType
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<AttributeType>, IntrinsicFunction> UserAttributes { get; set; }
+			public List<AttributeType> UserAttributes { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Cognito::UserPoolUser";
         
         public UserPoolUserProperties Properties { get; } = new UserPoolUserProperties();
+
     }
 }

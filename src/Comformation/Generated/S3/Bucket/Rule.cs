@@ -24,7 +24,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket AbortIncompleteMultipartUpload
         /// </summary>
         [JsonProperty("AbortIncompleteMultipartUpload")]
-        public Union<AbortIncompleteMultipartUpload, IntrinsicFunction> AbortIncompleteMultipartUpload { get; set; }
+        public AbortIncompleteMultipartUpload AbortIncompleteMultipartUpload { get; set; }
 
         /// <summary>
         /// ExpirationDate
@@ -89,7 +89,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket NoncurrentVersionTransition
         /// </summary>
         [JsonProperty("NoncurrentVersionTransition")]
-        public Union<NoncurrentVersionTransition, IntrinsicFunction> NoncurrentVersionTransition { get; set; }
+        public NoncurrentVersionTransition NoncurrentVersionTransition { get; set; }
 
         /// <summary>
         /// NoncurrentVersionTransitions
@@ -103,7 +103,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of Amazon S3 Bucket NoncurrentVersionTransition
         /// </summary>
         [JsonProperty("NoncurrentVersionTransitions")]
-        public Union<List<NoncurrentVersionTransition>, IntrinsicFunction> NoncurrentVersionTransitions { get; set; }
+        public List<NoncurrentVersionTransition> NoncurrentVersionTransitions { get; set; }
 
         /// <summary>
         /// Prefix
@@ -132,7 +132,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]
-        public Union<List<TagFilter>, IntrinsicFunction> TagFilters { get; set; }
+        public List<TagFilter> TagFilters { get; set; }
 
         /// <summary>
         /// Transition
@@ -146,7 +146,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket Transition
         /// </summary>
         [JsonProperty("Transition")]
-        public Union<Transition, IntrinsicFunction> Transition { get; set; }
+        public Transition Transition { get; set; }
 
         /// <summary>
         /// Transitions
@@ -160,7 +160,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of Amazon S3 Bucket Transition
         /// </summary>
         [JsonProperty("Transitions")]
-        public Union<List<Transition>, IntrinsicFunction> Transitions { get; set; }
+        public List<Transition> Transitions { get; set; }
 
     }
 }

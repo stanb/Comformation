@@ -33,7 +33,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Metrics")]
-        public Union<List<string>, IntrinsicFunction> Metrics { get; set; }
+        public List<Union<string, IntrinsicFunction>> Metrics { get; set; }
 
     }
 }

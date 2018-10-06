@@ -64,5 +64,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
         public string Type { get; } = "AWS::ServiceCatalog::LaunchTemplateConstraint";
         
         public LaunchTemplateConstraintProperties Properties { get; } = new LaunchTemplateConstraintProperties();
+
     }
 }

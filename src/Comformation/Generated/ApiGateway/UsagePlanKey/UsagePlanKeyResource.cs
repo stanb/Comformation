@@ -46,5 +46,6 @@ namespace Comformation.ApiGateway.UsagePlanKey
         public string Type { get; } = "AWS::ApiGateway::UsagePlanKey";
         
         public UsagePlanKeyProperties Properties { get; } = new UsagePlanKeyProperties();
+
     }
 }

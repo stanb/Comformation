@@ -21,7 +21,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of OriginCustomHeader type
         /// </summary>
         [JsonProperty("OriginCustomHeaders")]
-        public Union<List<OriginCustomHeader>, IntrinsicFunction> OriginCustomHeaders { get; set; }
+        public List<OriginCustomHeader> OriginCustomHeaders { get; set; }
 
         /// <summary>
         /// DomainName
@@ -41,7 +41,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: S3Origin type
         /// </summary>
         [JsonProperty("S3OriginConfig")]
-        public Union<S3OriginConfig, IntrinsicFunction> S3OriginConfig { get; set; }
+        public S3OriginConfig S3OriginConfig { get; set; }
 
         /// <summary>
         /// OriginPath
@@ -71,7 +71,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: CustomOriginConfig type
         /// </summary>
         [JsonProperty("CustomOriginConfig")]
-        public Union<CustomOriginConfig, IntrinsicFunction> CustomOriginConfig { get; set; }
+        public CustomOriginConfig CustomOriginConfig { get; set; }
 
     }
 }

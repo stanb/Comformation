@@ -24,7 +24,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ServerSideEncryptionConfiguration")]
-        public Union<List<ServerSideEncryptionRule>, IntrinsicFunction> ServerSideEncryptionConfiguration { get; set; }
+        public List<ServerSideEncryptionRule> ServerSideEncryptionConfiguration { get; set; }
 
     }
 }

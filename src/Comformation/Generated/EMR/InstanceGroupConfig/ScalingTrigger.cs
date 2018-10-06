@@ -23,7 +23,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// Type: Amazon EMR InstanceGroupConfig CloudWatchAlarmDefinition
         /// </summary>
         [JsonProperty("CloudWatchAlarmDefinition")]
-        public Union<CloudWatchAlarmDefinition, IntrinsicFunction> CloudWatchAlarmDefinition { get; set; }
+        public CloudWatchAlarmDefinition CloudWatchAlarmDefinition { get; set; }
 
     }
 }

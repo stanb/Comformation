@@ -22,7 +22,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Command")]
-        public Union<List<string>, IntrinsicFunction> Command { get; set; }
+        public List<Union<string, IntrinsicFunction>> Command { get; set; }
 
         /// <summary>
         /// Cpu
@@ -53,7 +53,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of String values
         /// </summary>
         [JsonProperty("DnsSearchDomains")]
-        public Union<List<string>, IntrinsicFunction> DnsSearchDomains { get; set; }
+        public List<Union<string, IntrinsicFunction>> DnsSearchDomains { get; set; }
 
         /// <summary>
         /// DnsServers
@@ -62,7 +62,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of String values
         /// </summary>
         [JsonProperty("DnsServers")]
-        public Union<List<string>, IntrinsicFunction> DnsServers { get; set; }
+        public List<Union<string, IntrinsicFunction>> DnsServers { get; set; }
 
         /// <summary>
         /// DockerLabels
@@ -71,7 +71,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: Key-value pairs, with the name of the label as the key and the label value as the value.
         /// </summary>
         [JsonProperty("DockerLabels")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> DockerLabels { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> DockerLabels { get; set; }
 
         /// <summary>
         /// DockerSecurityOptions
@@ -82,7 +82,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of String values
         /// </summary>
         [JsonProperty("DockerSecurityOptions")]
-        public Union<List<string>, IntrinsicFunction> DockerSecurityOptions { get; set; }
+        public List<Union<string, IntrinsicFunction>> DockerSecurityOptions { get; set; }
 
         /// <summary>
         /// EntryPoint
@@ -92,7 +92,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of String values
         /// </summary>
         [JsonProperty("EntryPoint")]
-        public Union<List<string>, IntrinsicFunction> EntryPoint { get; set; }
+        public List<Union<string, IntrinsicFunction>> EntryPoint { get; set; }
 
         /// <summary>
         /// Environment
@@ -101,7 +101,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of Amazon ECS TaskDefinition KeyValuePair property types
         /// </summary>
         [JsonProperty("Environment")]
-        public Union<List<KeyValuePair>, IntrinsicFunction> Environment { get; set; }
+        public List<KeyValuePair> Environment { get; set; }
 
         /// <summary>
         /// Essential
@@ -122,7 +122,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of Amazon ECS TaskDefinition HostEntry property types
         /// </summary>
         [JsonProperty("ExtraHosts")]
-        public Union<List<HostEntry>, IntrinsicFunction> ExtraHosts { get; set; }
+        public List<HostEntry> ExtraHosts { get; set; }
 
         /// <summary>
         /// HealthCheck
@@ -130,12 +130,10 @@ namespace Comformation.ECS.TaskDefinition
         /// override any Docker health checks that exist in the container image (such as those specified in a
         /// parent image or from the image&#39;s Dockerfile).
         /// Required: No
-        /// Type: AWS Batch JobDefinition TimeoutAmazon ECS TaskDefinition HealthCheckAmazon SageMaker Endpoint
-        /// TagAmazon SageMaker EndpointConfig ProductionVariantAmazon SageMaker NotebookInstanceLifecycleConfig
-        /// NotebookInstanceLifecycleHook
+        /// Type: Amazon ECS TaskDefinition HealthCheck
         /// </summary>
         [JsonProperty("HealthCheck")]
-        public Union<HealthCheck, IntrinsicFunction> HealthCheck { get; set; }
+        public HealthCheck HealthCheck { get; set; }
 
         /// <summary>
         /// Hostname
@@ -164,7 +162,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Links")]
-        public Union<List<string>, IntrinsicFunction> Links { get; set; }
+        public List<Union<string, IntrinsicFunction>> Links { get; set; }
 
         /// <summary>
         /// LinuxParameters
@@ -173,7 +171,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: Amazon ECS TaskDefinition LinuxParameters
         /// </summary>
         [JsonProperty("LinuxParameters")]
-        public Union<LinuxParameters, IntrinsicFunction> LinuxParameters { get; set; }
+        public LinuxParameters LinuxParameters { get; set; }
 
         /// <summary>
         /// LogConfiguration
@@ -183,7 +181,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: Amazon ECS TaskDefinition LogConfiguration
         /// </summary>
         [JsonProperty("LogConfiguration")]
-        public Union<LogConfiguration, IntrinsicFunction> LogConfiguration { get; set; }
+        public LogConfiguration LogConfiguration { get; set; }
 
         /// <summary>
         /// Memory
@@ -218,7 +216,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of Amazon ECS TaskDefinition MountPoint property types
         /// </summary>
         [JsonProperty("MountPoints")]
-        public Union<List<MountPoint>, IntrinsicFunction> MountPoints { get; set; }
+        public List<MountPoint> MountPoints { get; set; }
 
         /// <summary>
         /// Name
@@ -237,7 +235,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of Amazon ECS TaskDefinition ContainerDefinitions PortMapping property types
         /// </summary>
         [JsonProperty("PortMappings")]
-        public Union<List<PortMapping>, IntrinsicFunction> PortMappings { get; set; }
+        public List<PortMapping> PortMappings { get; set; }
 
         /// <summary>
         /// Privileged
@@ -258,6 +256,15 @@ namespace Comformation.ECS.TaskDefinition
         public Union<bool, IntrinsicFunction> ReadonlyRootFilesystem { get; set; }
 
         /// <summary>
+        /// RepositoryCredentials
+        /// The repository credentials for private registry authentication.
+        /// Required: No
+        /// Type: Amazon ECS TaskDefinition RepositoryCredentials
+        /// </summary>
+        [JsonProperty("RepositoryCredentials")]
+        public RepositoryCredentials RepositoryCredentials { get; set; }
+
+        /// <summary>
         /// Ulimits
         /// A list of ulimits to set in the container. The ulimits set constraints on how many resources a
         /// container can consume so that it doesn&#39;t deplete all available resources on the host.
@@ -265,7 +272,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of Amazon ECS TaskDefinition Ulimit property types
         /// </summary>
         [JsonProperty("Ulimits")]
-        public Union<List<Ulimit>, IntrinsicFunction> Ulimits { get; set; }
+        public List<Ulimit> Ulimits { get; set; }
 
         /// <summary>
         /// User
@@ -283,7 +290,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: List of Amazon ECS TaskDefinition VolumeFrom property types
         /// </summary>
         [JsonProperty("VolumesFrom")]
-        public Union<List<VolumeFrom>, IntrinsicFunction> VolumesFrom { get; set; }
+        public List<VolumeFrom> VolumesFrom { get; set; }
 
         /// <summary>
         /// WorkingDirectory

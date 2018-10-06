@@ -47,7 +47,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
+			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// SnapshotIdentifier
@@ -124,7 +124,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
             /// <summary>
             /// DBClusterParameterGroupName
@@ -153,20 +153,21 @@ namespace Comformation.Neptune.DBCluster
             /// Type: A list of resource tags.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Neptune::DBCluster";
         
         public DBClusterProperties Properties { get; } = new DBClusterProperties();
+
     }
 
 	public static class DBClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> ClusterResourceId = new ResourceAttribute<string>("ClusterResourceId");
-        public static readonly ResourceAttribute<string> Endpoint = new ResourceAttribute<string>("Endpoint");
-        public static readonly ResourceAttribute<string> Port = new ResourceAttribute<string>("Port");
-        public static readonly ResourceAttribute<string> ReadEndpoint = new ResourceAttribute<string>("ReadEndpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterResourceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterResourceId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndpoint");
 	}
 }

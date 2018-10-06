@@ -36,7 +36,7 @@ namespace Comformation.Config.ConfigRule
         /// Type: List of String values
         /// </summary>
         [JsonProperty("ComplianceResourceTypes")]
-        public Union<List<string>, IntrinsicFunction> ComplianceResourceTypes { get; set; }
+        public List<Union<string, IntrinsicFunction>> ComplianceResourceTypes { get; set; }
 
         /// <summary>
         /// TagKey

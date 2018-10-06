@@ -22,7 +22,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SpotOptions")]
-        public Union<SpotOptions, IntrinsicFunction> SpotOptions { get; set; }
+        public SpotOptions SpotOptions { get; set; }
 
         /// <summary>
         /// MarketType

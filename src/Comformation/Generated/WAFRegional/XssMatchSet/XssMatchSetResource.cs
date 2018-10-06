@@ -22,7 +22,7 @@ namespace Comformation.WAFRegional.XssMatchSet
             /// Type: List of AWS WAF Regional XssMatchSet XssMatchTuple
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<XssMatchTuple>, IntrinsicFunction> XssMatchTuples { get; set; }
+			public List<XssMatchTuple> XssMatchTuples { get; set; }
 
             /// <summary>
             /// Name
@@ -38,5 +38,6 @@ namespace Comformation.WAFRegional.XssMatchSet
         public string Type { get; } = "AWS::WAFRegional::XssMatchSet";
         
         public XssMatchSetProperties Properties { get; } = new XssMatchSetProperties();
+
     }
 }

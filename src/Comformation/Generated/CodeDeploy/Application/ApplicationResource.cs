@@ -42,5 +42,6 @@ namespace Comformation.CodeDeploy.Application
         public string Type { get; } = "AWS::CodeDeploy::Application";
         
         public ApplicationProperties Properties { get; } = new ApplicationProperties();
+
     }
 }

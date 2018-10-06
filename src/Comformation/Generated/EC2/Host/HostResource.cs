@@ -54,5 +54,6 @@ namespace Comformation.EC2.Host
         public string Type { get; } = "AWS::EC2::Host";
         
         public HostProperties Properties { get; } = new HostProperties();
+
     }
 }

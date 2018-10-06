@@ -21,7 +21,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: A list of key-value pairs
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// AutoAssignElasticIps
@@ -69,7 +69,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: AWS OpsWorks Recipes Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<Recipes, IntrinsicFunction> CustomRecipes { get; set; }
+			public Recipes CustomRecipes { get; set; }
 
             /// <summary>
             /// CustomSecurityGroupIds
@@ -78,7 +78,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> CustomSecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> CustomSecurityGroupIds { get; set; }
 
             /// <summary>
             /// EnableAutoHealing
@@ -105,7 +105,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: AWS OpsWorks Layer LifeCycleConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<LifecycleEventConfiguration, IntrinsicFunction> LifecycleEventConfiguration { get; set; }
+			public LifecycleEventConfiguration LifecycleEventConfiguration { get; set; }
 
             /// <summary>
             /// LoadBasedAutoScaling
@@ -114,7 +114,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: AWS OpsWorks LoadBasedAutoScaling Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<LoadBasedAutoScaling, IntrinsicFunction> LoadBasedAutoScaling { get; set; }
+			public LoadBasedAutoScaling LoadBasedAutoScaling { get; set; }
 
             /// <summary>
             /// Name
@@ -132,7 +132,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Packages { get; set; }
+			public List<Union<string, IntrinsicFunction>> Packages { get; set; }
 
             /// <summary>
             /// Shortname
@@ -162,10 +162,10 @@ namespace Comformation.OpsWorks.Layer
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this AWS OpsWorks layer. Use
             /// tags to manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
@@ -192,12 +192,13 @@ namespace Comformation.OpsWorks.Layer
             /// Type: A list of AWS OpsWorks VolumeConfiguration Type
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<List<VolumeConfiguration>, IntrinsicFunction> VolumeConfigurations { get; set; }
+			public List<VolumeConfiguration> VolumeConfigurations { get; set; }
 
         }
     
         public string Type { get; } = "AWS::OpsWorks::Layer";
         
         public LayerProperties Properties { get; } = new LayerProperties();
+
     }
 }

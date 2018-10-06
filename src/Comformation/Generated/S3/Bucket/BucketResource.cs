@@ -22,7 +22,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket AccelerateConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<AccelerateConfiguration, IntrinsicFunction> AccelerateConfiguration { get; set; }
+			public AccelerateConfiguration AccelerateConfiguration { get; set; }
 
             /// <summary>
             /// AccessControl
@@ -45,7 +45,7 @@ namespace Comformation.S3.Bucket
             /// Type: List of Amazon S3 Bucket AnalyticsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<AnalyticsConfiguration>, IntrinsicFunction> AnalyticsConfigurations { get; set; }
+			public List<AnalyticsConfiguration> AnalyticsConfigurations { get; set; }
 
             /// <summary>
             /// BucketEncryption
@@ -55,7 +55,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket BucketEncryption
             /// Update requires: No interruption
             /// </summary>
-			public Union<BucketEncryption, IntrinsicFunction> BucketEncryption { get; set; }
+			public BucketEncryption BucketEncryption { get; set; }
 
             /// <summary>
             /// BucketName
@@ -79,7 +79,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket CorsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<CorsConfiguration, IntrinsicFunction> CorsConfiguration { get; set; }
+			public CorsConfiguration CorsConfiguration { get; set; }
 
             /// <summary>
             /// InventoryConfigurations
@@ -88,7 +88,7 @@ namespace Comformation.S3.Bucket
             /// Type: List of Amazon S3 Bucket InventoryConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<InventoryConfiguration>, IntrinsicFunction> InventoryConfigurations { get; set; }
+			public List<InventoryConfiguration> InventoryConfigurations { get; set; }
 
             /// <summary>
             /// LifecycleConfiguration
@@ -98,7 +98,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket LifecycleConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<LifecycleConfiguration, IntrinsicFunction> LifecycleConfiguration { get; set; }
+			public LifecycleConfiguration LifecycleConfiguration { get; set; }
 
             /// <summary>
             /// LoggingConfiguration
@@ -107,17 +107,19 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket LoggingConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<LoggingConfiguration, IntrinsicFunction> LoggingConfiguration { get; set; }
+			public LoggingConfiguration LoggingConfiguration { get; set; }
 
             /// <summary>
             /// MetricsConfigurations
-            /// Settings that define a metrics configuration for the CloudWatch request metrics from the bucket.
+            /// Settings that define a metrics configuration for the CloudWatch request metrics from the bucket. For
+            /// a list of request metrics, see Amazon S3 CloudWatch Request Metrics in the Amazon Simple Storage
+            /// Service Developer Guide.
             /// Required: No
             /// Type: List of Amazon S3 Bucket MetricsConfiguration
             /// Update requires: No interruption
             /// Duplicates not allowed.
             /// </summary>
-			public Union<List<MetricsConfiguration>, IntrinsicFunction> MetricsConfigurations { get; set; }
+			public List<MetricsConfiguration> MetricsConfigurations { get; set; }
 
             /// <summary>
             /// NotificationConfiguration
@@ -126,7 +128,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket NotificationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<NotificationConfiguration, IntrinsicFunction> NotificationConfiguration { get; set; }
+			public NotificationConfiguration NotificationConfiguration { get; set; }
 
             /// <summary>
             /// ReplicationConfiguration
@@ -138,7 +140,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket ReplicationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<ReplicationConfiguration, IntrinsicFunction> ReplicationConfiguration { get; set; }
+			public ReplicationConfiguration ReplicationConfiguration { get; set; }
 
             /// <summary>
             /// Tags
@@ -147,10 +149,10 @@ namespace Comformation.S3.Bucket
             /// the AWS CLI and the AWS CloudFormation console and API actions from listing the tags for the S3
             /// bucket.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VersioningConfiguration
@@ -161,7 +163,7 @@ namespace Comformation.S3.Bucket
             /// Type: Amazon S3 Bucket VersioningConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<VersioningConfiguration, IntrinsicFunction> VersioningConfiguration { get; set; }
+			public VersioningConfiguration VersioningConfiguration { get; set; }
 
             /// <summary>
             /// WebsiteConfiguration
@@ -171,20 +173,21 @@ namespace Comformation.S3.Bucket
             /// Type: Website Configuration Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<WebsiteConfiguration, IntrinsicFunction> WebsiteConfiguration { get; set; }
+			public WebsiteConfiguration WebsiteConfiguration { get; set; }
 
         }
     
         public string Type { get; } = "AWS::S3::Bucket";
         
         public BucketProperties Properties { get; } = new BucketProperties();
+
     }
 
 	public static class BucketAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> DomainName = new ResourceAttribute<string>("DomainName");
-        public static readonly ResourceAttribute<string> DualStackDomainName = new ResourceAttribute<string>("DualStackDomainName");
-        public static readonly ResourceAttribute<string> WebsiteURL = new ResourceAttribute<string>("WebsiteURL");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DualStackDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DualStackDomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> WebsiteURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("WebsiteURL");
 	}
 }

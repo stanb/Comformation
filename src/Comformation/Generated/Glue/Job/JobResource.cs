@@ -43,7 +43,7 @@ namespace Comformation.Glue.Job
             /// Type: AWS Glue Job ConnectionsList
             /// Update requires: No interruption
             /// </summary>
-			public Union<ConnectionsList, IntrinsicFunction> Connections { get; set; }
+			public ConnectionsList Connections { get; set; }
 
             /// <summary>
             /// MaxRetries
@@ -79,7 +79,7 @@ namespace Comformation.Glue.Job
             /// Type: AWS Glue Job JobCommand
             /// Update requires: No interruption
             /// </summary>
-			public Union<JobCommand, IntrinsicFunction> Command { get; set; }
+			public JobCommand Command { get; set; }
 
             /// <summary>
             /// AllocatedCapacity
@@ -98,7 +98,7 @@ namespace Comformation.Glue.Job
             /// Type: AWS Glue Job ExecutionProperty
             /// Update requires: No interruption
             /// </summary>
-			public Union<ExecutionProperty, IntrinsicFunction> ExecutionProperty { get; set; }
+			public ExecutionProperty ExecutionProperty { get; set; }
 
             /// <summary>
             /// Name
@@ -115,5 +115,6 @@ namespace Comformation.Glue.Job
         public string Type { get; } = "AWS::Glue::Job";
         
         public JobProperties Properties { get; } = new JobProperties();
+
     }
 }

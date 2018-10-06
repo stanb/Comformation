@@ -53,7 +53,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: List of CloudTrail Trail EventSelector
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<EventSelector>, IntrinsicFunction> EventSelectors { get; set; }
+			public List<EventSelector> EventSelectors { get; set; }
 
             /// <summary>
             /// IncludeGlobalServiceEvents
@@ -128,10 +128,10 @@ namespace Comformation.CloudTrail.Trail
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this trail.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TrailName
@@ -148,11 +148,12 @@ namespace Comformation.CloudTrail.Trail
         public string Type { get; } = "AWS::CloudTrail::Trail";
         
         public TrailProperties Properties { get; } = new TrailProperties();
+
     }
 
 	public static class TrailAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> SnsTopicArn = new ResourceAttribute<string>("SnsTopicArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SnsTopicArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("SnsTopicArn");
 	}
 }

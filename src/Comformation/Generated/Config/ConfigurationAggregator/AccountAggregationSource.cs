@@ -32,7 +32,7 @@ namespace Comformation.Config.ConfigurationAggregator
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsRegions")]
-        public Union<List<string>, IntrinsicFunction> AwsRegions { get; set; }
+        public List<Union<string, IntrinsicFunction>> AwsRegions { get; set; }
 
         /// <summary>
         /// AccountIds
@@ -42,7 +42,7 @@ namespace Comformation.Config.ConfigurationAggregator
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AccountIds")]
-        public Union<List<string>, IntrinsicFunction> AccountIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> AccountIds { get; set; }
 
     }
 }

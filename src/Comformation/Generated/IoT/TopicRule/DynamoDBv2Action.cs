@@ -22,7 +22,7 @@ namespace Comformation.IoT.TopicRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PutItem")]
-        public Union<PutItemInput, IntrinsicFunction> PutItem { get; set; }
+        public PutItemInput PutItem { get; set; }
 
         /// <summary>
         /// RoleArn

@@ -99,10 +99,10 @@ namespace Comformation.EC2.Volume
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this volume.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VolumeType
@@ -119,5 +119,6 @@ namespace Comformation.EC2.Volume
         public string Type { get; } = "AWS::EC2::Volume";
         
         public VolumeProperties Properties { get; } = new VolumeProperties();
+
     }
 }

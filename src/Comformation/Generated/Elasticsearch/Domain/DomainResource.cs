@@ -35,7 +35,7 @@ namespace Comformation.Elasticsearch.Domain
             /// { &quot;rest. action. multi. allow_explicit_index&quot;: &quot;true&quot; }
             /// Update requires: Replacement
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> AdvancedOptions { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> AdvancedOptions { get; set; }
 
             /// <summary>
             /// DomainName
@@ -61,7 +61,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Amazon ES Domain EBSOptions
             /// Update requires: No interruption
             /// </summary>
-			public Union<EBSOptions, IntrinsicFunction> EBSOptions { get; set; }
+			public EBSOptions EBSOptions { get; set; }
 
             /// <summary>
             /// ElasticsearchClusterConfig
@@ -72,7 +72,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Amazon ES Domain ElasticsearchClusterConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<ElasticsearchClusterConfig, IntrinsicFunction> ElasticsearchClusterConfig { get; set; }
+			public ElasticsearchClusterConfig ElasticsearchClusterConfig { get; set; }
 
             /// <summary>
             /// ElasticsearchVersion
@@ -93,7 +93,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Amazon ES Domain EncryptionAtRestOptions
             /// Update requires: Replacement
             /// </summary>
-			public Union<EncryptionAtRestOptions, IntrinsicFunction> EncryptionAtRestOptions { get; set; }
+			public EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
 
             /// <summary>
             /// SnapshotOptions
@@ -102,16 +102,16 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Amazon ES Domain SnapshotOptions
             /// Update requires: No interruption
             /// </summary>
-			public Union<SnapshotOptions, IntrinsicFunction> SnapshotOptions { get; set; }
+			public SnapshotOptions SnapshotOptions { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to associate with the Amazon ES domain.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VPCOptions
@@ -122,19 +122,20 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Amazon ES Domain VPCOptions
             /// Update requires: No interruption
             /// </summary>
-			public Union<VPCOptions, IntrinsicFunction> VPCOptions { get; set; }
+			public VPCOptions VPCOptions { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Elasticsearch::Domain";
         
         public DomainProperties Properties { get; } = new DomainProperties();
+
     }
 
 	public static class DomainAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> DomainArn = new ResourceAttribute<string>("DomainArn");
-        public static readonly ResourceAttribute<string> DomainEndpoint = new ResourceAttribute<string>("DomainEndpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainEndpoint");
 	}
 }

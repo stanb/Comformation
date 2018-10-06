@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Comformation.CodeBuilder
@@ -90,10 +91,39 @@ namespace Comformation.CodeBuilder
 
     public class ResourceClass : CodeUnit
     {
+        private static readonly string[] classesWithCreationPolicy =
+        {
+            "AWS::AutoScaling::AutoScalingGroup",
+            "AWS::EC2::Instance",
+            "AWS::CloudFormation::WaitCondition"
+        };
+
+        private static readonly string[] classesWithUpdatePolicy = 
+        {
+            "AWS::AutoScaling::AutoScalingGroup",
+            "AWS::Lambda::Alias" 
+        };
+
         public string Type { get; set; }
         public string Documentation { get; set; }
         public IEnumerable<PropertyMember> Properties { get; set; }
         public IEnumerable<AttributeMember> Attributes { get; set; }
+
+        public bool HasCreationPolicy
+        {
+            get
+            {
+                return classesWithCreationPolicy.Contains(Type);
+            }
+        }
+
+        public bool HasUpdatePolicy
+        {
+            get
+            {
+                return classesWithUpdatePolicy.Contains(Type);
+            }
+        }
     }
 
     public abstract class CodeUnit

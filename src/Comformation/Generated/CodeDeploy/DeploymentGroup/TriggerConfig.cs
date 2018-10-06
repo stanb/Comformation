@@ -23,7 +23,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TriggerEvents")]
-        public Union<List<string>, IntrinsicFunction> TriggerEvents { get; set; }
+        public List<Union<string, IntrinsicFunction>> TriggerEvents { get; set; }
 
         /// <summary>
         /// TriggerName

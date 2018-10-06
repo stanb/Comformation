@@ -28,12 +28,13 @@ namespace Comformation.IAM.UserToGroupAddition
             /// Type: List of users
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Users { get; set; }
+			public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
     
         public string Type { get; } = "AWS::IAM::UserToGroupAddition";
         
         public UserToGroupAdditionProperties Properties { get; } = new UserToGroupAdditionProperties();
+
     }
 }

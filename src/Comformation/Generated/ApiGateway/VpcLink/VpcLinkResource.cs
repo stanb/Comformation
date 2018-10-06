@@ -32,7 +32,7 @@ namespace Comformation.ApiGateway.VpcLink
             /// List of Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> TargetArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> TargetArns { get; set; }
 
             /// <summary>
             /// Name
@@ -48,5 +48,6 @@ namespace Comformation.ApiGateway.VpcLink
         public string Type { get; } = "AWS::ApiGateway::VpcLink";
         
         public VpcLinkProperties Properties { get; } = new VpcLinkProperties();
+
     }
 }

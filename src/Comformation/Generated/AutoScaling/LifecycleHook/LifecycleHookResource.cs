@@ -104,5 +104,6 @@ namespace Comformation.AutoScaling.LifecycleHook
         public string Type { get; } = "AWS::AutoScaling::LifecycleHook";
         
         public LifecycleHookProperties Properties { get; } = new LifecycleHookProperties();
+
     }
 }

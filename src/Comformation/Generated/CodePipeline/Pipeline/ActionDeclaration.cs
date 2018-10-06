@@ -21,7 +21,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Type: AWS CodePipeline Pipeline Stages Actions ActionTypeId
         /// </summary>
         [JsonProperty("ActionTypeId")]
-        public Union<ActionTypeId, IntrinsicFunction> ActionTypeId { get; set; }
+        public ActionTypeId ActionTypeId { get; set; }
 
         /// <summary>
         /// Configuration
@@ -41,7 +41,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Type: List of AWS CodePipeline Pipeline Stages Actions InputArtifacts
         /// </summary>
         [JsonProperty("InputArtifacts")]
-        public Union<List<InputArtifact>, IntrinsicFunction> InputArtifacts { get; set; }
+        public List<InputArtifact> InputArtifacts { get; set; }
 
         /// <summary>
         /// Name
@@ -59,7 +59,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Type: List of AWS CodePipeline Pipeline Stages Actions OutputArtifacts
         /// </summary>
         [JsonProperty("OutputArtifacts")]
-        public Union<List<OutputArtifact>, IntrinsicFunction> OutputArtifacts { get; set; }
+        public List<OutputArtifact> OutputArtifacts { get; set; }
 
         /// <summary>
         /// RoleArn

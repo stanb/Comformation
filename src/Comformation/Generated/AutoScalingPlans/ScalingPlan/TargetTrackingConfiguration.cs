@@ -44,7 +44,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedScalingMetricSpecification")]
-        public Union<PredefinedScalingMetricSpecification, IntrinsicFunction> PredefinedScalingMetricSpecification { get; set; }
+        public PredefinedScalingMetricSpecification PredefinedScalingMetricSpecification { get; set; }
 
         /// <summary>
         /// DisableScaleIn
@@ -89,7 +89,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomizedScalingMetricSpecification")]
-        public Union<CustomizedScalingMetricSpecification, IntrinsicFunction> CustomizedScalingMetricSpecification { get; set; }
+        public CustomizedScalingMetricSpecification CustomizedScalingMetricSpecification { get; set; }
 
     }
 }

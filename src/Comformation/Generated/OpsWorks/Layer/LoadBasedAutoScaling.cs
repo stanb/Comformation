@@ -22,7 +22,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: AWS OpsWorks AutoScalingThresholds Type
         /// </summary>
         [JsonProperty("DownScaling")]
-        public Union<AutoScalingThresholds, IntrinsicFunction> DownScaling { get; set; }
+        public AutoScalingThresholds DownScaling { get; set; }
 
         /// <summary>
         /// Enable
@@ -41,7 +41,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: AWS OpsWorks AutoScalingThresholds Type
         /// </summary>
         [JsonProperty("UpScaling")]
-        public Union<AutoScalingThresholds, IntrinsicFunction> UpScaling { get; set; }
+        public AutoScalingThresholds UpScaling { get; set; }
 
     }
 }

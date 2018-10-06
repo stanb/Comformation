@@ -41,5 +41,6 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
         public string Type { get; } = "AWS::EC2::SubnetRouteTableAssociation";
         
         public SubnetRouteTableAssociationProperties Properties { get; } = new SubnetRouteTableAssociationProperties();
+
     }
 }

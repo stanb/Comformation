@@ -31,12 +31,13 @@ namespace Comformation.WAF.XssMatchSet
             /// Type: List of AWS WAF XssMatchSet XssMatchTuple
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<XssMatchTuple>, IntrinsicFunction> XssMatchTuples { get; set; }
+			public List<XssMatchTuple> XssMatchTuples { get; set; }
 
         }
     
         public string Type { get; } = "AWS::WAF::XssMatchSet";
         
         public XssMatchSetProperties Properties { get; } = new XssMatchSetProperties();
+
     }
 }

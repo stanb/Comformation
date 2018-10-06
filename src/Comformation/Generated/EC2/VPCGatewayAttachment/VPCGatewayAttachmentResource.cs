@@ -45,5 +45,6 @@ namespace Comformation.EC2.VPCGatewayAttachment
         public string Type { get; } = "AWS::EC2::VPCGatewayAttachment";
         
         public VPCGatewayAttachmentProperties Properties { get; } = new VPCGatewayAttachmentProperties();
+
     }
 }

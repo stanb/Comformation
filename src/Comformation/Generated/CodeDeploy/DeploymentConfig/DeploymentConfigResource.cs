@@ -43,12 +43,13 @@ namespace Comformation.CodeDeploy.DeploymentConfig
             /// Type: AWS CodeDeploy DeploymentConfig MinimumHealthyHosts
             /// Update requires: Replacement
             /// </summary>
-			public Union<MinimumHealthyHosts, IntrinsicFunction> MinimumHealthyHosts { get; set; }
+			public MinimumHealthyHosts MinimumHealthyHosts { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CodeDeploy::DeploymentConfig";
         
         public DeploymentConfigProperties Properties { get; } = new DeploymentConfigProperties();
+
     }
 }

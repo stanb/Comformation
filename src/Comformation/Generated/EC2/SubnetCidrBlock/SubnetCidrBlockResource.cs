@@ -36,5 +36,6 @@ namespace Comformation.EC2.SubnetCidrBlock
         public string Type { get; } = "AWS::EC2::SubnetCidrBlock";
         
         public SubnetCidrBlockProperties Properties { get; } = new SubnetCidrBlockProperties();
+
     }
 }

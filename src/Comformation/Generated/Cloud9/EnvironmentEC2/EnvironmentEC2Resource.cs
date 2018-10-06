@@ -21,7 +21,7 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Type: List of AWS Cloud9 EnvironmentEC2 Repository
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Repository>, IntrinsicFunction> Repositories { get; set; }
+			public List<Repository> Repositories { get; set; }
 
             /// <summary>
             /// OwnerArn
@@ -84,11 +84,12 @@ namespace Comformation.Cloud9.EnvironmentEC2
         public string Type { get; } = "AWS::Cloud9::EnvironmentEC2";
         
         public EnvironmentEC2Properties Properties { get; } = new EnvironmentEC2Properties();
+
     }
 
 	public static class EnvironmentEC2Attributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

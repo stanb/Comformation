@@ -25,7 +25,7 @@ namespace Comformation.Events.Rule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RunCommandTargets")]
-        public Union<List<RunCommandTarget>, IntrinsicFunction> RunCommandTargets { get; set; }
+        public List<RunCommandTarget> RunCommandTargets { get; set; }
 
     }
 }

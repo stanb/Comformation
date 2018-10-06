@@ -32,7 +32,7 @@ namespace Comformation.EMR.Cluster
         /// Type: List of Amazon EMR Cluster MetricDimension
         /// </summary>
         [JsonProperty("Dimensions")]
-        public Union<List<MetricDimension>, IntrinsicFunction> Dimensions { get; set; }
+        public List<MetricDimension> Dimensions { get; set; }
 
         /// <summary>
         /// EvaluationPeriods

@@ -23,7 +23,7 @@ namespace Comformation.WAFRegional.ByteMatchSet
             /// Type: List of AWS WAF Regional ByteMatchSet ByteMatchTuples
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ByteMatchTuple>, IntrinsicFunction> ByteMatchTuples { get; set; }
+			public List<ByteMatchTuple> ByteMatchTuples { get; set; }
 
             /// <summary>
             /// Name
@@ -39,5 +39,6 @@ namespace Comformation.WAFRegional.ByteMatchSet
         public string Type { get; } = "AWS::WAFRegional::ByteMatchSet";
         
         public ByteMatchSetProperties Properties { get; } = new ByteMatchSetProperties();
+
     }
 }

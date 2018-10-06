@@ -33,7 +33,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Type: Key-value pairs, with the option name as the key and the option value as the value.
         /// </summary>
         [JsonProperty("Options")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Options { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Options { get; set; }
 
     }
 }

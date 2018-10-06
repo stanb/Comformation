@@ -24,7 +24,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: AWS CodePipeline Pipeline ArtifactStore
             /// Update requires: No interruption
             /// </summary>
-			public Union<ArtifactStore, IntrinsicFunction> ArtifactStore { get; set; }
+			public ArtifactStore ArtifactStore { get; set; }
 
             /// <summary>
             /// DisableInboundStageTransitions
@@ -34,7 +34,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: List of AWS CodePipeline Pipeline DisableInboundStageTransitions
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<StageTransition>, IntrinsicFunction> DisableInboundStageTransitions { get; set; }
+			public List<StageTransition> DisableInboundStageTransitions { get; set; }
 
             /// <summary>
             /// Name
@@ -72,17 +72,18 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: AWS CodePipeline Pipeline Stages
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<StageDeclaration>, IntrinsicFunction> Stages { get; set; }
+			public List<StageDeclaration> Stages { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CodePipeline::Pipeline";
         
         public PipelineProperties Properties { get; } = new PipelineProperties();
+
     }
 
 	public static class PipelineAttributes
 	{
-        public static readonly ResourceAttribute<string> Version = new ResourceAttribute<string>("Version");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Version = new ResourceAttribute<Union<string, IntrinsicFunction>>("Version");
 	}
 }

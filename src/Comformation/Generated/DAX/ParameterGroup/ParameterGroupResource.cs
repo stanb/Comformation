@@ -46,5 +46,6 @@ namespace Comformation.DAX.ParameterGroup
         public string Type { get; } = "AWS::DAX::ParameterGroup";
         
         public ParameterGroupProperties Properties { get; } = new ParameterGroupProperties();
+
     }
 }

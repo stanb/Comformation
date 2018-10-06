@@ -48,5 +48,6 @@ namespace Comformation.AppSync.GraphQLSchema
         public string Type { get; } = "AWS::AppSync::GraphQLSchema";
         
         public GraphQLSchemaProperties Properties { get; } = new GraphQLSchemaProperties();
+
     }
 }

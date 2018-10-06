@@ -50,7 +50,7 @@ namespace Comformation.GameLift.Fleet
             /// Type: List of Amazon GameLift Fleet EC2InboundPermission
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<IpPermission>, IntrinsicFunction> EC2InboundPermissions { get; set; }
+			public List<IpPermission> EC2InboundPermissions { get; set; }
 
             /// <summary>
             /// EC2InstanceType
@@ -72,7 +72,7 @@ namespace Comformation.GameLift.Fleet
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> LogPaths { get; set; }
+			public List<Union<string, IntrinsicFunction>> LogPaths { get; set; }
 
             /// <summary>
             /// MaxSize
@@ -129,5 +129,6 @@ namespace Comformation.GameLift.Fleet
         public string Type { get; } = "AWS::GameLift::Fleet";
         
         public FleetProperties Properties { get; } = new FleetProperties();
+
     }
 }

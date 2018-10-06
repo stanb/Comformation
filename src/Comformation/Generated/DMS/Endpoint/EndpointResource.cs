@@ -52,12 +52,13 @@ namespace Comformation.DMS.Endpoint
             /// Type: AWS DMS Endpoint S3Settings
             /// Update requires: No interruption
             /// </summary>
-			public Union<S3Settings, IntrinsicFunction> S3Settings { get; set; }
+			public S3Settings S3Settings { get; set; }
 
             /// <summary>
             /// EngineName
-            /// The type of engine for the endpoint. Valid values depend on the EndPointType and include MYSQL,
-            /// ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+            /// The type of engine for the endpoint. Valid values depend on the EndPointType and include mysql,
+            /// oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb,
+            /// mongodb, and sqlserver.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -73,7 +74,7 @@ namespace Comformation.DMS.Endpoint
             /// Type: AWS DMS Endpoint DynamoDBSettings
             /// Update requires: No interruption
             /// </summary>
-			public Union<DynamoDbSettings, IntrinsicFunction> DynamoDbSettings { get; set; }
+			public DynamoDbSettings DynamoDbSettings { get; set; }
 
             /// <summary>
             /// Username
@@ -129,7 +130,7 @@ namespace Comformation.DMS.Endpoint
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// EndpointIdentifier
@@ -170,17 +171,18 @@ namespace Comformation.DMS.Endpoint
             /// Type: AWS DMS Endpoint MongoDbSettings
             /// Update requires: No interruption
             /// </summary>
-			public Union<MongoDbSettings, IntrinsicFunction> MongoDbSettings { get; set; }
+			public MongoDbSettings MongoDbSettings { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DMS::Endpoint";
         
         public EndpointProperties Properties { get; } = new EndpointProperties();
+
     }
 
 	public static class EndpointAttributes
 	{
-        public static readonly ResourceAttribute<string> ExternalId = new ResourceAttribute<string>("ExternalId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ExternalId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ExternalId");
 	}
 }

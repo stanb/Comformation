@@ -33,5 +33,16 @@ namespace Comformation.ApiGateway.UsagePlan
         [JsonProperty("Stage")]
         public Union<string, IntrinsicFunction> Stage { get; set; }
 
+        /// <summary>
+        /// Throttle
+        /// Map containing method-level throttling information for API stage in a usage plan.
+        /// Duplicates are not allowed.
+        /// Required: No
+        /// Type: Map of sting-to-Amazon API Gateway UsagePlan ThrottleSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Throttle")]
+        public Dictionary<string, ThrottleSettings> Throttle { get; set; }
+
     }
 }

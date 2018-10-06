@@ -34,7 +34,7 @@ namespace Comformation.Glue.Trigger
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Conditions")]
-        public Union<List<Condition>, IntrinsicFunction> Conditions { get; set; }
+        public List<Condition> Conditions { get; set; }
 
     }
 }

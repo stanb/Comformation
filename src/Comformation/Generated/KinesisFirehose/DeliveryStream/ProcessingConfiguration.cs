@@ -32,7 +32,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Processors")]
-        public Union<List<Processor>, IntrinsicFunction> Processors { get; set; }
+        public List<Processor> Processors { get; set; }
 
     }
 }

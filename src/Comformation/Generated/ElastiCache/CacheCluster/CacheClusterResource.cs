@@ -62,7 +62,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> CacheSecurityGroupNames { get; set; }
+			public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
 
             /// <summary>
             /// CacheSubnetGroupName
@@ -164,7 +164,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// of whether you specify the same Availability Zones), the update requires some interruptions.
             /// All other updates require replacement.
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> PreferredAvailabilityZones { get; set; }
+			public List<Union<string, IntrinsicFunction>> PreferredAvailabilityZones { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -184,7 +184,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SnapshotArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
 
             /// <summary>
             /// SnapshotName
@@ -220,10 +220,10 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this cache cluster.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -238,20 +238,21 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElastiCache::CacheCluster";
         
         public CacheClusterProperties Properties { get; } = new CacheClusterProperties();
+
     }
 
 	public static class CacheClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> ConfigurationEndpoint_Address = new ResourceAttribute<string>("ConfigurationEndpoint", "Address");
-        public static readonly ResourceAttribute<string> ConfigurationEndpoint_Port = new ResourceAttribute<string>("ConfigurationEndpoint", "Port");
-        public static readonly ResourceAttribute<string> RedisEndpoint_Address = new ResourceAttribute<string>("RedisEndpoint", "Address");
-        public static readonly ResourceAttribute<string> RedisEndpoint_Port = new ResourceAttribute<string>("RedisEndpoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndpoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndpoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RedisEndpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("RedisEndpoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RedisEndpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("RedisEndpoint", "Port");
 	}
 }

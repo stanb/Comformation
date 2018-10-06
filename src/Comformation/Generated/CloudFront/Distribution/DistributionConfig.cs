@@ -24,7 +24,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Logging")]
-        public Union<Logging, IntrinsicFunction> Logging { get; set; }
+        public Logging Logging { get; set; }
 
         /// <summary>
         /// Comment
@@ -59,7 +59,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Origins")]
-        public Union<List<Origin>, IntrinsicFunction> Origins { get; set; }
+        public List<Origin> Origins { get; set; }
 
         /// <summary>
         /// ViewerCertificate
@@ -69,7 +69,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ViewerCertificate")]
-        public Union<ViewerCertificate, IntrinsicFunction> ViewerCertificate { get; set; }
+        public ViewerCertificate ViewerCertificate { get; set; }
 
         /// <summary>
         /// PriceClass
@@ -94,7 +94,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefaultCacheBehavior")]
-        public Union<DefaultCacheBehavior, IntrinsicFunction> DefaultCacheBehavior { get; set; }
+        public DefaultCacheBehavior DefaultCacheBehavior { get; set; }
 
         /// <summary>
         /// CustomErrorResponses
@@ -105,7 +105,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomErrorResponses")]
-        public Union<List<CustomErrorResponse>, IntrinsicFunction> CustomErrorResponses { get; set; }
+        public List<CustomErrorResponse> CustomErrorResponses { get; set; }
 
         /// <summary>
         /// Enabled
@@ -125,7 +125,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Aliases")]
-        public Union<List<string>, IntrinsicFunction> Aliases { get; set; }
+        public List<Union<string, IntrinsicFunction>> Aliases { get; set; }
 
         /// <summary>
         /// IPV6Enabled
@@ -176,7 +176,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Restrictions")]
-        public Union<Restrictions, IntrinsicFunction> Restrictions { get; set; }
+        public Restrictions Restrictions { get; set; }
 
         /// <summary>
         /// CacheBehaviors
@@ -186,7 +186,7 @@ namespace Comformation.CloudFront.Distribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheBehaviors")]
-        public Union<List<CacheBehavior>, IntrinsicFunction> CacheBehaviors { get; set; }
+        public List<CacheBehavior> CacheBehaviors { get; set; }
 
     }
 }

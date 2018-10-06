@@ -55,5 +55,6 @@ namespace Comformation.OpsWorks.Volume
         public string Type { get; } = "AWS::OpsWorks::Volume";
         
         public VolumeProperties Properties { get; } = new VolumeProperties();
+
     }
 }

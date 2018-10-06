@@ -99,7 +99,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> CacheSecurityGroupNames { get; set; }
+			public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
 
             /// <summary>
             /// CacheSubnetGroupName
@@ -137,9 +137,12 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// PreferredCacheClusterAZs ReplicationGroupDescription
             /// Required: No
             /// Type: List of Amazon ElastiCache ReplicationGroup NodeGroupConfiguration
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions Update requires no interruption if the resource contains an
+            /// UseOnlineResharding update policy set to true. Update requires replacement if the resource does not
+            /// contain an UseOnlineResharding update policy, or the policy is set to false. For more information,
+            /// see UseOnlineResharding Policy.
             /// </summary>
-			public Union<List<NodeGroupConfiguration>, IntrinsicFunction> NodeGroupConfiguration { get; set; }
+			public List<NodeGroupConfiguration> NodeGroupConfiguration { get; set; }
 
             /// <summary>
             /// NotificationTopicArn
@@ -176,7 +179,10 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// PreferredCacheClusterAZs ReplicationGroupDescription
             /// Required: No
             /// Type: Integer
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions Update requires no interruption if the resource contains an
+            /// UseOnlineResharding update policy set to true. Update requires replacement if the resource does not
+            /// contain an UseOnlineResharding update policy, or the policy is set to false. For more information,
+            /// see UseOnlineResharding Policy.
             /// </summary>
 			public Union<int, IntrinsicFunction> NumNodeGroups { get; set; }
 
@@ -199,7 +205,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> PreferredCacheClusterAZs { get; set; }
+			public List<Union<string, IntrinsicFunction>> PreferredCacheClusterAZs { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -269,7 +275,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// SnapshotArns
@@ -281,7 +287,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SnapshotArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
 
             /// <summary>
             /// SnapshotName
@@ -325,10 +331,10 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this replication group.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TransitEncryptionEnabled
@@ -347,17 +353,18 @@ namespace Comformation.ElastiCache.ReplicationGroup
         public string Type { get; } = "AWS::ElastiCache::ReplicationGroup";
         
         public ReplicationGroupProperties Properties { get; } = new ReplicationGroupProperties();
+
     }
 
 	public static class ReplicationGroupAttributes
 	{
-        public static readonly ResourceAttribute<string> ConfigurationEndPoint_Address = new ResourceAttribute<string>("ConfigurationEndPoint", "Address");
-        public static readonly ResourceAttribute<string> ConfigurationEndPoint_Port = new ResourceAttribute<string>("ConfigurationEndPoint", "Port");
-        public static readonly ResourceAttribute<string> PrimaryEndPoint_Address = new ResourceAttribute<string>("PrimaryEndPoint", "Address");
-        public static readonly ResourceAttribute<string> PrimaryEndPoint_Port = new ResourceAttribute<string>("PrimaryEndPoint", "Port");
-        public static readonly ResourceAttribute<string> ReadEndPoint_Addresses = new ResourceAttribute<string>("ReadEndPoint", "Addresses");
-        public static readonly ResourceAttribute<List<string>> ReadEndPoint_Addresses_List = new ResourceAttribute<List<string>>("ReadEndPoint", "Addresses", "List");
-        public static readonly ResourceAttribute<string> ReadEndPoint_Ports = new ResourceAttribute<string>("ReadEndPoint", "Ports");
-        public static readonly ResourceAttribute<List<string>> ReadEndPoint_Ports_List = new ResourceAttribute<List<string>>("ReadEndPoint", "Ports", "List");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndPoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndPoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndPoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndPoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrimaryEndPoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrimaryEndPoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrimaryEndPoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrimaryEndPoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndPoint_Addresses = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndPoint", "Addresses");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReadEndPoint_Addresses_List = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReadEndPoint", "Addresses", "List");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndPoint_Ports = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndPoint", "Ports");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReadEndPoint_Ports_List = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReadEndPoint", "Ports", "List");
 	}
 }

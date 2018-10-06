@@ -21,7 +21,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
-        public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// ClusterJDBCURL
@@ -40,7 +40,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Kinesis Data Firehose DeliveryStream CopyCommand
         /// </summary>
         [JsonProperty("CopyCommand")]
-        public Union<CopyCommand, IntrinsicFunction> CopyCommand { get; set; }
+        public CopyCommand CopyCommand { get; set; }
 
         /// <summary>
         /// Password
@@ -58,7 +58,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
-        public Union<ProcessingConfiguration, IntrinsicFunction> ProcessingConfiguration { get; set; }
+        public ProcessingConfiguration ProcessingConfiguration { get; set; }
 
         /// <summary>
         /// RoleARN
@@ -82,7 +82,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
         /// </summary>
         [JsonProperty("S3Configuration")]
-        public Union<S3DestinationConfiguration, IntrinsicFunction> S3Configuration { get; set; }
+        public S3DestinationConfiguration S3Configuration { get; set; }
 
         /// <summary>
         /// Username

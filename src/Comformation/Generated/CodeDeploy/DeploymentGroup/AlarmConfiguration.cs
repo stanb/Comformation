@@ -22,7 +22,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Alarms")]
-        public Union<List<Alarm>, IntrinsicFunction> Alarms { get; set; }
+        public List<Alarm> Alarms { get; set; }
 
         /// <summary>
         /// Enabled

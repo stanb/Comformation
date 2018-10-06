@@ -22,7 +22,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsBlockDeviceConfigs")]
-        public Union<List<EbsBlockDeviceConfig>, IntrinsicFunction> EbsBlockDeviceConfigs { get; set; }
+        public List<EbsBlockDeviceConfig> EbsBlockDeviceConfigs { get; set; }
 
         /// <summary>
         /// EbsOptimized

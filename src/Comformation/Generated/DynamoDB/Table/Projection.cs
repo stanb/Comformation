@@ -25,7 +25,7 @@ namespace Comformation.DynamoDB.Table
         /// Type: List of String values
         /// </summary>
         [JsonProperty("NonKeyAttributes")]
-        public Union<List<string>, IntrinsicFunction> NonKeyAttributes { get; set; }
+        public List<Union<string, IntrinsicFunction>> NonKeyAttributes { get; set; }
 
         /// <summary>
         /// ProjectionType

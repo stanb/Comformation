@@ -23,7 +23,7 @@ namespace Comformation.WAF.WebACL
             /// Type: AWS WAF WebACL Action
             /// Update requires: No interruption
             /// </summary>
-			public Union<WafAction, IntrinsicFunction> DefaultAction { get; set; }
+			public WafAction DefaultAction { get; set; }
 
             /// <summary>
             /// MetricName
@@ -51,12 +51,13 @@ namespace Comformation.WAF.WebACL
             /// Type: List of AWS WAF WebACL ActivatedRule
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ActivatedRule>, IntrinsicFunction> Rules { get; set; }
+			public List<ActivatedRule> Rules { get; set; }
 
         }
     
         public string Type { get; } = "AWS::WAF::WebACL";
         
         public WebACLProperties Properties { get; } = new WebACLProperties();
+
     }
 }

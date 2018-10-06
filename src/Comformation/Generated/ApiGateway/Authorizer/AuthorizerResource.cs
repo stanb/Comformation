@@ -61,10 +61,14 @@ namespace Comformation.ApiGateway.Authorizer
 
             /// <summary>
             /// IdentitySource
-            /// The source of the identity in an incoming request. If you specify TOKEN for the authorizer&#39;s Type
-            /// property, specify a mapping expression. The custom header mapping expression has the form method.
-            /// request. header. name, where name is the name of a custom authorization header that clients submit
-            /// as part of their requests.
+            /// The source of the identity in an incoming request.
+            /// If you specify TOKEN or COGNITO_USER_POOLS for the Type property, specify a header mapping
+            /// expression using the form method. request. header. name, where name is the name of a custom
+            /// authorization header that clients submit as part of their requests.
+            /// If you specify REQUEST for the Type property, specify a comma-separated string of one or more
+            /// mapping expressions of the specified request parameter using the form method. request. parameter.
+            /// name. For supported parameter types, see Configure Lambda Authorizer Using the API Gateway Console
+            /// in the API Gateway Developer Guide.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -95,13 +99,13 @@ namespace Comformation.ApiGateway.Authorizer
             /// <summary>
             /// ProviderARNs
             /// A list of the Amazon Cognito user pool Amazon Resource Names (ARNs) to associate with this
-            /// authorizer. For more information, see Use Amazon Cognito Your User Pool in the API Gateway Developer
+            /// authorizer. For more information, see Use Amazon Cognito User Pools in the API Gateway Developer
             /// Guide.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ProviderARNs { get; set; }
+			public List<Union<string, IntrinsicFunction>> ProviderARNs { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -129,5 +133,6 @@ namespace Comformation.ApiGateway.Authorizer
         public string Type { get; } = "AWS::ApiGateway::Authorizer";
         
         public AuthorizerProperties Properties { get; } = new AuthorizerProperties();
+
     }
 }

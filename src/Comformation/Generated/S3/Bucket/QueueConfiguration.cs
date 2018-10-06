@@ -35,7 +35,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket NotificationFilter
         /// </summary>
         [JsonProperty("Filter")]
-        public Union<NotificationFilter, IntrinsicFunction> Filter { get; set; }
+        public NotificationFilter Filter { get; set; }
 
         /// <summary>
         /// Queue

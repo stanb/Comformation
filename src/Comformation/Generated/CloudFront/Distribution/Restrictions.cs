@@ -21,7 +21,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: CloudFront Distribution GeoRestriction
         /// </summary>
         [JsonProperty("GeoRestriction")]
-        public Union<GeoRestriction, IntrinsicFunction> GeoRestriction { get; set; }
+        public GeoRestriction GeoRestriction { get; set; }
 
     }
 }

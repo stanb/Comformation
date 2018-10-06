@@ -14,6 +14,15 @@ namespace Comformation.ApiGateway.Stage
         public class StageProperties
         {
             /// <summary>
+            /// AccessLogSetting
+            /// Specifies settings for logging access in this stage.
+            /// Required: No
+            /// Type: API Gateway Stage AccessLogSetting
+            /// Update requires: No interruption
+            /// </summary>
+			public AccessLogSetting AccessLogSetting { get; set; }
+
+            /// <summary>
             /// CacheClusterEnabled
             /// Indicates whether cache clustering is enabled for the stage.
             /// Required: No
@@ -30,6 +39,15 @@ namespace Comformation.ApiGateway.Stage
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheClusterSize { get; set; }
+
+            /// <summary>
+            /// CanarySetting
+            /// Specifies settings for the canary deployment in this stage.
+            /// Required: No
+            /// Type: API Gateway Stage CanarySetting
+            /// Update requires: No interruption
+            /// </summary>
+			public CanarySetting CanarySetting { get; set; }
 
             /// <summary>
             /// ClientCertificateId
@@ -74,7 +92,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: List of API Gateway Stage MethodSetting
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<MethodSetting>, IntrinsicFunction> MethodSettings { get; set; }
+			public List<MethodSetting> MethodSettings { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -104,12 +122,13 @@ namespace Comformation.ApiGateway.Stage
             /// Type: Mapping of key-value pairs
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Variables { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ApiGateway::Stage";
         
         public StageProperties Properties { get; } = new StageProperties();
+
     }
 }

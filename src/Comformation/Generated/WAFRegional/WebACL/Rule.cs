@@ -22,7 +22,7 @@ namespace Comformation.WAFRegional.WebACL
         /// Type: AWS WAF Regional WebACL Action
         /// </summary>
         [JsonProperty("Action")]
-        public Union<Action, IntrinsicFunction> Action { get; set; }
+        public Action Action { get; set; }
 
         /// <summary>
         /// Priority

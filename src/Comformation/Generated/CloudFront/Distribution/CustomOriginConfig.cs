@@ -54,7 +54,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("OriginSSLProtocols")]
-        public Union<List<string>, IntrinsicFunction> OriginSSLProtocols { get; set; }
+        public List<Union<string, IntrinsicFunction>> OriginSSLProtocols { get; set; }
 
         /// <summary>
         /// HTTPPort

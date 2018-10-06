@@ -49,27 +49,28 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> RulesPackageArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> RulesPackageArns { get; set; }
 
             /// <summary>
             /// UserAttributesForFindings
             /// The user-defined attributes that are assigned to every generated finding from the assessment run
             /// that uses this assessment template.
             /// Required: No
-            /// Type: List of AWS CloudFormation Resource Tags
+            /// Type: List of Resource Tag
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> UserAttributesForFindings { get; set; }
+			public List<Tag> UserAttributesForFindings { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Inspector::AssessmentTemplate";
         
         public AssessmentTemplateProperties Properties { get; } = new AssessmentTemplateProperties();
+
     }
 
 	public static class AssessmentTemplateAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

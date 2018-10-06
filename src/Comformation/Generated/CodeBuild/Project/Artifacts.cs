@@ -34,6 +34,12 @@ namespace Comformation.CodeBuild.Project
         public Union<string, IntrinsicFunction> Type { get; set; }
 
         /// <summary>
+        /// ArtifactIdentifier
+        /// </summary>
+        [JsonProperty("ArtifactIdentifier")]
+        public Union<string, IntrinsicFunction> ArtifactIdentifier { get; set; }
+
+        /// <summary>
         /// OverrideArtifactName
         /// If set to true a name specified in the buildspec file overrides the artifact name. The name
         /// specified in a buildspec file is calculated at build time and uses the Shell command language. For

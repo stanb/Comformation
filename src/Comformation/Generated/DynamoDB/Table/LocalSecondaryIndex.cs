@@ -34,7 +34,7 @@ namespace Comformation.DynamoDB.Table
         /// Type: List of DynamoDB Table KeySchema
         /// </summary>
         [JsonProperty("KeySchema")]
-        public Union<List<KeySchema>, IntrinsicFunction> KeySchema { get; set; }
+        public List<KeySchema> KeySchema { get; set; }
 
         /// <summary>
         /// Projection
@@ -44,7 +44,7 @@ namespace Comformation.DynamoDB.Table
         /// Type: DynamoDB Table Projection
         /// </summary>
         [JsonProperty("Projection")]
-        public Union<Projection, IntrinsicFunction> Projection { get; set; }
+        public Projection Projection { get; set; }
 
     }
 }

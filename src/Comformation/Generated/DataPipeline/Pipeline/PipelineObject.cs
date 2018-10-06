@@ -22,7 +22,7 @@ namespace Comformation.DataPipeline.Pipeline
         /// Type: List of AWS Data Pipeline Pipeline Field
         /// </summary>
         [JsonProperty("Fields")]
-        public Union<List<Field>, IntrinsicFunction> Fields { get; set; }
+        public List<Field> Fields { get; set; }
 
         /// <summary>
         /// Id

@@ -24,7 +24,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AdditionalMasterSecurityGroups")]
-        public Union<List<string>, IntrinsicFunction> AdditionalMasterSecurityGroups { get; set; }
+        public List<Union<string, IntrinsicFunction>> AdditionalMasterSecurityGroups { get; set; }
 
         /// <summary>
         /// AdditionalSlaveSecurityGroups
@@ -36,7 +36,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AdditionalSlaveSecurityGroups")]
-        public Union<List<string>, IntrinsicFunction> AdditionalSlaveSecurityGroups { get; set; }
+        public List<Union<string, IntrinsicFunction>> AdditionalSlaveSecurityGroups { get; set; }
 
         /// <summary>
         /// CoreInstanceFleet
@@ -49,7 +49,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("CoreInstanceFleet")]
-        public Union<InstanceFleetConfig, IntrinsicFunction> CoreInstanceFleet { get; set; }
+        public InstanceFleetConfig CoreInstanceFleet { get; set; }
 
         /// <summary>
         /// CoreInstanceGroup
@@ -60,7 +60,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("CoreInstanceGroup")]
-        public Union<InstanceGroupConfig, IntrinsicFunction> CoreInstanceGroup { get; set; }
+        public InstanceGroupConfig CoreInstanceGroup { get; set; }
 
         /// <summary>
         /// Ec2KeyName
@@ -128,7 +128,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("MasterInstanceFleet")]
-        public Union<InstanceFleetConfig, IntrinsicFunction> MasterInstanceFleet { get; set; }
+        public InstanceFleetConfig MasterInstanceFleet { get; set; }
 
         /// <summary>
         /// MasterInstanceGroup
@@ -140,7 +140,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("MasterInstanceGroup")]
-        public Union<InstanceGroupConfig, IntrinsicFunction> MasterInstanceGroup { get; set; }
+        public InstanceGroupConfig MasterInstanceGroup { get; set; }
 
         /// <summary>
         /// Placement
@@ -150,7 +150,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Placement")]
-        public Union<PlacementType, IntrinsicFunction> Placement { get; set; }
+        public PlacementType Placement { get; set; }
 
         /// <summary>
         /// ServiceAccessSecurityGroup

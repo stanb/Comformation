@@ -120,5 +120,6 @@ namespace Comformation.EC2.Route
         public string Type { get; } = "AWS::EC2::Route";
         
         public RouteProperties Properties { get; } = new RouteProperties();
+
     }
 }

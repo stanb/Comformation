@@ -29,5 +29,6 @@ namespace Comformation.ElastiCache.SecurityGroup
         public string Type { get; } = "AWS::ElastiCache::SecurityGroup";
         
         public SecurityGroupProperties Properties { get; } = new SecurityGroupProperties();
+
     }
 }

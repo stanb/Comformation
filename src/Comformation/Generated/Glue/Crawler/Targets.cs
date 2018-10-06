@@ -21,7 +21,7 @@ namespace Comformation.Glue.Crawler
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Targets")]
-        public Union<List<S3Target>, IntrinsicFunction> S3Targets { get; set; }
+        public List<S3Target> S3Targets { get; set; }
 
         /// <summary>
         /// JdbcTargets
@@ -31,7 +31,7 @@ namespace Comformation.Glue.Crawler
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("JdbcTargets")]
-        public Union<List<JdbcTarget>, IntrinsicFunction> JdbcTargets { get; set; }
+        public List<JdbcTarget> JdbcTargets { get; set; }
 
     }
 }

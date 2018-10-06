@@ -116,14 +116,10 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// DBSnapshotIdentifier
-            /// The name or Amazon Resource Name (ARN) of the DB snapshot that&#39;s used to restore the DB instance. If
-            /// you&#39;re restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.
-            /// By specifying this property, you can create a DB instance from the specified DB snapshot. If the
-            /// DBSnapshotIdentifier property is an empty string or the AWS::Neptune::DBInstance declaration has no
-            /// DBSnapshotIdentifier property, AWS CloudFormation creates a new database. If the property contains a
-            /// value (other than an empty string), AWS CloudFormation creates a database from the specified
-            /// snapshot. If a snapshot with the specified name doesn&#39;t exist, AWS CloudFormation can&#39;t create the
-            /// database and it rolls back the stack.
+            /// This parameter is not supported.
+            /// AWS::Neptune::DBInstance does not support restoring from snapshots.
+            /// AWS::Neptune::DBCluster supports restoring from snapshots. For more information, see
+            /// AWS::Neptune::DBCluster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -134,21 +130,22 @@ namespace Comformation.Neptune.DBInstance
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this DB instance.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Neptune::DBInstance";
         
         public DBInstanceProperties Properties { get; } = new DBInstanceProperties();
+
     }
 
 	public static class DBInstanceAttributes
 	{
-        public static readonly ResourceAttribute<string> Endpoint = new ResourceAttribute<string>("Endpoint");
-        public static readonly ResourceAttribute<string> Port = new ResourceAttribute<string>("Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Port");
 	}
 }

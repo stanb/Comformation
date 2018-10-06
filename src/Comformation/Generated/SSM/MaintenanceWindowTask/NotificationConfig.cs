@@ -48,7 +48,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationEvents")]
-        public Union<List<string>, IntrinsicFunction> NotificationEvents { get; set; }
+        public List<Union<string, IntrinsicFunction>> NotificationEvents { get; set; }
 
     }
 }

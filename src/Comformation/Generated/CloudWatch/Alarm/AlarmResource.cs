@@ -34,7 +34,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AlarmActions { get; set; }
+			public List<Union<string, IntrinsicFunction>> AlarmActions { get; set; }
 
             /// <summary>
             /// AlarmDescription
@@ -77,7 +77,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Type: List of Metric Dimension
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Dimension>, IntrinsicFunction> Dimensions { get; set; }
+			public List<Dimension> Dimensions { get; set; }
 
             /// <summary>
             /// EvaluateLowSampleCountPercentile
@@ -110,13 +110,13 @@ namespace Comformation.CloudWatch.Alarm
             /// <summary>
             /// InsufficientDataActions
             /// The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state. Specify
-            /// each action as an Amazon Resource Number (ARN). Currently, the only action supported is publishing
-            /// to an Amazon SNS topic or an Auto Scaling policy.
+            /// each action as an Amazon Resource Number (ARN). Currently, the only supported actions are publishing
+            /// to an Amazon SNS topic and publishing to an Auto Scaling policy.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> InsufficientDataActions { get; set; }
+			public List<Union<string, IntrinsicFunction>> InsufficientDataActions { get; set; }
 
             /// <summary>
             /// MetricName
@@ -147,7 +147,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> OKActions { get; set; }
+			public List<Union<string, IntrinsicFunction>> OKActions { get; set; }
 
             /// <summary>
             /// Period
@@ -208,10 +208,11 @@ namespace Comformation.CloudWatch.Alarm
         public string Type { get; } = "AWS::CloudWatch::Alarm";
         
         public AlarmProperties Properties { get; } = new AlarmProperties();
+
     }
 
 	public static class AlarmAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

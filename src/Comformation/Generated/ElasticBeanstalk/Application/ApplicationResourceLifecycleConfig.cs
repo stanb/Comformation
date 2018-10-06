@@ -17,7 +17,8 @@ namespace Comformation.ElasticBeanstalk.Application
         /// <summary>
         /// ServiceRole
         /// The ARN of an IAM service role that Elastic Beanstalk has permission to assume.
-        /// Required: No
+        /// Required: Conditional. If you specify the VersionLifecycleConfig property, you must specify this
+        /// property.
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -32,7 +33,7 @@ namespace Comformation.ElasticBeanstalk.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VersionLifecycleConfig")]
-        public Union<ApplicationVersionLifecycleConfig, IntrinsicFunction> VersionLifecycleConfig { get; set; }
+        public ApplicationVersionLifecycleConfig VersionLifecycleConfig { get; set; }
 
     }
 }

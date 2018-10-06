@@ -20,7 +20,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket LambdaConfiguration
         /// </summary>
         [JsonProperty("LambdaConfigurations")]
-        public Union<List<LambdaConfiguration>, IntrinsicFunction> LambdaConfigurations { get; set; }
+        public List<LambdaConfiguration> LambdaConfigurations { get; set; }
 
         /// <summary>
         /// QueueConfigurations
@@ -30,7 +30,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket QueueConfiguration
         /// </summary>
         [JsonProperty("QueueConfigurations")]
-        public Union<List<QueueConfiguration>, IntrinsicFunction> QueueConfigurations { get; set; }
+        public List<QueueConfiguration> QueueConfigurations { get; set; }
 
         /// <summary>
         /// TopicConfigurations
@@ -39,7 +39,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket TopicConfiguration
         /// </summary>
         [JsonProperty("TopicConfigurations")]
-        public Union<List<TopicConfiguration>, IntrinsicFunction> TopicConfigurations { get; set; }
+        public List<TopicConfiguration> TopicConfigurations { get; set; }
 
     }
 }

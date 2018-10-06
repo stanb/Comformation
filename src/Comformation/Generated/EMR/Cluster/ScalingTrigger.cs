@@ -24,7 +24,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchAlarmDefinition")]
-        public Union<CloudWatchAlarmDefinition, IntrinsicFunction> CloudWatchAlarmDefinition { get; set; }
+        public CloudWatchAlarmDefinition CloudWatchAlarmDefinition { get; set; }
 
     }
 }

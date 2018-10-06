@@ -30,7 +30,7 @@ namespace Comformation.Events.Rule
         /// Type: CloudWatch Events Rule EcsParameters
         /// </summary>
         [JsonProperty("EcsParameters")]
-        public Union<EcsParameters, IntrinsicFunction> EcsParameters { get; set; }
+        public EcsParameters EcsParameters { get; set; }
 
         /// <summary>
         /// Id
@@ -71,7 +71,7 @@ namespace Comformation.Events.Rule
         /// Type: CloudWatch Events Rule InputTransformer
         /// </summary>
         [JsonProperty("InputTransformer")]
-        public Union<InputTransformer, IntrinsicFunction> InputTransformer { get; set; }
+        public InputTransformer InputTransformer { get; set; }
 
         /// <summary>
         /// KinesisParameters
@@ -81,7 +81,7 @@ namespace Comformation.Events.Rule
         /// Type: CloudWatch Events Rule KinesisParameters
         /// </summary>
         [JsonProperty("KinesisParameters")]
-        public Union<KinesisParameters, IntrinsicFunction> KinesisParameters { get; set; }
+        public KinesisParameters KinesisParameters { get; set; }
 
         /// <summary>
         /// RoleArn
@@ -105,7 +105,13 @@ namespace Comformation.Events.Rule
         /// Type: CloudWatch Events Rule RunCommandParameters
         /// </summary>
         [JsonProperty("RunCommandParameters")]
-        public Union<RunCommandParameters, IntrinsicFunction> RunCommandParameters { get; set; }
+        public RunCommandParameters RunCommandParameters { get; set; }
+
+        /// <summary>
+        /// SqsParameters
+        /// </summary>
+        [JsonProperty("SqsParameters")]
+        public SqsParameters SqsParameters { get; set; }
 
     }
 }

@@ -37,7 +37,7 @@ namespace Comformation.WAFRegional.XssMatchSet
         /// Type: AWS WAF Regional XssMatchSet XssMatchTuple FieldToMatch
         /// </summary>
         [JsonProperty("FieldToMatch")]
-        public Union<FieldToMatch, IntrinsicFunction> FieldToMatch { get; set; }
+        public FieldToMatch FieldToMatch { get; set; }
 
     }
 }

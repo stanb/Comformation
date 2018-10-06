@@ -34,7 +34,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SimpleScalingPolicyConfiguration")]
-        public Union<SimpleScalingPolicyConfiguration, IntrinsicFunction> SimpleScalingPolicyConfiguration { get; set; }
+        public SimpleScalingPolicyConfiguration SimpleScalingPolicyConfiguration { get; set; }
 
     }
 }

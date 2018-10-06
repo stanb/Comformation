@@ -41,12 +41,13 @@ namespace Comformation.GameLift.Alias
             /// Type: Amazon GameLift Alias RoutingStrategy
             /// Update requires: No interruption
             /// </summary>
-			public Union<RoutingStrategy, IntrinsicFunction> RoutingStrategy { get; set; }
+			public RoutingStrategy RoutingStrategy { get; set; }
 
         }
     
         public string Type { get; } = "AWS::GameLift::Alias";
         
         public AliasProperties Properties { get; } = new AliasProperties();
+
     }
 }

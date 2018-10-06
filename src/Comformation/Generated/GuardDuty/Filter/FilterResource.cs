@@ -49,7 +49,7 @@ namespace Comformation.GuardDuty.Filter
             /// Type: GuardDuty Filter FindingCriteria
             /// Update requires: No interruption
             /// </summary>
-			public Union<FindingCriteria, IntrinsicFunction> FindingCriteria { get; set; }
+			public FindingCriteria FindingCriteria { get; set; }
 
             /// <summary>
             /// Rank
@@ -75,5 +75,6 @@ namespace Comformation.GuardDuty.Filter
         public string Type { get; } = "AWS::GuardDuty::Filter";
         
         public FilterProperties Properties { get; } = new FilterProperties();
+
     }
 }

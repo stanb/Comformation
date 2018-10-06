@@ -32,7 +32,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
+			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// Cooldown
@@ -124,7 +124,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// configuration that they were originally launched with. To update existing instances, specify an
             /// update policy attribute for this Auto Scaling group. For more information, see UpdatePolicy.
             /// </summary>
-			public Union<LaunchTemplateSpecification, IntrinsicFunction> LaunchTemplate { get; set; }
+			public LaunchTemplateSpecification LaunchTemplate { get; set; }
 
             /// <summary>
             /// LifecycleHookSpecificationList
@@ -135,7 +135,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup LifecycleHookSpecification
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<LifecycleHookSpecification>, IntrinsicFunction> LifecycleHookSpecificationList { get; set; }
+			public List<LifecycleHookSpecification> LifecycleHookSpecificationList { get; set; }
 
             /// <summary>
             /// LoadBalancerNames
@@ -145,7 +145,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> LoadBalancerNames { get; set; }
+			public List<Union<string, IntrinsicFunction>> LoadBalancerNames { get; set; }
 
             /// <summary>
             /// MaxSize
@@ -163,7 +163,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: A list of Amazon EC2 Auto Scaling AutoScalingGroup MetricsCollection
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<MetricsCollection>, IntrinsicFunction> MetricsCollection { get; set; }
+			public List<MetricsCollection> MetricsCollection { get; set; }
 
             /// <summary>
             /// MinSize
@@ -182,7 +182,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup NotificationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<NotificationConfiguration>, IntrinsicFunction> NotificationConfigurations { get; set; }
+			public List<NotificationConfiguration> NotificationConfigurations { get; set; }
 
             /// <summary>
             /// PlacementGroup
@@ -216,7 +216,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup TagProperty
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<TagProperty>, IntrinsicFunction> Tags { get; set; }
+			public List<TagProperty> Tags { get; set; }
 
             /// <summary>
             /// TargetGroupARNs
@@ -225,7 +225,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> TargetGroupARNs { get; set; }
+			public List<Union<string, IntrinsicFunction>> TargetGroupARNs { get; set; }
 
             /// <summary>
             /// TerminationPolicies
@@ -238,7 +238,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> TerminationPolicies { get; set; }
+			public List<Union<string, IntrinsicFunction>> TerminationPolicies { get; set; }
 
             /// <summary>
             /// VPCZoneIdentifier
@@ -253,12 +253,45 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Update requires: Some interruptions
             /// Note When you update VPCZoneIdentifier, the instances are replaced, but not the Auto Scaling group.
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VPCZoneIdentifier { get; set; }
+			public List<Union<string, IntrinsicFunction>> VPCZoneIdentifier { get; set; }
 
         }
     
         public string Type { get; } = "AWS::AutoScaling::AutoScalingGroup";
         
         public AutoScalingGroupProperties Properties { get; } = new AutoScalingGroupProperties();
+
+        /// <summary>
+        /// Associate the CreationPolicy attribute with a resource to prevent its status from reaching create complete until AWS CloudFormation receives
+        /// a specified number of success signals or the timeout period is exceeded. To signal a resource, you can use the cfn-signal helper script or 
+        /// SignalResource API. AWS CloudFormation publishes valid signals to the stack events so that you track the number of signals sent.
+        /// The creation policy is invoked only when AWS CloudFormation creates the associated resource.Currently, the only AWS CloudFormation resources 
+        /// that support creation policies are AWS::AutoScaling::AutoScalingGroup, AWS::EC2::Instance, and AWS::CloudFormation::WaitCondition.
+        /// Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds. For example, if you 
+        /// install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding. In such 
+        /// cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are 
+        /// installed and configured.
+        /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html
+        /// </summary>
+        public CreationPolicy CreationPolicy { get; set; }
+
+		/// <summary>
+		/// Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup or AWS::Lambda::Alias 
+		/// resource.
+		/// For AWS::AutoScaling::AutoScalingGroup resources, AWS CloudFormation invokes one of three update policies depending on the type of change you make 
+		/// or whether a scheduled action is associated with the Auto Scaling group.
+		/// The AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies apply only when you do one or more of the following:
+		///   Change the Auto Scaling group's AWS::AutoScaling::LaunchConfiguration.
+		///   Change the Auto Scaling group's VPCZoneIdentifier property
+		///   Change the Auto Scaling group's LaunchTemplate property
+		///   Update an Auto Scaling group that contains instances that don't match the current LaunchConfiguration.
+		/// If both the AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies are specified, setting the WillReplace property to true gives 
+		/// AutoScalingReplacingUpdate precedence.
+		/// The AutoScalingScheduledAction policy applies when you update a stack that includes an Auto Scaling group with an associated scheduled action.
+		/// For AWS::Lambda::Alias resources, AWS CloudFormation performs an AWS CodeDeploy deployment when the version changes on the alias.
+		/// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
+		/// </summary>
+        public UpdatePolicy UpdatePolicy { get; set; }
+
     }
 }

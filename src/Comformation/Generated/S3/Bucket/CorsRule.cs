@@ -22,7 +22,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of String values
         /// </summary>
         [JsonProperty("AllowedHeaders")]
-        public Union<List<string>, IntrinsicFunction> AllowedHeaders { get; set; }
+        public List<Union<string, IntrinsicFunction>> AllowedHeaders { get; set; }
 
         /// <summary>
         /// AllowedMethods
@@ -32,7 +32,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of String values
         /// </summary>
         [JsonProperty("AllowedMethods")]
-        public Union<List<string>, IntrinsicFunction> AllowedMethods { get; set; }
+        public List<Union<string, IntrinsicFunction>> AllowedMethods { get; set; }
 
         /// <summary>
         /// AllowedOrigins
@@ -41,7 +41,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of String values
         /// </summary>
         [JsonProperty("AllowedOrigins")]
-        public Union<List<string>, IntrinsicFunction> AllowedOrigins { get; set; }
+        public List<Union<string, IntrinsicFunction>> AllowedOrigins { get; set; }
 
         /// <summary>
         /// ExposedHeaders
@@ -51,7 +51,7 @@ namespace Comformation.S3.Bucket
         /// Type: List of String values
         /// </summary>
         [JsonProperty("ExposedHeaders")]
-        public Union<List<string>, IntrinsicFunction> ExposedHeaders { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExposedHeaders { get; set; }
 
         /// <summary>
         /// Id

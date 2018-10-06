@@ -21,7 +21,7 @@ namespace Comformation.OpsWorks.Layer
         /// Type: AWS OpsWorks Layer LifeCycleConfiguration ShutdownEventConfiguration
         /// </summary>
         [JsonProperty("ShutdownEventConfiguration")]
-        public Union<ShutdownEventConfiguration, IntrinsicFunction> ShutdownEventConfiguration { get; set; }
+        public ShutdownEventConfiguration ShutdownEventConfiguration { get; set; }
 
     }
 }

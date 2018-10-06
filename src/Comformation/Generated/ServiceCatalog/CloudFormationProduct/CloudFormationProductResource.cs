@@ -84,7 +84,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Type: List of Resource Tag property types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -103,19 +103,20 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ProvisioningArtifactProperties>, IntrinsicFunction> ProvisioningArtifactParameters { get; set; }
+			public List<ProvisioningArtifactProperties> ProvisioningArtifactParameters { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ServiceCatalog::CloudFormationProduct";
         
         public CloudFormationProductProperties Properties { get; } = new CloudFormationProductProperties();
+
     }
 
 	public static class CloudFormationProductAttributes
 	{
-        public static readonly ResourceAttribute<string> ProductName = new ResourceAttribute<string>("ProductName");
-        public static readonly ResourceAttribute<string> ProvisioningArtifactIds = new ResourceAttribute<string>("ProvisioningArtifactIds");
-        public static readonly ResourceAttribute<string> ProvisioningArtifactNames = new ResourceAttribute<string>("ProvisioningArtifactNames");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProductName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProductName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProvisioningArtifactIds = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProvisioningArtifactIds");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProvisioningArtifactNames = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProvisioningArtifactNames");
 	}
 }

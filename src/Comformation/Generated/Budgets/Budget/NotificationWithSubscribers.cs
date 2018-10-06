@@ -22,7 +22,7 @@ namespace Comformation.Budgets.Budget
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Subscribers")]
-        public Union<List<Subscriber>, IntrinsicFunction> Subscribers { get; set; }
+        public List<Subscriber> Subscribers { get; set; }
 
         /// <summary>
         /// Notification
@@ -38,7 +38,7 @@ namespace Comformation.Budgets.Budget
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Notification")]
-        public Union<Notification, IntrinsicFunction> Notification { get; set; }
+        public Notification Notification { get; set; }
 
     }
 }

@@ -25,7 +25,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// Type: List of String values
         /// </summary>
         [JsonProperty("NotificationTypes")]
-        public Union<List<string>, IntrinsicFunction> NotificationTypes { get; set; }
+        public List<Union<string, IntrinsicFunction>> NotificationTypes { get; set; }
 
         /// <summary>
         /// TopicARN

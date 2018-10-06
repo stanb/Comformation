@@ -32,7 +32,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: AWS OpsWorks Instance BlockDeviceMapping EbsBlockDevice
         /// </summary>
         [JsonProperty("Ebs")]
-        public Union<EbsBlockDevice, IntrinsicFunction> Ebs { get; set; }
+        public EbsBlockDevice Ebs { get; set; }
 
         /// <summary>
         /// NoDevice

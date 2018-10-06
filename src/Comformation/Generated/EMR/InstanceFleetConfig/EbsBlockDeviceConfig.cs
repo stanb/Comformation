@@ -24,7 +24,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("VolumeSpecification")]
-        public Union<VolumeSpecification, IntrinsicFunction> VolumeSpecification { get; set; }
+        public VolumeSpecification VolumeSpecification { get; set; }
 
         /// <summary>
         /// VolumesPerInstance

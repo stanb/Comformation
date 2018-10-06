@@ -23,7 +23,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Capabilities")]
-        public Union<KernelCapabilities, IntrinsicFunction> Capabilities { get; set; }
+        public KernelCapabilities Capabilities { get; set; }
 
         /// <summary>
         /// Devices
@@ -34,7 +34,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Devices")]
-        public Union<List<Device>, IntrinsicFunction> Devices { get; set; }
+        public List<Device> Devices { get; set; }
 
         /// <summary>
         /// InitProcessEnabled
@@ -49,6 +49,30 @@ namespace Comformation.ECS.TaskDefinition
         /// </summary>
         [JsonProperty("InitProcessEnabled")]
         public Union<bool, IntrinsicFunction> InitProcessEnabled { get; set; }
+
+        /// <summary>
+        /// SharedMemorySize
+        /// The value for the size (in MiB) of the /dev/shm volume. This parameter maps to the --shm-size option
+        /// to docker run.
+        /// Note If you are using tasks that use the Fargate launch type, SharedMemorySize is not supported.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SharedMemorySize")]
+        public Union<int, IntrinsicFunction> SharedMemorySize { get; set; }
+
+        /// <summary>
+        /// Tmpfs
+        /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+        /// --tmpfs option to docker run.
+        /// Note If you are using tasks that use the Fargate launch type, Tmpfs is not supported.
+        /// Required: No
+        /// Type: List of Amazon ECS TaskDefinition Tmpfs property types
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("Tmpfs")]
+        public List<Tmpfs> Tmpfs { get; set; }
 
     }
 }

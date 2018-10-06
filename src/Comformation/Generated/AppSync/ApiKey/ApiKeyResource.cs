@@ -26,8 +26,8 @@ namespace Comformation.AppSync.ApiKey
             /// <summary>
             /// Expires
             /// Expiration time of the API Key in seconds (using Unix Epoch time), with a minimum of 1 day and a
-            /// maximum of 365 days.
-            /// Required: Yes
+            /// maximum of 365 days. The default value is 7 days.
+            /// Required: No
             /// Type: Number
             /// Update requires: No interruption
             /// </summary>
@@ -47,11 +47,12 @@ namespace Comformation.AppSync.ApiKey
         public string Type { get; } = "AWS::AppSync::ApiKey";
         
         public ApiKeyProperties Properties { get; } = new ApiKeyProperties();
+
     }
 
 	public static class ApiKeyAttributes
 	{
-        public static readonly ResourceAttribute<string> ApiKey = new ResourceAttribute<string>("ApiKey");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ApiKey = new ResourceAttribute<Union<string, IntrinsicFunction>>("ApiKey");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

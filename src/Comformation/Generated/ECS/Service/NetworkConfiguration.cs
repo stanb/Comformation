@@ -22,7 +22,7 @@ namespace Comformation.ECS.Service
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsvpcConfiguration")]
-        public Union<AwsVpcConfiguration, IntrinsicFunction> AwsvpcConfiguration { get; set; }
+        public AwsVpcConfiguration AwsvpcConfiguration { get; set; }
 
     }
 }

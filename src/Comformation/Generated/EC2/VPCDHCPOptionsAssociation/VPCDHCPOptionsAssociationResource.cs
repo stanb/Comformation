@@ -37,5 +37,6 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
         public string Type { get; } = "AWS::EC2::VPCDHCPOptionsAssociation";
         
         public VPCDHCPOptionsAssociationProperties Properties { get; } = new VPCDHCPOptionsAssociationProperties();
+
     }
 }

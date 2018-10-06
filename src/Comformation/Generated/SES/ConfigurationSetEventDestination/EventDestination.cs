@@ -23,7 +23,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchDestination")]
-        public Union<CloudWatchDestination, IntrinsicFunction> CloudWatchDestination { get; set; }
+        public CloudWatchDestination CloudWatchDestination { get; set; }
 
         /// <summary>
         /// Enabled
@@ -46,7 +46,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MatchingEventTypes")]
-        public Union<List<string>, IntrinsicFunction> MatchingEventTypes { get; set; }
+        public List<Union<string, IntrinsicFunction>> MatchingEventTypes { get; set; }
 
         /// <summary>
         /// Name
@@ -69,7 +69,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisFirehoseDestination")]
-        public Union<KinesisFirehoseDestination, IntrinsicFunction> KinesisFirehoseDestination { get; set; }
+        public KinesisFirehoseDestination KinesisFirehoseDestination { get; set; }
 
     }
 }

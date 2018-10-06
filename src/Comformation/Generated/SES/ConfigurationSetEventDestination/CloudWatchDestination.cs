@@ -23,7 +23,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DimensionConfigurations")]
-        public Union<List<DimensionConfiguration>, IntrinsicFunction> DimensionConfigurations { get; set; }
+        public List<DimensionConfiguration> DimensionConfigurations { get; set; }
 
     }
 }

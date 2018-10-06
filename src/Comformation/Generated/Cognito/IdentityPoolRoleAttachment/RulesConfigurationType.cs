@@ -21,7 +21,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
         /// Type: List of Amazon Cognito IdentityPoolRoleAttachment MappingRule
         /// </summary>
         [JsonProperty("Rules")]
-        public Union<List<MappingRule>, IntrinsicFunction> Rules { get; set; }
+        public List<MappingRule> Rules { get; set; }
 
     }
 }

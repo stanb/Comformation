@@ -29,7 +29,7 @@ namespace Comformation.SNS.Topic
             /// Type: List of SNS Subscriptions
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Subscription>, IntrinsicFunction> Subscription { get; set; }
+			public List<Subscription> Subscription { get; set; }
 
             /// <summary>
             /// TopicName
@@ -49,10 +49,11 @@ namespace Comformation.SNS.Topic
         public string Type { get; } = "AWS::SNS::Topic";
         
         public TopicProperties Properties { get; } = new TopicProperties();
+
     }
 
 	public static class TopicAttributes
 	{
-        public static readonly ResourceAttribute<string> TopicName = new ResourceAttribute<string>("TopicName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> TopicName = new ResourceAttribute<Union<string, IntrinsicFunction>>("TopicName");
 	}
 }

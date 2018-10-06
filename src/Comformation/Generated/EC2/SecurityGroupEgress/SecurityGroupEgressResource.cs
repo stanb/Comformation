@@ -110,5 +110,6 @@ namespace Comformation.EC2.SecurityGroupEgress
         public string Type { get; } = "AWS::EC2::SecurityGroupEgress";
         
         public SecurityGroupEgressProperties Properties { get; } = new SecurityGroupEgressProperties();
+
     }
 }
