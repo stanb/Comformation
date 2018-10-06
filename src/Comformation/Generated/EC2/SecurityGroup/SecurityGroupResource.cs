@@ -44,7 +44,7 @@ namespace Comformation.EC2.SecurityGroup
             /// Type: List of EC2 Security Group Rule
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Egress>, IntrinsicFunction> SecurityGroupEgress { get; set; }
+			public List<Egress> SecurityGroupEgress { get; set; }
 
             /// <summary>
             /// SecurityGroupIngress
@@ -53,16 +53,16 @@ namespace Comformation.EC2.SecurityGroup
             /// Type: List of EC2 Security Group Rule
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Ingress>, IntrinsicFunction> SecurityGroupIngress { get; set; }
+			public List<Ingress> SecurityGroupIngress { get; set; }
 
             /// <summary>
             /// Tags
             /// The tags that you want to attach to the resource.
             /// Required: No
-            /// Type: List of AWS CloudFormation Resource Tags
+            /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -82,11 +82,12 @@ namespace Comformation.EC2.SecurityGroup
         public string Type { get; } = "AWS::EC2::SecurityGroup";
         
         public SecurityGroupProperties Properties { get; } = new SecurityGroupProperties();
+
     }
 
 	public static class SecurityGroupAttributes
 	{
-        public static readonly ResourceAttribute<string> GroupId = new ResourceAttribute<string>("GroupId");
-        public static readonly ResourceAttribute<string> VpcId = new ResourceAttribute<string>("VpcId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> GroupId = new ResourceAttribute<Union<string, IntrinsicFunction>>("GroupId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> VpcId = new ResourceAttribute<Union<string, IntrinsicFunction>>("VpcId");
 	}
 }

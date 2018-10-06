@@ -23,7 +23,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
-        public Union<List<ProcessorParameter>, IntrinsicFunction> Parameters { get; set; }
+        public List<ProcessorParameter> Parameters { get; set; }
 
         /// <summary>
         /// Type

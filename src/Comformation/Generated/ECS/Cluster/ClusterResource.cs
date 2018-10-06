@@ -33,10 +33,11 @@ namespace Comformation.ECS.Cluster
         public string Type { get; } = "AWS::ECS::Cluster";
         
         public ClusterProperties Properties { get; } = new ClusterProperties();
+
     }
 
 	public static class ClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

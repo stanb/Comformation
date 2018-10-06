@@ -30,7 +30,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// Type: Amazon EC2 Auto Scaling EBS Block Device.
         /// </summary>
         [JsonProperty("Ebs")]
-        public Union<BlockDevice, IntrinsicFunction> Ebs { get; set; }
+        public BlockDevice Ebs { get; set; }
 
         /// <summary>
         /// NoDevice

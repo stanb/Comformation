@@ -86,18 +86,19 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Type: AWS Directory Service MicrosoftAD VpcSettings
             /// Update requires: Replacement
             /// </summary>
-			public Union<VpcSettings, IntrinsicFunction> VpcSettings { get; set; }
+			public VpcSettings VpcSettings { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DirectoryService::MicrosoftAD";
         
         public MicrosoftADProperties Properties { get; } = new MicrosoftADProperties();
+
     }
 
 	public static class MicrosoftADAttributes
 	{
-        public static readonly ResourceAttribute<string> Alias = new ResourceAttribute<string>("Alias");
-        public static readonly ResourceAttribute<List<string>> DnsIpAddresses = new ResourceAttribute<List<string>>("DnsIpAddresses");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Alias = new ResourceAttribute<Union<string, IntrinsicFunction>>("Alias");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> DnsIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("DnsIpAddresses");
 	}
 }

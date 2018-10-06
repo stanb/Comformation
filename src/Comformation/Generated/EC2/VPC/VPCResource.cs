@@ -66,24 +66,25 @@ namespace Comformation.EC2.VPC
             /// An arbitrary set of tags (key–value pairs) for this VPC. To name a VPC resource, specify a value for
             /// the Name key.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::VPC";
         
         public VPCProperties Properties { get; } = new VPCProperties();
+
     }
 
 	public static class VPCAttributes
 	{
-        public static readonly ResourceAttribute<string> CidrBlock = new ResourceAttribute<string>("CidrBlock");
-        public static readonly ResourceAttribute<List<string>> CidrBlockAssociations = new ResourceAttribute<List<string>>("CidrBlockAssociations");
-        public static readonly ResourceAttribute<string> DefaultNetworkAcl = new ResourceAttribute<string>("DefaultNetworkAcl");
-        public static readonly ResourceAttribute<string> DefaultSecurityGroup = new ResourceAttribute<string>("DefaultSecurityGroup");
-        public static readonly ResourceAttribute<List<string>> Ipv6CidrBlocks = new ResourceAttribute<List<string>>("Ipv6CidrBlocks");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CidrBlock = new ResourceAttribute<Union<string, IntrinsicFunction>>("CidrBlock");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> CidrBlockAssociations = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("CidrBlockAssociations");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultNetworkAcl = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultNetworkAcl");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultSecurityGroup = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultSecurityGroup");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> Ipv6CidrBlocks = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("Ipv6CidrBlocks");
 	}
 }

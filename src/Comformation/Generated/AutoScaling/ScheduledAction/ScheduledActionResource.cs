@@ -89,5 +89,6 @@ namespace Comformation.AutoScaling.ScheduledAction
         public string Type { get; } = "AWS::AutoScaling::ScheduledAction";
         
         public ScheduledActionProperties Properties { get; } = new ScheduledActionProperties();
+
     }
 }

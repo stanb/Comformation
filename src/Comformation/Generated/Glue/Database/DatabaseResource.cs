@@ -21,7 +21,7 @@ namespace Comformation.Glue.Database
             /// Type: AWS Glue Database DatabaseInput
             /// Update requires: No interruption
             /// </summary>
-			public Union<DatabaseInput, IntrinsicFunction> DatabaseInput { get; set; }
+			public DatabaseInput DatabaseInput { get; set; }
 
             /// <summary>
             /// CatalogId
@@ -40,5 +40,6 @@ namespace Comformation.Glue.Database
         public string Type { get; } = "AWS::Glue::Database";
         
         public DatabaseProperties Properties { get; } = new DatabaseProperties();
+
     }
 }

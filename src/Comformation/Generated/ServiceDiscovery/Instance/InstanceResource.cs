@@ -77,5 +77,6 @@ namespace Comformation.ServiceDiscovery.Instance
         public string Type { get; } = "AWS::ServiceDiscovery::Instance";
         
         public InstanceProperties Properties { get; } = new InstanceProperties();
+
     }
 }

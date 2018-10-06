@@ -53,7 +53,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: AWS Data Pipeline Pipeline ParameterObjects
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ParameterObject>, IntrinsicFunction> ParameterObjects { get; set; }
+			public List<ParameterObject> ParameterObjects { get; set; }
 
             /// <summary>
             /// ParameterValues
@@ -64,7 +64,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: AWS Data Pipeline Pipeline ParameterValues
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ParameterValue>, IntrinsicFunction> ParameterValues { get; set; }
+			public List<ParameterValue> ParameterValues { get; set; }
 
             /// <summary>
             /// PipelineObjects
@@ -77,7 +77,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Restrictions on what can be updated are documented in Editing Your Pipelines in the AWS Data
             /// Pipeline Developer Guide.
             /// </summary>
-			public Union<List<PipelineObject>, IntrinsicFunction> PipelineObjects { get; set; }
+			public List<PipelineObject> PipelineObjects { get; set; }
 
             /// <summary>
             /// PipelineTags
@@ -88,12 +88,13 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: AWS Data Pipeline Pipeline PipelineTags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<PipelineTag>, IntrinsicFunction> PipelineTags { get; set; }
+			public List<PipelineTag> PipelineTags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DataPipeline::Pipeline";
         
         public PipelineProperties Properties { get; } = new PipelineProperties();
+
     }
 }

@@ -30,11 +30,11 @@ namespace Comformation.EC2.LaunchTemplate
         /// Tags
         /// The tags to apply to the resource.
         /// Required: No
-        /// Type: List of AWS CloudFormation Resource Tags
+        /// Type: List of Resource Tag
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tags")]
-        public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
 
     }
 }

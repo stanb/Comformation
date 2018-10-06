@@ -41,7 +41,7 @@ namespace Comformation.Batch.JobDefinition
             /// Type: AWS Batch JobDefinition Timeout
             /// Update requires: No Interruption
             /// </summary>
-			public Union<Timeout, IntrinsicFunction> Timeout { get; set; }
+			public Timeout Timeout { get; set; }
 
             /// <summary>
             /// ContainerProperties
@@ -50,7 +50,7 @@ namespace Comformation.Batch.JobDefinition
             /// Type: AWS Batch JobDefinition ContainerProperties
             /// Update requires: No Interruption
             /// </summary>
-			public Union<ContainerProperties, IntrinsicFunction> ContainerProperties { get; set; }
+			public ContainerProperties ContainerProperties { get; set; }
 
             /// <summary>
             /// JobDefinitionName
@@ -68,12 +68,13 @@ namespace Comformation.Batch.JobDefinition
             /// Type: AWS Batch JobDefinition RetryStrategy
             /// Update requires: No Interruption
             /// </summary>
-			public Union<RetryStrategy, IntrinsicFunction> RetryStrategy { get; set; }
+			public RetryStrategy RetryStrategy { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Batch::JobDefinition";
         
         public JobDefinitionProperties Properties { get; } = new JobDefinitionProperties();
+
     }
 }

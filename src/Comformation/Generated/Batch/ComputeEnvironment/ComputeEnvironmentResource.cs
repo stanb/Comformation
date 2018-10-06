@@ -49,7 +49,7 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Type: AWS Batch ComputeEnvironment ComputeResources
             /// Update requires: No interruption
             /// </summary>
-			public Union<ComputeResources, IntrinsicFunction> ComputeResources { get; set; }
+			public ComputeResources ComputeResources { get; set; }
 
             /// <summary>
             /// State
@@ -67,5 +67,6 @@ namespace Comformation.Batch.ComputeEnvironment
         public string Type { get; } = "AWS::Batch::ComputeEnvironment";
         
         public ComputeEnvironmentProperties Properties { get; } = new ComputeEnvironmentProperties();
+
     }
 }

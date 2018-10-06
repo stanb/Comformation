@@ -73,5 +73,6 @@ namespace Comformation.Cognito.UserPoolGroup
         public string Type { get; } = "AWS::Cognito::UserPoolGroup";
         
         public UserPoolGroupProperties Properties { get; } = new UserPoolGroupProperties();
+
     }
 }

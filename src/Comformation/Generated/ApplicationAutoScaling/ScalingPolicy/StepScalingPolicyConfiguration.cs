@@ -65,7 +65,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// Type: List of Application Auto Scaling ScalingPolicy StepScalingPolicyConfiguration StepAdjustment
         /// </summary>
         [JsonProperty("StepAdjustments")]
-        public Union<List<StepAdjustment>, IntrinsicFunction> StepAdjustments { get; set; }
+        public List<StepAdjustment> StepAdjustments { get; set; }
 
     }
 }

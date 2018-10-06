@@ -22,7 +22,7 @@ namespace Comformation.Budgets.Budget
             /// Type: List of Billing and Cost Management Budget NotificationWithSubscribers property types
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<NotificationWithSubscribers>, IntrinsicFunction> NotificationsWithSubscribers { get; set; }
+			public List<NotificationWithSubscribers> NotificationsWithSubscribers { get; set; }
 
             /// <summary>
             /// Budget
@@ -32,12 +32,13 @@ namespace Comformation.Budgets.Budget
             /// Type: Billing and Cost Management Budget BudgetData
             /// Update requires: No interruption
             /// </summary>
-			public Union<BudgetData, IntrinsicFunction> Budget { get; set; }
+			public BudgetData Budget { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Budgets::Budget";
         
         public BudgetProperties Properties { get; } = new BudgetProperties();
+
     }
 }

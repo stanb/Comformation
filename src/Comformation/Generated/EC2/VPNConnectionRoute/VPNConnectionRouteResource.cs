@@ -38,5 +38,6 @@ namespace Comformation.EC2.VPNConnectionRoute
         public string Type { get; } = "AWS::EC2::VPNConnectionRoute";
         
         public VPNConnectionRouteProperties Properties { get; } = new VPNConnectionRouteProperties();
+
     }
 }

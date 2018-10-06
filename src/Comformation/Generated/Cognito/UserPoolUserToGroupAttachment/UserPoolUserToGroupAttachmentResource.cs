@@ -46,5 +46,6 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
         public string Type { get; } = "AWS::Cognito::UserPoolUserToGroupAttachment";
         
         public UserPoolUserToGroupAttachmentProperties Properties { get; } = new UserPoolUserToGroupAttachmentProperties();
+
     }
 }

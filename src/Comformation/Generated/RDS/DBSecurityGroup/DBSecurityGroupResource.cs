@@ -22,7 +22,7 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Required: Yes
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Ingress>, IntrinsicFunction> DBSecurityGroupIngress { get; set; }
+			public List<Ingress> DBSecurityGroupIngress { get; set; }
 
             /// <summary>
             /// EC2VpcId
@@ -53,12 +53,13 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: A list of resource tags.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::DBSecurityGroup";
         
         public DBSecurityGroupProperties Properties { get; } = new DBSecurityGroupProperties();
+
     }
 }

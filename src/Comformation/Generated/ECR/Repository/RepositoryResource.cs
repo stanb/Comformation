@@ -22,7 +22,7 @@ namespace Comformation.ECR.Repository
             /// Type: Amazon ECR Repository LifecyclePolicy
             /// Update requires: No interruption
             /// </summary>
-			public Union<LifecyclePolicy, IntrinsicFunction> LifecyclePolicy { get; set; }
+			public LifecyclePolicy LifecyclePolicy { get; set; }
 
             /// <summary>
             /// RepositoryName
@@ -53,10 +53,11 @@ namespace Comformation.ECR.Repository
         public string Type { get; } = "AWS::ECR::Repository";
         
         public RepositoryProperties Properties { get; } = new RepositoryProperties();
+
     }
 
 	public static class RepositoryAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

@@ -60,7 +60,7 @@ namespace Comformation.EC2.Instance
         /// Type: List of strings.
         /// </summary>
         [JsonProperty("GroupSet")]
-        public Union<List<string>, IntrinsicFunction> GroupSet { get; set; }
+        public List<Union<string, IntrinsicFunction>> GroupSet { get; set; }
 
         /// <summary>
         /// Ipv6AddressCount
@@ -86,7 +86,7 @@ namespace Comformation.EC2.Instance
         /// Type: List of EC2 NetworkInterface Ipv6Addresses
         /// </summary>
         [JsonProperty("Ipv6Addresses")]
-        public Union<List<InstanceIpv6Address>, IntrinsicFunction> Ipv6Addresses { get; set; }
+        public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
 
         /// <summary>
         /// NetworkInterfaceId
@@ -119,7 +119,7 @@ namespace Comformation.EC2.Instance
         /// Type: list of PrivateIpAddressSpecification
         /// </summary>
         [JsonProperty("PrivateIpAddresses")]
-        public Union<List<PrivateIpAddressSpecification>, IntrinsicFunction> PrivateIpAddresses { get; set; }
+        public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 
         /// <summary>
         /// SecondaryPrivateIpAddressCount

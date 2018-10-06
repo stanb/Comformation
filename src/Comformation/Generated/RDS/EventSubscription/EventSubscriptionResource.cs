@@ -34,7 +34,7 @@ namespace Comformation.RDS.EventSubscription
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> EventCategories { get; set; }
+			public List<Union<string, IntrinsicFunction>> EventCategories { get; set; }
 
             /// <summary>
             /// SnsTopicArn
@@ -55,7 +55,7 @@ namespace Comformation.RDS.EventSubscription
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SourceIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SourceIds { get; set; }
 
             /// <summary>
             /// SourceType
@@ -76,5 +76,6 @@ namespace Comformation.RDS.EventSubscription
         public string Type { get; } = "AWS::RDS::EventSubscription";
         
         public EventSubscriptionProperties Properties { get; } = new EventSubscriptionProperties();
+
     }
 }

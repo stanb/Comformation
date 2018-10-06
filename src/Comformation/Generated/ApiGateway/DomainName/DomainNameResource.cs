@@ -42,7 +42,7 @@ namespace Comformation.ApiGateway.DomainName
             /// Type: API Gateway DomainName EndpointConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<EndpointConfiguration, IntrinsicFunction> EndpointConfiguration { get; set; }
+			public EndpointConfiguration EndpointConfiguration { get; set; }
 
             /// <summary>
             /// RegionalCertificateArn
@@ -59,13 +59,14 @@ namespace Comformation.ApiGateway.DomainName
         public string Type { get; } = "AWS::ApiGateway::DomainName";
         
         public DomainNameProperties Properties { get; } = new DomainNameProperties();
+
     }
 
 	public static class DomainNameAttributes
 	{
-        public static readonly ResourceAttribute<string> DistributionDomainName = new ResourceAttribute<string>("DistributionDomainName");
-        public static readonly ResourceAttribute<string> DistributionHostedZoneId = new ResourceAttribute<string>("DistributionHostedZoneId");
-        public static readonly ResourceAttribute<string> RegionalDomainName = new ResourceAttribute<string>("RegionalDomainName");
-        public static readonly ResourceAttribute<string> RegionalHostedZoneId = new ResourceAttribute<string>("RegionalHostedZoneId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DistributionDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DistributionDomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DistributionHostedZoneId = new ResourceAttribute<Union<string, IntrinsicFunction>>("DistributionHostedZoneId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RegionalDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("RegionalDomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RegionalHostedZoneId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RegionalHostedZoneId");
 	}
 }

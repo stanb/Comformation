@@ -59,10 +59,25 @@ namespace Comformation.CloudFormation.WaitCondition
         public string Type { get; } = "AWS::CloudFormation::WaitCondition";
         
         public WaitConditionProperties Properties { get; } = new WaitConditionProperties();
+
+        /// <summary>
+        /// Associate the CreationPolicy attribute with a resource to prevent its status from reaching create complete until AWS CloudFormation receives
+        /// a specified number of success signals or the timeout period is exceeded. To signal a resource, you can use the cfn-signal helper script or 
+        /// SignalResource API. AWS CloudFormation publishes valid signals to the stack events so that you track the number of signals sent.
+        /// The creation policy is invoked only when AWS CloudFormation creates the associated resource.Currently, the only AWS CloudFormation resources 
+        /// that support creation policies are AWS::AutoScaling::AutoScalingGroup, AWS::EC2::Instance, and AWS::CloudFormation::WaitCondition.
+        /// Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds. For example, if you 
+        /// install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding. In such 
+        /// cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are 
+        /// installed and configured.
+        /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html
+        /// </summary>
+        public CreationPolicy CreationPolicy { get; set; }
+
     }
 
 	public static class WaitConditionAttributes
 	{
-        public static readonly ResourceAttribute<Newtonsoft.Json.Linq.JToken> Data = new ResourceAttribute<Newtonsoft.Json.Linq.JToken>("Data");
+        public static readonly ResourceAttribute<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>> Data = new ResourceAttribute<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>>("Data");
 	}
 }

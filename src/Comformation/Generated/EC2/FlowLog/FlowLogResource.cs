@@ -21,16 +21,46 @@ namespace Comformation.EC2.FlowLog
             /// DeliverLogsPermissionArn
             /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that permits
             /// Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.
-            /// Required: Yes
+            /// If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn or LogGroupName.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DeliverLogsPermissionArn { get; set; }
 
             /// <summary>
+            /// LogDestination
+            /// Specifies the destination to which the flow log data is to be published. Flow log data can be
+            /// published to an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this
+            /// parameter depends on the value specified for LogDestinationType.
+            /// If LogDestinationType is not specified or cloud-watch-logs, specify the Amazon Resource Name (ARN)
+            /// of the CloudWatch Logs log group. If LogDestinationType is s3, specify the ARN of the Amazon S3
+            /// bucket. You can also specify a subfolder in the bucket. To specify a subfolder in the bucket, use
+            /// the following ARN format: bucket_ARN/subfolder_name/. For example, to specify a subfolder named
+            /// my-logs in a bucket named my-bucket , use the following ARN: arn:aws:s3:::my-bucket/my-logs/.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> LogDestination { get; set; }
+
+            /// <summary>
+            /// LogDestinationType
+            /// Specifies the type of destination to which the flow log data is to be published. Flow log data can
+            /// be published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+            /// cloud-watch-logs. To publish flow log data to Amazon S3, specify s3.
+            /// If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn or LogGroupName.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> LogDestinationType { get; set; }
+
+            /// <summary>
             /// LogGroupName
             /// The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes your flow logs.
-            /// Required: Yes
+            /// If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn or LogGroupName.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -72,5 +102,6 @@ namespace Comformation.EC2.FlowLog
         public string Type { get; } = "AWS::EC2::FlowLog";
         
         public FlowLogProperties Properties { get; } = new FlowLogProperties();
+
     }
 }

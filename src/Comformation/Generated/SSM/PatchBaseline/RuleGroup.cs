@@ -22,7 +22,7 @@ namespace Comformation.SSM.PatchBaseline
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchRules")]
-        public Union<List<Rule>, IntrinsicFunction> PatchRules { get; set; }
+        public List<Rule> PatchRules { get; set; }
 
     }
 }

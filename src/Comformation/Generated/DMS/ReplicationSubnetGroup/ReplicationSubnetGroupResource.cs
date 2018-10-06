@@ -40,7 +40,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -49,12 +49,13 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Type: A list of resource tags in key-value format.
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DMS::ReplicationSubnetGroup";
         
         public ReplicationSubnetGroupProperties Properties { get; } = new ReplicationSubnetGroupProperties();
+
     }
 }

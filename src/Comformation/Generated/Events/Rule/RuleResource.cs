@@ -83,17 +83,18 @@ namespace Comformation.Events.Rule
             /// Type: List of Amazon CloudWatch Events Rule Target
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
+			public List<Target> Targets { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Events::Rule";
         
         public RuleProperties Properties { get; } = new RuleProperties();
+
     }
 
 	public static class RuleAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

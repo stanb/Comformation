@@ -22,7 +22,7 @@ namespace Comformation.SSM.Association
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Location")]
-        public Union<S3OutputLocation, IntrinsicFunction> S3Location { get; set; }
+        public S3OutputLocation S3Location { get; set; }
 
     }
 }

@@ -70,7 +70,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Type: List of Systems Manager MaintenanceWindowTask Target
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Target>, IntrinsicFunction> Targets { get; set; }
+			public List<Target> Targets { get; set; }
 
             /// <summary>
             /// Name
@@ -101,7 +101,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Type: Systems Manager MaintenanceWindowTask TaskInvocationParameters
             /// Update requires: No interruption
             /// </summary>
-			public Union<TaskInvocationParameters, IntrinsicFunction> TaskInvocationParameters { get; set; }
+			public TaskInvocationParameters TaskInvocationParameters { get; set; }
 
             /// <summary>
             /// WindowId
@@ -145,12 +145,13 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Type: Systems Manager MaintenanceWindowTask LoggingInfo
             /// Update requires: No interruption
             /// </summary>
-			public Union<LoggingInfo, IntrinsicFunction> LoggingInfo { get; set; }
+			public LoggingInfo LoggingInfo { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SSM::MaintenanceWindowTask";
         
         public MaintenanceWindowTaskProperties Properties { get; } = new MaintenanceWindowTaskProperties();
+
     }
 }

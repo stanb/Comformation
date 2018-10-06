@@ -25,7 +25,7 @@ namespace Comformation.EC2.VPCEndpointServicePermissions
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AllowedPrincipals { get; set; }
+			public List<Union<string, IntrinsicFunction>> AllowedPrincipals { get; set; }
 
             /// <summary>
             /// ServiceId
@@ -41,5 +41,6 @@ namespace Comformation.EC2.VPCEndpointServicePermissions
         public string Type { get; } = "AWS::EC2::VPCEndpointServicePermissions";
         
         public VPCEndpointServicePermissionsProperties Properties { get; } = new VPCEndpointServicePermissionsProperties();
+
     }
 }

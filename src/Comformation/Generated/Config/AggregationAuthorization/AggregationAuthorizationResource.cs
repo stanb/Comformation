@@ -37,5 +37,6 @@ namespace Comformation.Config.AggregationAuthorization
         public string Type { get; } = "AWS::Config::AggregationAuthorization";
         
         public AggregationAuthorizationProperties Properties { get; } = new AggregationAuthorizationProperties();
+
     }
 }

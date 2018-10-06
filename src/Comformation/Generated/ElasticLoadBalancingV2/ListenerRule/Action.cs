@@ -26,8 +26,8 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 
         /// <summary>
         /// Type
-        /// The type of action. For valid values, see the Type contents for the Action data type in the Elastic
-        /// Load Balancing API Reference version 2015-12-01.
+        /// The type of action.
+        /// Valid values: forward
         /// Required: Yes
         /// Type: String
         /// </summary>

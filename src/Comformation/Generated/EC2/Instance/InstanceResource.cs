@@ -59,7 +59,7 @@ namespace Comformation.EC2.Instance
             /// Update requires: Replacement. If you change only the DeleteOnTermination property for one or more
             /// block devices, update requires No interruption.
             /// </summary>
-			public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
+			public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
 
             /// <summary>
             /// CreditSpecification
@@ -68,7 +68,7 @@ namespace Comformation.EC2.Instance
             /// Type: Amazon EC2 Instance CreditSpecification.
             /// Update requires: No interruption
             /// </summary>
-			public Union<CreditSpecification, IntrinsicFunction> CreditSpecification { get; set; }
+			public CreditSpecification CreditSpecification { get; set; }
 
             /// <summary>
             /// DisableApiTermination
@@ -104,7 +104,7 @@ namespace Comformation.EC2.Instance
             /// Type: List of Amazon EC2 Instance ElasticGpuSpecification
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<ElasticGpuSpecification>, IntrinsicFunction> ElasticGpuSpecifications { get; set; }
+			public List<ElasticGpuSpecification> ElasticGpuSpecifications { get; set; }
 
             /// <summary>
             /// HostId
@@ -186,7 +186,7 @@ namespace Comformation.EC2.Instance
             /// Type: List of EC2 NetworkInterface Ipv6Addresses
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<InstanceIpv6Address>, IntrinsicFunction> Ipv6Addresses { get; set; }
+			public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
 
             /// <summary>
             /// KernelId
@@ -215,7 +215,7 @@ namespace Comformation.EC2.Instance
             /// Type: Amazon EC2 Instance LaunchTemplateSpecification
             /// Update requires: Replacement
             /// </summary>
-			public Union<LaunchTemplateSpecification, IntrinsicFunction> LaunchTemplate { get; set; }
+			public LaunchTemplateSpecification LaunchTemplate { get; set; }
 
             /// <summary>
             /// Monitoring
@@ -238,7 +238,7 @@ namespace Comformation.EC2.Instance
             /// Type: A list of EC2 NetworkInterface Embedded Property Type
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<NetworkInterface>, IntrinsicFunction> NetworkInterfaces { get; set; }
+			public List<NetworkInterface> NetworkInterfaces { get; set; }
 
             /// <summary>
             /// PlacementGroupName
@@ -290,7 +290,7 @@ namespace Comformation.EC2.Instance
             /// Update requires: No interruption for instances that are in a VPC. Update requires: Replacement for
             /// instances that are not in a VPC.
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// SecurityGroups
@@ -301,7 +301,7 @@ namespace Comformation.EC2.Instance
             /// Type: List of String values
             /// Update requires: Replacement.
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// SourceDestCheck
@@ -326,7 +326,7 @@ namespace Comformation.EC2.Instance
             /// Type: List of Amazon EC2 Instance SsmAssociations.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<SsmAssociation>, IntrinsicFunction> SsmAssociations { get; set; }
+			public List<SsmAssociation> SsmAssociations { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -342,10 +342,10 @@ namespace Comformation.EC2.Instance
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this instance.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Tenancy
@@ -382,21 +382,36 @@ namespace Comformation.EC2.Instance
             /// Type: A list of EC2 MountPoints.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Volume>, IntrinsicFunction> Volumes { get; set; }
+			public List<Volume> Volumes { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::Instance";
         
         public InstanceProperties Properties { get; } = new InstanceProperties();
+
+        /// <summary>
+        /// Associate the CreationPolicy attribute with a resource to prevent its status from reaching create complete until AWS CloudFormation receives
+        /// a specified number of success signals or the timeout period is exceeded. To signal a resource, you can use the cfn-signal helper script or 
+        /// SignalResource API. AWS CloudFormation publishes valid signals to the stack events so that you track the number of signals sent.
+        /// The creation policy is invoked only when AWS CloudFormation creates the associated resource.Currently, the only AWS CloudFormation resources 
+        /// that support creation policies are AWS::AutoScaling::AutoScalingGroup, AWS::EC2::Instance, and AWS::CloudFormation::WaitCondition.
+        /// Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds. For example, if you 
+        /// install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding. In such 
+        /// cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are 
+        /// installed and configured.
+        /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html
+        /// </summary>
+        public CreationPolicy CreationPolicy { get; set; }
+
     }
 
 	public static class InstanceAttributes
 	{
-        public static readonly ResourceAttribute<string> AvailabilityZone = new ResourceAttribute<string>("AvailabilityZone");
-        public static readonly ResourceAttribute<string> PrivateDnsName = new ResourceAttribute<string>("PrivateDnsName");
-        public static readonly ResourceAttribute<string> PrivateIp = new ResourceAttribute<string>("PrivateIp");
-        public static readonly ResourceAttribute<string> PublicDnsName = new ResourceAttribute<string>("PublicDnsName");
-        public static readonly ResourceAttribute<string> PublicIp = new ResourceAttribute<string>("PublicIp");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AvailabilityZone = new ResourceAttribute<Union<string, IntrinsicFunction>>("AvailabilityZone");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrivateDnsName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrivateDnsName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrivateIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrivateIp");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PublicDnsName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PublicDnsName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PublicIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("PublicIp");
 	}
 }

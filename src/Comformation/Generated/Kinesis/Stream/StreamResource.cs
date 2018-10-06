@@ -55,27 +55,28 @@ namespace Comformation.Kinesis.Stream
             /// Type: Kinesis StreamEncryption
             /// Update requires: No interruption
             /// </summary>
-			public Union<StreamEncryption, IntrinsicFunction> StreamEncryption { get; set; }
+			public StreamEncryption StreamEncryption { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to associate with the Kinesis stream. For information
             /// about constraints for this property, see Tag Restrictions in the Amazon Kinesis Developer Guide.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Kinesis::Stream";
         
         public StreamProperties Properties { get; } = new StreamProperties();
+
     }
 
 	public static class StreamAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

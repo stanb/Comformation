@@ -29,17 +29,18 @@ namespace Comformation.IoT.TopicRule
             /// Type: TopicRulePayload object
             /// Update requires: No interruption
             /// </summary>
-			public Union<TopicRulePayload, IntrinsicFunction> TopicRulePayload { get; set; }
+			public TopicRulePayload TopicRulePayload { get; set; }
 
         }
     
         public string Type { get; } = "AWS::IoT::TopicRule";
         
         public TopicRuleProperties Properties { get; } = new TopicRuleProperties();
+
     }
 
 	public static class TopicRuleAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

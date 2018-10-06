@@ -21,7 +21,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destination")]
-        public Union<Destination, IntrinsicFunction> Destination { get; set; }
+        public Destination Destination { get; set; }
 
         /// <summary>
         /// Enabled
@@ -64,7 +64,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OptionalFields")]
-        public Union<List<string>, IntrinsicFunction> OptionalFields { get; set; }
+        public List<Union<string, IntrinsicFunction>> OptionalFields { get; set; }
 
         /// <summary>
         /// Prefix

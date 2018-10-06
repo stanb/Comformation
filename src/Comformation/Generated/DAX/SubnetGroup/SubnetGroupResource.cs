@@ -39,12 +39,13 @@ namespace Comformation.DAX.SubnetGroup
             /// Type: List of String values;
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DAX::SubnetGroup";
         
         public SubnetGroupProperties Properties { get; } = new SubnetGroupProperties();
+
     }
 }

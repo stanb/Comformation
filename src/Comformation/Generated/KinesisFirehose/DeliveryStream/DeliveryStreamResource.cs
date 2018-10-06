@@ -44,7 +44,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon ES
             /// destination to an Amazon S3 or Amazon Redshift destination, update requires some interruptions.
             /// </summary>
-			public Union<ElasticsearchDestinationConfiguration, IntrinsicFunction> ElasticsearchDestinationConfiguration { get; set; }
+			public ElasticsearchDestinationConfiguration ElasticsearchDestinationConfiguration { get; set; }
 
             /// <summary>
             /// ExtendedS3DestinationConfiguration
@@ -54,7 +54,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
-			public Union<ExtendedS3DestinationConfiguration, IntrinsicFunction> ExtendedS3DestinationConfiguration { get; set; }
+			public ExtendedS3DestinationConfiguration ExtendedS3DestinationConfiguration { get; set; }
 
             /// <summary>
             /// KinesisStreamSourceConfiguration
@@ -65,7 +65,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: Kinesis Data Firehose DeliveryStream KinesisStreamSourceConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<KinesisStreamSourceConfiguration, IntrinsicFunction> KinesisStreamSourceConfiguration { get; set; }
+			public KinesisStreamSourceConfiguration KinesisStreamSourceConfiguration { get; set; }
 
             /// <summary>
             /// RedshiftDestinationConfiguration
@@ -75,7 +75,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
-			public Union<RedshiftDestinationConfiguration, IntrinsicFunction> RedshiftDestinationConfiguration { get; set; }
+			public RedshiftDestinationConfiguration RedshiftDestinationConfiguration { get; set; }
 
             /// <summary>
             /// S3DestinationConfiguration
@@ -85,7 +85,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon S3
             /// destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
-			public Union<S3DestinationConfiguration, IntrinsicFunction> S3DestinationConfiguration { get; set; }
+			public S3DestinationConfiguration S3DestinationConfiguration { get; set; }
 
             /// <summary>
             /// SplunkDestinationConfiguration
@@ -94,17 +94,18 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: Kinesis Data Firehose DeliveryStream SplunkDestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<SplunkDestinationConfiguration, IntrinsicFunction> SplunkDestinationConfiguration { get; set; }
+			public SplunkDestinationConfiguration SplunkDestinationConfiguration { get; set; }
 
         }
     
         public string Type { get; } = "AWS::KinesisFirehose::DeliveryStream";
         
         public DeliveryStreamProperties Properties { get; } = new DeliveryStreamProperties();
+
     }
 
 	public static class DeliveryStreamAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

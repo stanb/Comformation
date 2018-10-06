@@ -30,22 +30,23 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this subnet group. Use tags
             /// to manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Redshift::ClusterSubnetGroup";
         
         public ClusterSubnetGroupProperties Properties { get; } = new ClusterSubnetGroupProperties();
+
     }
 }

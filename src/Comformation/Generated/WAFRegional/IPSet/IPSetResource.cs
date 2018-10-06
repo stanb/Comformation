@@ -27,7 +27,7 @@ namespace Comformation.WAFRegional.IPSet
             /// Type: List of AWS WAF Regional IPSet IPSetDescriptors
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<IPSetDescriptor>, IntrinsicFunction> IPSetDescriptors { get; set; }
+			public List<IPSetDescriptor> IPSetDescriptors { get; set; }
 
             /// <summary>
             /// Name
@@ -43,5 +43,6 @@ namespace Comformation.WAFRegional.IPSet
         public string Type { get; } = "AWS::WAFRegional::IPSet";
         
         public IPSetProperties Properties { get; } = new IPSetProperties();
+
     }
 }

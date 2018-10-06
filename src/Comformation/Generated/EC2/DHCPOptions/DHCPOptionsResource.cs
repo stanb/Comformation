@@ -33,7 +33,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
             /// &quot;DomainNameServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> DomainNameServers { get; set; }
+			public List<Union<string, IntrinsicFunction>> DomainNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNameServers
@@ -45,7 +45,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
             /// &quot;NetbiosNameServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> NetbiosNameServers { get; set; }
+			public List<Union<string, IntrinsicFunction>> NetbiosNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNodeType
@@ -71,21 +71,22 @@ namespace Comformation.EC2.DHCPOptions
             /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
             /// &quot;NtpServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> NtpServers { get; set; }
+			public List<Union<string, IntrinsicFunction>> NtpServers { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this resource.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::DHCPOptions";
         
         public DHCPOptionsProperties Properties { get; } = new DHCPOptionsProperties();
+
     }
 }

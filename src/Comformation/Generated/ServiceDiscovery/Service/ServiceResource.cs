@@ -44,7 +44,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// Update requires: No interruption
             /// 				
             /// </summary>
-			public Union<HealthCheckCustomConfig, IntrinsicFunction> HealthCheckCustomConfig { get; set; }
+			public HealthCheckCustomConfig HealthCheckCustomConfig { get; set; }
 
             /// <summary>
             /// DnsConfig
@@ -59,7 +59,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// Update requires: No interruption
             /// 				
             /// </summary>
-			public Union<DnsConfig, IntrinsicFunction> DnsConfig { get; set; }
+			public DnsConfig DnsConfig { get; set; }
 
             /// <summary>
             /// HealthCheckConfig
@@ -78,7 +78,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// Update requires: No interruption
             /// 				
             /// </summary>
-			public Union<HealthCheckConfig, IntrinsicFunction> HealthCheckConfig { get; set; }
+			public HealthCheckConfig HealthCheckConfig { get; set; }
 
             /// <summary>
             /// Name
@@ -99,12 +99,13 @@ namespace Comformation.ServiceDiscovery.Service
         public string Type { get; } = "AWS::ServiceDiscovery::Service";
         
         public ServiceProperties Properties { get; } = new ServiceProperties();
+
     }
 
 	public static class ServiceAttributes
 	{
-        public static readonly ResourceAttribute<string> Id = new ResourceAttribute<string>("Id");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

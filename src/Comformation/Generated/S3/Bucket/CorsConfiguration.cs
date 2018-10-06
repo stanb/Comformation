@@ -20,7 +20,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket CorsRule
         /// </summary>
         [JsonProperty("CorsRules")]
-        public Union<List<CorsRule>, IntrinsicFunction> CorsRules { get; set; }
+        public List<CorsRule> CorsRules { get; set; }
 
     }
 }

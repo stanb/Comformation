@@ -49,5 +49,6 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
         public string Type { get; } = "AWS::Cognito::IdentityPoolRoleAttachment";
         
         public IdentityPoolRoleAttachmentProperties Properties { get; } = new IdentityPoolRoleAttachmentProperties();
+
     }
 }

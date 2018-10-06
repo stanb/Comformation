@@ -90,5 +90,6 @@ namespace Comformation.Lambda.Permission
         public string Type { get; } = "AWS::Lambda::Permission";
         
         public PermissionProperties Properties { get; } = new PermissionProperties();
+
     }
 }

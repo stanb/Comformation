@@ -114,7 +114,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// Type: List of Amazon EC2 Auto Scaling ScalingPolicy StepAdjustments
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<StepAdjustment>, IntrinsicFunction> StepAdjustments { get; set; }
+			public List<StepAdjustment> StepAdjustments { get; set; }
 
             /// <summary>
             /// TargetTrackingConfiguration
@@ -124,12 +124,13 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// Type: Amazon EC2 Auto Scaling ScalingPolicy TargetTrackingConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<TargetTrackingConfiguration, IntrinsicFunction> TargetTrackingConfiguration { get; set; }
+			public TargetTrackingConfiguration TargetTrackingConfiguration { get; set; }
 
         }
     
         public string Type { get; } = "AWS::AutoScaling::ScalingPolicy";
         
         public ScalingPolicyProperties Properties { get; } = new ScalingPolicyProperties();
+
     }
 }

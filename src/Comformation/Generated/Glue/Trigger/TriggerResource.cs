@@ -39,7 +39,7 @@ namespace Comformation.Glue.Trigger
             /// Type: List of AWS Glue Trigger Action
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Action>, IntrinsicFunction> Actions { get; set; }
+			public List<Action> Actions { get; set; }
 
             /// <summary>
             /// Schedule
@@ -66,12 +66,13 @@ namespace Comformation.Glue.Trigger
             /// Type: AWS Glue Trigger Predicate
             /// Update requires: No interruption
             /// </summary>
-			public Union<Predicate, IntrinsicFunction> Predicate { get; set; }
+			public Predicate Predicate { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Glue::Trigger";
         
         public TriggerProperties Properties { get; } = new TriggerProperties();
+
     }
 }

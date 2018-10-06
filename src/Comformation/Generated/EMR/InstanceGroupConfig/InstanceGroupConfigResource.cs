@@ -23,7 +23,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: Amazon EMR InstanceGroupConfig AutoScalingPolicy
             /// Update requires: No interruption
             /// </summary>
-			public Union<AutoScalingPolicy, IntrinsicFunction> AutoScalingPolicy { get; set; }
+			public AutoScalingPolicy AutoScalingPolicy { get; set; }
 
             /// <summary>
             /// BidPrice
@@ -43,7 +43,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: List of Amazon EMR Cluster Configurations
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
+			public List<Configuration> Configurations { get; set; }
 
             /// <summary>
             /// EbsConfiguration
@@ -52,7 +52,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: Amazon EMR EbsConfiguration
             /// Update requires: Replacement
             /// </summary>
-			public Union<EbsConfiguration, IntrinsicFunction> EbsConfiguration { get; set; }
+			public EbsConfiguration EbsConfiguration { get; set; }
 
             /// <summary>
             /// InstanceCount
@@ -118,5 +118,6 @@ namespace Comformation.EMR.InstanceGroupConfig
         public string Type { get; } = "AWS::EMR::InstanceGroupConfig";
         
         public InstanceGroupConfigProperties Properties { get; } = new InstanceGroupConfigProperties();
+
     }
 }

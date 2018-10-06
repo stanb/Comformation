@@ -36,7 +36,7 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
         /// Type: AWS WAF Regional ByteMatchSet ByteMatchTuples FieldToMatch
         /// </summary>
         [JsonProperty("FieldToMatch")]
-        public Union<FieldToMatch, IntrinsicFunction> FieldToMatch { get; set; }
+        public FieldToMatch FieldToMatch { get; set; }
 
     }
 }

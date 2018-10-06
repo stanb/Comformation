@@ -43,7 +43,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageClassAnalysis")]
-        public Union<StorageClassAnalysis, IntrinsicFunction> StorageClassAnalysis { get; set; }
+        public StorageClassAnalysis StorageClassAnalysis { get; set; }
 
         /// <summary>
         /// TagFilters
@@ -55,7 +55,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]
-        public Union<List<TagFilter>, IntrinsicFunction> TagFilters { get; set; }
+        public List<TagFilter> TagFilters { get; set; }
 
     }
 }

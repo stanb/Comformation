@@ -36,7 +36,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> BinaryMediaTypes { get; set; }
+			public List<Union<string, IntrinsicFunction>> BinaryMediaTypes { get; set; }
 
             /// <summary>
             /// Body
@@ -56,7 +56,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: Amazon API Gateway RestApi S3Location
             /// Update requires: No interruption
             /// </summary>
-			public Union<S3Location, IntrinsicFunction> BodyS3Location { get; set; }
+			public S3Location BodyS3Location { get; set; }
 
             /// <summary>
             /// CloneFrom
@@ -84,7 +84,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: API Gateway RestApi EndpointConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<EndpointConfiguration, IntrinsicFunction> EndpointConfiguration { get; set; }
+			public EndpointConfiguration EndpointConfiguration { get; set; }
 
             /// <summary>
             /// FailOnWarnings
@@ -126,7 +126,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: String to String map
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Policy
@@ -142,10 +142,11 @@ namespace Comformation.ApiGateway.RestApi
         public string Type { get; } = "AWS::ApiGateway::RestApi";
         
         public RestApiProperties Properties { get; } = new RestApiProperties();
+
     }
 
 	public static class RestApiAttributes
 	{
-        public static readonly ResourceAttribute<string> RootResourceId = new ResourceAttribute<string>("RootResourceId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RootResourceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RootResourceId");
 	}
 }

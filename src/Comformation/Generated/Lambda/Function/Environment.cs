@@ -22,7 +22,7 @@ namespace Comformation.Lambda.Function
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("Variables")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Variables { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }
 
     }
 }

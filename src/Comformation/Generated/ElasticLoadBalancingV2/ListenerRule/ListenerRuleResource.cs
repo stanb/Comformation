@@ -22,7 +22,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
             /// Type: List of Elastic Load Balancing ListenerRule Actions
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Action>, IntrinsicFunction> Actions { get; set; }
+			public List<Action> Actions { get; set; }
 
             /// <summary>
             /// Conditions
@@ -31,7 +31,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
             /// Type: List of Elastic Load Balancing ListenerRule Conditions
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<RuleCondition>, IntrinsicFunction> Conditions { get; set; }
+			public List<RuleCondition> Conditions { get; set; }
 
             /// <summary>
             /// ListenerArn
@@ -61,5 +61,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::ListenerRule";
         
         public ListenerRuleProperties Properties { get; } = new ListenerRuleProperties();
+
     }
 }

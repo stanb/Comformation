@@ -30,12 +30,13 @@ namespace Comformation.SNS.TopicPolicy
             /// Type: A list of Amazon SNS topics ARNs
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Topics { get; set; }
+			public List<Union<string, IntrinsicFunction>> Topics { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SNS::TopicPolicy";
         
         public TopicPolicyProperties Properties { get; } = new TopicPolicyProperties();
+
     }
 }

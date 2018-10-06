@@ -30,7 +30,7 @@ namespace Comformation.EC2.Instance
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Value")]
-        public Union<List<string>, IntrinsicFunction> Value { get; set; }
+        public List<Union<string, IntrinsicFunction>> Value { get; set; }
 
     }
 }

@@ -44,7 +44,7 @@ namespace Comformation.EKS.Cluster
             /// Type: EKS Cluster ResourcesVpcConfig
             /// Update requires: Replacement
             /// </summary>
-			public Union<ResourcesVpcConfig, IntrinsicFunction> ResourcesVpcConfig { get; set; }
+			public ResourcesVpcConfig ResourcesVpcConfig { get; set; }
 
             /// <summary>
             /// Name
@@ -60,12 +60,13 @@ namespace Comformation.EKS.Cluster
         public string Type { get; } = "AWS::EKS::Cluster";
         
         public ClusterProperties Properties { get; } = new ClusterProperties();
+
     }
 
 	public static class ClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> Endpoint = new ResourceAttribute<string>("Endpoint");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> CertificateAuthorityData = new ResourceAttribute<string>("CertificateAuthorityData");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CertificateAuthorityData = new ResourceAttribute<Union<string, IntrinsicFunction>>("CertificateAuthorityData");
 	}
 }

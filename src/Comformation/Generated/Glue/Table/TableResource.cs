@@ -21,7 +21,7 @@ namespace Comformation.Glue.Table
             /// Type: AWS Glue Table TableInput
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<TableInput, IntrinsicFunction> TableInput { get; set; }
+			public TableInput TableInput { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -50,5 +50,6 @@ namespace Comformation.Glue.Table
         public string Type { get; } = "AWS::Glue::Table";
         
         public TableProperties Properties { get; } = new TableProperties();
+
     }
 }

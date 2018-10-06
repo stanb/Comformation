@@ -43,10 +43,11 @@ namespace Comformation.EC2.EIP
         public string Type { get; } = "AWS::EC2::EIP";
         
         public EIPProperties Properties { get; } = new EIPProperties();
+
     }
 
 	public static class EIPAttributes
 	{
-        public static readonly ResourceAttribute<string> AllocationId = new ResourceAttribute<string>("AllocationId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AllocationId = new ResourceAttribute<Union<string, IntrinsicFunction>>("AllocationId");
 	}
 }

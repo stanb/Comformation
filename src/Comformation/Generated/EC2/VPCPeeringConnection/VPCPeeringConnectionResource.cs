@@ -57,10 +57,10 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this resource.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -76,5 +76,6 @@ namespace Comformation.EC2.VPCPeeringConnection
         public string Type { get; } = "AWS::EC2::VPCPeeringConnection";
         
         public VPCPeeringConnectionProperties Properties { get; } = new VPCPeeringConnectionProperties();
+
     }
 }

@@ -22,7 +22,7 @@ namespace Comformation.WAFRegional.SizeConstraintSet
             /// Type: List of AWS WAF Regional SizeConstraintSet SizeConstraint
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<SizeConstraint>, IntrinsicFunction> SizeConstraints { get; set; }
+			public List<SizeConstraint> SizeConstraints { get; set; }
 
             /// <summary>
             /// Name
@@ -38,5 +38,6 @@ namespace Comformation.WAFRegional.SizeConstraintSet
         public string Type { get; } = "AWS::WAFRegional::SizeConstraintSet";
         
         public SizeConstraintSetProperties Properties { get; } = new SizeConstraintSetProperties();
+
     }
 }

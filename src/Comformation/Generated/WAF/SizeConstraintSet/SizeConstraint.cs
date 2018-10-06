@@ -34,7 +34,7 @@ namespace Comformation.WAF.SizeConstraintSet
         /// Type: AWS WAF SizeConstraintSet SizeConstraint FieldToMatch
         /// </summary>
         [JsonProperty("FieldToMatch")]
-        public Union<FieldToMatch, IntrinsicFunction> FieldToMatch { get; set; }
+        public FieldToMatch FieldToMatch { get; set; }
 
         /// <summary>
         /// Size

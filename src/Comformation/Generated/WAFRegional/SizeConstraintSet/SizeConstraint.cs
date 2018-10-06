@@ -61,7 +61,7 @@ namespace Comformation.WAFRegional.SizeConstraintSet
         /// Type: AWS WAF Regional SizeConstraintSet SizeConstraint FieldToMatch
         /// </summary>
         [JsonProperty("FieldToMatch")]
-        public Union<FieldToMatch, IntrinsicFunction> FieldToMatch { get; set; }
+        public FieldToMatch FieldToMatch { get; set; }
 
     }
 }

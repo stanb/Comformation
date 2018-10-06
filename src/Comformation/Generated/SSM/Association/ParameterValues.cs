@@ -15,7 +15,7 @@ namespace Comformation.SSM.Association
         /// ParameterValues_
         /// </summary>
         [JsonProperty("ParameterValues")]
-        public Union<List<string>, IntrinsicFunction> ParameterValues_ { get; set; }
+        public List<Union<string, IntrinsicFunction>> ParameterValues_ { get; set; }
 
     }
 }

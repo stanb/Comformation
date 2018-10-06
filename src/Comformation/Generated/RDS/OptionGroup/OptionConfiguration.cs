@@ -23,7 +23,7 @@ namespace Comformation.RDS.OptionGroup
         /// Type: List of String values
         /// </summary>
         [JsonProperty("DBSecurityGroupMemberships")]
-        public Union<List<string>, IntrinsicFunction> DBSecurityGroupMemberships { get; set; }
+        public List<Union<string, IntrinsicFunction>> DBSecurityGroupMemberships { get; set; }
 
         /// <summary>
         /// OptionName
@@ -42,7 +42,7 @@ namespace Comformation.RDS.OptionGroup
         /// Type: List of Amazon RDS OptionGroup OptionSetting
         /// </summary>
         [JsonProperty("OptionSettings")]
-        public Union<OptionSetting, IntrinsicFunction> OptionSettings { get; set; }
+        public List<OptionSetting> OptionSettings { get; set; }
 
         /// <summary>
         /// OptionVersion
@@ -71,7 +71,7 @@ namespace Comformation.RDS.OptionGroup
         /// Type: List of String values
         /// </summary>
         [JsonProperty("VpcSecurityGroupMemberships")]
-        public Union<List<string>, IntrinsicFunction> VpcSecurityGroupMemberships { get; set; }
+        public List<Union<string, IntrinsicFunction>> VpcSecurityGroupMemberships { get; set; }
 
     }
 }

@@ -20,7 +20,7 @@ namespace Comformation.DAX.Cluster
             /// Type: DAX Cluster SSESpecification
             /// Update requires: Replacement
             /// </summary>
-			public Union<SSESpecification, IntrinsicFunction> SSESpecification { get; set; }
+			public SSESpecification SSESpecification { get; set; }
 
             /// <summary>
             /// Description
@@ -62,7 +62,7 @@ namespace Comformation.DAX.Cluster
             /// Type: List of String values
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
+			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// IAMRoleARN
@@ -119,7 +119,7 @@ namespace Comformation.DAX.Cluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// NodeType
@@ -153,11 +153,12 @@ namespace Comformation.DAX.Cluster
         public string Type { get; } = "AWS::DAX::Cluster";
         
         public ClusterProperties Properties { get; } = new ClusterProperties();
+
     }
 
 	public static class ClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> ClusterDiscoveryEndpoint = new ResourceAttribute<string>("ClusterDiscoveryEndpoint");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterDiscoveryEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterDiscoveryEndpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

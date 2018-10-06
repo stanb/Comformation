@@ -26,7 +26,7 @@ namespace Comformation.Budgets.Budget
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BudgetLimit")]
-        public Union<Spend, IntrinsicFunction> BudgetLimit { get; set; }
+        public Spend BudgetLimit { get; set; }
 
         /// <summary>
         /// TimePeriod
@@ -43,7 +43,7 @@ namespace Comformation.Budgets.Budget
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimePeriod")]
-        public Union<TimePeriod, IntrinsicFunction> TimePeriod { get; set; }
+        public TimePeriod TimePeriod { get; set; }
 
         /// <summary>
         /// TimeUnit
@@ -86,7 +86,7 @@ namespace Comformation.Budgets.Budget
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CostTypes")]
-        public Union<CostTypes, IntrinsicFunction> CostTypes { get; set; }
+        public CostTypes CostTypes { get; set; }
 
         /// <summary>
         /// BudgetType

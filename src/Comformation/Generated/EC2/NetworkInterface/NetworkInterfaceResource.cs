@@ -30,7 +30,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: List of strings.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> GroupSet { get; set; }
+			public List<Union<string, IntrinsicFunction>> GroupSet { get; set; }
 
             /// <summary>
             /// InterfaceType
@@ -57,7 +57,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: List of EC2 NetworkInterface Ipv6Addresses
             /// Update requires: No interruption
             /// </summary>
-			public Union<InstanceIpv6Address, IntrinsicFunction> Ipv6Addresses { get; set; }
+			public InstanceIpv6Address Ipv6Addresses { get; set; }
 
             /// <summary>
             /// PrivateIpAddress
@@ -82,7 +82,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Update requires: Replacement if you change the primary private IP address. If not, update requires
             /// No interruption.
             /// </summary>
-			public Union<List<PrivateIpAddressSpecification>, IntrinsicFunction> PrivateIpAddresses { get; set; }
+			public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 
             /// <summary>
             /// SecondaryPrivateIpAddressCount
@@ -122,21 +122,22 @@ namespace Comformation.EC2.NetworkInterface
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this network interface.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::NetworkInterface";
         
         public NetworkInterfaceProperties Properties { get; } = new NetworkInterfaceProperties();
+
     }
 
 	public static class NetworkInterfaceAttributes
 	{
-        public static readonly ResourceAttribute<string> PrimaryPrivateIpAddress = new ResourceAttribute<string>("PrimaryPrivateIpAddress");
-        public static readonly ResourceAttribute<List<string>> SecondaryPrivateIpAddresses = new ResourceAttribute<List<string>>("SecondaryPrivateIpAddresses");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrimaryPrivateIpAddress = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrimaryPrivateIpAddress");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> SecondaryPrivateIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("SecondaryPrivateIpAddresses");
 	}
 }

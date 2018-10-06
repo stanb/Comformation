@@ -31,7 +31,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Amazon Cognito UserPool Policies
             /// Update requires: No interruption
             /// </summary>
-			public Union<Policies, IntrinsicFunction> Policies { get; set; }
+			public Policies Policies { get; set; }
 
             /// <summary>
             /// MfaConfiguration
@@ -55,7 +55,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: List of SchemaAttribute
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<SchemaAttribute>, IntrinsicFunction> Schema { get; set; }
+			public List<SchemaAttribute> Schema { get; set; }
 
             /// <summary>
             /// AdminCreateUserConfig
@@ -64,7 +64,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Amazon Cognito UserPool AdminCreateUserConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<AdminCreateUserConfig, IntrinsicFunction> AdminCreateUserConfig { get; set; }
+			public AdminCreateUserConfig AdminCreateUserConfig { get; set; }
 
             /// <summary>
             /// SmsAuthenticationMessage
@@ -100,7 +100,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Amazon Cognito UserPool EmailConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<EmailConfiguration, IntrinsicFunction> EmailConfiguration { get; set; }
+			public EmailConfiguration EmailConfiguration { get; set; }
 
             /// <summary>
             /// SmsConfiguration
@@ -109,7 +109,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Amazon Cognito UserPool SmsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<SmsConfiguration, IntrinsicFunction> SmsConfiguration { get; set; }
+			public SmsConfiguration SmsConfiguration { get; set; }
 
             /// <summary>
             /// AliasAttributes
@@ -119,7 +119,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AliasAttributes { get; set; }
+			public List<Union<string, IntrinsicFunction>> AliasAttributes { get; set; }
 
             /// <summary>
             /// EmailVerificationSubject
@@ -137,7 +137,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Amazon Cognito UserPool LambdaConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<LambdaConfig, IntrinsicFunction> LambdaConfig { get; set; }
+			public LambdaConfig LambdaConfig { get; set; }
 
             /// <summary>
             /// UsernameAttributes
@@ -147,7 +147,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> UsernameAttributes { get; set; }
+			public List<Union<string, IntrinsicFunction>> UsernameAttributes { get; set; }
 
             /// <summary>
             /// AutoVerifiedAttributes
@@ -156,7 +156,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AutoVerifiedAttributes { get; set; }
+			public List<Union<string, IntrinsicFunction>> AutoVerifiedAttributes { get; set; }
 
             /// <summary>
             /// DeviceConfiguration
@@ -165,7 +165,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Amazon Cognito UserPool DeviceConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<DeviceConfiguration, IntrinsicFunction> DeviceConfiguration { get; set; }
+			public DeviceConfiguration DeviceConfiguration { get; set; }
 
             /// <summary>
             /// EmailVerificationMessage
@@ -181,12 +181,13 @@ namespace Comformation.Cognito.UserPool
         public string Type { get; } = "AWS::Cognito::UserPool";
         
         public UserPoolProperties Properties { get; } = new UserPoolProperties();
+
     }
 
 	public static class UserPoolAttributes
 	{
-        public static readonly ResourceAttribute<string> ProviderName = new ResourceAttribute<string>("ProviderName");
-        public static readonly ResourceAttribute<string> ProviderURL = new ResourceAttribute<string>("ProviderURL");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProviderName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProviderName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProviderURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProviderURL");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

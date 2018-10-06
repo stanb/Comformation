@@ -22,7 +22,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
-        public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// HECAcknowledgmentTimeoutInSeconds
@@ -75,7 +75,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
-        public Union<ProcessingConfiguration, IntrinsicFunction> ProcessingConfiguration { get; set; }
+        public ProcessingConfiguration ProcessingConfiguration { get; set; }
 
         /// <summary>
         /// RetryOptions
@@ -86,7 +86,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RetryOptions")]
-        public Union<SplunkRetryOptions, IntrinsicFunction> RetryOptions { get; set; }
+        public SplunkRetryOptions RetryOptions { get; set; }
 
         /// <summary>
         /// S3BackupMode
@@ -110,7 +110,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Configuration")]
-        public Union<S3DestinationConfiguration, IntrinsicFunction> S3Configuration { get; set; }
+        public S3DestinationConfiguration S3Configuration { get; set; }
 
     }
 }

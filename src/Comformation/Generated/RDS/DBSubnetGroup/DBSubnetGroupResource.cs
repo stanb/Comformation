@@ -41,7 +41,7 @@ namespace Comformation.RDS.DBSubnetGroup
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -50,12 +50,13 @@ namespace Comformation.RDS.DBSubnetGroup
             /// Type: A list of resource tags in key-value format.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::DBSubnetGroup";
         
         public DBSubnetGroupProperties Properties { get; } = new DBSubnetGroupProperties();
+
     }
 }

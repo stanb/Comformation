@@ -31,5 +31,6 @@ namespace Comformation.SES.ConfigurationSet
         public string Type { get; } = "AWS::SES::ConfigurationSet";
         
         public ConfigurationSetProperties Properties { get; } = new ConfigurationSetProperties();
+
     }
 }

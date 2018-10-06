@@ -41,7 +41,7 @@ namespace Comformation.IAM.Group
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// Path
@@ -60,17 +60,18 @@ namespace Comformation.IAM.Group
             /// Type: List of IAM Policies
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
+			public List<Policy> Policies { get; set; }
 
         }
     
         public string Type { get; } = "AWS::IAM::Group";
         
         public GroupProperties Properties { get; } = new GroupProperties();
+
     }
 
 	public static class GroupAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

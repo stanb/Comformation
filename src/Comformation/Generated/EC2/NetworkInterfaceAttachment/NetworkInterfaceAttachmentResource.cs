@@ -57,5 +57,6 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
         public string Type { get; } = "AWS::EC2::NetworkInterfaceAttachment";
         
         public NetworkInterfaceAttachmentProperties Properties { get; } = new NetworkInterfaceAttachmentProperties();
+
     }
 }

@@ -52,12 +52,13 @@ namespace Comformation.Glue.Partition
             /// Type: AWS Glue Partition PartitionInput
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<PartitionInput, IntrinsicFunction> PartitionInput { get; set; }
+			public PartitionInput PartitionInput { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Glue::Partition";
         
         public PartitionProperties Properties { get; } = new PartitionProperties();
+
     }
 }

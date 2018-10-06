@@ -48,5 +48,6 @@ namespace Comformation.EC2.NetworkInterfacePermission
         public string Type { get; } = "AWS::EC2::NetworkInterfacePermission";
         
         public NetworkInterfacePermissionProperties Properties { get; } = new NetworkInterfacePermissionProperties();
+
     }
 }

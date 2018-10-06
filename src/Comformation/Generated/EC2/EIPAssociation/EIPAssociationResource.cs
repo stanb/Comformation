@@ -81,5 +81,6 @@ namespace Comformation.EC2.EIPAssociation
         public string Type { get; } = "AWS::EC2::EIPAssociation";
         
         public EIPAssociationProperties Properties { get; } = new EIPAssociationProperties();
+
     }
 }

@@ -25,7 +25,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR Cluster AutoScalingPolicy
         /// </summary>
         [JsonProperty("AutoScalingPolicy")]
-        public Union<AutoScalingPolicy, IntrinsicFunction> AutoScalingPolicy { get; set; }
+        public AutoScalingPolicy AutoScalingPolicy { get; set; }
 
         /// <summary>
         /// BidPrice
@@ -47,7 +47,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Configurations")]
-        public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
+        public List<Configuration> Configurations { get; set; }
 
         /// <summary>
         /// EbsConfiguration
@@ -57,7 +57,7 @@ namespace Comformation.EMR.Cluster
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsConfiguration")]
-        public Union<EbsConfiguration, IntrinsicFunction> EbsConfiguration { get; set; }
+        public EbsConfiguration EbsConfiguration { get; set; }
 
         /// <summary>
         /// InstanceCount

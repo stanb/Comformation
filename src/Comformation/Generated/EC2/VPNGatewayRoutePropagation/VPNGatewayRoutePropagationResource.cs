@@ -21,7 +21,7 @@ namespace Comformation.EC2.VPNGatewayRoutePropagation
             /// Type: List of route table IDs
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> RouteTableIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> RouteTableIds { get; set; }
 
             /// <summary>
             /// VpnGatewayId
@@ -38,5 +38,6 @@ namespace Comformation.EC2.VPNGatewayRoutePropagation
         public string Type { get; } = "AWS::EC2::VPNGatewayRoutePropagation";
         
         public VPNGatewayRoutePropagationProperties Properties { get; } = new VPNGatewayRoutePropagationProperties();
+
     }
 }

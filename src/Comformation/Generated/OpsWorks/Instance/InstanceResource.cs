@@ -75,7 +75,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of AWS OpsWorks Instance BlockDeviceMapping
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
+			public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
 
             /// <summary>
             /// EbsOptimized
@@ -95,7 +95,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ElasticIps { get; set; }
+			public List<Union<string, IntrinsicFunction>> ElasticIps { get; set; }
 
             /// <summary>
             /// Hostname
@@ -135,7 +135,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of String values
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> LayerIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> LayerIds { get; set; }
 
             /// <summary>
             /// Os
@@ -202,7 +202,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: AWS OpsWorks TimeBasedAutoScaling Type
             /// Update requires: Replacement
             /// </summary>
-			public Union<TimeBasedAutoScaling, IntrinsicFunction> TimeBasedAutoScaling { get; set; }
+			public TimeBasedAutoScaling TimeBasedAutoScaling { get; set; }
 
             /// <summary>
             /// VirtualizationType
@@ -221,21 +221,22 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Volumes { get; set; }
+			public List<Union<string, IntrinsicFunction>> Volumes { get; set; }
 
         }
     
         public string Type { get; } = "AWS::OpsWorks::Instance";
         
         public InstanceProperties Properties { get; } = new InstanceProperties();
+
     }
 
 	public static class InstanceAttributes
 	{
-        public static readonly ResourceAttribute<string> AvailabilityZone = new ResourceAttribute<string>("AvailabilityZone");
-        public static readonly ResourceAttribute<string> PrivateDnsName = new ResourceAttribute<string>("PrivateDnsName");
-        public static readonly ResourceAttribute<string> PrivateIp = new ResourceAttribute<string>("PrivateIp");
-        public static readonly ResourceAttribute<string> PublicDnsName = new ResourceAttribute<string>("PublicDnsName");
-        public static readonly ResourceAttribute<string> PublicIp = new ResourceAttribute<string>("PublicIp");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AvailabilityZone = new ResourceAttribute<Union<string, IntrinsicFunction>>("AvailabilityZone");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrivateDnsName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrivateDnsName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrivateIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrivateIp");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PublicDnsName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PublicDnsName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PublicIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("PublicIp");
 	}
 }

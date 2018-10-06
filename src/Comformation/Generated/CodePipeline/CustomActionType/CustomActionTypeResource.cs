@@ -33,7 +33,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: List of AWS CodePipeline CustomActionType ConfigurationProperties
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<ConfigurationProperties>, IntrinsicFunction> ConfigurationProperties { get; set; }
+			public List<ConfigurationProperties> ConfigurationProperties { get; set; }
 
             /// <summary>
             /// InputArtifactDetails
@@ -42,7 +42,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: AWS CodePipeline CustomActionType ArtifactDetails
             /// Update requires: Replacement
             /// </summary>
-			public Union<ArtifactDetails, IntrinsicFunction> InputArtifactDetails { get; set; }
+			public ArtifactDetails InputArtifactDetails { get; set; }
 
             /// <summary>
             /// OutputArtifactDetails
@@ -51,7 +51,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: AWS CodePipeline CustomActionType ArtifactDetails
             /// Update requires: Replacement
             /// </summary>
-			public Union<ArtifactDetails, IntrinsicFunction> OutputArtifactDetails { get; set; }
+			public ArtifactDetails OutputArtifactDetails { get; set; }
 
             /// <summary>
             /// Provider
@@ -69,7 +69,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: AWS CodePipeline CustomActionType Settings
             /// Update requires: Replacement
             /// </summary>
-			public Union<Settings, IntrinsicFunction> Settings { get; set; }
+			public Settings Settings { get; set; }
 
             /// <summary>
             /// Version
@@ -86,5 +86,6 @@ namespace Comformation.CodePipeline.CustomActionType
         public string Type { get; } = "AWS::CodePipeline::CustomActionType";
         
         public CustomActionTypeProperties Properties { get; } = new CustomActionTypeProperties();
+
     }
 }

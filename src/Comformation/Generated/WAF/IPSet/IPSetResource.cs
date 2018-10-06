@@ -27,7 +27,7 @@ namespace Comformation.WAF.IPSet
             /// Type: List of AWS WAF IPSet IPSetDescriptors
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<IPSetDescriptor>, IntrinsicFunction> IPSetDescriptors { get; set; }
+			public List<IPSetDescriptor> IPSetDescriptors { get; set; }
 
             /// <summary>
             /// Name
@@ -43,5 +43,6 @@ namespace Comformation.WAF.IPSet
         public string Type { get; } = "AWS::WAF::IPSet";
         
         public IPSetProperties Properties { get; } = new IPSetProperties();
+
     }
 }

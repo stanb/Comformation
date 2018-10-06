@@ -60,5 +60,6 @@ namespace Comformation.GuardDuty.Master
         public string Type { get; } = "AWS::GuardDuty::Master";
         
         public MasterProperties Properties { get; } = new MasterProperties();
+
     }
 }

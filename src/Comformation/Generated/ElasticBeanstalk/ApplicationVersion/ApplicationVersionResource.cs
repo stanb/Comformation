@@ -38,12 +38,13 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Type: Source Bundle
             /// Update requires: Replacement
             /// </summary>
-			public Union<SourceBundle, IntrinsicFunction> SourceBundle { get; set; }
+			public SourceBundle SourceBundle { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElasticBeanstalk::ApplicationVersion";
         
         public ApplicationVersionProperties Properties { get; } = new ApplicationVersionProperties();
+
     }
 }

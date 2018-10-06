@@ -85,5 +85,6 @@ namespace Comformation.WorkSpaces.Workspace
         public string Type { get; } = "AWS::WorkSpaces::Workspace";
         
         public WorkspaceProperties Properties { get; } = new WorkspaceProperties();
+
     }
 }

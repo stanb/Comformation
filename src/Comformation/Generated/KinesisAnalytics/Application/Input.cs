@@ -33,7 +33,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputSchema")]
-        public Union<InputSchema, IntrinsicFunction> InputSchema { get; set; }
+        public InputSchema InputSchema { get; set; }
 
         /// <summary>
         /// KinesisStreamsInput
@@ -44,7 +44,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisStreamsInput")]
-        public Union<KinesisStreamsInput, IntrinsicFunction> KinesisStreamsInput { get; set; }
+        public KinesisStreamsInput KinesisStreamsInput { get; set; }
 
         /// <summary>
         /// KinesisFirehoseInput
@@ -56,7 +56,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisFirehoseInput")]
-        public Union<KinesisFirehoseInput, IntrinsicFunction> KinesisFirehoseInput { get; set; }
+        public KinesisFirehoseInput KinesisFirehoseInput { get; set; }
 
         /// <summary>
         /// InputProcessingConfiguration
@@ -68,7 +68,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputProcessingConfiguration")]
-        public Union<InputProcessingConfiguration, IntrinsicFunction> InputProcessingConfiguration { get; set; }
+        public InputProcessingConfiguration InputProcessingConfiguration { get; set; }
 
         /// <summary>
         /// InputParallelism
@@ -78,7 +78,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputParallelism")]
-        public Union<InputParallelism, IntrinsicFunction> InputParallelism { get; set; }
+        public InputParallelism InputParallelism { get; set; }
 
     }
 }

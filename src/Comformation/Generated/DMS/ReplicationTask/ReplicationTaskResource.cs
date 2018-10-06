@@ -86,7 +86,7 @@ namespace Comformation.DMS.ReplicationTask
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// CdcStartTime
@@ -102,5 +102,6 @@ namespace Comformation.DMS.ReplicationTask
         public string Type { get; } = "AWS::DMS::ReplicationTask";
         
         public ReplicationTaskProperties Properties { get; } = new ReplicationTaskProperties();
+
     }
 }

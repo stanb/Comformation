@@ -21,7 +21,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ebs")]
-        public Union<Ebs, IntrinsicFunction> Ebs { get; set; }
+        public Ebs Ebs { get; set; }
 
         /// <summary>
         /// NoDevice

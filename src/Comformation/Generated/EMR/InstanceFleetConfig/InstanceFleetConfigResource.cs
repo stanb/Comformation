@@ -40,7 +40,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Type: List of Amazon EMR InstanceFleetConfig InstanceTypeConfig
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<InstanceTypeConfig>, IntrinsicFunction> InstanceTypeConfigs { get; set; }
+			public List<InstanceTypeConfig> InstanceTypeConfigs { get; set; }
 
             /// <summary>
             /// LaunchSpecifications
@@ -49,7 +49,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Type: Amazon EMR InstanceFleetConfig InstanceFleetProvisioningSpecifications
             /// Update requires: Replacement
             /// </summary>
-			public Union<InstanceFleetProvisioningSpecifications, IntrinsicFunction> LaunchSpecifications { get; set; }
+			public InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
 
             /// <summary>
             /// Name
@@ -87,5 +87,6 @@ namespace Comformation.EMR.InstanceFleetConfig
         public string Type { get; } = "AWS::EMR::InstanceFleetConfig";
         
         public InstanceFleetConfigProperties Properties { get; } = new InstanceFleetConfigProperties();
+
     }
 }

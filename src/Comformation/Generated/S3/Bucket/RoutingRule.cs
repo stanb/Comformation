@@ -21,7 +21,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Website Configuration Routing Rules Redirect Rule Property
         /// </summary>
         [JsonProperty("RedirectRule")]
-        public Union<RedirectRule, IntrinsicFunction> RedirectRule { get; set; }
+        public RedirectRule RedirectRule { get; set; }
 
         /// <summary>
         /// RoutingRuleCondition
@@ -30,7 +30,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Website Configuration Routing Rules Routing Rule Condition Property
         /// </summary>
         [JsonProperty("RoutingRuleCondition")]
-        public Union<RoutingRuleCondition, IntrinsicFunction> RoutingRuleCondition { get; set; }
+        public RoutingRuleCondition RoutingRuleCondition { get; set; }
 
     }
 }

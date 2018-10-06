@@ -22,7 +22,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowRunCommandParameters")]
-        public Union<MaintenanceWindowRunCommandParameters, IntrinsicFunction> MaintenanceWindowRunCommandParameters { get; set; }
+        public MaintenanceWindowRunCommandParameters MaintenanceWindowRunCommandParameters { get; set; }
 
         /// <summary>
         /// MaintenanceWindowAutomationParameters
@@ -32,7 +32,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowAutomationParameters")]
-        public Union<MaintenanceWindowAutomationParameters, IntrinsicFunction> MaintenanceWindowAutomationParameters { get; set; }
+        public MaintenanceWindowAutomationParameters MaintenanceWindowAutomationParameters { get; set; }
 
         /// <summary>
         /// MaintenanceWindowStepFunctionsParameters
@@ -42,7 +42,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowStepFunctionsParameters")]
-        public Union<MaintenanceWindowStepFunctionsParameters, IntrinsicFunction> MaintenanceWindowStepFunctionsParameters { get; set; }
+        public MaintenanceWindowStepFunctionsParameters MaintenanceWindowStepFunctionsParameters { get; set; }
 
         /// <summary>
         /// MaintenanceWindowLambdaParameters
@@ -52,7 +52,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowLambdaParameters")]
-        public Union<MaintenanceWindowLambdaParameters, IntrinsicFunction> MaintenanceWindowLambdaParameters { get; set; }
+        public MaintenanceWindowLambdaParameters MaintenanceWindowLambdaParameters { get; set; }
 
     }
 }

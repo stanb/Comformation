@@ -22,7 +22,7 @@ namespace Comformation.Batch.JobDefinition
         /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("MountPoints")]
-        public Union<List<MountPoints>, IntrinsicFunction> MountPoints { get; set; }
+        public List<MountPoints> MountPoints { get; set; }
 
         /// <summary>
         /// User
@@ -43,7 +43,7 @@ namespace Comformation.Batch.JobDefinition
         /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Volumes")]
-        public Union<List<Volumes>, IntrinsicFunction> Volumes { get; set; }
+        public List<Volumes> Volumes { get; set; }
 
         /// <summary>
         /// Command
@@ -54,7 +54,7 @@ namespace Comformation.Batch.JobDefinition
         /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Command")]
-        public Union<List<string>, IntrinsicFunction> Command { get; set; }
+        public List<Union<string, IntrinsicFunction>> Command { get; set; }
 
         /// <summary>
         /// Memory
@@ -91,7 +91,7 @@ namespace Comformation.Batch.JobDefinition
         /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Environment")]
-        public Union<List<Environment>, IntrinsicFunction> Environment { get; set; }
+        public List<Environment> Environment { get; set; }
 
         /// <summary>
         /// JobRoleArn
@@ -124,7 +124,7 @@ namespace Comformation.Batch.JobDefinition
         /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Ulimits")]
-        public Union<List<Ulimit>, IntrinsicFunction> Ulimits { get; set; }
+        public List<Ulimit> Ulimits { get; set; }
 
         /// <summary>
         /// Vcpus

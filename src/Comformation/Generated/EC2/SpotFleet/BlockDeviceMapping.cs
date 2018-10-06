@@ -30,7 +30,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: Amazon Elastic Compute Cloud SpotFleet Ebs
         /// </summary>
         [JsonProperty("Ebs")]
-        public Union<EbsBlockDevice, IntrinsicFunction> Ebs { get; set; }
+        public EbsBlockDevice Ebs { get; set; }
 
         /// <summary>
         /// NoDevice

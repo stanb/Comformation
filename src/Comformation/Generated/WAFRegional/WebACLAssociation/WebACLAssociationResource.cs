@@ -37,5 +37,6 @@ namespace Comformation.WAFRegional.WebACLAssociation
         public string Type { get; } = "AWS::WAFRegional::WebACLAssociation";
         
         public WebACLAssociationProperties Properties { get; } = new WebACLAssociationProperties();
+
     }
 }

@@ -36,5 +36,6 @@ namespace Comformation.EC2.TrunkInterfaceAssociation
         public string Type { get; } = "AWS::EC2::TrunkInterfaceAssociation";
         
         public TrunkInterfaceAssociationProperties Properties { get; } = new TrunkInterfaceAssociationProperties();
+
     }
 }

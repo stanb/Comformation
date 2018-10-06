@@ -31,7 +31,7 @@ namespace Comformation.Glue.Crawler
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Exclusions")]
-        public Union<List<string>, IntrinsicFunction> Exclusions { get; set; }
+        public List<Union<string, IntrinsicFunction>> Exclusions { get; set; }
 
     }
 }

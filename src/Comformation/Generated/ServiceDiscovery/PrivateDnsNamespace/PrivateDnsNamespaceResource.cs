@@ -63,11 +63,12 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
         public string Type { get; } = "AWS::ServiceDiscovery::PrivateDnsNamespace";
         
         public PrivateDnsNamespaceProperties Properties { get; } = new PrivateDnsNamespaceProperties();
+
     }
 
 	public static class PrivateDnsNamespaceAttributes
 	{
-        public static readonly ResourceAttribute<string> Id = new ResourceAttribute<string>("Id");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

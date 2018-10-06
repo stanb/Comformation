@@ -15,6 +15,16 @@ namespace Comformation.ApiGateway.Deployment
     {
 
         /// <summary>
+        /// AccessLogSetting
+        /// Specifies settings for logging access in this stage.
+        /// Required: No
+        /// Type: API Gateway Deployment AccessLogSetting
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AccessLogSetting")]
+        public AccessLogSetting AccessLogSetting { get; set; }
+
+        /// <summary>
         /// CacheClusterEnabled
         /// Indicates whether cache clustering is enabled for the stage.
         /// Required: No
@@ -60,6 +70,16 @@ namespace Comformation.ApiGateway.Deployment
         /// </summary>
         [JsonProperty("CachingEnabled")]
         public Union<bool, IntrinsicFunction> CachingEnabled { get; set; }
+
+        /// <summary>
+        /// CanarySetting
+        /// Specifies settings for the canary deployment in this stage.
+        /// Required: No
+        /// Type: API Gateway Deployment CanarySetting
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CanarySetting")]
+        public CanarySetting CanarySetting { get; set; }
 
         /// <summary>
         /// ClientCertificateId
@@ -116,7 +136,7 @@ namespace Comformation.ApiGateway.Deployment
         /// Type: List of API Gateway Deployment MethodSetting
         /// </summary>
         [JsonProperty("MethodSettings")]
-        public Union<List<MethodSetting>, IntrinsicFunction> MethodSettings { get; set; }
+        public List<MethodSetting> MethodSettings { get; set; }
 
         /// <summary>
         /// MetricsEnabled
@@ -157,7 +177,7 @@ namespace Comformation.ApiGateway.Deployment
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("Variables")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Variables { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }
 
     }
 }

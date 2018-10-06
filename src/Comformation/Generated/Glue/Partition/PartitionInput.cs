@@ -31,7 +31,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageDescriptor")]
-        public Union<StorageDescriptor, IntrinsicFunction> StorageDescriptor { get; set; }
+        public StorageDescriptor StorageDescriptor { get; set; }
 
         /// <summary>
         /// Values
@@ -41,7 +41,7 @@ namespace Comformation.Glue.Partition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Values")]
-        public Union<List<string>, IntrinsicFunction> Values { get; set; }
+        public List<Union<string, IntrinsicFunction>> Values { get; set; }
 
     }
 }

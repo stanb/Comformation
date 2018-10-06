@@ -32,12 +32,13 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
             /// Type: Kinesis Data Analytics ApplicationReferenceDataSource ReferenceDataSource
             /// Update requires: No interruption
             /// </summary>
-			public Union<ReferenceDataSource, IntrinsicFunction> ReferenceDataSource { get; set; }
+			public ReferenceDataSource ReferenceDataSource { get; set; }
 
         }
     
         public string Type { get; } = "AWS::KinesisAnalytics::ApplicationReferenceDataSource";
         
         public ApplicationReferenceDataSourceProperties Properties { get; } = new ApplicationReferenceDataSourceProperties();
+
     }
 }

@@ -22,7 +22,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: CloudFront Distribution Cookies
         /// </summary>
         [JsonProperty("Cookies")]
-        public Union<Cookies, IntrinsicFunction> Cookies { get; set; }
+        public Cookies Cookies { get; set; }
 
         /// <summary>
         /// Headers
@@ -37,7 +37,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Headers")]
-        public Union<List<string>, IntrinsicFunction> Headers { get; set; }
+        public List<Union<string, IntrinsicFunction>> Headers { get; set; }
 
         /// <summary>
         /// QueryString
@@ -60,7 +60,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("QueryStringCacheKeys")]
-        public Union<List<string>, IntrinsicFunction> QueryStringCacheKeys { get; set; }
+        public List<Union<string, IntrinsicFunction>> QueryStringCacheKeys { get; set; }
 
     }
 }

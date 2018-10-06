@@ -64,7 +64,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// Type: List of String values
         /// </summary>
         [JsonProperty("PolicyNames")]
-        public Union<List<string>, IntrinsicFunction> PolicyNames { get; set; }
+        public List<Union<string, IntrinsicFunction>> PolicyNames { get; set; }
 
         /// <summary>
         /// Protocol

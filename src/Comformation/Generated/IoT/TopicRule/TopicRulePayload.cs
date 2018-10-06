@@ -22,7 +22,7 @@ namespace Comformation.IoT.TopicRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Actions")]
-        public Union<List<Action>, IntrinsicFunction> Actions { get; set; }
+        public List<Action> Actions { get; set; }
 
         /// <summary>
         /// AwsIotSqlVersion

@@ -33,7 +33,7 @@ namespace Comformation.SES.ReceiptRule
             /// Type: Amazon SES ReceiptRule Rule
             /// Update requires: No interruption
             /// </summary>
-			public Union<Rule, IntrinsicFunction> Rule { get; set; }
+			public Rule Rule { get; set; }
 
             /// <summary>
             /// RuleSetName
@@ -49,5 +49,6 @@ namespace Comformation.SES.ReceiptRule
         public string Type { get; } = "AWS::SES::ReceiptRule";
         
         public ReceiptRuleProperties Properties { get; } = new ReceiptRuleProperties();
+
     }
 }

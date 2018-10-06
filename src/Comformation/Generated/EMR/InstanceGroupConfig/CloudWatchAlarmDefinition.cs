@@ -31,7 +31,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// Type: List of Amazon EMR InstanceGroupConfig MetricDimension
         /// </summary>
         [JsonProperty("Dimensions")]
-        public Union<List<MetricDimension>, IntrinsicFunction> Dimensions { get; set; }
+        public List<MetricDimension> Dimensions { get; set; }
 
         /// <summary>
         /// EvaluationPeriods

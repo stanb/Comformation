@@ -60,5 +60,6 @@ namespace Comformation.IAM.ServiceLinkedRole
         public string Type { get; } = "AWS::IAM::ServiceLinkedRole";
         
         public ServiceLinkedRoleProperties Properties { get; } = new ServiceLinkedRoleProperties();
+
     }
 }

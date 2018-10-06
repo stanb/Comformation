@@ -39,5 +39,6 @@ namespace Comformation.S3.BucketPolicy
         public string Type { get; } = "AWS::S3::BucketPolicy";
         
         public BucketPolicyProperties Properties { get; } = new BucketPolicyProperties();
+
     }
 }

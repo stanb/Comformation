@@ -36,7 +36,7 @@ namespace Comformation.IAM.Role
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// MaxSessionDuration
@@ -74,7 +74,7 @@ namespace Comformation.IAM.Role
             /// Type: List of IAM Policies
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
+			public List<Policy> Policies { get; set; }
 
             /// <summary>
             /// RoleName
@@ -102,11 +102,12 @@ namespace Comformation.IAM.Role
         public string Type { get; } = "AWS::IAM::Role";
         
         public RoleProperties Properties { get; } = new RoleProperties();
+
     }
 
 	public static class RoleAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> RoleId = new ResourceAttribute<string>("RoleId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RoleId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RoleId");
 	}
 }

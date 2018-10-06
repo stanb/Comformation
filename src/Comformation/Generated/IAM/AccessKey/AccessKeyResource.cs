@@ -49,10 +49,11 @@ namespace Comformation.IAM.AccessKey
         public string Type { get; } = "AWS::IAM::AccessKey";
         
         public AccessKeyProperties Properties { get; } = new AccessKeyProperties();
+
     }
 
 	public static class AccessKeyAttributes
 	{
-        public static readonly ResourceAttribute<string> SecretAccessKey = new ResourceAttribute<string>("SecretAccessKey");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SecretAccessKey = new ResourceAttribute<Union<string, IntrinsicFunction>>("SecretAccessKey");
 	}
 }

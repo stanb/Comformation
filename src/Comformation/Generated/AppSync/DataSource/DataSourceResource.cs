@@ -54,7 +54,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: AWS AppSync DataSource HttpConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<HttpConfig, IntrinsicFunction> HttpConfig { get; set; }
+			public HttpConfig HttpConfig { get; set; }
 
             /// <summary>
             /// LambdaConfig
@@ -63,7 +63,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: AWS AppSync DataSource LambdaConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<LambdaConfig, IntrinsicFunction> LambdaConfig { get; set; }
+			public LambdaConfig LambdaConfig { get; set; }
 
             /// <summary>
             /// ApiId
@@ -90,7 +90,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: AWS AppSync DataSource DynamoDBConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<DynamoDBConfig, IntrinsicFunction> DynamoDBConfig { get; set; }
+			public DynamoDBConfig DynamoDBConfig { get; set; }
 
             /// <summary>
             /// ElasticsearchConfig
@@ -99,18 +99,19 @@ namespace Comformation.AppSync.DataSource
             /// Type: AWS AppSync DataSource ElasticsearchConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<ElasticsearchConfig, IntrinsicFunction> ElasticsearchConfig { get; set; }
+			public ElasticsearchConfig ElasticsearchConfig { get; set; }
 
         }
     
         public string Type { get; } = "AWS::AppSync::DataSource";
         
         public DataSourceProperties Properties { get; } = new DataSourceProperties();
+
     }
 
 	public static class DataSourceAttributes
 	{
-        public static readonly ResourceAttribute<string> DataSourceArn = new ResourceAttribute<string>("DataSourceArn");
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DataSourceArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("DataSourceArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

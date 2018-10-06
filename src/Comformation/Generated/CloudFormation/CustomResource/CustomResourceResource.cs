@@ -30,5 +30,6 @@ namespace Comformation.CloudFormation.CustomResource
         public string Type { get; } = "AWS::CloudFormation::CustomResource";
         
         public CustomResourceProperties Properties { get; } = new CustomResourceProperties();
+
     }
 }

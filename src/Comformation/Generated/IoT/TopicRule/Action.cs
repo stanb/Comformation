@@ -21,7 +21,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule CloudwatchAlarmAction
         /// </summary>
         [JsonProperty("CloudwatchAlarm")]
-        public Union<CloudwatchAlarmAction, IntrinsicFunction> CloudwatchAlarm { get; set; }
+        public CloudwatchAlarmAction CloudwatchAlarm { get; set; }
 
         /// <summary>
         /// CloudwatchMetric
@@ -30,7 +30,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule CloudwatchMetricAction
         /// </summary>
         [JsonProperty("CloudwatchMetric")]
-        public Union<CloudwatchMetricAction, IntrinsicFunction> CloudwatchMetric { get; set; }
+        public CloudwatchMetricAction CloudwatchMetric { get; set; }
 
         /// <summary>
         /// DynamoDB
@@ -39,7 +39,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule DynamoDBAction
         /// </summary>
         [JsonProperty("DynamoDB")]
-        public Union<DynamoDBAction, IntrinsicFunction> DynamoDB { get; set; }
+        public DynamoDBAction DynamoDB { get; set; }
 
         /// <summary>
         /// DynamoDBv2
@@ -48,7 +48,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule DynamoDBv2Action
         /// </summary>
         [JsonProperty("DynamoDBv2")]
-        public Union<DynamoDBv2Action, IntrinsicFunction> DynamoDBv2 { get; set; }
+        public DynamoDBv2Action DynamoDBv2 { get; set; }
 
         /// <summary>
         /// Elasticsearch
@@ -57,7 +57,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule ElasticsearchAction
         /// </summary>
         [JsonProperty("Elasticsearch")]
-        public Union<ElasticsearchAction, IntrinsicFunction> Elasticsearch { get; set; }
+        public ElasticsearchAction Elasticsearch { get; set; }
 
         /// <summary>
         /// Firehose
@@ -66,7 +66,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule FirehoseAction
         /// </summary>
         [JsonProperty("Firehose")]
-        public Union<FirehoseAction, IntrinsicFunction> Firehose { get; set; }
+        public FirehoseAction Firehose { get; set; }
 
         /// <summary>
         /// Kinesis
@@ -75,7 +75,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule KinesisAction
         /// </summary>
         [JsonProperty("Kinesis")]
-        public Union<KinesisAction, IntrinsicFunction> Kinesis { get; set; }
+        public KinesisAction Kinesis { get; set; }
 
         /// <summary>
         /// Lambda
@@ -84,7 +84,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule LambdaAction
         /// </summary>
         [JsonProperty("Lambda")]
-        public Union<LambdaAction, IntrinsicFunction> Lambda { get; set; }
+        public LambdaAction Lambda { get; set; }
 
         /// <summary>
         /// Republish
@@ -93,7 +93,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule RepublishAction
         /// </summary>
         [JsonProperty("Republish")]
-        public Union<RepublishAction, IntrinsicFunction> Republish { get; set; }
+        public RepublishAction Republish { get; set; }
 
         /// <summary>
         /// S3
@@ -102,7 +102,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule S3Action
         /// </summary>
         [JsonProperty("S3")]
-        public Union<S3Action, IntrinsicFunction> S3 { get; set; }
+        public S3Action S3 { get; set; }
 
         /// <summary>
         /// Sns
@@ -111,7 +111,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule SnsAction
         /// </summary>
         [JsonProperty("Sns")]
-        public Union<SnsAction, IntrinsicFunction> Sns { get; set; }
+        public SnsAction Sns { get; set; }
 
         /// <summary>
         /// Sqs
@@ -120,7 +120,7 @@ namespace Comformation.IoT.TopicRule
         /// Type: AWS IoT TopicRule SqsAction
         /// </summary>
         [JsonProperty("Sqs")]
-        public Union<SqsAction, IntrinsicFunction> Sqs { get; set; }
+        public SqsAction Sqs { get; set; }
 
     }
 }

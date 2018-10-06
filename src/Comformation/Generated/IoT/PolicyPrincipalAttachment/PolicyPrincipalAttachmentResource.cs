@@ -38,5 +38,6 @@ namespace Comformation.IoT.PolicyPrincipalAttachment
         public string Type { get; } = "AWS::IoT::PolicyPrincipalAttachment";
         
         public PolicyPrincipalAttachmentProperties Properties { get; } = new PolicyPrincipalAttachmentProperties();
+
     }
 }

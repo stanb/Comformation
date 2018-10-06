@@ -33,7 +33,7 @@ namespace Comformation.ECS.Service
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroups")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
         /// <summary>
         /// Subnets
@@ -43,7 +43,7 @@ namespace Comformation.ECS.Service
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Subnets")]
-        public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
+        public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
     }
 }

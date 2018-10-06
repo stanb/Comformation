@@ -46,5 +46,6 @@ namespace Comformation.ServiceCatalog.PortfolioShare
         public string Type { get; } = "AWS::ServiceCatalog::PortfolioShare";
         
         public PortfolioShareProperties Properties { get; } = new PortfolioShareProperties();
+
     }
 }

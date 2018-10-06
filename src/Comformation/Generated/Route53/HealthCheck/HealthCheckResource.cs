@@ -22,7 +22,7 @@ namespace Comformation.Route53.HealthCheck
             /// Type: Route&#160;53 HealthCheck HealthCheckConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<HealthCheckConfig, IntrinsicFunction> HealthCheckConfig { get; set; }
+			public HealthCheckConfig HealthCheckConfig { get; set; }
 
             /// <summary>
             /// HealthCheckTags
@@ -31,12 +31,13 @@ namespace Comformation.Route53.HealthCheck
             /// Type: A list of Amazon Route&#160;53 HealthCheck HealthCheckTags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<HealthCheckTag>, IntrinsicFunction> HealthCheckTags { get; set; }
+			public List<HealthCheckTag> HealthCheckTags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Route53::HealthCheck";
         
         public HealthCheckProperties Properties { get; } = new HealthCheckProperties();
+
     }
 }

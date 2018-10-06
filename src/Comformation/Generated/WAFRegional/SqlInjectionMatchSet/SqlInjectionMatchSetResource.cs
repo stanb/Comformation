@@ -23,7 +23,7 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
             /// Type: List of AWS WAF Regional SqlInjectionMatchSet SqlInjectionMatchTuples
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<SqlInjectionMatchTuple>, IntrinsicFunction> SqlInjectionMatchTuples { get; set; }
+			public List<SqlInjectionMatchTuple> SqlInjectionMatchTuples { get; set; }
 
             /// <summary>
             /// Name
@@ -39,5 +39,6 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
         public string Type { get; } = "AWS::WAFRegional::SqlInjectionMatchSet";
         
         public SqlInjectionMatchSetProperties Properties { get; } = new SqlInjectionMatchSetProperties();
+
     }
 }

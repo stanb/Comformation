@@ -54,12 +54,13 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// Type: A list of resource tags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::DBClusterParameterGroup";
         
         public DBClusterParameterGroupProperties Properties { get; } = new DBClusterParameterGroupProperties();
+
     }
 }

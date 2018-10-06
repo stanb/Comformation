@@ -44,7 +44,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("ResponseParameters")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> ResponseParameters { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> ResponseParameters { get; set; }
 
         /// <summary>
         /// ResponseTemplates
@@ -56,7 +56,7 @@ namespace Comformation.ApiGateway.Method
         /// Type: Mapping of key-value pairs
         /// </summary>
         [JsonProperty("ResponseTemplates")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> ResponseTemplates { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> ResponseTemplates { get; set; }
 
         /// <summary>
         /// SelectionPattern

@@ -23,7 +23,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ServerSideEncryptionByDefault")]
-        public Union<ServerSideEncryptionByDefault, IntrinsicFunction> ServerSideEncryptionByDefault { get; set; }
+        public ServerSideEncryptionByDefault ServerSideEncryptionByDefault { get; set; }
 
     }
 }

@@ -46,5 +46,6 @@ namespace Comformation.DMS.Certificate
         public string Type { get; } = "AWS::DMS::Certificate";
         
         public CertificateProperties Properties { get; } = new CertificateProperties();
+
     }
 }

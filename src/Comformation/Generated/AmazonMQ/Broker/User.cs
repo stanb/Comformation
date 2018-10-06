@@ -34,7 +34,7 @@ namespace Comformation.AmazonMQ.Broker
         /// Update requires: Some interruptions
         /// </summary>
         [JsonProperty("Groups")]
-        public Union<List<string>, IntrinsicFunction> Groups { get; set; }
+        public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
         /// <summary>
         /// ConsoleAccess

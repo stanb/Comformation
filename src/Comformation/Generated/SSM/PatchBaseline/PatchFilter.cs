@@ -21,7 +21,7 @@ namespace Comformation.SSM.PatchBaseline
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Values")]
-        public Union<List<string>, IntrinsicFunction> Values { get; set; }
+        public List<Union<string, IntrinsicFunction>> Values { get; set; }
 
         /// <summary>
         /// Key

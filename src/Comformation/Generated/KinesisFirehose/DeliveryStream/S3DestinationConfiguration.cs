@@ -31,7 +31,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Kinesis Data Firehose DeliveryStream BufferingHints
         /// </summary>
         [JsonProperty("BufferingHints")]
-        public Union<BufferingHints, IntrinsicFunction> BufferingHints { get; set; }
+        public BufferingHints BufferingHints { get; set; }
 
         /// <summary>
         /// CloudWatchLoggingOptions
@@ -40,7 +40,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Amazon Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
-        public Union<CloudWatchLoggingOptions, IntrinsicFunction> CloudWatchLoggingOptions { get; set; }
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
 
         /// <summary>
         /// CompressionFormat
@@ -62,7 +62,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: Amazon Kinesis Data Firehose DeliveryStream EncryptionConfiguration
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
-        public Union<EncryptionConfiguration, IntrinsicFunction> EncryptionConfiguration { get; set; }
+        public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
         /// Prefix

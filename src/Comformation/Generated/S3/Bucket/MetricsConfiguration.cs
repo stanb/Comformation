@@ -46,7 +46,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]
-        public Union<List<TagFilter>, IntrinsicFunction> TagFilters { get; set; }
+        public List<TagFilter> TagFilters { get; set; }
 
     }
 }

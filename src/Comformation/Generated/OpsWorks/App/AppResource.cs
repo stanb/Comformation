@@ -21,7 +21,7 @@ namespace Comformation.OpsWorks.App
             /// Type: AWS OpsWorks Source Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<Source, IntrinsicFunction> AppSource { get; set; }
+			public Source AppSource { get; set; }
 
             /// <summary>
             /// Attributes
@@ -30,7 +30,7 @@ namespace Comformation.OpsWorks.App
             /// Type: A list of key-value pairs
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// DataSources
@@ -39,7 +39,7 @@ namespace Comformation.OpsWorks.App
             /// Type: List of AWS OpsWorks App DataSource
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<DataSource>, IntrinsicFunction> DataSources { get; set; }
+			public List<DataSource> DataSources { get; set; }
 
             /// <summary>
             /// Description
@@ -58,7 +58,7 @@ namespace Comformation.OpsWorks.App
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Domains { get; set; }
+			public List<Union<string, IntrinsicFunction>> Domains { get; set; }
 
             /// <summary>
             /// EnableSsl
@@ -76,7 +76,7 @@ namespace Comformation.OpsWorks.App
             /// Type: List of AWS OpsWorks App Environment
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<EnvironmentVariable>, IntrinsicFunction> Environment { get; set; }
+			public List<EnvironmentVariable> Environment { get; set; }
 
             /// <summary>
             /// Name
@@ -103,7 +103,7 @@ namespace Comformation.OpsWorks.App
             /// Type: AWS OpsWorks SslConfiguration Type
             /// Update requires: No interruption
             /// </summary>
-			public Union<SslConfiguration, IntrinsicFunction> SslConfiguration { get; set; }
+			public SslConfiguration SslConfiguration { get; set; }
 
             /// <summary>
             /// StackId
@@ -129,5 +129,6 @@ namespace Comformation.OpsWorks.App
         public string Type { get; } = "AWS::OpsWorks::App";
         
         public AppProperties Properties { get; } = new AppProperties();
+
     }
 }

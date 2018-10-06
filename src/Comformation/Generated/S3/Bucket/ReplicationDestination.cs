@@ -24,7 +24,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket AccessControlTranslation
         /// </summary>
         [JsonProperty("AccessControlTranslation")]
-        public Union<AccessControlTranslation, IntrinsicFunction> AccessControlTranslation { get; set; }
+        public AccessControlTranslation AccessControlTranslation { get; set; }
 
         /// <summary>
         /// Account
@@ -59,7 +59,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket EncryptionConfiguration
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
-        public Union<EncryptionConfiguration, IntrinsicFunction> EncryptionConfiguration { get; set; }
+        public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
         /// StorageClass

@@ -66,12 +66,13 @@ namespace Comformation.AmazonMQ.Configuration
         public string Type { get; } = "AWS::AmazonMQ::Configuration";
         
         public ConfigurationProperties Properties { get; } = new ConfigurationProperties();
+
     }
 
 	public static class ConfigurationAttributes
 	{
-        public static readonly ResourceAttribute<int> Revision = new ResourceAttribute<int>("Revision");
-        public static readonly ResourceAttribute<string> Id = new ResourceAttribute<string>("Id");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> Revision = new ResourceAttribute<Union<int, IntrinsicFunction>>("Revision");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

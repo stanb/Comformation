@@ -85,7 +85,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Type: Elastic Load Balancing TargetGroup Matcher
             /// Update requires: No interruption
             /// </summary>
-			public Union<Matcher, IntrinsicFunction> Matcher { get; set; }
+			public Matcher Matcher { get; set; }
 
             /// <summary>
             /// Name
@@ -121,10 +121,10 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for the target group. Use tags to help manage resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TargetGroupAttributes
@@ -133,7 +133,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Type: List of Elastic Load Balancing TargetGroup TargetGroupAttributes
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<TargetGroupAttribute>, IntrinsicFunction> TargetGroupAttributes { get; set; }
+			public List<TargetGroupAttribute> TargetGroupAttributes { get; set; }
 
             /// <summary>
             /// TargetType
@@ -152,7 +152,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Type: List of Elastic Load Balancing TargetGroup TargetDescription
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<TargetDescription>, IntrinsicFunction> Targets { get; set; }
+			public List<TargetDescription> Targets { get; set; }
 
             /// <summary>
             /// UnhealthyThresholdCount
@@ -178,12 +178,13 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::TargetGroup";
         
         public TargetGroupProperties Properties { get; } = new TargetGroupProperties();
+
     }
 
 	public static class TargetGroupAttributes
 	{
-        public static readonly ResourceAttribute<List<string>> LoadBalancerArns = new ResourceAttribute<List<string>>("LoadBalancerArns");
-        public static readonly ResourceAttribute<string> TargetGroupFullName = new ResourceAttribute<string>("TargetGroupFullName");
-        public static readonly ResourceAttribute<string> TargetGroupName = new ResourceAttribute<string>("TargetGroupName");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> LoadBalancerArns = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("LoadBalancerArns");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> TargetGroupFullName = new ResourceAttribute<Union<string, IntrinsicFunction>>("TargetGroupFullName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> TargetGroupName = new ResourceAttribute<Union<string, IntrinsicFunction>>("TargetGroupName");
 	}
 }

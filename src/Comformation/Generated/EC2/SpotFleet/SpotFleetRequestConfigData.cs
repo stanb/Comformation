@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// AllocationStrategy
         /// Indicates how to allocate the target capacity across the Spot pools that you specified in the Spot
-        /// fleet request. For valid values, see SpotFleetRequestConfigData in the Amazon EC2 API Reference.
+        /// fleet request.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -28,8 +28,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// ExcessCapacityTerminationPolicy
         /// Indicates whether running Spot instances are terminated if you decrease the target capacity of the
-        /// Spot fleet request below the current size of the Spot fleet. For valid values, see
-        /// SpotFleetRequestConfigData in the Amazon EC2 API Reference.
+        /// Spot fleet request below the current size of the Spot fleet.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -50,6 +49,16 @@ namespace Comformation.EC2.SpotFleet
         public Union<string, IntrinsicFunction> IamFleetRole { get; set; }
 
         /// <summary>
+        /// InstanceInterruptionBehavior
+        /// The behavior when a Spot Instance is interrupted.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("InstanceInterruptionBehavior")]
+        public Union<string, IntrinsicFunction> InstanceInterruptionBehavior { get; set; }
+
+        /// <summary>
         /// LaunchSpecifications
         /// The launch specifications for the Spot fleet request.
         /// Required: Yes
@@ -57,7 +66,7 @@ namespace Comformation.EC2.SpotFleet
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchSpecifications")]
-        public Union<List<SpotFleetLaunchSpecification>, IntrinsicFunction> LaunchSpecifications { get; set; }
+        public List<SpotFleetLaunchSpecification> LaunchSpecifications { get; set; }
 
         /// <summary>
         /// LaunchTemplateConfigs
@@ -67,7 +76,18 @@ namespace Comformation.EC2.SpotFleet
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateConfigs")]
-        public Union<List<LaunchTemplateConfig>, IntrinsicFunction> LaunchTemplateConfigs { get; set; }
+        public List<LaunchTemplateConfig> LaunchTemplateConfigs { get; set; }
+
+        /// <summary>
+        /// LoadBalancersConfig
+        /// One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet
+        /// registers the running Spot Instances with the specified Classic Load Balancers and target groups.
+        /// Required: No
+        /// Type: Amazon EC2 SpotFleet LoadBalancersConfig
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("LoadBalancersConfig")]
+        public LoadBalancersConfig LoadBalancersConfig { get; set; }
 
         /// <summary>
         /// ReplaceUnhealthyInstances
@@ -116,8 +136,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// Type
         /// The type of request, which indicates whether the fleet will only request the target capacity or also
-        /// attempt to maintain it. For more information, see SpotFleetRequestConfigData in the Amazon EC2 API
-        /// Reference.
+        /// attempt to maintain it.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

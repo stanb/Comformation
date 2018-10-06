@@ -31,12 +31,13 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
             /// Type: Kinesis Data Analytics ApplicationOutput Output
             /// Update requires: No interruption
             /// </summary>
-			public Union<Output, IntrinsicFunction> Output { get; set; }
+			public Output Output { get; set; }
 
         }
     
         public string Type { get; } = "AWS::KinesisAnalytics::ApplicationOutput";
         
         public ApplicationOutputProperties Properties { get; } = new ApplicationOutputProperties();
+
     }
 }

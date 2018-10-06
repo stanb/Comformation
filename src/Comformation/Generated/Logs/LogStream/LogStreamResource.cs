@@ -38,5 +38,6 @@ namespace Comformation.Logs.LogStream
         public string Type { get; } = "AWS::Logs::LogStream";
         
         public LogStreamProperties Properties { get; } = new LogStreamProperties();
+
     }
 }

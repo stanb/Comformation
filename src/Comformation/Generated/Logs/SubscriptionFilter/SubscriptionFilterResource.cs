@@ -63,5 +63,6 @@ namespace Comformation.Logs.SubscriptionFilter
         public string Type { get; } = "AWS::Logs::SubscriptionFilter";
         
         public SubscriptionFilterProperties Properties { get; } = new SubscriptionFilterProperties();
+
     }
 }

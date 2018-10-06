@@ -32,7 +32,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
+			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// ManagedPolicyName
@@ -84,7 +84,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
+			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
             /// <summary>
             /// Users
@@ -93,12 +93,13 @@ namespace Comformation.IAM.ManagedPolicy
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Users { get; set; }
+			public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
     
         public string Type { get; } = "AWS::IAM::ManagedPolicy";
         
         public ManagedPolicyProperties Properties { get; } = new ManagedPolicyProperties();
+
     }
 }

@@ -23,7 +23,7 @@ namespace Comformation.SageMaker.Model
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Subnets")]
-        public Union<List<string>, IntrinsicFunction> Subnets { get; set; }
+        public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
         /// <summary>
         /// SecurityGroupIds
@@ -34,7 +34,7 @@ namespace Comformation.SageMaker.Model
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
     }
 }

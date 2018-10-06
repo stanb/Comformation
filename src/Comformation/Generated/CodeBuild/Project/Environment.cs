@@ -32,7 +32,7 @@ namespace Comformation.CodeBuild.Project
         /// Type: List of AWS CodeBuild Project EnvironmentVariable
         /// </summary>
         [JsonProperty("EnvironmentVariables")]
-        public Union<List<EnvironmentVariable>, IntrinsicFunction> EnvironmentVariables { get; set; }
+        public List<EnvironmentVariable> EnvironmentVariables { get; set; }
 
         /// <summary>
         /// PrivilegedMode

@@ -22,7 +22,7 @@ namespace Comformation.IoT.Thing
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Attributes { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
     }
 }

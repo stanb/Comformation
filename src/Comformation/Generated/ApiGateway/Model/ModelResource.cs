@@ -69,5 +69,6 @@ namespace Comformation.ApiGateway.Model
         public string Type { get; } = "AWS::ApiGateway::Model";
         
         public ModelProperties Properties { get; } = new ModelProperties();
+
     }
 }

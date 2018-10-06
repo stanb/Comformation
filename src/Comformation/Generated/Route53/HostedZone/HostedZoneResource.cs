@@ -22,7 +22,7 @@ namespace Comformation.Route53.HostedZone
             /// Type: Route&#160;53 HostedZoneConfig Property
             /// Update requires: No interruption
             /// </summary>
-			public Union<HostedZoneConfig, IntrinsicFunction> HostedZoneConfig { get; set; }
+			public HostedZoneConfig HostedZoneConfig { get; set; }
 
             /// <summary>
             /// HostedZoneTags
@@ -31,7 +31,7 @@ namespace Comformation.Route53.HostedZone
             /// Type: List of Amazon Route&#160;53 HostedZoneTags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<HostedZoneTag>, IntrinsicFunction> HostedZoneTags { get; set; }
+			public List<HostedZoneTag> HostedZoneTags { get; set; }
 
             /// <summary>
             /// Name
@@ -50,7 +50,7 @@ namespace Comformation.Route53.HostedZone
             /// Type: Route&#160;53 QueryLoggingConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<QueryLoggingConfig, IntrinsicFunction> QueryLoggingConfig { get; set; }
+			public QueryLoggingConfig QueryLoggingConfig { get; set; }
 
             /// <summary>
             /// VPCs
@@ -62,17 +62,18 @@ namespace Comformation.Route53.HostedZone
             /// interruption. If this property wasn&#39;t specified and you add values, updates require replacement.
             /// Also, if this property was specified and you remove all values, updates require replacement.
             /// </summary>
-			public Union<List<VPC>, IntrinsicFunction> VPCs { get; set; }
+			public List<VPC> VPCs { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Route53::HostedZone";
         
         public HostedZoneProperties Properties { get; } = new HostedZoneProperties();
+
     }
 
 	public static class HostedZoneAttributes
 	{
-        public static readonly ResourceAttribute<List<string>> NameServers = new ResourceAttribute<List<string>>("NameServers");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> NameServers = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("NameServers");
 	}
 }

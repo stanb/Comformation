@@ -22,7 +22,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: String to string map
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> ResponseParameters { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> ResponseParameters { get; set; }
 
             /// <summary>
             /// ResponseTemplates
@@ -31,7 +31,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: String to string map
             /// Update requires: No interruption
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> ResponseTemplates { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> ResponseTemplates { get; set; }
 
             /// <summary>
             /// ResponseType
@@ -65,5 +65,6 @@ namespace Comformation.ApiGateway.GatewayResponse
         public string Type { get; } = "AWS::ApiGateway::GatewayResponse";
         
         public GatewayResponseProperties Properties { get; } = new GatewayResponseProperties();
+
     }
 }

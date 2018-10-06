@@ -9,7 +9,6 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Comformation.IntrinsicFunctions;
 using Comformation.S3.Bucket;
-using Newtonsoft.Json;
 using Xunit;
 
 namespace Comformation.Tests
@@ -57,7 +56,7 @@ namespace Comformation.Tests
                 try
                 {
                     // Get created stack details
-                    var stack = await GetCreatedStack(createResponse.StackId);
+                    var stack = await _cloudformation.GetCreatedStack(createResponse.StackId);
                 
                     // Validate created stack
                     await AssertCreatedStuck(stack, template);
@@ -79,30 +78,6 @@ namespace Comformation.Tests
             }
         }
 
-        private async Task<Stack> GetCreatedStack(string stackId)
-        {
-            do
-            {
-                var describeResponse = await _cloudformation.DescribeStacksAsync(
-                        new DescribeStacksRequest {StackName = stackId});
-                        
-                var stack = describeResponse.Stacks.First();
-                        
-                if (stack.StackStatus == StackStatus.CREATE_COMPLETE)
-                    return stack;
-
-                if (stack.StackStatus == StackStatus.CREATE_IN_PROGRESS)
-                {
-                    await Task.Delay(5000);
-                }
-                else
-                {
-                    Assert.True(false, $"Stack creation failed - {stack.StackStatus.Value}");
-                }
-            }
-            while (true);
-        }
-
         private async Task AssertCreatedStuck(Stack stack, Template template)
         {
             var createdBucket = stack.Outputs.FirstOrDefault(x => x.OutputKey == "CreatedBucket");
@@ -114,7 +89,7 @@ namespace Comformation.Tests
             Assert.Equal(locationResponse.Location, S3Region.EUW1);
             var taggingResponse = await s3.GetBucketTaggingAsync(
                 new GetBucketTaggingRequest {BucketName = createdBucket.OutputValue});
-            Assert.True(taggingResponse.TagSet.Any(x => x.Key == "Project" && x.Value == "Comformation"));
+            Assert.Contains(taggingResponse.TagSet, x => x.Key == "Project" && x.Value == "Comformation");
         }
 
         private Template CreateSimpleTemplate()
@@ -234,5 +209,6 @@ namespace Comformation.Tests
             };
             return template;
         }
+
     }
 }

@@ -31,7 +31,7 @@ namespace Comformation.CodeCommit.Repository
             /// Type: List of AWS CodeCommit Repository Trigger
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<RepositoryTrigger>, IntrinsicFunction> Triggers { get; set; }
+			public List<RepositoryTrigger> Triggers { get; set; }
 
             /// <summary>
             /// RepositoryDescription
@@ -48,13 +48,14 @@ namespace Comformation.CodeCommit.Repository
         public string Type { get; } = "AWS::CodeCommit::Repository";
         
         public RepositoryProperties Properties { get; } = new RepositoryProperties();
+
     }
 
 	public static class RepositoryAttributes
 	{
-        public static readonly ResourceAttribute<string> CloneUrlHttp = new ResourceAttribute<string>("CloneUrlHttp");
-        public static readonly ResourceAttribute<string> CloneUrlSsh = new ResourceAttribute<string>("CloneUrlSsh");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CloneUrlHttp = new ResourceAttribute<Union<string, IntrinsicFunction>>("CloneUrlHttp");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CloneUrlSsh = new ResourceAttribute<Union<string, IntrinsicFunction>>("CloneUrlSsh");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

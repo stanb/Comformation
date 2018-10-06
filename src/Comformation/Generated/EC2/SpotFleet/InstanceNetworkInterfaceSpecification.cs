@@ -59,7 +59,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Groups")]
-        public Union<List<string>, IntrinsicFunction> Groups { get; set; }
+        public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
         /// <summary>
         /// Ipv6AddressCount
@@ -81,7 +81,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of EC2 NetworkInterface Ipv6Addresses
         /// </summary>
         [JsonProperty("Ipv6Addresses")]
-        public Union<List<InstanceIpv6Address>, IntrinsicFunction> Ipv6Addresses { get; set; }
+        public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
 
         /// <summary>
         /// NetworkInterfaceId
@@ -99,7 +99,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of Amazon Elastic Compute Cloud SpotFleet NetworkInterfaces PrivateIpAddresses
         /// </summary>
         [JsonProperty("PrivateIpAddresses")]
-        public Union<List<PrivateIpAddressSpecification>, IntrinsicFunction> PrivateIpAddresses { get; set; }
+        public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 
         /// <summary>
         /// SecondaryPrivateIpAddressCount

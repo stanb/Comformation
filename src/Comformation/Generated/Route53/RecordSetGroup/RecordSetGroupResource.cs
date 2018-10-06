@@ -17,7 +17,7 @@ namespace Comformation.Route53.RecordSetGroup
         {
             /// <summary>
             /// Comment
-            /// Any comments you want to include about the hosted zone.
+            /// Any comments you want to include about the change batch.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -61,12 +61,13 @@ namespace Comformation.Route53.RecordSetGroup
             /// &quot;Frontend Two&quot;, &quot;Weight&quot; : &quot;6&quot;, &quot;ResourceRecords&quot; : [&quot;example-ec2-larger. amazonaws. com&quot;] } ]
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<RecordSet>, IntrinsicFunction> RecordSets { get; set; }
+			public List<RecordSet> RecordSets { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Route53::RecordSetGroup";
         
         public RecordSetGroupProperties Properties { get; } = new RecordSetGroupProperties();
+
     }
 }

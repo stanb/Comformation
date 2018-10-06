@@ -30,7 +30,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR Cluster ScriptBootstrapActionConfig
         /// </summary>
         [JsonProperty("ScriptBootstrapAction")]
-        public Union<ScriptBootstrapActionConfig, IntrinsicFunction> ScriptBootstrapAction { get; set; }
+        public ScriptBootstrapActionConfig ScriptBootstrapAction { get; set; }
 
     }
 }

@@ -20,7 +20,7 @@ namespace Comformation.CloudFormation.Stack
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> NotificationARNs { get; set; }
+			public List<Union<string, IntrinsicFunction>> NotificationARNs { get; set; }
 
             /// <summary>
             /// Parameters
@@ -33,16 +33,16 @@ namespace Comformation.CloudFormation.Stack
             /// Update requires: Whether an update causes interruptions depends on the resources that are being
             /// updated. An update never causes a nested stack to be replaced.
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to describe this stack.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TemplateURL
@@ -76,5 +76,6 @@ namespace Comformation.CloudFormation.Stack
         public string Type { get; } = "AWS::CloudFormation::Stack";
         
         public StackProperties Properties { get; } = new StackProperties();
+
     }
 }

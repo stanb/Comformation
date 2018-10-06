@@ -22,7 +22,7 @@ namespace Comformation.EC2.SpotFleet
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateSpecification")]
-        public Union<FleetLaunchTemplateSpecification, IntrinsicFunction> LaunchTemplateSpecification { get; set; }
+        public FleetLaunchTemplateSpecification LaunchTemplateSpecification { get; set; }
 
         /// <summary>
         /// Overrides
@@ -32,7 +32,7 @@ namespace Comformation.EC2.SpotFleet
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Overrides")]
-        public Union<List<LaunchTemplateOverrides>, IntrinsicFunction> Overrides { get; set; }
+        public List<LaunchTemplateOverrides> Overrides { get; set; }
 
     }
 }

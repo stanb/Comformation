@@ -33,7 +33,7 @@ namespace Comformation.Glue.Connection
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIdList")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIdList { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIdList { get; set; }
 
         /// <summary>
         /// SubnetId

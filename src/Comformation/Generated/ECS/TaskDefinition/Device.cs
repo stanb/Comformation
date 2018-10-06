@@ -43,7 +43,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Permissions")]
-        public Union<List<string>, IntrinsicFunction> Permissions { get; set; }
+        public List<Union<string, IntrinsicFunction>> Permissions { get; set; }
 
     }
 }

@@ -23,7 +23,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("JSONMappingParameters")]
-        public Union<JSONMappingParameters, IntrinsicFunction> JSONMappingParameters { get; set; }
+        public JSONMappingParameters JSONMappingParameters { get; set; }
 
         /// <summary>
         /// CSVMappingParameters
@@ -33,7 +33,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CSVMappingParameters")]
-        public Union<CSVMappingParameters, IntrinsicFunction> CSVMappingParameters { get; set; }
+        public CSVMappingParameters CSVMappingParameters { get; set; }
 
     }
 }

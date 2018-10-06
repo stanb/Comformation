@@ -23,7 +23,7 @@ namespace Comformation.Events.Rule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputPathsMap")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> InputPathsMap { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> InputPathsMap { get; set; }
 
         /// <summary>
         /// InputTemplate

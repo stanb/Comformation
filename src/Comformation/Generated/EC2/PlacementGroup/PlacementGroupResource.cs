@@ -32,5 +32,6 @@ namespace Comformation.EC2.PlacementGroup
         public string Type { get; } = "AWS::EC2::PlacementGroup";
         
         public PlacementGroupProperties Properties { get; } = new PlacementGroupProperties();
+
     }
 }

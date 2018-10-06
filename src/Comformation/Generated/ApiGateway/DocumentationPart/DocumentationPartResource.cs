@@ -22,7 +22,7 @@ namespace Comformation.ApiGateway.DocumentationPart
             /// Type: Amazon API Gateway DocumentationPart Location
             /// Update requires: Replacement
             /// </summary>
-			public Union<Location, IntrinsicFunction> Location { get; set; }
+			public Location Location { get; set; }
 
             /// <summary>
             /// Properties
@@ -47,5 +47,6 @@ namespace Comformation.ApiGateway.DocumentationPart
         public string Type { get; } = "AWS::ApiGateway::DocumentationPart";
         
         public DocumentationPartProperties Properties { get; } = new DocumentationPartProperties();
+
     }
 }

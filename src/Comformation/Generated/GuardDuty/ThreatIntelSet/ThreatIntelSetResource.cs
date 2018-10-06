@@ -66,5 +66,6 @@ namespace Comformation.GuardDuty.ThreatIntelSet
         public string Type { get; } = "AWS::GuardDuty::ThreatIntelSet";
         
         public ThreatIntelSetProperties Properties { get; } = new ThreatIntelSetProperties();
+
     }
 }

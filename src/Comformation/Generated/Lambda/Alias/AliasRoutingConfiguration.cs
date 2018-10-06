@@ -23,7 +23,7 @@ namespace Comformation.Lambda.Alias
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AdditionalVersionWeights")]
-        public Union<List<VersionWeight>, IntrinsicFunction> AdditionalVersionWeights { get; set; }
+        public List<VersionWeight> AdditionalVersionWeights { get; set; }
 
     }
 }

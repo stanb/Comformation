@@ -22,7 +22,7 @@ namespace Comformation.Lambda.Function
             /// Type: AWS Lambda Function Code
             /// Update requires: No interruption
             /// </summary>
-			public Union<Code, IntrinsicFunction> Code { get; set; }
+			public Code Code { get; set; }
 
             /// <summary>
             /// DeadLetterConfig
@@ -33,7 +33,7 @@ namespace Comformation.Lambda.Function
             /// Type: AWS Lambda Function DeadLetterConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<DeadLetterConfig, IntrinsicFunction> DeadLetterConfig { get; set; }
+			public DeadLetterConfig DeadLetterConfig { get; set; }
 
             /// <summary>
             /// Description
@@ -53,7 +53,7 @@ namespace Comformation.Lambda.Function
             /// Type: AWS Lambda Function Environment
             /// Update requires: No interruption
             /// </summary>
-			public Union<Environment, IntrinsicFunction> Environment { get; set; }
+			public Environment Environment { get; set; }
 
             /// <summary>
             /// FunctionName
@@ -142,10 +142,10 @@ namespace Comformation.Lambda.Function
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this Lambda function.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Timeout
@@ -167,7 +167,7 @@ namespace Comformation.Lambda.Function
             /// Type: AWS Lambda Function TracingConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<TracingConfig, IntrinsicFunction> TracingConfig { get; set; }
+			public TracingConfig TracingConfig { get; set; }
 
             /// <summary>
             /// VpcConfig
@@ -187,17 +187,18 @@ namespace Comformation.Lambda.Function
             /// Type: AWS Lambda Function VpcConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<VpcConfig, IntrinsicFunction> VpcConfig { get; set; }
+			public VpcConfig VpcConfig { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Lambda::Function";
         
         public FunctionProperties Properties { get; } = new FunctionProperties();
+
     }
 
 	public static class FunctionAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

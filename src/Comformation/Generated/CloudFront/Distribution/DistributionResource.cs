@@ -22,27 +22,28 @@ namespace Comformation.CloudFront.Distribution
             /// Type: DistributionConfig type
             /// Update requires: No interruption
             /// </summary>
-			public Union<DistributionConfig, IntrinsicFunction> DistributionConfig { get; set; }
+			public DistributionConfig DistributionConfig { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to associate with a CloudFront distribution.
             /// Required: No
-            /// Type: List of
+            /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// Duplicates not allowed.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CloudFront::Distribution";
         
         public DistributionProperties Properties { get; } = new DistributionProperties();
+
     }
 
 	public static class DistributionAttributes
 	{
-        public static readonly ResourceAttribute<string> DomainName = new ResourceAttribute<string>("DomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
 	}
 }

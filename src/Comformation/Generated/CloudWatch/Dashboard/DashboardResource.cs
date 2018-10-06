@@ -40,5 +40,6 @@ namespace Comformation.CloudWatch.Dashboard
         public string Type { get; } = "AWS::CloudWatch::Dashboard";
         
         public DashboardProperties Properties { get; } = new DashboardProperties();
+
     }
 }

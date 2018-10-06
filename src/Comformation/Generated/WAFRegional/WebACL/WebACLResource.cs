@@ -33,7 +33,7 @@ namespace Comformation.WAFRegional.WebACL
             /// Type: AWS WAF Regional WebACL Action
             /// Update requires: No interruption
             /// </summary>
-			public Union<Action, IntrinsicFunction> DefaultAction { get; set; }
+			public Action DefaultAction { get; set; }
 
             /// <summary>
             /// Rules
@@ -42,7 +42,7 @@ namespace Comformation.WAFRegional.WebACL
             /// Type: List of AWS WAF Regional WebACL Rules
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Rule>, IntrinsicFunction> Rules { get; set; }
+			public List<Rule> Rules { get; set; }
 
             /// <summary>
             /// Name
@@ -58,5 +58,6 @@ namespace Comformation.WAFRegional.WebACL
         public string Type { get; } = "AWS::WAFRegional::WebACL";
         
         public WebACLProperties Properties { get; } = new WebACLProperties();
+
     }
 }

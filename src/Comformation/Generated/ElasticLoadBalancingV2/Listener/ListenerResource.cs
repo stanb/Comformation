@@ -26,7 +26,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Type: List of Elastic Load Balancing Listener Certificate
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Certificate>, IntrinsicFunction> Certificates { get; set; }
+			public List<Certificate> Certificates { get; set; }
 
             /// <summary>
             /// DefaultActions
@@ -35,7 +35,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Type: List of Elastic Load Balancing Listener Action
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Action>, IntrinsicFunction> DefaultActions { get; set; }
+			public List<Action> DefaultActions { get; set; }
 
             /// <summary>
             /// LoadBalancerArn
@@ -82,5 +82,6 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::Listener";
         
         public ListenerProperties Properties { get; } = new ListenerProperties();
+
     }
 }

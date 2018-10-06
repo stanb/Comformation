@@ -34,7 +34,7 @@ namespace Comformation.WAFRegional.Rule
             /// Type: List of AWS WAF Regional Rule Predicates
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Predicate>, IntrinsicFunction> Predicates { get; set; }
+			public List<Predicate> Predicates { get; set; }
 
             /// <summary>
             /// Name
@@ -50,5 +50,6 @@ namespace Comformation.WAFRegional.Rule
         public string Type { get; } = "AWS::WAFRegional::Rule";
         
         public RuleProperties Properties { get; } = new RuleProperties();
+
     }
 }

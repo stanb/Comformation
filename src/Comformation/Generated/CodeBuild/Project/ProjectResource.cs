@@ -31,7 +31,16 @@ namespace Comformation.CodeBuild.Project
             /// Type: AWS CodeBuild Project VpcConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<VpcConfig, IntrinsicFunction> VpcConfig { get; set; }
+			public VpcConfig VpcConfig { get; set; }
+
+            /// <summary>
+            /// SecondarySources
+            /// An array of source objects. Each source object contains source code settings for the project.
+            /// Required: No
+            /// Type: List of AWS CodeBuild Project Source
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Source> SecondarySources { get; set; }
 
             /// <summary>
             /// EncryptionKey
@@ -53,7 +62,17 @@ namespace Comformation.CodeBuild.Project
             /// Type: AWS CodeBuild Project ProjectTriggers
             /// Update requires: No interruption
             /// </summary>
-			public Union<ProjectTriggers, IntrinsicFunction> Triggers { get; set; }
+			public ProjectTriggers Triggers { get; set; }
+
+            /// <summary>
+            /// SecondaryArtifacts
+            /// An array of artifacts objects. Each artifacts object specifies output settings that the project
+            /// generates during a build.
+            /// Required: No
+            /// Type: List of AWS CodeBuild Project Artifacts
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Artifacts> SecondaryArtifacts { get; set; }
 
             /// <summary>
             /// Source
@@ -62,7 +81,7 @@ namespace Comformation.CodeBuild.Project
             /// Type: AWS CodeBuild Project Source
             /// Update requires: No interruption
             /// </summary>
-			public Union<Source, IntrinsicFunction> Source { get; set; }
+			public Source Source { get; set; }
 
             /// <summary>
             /// Name
@@ -80,7 +99,7 @@ namespace Comformation.CodeBuild.Project
             /// Type: AWS CodeBuild Project Artifacts
             /// Update requires: No interruption
             /// </summary>
-			public Union<Artifacts, IntrinsicFunction> Artifacts { get; set; }
+			public Artifacts Artifacts { get; set; }
 
             /// <summary>
             /// BadgeEnabled
@@ -94,6 +113,15 @@ namespace Comformation.CodeBuild.Project
             /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> BadgeEnabled { get; set; }
+
+            /// <summary>
+            /// LogsConfig
+            /// Information about logs for this build project.
+            /// Required: No
+            /// Type: AWS CodeBuild Project LogsConfig
+            /// Update requires: No interruption
+            /// </summary>
+			public LogsConfig LogsConfig { get; set; }
 
             /// <summary>
             /// ServiceRole
@@ -112,16 +140,16 @@ namespace Comformation.CodeBuild.Project
             /// Type: AWS CodeBuild Project Environment
             /// Update requires: No interruption
             /// </summary>
-			public Union<Environment, IntrinsicFunction> Environment { get; set; }
+			public Environment Environment { get; set; }
 
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key-value pairs) for the AWS CodeBuild project.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TimeoutInMinutes
@@ -140,17 +168,18 @@ namespace Comformation.CodeBuild.Project
             /// Type: AWS CodeBuild Project ProjectCache
             /// Update requires: No interruption
             /// </summary>
-			public Union<ProjectCache, IntrinsicFunction> Cache { get; set; }
+			public ProjectCache Cache { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CodeBuild::Project";
         
         public ProjectProperties Properties { get; } = new ProjectProperties();
+
     }
 
 	public static class ProjectAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

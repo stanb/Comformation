@@ -22,7 +22,7 @@ namespace Comformation.Glue.Classifier
             /// Type: AWS Glue Classifier XMLClassifier
             /// Update requires: No interruption
             /// </summary>
-			public Union<XMLClassifier, IntrinsicFunction> XMLClassifier { get; set; }
+			public XMLClassifier XMLClassifier { get; set; }
 
             /// <summary>
             /// JsonClassifier
@@ -31,7 +31,7 @@ namespace Comformation.Glue.Classifier
             /// Type: AWS Glue Classifier JsonClassifier
             /// Update requires: No interruption
             /// </summary>
-			public Union<JsonClassifier, IntrinsicFunction> JsonClassifier { get; set; }
+			public JsonClassifier JsonClassifier { get; set; }
 
             /// <summary>
             /// GrokClassifier
@@ -40,12 +40,13 @@ namespace Comformation.Glue.Classifier
             /// Type: AWS Glue Classifier GrokClassifier
             /// Update requires: No interruption
             /// </summary>
-			public Union<GrokClassifier, IntrinsicFunction> GrokClassifier { get; set; }
+			public GrokClassifier GrokClassifier { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Glue::Classifier";
         
         public ClassifierProperties Properties { get; } = new ClassifierProperties();
+
     }
 }

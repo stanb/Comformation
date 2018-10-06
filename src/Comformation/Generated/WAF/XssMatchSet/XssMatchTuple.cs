@@ -22,7 +22,7 @@ namespace Comformation.WAF.XssMatchSet
         /// Type: AWS WAF XssMatchSet XssMatchTuple FieldToMatch
         /// </summary>
         [JsonProperty("FieldToMatch")]
-        public Union<FieldToMatch, IntrinsicFunction> FieldToMatch { get; set; }
+        public FieldToMatch FieldToMatch { get; set; }
 
         /// <summary>
         /// TextTransformation

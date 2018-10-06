@@ -54,20 +54,21 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Tags
             /// One or more tags.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ServiceCatalog::Portfolio";
         
         public PortfolioProperties Properties { get; } = new PortfolioProperties();
+
     }
 
 	public static class PortfolioAttributes
 	{
-        public static readonly ResourceAttribute<string> PortfolioName = new ResourceAttribute<string>("PortfolioName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PortfolioName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PortfolioName");
 	}
 }

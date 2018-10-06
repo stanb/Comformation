@@ -22,7 +22,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> AvailabilityZones { get; set; }
+			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// BackupRetentionPeriod
@@ -91,6 +91,15 @@ namespace Comformation.RDS.DBCluster
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Engine { get; set; }
+
+            /// <summary>
+            /// EngineMode
+            /// The DB engine mode of the DB cluster. Valid values include provisioned or serverless.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> EngineMode { get; set; }
 
             /// <summary>
             /// EngineVersion
@@ -181,6 +190,15 @@ namespace Comformation.RDS.DBCluster
 			public Union<string, IntrinsicFunction> ReplicationSourceIdentifier { get; set; }
 
             /// <summary>
+            /// ScalingConfiguration
+            /// For DB clusters in serverless DB engine mode, the scaling properties of the DB cluster.
+            /// Required: No
+            /// Type: Amazon RDS DBCluster ScalingConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+			public ScalingConfiguration ScalingConfiguration { get; set; }
+
+            /// <summary>
             /// SnapshotIdentifier
             /// The identifier for the DB cluster snapshot from which you want to restore.
             /// Required: No
@@ -207,7 +225,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: A list of resource tags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -216,19 +234,20 @@ namespace Comformation.RDS.DBCluster
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::DBCluster";
         
         public DBClusterProperties Properties { get; } = new DBClusterProperties();
+
     }
 
 	public static class DBClusterAttributes
 	{
-        public static readonly ResourceAttribute<string> Endpoint_Address = new ResourceAttribute<string>("Endpoint", "Address");
-        public static readonly ResourceAttribute<string> Endpoint_Port = new ResourceAttribute<string>("Endpoint", "Port");
-        public static readonly ResourceAttribute<string> ReadEndpoint_Address = new ResourceAttribute<string>("ReadEndpoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndpoint", "Address");
 	}
 }

@@ -22,12 +22,13 @@ namespace Comformation.SES.ReceiptFilter
             /// Type: Amazon SES ReceiptFilter Filter
             /// Update requires: Replacement
             /// </summary>
-			public Union<Filter, IntrinsicFunction> Filter { get; set; }
+			public Filter Filter { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SES::ReceiptFilter";
         
         public ReceiptFilterProperties Properties { get; } = new ReceiptFilterProperties();
+
     }
 }

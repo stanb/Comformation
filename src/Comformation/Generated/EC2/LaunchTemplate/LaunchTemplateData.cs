@@ -24,7 +24,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroups")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroups { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
         /// <summary>
         /// TagSpecifications
@@ -35,7 +35,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagSpecifications")]
-        public Union<List<TagSpecification>, IntrinsicFunction> TagSpecifications { get; set; }
+        public List<TagSpecification> TagSpecifications { get; set; }
 
         /// <summary>
         /// UserData
@@ -69,7 +69,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BlockDeviceMappings")]
-        public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
+        public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
 
         /// <summary>
         /// IamInstanceProfile
@@ -79,7 +79,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IamInstanceProfile")]
-        public Union<IamInstanceProfile, IntrinsicFunction> IamInstanceProfile { get; set; }
+        public IamInstanceProfile IamInstanceProfile { get; set; }
 
         /// <summary>
         /// KernelId
@@ -103,7 +103,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public Union<List<string>, IntrinsicFunction> SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
         /// <summary>
         /// EbsOptimized
@@ -149,7 +149,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ElasticGpuSpecifications")]
-        public Union<List<ElasticGpuSpecification>, IntrinsicFunction> ElasticGpuSpecifications { get; set; }
+        public List<ElasticGpuSpecification> ElasticGpuSpecifications { get; set; }
 
         /// <summary>
         /// Placement
@@ -159,7 +159,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Placement")]
-        public Union<Placement, IntrinsicFunction> Placement { get; set; }
+        public Placement Placement { get; set; }
 
         /// <summary>
         /// InstanceMarketOptions
@@ -169,7 +169,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceMarketOptions")]
-        public Union<InstanceMarketOptions, IntrinsicFunction> InstanceMarketOptions { get; set; }
+        public InstanceMarketOptions InstanceMarketOptions { get; set; }
 
         /// <summary>
         /// NetworkInterfaces
@@ -179,7 +179,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NetworkInterfaces")]
-        public Union<List<NetworkInterface>, IntrinsicFunction> NetworkInterfaces { get; set; }
+        public List<NetworkInterface> NetworkInterfaces { get; set; }
 
         /// <summary>
         /// ImageId
@@ -222,7 +222,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Monitoring")]
-        public Union<Monitoring, IntrinsicFunction> Monitoring { get; set; }
+        public Monitoring Monitoring { get; set; }
 
         /// <summary>
         /// CreditSpecification
@@ -232,7 +232,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CreditSpecification")]
-        public Union<CreditSpecification, IntrinsicFunction> CreditSpecification { get; set; }
+        public CreditSpecification CreditSpecification { get; set; }
 
     }
 }

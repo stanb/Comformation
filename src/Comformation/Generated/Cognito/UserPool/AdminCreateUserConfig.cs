@@ -21,7 +21,7 @@ namespace Comformation.Cognito.UserPool
         /// Required: No
         /// </summary>
         [JsonProperty("InviteMessageTemplate")]
-        public Union<InviteMessageTemplate, IntrinsicFunction> InviteMessageTemplate { get; set; }
+        public InviteMessageTemplate InviteMessageTemplate { get; set; }
 
         /// <summary>
         /// UnusedAccountValidityDays

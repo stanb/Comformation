@@ -28,5 +28,6 @@ namespace Comformation.ApiGateway.ClientCertificate
         public string Type { get; } = "AWS::ApiGateway::ClientCertificate";
         
         public ClientCertificateProperties Properties { get; } = new ClientCertificateProperties();
+
     }
 }

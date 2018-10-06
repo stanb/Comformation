@@ -37,10 +37,10 @@ namespace Comformation.EC2.VPNConnection
             /// Tags
             /// The tags that you want to attach to the resource.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags.
+            /// Type: Resource Tag.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
@@ -69,12 +69,13 @@ namespace Comformation.EC2.VPNConnection
             /// Type: List of EC2 VPNConnection VpnTunnelOptionsSpecification
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<VpnTunnelOptionsSpecification>, IntrinsicFunction> VpnTunnelOptionsSpecifications { get; set; }
+			public List<VpnTunnelOptionsSpecification> VpnTunnelOptionsSpecifications { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::VPNConnection";
         
         public VPNConnectionProperties Properties { get; } = new VPNConnectionProperties();
+
     }
 }

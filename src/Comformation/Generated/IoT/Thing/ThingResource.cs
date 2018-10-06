@@ -20,7 +20,7 @@ namespace Comformation.IoT.Thing
             /// Type: AWS IoT Thing AttributePayload
             /// Update requires: No interruption
             /// </summary>
-			public Union<AttributePayload, IntrinsicFunction> AttributePayload { get; set; }
+			public AttributePayload AttributePayload { get; set; }
 
             /// <summary>
             /// ThingName
@@ -36,5 +36,6 @@ namespace Comformation.IoT.Thing
         public string Type { get; } = "AWS::IoT::Thing";
         
         public ThingProperties Properties { get; } = new ThingProperties();
+
     }
 }

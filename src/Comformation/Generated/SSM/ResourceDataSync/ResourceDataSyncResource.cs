@@ -79,5 +79,6 @@ namespace Comformation.SSM.ResourceDataSync
         public string Type { get; } = "AWS::SSM::ResourceDataSync";
         
         public ResourceDataSyncProperties Properties { get; } = new ResourceDataSyncProperties();
+
     }
 }

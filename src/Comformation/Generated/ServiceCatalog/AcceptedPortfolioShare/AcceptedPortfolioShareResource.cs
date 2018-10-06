@@ -37,5 +37,6 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
         public string Type { get; } = "AWS::ServiceCatalog::AcceptedPortfolioShare";
         
         public AcceptedPortfolioShareProperties Properties { get; } = new AcceptedPortfolioShareProperties();
+
     }
 }

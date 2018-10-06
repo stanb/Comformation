@@ -23,7 +23,7 @@ namespace Comformation.CloudFront.Distribution
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Locations")]
-        public Union<List<string>, IntrinsicFunction> Locations { get; set; }
+        public List<Union<string, IntrinsicFunction>> Locations { get; set; }
 
         /// <summary>
         /// RestrictionType

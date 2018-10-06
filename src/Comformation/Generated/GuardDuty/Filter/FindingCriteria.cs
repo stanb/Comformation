@@ -33,7 +33,7 @@ namespace Comformation.GuardDuty.Filter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ItemType")]
-        public Union<Condition, IntrinsicFunction> ItemType { get; set; }
+        public Condition ItemType { get; set; }
 
     }
 }

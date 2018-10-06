@@ -21,7 +21,7 @@ namespace Comformation.EMR.Cluster
         /// Type: String-to-string map
         /// </summary>
         [JsonProperty("AdditionalInfo")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> AdditionalInfo { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> AdditionalInfo { get; set; }
 
         /// <summary>
         /// Args
@@ -30,7 +30,7 @@ namespace Comformation.EMR.Cluster
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Args")]
-        public Union<List<string>, IntrinsicFunction> Args { get; set; }
+        public List<Union<string, IntrinsicFunction>> Args { get; set; }
 
         /// <summary>
         /// Name

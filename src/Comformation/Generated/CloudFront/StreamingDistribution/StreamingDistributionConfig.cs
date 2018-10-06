@@ -22,7 +22,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Logging")]
-        public Union<Logging, IntrinsicFunction> Logging { get; set; }
+        public Logging Logging { get; set; }
 
         /// <summary>
         /// Comment
@@ -54,7 +54,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Origin")]
-        public Union<S3Origin, IntrinsicFunction> S3Origin { get; set; }
+        public S3Origin S3Origin { get; set; }
 
         /// <summary>
         /// Enabled
@@ -74,7 +74,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Aliases")]
-        public Union<List<string>, IntrinsicFunction> Aliases { get; set; }
+        public List<Union<string, IntrinsicFunction>> Aliases { get; set; }
 
         /// <summary>
         /// TrustedSigners
@@ -87,7 +87,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TrustedSigners")]
-        public Union<TrustedSigners, IntrinsicFunction> TrustedSigners { get; set; }
+        public TrustedSigners TrustedSigners { get; set; }
 
     }
 }

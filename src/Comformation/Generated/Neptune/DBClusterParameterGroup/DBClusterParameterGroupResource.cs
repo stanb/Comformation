@@ -51,7 +51,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: A list of resource tags
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -67,5 +67,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
         public string Type { get; } = "AWS::Neptune::DBClusterParameterGroup";
         
         public DBClusterParameterGroupProperties Properties { get; } = new DBClusterParameterGroupProperties();
+
     }
 }

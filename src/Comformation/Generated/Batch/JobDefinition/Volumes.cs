@@ -24,7 +24,7 @@ namespace Comformation.Batch.JobDefinition
         /// Update requires: No Interruption
         /// </summary>
         [JsonProperty("Host")]
-        public Union<VolumesHost, IntrinsicFunction> Host { get; set; }
+        public VolumesHost Host { get; set; }
 
         /// <summary>
         /// Name

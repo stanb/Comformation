@@ -106,7 +106,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             /// VpcSecurityGroupIds
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VpcSecurityGroupIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
             /// <summary>
             /// AllowMajorVersionUpgrade
@@ -153,18 +153,19 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: List of resource tags in key-value format
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DMS::ReplicationInstance";
         
         public ReplicationInstanceProperties Properties { get; } = new ReplicationInstanceProperties();
+
     }
 
 	public static class ReplicationInstanceAttributes
 	{
-        public static readonly ResourceAttribute<List<string>> ReplicationInstancePublicIpAddresses = new ResourceAttribute<List<string>>("ReplicationInstancePublicIpAddresses");
-        public static readonly ResourceAttribute<List<string>> ReplicationInstancePrivateIpAddresses = new ResourceAttribute<List<string>>("ReplicationInstancePrivateIpAddresses");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReplicationInstancePublicIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReplicationInstancePublicIpAddresses");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReplicationInstancePrivateIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReplicationInstancePrivateIpAddresses");
 	}
 }

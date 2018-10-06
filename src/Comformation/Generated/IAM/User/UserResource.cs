@@ -20,7 +20,7 @@ namespace Comformation.IAM.User
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Groups { get; set; }
+			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// LoginProfile
@@ -29,7 +29,7 @@ namespace Comformation.IAM.User
             /// Type: IAM User LoginProfile
             /// Update requires: No interruption
             /// </summary>
-			public Union<LoginProfile, IntrinsicFunction> LoginProfile { get; set; }
+			public LoginProfile LoginProfile { get; set; }
 
             /// <summary>
             /// ManagedPolicyArns
@@ -38,7 +38,7 @@ namespace Comformation.IAM.User
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ManagedPolicyArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// Path
@@ -60,7 +60,7 @@ namespace Comformation.IAM.User
             /// Type: List of IAM Policies
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Policy>, IntrinsicFunction> Policies { get; set; }
+			public List<Policy> Policies { get; set; }
 
             /// <summary>
             /// UserName
@@ -88,10 +88,11 @@ namespace Comformation.IAM.User
         public string Type { get; } = "AWS::IAM::User";
         
         public UserProperties Properties { get; } = new UserProperties();
+
     }
 
 	public static class UserAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

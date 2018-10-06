@@ -21,7 +21,7 @@ namespace Comformation.Cognito.IdentityPool
         /// Required: No
         /// </summary>
         [JsonProperty("ApplicationArns")]
-        public Union<List<string>, IntrinsicFunction> ApplicationArns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ApplicationArns { get; set; }
 
         /// <summary>
         /// RoleArn

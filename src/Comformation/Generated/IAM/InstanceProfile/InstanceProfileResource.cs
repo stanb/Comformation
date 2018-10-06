@@ -44,17 +44,18 @@ namespace Comformation.IAM.InstanceProfile
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> Roles { get; set; }
+			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
         }
     
         public string Type { get; } = "AWS::IAM::InstanceProfile";
         
         public InstanceProfileProperties Properties { get; } = new InstanceProfileProperties();
+
     }
 
 	public static class InstanceProfileAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

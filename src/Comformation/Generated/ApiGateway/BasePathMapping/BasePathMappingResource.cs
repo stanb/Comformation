@@ -56,5 +56,6 @@ namespace Comformation.ApiGateway.BasePathMapping
         public string Type { get; } = "AWS::ApiGateway::BasePathMapping";
         
         public BasePathMappingProperties Properties { get; } = new BasePathMappingProperties();
+
     }
 }

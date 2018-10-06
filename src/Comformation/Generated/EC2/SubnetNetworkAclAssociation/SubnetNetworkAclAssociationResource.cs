@@ -37,10 +37,11 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
         public string Type { get; } = "AWS::EC2::SubnetNetworkAclAssociation";
         
         public SubnetNetworkAclAssociationProperties Properties { get; } = new SubnetNetworkAclAssociationProperties();
+
     }
 
 	public static class SubnetNetworkAclAssociationAttributes
 	{
-        public static readonly ResourceAttribute<string> AssociationId = new ResourceAttribute<string>("AssociationId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AssociationId = new ResourceAttribute<Union<string, IntrinsicFunction>>("AssociationId");
 	}
 }

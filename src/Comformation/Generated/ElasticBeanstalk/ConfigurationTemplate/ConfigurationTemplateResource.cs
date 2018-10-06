@@ -52,7 +52,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Required: No
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<List<ConfigurationOptionSetting>, IntrinsicFunction> OptionSettings { get; set; }
+			public List<ConfigurationOptionSetting> OptionSettings { get; set; }
 
             /// <summary>
             /// PlatformArn
@@ -91,12 +91,13 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Required: Conditional
             /// Update requires: Replacement
             /// </summary>
-			public Union<SourceConfiguration, IntrinsicFunction> SourceConfiguration { get; set; }
+			public SourceConfiguration SourceConfiguration { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElasticBeanstalk::ConfigurationTemplate";
         
         public ConfigurationTemplateProperties Properties { get; } = new ConfigurationTemplateProperties();
+
     }
 }

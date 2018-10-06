@@ -64,7 +64,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: List of Elastic Beanstalk Environment OptionSetting
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<List<OptionSetting>, IntrinsicFunction> OptionSettings { get; set; }
+			public List<OptionSetting> OptionSettings { get; set; }
 
             /// <summary>
             /// PlatformArn
@@ -94,11 +94,11 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this environment.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: You can update tags only if you update another property that requires that the
             /// environment be replaced, such as the ApplicationName property.
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TemplateName
@@ -119,7 +119,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: Elastic Beanstalk Environment Tier Property Type
             /// Update requires: See Elastic Beanstalk Environment Tier Property Type
             /// </summary>
-			public Union<Tier, IntrinsicFunction> Tier { get; set; }
+			public Tier Tier { get; set; }
 
             /// <summary>
             /// VersionLabel
@@ -135,10 +135,11 @@ namespace Comformation.ElasticBeanstalk.Environment
         public string Type { get; } = "AWS::ElasticBeanstalk::Environment";
         
         public EnvironmentProperties Properties { get; } = new EnvironmentProperties();
+
     }
 
 	public static class EnvironmentAttributes
 	{
-        public static readonly ResourceAttribute<string> EndpointURL = new ResourceAttribute<string>("EndpointURL");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> EndpointURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("EndpointURL");
 	}
 }

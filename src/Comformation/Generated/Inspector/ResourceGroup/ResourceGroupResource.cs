@@ -18,20 +18,21 @@ namespace Comformation.Inspector.ResourceGroup
             /// ResourceGroupTags
             /// The tags (key and value pairs) of the resource group.
             /// Required: Yes
-            /// Type: List of AWS CloudFormation Resource Tags
+            /// Type: List of Resource Tag
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> ResourceGroupTags { get; set; }
+			public List<Tag> ResourceGroupTags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Inspector::ResourceGroup";
         
         public ResourceGroupProperties Properties { get; } = new ResourceGroupProperties();
+
     }
 
 	public static class ResourceGroupAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

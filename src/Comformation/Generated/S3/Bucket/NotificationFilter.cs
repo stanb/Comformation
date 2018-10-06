@@ -22,7 +22,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket S3KeyFilter
         /// </summary>
         [JsonProperty("S3Key")]
-        public Union<S3KeyFilter, IntrinsicFunction> S3Key { get; set; }
+        public S3KeyFilter S3Key { get; set; }
 
     }
 }

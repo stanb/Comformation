@@ -48,7 +48,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Configurations")]
-        public Union<List<Configuration>, IntrinsicFunction> Configurations { get; set; }
+        public List<Configuration> Configurations { get; set; }
 
         /// <summary>
         /// EbsConfiguration
@@ -59,7 +59,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsConfiguration")]
-        public Union<EbsConfiguration, IntrinsicFunction> EbsConfiguration { get; set; }
+        public EbsConfiguration EbsConfiguration { get; set; }
 
         /// <summary>
         /// InstanceType

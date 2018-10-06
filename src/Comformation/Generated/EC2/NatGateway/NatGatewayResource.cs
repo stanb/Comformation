@@ -40,15 +40,16 @@ namespace Comformation.EC2.NatGateway
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this resource. Use tags to
             /// manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::EC2::NatGateway";
         
         public NatGatewayProperties Properties { get; } = new NatGatewayProperties();
+
     }
 }

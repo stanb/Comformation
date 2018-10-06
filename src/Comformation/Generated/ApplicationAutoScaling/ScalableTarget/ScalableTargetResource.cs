@@ -74,7 +74,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// Type: List of Application Auto Scaling ScalableTarget ScheduledAction property types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ScheduledAction>, IntrinsicFunction> ScheduledActions { get; set; }
+			public List<ScheduledAction> ScheduledActions { get; set; }
 
             /// <summary>
             /// ServiceNamespace
@@ -92,5 +92,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         public string Type { get; } = "AWS::ApplicationAutoScaling::ScalableTarget";
         
         public ScalableTargetProperties Properties { get; } = new ScalableTargetProperties();
+
     }
 }

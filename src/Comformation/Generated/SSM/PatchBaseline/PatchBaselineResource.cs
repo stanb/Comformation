@@ -33,7 +33,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ApprovedPatches { get; set; }
+			public List<Union<string, IntrinsicFunction>> ApprovedPatches { get; set; }
 
             /// <summary>
             /// PatchGroups
@@ -42,7 +42,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> PatchGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> PatchGroups { get; set; }
 
             /// <summary>
             /// Description
@@ -77,7 +77,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: Systems Manager PatchBaseline RuleGroup
             /// Update requires: No interruption
             /// </summary>
-			public Union<RuleGroup, IntrinsicFunction> ApprovalRules { get; set; }
+			public RuleGroup ApprovalRules { get; set; }
 
             /// <summary>
             /// GlobalFilters
@@ -86,12 +86,12 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: Systems Manager PatchBaseline PatchFilterGroup
             /// Update requires: No interruption
             /// </summary>
-			public Union<PatchFilterGroup, IntrinsicFunction> GlobalFilters { get; set; }
+			public PatchFilterGroup GlobalFilters { get; set; }
 
             /// <summary>
             /// Sources
             /// </summary>
-			public Union<List<PatchSource>, IntrinsicFunction> Sources { get; set; }
+			public List<PatchSource> Sources { get; set; }
 
             /// <summary>
             /// Name
@@ -109,12 +109,13 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> RejectedPatches { get; set; }
+			public List<Union<string, IntrinsicFunction>> RejectedPatches { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SSM::PatchBaseline";
         
         public PatchBaselineProperties Properties { get; } = new PatchBaselineProperties();
+
     }
 }

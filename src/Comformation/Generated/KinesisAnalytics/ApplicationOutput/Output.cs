@@ -22,7 +22,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DestinationSchema")]
-        public Union<DestinationSchema, IntrinsicFunction> DestinationSchema { get; set; }
+        public DestinationSchema DestinationSchema { get; set; }
 
         /// <summary>
         /// LambdaOutput
@@ -32,7 +32,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaOutput")]
-        public Union<LambdaOutput, IntrinsicFunction> LambdaOutput { get; set; }
+        public LambdaOutput LambdaOutput { get; set; }
 
         /// <summary>
         /// KinesisFirehoseOutput
@@ -42,7 +42,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisFirehoseOutput")]
-        public Union<KinesisFirehoseOutput, IntrinsicFunction> KinesisFirehoseOutput { get; set; }
+        public KinesisFirehoseOutput KinesisFirehoseOutput { get; set; }
 
         /// <summary>
         /// KinesisStreamsOutput
@@ -52,7 +52,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisStreamsOutput")]
-        public Union<KinesisStreamsOutput, IntrinsicFunction> KinesisStreamsOutput { get; set; }
+        public KinesisStreamsOutput KinesisStreamsOutput { get; set; }
 
         /// <summary>
         /// Name

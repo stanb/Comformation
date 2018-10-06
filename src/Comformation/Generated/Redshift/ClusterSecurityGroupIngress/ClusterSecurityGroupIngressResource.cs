@@ -56,5 +56,6 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
         public string Type { get; } = "AWS::Redshift::ClusterSecurityGroupIngress";
         
         public ClusterSecurityGroupIngressProperties Properties { get; } = new ClusterSecurityGroupIngressProperties();
+
     }
 }

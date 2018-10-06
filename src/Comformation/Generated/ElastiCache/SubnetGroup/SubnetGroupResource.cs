@@ -43,12 +43,13 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Required: Yes
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> SubnetIds { get; set; }
+			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElastiCache::SubnetGroup";
         
         public SubnetGroupProperties Properties { get; } = new SubnetGroupProperties();
+
     }
 }

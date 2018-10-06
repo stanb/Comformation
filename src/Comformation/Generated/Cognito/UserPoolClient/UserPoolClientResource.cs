@@ -50,7 +50,7 @@ namespace Comformation.Cognito.UserPoolClient
             /// Type: List of Strings
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ExplicitAuthFlows { get; set; }
+			public List<Union<string, IntrinsicFunction>> ExplicitAuthFlows { get; set; }
 
             /// <summary>
             /// RefreshTokenValidity
@@ -68,7 +68,7 @@ namespace Comformation.Cognito.UserPoolClient
             /// Type: List of Strings
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> ReadAttributes { get; set; }
+			public List<Union<string, IntrinsicFunction>> ReadAttributes { get; set; }
 
             /// <summary>
             /// WriteAttributes
@@ -77,18 +77,19 @@ namespace Comformation.Cognito.UserPoolClient
             /// Type: List of Strings
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> WriteAttributes { get; set; }
+			public List<Union<string, IntrinsicFunction>> WriteAttributes { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Cognito::UserPoolClient";
         
         public UserPoolClientProperties Properties { get; } = new UserPoolClientProperties();
+
     }
 
 	public static class UserPoolClientAttributes
 	{
-        public static readonly ResourceAttribute<string> ClientSecret = new ResourceAttribute<string>("ClientSecret");
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClientSecret = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClientSecret");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

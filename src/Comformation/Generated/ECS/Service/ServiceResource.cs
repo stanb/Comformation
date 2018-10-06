@@ -31,7 +31,7 @@ namespace Comformation.ECS.Service
             /// Type: Amazon Elastic Container Service Service DeploymentConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<DeploymentConfiguration, IntrinsicFunction> DeploymentConfiguration { get; set; }
+			public DeploymentConfiguration DeploymentConfiguration { get; set; }
 
             /// <summary>
             /// DesiredCount
@@ -73,7 +73,7 @@ namespace Comformation.ECS.Service
             /// Type: List of Amazon Elastic Container Service Service LoadBalancers
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<LoadBalancer>, IntrinsicFunction> LoadBalancers { get; set; }
+			public List<LoadBalancer> LoadBalancers { get; set; }
 
             /// <summary>
             /// NetworkConfiguration
@@ -85,7 +85,7 @@ namespace Comformation.ECS.Service
             /// Type: Amazon ECS Service NetworkConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public Union<NetworkConfiguration, IntrinsicFunction> NetworkConfiguration { get; set; }
+			public NetworkConfiguration NetworkConfiguration { get; set; }
 
             /// <summary>
             /// PlacementConstraints
@@ -94,7 +94,7 @@ namespace Comformation.ECS.Service
             /// Type: Amazon Elastic Container Service Service PlacementConstraint
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<PlacementConstraint>, IntrinsicFunction> PlacementConstraints { get; set; }
+			public List<PlacementConstraint> PlacementConstraints { get; set; }
 
             /// <summary>
             /// PlacementStrategies
@@ -103,7 +103,7 @@ namespace Comformation.ECS.Service
             /// Type: Amazon Elastic Container Service Service PlacementStrategies
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<PlacementStrategy>, IntrinsicFunction> PlacementStrategies { get; set; }
+			public List<PlacementStrategy> PlacementStrategies { get; set; }
 
             /// <summary>
             /// PlatformVersion
@@ -128,6 +128,23 @@ namespace Comformation.ECS.Service
 			public Union<string, IntrinsicFunction> Role { get; set; }
 
             /// <summary>
+            /// SchedulingStrategy
+            /// The scheduling strategy to use for the service.
+            /// There are two service scheduler strategies available:
+            /// REPLICA: The replica scheduling strategy places and maintains the desired number of tasks across
+            /// your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use
+            /// task placement strategies and constraints to customize task placement decisions. DAEMON: The daemon
+            /// scheduling strategy deploys exactly one task on each container instance in your cluster. When using
+            /// this strategy, do not specify a desired number of tasks or any task placement strategies.
+            /// Valid values include REPLICA and DAEMON.
+            /// Note Fargate tasks do not support the DAEMON scheduling strategy
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> SchedulingStrategy { get; set; }
+
+            /// <summary>
             /// ServiceName
             /// The name of your service. The name is limited to 255 letters (uppercase and lowercase), numbers,
             /// hyphens, and underscores. Service names must be unique within a cluster, but you can have similarly
@@ -143,9 +160,9 @@ namespace Comformation.ECS.Service
             /// Details of the service registry.
             /// Required: No
             /// Type: Amazon ECS Service ServiceRegistry
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
-			public Union<List<ServiceRegistry>, IntrinsicFunction> ServiceRegistries { get; set; }
+			public List<ServiceRegistry> ServiceRegistries { get; set; }
 
             /// <summary>
             /// TaskDefinition
@@ -164,10 +181,11 @@ namespace Comformation.ECS.Service
         public string Type { get; } = "AWS::ECS::Service";
         
         public ServiceProperties Properties { get; } = new ServiceProperties();
+
     }
 
 	public static class ServiceAttributes
 	{
-        public static readonly ResourceAttribute<string> Name = new ResourceAttribute<string>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
 	}
 }

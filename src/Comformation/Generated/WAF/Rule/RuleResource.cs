@@ -43,12 +43,13 @@ namespace Comformation.WAF.Rule
             /// Type: List of AWS WAF Rule Predicates
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Predicate>, IntrinsicFunction> Predicates { get; set; }
+			public List<Predicate> Predicates { get; set; }
 
         }
     
         public string Type { get; } = "AWS::WAF::Rule";
         
         public RuleProperties Properties { get; } = new RuleProperties();
+
     }
 }

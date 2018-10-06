@@ -30,5 +30,6 @@ namespace Comformation.SES.ReceiptRuleSet
         public string Type { get; } = "AWS::SES::ReceiptRuleSet";
         
         public ReceiptRuleSetProperties Properties { get; } = new ReceiptRuleSetProperties();
+
     }
 }

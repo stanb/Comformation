@@ -22,7 +22,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket ReplicationDestination
         /// </summary>
         [JsonProperty("Destination")]
-        public Union<ReplicationDestination, IntrinsicFunction> Destination { get; set; }
+        public ReplicationDestination Destination { get; set; }
 
         /// <summary>
         /// Id
@@ -54,7 +54,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket SourceSelectionCriteria
         /// </summary>
         [JsonProperty("SourceSelectionCriteria")]
-        public Union<SourceSelectionCriteria, IntrinsicFunction> SourceSelectionCriteria { get; set; }
+        public SourceSelectionCriteria SourceSelectionCriteria { get; set; }
 
         /// <summary>
         /// Status

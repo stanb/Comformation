@@ -22,7 +22,7 @@ namespace Comformation.SSM.PatchBaseline
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchFilters")]
-        public Union<List<PatchFilter>, IntrinsicFunction> PatchFilters { get; set; }
+        public List<PatchFilter> PatchFilters { get; set; }
 
     }
 }

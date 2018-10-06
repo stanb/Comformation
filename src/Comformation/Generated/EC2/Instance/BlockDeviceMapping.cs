@@ -31,7 +31,7 @@ namespace Comformation.EC2.Instance
         /// Type: Amazon Elastic Block Store Block Device Property.
         /// </summary>
         [JsonProperty("Ebs")]
-        public Union<Ebs, IntrinsicFunction> Ebs { get; set; }
+        public Ebs Ebs { get; set; }
 
         /// <summary>
         /// NoDevice
@@ -40,7 +40,7 @@ namespace Comformation.EC2.Instance
         /// Type: Boolean
         /// </summary>
         [JsonProperty("NoDevice")]
-        public Union<NoDevice, IntrinsicFunction> NoDevice { get; set; }
+        public NoDevice NoDevice { get; set; }
 
         /// <summary>
         /// VirtualName

@@ -45,7 +45,13 @@ namespace Comformation.CodeBuild.Project
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Auth")]
-        public Union<SourceAuth, IntrinsicFunction> Auth { get; set; }
+        public SourceAuth Auth { get; set; }
+
+        /// <summary>
+        /// SourceIdentifier
+        /// </summary>
+        [JsonProperty("SourceIdentifier")]
+        public Union<string, IntrinsicFunction> SourceIdentifier { get; set; }
 
         /// <summary>
         /// BuildSpec

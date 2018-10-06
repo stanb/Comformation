@@ -42,12 +42,13 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// Type: Mapping of key-value pairs
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Properties { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Properties { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ElastiCache::ParameterGroup";
         
         public ParameterGroupProperties Properties { get; } = new ParameterGroupProperties();
+
     }
 }

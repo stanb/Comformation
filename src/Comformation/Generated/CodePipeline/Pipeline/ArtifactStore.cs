@@ -23,7 +23,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Type: AWS CodePipeline Pipeline ArtifactStore EncryptionKey
         /// </summary>
         [JsonProperty("EncryptionKey")]
-        public Union<EncryptionKey, IntrinsicFunction> EncryptionKey { get; set; }
+        public EncryptionKey EncryptionKey { get; set; }
 
         /// <summary>
         /// Location

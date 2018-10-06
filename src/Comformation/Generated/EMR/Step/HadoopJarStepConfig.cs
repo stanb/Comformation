@@ -22,7 +22,7 @@ namespace Comformation.EMR.Step
         /// Type: List of String values
         /// </summary>
         [JsonProperty("Args")]
-        public Union<List<string>, IntrinsicFunction> Args { get; set; }
+        public List<Union<string, IntrinsicFunction>> Args { get; set; }
 
         /// <summary>
         /// Jar
@@ -51,7 +51,7 @@ namespace Comformation.EMR.Step
         /// Type: List of Amazon EMR Step KeyValue
         /// </summary>
         [JsonProperty("StepProperties")]
-        public Union<List<KeyValue>, IntrinsicFunction> StepProperties { get; set; }
+        public List<KeyValue> StepProperties { get; set; }
 
     }
 }

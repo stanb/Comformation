@@ -22,7 +22,7 @@ namespace Comformation.S3.Bucket
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destination")]
-        public Union<Destination, IntrinsicFunction> Destination { get; set; }
+        public Destination Destination { get; set; }
 
         /// <summary>
         /// OutputSchemaVersion

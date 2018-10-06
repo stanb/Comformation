@@ -190,7 +190,7 @@ namespace Comformation.RDS.DBInstance
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> DBSecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> DBSecurityGroups { get; set; }
 
             /// <summary>
             /// DBSnapshotIdentifier
@@ -288,7 +288,7 @@ namespace Comformation.RDS.DBInstance
             /// Provisioned IOPS Storage to Improve Performance in the Amazon RDS User Guide.
             /// Required: Conditional. If you specify io1 for the StorageType property, you must specify this
             /// property.
-            /// Type: Number
+            /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Iops { get; set; }
@@ -516,10 +516,10 @@ namespace Comformation.RDS.DBInstance
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this DB instance.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Timezone
@@ -551,18 +551,19 @@ namespace Comformation.RDS.DBInstance
             /// Type: List of String values
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> VPCSecurityGroups { get; set; }
+			public List<Union<string, IntrinsicFunction>> VPCSecurityGroups { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::DBInstance";
         
         public DBInstanceProperties Properties { get; } = new DBInstanceProperties();
+
     }
 
 	public static class DBInstanceAttributes
 	{
-        public static readonly ResourceAttribute<string> Endpoint_Address = new ResourceAttribute<string>("Endpoint", "Address");
-        public static readonly ResourceAttribute<string> Endpoint_Port = new ResourceAttribute<string>("Endpoint", "Port");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Port");
 	}
 }

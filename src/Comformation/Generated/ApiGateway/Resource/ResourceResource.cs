@@ -47,5 +47,6 @@ namespace Comformation.ApiGateway.Resource
         public string Type { get; } = "AWS::ApiGateway::Resource";
         
         public ResourceProperties Properties { get; } = new ResourceProperties();
+
     }
 }

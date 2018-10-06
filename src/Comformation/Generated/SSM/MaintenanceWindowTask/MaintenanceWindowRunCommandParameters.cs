@@ -82,7 +82,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationConfig")]
-        public Union<NotificationConfig, IntrinsicFunction> NotificationConfig { get; set; }
+        public NotificationConfig NotificationConfig { get; set; }
 
         /// <summary>
         /// OutputS3BucketName

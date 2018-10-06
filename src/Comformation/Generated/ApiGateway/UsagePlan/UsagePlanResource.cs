@@ -22,7 +22,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: List of Amazon API Gateway UsagePlan ApiStage
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<ApiStage>, IntrinsicFunction> ApiStages { get; set; }
+			public List<ApiStage> ApiStages { get; set; }
 
             /// <summary>
             /// Description
@@ -40,7 +40,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: Amazon API Gateway UsagePlan QuotaSettings
             /// Update requires: No interruption
             /// </summary>
-			public Union<QuotaSettings, IntrinsicFunction> Quota { get; set; }
+			public QuotaSettings Quota { get; set; }
 
             /// <summary>
             /// Throttle
@@ -49,7 +49,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: Amazon API Gateway UsagePlan ThrottleSettings
             /// Update requires: No interruption
             /// </summary>
-			public Union<ThrottleSettings, IntrinsicFunction> Throttle { get; set; }
+			public ThrottleSettings Throttle { get; set; }
 
             /// <summary>
             /// UsagePlanName
@@ -65,5 +65,6 @@ namespace Comformation.ApiGateway.UsagePlan
         public string Type { get; } = "AWS::ApiGateway::UsagePlan";
         
         public UsagePlanProperties Properties { get; } = new UsagePlanProperties();
+
     }
 }

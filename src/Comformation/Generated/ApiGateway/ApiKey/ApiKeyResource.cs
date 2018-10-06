@@ -71,12 +71,13 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: List of Amazon API Gateway ApiKey StageKey property types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<StageKey>, IntrinsicFunction> StageKeys { get; set; }
+			public List<StageKey> StageKeys { get; set; }
 
         }
     
         public string Type { get; } = "AWS::ApiGateway::ApiKey";
         
         public ApiKeyProperties Properties { get; } = new ApiKeyProperties();
+
     }
 }

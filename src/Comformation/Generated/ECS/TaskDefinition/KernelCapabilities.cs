@@ -25,7 +25,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Add")]
-        public Union<List<string>, IntrinsicFunction> Add { get; set; }
+        public List<Union<string, IntrinsicFunction>> Add { get; set; }
 
         /// <summary>
         /// Drop
@@ -37,7 +37,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Drop")]
-        public Union<List<string>, IntrinsicFunction> Drop { get; set; }
+        public List<Union<string, IntrinsicFunction>> Drop { get; set; }
 
     }
 }

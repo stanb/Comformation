@@ -47,5 +47,6 @@ namespace Comformation.EC2.VPCCidrBlock
         public string Type { get; } = "AWS::EC2::VPCCidrBlock";
         
         public VPCCidrBlockProperties Properties { get; } = new VPCCidrBlockProperties();
+
     }
 }

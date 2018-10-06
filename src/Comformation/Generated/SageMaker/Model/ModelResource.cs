@@ -34,7 +34,7 @@ namespace Comformation.SageMaker.Model
             /// Type: Amazon SageMaker Model ContainerDefinition
             /// Update requires: Replacement
             /// </summary>
-			public Union<ContainerDefinition, IntrinsicFunction> PrimaryContainer { get; set; }
+			public ContainerDefinition PrimaryContainer { get; set; }
 
             /// <summary>
             /// ModelName
@@ -54,27 +54,28 @@ namespace Comformation.SageMaker.Model
             /// Type: Amazon SageMaker Model VpcConfig
             /// Update requires: Replacement
             /// </summary>
-			public Union<VpcConfig, IntrinsicFunction> VpcConfig { get; set; }
+			public VpcConfig VpcConfig { get; set; }
 
             /// <summary>
             /// Tags
             /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
             /// and Cost Management User Guide.
             /// Required: No
-            /// Type: List of Amazon SageMaker Model Tag
+            /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::SageMaker::Model";
         
         public ModelProperties Properties { get; } = new ModelProperties();
+
     }
 
 	public static class ModelAttributes
 	{
-        public static readonly ResourceAttribute<string> ModelName = new ResourceAttribute<string>("ModelName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ModelName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ModelName");
 	}
 }

@@ -20,7 +20,7 @@ namespace Comformation.S3.Bucket
         /// Type: Amazon S3 Bucket Rule
         /// </summary>
         [JsonProperty("Rules")]
-        public Union<List<Rule>, IntrinsicFunction> Rules { get; set; }
+        public List<Rule> Rules { get; set; }
 
     }
 }

@@ -49,11 +49,12 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
         public string Type { get; } = "AWS::ServiceDiscovery::PublicDnsNamespace";
         
         public PublicDnsNamespaceProperties Properties { get; } = new PublicDnsNamespaceProperties();
+
     }
 
 	public static class PublicDnsNamespaceAttributes
 	{
-        public static readonly ResourceAttribute<string> Id = new ResourceAttribute<string>("Id");
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

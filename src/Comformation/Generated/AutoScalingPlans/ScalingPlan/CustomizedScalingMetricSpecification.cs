@@ -43,7 +43,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]
-        public Union<List<MetricDimension>, IntrinsicFunction> Dimensions { get; set; }
+        public List<MetricDimension> Dimensions { get; set; }
 
         /// <summary>
         /// Unit

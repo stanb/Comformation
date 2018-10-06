@@ -21,7 +21,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of Amazon Elastic Compute Cloud SpotFleet BlockDeviceMappings
         /// </summary>
         [JsonProperty("BlockDeviceMappings")]
-        public Union<List<BlockDeviceMapping>, IntrinsicFunction> BlockDeviceMappings { get; set; }
+        public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
 
         /// <summary>
         /// EbsOptimized
@@ -43,7 +43,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: Amazon Elastic Compute Cloud SpotFleet IamInstanceProfile
         /// </summary>
         [JsonProperty("IamInstanceProfile")]
-        public Union<IamInstanceProfileSpecification, IntrinsicFunction> IamInstanceProfile { get; set; }
+        public IamInstanceProfileSpecification IamInstanceProfile { get; set; }
 
         /// <summary>
         /// ImageId
@@ -88,7 +88,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: Amazon EC2 SpotFleet Monitoring
         /// </summary>
         [JsonProperty("Monitoring")]
-        public Union<SpotFleetMonitoring, IntrinsicFunction> Monitoring { get; set; }
+        public SpotFleetMonitoring Monitoring { get; set; }
 
         /// <summary>
         /// NetworkInterfaces
@@ -97,7 +97,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of Amazon Elastic Compute Cloud SpotFleet NetworkInterfaces
         /// </summary>
         [JsonProperty("NetworkInterfaces")]
-        public Union<List<InstanceNetworkInterfaceSpecification>, IntrinsicFunction> NetworkInterfaces { get; set; }
+        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces { get; set; }
 
         /// <summary>
         /// Placement
@@ -107,7 +107,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: Amazon Elastic Compute Cloud SpotFleet Placement
         /// </summary>
         [JsonProperty("Placement")]
-        public Union<SpotPlacement, IntrinsicFunction> Placement { get; set; }
+        public SpotPlacement Placement { get; set; }
 
         /// <summary>
         /// RamdiskId
@@ -127,7 +127,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of Amazon Elastic Compute Cloud SpotFleet SecurityGroups
         /// </summary>
         [JsonProperty("SecurityGroups")]
-        public Union<List<GroupIdentifier>, IntrinsicFunction> SecurityGroups { get; set; }
+        public List<GroupIdentifier> SecurityGroups { get; set; }
 
         /// <summary>
         /// SpotPrice
@@ -156,7 +156,7 @@ namespace Comformation.EC2.SpotFleet
         /// Type: List of Amazon EC2 SpotFleet SpotFleetTagSpecification
         /// </summary>
         [JsonProperty("TagSpecifications")]
-        public Union<List<SpotFleetTagSpecification>, IntrinsicFunction> TagSpecifications { get; set; }
+        public List<SpotFleetTagSpecification> TagSpecifications { get; set; }
 
         /// <summary>
         /// UserData

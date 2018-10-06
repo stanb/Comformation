@@ -41,5 +41,6 @@ namespace Comformation.KMS.Alias
         public string Type { get; } = "AWS::KMS::Alias";
         
         public AliasProperties Properties { get; } = new AliasProperties();
+
     }
 }

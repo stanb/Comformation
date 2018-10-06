@@ -34,7 +34,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Events")]
-        public Union<List<string>, IntrinsicFunction> Events { get; set; }
+        public List<Union<string, IntrinsicFunction>> Events { get; set; }
 
     }
 }

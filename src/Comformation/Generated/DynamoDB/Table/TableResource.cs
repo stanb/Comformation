@@ -21,7 +21,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of DynamoDB Table AttributeDefinition
             /// Update requires: Some interruptions. Replacement if you edit an existing AttributeDefinition.
             /// </summary>
-			public Union<List<AttributeDefinition>, IntrinsicFunction> AttributeDefinitions { get; set; }
+			public List<AttributeDefinition> AttributeDefinitions { get; set; }
 
             /// <summary>
             /// GlobalSecondaryIndexes
@@ -43,7 +43,7 @@ namespace Comformation.DynamoDB.Table
             /// If you do both in the same update (for example, by changing the index&#39;s logical ID), the update
             /// fails.
             /// </summary>
-			public Union<List<GlobalSecondaryIndex>, IntrinsicFunction> GlobalSecondaryIndexes { get; set; }
+			public List<GlobalSecondaryIndex> GlobalSecondaryIndexes { get; set; }
 
             /// <summary>
             /// KeySchema
@@ -53,7 +53,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of DynamoDB Table KeySchema
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<KeySchema>, IntrinsicFunction> KeySchema { get; set; }
+			public List<KeySchema> KeySchema { get; set; }
 
             /// <summary>
             /// LocalSecondaryIndexes
@@ -63,7 +63,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of DynamoDB Table LocalSecondaryIndex
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<LocalSecondaryIndex>, IntrinsicFunction> LocalSecondaryIndexes { get; set; }
+			public List<LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
 
             /// <summary>
             /// PointInTimeRecoverySpecification
@@ -72,7 +72,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: DynamoDB Table PointInTimeRecoverySpecification
             /// Update requires: No interruption
             /// </summary>
-			public Union<PointInTimeRecoverySpecification, IntrinsicFunction> PointInTimeRecoverySpecification { get; set; }
+			public PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
 
             /// <summary>
             /// ProvisionedThroughput
@@ -83,7 +83,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: DynamoDB Table ProvisionedThroughput
             /// Update requires: No interruption
             /// </summary>
-			public Union<ProvisionedThroughput, IntrinsicFunction> ProvisionedThroughput { get; set; }
+			public ProvisionedThroughput ProvisionedThroughput { get; set; }
 
             /// <summary>
             /// SSESpecification
@@ -92,7 +92,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: DynamoDB SSESpecification
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<SSESpecification, IntrinsicFunction> SSESpecification { get; set; }
+			public SSESpecification SSESpecification { get; set; }
 
             /// <summary>
             /// StreamSpecification
@@ -101,7 +101,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: DynamoDB Table StreamSpecification
             /// Update requires: No interruption to the table. However, the stream is replaced.
             /// </summary>
-			public Union<StreamSpecification, IntrinsicFunction> StreamSpecification { get; set; }
+			public StreamSpecification StreamSpecification { get; set; }
 
             /// <summary>
             /// TableName
@@ -122,10 +122,10 @@ namespace Comformation.DynamoDB.Table
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this table. Use tags to
             /// manage your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TimeToLiveSpecification
@@ -134,18 +134,19 @@ namespace Comformation.DynamoDB.Table
             /// Type: DynamoDB Table TimeToLiveSpecification
             /// Update requires: No interruption
             /// </summary>
-			public Union<TimeToLiveSpecification, IntrinsicFunction> TimeToLiveSpecification { get; set; }
+			public TimeToLiveSpecification TimeToLiveSpecification { get; set; }
 
         }
     
         public string Type { get; } = "AWS::DynamoDB::Table";
         
         public TableProperties Properties { get; } = new TableProperties();
+
     }
 
 	public static class TableAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> StreamArn = new ResourceAttribute<string>("StreamArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StreamArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("StreamArn");
 	}
 }

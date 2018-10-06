@@ -27,11 +27,11 @@ namespace Comformation.Route53.RecordSetGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AliasTarget")]
-        public Union<AliasTarget, IntrinsicFunction> AliasTarget { get; set; }
+        public AliasTarget AliasTarget { get; set; }
 
         /// <summary>
         /// Comment
-        /// Any comments that you want to include about the hosted zone.
+        /// Any comments that you want to include about the change batch.
         /// Important If the record set is part of a record set group, this property isn&#39;t valid. Don&#39;t specify
         /// this property.
         /// Required: No
@@ -65,7 +65,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GeoLocation")]
-        public Union<GeoLocation, IntrinsicFunction> GeoLocation { get; set; }
+        public GeoLocation GeoLocation { get; set; }
 
         /// <summary>
         /// HealthCheckId
@@ -151,7 +151,7 @@ namespace Comformation.Route53.RecordSetGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceRecords")]
-        public Union<List<string>, IntrinsicFunction> ResourceRecords { get; set; }
+        public List<Union<string, IntrinsicFunction>> ResourceRecords { get; set; }
 
         /// <summary>
         /// SetIdentifier

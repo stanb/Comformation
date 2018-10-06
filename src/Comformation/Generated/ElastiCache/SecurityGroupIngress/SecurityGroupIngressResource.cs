@@ -48,5 +48,6 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
         public string Type { get; } = "AWS::ElastiCache::SecurityGroupIngress";
         
         public SecurityGroupIngressProperties Properties { get; } = new SecurityGroupIngressProperties();
+
     }
 }

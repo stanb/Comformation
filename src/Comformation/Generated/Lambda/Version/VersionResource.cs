@@ -51,10 +51,11 @@ namespace Comformation.Lambda.Version
         public string Type { get; } = "AWS::Lambda::Version";
         
         public VersionProperties Properties { get; } = new VersionProperties();
+
     }
 
 	public static class VersionAttributes
 	{
-        public static readonly ResourceAttribute<string> Version = new ResourceAttribute<string>("Version");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Version = new ResourceAttribute<Union<string, IntrinsicFunction>>("Version");
 	}
 }

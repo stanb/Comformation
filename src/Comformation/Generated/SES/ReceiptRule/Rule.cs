@@ -34,7 +34,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Recipients")]
-        public Union<List<string>, IntrinsicFunction> Recipients { get; set; }
+        public List<Union<string, IntrinsicFunction>> Recipients { get; set; }
 
         /// <summary>
         /// Actions
@@ -45,7 +45,7 @@ namespace Comformation.SES.ReceiptRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Actions")]
-        public Union<List<Action>, IntrinsicFunction> Actions { get; set; }
+        public List<Action> Actions { get; set; }
 
         /// <summary>
         /// Enabled

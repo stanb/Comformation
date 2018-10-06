@@ -30,7 +30,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
-			public Union<List<string>, IntrinsicFunction> NotificationArns { get; set; }
+			public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -64,5 +64,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
         public string Type { get; } = "AWS::ServiceCatalog::LaunchNotificationConstraint";
         
         public LaunchNotificationConstraintProperties Properties { get; } = new LaunchNotificationConstraintProperties();
+
     }
 }

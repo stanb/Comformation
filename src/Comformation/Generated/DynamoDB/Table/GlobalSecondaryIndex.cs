@@ -31,7 +31,7 @@ namespace Comformation.DynamoDB.Table
         /// Type: List of DynamoDB Table KeySchema
         /// </summary>
         [JsonProperty("KeySchema")]
-        public Union<List<KeySchema>, IntrinsicFunction> KeySchema { get; set; }
+        public List<KeySchema> KeySchema { get; set; }
 
         /// <summary>
         /// Projection
@@ -41,7 +41,7 @@ namespace Comformation.DynamoDB.Table
         /// Type: DynamoDB Table Projection
         /// </summary>
         [JsonProperty("Projection")]
-        public Union<Projection, IntrinsicFunction> Projection { get; set; }
+        public Projection Projection { get; set; }
 
         /// <summary>
         /// ProvisionedThroughput
@@ -50,7 +50,7 @@ namespace Comformation.DynamoDB.Table
         /// Type: DynamoDB Table ProvisionedThroughput
         /// </summary>
         [JsonProperty("ProvisionedThroughput")]
-        public Union<ProvisionedThroughput, IntrinsicFunction> ProvisionedThroughput { get; set; }
+        public ProvisionedThroughput ProvisionedThroughput { get; set; }
 
     }
 }

@@ -45,7 +45,7 @@ namespace Comformation.GuardDuty.Filter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Neq")]
-        public Union<List<string>, IntrinsicFunction> Neq { get; set; }
+        public List<Union<string, IntrinsicFunction>> Neq { get; set; }
 
         /// <summary>
         /// Eq
@@ -55,7 +55,7 @@ namespace Comformation.GuardDuty.Filter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Eq")]
-        public Union<List<string>, IntrinsicFunction> Eq { get; set; }
+        public List<Union<string, IntrinsicFunction>> Eq { get; set; }
 
         /// <summary>
         /// Lte

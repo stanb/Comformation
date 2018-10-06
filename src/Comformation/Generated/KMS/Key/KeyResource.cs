@@ -66,20 +66,21 @@ namespace Comformation.KMS.Key
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this key. Use tags to manage
             /// your resources.
             /// Required: No
-            /// Type: AWS CloudFormation Resource Tags
+            /// Type: Resource Tag
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::KMS::Key";
         
         public KeyProperties Properties { get; } = new KeyProperties();
+
     }
 
 	public static class KeyAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

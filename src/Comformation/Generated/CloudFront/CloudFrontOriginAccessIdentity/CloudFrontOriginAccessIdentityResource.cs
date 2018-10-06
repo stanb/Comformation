@@ -22,17 +22,18 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
             /// Type: CloudFrontOriginAccessIdentityConfig
             /// Update requires: No interruption
             /// </summary>
-			public Union<CloudFrontOriginAccessIdentityConfig, IntrinsicFunction> CloudFrontOriginAccessIdentityConfig { get; set; }
+			public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig { get; set; }
 
         }
     
         public string Type { get; } = "AWS::CloudFront::CloudFrontOriginAccessIdentity";
         
         public CloudFrontOriginAccessIdentityProperties Properties { get; } = new CloudFrontOriginAccessIdentityProperties();
+
     }
 
 	public static class CloudFrontOriginAccessIdentityAttributes
 	{
-        public static readonly ResourceAttribute<string> S3CanonicalUserId = new ResourceAttribute<string>("S3CanonicalUserId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> S3CanonicalUserId = new ResourceAttribute<Union<string, IntrinsicFunction>>("S3CanonicalUserId");
 	}
 }

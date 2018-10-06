@@ -35,7 +35,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ScalableTargetAction")]
-        public Union<ScalableTargetAction, IntrinsicFunction> ScalableTargetAction { get; set; }
+        public ScalableTargetAction ScalableTargetAction { get; set; }
 
         /// <summary>
         /// Schedule

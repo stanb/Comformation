@@ -58,10 +58,11 @@ namespace Comformation.OpsWorks.UserProfile
         public string Type { get; } = "AWS::OpsWorks::UserProfile";
         
         public UserProfileProperties Properties { get; } = new UserProfileProperties();
+
     }
 
 	public static class UserProfileAttributes
 	{
-        public static readonly ResourceAttribute<string> SshUsername = new ResourceAttribute<string>("SshUsername");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SshUsername = new ResourceAttribute<Union<string, IntrinsicFunction>>("SshUsername");
 	}
 }

@@ -22,7 +22,7 @@ namespace Comformation.Config.ConfigurationAggregator
             /// Type: List of AWS Config ConfigurationAggregator AccountAggregationSource property types
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<AccountAggregationSource>, IntrinsicFunction> AccountAggregationSources { get; set; }
+			public List<AccountAggregationSource> AccountAggregationSources { get; set; }
 
             /// <summary>
             /// ConfigurationAggregatorName
@@ -40,12 +40,13 @@ namespace Comformation.Config.ConfigurationAggregator
             /// Type: AWS Config ConfigurationAggregator OrganizationAggregationSource
             /// Update requires: No interruption
             /// </summary>
-			public Union<OrganizationAggregationSource, IntrinsicFunction> OrganizationAggregationSource { get; set; }
+			public OrganizationAggregationSource OrganizationAggregationSource { get; set; }
 
         }
     
         public string Type { get; } = "AWS::Config::ConfigurationAggregator";
         
         public ConfigurationAggregatorProperties Properties { get; } = new ConfigurationAggregatorProperties();
+
     }
 }

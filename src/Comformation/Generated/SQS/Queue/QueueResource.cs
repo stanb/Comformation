@@ -38,8 +38,9 @@ namespace Comformation.SQS.Queue
 
             /// <summary>
             /// FifoQueue
-            /// Indicates whether this queue is a FIFO queue. For more information, see FIFO (First-In-First-Out)
-            /// Queues in the Amazon Simple Queue Service Developer Guide.
+            /// If set to true, creates a FIFO queue. If you don&#39;t specify this property, Amazon SQS creates a
+            /// standard queue. For more information, see FIFO (First-In-First-Out) Queues in the Amazon Simple
+            /// Queue Service Developer Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -139,7 +140,7 @@ namespace Comformation.SQS.Queue
             /// Type: A list of resource tags
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VisibilityTimeout
@@ -161,11 +162,12 @@ namespace Comformation.SQS.Queue
         public string Type { get; } = "AWS::SQS::Queue";
         
         public QueueProperties Properties { get; } = new QueueProperties();
+
     }
 
 	public static class QueueAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
-        public static readonly ResourceAttribute<string> QueueName = new ResourceAttribute<string>("QueueName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> QueueName = new ResourceAttribute<Union<string, IntrinsicFunction>>("QueueName");
 	}
 }

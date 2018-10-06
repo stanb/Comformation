@@ -39,5 +39,6 @@ namespace Comformation.EMR.SecurityConfiguration
         public string Type { get; } = "AWS::EMR::SecurityConfiguration";
         
         public SecurityConfigurationProperties Properties { get; } = new SecurityConfigurationProperties();
+
     }
 }

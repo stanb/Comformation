@@ -21,7 +21,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Type: AWS CodeDeploy DeploymentGroup Deployment Revision GitHubLocation
         /// </summary>
         [JsonProperty("GitHubLocation")]
-        public Union<GitHubLocation, IntrinsicFunction> GitHubLocation { get; set; }
+        public GitHubLocation GitHubLocation { get; set; }
 
         /// <summary>
         /// RevisionType
@@ -40,7 +40,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Type: AWS CodeDeploy DeploymentGroup Deployment Revision S3Location
         /// </summary>
         [JsonProperty("S3Location")]
-        public Union<S3Location, IntrinsicFunction> S3Location { get; set; }
+        public S3Location S3Location { get; set; }
 
     }
 }

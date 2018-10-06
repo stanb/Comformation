@@ -21,7 +21,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Friday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Friday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Friday { get; set; }
 
         /// <summary>
         /// Monday
@@ -30,7 +30,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Monday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Monday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Monday { get; set; }
 
         /// <summary>
         /// Saturday
@@ -39,7 +39,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Saturday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Saturday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Saturday { get; set; }
 
         /// <summary>
         /// Sunday
@@ -48,7 +48,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Sunday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Sunday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Sunday { get; set; }
 
         /// <summary>
         /// Thursday
@@ -57,7 +57,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Thursday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Thursday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Thursday { get; set; }
 
         /// <summary>
         /// Tuesday
@@ -66,7 +66,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Tuesday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Tuesday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Tuesday { get; set; }
 
         /// <summary>
         /// Wednesday
@@ -75,7 +75,7 @@ namespace Comformation.OpsWorks.Instance
         /// Type: String to string map
         /// </summary>
         [JsonProperty("Wednesday")]
-        public Union<Dictionary<string, string>, IntrinsicFunction> Wednesday { get; set; }
+        public Dictionary<string, Union<string, IntrinsicFunction>> Wednesday { get; set; }
 
     }
 }

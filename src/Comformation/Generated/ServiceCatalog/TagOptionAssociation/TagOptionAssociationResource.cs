@@ -37,5 +37,6 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
         public string Type { get; } = "AWS::ServiceCatalog::TagOptionAssociation";
         
         public TagOptionAssociationProperties Properties { get; } = new TagOptionAssociationProperties();
+
     }
 }

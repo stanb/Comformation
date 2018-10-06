@@ -36,10 +36,11 @@ namespace Comformation.IoT.Certificate
         public string Type { get; } = "AWS::IoT::Certificate";
         
         public CertificateProperties Properties { get; } = new CertificateProperties();
+
     }
 
 	public static class CertificateAttributes
 	{
-        public static readonly ResourceAttribute<string> Arn = new ResourceAttribute<string>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
 	}
 }

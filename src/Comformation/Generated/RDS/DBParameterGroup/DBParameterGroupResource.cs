@@ -42,7 +42,7 @@ namespace Comformation.RDS.DBParameterGroup
             /// immediately. During an update, if you have static parameters (whether they were changed or not),
             /// triggers AWS CloudFormation to reboot the associated DB instance without failover.
             /// </summary>
-			public Union<Dictionary<string, string>, IntrinsicFunction> Parameters { get; set; }
+			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Tags
@@ -51,12 +51,13 @@ namespace Comformation.RDS.DBParameterGroup
             /// Type: A list of resource tags.
             /// Update requires: No interruption
             /// </summary>
-			public Union<List<Tag>, IntrinsicFunction> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
     
         public string Type { get; } = "AWS::RDS::DBParameterGroup";
         
         public DBParameterGroupProperties Properties { get; } = new DBParameterGroupProperties();
+
     }
 }

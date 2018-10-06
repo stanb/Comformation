@@ -42,7 +42,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivateIpAddresses")]
-        public Union<List<PrivateIpAdd>, IntrinsicFunction> PrivateIpAddresses { get; set; }
+        public List<PrivateIpAdd> PrivateIpAddresses { get; set; }
 
         /// <summary>
         /// SecondaryPrivateIpAddressCount
@@ -74,7 +74,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Groups")]
-        public Union<List<string>, IntrinsicFunction> Groups { get; set; }
+        public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
         /// <summary>
         /// DeviceIndex
@@ -105,7 +105,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ipv6Addresses")]
-        public Union<List<Ipv6Add>, IntrinsicFunction> Ipv6Addresses { get; set; }
+        public List<Ipv6Add> Ipv6Addresses { get; set; }
 
         /// <summary>
         /// AssociatePublicIpAddress

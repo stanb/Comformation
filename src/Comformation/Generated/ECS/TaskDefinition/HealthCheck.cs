@@ -27,7 +27,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Command")]
-        public Union<List<string>, IntrinsicFunction> Command { get; set; }
+        public List<Union<string, IntrinsicFunction>> Command { get; set; }
 
         /// <summary>
         /// Interval

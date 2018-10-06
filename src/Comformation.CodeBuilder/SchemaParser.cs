@@ -160,25 +160,34 @@ namespace Comformation.CodeBuilder
 
         private string Parse(PrimitiveType primitiveType, bool required)
         {
+            string type;
             switch (primitiveType)
             {
                 case PrimitiveType.Boolean:
-                    return required ? "bool" : "bool?";
+                    type = required ? "bool" : "bool?";
+                    break;
                 case PrimitiveType.Double:
-                    return required ? "double" : "double?";
+                    type = required ? "double" : "double?";
+                    break;
                 case PrimitiveType.Integer:
-                    return required ? "int" : "int?";
+                    type = required ? "int" : "int?";
+                    break;
                 case PrimitiveType.Long:
-                    return required ? "long" : "long?";
+                    type = required ? "long" : "long?";
+                    break;
                 case PrimitiveType.String:
-                    return "string";
+                    type = "string";
+                    break;
                 case PrimitiveType.Json:
-                    return "Newtonsoft.Json.Linq.JToken";
+                    type = "Newtonsoft.Json.Linq.JToken";
+                    break;
                 case PrimitiveType.Timestamp:
-                    return "string";
+                    type = "string";
+                    break;
                 default:
                     throw new Exception();
             }
+            return $"Union<{type}, IntrinsicFunction>";
         }
     }
 }

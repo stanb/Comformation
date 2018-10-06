@@ -23,7 +23,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]
-        public Union<List<MetricDimension>, IntrinsicFunction> Dimensions { get; set; }
+        public List<MetricDimension> Dimensions { get; set; }
 
         /// <summary>
         /// MetricName

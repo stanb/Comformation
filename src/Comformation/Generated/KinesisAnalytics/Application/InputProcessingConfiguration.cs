@@ -23,7 +23,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputLambdaProcessor")]
-        public Union<InputLambdaProcessor, IntrinsicFunction> InputLambdaProcessor { get; set; }
+        public InputLambdaProcessor InputLambdaProcessor { get; set; }
 
     }
 }

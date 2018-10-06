@@ -23,7 +23,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR Cluster ScalingAction
         /// </summary>
         [JsonProperty("Action")]
-        public Union<ScalingAction, IntrinsicFunction> Action { get; set; }
+        public ScalingAction Action { get; set; }
 
         /// <summary>
         /// Description
@@ -51,7 +51,7 @@ namespace Comformation.EMR.Cluster
         /// Type: Amazon EMR Cluster ScalingTrigger
         /// </summary>
         [JsonProperty("Trigger")]
-        public Union<ScalingTrigger, IntrinsicFunction> Trigger { get; set; }
+        public ScalingTrigger Trigger { get; set; }
 
     }
 }

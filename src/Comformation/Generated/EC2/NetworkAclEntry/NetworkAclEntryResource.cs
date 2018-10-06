@@ -40,7 +40,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: EC2 NetworkAclEntry Icmp
             /// Update requires: No interruption
             /// </summary>
-			public Union<Icmp, IntrinsicFunction> Icmp { get; set; }
+			public Icmp Icmp { get; set; }
 
             /// <summary>
             /// Ipv6CidrBlock
@@ -67,7 +67,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: EC2 NetworkAclEntry PortRange
             /// Update requires: No interruption
             /// </summary>
-			public Union<PortRange, IntrinsicFunction> PortRange { get; set; }
+			public PortRange PortRange { get; set; }
 
             /// <summary>
             /// Protocol
@@ -106,5 +106,6 @@ namespace Comformation.EC2.NetworkAclEntry
         public string Type { get; } = "AWS::EC2::NetworkAclEntry";
         
         public NetworkAclEntryProperties Properties { get; } = new NetworkAclEntryProperties();
+
     }
 }
