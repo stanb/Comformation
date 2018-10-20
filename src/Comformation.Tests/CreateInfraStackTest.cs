@@ -37,7 +37,7 @@ namespace Comformation.Tests
 
                 var request = new CreateStackRequest
                 {
-                    StackName = "ComformationTestInfraTemplate",
+                    StackName = $"ComformationTestInfraTemplate-{Guid.NewGuid()}",
                     TemplateBody = template.ToString(),
                     Parameters = new List<Amazon.CloudFormation.Model.Parameter>
                     {

@@ -31,7 +31,7 @@ namespace Comformation.EC2.FlowLog
             /// <summary>
             /// LogDestination
             /// Specifies the destination to which the flow log data is to be published. Flow log data can be
-            /// published to an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this
+            /// published to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this
             /// parameter depends on the value specified for LogDestinationType.
             /// If LogDestinationType is not specified or cloud-watch-logs, specify the Amazon Resource Name (ARN)
             /// of the CloudWatch Logs log group. If LogDestinationType is s3, specify the ARN of the Amazon S3

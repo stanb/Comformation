@@ -80,9 +80,10 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// The subnets to attach to the load balancer, specified as a list of SubnetMapping property types. You
             /// can specify only one subnet per Availability Zone. You must specify either subnets or subnet
             /// mappings.
-            /// [Application Load Balancers] The load balancer is allocated one static IP address per subnet. You
+            /// [Application Load Balancers] You must specify subnets from at least two Availability Zones. You
             /// cannot specify your own Elastic IP addresses.
-            /// [Network Load Balancers] You can specify one Elastic IP address per subnet.
+            /// [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can
+            /// specify one Elastic IP address per subnet.
             /// Required: No
             /// Type: List of Elastic Load Balancing LoadBalancer SubnetMapping
             /// Update requires: Replacement
