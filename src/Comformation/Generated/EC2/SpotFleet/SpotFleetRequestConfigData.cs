@@ -61,7 +61,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchSpecifications
         /// The launch specifications for the Spot fleet request.
-        /// Required: Yes
+        /// Required: Conditional. You must specify either LaunchSpecifications or LaunchTemplateConfigs.
         /// Type: List of Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications
         /// Update requires: Replacement
         /// </summary>
@@ -71,7 +71,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchTemplateConfigs
         /// Describes a launch template and overrides.
-        /// Required: No
+        /// Required: Conditional. You must specify either LaunchSpecifications or LaunchTemplateConfigs.
         /// Type: List of Amazon EC2 SpotFleet LaunchTemplateConfig
         /// Update requires: Replacement
         /// </summary>

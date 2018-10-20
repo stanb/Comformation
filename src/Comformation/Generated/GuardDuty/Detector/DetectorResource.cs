@@ -15,6 +15,16 @@ namespace Comformation.GuardDuty.Detector
         public class DetectorProperties
         {
             /// <summary>
+            /// FindingPublishingFrequency
+            /// Specifies the frequency of notifications sent about the subsequent finding occurrences. Valid values
+            /// include only the following: FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> FindingPublishingFrequency { get; set; }
+
+            /// <summary>
             /// Enable
             /// A Boolean value that specifies whether the detector is to be enabled.
             /// Required: Yes

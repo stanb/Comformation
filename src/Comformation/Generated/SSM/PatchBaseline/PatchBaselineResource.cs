@@ -36,6 +36,11 @@ namespace Comformation.SSM.PatchBaseline
 			public List<Union<string, IntrinsicFunction>> ApprovedPatches { get; set; }
 
             /// <summary>
+            /// RejectedPatchesAction
+            /// </summary>
+			public Union<string, IntrinsicFunction> RejectedPatchesAction { get; set; }
+
+            /// <summary>
             /// PatchGroups
             /// The names of the patch groups to register with the patch baseline.
             /// Required: No

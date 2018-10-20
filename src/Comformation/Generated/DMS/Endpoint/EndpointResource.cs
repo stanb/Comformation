@@ -79,7 +79,7 @@ namespace Comformation.DMS.Endpoint
             /// <summary>
             /// Username
             /// The user name to be used to login to the endpoint database.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

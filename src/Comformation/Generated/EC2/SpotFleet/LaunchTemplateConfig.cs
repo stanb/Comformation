@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchTemplateSpecification
         /// The launch template.
-        /// Required: No
+        /// Required: Yes
         /// Type: Amazon EC2 SpotFleet FleetLaunchTemplateSpecification
         /// Update requires: No interruption
         /// </summary>

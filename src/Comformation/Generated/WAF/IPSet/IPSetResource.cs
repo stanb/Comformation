@@ -18,11 +18,9 @@ namespace Comformation.WAF.IPSet
             /// <summary>
             /// IPSetDescriptors
             /// The IP address type and IP address range (in CIDR notation) from which web requests originate. If
-            /// you associate the IPSet with a web ACL that is associated with a Amazon CloudFront (CloudFront)
-            /// distribution, this descriptor is the value of one of the following fields in the CloudFront access
-            /// logs:
-            /// c-ip If the viewer did not use an HTTP proxy or a load balancer to send the request x-forwarded-for
-            /// If the viewer did use an HTTP proxy or a load balancer to send the request
+            /// you associate the IPSet with a web ACL that is associated with an Amazon CloudFront (CloudFront)
+            /// distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this
+            /// descriptor is the value of the c-ip field in the CloudFront access logs.
             /// Required: No
             /// Type: List of AWS WAF IPSet IPSetDescriptors
             /// Update requires: No interruption

@@ -52,7 +52,7 @@ namespace Comformation.Tests
                 new Mapping
                 {
                     Name = "Mapping1",
-                    Regions =
+                    Maps =
                     {
                         new RegionMap
                         {
@@ -71,7 +71,7 @@ namespace Comformation.Tests
                                 { "item1", "value1" },
                                 { "item2", "value2" }
                             }
-                        },
+                        }
                     }
                 }
             };
@@ -82,7 +82,72 @@ namespace Comformation.Tests
             var actual = JToken.Parse(json);
             Assert.True(JToken.DeepEquals(actual, expected));
         }
-        
+
+        [Fact]
+        public void SerializeMixedMappings()
+        {
+            var mappings = new Mappings
+            {
+                new Mapping
+                {
+                    Name = "environments",
+                    Regions = {
+                        new RegionMap
+                        {
+                            Region = RegionEndpoint.EUWest1,
+                            Map =
+                            {
+                                { "item1", "value1" },
+                                { "item2", "value2" }
+                            }
+                        },
+                        new RegionMap
+                        {
+                            Region = RegionEndpoint.EUWest2,
+                            Map =
+                            {
+                                { "item1", "value1" },
+                                { "item2", "value2" }
+                            }
+                        },
+                    },
+                    Maps = {
+                        new NamedMap
+                        {
+                            Name = "DEV",
+                            Map =
+                            {
+                                { "key1", "dev-val1" },
+                                { "key2", "dev-val2" }
+                            }
+                        },
+                        new NamedMap
+                        {
+                            Name = "PROD",
+                            Map = {
+                                { "key1", "prod-val1" },
+                                { "key2", "prod-val2" }
+                            }
+                        },
+                        new RegionMap
+                        {
+                            Region = RegionEndpoint.USEast1,
+                            Map =
+                            {
+                                { "key1", "useast1-val1" },
+                                { "key2", "useast1-val2" }
+                            }
+                        }
+                    }
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(mappings, SerializerSettings);
+            var expected = JToken.Parse("{\"environments\": {\"DEV\": {\"key1\": \"dev-val1\",\"key2\": \"dev-val2\"},\"PROD\": {\"key1\": \"prod-val1\",\"key2\": \"prod-val2\"},\"us-east-1\": {\"key1\": \"useast1-val1\",\"key2\": \"useast1-val2\"},\"eu-west-1\": {\"item1\": \"value1\",\"item2\": \"value2\"},\"eu-west-2\": {\"item1\": \"value1\",\"item2\": \"value2\"}}}");
+            var actual = JToken.Parse(json);
+            Assert.True(JToken.DeepEquals(actual, expected));
+        }
+
         [Fact]
         public void SerializeOutputs()
         {
