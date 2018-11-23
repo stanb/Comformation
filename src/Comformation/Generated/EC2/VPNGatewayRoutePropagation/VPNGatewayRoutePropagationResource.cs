@@ -34,9 +34,9 @@ namespace Comformation.EC2.VPNGatewayRoutePropagation
 			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPNGatewayRoutePropagation";
-        
+
         public VPNGatewayRoutePropagationProperties Properties { get; } = new VPNGatewayRoutePropagationProperties();
 
     }

@@ -8,7 +8,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
     /// <summary>
     /// AWS Auto Scaling ScalingPlan PredefinedScalingMetricSpecification
     /// The PredefinedScalingMetricSpecification property type specifies a predefined metric for a target tracking
-    /// policy for an AWS Auto Scaling scaling plan.
+    /// policy to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html
     /// </summary>
     public class PredefinedScalingMetricSpecification

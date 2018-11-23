@@ -37,7 +37,7 @@ namespace Comformation.EC2.VPCEndpoint
 
             /// <summary>
             /// RouteTableIds
-            /// One or more route table IDs that are used by the VPC to reach the endpoint.
+            /// [Gateway endpoint] One or more route table IDs that are used by the VPC to reach the endpoint.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -88,9 +88,9 @@ namespace Comformation.EC2.VPCEndpoint
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPCEndpoint";
-        
+
         public VPCEndpointProperties Properties { get; } = new VPCEndpointProperties();
 
     }

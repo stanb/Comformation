@@ -93,9 +93,9 @@ namespace Comformation.Glue.DevEndpoint
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Glue::DevEndpoint";
-        
+
         public DevEndpointProperties Properties { get; } = new DevEndpointProperties();
 
     }

@@ -61,9 +61,9 @@ namespace Comformation.ApiGateway.UsagePlan
 			public Union<string, IntrinsicFunction> UsagePlanName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::UsagePlan";
-        
+
         public UsagePlanProperties Properties { get; } = new UsagePlanProperties();
 
     }

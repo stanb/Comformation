@@ -82,9 +82,9 @@ namespace Comformation.Config.ConfigRule
 			public Source Source { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Config::ConfigRule";
-        
+
         public ConfigRuleProperties Properties { get; } = new ConfigRuleProperties();
 
     }

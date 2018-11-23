@@ -18,7 +18,7 @@ namespace Comformation.Glue.Table
             /// TableInput
             /// The metadata of the table.
             /// Required: Yes
-            /// Type: AWS Glue Table TableInput
+            /// Type: TableInput
             /// Update requires: Some interruptions
             /// </summary>
 			public TableInput TableInput { get; set; }
@@ -46,9 +46,9 @@ namespace Comformation.Glue.Table
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Glue::Table";
-        
+
         public TableProperties Properties { get; } = new TableProperties();
 
     }

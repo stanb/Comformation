@@ -18,7 +18,7 @@ namespace Comformation.DynamoDB.Table
             /// AttributeDefinitions
             /// A list of attributes that describe the key schema for the table and indexes. Duplicates are allowed.
             /// Required: Yes
-            /// Type: List of DynamoDB Table AttributeDefinition
+            /// Type: List of AttributeDefinition
             /// Update requires: Some interruptions. Replacement if you edit an existing AttributeDefinition.
             /// </summary>
 			public List<AttributeDefinition> AttributeDefinitions { get; set; }
@@ -36,7 +36,7 @@ namespace Comformation.DynamoDB.Table
             /// stack fails to update and is rolled back while adding a new index, you must manually delete the
             /// index.
             /// Required: No
-            /// Type: List of DynamoDB Table GlobalSecondaryIndex
+            /// Type: List of GlobalSecondaryIndex
             /// Update requires: Updates are not supported. The following are exceptions:
             /// If you update only the provisioned throughput values of global secondary indexes, you can update the
             /// table without interruption. You can delete or add one global secondary index without interruption.
@@ -50,7 +50,7 @@ namespace Comformation.DynamoDB.Table
             /// Specifies the attributes that make up the primary key for the table. The attributes in the KeySchema
             /// property must also be defined in the AttributeDefinitions property.
             /// Required: Yes
-            /// Type: List of DynamoDB Table KeySchema
+            /// Type: List of KeySchema
             /// Update requires: Replacement
             /// </summary>
 			public List<KeySchema> KeySchema { get; set; }
@@ -60,7 +60,7 @@ namespace Comformation.DynamoDB.Table
             /// Local secondary indexes to be created on the table. You can create up to 5 local secondary indexes.
             /// Each index is scoped to a given hash key value. The size of each hash key can be up to 10 gigabytes.
             /// Required: No
-            /// Type: List of DynamoDB Table LocalSecondaryIndex
+            /// Type: List of LocalSecondaryIndex
             /// Update requires: Replacement
             /// </summary>
 			public List<LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
@@ -69,7 +69,7 @@ namespace Comformation.DynamoDB.Table
             /// PointInTimeRecoverySpecification
             /// The settings used to enable point in time recovery.
             /// Required: No
-            /// Type: DynamoDB Table PointInTimeRecoverySpecification
+            /// Type: PointInTimeRecoverySpecification
             /// Update requires: No interruption
             /// </summary>
 			public PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
@@ -80,7 +80,7 @@ namespace Comformation.DynamoDB.Table
             /// WriteCapacityUnits. For more information about the contents of a provisioned throughput structure,
             /// see Amazon DynamoDB Table ProvisionedThroughput.
             /// Required: Yes
-            /// Type: DynamoDB Table ProvisionedThroughput
+            /// Type: ProvisionedThroughput
             /// Update requires: No interruption
             /// </summary>
 			public ProvisionedThroughput ProvisionedThroughput { get; set; }
@@ -89,7 +89,7 @@ namespace Comformation.DynamoDB.Table
             /// SSESpecification
             /// Specifies the settings to enable server-side encryption.
             /// Required: No
-            /// Type: DynamoDB SSESpecification
+            /// Type: DynamoDB Table SSESpecification
             /// Update requires: Some interruptions
             /// </summary>
 			public SSESpecification SSESpecification { get; set; }
@@ -98,7 +98,7 @@ namespace Comformation.DynamoDB.Table
             /// StreamSpecification
             /// The settings for the DynamoDB table stream, which capture changes to items stored in the table.
             /// Required: No
-            /// Type: DynamoDB Table StreamSpecification
+            /// Type: StreamSpecification
             /// Update requires: No interruption to the table. However, the stream is replaced.
             /// </summary>
 			public StreamSpecification StreamSpecification { get; set; }
@@ -131,15 +131,15 @@ namespace Comformation.DynamoDB.Table
             /// TimeToLiveSpecification
             /// Specifies the Time to Live (TTL) settings for the table.
             /// Required: No
-            /// Type: DynamoDB Table TimeToLiveSpecification
+            /// Type: TimeToLiveSpecification
             /// Update requires: No interruption
             /// </summary>
 			public TimeToLiveSpecification TimeToLiveSpecification { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DynamoDB::Table";
-        
+
         public TableProperties Properties { get; } = new TableProperties();
 
     }

@@ -32,9 +32,9 @@ namespace Comformation.EC2.NetworkAcl
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::NetworkAcl";
-        
+
         public NetworkAclProperties Properties { get; } = new NetworkAclProperties();
 
     }

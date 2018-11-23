@@ -50,6 +50,15 @@ namespace Comformation.WorkSpaces.Workspace
 			public Union<bool, IntrinsicFunction> RootVolumeEncryptionEnabled { get; set; }
 
             /// <summary>
+            /// Tags
+            /// The tags (key-value pairs) for the WorkSpace.
+            /// Required: No
+            /// Type: List of Resource Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// UserName
             /// The name of the user to which the workspace is assigned. This user name must exist in the specified
             /// AWS Directory Service directory.
@@ -80,10 +89,20 @@ namespace Comformation.WorkSpaces.Workspace
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeEncryptionKey { get; set; }
 
+            /// <summary>
+            /// WorkspaceProperties
+            /// The WorkSpace properties.
+            /// Required: No
+            /// Type: Amazon WorkSpaces Workspace WorkspaceProperties
+            /// Update requires: No interruption
+            /// </summary>
+			[Newtonsoft.Json.JsonProperty("WorkspaceProperties")]
+			public Comformation.WorkSpaces.Workspace.WorkspaceProperties WorkspaceProperties_ { get; set; }
+
         }
-    
+
         public string Type { get; } = "AWS::WorkSpaces::Workspace";
-        
+
         public WorkspaceProperties Properties { get; } = new WorkspaceProperties();
 
     }

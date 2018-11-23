@@ -72,9 +72,9 @@ namespace Comformation.IAM.Policy
 			public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::Policy";
-        
+
         public PolicyProperties Properties { get; } = new PolicyProperties();
 
     }

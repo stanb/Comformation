@@ -78,9 +78,9 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 			public Union<string, IntrinsicFunction> SslPolicy { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::Listener";
-        
+
         public ListenerProperties Properties { get; } = new ListenerProperties();
 
     }

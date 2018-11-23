@@ -20,7 +20,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Describes the format of the data in the streaming source, and how each data element maps to
         /// corresponding columns that are created in the in-application stream.
         /// Required: Yes
-        /// Type: Kinesis Data Analytics ApplicationReferenceDataSource ReferenceSchema
+        /// Type: ReferenceSchema
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReferenceSchema")]
@@ -41,7 +41,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Identifies the Amazon S3 bucket and object that contains the reference data. Also identifies the IAM
         /// role that Amazon Kinesis Data Analytics can assume to read this object on your behalf.
         /// Required: No
-        /// Type: Kinesis Data Analytics ApplicationReferenceDataSource S3ReferenceDataSource
+        /// Type: S3ReferenceDataSource
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3ReferenceDataSource")]

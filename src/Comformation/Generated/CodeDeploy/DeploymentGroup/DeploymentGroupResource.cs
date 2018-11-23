@@ -38,7 +38,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Information about the automatic rollback configuration that is associated with the deployment group.
             /// If you specify this property, don&#39;t specify the Deployment property.
             /// Required: No
-            /// Type: AWS CodeDeploy DeploymentGroup AutoRollbackConfiguration
+            /// Type: AutoRollbackConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public AutoRollbackConfiguration AutoRollbackConfiguration { get; set; }
@@ -98,7 +98,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Note For blue/green deployments, AWS CloudFormation supports deployments on AWS Lambda compute
             /// platforms only.
             /// Required: No
-            /// Type: AWS CodeDeploy DeploymentGroup DeploymentStyle
+            /// Type: DeploymentStyle
             /// Update requires: No interruption
             /// </summary>
 			public DeploymentStyle DeploymentStyle { get; set; }
@@ -121,7 +121,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// include only EC2 instances identified by all the tag groups.
             /// You can specify EC2TagFilters or Ec2TagSet, but not both.
             /// Required: No
-            /// Type: AWS CodeDeploy DeploymentGroup EC2TagSet
+            /// Type: EC2TagSet
             /// Update requires: No interruption
             /// </summary>
 			public EC2TagSet Ec2TagSet { get; set; }
@@ -131,7 +131,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Information about the load balancer used in the deployment. For more information, see Integrating
             /// AWS CodeDeploy with Elastic Load Balancing in the AWS CodeDeploy User Guide.
             /// Required: No
-            /// Type: AWS CodeDeploy DeploymentGroup LoadBalancerInfo
+            /// Type: LoadBalancerInfo
             /// Update requires: No interruption
             /// </summary>
 			public LoadBalancerInfo LoadBalancerInfo { get; set; }
@@ -178,9 +178,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 			public List<TriggerConfig> TriggerConfigurations { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodeDeploy::DeploymentGroup";
-        
+
         public DeploymentGroupProperties Properties { get; } = new DeploymentGroupProperties();
 
     }

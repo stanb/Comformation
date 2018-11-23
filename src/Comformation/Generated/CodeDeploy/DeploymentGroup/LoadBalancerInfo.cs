@@ -20,7 +20,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Information about the Elastic Load Balancing load balancer to use in the deployment.
         /// Conditional: You must specify either ElbInfoList or TargetGroupInfoList, but not both.
         /// Required: No
-        /// Type: List of AWS CodeDeploy DeploymentGroup ELBInfo
+        /// Type: List of ELBInfo
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ElbInfoList")]
@@ -32,7 +32,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// a target group, and traffic is routed to the target group.
         /// Conditional: You must specify either ElbInfoList or TargetGroupInfoList, but not both.
         /// Required: No
-        /// Type: List of AWS CodeDeploy DeploymentGroup TargetGroupInfo
+        /// Type: List of TargetGroupInfo
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetGroupInfoList")]

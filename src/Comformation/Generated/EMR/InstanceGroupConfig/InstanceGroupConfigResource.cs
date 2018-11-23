@@ -114,9 +114,9 @@ namespace Comformation.EMR.InstanceGroupConfig
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EMR::InstanceGroupConfig";
-        
+
         public InstanceGroupConfigProperties Properties { get; } = new InstanceGroupConfigProperties();
 
     }

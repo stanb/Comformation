@@ -20,7 +20,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// additional mapping information specific to the record format (such as JSON, CSV, or record fields
         /// delimited by some delimiter) on the streaming source.
         /// Required: No
-        /// Type: Kinesis Data Analytics Application MappingParameters
+        /// Type: MappingParameters
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MappingParameters")]

@@ -39,7 +39,7 @@ namespace Comformation.RDS.OptionGroup
         /// OptionSettings
         /// The settings for this option.
         /// Required: No
-        /// Type: List of Amazon RDS OptionGroup OptionSetting
+        /// Type: List of OptionSetting
         /// </summary>
         [JsonProperty("OptionSettings")]
         public List<OptionSetting> OptionSettings { get; set; }

@@ -115,9 +115,9 @@ namespace Comformation.EC2.Volume
 			public Union<string, IntrinsicFunction> VolumeType { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::Volume";
-        
+
         public VolumeProperties Properties { get; } = new VolumeProperties();
 
     }

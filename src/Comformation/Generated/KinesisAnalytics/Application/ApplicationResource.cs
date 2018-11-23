@@ -27,7 +27,7 @@ namespace Comformation.KinesisAnalytics.Application
             /// Inputs
             /// Use this parameter to configure the application input.
             /// Required: Yes
-            /// Type: List of Kinesis Data Analytics Application Input
+            /// Type: List of Input
             /// Update requires: No interruption
             /// </summary>
 			public List<Input> Inputs { get; set; }
@@ -51,9 +51,9 @@ namespace Comformation.KinesisAnalytics.Application
 			public Union<string, IntrinsicFunction> ApplicationCode { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::KinesisAnalytics::Application";
-        
+
         public ApplicationProperties Properties { get; } = new ApplicationProperties();
 
     }

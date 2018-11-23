@@ -42,9 +42,9 @@ namespace Comformation.DAX.SubnetGroup
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DAX::SubnetGroup";
-        
+
         public SubnetGroupProperties Properties { get; } = new SubnetGroupProperties();
 
     }

@@ -25,9 +25,9 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
 			public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudFront::CloudFrontOriginAccessIdentity";
-        
+
         public CloudFrontOriginAccessIdentityProperties Properties { get; } = new CloudFrontOriginAccessIdentityProperties();
 
     }

@@ -125,9 +125,9 @@ namespace Comformation.GameLift.Fleet
 			public Union<string, IntrinsicFunction> ServerLaunchPath { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GameLift::Fleet";
-        
+
         public FleetProperties Properties { get; } = new FleetProperties();
 
     }

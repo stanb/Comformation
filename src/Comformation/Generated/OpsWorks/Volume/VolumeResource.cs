@@ -51,9 +51,9 @@ namespace Comformation.OpsWorks.Volume
 			public Union<string, IntrinsicFunction> StackId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::Volume";
-        
+
         public VolumeProperties Properties { get; } = new VolumeProperties();
 
     }

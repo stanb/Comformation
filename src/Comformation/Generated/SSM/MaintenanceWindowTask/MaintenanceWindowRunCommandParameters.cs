@@ -78,7 +78,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// NotificationConfig
         /// Configurations for sending notifications about command status changes on a per-instance basis.
         /// Required: No
-        /// Type: Systems Manager MaintenanceWindowTask NotificationConfig
+        /// Type: NotificationConfig
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationConfig")]

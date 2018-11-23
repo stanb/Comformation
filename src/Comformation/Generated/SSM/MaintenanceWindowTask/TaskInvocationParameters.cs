@@ -18,7 +18,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// MaintenanceWindowRunCommandParameters
         /// The parameters for a RUN_COMMAND task type.
         /// Required: No
-        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowRunCommandParameters
+        /// Type: MaintenanceWindowRunCommandParameters
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowRunCommandParameters")]
@@ -28,7 +28,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// MaintenanceWindowAutomationParameters
         /// The parameters for an AUTOMATION task type.
         /// Required: No
-        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowAutomationParameters
+        /// Type: MaintenanceWindowAutomationParameters
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowAutomationParameters")]
@@ -38,7 +38,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// MaintenanceWindowStepFunctionsParameters
         /// The parameters for a STEP_FUNCTION task type.
         /// Required: No
-        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowStepFunctionsParameters
+        /// Type: MaintenanceWindowStepFunctionsParameters
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowStepFunctionsParameters")]
@@ -48,7 +48,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// MaintenanceWindowLambdaParameters
         /// The parameters for a LAMBDA task type.
         /// Required: No
-        /// Type: Systems Manager MaintenanceWindowTask MaintenanceWindowLambdaParameters
+        /// Type: MaintenanceWindowLambdaParameters
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaintenanceWindowLambdaParameters")]

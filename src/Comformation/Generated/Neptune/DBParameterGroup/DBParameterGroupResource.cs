@@ -62,9 +62,9 @@ namespace Comformation.Neptune.DBParameterGroup
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Neptune::DBParameterGroup";
-        
+
         public DBParameterGroupProperties Properties { get; } = new DBParameterGroupProperties();
 
     }

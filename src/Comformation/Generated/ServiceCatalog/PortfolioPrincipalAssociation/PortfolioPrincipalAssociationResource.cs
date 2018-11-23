@@ -51,9 +51,9 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
 			public Union<string, IntrinsicFunction> PrincipalType { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::PortfolioPrincipalAssociation";
-        
+
         public PortfolioPrincipalAssociationProperties Properties { get; } = new PortfolioPrincipalAssociationProperties();
 
     }

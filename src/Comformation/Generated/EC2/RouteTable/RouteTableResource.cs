@@ -34,9 +34,9 @@ namespace Comformation.EC2.RouteTable
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::RouteTable";
-        
+
         public RouteTableProperties Properties { get; } = new RouteTableProperties();
 
     }

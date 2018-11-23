@@ -174,9 +174,9 @@ namespace Comformation.DMS.Endpoint
 			public MongoDbSettings MongoDbSettings { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DMS::Endpoint";
-        
+
         public EndpointProperties Properties { get; } = new EndpointProperties();
 
     }

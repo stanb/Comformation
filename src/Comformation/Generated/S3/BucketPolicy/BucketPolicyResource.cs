@@ -35,9 +35,9 @@ namespace Comformation.S3.BucketPolicy
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::S3::BucketPolicy";
-        
+
         public BucketPolicyProperties Properties { get; } = new BucketPolicyProperties();
 
     }

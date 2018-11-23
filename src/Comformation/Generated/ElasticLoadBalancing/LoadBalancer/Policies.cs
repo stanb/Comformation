@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// ElasticLoadBalancing Policy Type
+    /// ElasticLoadBalancing Policy
     /// The ElasticLoadBalancing policy type is an embedded property of the AWS::ElasticLoadBalancing::LoadBalancer
     /// resource. You associate policies with a listener by referencing a policy&#39;s name in the listener&#39;s PolicyNames
     /// property.

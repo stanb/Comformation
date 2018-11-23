@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.Environment
 {
     /// <summary>
-    /// Elastic Beanstalk Environment Tier Property Type
+    /// Elastic Beanstalk Environment EnvironmentTier
     /// Describes the environment tier for an AWS::ElasticBeanstalk::Environment resource. For more information, see
     /// Environment Tiers in the AWS Elastic Beanstalk Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html

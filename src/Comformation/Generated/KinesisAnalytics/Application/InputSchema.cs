@@ -29,7 +29,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// RecordColumns
         /// A list of RecordColumn objects.
         /// Required: Yes
-        /// Type: List of Kinesis Data Analytics Application RecordColumn
+        /// Type: List of RecordColumn
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumns")]
@@ -39,7 +39,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// RecordFormat
         /// Specifies the format of the records on the streaming source.
         /// Required: Yes
-        /// Type: Kinesis Data Analytics Application RecordFormat
+        /// Type: RecordFormat
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormat")]

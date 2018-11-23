@@ -58,8 +58,24 @@ namespace Comformation.KMS.Key
 
             /// <summary>
             /// KeyUsage
+            /// The intended use of the key. You can use CMKs only for symmetric encryption and decryption.
+            /// Valid values: ENCRYPT_DECRYPT
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyUsage { get; set; }
+
+            /// <summary>
+            /// PendingWindowInDays
+            /// The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the
+            /// customer master key (CMK).
+            /// Valid Range: Minimum value of 7. Maximum value of 30.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<int, IntrinsicFunction> PendingWindowInDays { get; set; }
 
             /// <summary>
             /// Tags
@@ -72,9 +88,9 @@ namespace Comformation.KMS.Key
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::KMS::Key";
-        
+
         public KeyProperties Properties { get; } = new KeyProperties();
 
     }

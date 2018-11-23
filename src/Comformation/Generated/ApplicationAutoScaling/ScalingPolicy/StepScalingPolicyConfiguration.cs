@@ -8,7 +8,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
     /// <summary>
     /// Application Auto Scaling ScalingPolicy StepScalingPolicyConfiguration
     /// StepScalingPolicyConfiguration is a property of the AWS::ApplicationAutoScaling::ScalingPolicy resource that
-    /// configures when Application Auto Scaling scales resources up or down, and by how much.
+    /// specifies a step scaling policy to use with Application Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html
     /// </summary>
     public class StepScalingPolicyConfiguration

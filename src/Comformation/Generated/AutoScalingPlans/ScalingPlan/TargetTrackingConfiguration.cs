@@ -7,8 +7,8 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS Auto Scaling ScalingPlan TargetTrackingConfiguration
-    /// The TargetTrackingConfiguration property type specifies a target tracking policy for an AWS Auto Scaling
-    /// scaling plan.
+    /// The TargetTrackingConfiguration property type specifies a target tracking configuration to use with AWS Auto
+    /// Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html
     /// </summary>
     public class TargetTrackingConfiguration
@@ -40,7 +40,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// PredefinedScalingMetricSpecification
         /// A predefined metric.
         /// Required: No
-        /// Type: AWS Auto Scaling ScalingPlan PredefinedScalingMetricSpecification
+        /// Type: PredefinedScalingMetricSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedScalingMetricSpecification")]
@@ -85,7 +85,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// CustomizedScalingMetricSpecification
         /// A customized metric.
         /// Required: No
-        /// Type: AWS Auto Scaling ScalingPlan CustomizedScalingMetricSpecification
+        /// Type: CustomizedScalingMetricSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomizedScalingMetricSpecification")]

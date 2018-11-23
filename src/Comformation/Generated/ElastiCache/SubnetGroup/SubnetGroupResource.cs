@@ -46,9 +46,9 @@ namespace Comformation.ElastiCache.SubnetGroup
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElastiCache::SubnetGroup";
-        
+
         public SubnetGroupProperties Properties { get; } = new SubnetGroupProperties();
 
     }

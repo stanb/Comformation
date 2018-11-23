@@ -34,9 +34,9 @@ namespace Comformation.WAFRegional.SizeConstraintSet
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::SizeConstraintSet";
-        
+
         public SizeConstraintSetProperties Properties { get; } = new SizeConstraintSetProperties();
 
     }

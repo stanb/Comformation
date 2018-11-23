@@ -63,9 +63,9 @@ namespace Comformation.Neptune.DBClusterParameterGroup
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Neptune::DBClusterParameterGroup";
-        
+
         public DBClusterParameterGroupProperties Properties { get; } = new DBClusterParameterGroupProperties();
 
     }

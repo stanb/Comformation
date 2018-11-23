@@ -7,11 +7,11 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 {
     /// <summary>
     /// Application Auto Scaling ScalingPolicy TargetTrackingScalingPolicyConfiguration
-    /// Use the TargetTrackingScalingPolicyConfiguration property to configure a target tracking scaling policy. Use
-    /// it to adjust upward or downward in response to actual workloads, so that capacity utilization remains at or
-    /// near your target utilization. TargetTrackingScalingPolicyConfiguration is a property of the
-    /// AWS::ApplicationAutoScaling::ScalingPolicy resource. For more information, see PutScalingPolicy in the
-    /// Application Auto Scaling API Reference.
+    /// Use the TargetTrackingScalingPolicyConfiguration property to configure a target tracking scaling policy to use
+    /// with Application Auto Scaling. Use it to adjust upward or downward in response to actual workloads, so that
+    /// resource utilization remains at or near the target utilization value. TargetTrackingScalingPolicyConfiguration
+    /// is a property of the AWS::ApplicationAutoScaling::ScalingPolicy resource. For more information, see
+    /// PutScalingPolicy in the Application Auto Scaling API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html
     /// </summary>
     public class TargetTrackingScalingPolicyConfiguration

@@ -26,6 +26,11 @@ namespace Comformation.SageMaker.NotebookInstance
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
+            /// VolumeSizeInGB
+            /// </summary>
+			public Union<int, IntrinsicFunction> VolumeSizeInGB { get; set; }
+
+            /// <summary>
             /// DirectInternetAccess
             /// Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
             /// Disabled this notebook instance will be able to access resources only in your VPC, and will not be
@@ -110,9 +115,9 @@ namespace Comformation.SageMaker.NotebookInstance
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SageMaker::NotebookInstance";
-        
+
         public NotebookInstanceProperties Properties { get; } = new NotebookInstanceProperties();
 
     }

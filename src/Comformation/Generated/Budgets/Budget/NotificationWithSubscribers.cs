@@ -18,7 +18,7 @@ namespace Comformation.Budgets.Budget
         /// Subscribers
         /// A list of subscribers who are subscribed to this notification.
         /// Required: Yes
-        /// Type: List of Billing and Cost Management Budget Subscriber
+        /// Type: List of Subscriber
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Subscribers")]
@@ -34,7 +34,7 @@ namespace Comformation.Budgets.Budget
         /// A thresholdType of PERCENTAGE A threshold of 80 A notificationType of ACTUAL A comparisonOperator of
         /// GREATER_THAN
         /// Required: Yes
-        /// Type: Billing and Cost Management Budget Notification
+        /// Type: Notification
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Notification")]

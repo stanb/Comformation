@@ -51,9 +51,9 @@ namespace Comformation.Config.ConfigurationRecorder
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Config::ConfigurationRecorder";
-        
+
         public ConfigurationRecorderProperties Properties { get; } = new ConfigurationRecorderProperties();
 
     }

@@ -44,9 +44,9 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElastiCache::SecurityGroupIngress";
-        
+
         public SecurityGroupIngressProperties Properties { get; } = new SecurityGroupIngressProperties();
 
     }

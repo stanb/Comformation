@@ -19,13 +19,16 @@ namespace {{ resource.Namespace }}
             /// {{ line }}
 {% endfor -%}
             /// </summary>
+{% if property.Name != property.JsonProperty -%}
+			[Newtonsoft.Json.JsonProperty("{{ property.JsonProperty }}")]
+{% endif -%}
 			public {{ property.Type }} {{ property.Name }} { get; set; }
 
 {% endfor -%}
         }
-    
+
         public string Type { get; } = "{{ resource.Type }}";
-        
+
         public {{ resource.Name }}Properties Properties { get; } = new {{ resource.Name }}Properties();
 
 {% if resource.HasCreationPolicy -%}

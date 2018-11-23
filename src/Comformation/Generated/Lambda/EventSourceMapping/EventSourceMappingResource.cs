@@ -67,9 +67,9 @@ namespace Comformation.Lambda.EventSourceMapping
 			public Union<string, IntrinsicFunction> StartingPosition { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Lambda::EventSourceMapping";
-        
+
         public EventSourceMappingProperties Properties { get; } = new EventSourceMappingProperties();
 
     }

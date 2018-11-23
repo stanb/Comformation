@@ -31,7 +31,7 @@ namespace Comformation.IoT1Click.Project
             /// been created. However, you can update callbackOverrides for the device templates using the
             /// UpdateProject API.
             /// Required: Yes
-            /// Type: AWS IoT 1-Click Project PlacementTemplate
+            /// Type: PlacementTemplate
             /// Update requires: No interruption
             /// </summary>
 			public PlacementTemplate PlacementTemplate { get; set; }
@@ -39,16 +39,16 @@ namespace Comformation.IoT1Click.Project
             /// <summary>
             /// ProjectName
             /// The name of the project to create.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ProjectName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT1Click::Project";
-        
+
         public ProjectProperties Properties { get; } = new ProjectProperties();
 
     }

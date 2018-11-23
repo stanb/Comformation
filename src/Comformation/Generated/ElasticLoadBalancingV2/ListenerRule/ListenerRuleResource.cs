@@ -57,9 +57,9 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 			public Union<int, IntrinsicFunction> Priority { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::ListenerRule";
-        
+
         public ListenerRuleProperties Properties { get; } = new ListenerRuleProperties();
 
     }

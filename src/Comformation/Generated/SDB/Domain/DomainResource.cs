@@ -24,9 +24,9 @@ namespace Comformation.SDB.Domain
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SDB::Domain";
-        
+
         public DomainProperties Properties { get; } = new DomainProperties();
 
     }

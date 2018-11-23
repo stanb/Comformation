@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53.RecordSetGroup
 {
     /// <summary>
-    /// Route 53 AliasTarget Property
+    /// Amazon Route&#160;53 AliasTarget Property
     /// AliasTarget is a property of the AWS::Route53::RecordSet resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
     /// </summary>

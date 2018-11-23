@@ -19,7 +19,7 @@ namespace Comformation.Budgets.Budget
             /// The notification that you want associated with the budget. A budget can have up to five
             /// notifications, and each notification can have one SNS subscriber and up to ten email subscribers.
             /// Required: No
-            /// Type: List of Billing and Cost Management Budget NotificationWithSubscribers property types
+            /// Type: List of NotificationWithSubscribers property types
             /// Update requires: Replacement
             /// </summary>
 			public List<NotificationWithSubscribers> NotificationsWithSubscribers { get; set; }
@@ -29,15 +29,15 @@ namespace Comformation.Budgets.Budget
             /// The budget for tracking your service usage, costs, and RI utilization. Single accounts and master
             /// and member accounts in an organization can, by default, create budgets.
             /// Required: Yes
-            /// Type: Billing and Cost Management Budget BudgetData
+            /// Type: BudgetData
             /// Update requires: No interruption
             /// </summary>
 			public BudgetData Budget { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Budgets::Budget";
-        
+
         public BudgetProperties Properties { get; } = new BudgetProperties();
 
     }

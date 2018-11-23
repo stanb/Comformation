@@ -27,7 +27,7 @@ namespace Comformation.Glue.Partition
         /// StorageDescriptor
         /// Information about the physical storage of the partition.
         /// Required: No
-        /// Type: AWS Glue Partition StorageDescriptor
+        /// Type: StorageDescriptor
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageDescriptor")]

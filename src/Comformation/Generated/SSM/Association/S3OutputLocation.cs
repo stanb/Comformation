@@ -7,8 +7,8 @@ namespace Comformation.SSM.Association
 {
     /// <summary>
     /// AWS Systems Manager Association S3OutputLocation
-    /// S3OutputLocation is a property of the Systems Manager Association InstanceAssociationOutputLocation property
-    /// that specifies an Amazon S3 bucket where you want to store the results of this request.
+    /// S3OutputLocation is a property of the InstanceAssociationOutputLocation property that specifies an Amazon S3
+    /// bucket where you want to store the results of this request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html
     /// </summary>
     public class S3OutputLocation

@@ -43,9 +43,9 @@ namespace Comformation.ApiGateway.Resource
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Resource";
-        
+
         public ResourceProperties Properties { get; } = new ResourceProperties();
 
     }

@@ -86,9 +86,9 @@ namespace Comformation.Lambda.Permission
 			public Union<string, IntrinsicFunction> SourceArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Lambda::Permission";
-        
+
         public PermissionProperties Properties { get; } = new PermissionProperties();
 
     }

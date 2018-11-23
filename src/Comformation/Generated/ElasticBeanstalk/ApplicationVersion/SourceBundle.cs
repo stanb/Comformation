@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.ApplicationVersion
 {
     /// <summary>
-    /// Elastic Beanstalk SourceBundle Property Type
+    /// Elastic Beanstalk ApplicationVersion SourceBundle
     /// The SourceBundle property is an embedded property of the AWS::ElasticBeanstalk::ApplicationVersion resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html
     /// </summary>

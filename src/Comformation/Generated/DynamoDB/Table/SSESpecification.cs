@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// DynamoDB SSESpecification
+    /// DynamoDB Table SSESpecification
     /// The SSESpecification property is part of the AWS::DynamoDB::Table resource that specifies the settings to
     /// enable server-side encryption.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html

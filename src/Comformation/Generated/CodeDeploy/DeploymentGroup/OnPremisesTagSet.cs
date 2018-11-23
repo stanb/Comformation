@@ -21,7 +21,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// included in the deployment group, it must be identified by all the tag groups in the list.
         /// Duplicates are not allowed.
         /// Required: No
-        /// Type: List of AWS CodeDeploy DeploymentGroup OnPremisesTagSetListObject
+        /// Type: List of OnPremisesTagSetListObject
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OnPremisesTagSetList")]

@@ -60,9 +60,9 @@ namespace Comformation.ServiceCatalog.Portfolio
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::Portfolio";
-        
+
         public PortfolioProperties Properties { get; } = new PortfolioProperties();
 
     }

@@ -69,9 +69,9 @@ namespace Comformation.Cognito.UserPoolGroup
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Cognito::UserPoolGroup";
-        
+
         public UserPoolGroupProperties Properties { get; } = new UserPoolGroupProperties();
 
     }

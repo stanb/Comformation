@@ -113,7 +113,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// During the time that AWS CloudFormation is performing this action, clients will not be able to
             /// connect to the load balancer.
             /// Required: Yes
-            /// Type: A list of ElasticLoadBalancing Listener Property Type objects.
+            /// Type: A list of ElasticLoadBalancing Listener objects.
             /// Update requires: No interruption
             /// </summary>
 			public List<Listeners> Listeners { get; set; }
@@ -195,9 +195,9 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticLoadBalancing::LoadBalancer";
-        
+
         public LoadBalancerProperties Properties { get; } = new LoadBalancerProperties();
 
     }

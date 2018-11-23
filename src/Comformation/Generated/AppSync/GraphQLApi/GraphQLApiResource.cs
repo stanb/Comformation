@@ -19,7 +19,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Optional authorization configuration for using an OpenId Connect compliant service with your GraphQL
             /// endpoint.
             /// Required: No
-            /// Type: AWS AppSync GraphQLApi OpenId Connect Config
+            /// Type: OpenId Connect Config
             /// Update requires: No interruption
             /// </summary>
 			public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
@@ -28,7 +28,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// UserPoolConfig
             /// Optional authorization configuration for using Amazon Cognito User Pools with your GraphQL endpoint.
             /// Required: No
-            /// Type: AWS AppSync GraphQLApi UserPoolConfig
+            /// Type: UserPoolConfig
             /// Update requires: No interruption
             /// </summary>
 			public UserPoolConfig UserPoolConfig { get; set; }
@@ -56,15 +56,15 @@ namespace Comformation.AppSync.GraphQLApi
             /// LogConfig
             /// Logging configuration when writing GraphQL operations and tracing to Amazon Cloudwatch.
             /// Required: No
-            /// Type: AWS AppSync GraphQLApi LogConfig
+            /// Type: LogConfig
             /// Update requires: No interruption
             /// </summary>
 			public LogConfig LogConfig { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AppSync::GraphQLApi";
-        
+
         public GraphQLApiProperties Properties { get; } = new GraphQLApiProperties();
 
     }

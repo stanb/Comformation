@@ -61,9 +61,9 @@ namespace Comformation.GuardDuty.IPSet
 			public Union<string, IntrinsicFunction> Location { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GuardDuty::IPSet";
-        
+
         public IPSetProperties Properties { get; } = new IPSetProperties();
 
     }

@@ -65,9 +65,9 @@ namespace Comformation.Config.DeliveryChannel
 			public Union<string, IntrinsicFunction> SnsTopicARN { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Config::DeliveryChannel";
-        
+
         public DeliveryChannelProperties Properties { get; } = new DeliveryChannelProperties();
 
     }

@@ -25,9 +25,9 @@ namespace Comformation.ApiGateway.Account
 			public Union<string, IntrinsicFunction> CloudWatchRoleArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Account";
-        
+
         public AccountProperties Properties { get; } = new AccountProperties();
 
     }

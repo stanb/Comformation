@@ -82,7 +82,7 @@ namespace Comformation.ECS.Service
             /// other network modes. For more information, see Task Networking in the Amazon Elastic Container
             /// Service Developer Guide.
             /// Required: No
-            /// Type: Amazon ECS Service NetworkConfiguration
+            /// Type: NetworkConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public NetworkConfiguration NetworkConfiguration { get; set; }
@@ -159,7 +159,7 @@ namespace Comformation.ECS.Service
             /// ServiceRegistries
             /// Details of the service registry.
             /// Required: No
-            /// Type: Amazon ECS Service ServiceRegistry
+            /// Type: ServiceRegistry
             /// Update requires: Replacement
             /// </summary>
 			public List<ServiceRegistry> ServiceRegistries { get; set; }
@@ -177,9 +177,9 @@ namespace Comformation.ECS.Service
 			public Union<string, IntrinsicFunction> TaskDefinition { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ECS::Service";
-        
+
         public ServiceProperties Properties { get; } = new ServiceProperties();
 
     }

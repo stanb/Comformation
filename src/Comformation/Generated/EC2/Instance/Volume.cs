@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// EC2 MountPoint Property Type
+    /// EC2 MountPoint
     /// The EC2 MountPoint property is an embedded property of the AWS::EC2::Instance type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html
     /// </summary>

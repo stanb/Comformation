@@ -75,9 +75,9 @@ namespace Comformation.EFS.MountTarget
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EFS::MountTarget";
-        
+
         public MountTargetProperties Properties { get; } = new MountTargetProperties();
 
     }

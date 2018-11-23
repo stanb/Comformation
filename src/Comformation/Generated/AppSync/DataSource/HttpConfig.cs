@@ -23,5 +23,15 @@ namespace Comformation.AppSync.DataSource
         [JsonProperty("Endpoint")]
         public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
+        /// <summary>
+        /// AuthorizationConfig
+        /// The authorization configuration.
+        /// Required: No
+        /// Type: AuthorizationConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AuthorizationConfig")]
+        public AuthorizationConfig AuthorizationConfig { get; set; }
+
     }
 }

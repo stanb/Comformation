@@ -349,9 +349,9 @@ namespace Comformation.ElastiCache.ReplicationGroup
 			public Union<bool, IntrinsicFunction> TransitEncryptionEnabled { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElastiCache::ReplicationGroup";
-        
+
         public ReplicationGroupProperties Properties { get; } = new ReplicationGroupProperties();
 
     }

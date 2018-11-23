@@ -72,9 +72,9 @@ namespace Comformation.CloudFormation.Stack
 			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudFormation::Stack";
-        
+
         public StackProperties Properties { get; } = new StackProperties();
 
     }

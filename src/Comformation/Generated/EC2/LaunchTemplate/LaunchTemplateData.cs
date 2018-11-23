@@ -31,7 +31,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// The tags to apply to the resources during launch. You can tag instances and volumes. The specified
         /// tags are applied to all instances or volumes that are created during launch.
         /// Required: No
-        /// Type: List of Amazon EC2 LaunchTemplate TagSpecification
+        /// Type: List of TagSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagSpecifications")]
@@ -65,7 +65,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// BlockDeviceMappings
         /// The block device mapping.
         /// Required: No
-        /// Type: List of Amazon EC2 LaunchTemplate BlockDeviceMapping
+        /// Type: List of BlockDeviceMapping
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BlockDeviceMappings")]
@@ -75,7 +75,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// IamInstanceProfile
         /// The IAM instance profile.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate IamInstanceProfile
+        /// Type: IamInstanceProfile
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IamInstanceProfile")]
@@ -145,7 +145,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// ElasticGpuSpecifications
         /// An elastic GPU to associate with the instance.
         /// Required: No
-        /// Type: List of Amazon EC2 LaunchTemplate ElasticGpuSpecification
+        /// Type: List of ElasticGpuSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ElasticGpuSpecifications")]
@@ -155,7 +155,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Placement
         /// The placement for the instance.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate Placement
+        /// Type: Placement
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Placement")]
@@ -165,7 +165,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// InstanceMarketOptions
         /// The market (purchasing) option for the instances.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate InstanceMarketOptions
+        /// Type: InstanceMarketOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceMarketOptions")]
@@ -175,7 +175,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// NetworkInterfaces
         /// One or more network interfaces.
         /// Required: No
-        /// Type: List of Amazon EC2 LaunchTemplate NetworkInterface
+        /// Type: List of NetworkInterface
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NetworkInterfaces")]
@@ -218,7 +218,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Monitoring
         /// The monitoring for the instance.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate Monitoring
+        /// Type: Monitoring
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Monitoring")]
@@ -228,7 +228,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// CreditSpecification
         /// The credit option for CPU usage of the instance. Valid for T2 instances only.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate CreditSpecification
+        /// Type: CreditSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CreditSpecification")]

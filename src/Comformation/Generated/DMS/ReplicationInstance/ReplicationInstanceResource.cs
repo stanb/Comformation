@@ -156,9 +156,9 @@ namespace Comformation.DMS.ReplicationInstance
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DMS::ReplicationInstance";
-        
+
         public ReplicationInstanceProperties Properties { get; } = new ReplicationInstanceProperties();
 
     }

@@ -27,7 +27,7 @@ namespace Comformation.Events.Rule
         /// EcsParameters
         /// The Amazon ECS task definition and task count to use, if the event target is an Amazon ECS task.
         /// Required: No
-        /// Type: CloudWatch Events Rule EcsParameters
+        /// Type: EcsParameters
         /// </summary>
         [JsonProperty("EcsParameters")]
         public EcsParameters EcsParameters { get; set; }
@@ -68,7 +68,7 @@ namespace Comformation.Events.Rule
         /// Settings that provide custom input to a target based on certain event data. You can extract one or
         /// more key-value pairs from the event, and then use that data to send customized input to the target.
         /// Required: No
-        /// Type: CloudWatch Events Rule InputTransformer
+        /// Type: InputTransformer
         /// </summary>
         [JsonProperty("InputTransformer")]
         public InputTransformer InputTransformer { get; set; }
@@ -78,7 +78,7 @@ namespace Comformation.Events.Rule
         /// Settings that control shard assignment, when the target is a Kinesis stream. If you don&#39;t include
         /// this parameter, eventId is used as the partition key.
         /// Required: No
-        /// Type: CloudWatch Events Rule KinesisParameters
+        /// Type: KinesisParameters
         /// </summary>
         [JsonProperty("KinesisParameters")]
         public KinesisParameters KinesisParameters { get; set; }
@@ -102,7 +102,7 @@ namespace Comformation.Events.Rule
         /// RunCommandParameters
         /// Parameters used when the rule invokes the AWS Systems Manager Run Command.
         /// Required: No
-        /// Type: CloudWatch Events Rule RunCommandParameters
+        /// Type: RunCommandParameters
         /// </summary>
         [JsonProperty("RunCommandParameters")]
         public RunCommandParameters RunCommandParameters { get; set; }

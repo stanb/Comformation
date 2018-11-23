@@ -6,8 +6,8 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::ApplicationAutoScaling::ScalingPolicy
-    /// The AWS::ApplicationAutoScaling::ScalingPolicy resource defines an Application Auto Scaling scaling policy
-    /// that Application Auto Scaling uses to adjust your application resources.
+    /// The AWS::ApplicationAutoScaling::ScalingPolicy resource defines a scaling policy that Application Auto Scaling
+    /// uses to adjust your application resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html
     /// </summary>
     public class ScalingPolicyResource : ResourceBase
@@ -108,9 +108,9 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 			public TargetTrackingScalingPolicyConfiguration TargetTrackingScalingPolicyConfiguration { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApplicationAutoScaling::ScalingPolicy";
-        
+
         public ScalingPolicyProperties Properties { get; } = new ScalingPolicyProperties();
 
     }

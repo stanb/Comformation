@@ -34,9 +34,9 @@ namespace Comformation.EC2.VPNConnectionRoute
 			public Union<string, IntrinsicFunction> VpnConnectionId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPNConnectionRoute";
-        
+
         public VPNConnectionRouteProperties Properties { get; } = new VPNConnectionRouteProperties();
 
     }

@@ -33,9 +33,9 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SubnetNetworkAclAssociation";
-        
+
         public SubnetNetworkAclAssociationProperties Properties { get; } = new SubnetNetworkAclAssociationProperties();
 
     }

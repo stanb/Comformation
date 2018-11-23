@@ -41,7 +41,7 @@ namespace Comformation.SES.ReceiptRule
         /// An ordered list of actions to perform on messages that match at least one of the recipient email
         /// addresses or domains specified in the receipt rule.
         /// Required: No
-        /// Type: List of Amazon SES ReceiptRule Action
+        /// Type: List of Action
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Actions")]

@@ -41,7 +41,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Revision
         /// The location of the application revision to deploy.
         /// Required: Yes
-        /// Type: AWS CodeDeploy DeploymentGroup Deployment Revision
+        /// Type: AWS CodeDeploy DeploymentGroup Revision
         /// </summary>
         [JsonProperty("Revision")]
         public RevisionLocation Revision { get; set; }

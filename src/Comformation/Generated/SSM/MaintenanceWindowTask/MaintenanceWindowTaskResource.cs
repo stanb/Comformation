@@ -67,7 +67,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Specify instances using Key=instanceids,Values=instanceid1,instanceid2. Specify tags using Key=tag
             /// name,Values=tag value.
             /// Required: Yes
-            /// Type: List of Systems Manager MaintenanceWindowTask Target
+            /// Type: List of Target
             /// Update requires: No interruption
             /// </summary>
 			public List<Target> Targets { get; set; }
@@ -98,7 +98,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// TaskInvocationParameters
             /// The parameters for task execution.
             /// Required: No
-            /// Type: Systems Manager MaintenanceWindowTask TaskInvocationParameters
+            /// Type: TaskInvocationParameters
             /// Update requires: No interruption
             /// </summary>
 			public TaskInvocationParameters TaskInvocationParameters { get; set; }
@@ -142,15 +142,15 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// information about how Systems Manager handles these options for the supported Maintenance Window
             /// task types, see AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters.
             /// Required: No
-            /// Type: Systems Manager MaintenanceWindowTask LoggingInfo
+            /// Type: LoggingInfo
             /// Update requires: No interruption
             /// </summary>
 			public LoggingInfo LoggingInfo { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SSM::MaintenanceWindowTask";
-        
+
         public MaintenanceWindowTaskProperties Properties { get; } = new MaintenanceWindowTaskProperties();
 
     }

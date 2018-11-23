@@ -19,7 +19,7 @@ namespace Comformation.S3.Bucket
             /// Configuration for the transfer acceleration state. For more information, see Amazon S3 Transfer
             /// Acceleration in the Amazon Simple Storage Service Developer Guide.
             /// Required: No
-            /// Type: Amazon S3 Bucket AccelerateConfiguration
+            /// Type: AccelerateConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public AccelerateConfiguration AccelerateConfiguration { get; set; }
@@ -42,7 +42,7 @@ namespace Comformation.S3.Bucket
             /// The configuration and any analyses for the analytics filter of an Amazon S3 bucket. Duplicates not
             /// allowed.
             /// Required: No
-            /// Type: List of Amazon S3 Bucket AnalyticsConfiguration
+            /// Type: List of AnalyticsConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public List<AnalyticsConfiguration> AnalyticsConfigurations { get; set; }
@@ -85,7 +85,7 @@ namespace Comformation.S3.Bucket
             /// InventoryConfigurations
             /// The inventory configuration for an Amazon S3 bucket. Duplicates not allowed.
             /// Required: No
-            /// Type: List of Amazon S3 Bucket InventoryConfiguration
+            /// Type: List of InventoryConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public List<InventoryConfiguration> InventoryConfigurations { get; set; }
@@ -115,7 +115,7 @@ namespace Comformation.S3.Bucket
             /// a list of request metrics, see Amazon S3 CloudWatch Request Metrics in the Amazon Simple Storage
             /// Service Developer Guide.
             /// Required: No
-            /// Type: List of Amazon S3 Bucket MetricsConfiguration
+            /// Type: List of MetricsConfiguration
             /// Update requires: No interruption
             /// Duplicates not allowed.
             /// </summary>
@@ -129,6 +129,15 @@ namespace Comformation.S3.Bucket
             /// Update requires: No interruption
             /// </summary>
 			public NotificationConfiguration NotificationConfiguration { get; set; }
+
+            /// <summary>
+            /// PublicAccessBlockConfiguration
+            /// Configuration that defines how Amazon S3 handles public access.
+            /// Required: No
+            /// Type: PublicAccessBlockConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+			public PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
 
             /// <summary>
             /// ReplicationConfiguration
@@ -176,9 +185,9 @@ namespace Comformation.S3.Bucket
 			public WebsiteConfiguration WebsiteConfiguration { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::S3::Bucket";
-        
+
         public BucketProperties Properties { get; } = new BucketProperties();
 
     }
@@ -188,6 +197,7 @@ namespace Comformation.S3.Bucket
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DualStackDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DualStackDomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RegionalDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("RegionalDomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> WebsiteURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("WebsiteURL");
 	}
 }

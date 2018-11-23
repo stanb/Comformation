@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.LaunchConfiguration
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling Block Device Mapping Property Type
-    /// The AutoScaling Block Device Mapping type is an embedded property of the AWS::AutoScaling::LaunchConfiguration
-    /// type.
+    /// Amazon EC2 Auto Scaling LaunchConfiguration BlockDeviceMapping
+    /// The Amazon EC2 Auto Scaling BlockDeviceMapping type is an embedded property of the
+    /// AWS::AutoScaling::LaunchConfiguration type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html
     /// </summary>
     public class BlockDeviceMapping
@@ -27,7 +27,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// Ebs
         /// The Amazon Elastic Block Store volume information.
         /// Required: Conditional You can specify either VirtualName or Ebs, but not both.
-        /// Type: Amazon EC2 Auto Scaling EBS Block Device.
+        /// Type: Amazon EC2 Auto Scaling LaunchConfig BlockDevice.
         /// </summary>
         [JsonProperty("Ebs")]
         public BlockDevice Ebs { get; set; }
@@ -35,8 +35,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// <summary>
         /// NoDevice
         /// Suppresses the device mapping. If NoDevice is set to true for the root device, the instance might
-        /// fail the Amazon EC2 health check. Auto Scaling launches a replacement instance if the instance fails
-        /// the health check.
+        /// fail the Amazon EC2 health check. Amazon EC2 Auto Scaling launches a replacement instance if the
+        /// instance fails the health check.
         /// Required: No
         /// Type: Boolean
         /// </summary>

@@ -41,7 +41,7 @@ namespace Comformation.EC2.SecurityGroup
             /// SecurityGroupEgress
             /// A list of Amazon EC2 security group egress rules.
             /// Required: No
-            /// Type: List of EC2 Security Group Rule
+            /// Type: List of SecurityGroupRule
             /// Update requires: No interruption
             /// </summary>
 			public List<Egress> SecurityGroupEgress { get; set; }
@@ -50,7 +50,7 @@ namespace Comformation.EC2.SecurityGroup
             /// SecurityGroupIngress
             /// A list of Amazon EC2 security group ingress rules.
             /// Required: No
-            /// Type: List of EC2 Security Group Rule
+            /// Type: List of SecurityGroupRule
             /// Update requires: No interruption
             /// </summary>
 			public List<Ingress> SecurityGroupIngress { get; set; }
@@ -78,9 +78,9 @@ namespace Comformation.EC2.SecurityGroup
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SecurityGroup";
-        
+
         public SecurityGroupProperties Properties { get; } = new SecurityGroupProperties();
 
     }

@@ -34,9 +34,9 @@ namespace Comformation.IoT.PolicyPrincipalAttachment
 			public Union<string, IntrinsicFunction> Principal { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT::PolicyPrincipalAttachment";
-        
+
         public PolicyPrincipalAttachmentProperties Properties { get; } = new PolicyPrincipalAttachmentProperties();
 
     }

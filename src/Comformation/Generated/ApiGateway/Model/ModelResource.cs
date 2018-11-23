@@ -65,9 +65,9 @@ namespace Comformation.ApiGateway.Model
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Model";
-        
+
         public ModelProperties Properties { get; } = new ModelProperties();
 
     }

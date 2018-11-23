@@ -62,9 +62,9 @@ namespace Comformation.GuardDuty.ThreatIntelSet
 			public Union<string, IntrinsicFunction> Location { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GuardDuty::ThreatIntelSet";
-        
+
         public ThreatIntelSetProperties Properties { get; } = new ThreatIntelSetProperties();
 
     }

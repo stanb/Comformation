@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
-    /// GuardDuty Filter Condition
+    /// Amazon GuardDuty Filter Condition
     /// The Condition property type specifies the condition to be applied to a single field when filtering through
     /// GuardDuty findings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html

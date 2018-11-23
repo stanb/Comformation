@@ -32,9 +32,9 @@ namespace Comformation.IoT.Certificate
 			public Union<string, IntrinsicFunction> Status { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT::Certificate";
-        
+
         public CertificateProperties Properties { get; } = new CertificateProperties();
 
     }

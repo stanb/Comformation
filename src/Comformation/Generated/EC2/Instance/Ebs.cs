@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// Amazon Elastic Block Store Block Device Property
-    /// The Amazon Elastic Block Store block device type is an embedded property of the Amazon EC2 Block Device
-    /// Mapping Property property.
+    /// Amazon Elastic Block Store Block Device
+    /// The Amazon Elastic Block Store block device type is an embedded property of the Amazon EC2 BlockDeviceMapping
+    /// property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html
     /// </summary>
     public class Ebs

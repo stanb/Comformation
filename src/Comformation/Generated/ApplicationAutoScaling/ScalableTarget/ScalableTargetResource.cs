@@ -7,8 +7,8 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
     /// <summary>
     /// AWS::ApplicationAutoScaling::ScalableTarget
     /// The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling
-    /// can scale up or down. For more information, see the RegisterScalableTarget action in the Application Auto
-    /// Scaling API Reference.
+    /// can scale. For more information, see the RegisterScalableTarget action in the Application Auto Scaling API
+    /// Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
     /// </summary>
     public class ScalableTargetResource : ResourceBase
@@ -71,7 +71,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// ScheduledActions
             /// The scheduled actions for the scalable target. Duplicates aren&#39;t allowed.
             /// Required: No
-            /// Type: List of Application Auto Scaling ScalableTarget ScheduledAction property types
+            /// Type: List of ScheduledAction property types
             /// Update requires: No interruption
             /// </summary>
 			public List<ScheduledAction> ScheduledActions { get; set; }
@@ -88,9 +88,9 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 			public Union<string, IntrinsicFunction> ServiceNamespace { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApplicationAutoScaling::ScalableTarget";
-        
+
         public ScalableTargetProperties Properties { get; } = new ScalableTargetProperties();
 
     }

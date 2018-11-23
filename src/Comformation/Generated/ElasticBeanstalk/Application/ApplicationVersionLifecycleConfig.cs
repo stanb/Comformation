@@ -20,7 +20,7 @@ namespace Comformation.ElasticBeanstalk.Application
         /// Specifies a max age rule to restrict the length of time that application versions are retained for
         /// an application.
         /// Required: No
-        /// Type: Elastic Beanstalk Application MaxAgeRule
+        /// Type: MaxAgeRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxAgeRule")]
@@ -31,7 +31,7 @@ namespace Comformation.ElasticBeanstalk.Application
         /// Specifies a max count rule to restrict the number of application versions that are retained for an
         /// application.
         /// Required: No
-        /// Type: Elastic Beanstalk Application MaxCountRule
+        /// Type: MaxCountRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxCountRule")]

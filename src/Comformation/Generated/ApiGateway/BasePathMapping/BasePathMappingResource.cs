@@ -52,9 +52,9 @@ namespace Comformation.ApiGateway.BasePathMapping
 			public Union<string, IntrinsicFunction> Stage { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::BasePathMapping";
-        
+
         public BasePathMappingProperties Properties { get; } = new BasePathMappingProperties();
 
     }

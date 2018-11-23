@@ -116,8 +116,8 @@ namespace Comformation.CodeBuilder
                                     var propDoc = docParser != null ? docParser.GetPropertyDocumentation(prop.Name) : new[] { prop.Name };
                                     var x = new
                                     {
-                                        prop.Name,
-                                        prop.Type,
+                                        Name = prop.Name.Equals($"{clazz.Name}Properties") ? $"{prop.Name}_" : prop.Name,
+                                        Type = prop.Type.Equals($"{clazz.Name}Properties") ? $"{clazz.Namespace}.{prop.Type}" : prop.Type,
                                         Documentation = propDoc,
                                         prop.JsonProperty
                                     };

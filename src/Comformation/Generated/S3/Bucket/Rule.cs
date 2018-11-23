@@ -128,7 +128,7 @@ namespace Comformation.S3.Bucket
         /// TagFilters
         /// Tags to use to identify a subset of objects to which the lifecycle rule applies.
         /// Required: No
-        /// Type: List of Amazon S3 Bucket TagFilter
+        /// Type: List of TagFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]

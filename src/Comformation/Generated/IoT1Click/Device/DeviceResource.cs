@@ -33,9 +33,9 @@ namespace Comformation.IoT1Click.Device
 			public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT1Click::Device";
-        
+
         public DeviceProperties Properties { get; } = new DeviceProperties();
 
     }

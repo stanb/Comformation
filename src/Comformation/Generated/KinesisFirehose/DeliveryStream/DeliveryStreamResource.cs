@@ -40,7 +40,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// ElasticsearchDestinationConfiguration
             /// An Amazon ES destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Data Firehose DeliveryStream ElasticsearchDestinationConfiguration
+            /// Type: ElasticsearchDestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon ES
             /// destination to an Amazon S3 or Amazon Redshift destination, update requires some interruptions.
             /// </summary>
@@ -50,7 +50,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// ExtendedS3DestinationConfiguration
             /// An Amazon S3 destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Data Firehose DeliveryStream ExtendedS3DestinationConfiguration
+            /// Type: ExtendedS3DestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
@@ -58,11 +58,11 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
             /// <summary>
             /// KinesisStreamSourceConfiguration
-            /// When a Kinesis stream is used as the source for the delivery stream, a Kinesis Data Firehose
-            /// DeliveryStream KinesisStreamSourceConfiguration containing the Kinesis stream ARN and the role ARN
-            /// for the source stream.
+            /// When a Kinesis stream is used as the source for the delivery stream, a
+            /// KinesisStreamSourceConfiguration containing the Kinesis stream ARN and the role ARN for the source
+            /// stream.
             /// Required: No
-            /// Type: Kinesis Data Firehose DeliveryStream KinesisStreamSourceConfiguration
+            /// Type: KinesisStreamSourceConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public KinesisStreamSourceConfiguration KinesisStreamSourceConfiguration { get; set; }
@@ -71,7 +71,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// RedshiftDestinationConfiguration
             /// An Amazon Redshift destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Data Firehose DeliveryStream RedshiftDestinationConfiguration
+            /// Type: RedshiftDestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
             /// Redshift destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
@@ -81,7 +81,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// S3DestinationConfiguration
             /// An Amazon S3 destination for the delivery stream.
             /// Required: Conditional. You must specify only one destination configuration.
-            /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
+            /// Type: S3DestinationConfiguration
             /// Update requires: No interruption. If you change the delivery stream destination from an Amazon S3
             /// destination to an Amazon ES destination, update requires some interruptions.
             /// </summary>
@@ -91,15 +91,15 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// SplunkDestinationConfiguration
             /// The configuration of a destination in Splunk for the delivery stream.
             /// Required: No
-            /// Type: Kinesis Data Firehose DeliveryStream SplunkDestinationConfiguration
+            /// Type: SplunkDestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public SplunkDestinationConfiguration SplunkDestinationConfiguration { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::KinesisFirehose::DeliveryStream";
-        
+
         public DeliveryStreamProperties Properties { get; } = new DeliveryStreamProperties();
 
     }

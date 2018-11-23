@@ -34,9 +34,9 @@ namespace Comformation.IoT.ThingPrincipalAttachment
 			public Union<string, IntrinsicFunction> ThingName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT::ThingPrincipalAttachment";
-        
+
         public ThingPrincipalAttachmentProperties Properties { get; } = new ThingPrincipalAttachmentProperties();
 
     }

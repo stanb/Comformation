@@ -51,16 +51,25 @@ namespace Comformation.AppSync.DataSource
             /// HttpConfig
             /// Endpoints for an HTTP DataSource.
             /// Required: No
-            /// Type: AWS AppSync DataSource HttpConfig
+            /// Type: HttpConfig
             /// Update requires: No interruption
             /// </summary>
 			public HttpConfig HttpConfig { get; set; }
 
             /// <summary>
+            /// RelationalDatabaseConfig
+            /// Relational Database configuration of the relational database data source.
+            /// Required: No
+            /// Type: RelationalDatabaseConfig
+            /// Update requires: No interruption
+            /// </summary>
+			public RelationalDatabaseConfig RelationalDatabaseConfig { get; set; }
+
+            /// <summary>
             /// LambdaConfig
             /// A valid ARN of a Lambda function in your account.
             /// Required: No
-            /// Type: AWS AppSync DataSource LambdaConfig
+            /// Type: LambdaConfig
             /// Update requires: No interruption
             /// </summary>
 			public LambdaConfig LambdaConfig { get; set; }
@@ -87,7 +96,7 @@ namespace Comformation.AppSync.DataSource
             /// DynamoDBConfig
             /// AwsRegion and TableName for an Amazon DynamoDB table in your account.
             /// Required: No
-            /// Type: AWS AppSync DataSource DynamoDBConfig
+            /// Type: DynamoDBConfig
             /// Update requires: No interruption
             /// </summary>
 			public DynamoDBConfig DynamoDBConfig { get; set; }
@@ -96,15 +105,15 @@ namespace Comformation.AppSync.DataSource
             /// ElasticsearchConfig
             /// AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account.
             /// Required: No
-            /// Type: AWS AppSync DataSource ElasticsearchConfig
+            /// Type: ElasticsearchConfig
             /// Update requires: No interruption
             /// </summary>
 			public ElasticsearchConfig ElasticsearchConfig { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AppSync::DataSource";
-        
+
         public DataSourceProperties Properties { get; } = new DataSourceProperties();
 
     }

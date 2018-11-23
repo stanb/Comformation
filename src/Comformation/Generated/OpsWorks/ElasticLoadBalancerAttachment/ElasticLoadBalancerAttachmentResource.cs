@@ -32,9 +32,9 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
 			public Union<string, IntrinsicFunction> LayerId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::ElasticLoadBalancerAttachment";
-        
+
         public ElasticLoadBalancerAttachmentProperties Properties { get; } = new ElasticLoadBalancerAttachmentProperties();
 
     }

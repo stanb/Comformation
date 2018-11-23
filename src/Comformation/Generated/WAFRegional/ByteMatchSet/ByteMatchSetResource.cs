@@ -35,9 +35,9 @@ namespace Comformation.WAFRegional.ByteMatchSet
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::ByteMatchSet";
-        
+
         public ByteMatchSetProperties Properties { get; } = new ByteMatchSetProperties();
 
     }

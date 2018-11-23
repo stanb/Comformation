@@ -34,9 +34,9 @@ namespace Comformation.Route53.HealthCheck
 			public List<HealthCheckTag> HealthCheckTags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Route53::HealthCheck";
-        
+
         public HealthCheckProperties Properties { get; } = new HealthCheckProperties();
 
     }

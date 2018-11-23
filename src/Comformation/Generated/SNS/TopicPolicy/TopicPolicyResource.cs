@@ -33,9 +33,9 @@ namespace Comformation.SNS.TopicPolicy
 			public List<Union<string, IntrinsicFunction>> Topics { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SNS::TopicPolicy";
-        
+
         public TopicPolicyProperties Properties { get; } = new TopicPolicyProperties();
 
     }

@@ -8,8 +8,8 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
     /// <summary>
     /// Elastic Load Balancing LoadBalancer LoadBalancerAttributes
     /// LoadBalancerAttributes is a property of the AWS::ElasticLoadBalancingV2::LoadBalancer resource that configures
-    /// settings for an Elastic Load Balancing Application load balancer. For more information, see Load Balancer
-    /// Attributes in the Application Load Balancers Guide.
+    /// settings for an Elastic Load Balancing Application Load Balancer. For more information, see Load Balancer
+    /// Attributes in the User Guide for Application Load Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html
     /// </summary>
     public class LoadBalancerAttribute

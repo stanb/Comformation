@@ -18,7 +18,7 @@ namespace Comformation.SES.ReceiptFilter
         /// IpFilter
         /// The IP addresses to block or allow, and whether to block or allow incoming mail from them.
         /// Required: Yes
-        /// Type: Amazon SES ReceiptFilter IpFilter
+        /// Type: IpFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IpFilter")]

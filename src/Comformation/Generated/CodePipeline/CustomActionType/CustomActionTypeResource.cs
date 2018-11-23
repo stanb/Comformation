@@ -82,9 +82,9 @@ namespace Comformation.CodePipeline.CustomActionType
 			public Union<string, IntrinsicFunction> Version { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodePipeline::CustomActionType";
-        
+
         public CustomActionTypeProperties Properties { get; } = new CustomActionTypeProperties();
 
     }

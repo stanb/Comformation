@@ -28,11 +28,20 @@ namespace Comformation.Batch.JobDefinition
             /// Default parameters or parameter substitution placeholders that are set in the job definition.
             /// Parameters are specified as a key-value pair mapping. For more information about specifying
             /// parameters, see Job Definition Parameters in the AWS Batch User Guide.
-            /// Required: Yes
+            /// Required: No
             /// Type: JSON object
             /// Update requires: No Interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+
+            /// <summary>
+            /// NodeProperties
+            /// An object representing the node properties of a multi-node parallel job.
+            /// Required: No
+            /// Type: NodeProperties
+            /// Update requires: No interruption
+            /// </summary>
+			public NodeProperties NodeProperties { get; set; }
 
             /// <summary>
             /// Timeout
@@ -71,9 +80,9 @@ namespace Comformation.Batch.JobDefinition
 			public RetryStrategy RetryStrategy { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Batch::JobDefinition";
-        
+
         public JobDefinitionProperties Properties { get; } = new JobDefinitionProperties();
 
     }

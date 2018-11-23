@@ -9,8 +9,8 @@ namespace Comformation
     /// Resource Tag
     /// You can use the Resource Tags property to apply tags to resources, which can help you identify and categorize
     /// those resources. You can tag only resources for which AWS CloudFormation supports tagging. For information
-    /// about which resources you can tag with AWS CloudFormation, see the individual resources in AWS Resource Types
-    /// Reference.
+    /// about which resources you can tag with AWS CloudFormation, see the individual resources in AWS Resource and
+    /// Property Types Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html
     /// </summary>
     public class Tag

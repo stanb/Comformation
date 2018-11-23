@@ -44,9 +44,9 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
 			public List<NotebookInstanceLifecycleHook> OnCreate { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SageMaker::NotebookInstanceLifecycleConfig";
-        
+
         public NotebookInstanceLifecycleConfigProperties Properties { get; } = new NotebookInstanceLifecycleConfigProperties();
 
     }

@@ -91,9 +91,9 @@ namespace Comformation.DataPipeline.Pipeline
 			public List<PipelineTag> PipelineTags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DataPipeline::Pipeline";
-        
+
         public PipelineProperties Properties { get; } = new PipelineProperties();
 
     }

@@ -6,7 +6,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup
-    /// Creates an Auto Scaling group.
+    /// Creates an Amazon EC2 Auto Scaling group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html
     /// </summary>
     public class AutoScalingGroupResource : ResourceBase
@@ -53,7 +53,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// desired capacity is reached.
             /// If SpotPrice is set, then DesiredCapacity will not be used as a criteria for success, since
             /// instances will only be started when the spot price has been matched. After the spot price has been
-            /// matched, however, Auto Scaling uses DesiredCapacity as the target capacity for the group.
+            /// matched, however, Amazon EC2 Auto Scaling uses DesiredCapacity as the target capacity for the group.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -62,8 +62,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// HealthCheckGracePeriod
-            /// The length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts
-            /// checking its health.
+            /// The length of time in seconds after a new EC2 instance comes into service that Amazon EC2 Auto
+            /// Scaling starts checking its health.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -118,7 +118,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// The launch template to use to launch instances.
             /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName,
             /// or LaunchTemplate.
-            /// Type: Amazon EC2 Auto Scaling AutoScalingGroup LaunchTemplateSpecification
+            /// Type: LaunchTemplateSpecification
             /// Update requires: No interruption
             /// Important When you update the LaunchTemplate, existing Amazon EC2 instances continue to run with the
             /// configuration that they were originally launched with. To update existing instances, specify an
@@ -128,11 +128,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// LifecycleHookSpecificationList
-            /// The lifecycle hooks for the group, which specify actions to perform when Auto Scaling launches or
-            /// terminates instances. For more information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the
-            /// Amazon EC2 Auto Scaling User Guide.
+            /// The lifecycle hooks for the group, which specify actions to perform when Amazon EC2 Auto Scaling
+            /// launches or terminates instances. For more information, see Amazon EC2 Auto Scaling Lifecycle Hooks
+            /// in the Amazon EC2 Auto Scaling User Guide.
             /// Required: No
-            /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup LifecycleHookSpecification
+            /// Type: List of LifecycleHookSpecification
             /// Update requires: No interruption
             /// </summary>
 			public List<LifecycleHookSpecification> LifecycleHookSpecificationList { get; set; }
@@ -140,7 +140,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             /// LoadBalancerNames
             /// A list of Classic load balancers associated with this Auto Scaling group. To specify Application
-            /// load balancers, use TargetGroupARNs.
+            /// Load Balancers, use TargetGroupARNs.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -173,6 +173,16 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> MinSize { get; set; }
+
+            /// <summary>
+            /// MixedInstancesPolicy
+            /// The mixed instances policy to use to launch instances. This parameter, a launch template, a launch
+            /// configuration, or an Amazon EC2 instance must be specified.
+            /// Required: No
+            /// Type: MixedInstancesPolicy
+            /// Update requires: No interruption
+            /// </summary>
+			public MixedInstancesPolicy MixedInstancesPolicy { get; set; }
 
             /// <summary>
             /// NotificationConfigurations
@@ -210,8 +220,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// Tags
-            /// The Auto Scaling tags to attach to this resource. For more information about Auto Scaling tags, see
-            /// Tagging Auto Scaling Groups and Instances in the Amazon EC2 Auto Scaling User Guide.
+            /// The tags to attach to this resource. For more information, see Tagging Auto Scaling Groups and
+            /// Instances in the Amazon EC2 Auto Scaling User Guide.
             /// Required: No
             /// Type: List of Amazon EC2 Auto Scaling AutoScalingGroup TagProperty
             /// Update requires: No interruption
@@ -256,9 +266,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 			public List<Union<string, IntrinsicFunction>> VPCZoneIdentifier { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AutoScaling::AutoScalingGroup";
-        
+
         public AutoScalingGroupProperties Properties { get; } = new AutoScalingGroupProperties();
 
         /// <summary>

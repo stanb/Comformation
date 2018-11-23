@@ -26,9 +26,9 @@ namespace Comformation.EC2.EgressOnlyInternetGateway
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::EgressOnlyInternetGateway";
-        
+
         public EgressOnlyInternetGatewayProperties Properties { get; } = new EgressOnlyInternetGatewayProperties();
 
     }

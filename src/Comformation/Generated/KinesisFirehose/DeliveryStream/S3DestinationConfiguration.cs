@@ -28,7 +28,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon S3
         /// bucket.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream BufferingHints
+        /// Type: BufferingHints
         /// </summary>
         [JsonProperty("BufferingHints")]
         public BufferingHints BufferingHints { get; set; }

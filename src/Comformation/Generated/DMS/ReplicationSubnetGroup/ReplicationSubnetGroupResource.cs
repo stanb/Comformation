@@ -52,9 +52,9 @@ namespace Comformation.DMS.ReplicationSubnetGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DMS::ReplicationSubnetGroup";
-        
+
         public ReplicationSubnetGroupProperties Properties { get; } = new ReplicationSubnetGroupProperties();
 
     }

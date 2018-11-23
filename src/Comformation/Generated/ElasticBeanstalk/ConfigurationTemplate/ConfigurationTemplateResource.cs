@@ -48,7 +48,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// The options for the Elastic Beanstalk configuration, such as the instance type. For a complete list
             /// of Elastic Beanstalk configuration options, see Option Values, in the AWS Elastic Beanstalk
             /// Developer Guide.
-            /// Type: List of Elastic Beanstalk ConfigurationTemplate ConfigurationOptionSetting
+            /// Type: List of ConfigurationOptionSetting
             /// Required: No
             /// Update requires: Some interruptions
             /// </summary>
@@ -87,16 +87,16 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// property.
             /// You must specify this property if you don&#39;t specify the EnvironmentId or SolutionStackName
             /// properties.
-            /// Type: Elastic Beanstalk ConfigurationTemplate SourceConfiguration
+            /// Type: SourceConfiguration
             /// Required: Conditional
             /// Update requires: Replacement
             /// </summary>
 			public SourceConfiguration SourceConfiguration { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticBeanstalk::ConfigurationTemplate";
-        
+
         public ConfigurationTemplateProperties Properties { get; } = new ConfigurationTemplateProperties();
 
     }

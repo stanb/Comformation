@@ -18,7 +18,7 @@ namespace Comformation.ApiGateway.Deployment
             /// DeploymentCanarySettings
             /// Specifies settings for the canary deployment.
             /// Required: No
-            /// Type: API Gateway Deployment DeploymentCanarySettings
+            /// Type: DeploymentCanarySettings
             /// Update requires: Replacement
             /// </summary>
 			public DeploymentCanarySettings DeploymentCanarySettings { get; set; }
@@ -61,9 +61,9 @@ namespace Comformation.ApiGateway.Deployment
 			public Union<string, IntrinsicFunction> StageName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Deployment";
-        
+
         public DeploymentProperties Properties { get; } = new DeploymentProperties();
 
     }

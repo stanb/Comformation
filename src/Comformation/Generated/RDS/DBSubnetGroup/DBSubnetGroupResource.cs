@@ -53,9 +53,9 @@ namespace Comformation.RDS.DBSubnetGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBSubnetGroup";
-        
+
         public DBSubnetGroupProperties Properties { get; } = new DBSubnetGroupProperties();
 
     }

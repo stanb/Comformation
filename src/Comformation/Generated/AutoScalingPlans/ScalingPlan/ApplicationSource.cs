@@ -7,8 +7,8 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS Auto Scaling ScalingPlan ApplicationSource
-    /// The ApplicationSource property type specifies the application source for an AWS Auto Scaling scaling plan. You
-    /// can create one scaling plan per application source.
+    /// The ApplicationSource property type specifies the application source to use with AWS Auto Scaling. You can
+    /// create one scaling plan per application source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html
     /// </summary>
     public class ApplicationSource
@@ -28,7 +28,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// TagFilters
         /// A set of tags (up to 50).
         /// Required: No
-        /// Type: List of AWS Auto Scaling ScalingPlan TagFilter
+        /// Type: List of TagFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]

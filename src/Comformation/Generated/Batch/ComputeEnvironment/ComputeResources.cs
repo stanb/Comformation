@@ -89,6 +89,19 @@ namespace Comformation.Batch.ComputeEnvironment
         public Union<int, IntrinsicFunction> MinvCpus { get; set; }
 
         /// <summary>
+        /// LaunchTemplate
+        /// The launch template to use for your compute resources. Any other compute resource parameters that
+        /// you specify in a CreateComputeEnvironment API operation override the same parameters in the launch
+        /// template. You must specify either the launch template ID or launch template name in the request, but
+        /// not both. For more information, see Launch Template Support in the AWS Batch User Guide.
+        /// Required: No
+        /// Type: LaunchTemplateSpecification
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("LaunchTemplate")]
+        public LaunchTemplateSpecification LaunchTemplate { get; set; }
+
+        /// <summary>
         /// ImageId
         /// The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
         /// Required: No
@@ -127,6 +140,21 @@ namespace Comformation.Batch.ComputeEnvironment
         /// </summary>
         [JsonProperty("Ec2KeyPair")]
         public Union<string, IntrinsicFunction> Ec2KeyPair { get; set; }
+
+        /// <summary>
+        /// PlacementGroup
+        /// The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+        /// multi-node parallel jobs to your compute environment, you should consider creating a cluster
+        /// placement group and associate it with your compute resources. This keeps your multi-node parallel
+        /// job on a logical grouping of instances within a single Availability Zone with high network flow
+        /// potential. For more information, see Placement Groups in the Amazon EC2 User Guide for Linux
+        /// Instances.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("PlacementGroup")]
+        public Union<string, IntrinsicFunction> PlacementGroup { get; set; }
 
         /// <summary>
         /// Tags

@@ -306,9 +306,9 @@ namespace Comformation.Redshift.Cluster
 			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Redshift::Cluster";
-        
+
         public ClusterProperties Properties { get; } = new ClusterProperties();
 
     }

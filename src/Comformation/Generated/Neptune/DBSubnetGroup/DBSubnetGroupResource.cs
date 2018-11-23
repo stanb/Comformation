@@ -53,9 +53,9 @@ namespace Comformation.Neptune.DBSubnetGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Neptune::DBSubnetGroup";
-        
+
         public DBSubnetGroupProperties Properties { get; } = new DBSubnetGroupProperties();
 
     }

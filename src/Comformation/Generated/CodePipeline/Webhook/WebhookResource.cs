@@ -20,7 +20,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Properties that configure the authentication applied to incoming webhook trigger requests. For more
             /// information, see Webhook Definition in the AWS CodePipeline API Reference.
             /// Required: Yes
-            /// Type: AWS CodePipeline Webhook WebhookAuthConfiguration
+            /// Type: WebhookAuthConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public WebhookAuthConfiguration AuthenticationConfiguration { get; set; }
@@ -30,7 +30,7 @@ namespace Comformation.CodePipeline.Webhook
             /// A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined
             /// rules must pass for the request to be accepted and the pipeline started.
             /// Required: Yes
-            /// Type: List of AWS CodePipeline Webhook WebhookFilterRule property types
+            /// Type: List of WebhookFilterRule property types
             /// Update requires: No interruption
             /// </summary>
 			public List<WebhookFilterRule> Filters { get; set; }
@@ -94,9 +94,9 @@ namespace Comformation.CodePipeline.Webhook
 			public Union<bool, IntrinsicFunction> RegisterWithThirdParty { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodePipeline::Webhook";
-        
+
         public WebhookProperties Properties { get; } = new WebhookProperties();
 
     }

@@ -58,9 +58,9 @@ namespace Comformation.EMR.Step
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EMR::Step";
-        
+
         public StepProperties Properties { get; } = new StepProperties();
 
     }

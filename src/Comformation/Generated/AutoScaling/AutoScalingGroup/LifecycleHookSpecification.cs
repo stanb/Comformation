@@ -7,9 +7,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// Amazon EC2 Auto Scaling AutoScalingGroup LifecycleHookSpecification
-    /// The LifecycleHookSpecification property type defines lifecycle hooks for an Auto Scaling group, which specify
-    /// actions to perform when Auto Scaling launches or terminates instances. For more information, see Amazon EC2
-    /// Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
+    /// The LifecycleHookSpecification property type defines lifecycle hooks for an Amazon EC2 Auto Scaling group,
+    /// which specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances. For more
+    /// information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html
     /// </summary>
     public class LifecycleHookSpecification
@@ -62,8 +62,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// NotificationMetadata
-        /// Additional information to include when Auto Scaling sends a message to the notification target. For
-        /// constraints, see PutLifecycleHook in the Amazon EC2 Auto Scaling API Reference.
+        /// Additional information to include when Amazon EC2 Auto Scaling sends a message to the notification
+        /// target. For constraints, see PutLifecycleHook in the Amazon EC2 Auto Scaling API Reference.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -73,9 +73,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// NotificationTargetARN
-        /// The Amazon Resource Name (ARN) of the target that Auto Scaling sends notifications to when an
-        /// instance is in the transition state for the lifecycle hook. The notification target can be either an
-        /// Amazon SQS queue or an Amazon SNS topic.
+        /// The Amazon Resource Name (ARN) of the target that Amazon EC2 Auto Scaling sends notifications to
+        /// when an instance is in the transition state for the lifecycle hook. The notification target can be
+        /// either an Amazon SQS queue or an Amazon SNS topic.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

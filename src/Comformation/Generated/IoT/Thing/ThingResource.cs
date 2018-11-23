@@ -32,9 +32,9 @@ namespace Comformation.IoT.Thing
 			public Union<string, IntrinsicFunction> ThingName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT::Thing";
-        
+
         public ThingProperties Properties { get; } = new ThingProperties();
 
     }

@@ -80,9 +80,9 @@ namespace Comformation.Cognito.UserPoolClient
 			public List<Union<string, IntrinsicFunction>> WriteAttributes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Cognito::UserPoolClient";
-        
+
         public UserPoolClientProperties Properties { get; } = new UserPoolClientProperties();
 
     }

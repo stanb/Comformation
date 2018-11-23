@@ -28,7 +28,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Processors
         /// The data processors.
         /// Required: Yes
-        /// Type: List of Kinesis Data Firehose DeliveryStream Processor
+        /// Type: List of Processor
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Processors")]

@@ -32,9 +32,9 @@ namespace Comformation.EC2.TrunkInterfaceAssociation
 			public Union<int, IntrinsicFunction> VLANId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::TrunkInterfaceAssociation";
-        
+
         public TrunkInterfaceAssociationProperties Properties { get; } = new TrunkInterfaceAssociationProperties();
 
     }

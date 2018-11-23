@@ -56,9 +56,9 @@ namespace Comformation.GuardDuty.Master
 			public Union<string, IntrinsicFunction> InvitationId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GuardDuty::Master";
-        
+
         public MasterProperties Properties { get; } = new MasterProperties();
 
     }

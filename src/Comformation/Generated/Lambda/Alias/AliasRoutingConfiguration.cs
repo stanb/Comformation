@@ -19,7 +19,7 @@ namespace Comformation.Lambda.Alias
         /// AdditionalVersionWeights
         /// The percentage of traffic that will invoke the updated function version.
         /// Required: Yes
-        /// Type: List of AWS Lambda Alias VersionWeight
+        /// Type: List of VersionWeight
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AdditionalVersionWeights")]

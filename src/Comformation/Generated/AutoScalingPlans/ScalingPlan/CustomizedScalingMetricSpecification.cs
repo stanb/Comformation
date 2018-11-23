@@ -7,8 +7,8 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS Auto Scaling ScalingPlan CustomizedScalingMetricSpecification
-    /// The CustomizedScalingMetricSpecification property type specifies a customized metric for a target tracking
-    /// policy for an AWS Auto Scaling scaling plan.
+    /// The CustomizedScalingMetricSpecification property type specifies a customized metric (an Amazon CloudWatch
+    /// metric of your choosing) for a target tracking configuration to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html
     /// </summary>
     public class CustomizedScalingMetricSpecification
@@ -39,7 +39,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Dimensions
         /// The dimensions of the metric.
         /// Required: No
-        /// Type: List of AWS Auto Scaling ScalingPlan MetricDimension
+        /// Type: List of MetricDimension
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]

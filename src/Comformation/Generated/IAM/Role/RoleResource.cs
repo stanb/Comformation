@@ -60,6 +60,16 @@ namespace Comformation.IAM.Role
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
+            /// PermissionsBoundary
+            /// The ARN of the policy that is used to set the permissions boundary for the role. Minimum length of
+            /// 20. Maximum length of 2048.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> PermissionsBoundary { get; set; }
+
+            /// <summary>
             /// Policies
             /// The policies to associate with this role. For sample templates, see Template Examples.
             /// Important The name of each policy for a role, user, or group must be unique. If you don&#39;t, updates
@@ -98,9 +108,9 @@ namespace Comformation.IAM.Role
 			public Union<string, IntrinsicFunction> RoleName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::Role";
-        
+
         public RoleProperties Properties { get; } = new RoleProperties();
 
     }

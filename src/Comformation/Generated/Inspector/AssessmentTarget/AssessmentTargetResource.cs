@@ -33,9 +33,9 @@ namespace Comformation.Inspector.AssessmentTarget
 			public Union<string, IntrinsicFunction> ResourceGroupArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Inspector::AssessmentTarget";
-        
+
         public AssessmentTargetProperties Properties { get; } = new AssessmentTargetProperties();
 
     }

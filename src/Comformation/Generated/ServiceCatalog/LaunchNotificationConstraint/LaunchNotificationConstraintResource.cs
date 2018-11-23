@@ -60,9 +60,9 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::LaunchNotificationConstraint";
-        
+
         public LaunchNotificationConstraintProperties Properties { get; } = new LaunchNotificationConstraintProperties();
 
     }

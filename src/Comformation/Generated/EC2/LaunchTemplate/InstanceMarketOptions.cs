@@ -18,7 +18,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// SpotOptions
         /// The options for Spot Instances.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate SpotOptions
+        /// Type: SpotOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SpotOptions")]

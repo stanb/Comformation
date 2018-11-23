@@ -62,6 +62,12 @@ namespace Comformation.EC2.SecurityGroup
         public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
         /// <summary>
+        /// SourcePrefixListId
+        /// </summary>
+        [JsonProperty("SourcePrefixListId")]
+        public Union<string, IntrinsicFunction> SourcePrefixListId { get; set; }
+
+        /// <summary>
         /// SourceSecurityGroupId
         /// For VPC security groups only. Specifies the ID of the Amazon EC2 Security Group to allow access. You
         /// can use the Ref intrinsic function to refer to the logical ID of a security group defined in the

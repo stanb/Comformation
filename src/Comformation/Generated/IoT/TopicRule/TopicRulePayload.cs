@@ -45,6 +45,16 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> Description { get; set; }
 
         /// <summary>
+        /// ErrorAction
+        /// The action to take when an error occurs.
+        /// Required: No
+        /// Type: Action
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ErrorAction")]
+        public Action ErrorAction { get; set; }
+
+        /// <summary>
         /// RuleDisabled
         /// Specifies whether the rule is disabled.
         /// Required: Yes

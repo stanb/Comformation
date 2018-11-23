@@ -17,7 +17,7 @@ namespace Comformation.DAX.Cluster
             /// SSESpecification
             /// Whether server-side encryption is enabled or not.
             /// Required: No
-            /// Type: DAX Cluster SSESpecification
+            /// Type: SSESpecification
             /// Update requires: Replacement
             /// </summary>
 			public SSESpecification SSESpecification { get; set; }
@@ -149,9 +149,9 @@ namespace Comformation.DAX.Cluster
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DAX::Cluster";
-        
+
         public ClusterProperties Properties { get; } = new ClusterProperties();
 
     }

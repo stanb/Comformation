@@ -27,11 +27,11 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         /// <summary>
         /// ScalableTargetAction
         /// The new minimum and maximum capacity. You can set both values or just one. During the scheduled
-        /// time, 				 if the current capacity is below the minimum capacity, Application Auto Scaling scales
-        /// out to the minimum capacity. 				 If the current capacity is above the maximum capacity, Application
-        /// Auto Scaling scales in to the maximum capacity.
+        /// time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to
+        /// the minimum capacity. If the current capacity is above the maximum capacity, Application Auto
+        /// Scaling scales in to the maximum capacity.
         /// Required: No
-        /// Type: Application Auto Scaling ScalableTarget ScalableTargetAction
+        /// Type: ScalableTargetAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ScalableTargetAction")]
@@ -43,10 +43,9 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         /// At expressions - at(yyyy-mm-ddThh:mm:ss) At expressions are useful for one-time schedules. Specify
         /// the time in UTC. Rate expressions - rate(value unit) For rate expressions, value is a positive
         /// integer, and unit is minute, minutes, hour, hours, day, or days. Cron expressions - cron(fields) For
-        /// more information about cron expressions, see Cron.
-        /// 					
-        /// For constraints, see the 					 ScheduledAction data type in the Application Auto Scaling API
-        /// Reference.
+        /// more information about cron expressions, see Cron Expressions in the Amazon CloudWatch Events User
+        /// Guide.
+        /// For constraints, see the ScheduledAction data type in the Application Auto Scaling API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -56,8 +55,8 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
         /// <summary>
         /// ScheduledActionName
-        /// The name of the scheduled action. 				 For constraints, see the 					 ScheduledAction data type in
-        /// the Application Auto Scaling API Reference.
+        /// The name of the scheduled action. For constraints, see the ScheduledAction data type in the
+        /// Application Auto Scaling API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

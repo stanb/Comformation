@@ -18,7 +18,7 @@ namespace Comformation.Glue.Connection
             /// ConnectionInput
             /// The connection that you want to create.
             /// Required: Yes
-            /// Type: AWS Glue Connection ConnectionInput
+            /// Type: ConnectionInput
             /// Update requires: No interruption
             /// </summary>
 			public ConnectionInput ConnectionInput { get; set; }
@@ -36,9 +36,9 @@ namespace Comformation.Glue.Connection
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Glue::Connection";
-        
+
         public ConnectionProperties Properties { get; } = new ConnectionProperties();
 
     }

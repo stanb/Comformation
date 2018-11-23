@@ -33,9 +33,9 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
 			public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::TagOptionAssociation";
-        
+
         public TagOptionAssociationProperties Properties { get; } = new TagOptionAssociationProperties();
 
     }

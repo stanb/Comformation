@@ -69,6 +69,15 @@ namespace Comformation.IoT.TopicRule
         public FirehoseAction Firehose { get; set; }
 
         /// <summary>
+        /// IotAnalytics
+        /// Sends message data to an AWS IoT Analytics channel.
+        /// Required: No
+        /// Type: AWS IoT TopicRule IotAnalyticsAction
+        /// </summary>
+        [JsonProperty("IotAnalytics")]
+        public IotAnalyticsAction IotAnalytics { get; set; }
+
+        /// <summary>
         /// Kinesis
         /// Writes data to an Kinesis stream.
         /// Required: No
@@ -121,6 +130,15 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("Sqs")]
         public SqsAction Sqs { get; set; }
+
+        /// <summary>
+        /// StepFunctions
+        /// Starts execution of a Step Functions state machine.
+        /// Required: No
+        /// Type: AWS IoT TopicRule StepFunctionsAction
+        /// </summary>
+        [JsonProperty("StepFunctions")]
+        public StepFunctionsAction StepFunctions { get; set; }
 
     }
 }

@@ -26,7 +26,7 @@ namespace Comformation.Events.EventBusPolicy
             /// If you specify Condition with an AWS organization ID, you must specify &quot;*&quot; as the value for
             /// Principal. This grants permission to all the accounts in the named organization.
             /// Required: No
-            /// Type: Amazon CloudWatch Events EventBusPolicy Condition
+            /// Type: Condition
             /// Update requires: No interruption
             /// </summary>
 			public Condition Condition { get; set; }
@@ -63,9 +63,9 @@ namespace Comformation.Events.EventBusPolicy
 			public Union<string, IntrinsicFunction> Principal { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Events::EventBusPolicy";
-        
+
         public EventBusPolicyProperties Properties { get; } = new EventBusPolicyProperties();
 
     }

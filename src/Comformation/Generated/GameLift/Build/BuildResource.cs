@@ -44,9 +44,9 @@ namespace Comformation.GameLift.Build
 			public Union<string, IntrinsicFunction> Version { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GameLift::Build";
-        
+
         public BuildProperties Properties { get; } = new BuildProperties();
 
     }

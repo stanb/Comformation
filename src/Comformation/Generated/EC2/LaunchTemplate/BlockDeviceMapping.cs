@@ -17,7 +17,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Ebs
         /// Parameters used to automatically set up EBS volumes when the instance is launched.
         /// Required: No
-        /// Type: Amazon EC2 LaunchTemplate Ebs
+        /// Type: Ebs
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ebs")]

@@ -89,12 +89,23 @@ namespace Comformation.EC2.SecurityGroupIngress
 			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
             /// <summary>
+            /// SourcePrefixListId
+            /// The AWS service prefix of an Amazon VPC endpoint. For more information, see VPC Endpoints in the
+            /// Amazon VPC User Guide.
+            /// Type: String
+            /// Required: Conditional. You must specify a source security group (SourcePrefixListId,
+            /// SourceSecurityGroupId, or SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> SourcePrefixListId { get; set; }
+
+            /// <summary>
             /// SourceSecurityGroupId
             /// Specifies the ID of the source security group or uses the Ref intrinsic function to refer to the
             /// logical ID of a security group defined in the same template.
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
-            /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: Conditional. You must specify a source security group (SourcePrefixListId,
+            /// SourceSecurityGroupId, or SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupId { get; set; }
@@ -105,8 +116,8 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// the Ref intrinsic function to refer to the logical ID of a security group defined in the same
             /// template. For instances in a VPC, specify the SourceSecurityGroupId property.
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
-            /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: Conditional. You must specify a source security group (SourcePrefixListId,
+            /// SourceSecurityGroupId, or SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupName { get; set; }
@@ -134,9 +145,9 @@ namespace Comformation.EC2.SecurityGroupIngress
 			public Union<int, IntrinsicFunction> ToPort { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SecurityGroupIngress";
-        
+
         public SecurityGroupIngressProperties Properties { get; } = new SecurityGroupIngressProperties();
 
     }

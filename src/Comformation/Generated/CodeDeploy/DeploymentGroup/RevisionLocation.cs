@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup Deployment Revision
+    /// AWS CodeDeploy DeploymentGroup Revision
     /// Revision is a property of the AWS::CodeDeploy::DeploymentGroup property that defines the location of the AWS
     /// CodeDeploy application revision to deploy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html

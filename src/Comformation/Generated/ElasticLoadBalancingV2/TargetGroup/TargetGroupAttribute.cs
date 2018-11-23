@@ -9,7 +9,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
     /// Elastic Load Balancing TargetGroup TargetGroupAttributes
     /// TargetGroupAttributes is a property of the AWS::ElasticLoadBalancingV2::TargetGroup resource that configures
     /// settings for an Elastic Load Balancing target group. For more information, see Target Group Attributes in the
-    /// Application Load Balancers Guide.
+    /// User Guide for Application Load Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattributes.html
     /// </summary>
     public class TargetGroupAttribute

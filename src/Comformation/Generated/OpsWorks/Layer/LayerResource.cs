@@ -189,15 +189,15 @@ namespace Comformation.OpsWorks.Layer
             /// VolumeConfigurations
             /// Describes the Amazon EBS volumes for this layer.
             /// Required: No
-            /// Type: A list of AWS OpsWorks VolumeConfiguration Type
+            /// Type: A list of AWS OpsWorks VolumeConfiguration
             /// Update requires: Some interruptions
             /// </summary>
 			public List<VolumeConfiguration> VolumeConfigurations { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::Layer";
-        
+
         public LayerProperties Properties { get; } = new LayerProperties();
 
     }

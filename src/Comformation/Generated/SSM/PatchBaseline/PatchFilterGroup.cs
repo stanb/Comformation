@@ -18,7 +18,7 @@ namespace Comformation.SSM.PatchBaseline
         /// PatchFilters
         /// The set of patch filters that make up the group.
         /// Required: No
-        /// Type: List of Systems Manager PatchBaseline PatchFilter
+        /// Type: List of PatchFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchFilters")]

@@ -45,9 +45,9 @@ namespace Comformation.EC2.VolumeAttachment
 			public Union<string, IntrinsicFunction> VolumeId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VolumeAttachment";
-        
+
         public VolumeAttachmentProperties Properties { get; } = new VolumeAttachmentProperties();
 
     }

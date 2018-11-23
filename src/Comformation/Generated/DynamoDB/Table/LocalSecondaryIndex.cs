@@ -31,7 +31,7 @@ namespace Comformation.DynamoDB.Table
         /// attribute names and key types. For local secondary indexes, the hash key must be the same as that of
         /// the source table.
         /// Required: Yes
-        /// Type: List of DynamoDB Table KeySchema
+        /// Type: List of KeySchema
         /// </summary>
         [JsonProperty("KeySchema")]
         public List<KeySchema> KeySchema { get; set; }
@@ -41,7 +41,7 @@ namespace Comformation.DynamoDB.Table
         /// Attributes that are copied (projected) from the source table into the index. These attributes are
         /// additions to the primary key attributes and index key attributes, which are automatically projected.
         /// Required: Yes
-        /// Type: DynamoDB Table Projection
+        /// Type: Projection
         /// </summary>
         [JsonProperty("Projection")]
         public Projection Projection { get; set; }

@@ -224,9 +224,9 @@ namespace Comformation.OpsWorks.Instance
 			public List<Union<string, IntrinsicFunction>> Volumes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::Instance";
-        
+
         public InstanceProperties Properties { get; } = new InstanceProperties();
 
     }

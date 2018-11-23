@@ -30,7 +30,7 @@ namespace Comformation.SES.ReceiptRule
             /// The specified rule&#39;s name, actions, recipients, domains, enabled status, scan status, and TLS
             /// policy.
             /// Required: Yes
-            /// Type: Amazon SES ReceiptRule Rule
+            /// Type: Rule
             /// Update requires: No interruption
             /// </summary>
 			public Rule Rule { get; set; }
@@ -45,9 +45,9 @@ namespace Comformation.SES.ReceiptRule
 			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SES::ReceiptRule";
-        
+
         public ReceiptRuleProperties Properties { get; } = new ReceiptRuleProperties();
 
     }

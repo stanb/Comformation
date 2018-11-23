@@ -32,9 +32,9 @@ namespace Comformation.EC2.SubnetCidrBlock
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SubnetCidrBlock";
-        
+
         public SubnetCidrBlockProperties Properties { get; } = new SubnetCidrBlockProperties();
 
     }

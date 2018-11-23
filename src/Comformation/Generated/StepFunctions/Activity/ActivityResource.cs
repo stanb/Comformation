@@ -23,9 +23,9 @@ namespace Comformation.StepFunctions.Activity
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::StepFunctions::Activity";
-        
+
         public ActivityProperties Properties { get; } = new ActivityProperties();
 
     }

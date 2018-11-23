@@ -98,9 +98,9 @@ namespace Comformation.EC2.FlowLog
 			public Union<string, IntrinsicFunction> TrafficType { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::FlowLog";
-        
+
         public FlowLogProperties Properties { get; } = new FlowLogProperties();
 
     }

@@ -32,9 +32,9 @@ namespace Comformation.IoT.TopicRule
 			public TopicRulePayload TopicRulePayload { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT::TopicRule";
-        
+
         public TopicRuleProperties Properties { get; } = new TopicRuleProperties();
 
     }

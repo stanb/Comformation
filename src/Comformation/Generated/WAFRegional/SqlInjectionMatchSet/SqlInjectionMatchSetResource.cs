@@ -35,9 +35,9 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::SqlInjectionMatchSet";
-        
+
         public SqlInjectionMatchSetProperties Properties { get; } = new SqlInjectionMatchSetProperties();
 
     }

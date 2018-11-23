@@ -177,9 +177,9 @@ namespace Comformation.Cognito.UserPool
 			public Union<string, IntrinsicFunction> EmailVerificationMessage { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Cognito::UserPool";
-        
+
         public UserPoolProperties Properties { get; } = new UserPoolProperties();
 
     }

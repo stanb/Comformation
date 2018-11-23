@@ -79,7 +79,7 @@ namespace Comformation.SSM.PatchBaseline
             /// ApprovalRules
             /// A set of rules that are used to include patches in the baseline.
             /// Required: No
-            /// Type: Systems Manager PatchBaseline RuleGroup
+            /// Type: RuleGroup
             /// Update requires: No interruption
             /// </summary>
 			public RuleGroup ApprovalRules { get; set; }
@@ -88,7 +88,7 @@ namespace Comformation.SSM.PatchBaseline
             /// GlobalFilters
             /// A set of global filters that are used to exclude patches from the baseline.
             /// Required: No
-            /// Type: Systems Manager PatchBaseline PatchFilterGroup
+            /// Type: PatchFilterGroup
             /// Update requires: No interruption
             /// </summary>
 			public PatchFilterGroup GlobalFilters { get; set; }
@@ -117,9 +117,9 @@ namespace Comformation.SSM.PatchBaseline
 			public List<Union<string, IntrinsicFunction>> RejectedPatches { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SSM::PatchBaseline";
-        
+
         public PatchBaselineProperties Properties { get; } = new PatchBaselineProperties();
 
     }

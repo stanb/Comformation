@@ -28,7 +28,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// RecordColumns
         /// A list of Amazon Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn objects.
         /// Required: Yes
-        /// Type: List of Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn
+        /// Type: List of RecordColumn
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumns")]
@@ -38,7 +38,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// RecordFormat
         /// Specifies the format of the records on the streaming source.
         /// Required: Yes
-        /// Type: Kinesis Data Analytics ApplicationReferenceDataSource RecordFormat
+        /// Type: RecordFormat
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormat")]

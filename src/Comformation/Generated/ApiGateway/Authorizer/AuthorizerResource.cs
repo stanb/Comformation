@@ -129,9 +129,9 @@ namespace Comformation.ApiGateway.Authorizer
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Authorizer";
-        
+
         public AuthorizerProperties Properties { get; } = new AuthorizerProperties();
 
     }

@@ -70,9 +70,9 @@ namespace Comformation.RDS.DBSecurityGroupIngress
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBSecurityGroupIngress";
-        
+
         public DBSecurityGroupIngressProperties Properties { get; } = new DBSecurityGroupIngressProperties();
 
     }

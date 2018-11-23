@@ -19,10 +19,20 @@ namespace Comformation.RDS.DBCluster
             /// AvailabilityZones
             /// A list of Availability Zones (AZs) in which DB instances in the cluster can be created.
             /// Required: No
-            /// Type: String
+            /// Type: List of String values
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
+
+            /// <summary>
+            /// BacktrackWindow
+            /// The target backtrack window, in seconds. To disable backtracking, specify 0. If specified, this
+            /// property must be set to a number from 0 to 259,200 (72 hours).
+            /// Required: No
+            /// Type: Long
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<long, IntrinsicFunction> BacktrackWindow { get; set; }
 
             /// <summary>
             /// BackupRetentionPeriod
@@ -78,6 +88,40 @@ namespace Comformation.RDS.DBCluster
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+
+            /// <summary>
+            /// DeletionProtection
+            /// Indicates whether the DB cluster should have deletion protection enabled. The database can&#39;t be
+            /// deleted when this value is set to true. If you want to delete a stack with a protected cluster,
+            /// update this value to false before you delete the stack.
+            /// For more information, see Deleting a DB Instance.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
+
+            /// <summary>
+            /// EnableCloudwatchLogsExports
+            /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the
+            /// list depend on the DB engine being used. Log types that are excluded or removed from this list
+            /// during updates are disabled. For more information, see Publishing Database Logs to Amazon CloudWatch
+            /// Logs in the Amazon Aurora User Guide.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
+
+            /// <summary>
+            /// EnableIAMDatabaseAuthentication
+            /// If set to true, enables mapping of AWS Identity and Access Management (IAM) accounts to database
+            /// accounts.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> EnableIAMDatabaseAuthentication { get; set; }
 
             /// <summary>
             /// Engine
@@ -157,7 +201,7 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// PreferredBackupWindow
-            /// if automated backups are enabled (see the BackupRetentionPeriod property), the daily time range in
+            /// If automated backups are enabled (see the BackupRetentionPeriod property), the daily time range in
             /// UTC during which you want to create automated backups.
             /// For valid values, see the PreferredBackupWindow parameter of the CreateDBInstance action in the
             /// Amazon RDS API Reference.
@@ -193,7 +237,7 @@ namespace Comformation.RDS.DBCluster
             /// ScalingConfiguration
             /// For DB clusters in serverless DB engine mode, the scaling properties of the DB cluster.
             /// Required: No
-            /// Type: Amazon RDS DBCluster ScalingConfiguration
+            /// Type: ScalingConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public ScalingConfiguration ScalingConfiguration { get; set; }
@@ -222,7 +266,7 @@ namespace Comformation.RDS.DBCluster
             /// Tags
             /// The tags that you want to attach to this DB cluster.
             /// Required: No
-            /// Type: A list of resource tags
+            /// Type: List of Resource Tag property types
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
@@ -237,9 +281,9 @@ namespace Comformation.RDS.DBCluster
 			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBCluster";
-        
+
         public DBClusterProperties Properties { get; } = new DBClusterProperties();
 
     }

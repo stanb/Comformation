@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.LaunchConfiguration
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling EBS Block Device Property Type
-    /// The AutoScaling EBS Block Device type is an embedded property of the Amazon EC2 Auto Scaling Block Device
-    /// Mapping type.
+    /// Amazon EC2 Auto Scaling LaunchConfig BlockDevice
+    /// The Amazon EC2 Auto Scaling EBS BlockDevice type is an embedded property of the Amazon EC2 Auto Scaling
+    /// LaunchConfiguration BlockDeviceMapping type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html
     /// </summary>
     public class BlockDevice
@@ -16,8 +16,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// DeleteOnTermination
-        /// Indicates whether to delete the volume when the instance is terminated. By default, Auto Scaling
-        /// uses true.
+        /// Indicates whether to delete the volume when the instance is terminated. By default, Amazon EC2 Auto
+        /// Scaling uses true.
         /// Required: No
         /// Type: Boolean
         /// </summary>
@@ -71,8 +71,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// VolumeType
-        /// The volume type. By default, Auto Scaling uses the standard volume type. For more information, see
-        /// Ebs in the Amazon EC2 Auto Scaling API Reference.
+        /// The volume type. By default, Amazon EC2 Auto Scaling uses the standard volume type. For more
+        /// information, see Ebs in the Amazon EC2 Auto Scaling API Reference.
         /// Required: No
         /// Type: String
         /// </summary>

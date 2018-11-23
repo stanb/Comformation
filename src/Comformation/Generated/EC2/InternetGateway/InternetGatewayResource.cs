@@ -24,9 +24,9 @@ namespace Comformation.EC2.InternetGateway
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::InternetGateway";
-        
+
         public InternetGatewayProperties Properties { get; } = new InternetGatewayProperties();
 
     }

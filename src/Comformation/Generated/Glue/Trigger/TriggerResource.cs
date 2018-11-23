@@ -36,7 +36,7 @@ namespace Comformation.Glue.Trigger
             /// Actions
             /// The actions that the job trigger initiates when it fires.
             /// Required: Yes
-            /// Type: List of AWS Glue Trigger Action
+            /// Type: List of Action
             /// Update requires: No interruption
             /// </summary>
 			public List<Action> Actions { get; set; }
@@ -63,15 +63,15 @@ namespace Comformation.Glue.Trigger
             /// Predicate
             /// The predicate of the job trigger, which determines when the trigger fires.
             /// Required: No
-            /// Type: AWS Glue Trigger Predicate
+            /// Type: Predicate
             /// Update requires: No interruption
             /// </summary>
 			public Predicate Predicate { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Glue::Trigger";
-        
+
         public TriggerProperties Properties { get; } = new TriggerProperties();
 
     }

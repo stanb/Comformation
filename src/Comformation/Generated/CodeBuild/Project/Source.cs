@@ -41,7 +41,7 @@ namespace Comformation.CodeBuild.Project
         /// Note Your code shouldn&#39;t get or set this information directly unless the project&#39;s source type is
         /// GITHUB.
         /// Required: No
-        /// Type: AWS CodeBuild Project SourceAuth
+        /// Type: SourceAuth
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Auth")]

@@ -36,7 +36,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// UseCallerCredentials
-        /// Set to TRUE to use Amazon Cognito credentials with this data source.
+        /// Set to TRUE to use AWS IAM with this data source.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

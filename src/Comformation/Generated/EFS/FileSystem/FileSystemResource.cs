@@ -85,9 +85,9 @@ namespace Comformation.EFS.FileSystem
 			public Union<string, IntrinsicFunction> ThroughputMode { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EFS::FileSystem";
-        
+
         public FileSystemProperties Properties { get; } = new FileSystemProperties();
 
     }

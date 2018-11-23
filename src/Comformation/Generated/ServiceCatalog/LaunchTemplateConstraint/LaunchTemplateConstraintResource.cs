@@ -60,9 +60,9 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
 			public Union<string, IntrinsicFunction> Rules { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::LaunchTemplateConstraint";
-        
+
         public LaunchTemplateConstraintProperties Properties { get; } = new LaunchTemplateConstraintProperties();
 
     }

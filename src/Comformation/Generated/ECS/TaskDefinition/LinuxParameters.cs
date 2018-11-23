@@ -19,7 +19,7 @@ namespace Comformation.ECS.TaskDefinition
         /// The Linux capabilities for the container that are added to or dropped from the default configuration
         /// provided by Docker.
         /// Required: No
-        /// Type: Amazon ECS TaskDefinition KernelCapabilities
+        /// Type: KernelCapabilities
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Capabilities")]
@@ -30,7 +30,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Any host devices to expose to the container. This maps to Devices in the Create a container section
         /// of the Docker Remote API and the --device option to docker run.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition Device property types
+        /// Type: List of Device property types
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Devices")]
@@ -68,7 +68,7 @@ namespace Comformation.ECS.TaskDefinition
         /// --tmpfs option to docker run.
         /// Note If you are using tasks that use the Fargate launch type, Tmpfs is not supported.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition Tmpfs property types
+        /// Type: List of Tmpfs property types
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Tmpfs")]

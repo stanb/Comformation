@@ -102,9 +102,9 @@ namespace Comformation.EC2.NetworkAclEntry
 			public Union<int, IntrinsicFunction> RuleNumber { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::NetworkAclEntry";
-        
+
         public NetworkAclEntryProperties Properties { get; } = new NetworkAclEntryProperties();
 
     }

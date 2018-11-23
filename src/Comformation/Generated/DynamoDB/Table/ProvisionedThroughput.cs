@@ -16,7 +16,7 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// ReadCapacityUnits
-        /// Sets the desired minimum number of consistent reads of items (up to 1KB in size) per second for the
+        /// Sets the desired minimum number of consistent reads of items (up to 4KB in size) per second for the
         /// specified table before Amazon DynamoDB balances the load.
         /// Required: Yes
         /// Type: Number

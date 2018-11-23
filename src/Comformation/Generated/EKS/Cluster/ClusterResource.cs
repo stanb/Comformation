@@ -56,9 +56,9 @@ namespace Comformation.EKS.Cluster
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EKS::Cluster";
-        
+
         public ClusterProperties Properties { get; } = new ClusterProperties();
 
     }

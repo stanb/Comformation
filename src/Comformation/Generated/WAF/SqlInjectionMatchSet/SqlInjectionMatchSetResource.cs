@@ -35,9 +35,9 @@ namespace Comformation.WAF.SqlInjectionMatchSet
 			public List<SqlInjectionMatchTuple> SqlInjectionMatchTuples { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAF::SqlInjectionMatchSet";
-        
+
         public SqlInjectionMatchSetProperties Properties { get; } = new SqlInjectionMatchSetProperties();
 
     }

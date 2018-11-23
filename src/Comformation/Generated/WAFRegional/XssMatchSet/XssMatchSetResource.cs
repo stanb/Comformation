@@ -34,9 +34,9 @@ namespace Comformation.WAFRegional.XssMatchSet
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::XssMatchSet";
-        
+
         public XssMatchSetProperties Properties { get; } = new XssMatchSetProperties();
 
     }

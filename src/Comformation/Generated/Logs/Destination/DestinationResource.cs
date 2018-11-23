@@ -55,9 +55,9 @@ namespace Comformation.Logs.Destination
 			public Union<string, IntrinsicFunction> TargetArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Logs::Destination";
-        
+
         public DestinationProperties Properties { get; } = new DestinationProperties();
 
     }

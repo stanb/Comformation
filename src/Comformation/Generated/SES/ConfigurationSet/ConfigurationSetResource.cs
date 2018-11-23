@@ -27,9 +27,9 @@ namespace Comformation.SES.ConfigurationSet
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SES::ConfigurationSet";
-        
+
         public ConfigurationSetProperties Properties { get; } = new ConfigurationSetProperties();
 
     }

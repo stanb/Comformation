@@ -55,9 +55,9 @@ namespace Comformation.CloudFormation.WaitCondition
 			public Union<string, IntrinsicFunction> Timeout { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudFormation::WaitCondition";
-        
+
         public WaitConditionProperties Properties { get; } = new WaitConditionProperties();
 
         /// <summary>

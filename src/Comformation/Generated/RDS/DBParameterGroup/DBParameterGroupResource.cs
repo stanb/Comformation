@@ -54,9 +54,9 @@ namespace Comformation.RDS.DBParameterGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBParameterGroup";
-        
+
         public DBParameterGroupProperties Properties { get; } = new DBParameterGroupProperties();
 
     }

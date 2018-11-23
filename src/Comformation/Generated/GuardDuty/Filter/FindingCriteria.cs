@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
-    /// GuardDuty Filter FindingCriteria
+    /// Amazon GuardDuty Filter FindingCriteria
     /// The FindingCriteria property type specifies the attributes to be used in the filter and the conditions to be
     /// applied to the selected attributes for filtering through your GuardDuty findings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html
@@ -29,7 +29,7 @@ namespace Comformation.GuardDuty.Filter
         /// ItemType
         /// Specifies the condition to be applied to a single field when filtering through findings.
         /// Required: No
-        /// Type: GuardDuty Filter Condition
+        /// Type: Condition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ItemType")]

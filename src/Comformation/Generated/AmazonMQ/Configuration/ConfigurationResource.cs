@@ -16,7 +16,7 @@ namespace Comformation.AmazonMQ.Configuration
             /// <summary>
             /// EngineVersion
             /// The version of the broker engine.
-            /// Note Currently, Amazon MQ supports only 5. 15. 0.
+            /// Note For a list of supported engine versions, see: Broker Engine.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -62,9 +62,9 @@ namespace Comformation.AmazonMQ.Configuration
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AmazonMQ::Configuration";
-        
+
         public ConfigurationProperties Properties { get; } = new ConfigurationProperties();
 
     }

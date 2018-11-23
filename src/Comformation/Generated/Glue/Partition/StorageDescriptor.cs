@@ -48,7 +48,7 @@ namespace Comformation.Glue.Partition
         /// SkewedInfo
         /// Information about values that appear very frequently in a column (skewed values).
         /// Required: No
-        /// Type: AWS Glue Partition SkewedInfo
+        /// Type: SkewedInfo
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedInfo")]
@@ -92,7 +92,7 @@ namespace Comformation.Glue.Partition
         /// Columns
         /// The columns in the partition.
         /// Required: No
-        /// Type: List of AWS Glue Partition Column
+        /// Type: List of Column
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Columns")]
@@ -103,7 +103,7 @@ namespace Comformation.Glue.Partition
         /// Information about a serialization/deserialization program (SerDe), which serves as an extractor and
         /// loader.
         /// Required: No
-        /// Type: AWS Glue Partition SerdeInfo
+        /// Type: SerdeInfo
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SerdeInfo")]
@@ -113,7 +113,7 @@ namespace Comformation.Glue.Partition
         /// SortColumns
         /// The sort order of each bucket in the partition.
         /// Required: No
-        /// Type: List of AWS Glue Partition Order
+        /// Type: List of Order
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SortColumns")]

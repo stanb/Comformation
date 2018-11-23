@@ -42,9 +42,9 @@ namespace Comformation.ApiGateway.UsagePlanKey
 			public Union<string, IntrinsicFunction> UsagePlanId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::UsagePlanKey";
-        
+
         public UsagePlanKeyProperties Properties { get; } = new UsagePlanKeyProperties();
 
     }

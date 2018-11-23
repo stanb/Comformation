@@ -42,9 +42,9 @@ namespace Comformation.ServiceCatalog.PortfolioShare
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::PortfolioShare";
-        
+
         public PortfolioShareProperties Properties { get; } = new PortfolioShareProperties();
 
     }

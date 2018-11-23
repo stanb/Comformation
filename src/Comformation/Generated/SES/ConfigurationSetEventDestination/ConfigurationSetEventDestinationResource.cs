@@ -28,15 +28,15 @@ namespace Comformation.SES.ConfigurationSetEventDestination
             /// EventDestination
             /// The AWS service that email sending event information will be published to.
             /// Required: Yes
-            /// Type: Amazon SES ConfigurationSetEventDestination EventDestination
+            /// Type: EventDestination
             /// Update requires: No interruption
             /// </summary>
 			public EventDestination EventDestination { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SES::ConfigurationSetEventDestination";
-        
+
         public ConfigurationSetEventDestinationProperties Properties { get; } = new ConfigurationSetEventDestinationProperties();
 
     }

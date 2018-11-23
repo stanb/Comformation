@@ -50,7 +50,7 @@ namespace Comformation.CloudTrail.Trail
             /// EventSelectors
             /// Configures logging for management and data events.
             /// Required: No
-            /// Type: List of CloudTrail Trail EventSelector
+            /// Type: List of EventSelector
             /// Update requires: No interruption
             /// </summary>
 			public List<EventSelector> EventSelectors { get; set; }
@@ -144,9 +144,9 @@ namespace Comformation.CloudTrail.Trail
 			public Union<string, IntrinsicFunction> TrailName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudTrail::Trail";
-        
+
         public TrailProperties Properties { get; } = new TrailProperties();
 
     }

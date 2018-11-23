@@ -72,9 +72,9 @@ namespace Comformation.RDS.EventSubscription
 			public Union<string, IntrinsicFunction> SourceType { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::EventSubscription";
-        
+
         public EventSubscriptionProperties Properties { get; } = new EventSubscriptionProperties();
 
     }

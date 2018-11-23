@@ -96,9 +96,9 @@ namespace Comformation.IAM.ManagedPolicy
 			public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::ManagedPolicy";
-        
+
         public ManagedPolicyProperties Properties { get; } = new ManagedPolicyProperties();
 
     }

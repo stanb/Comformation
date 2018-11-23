@@ -46,9 +46,9 @@ namespace Comformation.WAFRegional.Rule
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::Rule";
-        
+
         public RuleProperties Properties { get; } = new RuleProperties();
 
     }

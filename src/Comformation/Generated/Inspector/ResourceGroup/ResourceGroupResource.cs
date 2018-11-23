@@ -24,9 +24,9 @@ namespace Comformation.Inspector.ResourceGroup
 			public List<Tag> ResourceGroupTags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Inspector::ResourceGroup";
-        
+
         public ResourceGroupProperties Properties { get; } = new ResourceGroupProperties();
 
     }
