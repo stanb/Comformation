@@ -42,9 +42,9 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
 			public Union<string, IntrinsicFunction> Username { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Cognito::UserPoolUserToGroupAttachment";
-        
+
         public UserPoolUserToGroupAttachmentProperties Properties { get; } = new UserPoolUserToGroupAttachmentProperties();
 
     }

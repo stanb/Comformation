@@ -17,7 +17,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
             /// ApplicationSource
             /// A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
             /// Required: Yes
-            /// Type: AWS Auto Scaling ScalingPlan ApplicationSource
+            /// Type: ApplicationSource
             /// Update requires: No interruption
             /// </summary>
 			public ApplicationSource ApplicationSource { get; set; }
@@ -26,16 +26,22 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
             /// ScalingInstructions
             /// The scaling instructions.
             /// Required: Yes
-            /// Type: List of AWS Auto Scaling ScalingPlan ScalingInstruction property types
+            /// Type: List of ScalingInstruction property types
             /// Update requires: No interruption
             /// </summary>
 			public List<ScalingInstruction> ScalingInstructions { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AutoScalingPlans::ScalingPlan";
-        
+
         public ScalingPlanProperties Properties { get; } = new ScalingPlanProperties();
 
     }
+
+	public static class ScalingPlanAttributes
+	{
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ScalingPlanName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ScalingPlanName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ScalingPlanVersion = new ResourceAttribute<Union<string, IntrinsicFunction>>("ScalingPlanVersion");
+	}
 }

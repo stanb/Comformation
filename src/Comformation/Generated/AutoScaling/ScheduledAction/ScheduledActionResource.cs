@@ -6,8 +6,8 @@ namespace Comformation.AutoScaling.ScheduledAction
 {
     /// <summary>
     /// AWS::AutoScaling::ScheduledAction
-    /// Creates a scheduled scaling action for an Auto Scaling group, changing the number of servers available for
-    /// your application in response to predictable load changes.
+    /// Creates a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers
+    /// available for your application in response to predictable load changes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html
     /// </summary>
     public class ScheduledActionResource : ResourceBase
@@ -85,9 +85,9 @@ namespace Comformation.AutoScaling.ScheduledAction
 			public Union<string, IntrinsicFunction> StartTime { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AutoScaling::ScheduledAction";
-        
+
         public ScheduledActionProperties Properties { get; } = new ScheduledActionProperties();
 
     }

@@ -28,15 +28,15 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
             /// Output
             /// An array of objects, each describing one output configuration.
             /// Required: Yes
-            /// Type: Kinesis Data Analytics ApplicationOutput Output
+            /// Type: Output
             /// Update requires: No interruption
             /// </summary>
 			public Output Output { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::KinesisAnalytics::ApplicationOutput";
-        
+
         public ApplicationOutputProperties Properties { get; } = new ApplicationOutputProperties();
 
     }

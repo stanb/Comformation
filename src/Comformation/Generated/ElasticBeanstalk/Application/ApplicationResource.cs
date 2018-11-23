@@ -41,15 +41,15 @@ namespace Comformation.ElasticBeanstalk.Application
             /// Defines lifecycle settings for resources that belong to the application, and the service role that
             /// Elastic Beanstalk assumes in order to apply lifecycle settings.
             /// Required: No
-            /// Type: Elastic Beanstalk Application ApplicationResourceLifecycleConfig
+            /// Type: ApplicationResourceLifecycleConfig
             /// Update requires:&#160;No interruption
             /// </summary>
 			public ApplicationResourceLifecycleConfig ResourceLifecycleConfig { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticBeanstalk::Application";
-        
+
         public ApplicationProperties Properties { get; } = new ApplicationProperties();
 
     }

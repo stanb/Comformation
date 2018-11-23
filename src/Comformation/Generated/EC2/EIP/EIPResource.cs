@@ -38,10 +38,20 @@ namespace Comformation.EC2.EIP
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
+            /// <summary>
+            /// PublicIpv4Pool
+            /// Specifies the ID of an address pool that you own to let Amazon EC2 select an address from the
+            /// address pool.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> PublicIpv4Pool { get; set; }
+
         }
-    
+
         public string Type { get; } = "AWS::EC2::EIP";
-        
+
         public EIPProperties Properties { get; } = new EIPProperties();
 
     }

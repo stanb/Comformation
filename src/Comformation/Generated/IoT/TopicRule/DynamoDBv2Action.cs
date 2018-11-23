@@ -18,7 +18,7 @@ namespace Comformation.IoT.TopicRule
         /// PutItem
         /// Specifies the database table to which to write the item for an AWS IoT topic rule.
         /// Required: No
-        /// Type: AWS IoT TopicRule PutItemInput
+        /// Type: PutItemInput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PutItem")]

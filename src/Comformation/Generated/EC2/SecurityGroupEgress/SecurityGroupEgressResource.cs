@@ -106,9 +106,9 @@ namespace Comformation.EC2.SecurityGroupEgress
 			public Union<int, IntrinsicFunction> ToPort { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SecurityGroupEgress";
-        
+
         public SecurityGroupEgressProperties Properties { get; } = new SecurityGroupEgressProperties();
 
     }

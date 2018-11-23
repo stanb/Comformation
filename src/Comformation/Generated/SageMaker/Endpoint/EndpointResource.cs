@@ -46,9 +46,9 @@ namespace Comformation.SageMaker.Endpoint
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SageMaker::Endpoint";
-        
+
         public EndpointProperties Properties { get; } = new EndpointProperties();
 
     }

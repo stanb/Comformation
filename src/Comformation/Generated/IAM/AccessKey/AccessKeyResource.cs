@@ -45,9 +45,9 @@ namespace Comformation.IAM.AccessKey
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::AccessKey";
-        
+
         public AccessKeyProperties Properties { get; } = new AccessKeyProperties();
 
     }

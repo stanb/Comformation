@@ -86,9 +86,9 @@ namespace Comformation.SNS.Subscription
 			public Union<string, IntrinsicFunction> TopicArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SNS::Subscription";
-        
+
         public SubscriptionProperties Properties { get; } = new SubscriptionProperties();
 
     }

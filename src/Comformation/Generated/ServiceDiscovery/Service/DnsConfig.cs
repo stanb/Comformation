@@ -22,7 +22,7 @@ namespace Comformation.ServiceDiscovery.Service
         /// 					
         /// Required: Yes
         /// 					
-        /// Type: List of 						Amazon Route&#160;53 ServiceDiscovery DnsRecord
+        /// Type: List of 						DnsRecord
         /// 					
         /// Update requires: No interruption
         /// 				

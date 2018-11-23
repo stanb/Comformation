@@ -43,9 +43,9 @@ namespace Comformation.Redshift.ClusterSubnetGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Redshift::ClusterSubnetGroup";
-        
+
         public ClusterSubnetGroupProperties Properties { get; } = new ClusterSubnetGroupProperties();
 
     }

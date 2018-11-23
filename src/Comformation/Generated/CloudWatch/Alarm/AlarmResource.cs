@@ -71,6 +71,17 @@ namespace Comformation.CloudWatch.Alarm
 			public Union<string, IntrinsicFunction> ComparisonOperator { get; set; }
 
             /// <summary>
+            /// DatapointsToAlarm
+            /// The number of datapoints that must be breaching to trigger the alarm. This is used only if you are
+            /// setting an &quot;M out of N&quot; alarm. In that case, this value is the M. For more information, see
+            /// Evaluating an Alarm in the Amazon CloudWatch User Guide.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<int, IntrinsicFunction> DatapointsToAlarm { get; set; }
+
+            /// <summary>
             /// Dimensions
             /// The dimensions of the metric for the alarm.
             /// Required: No
@@ -123,7 +134,7 @@ namespace Comformation.CloudWatch.Alarm
             /// The name of the metric associated with the alarm. For more information about the metrics that you
             /// can specify, see Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference in the Amazon
             /// CloudWatch User Guide.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -132,7 +143,7 @@ namespace Comformation.CloudWatch.Alarm
             /// <summary>
             /// Namespace
             /// The namespace of the metric that is associated with the alarm.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -152,7 +163,7 @@ namespace Comformation.CloudWatch.Alarm
             /// <summary>
             /// Period
             /// The time over which the specified statistic is applied. Specify time in seconds, in multiples of 60.
-            /// Required: Yes
+            /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
@@ -204,9 +215,9 @@ namespace Comformation.CloudWatch.Alarm
 			public Union<string, IntrinsicFunction> Unit { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudWatch::Alarm";
-        
+
         public AlarmProperties Properties { get; } = new AlarmProperties();
 
     }

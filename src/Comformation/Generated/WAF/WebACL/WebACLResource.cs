@@ -54,9 +54,9 @@ namespace Comformation.WAF.WebACL
 			public List<ActivatedRule> Rules { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAF::WebACL";
-        
+
         public WebACLProperties Properties { get; } = new WebACLProperties();
 
     }

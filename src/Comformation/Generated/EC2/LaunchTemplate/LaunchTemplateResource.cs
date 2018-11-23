@@ -30,15 +30,15 @@ namespace Comformation.EC2.LaunchTemplate
             /// LaunchTemplateData
             /// The information for the launch template.
             /// Required: No
-            /// Type: Amazon EC2 LaunchTemplate LaunchTemplateData
+            /// Type: LaunchTemplateData
             /// Update requires: No interruption
             /// </summary>
 			public LaunchTemplateData LaunchTemplateData { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::LaunchTemplate";
-        
+
         public LaunchTemplateProperties Properties { get; } = new LaunchTemplateProperties();
 
     }

@@ -122,9 +122,9 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::LoadBalancer";
-        
+
         public LoadBalancerProperties Properties { get; } = new LoadBalancerProperties();
 
     }

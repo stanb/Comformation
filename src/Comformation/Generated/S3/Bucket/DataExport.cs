@@ -18,7 +18,7 @@ namespace Comformation.S3.Bucket
         /// Destination
         /// Information about where to publish the analytics results.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket Destination
+        /// Type: Destination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destination")]

@@ -72,9 +72,9 @@ namespace Comformation.EC2.VPC
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPC";
-        
+
         public VPCProperties Properties { get; } = new VPCProperties();
 
     }

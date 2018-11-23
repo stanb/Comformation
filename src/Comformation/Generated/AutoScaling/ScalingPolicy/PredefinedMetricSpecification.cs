@@ -7,8 +7,8 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// Amazon EC2 Auto Scaling ScalingPolicy PredefinedMetricSpecification
-    /// The PredefinedMetricSpecification property configures a predefined metric for a target tracking policy in
-    /// Amazon EC2 Auto Scaling. PredefinedMetricSpecification is a subproperty of the Amazon EC2 Auto Scaling
+    /// The PredefinedMetricSpecification property configures a predefined metric for a target tracking policy to use
+    /// with Amazon EC2 Auto Scaling. PredefinedMetricSpecification is a subproperty of the Amazon EC2 Auto Scaling
     /// ScalingPolicy TargetTrackingConfiguration property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html
     /// </summary>

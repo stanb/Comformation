@@ -60,9 +60,9 @@ namespace Comformation.ServiceCatalog.LaunchRoleConstraint
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::LaunchRoleConstraint";
-        
+
         public LaunchRoleConstraintProperties Properties { get; } = new LaunchRoleConstraintProperties();
 
     }

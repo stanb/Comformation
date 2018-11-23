@@ -36,9 +36,9 @@ namespace Comformation.CloudWatch.Dashboard
 			public Union<string, IntrinsicFunction> DashboardBody { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudWatch::Dashboard";
-        
+
         public DashboardProperties Properties { get; } = new DashboardProperties();
 
     }

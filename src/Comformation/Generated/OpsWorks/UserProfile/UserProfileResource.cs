@@ -54,9 +54,9 @@ namespace Comformation.OpsWorks.UserProfile
 			public Union<string, IntrinsicFunction> SshUsername { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::UserProfile";
-        
+
         public UserProfileProperties Properties { get; } = new UserProfileProperties();
 
     }

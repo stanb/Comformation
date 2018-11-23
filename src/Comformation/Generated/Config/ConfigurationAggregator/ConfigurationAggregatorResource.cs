@@ -19,7 +19,7 @@ namespace Comformation.Config.ConfigurationAggregator
             /// AccountAggregationSources
             /// A collection of accounts and regions.
             /// Required: No
-            /// Type: List of AWS Config ConfigurationAggregator AccountAggregationSource property types
+            /// Type: List of AccountAggregationSource property types
             /// Update requires: No interruption
             /// </summary>
 			public List<AccountAggregationSource> AccountAggregationSources { get; set; }
@@ -37,15 +37,15 @@ namespace Comformation.Config.ConfigurationAggregator
             /// OrganizationAggregationSource
             /// A collection of regions and IAM role to retrieve AWS Organizations details.
             /// Required: No
-            /// Type: AWS Config ConfigurationAggregator OrganizationAggregationSource
+            /// Type: OrganizationAggregationSource
             /// Update requires: No interruption
             /// </summary>
 			public OrganizationAggregationSource OrganizationAggregationSource { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Config::ConfigurationAggregator";
-        
+
         public ConfigurationAggregatorProperties Properties { get; } = new ConfigurationAggregatorProperties();
 
     }

@@ -42,7 +42,7 @@ namespace Comformation.S3.Bucket
         /// Specifies a list of tag filters to use as a metrics configuration filter. The metrics configuration
         /// includes only objects that meet the filter&#39;s criteria.
         /// Required: No
-        /// Type: List of Amazon S3 Bucket TagFilter
+        /// Type: List of TagFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]

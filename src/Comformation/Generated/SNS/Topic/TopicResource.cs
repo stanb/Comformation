@@ -23,6 +23,15 @@ namespace Comformation.SNS.Topic
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
 
             /// <summary>
+            /// KmsMasterKeyId
+            /// An AWS KMS key identifier. This can be a key ID, key ARN, or key alias.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> KmsMasterKeyId { get; set; }
+
+            /// <summary>
             /// Subscription
             /// The SNS subscriptions (endpoints) for this topic.
             /// Required: No
@@ -45,9 +54,9 @@ namespace Comformation.SNS.Topic
 			public Union<string, IntrinsicFunction> TopicName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SNS::Topic";
-        
+
         public TopicProperties Properties { get; } = new TopicProperties();
 
     }

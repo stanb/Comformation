@@ -19,7 +19,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// The names, default values, and sources of the dimensions associated with an CloudWatch event
         /// destination.
         /// Required: No
-        /// Type: Amazon SES ConfigurationSetEventDestination CloudWatchDestination
+        /// Type: CloudWatchDestination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchDestination")]
@@ -65,7 +65,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// Contains the delivery stream ARN and the IAM role ARN associated with an Kinesis Data Firehose event
         /// destination.
         /// Required: No
-        /// Type: Amazon SES ConfigurationSetEventDestination KinesisFirehoseDestination
+        /// Type: KinesisFirehoseDestination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisFirehoseDestination")]

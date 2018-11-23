@@ -86,9 +86,9 @@ namespace Comformation.Events.Rule
 			public List<Target> Targets { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Events::Rule";
-        
+
         public RuleProperties Properties { get; } = new RuleProperties();
 
     }

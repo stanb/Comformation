@@ -14,17 +14,6 @@ namespace Comformation.Batch.JobDefinition
     {
 
         /// <summary>
-        /// MountPoints
-        /// The mount points for data volumes in your container. This parameter maps to Volumes in the Create a
-        /// container section of the Docker Remote API and the --volume option to docker run.
-        /// Required: no
-        /// Type: List of AWS Batch JobDefinition MountPoints
-        /// Update requires: No Interruption
-        /// </summary>
-        [JsonProperty("MountPoints")]
-        public List<MountPoints> MountPoints { get; set; }
-
-        /// <summary>
         /// User
         /// The user name to use inside the container. This parameter maps to User in the Create a container
         /// section of the Docker Remote API and the --user option to docker run.
@@ -34,27 +23,6 @@ namespace Comformation.Batch.JobDefinition
         /// </summary>
         [JsonProperty("User")]
         public Union<string, IntrinsicFunction> User { get; set; }
-
-        /// <summary>
-        /// Volumes
-        /// A list of data volumes used in a job.
-        /// Required: no
-        /// Type: List of AWS Batch JobDefinition Volumes
-        /// Update requires: No Interruption
-        /// </summary>
-        [JsonProperty("Volumes")]
-        public List<Volumes> Volumes { get; set; }
-
-        /// <summary>
-        /// Command
-        /// The command that is passed to the container. This parameter maps to Cmd in the Create a container
-        /// section of the Docker Remote API and the COMMAND parameter to docker run.
-        /// Required: no
-        /// Type: List of String values
-        /// Update requires: No Interruption
-        /// </summary>
-        [JsonProperty("Command")]
-        public List<Union<string, IntrinsicFunction>> Command { get; set; }
 
         /// <summary>
         /// Memory
@@ -81,19 +49,6 @@ namespace Comformation.Batch.JobDefinition
         public Union<bool, IntrinsicFunction> Privileged { get; set; }
 
         /// <summary>
-        /// Environment
-        /// The environment variables to pass to a container. This parameter maps to Env in the Create a
-        /// container section of the Docker Remote API and the --env option to docker run.
-        /// Important We do not recommend using plain text environment variables for sensitive information, such
-        /// as credential data.
-        /// Required: no
-        /// Type: List of AWS Batch JobDefinition Environment
-        /// Update requires: No Interruption
-        /// </summary>
-        [JsonProperty("Environment")]
-        public List<Environment> Environment { get; set; }
-
-        /// <summary>
         /// JobRoleArn
         /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
         /// Required: no
@@ -114,17 +69,6 @@ namespace Comformation.Batch.JobDefinition
         /// </summary>
         [JsonProperty("ReadonlyRootFilesystem")]
         public Union<bool, IntrinsicFunction> ReadonlyRootFilesystem { get; set; }
-
-        /// <summary>
-        /// Ulimits
-        /// A list of ulimits to set in the container. This parameter maps to Ulimits in the Create a container
-        /// section of the Docker Remote API and the --ulimit option to docker run.
-        /// Required: no
-        /// Type: List of AWS Batch JobDefinition Ulimit
-        /// Update requires: No Interruption
-        /// </summary>
-        [JsonProperty("Ulimits")]
-        public List<Ulimit> Ulimits { get; set; }
 
         /// <summary>
         /// Vcpus
@@ -158,6 +102,68 @@ namespace Comformation.Batch.JobDefinition
         /// </summary>
         [JsonProperty("Image")]
         public Union<string, IntrinsicFunction> Image { get; set; }
+
+        /// <summary>
+        /// MountPoints
+        /// The mount points for data volumes in your container. This parameter maps to Volumes in the Create a
+        /// container section of the Docker Remote API and the --volume option to docker run.
+        /// Required: no
+        /// Type: List of AWS Batch JobDefinition MountPoints
+        /// Update requires: No Interruption
+        /// </summary>
+        [JsonProperty("MountPoints")]
+        public List<MountPoints> MountPoints { get; set; }
+
+        /// <summary>
+        /// Volumes
+        /// A list of data volumes used in a job.
+        /// Required: no
+        /// Type: List of AWS Batch JobDefinition Volumes
+        /// Update requires: No Interruption
+        /// </summary>
+        [JsonProperty("Volumes")]
+        public List<Volumes> Volumes { get; set; }
+
+        /// <summary>
+        /// Command
+        /// The command that is passed to the container. This parameter maps to Cmd in the Create a container
+        /// section of the Docker Remote API and the COMMAND parameter to docker run.
+        /// Required: no
+        /// Type: List of String values
+        /// Update requires: No Interruption
+        /// </summary>
+        [JsonProperty("Command")]
+        public List<Union<string, IntrinsicFunction>> Command { get; set; }
+
+        /// <summary>
+        /// Environment
+        /// The environment variables to pass to a container. This parameter maps to Env in the Create a
+        /// container section of the Docker Remote API and the --env option to docker run.
+        /// Important We do not recommend using plain text environment variables for sensitive information, such
+        /// as credential data.
+        /// Required: no
+        /// Type: List of AWS Batch JobDefinition Environment
+        /// Update requires: No Interruption
+        /// </summary>
+        [JsonProperty("Environment")]
+        public List<Environment> Environment { get; set; }
+
+        /// <summary>
+        /// Ulimits
+        /// A list of ulimits to set in the container. This parameter maps to Ulimits in the Create a container
+        /// section of the Docker Remote API and the --ulimit option to docker run.
+        /// Required: no
+        /// Type: List of AWS Batch JobDefinition Ulimit
+        /// Update requires: No Interruption
+        /// </summary>
+        [JsonProperty("Ulimits")]
+        public List<Ulimit> Ulimits { get; set; }
+
+        /// <summary>
+        /// InstanceType
+        /// </summary>
+        [JsonProperty("InstanceType")]
+        public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
     }
 }

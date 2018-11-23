@@ -18,7 +18,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// DestinationSchema
         /// The data format when records are written to the destination.
         /// Required: Yes
-        /// Type: Kinesis Data Analytics ApplicationOutput DestinationSchema
+        /// Type: DestinationSchema
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DestinationSchema")]
@@ -28,7 +28,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// LambdaOutput
         /// Identifies a Lambda function as the destination.
         /// Required: Conditional.
-        /// Type: Kinesis Data Analytics ApplicationOutput LambdaOutput
+        /// Type: LambdaOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaOutput")]
@@ -38,7 +38,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// KinesisFirehoseOutput
         /// Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
         /// Required: Conditional.
-        /// Type: Kinesis Data Analytics ApplicationOutput KinesisFirehoseOutput
+        /// Type: KinesisFirehoseOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisFirehoseOutput")]
@@ -48,7 +48,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// KinesisStreamsOutput
         /// Identifies an Amazon Kinesis stream as the destination.
         /// Required: Conditional.
-        /// Type: Kinesis Data Analytics ApplicationOutput KinesisStreamsOutput
+        /// Type: KinesisStreamsOutput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisStreamsOutput")]

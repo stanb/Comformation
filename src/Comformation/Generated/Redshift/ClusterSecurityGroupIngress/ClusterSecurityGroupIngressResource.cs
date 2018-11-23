@@ -52,9 +52,9 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Redshift::ClusterSecurityGroupIngress";
-        
+
         public ClusterSecurityGroupIngressProperties Properties { get; } = new ClusterSecurityGroupIngressProperties();
 
     }

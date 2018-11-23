@@ -128,9 +128,9 @@ namespace Comformation.EC2.NetworkInterface
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::NetworkInterface";
-        
+
         public NetworkInterfaceProperties Properties { get; } = new NetworkInterfaceProperties();
 
     }

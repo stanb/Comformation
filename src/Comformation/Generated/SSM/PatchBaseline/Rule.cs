@@ -29,7 +29,7 @@ namespace Comformation.SSM.PatchBaseline
         /// PatchFilterGroup
         /// The patch filter group that defines the criteria for the rule.
         /// Required: No
-        /// Type: Systems Manager PatchBaseline PatchFilterGroup
+        /// Type: PatchFilterGroup
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchFilterGroup")]

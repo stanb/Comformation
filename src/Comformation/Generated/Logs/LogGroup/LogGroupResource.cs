@@ -40,9 +40,9 @@ namespace Comformation.Logs.LogGroup
 			public Union<int, IntrinsicFunction> RetentionInDays { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Logs::LogGroup";
-        
+
         public LogGroupProperties Properties { get; } = new LogGroupProperties();
 
     }

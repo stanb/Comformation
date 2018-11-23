@@ -19,7 +19,7 @@ namespace Comformation.SES.ReceiptRule
         /// Rejects the received email by returning a bounce response to the sender and, optionally, publishes a
         /// notification to Amazon SNS.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule BounceAction
+        /// Type: BounceAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BounceAction")]
@@ -30,7 +30,7 @@ namespace Comformation.SES.ReceiptRule
         /// Saves the received message to an Amazon S3 bucket and, optionally, publishes a notification to
         /// Amazon SNS.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule S3Action
+        /// Type: S3Action
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Action")]
@@ -41,7 +41,7 @@ namespace Comformation.SES.ReceiptRule
         /// Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon
         /// SNS.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule StopAction
+        /// Type: StopAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StopAction")]
@@ -51,7 +51,7 @@ namespace Comformation.SES.ReceiptRule
         /// SNSAction
         /// Publishes the email content within a notification to Amazon SNS.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule SNSAction
+        /// Type: SNSAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SNSAction")]
@@ -61,7 +61,7 @@ namespace Comformation.SES.ReceiptRule
         /// WorkmailAction
         /// Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule WorkmailAction
+        /// Type: WorkmailAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("WorkmailAction")]
@@ -71,7 +71,7 @@ namespace Comformation.SES.ReceiptRule
         /// AddHeaderAction
         /// Adds a header to the received email.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule AddHeaderAction
+        /// Type: AddHeaderAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AddHeaderAction")]
@@ -81,7 +81,7 @@ namespace Comformation.SES.ReceiptRule
         /// LambdaAction
         /// Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.
         /// Required: No
-        /// Type: Amazon SES ReceiptRule LambdaAction
+        /// Type: LambdaAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaAction")]

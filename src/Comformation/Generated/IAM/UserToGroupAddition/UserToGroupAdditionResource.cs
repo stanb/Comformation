@@ -31,9 +31,9 @@ namespace Comformation.IAM.UserToGroupAddition
 			public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::UserToGroupAddition";
-        
+
         public UserToGroupAdditionProperties Properties { get; } = new UserToGroupAdditionProperties();
 
     }

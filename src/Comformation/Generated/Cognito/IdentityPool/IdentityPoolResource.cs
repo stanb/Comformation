@@ -47,9 +47,9 @@ namespace Comformation.Cognito.IdentityPool
             /// the DeveloperProviderName, you can use letters and periods (. ), underscores (_), and dashes (-).
             /// Required: No
             /// Type: String
+            /// Minimum length: 1
+            /// Maximum length: 100
             /// Update requires: No interruption
-            /// MinLength: 1
-            /// MaxLength: 100
             /// </summary>
 			public Union<string, IntrinsicFunction> DeveloperProviderName { get; set; }
 
@@ -67,9 +67,10 @@ namespace Comformation.Cognito.IdentityPool
             /// The name of your Amazon Cognito identity pool.
             /// Required: No
             /// Type: String
+            /// Minimum length: 1
+            /// Maximum length: 128
+            /// Pattern: [\w ]+
             /// Update requires: No interruption
-            /// MinLength: 1
-            /// MaxLength: 128
             /// </summary>
 			public Union<string, IntrinsicFunction> IdentityPoolName { get; set; }
 
@@ -110,9 +111,9 @@ namespace Comformation.Cognito.IdentityPool
 			public List<Union<string, IntrinsicFunction>> OpenIdConnectProviderARNs { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Cognito::IdentityPool";
-        
+
         public IdentityPoolProperties Properties { get; } = new IdentityPoolProperties();
 
     }

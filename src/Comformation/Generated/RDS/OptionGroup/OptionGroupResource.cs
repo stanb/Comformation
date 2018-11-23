@@ -37,7 +37,7 @@ namespace Comformation.RDS.OptionGroup
             /// OptionConfigurations
             /// The configurations for this option group.
             /// Required: Yes
-            /// Type: List of Amazon RDS OptionGroup OptionConfiguration
+            /// Type: List of OptionConfiguration
             /// Update requires: Replacement
             /// </summary>
 			public List<OptionConfiguration> OptionConfigurations { get; set; }
@@ -61,9 +61,9 @@ namespace Comformation.RDS.OptionGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::OptionGroup";
-        
+
         public OptionGroupProperties Properties { get; } = new OptionGroupProperties();
 
     }

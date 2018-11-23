@@ -56,9 +56,9 @@ namespace Comformation.IAM.ServiceLinkedRole
 			public Union<string, IntrinsicFunction> AWSServiceName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::ServiceLinkedRole";
-        
+
         public ServiceLinkedRoleProperties Properties { get; } = new ServiceLinkedRoleProperties();
 
     }

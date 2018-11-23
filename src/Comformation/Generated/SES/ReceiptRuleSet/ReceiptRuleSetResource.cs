@@ -26,9 +26,9 @@ namespace Comformation.SES.ReceiptRuleSet
 			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SES::ReceiptRuleSet";
-        
+
         public ReceiptRuleSetProperties Properties { get; } = new ReceiptRuleSetProperties();
 
     }

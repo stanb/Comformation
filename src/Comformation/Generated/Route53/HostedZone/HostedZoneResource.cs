@@ -65,9 +65,9 @@ namespace Comformation.Route53.HostedZone
 			public List<VPC> VPCs { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Route53::HostedZone";
-        
+
         public HostedZoneProperties Properties { get; } = new HostedZoneProperties();
 
     }

@@ -7,8 +7,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS CodeDeploy DeploymentGroup Deployment Revision S3Location
-    /// S3Location is a property of the AWS CodeDeploy DeploymentGroup Deployment Revision property that specifies the
-    /// location of an application revision that is stored in Amazon Simple Storage Service (Amazon S3).
+    /// S3Location is a property of the AWS CodeDeploy DeploymentGroup Revision property that specifies the location
+    /// of an application revision that is stored in Amazon Simple Storage Service (Amazon S3).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html
     /// </summary>
     public class S3Location

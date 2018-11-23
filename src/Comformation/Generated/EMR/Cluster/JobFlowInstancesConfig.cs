@@ -117,6 +117,16 @@ namespace Comformation.EMR.Cluster
         public Union<string, IntrinsicFunction> HadoopVersion { get; set; }
 
         /// <summary>
+        /// KeepJobFlowAliveWhenNoSteps
+        /// Specifies whether the cluster should remain available after completing all steps.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("KeepJobFlowAliveWhenNoSteps")]
+        public Union<bool, IntrinsicFunction> KeepJobFlowAliveWhenNoSteps { get; set; }
+
+        /// <summary>
         /// MasterInstanceFleet
         /// The instance fleet settings for the master instance (master node).
         /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later,

@@ -63,9 +63,9 @@ namespace Comformation.Batch.ComputeEnvironment
 			public Union<string, IntrinsicFunction> State { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Batch::ComputeEnvironment";
-        
+
         public ComputeEnvironmentProperties Properties { get; } = new ComputeEnvironmentProperties();
 
     }

@@ -43,9 +43,9 @@ namespace Comformation.ApiGateway.DocumentationPart
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::DocumentationPart";
-        
+
         public DocumentationPartProperties Properties { get; } = new DocumentationPartProperties();
 
     }

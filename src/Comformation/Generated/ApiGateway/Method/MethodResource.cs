@@ -147,9 +147,9 @@ namespace Comformation.ApiGateway.Method
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Method";
-        
+
         public MethodProperties Properties { get; } = new MethodProperties();
 
     }

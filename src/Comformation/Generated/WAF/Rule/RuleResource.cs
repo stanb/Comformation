@@ -46,9 +46,9 @@ namespace Comformation.WAF.Rule
 			public List<Predicate> Predicates { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAF::Rule";
-        
+
         public RuleProperties Properties { get; } = new RuleProperties();
 
     }

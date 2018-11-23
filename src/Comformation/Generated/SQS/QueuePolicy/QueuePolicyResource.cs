@@ -35,9 +35,9 @@ namespace Comformation.SQS.QueuePolicy
 			public List<Union<string, IntrinsicFunction>> Queues { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SQS::QueuePolicy";
-        
+
         public QueuePolicyProperties Properties { get; } = new QueuePolicyProperties();
 
     }

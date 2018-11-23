@@ -28,9 +28,9 @@ namespace Comformation.EC2.PlacementGroup
 			public Union<string, IntrinsicFunction> Strategy { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::PlacementGroup";
-        
+
         public PlacementGroupProperties Properties { get; } = new PlacementGroupProperties();
 
     }

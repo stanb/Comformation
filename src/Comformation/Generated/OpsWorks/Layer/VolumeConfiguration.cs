@@ -6,12 +6,21 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
-    /// AWS OpsWorks VolumeConfiguration Type
+    /// AWS OpsWorks VolumeConfiguration
     /// Describes the Amazon EBS volumes for the AWS::OpsWorks::Layer resource type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfig.html
     /// </summary>
     public class VolumeConfiguration
     {
+
+        /// <summary>
+        /// Encrypted
+        /// Specifies whether an Amazon EBS volume is encrypted.
+        /// Required: No
+        /// Type: Boolean
+        /// </summary>
+        [JsonProperty("Encrypted")]
+        public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
         /// <summary>
         /// Iops

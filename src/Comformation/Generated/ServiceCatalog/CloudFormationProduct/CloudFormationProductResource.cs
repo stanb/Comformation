@@ -99,16 +99,15 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// ProvisioningArtifactParameters
             /// The configuration of the provisioning artifact (also known as a version) for a product.
             /// Required: Yes
-            /// Type: List of AWS Service Catalog CloudFormationProduct ProvisioningArtifactProperties property
-            /// types
+            /// Type: List of ProvisioningArtifactProperties property types
             /// Update requires: No interruption
             /// </summary>
 			public List<ProvisioningArtifactProperties> ProvisioningArtifactParameters { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::CloudFormationProduct";
-        
+
         public CloudFormationProductProperties Properties { get; } = new CloudFormationProductProperties();
 
     }

@@ -39,7 +39,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Required: No
             /// 					
-            /// Type: Route&#160;53 ServiceDiscovery Service HealthCheckCustomConfig
+            /// Type: HealthCheckCustomConfig
             /// 					
             /// Update requires: No interruption
             /// 				
@@ -54,12 +54,17 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Required: Yes
             /// 					
-            /// Type: Amazon Route&#160;53 ServiceDiscovery DnsConfig
+            /// Type: DnsConfig
             /// 					
             /// Update requires: No interruption
             /// 				
             /// </summary>
 			public DnsConfig DnsConfig { get; set; }
+
+            /// <summary>
+            /// NamespaceId
+            /// </summary>
+			public Union<string, IntrinsicFunction> NamespaceId { get; set; }
 
             /// <summary>
             /// HealthCheckConfig
@@ -73,7 +78,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Required: No
             /// 					
-            /// Type: Amazon Route&#160;53 ServiceDiscovery HealthCheckConfig
+            /// Type: HealthCheckConfig
             /// 					
             /// Update requires: No interruption
             /// 				
@@ -95,9 +100,9 @@ namespace Comformation.ServiceDiscovery.Service
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceDiscovery::Service";
-        
+
         public ServiceProperties Properties { get; } = new ServiceProperties();
 
     }

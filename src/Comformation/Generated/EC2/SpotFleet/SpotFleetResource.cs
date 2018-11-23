@@ -25,9 +25,9 @@ namespace Comformation.EC2.SpotFleet
 			public SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SpotFleet";
-        
+
         public SpotFleetProperties Properties { get; } = new SpotFleetProperties();
 
     }

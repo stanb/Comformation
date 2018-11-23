@@ -51,10 +51,14 @@ namespace Comformation.RDS.DBCluster
         public Union<int, IntrinsicFunction> MinCapacity { get; set; }
 
         /// <summary>
-        /// SecondsBeforeAutoPause
+        /// SecondsUntilAutoPause
+        /// The time, in seconds, before an Aurora DB cluster in serverless mode is paused.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("SecondsBeforeAutoPause")]
-        public Union<int, IntrinsicFunction> SecondsBeforeAutoPause { get; set; }
+        [JsonProperty("SecondsUntilAutoPause")]
+        public Union<int, IntrinsicFunction> SecondsUntilAutoPause { get; set; }
 
     }
 }

@@ -44,7 +44,7 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// TargetGroupArn
-        /// An Application load balancer target group Amazon Resource Name (ARN) to associate with the Amazon
+        /// An Application Load Balancer target group Amazon Resource Name (ARN) to associate with the Amazon
         /// ECS service.
         /// Required: No
         /// Type: String

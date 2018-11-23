@@ -116,9 +116,9 @@ namespace Comformation.EC2.Route
 			public Union<string, IntrinsicFunction> VpcPeeringConnectionId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::Route";
-        
+
         public RouteProperties Properties { get; } = new RouteProperties();
 
     }

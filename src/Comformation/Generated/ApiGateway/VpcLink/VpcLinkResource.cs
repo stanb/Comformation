@@ -44,9 +44,9 @@ namespace Comformation.ApiGateway.VpcLink
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::VpcLink";
-        
+
         public VpcLinkProperties Properties { get; } = new VpcLinkProperties();
 
     }

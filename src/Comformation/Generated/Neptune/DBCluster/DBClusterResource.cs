@@ -156,9 +156,9 @@ namespace Comformation.Neptune.DBCluster
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Neptune::DBCluster";
-        
+
         public DBClusterProperties Properties { get; } = new DBClusterProperties();
 
     }

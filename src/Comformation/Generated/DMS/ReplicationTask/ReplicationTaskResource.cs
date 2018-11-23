@@ -98,9 +98,9 @@ namespace Comformation.DMS.ReplicationTask
 			public Union<double, IntrinsicFunction> CdcStartTime { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DMS::ReplicationTask";
-        
+
         public ReplicationTaskProperties Properties { get; } = new ReplicationTaskProperties();
 
     }

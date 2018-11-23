@@ -75,9 +75,9 @@ namespace Comformation.SSM.ResourceDataSync
 			public Union<string, IntrinsicFunction> BucketPrefix { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SSM::ResourceDataSync";
-        
+
         public ResourceDataSyncProperties Properties { get; } = new ResourceDataSyncProperties();
 
     }

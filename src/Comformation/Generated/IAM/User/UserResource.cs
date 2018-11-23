@@ -51,6 +51,16 @@ namespace Comformation.IAM.User
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
+            /// PermissionsBoundary
+            /// The ARN of the policy that is used to set the permissions boundary for the user. Minimum length of
+            /// 20. Maximum length of 2048.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> PermissionsBoundary { get; set; }
+
+            /// <summary>
             /// Policies
             /// The policies to associate with this user. For information about policies, see Overview of IAM
             /// Policies in the IAM User Guide.
@@ -84,9 +94,9 @@ namespace Comformation.IAM.User
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::User";
-        
+
         public UserProperties Properties { get; } = new UserProperties();
 
     }

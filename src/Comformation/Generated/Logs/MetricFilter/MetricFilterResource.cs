@@ -51,9 +51,9 @@ namespace Comformation.Logs.MetricFilter
 			public List<MetricTransformation> MetricTransformations { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Logs::MetricFilter";
-        
+
         public MetricFilterProperties Properties { get; } = new MetricFilterProperties();
 
     }

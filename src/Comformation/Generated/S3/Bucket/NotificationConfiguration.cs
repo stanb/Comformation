@@ -17,7 +17,7 @@ namespace Comformation.S3.Bucket
         /// LambdaConfigurations
         /// The AWS Lambda functions to invoke and the events for which to invoke the functions.
         /// Required: No
-        /// Type: Amazon S3 Bucket LambdaConfiguration
+        /// Type: LambdaConfiguration
         /// </summary>
         [JsonProperty("LambdaConfigurations")]
         public List<LambdaConfiguration> LambdaConfigurations { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.S3.Bucket
         /// The Amazon Simple Queue Service queues to publish messages to and the events for which to publish
         /// messages.
         /// Required: No
-        /// Type: Amazon S3 Bucket QueueConfiguration
+        /// Type: QueueConfiguration
         /// </summary>
         [JsonProperty("QueueConfigurations")]
         public List<QueueConfiguration> QueueConfigurations { get; set; }
@@ -36,7 +36,7 @@ namespace Comformation.S3.Bucket
         /// TopicConfigurations
         /// The topic to which notifications are sent and the events for which notification are generated.
         /// Required: No
-        /// Type: Amazon S3 Bucket TopicConfiguration
+        /// Type: TopicConfiguration
         /// </summary>
         [JsonProperty("TopicConfigurations")]
         public List<TopicConfiguration> TopicConfigurations { get; set; }

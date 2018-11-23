@@ -190,9 +190,9 @@ namespace Comformation.Lambda.Function
 			public VpcConfig VpcConfig { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Lambda::Function";
-        
+
         public FunctionProperties Properties { get; } = new FunctionProperties();
 
     }

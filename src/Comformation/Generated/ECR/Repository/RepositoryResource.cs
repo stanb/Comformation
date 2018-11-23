@@ -19,7 +19,7 @@ namespace Comformation.ECR.Repository
             /// LifecyclePolicy
             /// A lifecycle policy for the repository.
             /// Required: No
-            /// Type: Amazon ECR Repository LifecyclePolicy
+            /// Type: LifecyclePolicy
             /// Update requires: No interruption
             /// </summary>
 			public LifecyclePolicy LifecyclePolicy { get; set; }
@@ -49,9 +49,9 @@ namespace Comformation.ECR.Repository
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RepositoryPolicyText { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ECR::Repository";
-        
+
         public RepositoryProperties Properties { get; } = new RepositoryProperties();
 
     }

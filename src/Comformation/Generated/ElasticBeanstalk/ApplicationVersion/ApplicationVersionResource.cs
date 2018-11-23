@@ -41,9 +41,9 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
 			public SourceBundle SourceBundle { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticBeanstalk::ApplicationVersion";
-        
+
         public ApplicationVersionProperties Properties { get; } = new ApplicationVersionProperties();
 
     }

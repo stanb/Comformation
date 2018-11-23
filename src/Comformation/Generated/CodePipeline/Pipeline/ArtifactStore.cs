@@ -20,7 +20,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Key Management Service (AWS KMS) key. If you don&#39;t specify a key, AWS CodePipeline uses the default
         /// key for Amazon Simple Storage Service (Amazon S3).
         /// Required: No
-        /// Type: AWS CodePipeline Pipeline ArtifactStore EncryptionKey
+        /// Type: EncryptionKey
         /// </summary>
         [JsonProperty("EncryptionKey")]
         public EncryptionKey EncryptionKey { get; set; }

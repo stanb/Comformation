@@ -66,15 +66,15 @@ namespace Comformation.EC2.VPNConnection
             /// VpnTunnelOptionsSpecifications
             /// The tunnel options for the VPN connection. Duplicates not allowed.
             /// Required: No
-            /// Type: List of EC2 VPNConnection VpnTunnelOptionsSpecification
+            /// Type: List of VpnTunnelOptionsSpecification
             /// Update requires: Replacement
             /// </summary>
 			public List<VpnTunnelOptionsSpecification> VpnTunnelOptionsSpecifications { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPNConnection";
-        
+
         public VPNConnectionProperties Properties { get; } = new VPNConnectionProperties();
 
     }

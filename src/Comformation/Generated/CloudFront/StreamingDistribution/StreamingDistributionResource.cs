@@ -20,7 +20,7 @@ namespace Comformation.CloudFront.StreamingDistribution
             /// StreamingDistributionConfig
             /// Information about the configuration of the RMTP streaming distribution.
             /// Required: Yes
-            /// Type: CloudFront StreamingDistribution StreamingDistributionConfig
+            /// Type: StreamingDistributionConfig
             /// Update requires: No interruption
             /// </summary>
 			public StreamingDistributionConfig StreamingDistributionConfig { get; set; }
@@ -36,9 +36,9 @@ namespace Comformation.CloudFront.StreamingDistribution
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudFront::StreamingDistribution";
-        
+
         public StreamingDistributionProperties Properties { get; } = new StreamingDistributionProperties();
 
     }

@@ -98,7 +98,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Environment
         /// The environment variables to pass to the container.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition KeyValuePair property types
+        /// Type: List of KeyValuePair property types
         /// </summary>
         [JsonProperty("Environment")]
         public List<KeyValuePair> Environment { get; set; }
@@ -119,7 +119,7 @@ namespace Comformation.ECS.TaskDefinition
         /// ExtraHosts
         /// A list of hostnames and IP address mappings to append to the /etc/hosts file on the container.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition HostEntry property types
+        /// Type: List of HostEntry property types
         /// </summary>
         [JsonProperty("ExtraHosts")]
         public List<HostEntry> ExtraHosts { get; set; }
@@ -130,7 +130,7 @@ namespace Comformation.ECS.TaskDefinition
         /// override any Docker health checks that exist in the container image (such as those specified in a
         /// parent image or from the image&#39;s Dockerfile).
         /// Required: No
-        /// Type: Amazon ECS TaskDefinition HealthCheck
+        /// Type: HealthCheck
         /// </summary>
         [JsonProperty("HealthCheck")]
         public HealthCheck HealthCheck { get; set; }
@@ -168,7 +168,7 @@ namespace Comformation.ECS.TaskDefinition
         /// LinuxParameters
         /// The Linux-specific options that are applied to the container.
         /// Required: No
-        /// Type: Amazon ECS TaskDefinition LinuxParameters
+        /// Type: LinuxParameters
         /// </summary>
         [JsonProperty("LinuxParameters")]
         public LinuxParameters LinuxParameters { get; set; }
@@ -178,7 +178,7 @@ namespace Comformation.ECS.TaskDefinition
         /// Configures a custom log driver for the container. For more information, see the logConfiguration
         /// content for the ContainerDefinition data type in the Amazon Elastic Container Service API Reference.
         /// Required: No
-        /// Type: Amazon ECS TaskDefinition LogConfiguration
+        /// Type: LogConfiguration
         /// </summary>
         [JsonProperty("LogConfiguration")]
         public LogConfiguration LogConfiguration { get; set; }
@@ -213,7 +213,7 @@ namespace Comformation.ECS.TaskDefinition
         /// MountPoints
         /// The mount points for data volumes in the container.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition MountPoint property types
+        /// Type: List of MountPoint property types
         /// </summary>
         [JsonProperty("MountPoints")]
         public List<MountPoint> MountPoints { get; set; }
@@ -232,7 +232,7 @@ namespace Comformation.ECS.TaskDefinition
         /// A mapping of the container port to a host port. Port mappings enable containers to access ports on
         /// the host container instance to send or receive traffic.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition ContainerDefinitions PortMapping property types
+        /// Type: List of PortMapping property types
         /// </summary>
         [JsonProperty("PortMappings")]
         public List<PortMapping> PortMappings { get; set; }
@@ -259,7 +259,7 @@ namespace Comformation.ECS.TaskDefinition
         /// RepositoryCredentials
         /// The repository credentials for private registry authentication.
         /// Required: No
-        /// Type: Amazon ECS TaskDefinition RepositoryCredentials
+        /// Type: RepositoryCredentials
         /// </summary>
         [JsonProperty("RepositoryCredentials")]
         public RepositoryCredentials RepositoryCredentials { get; set; }
@@ -269,7 +269,7 @@ namespace Comformation.ECS.TaskDefinition
         /// A list of ulimits to set in the container. The ulimits set constraints on how many resources a
         /// container can consume so that it doesn&#39;t deplete all available resources on the host.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition Ulimit property types
+        /// Type: List of Ulimit property types
         /// </summary>
         [JsonProperty("Ulimits")]
         public List<Ulimit> Ulimits { get; set; }
@@ -287,7 +287,7 @@ namespace Comformation.ECS.TaskDefinition
         /// VolumesFrom
         /// The data volumes to mount from another container.
         /// Required: No
-        /// Type: List of Amazon ECS TaskDefinition VolumeFrom property types
+        /// Type: List of VolumeFrom property types
         /// </summary>
         [JsonProperty("VolumesFrom")]
         public List<VolumeFrom> VolumesFrom { get; set; }

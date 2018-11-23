@@ -89,9 +89,9 @@ namespace Comformation.DirectoryService.MicrosoftAD
 			public VpcSettings VpcSettings { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DirectoryService::MicrosoftAD";
-        
+
         public MicrosoftADProperties Properties { get; } = new MicrosoftADProperties();
 
     }

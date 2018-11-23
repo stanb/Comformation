@@ -42,9 +42,9 @@ namespace Comformation.DMS.Certificate
 			public Union<string, IntrinsicFunction> CertificateWallet { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DMS::Certificate";
-        
+
         public CertificateProperties Properties { get; } = new CertificateProperties();
 
     }

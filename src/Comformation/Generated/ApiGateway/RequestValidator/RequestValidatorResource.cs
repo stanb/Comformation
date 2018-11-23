@@ -53,9 +53,9 @@ namespace Comformation.ApiGateway.RequestValidator
 			public Union<bool, IntrinsicFunction> ValidateRequestParameters { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::RequestValidator";
-        
+
         public RequestValidatorProperties Properties { get; } = new RequestValidatorProperties();
 
     }

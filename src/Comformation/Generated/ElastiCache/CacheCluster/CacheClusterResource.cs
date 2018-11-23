@@ -241,9 +241,9 @@ namespace Comformation.ElastiCache.CacheCluster
 			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElastiCache::CacheCluster";
-        
+
         public CacheClusterProperties Properties { get; } = new CacheClusterProperties();
 
     }

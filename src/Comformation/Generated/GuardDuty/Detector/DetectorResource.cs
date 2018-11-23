@@ -34,9 +34,9 @@ namespace Comformation.GuardDuty.Detector
 			public Union<bool, IntrinsicFunction> Enable { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GuardDuty::Detector";
-        
+
         public DetectorProperties Properties { get; } = new DetectorProperties();
 
     }

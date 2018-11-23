@@ -53,9 +53,9 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
 			public Union<string, IntrinsicFunction> ConnectionNotificationArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPCEndpointConnectionNotification";
-        
+
         public VPCEndpointConnectionNotificationProperties Properties { get; } = new VPCEndpointConnectionNotificationProperties();
 
     }

@@ -44,9 +44,9 @@ namespace Comformation.StepFunctions.StateMachine
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::StepFunctions::StateMachine";
-        
+
         public StateMachineProperties Properties { get; } = new StateMachineProperties();
 
     }

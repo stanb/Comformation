@@ -8,8 +8,8 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
     /// <summary>
     /// Application Auto Scaling ScalingPolicy PredefinedMetricSpecification
     /// Use the PredefinedMetricSpecification property to configure a predefined metric for a target tracking policy
-    /// in Application Auto Scaling. PredefinedMetricSpecification is a subproperty of the Application Auto Scaling
-    /// ScalingPolicy TargetTrackingScalingPolicyConfiguration property.
+    /// to use with Application Auto Scaling. PredefinedMetricSpecification is a subproperty of the Application Auto
+    /// Scaling ScalingPolicy TargetTrackingScalingPolicyConfiguration property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predefinedmetricspecification.html
     /// </summary>
     public class PredefinedMetricSpecification

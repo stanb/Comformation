@@ -18,7 +18,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The CloudWatch logging options for your delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: CloudWatchLoggingOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
@@ -71,7 +71,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// ProcessingConfiguration
         /// The data processing configuration.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
+        /// Type: ProcessingConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
@@ -82,7 +82,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it
         /// doesn&#39;t receive an acknowledgment of receipt from Splunk.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream SplunkRetryOptions
+        /// Type: SplunkRetryOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RetryOptions")]
@@ -106,7 +106,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3Configuration
         /// The configuration for the backup Amazon S3 location.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: S3DestinationConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Configuration")]

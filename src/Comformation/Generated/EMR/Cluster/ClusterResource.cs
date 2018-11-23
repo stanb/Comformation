@@ -176,6 +176,15 @@ namespace Comformation.EMR.Cluster
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
             /// <summary>
+            /// Steps
+            /// The cluster (job flow) steps.
+            /// Required: No
+            /// Type: List of Amazon EMR Cluster StepConfig property types
+            /// Update requires: Replacement
+            /// </summary>
+			public List<StepConfig> Steps { get; set; }
+
+            /// <summary>
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to help you identify the Amazon EMR cluster.
             /// Required: No
@@ -197,9 +206,9 @@ namespace Comformation.EMR.Cluster
 			public Union<bool, IntrinsicFunction> VisibleToAllUsers { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EMR::Cluster";
-        
+
         public ClusterProperties Properties { get; } = new ClusterProperties();
 
     }

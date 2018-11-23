@@ -54,9 +54,9 @@ namespace Comformation.WAFRegional.WebACL
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::WebACL";
-        
+
         public WebACLProperties Properties { get; } = new WebACLProperties();
 
     }

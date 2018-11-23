@@ -62,9 +62,9 @@ namespace Comformation.Inspector.AssessmentTemplate
 			public List<Tag> UserAttributesForFindings { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Inspector::AssessmentTemplate";
-        
+
         public AssessmentTemplateProperties Properties { get; } = new AssessmentTemplateProperties();
 
     }

@@ -35,9 +35,9 @@ namespace Comformation.EMR.SecurityConfiguration
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SecurityConfiguration { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EMR::SecurityConfiguration";
-        
+
         public SecurityConfigurationProperties Properties { get; } = new SecurityConfigurationProperties();
 
     }

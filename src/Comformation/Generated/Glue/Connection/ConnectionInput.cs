@@ -48,7 +48,7 @@ namespace Comformation.Glue.Connection
         /// A map of physical connection requirements that are needed to make the connection, such as VPC and
         /// SecurityGroup.
         /// Required: Yes
-        /// Type: AWS Glue Connection PhysicalConnectionRequirements
+        /// Type: PhysicalConnectionRequirements
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PhysicalConnectionRequirements")]

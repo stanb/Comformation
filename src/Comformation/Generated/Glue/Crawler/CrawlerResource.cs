@@ -47,7 +47,7 @@ namespace Comformation.Glue.Crawler
             /// SchemaChangePolicy
             /// The policy that specifies update and delete behaviors for the crawler.
             /// Required: No
-            /// Type: AWS Glue Crawler SchemaChangePolicy
+            /// Type: SchemaChangePolicy
             /// Update requires: No interruption
             /// </summary>
 			public SchemaChangePolicy SchemaChangePolicy { get; set; }
@@ -66,7 +66,7 @@ namespace Comformation.Glue.Crawler
             /// Schedule
             /// The schedule for the crawler.
             /// Required: No
-            /// Type: AWS Glue Crawler Schedule
+            /// Type: Schedule
             /// Update requires: No interruption
             /// </summary>
 			public Schedule Schedule { get; set; }
@@ -84,7 +84,7 @@ namespace Comformation.Glue.Crawler
             /// Targets
             /// The crawler targets.
             /// Required: Yes
-            /// Type: AWS Glue Crawler Targets
+            /// Type: Targets
             /// Update requires: No interruption
             /// </summary>
 			public Targets Targets { get; set; }
@@ -109,9 +109,9 @@ namespace Comformation.Glue.Crawler
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Glue::Crawler";
-        
+
         public CrawlerProperties Properties { get; } = new CrawlerProperties();
 
     }

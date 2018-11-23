@@ -45,9 +45,9 @@ namespace Comformation.ElastiCache.ParameterGroup
 			public Dictionary<string, Union<string, IntrinsicFunction>> Properties { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElastiCache::ParameterGroup";
-        
+
         public ParameterGroupProperties Properties { get; } = new ParameterGroupProperties();
 
     }

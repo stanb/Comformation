@@ -28,7 +28,7 @@ namespace Comformation.SageMaker.Model
         /// The environment variables to set in the Docker container. Each key and value in the Environment
         /// string to string map can have length of up to 1024. We support up to 16 entries in the map.
         /// Required: No
-        /// Type: JSON
+        /// Type: JSON object
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Environment")]

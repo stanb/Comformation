@@ -55,7 +55,7 @@ namespace Comformation.EC2.Instance
             /// device mappings, or both. For more information, see Amazon Elastic Block Store or Amazon EC2
             /// Instance Store in the Amazon EC2 User Guide for Linux Instances.
             /// Required: No
-            /// Type: A list of Amazon EC2 Block Device Mapping Property.
+            /// Type: A list of Amazon EC2 BlockDeviceMapping.
             /// Update requires: Replacement. If you change only the DeleteOnTermination property for one or more
             /// block devices, update requires No interruption.
             /// </summary>
@@ -235,7 +235,7 @@ namespace Comformation.EC2.Instance
             /// use the DependsOn attribute to declare a dependency on the VPC-gateway attachment. For more
             /// information, see DependsOn Attribute.
             /// Required: No
-            /// Type: A list of EC2 NetworkInterface Embedded Property Type
+            /// Type: A list of EC2 NetworkInterface
             /// Update requires: Replacement
             /// </summary>
 			public List<NetworkInterface> NetworkInterfaces { get; set; }
@@ -385,9 +385,9 @@ namespace Comformation.EC2.Instance
 			public List<Volume> Volumes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::Instance";
-        
+
         public InstanceProperties Properties { get; } = new InstanceProperties();
 
         /// <summary>

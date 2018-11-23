@@ -29,9 +29,9 @@ namespace Comformation.ECS.Cluster
 			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ECS::Cluster";
-        
+
         public ClusterProperties Properties { get; } = new ClusterProperties();
 
     }

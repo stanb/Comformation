@@ -37,9 +37,9 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::SubnetRouteTableAssociation";
-        
+
         public SubnetRouteTableAssociationProperties Properties { get; } = new SubnetRouteTableAssociationProperties();
 
     }

@@ -19,7 +19,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon ES
         /// domain.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream ElasticsearchBufferingHints
+        /// Type: ElasticsearchBufferingHints
         /// </summary>
         [JsonProperty("BufferingHints")]
         public ElasticsearchBufferingHints BufferingHints { get; set; }
@@ -28,7 +28,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The Amazon CloudWatch Logs logging options for the delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
@@ -67,7 +67,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// ProcessingConfiguration
         /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
+        /// Type: ProcessingConfiguration
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
         public ProcessingConfiguration ProcessingConfiguration { get; set; }
@@ -76,7 +76,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// RetryOptions
         /// The retry behavior when Kinesis Data Firehose is unable to deliver data to Amazon ES.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream ElasticsearchRetryOptions
+        /// Type: ElasticsearchRetryOptions
         /// </summary>
         [JsonProperty("RetryOptions")]
         public ElasticsearchRetryOptions RetryOptions { get; set; }
@@ -111,7 +111,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3Configuration
         /// The S3 bucket where Kinesis Data Firehose backs up incoming data.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: S3DestinationConfiguration
         /// </summary>
         [JsonProperty("S3Configuration")]
         public S3DestinationConfiguration S3Configuration { get; set; }

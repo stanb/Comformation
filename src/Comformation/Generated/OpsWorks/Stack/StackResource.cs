@@ -273,9 +273,9 @@ namespace Comformation.OpsWorks.Stack
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::Stack";
-        
+
         public StackProperties Properties { get; } = new StackProperties();
 
     }

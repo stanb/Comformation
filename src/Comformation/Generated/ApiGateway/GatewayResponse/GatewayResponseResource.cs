@@ -61,9 +61,9 @@ namespace Comformation.ApiGateway.GatewayResponse
 			public Union<string, IntrinsicFunction> StatusCode { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::GatewayResponse";
-        
+
         public GatewayResponseProperties Properties { get; } = new GatewayResponseProperties();
 
     }

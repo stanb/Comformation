@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// Amazon EC2 Block Device Mapping Property
+    /// Amazon EC2 BlockDeviceMapping
     /// The Amazon EC2 block device mapping property is an embedded property of the AWS::EC2::Instance resource. For
-    /// block device mappings for an Auto Scaling launch configuration, see Amazon EC2 Auto Scaling Block Device
-    /// Mapping.
+    /// block device mappings for an Auto Scaling launch configuration, see Amazon EC2 Auto Scaling
+    /// LaunchConfiguration BlockDeviceMapping.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html
     /// </summary>
     public class BlockDeviceMapping
@@ -28,7 +28,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// Ebs
         /// Required: Conditional You can specify either VirtualName or Ebs, but not both.
-        /// Type: Amazon Elastic Block Store Block Device Property.
+        /// Type: Amazon Elastic Block Store Block Device.
         /// </summary>
         [JsonProperty("Ebs")]
         public Ebs Ebs { get; set; }

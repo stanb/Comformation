@@ -19,15 +19,15 @@ namespace Comformation.SES.ReceiptFilter
             /// Filter
             /// The IP addresses to block or allow, and whether to block or allow incoming mail from them.
             /// Required: Yes
-            /// Type: Amazon SES ReceiptFilter Filter
+            /// Type: Filter
             /// Update requires: Replacement
             /// </summary>
 			public Filter Filter { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SES::ReceiptFilter";
-        
+
         public ReceiptFilterProperties Properties { get; } = new ReceiptFilterProperties();
 
     }

@@ -68,9 +68,9 @@ namespace Comformation.Kinesis.Stream
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Kinesis::Stream";
-        
+
         public StreamProperties Properties { get; } = new StreamProperties();
 
     }

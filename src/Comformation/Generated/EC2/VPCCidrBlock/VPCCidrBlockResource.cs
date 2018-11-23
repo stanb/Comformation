@@ -43,9 +43,9 @@ namespace Comformation.EC2.VPCCidrBlock
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPCCidrBlock";
-        
+
         public VPCCidrBlockProperties Properties { get; } = new VPCCidrBlockProperties();
 
     }

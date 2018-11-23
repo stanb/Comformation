@@ -34,9 +34,9 @@ namespace Comformation.Redshift.ClusterSecurityGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Redshift::ClusterSecurityGroup";
-        
+
         public ClusterSecurityGroupProperties Properties { get; } = new ClusterSecurityGroupProperties();
 
     }

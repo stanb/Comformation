@@ -35,9 +35,9 @@ namespace Comformation.CloudFront.Distribution
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CloudFront::Distribution";
-        
+
         public DistributionProperties Properties { get; } = new DistributionProperties();
 
     }

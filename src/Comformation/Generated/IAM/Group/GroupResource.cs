@@ -63,9 +63,9 @@ namespace Comformation.IAM.Group
 			public List<Policy> Policies { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::Group";
-        
+
         public GroupProperties Properties { get; } = new GroupProperties();
 
     }

@@ -60,15 +60,15 @@ namespace Comformation.Lambda.Alias
             /// what percentage of traffic will invoke each version. For more information, see Routing Traffic to
             /// Different Function Versions Using Aliases in the AWS Lambda Developer Guide.
             /// Required: No
-            /// Type: AWS Lambda Alias AliasRoutingConfiguration
+            /// Type: AliasRoutingConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public AliasRoutingConfiguration RoutingConfig { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Lambda::Alias";
-        
+
         public AliasProperties Properties { get; } = new AliasProperties();
 
 		/// <summary>

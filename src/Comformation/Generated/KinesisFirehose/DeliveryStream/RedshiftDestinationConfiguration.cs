@@ -18,7 +18,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The Amazon CloudWatch Logs logging options for the delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: CloudWatchLoggingOptions
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
@@ -37,7 +37,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Configures the Amazon Redshift COPY command that Kinesis Data Firehose uses to load data into the
         /// cluster from the Amazon S3 bucket.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream CopyCommand
+        /// Type: CopyCommand
         /// </summary>
         [JsonProperty("CopyCommand")]
         public CopyCommand CopyCommand { get; set; }
@@ -55,7 +55,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// ProcessingConfiguration
         /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
+        /// Type: ProcessingConfiguration
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
         public ProcessingConfiguration ProcessingConfiguration { get; set; }
@@ -79,7 +79,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// the Amazon S3 bucket&#39;s compression format, don&#39;t specify SNAPPY or ZIP because the Amazon Redshift
         /// COPY command doesn&#39;t support them.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: S3DestinationConfiguration
         /// </summary>
         [JsonProperty("S3Configuration")]
         public S3DestinationConfiguration S3Configuration { get; set; }

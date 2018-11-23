@@ -44,9 +44,9 @@ namespace Comformation.AppSync.GraphQLSchema
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AppSync::GraphQLSchema";
-        
+
         public GraphQLSchemaProperties Properties { get; } = new GraphQLSchemaProperties();
 
     }

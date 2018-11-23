@@ -37,9 +37,9 @@ namespace Comformation.EC2.VPCEndpointServicePermissions
 			public Union<string, IntrinsicFunction> ServiceId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPCEndpointServicePermissions";
-        
+
         public VPCEndpointServicePermissionsProperties Properties { get; } = new VPCEndpointServicePermissionsProperties();
 
     }

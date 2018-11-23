@@ -7,7 +7,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// Amazon EC2 Auto Scaling AutoScalingGroup NotificationConfiguration
-    /// The NotificationConfiguration property type specifies the events that the Auto Scaling group sends
+    /// The NotificationConfiguration property type specifies the events that the Amazon EC2 Auto Scaling group sends
     /// notifications for.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html
     /// </summary>

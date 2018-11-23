@@ -18,7 +18,7 @@ namespace Comformation.SSM.Association
         /// S3Location
         /// An Amazon S3 bucket where you want to store the results of this request.
         /// Required: No
-        /// Type: Systems Manager Association S3OutputLocation
+        /// Type: S3OutputLocation
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Location")]

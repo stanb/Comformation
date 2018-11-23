@@ -29,15 +29,15 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
             /// The reference data source, which is an object in your Amazon Simple Storage Service (Amazon S3)
             /// bucket.
             /// Required: Yes
-            /// Type: Kinesis Data Analytics ApplicationReferenceDataSource ReferenceDataSource
+            /// Type: ReferenceDataSource
             /// Update requires: No interruption
             /// </summary>
 			public ReferenceDataSource ReferenceDataSource { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::KinesisAnalytics::ApplicationReferenceDataSource";
-        
+
         public ApplicationReferenceDataSourceProperties Properties { get; } = new ApplicationReferenceDataSourceProperties();
 
     }

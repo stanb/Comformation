@@ -33,9 +33,9 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPCDHCPOptionsAssociation";
-        
+
         public VPCDHCPOptionsAssociationProperties Properties { get; } = new VPCDHCPOptionsAssociationProperties();
 
     }

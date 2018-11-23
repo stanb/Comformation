@@ -33,9 +33,9 @@ namespace Comformation.Config.AggregationAuthorization
 			public Union<string, IntrinsicFunction> AuthorizedAwsRegion { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Config::AggregationAuthorization";
-        
+
         public AggregationAuthorizationProperties Properties { get; } = new AggregationAuthorizationProperties();
 
     }

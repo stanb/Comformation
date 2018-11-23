@@ -83,9 +83,9 @@ namespace Comformation.EC2.DHCPOptions
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::DHCPOptions";
-        
+
         public DHCPOptionsProperties Properties { get; } = new DHCPOptionsProperties();
 
     }

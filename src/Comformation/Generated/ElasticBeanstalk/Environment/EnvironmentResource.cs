@@ -61,7 +61,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// template. If you remove any options during a stack update, the removed options revert to default
             /// values.
             /// Required: Yes. The IamInstanceProfile and ServiceRole options are required.
-            /// Type: List of Elastic Beanstalk Environment OptionSetting
+            /// Type: List of OptionSetting
             /// Update requires: Some interruptions
             /// </summary>
 			public List<OptionSetting> OptionSettings { get; set; }
@@ -116,8 +116,8 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// determines whether Elastic Beanstalk provisions resources to support a web application that handles
             /// HTTP(S) requests or a web application that handles background-processing tasks.
             /// Required: No
-            /// Type: Elastic Beanstalk Environment Tier Property Type
-            /// Update requires: See Elastic Beanstalk Environment Tier Property Type
+            /// Type: Elastic Beanstalk Environment EnvironmentTier
+            /// Update requires: See Elastic Beanstalk Environment EnvironmentTier
             /// </summary>
 			public Tier Tier { get; set; }
 
@@ -131,9 +131,9 @@ namespace Comformation.ElasticBeanstalk.Environment
 			public Union<string, IntrinsicFunction> VersionLabel { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticBeanstalk::Environment";
-        
+
         public EnvironmentProperties Properties { get; } = new EnvironmentProperties();
 
     }

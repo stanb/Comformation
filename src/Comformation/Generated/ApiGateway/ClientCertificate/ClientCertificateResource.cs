@@ -24,9 +24,9 @@ namespace Comformation.ApiGateway.ClientCertificate
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::ClientCertificate";
-        
+
         public ClientCertificateProperties Properties { get; } = new ClientCertificateProperties();
 
     }

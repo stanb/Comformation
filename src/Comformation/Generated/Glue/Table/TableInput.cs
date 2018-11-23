@@ -80,7 +80,7 @@ namespace Comformation.Glue.Table
         /// StorageDescriptor
         /// Information about the physical storage of the table.
         /// Required: No
-        /// Type: AWS Glue Table StorageDescriptor
+        /// Type: StorageDescriptor
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageDescriptor")]
@@ -90,7 +90,7 @@ namespace Comformation.Glue.Table
         /// PartitionKeys
         /// The columns in the table.
         /// Required: No
-        /// Type: List of AWS Glue Table Column
+        /// Type: List of Column
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PartitionKeys")]

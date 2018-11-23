@@ -42,9 +42,9 @@ namespace Comformation.DAX.ParameterGroup
 			public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DAX::ParameterGroup";
-        
+
         public ParameterGroupProperties Properties { get; } = new ParameterGroupProperties();
 
     }

@@ -42,9 +42,9 @@ namespace Comformation.EC2.VPNGateway
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPNGateway";
-        
+
         public VPNGatewayProperties Properties { get; } = new VPNGatewayProperties();
 
     }

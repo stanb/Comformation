@@ -38,9 +38,9 @@ namespace Comformation.CodeDeploy.Application
 			public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodeDeploy::Application";
-        
+
         public ApplicationProperties Properties { get; } = new ApplicationProperties();
 
     }

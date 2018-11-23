@@ -83,9 +83,9 @@ namespace Comformation.EMR.InstanceFleetConfig
 			public Union<int, IntrinsicFunction> TargetSpotCapacity { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EMR::InstanceFleetConfig";
-        
+
         public InstanceFleetConfigProperties Properties { get; } = new InstanceFleetConfigProperties();
 
     }

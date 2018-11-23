@@ -47,9 +47,9 @@ namespace Comformation.Lambda.Version
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Lambda::Version";
-        
+
         public VersionProperties Properties { get; } = new VersionProperties();
 
     }

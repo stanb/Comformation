@@ -48,9 +48,9 @@ namespace Comformation.SSM.Document
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SSM::Document";
-        
+
         public DocumentProperties Properties { get; } = new DocumentProperties();
 
     }

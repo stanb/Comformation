@@ -48,7 +48,7 @@ namespace Comformation.Glue.Table
         /// SkewedInfo
         /// Information about values that appear very frequently in a column (skewed values).
         /// Required: No
-        /// Type: AWS Glue Table SkewedInfo
+        /// Type: SkewedInfo
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedInfo")]
@@ -91,7 +91,7 @@ namespace Comformation.Glue.Table
         /// Columns
         /// The columns in the table.
         /// Required: No
-        /// Type: List of AWS Glue Table Column
+        /// Type: List of Column
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Columns")]
@@ -102,7 +102,7 @@ namespace Comformation.Glue.Table
         /// Information about a serialization/deserialization program (SerDe), which serves as an extractor and
         /// loader.
         /// Required: No
-        /// Type: AWS Glue Table SerdeInfo
+        /// Type: SerdeInfo
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SerdeInfo")]
@@ -112,7 +112,7 @@ namespace Comformation.Glue.Table
         /// SortColumns
         /// The sort order of each bucket in the table.
         /// Required: No
-        /// Type: List of AWS Glue Table Order
+        /// Type: List of Order
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SortColumns")]

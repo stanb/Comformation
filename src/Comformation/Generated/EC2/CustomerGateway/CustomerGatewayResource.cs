@@ -52,9 +52,9 @@ namespace Comformation.EC2.CustomerGateway
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::CustomerGateway";
-        
+
         public CustomerGatewayProperties Properties { get; } = new CustomerGatewayProperties();
 
     }

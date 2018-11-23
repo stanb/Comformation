@@ -21,7 +21,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// the deployment group, it must be identified by all the tag groups in the list.
         /// Duplicates are not allowed.
         /// Required: No
-        /// Type: List of AWS CodeDeploy DeploymentGroup EC2TagSetListObject
+        /// Type: List of EC2TagSetListObject
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ec2TagSetList")]

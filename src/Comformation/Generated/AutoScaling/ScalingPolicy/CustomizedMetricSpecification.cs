@@ -7,9 +7,9 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// Amazon EC2 Auto Scaling ScalingPolicy CustomizedMetricSpecification
-    /// The CustomizedMetricSpecification property configures a customized metric for a target tracking policy in
-    /// Amazon EC2 Auto Scaling. CustomizedMetricSpecification is a subproperty of the Amazon EC2 Auto Scaling
-    /// ScalingPolicy TargetTrackingConfiguration property.
+    /// The CustomizedMetricSpecification property configures a customized metric (an Amazon CloudWatch metric of your
+    /// choosing) for a target tracking policy to use with Amazon EC2 Auto Scaling. CustomizedMetricSpecification is a
+    /// subproperty of the Amazon EC2 Auto Scaling ScalingPolicy TargetTrackingConfiguration property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html
     /// </summary>
     public class CustomizedMetricSpecification

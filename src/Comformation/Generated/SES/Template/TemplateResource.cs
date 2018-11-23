@@ -19,15 +19,15 @@ namespace Comformation.SES.Template
             /// Template
             /// The content of the email, composed of a subject line, an HTML part, and a text-only part.
             /// Required: No
-            /// Type: Amazon SES Template Template
+            /// Type: Template
             /// Update requires: No interruption
             /// </summary>
 			public Template Template { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SES::Template";
-        
+
         public TemplateProperties Properties { get; } = new TemplateProperties();
 
     }

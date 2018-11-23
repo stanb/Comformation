@@ -54,7 +54,7 @@ namespace Comformation.SSM.Association
             /// OutputLocation
             /// An Amazon S3 bucket where you want to store the results of this request.
             /// Required: No
-            /// Type: Systems Manager Association InstanceAssociationOutputLocation
+            /// Type: InstanceAssociationOutputLocation
             /// Update requires: No interruption
             /// </summary>
 			public InstanceAssociationOutputLocation OutputLocation { get; set; }
@@ -88,9 +88,9 @@ namespace Comformation.SSM.Association
 			public List<Target> Targets { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SSM::Association";
-        
+
         public AssociationProperties Properties { get; } = new AssociationProperties();
 
     }

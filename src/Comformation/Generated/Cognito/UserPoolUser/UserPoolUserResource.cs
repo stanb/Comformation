@@ -100,9 +100,9 @@ namespace Comformation.Cognito.UserPoolUser
 			public List<AttributeType> UserAttributes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Cognito::UserPoolUser";
-        
+
         public UserPoolUserProperties Properties { get; } = new UserPoolUserProperties();
 
     }

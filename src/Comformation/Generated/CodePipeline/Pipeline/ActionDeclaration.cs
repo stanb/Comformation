@@ -62,6 +62,15 @@ namespace Comformation.CodePipeline.Pipeline
         public List<OutputArtifact> OutputArtifacts { get; set; }
 
         /// <summary>
+        /// Region
+        /// Specifies the action’s AWS Region, such as us-east-1.
+        /// Required: No
+        /// Type: String
+        /// </summary>
+        [JsonProperty("Region")]
+        public Union<string, IntrinsicFunction> Region { get; set; }
+
+        /// <summary>
         /// RoleArn
         /// The Amazon Resource Name (ARN) of a service role that the action uses. The pipeline&#39;s role assumes
         /// this role.

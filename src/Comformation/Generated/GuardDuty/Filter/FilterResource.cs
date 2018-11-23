@@ -46,7 +46,7 @@ namespace Comformation.GuardDuty.Filter
             /// FindingCriteria
             /// Represents the criteria to be used in the filter for querying findings.
             /// Required: Yes
-            /// Type: GuardDuty Filter FindingCriteria
+            /// Type: FindingCriteria
             /// Update requires: No interruption
             /// </summary>
 			public FindingCriteria FindingCriteria { get; set; }
@@ -71,9 +71,9 @@ namespace Comformation.GuardDuty.Filter
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GuardDuty::Filter";
-        
+
         public FilterProperties Properties { get; } = new FilterProperties();
 
     }

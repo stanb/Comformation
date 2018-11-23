@@ -44,9 +44,9 @@ namespace Comformation.GameLift.Alias
 			public RoutingStrategy RoutingStrategy { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GameLift::Alias";
-        
+
         public AliasProperties Properties { get; } = new AliasProperties();
 
     }

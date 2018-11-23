@@ -6,10 +6,10 @@ namespace Comformation.AutoScaling.LifecycleHook
 {
     /// <summary>
     /// AWS::AutoScaling::LifecycleHook
-    /// Controls the state of an instance in an Auto Scaling group after it is launched or terminated. When you use a
-    /// lifecycle hook, the Auto Scaling group either pauses the instance after it is launched (before it is put into
-    /// service) or pauses the instance as it is terminated (before it is fully terminated). For more information, see
-    /// Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
+    /// Controls the state of an instance in an Amazon EC2 Auto Scaling group after it is launched or terminated. When
+    /// you use a lifecycle hook, the Auto Scaling group either pauses the instance after it is launched (before it is
+    /// put into service) or pauses the instance as it is terminated (before it is fully terminated). For more
+    /// information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
     /// </summary>
     public class LifecycleHookResource : ResourceBase
@@ -38,8 +38,8 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// <summary>
             /// HeartbeatTimeout
             /// The amount of time (in seconds) that can elapse before the lifecycle hook times out. When the
-            /// lifecycle hook times out, Auto Scaling performs the action that you specified in the DefaultResult
-            /// property.
+            /// lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
+            /// DefaultResult property.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -68,7 +68,7 @@ namespace Comformation.AutoScaling.LifecycleHook
 
             /// <summary>
             /// NotificationMetadata
-            /// Additional information that you want to include when Auto Scaling sends a message to the
+            /// Additional information that you want to include when Amazon EC2 Auto Scaling sends a message to the
             /// notification target.
             /// Required: No
             /// Type: String
@@ -78,11 +78,11 @@ namespace Comformation.AutoScaling.LifecycleHook
 
             /// <summary>
             /// NotificationTargetARN
-            /// The Amazon resource name (ARN) of the notification target that Auto Scaling uses to notify you when
-            /// an instance is in the transition state for the lifecycle hook. You can specify an Amazon SQS queue
-            /// or an Amazon SNS topic. The notification message includes the following information: lifecycle
-            /// action token, user account ID, Auto Scaling group name, lifecycle hook name, instance ID, lifecycle
-            /// transition, and notification metadata.
+            /// The Amazon resource name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to
+            /// notify you when an instance is in the transition state for the lifecycle hook. You can specify an
+            /// Amazon SQS queue or an Amazon SNS topic. The notification message includes the following
+            /// information: lifecycle action token, user account ID, Auto Scaling group name, lifecycle hook name,
+            /// instance ID, lifecycle transition, and notification metadata.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -100,9 +100,9 @@ namespace Comformation.AutoScaling.LifecycleHook
 			public Union<string, IntrinsicFunction> RoleARN { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AutoScaling::LifecycleHook";
-        
+
         public LifecycleHookProperties Properties { get; } = new LifecycleHookProperties();
 
     }

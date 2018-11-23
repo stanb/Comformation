@@ -17,7 +17,7 @@ namespace Comformation.IoT1Click.Placement
             /// <summary>
             /// PlacementName
             /// The name of this placement.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -52,9 +52,9 @@ namespace Comformation.IoT1Click.Placement
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Attributes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT1Click::Placement";
-        
+
         public PlacementProperties Properties { get; } = new PlacementProperties();
 
     }

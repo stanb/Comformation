@@ -94,9 +94,9 @@ namespace Comformation.DirectoryService.SimpleAD
 			public VpcSettings VpcSettings { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DirectoryService::SimpleAD";
-        
+
         public SimpleADProperties Properties { get; } = new SimpleADProperties();
 
     }

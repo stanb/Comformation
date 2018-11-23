@@ -18,7 +18,7 @@ namespace Comformation.ApiGateway.Deployment
         /// AccessLogSetting
         /// Specifies settings for logging access in this stage.
         /// Required: No
-        /// Type: API Gateway Deployment AccessLogSetting
+        /// Type: AccessLogSetting
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AccessLogSetting")]
@@ -75,7 +75,7 @@ namespace Comformation.ApiGateway.Deployment
         /// CanarySetting
         /// Specifies settings for the canary deployment in this stage.
         /// Required: No
-        /// Type: API Gateway Deployment CanarySetting
+        /// Type: CanarySetting
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CanarySetting")]
@@ -133,7 +133,7 @@ namespace Comformation.ApiGateway.Deployment
         /// MethodSettings
         /// Configures settings for all of the stage&#39;s methods.
         /// Required: No
-        /// Type: List of API Gateway Deployment MethodSetting
+        /// Type: List of MethodSetting
         /// </summary>
         [JsonProperty("MethodSettings")]
         public List<MethodSetting> MethodSettings { get; set; }
@@ -146,6 +146,16 @@ namespace Comformation.ApiGateway.Deployment
         /// </summary>
         [JsonProperty("MetricsEnabled")]
         public Union<bool, IntrinsicFunction> MetricsEnabled { get; set; }
+
+        /// <summary>
+        /// Tags
+        /// An array of arbitrary tags (key-value pairs) to associate with the stage.
+        /// Required: No
+        /// Type: List of Resource Tag property types
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Tags")]
+        public List<Tag> Tags { get; set; }
 
         /// <summary>
         /// ThrottlingBurstLimit
@@ -168,6 +178,18 @@ namespace Comformation.ApiGateway.Deployment
         /// </summary>
         [JsonProperty("ThrottlingRateLimit")]
         public Union<double, IntrinsicFunction> ThrottlingRateLimit { get; set; }
+
+        /// <summary>
+        /// TracingEnabled
+        /// Specifies whether active tracing with X-ray is enabled for this stage.
+        /// For more information, see Trace API Gateway API Execution with AWS X-Ray in the API Gateway
+        /// Developer Guide.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TracingEnabled")]
+        public Union<bool, IntrinsicFunction> TracingEnabled { get; set; }
 
         /// <summary>
         /// Variables

@@ -53,9 +53,9 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::NetworkInterfaceAttachment";
-        
+
         public NetworkInterfaceAttachmentProperties Properties { get; } = new NetworkInterfaceAttachmentProperties();
 
     }

@@ -21,7 +21,7 @@ namespace Comformation.Events.Rule
         /// Note Currently, you can include only one RunCommandTarget block, which specifies a list of
         /// InstanceIds or a tag.
         /// Required: Yes
-        /// Type: List of CloudWatch Events Rule RunCommandTarget
+        /// Type: List of RunCommandTarget
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RunCommandTargets")]

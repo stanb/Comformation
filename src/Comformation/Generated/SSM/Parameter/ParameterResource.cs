@@ -63,9 +63,9 @@ namespace Comformation.SSM.Parameter
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SSM::Parameter";
-        
+
         public ParameterProperties Properties { get; } = new ParameterProperties();
 
     }

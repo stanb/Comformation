@@ -72,9 +72,9 @@ namespace Comformation.EC2.VPCPeeringConnection
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::VPCPeeringConnection";
-        
+
         public VPCPeeringConnectionProperties Properties { get; } = new VPCPeeringConnectionProperties();
 
     }

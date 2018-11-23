@@ -33,9 +33,9 @@ namespace Comformation.WAFRegional.WebACLAssociation
 			public Union<string, IntrinsicFunction> WebACLId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::WebACLAssociation";
-        
+
         public WebACLAssociationProperties Properties { get; } = new WebACLAssociationProperties();
 
     }

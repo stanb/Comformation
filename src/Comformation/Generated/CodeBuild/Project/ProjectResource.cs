@@ -28,7 +28,7 @@ namespace Comformation.CodeBuild.Project
             /// Settings that enable AWS CodeBuild to access resources in an Amazon VPC. For more information, see
             /// Use AWS CodeBuild with Amazon Virtual Private Cloud in the AWS CodeBuild User Guide.
             /// Required: No
-            /// Type: AWS CodeBuild Project VpcConfig
+            /// Type: VpcConfig
             /// Update requires: No interruption
             /// </summary>
 			public VpcConfig VpcConfig { get; set; }
@@ -133,6 +133,11 @@ namespace Comformation.CodeBuild.Project
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
             /// <summary>
+            /// QueuedTimeoutInMinutes
+            /// </summary>
+			public Union<int, IntrinsicFunction> QueuedTimeoutInMinutes { get; set; }
+
+            /// <summary>
             /// Environment
             /// The build environment settings for the project, such as the environment type or the environment
             /// variables to use for the build environment.
@@ -165,15 +170,15 @@ namespace Comformation.CodeBuild.Project
             /// Cache
             /// Settings that AWS CodeBuild uses to store and reuse build dependencies.
             /// Required: No
-            /// Type: AWS CodeBuild Project ProjectCache
+            /// Type: ProjectCache
             /// Update requires: No interruption
             /// </summary>
 			public ProjectCache Cache { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodeBuild::Project";
-        
+
         public ProjectProperties Properties { get; } = new ProjectProperties();
 
     }

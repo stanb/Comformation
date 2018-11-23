@@ -17,9 +17,9 @@ namespace Comformation.CloudFormation.WaitConditionHandle
         public class WaitConditionHandleProperties
         {
         }
-    
+
         public string Type { get; } = "AWS::CloudFormation::WaitConditionHandle";
-        
+
         public WaitConditionHandleProperties Properties { get; } = new WaitConditionHandleProperties();
 
     }

@@ -34,9 +34,9 @@ namespace Comformation.Logs.LogStream
 			public Union<string, IntrinsicFunction> LogStreamName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Logs::LogStream";
-        
+
         public LogStreamProperties Properties { get; } = new LogStreamProperties();
 
     }

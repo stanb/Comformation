@@ -43,9 +43,9 @@ namespace Comformation.ApiGateway.DocumentationVersion
 			public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::DocumentationVersion";
-        
+
         public DocumentationVersionProperties Properties { get; } = new DocumentationVersionProperties();
 
     }

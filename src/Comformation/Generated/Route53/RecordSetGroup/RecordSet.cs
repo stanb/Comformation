@@ -107,6 +107,29 @@ namespace Comformation.Route53.RecordSetGroup
         public Union<string, IntrinsicFunction> HostedZoneName { get; set; }
 
         /// <summary>
+        /// MultiValueAnswer
+        /// Multivalue answer resource record sets only: To route traffic approximately randomly to multiple
+        /// resources, such as web servers, create one multivalue answer record for each resource and specify
+        /// true for MultiValueAnswer.
+        /// Note the following:
+        /// If you associate a health check with a multivalue answer resource record set, Route&#160;53 responds to
+        /// DNS queries with the corresponding IP address only when the health check is healthy. If you don&#39;t
+        /// associate a health check with a multivalue answer record, Route&#160;53 always considers the record to be
+        /// healthy. Amazon Route&#160;53 responds to DNS queries with up to eight healthy records; if you have eight
+        /// or fewer healthy records, Route&#160;53 responds to all DNS queries with all the healthy records. If you
+        /// have more than eight healthy records, Route&#160;53 responds to different DNS resolvers with different
+        /// combinations of healthy records. When all records are unhealthy, Route&#160;53 responds to DNS queries
+        /// with up to eight unhealthy records. If a resource becomes unavailable after a resolver caches a
+        /// response, client software typically tries another of the IP addresses in the response.
+        /// You can&#39;t create multivalue answer alias records.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("MultiValueAnswer")]
+        public Union<bool, IntrinsicFunction> MultiValueAnswer { get; set; }
+
+        /// <summary>
         /// Name
         /// The name of the domain. You must specify a fully qualified domain name that ends with a period as
         /// the last label indication. If you omit the final period, Route&#160;53 adds it.

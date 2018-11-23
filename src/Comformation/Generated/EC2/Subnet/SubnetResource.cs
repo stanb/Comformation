@@ -89,9 +89,9 @@ namespace Comformation.EC2.Subnet
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::Subnet";
-        
+
         public SubnetProperties Properties { get; } = new SubnetProperties();
 
     }

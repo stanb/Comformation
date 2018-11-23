@@ -44,9 +44,9 @@ namespace Comformation.CodeCommit.Repository
 			public Union<string, IntrinsicFunction> RepositoryDescription { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodeCommit::Repository";
-        
+
         public RepositoryProperties Properties { get; } = new RepositoryProperties();
 
     }

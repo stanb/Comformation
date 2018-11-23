@@ -55,9 +55,9 @@ namespace Comformation.Redshift.ClusterParameterGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Redshift::ClusterParameterGroup";
-        
+
         public ClusterParameterGroupProperties Properties { get; } = new ClusterParameterGroupProperties();
 
     }

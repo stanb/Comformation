@@ -74,9 +74,9 @@ namespace Comformation.ApiGateway.ApiKey
 			public List<StageKey> StageKeys { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::ApiKey";
-        
+
         public ApiKeyProperties Properties { get; } = new ApiKeyProperties();
 
     }

@@ -6,8 +6,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 {
     /// <summary>
     /// AWS::AutoScaling::LaunchConfiguration
-    /// Creates an Auto Scaling launch configuration that can be used by an Auto Scaling group to configure Auto
-    /// Scaling instances.
+    /// Creates an Amazon EC2 Auto Scaling launch configuration that can be used by an Auto Scaling group to configure
+    /// Amazon EC2 instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html
     /// </summary>
     public class LaunchConfigurationResource : ResourceBase
@@ -17,8 +17,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// <summary>
             /// AssociatePublicIpAddress
             /// For Amazon EC2 instances in a VPC, indicates whether instances in the Auto Scaling group receive
-            /// public IP addresses. If you specify true, each instance in the Auto Scaling receives a unique public
-            /// IP address.
+            /// public IP addresses. If you specify true, each instance in the Auto Scaling group receives a unique
+            /// public IP address.
             /// Note If this resource has a public IP address and is also in a VPC that is defined in the same
             /// template, you must use the DependsOn attribute to declare a dependency on the VPC-gateway
             /// attachment. For more information, see DependsOn Attribute.
@@ -110,10 +110,10 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// InstanceMonitoring
             /// Indicates whether detailed instance monitoring is enabled for the Auto Scaling group. By default,
             /// this property is set to true (enabled).
-            /// When detailed monitoring is enabled, Amazon CloudWatch (CloudWatch) generates metrics every minute
-            /// and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates
-            /// metrics every 5 minutes. For more information, see Monitor Your Auto Scaling Groups and Instances
-            /// Using Amazon CloudWatch in the Amazon EC2 Auto Scaling User Guide.
+            /// When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
+            /// account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5
+            /// minutes. For more information, see Monitor Your Auto Scaling Groups and Instances Using Amazon
+            /// CloudWatch in the Amazon EC2 Auto Scaling User Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -199,7 +199,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// SpotPrice
             /// The spot price for this Auto Scaling group. If a spot price is set, then the Auto Scaling group will
             /// launch when the current spot price is less than the amount specified in the template.
-            /// When you have specified a spot price for an auto scaling group, the group will only launch when the
+            /// When you have specified a spot price for an Auto Scaling group, the group will only launch when the
             /// spot price has been met, regardless of the setting in the Auto Scaling group&#39;s DesiredCapacity.
             /// For more information about configuring a spot price for an Auto Scaling group, see Launching Spot
             /// Instances in your Auto Scaling Group in the Amazon EC2 Auto Scaling User Guide.
@@ -222,9 +222,9 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 			public Union<string, IntrinsicFunction> UserData { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AutoScaling::LaunchConfiguration";
-        
+
         public LaunchConfigurationProperties Properties { get; } = new LaunchConfigurationProperties();
 
     }

@@ -56,9 +56,9 @@ namespace Comformation.RDS.DBSecurityGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBSecurityGroup";
-        
+
         public DBSecurityGroupProperties Properties { get; } = new DBSecurityGroupProperties();
 
     }

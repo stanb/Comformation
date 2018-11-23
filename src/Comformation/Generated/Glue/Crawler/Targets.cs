@@ -17,7 +17,7 @@ namespace Comformation.Glue.Crawler
         /// S3Targets
         /// The Amazon S3 crawler targets.
         /// Required: No
-        /// Type: List of AWS Glue Crawler S3Target
+        /// Type: List of S3Target
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Targets")]
@@ -27,7 +27,7 @@ namespace Comformation.Glue.Crawler
         /// JdbcTargets
         /// The JDBC crawler targets.
         /// Required: No
-        /// Type: List of AWS Glue Crawler JdbcTarget
+        /// Type: List of JdbcTarget
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("JdbcTargets")]

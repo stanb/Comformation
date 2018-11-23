@@ -18,7 +18,7 @@ namespace Comformation.SSM.PatchBaseline
         /// PatchRules
         /// The rules that make up the rule group.
         /// Required: No
-        /// Type: List of Systems Manager PatchBaseline Rule
+        /// Type: List of Rule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchRules")]

@@ -73,9 +73,9 @@ namespace Comformation.ServiceDiscovery.Instance
 			public Union<string, IntrinsicFunction> ServiceId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceDiscovery::Instance";
-        
+
         public InstanceProperties Properties { get; } = new InstanceProperties();
 
     }

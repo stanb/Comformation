@@ -18,6 +18,8 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// <summary>
             /// HealthCheckIntervalSeconds
             /// The approximate number of seconds between health checks for an individual target.
+            /// For valid and default values, see the HealthCheckIntervalSeconds parameter for the CreateTargetGroup
+            /// action in the .
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -26,7 +28,8 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// HealthCheckPath
-            /// The ping path destination where Elastic Load Balancing sends health check requests.
+            /// [HTTP/HTTPS health checks] The ping path destination where Elastic Load Balancing sends health check
+            /// requests. The default is /.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -58,7 +61,10 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// HealthCheckTimeoutSeconds
-            /// The number of seconds to wait for a response before considering that a health check has failed.
+            /// The number of seconds to wait for a response before considering that a health check has failed. For
+            /// Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load
+            /// Balancers, this value is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health
+            /// checks.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -77,8 +83,8 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// Matcher
-            /// The HTTP codes that a healthy target uses when responding to a health check. If you specify TCP for
-            /// the Protocol property, you must specify the range 200-399 for the Matcher property.
+            /// [HTTP/HTTPS health checks] The HTTP codes that a healthy target uses when responding to a health
+            /// check.
             /// For more information about specifying this property, see Matcher in the Elastic Load Balancing API
             /// Reference version 2015-12-01.
             /// Required: No
@@ -174,9 +180,9 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElasticLoadBalancingV2::TargetGroup";
-        
+
         public TargetGroupProperties Properties { get; } = new TargetGroupProperties();
 
     }

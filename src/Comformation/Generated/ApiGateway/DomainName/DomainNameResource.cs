@@ -39,7 +39,7 @@ namespace Comformation.ApiGateway.DomainName
             /// EndpointConfiguration
             /// A list of the endpoint types of the domain name.
             /// Required: No
-            /// Type: API Gateway DomainName EndpointConfiguration
+            /// Type: EndpointConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public EndpointConfiguration EndpointConfiguration { get; set; }
@@ -55,9 +55,9 @@ namespace Comformation.ApiGateway.DomainName
 			public Union<string, IntrinsicFunction> RegionalCertificateArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::DomainName";
-        
+
         public DomainNameProperties Properties { get; } = new DomainNameProperties();
 
     }

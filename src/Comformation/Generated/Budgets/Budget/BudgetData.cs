@@ -22,7 +22,7 @@ namespace Comformation.Budgets.Budget
         /// The BudgetLimit is required for cost or usage budgets, but optional for RI utilization budgets. RI
         /// utilization budgets default to the only valid value for RI utilization budgets, which is 100.
         /// Required: No
-        /// Type: Billing and Cost Management Budget Spend
+        /// Type: Spend
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BudgetLimit")]
@@ -39,7 +39,7 @@ namespace Comformation.Budgets.Budget
         /// specify an end date, AWS sets your end date to 06/15/87 00:00 UTC.
         /// After the end date, AWS deletes the budget and all associated notifications and subscribers.
         /// Required: No
-        /// Type: Billing and Cost Management Budget TimePeriod
+        /// Type: TimePeriod
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimePeriod")]
@@ -82,7 +82,7 @@ namespace Comformation.Budgets.Budget
         /// CostTypes
         /// The types of costs included in this budget, such as credits, subscriptions, or taxes.
         /// Required: No
-        /// Type: Billing and Cost Management Budget CostTypes
+        /// Type: CostTypes
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CostTypes")]

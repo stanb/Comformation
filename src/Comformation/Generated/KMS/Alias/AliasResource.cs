@@ -37,9 +37,9 @@ namespace Comformation.KMS.Alias
 			public Union<string, IntrinsicFunction> TargetKeyId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::KMS::Alias";
-        
+
         public AliasProperties Properties { get; } = new AliasProperties();
 
     }

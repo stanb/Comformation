@@ -18,7 +18,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Logging
         /// Whether access logs are written for the streaming distribution.
         /// Required: No
-        /// Type: CloudFront StreamingDistribution Logging
+        /// Type: Logging
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Logging")]
@@ -50,7 +50,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// Information about the Amazon S3 bucket from which you want CloudFront to get your media files for
         /// distribution.
         /// Required: Yes
-        /// Type: CloudFront StreamingDistribution S3Origin
+        /// Type: S3Origin
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Origin")]
@@ -83,7 +83,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// public URLs, remove this property. For more information, see Serving Private Content through
         /// CloudFront in the Amazon CloudFront Developer Guide.
         /// Required: Yes
-        /// Type: CloudFront StreamingDistribution TrustedSigners
+        /// Type: TrustedSigners
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TrustedSigners")]

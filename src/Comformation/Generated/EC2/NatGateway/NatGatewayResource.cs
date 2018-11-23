@@ -46,9 +46,9 @@ namespace Comformation.EC2.NatGateway
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::EC2::NatGateway";
-        
+
         public NatGatewayProperties Properties { get; } = new NatGatewayProperties();
 
     }

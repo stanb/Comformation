@@ -17,7 +17,7 @@ namespace Comformation.ApiGateway.Stage
             /// AccessLogSetting
             /// Specifies settings for logging access in this stage.
             /// Required: No
-            /// Type: API Gateway Stage AccessLogSetting
+            /// Type: AccessLogSetting
             /// Update requires: No interruption
             /// </summary>
 			public AccessLogSetting AccessLogSetting { get; set; }
@@ -44,7 +44,7 @@ namespace Comformation.ApiGateway.Stage
             /// CanarySetting
             /// Specifies settings for the canary deployment in this stage.
             /// Required: No
-            /// Type: API Gateway Stage CanarySetting
+            /// Type: CanarySetting
             /// Update requires: No interruption
             /// </summary>
 			public CanarySetting CanarySetting { get; set; }
@@ -89,7 +89,7 @@ namespace Comformation.ApiGateway.Stage
             /// MethodSettings
             /// Settings for all methods in the stage.
             /// Required: No
-            /// Type: List of API Gateway Stage MethodSetting
+            /// Type: List of MethodSetting
             /// Update requires: No interruption
             /// </summary>
 			public List<MethodSetting> MethodSettings { get; set; }
@@ -114,6 +114,26 @@ namespace Comformation.ApiGateway.Stage
 			public Union<string, IntrinsicFunction> StageName { get; set; }
 
             /// <summary>
+            /// Tags
+            /// An array of arbitrary tags (key-value pairs) to associate with the stage.
+            /// Required: No
+            /// Type: List of Resource Tag property types
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// TracingEnabled
+            /// Specifies whether active tracing with X-ray is enabled for this stage.
+            /// For more information, see Trace API Gateway API Execution with AWS X-Ray in the API Gateway
+            /// Developer Guide.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> TracingEnabled { get; set; }
+
+            /// <summary>
             /// Variables
             /// A map (string-to-string map) that defines the stage variables, where the variable name is the key
             /// and the variable value is the value. Variable names are limited to alphanumeric characters. Values
@@ -125,9 +145,9 @@ namespace Comformation.ApiGateway.Stage
 			public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::Stage";
-        
+
         public StageProperties Properties { get; } = new StageProperties();
 
     }

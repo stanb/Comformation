@@ -125,9 +125,9 @@ namespace Comformation.OpsWorks.App
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::OpsWorks::App";
-        
+
         public AppProperties Properties { get; } = new AppProperties();
 
     }

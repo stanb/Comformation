@@ -18,20 +18,31 @@ namespace Comformation.CodePipeline.Pipeline
             /// <summary>
             /// ArtifactStore
             /// The Amazon Simple Storage Service (Amazon S3) location where AWS CodePipeline stores pipeline
-            /// artifacts. For more information, see Create an Amazon S3 Bucket for Your Application in the AWS
-            /// CodePipeline User Guide.
-            /// Required: Yes
-            /// Type: AWS CodePipeline Pipeline ArtifactStore
+            /// artifacts. You can only use either ArtifactStore or ArtifactStores, not both. For more information,
+            /// see Create an Amazon S3 Bucket for Your Application in the AWS CodePipeline User Guide.
+            /// Required: No
+            /// Type: ArtifactStore
             /// Update requires: No interruption
             /// </summary>
 			public ArtifactStore ArtifactStore { get; set; }
+
+            /// <summary>
+            /// ArtifactStores
+            /// Specifies a list of ArtifactStoreMap mappings. There must be an artifact store for the pipeline
+            /// region and for each cross-region action within the pipeline. You can only use either ArtifactStore
+            /// or ArtifactStores, not both.
+            /// Required: No
+            /// Type: List of ArtifactStoreMap property types
+            /// Update requires: No interruption
+            /// </summary>
+			public List<ArtifactStoreMap> ArtifactStores { get; set; }
 
             /// <summary>
             /// DisableInboundStageTransitions
             /// Prevents artifacts in a pipeline from transitioning to the stage that you specified. This enables
             /// you to manually control transitions.
             /// Required: No
-            /// Type: List of AWS CodePipeline Pipeline DisableInboundStageTransitions
+            /// Type: List of DisableInboundStageTransitions property types
             /// Update requires: No interruption
             /// </summary>
 			public List<StageTransition> DisableInboundStageTransitions { get; set; }
@@ -69,15 +80,15 @@ namespace Comformation.CodePipeline.Pipeline
             /// Stages
             /// Defines the AWS CodePipeline pipeline stages.
             /// Required: Yes
-            /// Type: AWS CodePipeline Pipeline Stages
+            /// Type: List of Stages property types
             /// Update requires: No interruption
             /// </summary>
 			public List<StageDeclaration> Stages { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodePipeline::Pipeline";
-        
+
         public PipelineProperties Properties { get; } = new PipelineProperties();
 
     }

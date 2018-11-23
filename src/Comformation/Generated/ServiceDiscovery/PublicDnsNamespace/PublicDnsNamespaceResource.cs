@@ -45,9 +45,9 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceDiscovery::PublicDnsNamespace";
-        
+
         public PublicDnsNamespaceProperties Properties { get; } = new PublicDnsNamespaceProperties();
 
     }

@@ -43,9 +43,9 @@ namespace Comformation.AppSync.ApiKey
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AppSync::ApiKey";
-        
+
         public ApiKeyProperties Properties { get; } = new ApiKeyProperties();
 
     }

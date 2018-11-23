@@ -67,9 +67,9 @@ namespace Comformation.SageMaker.Model
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SageMaker::Model";
-        
+
         public ModelProperties Properties { get; } = new ModelProperties();
 
     }

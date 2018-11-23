@@ -30,7 +30,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// BufferingHints
         /// The buffering option.
         /// Required: Yes
-        /// Type: Kinesis Data Firehose DeliveryStream BufferingHints
+        /// Type: BufferingHints
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BufferingHints")]
@@ -40,7 +40,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CloudWatchLoggingOptions
         /// The CloudWatch logging options for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: CloudWatchLoggingOptions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
@@ -63,7 +63,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The encryption configuration for the Kinesis Data Firehose delivery stream. The default value is
         /// NoEncryption.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream EncryptionConfiguration
+        /// Type: EncryptionConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
@@ -85,7 +85,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// ProcessingConfiguration
         /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream ProcessingConfiguration
+        /// Type: ProcessingConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
@@ -106,7 +106,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3BackupConfiguration
         /// The configuration for backup in Amazon S3.
         /// Required: No
-        /// Type: Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
+        /// Type: S3DestinationConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupConfiguration")]

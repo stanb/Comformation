@@ -82,9 +82,9 @@ namespace Comformation.CertificateManager.Certificate
 			public Union<string, IntrinsicFunction> ValidationMethod { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CertificateManager::Certificate";
-        
+
         public CertificateProperties Properties { get; } = new CertificateProperties();
 
     }

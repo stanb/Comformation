@@ -47,9 +47,9 @@ namespace Comformation.IAM.InstanceProfile
 			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IAM::InstanceProfile";
-        
+
         public InstanceProfileProperties Properties { get; } = new InstanceProfileProperties();
 
     }

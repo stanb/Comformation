@@ -51,9 +51,9 @@ namespace Comformation.Athena.NamedQuery
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Athena::NamedQuery";
-        
+
         public NamedQueryProperties Properties { get; } = new NamedQueryProperties();
 
     }

@@ -58,7 +58,7 @@ namespace Comformation.Elasticsearch.Domain
             /// nodes in the Amazon ES domain. For more information, see Configuring EBS-based Storage in the Amazon
             /// Elasticsearch Service Developer Guide.
             /// Required: No
-            /// Type: Amazon ES Domain EBSOptions
+            /// Type: EBSOptions
             /// Update requires: No interruption
             /// </summary>
 			public EBSOptions EBSOptions { get; set; }
@@ -69,7 +69,7 @@ namespace Comformation.Elasticsearch.Domain
             /// type and the number of instances. For more information, see Configuring Amazon ES Domains in the
             /// Amazon Elasticsearch Service Developer Guide.
             /// Required: No
-            /// Type: Amazon ES Domain ElasticsearchClusterConfig
+            /// Type: ElasticsearchClusterConfig
             /// Update requires: No interruption
             /// </summary>
 			public ElasticsearchClusterConfig ElasticsearchClusterConfig { get; set; }
@@ -90,7 +90,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service (KMS) key
             /// to use. Can only be used to create a new domain, not update an existing one.
             /// Required: No
-            /// Type: Amazon ES Domain EncryptionAtRestOptions
+            /// Type: EncryptionAtRestOptions
             /// Update requires: Replacement
             /// </summary>
 			public EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
@@ -99,7 +99,7 @@ namespace Comformation.Elasticsearch.Domain
             /// SnapshotOptions
             /// The automated snapshot configuration for the Amazon ES domain indices.
             /// Required: No
-            /// Type: Amazon ES Domain SnapshotOptions
+            /// Type: SnapshotOptions
             /// Update requires: No interruption
             /// </summary>
 			public SnapshotOptions SnapshotOptions { get; set; }
@@ -119,15 +119,15 @@ namespace Comformation.Elasticsearch.Domain
             /// VPC Support for Amazon Elasticsearch Service Domains in the Amazon Elasticsearch Service Developer
             /// Guide.
             /// Required: No
-            /// Type: Amazon ES Domain VPCOptions
+            /// Type: VPCOptions
             /// Update requires: No interruption
             /// </summary>
 			public VPCOptions VPCOptions { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Elasticsearch::Domain";
-        
+
         public DomainProperties Properties { get; } = new DomainProperties();
 
     }

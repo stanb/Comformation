@@ -136,9 +136,9 @@ namespace Comformation.Neptune.DBInstance
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Neptune::DBInstance";
-        
+
         public DBInstanceProperties Properties { get; } = new DBInstanceProperties();
 
     }

@@ -29,7 +29,7 @@ namespace Comformation.ElasticBeanstalk.Application
         /// VersionLifecycleConfig
         /// Defines lifecycle settings for application versions.
         /// Required: No
-        /// Type: Elastic Beanstalk Application ApplicationVersionLifecycleConfig
+        /// Type: ApplicationVersionLifecycleConfig
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VersionLifecycleConfig")]

@@ -25,10 +25,10 @@ namespace Comformation.AmazonMQ.Broker
             /// <summary>
             /// EngineVersion
             /// The version of the broker engine.
-            /// Note Currently, Amazon MQ supports only 5. 15. 0.
+            /// Note For a list of supported engine versions, see: Broker Engine.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
@@ -38,7 +38,7 @@ namespace Comformation.AmazonMQ.Broker
             /// configuration.
             /// Note You can use AWS CloudFormation to modify—but not delete—an Amazon MQ configuration.
             /// Required: No
-            /// Type: Amazon MQ Broker ConfigurationId
+            /// Type: ConfigurationId
             /// Update requires: Some interruptions
             /// </summary>
 			public ConfigurationId Configuration { get; set; }
@@ -47,7 +47,7 @@ namespace Comformation.AmazonMQ.Broker
             /// MaintenanceWindowStartTime
             /// The parameters that determine the WeeklyStartTime.
             /// Required: No
-            /// Type: Amazon MQ Broker MaintenanceWindow
+            /// Type: MaintenanceWindow
             /// Update requires: Replacement
             /// </summary>
 			public MaintenanceWindow MaintenanceWindowStartTime { get; set; }
@@ -69,7 +69,7 @@ namespace Comformation.AmazonMQ.Broker
             /// reboot.
             /// Required: Yes
             /// Type: Boolean
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -77,7 +77,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Users
             /// The list of all ActiveMQ usernames for the specified broker.
             /// Required: Yes
-            /// Type: List of Amazon MQ Broker User property types
+            /// Type: List of User property types
             /// Update requires: Some interruptions
             /// </summary>
 			public List<User> Users { get; set; }
@@ -86,7 +86,7 @@ namespace Comformation.AmazonMQ.Broker
             /// Logs
             /// The Amazon CloudWatch Logs configuration for the broker.
             /// Required: No
-            /// Type: Amazon MQ Broker LogsConfiguration
+            /// Type: LogsConfiguration
             /// Update requires: Some interruptions
             /// </summary>
 			public LogList Logs { get; set; }
@@ -143,9 +143,9 @@ namespace Comformation.AmazonMQ.Broker
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AmazonMQ::Broker";
-        
+
         public BrokerProperties Properties { get; } = new BrokerProperties();
 
     }

@@ -153,7 +153,7 @@ namespace Comformation.EC2.SpotFleet
         /// TagSpecifications
         /// The tags to apply during creation.
         /// Required: No
-        /// Type: List of Amazon EC2 SpotFleet SpotFleetTagSpecification
+        /// Type: List of SpotFleetTagSpecification
         /// </summary>
         [JsonProperty("TagSpecifications")]
         public List<SpotFleetTagSpecification> TagSpecifications { get; set; }

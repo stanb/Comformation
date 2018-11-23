@@ -91,9 +91,9 @@ namespace Comformation.DMS.EventSubscription
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::DMS::EventSubscription";
-        
+
         public EventSubscriptionProperties Properties { get; } = new EventSubscriptionProperties();
 
     }

@@ -40,7 +40,7 @@ namespace Comformation.Glue.Job
             /// Connections
             /// The connections that are used by the job.
             /// Required: No
-            /// Type: AWS Glue Job ConnectionsList
+            /// Type: ConnectionsList
             /// Update requires: No interruption
             /// </summary>
 			public ConnectionsList Connections { get; set; }
@@ -76,7 +76,7 @@ namespace Comformation.Glue.Job
             /// Command
             /// The code that executes a job.
             /// Required: Yes
-            /// Type: AWS Glue Job JobCommand
+            /// Type: JobCommand
             /// Update requires: No interruption
             /// </summary>
 			public JobCommand Command { get; set; }
@@ -95,7 +95,7 @@ namespace Comformation.Glue.Job
             /// The execution property of the job, which specifies the maximum number of concurrent runs that are
             /// allowed for the job.
             /// Required: No
-            /// Type: AWS Glue Job ExecutionProperty
+            /// Type: ExecutionProperty
             /// Update requires: No interruption
             /// </summary>
 			public ExecutionProperty ExecutionProperty { get; set; }
@@ -111,9 +111,9 @@ namespace Comformation.Glue.Job
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Glue::Job";
-        
+
         public JobProperties Properties { get; } = new JobProperties();
 
     }

@@ -77,9 +77,9 @@ namespace Comformation.GuardDuty.Member
 			public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::GuardDuty::Member";
-        
+
         public MemberProperties Properties { get; } = new MemberProperties();
 
     }

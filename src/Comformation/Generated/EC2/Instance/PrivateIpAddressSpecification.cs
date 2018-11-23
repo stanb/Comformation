@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// EC2 Network Interface Private IP Specification
+    /// Amazon EC2 NetworkInterface PrivateIpAddressSpecification
     /// The PrivateIpAddressSpecification type is an embedded property of the AWS::EC2::NetworkInterface type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html
     /// </summary>

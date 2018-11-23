@@ -72,7 +72,7 @@ namespace Comformation.EC2.SpotFleet
         /// LaunchTemplateConfigs
         /// Describes a launch template and overrides.
         /// Required: Conditional. You must specify either LaunchSpecifications or LaunchTemplateConfigs.
-        /// Type: List of Amazon EC2 SpotFleet LaunchTemplateConfig
+        /// Type: List of LaunchTemplateConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateConfigs")]
@@ -83,7 +83,7 @@ namespace Comformation.EC2.SpotFleet
         /// One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet
         /// registers the running Spot Instances with the specified Classic Load Balancers and target groups.
         /// Required: No
-        /// Type: Amazon EC2 SpotFleet LoadBalancersConfig
+        /// Type: LoadBalancersConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LoadBalancersConfig")]

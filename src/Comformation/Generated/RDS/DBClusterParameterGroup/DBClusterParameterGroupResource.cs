@@ -57,9 +57,9 @@ namespace Comformation.RDS.DBClusterParameterGroup
 			public List<Tag> Tags { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBClusterParameterGroup";
-        
+
         public DBClusterParameterGroupProperties Properties { get; } = new DBClusterParameterGroupProperties();
 
     }

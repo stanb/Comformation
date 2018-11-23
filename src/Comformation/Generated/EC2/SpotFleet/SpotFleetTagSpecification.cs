@@ -25,5 +25,16 @@ namespace Comformation.EC2.SpotFleet
         [JsonProperty("ResourceType")]
         public Union<string, IntrinsicFunction> ResourceType { get; set; }
 
+        /// <summary>
+        /// Tags
+        /// Specifies an arbitrary set of tags (key–value pairs) to associate with this spot fleet. Use tags to
+        /// manage your resources.
+        /// Required: No
+        /// Type: Resource Tag
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Tags")]
+        public List<Tag> Tags { get; set; }
+
     }
 }

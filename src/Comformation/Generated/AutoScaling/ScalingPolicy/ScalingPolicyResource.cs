@@ -6,9 +6,9 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::AutoScaling::ScalingPolicy
-    /// Adds a scaling policy to an Auto Scaling group. A scaling policy specifies whether to scale the Auto Scaling
-    /// group up or down, and by how much. For more information, see Dynamic Scaling in the Amazon EC2 Auto Scaling
-    /// User Guide.
+    /// Adds a scaling policy to an Amazon EC2 Auto Scaling group. A scaling policy specifies whether to scale the
+    /// Auto Scaling group up or down, and by how much. For more information, see Dynamic Scaling in the Amazon EC2
+    /// Auto Scaling User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html
     /// </summary>
     public class ScalingPolicyResource : ResourceBase
@@ -27,7 +27,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
             /// <summary>
             /// AutoScalingGroupName
-            /// The name or Amazon Resource Name (ARN) of the Auto Scaling Group that you want to attach the policy
+            /// The name or Amazon Resource Name (ARN) of the Auto Scaling group that you want to attach the policy
             /// to.
             /// Required: Yes
             /// Type: String
@@ -49,7 +49,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// <summary>
             /// EstimatedInstanceWarmup
             /// The estimated time, in seconds, until a newly launched instance can send metrics to CloudWatch. By
-            /// default, Auto Scaling uses the cooldown period, as specified in the Cooldown property.
+            /// default, Amazon EC2 Auto Scaling uses the cooldown period, as specified in the Cooldown property.
             /// Do not specify this property if you are using the SimpleScaling policy type.
             /// Required: No
             /// Type: Integer
@@ -127,9 +127,9 @@ namespace Comformation.AutoScaling.ScalingPolicy
 			public TargetTrackingConfiguration TargetTrackingConfiguration { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AutoScaling::ScalingPolicy";
-        
+
         public ScalingPolicyProperties Properties { get; } = new ScalingPolicyProperties();
 
     }

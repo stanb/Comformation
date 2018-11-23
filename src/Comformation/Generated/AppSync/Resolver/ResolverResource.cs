@@ -35,6 +35,15 @@ namespace Comformation.AppSync.Resolver
 			public Union<string, IntrinsicFunction> TypeName { get; set; }
 
             /// <summary>
+            /// PipelineConfig
+            /// Functions linked with the pipeline resolver.
+            /// Required: No
+            /// Type: PipelineConfig
+            /// Update requires: No interruption
+            /// </summary>
+			public PipelineConfig PipelineConfig { get; set; }
+
+            /// <summary>
             /// DataSourceName
             /// The AWS AppSync data source that this resolver will run against in order to return data to the
             /// caller.
@@ -61,6 +70,11 @@ namespace Comformation.AppSync.Resolver
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ResponseMappingTemplate { get; set; }
+
+            /// <summary>
+            /// Kind
+            /// </summary>
+			public Union<string, IntrinsicFunction> Kind { get; set; }
 
             /// <summary>
             /// RequestMappingTemplateS3Location
@@ -91,9 +105,9 @@ namespace Comformation.AppSync.Resolver
 			public Union<string, IntrinsicFunction> FieldName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::AppSync::Resolver";
-        
+
         public ResolverProperties Properties { get; } = new ResolverProperties();
 
     }

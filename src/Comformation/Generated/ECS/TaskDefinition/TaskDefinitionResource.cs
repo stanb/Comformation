@@ -134,9 +134,9 @@ namespace Comformation.ECS.TaskDefinition
 			public List<Volume> Volumes { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ECS::TaskDefinition";
-        
+
         public TaskDefinitionProperties Properties { get; } = new TaskDefinitionProperties();
 
     }

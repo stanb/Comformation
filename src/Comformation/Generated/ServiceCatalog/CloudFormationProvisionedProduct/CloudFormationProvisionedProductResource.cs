@@ -27,8 +27,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// ProvisioningParameters
             /// Parameters specified by the administrator that are required for provisioning the product.
             /// Required: No
-            /// Type: List of AWS Service Catalog CloudFormationProvisionedProduct ProvisioningParameter property
-            /// types
+            /// Type: List of ProvisioningParameter property types
             /// Update requires: No interruption
             /// </summary>
 			public List<ProvisioningParameter> ProvisioningParameters { get; set; }
@@ -111,9 +110,9 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 			public Union<string, IntrinsicFunction> ProvisioningArtifactId { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ServiceCatalog::CloudFormationProvisionedProduct";
-        
+
         public CloudFormationProvisionedProductProperties Properties { get; } = new CloudFormationProvisionedProductProperties();
 
     }

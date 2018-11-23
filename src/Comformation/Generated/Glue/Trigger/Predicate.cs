@@ -30,7 +30,7 @@ namespace Comformation.Glue.Trigger
         /// Conditions
         /// The conditions that determine when the trigger fires.
         /// Required: No
-        /// Type: List of AWS Glue Trigger Condition
+        /// Type: List of Condition
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Conditions")]

@@ -25,9 +25,9 @@ namespace Comformation.ElastiCache.SecurityGroup
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ElastiCache::SecurityGroup";
-        
+
         public SecurityGroupProperties Properties { get; } = new SecurityGroupProperties();
 
     }

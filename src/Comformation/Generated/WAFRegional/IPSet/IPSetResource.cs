@@ -39,9 +39,9 @@ namespace Comformation.WAFRegional.IPSet
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAFRegional::IPSet";
-        
+
         public IPSetProperties Properties { get; } = new IPSetProperties();
 
     }

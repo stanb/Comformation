@@ -158,9 +158,9 @@ namespace Comformation.SQS.Queue
 			public Union<int, IntrinsicFunction> VisibilityTimeout { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::SQS::Queue";
-        
+
         public QueueProperties Properties { get; } = new QueueProperties();
 
     }

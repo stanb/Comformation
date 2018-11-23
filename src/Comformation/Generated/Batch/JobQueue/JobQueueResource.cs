@@ -52,9 +52,9 @@ namespace Comformation.Batch.JobQueue
 			public Union<string, IntrinsicFunction> JobQueueName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Batch::JobQueue";
-        
+
         public JobQueueProperties Properties { get; } = new JobQueueProperties();
 
     }

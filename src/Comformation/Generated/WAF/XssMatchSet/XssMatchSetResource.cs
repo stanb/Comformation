@@ -34,9 +34,9 @@ namespace Comformation.WAF.XssMatchSet
 			public List<XssMatchTuple> XssMatchTuples { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAF::XssMatchSet";
-        
+
         public XssMatchSetProperties Properties { get; } = new XssMatchSetProperties();
 
     }

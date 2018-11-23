@@ -28,7 +28,7 @@ namespace Comformation.CloudFront.Distribution
         /// LambdaFunctionAssociations
         /// Lambda function associations for the Amazon CloudFront distribution.
         /// Required: No
-        /// Type: List of CloudFront Distribution LambdaFunctionAssociation
+        /// Type: List of LambdaFunctionAssociation
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaFunctionAssociations")]

@@ -226,6 +226,28 @@ namespace Comformation.RDS.DBInstance
 			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
+            /// DeleteAutomatedBackups
+            /// Indicates whether automated backups should be deleted (true) or retained (false) when you delete a
+            /// DB instance. The default is true.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> DeleteAutomatedBackups { get; set; }
+
+            /// <summary>
+            /// DeletionProtection
+            /// Indicates whether the DB instance should have deletion protection enabled. The database can&#39;t be
+            /// deleted when this value is set to true. If you want to delete a stack with a protected instance,
+            /// update this value to false before you delete the stack.
+            /// For more information, see Deleting a DB Instance.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
+
+            /// <summary>
             /// Domain
             /// For an Amazon RDS DB instance that&#39;s running Microsoft SQL Server, the Active Directory directory ID
             /// to create the instance in. Amazon RDS uses Windows Authentication to authenticate users that connect
@@ -246,6 +268,46 @@ namespace Comformation.RDS.DBInstance
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainIAMRoleName { get; set; }
+
+            /// <summary>
+            /// EnableCloudwatchLogsExports
+            /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the
+            /// list depend on the DB engine being used. Log types that are excluded or removed from this list
+            /// during updates are disabled. For more information, see Publishing Database Logs to Amazon CloudWatch
+            /// Logs in the Amazon Relational Database Service User Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
+
+            /// <summary>
+            /// EnableIAMDatabaseAuthentication
+            /// If set to true, enables mapping of AWS Identity and Access Management (IAM) accounts to database
+            /// accounts.
+            /// You can enable IAM database authentication for the following database engines:
+            /// Amazon Aurora
+            /// Not applicable. Mapping IAM accounts to database accounts is managed by the DB cluster. For more
+            /// information, see CreateDBCluster.
+            /// MySQL
+            /// For MySQL 5. 6, minor version 5. 6. 34 or higher For MySQL 5. 7, minor version 5. 7. 16 or higher
+            /// Default: false
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> EnableIAMDatabaseAuthentication { get; set; }
+
+            /// <summary>
+            /// EnablePerformanceInsights
+            /// If set to true, enables Performance Insights for the DB instance.
+            /// For more information, see Using Amazon Performance Insights in the Amazon Relational Database
+            /// Service User Guide.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<bool, IntrinsicFunction> EnablePerformanceInsights { get; set; }
 
             /// <summary>
             /// Engine
@@ -396,6 +458,30 @@ namespace Comformation.RDS.DBInstance
 			public Union<string, IntrinsicFunction> OptionGroupName { get; set; }
 
             /// <summary>
+            /// PerformanceInsightsKMSKeyId
+            /// The AWS KMS key identifier for encryption of Performance Insights data. The AWS KMS key ID is the
+            /// Amazon Resource Name (ARN), AWS KMS key identifier, or the AWS KMS key alias for the AWS KMS
+            /// encryption key.
+            /// If EnablePerformanceInsights is set to false, don&#39;t specify this property.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Some interruptions. When you set EnablePerformanceInsights to true, the first time
+            /// you specify PerformanceInsightsKMSKeyId requires no interruption. If you update the value for
+            /// PerformanceInsightsKMSKeyId with Performance Insights enabled, replacement occurs.
+            /// </summary>
+			public Union<string, IntrinsicFunction> PerformanceInsightsKMSKeyId { get; set; }
+
+            /// <summary>
+            /// PerformanceInsightsRetentionPeriod
+            /// The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2
+            /// years).
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<int, IntrinsicFunction> PerformanceInsightsRetentionPeriod { get; set; }
+
+            /// <summary>
             /// Port
             /// The port for the instance.
             /// Required: No
@@ -428,6 +514,27 @@ namespace Comformation.RDS.DBInstance
             /// in the Amazon RDS API Reference.
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+
+            /// <summary>
+            /// ProcessorFeatures
+            /// The number of CPU cores and the number of threads per core for the DB instance class of the DB
+            /// instance.
+            /// Required: No
+            /// Type: List of ProcessorFeature property types
+            /// Update requires: No interruption
+            /// </summary>
+			public List<ProcessorFeature> ProcessorFeatures { get; set; }
+
+            /// <summary>
+            /// PromotionTier
+            /// A value that specifies the order in which an Aurora Replica is promoted to the primary instance
+            /// after a failure of the existing primary instance. For more information, see Fault Tolerance for an
+            /// Aurora DB Cluster in the Amazon Aurora User Guide.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<int, IntrinsicFunction> PromotionTier { get; set; }
 
             /// <summary>
             /// PubliclyAccessible
@@ -516,7 +623,7 @@ namespace Comformation.RDS.DBInstance
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this DB instance.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Resource Tag property types
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
@@ -554,9 +661,9 @@ namespace Comformation.RDS.DBInstance
 			public List<Union<string, IntrinsicFunction>> VPCSecurityGroups { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::RDS::DBInstance";
-        
+
         public DBInstanceProperties Properties { get; } = new DBInstanceProperties();
 
     }

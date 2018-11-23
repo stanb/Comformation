@@ -59,9 +59,9 @@ namespace Comformation.Logs.SubscriptionFilter
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Logs::SubscriptionFilter";
-        
+
         public SubscriptionFilterProperties Properties { get; } = new SubscriptionFilterProperties();
 
     }

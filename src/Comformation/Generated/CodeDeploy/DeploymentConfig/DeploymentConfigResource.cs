@@ -46,9 +46,9 @@ namespace Comformation.CodeDeploy.DeploymentConfig
 			public MinimumHealthyHosts MinimumHealthyHosts { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::CodeDeploy::DeploymentConfig";
-        
+
         public DeploymentConfigProperties Properties { get; } = new DeploymentConfigProperties();
 
     }

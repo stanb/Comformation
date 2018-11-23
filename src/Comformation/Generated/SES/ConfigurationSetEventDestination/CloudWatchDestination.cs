@@ -19,7 +19,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// A list of dimensions upon which to categorize your emails when you publish email sending events to
         /// CloudWatch.
         /// Required: No
-        /// Type: List of Amazon SES ConfigurationSetEventDestination DimensionConfiguration
+        /// Type: List of DimensionConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DimensionConfigurations")]

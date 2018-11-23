@@ -81,7 +81,7 @@ namespace Comformation.ApiGateway.RestApi
             /// A list of the endpoint types of the API. Use this property when creating an API. When importing an
             /// existing API, specify the endpoint configuration types using the Parameters property.
             /// Required: No
-            /// Type: API Gateway RestApi EndpointConfiguration
+            /// Type: EndpointConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public EndpointConfiguration EndpointConfiguration { get; set; }
@@ -138,9 +138,9 @@ namespace Comformation.ApiGateway.RestApi
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Policy { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::ApiGateway::RestApi";
-        
+
         public RestApiProperties Properties { get; } = new RestApiProperties();
 
     }

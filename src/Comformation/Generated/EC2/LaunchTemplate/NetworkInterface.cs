@@ -38,7 +38,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// PrivateIpAddresses
         /// One or more private IPv4 addresses.
         /// Required: No
-        /// Type: List of Amazon EC2 LaunchTemplate PrivateIpAdd
+        /// Type: List of PrivateIpAdd
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivateIpAddresses")]
@@ -101,7 +101,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can&#39;t use
         /// this option if you&#39;re specifying a number of IPv6 addresses.
         /// Required: No
-        /// Type: List of Amazon EC2 LaunchTemplate Ipv6Add
+        /// Type: List of Ipv6Add
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ipv6Addresses")]

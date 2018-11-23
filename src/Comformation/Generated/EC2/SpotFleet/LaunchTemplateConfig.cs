@@ -18,7 +18,7 @@ namespace Comformation.EC2.SpotFleet
         /// LaunchTemplateSpecification
         /// The launch template.
         /// Required: Yes
-        /// Type: Amazon EC2 SpotFleet FleetLaunchTemplateSpecification
+        /// Type: FleetLaunchTemplateSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateSpecification")]
@@ -28,7 +28,7 @@ namespace Comformation.EC2.SpotFleet
         /// Overrides
         /// Any parameters that you specify override the same parameters in the launch template.
         /// Required: No
-        /// Type: List of Amazon EC2 SpotFleet LaunchTemplateOverrides
+        /// Type: List of LaunchTemplateOverrides
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Overrides")]

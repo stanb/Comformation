@@ -34,9 +34,9 @@ namespace Comformation.WAF.SizeConstraintSet
 			public List<SizeConstraint> SizeConstraints { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::WAF::SizeConstraintSet";
-        
+
         public SizeConstraintSetProperties Properties { get; } = new SizeConstraintSetProperties();
 
     }

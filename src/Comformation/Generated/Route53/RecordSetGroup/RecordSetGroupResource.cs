@@ -64,9 +64,9 @@ namespace Comformation.Route53.RecordSetGroup
 			public List<RecordSet> RecordSets { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::Route53::RecordSetGroup";
-        
+
         public RecordSetGroupProperties Properties { get; } = new RecordSetGroupProperties();
 
     }

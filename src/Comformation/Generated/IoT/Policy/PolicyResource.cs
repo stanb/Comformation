@@ -32,9 +32,9 @@ namespace Comformation.IoT.Policy
 			public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
         }
-    
+
         public string Type { get; } = "AWS::IoT::Policy";
-        
+
         public PolicyProperties Properties { get; } = new PolicyProperties();
 
     }

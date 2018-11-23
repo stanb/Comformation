@@ -29,7 +29,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Describes the format of the data in the streaming source, and how each data element maps to
         /// corresponding columns in the in-application stream that is being created.
         /// Required: Yes
-        /// Type: Kinesis Data Analytics Application InputSchema
+        /// Type: InputSchema
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputSchema")]
@@ -40,7 +40,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// If the streaming source is an Amazon Kinesis stream, identifies the stream&#39;s ARN and an IAM role
         /// that enables Kinesis Data Analytics to access the stream on your behalf.
         /// Required: No
-        /// Type: Kinesis Data Analytics Application KinesisStreamsInput
+        /// Type: KinesisStreamsInput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisStreamsInput")]
@@ -52,7 +52,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// stream&#39;s Amazon Resource Name (ARN) and an IAM role that enables Kinesis Data Analytics to access
         /// the stream on your behalf.
         /// Required: No
-        /// Type: Kinesis Data Analytics Application KinesisFirehoseInput
+        /// Type: KinesisFirehoseInput
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KinesisFirehoseInput")]
@@ -64,7 +64,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// received from the stream, before the application&#39;s SQL code executes. Currently, the only input
         /// processing configuration available is InputLambdaProcessor.
         /// Required: No
-        /// Type: Kinesis Data Analytics Application InputProcessingConfiguration
+        /// Type: InputProcessingConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputProcessingConfiguration")]
@@ -74,7 +74,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// InputParallelism
         /// Describes the number of in-application streams to create.
         /// Required: No
-        /// Type: Kinesis Data Analytics Application InputParallelism
+        /// Type: InputParallelism
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputParallelism")]
