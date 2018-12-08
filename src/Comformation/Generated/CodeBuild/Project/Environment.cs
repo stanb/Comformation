@@ -71,6 +71,9 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Certificate
+        /// The certificate to use with the build project.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("Certificate")]
         public Union<string, IntrinsicFunction> Certificate { get; set; }

@@ -49,6 +49,9 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// SourceIdentifier
+        /// An identifier for this project source.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("SourceIdentifier")]
         public Union<string, IntrinsicFunction> SourceIdentifier { get; set; }

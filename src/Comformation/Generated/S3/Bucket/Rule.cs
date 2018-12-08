@@ -28,10 +28,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ExpirationDate
-        /// Indicates when objects are deleted from Amazon S3 and Amazon Glacier. The date value must be in ISO
-        /// 8601 format. The time is always midnight UTC. If you specify an expiration and transition time, you
-        /// must use the same time unit for both properties (either in days or by date). The expiration time
-        /// must also be later than the transition time.
+        /// Indicates when objects are deleted from Amazon S3 and Glacier. The date value must be in ISO 8601
+        /// format. The time is always midnight UTC. If you specify an expiration and transition time, you must
+        /// use the same time unit for both properties (either in days or by date). The expiration time must
+        /// also be later than the transition time.
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
@@ -42,10 +42,9 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ExpirationInDays
-        /// Indicates the number of days after creation when objects are deleted from Amazon S3 and Amazon
-        /// Glacier. If you specify an expiration and transition time, you must use the same time unit for both
-        /// properties (either in days or by date). The expiration time must also be later than the transition
-        /// time.
+        /// Indicates the number of days after creation when objects are deleted from Amazon S3 and Glacier. If
+        /// you specify an expiration and transition time, you must use the same time unit for both properties
+        /// (either in days or by date). The expiration time must also be later than the transition time.
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.

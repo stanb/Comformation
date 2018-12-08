@@ -73,6 +73,11 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// Kind
+            /// The kind of the resolver.
+            /// Valid values: UNIT | PIPELINE.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Kind { get; set; }
 

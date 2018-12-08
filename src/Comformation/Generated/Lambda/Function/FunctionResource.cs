@@ -91,6 +91,18 @@ namespace Comformation.Lambda.Function
 			public Union<string, IntrinsicFunction> KmsKeyArn { get; set; }
 
             /// <summary>
+            /// Layers
+            /// A list of Amazon Resource Names (ARNs) for the function layers to add to the function&#39;s execution
+            /// environment. You can configure your Lambda function to pull in additional code during
+            /// intitialization in the form of layers. Layers are packages of libraries or other dependencies that
+            /// can be used by multiple functions.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> Layers { get; set; }
+
+            /// <summary>
             /// MemorySize
             /// The amount of memory, in MB, that is allocated to your Lambda function. Lambda uses this value to
             /// proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS

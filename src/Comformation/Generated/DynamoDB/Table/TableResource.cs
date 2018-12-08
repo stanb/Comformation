@@ -24,6 +24,20 @@ namespace Comformation.DynamoDB.Table
 			public List<AttributeDefinition> AttributeDefinitions { get; set; }
 
             /// <summary>
+            /// BillingMode
+            /// Specify how you are charged for read and write throughput and how you manage capacity.
+            /// Valid values include:
+            /// PROVISIONED: Sets the billing mode to PROVISIONED. We recommend using PROVISIONED for predictable
+            /// workloads. PAY_PER_REQUEST: Sets the billing mode to PAY_PER_REQUEST. We recommend using
+            /// PAY_PER_REQUEST for unpredictable workloads.
+            /// If not specified, the default is PROVISIONED.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> BillingMode { get; set; }
+
+            /// <summary>
             /// GlobalSecondaryIndexes
             /// Global secondary indexes to be created on the table. You can create up to 5 global secondary
             /// indexes.
@@ -79,7 +93,8 @@ namespace Comformation.DynamoDB.Table
             /// Throughput for the specified table, which consists of values for ReadCapacityUnits and
             /// WriteCapacityUnits. For more information about the contents of a provisioned throughput structure,
             /// see Amazon DynamoDB Table ProvisionedThroughput.
-            /// Required: Yes
+            /// Required: Conditional. If you set BillingMode as PROVISIONED, you must specify this property. If you
+            /// set BillingMode as PAY_PER_REQUEST, you cannot specify this property.
             /// Type: ProvisionedThroughput
             /// Update requires: No interruption
             /// </summary>

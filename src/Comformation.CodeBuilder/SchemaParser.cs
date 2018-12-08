@@ -128,7 +128,12 @@ namespace Comformation.CodeBuilder
             string type;
             if (property.PrimitiveType.HasValue)
             {
-                type = Parse(property.PrimitiveType.Value, true);
+                // Support unexpected behaviour in spec json file. Seems like a wrong definition. 
+                // PrimitiveType should not be used. Instead there should be Type: "Map" and PrimitiveItemType: "string"
+                if (property.PrimitiveType.Value == PrimitiveType.Map)
+                    type = "Dictionary<string, Union<string, IntrinsicFunction>>";
+                else
+                    type = Parse(property.PrimitiveType.Value, true);
             }
             else
             {

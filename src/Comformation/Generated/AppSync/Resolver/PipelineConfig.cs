@@ -17,7 +17,7 @@ namespace Comformation.AppSync.Resolver
         /// Functions
         /// The FunctionsIds of the functions attached with the resolver.
         /// Required: No
-        /// Type: Type: List of String values
+        /// Type: List of String values
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Functions")]

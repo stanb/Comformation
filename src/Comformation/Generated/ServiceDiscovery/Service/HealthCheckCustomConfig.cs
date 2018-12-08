@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceDiscovery.Service
 {
     /// <summary>
-    /// Route&#160;53 ServiceDiscovery Service HealthCheckCustomConfig
+    /// AWS Cloud Map ServiceDiscovery Service HealthCheckCustomConfig
     /// The HealthCheckCustomConfig property type specifies information about an optional custom health check.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckcustomconfig.html
     /// </summary>

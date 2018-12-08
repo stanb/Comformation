@@ -46,7 +46,8 @@ namespace Comformation.DynamoDB.Table
         /// <summary>
         /// ProvisionedThroughput
         /// The provisioned throughput settings for the index.
-        /// Required: Yes
+        /// Required: Conditional. If you set BillingMode as PROVISIONED, you must specify this property. If you
+        /// set BillingMode as PAY_PER_REQUEST, you cannot specify this property.
         /// Type: ProvisionedThroughput
         /// </summary>
         [JsonProperty("ProvisionedThroughput")]

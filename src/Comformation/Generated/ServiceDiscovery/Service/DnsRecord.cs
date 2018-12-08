@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceDiscovery.Service
 {
     /// <summary>
-    /// Amazon Route&#160;53 ServiceDiscovery DnsRecord
-    /// The DnsRecord property type 		specifies settings for one DNS record that you want Amazon Route&#160;53 to create
-    /// when you register an instance.
+    /// AWS Cloud Map ServiceDiscovery DnsRecord
+    /// The DnsRecord property type 		specifies settings for one DNS record that you want AWS Cloud Map to create when
+    /// you register an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsrecord.html
     /// </summary>
     public class DnsRecord
@@ -17,7 +17,7 @@ namespace Comformation.ServiceDiscovery.Service
         /// <summary>
         /// Type
         /// 					
-        /// The DNS type of the record that you want Route&#160;53 to create. Supported record types include A,
+        /// The DNS type of the record that you want AWS Cloud Map to create. Supported record types include A,
         /// 						AAAA, and SRV.
         /// 					
         /// Required: Yes
