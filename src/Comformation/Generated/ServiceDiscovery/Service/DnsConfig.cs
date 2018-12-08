@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceDiscovery.Service
 {
     /// <summary>
-    /// Amazon Route&#160;53 ServiceDiscovery DnsConfig
-    /// The DnsConfig property type specifies 		settings for the records that you want Amazon Route&#160;53 to create when
-    /// you register an instance
+    /// AWS Cloud Map ServiceDiscovery DnsConfig
+    /// The optional 			DnsConfig property type specifies settings for the DNS records that you 		want AWS Cloud Map
+    /// to create when you register an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html
     /// </summary>
     public class DnsConfig
@@ -17,7 +17,7 @@ namespace Comformation.ServiceDiscovery.Service
         /// <summary>
         /// DnsRecords
         /// 					
-        /// Contains one DnsRecord element for each DNS record that you want Route&#160;53 to create when you
+        /// Contains one DnsRecord element for each DNS record that you want AWS Cloud Map to create when you
         /// register 						an instance.
         /// 					
         /// Required: Yes
@@ -32,6 +32,16 @@ namespace Comformation.ServiceDiscovery.Service
 
         /// <summary>
         /// RoutingPolicy
+        /// 					
+        /// The routing policy that you want to apply to all DNS records that AWS Cloud Map creates when you
+        /// register an instance and 						specify this service.
+        /// 					
+        /// 						Required: No
+        /// 					
+        /// 						Type: String
+        /// 					
+        /// 						Update requires: No interruption 					
+        /// 				
         /// </summary>
         [JsonProperty("RoutingPolicy")]
         public Union<string, IntrinsicFunction> RoutingPolicy { get; set; }

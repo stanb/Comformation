@@ -35,6 +35,9 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// ArtifactIdentifier
+        /// An identifier for this artifact.
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("ArtifactIdentifier")]
         public Union<string, IntrinsicFunction> ArtifactIdentifier { get; set; }

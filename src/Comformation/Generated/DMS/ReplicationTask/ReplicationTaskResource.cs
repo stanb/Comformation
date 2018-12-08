@@ -57,7 +57,7 @@ namespace Comformation.DMS.ReplicationTask
             /// Valid Values: full-load, cdc, full-load-and-cdc
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> MigrationType { get; set; }
 

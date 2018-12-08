@@ -107,6 +107,17 @@ namespace Comformation.EC2.Instance
 			public List<ElasticGpuSpecification> ElasticGpuSpecifications { get; set; }
 
             /// <summary>
+            /// ElasticInferenceAccelerators
+            /// Specify a list of elastic inference accelerators for an instance. Elastic Inference (EI)
+            /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep
+            /// Learning (DL) inference workloads.
+            /// Required: No
+            /// Type: List of ElasticInferenceAccelerator
+            /// Update requires: Replacement
+            /// </summary>
+			public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators { get; set; }
+
+            /// <summary>
             /// HostId
             /// If you specify host for the Affinity property, the ID of a dedicated host that the instance is
             /// associated with. If you don&#39;t specify an ID, Amazon EC2 launches the instance onto any available,
@@ -216,6 +227,15 @@ namespace Comformation.EC2.Instance
             /// Update requires: Replacement
             /// </summary>
 			public LaunchTemplateSpecification LaunchTemplate { get; set; }
+
+            /// <summary>
+            /// LicenseSpecifications
+            /// Associate a list of license configurations with the instance.
+            /// Required: No
+            /// Type: List of LicenseSpecification
+            /// Update requires: Replacement
+            /// </summary>
+			public List<LicenseSpecification> LicenseSpecifications { get; set; }
 
             /// <summary>
             /// Monitoring

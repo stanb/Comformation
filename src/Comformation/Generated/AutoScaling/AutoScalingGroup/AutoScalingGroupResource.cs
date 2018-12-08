@@ -90,7 +90,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// all its properties from the instance, with the exception of BlockDeviceMapping and
             /// AssociatePublicIpAddress.
             /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName,
-            /// or LaunchTemplate.
+            /// LaunchTemplate, or MixedInstancesPolicy.
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -102,14 +102,14 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Note If this resource has a public IP address and is also in a VPC that is defined in the same
             /// template, you must use the DependsOn attribute to declare a dependency on the VPC-gateway
             /// attachment. For more information, see DependsOn Attribute.
-            /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName or
-            /// LaunchTemplate.
+            /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName,
+            /// LaunchTemplate, or MixedInstancesPolicy.
             /// Type: String
             /// Update requires: No interruption
             /// Important When you update the LaunchConfigurationName, existing Amazon EC2 instances continue to run
             /// with the configuration that they were originally launched with. To update existing instances,
             /// specify an update policy attribute for this Auto Scaling group. For more information, see
-            /// UpdatePolicy.
+            /// UpdatePolicy Attribute.
             /// </summary>
 			public Union<string, IntrinsicFunction> LaunchConfigurationName { get; set; }
 
@@ -117,12 +117,13 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// LaunchTemplate
             /// The launch template to use to launch instances.
             /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName,
-            /// or LaunchTemplate.
+            /// LaunchTemplate, or MixedInstancesPolicy.
             /// Type: LaunchTemplateSpecification
             /// Update requires: No interruption
             /// Important When you update the LaunchTemplate, existing Amazon EC2 instances continue to run with the
             /// configuration that they were originally launched with. To update existing instances, specify an
-            /// update policy attribute for this Auto Scaling group. For more information, see UpdatePolicy.
+            /// update policy attribute for this Auto Scaling group. For more information, see UpdatePolicy
+            /// Attribute.
             /// </summary>
 			public LaunchTemplateSpecification LaunchTemplate { get; set; }
 
@@ -176,9 +177,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// MixedInstancesPolicy
-            /// The mixed instances policy to use to launch instances. This parameter, a launch template, a launch
-            /// configuration, or an Amazon EC2 instance must be specified.
-            /// Required: No
+            /// The mixed instances policy to use to launch instances.
+            /// Required: Conditional. You must specify one of the following: InstanceId, LaunchConfigurationName,
+            /// LaunchTemplate, or MixedInstancesPolicy.
             /// Type: MixedInstancesPolicy
             /// Update requires: No interruption
             /// </summary>

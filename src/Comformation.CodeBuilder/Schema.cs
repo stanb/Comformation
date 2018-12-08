@@ -33,7 +33,8 @@ namespace Comformation.CodeBuilder
         Double,
         Boolean,
         Timestamp,
-        Json
+        Json,
+        Map
     }
 
     public enum UpdateType
