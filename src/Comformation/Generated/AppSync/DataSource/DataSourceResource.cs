@@ -7,7 +7,7 @@ namespace Comformation.AppSync.DataSource
     /// <summary>
     /// AWS::AppSync::DataSource
     /// The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as
-    /// Amazon DynamoDB, AWS Lambda, and Amazon Elasticserach Service. Resolvers use these data sources to fetch data
+    /// Amazon DynamoDB, AWS Lambda, and Amazon Elasticsearch Service. Resolvers use these data sources to fetch data
     /// when clients make GraphQL calls.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
     /// </summary>

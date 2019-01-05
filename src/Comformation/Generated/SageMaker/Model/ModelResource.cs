@@ -57,6 +57,15 @@ namespace Comformation.SageMaker.Model
 			public VpcConfig VpcConfig { get; set; }
 
             /// <summary>
+            /// Containers
+            /// Specifies the containers in the inference pipeline.
+            /// Required: No
+            /// Type: List of Amazon SageMaker Model ContainerDefinition
+            /// Update requires: Replacement
+            /// </summary>
+			public List<ContainerDefinition> Containers { get; set; }
+
+            /// <summary>
             /// Tags
             /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
             /// and Cost Management User Guide.

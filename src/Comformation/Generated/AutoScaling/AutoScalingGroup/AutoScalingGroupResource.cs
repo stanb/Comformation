@@ -140,8 +140,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// LoadBalancerNames
-            /// A list of Classic load balancers associated with this Auto Scaling group. To specify Application
-            /// Load Balancers, use TargetGroupARNs.
+            /// A list of Classic Load Balancers associated with this Auto Scaling group. To specify Application
+            /// Load Balancers or Network Load Balancers, use TargetGroupARNs instead.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption

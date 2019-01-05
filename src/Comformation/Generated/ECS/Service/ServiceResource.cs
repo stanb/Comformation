@@ -159,7 +159,7 @@ namespace Comformation.ECS.Service
             /// ServiceRegistries
             /// Details of the service registry.
             /// Required: No
-            /// Type: ServiceRegistry
+            /// Type: List of ServiceRegistry property types
             /// Update requires: Replacement
             /// </summary>
 			public List<ServiceRegistry> ServiceRegistries { get; set; }

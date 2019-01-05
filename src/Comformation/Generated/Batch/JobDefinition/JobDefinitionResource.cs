@@ -55,7 +55,7 @@ namespace Comformation.Batch.JobDefinition
             /// <summary>
             /// ContainerProperties
             /// An object with various properties specific to container-based jobs.
-            /// Required: Yes
+            /// Required: No
             /// Type: AWS Batch JobDefinition ContainerProperties
             /// Update requires: No Interruption
             /// </summary>

@@ -195,6 +195,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// forecasts capacity but does not create any scheduled scaling actions based on the capacity forecast.
         /// Required: No
         /// Type: String
+        /// Valid values: ForecastAndScale | ForecastOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredictiveScalingMode")]

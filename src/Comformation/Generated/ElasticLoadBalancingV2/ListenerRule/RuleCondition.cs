@@ -18,8 +18,8 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// Field
         /// The name of the condition that you want to define, such as path-pattern (which forwards requests
         /// based on the URL of the request).
-        /// For valid values, see the Field contents for the RuleCondition data type in the Elastic Load
-        /// Balancing API Reference version 2015-12-01.
+        /// Valid values: host-header | path-pattern
+        /// Length constraints: Maximum length of 64
         /// Required: No
         /// Type: String
         /// </summary>
@@ -29,6 +29,15 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// Values
         /// The value for the field that you specified in the Field property.
+        /// If you specified host-header for Field, you can specify a single host name (for example, my.
+        /// example. com). A host name is case insensitive, can be up to 128 characters in length, and can
+        /// contain any of the following characters. You can include up to three wildcard characters.
+        /// A-Z, a-z, 0-9 - . * (matches 0 or more characters) ? (matches exactly 1 character)
+        /// If you specified path-pattern for Field, you can specify a single path pattern (for example,
+        /// /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain
+        /// any of the following characters. You can include up to three wildcard characters.
+        /// A-Z, a-z, 0-9 _ - . $ / ~ &quot; &#39; @ : + &amp;amp; (using &amp;amp;amp;) * (matches 0 or more characters) ?
+        /// (matches exactly 1 character)
         /// Required: No
         /// Type: List of String values
         /// </summary>

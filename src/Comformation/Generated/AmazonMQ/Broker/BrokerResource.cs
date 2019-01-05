@@ -142,6 +142,16 @@ namespace Comformation.AmazonMQ.Broker
             /// </summary>
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide.
+            /// Required: Yes
+            /// Type: List of Resource Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<TagsEntry> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::AmazonMQ::Broker";
@@ -152,6 +162,14 @@ namespace Comformation.AmazonMQ.Broker
 
 	public static class BrokerAttributes
 	{
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> BrokerId = new ResourceAttribute<Union<string, IntrinsicFunction>>("BrokerId");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> IpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("IpAddresses");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> OpenWireEndpoints = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("OpenWireEndpoints");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> ConfigurationRevision = new ResourceAttribute<Union<int, IntrinsicFunction>>("ConfigurationRevision");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> StompEndpoints = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("StompEndpoints");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> MqttEndpoints = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("MqttEndpoints");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> AmqpEndpoints = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("AmqpEndpoints");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationId");
+        public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> WssEndpoints = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("WssEndpoints");
 	}
 }

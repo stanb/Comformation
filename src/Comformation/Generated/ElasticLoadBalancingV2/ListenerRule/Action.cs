@@ -84,7 +84,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// Type
         /// The type of action.
-        /// Valid values: forward
+        /// Valid values: forward | authenticate-oidc | authenticate-cognito | redirect | fixed-response
         /// Required: Yes
         /// Type: String
         /// </summary>

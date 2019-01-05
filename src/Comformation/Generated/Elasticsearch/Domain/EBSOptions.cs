@@ -36,9 +36,9 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// VolumeSize
-        /// The size of the EBS volume for each data node. The minimum and maximum size of an EBS volume depends
-        /// on the EBS volume type and the instance type to which it is attached. For more information, see
-        /// Configuring EBS-based Storage in the Amazon Elasticsearch Service Developer Guide.
+        /// The size (in GiB) of the EBS volume for each data node. The minimum and maximum size of an EBS
+        /// volume depends on the EBS volume type and the instance type to which it is attached. For more
+        /// information, see Configuring EBS-based Storage in the Amazon Elasticsearch Service Developer Guide.
         /// Required: No
         /// Type: Integer
         /// </summary>

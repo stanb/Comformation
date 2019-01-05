@@ -16,9 +16,9 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// SecurityGroups
-        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use
-        /// security group IDs instead. You cannot specify both a security group ID and security name in the
-        /// same request.
+        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use the
+        /// SecurityGroupIds property instead. You cannot specify both a security group ID and security name in
+        /// the same request.
         /// Required: No
         /// Type: List of String values
         /// Update requires: No interruption

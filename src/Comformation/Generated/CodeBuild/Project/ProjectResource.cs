@@ -86,7 +86,7 @@ namespace Comformation.CodeBuild.Project
             /// <summary>
             /// Name
             /// A name for the project. The name must be unique across all of the projects in your AWS account.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

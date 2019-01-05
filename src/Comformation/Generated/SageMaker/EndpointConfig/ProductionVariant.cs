@@ -56,6 +56,12 @@ namespace Comformation.SageMaker.EndpointConfig
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         /// <summary>
+        /// AcceleratorType
+        /// </summary>
+        [JsonProperty("AcceleratorType")]
+        public Union<string, IntrinsicFunction> AcceleratorType { get; set; }
+
+        /// <summary>
         /// InitialVariantWeight
         /// Determines initial traffic distribution among all of the models that you specify in the endpoint
         /// configuration. The traffic to a production variant is determined by the ratio of the VariantWeight

@@ -26,7 +26,7 @@ namespace Comformation.ApiGateway.BasePathMapping
 
             /// <summary>
             /// DomainName
-            /// The domain name of a DomainName resource.
+            /// The DomainName of an AWS::ApiGateway::DomainName resource.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
