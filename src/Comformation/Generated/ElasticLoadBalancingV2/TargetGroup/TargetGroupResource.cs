@@ -19,7 +19,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// HealthCheckIntervalSeconds
             /// The approximate number of seconds between health checks for an individual target.
             /// For valid and default values, see the HealthCheckIntervalSeconds parameter for the CreateTargetGroup
-            /// action in the .
+            /// action in the Elastic Load Balancing API Reference version 2015-12-01.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption

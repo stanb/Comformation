@@ -58,8 +58,7 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The name of the Availability Zone where the DB instance is located. You can&#39;t set the
-            /// AvailabilityZone parameter if the MultiAZ parameter is set to true.
+            /// The name of the Availability Zone where the DB instance is located.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

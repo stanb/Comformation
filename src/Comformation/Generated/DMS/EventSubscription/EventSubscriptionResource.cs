@@ -55,7 +55,7 @@ namespace Comformation.DMS.EventSubscription
             /// The subscription name.
             /// If you don&#39;t specify a value, we create a random value.
             /// Required: No
-            /// Type: List of String values
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SubscriptionName { get; set; }

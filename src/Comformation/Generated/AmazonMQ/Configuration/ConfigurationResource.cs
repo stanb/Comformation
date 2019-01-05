@@ -52,6 +52,16 @@ namespace Comformation.AmazonMQ.Configuration
 			public Union<string, IntrinsicFunction> Data { get; set; }
 
             /// <summary>
+            /// Tags
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide.
+            /// Required: Yes
+            /// Type: List of Resource Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<TagsEntry> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
             /// underscores, and tildes (- . _ ~). This value must be 1-150 characters long.

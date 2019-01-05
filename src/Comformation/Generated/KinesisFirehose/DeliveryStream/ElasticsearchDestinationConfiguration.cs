@@ -83,11 +83,11 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// RoleARN
-        /// The ARN of the AWS Identity and Access Management (IAM) role that grants Kinesis Data Firehose
-        /// access to your Amazon S3 bucket, AWS KMS (if you enable data encryption), and Amazon CloudWatch Logs
-        /// (if you enable logging).
-        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon Elasticsearch Service
-        /// Destination in the Amazon Kinesis Data Firehose Developer Guide.
+        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling
+        /// the Amazon ES Configuration API and for indexing documents.
+        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon S3 Destination in the
+        /// Amazon Kinesis Data Firehose Developer Guide and Amazon Resource Names (ARNs) and AWS Service
+        /// Namespaces in the Amazon Web Services General Reference.
         /// Required: Yes
         /// Type: String
         /// </summary>

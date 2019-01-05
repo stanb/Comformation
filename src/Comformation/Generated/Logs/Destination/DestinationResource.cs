@@ -18,7 +18,8 @@ namespace Comformation.Logs.Destination
         {
             /// <summary>
             /// DestinationName
-            /// The name of the CloudWatch Logs destination.
+            /// The name of the CloudWatch Logs destination that you will reference in the DestinationPolicy
+            /// property.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

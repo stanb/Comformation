@@ -16,7 +16,7 @@ namespace Comformation.Glue.Job
         /// <summary>
         /// ScriptLocation
         /// The location of a script that executes a job.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -26,7 +26,7 @@ namespace Comformation.Glue.Job
         /// <summary>
         /// Name
         /// The name of the job command.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Valid values: glueetl
         /// Update requires: No interruption

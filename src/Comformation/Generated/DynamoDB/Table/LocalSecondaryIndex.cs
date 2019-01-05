@@ -17,9 +17,10 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// IndexName
-        /// The name of the local secondary index. The index name can be 3 – 255 characters long and have no
-        /// character restrictions.
+        /// The name of the local secondary index.
         /// Required: Yes
+        /// Length constraints: Minimum of 3. Maximum of 255.
+        /// Pattern: [a-zA-Z0-9_. -]+
         /// Type: String
         /// </summary>
         [JsonProperty("IndexName")]

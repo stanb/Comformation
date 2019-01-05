@@ -26,6 +26,10 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// RelationalDatabaseSourceType
+        /// The type of the relational datasource.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RelationalDatabaseSourceType")]
         public Union<string, IntrinsicFunction> RelationalDatabaseSourceType { get; set; }

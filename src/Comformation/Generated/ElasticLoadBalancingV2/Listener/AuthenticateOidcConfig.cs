@@ -104,8 +104,8 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// SessionTimeout
         /// The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7
         /// days).
-        /// Required: Number
-        /// Type: String
+        /// Required: No
+        /// Type: Number
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SessionTimeout")]

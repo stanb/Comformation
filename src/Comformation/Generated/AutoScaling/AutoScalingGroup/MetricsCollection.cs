@@ -18,8 +18,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Granularity
-        /// The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. For example, you
-        /// can specify 1Minute to send aggregated data to CloudWatch every minute.
+        /// The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid
+        /// value is 1Minute.
         /// Required: Yes
         /// Type: String
         /// </summary>

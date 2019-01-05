@@ -16,7 +16,8 @@ namespace Comformation.ApiGateway.Method
 
         /// <summary>
         /// CacheKeyParameters
-        /// A list of request parameters whose values API Gateway caches.
+        /// A list of request parameters whose values API Gateway caches. These parameters must also be
+        /// specified in RequestParameters to be supported in CacheKeyParameters.
         /// Required: No
         /// Type: List of String values
         /// </summary>

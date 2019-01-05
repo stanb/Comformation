@@ -28,7 +28,7 @@ namespace Comformation.ApiGateway.DomainName
 
             /// <summary>
             /// DomainName
-            /// The custom domain name for your API in Amazon API Gateway.
+            /// The custom domain name for your API in Amazon API Gateway. Uppercase letters are not supported.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
