@@ -6,8 +6,8 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerCertificate
-    /// The AWS::ElasticLoadBalancingV2::ListenerCertificate resource specifies certificates for an Elastic Load
-    /// Balancing secure listener. For more information, see Getting Started in the Elastic Load Balancing User Guide.
+    /// The AWS::ElasticLoadBalancingV2::ListenerCertificate resource adds certificates to an HTTPS listener. For more
+    /// information, see SSL Certificates in the User Guide for Application Load Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html
     /// </summary>
     public class ListenerCertificateResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
         {
             /// <summary>
             /// Certificates
-            /// Certificates specified for the listener. Duplicates not allowed.
+            /// The certificates to add. Duplicates not allowed.
             /// Required: Yes
             /// Type: List of Certificate
             /// Update requires: Replacement

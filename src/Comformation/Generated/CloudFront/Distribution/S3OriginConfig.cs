@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    /// CloudFront Distribution S3Origin
-    /// S3Origin is a property of the Origin property that describes the Amazon Simple Storage Service (S3) origin to
-    /// associate with an Amazon CloudFront origin.
+    /// CloudFront Distribution S3OriginConfig
+    /// S3OriginConfig is a subproperty of the Origin property that describes the Amazon Simple Storage Service (S3)
+    /// origin to associate with an Amazon CloudFront origin.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html
     /// </summary>
     public class S3OriginConfig

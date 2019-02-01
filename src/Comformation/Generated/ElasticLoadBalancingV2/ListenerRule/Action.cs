@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    /// Elastic Load Balancing ListenerRule Actions
+    /// Elastic Load Balancing V2 Actions
     /// Actions is a property of the AWS::ElasticLoadBalancingV2::ListenerRule resource that specifies the actions an
     /// Elastic Load Balancing listener takes when an incoming request meets a listener rule&#39;s condition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html

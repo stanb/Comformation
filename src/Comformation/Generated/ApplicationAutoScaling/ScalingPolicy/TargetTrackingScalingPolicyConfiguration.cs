@@ -19,7 +19,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 
         /// <summary>
         /// CustomizedMetricSpecification
-        /// This property is reserved for future use.
+        /// A customized metric.
         /// Required: No
         /// Type: Application Auto Scaling ScalingPolicy CustomizedMetricSpecification
         /// Update requires: No interruption

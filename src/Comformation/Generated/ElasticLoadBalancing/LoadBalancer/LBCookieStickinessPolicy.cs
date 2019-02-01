@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// ElasticLoadBalancing LBCookieStickinessPolicy
+    /// Elastic Load Balancing V1 LBCookieStickinessPolicy
     /// The LBCookieStickinessPolicy type is an embedded property of the AWS::ElasticLoadBalancing::LoadBalancer type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html
     /// </summary>

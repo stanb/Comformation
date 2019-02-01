@@ -28,7 +28,7 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// Enabled
-            /// Disables the event source mapping to pause polling and invocation.
+            /// Set to false to pause polling and invocation.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

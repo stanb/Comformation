@@ -27,9 +27,18 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 
         /// <summary>
         /// ResourceLabel
-        /// This property is reserved for future use.
+        /// Identifies the resource associated with the metric type. You can&#39;t specify a resource label unless
+        /// the metric type is ALBRequestCountPerTarget and there is a target group attached to the Spot fleet
+        /// request or ECS service.
+        /// The format is
+        /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt;/targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt;,
+        /// where:
+        /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt; is the final portion of the load balancer
+        /// ARN targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt; is the final portion of the target
+        /// group ARN.
         /// Required: No
         /// Type: String
+        /// Length constraints: Minimum length of 1. Maximum length of 1023.
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceLabel")]

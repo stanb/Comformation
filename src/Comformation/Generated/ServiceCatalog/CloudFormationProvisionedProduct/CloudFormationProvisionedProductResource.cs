@@ -36,9 +36,11 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// ProductName
             /// The product name. This name must be unique for the user. You must specify either the name or the ID
             /// of the product, but not both.
+            /// Each time a stack is created or updated, if ProductName is provided it will successfully resolve to
+            /// ProductId as long as only one product exists in the account/region with that ProductName.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductName { get; set; }
 
@@ -76,7 +78,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// The product identifier. You must specify either the ID or the name of the product, but not both.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
 

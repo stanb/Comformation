@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
-    /// Elastic Load Balancing Listener AuthenticateCognitoConfig
+    /// Elastic Load Balancing V2 AuthenticateCognitoConfig
     /// The AuthenticateCognitoConfig property type specifies request parameters to use when integrating with Amazon
     /// Cognito to authenticate users.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html

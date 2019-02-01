@@ -6,9 +6,11 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::Listener
-    /// The AWS::ElasticLoadBalancingV2::Listener resource creates a listener for an Elastic Load Balancing
-    /// Application or Network load balancer. The listener checks for connection requests and forwards them to one or
-    /// more target groups. For more information, see Getting Started in the Elastic Load Balancing User Guide.
+    /// The AWS::ElasticLoadBalancingV2::Listener resource creates a listener for an Application Load Balancer or a
+    /// Network Load Balancer. The listener checks for connection requests and forwards them to one or more target
+    /// groups. For more information, see Listeners for Your Application Load Balancers in the User Guide for
+    /// Application Load Balancers or Listeners for Your Network Load Balancers in the User Guide for Network Load
+    /// Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
     /// </summary>
     public class ListenerResource : ResourceBase
@@ -17,29 +19,26 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         {
             /// <summary>
             /// Certificates
-            /// The SSL server certificate for the listener. With a certificate, you can encrypt traffic between the
-            /// load balancer and the clients that initiate HTTPS sessions, and traffic between the load balancer
-            /// and your targets.
-            /// This property represents the default certificate for the listener. You can specify only one
-            /// certificate for the AWS::ElasticLoadBalancingV2::Listener resource.
-            /// Required: Conditional. If you specify HTTPS for the Protocol property, specify a certificate.
-            /// Type: List of Elastic Load Balancing Listener Certificate
+            /// [HTTPS and TLS listeners] The default SSL server certificate for the listener.
+            /// Required: Conditional. If you specify HTTPS or TLS for the Protocol property, you must specify
+            /// exactly one certificate.
+            /// Type: List of Elastic Load Balancing V2 Certificate
             /// Update requires: No interruption
             /// </summary>
 			public List<Certificate> Certificates { get; set; }
 
             /// <summary>
             /// DefaultActions
-            /// The default actions that the listener takes when handling incoming requests.
+            /// The actions for the default rule for the listener.
             /// Required: Yes
-            /// Type: List of Elastic Load Balancing Listener Action
+            /// Type: List of Elastic Load Balancing V2 Action
             /// Update requires: No interruption
             /// </summary>
 			public List<Action> DefaultActions { get; set; }
 
             /// <summary>
             /// LoadBalancerArn
-            /// The Amazon Resource Name (ARN) of the load balancer to associate with the listener.
+            /// The Amazon Resource Name (ARN) of the load balancer.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -70,7 +69,8 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 
             /// <summary>
             /// SslPolicy
-            /// The security policy that defines the ciphers and protocols that the load balancer supports.
+            /// [HTTPS and TLS listeners] The security policy that defines the ciphers and protocols that the
+            /// listener supports. The default is the current predefined security policy.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

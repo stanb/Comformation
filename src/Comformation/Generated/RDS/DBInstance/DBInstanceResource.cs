@@ -332,7 +332,8 @@ namespace Comformation.RDS.DBInstance
             /// The version number of the database engine that the DB instance uses.
             /// Note To prevent automatic upgrades, be sure to specify the full version number (for example, 5. 6.
             /// 13). If the default version for the database engine changes and you specify only the major version
-            /// (for example, 5. 6), your DB instance will be upgraded to use the latest default version.
+            /// (for example, 5. 6), your DB instance will be upgraded to use the new default version. Note that the
+            /// default version is not necessarily the latest supported version.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
@@ -638,6 +639,11 @@ namespace Comformation.RDS.DBInstance
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Timezone { get; set; }
+
+            /// <summary>
+            /// UseDefaultProcessorFeatures
+            /// </summary>
+			public Union<bool, IntrinsicFunction> UseDefaultProcessorFeatures { get; set; }
 
             /// <summary>
             /// VPCSecurityGroups

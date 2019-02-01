@@ -134,6 +134,10 @@ namespace Comformation.CodeBuild.Project
 
             /// <summary>
             /// QueuedTimeoutInMinutes
+            /// The number of minutes a build is allowed to be queued before it times out.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> QueuedTimeoutInMinutes { get; set; }
 

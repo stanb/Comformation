@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
-    /// Elastic Load Balancing Listener AuthenticateOidcConfig
+    /// Elastic Load Balancing V2 AuthenticateOidcConfig
     /// The AuthenticateOidcConfig property type specifies request parameters when using an identity provider (IdP)
     /// that is compliant with OpenID Connect (OIDC) to authenticate users.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html

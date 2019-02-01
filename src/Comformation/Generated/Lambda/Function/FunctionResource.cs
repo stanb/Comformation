@@ -7,7 +7,8 @@ namespace Comformation.Lambda.Function
     /// <summary>
     /// AWS::Lambda::Function
     /// The AWS::Lambda::Function resource creates an AWS Lambda (Lambda) function that can run code in response to
-    /// events. For more information, see CreateFunction in the AWS Lambda Developer Guide.
+    /// events. To create a function, you need a deployment package and an execution role. For more information, see
+    /// CreateFunction in the AWS Lambda Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html
     /// </summary>
     public class FunctionResource : ResourceBase
@@ -16,8 +17,7 @@ namespace Comformation.Lambda.Function
         {
             /// <summary>
             /// Code
-            /// The source code of your Lambda function. You can point to a file in an Amazon Simple Storage Service
-            /// (Amazon S3) bucket or specify your source code as inline text.
+            /// The code for the function.
             /// Required: Yes
             /// Type: AWS Lambda Function Code
             /// Update requires: No interruption
@@ -26,9 +26,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// DeadLetterConfig
-            /// Configures how Lambda handles events that it can&#39;t process. If you don&#39;t specify a Dead Letter Queue
-            /// (DLQ) configuration, Lambda discards events after the maximum number of retries. For more
-            /// information, see Dead Letter Queues in the AWS Lambda Developer Guide.
+            /// A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous
+            /// events when they fail processing. For more information, see Dead Letter Queues.
             /// Required: No
             /// Type: AWS Lambda Function DeadLetterConfig
             /// Update requires: No interruption
@@ -46,9 +45,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// Environment
-            /// Key-value pairs that Lambda caches and makes available for your Lambda functions. Use environment
-            /// variables to apply configuration changes, such as test and production environment configurations,
-            /// without changing your Lambda function source code.
+            /// Environment variables that are accessible from function code during execution.
             /// Required: No
             /// Type: AWS Lambda Function Environment
             /// Update requires: No interruption
@@ -57,8 +54,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// FunctionName
-            /// A name for the function. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
-            /// ID and uses that ID for the function&#39;s name. For more information, see Name Type.
+            /// The name of the Lambda function. If you don&#39;t specify a name, AWS CloudFormation generates one. For
+            /// more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
@@ -70,10 +67,9 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// Handler
-            /// The name of the function (within your source code) that Lambda calls to start running your code. For
-            /// more information, see the Handler property in the AWS Lambda Developer Guide.
-            /// Note If you specify your source code as inline text by specifying the ZipFile property within the
-            /// Code property, specify index. function_name as the handler.
+            /// The name of the method within your code that Lambda calls to execute your function. The format
+            /// includes the filename and can also include namespaces and other qualifiers, depending on the
+            /// runtime. For more information, see Programming Model.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -82,8 +78,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// KmsKeyArn
-            /// The Amazon Resource Name (ARN) of an AWS Key Management Service (AWS KMS) key that Lambda uses to
-            /// encrypt and decrypt environment variable values.
+            /// The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt your function&#39;s
+            /// environment variables. If not provided, Lambda uses a default service key.
             /// Type: String
             /// Required: No
             /// Update requires: No interruption
@@ -92,10 +88,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// Layers
-            /// A list of Amazon Resource Names (ARNs) for the function layers to add to the function&#39;s execution
-            /// environment. You can configure your Lambda function to pull in additional code during
-            /// intitialization in the form of layers. Layers are packages of libraries or other dependencies that
-            /// can be used by multiple functions.
+            /// A list of function layers to add to the function&#39;s execution environment. Specify each layer by ARN,
+            /// including the version.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -104,13 +98,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// MemorySize
-            /// The amount of memory, in MB, that is allocated to your Lambda function. Lambda uses this value to
-            /// proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS
-            /// Lambda Developer Guide.
-            /// Your function use case determines your CPU and memory requirements. For example, a database
-            /// operation might need less memory than an image processing function. You must specify a value that is
-            /// greater than or equal to 128, and it must be a multiple of 64. You cannot specify a size larger than
-            /// 3008. The default value is 128 MB.
+            /// The amount of memory that your function has access to. Increasing the function&#39;s memory also
+            /// increases it&#39;s CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -119,8 +108,9 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// ReservedConcurrentExecutions
-            /// The maximum of concurrent executions you want reserved for the function. For more information on
-            /// reserved concurrency limits, see Managing Concurrency in the AWS Lambda Developer Guide.
+            /// The maximum number of instances of your function that process events simultaneously. This option
+            /// both sets the maximum concurrency for your function and reserves concurrency to ensure that it is
+            /// available. For more information, see Managing Concurrency in the AWS Lambda Developer Guide.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -129,8 +119,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// Role
-            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role that
-            /// Lambda assumes when it runs your code to access AWS services.
+            /// The ARN of the function&#39;s execution role.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -139,20 +128,16 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// Runtime
-            /// The runtime environment for the Lambda function that you are uploading. For valid values, see the
-            /// Runtime property in the AWS Lambda Developer Guide.
+            /// The identifier of the function&#39;s runtime.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
-            /// Note Because Node. js 0. 10. 32 has been deprecated, you can no longer roll back a template that
-            /// uses Node. js 0. 10. 32. If you update a stack to Node. js 0. 10. 32 and the update fails, AWS
-            /// CloudFormation won&#39;t roll it back.
             /// </summary>
 			public Union<string, IntrinsicFunction> Runtime { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this Lambda function.
+            /// A list of tags to apply to the function.
             /// Required: No
             /// Type: Resource Tag
             /// Update requires: No interruption
@@ -161,9 +146,8 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// Timeout
-            /// The function execution time (in seconds) after which Lambda terminates the function. Because the
-            /// execution time affects cost, set this value based on the function&#39;s expected execution time. By
-            /// default, Timeout is set to 3 seconds. For more information, see the FAQs.
+            /// The amount of time that Lambda allows a function to run before terminating it. The default is 3
+            /// seconds. The maximum allowed value is 900 seconds.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -172,9 +156,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// TracingConfig
-            /// The parent object that contains your Lambda function&#39;s tracing settings. By default, the Mode
-            /// property is set to PassThrough. For valid values, see the TracingConfig data type in the AWS Lambda
-            /// Developer Guide.
+            /// Set Mode to Active to sample and trace a subset of incoming requests with AWS X-Ray.
             /// Required: No
             /// Type: AWS Lambda Function TracingConfig
             /// Update requires: No interruption
@@ -183,13 +165,9 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// VpcConfig
-            /// If the Lambda function requires access to resources in a VPC, specify a VPC configuration that
-            /// Lambda uses to set up an elastic network interface (ENI). The ENI enables your function to connect
-            /// to other resources in your VPC, but it doesn&#39;t provide public Internet access. If your function
-            /// requires Internet access (for example, to access AWS services that don&#39;t have VPC endpoints),
-            /// configure a Network Address Translation (NAT) instance inside your VPC or use an Amazon Virtual
-            /// Private Cloud (Amazon VPC) NAT gateway. For more information, see NAT Gateways in the Amazon VPC
-            /// User Guide.
+            /// For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in
+            /// the VPC. When you connect a function to a VPC, it can only access resources and the internet through
+            /// that VPC. For more information, see VPC Settings.
             /// Note When you specify this property, AWS CloudFormation might not be able to delete the stack if
             /// another resource in the template (such as a security group) requires the attached ENI to be deleted
             /// before it can be deleted. We recommend that you run AWS CloudFormation with the

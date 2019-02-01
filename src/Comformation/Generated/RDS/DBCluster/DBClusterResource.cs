@@ -252,6 +252,11 @@ namespace Comformation.RDS.DBCluster
 			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
             /// <summary>
+            /// SourceRegion
+            /// </summary>
+			public Union<string, IntrinsicFunction> SourceRegion { get; set; }
+
+            /// <summary>
             /// StorageEncrypted
             /// Indicates whether the DB instances in the cluster are encrypted.
             /// If you specify the SnapshotIdentifier property, do not specify this property. The value is inherited

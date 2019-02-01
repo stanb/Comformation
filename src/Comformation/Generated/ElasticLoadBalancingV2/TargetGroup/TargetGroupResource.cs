@@ -6,9 +6,10 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::TargetGroup
-    /// The AWS::ElasticLoadBalancingV2::TargetGroup resource creates an Elastic Load Balancing target group that
-    /// routes requests to one or more registered targets, such as EC2 instances. For more information, see Getting
-    /// Started in the Elastic Load Balancing User Guide.
+    /// The AWS::ElasticLoadBalancingV2::TargetGroup resource creates a target group that routes requests to one or
+    /// more registered targets. For more information, see Target Groups for Your Application Load Balancers in the
+    /// User Guide for Application Load Balancers or Target Groups for Your Network Load Balancers in the User Guide
+    /// for Network Load Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
     /// </summary>
     public class TargetGroupResource : ResourceBase
@@ -49,8 +50,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// HealthCheckProtocol
-            /// The protocol that the load balancer uses when performing health checks on the targets, such as HTTP
-            /// or HTTPS.
+            /// The protocol that the load balancer uses when performing health checks on the targets.
             /// For valid and default values, see the HealthCheckProtocol parameter for the CreateTargetGroup action
             /// in the Elastic Load Balancing API Reference version 2015-12-01.
             /// Required: No
@@ -88,7 +88,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// For more information about specifying this property, see Matcher in the Elastic Load Balancing API
             /// Reference version 2015-12-01.
             /// Required: No
-            /// Type: Elastic Load Balancing TargetGroup Matcher
+            /// Type: Elastic Load Balancing V2 Matcher
             /// Update requires: No interruption
             /// </summary>
 			public Matcher Matcher { get; set; }
@@ -136,15 +136,16 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// TargetGroupAttributes
             /// Target group configurations.
             /// Required: No
-            /// Type: List of Elastic Load Balancing TargetGroup TargetGroupAttributes
+            /// Type: List of Elastic Load Balancing V2 TargetGroupAttributes
             /// Update requires: No interruption
             /// </summary>
 			public List<TargetGroupAttribute> TargetGroupAttributes { get; set; }
 
             /// <summary>
             /// TargetType
-            /// The registration type of the targets in this target group. Valid values are instance and ip. The
-            /// default is instance.
+            /// The type of targets that you must specify when registering targets with this target group.
+            /// For valid and default values, see the TargetType parameter for the CreateTargetGroup action in the
+            /// Elastic Load Balancing API Reference version 2015-12-01.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -155,7 +156,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// Targets
             /// The targets to add to this target group.
             /// Required: No
-            /// Type: List of Elastic Load Balancing TargetGroup TargetDescription
+            /// Type: List of Elastic Load Balancing V2 TargetDescription
             /// Update requires: No interruption
             /// </summary>
 			public List<TargetDescription> Targets { get; set; }
@@ -172,7 +173,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC in which your targets are located.
+            /// The ID of the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

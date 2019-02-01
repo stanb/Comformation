@@ -28,7 +28,7 @@ namespace Comformation.ECS.Service
             /// DeploymentConfiguration
             /// Configures how many tasks run during a deployment.
             /// Required: No
-            /// Type: Amazon Elastic Container Service Service DeploymentConfiguration
+            /// Type: DeploymentConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public DeploymentConfiguration DeploymentConfiguration { get; set; }
@@ -70,7 +70,7 @@ namespace Comformation.ECS.Service
             /// can specify per service, see Service Load Balancing in the Amazon Elastic Container Service
             /// Developer Guide.
             /// Required: Conditional
-            /// Type: List of Amazon Elastic Container Service Service LoadBalancers
+            /// Type: List of LoadBalancers property types
             /// Update requires: Replacement
             /// </summary>
 			public List<LoadBalancer> LoadBalancers { get; set; }
@@ -91,7 +91,7 @@ namespace Comformation.ECS.Service
             /// PlacementConstraints
             /// The placement constraints for the tasks in the service.
             /// Required: No
-            /// Type: Amazon Elastic Container Service Service PlacementConstraint
+            /// Type: List of PlacementConstraint property types
             /// Update requires: Replacement
             /// </summary>
 			public List<PlacementConstraint> PlacementConstraints { get; set; }
@@ -100,7 +100,7 @@ namespace Comformation.ECS.Service
             /// PlacementStrategies
             /// The placement strategies that determine how tasks for the service are placed.
             /// Required: No
-            /// Type: Amazon Elastic Container Service Service PlacementStrategies
+            /// Type: List of PlacementStrategies property types
             /// Update requires: Replacement
             /// </summary>
 			public List<PlacementStrategy> PlacementStrategies { get; set; }
@@ -163,6 +163,11 @@ namespace Comformation.ECS.Service
             /// Update requires: Replacement
             /// </summary>
 			public List<ServiceRegistry> ServiceRegistries { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// </summary>
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TaskDefinition

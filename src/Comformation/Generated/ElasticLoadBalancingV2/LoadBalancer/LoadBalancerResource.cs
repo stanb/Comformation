@@ -6,8 +6,8 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::LoadBalancer
-    /// The AWS::ElasticLoadBalancingV2::LoadBalancer resource creates an Elastic Load Balancing Application or
-    /// Network Load Balancer. For more information, see Getting Started in the Elastic Load Balancing User Guide.
+    /// Creates an Application Load Balancer or a Network Load Balancer. For more information, see Getting Started in
+    /// the Elastic Load Balancing User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
@@ -29,17 +29,17 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
             /// <summary>
             /// LoadBalancerAttributes
-            /// Specifies the load balancer configuration.
+            /// The load balancer configuration.
             /// Required: No
-            /// Type: A list of Elastic Load Balancing LoadBalancer LoadBalancerAttributes
+            /// Type: A list of Elastic Load Balancing V2 LoadBalancerAttributes
             /// Update requires: No interruption
             /// </summary>
 			public List<LoadBalancerAttribute> LoadBalancerAttributes { get; set; }
 
             /// <summary>
             /// Name
-            /// Specifies a name for the load balancer. This name must be unique within your AWS account and can
-            /// have a maximum of 32 alphanumeric characters and hyphens. A name can&#39;t begin or end with a hyphen.
+            /// A name for the load balancer. This name must be unique within your AWS account and can have a
+            /// maximum of 32 alphanumeric characters and hyphens. A name can&#39;t begin or end with a hyphen.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
@@ -67,8 +67,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
             /// <summary>
             /// SecurityGroups
-            /// [Application Load Balancers] Specifies a list of the IDs of the security groups to assign to the
-            /// load balancer.
+            /// [Application Load Balancers] The IDs of the security groups to assign to the load balancer.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -85,7 +84,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can
             /// specify one Elastic IP address per subnet.
             /// Required: No
-            /// Type: List of Elastic Load Balancing LoadBalancer SubnetMapping
+            /// Type: List of Elastic Load Balancing V2 SubnetMapping
             /// Update requires: Replacement
             /// </summary>
 			public List<SubnetMapping> SubnetMappings { get; set; }
@@ -103,8 +102,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
             /// <summary>
             /// Tags
-            /// Specifies an arbitrary set of tags (key–value pairs) to associate with this load balancer. Use tags
-            /// to manage your resources.
+            /// The tags (key–value pairs) to associate with this load balancer. Use tags to manage your resources.
             /// Required: No
             /// Type: Resource Tag
             /// Update requires: No interruption
@@ -113,8 +111,8 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
             /// <summary>
             /// Type
-            /// Specifies the type of load balancer to create. Valid values are application and network. The default
-            /// is application.
+            /// The type of load balancer to create. Valid values are application and network. The default is
+            /// application.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

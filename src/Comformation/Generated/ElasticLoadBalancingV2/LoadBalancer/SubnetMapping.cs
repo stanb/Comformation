@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing LoadBalancer SubnetMapping
-    /// The SubnetMapping property type specifies the ID of a subnet to attach to an Elastic Load Balancing
-    /// Application or Network Load Balancer.
+    /// Elastic Load Balancing V2 SubnetMapping
+    /// The SubnetMapping property type specifies the ID of a subnet to attach to an Application Load Balancer or a
+    /// Network Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html
     /// </summary>
     public class SubnetMapping

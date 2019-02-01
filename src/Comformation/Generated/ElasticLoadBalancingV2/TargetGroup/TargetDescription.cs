@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 {
     /// <summary>
-    /// Elastic Load Balancing TargetGroup TargetDescription
-    /// TargetDescription is a property of the AWS::ElasticLoadBalancingV2::TargetGroup resource that specifies a
-    /// target to add to an Elastic Load Balancing target group.
+    /// Elastic Load Balancing V2 TargetDescription
+    /// The TargetDescription property of the AWS::ElasticLoadBalancingV2::TargetGroup resource specifies a target to
+    /// add to a target group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html
     /// </summary>
     public class TargetDescription
@@ -26,8 +26,8 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
         /// <summary>
         /// Id
-        /// The ID of the target, such as an EC2 instance ID. If the target type of the target group is
-        /// instance, specify an instance ID. If the target type is ip, specify an IP address.
+        /// The ID of the target. If the target type of the target group is instance, specify an instance ID. If
+        /// the target type is ip, specify an IP address.
         /// Required: Yes
         /// Type: String
         /// </summary>

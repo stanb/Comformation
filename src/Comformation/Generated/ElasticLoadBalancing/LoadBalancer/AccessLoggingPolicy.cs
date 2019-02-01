@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing AccessLoggingPolicy
+    /// Elastic Load Balancing V1 AccessLoggingPolicy
     /// The AccessLoggingPolicy property describes where and how access logs are stored for the
     /// AWS::ElasticLoadBalancing::LoadBalancer resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// ElasticLoadBalancing LoadBalancer HealthCheck
+    /// Elastic Load Balancing V1 HealthCheck
     /// The HealthCheck property configures health checks for the availability of your EC2 instances. For more
     /// information, see Configure Health Checks for Your Classic Load Balancer in the User Guide for Classic Load
     /// Balancers.

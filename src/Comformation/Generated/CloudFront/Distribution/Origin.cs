@@ -38,7 +38,7 @@ namespace Comformation.CloudFront.Distribution
         /// Origin information to specify an S3 origin.
         /// Required: Conditional. You cannot use S3OriginConfig and CustomOriginConfig in the same Origin, but
         /// you must specify one or the other.
-        /// Type: S3Origin type
+        /// Type: S3OriginConfig type
         /// </summary>
         [JsonProperty("S3OriginConfig")]
         public S3OriginConfig S3OriginConfig { get; set; }

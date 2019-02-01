@@ -28,6 +28,11 @@ namespace Comformation.ECS.Cluster
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ECS::Cluster";

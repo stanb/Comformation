@@ -113,6 +113,11 @@ namespace Comformation.ECS.TaskDefinition
 			public List<Union<string, IntrinsicFunction>> RequiresCompatibilities { get; set; }
 
             /// <summary>
+            /// Tags
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// TaskRoleArn
             /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants
             /// containers in the task permission to call AWS APIs on your behalf. For more information, see IAM
