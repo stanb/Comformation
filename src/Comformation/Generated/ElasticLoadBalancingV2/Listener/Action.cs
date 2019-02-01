@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
-    /// Elastic Load Balancing Listener Action
+    /// Elastic Load Balancing V2 Action
     /// The Action property type specifies the default actions that the Elastic Load Balancing listener takes when
     /// handling incoming requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html
@@ -83,7 +83,8 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 
         /// <summary>
         /// Type
-        /// The type of action.
+        /// The type of action. Each rule must include exactly one of the following types of actions: forward,
+        /// fixed-response, or redirect.
         /// Valid values: forward | authenticate-oidc | authenticate-cognito | redirect | fixed-response
         /// Required: Yes
         /// Type: String

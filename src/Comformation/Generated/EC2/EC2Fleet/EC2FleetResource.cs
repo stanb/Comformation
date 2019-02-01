@@ -86,10 +86,10 @@ namespace Comformation.EC2.EC2Fleet
             /// The start date and time of the request, in UTC format (for example, YYYY-MM-DDTHH:MM:SSZ). The
             /// default is to start fulfilling the request immediately.
             /// Required: No
-            /// Type: Integer
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> ValidFrom { get; set; }
+			public Union<string, IntrinsicFunction> ValidFrom { get; set; }
 
             /// <summary>
             /// ReplaceUnhealthyInstances
@@ -124,10 +124,10 @@ namespace Comformation.EC2.EC2Fleet
             /// point, no new EC2 Fleet requests are placed or able to fulfill the request. The default end date is
             /// 7 days from the current date.
             /// Required: No
-            /// Type: Integer
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> ValidUntil { get; set; }
+			public Union<string, IntrinsicFunction> ValidUntil { get; set; }
 
         }
 

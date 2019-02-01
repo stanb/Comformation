@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing ConnectionSettings
+    /// Elastic Load Balancing V1 ConnectionSettings
     /// ConnectionSettings is a property of the AWS::ElasticLoadBalancing::LoadBalancer resource that describes how
     /// long the front-end and back-end connections of your load balancer can remain idle. For more information, see
-    /// Configure Idle Connection Timeout in the Elastic Load Balancing User Guide.
+    /// Configure the Idle Connection Timeout in the User Guide for Classic Load Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html
     /// </summary>
     public class ConnectionSettings

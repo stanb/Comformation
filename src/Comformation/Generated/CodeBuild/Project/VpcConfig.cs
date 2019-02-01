@@ -16,7 +16,7 @@ namespace Comformation.CodeBuild.Project
         /// <summary>
         /// Subnets
         /// The IDs of the subnets in the Amazon VPC. The maximum count is 16.
-        /// Required: Yes
+        /// Required: No
         /// Type: List of String values
         /// Update requires: No interruption
         /// </summary>
@@ -26,7 +26,7 @@ namespace Comformation.CodeBuild.Project
         /// <summary>
         /// VpcId
         /// The ID of the Amazon VPC.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -36,7 +36,7 @@ namespace Comformation.CodeBuild.Project
         /// <summary>
         /// SecurityGroupIds
         /// The IDs of the security groups in the Amazon VPC. The maximum count is 5.
-        /// Required: Yes
+        /// Required: No
         /// Type: List of String values
         /// Update requires: No interruption
         /// </summary>

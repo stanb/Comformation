@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    /// Elastic Load Balancing Listener FixedResponseConfig
+    /// Elastic Load Balancing V2 FixedResponseConfig
     /// The FixedResponseConfig property type specifies information about an action that returns a custom HTTP
     /// response.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html

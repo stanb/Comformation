@@ -39,7 +39,7 @@ namespace Comformation.DynamoDB.Table
 
             /// <summary>
             /// GlobalSecondaryIndexes
-            /// Global secondary indexes to be created on the table. You can create up to 5 global secondary
+            /// Global secondary indexes to be created on the table. You can create up to 20 global secondary
             /// indexes.
             /// Important If you update a table to include a new global secondary index, AWS CloudFormation
             /// initiates the index creation and then proceeds with the stack update. AWS CloudFormation doesn&#39;t

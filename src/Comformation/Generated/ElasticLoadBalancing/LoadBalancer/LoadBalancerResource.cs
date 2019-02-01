@@ -6,7 +6,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer
-    /// The AWS::ElasticLoadBalancing::LoadBalancer type creates a LoadBalancer.
+    /// Creates a Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
@@ -18,7 +18,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Captures detailed information for all requests made to your load balancer, such as the time a
             /// request was received, client’s IP address, latencies, request path, and server responses.
             /// Required: No
-            /// Type: Elastic Load Balancing AccessLoggingPolicy
+            /// Type: Elastic Load Balancing V1 AccessLoggingPolicy
             /// Update requires: No interruption
             /// </summary>
 			public AccessLoggingPolicy AccessLoggingPolicy { get; set; }
@@ -49,7 +49,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// ConnectionDrainingPolicy
             /// Whether deregistered or unhealthy instances can complete all in-flight requests.
             /// Required: No
-            /// Type: Elastic Load Balancing ConnectionDrainingPolicy
+            /// Type: Elastic Load Balancing V1 ConnectionDrainingPolicy
             /// Update requires: No interruption
             /// </summary>
 			public ConnectionDrainingPolicy ConnectionDrainingPolicy { get; set; }
@@ -58,7 +58,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// ConnectionSettings
             /// Specifies how long front-end and back-end connections of your load balancer can remain idle.
             /// Required: No
-            /// Type: Elastic Load Balancing ConnectionSettings
+            /// Type: Elastic Load Balancing V1 ConnectionSettings
             /// Update requires: No interruption
             /// </summary>
 			public ConnectionSettings ConnectionSettings { get; set; }
@@ -78,7 +78,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// HealthCheck
             /// Application health check for the instances.
             /// Required: No
-            /// Type: ElasticLoadBalancing LoadBalancer HealthCheck.
+            /// Type: Elastic Load Balancing V1 HealthCheck.
             /// Update requires: Replacement if you did not have a health check specified and you are adding one or
             /// if you are removing a health check. Otherwise, update requires no interruption.
             /// </summary>
@@ -86,7 +86,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
             /// <summary>
             /// Instances
-            /// A list of EC2 instance IDs for the load balancer.
+            /// The IDs of the EC2 instances for the load balancer.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -113,7 +113,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// During the time that AWS CloudFormation is performing this action, clients will not be able to
             /// connect to the load balancer.
             /// Required: Yes
-            /// Type: A list of ElasticLoadBalancing Listener objects.
+            /// Type: A list of Elastic Load Balancing V1 Listener objects.
             /// Update requires: No interruption
             /// </summary>
 			public List<Listeners> Listeners { get; set; }
@@ -136,9 +136,9 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
             /// <summary>
             /// Policies
-            /// A list of elastic load balancing policies to apply to this elastic load balancer. Specify only
-            /// back-end server policies. For more information, see DescribeLoadBalancerPolicyTypes in the Elastic
-            /// Load Balancing API Reference version 2012-06-01.
+            /// The policies to apply to this elastic load balancer. Specify only back-end server policies. For more
+            /// information, see DescribeLoadBalancerPolicyTypes in the Elastic Load Balancing API Reference version
+            /// 2012-06-01.
             /// Required: No
             /// Type: A list of ElasticLoadBalancing policy objects.
             /// Update requires: No interruption
@@ -162,19 +162,18 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// <summary>
             /// SecurityGroups
             /// Required: No
-            /// Type: A list of security groups assigned to your load balancer within your virtual private cloud
-            /// (VPC).
+            /// Type: The security groups assigned to your load balancer within your virtual private cloud (VPC).
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// Subnets
-            /// A list of subnet IDs in your virtual private cloud (VPC) to attach to your load balancer. Do not
-            /// specify multiple subnets that are in the same Availability Zone. You can specify the
-            /// AvailabilityZones or Subnets property, but not both.
-            /// For more information about using Elastic Load Balancing in a VPC, see How Do I Use Elastic Load
-            /// Balancing in Amazon VPC in the Elastic Load Balancing Developer Guide.
+            /// The subnet IDs in your virtual private cloud (VPC) to attach to your load balancer. Do not specify
+            /// multiple subnets that are in the same Availability Zone. You can specify the AvailabilityZones or
+            /// Subnets property, but not both.
+            /// For more information, see Add or Remove Subnets for your Classic Load Balancer in a VPC in the User
+            /// Guide for Classic Load Balancers.
             /// Required: No
             /// Type: List of String values
             /// Update requires: Replacement if you did not have a subnet specified and you are adding one or if you

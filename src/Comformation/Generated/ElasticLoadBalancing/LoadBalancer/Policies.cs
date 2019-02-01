@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// ElasticLoadBalancing Policy
+    /// Elastic Load Balancing V1 Policy
     /// The ElasticLoadBalancing policy type is an embedded property of the AWS::ElasticLoadBalancing::LoadBalancer
     /// resource. You associate policies with a listener by referencing a policy&#39;s name in the listener&#39;s PolicyNames
     /// property.
@@ -17,8 +17,8 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// Attributes
-        /// A list of arbitrary attributes for this policy. If you don&#39;t need to specify any policy attributes,
-        /// specify an empty list ([]).
+        /// The attributes for this policy. If you don&#39;t need to specify any policy attributes, specify an empty
+        /// list ([]).
         /// Required: Yes
         /// Type: List of JSON name-value pairs.
         /// </summary>
@@ -27,7 +27,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// InstancePorts
-        /// A list of instance ports for the policy. These are the ports associated with the back-end server.
+        /// The instance ports for the policy. These are the ports associated with the back-end server.
         /// Required: No
         /// Type: List of String values
         /// </summary>
@@ -36,9 +36,8 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// LoadBalancerPorts
-        /// A list of external load balancer ports for the policy.
-        /// Required: Only for some policies. For more information, see the Elastic Load Balancing Developer
-        /// Guide.
+        /// The load balancer ports for the policy.
+        /// Required: Only for some policies.
         /// Type: List of String values
         /// </summary>
         [JsonProperty("LoadBalancerPorts")]

@@ -44,6 +44,11 @@ namespace Comformation.DMS.Endpoint
 			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
             /// <summary>
+            /// ElasticsearchSettings
+            /// </summary>
+			public ElasticsearchSettings ElasticsearchSettings { get; set; }
+
+            /// <summary>
             /// S3Settings
             /// Settings in JSON format for the target Amazon S3 endpoint. For more information about the available
             /// settings, see the Extra Connection Attributes section at Using Amazon S3 as a Target for AWS
@@ -75,6 +80,11 @@ namespace Comformation.DMS.Endpoint
             /// Update requires: No interruption
             /// </summary>
 			public DynamoDbSettings DynamoDbSettings { get; set; }
+
+            /// <summary>
+            /// KinesisSettings
+            /// </summary>
+			public KinesisSettings KinesisSettings { get; set; }
 
             /// <summary>
             /// Username

@@ -6,10 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing LoadBalancer LoadBalancerAttributes
+    /// Elastic Load Balancing V2 LoadBalancerAttributes
     /// LoadBalancerAttributes is a property of the AWS::ElasticLoadBalancingV2::LoadBalancer resource that configures
-    /// settings for an Elastic Load Balancing Application Load Balancer. For more information, see Load Balancer
-    /// Attributes in the User Guide for Application Load Balancers.
+    /// settings for an Application Load Balancer or a Network Load Balancer. For more information, see Load Balancer
+    /// Attributes in the User Guide for Application Load Balancers or Load Balancer Attributes in the User Guide for
+    /// Network Load Balancers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html
     /// </summary>
     public class LoadBalancerAttribute

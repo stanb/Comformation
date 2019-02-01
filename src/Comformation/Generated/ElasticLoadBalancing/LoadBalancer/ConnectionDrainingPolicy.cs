@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing ConnectionDrainingPolicy
+    /// Elastic Load Balancing V1 ConnectionDrainingPolicy
     /// The ConnectionDrainingPolicy property describes how deregistered or unhealthy instances handle in-flight
     /// requests for the AWS::ElasticLoadBalancing::LoadBalancer resource. Connection draining ensures that the load
     /// balancer completes serving all in-flight requests made to a registered instance when the instance is
@@ -19,7 +19,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// Enabled
-        /// Whether or not connection draining is enabled for the load balancer.
+        /// Indicates whether connection draining is enabled for the load balancer.
         /// Required: Yes
         /// Type: Boolean
         /// </summary>
@@ -28,8 +28,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// Timeout
-        /// The time in seconds after the load balancer closes all connections to a deregistered or unhealthy
-        /// instance.
+        /// The maximum time, in seconds, to keep existing connections open before deregistering the instances.
         /// Required: No
         /// Type: Integer
         /// </summary>

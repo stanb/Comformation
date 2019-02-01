@@ -29,7 +29,7 @@ namespace Comformation.CodeBuild.Project
         /// The environment variables that your builds can use. For more information, see the
         /// environmentVariables field in the AWS CodeBuild User Guide.
         /// Required: No
-        /// Type: List of AWS CodeBuild Project EnvironmentVariable
+        /// Type: List of EnvironmentVariable
         /// </summary>
         [JsonProperty("EnvironmentVariables")]
         public List<EnvironmentVariable> EnvironmentVariables { get; set; }
@@ -49,14 +49,49 @@ namespace Comformation.CodeBuild.Project
         public Union<bool, IntrinsicFunction> PrivilegedMode { get; set; }
 
         /// <summary>
+        /// ImagePullCredentialsType
+        /// The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+        /// CODEBUILD specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+        /// ECR repository policy to trust the AWS CodeBuild service principal. SERVICE_ROLE specifies that AWS
+        /// CodeBuild uses your build project&#39;s service role.
+        /// When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When
+        /// you use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+        /// The Docker image identifier that the build environment uses. For more information, see the
+        /// imagePullCredentialsType field in the AWS CodeBuild User Guide.
+        /// Required: Yes
+        /// Type: String
+        /// </summary>
+        [JsonProperty("ImagePullCredentialsType")]
+        public Union<string, IntrinsicFunction> ImagePullCredentialsType { get; set; }
+
+        /// <summary>
         /// Image
-        /// The Docker image identifier that the build environment uses. For more information, see the image
-        /// field in the AWS CodeBuild User Guide.
+        /// The image tag or image digest that identifies the Docker image to use for this build project. Use
+        /// the following formats:
+        /// For an image tag: registry/repository:tag. For example, to specify an image with the tag &quot;latest,&quot;
+        /// use registry/repository:latest. For an image digest: registry/repository@digest. For example, to
+        /// specify an image with the digest
+        /// &quot;sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,&quot; use
+        /// registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf.
+        /// For more information, see the image field in the AWS CodeBuild User Guide.
         /// Required: Yes
         /// Type: String
         /// </summary>
         [JsonProperty("Image")]
         public Union<string, IntrinsicFunction> Image { get; set; }
+
+        /// <summary>
+        /// RegistryCredential
+        /// RegistryCredential is a property of the AWS::CodeBuild::Project resource that specifies information
+        /// about credentials that provide access to a private Docker registry. When this is set:
+        /// imagePullCredentialsType must be set to SERVICE_ROLE. images cannot be curated or an Amazon ECR
+        /// image.
+        /// For more information, see the RegistryCredential field in the AWS CodeBuild User Guide.
+        /// Required: No
+        /// Type: RegistryCredential
+        /// </summary>
+        [JsonProperty("RegistryCredential")]
+        public RegistryCredential RegistryCredential { get; set; }
 
         /// <summary>
         /// ComputeType

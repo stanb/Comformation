@@ -73,6 +73,11 @@ namespace Comformation.ApiGateway.ApiKey
             /// </summary>
 			public List<StageKey> StageKeys { get; set; }
 
+            /// <summary>
+            /// Value
+            /// </summary>
+			public Union<string, IntrinsicFunction> Value { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ApiGateway::ApiKey";

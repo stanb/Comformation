@@ -96,6 +96,11 @@ namespace Comformation.Elasticsearch.Domain
 			public EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
 
             /// <summary>
+            /// NodeToNodeEncryptionOptions
+            /// </summary>
+			public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
+
+            /// <summary>
             /// SnapshotOptions
             /// The automated snapshot configuration for the Amazon ES domain indices.
             /// Required: No

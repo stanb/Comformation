@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    /// Elastic Load Balancing ListenerRule Conditions
+    /// Elastic Load Balancing V2 Conditions
     /// Conditions is a property of the AWS::ElasticLoadBalancingV2::ListenerRule resource that specifies the
     /// conditions when an Elastic Load Balancing listener rule takes effect.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html

@@ -19,7 +19,7 @@ namespace Comformation.DLM.LifecyclePolicy
             /// ExecutionRoleArn
             /// The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle
             /// policy.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -37,7 +37,7 @@ namespace Comformation.DLM.LifecyclePolicy
             /// <summary>
             /// State
             /// The activation state of the lifecycle policy.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
