@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Website Configuration Routing Rules Property
-    /// The RoutingRules property is an embedded property of the Amazon S3 Website Configuration Property property.
-    /// This property describes the redirect behavior and when a redirect is applied.
+    /// Amazon S3 Bucket RoutingRules
+    /// The RoutingRules property is an embedded property of the WebsiteConfiguration property. This property
+    /// describes the redirect behavior and when a redirect is applied.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html
     /// </summary>
     public class RoutingRule
@@ -18,7 +18,7 @@ namespace Comformation.S3.Bucket
         /// RedirectRule
         /// Redirect requests to another host, to another page, or with another protocol.
         /// Required: Yes
-        /// Type: Amazon S3 Website Configuration Routing Rules Redirect Rule Property
+        /// Type: RedirectRule
         /// </summary>
         [JsonProperty("RedirectRule")]
         public RedirectRule RedirectRule { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.S3.Bucket
         /// RoutingRuleCondition
         /// Rules that define when a redirect is applied.
         /// Required: No
-        /// Type: Amazon S3 Website Configuration Routing Rules Routing Rule Condition Property
+        /// Type: RoutingRuleCondition
         /// </summary>
         [JsonProperty("RoutingRuleCondition")]
         public RoutingRuleCondition RoutingRuleCondition { get; set; }

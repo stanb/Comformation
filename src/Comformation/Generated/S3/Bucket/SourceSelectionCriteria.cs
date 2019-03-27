@@ -19,7 +19,7 @@ namespace Comformation.S3.Bucket
         /// Contains the status of whether Amazon S3 replicates objects created with server-side encryption
         /// using an AWS KMS-managed key.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket SseKmsEncryptedObjects
+        /// Type: SseKmsEncryptedObjects
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SseKmsEncryptedObjects")]

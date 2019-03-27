@@ -27,6 +27,17 @@ namespace Comformation.CodeBuild.Project
         public Union<string, IntrinsicFunction> Status { get; set; }
 
         /// <summary>
+        /// EncryptionDisabled
+        /// Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are
+        /// encrypted.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("EncryptionDisabled")]
+        public Union<bool, IntrinsicFunction> EncryptionDisabled { get; set; }
+
+        /// <summary>
         /// Location
         /// The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is my-bucket,
         /// and your path prefix is build-log, then acceptable formats are my-bucket/build-log or

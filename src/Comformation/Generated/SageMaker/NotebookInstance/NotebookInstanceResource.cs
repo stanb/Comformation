@@ -6,7 +6,7 @@ namespace Comformation.SageMaker.NotebookInstance
 {
     /// <summary>
     /// AWS::SageMaker::NotebookInstance
-    /// The AWS::SageMaker::NotebookInstance resource Creates an Amazon SageMaker notebook instance. A notebook
+    /// The AWS::SageMaker::NotebookInstance resource creates an Amazon SageMaker notebook instance. A notebook
     /// instance is a machine learning (ML) compute instance running on a Jupyter notebook. For more information, see
     /// Using Notebook Instances in the Amazon SageMaker Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html
@@ -15,6 +15,19 @@ namespace Comformation.SageMaker.NotebookInstance
     {
         public class NotebookInstanceProperties
         {
+            /// <summary>
+            /// RootAccess
+            /// Whether root access is enabled or disabled for users of the notebook instance. The default value is
+            /// Enabled.
+            /// Note Lifecycle configurations need root access to be able to set up a notebook instance. Because of
+            /// this, lifecycle configurations associated with a notebook instance always run with root access even
+            /// if you disable root access for users.
+            /// Required: No
+            /// Type: : String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> RootAccess { get; set; }
+
             /// <summary>
             /// KmsKeyId
             /// If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage
@@ -27,6 +40,11 @@ namespace Comformation.SageMaker.NotebookInstance
 
             /// <summary>
             /// VolumeSizeInGB
+            /// The size in GB of the persisted machine learning storage volume that is provisioned and attached to
+            /// the Amazon SageMaker notebook instance.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> VolumeSizeInGB { get; set; }
 
@@ -78,7 +96,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// lifestyle configurations, see Customize a Notebook Instance in the Amazon SageMaker Developer Guide.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> LifecycleConfigName { get; set; }
 

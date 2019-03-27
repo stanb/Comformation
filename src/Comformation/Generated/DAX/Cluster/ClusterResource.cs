@@ -79,7 +79,7 @@ namespace Comformation.DAX.Cluster
             /// The name of the subnet group to be used for the replication group.
             /// Important DAX clusters can only run in an Amazon VPC environment. All of the subnets that you
             /// specify in a subnet group must exist in the same VPC.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>

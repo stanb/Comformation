@@ -40,7 +40,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// 					
             /// Type: HealthCheckCustomConfig
             /// 					
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// 				
             /// </summary>
 			public HealthCheckCustomConfig HealthCheckCustomConfig { get; set; }
@@ -51,7 +51,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// An optional complex type that contains information about the DNS records that you want AWS Cloud Map
             /// to create 						when you register an instance.
             /// 					
-            /// Required: Yes
+            /// Required: No
             /// 					
             /// Type: DnsConfig
             /// 					

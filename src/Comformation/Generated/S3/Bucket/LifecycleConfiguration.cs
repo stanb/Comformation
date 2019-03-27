@@ -17,7 +17,7 @@ namespace Comformation.S3.Bucket
         /// Rules
         /// A lifecycle rule for individual objects in an S3 bucket.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket Rule
+        /// Type: Rule
         /// </summary>
         [JsonProperty("Rules")]
         public List<Rule> Rules { get; set; }

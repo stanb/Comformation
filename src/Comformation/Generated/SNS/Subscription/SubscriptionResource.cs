@@ -69,7 +69,7 @@ namespace Comformation.SNS.Subscription
 
             /// <summary>
             /// Region
-            /// The region in which the topic resides.
+            /// For cross-region subscriptions, the region in which the topic resides.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

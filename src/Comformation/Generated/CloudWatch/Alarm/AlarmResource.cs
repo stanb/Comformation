@@ -141,6 +141,15 @@ namespace Comformation.CloudWatch.Alarm
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
+            /// Metrics
+            /// Specifies the metric data to return.
+            /// Required: No
+            /// Type: List of MetricDataQuery property types
+            /// Update requires: No interruption
+            /// </summary>
+			public List<MetricDataQuery> Metrics { get; set; }
+
+            /// <summary>
             /// Namespace
             /// The namespace of the metric that is associated with the alarm.
             /// Required: No

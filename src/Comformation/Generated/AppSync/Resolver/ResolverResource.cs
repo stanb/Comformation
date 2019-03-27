@@ -47,7 +47,7 @@ namespace Comformation.AppSync.Resolver
             /// DataSourceName
             /// The AWS AppSync data source that this resolver will run against in order to return data to the
             /// caller.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

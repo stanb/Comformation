@@ -26,9 +26,9 @@ namespace Comformation.Glue.Job
         /// <summary>
         /// Name
         /// The name of the job command.
+        /// Valid values are glueetl for an Apache Spark ETL job and pythonshell for a Python shell job.
         /// Required: Yes
         /// Type: String
-        /// Valid values: glueetl
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

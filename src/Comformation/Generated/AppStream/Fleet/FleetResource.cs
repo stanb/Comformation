@@ -127,6 +127,11 @@ namespace Comformation.AppStream.Fleet
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
+            /// Tags
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// ImageArn
             /// The ARN of the public, private, or shared image to use.
             /// Required: No

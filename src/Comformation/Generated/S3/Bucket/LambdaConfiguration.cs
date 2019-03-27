@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon Simple Storage Service Bucket LambdaConfiguration
-    /// LambdaConfigurations is a property of the Amazon S3 Bucket NotificationConfiguration property that describes
-    /// the AWS Lambda (Lambda) functions to invoke and the events for which to invoke them.
+    /// Amazon S3 Bucket LambdaConfiguration
+    /// LambdaConfigurations is a property of the NotificationConfiguration property that describes the AWS Lambda
+    /// (Lambda) functions to invoke and the events for which to invoke them.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html
     /// </summary>
     public class LambdaConfiguration
@@ -30,7 +30,7 @@ namespace Comformation.S3.Bucket
         /// create a filter so that only image files with a . jpg extension invoke the function when they are
         /// added to the S3 bucket.
         /// Required: No
-        /// Type: Amazon S3 Bucket NotificationFilter
+        /// Type: NotificationFilter
         /// </summary>
         [JsonProperty("Filter")]
         public NotificationFilter Filter { get; set; }

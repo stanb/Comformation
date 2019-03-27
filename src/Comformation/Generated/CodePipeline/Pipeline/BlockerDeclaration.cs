@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline Stages Blockers
-    /// Blockers is a property of the AWS CodePipeline Pipeline Stages property that specifies an AWS CodePipeline
-    /// gate declaration.
+    /// CodePipeline Pipeline Stages Blockers
+    /// Blockers is a property of the CodePipeline Pipeline Stages property that specifies an CodePipeline gate
+    /// declaration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html
     /// </summary>
     public class BlockerDeclaration

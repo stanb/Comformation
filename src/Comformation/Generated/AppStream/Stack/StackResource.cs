@@ -91,6 +91,11 @@ namespace Comformation.AppStream.Stack
 			public Union<string, IntrinsicFunction> RedirectURL { get; set; }
 
             /// <summary>
+            /// Tags
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the stack.
             /// Required: True

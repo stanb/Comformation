@@ -40,8 +40,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// LifecycleHookName
-        /// The name of the lifecycle hook. For constraints, see PutLifecycleHook in the Amazon EC2 Auto Scaling
-        /// API Reference.
+        /// The name of the lifecycle hook. For constraints, see LifecycleHookSpecification in the Amazon EC2
+        /// Auto Scaling API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -63,7 +63,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// NotificationMetadata
         /// Additional information to include when Amazon EC2 Auto Scaling sends a message to the notification
-        /// target. For constraints, see PutLifecycleHook in the Amazon EC2 Auto Scaling API Reference.
+        /// target. For constraints, see LifecycleHookSpecification in the Amazon EC2 Auto Scaling API
+        /// Reference.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

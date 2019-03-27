@@ -284,13 +284,16 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// EnableIAMDatabaseAuthentication
             /// If set to true, enables mapping of AWS Identity and Access Management (IAM) accounts to database
-            /// accounts.
+            /// accounts. For more information, see IAM Database Authentication for MySQL and PostgreSQL in the
+            /// Amazon RDS User Guide
             /// You can enable IAM database authentication for the following database engines:
             /// Amazon Aurora
             /// Not applicable. Mapping IAM accounts to database accounts is managed by the DB cluster. For more
             /// information, see CreateDBCluster.
             /// MySQL
             /// For MySQL 5. 6, minor version 5. 6. 34 or higher For MySQL 5. 7, minor version 5. 7. 16 or higher
+            /// PostgreSQL
+            /// Versions 10. 6 or higher, 9. 6. 11 or higher, and 9. 5. 15 or higher
             /// Default: false
             /// Required: No
             /// Type: Boolean
@@ -522,7 +525,8 @@ namespace Comformation.RDS.DBInstance
             /// instance.
             /// Required: No
             /// Type: List of ProcessorFeature property types
-            /// Update requires: No interruption
+            /// Update requires: Some interruptions. Updating this property results in a reboot of the database, and
+            /// will incur a small down time.
             /// </summary>
 			public List<ProcessorFeature> ProcessorFeatures { get; set; }
 
@@ -642,6 +646,11 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// UseDefaultProcessorFeatures
+            /// Specifies that the DB instance class of the DB instance uses its default processor features.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Some interruptions. Updating this property results in a reboot of the database, and
+            /// will incur a small down time.
             /// </summary>
 			public Union<bool, IntrinsicFunction> UseDefaultProcessorFeatures { get; set; }
 

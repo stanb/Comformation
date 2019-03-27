@@ -15,6 +15,16 @@ namespace Comformation.CodeBuild.Project
     {
 
         /// <summary>
+        /// FilterGroups
+        /// A list of lists of WebhookFilter objects used to determine which webhook events are triggered. At
+        /// least one WebhookFilter in the array must specify EVENT as its type.
+        /// Required: No
+        /// Type: A list of a list of AWS CodeBuild Project WebhookFilter objects
+        /// </summary>
+        [JsonProperty("FilterGroups")]
+        public List<FilterGroup> FilterGroups { get; set; }
+
+        /// <summary>
         /// Webhook
         /// Specifies whether or not to begin automatically rebuilding the source code every time a code change
         /// is pushed to the repository.

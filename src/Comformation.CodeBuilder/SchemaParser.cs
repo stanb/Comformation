@@ -20,7 +20,7 @@ namespace Comformation.CodeBuilder
 
         private IEnumerable<PropertyTypeClass> Parse(IDictionary<string, PropertySpec> propertySpecs)
         {
-            var propertyClasses = propertySpecs.Select(x =>
+            var propertyClasses = propertySpecs.Where(x => x.Value.Properties != null).Select(x =>
             {
                 var keyParts = x.Key.Split('.').Reverse().ToArray();
                 var className = keyParts[0];

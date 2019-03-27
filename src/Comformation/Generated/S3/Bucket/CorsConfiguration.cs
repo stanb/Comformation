@@ -17,7 +17,7 @@ namespace Comformation.S3.Bucket
         /// CorsRules
         /// A set of origins and methods that you allow.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket CorsRule
+        /// Type: CorsRule
         /// </summary>
         [JsonProperty("CorsRules")]
         public List<CorsRule> CorsRules { get; set; }

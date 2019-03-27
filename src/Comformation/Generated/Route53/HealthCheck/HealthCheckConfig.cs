@@ -19,7 +19,7 @@ namespace Comformation.Route53.HealthCheck
         /// AlarmIdentifier
         /// Identifies the CloudWatch alarm that you want Route&#160;53 health checkers to use to determine whether
         /// this health check is healthy.
-        /// Type: Amazon Route&#160;53 HealthCheck AlarmIdentifier
+        /// Type: AlarmIdentifier
         /// Required: No
         /// </summary>
         [JsonProperty("AlarmIdentifier")]

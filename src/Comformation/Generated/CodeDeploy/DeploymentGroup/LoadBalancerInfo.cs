@@ -8,8 +8,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
     /// <summary>
     /// AWS CodeDeploy DeploymentGroup LoadBalancerInfo
     /// The LoadBalancerInfo property type specifies information about the load balancer or target group used for an
-    /// AWS CodeDeploy deployment group. For more information, see Integrating AWS CodeDeploy with Elastic Load
-    /// Balancing in the AWS CodeDeploy User Guide.
+    /// AWS CodeDeploy deployment group. For more information, see Integrating CodeDeploy with Elastic Load Balancing
+    /// in the AWS CodeDeploy User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html
     /// </summary>
     public class LoadBalancerInfo

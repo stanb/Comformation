@@ -83,6 +83,16 @@ namespace Comformation.CodeBuild.Project
         public Union<int, IntrinsicFunction> GitCloneDepth { get; set; }
 
         /// <summary>
+        /// GitSubmodulesConfig
+        /// The configuration information about Git submodules in a project&#39;s source respository.
+        /// Required: No
+        /// Type: GitSubmodulesConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("GitSubmodulesConfig")]
+        public GitSubmodulesConfig GitSubmodulesConfig { get; set; }
+
+        /// <summary>
         /// InsecureSsl
         /// This is used with GitHub Enterprise only. Set to true to ignore SSL warnings while connecting to
         /// your GitHub Enterprise project repository. The default value is false. InsecureSsl should be used

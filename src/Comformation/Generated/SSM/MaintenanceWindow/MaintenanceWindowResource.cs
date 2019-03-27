@@ -89,6 +89,18 @@ namespace Comformation.SSM.MaintenanceWindow
 			public Union<string, IntrinsicFunction> EndDate { get; set; }
 
             /// <summary>
+            /// Tags
+            /// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key–value
+            /// pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
+            /// environment. For example, you might want to tag a Maintenance Window to identify the type of tasks
+            /// it will run, the types of targets, and the environment it will run in.
+            /// Required: No
+            /// Type: Resource Tag
+            /// Update requires: No interruption.
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the Maintenance Window.
             /// Required: Yes

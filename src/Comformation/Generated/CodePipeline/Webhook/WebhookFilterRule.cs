@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Webhook
 {
     /// <summary>
-    /// AWS CodePipeline Webhook WebhookFilterRule
+    /// CodePipeline Webhook WebhookFilterRule
     /// The WebhookFilterRule property type specifies events that will trigger a webhook. For more information, see
     /// Webhook Definition in the AWS CodePipeline API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html

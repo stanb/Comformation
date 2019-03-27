@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeCommit.Repository
 {
     /// <summary>
-    /// AWS CodeCommit Repository Trigger
+    /// CodeCommit Repository Trigger
     /// Trigger is a property of the AWS::CodeCommit::Repository resource that defines the actions to take in response
-    /// to events that occur in the AWS CodeCommit repository.
+    /// to events that occur in the CodeCommit repository.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-triggers.html
     /// </summary>
     public class RepositoryTrigger
@@ -16,8 +16,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// Events
-        /// The repository events for which AWS CodeCommit sends information to the target, which you specified
-        /// in the DestinationArn property. If you don&#39;t specify events, the trigger runs for all repository
+        /// The repository events for which CodeCommit sends information to the target, which you specified in
+        /// the DestinationArn property. If you don&#39;t specify events, the trigger runs for all repository
         /// events. For valid values, see the RepositoryTrigger data type in the AWS CodeCommit API Reference.
         /// Required: No
         /// Type: List of String values
@@ -27,9 +27,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// Branches
-        /// The names of the branches in the AWS CodeCommit repository that contain events that you want to
-        /// include in the trigger. If you don&#39;t specify at least one branch, the trigger applies to all
-        /// branches.
+        /// The names of the branches in the CodeCommit repository that contain events that you want to include
+        /// in the trigger. If you don&#39;t specify at least one branch, the trigger applies to all branches.
         /// Required: No
         /// Type: List of String values
         /// </summary>
@@ -38,7 +37,7 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// CustomData
-        /// When an event is triggered, additional information that AWS CodeCommit includes when it sends
+        /// When an event is triggered, additional information that CodeCommit includes when it sends
         /// information to the target.
         /// Required: No
         /// Type: String
@@ -49,7 +48,7 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// DestinationArn
         /// The Amazon Resource Name (ARN) of the resource that is the target for this trigger. For valid
-        /// targets, see Manage Triggers for an AWS CodeCommit Repository in the AWS CodeCommit User Guide.
+        /// targets, see Manage Triggers for an CodeCommit Repository in the AWS CodeCommit User Guide.
         /// Required: No
         /// Type: String
         /// </summary>

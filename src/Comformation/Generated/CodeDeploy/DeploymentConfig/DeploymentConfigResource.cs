@@ -7,7 +7,7 @@ namespace Comformation.CodeDeploy.DeploymentConfig
     /// <summary>
     /// AWS::CodeDeploy::DeploymentConfig
     /// The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success
-    /// conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment
+    /// conditions, and deployment failure conditions that CodeDeploy uses during a deployment. The deployment
     /// configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances
     /// that must remain available at any time during a deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html
@@ -32,15 +32,15 @@ namespace Comformation.CodeDeploy.DeploymentConfig
 
             /// <summary>
             /// MinimumHealthyHosts
-            /// The minimum number of healthy instances that must be available at any time during an AWS CodeDeploy
+            /// The minimum number of healthy instances that must be available at any time during an CodeDeploy
             /// deployment. For example, for a fleet of nine instances, if you specify a minimum of six healthy
-            /// instances, AWS CodeDeploy deploys your application up to three instances at a time so that you
-            /// always have six healthy instances. The deployment succeeds if your application successfully deploys
-            /// to six or more instances; otherwise, the deployment fails.
-            /// For more information about instance health, see AWS CodeDeploy Instance Health in the AWS CodeDeploy
+            /// instances, CodeDeploy deploys your application up to three instances at a time so that you always
+            /// have six healthy instances. The deployment succeeds if your application successfully deploys to six
+            /// or more instances; otherwise, the deployment fails.
+            /// For more information about instance health, see CodeDeploy Instance Health in the AWS CodeDeploy
             /// User Guide.
             /// Required: Yes
-            /// Type: AWS CodeDeploy DeploymentConfig MinimumHealthyHosts
+            /// Type: CodeDeploy DeploymentConfig MinimumHealthyHosts
             /// Update requires: Replacement
             /// </summary>
 			public MinimumHealthyHosts MinimumHealthyHosts { get; set; }

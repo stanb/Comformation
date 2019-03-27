@@ -19,7 +19,7 @@ namespace Comformation.S3.Bucket
         /// S3Key
         /// Amazon S3 filtering rules that describe for which object key names to send notifications.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket S3KeyFilter
+        /// Type: S3KeyFilter
         /// </summary>
         [JsonProperty("S3Key")]
         public S3KeyFilter S3Key { get; set; }

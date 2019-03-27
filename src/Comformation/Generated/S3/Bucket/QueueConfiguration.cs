@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon Simple Storage Service Bucket QueueConfiguration
-    /// QueueConfigurations is a property of the Amazon S3 Bucket NotificationConfiguration property that describes
-    /// the S3 bucket events about which you want to send messages to Amazon SQS and the queues to which you want to
-    /// send them.
+    /// Amazon S3 Bucket QueueConfiguration
+    /// QueueConfigurations is a property of the NotificationConfiguration property that describes the S3 bucket
+    /// events about which you want to send messages to Amazon SQS and the queues to which you want to send them.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html
     /// </summary>
     public class QueueConfiguration
@@ -32,7 +31,7 @@ namespace Comformation.S3.Bucket
         /// create a filter so that Amazon Simple Storage Service (Amazon S3) sends notifications only when
         /// image files with a . jpg extension are added to the bucket.
         /// Required: No
-        /// Type: Amazon S3 Bucket NotificationFilter
+        /// Type: NotificationFilter
         /// </summary>
         [JsonProperty("Filter")]
         public NotificationFilter Filter { get; set; }

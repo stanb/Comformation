@@ -26,6 +26,10 @@ namespace Comformation.AppStream.StackUserAssociation
 
             /// <summary>
             /// UserName
+            /// The email address of the user.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> UserName { get; set; }
 

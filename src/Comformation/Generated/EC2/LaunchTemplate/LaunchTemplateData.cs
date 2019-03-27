@@ -50,18 +50,6 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<string, IntrinsicFunction> UserData { get; set; }
 
         /// <summary>
-        /// InstanceInitiatedShutdownBehavior
-        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance
-        /// (using the operating system command for system shutdown).
-        /// Valid values include stop and terminate. The default is stop.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("InstanceInitiatedShutdownBehavior")]
-        public Union<string, IntrinsicFunction> InstanceInitiatedShutdownBehavior { get; set; }
-
-        /// <summary>
         /// BlockDeviceMappings
         /// The block device mapping.
         /// Required: No
@@ -94,18 +82,6 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<string, IntrinsicFunction> KernelId { get; set; }
 
         /// <summary>
-        /// SecurityGroupIds
-        /// One or more security group IDs. You cannot specify both a security group ID and security name in the
-        /// same request. For information on creating a security group, see CreateSecurityGroup in the Amazon
-        /// EC2 API Reference.
-        /// Required: No
-        /// Type: List of String values
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("SecurityGroupIds")]
-        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
-
-        /// <summary>
         /// EbsOptimized
         /// Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
         /// throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
@@ -119,29 +95,6 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
         /// <summary>
-        /// KeyName
-        /// The name of the key pair. For information on creating a key pair, see CreateKeyPair or ImportKeyPair
-        /// in the Amazon EC2 API Reference.
-        /// Important If you do not specify a key pair, you can&#39;t connect to the instance unless you choose an
-        /// AMI that is configured to allow users another way to log in.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("KeyName")]
-        public Union<string, IntrinsicFunction> KeyName { get; set; }
-
-        /// <summary>
-        /// DisableApiTermination
-        /// If set to true, you can&#39;t terminate the instance using the Amazon EC2 console, CLI, or API.
-        /// Required: No
-        /// Type: Boolean
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("DisableApiTermination")]
-        public Union<bool, IntrinsicFunction> DisableApiTermination { get; set; }
-
-        /// <summary>
         /// ElasticGpuSpecifications
         /// An elastic GPU to associate with the instance.
         /// Required: No
@@ -152,6 +105,12 @@ namespace Comformation.EC2.LaunchTemplate
         public List<ElasticGpuSpecification> ElasticGpuSpecifications { get; set; }
 
         /// <summary>
+        /// ElasticInferenceAccelerators
+        /// </summary>
+        [JsonProperty("ElasticInferenceAccelerators")]
+        public List<LaunchTemplateElasticInferenceAccelerator> ElasticInferenceAccelerators { get; set; }
+
+        /// <summary>
         /// Placement
         /// The placement for the instance.
         /// Required: No
@@ -160,16 +119,6 @@ namespace Comformation.EC2.LaunchTemplate
         /// </summary>
         [JsonProperty("Placement")]
         public Placement Placement { get; set; }
-
-        /// <summary>
-        /// InstanceMarketOptions
-        /// The market (purchasing) option for the instances.
-        /// Required: No
-        /// Type: InstanceMarketOptions
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("InstanceMarketOptions")]
-        public InstanceMarketOptions InstanceMarketOptions { get; set; }
 
         /// <summary>
         /// NetworkInterfaces
@@ -203,6 +152,91 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         /// <summary>
+        /// Monitoring
+        /// The monitoring for the instance.
+        /// Required: No
+        /// Type: Monitoring
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Monitoring")]
+        public Monitoring Monitoring { get; set; }
+
+        /// <summary>
+        /// HibernationOptions
+        /// </summary>
+        [JsonProperty("HibernationOptions")]
+        public HibernationOptions HibernationOptions { get; set; }
+
+        /// <summary>
+        /// LicenseSpecifications
+        /// </summary>
+        [JsonProperty("LicenseSpecifications")]
+        public List<LicenseSpecification> LicenseSpecifications { get; set; }
+
+        /// <summary>
+        /// InstanceInitiatedShutdownBehavior
+        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance
+        /// (using the operating system command for system shutdown).
+        /// Valid values include stop and terminate. The default is stop.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("InstanceInitiatedShutdownBehavior")]
+        public Union<string, IntrinsicFunction> InstanceInitiatedShutdownBehavior { get; set; }
+
+        /// <summary>
+        /// CpuOptions
+        /// </summary>
+        [JsonProperty("CpuOptions")]
+        public CpuOptions CpuOptions { get; set; }
+
+        /// <summary>
+        /// SecurityGroupIds
+        /// One or more security group IDs. You cannot specify both a security group ID and security name in the
+        /// same request. For information on creating a security group, see CreateSecurityGroup in the Amazon
+        /// EC2 API Reference.
+        /// Required: No
+        /// Type: List of String values
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SecurityGroupIds")]
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+
+        /// <summary>
+        /// KeyName
+        /// The name of the key pair. For information on creating a key pair, see CreateKeyPair or ImportKeyPair
+        /// in the Amazon EC2 API Reference.
+        /// Important If you do not specify a key pair, you can&#39;t connect to the instance unless you choose an
+        /// AMI that is configured to allow users another way to log in.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("KeyName")]
+        public Union<string, IntrinsicFunction> KeyName { get; set; }
+
+        /// <summary>
+        /// DisableApiTermination
+        /// If set to true, you can&#39;t terminate the instance using the Amazon EC2 console, CLI, or API.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DisableApiTermination")]
+        public Union<bool, IntrinsicFunction> DisableApiTermination { get; set; }
+
+        /// <summary>
+        /// InstanceMarketOptions
+        /// The market (purchasing) option for the instances.
+        /// Required: No
+        /// Type: InstanceMarketOptions
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("InstanceMarketOptions")]
+        public InstanceMarketOptions InstanceMarketOptions { get; set; }
+
+        /// <summary>
         /// RamDiskId
         /// The ID of the RAM disk.
         /// Important We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
@@ -215,14 +249,10 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<string, IntrinsicFunction> RamDiskId { get; set; }
 
         /// <summary>
-        /// Monitoring
-        /// The monitoring for the instance.
-        /// Required: No
-        /// Type: Monitoring
-        /// Update requires: No interruption
+        /// CapacityReservationSpecification
         /// </summary>
-        [JsonProperty("Monitoring")]
-        public Monitoring Monitoring { get; set; }
+        [JsonProperty("CapacityReservationSpecification")]
+        public CapacityReservationSpecification CapacityReservationSpecification { get; set; }
 
         /// <summary>
         /// CreditSpecification

@@ -90,6 +90,11 @@ namespace Comformation.AppStream.ImageBuilder
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
+            /// Tags
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// A unique name for the image builder.
             /// Required: Yes

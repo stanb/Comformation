@@ -30,7 +30,7 @@ namespace Comformation.S3.Bucket
         /// Rules
         /// A replication rule that specifies which objects to replicate and where they are stored.
         /// Required: Yes
-        /// Type: List of Amazon S3 Bucket ReplicationRule
+        /// Type: List of ReplicationRule
         /// </summary>
         [JsonProperty("Rules")]
         public List<ReplicationRule> Rules { get; set; }

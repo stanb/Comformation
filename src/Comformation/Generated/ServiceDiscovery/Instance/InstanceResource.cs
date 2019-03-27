@@ -37,7 +37,7 @@ namespace Comformation.ServiceDiscovery.Instance
             /// 					
             /// Required: Yes
             /// 					
-            /// Type: JSON object
+            /// Type: String map
             /// 					
             /// Update requires: No interruption
             /// 				

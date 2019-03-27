@@ -15,9 +15,8 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// AuthSource
-        /// The authentication type you use to access the MongoDB source endpoint.
-        /// Valid values: NO, PASSWORD
-        /// When NO is selected, user name and password parameters are not used and can be empty.
+        /// The MongoDB database name. This attribute is not used when you specify NO for AuthType. The default
+        /// is admin.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -95,6 +94,11 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// AuthType
+        /// The authentication type you use to access the MongoDB source endpoint.
+        /// When NO is specified, user name and password parameters are not used and can be empty.
+        /// Valid values: NO, PASSWORD
+        /// Required: No
+        /// Type: String
         /// </summary>
         [JsonProperty("AuthType")]
         public Union<string, IntrinsicFunction> AuthType { get; set; }

@@ -7,8 +7,8 @@ namespace Comformation.Route53.HealthCheck
 {
     /// <summary>
     /// Amazon Route&#160;53 HealthCheck AlarmIdentifier
-    /// The AlarmIdentifier subproperty describes the name and Region that are associated with an Route&#160;53 HealthCheck
-    /// HealthCheckConfig property.
+    /// The AlarmIdentifier subproperty describes the name and Region that are associated with an HealthCheckConfig
+    /// property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig-alarmidentifier.html
     /// </summary>
     public class AlarmIdentifier

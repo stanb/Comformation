@@ -6,9 +6,9 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline
-    /// The AWS::CodePipeline::Pipeline resource creates an AWS CodePipeline pipeline that describes how software
-    /// changes go through a release process. For more information, see What Is AWS CodePipeline? in the AWS
-    /// CodePipeline User Guide.
+    /// The AWS::CodePipeline::Pipeline resource creates an CodePipeline pipeline that describes how software changes
+    /// go through a release process. For more information, see What Is CodePipeline? in the AWS CodePipeline User
+    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
@@ -17,9 +17,9 @@ namespace Comformation.CodePipeline.Pipeline
         {
             /// <summary>
             /// ArtifactStore
-            /// The Amazon Simple Storage Service (Amazon S3) location where AWS CodePipeline stores pipeline
-            /// artifacts. You can only use either ArtifactStore or ArtifactStores, not both. For more information,
-            /// see Create an Amazon S3 Bucket for Your Application in the AWS CodePipeline User Guide.
+            /// The Amazon Simple Storage Service (Amazon S3) location where CodePipeline stores pipeline artifacts.
+            /// You can only use either ArtifactStore or ArtifactStores, not both. For more information, see Create
+            /// an Amazon S3 Bucket for Your Application in the AWS CodePipeline User Guide.
             /// Required: No
             /// Type: ArtifactStore
             /// Update requires: No interruption
@@ -49,7 +49,7 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// Name
-            /// The name of your AWS CodePipeline pipeline.
+            /// The name of your CodePipeline pipeline.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -58,7 +58,7 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// RestartExecutionOnUpdate
-            /// Indicates whether to rerun the AWS CodePipeline pipeline after you update it.
+            /// Indicates whether to rerun the CodePipeline pipeline after you update it.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -78,7 +78,7 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// Stages
-            /// Defines the AWS CodePipeline pipeline stages.
+            /// Defines the CodePipeline pipeline stages.
             /// Required: Yes
             /// Type: List of Stages property types
             /// Update requires: No interruption

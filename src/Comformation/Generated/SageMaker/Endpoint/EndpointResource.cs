@@ -39,7 +39,7 @@ namespace Comformation.SageMaker.Endpoint
             /// Tags
             /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
             /// and Cost Management User Guide.
-            /// Required: Yes
+            /// Required: No
             /// Type: List of Resource Tag
             /// Update requires: No interruption
             /// </summary>

@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.CustomActionType
 {
     /// <summary>
-    /// AWS CodePipeline CustomActionType ArtifactDetails
+    /// CodePipeline CustomActionType ArtifactDetails
     /// ArtifactDetails is a property of the AWS::CodePipeline::CustomActionType resource that specifies the details
-    /// of an artifact for an AWS CodePipeline custom action. For valid values, see ArtifactDetails in the AWS
+    /// of an artifact for an CodePipeline custom action. For valid values, see ArtifactDetails in the AWS
     /// CodePipeline API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype-artifactdetails.html
     /// </summary>

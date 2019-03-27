@@ -7,8 +7,8 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Bucket ReplicationDestination
-    /// Destination is a property of the Amazon S3 Bucket ReplicationRule property that specifies which Amazon Simple
-    /// Storage Service (Amazon S3) bucket to store replicated objects and their storage class.
+    /// Destination is a property of the ReplicationRule property that specifies which Amazon Simple Storage Service
+    /// (Amazon S3) bucket to store replicated objects and their storage class.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html
     /// </summary>
     public class ReplicationDestination
@@ -21,7 +21,7 @@ namespace Comformation.S3.Bucket
         /// bucket. If this is not specified in the replication configuration, the replicas are owned by same
         /// AWS account that owns the source object.
         /// Required: No
-        /// Type: Amazon S3 Bucket AccessControlTranslation
+        /// Type: AccessControlTranslation
         /// </summary>
         [JsonProperty("AccessControlTranslation")]
         public AccessControlTranslation AccessControlTranslation { get; set; }
@@ -56,7 +56,7 @@ namespace Comformation.S3.Bucket
         /// EncryptionConfiguration
         /// Specifies encryption-related information.
         /// Required: No
-        /// Type: Amazon S3 Bucket EncryptionConfiguration
+        /// Type: EncryptionConfiguration
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
         public EncryptionConfiguration EncryptionConfiguration { get; set; }

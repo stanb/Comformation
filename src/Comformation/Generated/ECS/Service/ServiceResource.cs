@@ -165,11 +165,6 @@ namespace Comformation.ECS.Service
 			public List<ServiceRegistry> ServiceRegistries { get; set; }
 
             /// <summary>
-            /// Tags
-            /// </summary>
-			public List<Tag> Tags { get; set; }
-
-            /// <summary>
             /// TaskDefinition
             /// The ARN of the task definition (including the revision number) that you want to run on the cluster,
             /// such as arn:aws:ecs:us-east-1:123456789012:task-definition/mytask:3. You can&#39;t use :latest to

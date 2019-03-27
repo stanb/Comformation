@@ -82,6 +82,16 @@ namespace Comformation.OpsWorksCM.Server
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
+            /// AssociatePublicIpAddress
+            /// Associate a public IP address with the server. Valid values are true or false. The default value is
+            /// true.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
+
+            /// <summary>
             /// InstanceProfileArn
             /// The instance profile ARN of the server.
             /// Required: Yes
@@ -137,7 +147,11 @@ namespace Comformation.OpsWorksCM.Server
             /// API.
             /// Attributes accepted in a createServer request for Puppet Enterprise: PUPPET_ADMIN_PASSWORD: An
             /// administrator password that you can use to sign in to the Puppet Enterprise console after the server
-            /// is online. The password must use between 8 and 32 ASCII characters.
+            /// is online. The password must use between 8 and 32 ASCII characters. PUPPET_R10K_REMOTE: The r10k
+            /// remote is the URL of your control repository (for example, ssh://git@your. git-repo.
+            /// com:user/control-repo. git). Specifying an r10k remote opens TCP port 8170. PUPPET_R10K_PRIVATE_KEY:
+            /// If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded
+            /// private SSH key.
             /// Required: No
             /// Type: List of EngineAttribute property types
             /// Update requires: Replacement

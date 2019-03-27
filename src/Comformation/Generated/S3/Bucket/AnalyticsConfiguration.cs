@@ -39,7 +39,7 @@ namespace Comformation.S3.Bucket
         /// Contains data related to access patterns to be collected and made available to analyze the tradeoffs
         /// between different storage classes.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket StorageClassAnalysis
+        /// Type: StorageClassAnalysis
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageClassAnalysis")]
@@ -51,7 +51,7 @@ namespace Comformation.S3.Bucket
         /// The analytics only includes objects that meet the filter&#39;s criteria. If no filter is speciified, all
         /// of the contents of the bucket are included in the analysis.
         /// Required: No
-        /// Type: List of Amazon S3 Bucket TagFilter
+        /// Type: List of TagFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagFilters")]

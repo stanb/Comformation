@@ -7,8 +7,8 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Bucket NoncurrentVersionTransition
-    /// NoncurrentVersionTransition is a property of the Amazon S3 Bucket Rule property that describes when noncurrent
-    /// objects transition to a specified storage class.
+    /// NoncurrentVersionTransition is a property of the Rule property that describes when noncurrent objects
+    /// transition to a specified storage class.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html
     /// </summary>
     public class NoncurrentVersionTransition

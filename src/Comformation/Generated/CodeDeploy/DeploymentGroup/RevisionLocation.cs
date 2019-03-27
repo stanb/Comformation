@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup Revision
-    /// Revision is a property of the AWS::CodeDeploy::DeploymentGroup property that defines the location of the AWS
+    /// CodeDeploy DeploymentGroup Revision
+    /// Revision is a property of the AWS::CodeDeploy::DeploymentGroup property that defines the location of the
     /// CodeDeploy application revision to deploy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html
     /// </summary>
@@ -18,7 +18,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// GitHubLocation
         /// If your application revision is stored in GitHub, information about the location where it is stored.
         /// Required: No
-        /// Type: AWS CodeDeploy DeploymentGroup Deployment Revision GitHubLocation
+        /// Type: CodeDeploy DeploymentGroup Deployment Revision GitHubLocation
         /// </summary>
         [JsonProperty("GitHubLocation")]
         public GitHubLocation GitHubLocation { get; set; }
@@ -37,7 +37,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// S3Location
         /// If the application revision is stored in an S3 bucket, information about the location.
         /// Required: No
-        /// Type: AWS CodeDeploy DeploymentGroup Deployment Revision S3Location
+        /// Type: CodeDeploy DeploymentGroup Deployment Revision S3Location
         /// </summary>
         [JsonProperty("S3Location")]
         public S3Location S3Location { get; set; }
