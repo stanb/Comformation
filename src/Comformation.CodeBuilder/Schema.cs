@@ -19,7 +19,7 @@ namespace Comformation.CodeBuilder
         public IDictionary<string, Property> Properties { get; set; }
     }
 
-    public class PropertySpec
+    public class PropertySpec : Property
     {
         public string Documentation { get; set; }
         public IDictionary<string, Property> Properties { get; set; }

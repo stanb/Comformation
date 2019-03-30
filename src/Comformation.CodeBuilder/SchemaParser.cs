@@ -20,6 +20,10 @@ namespace Comformation.CodeBuilder
 
         private IEnumerable<PropertyTypeClass> Parse(IDictionary<string, PropertySpec> propertySpecs)
         {
+            var aliases = propertySpecs
+                .Where(x => x.Value.Properties == null)
+                .ToDictionary(x => x.Key, x => x.Value as Property);
+
             var propertyClasses = propertySpecs.Where(x => x.Value.Properties != null).Select(x =>
             {
                 var keyParts = x.Key.Split('.').Reverse().ToArray();
@@ -40,6 +44,19 @@ namespace Comformation.CodeBuilder
                     path = Path.Combine(pathParts);
                 }
                 path = Path.ChangeExtension(path, ".cs");
+
+                // Fix aliases
+                foreach (var prop in x.Value.Properties)
+                {
+                    var aliasName = $"{x.Key.Split(".")[0]}.{prop.Value.ItemType ?? prop.Value.Type}";
+                    if (aliases.TryGetValue(aliasName, out var aliasType))
+                    {
+                        prop.Value.Type = aliasType.Type;
+                        prop.Value.ItemType = aliasType.ItemType;
+                        prop.Value.PrimitiveType = aliasType.PrimitiveType;
+                        prop.Value.PrimitiveItemType = aliasType.PrimitiveItemType;
+                    }
+                }
 
                 var propertyClass = new PropertyTypeClass
                 {

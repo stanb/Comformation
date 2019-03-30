@@ -91,6 +91,11 @@ namespace Comformation.AppStream.ImageBuilder
 
             /// <summary>
             /// Tags
+            /// The tags for the image builder. Each tag specifies a key-value pair, and the value is optional. If
+            /// you do not specify a value, it is set to an empty string (for example, Environment=).
+            /// Required: No
+            /// Type: List of Tag property types
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 

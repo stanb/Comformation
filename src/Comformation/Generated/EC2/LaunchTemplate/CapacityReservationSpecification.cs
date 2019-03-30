@@ -15,7 +15,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// CapacityReservationPreference
         /// </summary>
         [JsonProperty("CapacityReservationPreference")]
-        public CapacityReservationPreference CapacityReservationPreference { get; set; }
+        public Union<string, IntrinsicFunction> CapacityReservationPreference { get; set; }
 
         /// <summary>
         /// CapacityReservationTarget

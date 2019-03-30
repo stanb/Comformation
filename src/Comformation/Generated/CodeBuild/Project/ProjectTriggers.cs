@@ -22,7 +22,7 @@ namespace Comformation.CodeBuild.Project
         /// Type: A list of a list of AWS CodeBuild Project WebhookFilter objects
         /// </summary>
         [JsonProperty("FilterGroups")]
-        public List<FilterGroup> FilterGroups { get; set; }
+        public List<WebhookFilter> FilterGroups { get; set; }
 
         /// <summary>
         /// Webhook
