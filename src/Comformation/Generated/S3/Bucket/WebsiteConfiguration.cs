@@ -7,7 +7,7 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Website Configuration Property
-    /// WebsiteConfiguration is an embedded property of the AWS::S3::Bucket resource.
+    /// WebsiteConfiguration is a property of the AWS::S3::Bucket resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html
     /// </summary>
     public class WebsiteConfiguration
@@ -36,7 +36,7 @@ namespace Comformation.S3.Bucket
         /// The redirect behavior for every request to this bucket&#39;s website endpoint.
         /// Important If you specify this property, you cannot specify any other property.
         /// Required: No
-        /// Type: Amazon S3 Website Configuration Redirect All Requests To Property
+        /// Type: RedirectAllRequestsTo
         /// </summary>
         [JsonProperty("RedirectAllRequestsTo")]
         public RedirectAllRequestsTo RedirectAllRequestsTo { get; set; }
@@ -45,7 +45,7 @@ namespace Comformation.S3.Bucket
         /// RoutingRules
         /// Rules that define when a redirect is applied and the redirect behavior.
         /// Required: No
-        /// Type: List of Amazon S3 Website Configuration Routing Rules Property
+        /// Type: List of RoutingRules
         /// </summary>
         [JsonProperty("RoutingRules")]
         public List<RoutingRule> RoutingRules { get; set; }

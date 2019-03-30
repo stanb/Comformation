@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup Deployment Revision S3Location
-    /// S3Location is a property of the AWS CodeDeploy DeploymentGroup Revision property that specifies the location
-    /// of an application revision that is stored in Amazon Simple Storage Service (Amazon S3).
+    /// CodeDeploy DeploymentGroup Deployment Revision S3Location
+    /// S3Location is a property of the CodeDeploy DeploymentGroup Revision property that specifies the location of an
+    /// application revision that is stored in Amazon Simple Storage Service (Amazon S3).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html
     /// </summary>
     public class S3Location
@@ -35,7 +35,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// ETag
-        /// The Amazon S3 ETag (a file checksum) of the application revision. If you don&#39;t specify a value, AWS
+        /// The Amazon S3 ETag (a file checksum) of the application revision. If you don&#39;t specify a value,
         /// CodeDeploy skips the ETag validation of your application revision.
         /// Required: No
         /// Type: String

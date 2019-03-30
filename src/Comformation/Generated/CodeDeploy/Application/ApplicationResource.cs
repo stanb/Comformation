@@ -6,11 +6,11 @@ namespace Comformation.CodeDeploy.Application
 {
     /// <summary>
     /// AWS::CodeDeploy::Application
-    /// The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In AWS CodeDeploy, an
-    /// application is a name that functions as a container to ensure that the correct combination of revision,
-    /// deployment configuration, and deployment group are referenced during a deployment. You can use the
-    /// AWS::CodeDeploy::DeploymentGroup resource to associate the application with an AWS CodeDeploy deployment
-    /// group. For more information, see AWS CodeDeploy Deployments in the AWS CodeDeploy User Guide.
+    /// The AWS::CodeDeploy::Application resource creates an CodeDeploy application. In CodeDeploy, an application is
+    /// a name that functions as a container to ensure that the correct combination of revision, deployment
+    /// configuration, and deployment group are referenced during a deployment. You can use the
+    /// AWS::CodeDeploy::DeploymentGroup resource to associate the application with an CodeDeploy deployment group.
+    /// For more information, see CodeDeploy Deployments in the AWS CodeDeploy User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
@@ -29,8 +29,8 @@ namespace Comformation.CodeDeploy.Application
 
             /// <summary>
             /// ComputePlatform
-            /// The compute platform that AWS CodeDeploy deploys the application to. For valid values see
-            /// CreateApplication in the AWS CodeDeploy API Reference.
+            /// The compute platform that CodeDeploy deploys the application to. For valid values see
+            /// CreateApplication in the CodeDeploy API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

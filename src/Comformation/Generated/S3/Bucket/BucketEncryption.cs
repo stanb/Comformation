@@ -20,7 +20,7 @@ namespace Comformation.S3.Bucket
         /// ServerSideEncryptionConfiguration
         /// Specifies the server-side encryption by default configuration.
         /// Required: Yes
-        /// Type: List of Amazon S3 Bucket ServerSideEncryptionRule
+        /// Type: List of ServerSideEncryptionRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ServerSideEncryptionConfiguration")]

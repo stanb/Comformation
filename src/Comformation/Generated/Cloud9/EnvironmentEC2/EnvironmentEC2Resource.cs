@@ -19,7 +19,7 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// Any AWS CodeCommit source code repositories to be cloned into the development environment.
             /// Required: No
             /// Type: List of Repository
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public List<Repository> Repositories { get; set; }
 

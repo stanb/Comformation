@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Website Configuration Redirect All Requests To Property
-    /// The RedirectAllRequestsTo code is an embedded property of the Amazon S3 Website Configuration Property
-    /// property that describes the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
+    /// Amazon S3 WebsiteConfiguration RedirectAllRequestsTo
+    /// RedirectAllRequestsTo is an embedded property of the WebsiteConfiguration property that describes the redirect
+    /// behavior of all requests to a website endpoint of an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html
     /// </summary>
     public class RedirectAllRequestsTo

@@ -74,8 +74,8 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// TargetGroupArn
         /// The Amazon Resource Name (ARN) of the target group to which Elastic Load Balancing routes the
-        /// traffic.
-        /// Required: Yes
+        /// traffic. Specify only when Type is forward.
+        /// Required: No
         /// Type: String
         /// </summary>
         [JsonProperty("TargetGroupArn")]

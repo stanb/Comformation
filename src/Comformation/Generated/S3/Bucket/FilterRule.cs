@@ -7,9 +7,8 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Bucket FilterRule
-    /// Rules is a property of the Amazon S3 Bucket S3KeyFilter property that describes the Amazon Simple Storage
-    /// Service (Amazon S3) object key name to filter on and whether to filter on the suffix or prefix of the key
-    /// name.
+    /// Rules is a property of the S3KeyFilter property that describes the Amazon Simple Storage Service (Amazon S3)
+    /// object key name to filter on and whether to filter on the suffix or prefix of the key name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html
     /// </summary>
     public class FilterRule

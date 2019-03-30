@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline Stages
-    /// Stages is a property of the AWS::CodePipeline::Pipeline resource that specifies a sequence of tasks for AWS
+    /// CodePipeline Pipeline Stages
+    /// Stages is a property of the AWS::CodePipeline::Pipeline resource that specifies a sequence of tasks for
     /// CodePipeline to complete on an artifact.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html
     /// </summary>
@@ -18,7 +18,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Actions
         /// The actions to include in this stage.
         /// Required: Yes
-        /// Type: List of AWS CodePipeline Pipeline Stages Actions
+        /// Type: List of CodePipeline Pipeline Stages Actions
         /// </summary>
         [JsonProperty("Actions")]
         public List<ActionDeclaration> Actions { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Blockers
         /// The gates included in a stage.
         /// Required: No
-        /// Type: List of AWS CodePipeline Pipeline Stages Blockers
+        /// Type: List of CodePipeline Pipeline Stages Blockers
         /// </summary>
         [JsonProperty("Blockers")]
         public List<BlockerDeclaration> Blockers { get; set; }

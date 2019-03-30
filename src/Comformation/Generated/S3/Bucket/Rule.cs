@@ -7,9 +7,9 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Bucket Rule
-    /// The Rule property type describes lifecycle rules. The Rules subproperty of the Amazon S3 Bucket
-    /// LifecycleConfiguration property contains a list of Rule property types. For more information, see PUT Bucket
-    /// lifecycle in the Amazon Simple Storage Service (Amazon S3) API Reference.
+    /// The Rule property type describes lifecycle rules. The Rules subproperty of the LifecycleConfiguration property
+    /// contains a list of Rule property types. For more information, see PUT Bucket lifecycle in the Amazon Simple
+    /// Storage Service (Amazon S3) API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
     /// </summary>
     public class Rule
@@ -21,7 +21,7 @@ namespace Comformation.S3.Bucket
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
-        /// Type: Amazon S3 Bucket AbortIncompleteMultipartUpload
+        /// Type: AbortIncompleteMultipartUpload
         /// </summary>
         [JsonProperty("AbortIncompleteMultipartUpload")]
         public AbortIncompleteMultipartUpload AbortIncompleteMultipartUpload { get; set; }
@@ -85,7 +85,7 @@ namespace Comformation.S3.Bucket
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
-        /// Type: Amazon S3 Bucket NoncurrentVersionTransition
+        /// Type: NoncurrentVersionTransition
         /// </summary>
         [JsonProperty("NoncurrentVersionTransition")]
         public NoncurrentVersionTransition NoncurrentVersionTransition { get; set; }
@@ -99,7 +99,7 @@ namespace Comformation.S3.Bucket
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
-        /// Type: List of Amazon S3 Bucket NoncurrentVersionTransition
+        /// Type: List of NoncurrentVersionTransition
         /// </summary>
         [JsonProperty("NoncurrentVersionTransitions")]
         public List<NoncurrentVersionTransition> NoncurrentVersionTransitions { get; set; }
@@ -142,7 +142,7 @@ namespace Comformation.S3.Bucket
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
-        /// Type: Amazon S3 Bucket Transition
+        /// Type: Transition
         /// </summary>
         [JsonProperty("Transition")]
         public Transition Transition { get; set; }
@@ -156,7 +156,7 @@ namespace Comformation.S3.Bucket
         /// Required: Conditional. You must specify at least one of the following properties:
         /// AbortIncompleteMultipartUpload, ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays,
         /// NoncurrentVersionTransition, NoncurrentVersionTransitions, Transition, or Transitions.
-        /// Type: List of Amazon S3 Bucket Transition
+        /// Type: List of Transition
         /// </summary>
         [JsonProperty("Transitions")]
         public List<Transition> Transitions { get; set; }

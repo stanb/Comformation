@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup AlarmConfiguration
-    /// The AlarmConfiguration property type configures CloudWatch alarms for an AWS CodeDeploy deployment group.
+    /// CodeDeploy DeploymentGroup AlarmConfiguration
+    /// The AlarmConfiguration property type configures CloudWatch alarms for an CodeDeploy deployment group.
     /// AlarmConfiguration is a property of the AWS::CodeDeploy::DeploymentGroup resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html
     /// </summary>
@@ -18,7 +18,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// Alarms
         /// The list of alarms configured for the deployment group. Duplicates are not allowed.
         /// Required: No
-        /// Type: List of AWS CodeDeploy DeploymentGroup Alarm
+        /// Type: List of CodeDeploy DeploymentGroup Alarm
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Alarms")]

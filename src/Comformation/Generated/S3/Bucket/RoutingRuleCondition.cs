@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Website Configuration Routing Rules Routing Rule Condition Property
-    /// The RoutingRuleCondition property is an embedded property of the Amazon S3 Website Configuration Routing Rules
-    /// Property that describes a condition that must be met for a redirect to apply.
+    /// Amazon S3 Bucket RoutingRuleCondition
+    /// The RoutingRuleCondition property is an embedded property of the RoutingRules that describes a condition that
+    /// must be met for a redirect to apply.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html
     /// </summary>
     public class RoutingRuleCondition

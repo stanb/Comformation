@@ -6,10 +6,11 @@ namespace Comformation.AutoScaling.LifecycleHook
 {
     /// <summary>
     /// AWS::AutoScaling::LifecycleHook
-    /// Controls the state of an instance in an Amazon EC2 Auto Scaling group after it is launched or terminated. When
-    /// you use a lifecycle hook, the Auto Scaling group either pauses the instance after it is launched (before it is
-    /// put into service) or pauses the instance as it is terminated (before it is fully terminated). For more
-    /// information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
+    /// Defines lifecycle hooks for an Amazon EC2 Auto Scaling group, which specify actions to perform when Amazon EC2
+    /// Auto Scaling launches or terminates instances. When you use a lifecycle hook, the Auto Scaling group pauses
+    /// the instance either after it is launched (before it is put into service) or as it is terminated (before it is
+    /// fully terminated). For more information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto
+    /// Scaling User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
     /// </summary>
     public class LifecycleHookResource : ResourceBase
@@ -28,7 +29,7 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// <summary>
             /// DefaultResult
             /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
-            /// failure occurs. Valid values are CONTINUE (default) and ABANDON.
+            /// failure occurs. Valid values are CONTINUE and ABANDON (default).
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -58,7 +59,7 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// <summary>
             /// LifecycleTransition
             /// The state of the Amazon EC2 instance to which you want to attach the lifecycle hook. For valid
-            /// values, see the LifecycleTransition content for the LifecycleHook data type in the Amazon EC2 Auto
+            /// values, see the LifecycleTransition details for the PutLifecycleHook action in the Amazon EC2 Auto
             /// Scaling API Reference.
             /// Required: Yes
             /// Type: String

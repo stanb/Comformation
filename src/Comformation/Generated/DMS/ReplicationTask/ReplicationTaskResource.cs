@@ -35,7 +35,10 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// ReplicationTaskIdentifier
-            /// The ARN string that uniquely identifies the endpoint.
+            /// The replication task identifier.
+            /// Constraints:
+            /// Must contain from 1 to 255 alphanumeric characters or hyphens. First character must be a letter.
+            /// Cannot end with a hyphen or contain two consecutive hyphens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

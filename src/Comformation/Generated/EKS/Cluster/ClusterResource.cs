@@ -6,10 +6,7 @@ namespace Comformation.EKS.Cluster
 {
     /// <summary>
     /// AWS::EKS::Cluster
-    /// The AWS::EKS::Cluster resource creates an Amazon EKS cluster control plane. The Amazon EKS cluster control
-    /// plane consists of control plane instances that run the Kubernetes software, like etcd and the Kubernetes API
-    /// server. The control plane runs in an account managed by AWS, and the Kubernetes API is exposed via the Amazon
-    /// EKS endpoint associated with your cluster. For more information, see Clusters in the Amazon EKS User Guide.
+    /// Creates an Amazon EKS control plane.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -18,17 +15,19 @@ namespace Comformation.EKS.Cluster
         {
             /// <summary>
             /// Version
-            /// The Kubernetes server version for the cluster.
+            /// The desired Kubernetes version for your cluster. If you do not specify a value here, the latest
+            /// version available in Amazon EKS is used.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Version { get; set; }
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-            /// plane to make calls to AWS API operations on your behalf.
+            /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make
+            /// calls to other AWS API operations on your behalf. For more information, see Amazon EKS Service IAM
+            /// Role in the Amazon EKS User Guide .
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -37,18 +36,20 @@ namespace Comformation.EKS.Cluster
 
             /// <summary>
             /// ResourcesVpcConfig
-            /// The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have
-            /// specific requirements to work properly with Kubernetes. For more information, see Cluster VPC
-            /// Considerations and Cluster Security Group Considerations in the Amazon EKS User Guide.
+            /// The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+            /// requirements to work properly with Kubernetes. For more information, see Cluster VPC Considerations
+            /// and Cluster Security Group Considerations in the Amazon EKS User Guide. You must specify at least
+            /// two subnets. You may specify up to five security groups, but we recommend that you use a dedicated
+            /// security group for your cluster control plane.
             /// Required: Yes
-            /// Type: EKS Cluster ResourcesVpcConfig
+            /// Type: ResourcesVpcConfig
             /// Update requires: Replacement
             /// </summary>
 			public ResourcesVpcConfig ResourcesVpcConfig { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the cluster.
+            /// The unique name to give to your cluster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

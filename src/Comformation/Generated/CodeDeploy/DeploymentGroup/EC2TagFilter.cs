@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup Ec2TagFilters
+    /// CodeDeploy DeploymentGroup Ec2TagFilters
     /// Ec2TagFilters is a property of the AWS::CodeDeploy::DeploymentGroup resource that specifies which EC2
     /// instances to associate with the deployment group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilters.html

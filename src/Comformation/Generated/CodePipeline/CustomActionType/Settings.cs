@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.CustomActionType
 {
     /// <summary>
-    /// AWS CodePipeline CustomActionType Settings
+    /// CodePipeline CustomActionType Settings
     /// Settings is a property of the AWS::CodePipeline::CustomActionType resource that provides URLs that users can
-    /// access to view information about the AWS CodePipeline custom action.
+    /// access to view information about the CodePipeline custom action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype-settings.html
     /// </summary>
     public class Settings
@@ -16,8 +16,8 @@ namespace Comformation.CodePipeline.CustomActionType
 
         /// <summary>
         /// EntityUrlTemplate
-        /// The URL that is returned to the AWS CodePipeline console that links to the resources of the external
-        /// system, such as the configuration page for an AWS CodeDeploy deployment group.
+        /// The URL that is returned to the CodePipeline console that links to the resources of the external
+        /// system, such as the configuration page for an CodeDeploy deployment group.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -26,8 +26,8 @@ namespace Comformation.CodePipeline.CustomActionType
 
         /// <summary>
         /// ExecutionUrlTemplate
-        /// The URL that is returned to the AWS CodePipeline console that links to the top-level landing page
-        /// for the external system, such as the console page for AWS CodeDeploy.
+        /// The URL that is returned to the CodePipeline console that links to the top-level landing page for
+        /// the external system, such as the console page for CodeDeploy.
         /// Required: No
         /// Type: String
         /// </summary>
@@ -36,7 +36,7 @@ namespace Comformation.CodePipeline.CustomActionType
 
         /// <summary>
         /// RevisionUrlTemplate
-        /// The URL that is returned to the AWS CodePipeline console that links to the page where customers can
+        /// The URL that is returned to the CodePipeline console that links to the page where customers can
         /// update or change the configuration of the external action.
         /// Required: No
         /// Type: String

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Webhook
 {
     /// <summary>
-    /// AWS CodePipeline Webhook WebhookAuthConfiguration
+    /// CodePipeline Webhook WebhookAuthConfiguration
     /// The WebhookAuthConfiguration property type configures the authentication applied to incoming webhook trigger
     /// requests. For more information, see Webhook Definition in the AWS CodePipeline API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html

@@ -43,6 +43,16 @@ namespace Comformation.StepFunctions.StateMachine
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide and Controlling Access Using IAM Tags.
+            /// Required: No
+            /// Type: List of Resource Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<TagsEntry> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::StepFunctions::StateMachine";

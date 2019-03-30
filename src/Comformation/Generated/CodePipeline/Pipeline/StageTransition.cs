@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline DisableInboundStageTransitions
+    /// CodePipeline Pipeline DisableInboundStageTransitions
     /// DisableInboundStageTransitions is a property of the AWS::CodePipeline::Pipeline resource that specifies which
-    /// AWS CodePipeline stage to disable transitions to.
+    /// CodePipeline stage to disable transitions to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
     /// </summary>
     public class StageTransition

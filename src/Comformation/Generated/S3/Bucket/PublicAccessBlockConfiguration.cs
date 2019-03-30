@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon Simple Storage Service Bucket PublicAccessBlockConfiguration
+    /// Amazon S3 Bucket PublicAccessBlockConfiguration
     /// The PublicAccessBlockConfiguration property type specifies the public access configuration for an Amazon S3
     /// bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html

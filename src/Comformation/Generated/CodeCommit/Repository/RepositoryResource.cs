@@ -6,8 +6,8 @@ namespace Comformation.CodeCommit.Repository
 {
     /// <summary>
     /// AWS::CodeCommit::Repository
-    /// The AWS::CodeCommit::Repository resource creates an AWS CodeCommit repository that is hosted by Amazon Web
-    /// Services. For more information, see Create an AWS CodeCommit Repository in the AWS CodeCommit User Guide.
+    /// The AWS::CodeCommit::Repository resource creates an CodeCommit repository that is hosted by Amazon Web
+    /// Services. For more information, see Create an CodeCommit Repository in the AWS CodeCommit User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html
     /// </summary>
     public class RepositoryResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.CodeCommit.Repository
         {
             /// <summary>
             /// RepositoryName
-            /// A name for the AWS CodeCommit repository.
+            /// A name for the CodeCommit repository.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -28,15 +28,15 @@ namespace Comformation.CodeCommit.Repository
             /// Defines the actions to take in response to events that occur in the repository. For example, you can
             /// send email notifications when someone pushes to the repository.
             /// Required: No
-            /// Type: List of AWS CodeCommit Repository Trigger
+            /// Type: List of CodeCommit Repository Trigger
             /// Update requires: No interruption
             /// </summary>
 			public List<RepositoryTrigger> Triggers { get; set; }
 
             /// <summary>
             /// RepositoryDescription
-            /// A description about the AWS CodeCommit repository. For constraints, see the CreateRepository action
-            /// in the AWS CodeCommit API Reference.
+            /// A description about the CodeCommit repository. For constraints, see the CreateRepository action in
+            /// the AWS CodeCommit API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

@@ -19,14 +19,14 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// AlarmConfiguration
             /// Information about the Amazon CloudWatch alarms that are associated with the deployment group.
             /// Required: No
-            /// Type: AWS CodeDeploy DeploymentGroup AlarmConfiguration
+            /// Type: AlarmConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public AlarmConfiguration AlarmConfiguration { get; set; }
 
             /// <summary>
             /// ApplicationName
-            /// The name of an existing AWS CodeDeploy application to associate this deployment group with.
+            /// The name of an existing CodeDeploy application to associate this deployment group with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -45,8 +45,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
             /// <summary>
             /// AutoScalingGroups
-            /// A list of associated Auto Scaling groups that AWS CodeDeploy automatically deploys revisions to when
-            /// new instances are created. Duplicates are not allowed.
+            /// A list of associated Auto Scaling groups that CodeDeploy automatically deploys revisions to when new
+            /// instances are created. Duplicates are not allowed.
             /// Required: No
             /// Type: List of String values
             /// Update requires: No interruption
@@ -59,7 +59,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// target application revision will be deployed as soon as the provisioning process is complete. If you
             /// specify this property, don&#39;t specify the AutoRollbackConfiguration property.
             /// Required: No
-            /// Type: AWS CodeDeploy DeploymentGroup Deployment
+            /// Type: Deployment
             /// Update requires: No interruption
             /// </summary>
 			public Deployment Deployment { get; set; }
@@ -106,11 +106,11 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// <summary>
             /// Ec2TagFilters
             /// The EC2 tags that are already applied to EC2 instances that you want to include in the deployment
-            /// group. AWS CodeDeploy includes all EC2 instances identified by any of the tags you specify in this
+            /// group. CodeDeploy includes all EC2 instances identified by any of the tags you specify in this
             /// deployment group. Duplicates are not allowed.
             /// You can specify EC2TagFilters or Ec2TagSet, but not both.
             /// Required: No
-            /// Type: List of AWS CodeDeploy DeploymentGroup Ec2TagFilters
+            /// Type: List of Ec2TagFilters
             /// Update requires: No interruption
             /// </summary>
 			public List<EC2TagFilter> Ec2TagFilters { get; set; }
@@ -129,7 +129,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// <summary>
             /// LoadBalancerInfo
             /// Information about the load balancer used in the deployment. For more information, see Integrating
-            /// AWS CodeDeploy with Elastic Load Balancing in the AWS CodeDeploy User Guide.
+            /// CodeDeploy with Elastic Load Balancing in the AWS CodeDeploy User Guide.
             /// Required: No
             /// Type: LoadBalancerInfo
             /// Update requires: No interruption
@@ -139,25 +139,31 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// <summary>
             /// OnPremisesInstanceTagFilters
             /// The on-premises instance tags already applied to on-premises instances that you want to include in
-            /// the deployment group. AWS CodeDeploy includes all on-premises instances identified by any of the
-            /// tags you specify in this deployment group. To register on-premises instances with AWS CodeDeploy,
-            /// see Working with On-Premises Instances for AWS CodeDeploy in the AWS CodeDeploy User Guide.
-            /// Duplicates are not allowed.
+            /// the deployment group. CodeDeploy includes all on-premises instances identified by any of the tags
+            /// you specify in this deployment group. To register on-premises instances with CodeDeploy, see Working
+            /// with On-Premises Instances for CodeDeploy in the AWS CodeDeploy User Guide. Duplicates are not
+            /// allowed.
             /// You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
             /// Required: No
-            /// Type: List of AWS CodeDeploy DeploymentGroup TagFilters
+            /// Type: List of TagFilters
             /// Update requires: No interruption
             /// </summary>
 			public List<TagFilter> OnPremisesInstanceTagFilters { get; set; }
 
             /// <summary>
             /// OnPremisesTagSet
+            /// Information about groups of tags applied to on-premises instances. The deployment group will include
+            /// only on-premises instances identified by all the tag groups.
+            /// You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
+            /// Required: No
+            /// Type:OnPremisesTagSet
+            /// Update requires: No interruption
             /// </summary>
 			public OnPremisesTagSet OnPremisesTagSet { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
-            /// A service role Amazon Resource Name (ARN) that grants AWS CodeDeploy permission to make calls to AWS
+            /// A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS
             /// services on your behalf. For more information, see Create a Service Role for AWS CodeDeploy in the
             /// AWS CodeDeploy User Guide.
             /// Note In some cases, you might need to add a dependency on the service role&#39;s policy. For more
@@ -172,7 +178,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// TriggerConfigurations
             /// Information about the notification triggers for the deployment group. Duplicates are not allowed.
             /// Required: No
-            /// Type: List of AWS CodeDeploy DeploymentGroup TriggerConfig
+            /// Type: List of TriggerConfig
             /// Update requires: No interruption
             /// </summary>
 			public List<TriggerConfig> TriggerConfigurations { get; set; }

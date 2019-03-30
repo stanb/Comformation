@@ -109,6 +109,11 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// SqsParameters
+        /// Specifies the message group ID to use when the target is a FIFO queue.
+        /// If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication
+        /// enabled.
+        /// Required: No
+        /// Type: SqsParameters
         /// </summary>
         [JsonProperty("SqsParameters")]
         public SqsParameters SqsParameters { get; set; }

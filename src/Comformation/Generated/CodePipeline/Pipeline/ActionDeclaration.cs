@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline Stages Actions
-    /// Actions is a property of the AWS CodePipeline Pipeline Stages property that specifies an action for an AWS
+    /// CodePipeline Pipeline Stages Actions
+    /// Actions is a property of the CodePipeline Pipeline Stages property that specifies an action for an
     /// CodePipeline stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
     /// </summary>
@@ -18,7 +18,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// ActionTypeId
         /// Specifies the action type and the provider of the action.
         /// Required: Yes
-        /// Type: AWS CodePipeline Pipeline Stages Actions ActionTypeId
+        /// Type: CodePipeline Pipeline Stages Actions ActionTypeId
         /// </summary>
         [JsonProperty("ActionTypeId")]
         public ActionTypeId ActionTypeId { get; set; }
@@ -26,8 +26,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// <summary>
         /// Configuration
         /// The action&#39;s configuration. These are key-value pairs that specify input values for an action. For
-        /// more information, see Action Structure Requirements in AWS CodePipeline in the AWS CodePipeline User
-        /// Guide.
+        /// more information, see Action Structure Requirements in CodePipeline in the CodePipeline User Guide.
         /// Required: No
         /// Type: JSON object
         /// </summary>
@@ -38,7 +37,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// InputArtifacts
         /// The name or ID of the artifact that the action consumes, such as a test or build artifact.
         /// Required: No
-        /// Type: List of AWS CodePipeline Pipeline Stages Actions InputArtifacts
+        /// Type: List of CodePipeline Pipeline Stages Actions InputArtifacts
         /// </summary>
         [JsonProperty("InputArtifacts")]
         public List<InputArtifact> InputArtifacts { get; set; }
@@ -56,7 +55,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// OutputArtifacts
         /// The artifact name or ID that is a result of the action, such as a test or build artifact.
         /// Required: No
-        /// Type: List of AWS CodePipeline Pipeline Stages Actions OutputArtifacts
+        /// Type: List of CodePipeline Pipeline Stages Actions OutputArtifacts
         /// </summary>
         [JsonProperty("OutputArtifacts")]
         public List<OutputArtifact> OutputArtifacts { get; set; }
@@ -82,7 +81,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// RunOrder
-        /// The order in which AWS CodePipeline runs this action.
+        /// The order in which CodePipeline runs this action.
         /// Required: No
         /// Type: Integer
         /// </summary>

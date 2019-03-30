@@ -127,9 +127,9 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Specifies the AWS Account ID of the owner of the Amazon EC2 security group specified in the
             /// SourceSecurityGroupName property.
             /// Type: String
-            /// Required: Conditional. If you specify SourceSecurityGroupName and that security group is owned by a
-            /// different account than the account creating the stack, you must specify the
-            /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
+            /// Required: Conditional. If you specify SourceSecurityGroupName or SourceSecurityGroupId and that
+            /// security group is owned by a different account than the account creating the stack, you must specify
+            /// the SourceSecurityGroupOwnerId; otherwise, this property is optional.
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupOwnerId { get; set; }

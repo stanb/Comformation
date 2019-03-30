@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline Stages Actions OutputArtifacts
-    /// OutputArtifacts is a property of the AWS CodePipeline Pipeline Stages Actions property that specifies an
-    /// artifact that is the result of an AWS CodePipeline action, such as a test or build artifact.
+    /// CodePipeline Pipeline Stages Actions OutputArtifacts
+    /// OutputArtifacts is a property of the CodePipeline Pipeline Stages Actions property that specifies an artifact
+    /// that is the result of an CodePipeline action, such as a test or build artifact.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html
     /// </summary>
     public class OutputArtifact
@@ -16,7 +16,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Name
-        /// The name of the artifact that is the result of an AWS CodePipeline action, such as My App. Output
+        /// The name of the artifact that is the result of an CodePipeline action, such as My App. Output
         /// artifact names must be unique within a pipeline.
         /// Required: Yes
         /// Type: String

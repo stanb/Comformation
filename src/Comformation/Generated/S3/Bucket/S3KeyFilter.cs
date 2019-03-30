@@ -18,7 +18,7 @@ namespace Comformation.S3.Bucket
         /// Rules
         /// The object key name to filter on and whether to filter on the suffix or prefix of the key name.
         /// Required: Yes
-        /// Type: List of Amazon S3 Bucket FilterRule
+        /// Type: List of FilterRule
         /// </summary>
         [JsonProperty("Rules")]
         public List<FilterRule> Rules { get; set; }

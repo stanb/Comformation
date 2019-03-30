@@ -37,13 +37,13 @@ namespace Comformation.ServiceDiscovery.Service
         /// 					
         /// Required: Yes
         /// 					
-        /// Type: String
+        /// Type: Number
         /// 					
         /// Update requires: No interruption
         /// 				
         /// </summary>
         [JsonProperty("TTL")]
-        public Union<string, IntrinsicFunction> TTL { get; set; }
+        public Union<double, IntrinsicFunction> TTL { get; set; }
 
     }
 }

@@ -7,8 +7,8 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS CodeBuild Project RegistryCredential
-    /// RegistryCredential is a property of the AWS::CodeBuild::Project resource that specify information about
-    /// credentials that provide access to a private Docer registry. When this is set:
+    /// RegistryCredential is a property of the AWS::CodeBuild::Project resource that specifies information about
+    /// credentials that provide access to a private Docker registry. When this is set:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html
     /// </summary>
     public class RegistryCredential

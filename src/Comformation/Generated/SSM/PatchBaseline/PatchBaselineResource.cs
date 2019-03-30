@@ -27,29 +27,6 @@ namespace Comformation.SSM.PatchBaseline
 			public Union<string, IntrinsicFunction> OperatingSystem { get; set; }
 
             /// <summary>
-            /// ApprovedPatches
-            /// A list of explicitly approved patches for the baseline.
-            /// Required: No
-            /// Type: List of String values
-            /// Update requires: No interruption
-            /// </summary>
-			public List<Union<string, IntrinsicFunction>> ApprovedPatches { get; set; }
-
-            /// <summary>
-            /// RejectedPatchesAction
-            /// </summary>
-			public Union<string, IntrinsicFunction> RejectedPatchesAction { get; set; }
-
-            /// <summary>
-            /// PatchGroups
-            /// The names of the patch groups to register with the patch baseline.
-            /// Required: No
-            /// Type: List of String values
-            /// Update requires: No interruption
-            /// </summary>
-			public List<Union<string, IntrinsicFunction>> PatchGroups { get; set; }
-
-            /// <summary>
             /// Description
             /// A description of the patch baseline.
             /// Required: No
@@ -59,23 +36,6 @@ namespace Comformation.SSM.PatchBaseline
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
-            /// ApprovedPatchesComplianceLevel
-            /// The compliance level for approved patches. This means that if an approved patch is reported as
-            /// missing, this is the severity of the compliance violation. Valid compliance severity levels include
-            /// the following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, and UNSPECIFIED. The default value is
-            /// UNSPECIFIED.
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<string, IntrinsicFunction> ApprovedPatchesComplianceLevel { get; set; }
-
-            /// <summary>
-            /// ApprovedPatchesEnableNonSecurity
-            /// </summary>
-			public Union<bool, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
-
-            /// <summary>
             /// ApprovalRules
             /// A set of rules that are used to include patches in the baseline.
             /// Required: No
@@ -83,15 +43,6 @@ namespace Comformation.SSM.PatchBaseline
             /// Update requires: No interruption
             /// </summary>
 			public RuleGroup ApprovalRules { get; set; }
-
-            /// <summary>
-            /// GlobalFilters
-            /// A set of global filters that are used to exclude patches from the baseline.
-            /// Required: No
-            /// Type: PatchFilterGroup
-            /// Update requires: No interruption
-            /// </summary>
-			public PatchFilterGroup GlobalFilters { get; set; }
 
             /// <summary>
             /// Sources
@@ -115,6 +66,67 @@ namespace Comformation.SSM.PatchBaseline
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> RejectedPatches { get; set; }
+
+            /// <summary>
+            /// ApprovedPatches
+            /// A list of explicitly approved patches for the baseline.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> ApprovedPatches { get; set; }
+
+            /// <summary>
+            /// RejectedPatchesAction
+            /// </summary>
+			public Union<string, IntrinsicFunction> RejectedPatchesAction { get; set; }
+
+            /// <summary>
+            /// PatchGroups
+            /// The names of the patch groups to register with the patch baseline.
+            /// Required: No
+            /// Type: List of String values
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> PatchGroups { get; set; }
+
+            /// <summary>
+            /// ApprovedPatchesComplianceLevel
+            /// The compliance level for approved patches. This means that if an approved patch is reported as
+            /// missing, this is the severity of the compliance violation. Valid compliance severity levels include
+            /// the following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, and UNSPECIFIED. The default value is
+            /// UNSPECIFIED.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> ApprovedPatchesComplianceLevel { get; set; }
+
+            /// <summary>
+            /// ApprovedPatchesEnableNonSecurity
+            /// </summary>
+			public Union<bool, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
+
+            /// <summary>
+            /// GlobalFilters
+            /// A set of global filters that are used to exclude patches from the baseline.
+            /// Required: No
+            /// Type: PatchFilterGroup
+            /// Update requires: No interruption
+            /// </summary>
+			public PatchFilterGroup GlobalFilters { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key–value
+            /// pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
+            /// environment. For example, you might want to tag a patch baseline to identify the severity level of
+            /// patches it specifies and the operating system family it applies to.
+            /// Required: No
+            /// Type: Resource Tag
+            /// Update requires: No interruption.
+            /// </summary>
+			public List<Tag> Tags { get; set; }
 
         }
 

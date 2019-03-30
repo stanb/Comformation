@@ -14,6 +14,16 @@ namespace Comformation.StepFunctions.Activity
         public class ActivityProperties
         {
             /// <summary>
+            /// Tags
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide, and Controlling Access Using IAM Tags.
+            /// Required: No
+            /// Type: List of Resource Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<TagsEntry> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the activity to create. This name must be unique for your AWS account and region.
             /// Required: Yes

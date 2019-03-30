@@ -74,9 +74,13 @@ namespace Comformation.EC2.VPCEndpoint
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
-            /// VPCEndpointType
+            /// VpcEndpointType
+            /// The type of endpoint. Valid values are Interface and Gateway.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VPCEndpointType { get; set; }
+			public Union<string, IntrinsicFunction> VpcEndpointType { get; set; }
 
             /// <summary>
             /// VpcId

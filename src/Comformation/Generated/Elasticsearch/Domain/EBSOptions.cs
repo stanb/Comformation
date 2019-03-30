@@ -47,8 +47,8 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// VolumeType
-        /// The EBS volume type to use with the Amazon ES domain, such as standard, gp2, or io1. For more
-        /// information about each type, see Amazon EBS Volume Types in the Amazon EC2 User Guide for Linux
+        /// The EBS volume type to use with the Amazon ES domain, such as standard, gp2, io1, st1, or sc1. For
+        /// more information about each type, see Amazon EBS Volume Types in the Amazon EC2 User Guide for Linux
         /// Instances.
         /// Required: No
         /// Type: String

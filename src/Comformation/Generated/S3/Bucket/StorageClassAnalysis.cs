@@ -18,7 +18,7 @@ namespace Comformation.S3.Bucket
         /// DataExport
         /// Describes how data related to the storage class analysis should be exported.
         /// Required: No
-        /// Type: Amazon S3 Bucket DataExport
+        /// Type: DataExport
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataExport")]

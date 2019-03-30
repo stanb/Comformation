@@ -21,6 +21,9 @@ namespace Comformation.Budgets.Budget
         /// start date to 01/24/18 00:00 UTC. If you choose MONTHLY, AWS sets your start date to 01/01/18 00:00
         /// UTC. The defaults are the same for the AWS Billing and Cost Management console and the API.
         /// You can change your start date with the UpdateBudget API operation.
+        /// If you specify COST or USAGE for BudgetType, valid values are MONTHLY, QUARTERLY, and ANNUALLY. If
+        /// you specify RI_UTILIZATION or RI_COVERAGE for BudgetType, valid values are DAILY, MONTHLY,
+        /// QUARTERLY, and ANNUALLY.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

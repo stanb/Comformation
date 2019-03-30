@@ -17,6 +17,11 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         public class TargetGroupProperties
         {
             /// <summary>
+            /// HealthCheckEnabled
+            /// </summary>
+			public Union<bool, IntrinsicFunction> HealthCheckEnabled { get; set; }
+
+            /// <summary>
             /// HealthCheckIntervalSeconds
             /// The approximate number of seconds between health checks for an individual target.
             /// For valid and default values, see the HealthCheckIntervalSeconds parameter for the CreateTargetGroup

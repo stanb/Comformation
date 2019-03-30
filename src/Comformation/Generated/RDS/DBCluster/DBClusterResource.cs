@@ -161,8 +161,6 @@ namespace Comformation.RDS.DBCluster
             /// arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. If you enable the
             /// StorageEncrypted property but don&#39;t specify this property, the default master key is used. If you
             /// specify this property, you must set the StorageEncrypted property to true.
-            /// If you specify the SnapshotIdentifier, do not specify this property. The value is inherited from the
-            /// snapshot DB cluster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement.
@@ -253,14 +251,17 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// SourceRegion
+            /// The AWS Region which contains the source DB cluster when replicating a DB cluster. For example,
+            /// us-east-1.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceRegion { get; set; }
 
             /// <summary>
             /// StorageEncrypted
             /// Indicates whether the DB instances in the cluster are encrypted.
-            /// If you specify the SnapshotIdentifier property, do not specify this property. The value is inherited
-            /// from the snapshot DB cluster.
             /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
             /// Type: Boolean
             /// Update requires: Replacement.

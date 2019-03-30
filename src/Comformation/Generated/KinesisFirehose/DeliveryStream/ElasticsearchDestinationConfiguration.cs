@@ -101,7 +101,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Firehose could not deliver to the Amazon ES destination. For more information and valid values, see
         /// the S3BackupMode content for the ElasticsearchDestinationConfiguration data type in the Amazon
         /// Kinesis Data Firehose API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// </summary>
         [JsonProperty("S3BackupMode")]

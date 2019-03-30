@@ -75,6 +75,10 @@ namespace Comformation.ApiGateway.ApiKey
 
             /// <summary>
             /// Value
+            /// The value of the API key.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Value { get; set; }
 

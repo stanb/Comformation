@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline Stages Actions ActionTypeId
-    /// ActionTypeId is a property of the AWS CodePipeline Pipeline Stages Actions property that specifies the action
-    /// type and provider for an AWS CodePipeline action.
+    /// CodePipeline Pipeline Stages Actions ActionTypeId
+    /// ActionTypeId is a property of the CodePipeline Pipeline Stages Actions property that specifies the action type
+    /// and provider for an CodePipeline action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html
     /// </summary>
     public class ActionTypeId
@@ -38,8 +38,8 @@ namespace Comformation.CodePipeline.Pipeline
         /// <summary>
         /// Provider
         /// The service provider that the action calls. The providers that you can specify are determined by the
-        /// category that you select. For example, a valid provider for the Deploy category is AWS CodeDeploy,
-        /// which you would specify as CodeDeploy.
+        /// category that you select. For example, a valid provider for the Deploy category is CodeDeploy, which
+        /// you would specify as CodeDeploy.
         /// Required: Yes
         /// Type: String
         /// </summary>

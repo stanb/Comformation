@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// AWS CodePipeline Pipeline ArtifactStore EncryptionKey
-    /// EncryptionKey is a property of the AWS CodePipeline Pipeline ArtifactStore property that specifies which key
-    /// AWS CodePipeline uses to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS)
-    /// key.
+    /// CodePipeline Pipeline ArtifactStore EncryptionKey
+    /// EncryptionKey is a property of the CodePipeline Pipeline ArtifactStore property that specifies which key
+    /// CodePipeline uses to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html
     /// </summary>
     public class EncryptionKey

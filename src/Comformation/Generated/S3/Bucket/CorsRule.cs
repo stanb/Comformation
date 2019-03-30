@@ -7,7 +7,7 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Bucket CorsRule
-    /// Describes cross-origin access rules for the Amazon S3 Bucket CorsConfiguration property.
+    /// Describes cross-origin access rules for the CorsConfiguration property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html
     /// </summary>
     public class CorsRule

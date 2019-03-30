@@ -7,7 +7,7 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// Amazon S3 Bucket Transition
-    /// Describes when an object transitions to a specified storage class for the Amazon S3 Bucket Rule property.
+    /// Describes when an object transitions to a specified storage class for the Rule property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html
     /// </summary>
     public class Transition

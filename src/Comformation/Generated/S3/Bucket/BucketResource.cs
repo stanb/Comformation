@@ -52,7 +52,7 @@ namespace Comformation.S3.Bucket
             /// Specifies default encryption for a bucket using server-side encryption with either Amazon S3-managed
             /// keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS).
             /// Required: No
-            /// Type: Amazon S3 Bucket BucketEncryption
+            /// Type: BucketEncryption
             /// Update requires: No interruption
             /// </summary>
 			public BucketEncryption BucketEncryption { get; set; }
@@ -76,7 +76,7 @@ namespace Comformation.S3.Bucket
             /// Rules that define cross-origin resource sharing of objects in this bucket. For more information, see
             /// Enabling Cross-Origin Resource Sharing in the Amazon Simple Storage Service Developer Guide.
             /// Required: No
-            /// Type: Amazon S3 Bucket CorsConfiguration
+            /// Type: CorsConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public CorsConfiguration CorsConfiguration { get; set; }
@@ -95,7 +95,7 @@ namespace Comformation.S3.Bucket
             /// Rules that define how Amazon S3 manages objects during their lifetime. For more information, see
             /// Object Lifecycle Management in the Amazon Simple Storage Service Developer Guide.
             /// Required: No
-            /// Type: Amazon S3 Bucket LifecycleConfiguration
+            /// Type: LifecycleConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public LifecycleConfiguration LifecycleConfiguration { get; set; }
@@ -104,7 +104,7 @@ namespace Comformation.S3.Bucket
             /// LoggingConfiguration
             /// Settings that define where logs are stored.
             /// Required: No
-            /// Type: Amazon S3 Bucket LoggingConfiguration
+            /// Type: LoggingConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public LoggingConfiguration LoggingConfiguration { get; set; }
@@ -125,7 +125,7 @@ namespace Comformation.S3.Bucket
             /// NotificationConfiguration
             /// Configuration that defines how Amazon S3 handles bucket notifications.
             /// Required: No
-            /// Type: Amazon S3 Bucket NotificationConfiguration
+            /// Type: NotificationConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public NotificationConfiguration NotificationConfiguration { get; set; }
@@ -146,7 +146,7 @@ namespace Comformation.S3.Bucket
             /// Amazon S3 can store replicated objects in only one destination (S3 bucket). The destination bucket
             /// must already exist and be in a different AWS Region than your source bucket.
             /// Required: No
-            /// Type: Amazon S3 Bucket ReplicationConfiguration
+            /// Type: ReplicationConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public ReplicationConfiguration ReplicationConfiguration { get; set; }
@@ -169,7 +169,7 @@ namespace Comformation.S3.Bucket
             /// objects from being deleted or overwritten by mistake or to archive objects so that you can retrieve
             /// previous versions of them.
             /// Required: No
-            /// Type: Amazon S3 Bucket VersioningConfiguration
+            /// Type: VersioningConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public VersioningConfiguration VersioningConfiguration { get; set; }
@@ -179,7 +179,7 @@ namespace Comformation.S3.Bucket
             /// Information used to configure the bucket as a static website. For more information, see Hosting
             /// Websites on Amazon S3.
             /// Required: No
-            /// Type: Website Configuration Type
+            /// Type: WebsiteConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public WebsiteConfiguration WebsiteConfiguration { get; set; }

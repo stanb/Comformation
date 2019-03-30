@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Website Configuration Routing Rules Redirect Rule Property
-    /// The RedirectRule property is an embedded property of the Amazon S3 Website Configuration Routing Rules
-    /// Property that describes how requests are redirected. In the event of an error, you can specify a different
-    /// error code to return.
+    /// Amazon S3 Bucket RedirectRule
+    /// The RedirectRule property is an embedded property of the Amazon S3 Bucket RoutingRules that describes how
+    /// requests are redirected. In the event of an error, you can specify a different error code to return.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html
     /// </summary>
     public class RedirectRule

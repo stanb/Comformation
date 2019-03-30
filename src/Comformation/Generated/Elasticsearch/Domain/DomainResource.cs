@@ -76,9 +76,9 @@ namespace Comformation.Elasticsearch.Domain
 
             /// <summary>
             /// ElasticsearchVersion
-            /// The version of Elasticsearch to use, such as 2. 3. For information about the versions that Amazon ES
-            /// supports, see the Elasticsearch-Version parameter for the CreateElasticsearchDomain action in the
-            /// Amazon Elasticsearch Service Developer Guide.
+            /// The version of Elasticsearch to use, such as 2. 3. If not specified, 1. 5 is used as the default.
+            /// For information about the versions that Amazon ES supports, see the Elasticsearch-Version parameter
+            /// for the CreateElasticsearchDomain action in the Amazon Elasticsearch Service Developer Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -97,6 +97,10 @@ namespace Comformation.Elasticsearch.Domain
 
             /// <summary>
             /// NodeToNodeEncryptionOptions
+            /// Specifies whether node-to-node encryption is enabled.
+            /// Required: No
+            /// Type: NodeToNodeEncryptionOptions
+            /// Update requires: Replacement
             /// </summary>
 			public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
 

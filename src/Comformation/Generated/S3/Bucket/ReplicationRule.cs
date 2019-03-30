@@ -8,8 +8,8 @@ namespace Comformation.S3.Bucket
     /// <summary>
     /// Amazon S3 Bucket ReplicationRule
     /// The ReplicationRule property type specifies which Amazon Simple Storage Service (Amazon S3) objects to
-    /// replicate and where to store them. The Rules subproperty of the Amazon S3 Bucket ReplicationConfiguration
-    /// property contains a list of ReplicationRule property types.
+    /// replicate and where to store them. The Rules sub-property of the ReplicationConfiguration property contains a
+    /// list of ReplicationRule property types.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html
     /// </summary>
     public class ReplicationRule
@@ -19,7 +19,7 @@ namespace Comformation.S3.Bucket
         /// Destination
         /// Defines the destination where Amazon S3 stores replicated objects.
         /// Required: Yes
-        /// Type: Amazon S3 Bucket ReplicationDestination
+        /// Type: ReplicationDestination
         /// </summary>
         [JsonProperty("Destination")]
         public ReplicationDestination Destination { get; set; }
@@ -51,7 +51,7 @@ namespace Comformation.S3.Bucket
         /// server-side encryption using an AWS KMS-managed key. That is, you can choose to enable or disable
         /// replication of these objects.
         /// Required: No
-        /// Type: Amazon S3 Bucket SourceSelectionCriteria
+        /// Type: SourceSelectionCriteria
         /// </summary>
         [JsonProperty("SourceSelectionCriteria")]
         public SourceSelectionCriteria SourceSelectionCriteria { get; set; }

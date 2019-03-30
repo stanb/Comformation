@@ -38,7 +38,7 @@ namespace Comformation.ApiGateway.UsagePlan
         /// Map containing method-level throttling information for API stage in a usage plan.
         /// Duplicates are not allowed.
         /// Required: No
-        /// Type: Map of string-to-Amazon API Gateway UsagePlan ThrottleSettings
+        /// Type: Map of string-to-ThrottleSettings
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Throttle")]

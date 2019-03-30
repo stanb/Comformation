@@ -91,6 +91,16 @@ namespace Comformation.AppStream.Stack
 			public Union<string, IntrinsicFunction> RedirectURL { get; set; }
 
             /// <summary>
+            /// Tags
+            /// The tags for the stack. Each tag specifies a key-value pair, and the value is optional. If you do
+            /// not specify a value, it is set to an empty string (for example, Environment=).
+            /// Required: No
+            /// Type: List of Tag property types
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the stack.
             /// Required: True

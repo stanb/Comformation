@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.CustomActionType
 {
     /// <summary>
-    /// AWS CodePipeline CustomActionType ConfigurationProperties
+    /// CodePipeline CustomActionType ConfigurationProperties
     /// ConfigurationProperties is a property of the AWS::CodePipeline::CustomActionType resource that defines a
-    /// configuration for an AWS CodePipeline custom action.
+    /// configuration for an CodePipeline custom action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype-configurationproperties.html
     /// </summary>
     public class ConfigurationProperties
@@ -65,7 +65,7 @@ namespace Comformation.CodePipeline.CustomActionType
         /// <summary>
         /// Secret
         /// Indicates whether the configuration property is secret. Secret configuration properties are hidden
-        /// from all AWS CodePipeline calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and
+        /// from all CodePipeline calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and
         /// PollForThirdPartyJobs.
         /// Required: Yes
         /// Type: Boolean

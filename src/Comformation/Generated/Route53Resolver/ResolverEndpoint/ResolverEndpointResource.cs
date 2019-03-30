@@ -30,6 +30,7 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
             /// Direction
             /// 	
             /// Indicates whether the resolver endpoint allows inbound or outbound DNS queries.
+            /// Valid values:INBOUND | OUTBOUND
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

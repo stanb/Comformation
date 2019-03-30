@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup TriggerConfig
-    /// The TriggerConfig property type specifies a notification trigger for an AWS CodeDeploy deployment group. The
+    /// CodeDeploy DeploymentGroup TriggerConfig
+    /// The TriggerConfig property type specifies a notification trigger for an CodeDeploy deployment group. The
     /// TriggerConfigurations property of the AWS::CodeDeploy::DeploymentGroup resource contains a list of
     /// TriggerConfig property types.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html
