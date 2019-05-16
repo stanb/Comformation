@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    /// AWS Auto Scaling ScalingPlan PredefinedLoadMetricSpecification
-    /// The PredefinedLoadMetricSpecification property type specifies a predefined load metric for predictive scaling
-    /// to use with AWS Auto Scaling.
+    /// AWS::AutoScalingPlans::ScalingPlan PredefinedLoadMetricSpecification
+    /// PredefinedLoadMetricSpecification is a subproperty of ScalingInstruction that specifies a predefined load
+    /// metric for predictive scaling to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html
     /// </summary>
     public class PredefinedLoadMetricSpecification
@@ -16,10 +16,11 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// PredefinedLoadMetricType
-        /// The metric type. For more information, see PredefinedLoadMetricSpecification in the AWS Auto Scaling
-        /// API Reference.
+        /// The metric type.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ALBTargetGroupRequestCount | ASGTotalCPUUtilization | ASGTotalNetworkIn |
+        /// ASGTotalNetworkOut
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedLoadMetricType")]
@@ -36,8 +37,10 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt; is the final portion of the load balancer
         /// ARN. targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt; is the final portion of the
         /// target group ARN.
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1023
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceLabel")]

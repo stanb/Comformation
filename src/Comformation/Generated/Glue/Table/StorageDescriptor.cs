@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Table
 {
     /// <summary>
-    /// AWS Glue Table StorageDescriptor
-    /// The StorageDescriptor property type describes the physical storage of AWS Glue table data.
+    /// AWS::Glue::Table StorageDescriptor
+    /// Describes the physical storage of table data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html
     /// </summary>
     public class StorageDescriptor
@@ -15,7 +15,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// StoredAsSubDirectories
-        /// Indicates whether the table data is stored in subdirectories.
+        /// True if the table data is stored in subdirectories, or False if not.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -25,9 +25,9 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Parameters
-        /// UTF-8 string–to–UTF-8 string key-value pairs that specify user-supplied properties.
+        /// The user-supplied properties in key-value form.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -35,10 +35,9 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// BucketColumns
-        /// A list of UTF-8 strings that specify reducer grouping columns, clustering columns, and bucketing
-        /// columns in the table.
+        /// A list of reducer grouping columns, clustering columns, and bucketing columns in the table.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BucketColumns")]
@@ -46,7 +45,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// SkewedInfo
-        /// Information about values that appear very frequently in a column (skewed values).
+        /// The information about values that appear frequently in a column (skewed values).
         /// Required: No
         /// Type: SkewedInfo
         /// Update requires: No interruption
@@ -56,8 +55,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// InputFormat
-        /// The input format: SequenceFileInputFormat (binary), TextInputFormat, or a custom format. It must
-        /// match the single-line string pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The input format: SequenceFileInputFormat (binary), or TextInputFormat, or a custom format.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -67,8 +65,8 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// NumberOfBuckets
-        /// The number of buckets.
-        /// Required: Conditional. You must specify this property if the table contains any dimension columns.
+        /// Must be specified if the table contains any dimension columns.
+        /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
         /// </summary>
@@ -77,9 +75,8 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// OutputFormat
-        /// The output format: SequenceFileOutputFormat (binary), IgnoreKeyTextOutputFormat, or a custom format.
-        /// It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The output format: SequenceFileOutputFormat (binary), or IgnoreKeyTextOutputFormat, or a custom
+        /// format.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -89,7 +86,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Columns
-        /// The columns in the table.
+        /// A list of the Columns in the table.
         /// Required: No
         /// Type: List of Column
         /// Update requires: No interruption
@@ -99,8 +96,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// SerdeInfo
-        /// Information about a serialization/deserialization program (SerDe), which serves as an extractor and
-        /// loader.
+        /// The serialization/deserialization (SerDe) information.
         /// Required: No
         /// Type: SerdeInfo
         /// Update requires: No interruption
@@ -110,7 +106,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// SortColumns
-        /// The sort order of each bucket in the table.
+        /// A list specifying the sort order of each bucket in the table.
         /// Required: No
         /// Type: List of Order
         /// Update requires: No interruption
@@ -120,7 +116,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Compressed
-        /// Indicates whether the data in the table is compressed.
+        /// True if the data in the table is compressed, or False if not.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -131,8 +127,7 @@ namespace Comformation.Glue.Table
         /// <summary>
         /// Location
         /// The physical location of the table. By default, this takes the form of the warehouse location,
-        /// followed by the database location in the warehouse, followed by the table name. It must match the
-        /// URI address multi-line string pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// followed by the database location in the warehouse, followed by the table name.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

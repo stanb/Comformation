@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset Variable
-    /// The Variable property type specifies the values of variables used within the context of the execution of the
-    /// containerized application for an AWS IoT Analytics dataset.
+    /// AWS::IoTAnalytics::Dataset Variable
+    /// An instance of a variable to be passed to the &quot;containerAction&quot; execution. Each variable must have a name and
+    /// a value given by one of &quot;stringValue&quot;, &quot;datasetContentVersionValue&quot;, or &quot;outputFileUriValue&quot;.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html
     /// </summary>
     public class Variable
@@ -26,7 +26,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// DoubleValue
-        /// The value of the variable as a Java &quot;double&quot; type.
+        /// The value of the variable as a double (numeric).
         /// Required: No
         /// Type: Double
         /// Update requires: No interruption
@@ -49,6 +49,8 @@ namespace Comformation.IoTAnalytics.Dataset
         /// The name of the variable.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VariableName")]
@@ -56,9 +58,11 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// StringValue
-        /// The value of the variable as a Java &quot;string&quot; type.
+        /// The value of the variable as a string.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StringValue")]

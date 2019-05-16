@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.Api
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Api
-    /// The AWS::ApiGatewayV2::Api resource contains an Amazon API Gateway API. For more information, see CreateApi in
-    /// the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more
+    /// information about WebSocket APIs, see About WebSocket APIs in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html
     /// </summary>
     public class ApiResource : ResourceBase
@@ -43,7 +43,7 @@ namespace Comformation.ApiGatewayV2.Api
 
             /// <summary>
             /// ProtocolType
-            /// The API protocol.
+            /// The API protocol: Currently only WEBSOCKET is supported.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -70,7 +70,7 @@ namespace Comformation.ApiGatewayV2.Api
 
             /// <summary>
             /// ApiKeySelectionExpression
-            /// An API key selection expression.
+            /// An API key selection expression. See API Key Selection Expressions.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

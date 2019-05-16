@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Data Firehose DeliveryStream S3DestinationConfiguration
+    /// AWS::KinesisFirehose::DeliveryStream S3DestinationConfiguration
     /// The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3)
     /// destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html
@@ -19,6 +19,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The Amazon Resource Name (ARN) of the Amazon S3 bucket to send data to.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BucketARN")]
         public Union<string, IntrinsicFunction> BucketARN { get; set; }
@@ -29,15 +33,17 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// bucket.
         /// Required: Yes
         /// Type: BufferingHints
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BufferingHints")]
         public BufferingHints BufferingHints { get; set; }
 
         /// <summary>
         /// CloudWatchLoggingOptions
-        /// The Amazon CloudWatch Logs logging options for the delivery stream.
+        /// The CloudWatch logging options for your delivery stream.
         /// Required: No
-        /// Type: Amazon Kinesis Data Firehose DeliveryStream CloudWatchLoggingOptions
+        /// Type: CloudWatchLoggingOptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
@@ -49,6 +55,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// S3DestinationConfiguration data type in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: GZIP | Snappy | UNCOMPRESSED | ZIP
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CompressionFormat")]
         public Union<string, IntrinsicFunction> CompressionFormat { get; set; }
@@ -59,7 +67,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// uses AWS Key Management Service (AWS KMS) to encrypt the data that it delivers to your Amazon S3
         /// bucket.
         /// Required: No
-        /// Type: Amazon Kinesis Data Firehose DeliveryStream EncryptionConfiguration
+        /// Type: EncryptionConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
@@ -70,6 +79,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// prefix helps you identify the files that Kinesis Data Firehose delivered.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Prefix")]
         public Union<string, IntrinsicFunction> Prefix { get; set; }
@@ -77,11 +87,15 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// RoleARN
         /// The ARN of an AWS Identity and Access Management (IAM) role that grants Kinesis Data Firehose access
-        /// to your Amazon S3 bucket and AWS KMS (if you enable data encryption).
-        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon S3 Destination in the
-        /// Amazon Kinesis Data Firehose Developer Guide.
+        /// to your Amazon S3 bucket and AWS KMS (if you enable data encryption). For more information, see
+        /// Grant Kinesis Data Firehose Access to an Amazon S3 Destination in the Amazon Kinesis Data Firehose
+        /// Developer Guide.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 512
+        /// Pattern: arn:. *
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]
         public Union<string, IntrinsicFunction> RoleARN { get; set; }

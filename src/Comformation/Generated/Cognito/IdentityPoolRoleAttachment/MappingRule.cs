@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.IdentityPoolRoleAttachment
 {
     /// <summary>
-    /// Amazon Cognito IdentityPoolRoleAttachment MappingRule
-    /// MappingRule is a subproperty of the Amazon Cognito IdentityPoolRoleAttachment RoleMapping property that
-    /// defines how to map a claim to a role arn.
+    /// AWS::Cognito::IdentityPoolRoleAttachment MappingRule
+    /// Defines how to map a claim to a role ARN.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html
     /// </summary>
     public class MappingRule

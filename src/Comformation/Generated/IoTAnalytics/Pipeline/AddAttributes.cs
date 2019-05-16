@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline AddAttributes
-    /// The AddAttributes property type specifies additional attributes to be added to a message for an AWS IoT
-    /// Analytics pipeline.
+    /// AWS::IoTAnalytics::Pipeline AddAttributes
+    /// An activity that adds other attributes based on existing attributes in the message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-addattributes.html
     /// </summary>
     public class AddAttributes
@@ -19,6 +18,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -26,9 +27,11 @@ namespace Comformation.IoTAnalytics.Pipeline
 
         /// <summary>
         /// Attributes
-        /// A list of objects that map an existing attribute to a new attribute in a message.
+        /// A list of 1-50 &quot;AttributeNameMapping&quot; objects that map an existing attribute to a new attribute.
+        /// Note The existing attributes remain in the message, so if you want to remove the originals, use
+        /// &quot;RemoveAttributeActivity&quot;.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]
@@ -39,6 +42,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;addAttributes&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

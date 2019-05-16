@@ -6,9 +6,8 @@ namespace Comformation.ApiGateway.DocumentationPart
 {
     /// <summary>
     /// AWS::ApiGateway::DocumentationPart
-    /// The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an Amazon API Gateway API
-    /// entity. For more information, see Representation of API Documentation in API Gateway in the API Gateway
-    /// Developer Guide.
+    /// The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API. For more information,
+    /// see Representation of API Documentation in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html
     /// </summary>
     public class DocumentationPartResource : ResourceBase
@@ -19,7 +18,7 @@ namespace Comformation.ApiGateway.DocumentationPart
             /// Location
             /// The location of the API entity that the documentation applies to.
             /// Required: Yes
-            /// Type: Amazon API Gateway DocumentationPart Location
+            /// Type: Location
             /// Update requires: Replacement
             /// </summary>
 			public Location Location { get; set; }

@@ -19,8 +19,8 @@ namespace Comformation.Greengrass.GroupVersion
         {
             /// <summary>
             /// LoggerDefinitionVersionArn
-            /// The Amazon Resource Name (ARN) of the logger definition version that contains the loggers you want
-            /// to deploy with the group version.
+            /// The ARN of the logger definition version that contains the loggers you want to deploy with the group
+            /// version.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -69,8 +69,8 @@ namespace Comformation.Greengrass.GroupVersion
 
             /// <summary>
             /// ConnectorDefinitionVersionArn
-            /// The ARN of the connector definition version that contains the connectors you want to deploy with the
-            /// group version.
+            /// The Amazon Resource Name (ARN) of the connector definition version that contains the connectors you
+            /// want to deploy with the group version.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

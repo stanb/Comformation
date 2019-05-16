@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset OutputFileUriValue
-    /// The OutputFileUriValue property type specifies a variable value which contains an output file URI for an AWS
-    /// IoT Analytics dataset.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-outputfileurivalue.html
+    /// AWS::IoTAnalytics::Dataset OutputFileUriValue
+    /// The value of the variable as a structure that specifies an output file URI.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-outputfileurivalue.html
     /// </summary>
     public class OutputFileUriValue
     {
@@ -20,6 +19,7 @@ namespace Comformation.IoTAnalytics.Dataset
         /// bucket.
         /// Required: No
         /// Type: String
+        /// Pattern: [\w\. -]{1,255}
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FileName")]

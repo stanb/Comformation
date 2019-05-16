@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.DomainName
 {
     /// <summary>
-    /// Amazon API Gateway DomainName EndpointConfiguration
+    /// AWS::ApiGateway::DomainName EndpointConfiguration
     /// The EndpointConfiguration property type specifies the endpoint types of an Amazon API Gateway domain name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html
     /// </summary>
@@ -19,7 +19,7 @@ namespace Comformation.ApiGateway.DomainName
         /// custom domain name, the endpoint type is EDGE. For a regional API and its custom domain name, the
         /// endpoint type is REGIONAL.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Types")]

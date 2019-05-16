@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Crawler
 {
     /// <summary>
-    /// AWS Glue Crawler S3Target
-    /// The S3Target property type specifies an Amazon S3 target for an AWS Glue crawl.
+    /// AWS::Glue::Crawler S3Target
+    /// Specifies a data store in Amazon Simple Storage Service (Amazon S3).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html
     /// </summary>
     public class S3Target
@@ -25,9 +25,10 @@ namespace Comformation.Glue.Crawler
 
         /// <summary>
         /// Exclusions
-        /// A list of UTF-8 strings that specify the Amazon S3 objects to exclude from the crawl.
+        /// A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables
+        /// with a Crawler.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Exclusions")]

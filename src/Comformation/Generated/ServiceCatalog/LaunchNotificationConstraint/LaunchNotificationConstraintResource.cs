@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
 {
     /// <summary>
     /// AWS::ServiceCatalog::LaunchNotificationConstraint
-    /// Creates a notification constraint for AWS Service Catalog. For more information, see CreateConstraint in the
-    /// AWS Service Catalog Developer Guide.
+    /// Specifies a notification constraint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html
     /// </summary>
     public class LaunchNotificationConstraintResource : ResourceBase
@@ -19,6 +18,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// The description of the constraint.
             /// Required: No
             /// Type: String
+            /// Maximum: 2000
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// NotificationArns
             /// The notification ARNs.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
@@ -35,8 +35,10 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
@@ -46,6 +48,9 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// The portfolio identifier.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
@@ -55,6 +60,9 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// The product identifier.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }

@@ -6,7 +6,7 @@ namespace Comformation.EC2.Volume
 {
     /// <summary>
     /// AWS::EC2::Volume
-    /// The AWS::EC2::Volume type creates a new Amazon Elastic Block Store (Amazon EBS) volume.
+    /// Specifies an Amazon Elastic Block Store (Amazon EBS) volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html
     /// </summary>
     public class VolumeResource : ResourceBase
@@ -19,8 +19,7 @@ namespace Comformation.EC2.Volume
             /// to the volume from attached EC2 instances when it determines that a volume&#39;s data is potentially
             /// inconsistent. If the consistency of the volume is not a concern, and you prefer that the volume be
             /// made available immediately if it&#39;s impaired, you can configure the volume to automatically enable
-            /// I/O. For more information, see Working with the AutoEnableIO Volume Attribute in the Amazon EC2 User
-            /// Guide for Linux Instances.
+            /// I/O.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -32,7 +31,7 @@ namespace Comformation.EC2.Volume
             /// The Availability Zone in which to create the new volume.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
@@ -42,21 +41,28 @@ namespace Comformation.EC2.Volume
             /// instance types that support Amazon EBS encryption. Volumes that are created from encrypted snapshots
             /// are automatically encrypted. You can&#39;t create an encrypted volume from an unencrypted snapshot, or
             /// vice versa. If your AMI uses encrypted volumes, you can launch the AMI only on supported instance
-            /// types. For more information, see Amazon EBS encryption in the Amazon EC2 User Guide for Linux
-            /// Instances.
-            /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
+            /// types.
+            /// Requirement is conditional: If you specify the KmsKeyId property, you must enable encryption.
+            /// Required: No
             /// Type: Boolean
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
             /// <summary>
             /// Iops
-            /// The number of I/O operations per second (IOPS) that the volume supports. For more information about
-            /// the valid sizes for each volume type, see the Iops parameter for the CreateVolume action in the
-            /// Amazon EC2 API Reference.
-            /// Required: Conditional. Required when the volume type is io1; not used with other volume types.
-            /// Type: Number
+            /// The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD
+            /// volumes, this represents the number of IOPS that are provisioned for the volume. For General Purpose
+            /// SSD volumes, this represents the baseline performance of the volume and the rate at which the volume
+            /// accumulates I/O credits for bursting. For more information, see Amazon EBS Volume Types in the
+            /// Amazon Elastic Compute Cloud User Guide.
+            /// Constraints: Range is 100-16,000 IOPS for gp2 volumes and 100 to 64,000IOPS for io1 volumes, in most
+            /// Regions. The maximum IOPS for io1 of 64,000 is guaranteed only on Nitro-based instances. Other
+            /// instance families guarantee performance up to 32,000 IOPS.
+            /// Requirement is conditional: This parameter is required for requests to create io1 volumes; it is not
+            /// used in requests to create gp2, st1, sc1, or standard volumes.
+            /// Required: No
+            /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Iops { get; set; }
@@ -69,18 +75,18 @@ namespace Comformation.EC2.Volume
             /// encrypted volume and don&#39;t specify this property, AWS CloudFormation uses the default master key.
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// Size
-            /// The size of the volume, in gibibytes (GiBs). For more information about the valid sizes for each
-            /// volume type, see the Size parameter for the CreateVolume action in the Amazon EC2 API Reference.
+            /// The size of the volume, in gibibytes (GiBs).
             /// If you specify the SnapshotId property, specify a size that is equal to or greater than the size of
             /// the snapshot. If you don&#39;t specify a size, EC2 uses the size of the snapshot as the volume size.
-            /// Required: Conditional. If you don&#39;t specify a value for the SnapshotId property, you must specify
-            /// this property.
+            /// Requirement is conditional: If you don&#39;t specify a value for the SnapshotId property, then you must
+            /// specify this property.
+            /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
@@ -88,10 +94,10 @@ namespace Comformation.EC2.Volume
 
             /// <summary>
             /// SnapshotId
-            /// The snapshot from which to create the new volume.
+            /// The snapshot from which to create the volume.
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotId { get; set; }
 
@@ -99,17 +105,19 @@ namespace Comformation.EC2.Volume
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this volume.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VolumeType
-            /// The volume type. If you set the type to io1, you must also set the Iops property. For valid values,
-            /// see the VolumeType parameter for the CreateVolume action in the Amazon EC2 API Reference.
+            /// The volume type. This can be gp2 for General Purpose SSD, io1 for Provisioned IOPS SSD, st1 for
+            /// Throughput Optimized HDD, sc1 for Cold HDD, or standard for Magnetic volumes. If you set the type to
+            /// io1, you must also set the Iops property.
             /// Required: No
             /// Type: String
+            /// Allowed Values: gp2 | io1 | sc1 | st1 | standard
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeType { get; set; }

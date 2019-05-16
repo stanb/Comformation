@@ -17,18 +17,23 @@ namespace Comformation.GameLift.Alias
         {
             /// <summary>
             /// Description
-            /// Information that helps you identify the purpose of this alias.
+            /// Human-readable description of an alias.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Name
-            /// An identifier to associate with this alias. Alias names don&#39;t need to be unique.
+            /// Descriptive label that is associated with an alias. Alias names do not need to be unique.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
+            /// Pattern: . *\S. *
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
@@ -38,7 +43,7 @@ namespace Comformation.GameLift.Alias
             /// A routing configuration that specifies where traffic is directed for this alias, such as to a fleet
             /// or to a message.
             /// Required: Yes
-            /// Type: Amazon GameLift Alias RoutingStrategy
+            /// Type: RoutingStrategy
             /// Update requires: No interruption
             /// </summary>
 			public RoutingStrategy RoutingStrategy { get; set; }

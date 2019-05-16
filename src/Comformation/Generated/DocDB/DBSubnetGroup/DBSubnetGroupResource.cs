@@ -6,8 +6,9 @@ namespace Comformation.DocDB.DBSubnetGroup
 {
     /// <summary>
     /// AWS::DocDB::DBSubnetGroup
-    /// The AWS::DocDB::DBSubnetGroup Amazon DocumentDB resource describes a DBSubnetGroup. For more information, see
-    /// DBSubnetGroup in the Amazon DocumentDB Developer Guide.
+    /// The AWS::DocDB::DBSubnetGroup Amazon DocumentDB (with MongoDB compatibility) resource describes a
+    /// DBSubnetGroup. DB subnet groups must contain at least one subnet in at least two Availability Zones in the AWS
+    /// Region. For more information, see DBSubnetGroup in the Amazon DocumentDB Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
@@ -16,7 +17,10 @@ namespace Comformation.DocDB.DBSubnetGroup
         {
             /// <summary>
             /// DBSubnetGroupName
-            /// The name of the DB subnet group.
+            /// The name for the DB subnet group. This value is stored as a lowercase string.
+            /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
+            /// hyphens. Must not be default.
+            /// Example: mySubnetgroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +29,7 @@ namespace Comformation.DocDB.DBSubnetGroup
 
             /// <summary>
             /// DBSubnetGroupDescription
-            /// The description of the DB subnet group.
+            /// The description for the DB subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -34,19 +38,18 @@ namespace Comformation.DocDB.DBSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// List of subnet identifiers.
+            /// The Amazon EC2 subnet IDs for the DB subnet group.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
-            /// A list of up to 50 tags. A tag is metadata assigned to an Amazon DocumentDB (with MongoDB
-            /// compatibility) resource consisting of a key-value pair.
+            /// The tags to be assigned to the DB subnet group.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

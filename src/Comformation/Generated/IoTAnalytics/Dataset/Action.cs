@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset Action
-    /// The Action property type specifies a list of actions that create data set contents for an AWS IoT Analytics
-    /// dataset.
+    /// AWS::IoTAnalytics::Dataset Action
+    /// Information needed to run the &quot;containerAction&quot; to produce data set contents.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-action.html
     /// </summary>
     public class Action
@@ -16,9 +15,12 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// ActionName
-        /// The name of the data set action.
+        /// The name of the data set action by which data set contents are automatically created.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: ^[a-zA-Z0-9_]+$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ActionName")]
@@ -37,7 +39,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// QueryAction
-        /// Uses an SQL query to automatically create data set contents.
+        /// An &quot;SqlQueryDatasetAction&quot; object that uses an SQL query to automatically create data set contents.
         /// Required: No
         /// Type: QueryAction
         /// Update requires: No interruption

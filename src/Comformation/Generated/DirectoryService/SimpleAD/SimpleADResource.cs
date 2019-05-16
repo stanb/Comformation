@@ -6,10 +6,10 @@ namespace Comformation.DirectoryService.SimpleAD
 {
     /// <summary>
     /// AWS::DirectoryService::SimpleAD
-    /// The AWS::DirectoryService::SimpleAD resource creates an AWS Directory Service Simple Active Directory (Simple
-    /// AD) in AWS so that your directory users and groups can access the AWS Management Console and AWS applications
-    /// using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory. For more
-    /// information, see What Is AWS Directory Service? in the AWS Directory Service Administration Guide.
+    /// The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory
+    /// (Simple AD) in AWS so that your directory users and groups can access the AWS Management Console and AWS
+    /// applications using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory.
+    /// For more information, see Simple Active Directory in the AWS Directory Service Admin Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
     /// </summary>
     public class SimpleADResource : ResourceBase
@@ -18,9 +18,11 @@ namespace Comformation.DirectoryService.SimpleAD
         {
             /// <summary>
             /// CreateAlias
-            /// If set to true, creates an alias for a directory and assigns the alias to the directory. AWS
-            /// Directory Service uses the alias to construct the access URL for the directory, such as
-            /// http://alias. awsapps. com. By default, this property is set to false.
+            /// If set to true, specifies an alias for a directory and assigns the alias to the directory. The alias
+            /// is used to construct the access URL for the directory, such as http://&amp;lt;alias&amp;gt;. awsapps. com.
+            /// By default, this property is set to false.
+            /// Important After an alias has been created, it cannot be deleted or reused, so this operation should
+            /// only be used when absolutely necessary.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -29,9 +31,12 @@ namespace Comformation.DirectoryService.SimpleAD
 
             /// <summary>
             /// Description
-            /// A description of the directory.
+            /// A textual description for the directory.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 128
+            /// Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?. /!\s-]*$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -51,25 +56,30 @@ namespace Comformation.DirectoryService.SimpleAD
             /// The fully qualified name for the directory, such as corp. example. com.
             /// Required: Yes
             /// Type: String
+            /// Pattern: ^([a-zA-Z0-9]+[\\. -])+([a-zA-Z0-9])+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Password
-            /// The password for the directory administrator. AWS Directory Service creates a directory
+            /// The password for the directory administrator. The directory creation process creates a directory
             /// administrator account with the user name Administrator and this password.
             /// Required: Yes
             /// Type: String
+            /// Pattern: (?=^. {8,64}$)((?=. *\d)(?=. *[A-Z])(?=. *[a-z])|(?=. *\d)(?=. *[^A-Za-z0-9\s])(?=.
+            /// *[a-z])|(?=. *[^A-Za-z0-9\s])(?=. *[A-Z])(?=. *[a-z])|(?=. *\d)(?=. *[A-Z])(?=. *[^A-Za-z0-9\s]))^.
+            /// *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
             /// ShortName
-            /// The NetBIOS name of the on-premises directory, such as CORP.
+            /// The short name of the directory, such as CORP.
             /// Required: No
             /// Type: String
+            /// Pattern: ^[^\\/:*?\&quot;\&amp;lt;\&amp;gt;|. ]+[^\\/:*?\&quot;&amp;lt;&amp;gt;|]*$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ShortName { get; set; }
@@ -80,15 +90,16 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Reference.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: Large | Small
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Size { get; set; }
 
             /// <summary>
             /// VpcSettings
-            /// Specifies the VPC settings of the directory server.
+            /// A DirectoryVpcSettings object that contains additional information for the operation.
             /// Required: Yes
-            /// Type: AWS Directory Service SimpleAD VpcSettings
+            /// Type: VpcSettings
             /// Update requires: Replacement
             /// </summary>
 			public VpcSettings VpcSettings { get; set; }

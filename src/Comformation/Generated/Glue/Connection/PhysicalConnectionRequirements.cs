@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Connection
 {
     /// <summary>
-    /// AWS Glue Connection PhysicalConnectionRequirements
-    /// The PhysicalConnectionRequirements property type specifies the physical connection requirements that are
-    /// needed to make an AWS Glue connection, such as VPC and SecurityGroup.
+    /// AWS::Glue::Connection PhysicalConnectionRequirements
+    /// Specifies the physical requirements for a connection.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html
     /// </summary>
     public class PhysicalConnectionRequirements
@@ -16,9 +15,10 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// AvailabilityZone
-        /// The connection&#39;s Availability Zone. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
-        /// Required: Yes
+        /// The connection&#39;s Availability Zone. This field is redundant because the specified subnet implies the
+        /// Availability Zone to be used. Currently the field must be populated, but it will be deprecated in
+        /// the future.
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -27,9 +27,9 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// SecurityGroupIdList
-        /// A list of UTF-8 strings that specify the security group IDs that are used by the connection.
-        /// Required: Yes
-        /// Type: List of String values
+        /// The security group ID list used by the connection.
+        /// Required: No
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIdList")]
@@ -37,9 +37,8 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// SubnetId
-        /// The subnet ID that&#39;s used by the connection. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
-        /// Required: Yes
+        /// The subnet ID used by the connection.
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

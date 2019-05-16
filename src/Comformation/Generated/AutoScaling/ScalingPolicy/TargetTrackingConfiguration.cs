@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling ScalingPolicy TargetTrackingConfiguration
-    /// The TargetTrackingConfiguration property configures a target tracking scaling policy to use with Amazon EC2
-    /// Auto Scaling. TargetTrackingConfiguration is a property of the AWS::AutoScaling::ScalingPolicy resource. For
-    /// more information, see PutScalingPolicy in the Amazon EC2 Auto Scaling API Reference.
+    /// AWS::AutoScaling::ScalingPolicy TargetTrackingConfiguration
+    /// TargetTrackingConfiguration is a subproperty of ScalingPolicy that specifies a target tracking scaling policy
+    /// to use with Amazon EC2 Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html
     /// </summary>
     public class TargetTrackingConfiguration
@@ -17,9 +16,9 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
         /// <summary>
         /// CustomizedMetricSpecification
-        /// A customized metric.
-        /// Required: No
-        /// Type: Amazon EC2 Auto Scaling ScalingPolicy CustomizedMetricSpecification
+        /// A customized metric. You must specify either a predefined metric or a customized metric.
+        /// Required: Conditional
+        /// Type: CustomizedMetricSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomizedMetricSpecification")]
@@ -27,8 +26,10 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
         /// <summary>
         /// DisableScaleIn
-        /// Indicates whether to disable scale-in for the target tracking policy. If true, the target tracking
-        /// policy will not scale in the Auto Scaling group. The default value is false.
+        /// Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is
+        /// disabled, the target tracking scaling policy doesn&#39;t remove instances from the Auto Scaling group.
+        /// Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The
+        /// default is false.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -38,9 +39,9 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
         /// <summary>
         /// PredefinedMetricSpecification
-        /// A predefined metric.
-        /// Required: No
-        /// Type: Amazon EC2 Auto Scaling ScalingPolicy PredefinedMetricSpecification
+        /// A predefined metric. You must specify either a predefined metric or a customized metric.
+        /// Required: Conditional
+        /// Type: PredefinedMetricSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedMetricSpecification")]

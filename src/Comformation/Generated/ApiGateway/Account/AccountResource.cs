@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.Account
 {
     /// <summary>
     /// AWS::ApiGateway::Account
-    /// The AWS::ApiGateway::Account resource specifies the AWS Identity and Access Management (IAM) role that Amazon
-    /// API Gateway (API Gateway) uses to write API logs to Amazon CloudWatch Logs (CloudWatch Logs).
+    /// The AWS::ApiGateway::Account resource specifies the IAM role that Amazon API Gateway uses to write API logs to
+    /// Amazon CloudWatch Logs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html
     /// </summary>
     public class AccountResource : ResourceBase

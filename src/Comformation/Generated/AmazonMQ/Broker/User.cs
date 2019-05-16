@@ -6,8 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
-    /// Amazon MQ Broker User
-    /// The User property type specifies the details for an Amazon MQ user.
+    /// AWS::AmazonMQ::Broker User
+    /// The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can contain
+    /// only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+    /// characters long.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html
     /// </summary>
     public class User
@@ -19,7 +21,7 @@ namespace Comformation.AmazonMQ.Broker
         /// periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Username")]
         public Union<string, IntrinsicFunction> Username { get; set; }
@@ -30,29 +32,29 @@ namespace Comformation.AmazonMQ.Broker
         /// alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
         /// 2-100 characters long.
         /// Required: No
-        /// Type: List of String values
-        /// Update requires: Some interruptions
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Groups")]
         public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
         /// <summary>
         /// ConsoleAccess
-        /// Enables access to the ActiveMQ Web Console for the ActiveMQ user.
+        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConsoleAccess")]
         public Union<bool, IntrinsicFunction> ConsoleAccess { get; set; }
 
         /// <summary>
         /// Password
-        /// The password of the user. This value must be at least 12 characters long, must contain at least 4
-        /// unique characters, and must not contain commas.
+        /// The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at
+        /// least 4 unique characters, and must not contain commas.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Password")]
         public Union<string, IntrinsicFunction> Password { get; set; }

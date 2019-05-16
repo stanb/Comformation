@@ -6,9 +6,9 @@ namespace Comformation.Logs.SubscriptionFilter
 {
     /// <summary>
     /// AWS::Logs::SubscriptionFilter
-    /// The AWS::Logs::SubscriptionFilter resource creates an Amazon CloudWatch Logs (CloudWatch Logs) subscription
-    /// filter that defines which log events are delivered to your Kinesis stream or AWS Lambda (Lambda) function and
-    /// where to send them.
+    /// The AWS::Logs::SubscriptionFilter resource specifies a subscription filter and associates it with the
+    /// specified log group. Subscription filters allow you to subscribe to a real-time stream of log events and have
+    /// them delivered to a specific destination. Currently, the supported destinations are:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
     /// </summary>
     public class SubscriptionFilterResource : ResourceBase
@@ -17,10 +17,10 @@ namespace Comformation.Logs.SubscriptionFilter
         {
             /// <summary>
             /// DestinationArn
-            /// The Amazon Resource Name (ARN) of the Kinesis stream, Kinesis Data Firehose delivery stream, or
-            /// Lambda function that you want to use as the subscription feed destination.
+            /// The Amazon Resource Name (ARN) of the destination.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationArn { get; set; }
@@ -28,8 +28,7 @@ namespace Comformation.Logs.SubscriptionFilter
             /// <summary>
             /// FilterPattern
             /// The filtering expressions that restrict what gets delivered to the destination AWS resource. For
-            /// more information about the filter pattern syntax, see Filter and Pattern Syntax in the Amazon
-            /// CloudWatch User Guide.
+            /// more information about the filter pattern syntax, see Filter and Pattern Syntax.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -43,17 +42,20 @@ namespace Comformation.Logs.SubscriptionFilter
             /// log events.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
+            /// Pattern: [\. \-_/#A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// RoleArn
-            /// An IAM role that grants CloudWatch Logs permission to put data into the specified Kinesis stream.
-            /// For Lambda and CloudWatch Logs destinations, don&#39;t specify this property because CloudWatch Logs
-            /// gets the necessary permissions from the destination resource.
+            /// The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the
+            /// destination stream.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }

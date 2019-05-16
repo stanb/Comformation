@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WAFRegional.WebACL
 {
     /// <summary>
-    /// AWS WAF Regional WebACL Action
-    /// Action is a property of the AWS::WAFRegional::WebACL resource and the AWS WAF Regional WebACL Rules property
-    /// that specifies the action AWS WAF takes when a web request matches or doesn&#39;t match all rule conditions.
+    /// AWS::WAFRegional::WebACL Action
+    /// Specifies the action AWS WAF takes when a web request matches or doesn&#39;t match all rule conditions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html
     /// </summary>
     public class Action
@@ -20,10 +19,14 @@ namespace Comformation.WAFRegional.WebACL
         /// matches all conditions in a rule.
         /// For the default action of a web access control list (ACL), the action that AWS WAF takes when a web
         /// request doesn&#39;t match all conditions in any rule.
-        /// For valid value, see the Type contents of the WafAction data type in the AWS WAF Regional API
-        /// Reference.
+        /// Valid settings include the following:
+        /// ALLOW: AWS WAF allows requests BLOCK: AWS WAF blocks requests COUNT: AWS WAF increments a counter of
+        /// the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web
+        /// request based on the remaining rules in the web ACL. You can&#39;t specify COUNT for the default action
+        /// for a WebACL.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }

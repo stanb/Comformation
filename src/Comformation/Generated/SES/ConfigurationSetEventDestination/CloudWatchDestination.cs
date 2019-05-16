@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
-    /// Amazon Simple Email Service ConfigurationSetEventDestination CloudWatchDestination
-    /// The CloudWatchDestination property type specifies information associated with an CloudWatch event destination
-    /// to which email sending events are published in Amazon SES.
+    /// AWS::SES::ConfigurationSetEventDestination CloudWatchDestination
+    /// Contains information associated with an Amazon CloudWatch event destination to which email sending events are
+    /// published.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html
     /// </summary>
     public class CloudWatchDestination
@@ -17,7 +17,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// <summary>
         /// DimensionConfigurations
         /// A list of dimensions upon which to categorize your emails when you publish email sending events to
-        /// CloudWatch.
+        /// Amazon CloudWatch.
         /// Required: No
         /// Type: List of DimensionConfiguration
         /// Update requires: No interruption

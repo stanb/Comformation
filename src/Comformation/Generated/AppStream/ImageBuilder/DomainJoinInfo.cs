@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppStream.ImageBuilder
 {
     /// <summary>
-    /// Amazon AppStream 2. 0 ImageBuilder DomainJoinInfo
-    /// The DomainJoinInfo property type specifies the name of the directory and organizational unit (OU) to use to
-    /// join an Amazon AppStream 2. 0 image builder to a Microsoft Active Directory domain.
+    /// AWS::AppStream::ImageBuilder DomainJoinInfo
+    /// The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+    /// Directory domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html
     /// </summary>
     public class DomainJoinInfo
@@ -19,6 +19,7 @@ namespace Comformation.AppStream.ImageBuilder
         /// The distinguished name of the organizational unit for computer accounts.
         /// Required: No
         /// Type: String
+        /// Maximum: 2000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OrganizationalUnitDistinguishedName")]

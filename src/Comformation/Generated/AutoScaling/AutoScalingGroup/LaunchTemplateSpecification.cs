@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling AutoScalingGroup LaunchTemplateSpecification
-    /// LaunchTemplateSpecification is a property of the AWS::AutoScaling::AutoScalingGroup resource that specifies
-    /// the launch template to use to launch instances.
+    /// AWS::AutoScaling::AutoScalingGroup LaunchTemplateSpecification
+    /// LaunchTemplateSpecification is a property of AutoScalingGroup that specifies the launch template to use to
+    /// launch instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html
     /// </summary>
     public class LaunchTemplateSpecification
@@ -17,10 +17,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// LaunchTemplateId
         /// The ID of the launch template. You must specify either a template ID or a template name.
-        /// Minimum length of 1. Maximum length of 255. IDs must fit the following pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateId")]
@@ -29,10 +30,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// LaunchTemplateName
         /// The name of the launch template. You must specify either a template name or a template ID.
-        /// Minimum length of 3. Maximum length of 128. Names must fit the following pattern:
-        /// [a-zA-Z0-9\(\)\. -/_]+
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 128
+        /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateName")]
@@ -42,10 +44,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// Version
         /// The version number. AWS CloudFormation does not support specifying $Latest, or $Default for the
         /// template version number.
-        /// Minimum length of 1. Maximum length of 255. Versions must fit the following pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]

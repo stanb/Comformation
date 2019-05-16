@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
-    /// Amazon Elastic Container Service TaskDefinition VolumeFrom
-    /// VolumesFrom is a property of the Amazon Elastic Container Service TaskDefinition ContainerDefinition property
-    /// that mounts data volumes from other containers.
+    /// AWS::ECS::TaskDefinition VolumeFrom
+    /// The VolumeFrom property specifies details on a data volume from another container in the same task definition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html
     /// </summary>
     public class VolumeFrom
@@ -16,20 +15,21 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// ReadOnly
-        /// Indicates whether the container can write to the volume. If you specify true, the container has
-        /// read-only access to the volume. If you specify false, the container can write to the volume. By
-        /// default, the value is false.
+        /// If this value is true, the container has read-only access to the volume. If this value is false,
+        /// then the container can write to the volume. The default value is false.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ReadOnly")]
         public Union<bool, IntrinsicFunction> ReadOnly { get; set; }
 
         /// <summary>
         /// SourceContainer
-        /// The name of the container that has the volumes to mount.
-        /// Required: Yes
+        /// The name of another container within the same task definition from which to mount volumes.
+        /// Required: No
         /// Type: String
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SourceContainer")]
         public Union<string, IntrinsicFunction> SourceContainer { get; set; }

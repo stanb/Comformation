@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationOutput DestinationSchema
-    /// The DestinationSchema property describes the data format when records are written to the destination.
+    /// AWS::KinesisAnalytics::ApplicationOutput DestinationSchema
+    /// Describes the data format when records are written to the destination. For more information, see Configuring
+    /// Application Output.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html
     /// </summary>
     public class DestinationSchema
@@ -18,6 +19,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Specifies the format of the records on the output stream.
         /// Required: No
         /// Type: String
+        /// Allowed Values: CSV | JSON
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormatType")]

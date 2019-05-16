@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// CodePipeline Pipeline Stages Actions
-    /// Actions is a property of the CodePipeline Pipeline Stages property that specifies an action for an
-    /// CodePipeline stage.
+    /// AWS::CodePipeline::Pipeline ActionDeclaration
+    /// Represents information about an action declaration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
     /// </summary>
     public class ActionDeclaration
@@ -16,74 +15,90 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// ActionTypeId
-        /// Specifies the action type and the provider of the action.
+        /// The configuration information for the action type.
         /// Required: Yes
-        /// Type: CodePipeline Pipeline Stages Actions ActionTypeId
+        /// Type: ActionTypeId
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ActionTypeId")]
         public ActionTypeId ActionTypeId { get; set; }
 
         /// <summary>
         /// Configuration
-        /// The action&#39;s configuration. These are key-value pairs that specify input values for an action. For
-        /// more information, see Action Structure Requirements in CodePipeline in the CodePipeline User Guide.
+        /// The action declaration&#39;s configuration.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Configuration")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Configuration { get; set; }
 
         /// <summary>
         /// InputArtifacts
-        /// The name or ID of the artifact that the action consumes, such as a test or build artifact.
+        /// The name or ID of the artifact consumed by the action, such as a test or build artifact.
         /// Required: No
-        /// Type: List of CodePipeline Pipeline Stages Actions InputArtifacts
+        /// Type: List of InputArtifact
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InputArtifacts")]
         public List<InputArtifact> InputArtifacts { get; set; }
 
         /// <summary>
         /// Name
-        /// The action name.
+        /// The action declaration&#39;s name.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 100
+        /// Pattern: [A-Za-z0-9. @\-_]+
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
 
         /// <summary>
         /// OutputArtifacts
-        /// The artifact name or ID that is a result of the action, such as a test or build artifact.
+        /// The name or ID of the result of the action declaration, such as a test or build artifact.
         /// Required: No
-        /// Type: List of CodePipeline Pipeline Stages Actions OutputArtifacts
+        /// Type: List of OutputArtifact
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputArtifacts")]
         public List<OutputArtifact> OutputArtifacts { get; set; }
 
         /// <summary>
         /// Region
-        /// Specifies the action’s AWS Region, such as us-east-1.
+        /// The action declaration&#39;s AWS Region, such as us-east-1.
         /// Required: No
         /// Type: String
+        /// Minimum: 4
+        /// Maximum: 30
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Region")]
         public Union<string, IntrinsicFunction> Region { get; set; }
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) of a service role that the action uses. The pipeline&#39;s role assumes
-        /// this role.
+        /// The ARN of the IAM service role that will perform the declared action. This is assumed through the
+        /// roleArn for the pipeline.
         /// Required: No
         /// Type: String
+        /// Maximum: 1024
+        /// Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/. *
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         /// <summary>
         /// RunOrder
-        /// The order in which CodePipeline runs this action.
+        /// The order in which actions are run.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 999
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RunOrder")]
         public Union<int, IntrinsicFunction> RunOrder { get; set; }

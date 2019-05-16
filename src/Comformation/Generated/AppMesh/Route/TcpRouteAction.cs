@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.Route
 {
     /// <summary>
-    /// AWS AppMesh Route TcpRouteAction
+    /// AWS::AppMesh::Route TcpRouteAction
     /// An object representing the traffic distribution requirements for matched TCP requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html
     /// </summary>

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    /// Amazon Simple Email Service ReceiptRule AddHeaderAction
-    /// The AddHeaderAction property type add a header to email it recieves on behalf of one or more email addresses
-    /// or domains that you own.
+    /// AWS::SES::ReceiptRule AddHeaderAction
+    /// When included in a receipt rule, this action adds a header to the received email.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html
     /// </summary>
     public class AddHeaderAction
@@ -16,7 +15,8 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// HeaderValue
-        /// Must be less than 2048 characters, and must not contain newline characters (&quot;\r&quot; or &quot;\n&quot;).
+        /// The content that you want to include in the header. This value can contain up to 2048 characters. It
+        /// can&#39;t contain newline (\n) or carraige return (\r) characters.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -26,8 +26,9 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// HeaderName
-        /// The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of
-        /// alphanumeric (a-z, A-Z, 0-9) characters and dashes only.
+        /// The name of the header that you want to add to the incoming message. The name has to contain at
+        /// least one character, and can contain up to 50 characters. It can only consist of alphanumeric (a–z,
+        /// A–Z, 0–9) characters and dashes.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

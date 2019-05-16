@@ -6,8 +6,8 @@ namespace Comformation.Redshift.ClusterSubnetGroup
 {
     /// <summary>
     /// AWS::Redshift::ClusterSubnetGroup
-    /// Creates an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing
-    /// Amazon VPC when creating an Amazon Redshift subnet group.
+    /// Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing
+    /// Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
     /// </summary>
     public class ClusterSubnetGroupResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.Redshift.ClusterSubnetGroup
         {
             /// <summary>
             /// Description
-            /// A description of the subnet group.
+            /// A description for the subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -25,9 +25,9 @@ namespace Comformation.Redshift.ClusterSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// A list of VPC subnet IDs. You can modify a maximum of 20 subnets.
+            /// An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
@@ -37,7 +37,7 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Specifies an arbitrary set of tags (key–value pairs) to associate with this subnet group. Use tags
             /// to manage your resources.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

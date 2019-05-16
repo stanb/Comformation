@@ -6,7 +6,8 @@ namespace Comformation.EC2.VPNGateway
 {
     /// <summary>
     /// AWS::EC2::VPNGateway
-    /// Creates a virtual private gateway. A virtual private gateway is the VPC-side endpoint for your VPN connection.
+    /// Specifies a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN
+    /// connection. You can create a virtual private gateway before creating the VPC itself.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html
     /// </summary>
     public class VPNGatewayResource : ResourceBase
@@ -15,7 +16,9 @@ namespace Comformation.EC2.VPNGateway
         {
             /// <summary>
             /// AmazonSideAsn
+            /// 		
             /// The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+            /// 	
             /// Required: No
             /// Type: Long
             /// Update requires: Replacement
@@ -24,19 +27,19 @@ namespace Comformation.EC2.VPNGateway
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this resource.
+            /// Any tags assigned to the virtual private gateway.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
-            /// The type of VPN connection this virtual private gateway supports. The only valid value is &quot;ipsec.
-            /// 1&quot;.
+            /// The type of VPN connection the virtual private gateway supports.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: ipsec. 1
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }

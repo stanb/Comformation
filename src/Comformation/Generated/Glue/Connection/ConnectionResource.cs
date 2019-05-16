@@ -28,10 +28,10 @@ namespace Comformation.Glue.Connection
             /// The ID of the data catalog to create the catalog object in. Currently, this should be the AWS
             /// account ID.
             /// Note To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId
-            /// pseudo parameter—for example !Ref AWS::AccountId.
+            /// pseudo parameter. For example: !Ref AWS::AccountId.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 

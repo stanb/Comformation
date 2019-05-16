@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
-    /// AWS AppMesh VirtualNode Listener
+    /// AWS::AppMesh::VirtualNode Listener
     /// An object representing a listener for a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
     /// </summary>
@@ -15,6 +15,10 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// HealthCheck
+        /// The health check information for the listener.
+        /// Required: No
+        /// Type: HealthCheck
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HealthCheck")]
         public HealthCheck HealthCheck { get; set; }

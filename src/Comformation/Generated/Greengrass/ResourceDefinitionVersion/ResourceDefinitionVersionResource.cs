@@ -19,7 +19,7 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
             /// Resources
             /// The resources in this version.
             /// Required: Yes
-            /// Type: List of ResourceInstance property types
+            /// Type: List of ResourceInstance
             /// Update requires: Replacement
             /// </summary>
 			public List<ResourceInstance> Resources { get; set; }

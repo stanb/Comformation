@@ -6,7 +6,7 @@ namespace Comformation.EC2.NetworkAcl
 {
     /// <summary>
     /// AWS::EC2::NetworkAcl
-    /// Creates a new network ACL in a VPC.
+    /// Specifies a network ACL for your VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html
     /// </summary>
     public class NetworkAclResource : ResourceBase
@@ -17,14 +17,14 @@ namespace Comformation.EC2.NetworkAcl
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this ACL.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC where the network ACL will be created.
+            /// The ID of the VPC for the network ACL.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

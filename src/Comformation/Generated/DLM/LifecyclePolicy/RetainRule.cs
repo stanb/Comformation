@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DLM.LifecyclePolicy
 {
     /// <summary>
-    /// Amazon Data Lifecycle Manager LifecyclePolicy RetainRule
-    /// The RetainRule property type specifies a snapshot retention rule for an Amazon Data Lifecycle Manager
-    /// lifecycle policy.
+    /// AWS::DLM::LifecyclePolicy RetainRule
+    /// Specifies the number of snapshots to keep for each EBS volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html
     /// </summary>
     public class RetainRule
@@ -19,6 +18,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// The number of snapshots to keep for each volume, up to a maximum of 1000.
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 1000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Count")]

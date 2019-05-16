@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket NotificationConfiguration
-    /// Describes the notification configuration for an AWS::S3::Bucket resource.
+    /// AWS::S3::Bucket NotificationConfiguration
+    /// Describes the notification configuration for an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
     /// </summary>
     public class NotificationConfiguration
@@ -15,9 +15,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// LambdaConfigurations
-        /// The AWS Lambda functions to invoke and the events for which to invoke the functions.
+        /// Describes the AWS Lambda functions to invoke and the events for which to invoke them.
         /// Required: No
-        /// Type: LambdaConfiguration
+        /// Type: List of LambdaConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaConfigurations")]
         public List<LambdaConfiguration> LambdaConfigurations { get; set; }
@@ -27,16 +28,18 @@ namespace Comformation.S3.Bucket
         /// The Amazon Simple Queue Service queues to publish messages to and the events for which to publish
         /// messages.
         /// Required: No
-        /// Type: QueueConfiguration
+        /// Type: List of QueueConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("QueueConfigurations")]
         public List<QueueConfiguration> QueueConfigurations { get; set; }
 
         /// <summary>
         /// TopicConfigurations
-        /// The topic to which notifications are sent and the events for which notification are generated.
+        /// The topic to which notifications are sent and the events for which notifications are generated.
         /// Required: No
-        /// Type: TopicConfiguration
+        /// Type: List of TopicConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TopicConfigurations")]
         public List<TopicConfiguration> TopicConfigurations { get; set; }

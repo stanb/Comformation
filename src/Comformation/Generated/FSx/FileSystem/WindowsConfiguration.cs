@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.FSx.FileSystem
 {
     /// <summary>
-    /// Amazon FSx FileSystem WindowsConfiguration
-    /// The WindowsConfiguration property type defines an Amazon FSx for Windows File Server file system.
+    /// AWS::FSx::FileSystem WindowsConfiguration
+    /// The configuration for this Microsoft Windows file system.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
     /// </summary>
     public class WindowsConfiguration
@@ -16,7 +16,6 @@ namespace Comformation.FSx.FileSystem
         /// <summary>
         /// WeeklyMaintenanceStartTime
         /// The preferred start time to perform weekly maintenance, in the UTC time zone.
-        /// Length Constraints: Fixed length of 7. Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -28,9 +27,11 @@ namespace Comformation.FSx.FileSystem
         /// ActiveDirectoryId
         /// The ID for an existing Microsoft Active Directory instance that the file system should join when
         /// it&#39;s created.
-        /// Length Constraints: Fixed length of 12. Pattern: ^d-[0-9a-f]{10}$
         /// Required: No
         /// Type: String
+        /// Minimum: 12
+        /// Maximum: 12
+        /// Pattern: ^d-[0-9a-f]{10}$
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ActiveDirectoryId")]
@@ -38,10 +39,12 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// ThroughputCapacity
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second. Valid range of
-        /// values: Minimum value of 8. Maximum value of 2048.
+        /// The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the nth
+        /// increments, between 2^3 (8) and 2^11 (2048).
         /// Required: No
         /// Type: Integer
+        /// Minimum: 8
+        /// Maximum: 2048
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ThroughputCapacity")]
@@ -63,7 +66,6 @@ namespace Comformation.FSx.FileSystem
         /// <summary>
         /// DailyAutomaticBackupStartTime
         /// The preferred time to take daily automatic backups, in the UTC time zone.
-        /// Length Constraints: Fixed length of 5. Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -78,6 +80,8 @@ namespace Comformation.FSx.FileSystem
         /// is 35 days.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 0
+        /// Maximum: 35
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AutomaticBackupRetentionDays")]

@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.ClientCertificate
 {
     /// <summary>
     /// AWS::ApiGateway::ClientCertificate
-    /// The AWS::ApiGateway::ClientCertificate resource creates a client certificate that Amazon API Gateway (API
-    /// Gateway) uses to configure client-side SSL authentication for sending requests to the integration endpoint.
+    /// The AWS::ApiGateway::ClientCertificate resource creates a client certificate that API Gateway uses to
+    /// configure client-side SSL authentication for sending requests to the integration endpoint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html
     /// </summary>
     public class ClientCertificateResource : ResourceBase

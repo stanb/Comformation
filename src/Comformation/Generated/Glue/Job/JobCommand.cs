@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Job
 {
     /// <summary>
-    /// AWS Glue Job JobCommand
-    /// The JobCommand property type specifies code that executes an AWS Glue job.
+    /// AWS::Glue::Job JobCommand
+    /// Specifies code executed when a job is run.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html
     /// </summary>
     public class JobCommand
@@ -15,8 +15,9 @@ namespace Comformation.Glue.Job
 
         /// <summary>
         /// ScriptLocation
-        /// The location of a script that executes a job.
-        /// Required: Yes
+        /// Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job
+        /// (required).
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -25,9 +26,9 @@ namespace Comformation.Glue.Job
 
         /// <summary>
         /// Name
-        /// The name of the job command.
-        /// Valid values are glueetl for an Apache Spark ETL job and pythonshell for a Python shell job.
-        /// Required: Yes
+        /// The name of the job command. For an Apache Spark ETL job, this must be glueetl. For a Python shell
+        /// job, it must be pythonshell.
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

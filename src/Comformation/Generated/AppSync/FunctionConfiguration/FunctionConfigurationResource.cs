@@ -6,9 +6,9 @@ namespace Comformation.AppSync.FunctionConfiguration
 {
     /// <summary>
     /// AWS::AppSync::FunctionConfiguration
-    /// The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL Apis to perform certain
-    /// operations. Functions can be attached by PipelineResolver. More information on functions can be found in the
-    /// FunctionConfiguration Reference.
+    /// The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL APIs to perform certain
+    /// operations. You can use pipeline resolvers to attach functions. For more information, see Pipeline Resolvers
+    /// in the AWS AppSync Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html
     /// </summary>
     public class FunctionConfigurationResource : ResourceBase
@@ -17,8 +17,9 @@ namespace Comformation.AppSync.FunctionConfiguration
         {
             /// <summary>
             /// ResponseMappingTemplateS3Location
-            /// A location of a response mapping template on an S3 bucket if you wish to provision with the template
-            /// file living in S3 rather than embedded in your CloudFormation template.
+            /// The location of a response mapping template in an Amazon S3 bucket. Use this if you want to
+            /// provision with a template file in Amazon S3 rather than embedding it in your CloudFormation
+            /// template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -27,7 +28,7 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// Description
-            /// The Description of the function.
+            /// The Function description.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -36,8 +37,7 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// DataSourceName
-            /// The AWS AppSync data source that this function will run against in order to return data to the
-            /// caller.
+            /// The name of data source this function will attach.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -46,7 +46,8 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// RequestMappingTemplate
-            /// The function’s request mapping template, written in text within the CloudFormation template.
+            /// The Function request mapping template. Functions support only the 2018-05-29 version of the request
+            /// mapping template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -55,7 +56,7 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// ResponseMappingTemplate
-            /// The function’s response mapping template, written in text within the CloudFormation template.
+            /// The Function response mapping template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -64,7 +65,8 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// FunctionVersion
-            /// The version of the function.
+            /// The version of the request mapping template. Currently only the 2018-05-29 version of the template
+            /// is supported.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -73,8 +75,8 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// RequestMappingTemplateS3Location
-            /// A location of a request mapping template on an S3 bucket if you wish to provision with the template
-            /// file living in S3 rather than embedded in your CloudFormation template.
+            /// The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision
+            /// with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -83,7 +85,7 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// ApiId
-            /// The AWS AppSync GraphQL API which you will attach with this function.
+            /// The AWS AppSync GraphQL API that you want to attach using this function.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -92,7 +94,7 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// Name
-            /// The Name of the function.
+            /// The name of the function.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

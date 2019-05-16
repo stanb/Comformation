@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate IamInstanceProfile
-    /// The IamInstanceProfile property type specifies an IAM instance profile for an Amazon EC2 launch template.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-iaminstanceprofile.html
+    /// AWS::EC2::LaunchTemplate IamInstanceProfile
+    /// Specifies an IAM instance profile. You must provide either the name or the ARN of the instance profile.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html
     /// </summary>
     public class IamInstanceProfile
     {

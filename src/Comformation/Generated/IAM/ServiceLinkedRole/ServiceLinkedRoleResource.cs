@@ -6,12 +6,11 @@ namespace Comformation.IAM.ServiceLinkedRole
 {
     /// <summary>
     /// AWS::IAM::ServiceLinkedRole
-    /// The AWS::IAM::ServiceLinkedRole resource creates a service-linked role in AWS Identity and Access Management
-    /// (IAM). A service-linked role is a unique type of IAM role that is linked directly to an AWS service.
-    /// Service-linked roles are predefined by the service and include all the permissions that the service requires
-    /// to call other AWS services on your behalf. The linked service also defines how you create, modify, and delete
-    /// a service-linked role. For more information, see CreateServiceLinkedRole in the IAM API Reference or Using
-    /// Service-Linked Roles in the IAM User Guide.
+    /// Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and
+    /// when the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or
+    /// deleted role, which could put your AWS resources into an unknown state. Allowing the service to control the
+    /// role helps improve service stability and proper cleanup when a service and its role are no longer needed. For
+    /// more information, see Using Service-Linked Roles in the IAM User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html
     /// </summary>
     public class ServiceLinkedRoleResource : ResourceBase
@@ -28,6 +27,9 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// operation fails, try the operation again without the suffix.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
+            /// Pattern: [\w+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomSuffix { get; set; }
@@ -37,6 +39,8 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// The description of the role.
             /// Required: No
             /// Type: String
+            /// Maximum: 1000
+            /// Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -45,12 +49,15 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// AWSServiceName
             /// The service principal for the AWS service to which this role is attached. You use a string similar
             /// to a URL but without the http:// in front. For example: elasticbeanstalk. amazonaws. com.
-            /// Service principals are unique and case sensitive. To find the exact service principal for your
+            /// Service principals are unique and case-sensitive. To find the exact service principal for your
             /// service-linked role, see AWS Services That Work with IAM in the IAM User Guide. Look for the
             /// services that have Yes in the Service-Linked Role column. Choose the Yes link to view the
             /// service-linked role documentation for that service.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AWSServiceName { get; set; }

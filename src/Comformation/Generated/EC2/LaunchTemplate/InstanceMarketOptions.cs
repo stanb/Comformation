@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate InstanceMarketOptions
-    /// The InstanceMarketOptions property type specifies market (purchasing) option for instances in an Amazon EC2
-    /// launch template.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancemarketoptions.html
+    /// AWS::EC2::LaunchTemplate InstanceMarketOptions
+    /// Specifies the market (purchasing) option for an instance.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html
     /// </summary>
     public class InstanceMarketOptions
     {
@@ -27,9 +26,9 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// MarketType
         /// The market type.
-        /// Valid values include: spot
         /// Required: No
         /// Type: String
+        /// Allowed Values: spot
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MarketType")]

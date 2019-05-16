@@ -6,7 +6,7 @@ namespace Comformation.S3.BucketPolicy
 {
     /// <summary>
     /// AWS::S3::BucketPolicy
-    /// The AWS::S3::BucketPolicy type applies an Amazon S3 bucket policy to an Amazon S3 bucket.
+    /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html
     /// </summary>
     public class BucketPolicyResource : ResourceBase
@@ -18,9 +18,7 @@ namespace Comformation.S3.BucketPolicy
             /// The name of the Amazon S3 bucket to which the policy applies.
             /// Required: Yes
             /// Type: String
-            /// You cannot update this property. If you want to add or remove a bucket from a bucket policy, you
-            /// must modify your AWS CloudFormation template by creating a new bucket policy resource and removing
-            /// the old one. Then use the modified template to update your AWS CloudFormation stack.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Bucket { get; set; }
 
@@ -29,7 +27,7 @@ namespace Comformation.S3.BucketPolicy
             /// A policy document containing permissions to add to the specified bucket. For more information, see
             /// Access Policy Language Overview in the Amazon Simple Storage Service Developer Guide.
             /// Required: Yes
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }

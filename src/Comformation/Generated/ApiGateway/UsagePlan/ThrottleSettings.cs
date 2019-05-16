@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
-    /// Amazon API Gateway UsagePlan ThrottleSettings
+    /// AWS::ApiGateway::UsagePlan ThrottleSettings
     /// ThrottleSettings is a property of the AWS::ApiGateway::UsagePlan resource that specifies the overall request
-    /// rate (average requests per second) and burst capacity when users call your Amazon API Gateway (API Gateway)
-    /// APIs.
+    /// rate (average requests per second) and burst capacity when users call your REST APIs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html
     /// </summary>
     public class ThrottleSettings
@@ -23,6 +22,7 @@ namespace Comformation.ApiGateway.UsagePlan
         /// Guide.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BurstLimit")]
         public Union<int, IntrinsicFunction> BurstLimit { get; set; }
@@ -33,7 +33,8 @@ namespace Comformation.ApiGateway.UsagePlan
         /// time). For more information about request throttling, see Manage API Request Throttling in the API
         /// Gateway Developer Guide.
         /// Required: No
-        /// Type: Number
+        /// Type: Double
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RateLimit")]
         public Union<double, IntrinsicFunction> RateLimit { get; set; }

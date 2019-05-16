@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters
+    /// AWS::SSM::MaintenanceWindowTask TaskInvocationParameters
     /// The TaskInvocationParameters property type specifies the task execution parameters for a Maintenance Window
     /// task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html

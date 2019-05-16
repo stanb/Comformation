@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT1Click.Project
 {
     /// <summary>
-    /// AWS IoT 1-Click Project PlacementTemplate
+    /// AWS::IoT1Click::Project PlacementTemplate
     /// In AWS CloudFormation, use the PlacementTemplate property type to define the template for an AWS IoT 1-Click
     /// project.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html
@@ -26,7 +26,7 @@ namespace Comformation.IoT1Click.Project
 
         /// <summary>
         /// DefaultAttributes
-        /// The attributes (key/value pairs) to be applied to all placements using this template.
+        /// The default attributes (key-value pairs) to be applied to all placements using this template.
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption

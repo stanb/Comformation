@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationOutput KinesisFirehoseOutput
-    /// The KinesisFirehoseOutput property type specifies an Amazon Kinesis Data Firehose delivery stream as the
-    /// destination when you are configuring application output.
+    /// AWS::KinesisAnalytics::ApplicationOutput KinesisFirehoseOutput
+    /// When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination.
+    /// You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
+    /// write to the stream on your behalf.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisfirehoseoutput.html
     /// </summary>
     public class KinesisFirehoseOutput
@@ -16,10 +17,12 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 
         /// <summary>
         /// ResourceARN
-        /// The Amazon Resource Name (ARN) of the destination Amazon Kinesis Data Firehose delivery stream to
-        /// write to.
+        /// ARN of the destination Amazon Kinesis Firehose delivery stream to write to.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]
@@ -27,10 +30,13 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 
         /// <summary>
         /// RoleARN
-        /// The ARN of the IAM role that Amazon Kinesis Data Analytics can assume to write to the destination
-        /// stream on your behalf.
+        /// ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on
+        /// your behalf. You need to grant the necessary permissions to this role.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

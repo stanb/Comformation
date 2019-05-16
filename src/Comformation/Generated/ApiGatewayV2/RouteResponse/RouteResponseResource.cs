@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.RouteResponse
 {
     /// <summary>
     /// AWS::ApiGatewayV2::RouteResponse
-    /// The AWS::ApiGatewayV2::RouteResponse resource defines the route response for a WebSocket API route. For more
-    /// information, see CreateRouteResponse in the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::RouteResponse resource creates a route response for a WebSocket API. For more
+    /// information, see Set up Route Responses for a WebSocket API in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html
     /// </summary>
     public class RouteResponseResource : ResourceBase
@@ -27,7 +27,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// ResponseParameters
             /// The route response parameters.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
 
             /// <summary>
             /// ApiId
-            /// The API ID
+            /// The API identifier.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -63,7 +63,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// ResponseModels
             /// The response models for the route response.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseModels { get; set; }

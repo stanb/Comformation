@@ -7,7 +7,7 @@ namespace Comformation.AppStream.Stack
     /// <summary>
     /// AWS::AppStream::Stack
     /// The AWS::AppStream::Stack resource creates a stack to start streaming applications to Amazon AppStream 2. 0
-    /// users. For more information, see CreateStack in the Amazon AppStream 2. 0 API Reference.
+    /// users. A stack consists of an associated fleet, user access policies, and storage configurations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html
     /// </summary>
     public class StackResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.AppStream.Stack
         {
             /// <summary>
             /// ApplicationSettings
-            /// The persistent application settings for users of a stack. When these settings are enabled, changes
+            /// The persistent application settings for users of the stack. When these settings are enabled, changes
             /// that users make to applications and Windows settings are automatically saved after each session and
             /// applied to the next session.
             /// Required: No
@@ -30,6 +30,7 @@ namespace Comformation.AppStream.Stack
             /// The description to display.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -38,7 +39,7 @@ namespace Comformation.AppStream.Stack
             /// StorageConnectors
             /// The storage connectors to enable.
             /// Required: No
-            /// Type: List of StorageConnector property types
+            /// Type: List of StorageConnector
             /// Update requires: No interruption
             /// </summary>
 			public List<StorageConnector> StorageConnectors { get; set; }
@@ -58,7 +59,7 @@ namespace Comformation.AppStream.Stack
             /// The actions that are enabled or disabled for users during their streaming sessions. By default,
             /// these actions are enabled.
             /// Required: No
-            /// Type: List of UserSetting property types
+            /// Type: List of UserSetting
             /// Update requires: No interruption
             /// </summary>
 			public List<UserSetting> UserSettings { get; set; }
@@ -67,7 +68,7 @@ namespace Comformation.AppStream.Stack
             /// AttributesToDelete
             /// The stack attributes to delete.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AttributesToDelete { get; set; }
@@ -77,6 +78,7 @@ namespace Comformation.AppStream.Stack
             /// The stack name to display.
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
@@ -86,16 +88,17 @@ namespace Comformation.AppStream.Stack
             /// The URL that users are redirected to after their streaming session ends.
             /// Required: No
             /// Type: String
+            /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RedirectURL { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags for the stack. Each tag specifies a key-value pair, and the value is optional. If you do
-            /// not specify a value, it is set to an empty string (for example, Environment=).
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide.
             /// Required: No
-            /// Type: List of Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
@@ -103,18 +106,20 @@ namespace Comformation.AppStream.Stack
             /// <summary>
             /// Name
             /// The name of the stack.
-            /// Required: True
+            /// Required: No
             /// Type: String
+            /// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,100}$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// FeedbackURL
-            /// The URL that users are redirected to after they choose the Send Feedback link. If no URL is
+            /// The URL that users are redirected to after they click the Send Feedback link. If no URL is
             /// specified, no Send Feedback link is displayed.
             /// Required: No
             /// Type: String
+            /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> FeedbackURL { get; set; }

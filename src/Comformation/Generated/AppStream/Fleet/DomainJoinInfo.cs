@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppStream.Fleet
 {
     /// <summary>
-    /// Amazon AppStream 2. 0 Fleet DomainJoinInfo
-    /// The DomainJoinInfo property type specifies the name of the directory and organizational unit (OU) to use to
-    /// join an Amazon AppStream 2. 0 fleet to a Microsoft Active Directory domain.
+    /// AWS::AppStream::Fleet DomainJoinInfo
+    /// The name of the directory and organizational unit (OU) to use to join a fleet to a Microsoft Active Directory
+    /// domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html
     /// </summary>
     public class DomainJoinInfo
@@ -19,6 +19,7 @@ namespace Comformation.AppStream.Fleet
         /// The distinguished name of the organizational unit for computer accounts.
         /// Required: No
         /// Type: String
+        /// Maximum: 2000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OrganizationalUnitDistinguishedName")]

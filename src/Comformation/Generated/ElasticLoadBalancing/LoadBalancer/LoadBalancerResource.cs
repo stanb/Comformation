@@ -6,7 +6,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer
-    /// Creates a Classic Load Balancer.
+    /// Specifies a Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
@@ -15,59 +15,61 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         {
             /// <summary>
             /// AccessLoggingPolicy
-            /// Captures detailed information for all requests made to your load balancer, such as the time a
-            /// request was received, client’s IP address, latencies, request path, and server responses.
+            /// Information about where and how access logs are stored for the load balancer.
             /// Required: No
-            /// Type: Elastic Load Balancing V1 AccessLoggingPolicy
+            /// Type: AccessLoggingPolicy
             /// Update requires: No interruption
             /// </summary>
 			public AccessLoggingPolicy AccessLoggingPolicy { get; set; }
 
             /// <summary>
             /// AppCookieStickinessPolicy
-            /// Generates one or more stickiness policies with sticky session lifetimes that follow that of an
-            /// application-generated cookie. These policies can be associated only with HTTP/HTTPS listeners.
+            /// Information about a policy for application-controlled session stickiness.
             /// Required: No
-            /// Type: A list of AppCookieStickinessPolicy objects.
+            /// Type: List of AppCookieStickinessPolicy
             /// Update requires: No interruption
             /// </summary>
 			public List<AppCookieStickinessPolicy> AppCookieStickinessPolicy { get; set; }
 
             /// <summary>
             /// AvailabilityZones
-            /// The Availability Zones in which to create the load balancer. You can specify the AvailabilityZones
-            /// or Subnets property, but not both.
-            /// Note For load balancers that are in a VPC, specify the Subnets property.
+            /// The Availability Zones for the load balancer. For load balancers in a VPC, specify Subnets instead.
+            /// Update requires replacement if you did not previously specify an Availability Zone or if you are
+            /// removing all Availability Zones. Otherwise, update requires no interruption.
             /// Required: No
-            /// Type: List of String values
-            /// Update requires: Replacement if you did not have an Availability Zone specified and you are adding
-            /// one or if you are removing all Availability Zones. Otherwise, update requires no interruption.
+            /// Type: List of String
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// ConnectionDrainingPolicy
-            /// Whether deregistered or unhealthy instances can complete all in-flight requests.
+            /// If enabled, the load balancer allows existing requests to complete before the load balancer shifts
+            /// traffic away from a deregistered or unhealthy instance.
+            /// For more information, see Configure Connection Draining in the Classic Load Balancers Guide.
             /// Required: No
-            /// Type: Elastic Load Balancing V1 ConnectionDrainingPolicy
+            /// Type: ConnectionDrainingPolicy
             /// Update requires: No interruption
             /// </summary>
 			public ConnectionDrainingPolicy ConnectionDrainingPolicy { get; set; }
 
             /// <summary>
             /// ConnectionSettings
-            /// Specifies how long front-end and back-end connections of your load balancer can remain idle.
+            /// If enabled, the load balancer allows the connections to remain idle (no data is sent over the
+            /// connection) for the specified duration.
+            /// By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end
+            /// and back-end connections of your load balancer. For more information, see Configure Idle Connection
+            /// Timeout in the Classic Load Balancers Guide.
             /// Required: No
-            /// Type: Elastic Load Balancing V1 ConnectionSettings
+            /// Type: ConnectionSettings
             /// Update requires: No interruption
             /// </summary>
 			public ConnectionSettings ConnectionSettings { get; set; }
 
             /// <summary>
             /// CrossZone
-            /// Whether cross-zone load balancing is enabled for the load balancer. With cross-zone load balancing,
-            /// your load balancer nodes route traffic to the back-end instances across all Availability Zones. By
-            /// default the CrossZone property is false.
+            /// If enabled, the load balancer routes the request traffic evenly across all instances regardless of
+            /// the Availability Zones.
+            /// For more information, see Configure Cross-Zone Load Balancing in the Classic Load Balancers Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -76,57 +78,51 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
             /// <summary>
             /// HealthCheck
-            /// Application health check for the instances.
+            /// The health check settings to use when evaluating the health of your EC2 instances.
+            /// Update requires replacement if you did not previously specify health check settings or if you are
+            /// removing the health check settings. Otherwise, update requires no interruption.
             /// Required: No
-            /// Type: Elastic Load Balancing V1 HealthCheck.
-            /// Update requires: Replacement if you did not have a health check specified and you are adding one or
-            /// if you are removing a health check. Otherwise, update requires no interruption.
+            /// Type: HealthCheck
             /// </summary>
 			public HealthCheck HealthCheck { get; set; }
 
             /// <summary>
             /// Instances
-            /// The IDs of the EC2 instances for the load balancer.
+            /// The IDs of the instances for the load balancer.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Instances { get; set; }
 
             /// <summary>
             /// LBCookieStickinessPolicy
-            /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the
-            /// browser (user-agent), or by a specified expiration period. This policy can be associated only with
-            /// HTTP/HTTPS listeners.
+            /// Information about a policy for duration-based session stickiness.
             /// Required: No
-            /// Type: A list of LBCookieStickinessPolicy objects.
+            /// Type: List of LBCookieStickinessPolicy
             /// Update requires: No interruption
             /// </summary>
 			public List<LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
 
             /// <summary>
             /// Listeners
-            /// One or more listeners for this load balancer. Each listener must be registered for a specific port,
-            /// and you cannot have more than one listener for a given port.
-            /// Important If you update the property values for a listener specified by the Listeners property, AWS
-            /// CloudFormation will delete the existing listener and create a new one with the updated properties.
-            /// During the time that AWS CloudFormation is performing this action, clients will not be able to
-            /// connect to the load balancer.
+            /// The listeners for the load balancer. You can specify at most one listener per port.
+            /// If you update the properties for a listener, AWS CloudFormation deletes the existing listener and
+            /// creates a new one with the specified properties. While the new listener is being created, clients
+            /// cannot connect to the load balancer.
             /// Required: Yes
-            /// Type: A list of Elastic Load Balancing V1 Listener objects.
+            /// Type: List of Listeners
             /// Update requires: No interruption
             /// </summary>
 			public List<Listeners> Listeners { get; set; }
 
             /// <summary>
             /// LoadBalancerName
-            /// A name for the load balancer. For valid values, see the LoadBalancerName parameter for the
-            /// CreateLoadBalancer action in the Elastic Load Balancing API Reference version 2012-06-01.
-            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
-            /// the load balancer. The name must be unique within your set of load balancers. For more information,
-            /// see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
+            /// The name of the load balancer. This name must be unique within your set of load balancers for the
+            /// region.
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID for the load
+            /// balancer. For more information, see Name Type. If you specify a name, you cannot perform updates
+            /// that require replacement of this resource, but you can perform other updates. To replace the
             /// resource, specify a new name.
             /// Required: No
             /// Type: String
@@ -136,23 +132,20 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
             /// <summary>
             /// Policies
-            /// The policies to apply to this elastic load balancer. Specify only back-end server policies. For more
-            /// information, see DescribeLoadBalancerPolicyTypes in the Elastic Load Balancing API Reference version
-            /// 2012-06-01.
+            /// The policies defined for your Classic Load Balancer. Specify only back-end server policies.
             /// Required: No
-            /// Type: A list of ElasticLoadBalancing policy objects.
+            /// Type: List of Policies
             /// Update requires: No interruption
             /// </summary>
 			public List<Policies> Policies { get; set; }
 
             /// <summary>
             /// Scheme
-            /// For load balancers attached to an Amazon VPC, this parameter can be used to specify the type of load
-            /// balancer to use. Specify internal to create an internal load balancer with a DNS name that resolves
-            /// to private IP addresses or internet-facing to create a load balancer with a publicly resolvable DNS
-            /// name, which resolves to public IP addresses.
-            /// Note If you specify internal, you must specify subnets to associate with the load balancer, not
-            /// Availability Zones.
+            /// The type of load balancer. Valid only for load balancers in a VPC.
+            /// If Scheme is internet-facing, the load balancer has a public DNS name that resolves to a public IP
+            /// address.
+            /// If Scheme is internal, the load balancer has a public DNS name that resolves to a private IP
+            /// address.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -161,34 +154,31 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
             /// <summary>
             /// SecurityGroups
+            /// The security groups for the load balancer. Valid only for load balancers in a VPC.
             /// Required: No
-            /// Type: The security groups assigned to your load balancer within your virtual private cloud (VPC).
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// Subnets
-            /// The subnet IDs in your virtual private cloud (VPC) to attach to your load balancer. Do not specify
-            /// multiple subnets that are in the same Availability Zone. You can specify the AvailabilityZones or
-            /// Subnets property, but not both.
-            /// For more information, see Add or Remove Subnets for your Classic Load Balancer in a VPC in the User
-            /// Guide for Classic Load Balancers.
+            /// The IDs of the subnets for the load balancer. You can specify at most one subnet per Availability
+            /// Zone.
+            /// Update requires replacement if you did not previously specify a subnet or if you are removing all
+            /// subnets. Otherwise, update requires no interruption. To update to a different subnet in the current
+            /// Availability Zone, you must first update to a subnet in a different Availability Zone, then update
+            /// to the new subnet in the original Availability Zone.
             /// Required: No
-            /// Type: List of String values
-            /// Update requires: Replacement if you did not have a subnet specified and you are adding one or if you
-            /// are removing all subnets. Otherwise, update requires no interruption. To update the load balancer to
-            /// another subnet that is in the same Availability Zone, you must do two updates. You must first update
-            /// the load balancer to use a subnet in different Availability Zone. After the update is complete,
-            /// update the load balancer to use the new subnet that is in the original Availability Zone.
+            /// Type: List of String
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key-value pairs) for this load balancer.
+            /// The tags associated with a load balancer.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

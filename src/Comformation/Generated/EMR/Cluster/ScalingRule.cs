@@ -6,12 +6,12 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster ScalingRule
-    /// The ScalingRule property type represents a scale-in or scale-out rule that defines scaling activity, including
-    /// the CloudWatch metric alarm that triggers activity, how Amazon EC2 instances are added or removed, and the
-    /// periodicity of adjustments. The Rules subproperty of the Amazon EMR Cluster JobFlowInstancesConfig property
-    /// contains a list of one or more ScalingRule property types.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule.html
+    /// AWS::EMR::Cluster ScalingRule
+    /// ScalingRule is a subproperty of the AutoScalingPolicy property type. ScalingRule defines the scale-in or
+    /// scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2
+    /// instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an
+    /// instance group can comprise one or more automatic scaling rules.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html
     /// </summary>
     public class ScalingRule
     {
@@ -20,7 +20,8 @@ namespace Comformation.EMR.Cluster
         /// Action
         /// The conditions that trigger an automatic scaling activity.
         /// Required: Yes
-        /// Type: Amazon EMR Cluster ScalingAction
+        /// Type: ScalingAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Action")]
         public ScalingAction Action { get; set; }
@@ -30,6 +31,7 @@ namespace Comformation.EMR.Cluster
         /// A friendly, more verbose description of the automatic scaling rule.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Description")]
         public Union<string, IntrinsicFunction> Description { get; set; }
@@ -40,6 +42,7 @@ namespace Comformation.EMR.Cluster
         /// policy.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
@@ -48,7 +51,8 @@ namespace Comformation.EMR.Cluster
         /// Trigger
         /// The CloudWatch alarm definition that determines when automatic scaling activity is triggered.
         /// Required: Yes
-        /// Type: Amazon EMR Cluster ScalingTrigger
+        /// Type: ScalingTrigger
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Trigger")]
         public ScalingTrigger Trigger { get; set; }

@@ -6,7 +6,7 @@ namespace Comformation.EC2.TransitGatewayRouteTablePropagation
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRouteTablePropagation
-    /// Enables an attachment to propagate routes. For more information, see Amazon VPC Transit Gateways.
+    /// Enables the specified attachment to propagate routes to the specified propagation route table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html
     /// </summary>
     public class TransitGatewayRouteTablePropagationResource : ResourceBase

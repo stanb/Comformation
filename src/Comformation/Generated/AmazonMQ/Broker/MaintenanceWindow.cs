@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
-    /// Amazon MQ Broker MaintenanceWindow
-    /// The MaintenanceWindow property type specifies the parameters that determine the WeeklyStartTime for an Amazon
-    /// MQ broker.
+    /// AWS::AmazonMQ::Broker MaintenanceWindow
+    /// The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html
     /// </summary>
     public class MaintenanceWindow
@@ -16,10 +15,10 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// DayOfWeek
-        /// The day of the week, for example MONDAY, TUESDAY.
+        /// The day of the week.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DayOfWeek")]
         public Union<string, IntrinsicFunction> DayOfWeek { get; set; }
@@ -29,7 +28,7 @@ namespace Comformation.AmazonMQ.Broker
         /// The time, in 24-hour format.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimeOfDay")]
         public Union<string, IntrinsicFunction> TimeOfDay { get; set; }
@@ -39,7 +38,7 @@ namespace Comformation.AmazonMQ.Broker
         /// The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimeZone")]
         public Union<string, IntrinsicFunction> TimeZone { get; set; }

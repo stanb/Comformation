@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync DataSource LambdaConfig
+    /// AWS::AppSync::DataSource LambdaConfig
     /// The LambdaConfig property type specifies the Lambda function ARN for an AWS AppSync data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html
     /// </summary>

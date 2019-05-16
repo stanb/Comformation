@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinitionVersion DefaultConfig
+    /// AWS::Greengrass::FunctionDefinitionVersion DefaultConfig
     /// The default configuration 		that applies to all Lambda functions in the function definition version.
     /// Individual Lambda functions can override these settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline Datastore
-    /// The Datastore property type specifies where to store the processed message data for an AWS IoT Analytics
-    /// pipeline.
+    /// AWS::IoTAnalytics::Pipeline Datastore
+    /// The &#39;datastore&#39; activity that specifies where to store the processed data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html
     /// </summary>
     public class Datastore
@@ -19,6 +18,9 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the data store where processed messages are stored.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: ^[a-zA-Z0-9_]+$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DatastoreName")]
@@ -29,6 +31,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;datastore&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

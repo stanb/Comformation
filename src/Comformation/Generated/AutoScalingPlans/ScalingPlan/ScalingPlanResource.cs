@@ -6,7 +6,8 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan
-    /// Creates a scaling plan for AWS Auto Scaling. For more information, see the AWS Auto Scaling User Guide.
+    /// The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the
+    /// following application resources:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html
     /// </summary>
     public class ScalingPlanResource : ResourceBase
@@ -26,7 +27,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
             /// ScalingInstructions
             /// The scaling instructions.
             /// Required: Yes
-            /// Type: List of ScalingInstruction property types
+            /// Type: List of ScalingInstruction
             /// Update requires: No interruption
             /// </summary>
 			public List<ScalingInstruction> ScalingInstructions { get; set; }

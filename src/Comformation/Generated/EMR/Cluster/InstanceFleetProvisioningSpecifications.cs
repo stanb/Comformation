@@ -6,11 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster InstanceFleetProvisioningSpecifications
-    /// The InstanceFleetProvisioningSpecifications property specifies the launch specification for Spot instances in
-    /// the fleet, which determines the defined duration and provisioning timeout behavior.
-    /// InstanceFleetProvisioningSpecifications is the property type for the LaunchSpecifications property of the
-    /// Amazon EMR Cluster InstanceFleetConfig property type.
+    /// AWS::EMR::Cluster InstanceFleetProvisioningSpecifications
+    /// InstanceFleetProvisioningSpecification is a subproperty of InstanceFleetConfig.
+    /// InstanceFleetProvisioningSpecification defines the launch specification for Spot instances in an instance
+    /// fleet, which determines the defined duration and provisioning timeout behavior for Spot instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html
     /// </summary>
     public class InstanceFleetProvisioningSpecifications
@@ -21,7 +20,7 @@ namespace Comformation.EMR.Cluster
         /// The launch specification for Spot instances in the fleet, which determines the defined duration and
         /// provisioning timeout behavior.
         /// Required: Yes
-        /// Type: Amazon EMR Cluster SpotProvisioningSpecification
+        /// Type: SpotProvisioningSpecification
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SpotSpecification")]

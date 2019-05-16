@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.RoboMaker.SimulationApplication
 {
     /// <summary>
-    /// RoboMaker SimulationApplication RenderingEngine
-    /// The RenderingEngine property type specifies the rendering engine for an AWS RoboMaker simulation application.
+    /// AWS::RoboMaker::SimulationApplication RenderingEngine
+    /// Information about a rendering engine.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html
     /// </summary>
     public class RenderingEngine
@@ -18,6 +18,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The version of the rendering engine.
         /// Required: Yes
         /// Type: String
+        /// Pattern: 1. x
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
@@ -28,6 +29,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The name of the rendering engine.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: OGRE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

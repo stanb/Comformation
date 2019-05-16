@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
-    /// AWS OpsWorks StackConfigurationManager Type
-    /// Describes the stack configuration manager for the AWS::OpsWorks::Stack resource type. For more information,
-    /// see StackConfigurationManager in the AWS OpsWorks Stacks API Reference.
+    /// AWS::OpsWorks::Stack StackConfigurationManager
+    /// Describes the configuration manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html
     /// </summary>
     public class StackConfigurationManager
@@ -16,18 +15,21 @@ namespace Comformation.OpsWorks.Stack
 
         /// <summary>
         /// Name
-        /// The name of the configuration manager.
+        /// The name. This parameter must be set to &quot;Chef&quot;.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
 
         /// <summary>
         /// Version
-        /// The Chef version.
+        /// The Chef version. This parameter must be set to 12, 11. 10, or 11. 4 for Linux stacks, and to 12. 2
+        /// for Windows stacks. The default value for Linux stacks is 11. 4.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
         public Union<string, IntrinsicFunction> Version { get; set; }

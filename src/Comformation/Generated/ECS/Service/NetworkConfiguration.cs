@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.Service
 {
     /// <summary>
-    /// Amazon Elastic Container Service Service NetworkConfiguration
-    /// NetworkConfiguration is a property of the AWS::ECS::Service resource that specifies the network configuration
-    /// for an Amazon Elastic Container Service (Amazon ECS) task or service.
+    /// AWS::ECS::Service NetworkConfiguration
+    /// The NetworkConfiguration property specifies an object representing the network configuration for a task or
+    /// service.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html
     /// </summary>
     public class NetworkConfiguration
@@ -17,8 +17,9 @@ namespace Comformation.ECS.Service
         /// <summary>
         /// AwsvpcConfiguration
         /// The VPC subnets and security groups associated with a task.
+        /// Note All specified subnets and security groups must be from the same VPC.
         /// Required: No
-        /// Type: Amazon Elastic Container Service Service AwsVpcConfiguration
+        /// Type: AwsVpcConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsvpcConfiguration")]

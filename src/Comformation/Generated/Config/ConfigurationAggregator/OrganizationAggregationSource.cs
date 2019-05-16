@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Config.ConfigurationAggregator
 {
     /// <summary>
-    /// AWS Config ConfigurationAggregator OrganizationAggregationSource
-    /// The OrganizationAggregationSource property type specifies the regions of AWS Config data to aggregate into an
-    /// AWS Config configuration aggregator and the IAM role to use to retrieve AWS Organizations details.
+    /// AWS::Config::ConfigurationAggregator OrganizationAggregationSource
+    /// This object contains regions to set up the aggregator and an IAM 			role to retrieve organization details.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html
     /// </summary>
     public class OrganizationAggregationSource
@@ -16,7 +15,9 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// AllAwsRegions
-        /// If true aggreagate existing AWS Config regions and future regions.
+        /// 		
+        /// If true, aggregate existing AWS Config regions and future 			regions.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -26,9 +27,11 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// AwsRegions
+        /// 		
         /// The source regions being aggregated.
+        /// 	
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsRegions")]
@@ -36,8 +39,9 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) of the IAM role used to retreive AWS Organizations details associated
-        /// with the aggregator account.
+        /// ARN of the IAM role used to retrieve AWS Organization details 			associated with the aggregator
+        /// account.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

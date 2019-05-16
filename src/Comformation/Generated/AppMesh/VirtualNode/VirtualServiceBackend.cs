@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
-    /// AWS AppMesh VirtualNode VirtualServiceBackend
+    /// AWS::AppMesh::VirtualNode VirtualServiceBackend
     /// An object representing a virtual service backend for a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html
     /// </summary>

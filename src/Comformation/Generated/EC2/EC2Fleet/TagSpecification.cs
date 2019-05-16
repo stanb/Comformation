@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
-    /// Amazon EC2 EC2Fleet TagSpecification
-    /// The TagSpecification property type specifies the tags to apply to a resource when the resource is being
-    /// created for an EC2 Fleet.
+    /// AWS::EC2::EC2Fleet TagSpecification
+    /// Specifies the tags to apply to a resource when the resource is being created for an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html
     /// </summary>
     public class TagSpecification
@@ -16,11 +15,16 @@ namespace Comformation.EC2.EC2Fleet
 
         /// <summary>
         /// ResourceType
-        /// The type of resource to tag. Currently, the resource types that support tagging on creation are
-        /// fleet, dedicated-host, instance, snapshot, and volume. To tag a resource after it has been created,
-        /// see CreateTags.
+        /// 		
+        /// The type of resource to tag. ResourceType must be fleet.
+        /// 	
         /// Required: No
         /// Type: String
+        /// Allowed Values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options | elastic-ip
+        /// | fleet | fpga-image | host-reservation | image | instance | internet-gateway | launch-template |
+        /// natgateway | network-acl | network-interface | reserved-instances | route-table | security-group |
+        /// snapshot | spot-instances-request | subnet | transit-gateway | transit-gateway-attachment |
+        /// transit-gateway-route-table | volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceType")]
@@ -28,10 +32,9 @@ namespace Comformation.EC2.EC2Fleet
 
         /// <summary>
         /// Tags
-        /// One or more tags. The value parameter is required, but if you don&#39;t want the tag to have a value,
-        /// specify the parameter with no value, and we set the value to an empty string.
+        /// The tags to apply to the resource.
         /// Required: No
-        /// Type: List of Resource Tag property types
+        /// Type: List of TagRequest
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tags")]

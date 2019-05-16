@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DirectoryService.MicrosoftAD
 {
     /// <summary>
-    /// AWS Directory Service MicrosoftAD VpcSettings
-    /// VpcSettings is a property of the AWS::DirectoryService::MicrosoftAD resource that specifies the VPC settings
-    /// for a Microsoft directory server.
+    /// AWS::DirectoryService::MicrosoftAD VpcSettings
+    /// Contains VPC information for the CreateDirectory or CreateMicrosoftAD operation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html
     /// </summary>
     public class VpcSettings
@@ -16,19 +15,23 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
         /// <summary>
         /// SubnetIds
-        /// A list of two subnet IDs for the directory servers. Each subnet must be in different Availability
-        /// Zones (AZs). AWS Directory Service creates a directory server and a DNS server in each subnet.
+        /// The identifiers of the subnets for the directory servers. The two subnets must be in different
+        /// Availability Zones. AWS Directory Service specifies a directory server and a DNS server in each of
+        /// these subnets.
         /// Required: Yes
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubnetIds")]
         public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         /// <summary>
         /// VpcId
-        /// The VPC ID in which to create the Microsoft Active Directory server.
+        /// The identifier of the VPC in which to create the directory.
         /// Required: Yes
         /// Type: String
+        /// Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VpcId")]
         public Union<string, IntrinsicFunction> VpcId { get; set; }

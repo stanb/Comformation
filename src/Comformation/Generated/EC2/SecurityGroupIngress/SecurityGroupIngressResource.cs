@@ -6,8 +6,7 @@ namespace Comformation.EC2.SecurityGroupIngress
 {
     /// <summary>
     /// AWS::EC2::SecurityGroupIngress
-    /// The AWS::EC2::SecurityGroupIngress resource adds an ingress rule to an Amazon EC2 or Amazon VPC security
-    /// group.
+    /// Adds the specified ingress rules to a security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html
     /// </summary>
     public class SecurityGroupIngressResource : ResourceBase
@@ -16,28 +15,26 @@ namespace Comformation.EC2.SecurityGroupIngress
         {
             /// <summary>
             /// CidrIp
-            /// An IPv4 CIDR range.
-            /// For an overview of CIDR ranges, go to the Wikipedia Tutorial.
+            /// The IPv4 ranges.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
-            /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
             /// <summary>
             /// CidrIpv6
-            /// An IPv6 CIDR range.
+            /// [VPC only] The IPv6 ranges.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourceSecurityGroupName or
-            /// SourceSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
             /// <summary>
             /// Description
-            /// Description of the ingress rule.
+            /// Updates the description of an ingress (inbound) security group rule. You can replace an 			existing
+            /// description, or add a description to a rule that did not have one 			previously.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -46,100 +43,119 @@ namespace Comformation.EC2.SecurityGroupIngress
 
             /// <summary>
             /// FromPort
-            /// Start of port range for the TCP and UDP protocols, or an ICMP type number. If you specify icmp for
-            /// the IpProtocol property, you can specify -1 as a wildcard (i. e. , any ICMP type number).
+            /// The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. 			A value of
+            /// -1 indicates all ICMP/ICMPv6 types. If you specify all 			ICMP/ICMPv6 types, you must specify all
+            /// codes.
+            /// Use this for ICMP and any protocol that uses ports.
+            /// Required: No
             /// Type: Integer
-            /// Required: Yes, for ICMP and any protocol that uses ports.
             /// Update requires: Replacement
             /// </summary>
 			public Union<int, IntrinsicFunction> FromPort { get; set; }
 
             /// <summary>
             /// GroupId
-            /// ID of the Amazon EC2 or VPC security group to modify. The group must belong to your account.
+            /// The ID of the security group. You must specify either the security group ID or the 			security group
+            /// name in the request. For security groups in a nondefault VPC, you must 			specify the security group
+            /// ID.
+            /// You must specify the GroupName property or the GroupId property. For security groups that are in a
+            /// VPC, you must use the GroupId property. For example, EC2-VPC accounts must use the GroupId property.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify the GroupName property or the GroupId property. For security
-            /// groups that are in a VPC, you must use the GroupId property. For example, EC2-VPC accounts must use
-            /// the GroupId property.
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupId { get; set; }
 
             /// <summary>
             /// GroupName
-            /// Name of the Amazon EC2 security group (non-VPC security group) to modify. This value can be a
-            /// reference to an AWS::EC2::SecurityGroup resource or the name of an existing Amazon EC2 security
-            /// group.
+            /// The name of the security group.
+            /// Constraints: Up to 255 characters in length. Cannot start with sg-.
+            /// Constraints for EC2-Classic: ASCII characters
+            /// Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and . _-:/()#,@[]+=&amp;amp;;{}!$*
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify the GroupName property or the GroupId property. For security
-            /// groups that are in a VPC, you must use the GroupId property. For example, EC2-VPC accounts must use
-            /// the GroupId property.
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// IpProtocol
-            /// IP protocol name or number. For valid values, see the IpProtocol parameter in
-            /// AuthorizeSecurityGroupIngress
-            /// Type: String
+            /// The IP protocol name (tcp, udp, icmp, icmpv6) or number (see Protocol Numbers).
+            /// [VPC only] Use -1 to specify all protocols. When authorizing security group rules, specifying -1 or
+            /// a protocol number other than tcp, udp, icmp, or icmpv6 allows traffic on all ports, regardless of
+            /// any port range you specify. For tcp, udp, and icmp, you must specify a port range. For icmpv6, the
+            /// port range is optional; if you omit the port range, traffic for all types and codes is allowed.
             /// Required: Yes
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
             /// <summary>
             /// SourcePrefixListId
-            /// The AWS service prefix of an Amazon VPC endpoint. For more information, see VPC Endpoints in the
-            /// Amazon VPC User Guide.
+            /// [EC2-VPC only] The prefix list IDs for an AWS service. This is the AWS service that you want to
+            /// access through a VPC endpoint from instances associated with the security group.
+            /// You must specify a source security group (SourcePrefixListId, SourceSecurityGroupId, or
+            /// SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourcePrefixListId,
-            /// SourceSecurityGroupId, or SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourcePrefixListId { get; set; }
 
             /// <summary>
             /// SourceSecurityGroupId
-            /// Specifies the ID of the source security group or uses the Ref intrinsic function to refer to the
-            /// logical ID of a security group defined in the same template.
+            /// [nondefault VPC] The AWS account ID for the source security group, if the source security group is
+            /// in a different account. You can&#39;t specify this parameter in combination with the following
+            /// parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of
+            /// the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+            /// specific IP protocol and port range, use a set of IP permissions instead.
+            /// If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by
+            /// a different account than the account creating the stack, you must specify the
+            /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourcePrefixListId,
-            /// SourceSecurityGroupId, or SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupId { get; set; }
 
             /// <summary>
             /// SourceSecurityGroupName
-            /// Specifies the name of the Amazon EC2 security group (non-VPC security group) to allow access or use
-            /// the Ref intrinsic function to refer to the logical ID of a security group defined in the same
-            /// template. For instances in a VPC, specify the SourceSecurityGroupId property.
+            /// [EC2-Classic, default VPC] The name of the source security group. You can&#39;t specify this parameter
+            /// in combination with the following parameters: the CIDR IP address range, the start of the port
+            /// range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and
+            /// TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions
+            /// instead. For EC2-VPC, the source security group must be in the same VPC.
+            /// You must specify the GroupName property or the GroupId property. For security groups that are in a
+            /// VPC, you must use the GroupId property. For example, EC2-VPC accounts must use the GroupId property.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. You must specify a source security group (SourcePrefixListId,
-            /// SourceSecurityGroupId, or SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupName { get; set; }
 
             /// <summary>
             /// SourceSecurityGroupOwnerId
-            /// Specifies the AWS Account ID of the owner of the Amazon EC2 security group specified in the
-            /// SourceSecurityGroupName property.
+            /// The ID of the security group. You must specify either the security group ID or the 			security group
+            /// name in the request. For security groups in a nondefault VPC, you must 			specify the security group
+            /// ID.
+            /// If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by
+            /// a different account than the account creating the stack, you must specify the
+            /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. If you specify SourceSecurityGroupName or SourceSecurityGroupId and that
-            /// security group is owned by a different account than the account creating the stack, you must specify
-            /// the SourceSecurityGroupOwnerId; otherwise, this property is optional.
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceSecurityGroupOwnerId { get; set; }
 
             /// <summary>
             /// ToPort
-            /// End of port range for the TCP and UDP protocols, or an ICMP code. If you specify icmp for the
-            /// IpProtocol property, you can specify -1 as a wildcard (i. e. , any ICMP code).
+            /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value 			of -1
+            /// indicates all ICMP/ICMPv6 codes for the specified ICMP type. If you 			specify all ICMP/ICMPv6
+            /// types, you must specify all codes.
+            /// Use this for ICMP and any protocol that uses ports.
+            /// Required: No
             /// Type: Integer
-            /// Required: Yes, for ICMP and any protocol that uses ports.
             /// Update requires: Replacement
             /// </summary>
 			public Union<int, IntrinsicFunction> ToPort { get; set; }

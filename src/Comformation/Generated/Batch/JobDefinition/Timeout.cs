@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
-    /// AWS Batch JobDefinition Timeout
-    /// The Timeout property type specifies a job timeout configuration.
+    /// AWS::Batch::JobDefinition Timeout
+    /// An object representing a job timeout configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html
     /// </summary>
     public class Timeout

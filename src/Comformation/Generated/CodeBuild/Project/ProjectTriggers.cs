@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project ProjectTriggers
-    /// ProjectTriggers is a property of the AWS::CodeBuild::Project resource that specifies the environment for an
-    /// AWS CodeBuild project.
+    /// AWS::CodeBuild::Project ProjectTriggers
+    /// ProjectTriggers is a property of the AWS CodeBuild Project resource that specifies webhooks that trigger an
+    /// AWS CodeBuild build.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
     /// </summary>
     public class ProjectTriggers
@@ -19,7 +19,8 @@ namespace Comformation.CodeBuild.Project
         /// A list of lists of WebhookFilter objects used to determine which webhook events are triggered. At
         /// least one WebhookFilter in the array must specify EVENT as its type.
         /// Required: No
-        /// Type: A list of a list of AWS CodeBuild Project WebhookFilter objects
+        /// Type: List of FilterGroup
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FilterGroups")]
         public List<WebhookFilter> FilterGroups { get; set; }
@@ -30,6 +31,7 @@ namespace Comformation.CodeBuild.Project
         /// is pushed to the repository.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Webhook")]
         public Union<bool, IntrinsicFunction> Webhook { get; set; }

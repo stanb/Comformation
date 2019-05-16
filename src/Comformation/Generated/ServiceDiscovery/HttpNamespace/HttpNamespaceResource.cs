@@ -6,8 +6,9 @@ namespace Comformation.ServiceDiscovery.HttpNamespace
 {
     /// <summary>
     /// AWS::ServiceDiscovery::HttpNamespace
-    /// The AWS::ServiceDiscovery::HttpNamespace resource specifies values for an AWS Cloud Map HTTP namespace. 	For
-    /// more information, see CreateHttpNamespace 	in the AWS Cloud Map API Reference.
+    /// The HttpNamespace resource is a Cloud Map resource type that contains information about an HTTP namespace.
+    /// 			Service instances that you register using an HTTP namespace can be discovered using a DiscoverInstances
+    /// request 			but can&#39;t be discovered using DNS.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html
     /// </summary>
     public class HttpNamespaceResource : ResourceBase
@@ -16,18 +17,24 @@ namespace Comformation.ServiceDiscovery.HttpNamespace
         {
             /// <summary>
             /// Description
-            /// A description of the namespace.
+            /// 		
+            /// A description for the namespace.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Maximum: 1024
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the namespace.
+            /// 		
+            /// The name that you want to assign to this namespace.
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Maximum: 1024
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

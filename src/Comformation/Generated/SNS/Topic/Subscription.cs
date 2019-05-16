@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SNS.Topic
 {
     /// <summary>
-    /// Amazon SNS Subscription Property Type
-    /// Subscription is an embedded property of the AWS::SNS::Topic resource that describes the subscription endpoints
-    /// for an Amazon Simple Notification Service (Amazon SNS) topic.
+    /// AWS::SNS::Topic Subscription
+    /// Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
     /// </summary>
     public class Subscription
@@ -16,20 +15,23 @@ namespace Comformation.SNS.Topic
 
         /// <summary>
         /// Endpoint
-        /// The subscription&#39;s endpoint (format depends on the protocol). For more information, see the
-        /// Subscribe Endpoint parameter in the Amazon Simple Notification Service API Reference.
+        /// The endpoint that receives notifications from the Amazon SNS topic. The endpoint value depends on
+        /// the protocol that you specify. For more information, see the Endpoint parameter of the Subscribe
+        /// action in the Amazon Simple Notification Service API Reference.
         /// Required: Yes
         /// Type: String
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Endpoint")]
         public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
         /// <summary>
         /// Protocol
-        /// The subscription&#39;s protocol. For more information, see the Subscribe Protocol parameter in the
-        /// Amazon Simple Notification Service API Reference.
+        /// The subscription&#39;s protocol. For more information, see the Protocol parameter of the Subscribe
+        /// action in the Amazon Simple Notification Service API Reference.
         /// Required: Yes
         /// Type: String
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Protocol")]
         public Union<string, IntrinsicFunction> Protocol { get; set; }

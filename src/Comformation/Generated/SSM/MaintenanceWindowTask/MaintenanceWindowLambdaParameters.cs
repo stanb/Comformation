@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask MaintenanceWindowLambdaParameters
+    /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowLambdaParameters
     /// The MaintenanceWindowLambdaParameters property type specifies the parameters for a LAMBDA task type for a
     /// Maintenance Window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html
@@ -20,6 +20,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// the context variable to process the client information in your Lambda function.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 8000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ClientContext")]
@@ -33,6 +35,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// points to.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Qualifier")]

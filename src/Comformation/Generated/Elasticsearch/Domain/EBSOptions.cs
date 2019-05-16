@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
-    /// Amazon Elasticsearch Service Domain EBSOptions
-    /// EBSOptions is a property of the AWS::Elasticsearch::Domain resource that configures the Amazon Elastic Block
-    /// Store (Amazon EBS) volumes that are attached to data nodes in the Amazon Elasticsearch Service (Amazon ES)
-    /// domain.
+    /// AWS::Elasticsearch::Domain EBSOptions
+    /// The configurations of Amazon Elastic Block Store (Amazon EBS) volumes that are attached to data nodes in the
+    /// Amazon ES domain. For more information, see Configuring EBS-based Storage in the Amazon Elasticsearch Service
+    /// Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html
     /// </summary>
     public class EBSOptions
@@ -20,6 +20,7 @@ namespace Comformation.Elasticsearch.Domain
         /// Specifies whether Amazon EBS volumes are attached to data nodes in the Amazon ES domain.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EBSEnabled")]
         public Union<bool, IntrinsicFunction> EBSEnabled { get; set; }
@@ -30,6 +31,7 @@ namespace Comformation.Elasticsearch.Domain
         /// to the Provisioned IOPS (SSD) EBS volume type.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Iops")]
         public Union<int, IntrinsicFunction> Iops { get; set; }
@@ -41,6 +43,7 @@ namespace Comformation.Elasticsearch.Domain
         /// information, see Configuring EBS-based Storage in the Amazon Elasticsearch Service Developer Guide.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeSize")]
         public Union<int, IntrinsicFunction> VolumeSize { get; set; }
@@ -52,6 +55,7 @@ namespace Comformation.Elasticsearch.Domain
         /// Instances.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeType")]
         public Union<string, IntrinsicFunction> VolumeType { get; set; }

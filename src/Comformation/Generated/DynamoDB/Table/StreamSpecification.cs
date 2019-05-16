@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// Amazon DynamoDB Table StreamSpecification
-    /// StreamSpecification is a property of the AWS::DynamoDB::Table resource that defines the settings of a DynamoDB
-    /// table&#39;s stream.
+    /// AWS::DynamoDB::Table StreamSpecification
+    /// Represents the DynamoDB Streams configuration for a table in DynamoDB.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html
     /// </summary>
     public class StreamSpecification
@@ -16,10 +15,16 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// StreamViewType
-        /// Determines the information that the stream captures when an item in the table is modified. For valid
-        /// values, see StreamSpecification in the Amazon DynamoDB API Reference.
+        /// When an item in the table is modified, StreamViewType determines what information is written to the
+        /// stream for this table. Valid values for StreamViewType are:
+        /// KEYS_ONLY - Only the key attributes of the modified item are written to the stream. NEW_IMAGE - The
+        /// entire item, as it appears after it was modified, is written to the stream. OLD_IMAGE - The entire
+        /// item, as it appeared before it was modified, is written to the stream. NEW_AND_OLD_IMAGES - Both the
+        /// new and the old item images of the item are written to the stream.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: KEYS_ONLY | NEW_AND_OLD_IMAGES | NEW_IMAGE | OLD_IMAGE
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StreamViewType")]
         public Union<string, IntrinsicFunction> StreamViewType { get; set; }

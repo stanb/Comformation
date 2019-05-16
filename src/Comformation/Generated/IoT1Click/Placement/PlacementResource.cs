@@ -6,8 +6,9 @@ namespace Comformation.IoT1Click.Placement
 {
     /// <summary>
     /// AWS::IoT1Click::Placement
-    /// The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project.
-    /// For more information, see Projects, Templates, and Placements in the AWS IoT 1-Click Developer Guide.
+    /// The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project. A
+    /// placement is an instance of a device in a location. For more information, see Projects, Templates, and
+    /// Placements in the AWS IoT 1-Click Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html
     /// </summary>
     public class PlacementResource : ResourceBase
@@ -16,7 +17,7 @@ namespace Comformation.IoT1Click.Placement
         {
             /// <summary>
             /// PlacementName
-            /// The name of this placement.
+            /// The name of the placement.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +26,7 @@ namespace Comformation.IoT1Click.Placement
 
             /// <summary>
             /// ProjectName
-            /// The name of the project that will contain this placement.
+            /// The name of the project containing the placement.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -34,8 +35,8 @@ namespace Comformation.IoT1Click.Placement
 
             /// <summary>
             /// AssociatedDevices
-            /// The device(s) to associate with the placement, as defined by a mapping of zero or more key/value
-            /// pairs wherein the key is a template name and the value is a device ID.
+            /// The devices to associate with the placement, as defined by a mapping of zero or more key-value pairs
+            /// wherein the key is a template name and the value is a device ID.
             /// Required: No
             /// Type: Json
             /// Update requires: Replacement
@@ -44,7 +45,7 @@ namespace Comformation.IoT1Click.Placement
 
             /// <summary>
             /// Attributes
-            /// User specified attribute(s) in the form of key/value pairs.
+            /// The user-defined attributes associated with the placement.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption

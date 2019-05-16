@@ -6,7 +6,7 @@ namespace Comformation.IAM.User
 {
     /// <summary>
     /// AWS::IAM::User
-    /// The AWS::IAM::User type creates a user.
+    /// Creates a new IAM user for your AWS account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
     /// </summary>
     public class UserResource : ResourceBase
@@ -15,27 +15,32 @@ namespace Comformation.IAM.User
         {
             /// <summary>
             /// Groups
-            /// A name of a group to which you want to add the user.
+            /// A list of groups to which you want to add the user.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// LoginProfile
-            /// Creates a login profile so that the user can access the AWS Management Console.
+            /// Creates a password for the specified user, giving the user the ability to access AWS services
+            /// through the AWS Management Console. For more information about managing passwords, see Managing
+            /// Passwords in the IAM User Guide.
             /// Required: No
-            /// Type: IAM User LoginProfile
+            /// Type: LoginProfile
             /// Update requires: No interruption
             /// </summary>
 			public LoginProfile LoginProfile { get; set; }
 
             /// <summary>
             /// ManagedPolicyArns
-            /// One or more managed policy ARNs to attach to this user.
+            /// A list of Amazon Resource Names (ARNs) of the IAM managed policies that you want to attach to the
+            /// user.
+            /// For more information about ARNs, see Amazon Resource Names (ARNs) and AWS Service Namespaces in the
+            /// AWS General Reference.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
@@ -44,16 +49,23 @@ namespace Comformation.IAM.User
             /// Path
             /// The path for the user name. For more information about paths, see IAM Identifiers in the IAM User
             /// Guide.
+            /// This parameter is optional. If it is not included, it defaults to a slash (/).
+            /// This parameter allows (through its regex pattern) a string of characters consisting of either a
+            /// forward slash (/) by itself or a string that must begin and end with forward slashes. In addition,
+            /// it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F), including
+            /// most punctuation characters, digits, and upper and lowercased letters.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
+            /// Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// PermissionsBoundary
-            /// The ARN of the policy that is used to set the permissions boundary for the user. Minimum length of
-            /// 20. Maximum length of 2048.
+            /// The ARN of the policy that is used to set the permissions boundary for the user.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -62,30 +74,33 @@ namespace Comformation.IAM.User
 
             /// <summary>
             /// Policies
-            /// The policies to associate with this user. For information about policies, see Overview of IAM
-            /// Policies in the IAM User Guide.
-            /// Note If you specify multiple polices, specify unique values for the policy name. If you don&#39;t,
-            /// updates to the IAM user will fail.
+            /// Adds or updates an inline policy document that is embedded in the specified IAM user. To view
+            /// AWS::IAM::User snippets, see Declaring an IAM User Resource.
+            /// Important The name of each policy for a role, user, or group must be unique. If you don&#39;t choose
+            /// unique names, updates to the IAM identity will fail.
+            /// For information about limits on the number of inline policies that you can embed in a user, see
+            /// Limitations on IAM Entities in the IAM User Guide.
             /// Required: No
-            /// Type: List of IAM Policies
+            /// Type: List of Policy
             /// Update requires: No interruption
             /// </summary>
 			public List<Policy> Policies { get; set; }
 
             /// <summary>
             /// UserName
-            /// A name for the IAM user. For valid values, see the UserName parameter for the CreateUser action in
-            /// the IAM API Reference. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
-            /// ID and uses that ID for the user name.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// The name of the user to create. Do not include the path in this value.
+            /// This parameter allows (per its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-. The user name must be unique within the account. User names are not
+            /// distinguished by case. For example, you cannot create users named both &quot;John&quot; and &quot;john&quot;.
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
+            /// the user name.
             /// If you specify a name, you must specify the CAPABILITY_NAMED_IAM value to acknowledge your
             /// template&#39;s capabilities. For more information, see Acknowledging IAM Resources in AWS CloudFormation
             /// Templates.
-            /// Warning Naming an IAM resource can cause an unrecoverable error if you reuse the same template in
-            /// multiple regions. To prevent this, we recommend using Fn::Join and AWS::Region to create a
-            /// region-specific name, as in the following example: {&quot;Fn::Join&quot;: [&quot;&quot;, [{&quot;Ref&quot;: &quot;AWS::Region&quot;},
+            /// Important Naming an IAM resource can cause an unrecoverable error if you reuse the same template in
+            /// multiple Regions. To prevent this, we recommend using Fn::Join and AWS::Region to create a
+            /// Region-specific name, as in the following example: {&quot;Fn::Join&quot;: [&quot;&quot;, [{&quot;Ref&quot;: &quot;AWS::Region&quot;},
             /// {&quot;Ref&quot;: &quot;MyResourceName&quot;}]]}.
             /// Required: No
             /// Type: String

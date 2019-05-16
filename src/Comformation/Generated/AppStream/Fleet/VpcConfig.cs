@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppStream.Fleet
 {
     /// <summary>
-    /// Amazon AppStream 2. 0 Fleet VpcConfig
-    /// The VpcConfig property type specifies the VPC configuration information for an Amazon AppStream 2. 0 fleet.
+    /// AWS::AppStream::Fleet VpcConfig
+    /// The VPC configuration information for the fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html
     /// </summary>
     public class VpcConfig
@@ -18,7 +18,7 @@ namespace Comformation.AppStream.Fleet
         /// The identifiers of the subnets to which a network interface is attached from the fleet instance.
         /// Fleet instances can use one or two subnets.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubnetIds")]
@@ -28,7 +28,8 @@ namespace Comformation.AppStream.Fleet
         /// SecurityGroupIds
         /// The identifiers of the security groups for the fleet.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 5
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]

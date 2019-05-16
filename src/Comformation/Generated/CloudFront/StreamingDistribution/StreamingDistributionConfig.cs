@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
-    /// Amazon CloudFront StreamingDistribution StreamingDistributionConfig
-    /// The StreamingDistributionConfig property type specifies the configuration of an RMTP streaming distribution
-    /// for Amazon CloudFront.
+    /// AWS::CloudFront::StreamingDistribution StreamingDistributionConfig
+    /// The RTMP distribution&#39;s configuration information.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html
     /// </summary>
     public class StreamingDistributionConfig
@@ -16,7 +15,9 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// Logging
-        /// Whether access logs are written for the streaming distribution.
+        /// 		
+        /// A complex type that controls whether access logs are written for the streaming 			distribution.
+        /// 	
         /// Required: No
         /// Type: Logging
         /// Update requires: No interruption
@@ -26,7 +27,9 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// Comment
+        /// 		
         /// Any comments you want to include about the streaming distribution.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -36,10 +39,12 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// PriceClass
-        /// The price class for this streaming distribution.
-        /// Valid values include PriceClass_100, PriceClass_200, and PriceClass_All.
+        /// 		
+        /// A complex type that contains information about price class for this streaming 			distribution.
+        /// 	
         /// Required: No
         /// Type: String
+        /// Allowed Values: PriceClass_100 | PriceClass_200 | PriceClass_All
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PriceClass")]
@@ -47,8 +52,10 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// S3Origin
-        /// Information about the Amazon S3 bucket from which you want CloudFront to get your media files for
-        /// distribution.
+        /// 		
+        /// A complex type that contains information about the Amazon S3 bucket from which you want
+        /// 			CloudFront to get your media files for distribution.
+        /// 	
         /// Required: Yes
         /// Type: S3Origin
         /// Update requires: No interruption
@@ -58,7 +65,9 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// Enabled
-        /// Whether the streaming distribution is enabled to accept user requests for content.
+        /// 		
+        /// Whether the streaming distribution is enabled to accept user requests for 			content.
+        /// 	
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption
@@ -68,9 +77,12 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// Aliases
-        /// Lists the CNAMEs (alternate domain names), if any, for this streaming distribution.
+        /// 		
+        /// A complex type that contains information about CNAMEs (alternate domain names), if any, 			for this
+        /// streaming distribution.
+        /// 	
         /// Required: No
-        /// Type: StringList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Aliases")]
@@ -78,10 +90,12 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// TrustedSigners
-        /// Specifies any AWS accounts that you want to permit to create signed URLs for private content. If you
-        /// want the distribution to use signed URLs, include this element; if you want the distribution to use
-        /// public URLs, remove this property. For more information, see Serving Private Content through
-        /// CloudFront in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// A complex type that specifies any AWS accounts that you want to permit to create signed 			URLs for
+        /// private content. If you want the distribution to use signed URLs, include this 			element; if you
+        /// want the distribution to use public URLs, remove this element. For more 			information, see Serving
+        /// Private Content through 				CloudFront in the Amazon CloudFront Developer Guide.
+        /// 	
         /// Required: Yes
         /// Type: TrustedSigners
         /// Update requires: No interruption

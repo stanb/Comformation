@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinition RunAs
+    /// AWS::Greengrass::FunctionDefinition RunAs
     /// The access identity whose permissions 		are used to run the Lambda function. This setting overrides the
     /// default access identity that&#39;s specified 		for the group (by default, ggc_user and ggc_group). You can
     /// override the user, group, or both. 	For more information, 	see Run as in the AWS IoT Greengrass Developer

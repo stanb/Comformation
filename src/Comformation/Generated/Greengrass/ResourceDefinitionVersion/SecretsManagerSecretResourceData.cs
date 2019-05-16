@@ -6,11 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion SecretsManagerSecretResourceData
-    /// Settings for a secret resource, 		which references a secret from Secrets Manager. AWS IoT Greengrass stores a
-    /// local, encrypted copy of the secret on the Greengrass core, 		where it can be securely accessed by connectors
-    /// and Lambda functions. 		For more information, see Deploy Secrets to the AWS IoT Greengrass Core in the AWS IoT
-    /// Greengrass Developer Guide.
+    /// AWS::Greengrass::ResourceDefinitionVersion SecretsManagerSecretResourceData
+    /// Settings for a secret resource, 		which references a secret from AWS Secrets Manager. AWS IoT Greengrass
+    /// stores a local, encrypted copy of the secret on the Greengrass core, 		where it can be securely accessed by
+    /// connectors and Lambda functions. 		For more information, see Deploy Secrets to the AWS IoT Greengrass Core in
+    /// the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html
     /// </summary>
     public class SecretsManagerSecretResourceData
@@ -32,7 +32,7 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
         /// AdditionalStagingLabelsToDownload
         /// The staging labels whose values you want to make available on the core, in addition to AWSCURRENT.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AdditionalStagingLabelsToDownload")]

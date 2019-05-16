@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset QueryAction
-    /// The QueryAction property type specifies how to automatically create data set contents using an SQL query for
-    /// an AWS IoT Analytics dataset.
+    /// AWS::IoTAnalytics::Dataset QueryAction
+    /// An &quot;SqlQueryDatasetAction&quot; object that uses an SQL query to automatically create data set contents.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html
     /// </summary>
     public class QueryAction
@@ -18,7 +17,8 @@ namespace Comformation.IoTAnalytics.Dataset
         /// Filters
         /// Pre-filters applied to message data.
         /// Required: No
-        /// Type: List of Filter property types
+        /// Type: List of Filter
+        /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Filters")]
@@ -26,7 +26,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// SqlQuery
-        /// An SQL query string.
+        /// An &quot;SqlQueryDatasetAction&quot; object that uses an SQL query to automatically create data set contents.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

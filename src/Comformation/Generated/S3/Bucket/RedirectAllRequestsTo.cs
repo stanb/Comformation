@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 WebsiteConfiguration RedirectAllRequestsTo
-    /// RedirectAllRequestsTo is an embedded property of the WebsiteConfiguration property that describes the redirect
-    /// behavior of all requests to a website endpoint of an Amazon S3 bucket.
+    /// AWS::S3::Bucket RedirectAllRequestsTo
+    /// Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html
     /// </summary>
     public class RedirectAllRequestsTo
@@ -19,16 +18,19 @@ namespace Comformation.S3.Bucket
         /// Name of the host where requests are redirected.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HostName")]
         public Union<string, IntrinsicFunction> HostName { get; set; }
 
         /// <summary>
         /// Protocol
-        /// Protocol to use (http or https) when redirecting requests. The default is the protocol that is used
-        /// in the original request.
+        /// Protocol to use when redirecting requests. The default is the protocol that is used in the original
+        /// request.
         /// Required: No
         /// Type: String
+        /// Allowed Values: http | https
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Protocol")]
         public Union<string, IntrinsicFunction> Protocol { get; set; }

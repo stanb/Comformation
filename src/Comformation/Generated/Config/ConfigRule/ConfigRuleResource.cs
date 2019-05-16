@@ -6,11 +6,8 @@ namespace Comformation.Config.ConfigRule
 {
     /// <summary>
     /// AWS::Config::ConfigRule
-    /// The AWS::Config::ConfigRule resource uses an AWS Lambda (Lambda) function that evaluates configuration items
-    /// to assess whether your AWS resources comply with your specified configurations. This function can run when AWS
-    /// Config detects a configuration change or delivers a configuration snapshot. The resources this function
-    /// evaluates must be in the recording group. For more information, see Evaluating AWS Resource Configurations
-    /// with AWS Config in the AWS Config Developer Guide.
+    /// Specifies an AWS Config rule for evaluating whether your 			AWS resources comply with your desired
+    /// configurations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html
     /// </summary>
     public class ConfigRuleResource : ResourceBase
@@ -21,62 +18,84 @@ namespace Comformation.Config.ConfigRule
             /// ConfigRuleName
             /// A name for the AWS Config rule. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the rule name. For more information, see Name Type.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ConfigRuleName { get; set; }
 
             /// <summary>
             /// Description
-            /// A description about this AWS Config rule.
+            /// 		
+            /// The description that you provide for the AWS Config 			rule.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// InputParameters
-            /// Input parameter values that are passed to the AWS Config rule (Lambda function).
+            /// 		
+            /// A string, in JSON format, that is passed to the AWS Config rule 			Lambda function.
+            /// 		 	
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
+            /// Minimum: 1
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InputParameters { get; set; }
 
             /// <summary>
             /// MaximumExecutionFrequency
-            /// The maximum frequency at which the AWS Config rule runs evaluations. For valid values, see the
-            /// ConfigRule data type in the AWS Config API Reference.
-            /// If the rule runs an evaluation when AWS Config delivers a configuration snapshot, the rule cannot
-            /// run more frequently than the snapshot delivery frequency. Set an execution frequency value that is
-            /// equal to or greater than the value of the snapshot delivery frequency, which is a property the
-            /// AWS::Config::DeliveryChannel resource.
+            /// 		 		
+            /// The maximum frequency with which AWS Config runs evaluations 			for a rule. You can specify a value
+            /// for 				MaximumExecutionFrequency when:
+            /// 		
+            /// 			 			 		 				 You are using an AWS managed rule that is triggered at 					a periodic frequency.
+            /// 			 				 Your custom rule is triggered when AWS Config delivers 				 the configuration snapshot. For
+            /// more information, see ConfigSnapshotDeliveryProperties. 			
+            /// 		
+            /// Note By default, rules with a periodic trigger are evaluated 				every 24 hours. To change the
+            /// frequency, specify a valid value 				for the MaximumExecutionFrequency 				parameter.
+            /// 		 	
             /// Required: No
             /// Type: String
+            /// Allowed Values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> MaximumExecutionFrequency { get; set; }
 
             /// <summary>
             /// Scope
-            /// Defines which AWS resources will trigger an evaluation when their configurations change. The scope
-            /// can include one or more resource types, a combination of a tag key and value, or a combination of
-            /// one resource type and one resource ID. Specify a scope to constrain the resources that are
-            /// evaluated. If you don&#39;t specify a scope, the rule evaluates all resources in the recording group.
+            /// 		
+            /// Defines which resources can trigger an evaluation for the rule. 			The scope can include one or more
+            /// resource types, a combination of 			one resource type and one resource ID, or a combination of a tag
+            /// key 			and value. Specify a scope to constrain the resources that can 			trigger an evaluation for
+            /// the rule. If you do not specify a scope, 			evaluations are triggered when any resource in the
+            /// recording group 			changes.
+            /// 	
             /// Required: No
-            /// Type: AWS Config ConfigRule Scope
+            /// Type: Scope
             /// Update requires: No interruption
             /// </summary>
 			public Scope Scope { get; set; }
 
             /// <summary>
             /// Source
-            /// Specifies the rule owner, the rule identifier, and the events that cause the function to evaluate
-            /// your AWS resources.
+            /// 		
+            /// Provides the rule owner (AWS or customer), the rule identifier, 			and the notifications that cause
+            /// the function to evaluate your AWS 			resources.
+            /// 	
             /// Required: Yes
-            /// Type: AWS Config ConfigRule Source
+            /// Type: Source
             /// Update requires: No interruption
             /// </summary>
 			public Source Source { get; set; }

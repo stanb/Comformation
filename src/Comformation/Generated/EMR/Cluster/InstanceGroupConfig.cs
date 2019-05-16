@@ -6,33 +6,40 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster InstanceGroupConfig
-    /// InstanceGroupConfig is a property of the CoreInstanceGroup and MasterInstanceGroup properties of the job flow
-    /// instances configuration. The InstanceGroupConfig property specifies the settings for instances (nodes) in the
-    /// core and master instance groups of an Amazon EMR cluster.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig.html
+    /// AWS::EMR::Cluster InstanceGroupConfig
+    /// Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance
+    /// groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform
+    /// Instance Groups in the Amazon EMR Management Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html
     /// </summary>
     public class InstanceGroupConfig
     {
 
         /// <summary>
         /// AutoScalingPolicy
-        /// An automatic scaling policy for a core instance group or task instance group in an Amazon EMR
-        /// cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates
-        /// EC2 instances in response to the value of a CloudWatch metric.
+        /// AutoScalingPolicy is a subproperty of the InstanceGroupConfig property type that specifies the
+        /// constraints and rules of an automatic scaling policy in Amazon EMR. The automatic scaling policy
+        /// defines how an instance group dynamically adds and terminates EC2 instances in response to the value
+        /// of a CloudWatch metric. Only core and task instance groups can use automatic scaling policies. For
+        /// more information, see Using Automatic Scaling in Amazon EMR.
         /// Required: No
+        /// Type: AutoScalingPolicy
         /// Update requires: No interruption
-        /// Type: Amazon EMR Cluster AutoScalingPolicy
         /// </summary>
         [JsonProperty("AutoScalingPolicy")]
         public AutoScalingPolicy AutoScalingPolicy { get; set; }
 
         /// <summary>
         /// BidPrice
-        /// When launching instances as Spot Instances, the bid price in USD for each EC2 instance in the
-        /// instance group.
+        /// The maximum Spot price your are willing to pay for EC2 instances.
+        /// If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group. Specified in USD.
+        /// Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the
+        /// On-Demand price.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("BidPrice")]
@@ -40,10 +47,11 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// Configurations
-        /// A list of configurations to apply to this instance group. For more information see, Configuring
-        /// Applications in the Amazon EMR Release Guide.
+        /// Note Amazon EMR releases 4. x or later.
+        /// The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+        /// configuration for each instance group (master, core, and task).
         /// Required: No
-        /// Type: List of Amazon EMR Cluster Configurations
+        /// Type: List of Configuration
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Configurations")]
@@ -51,9 +59,9 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// EbsConfiguration
-        /// Configures Amazon Elastic Block Store (Amazon EBS) storage volumes to attach to your instances.
+        /// EBS configurations that will be attached to each EC2 instance in the instance group.
         /// Required: No
-        /// Type: Amazon EMR EbsConfiguration
+        /// Type: EbsConfiguration
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsConfiguration")]
@@ -61,38 +69,47 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// InstanceCount
-        /// The number of instances to launch in the instance group.
+        /// Target number of instances for the instance group.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceCount")]
         public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
         /// <summary>
         /// InstanceType
-        /// The EC2 instance type for all instances in the instance group. For more information, see Instance
-        /// Configurations in the Amazon EMR Management Guide.
+        /// The EC2 instance type for all instances in the instance group.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceType")]
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         /// <summary>
         /// Market
-        /// The type of marketplace from which your instances are provisioned into this group, either ON_DEMAND
-        /// or SPOT. For more information, see Amazon EC2 Purchasing Options.
+        /// Market type of the EC2 instances used to create a cluster node.
         /// Required: No
         /// Type: String
+        /// Allowed Values: ON_DEMAND | SPOT
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Market")]
         public Union<string, IntrinsicFunction> Market { get; set; }
 
         /// <summary>
         /// Name
-        /// A name for the instance group.
+        /// Friendly name given to the instance group.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

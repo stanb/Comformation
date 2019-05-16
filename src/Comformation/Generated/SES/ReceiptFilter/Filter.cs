@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptFilter
 {
     /// <summary>
-    /// Amazon Simple Email Service ReceiptFilter Filter
-    /// The Filter property type specifies specify whether to accept or reject mail originating from an IP address or
-    /// range of IP addresses for Amazon SES.
+    /// AWS::SES::ReceiptFilter Filter
+    /// A data structure that describes the IP address filter that you want to specify. This structure consists of a
+    /// name, an IP address range, and whether to allow or block mail from it.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html
     /// </summary>
     public class Filter
@@ -16,7 +16,8 @@ namespace Comformation.SES.ReceiptFilter
 
         /// <summary>
         /// IpFilter
-        /// The IP addresses to block or allow, and whether to block or allow incoming mail from them.
+        /// A structure that provides the IP addresses to block or allow, and whether to block or allow incoming
+        /// mail from them.
         /// Required: Yes
         /// Type: IpFilter
         /// Update requires: No interruption
@@ -27,8 +28,8 @@ namespace Comformation.SES.ReceiptFilter
         /// <summary>
         /// Name
         /// The name of the IP address filter. The name must:
-        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Start and end
-        /// with a letter or number. Contain less than 64 characters.
+        /// Only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-). Start and end
+        /// with a letter or number. Contain 64 characters or fewer.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

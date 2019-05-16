@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 {
     /// <summary>
-    /// AWS Service Catalog CloudFormationProvisionedProduct ProvisioningParameter
-    /// The ProvisioningParameter property type specifies a parameter for an AWS Service Catalog provisioned product.
+    /// AWS::ServiceCatalog::CloudFormationProvisionedProduct ProvisioningParameter
+    /// Information about a parameter used to provision a product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html
     /// </summary>
     public class ProvisioningParameter
@@ -18,6 +18,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         /// The parameter value.
         /// Required: No
         /// Type: String
+        /// Maximum: 4096
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
@@ -28,6 +29,8 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         /// The parameter key.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]

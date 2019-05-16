@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket RoutingRuleCondition
-    /// The RoutingRuleCondition property is an embedded property of the RoutingRules that describes a condition that
-    /// must be met for a redirect to apply.
+    /// AWS::S3::Bucket RoutingRuleCondition
+    /// Specifies a condition that must be met for a redirect to apply.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html
     /// </summary>
     public class RoutingRuleCondition
@@ -16,9 +15,13 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// HttpErrorCodeReturnedEquals
-        /// Applies this redirect if the error code equals this value in the event of an error.
-        /// Required: Conditional. You must specify at least one condition property.
+        /// The HTTP error code when the redirect is applied. In the event of an error, if the error code equals
+        /// this value, then the specified redirect is applied.
+        /// Required when parent element Condition is specified and sibling KeyPrefixEquals is not specified. If
+        /// both are specified, then both must be true for the redirect to be applied.
+        /// Required: Conditional
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HttpErrorCodeReturnedEquals")]
         public Union<string, IntrinsicFunction> HttpErrorCodeReturnedEquals { get; set; }
@@ -26,10 +29,13 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// KeyPrefixEquals
         /// The object key name prefix when the redirect is applied. For example, to redirect requests for
-        /// ExamplePage. html, set the key prefix to ExamplePage. html. To redirect request for all pages with
-        /// the prefix docs/, set the key prefix to docs/, which identifies all objects in the docs/ folder.
-        /// Required: Conditional. You must at least one condition property.
+        /// ExamplePage. html, the key prefix will be ExamplePage. html. To redirect request for all pages with
+        /// the prefix docs/, the key prefix will be /docs, which identifies all objects in the docs/ folder.
+        /// Required when the parent element Condition is specified and sibling HttpErrorCodeReturnedEquals is
+        /// not specified. If both conditions are specified, both must be true for the redirect to be applied.
+        /// Required: Conditional
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeyPrefixEquals")]
         public Union<string, IntrinsicFunction> KeyPrefixEquals { get; set; }

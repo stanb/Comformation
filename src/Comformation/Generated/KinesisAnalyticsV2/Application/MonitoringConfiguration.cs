@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application MonitoringConfiguration
-    /// The MonitoringConfiguration property type specifies configuration parameters for Amazon CloudWatch logging for
-    /// a Java-based Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application MonitoringConfiguration
+    /// Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics
+    /// application. For more information about CloudWatch logging, see Monitoring.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html
     /// </summary>
     public class MonitoringConfiguration
@@ -19,6 +19,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Describes whether to use the default CloudWatch logging configuration for an application.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: CUSTOM | DEFAULT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConfigurationType")]
@@ -29,6 +30,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Describes the granularity of the CloudWatch Logs for an application.
         /// Required: No
         /// Type: String
+        /// Allowed Values: APPLICATION | OPERATOR | PARALLELISM | TASK
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricsLevel")]
@@ -39,6 +41,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Describes the verbosity of the CloudWatch Logs for an application.
         /// Required: No
         /// Type: String
+        /// Allowed Values: DEBUG | ERROR | INFO | WARN
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LogLevel")]

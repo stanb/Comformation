@@ -6,7 +6,10 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
 {
     /// <summary>
     /// AWS::Redshift::ClusterSecurityGroupIngress
-    /// Specifies inbound (ingress) rules for an Amazon Redshift security group.
+    /// Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application
+    /// accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access
+    /// to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security
+    /// group. You can add as many as 20 ingress rules to an Amazon Redshift security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
     /// </summary>
     public class ClusterSecurityGroupIngressResource : ResourceBase
@@ -15,7 +18,7 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
         {
             /// <summary>
             /// CIDRIP
-            /// The IP address range that has inbound access to the Amazon Redshift security group.
+            /// The IP range to be added the Amazon Redshift security group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -24,7 +27,7 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
 
             /// <summary>
             /// ClusterSecurityGroupName
-            /// The name of the Amazon Redshift security group that will be associated with the ingress rule.
+            /// The name of the security group to which the ingress rule is added.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -33,7 +36,7 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
 
             /// <summary>
             /// EC2SecurityGroupName
-            /// The Amazon EC2 security group that will be added the Amazon Redshift security group.
+            /// The EC2 security group to be added the Amazon Redshift security group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -42,10 +45,11 @@ namespace Comformation.Redshift.ClusterSecurityGroupIngress
 
             /// <summary>
             /// EC2SecurityGroupOwnerId
-            /// The 12-digit AWS account number of the owner of the Amazon EC2 security group that is specified by
-            /// the EC2SecurityGroupName parameter.
-            /// Required: Conditional. If you specify the EC2SecurityGroupName property, you must specify this
-            /// property.
+            /// The AWS account number of the owner of the security group specified by the EC2SecurityGroupName
+            /// parameter. The AWS Access Key ID is not an acceptable value.
+            /// Example: 111122223333
+            /// Conditional. If you specify the EC2SecurityGroupName property, you must specify this property.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

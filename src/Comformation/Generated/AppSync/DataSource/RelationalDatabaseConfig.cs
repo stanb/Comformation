@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync DataSource RelationalDatabaseConfig
+    /// AWS::AppSync::DataSource RelationalDatabaseConfig
     /// Use the RelationalDatabaseConfig property type to specify RelationalDatabaseConfig for an AWS AppSync data
     /// source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html
@@ -16,9 +16,9 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// RdsHttpEndpointConfig
-        /// The information about the rds resource.
+        /// Information about the Amazon RDS resource.
         /// Required: No
-        /// Type:RdsHttpEndpointConfig
+        /// Type: RdsHttpEndpointConfig
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RdsHttpEndpointConfig")]
@@ -26,8 +26,8 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// RelationalDatabaseSourceType
-        /// The type of the relational datasource.
-        /// Required: No
+        /// The type of relational data source.
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.Method
 {
     /// <summary>
     /// AWS::ApiGateway::Method
-    /// The AWS::ApiGateway::Method resource creates Amazon API Gateway (API Gateway) methods that define the
-    /// parameters and body that clients must send in their requests.
+    /// The AWS::ApiGateway::Method resource creates API Gateway methods that define the parameters and body that
+    /// clients must send in their requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
     /// </summary>
     public class MethodResource : ResourceBase
@@ -28,11 +28,11 @@ namespace Comformation.ApiGateway.Method
             /// A list of authorization scopes configured on the method. The scopes are used with a
             /// COGNITO_USER_POOLS authorizer to authorize the method invocation. The authorization works by
             /// matching the method scopes against the scopes parsed from the access token in the incoming request.
-            /// The method invocation is authorized if any method scopes matches a claimed scope in the access
-            /// token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
-            /// must provide an access token instead of an identity token for authorization purposes.
+            /// The method invocation is authorized if any method scopes match a claimed scope in the access token.
+            /// Otherwise, the invocation is not authorized. When the method scope is configured, the client must
+            /// provide an access token instead of an identity token for authorization purposes.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AuthorizationScopes { get; set; }
@@ -41,7 +41,7 @@ namespace Comformation.ApiGateway.Method
             /// AuthorizationType
             /// The method&#39;s authorization type. For valid values, see Method in the API Gateway API Reference.
             /// Note If you specify the AuthorizerId property, specify CUSTOM for this property.
-            /// Required: Yes.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -70,7 +70,7 @@ namespace Comformation.ApiGateway.Method
             /// Integration
             /// The backend system that the method calls when it receives a request.
             /// Required: No
-            /// Type: Amazon API Gateway Method Integration
+            /// Type: Integration
             /// Update requires: No interruption
             /// </summary>
 			public Integration Integration { get; set; }
@@ -79,7 +79,7 @@ namespace Comformation.ApiGateway.Method
             /// MethodResponses
             /// The responses that can be sent to the client who calls the method.
             /// Required: No
-            /// Type: List of Amazon API Gateway Method MethodResponse property types.
+            /// Type: List of MethodResponse
             /// Update requires: No interruption
             /// </summary>
 			public List<MethodResponse> MethodResponses { get; set; }
@@ -100,7 +100,7 @@ namespace Comformation.ApiGateway.Method
             /// pairs (string-to-string mapping), with a content type as the key and a Model resource name as the
             /// value.
             /// Required: No
-            /// Type: Mapping of key-value pairs
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> RequestModels { get; set; }
@@ -110,10 +110,10 @@ namespace Comformation.ApiGateway.Method
             /// The request parameters that API Gateway accepts. Specify request parameters as key-value pairs
             /// (string-to-Boolean mapping), with a source as the key and a Boolean as the value. The Boolean
             /// specifies whether a parameter is required. A source must match the format method. request. location.
-            /// name, where the location is querystring, path, or header, and name is a valid, unique parameter
+            /// name, where the location is query string, path, or header, and name is a valid, unique parameter
             /// name.
             /// Required: No
-            /// Type: Mapping of key-value pairs
+            /// Type: Map of Boolean
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<bool, IntrinsicFunction>> RequestParameters { get; set; }

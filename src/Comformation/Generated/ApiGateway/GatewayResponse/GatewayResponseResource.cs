@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.GatewayResponse
 {
     /// <summary>
     /// AWS::ApiGateway::GatewayResponse
-    /// The AWS::ApiGateway::GatewayResponse resource creates a custom response for your API Gateway API. For more
-    /// information, see API Gateway Responses in the API Gateway Developer Guide.
+    /// The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API. For more information,
+    /// see API Gateway Responses in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html
     /// </summary>
     public class GatewayResponseResource : ResourceBase
@@ -19,7 +19,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// The response parameters (paths, query strings, and headers) for the response. Duplicates not
             /// allowed.
             /// Required: No
-            /// Type: String to string map
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> ResponseParameters { get; set; }
@@ -28,7 +28,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// ResponseTemplates
             /// The response templates for the response. Duplicates not allowed.
             /// Required: No
-            /// Type: String to string map
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> ResponseTemplates { get; set; }
@@ -44,7 +44,7 @@ namespace Comformation.ApiGateway.GatewayResponse
 
             /// <summary>
             /// RestApiId
-            /// The identifier of the targeted API entity.
+            /// The identifier of the API.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

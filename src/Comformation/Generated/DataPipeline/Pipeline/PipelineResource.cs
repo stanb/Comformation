@@ -6,10 +6,10 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline
-    /// Creates a data pipeline that you can use to automate the movement and transformation of data. In each
-    /// pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources. For
-    /// information about pipeline objects and components that you can use, see Pipeline Object Reference in the AWS
-    /// Data Pipeline Developer Guide.
+    /// The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement
+    /// and transformation of data. In each pipeline, you define pipeline objects, such as activities, schedules, data
+    /// nodes, and resources. For information about pipeline objects and components that you can use, see Pipeline
+    /// Object Reference in the AWS Data Pipeline Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
@@ -28,54 +28,54 @@ namespace Comformation.DataPipeline.Pipeline
 
             /// <summary>
             /// Description
-            /// A description for the pipeline.
+            /// A description of the pipeline.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement.
+            /// Minimum: 0
+            /// Maximum: 1024
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the pipeline. Because AWS CloudFormation assigns each new pipeline a unique identifier,
-            /// you can use the same name for multiple pipelines that are associated with your AWS account.
+            /// The name of the pipeline.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ParameterObjects
-            /// Defines the variables that are in the pipeline definition. For more information, see Creating a
-            /// Pipeline Using Parameterized Templates in the AWS Data Pipeline Developer Guide.
-            /// Required: No
-            /// Type: AWS Data Pipeline Pipeline ParameterObjects
+            /// The parameter objects used with the pipeline.
+            /// Required: Yes
+            /// Type: List of ParameterObject
             /// Update requires: No interruption
             /// </summary>
 			public List<ParameterObject> ParameterObjects { get; set; }
 
             /// <summary>
             /// ParameterValues
-            /// Defines the values for the parameters that are defined in the ParameterObjects property. For more
-            /// information, see Creating a Pipeline Using Parameterized Templates in the AWS Data Pipeline
-            /// Developer Guide.
+            /// The parameter values used with the pipeline.
             /// Required: No
-            /// Type: AWS Data Pipeline Pipeline ParameterValues
+            /// Type: List of ParameterValue
             /// Update requires: No interruption
             /// </summary>
 			public List<ParameterValue> ParameterValues { get; set; }
 
             /// <summary>
             /// PipelineObjects
-            /// A list of pipeline objects that make up the pipeline. For more information about pipeline objects
-            /// and a description of each object, see Pipeline Object Reference in the AWS Data Pipeline Developer
-            /// Guide.
-            /// Required: Yes
-            /// Type: A list of AWS Data Pipeline PipelineObject
-            /// Update requires: Some interruptions. Not all objects, fields, and values can be updated.
-            /// Restrictions on what can be updated are documented in Editing Your Pipelines in the AWS Data
-            /// Pipeline Developer Guide.
+            /// The objects that define the pipeline. These objects overwrite the existing pipeline definition. Not
+            /// all objects, fields, and values can be updated. For information about restrictions, see Editing Your
+            /// Pipeline in the AWS Data Pipeline Developer Guide.
+            /// Required: No
+            /// Type: List of PipelineObject
+            /// Update requires: No interruption
             /// </summary>
 			public List<PipelineObject> PipelineObjects { get; set; }
 
@@ -85,7 +85,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// control permissions. For more information, see Controlling Access to Pipelines and Resources in the
             /// AWS Data Pipeline Developer Guide.
             /// Required: No
-            /// Type: AWS Data Pipeline Pipeline PipelineTags
+            /// Type: List of PipelineTag
             /// Update requires: No interruption
             /// </summary>
 			public List<PipelineTag> PipelineTags { get; set; }

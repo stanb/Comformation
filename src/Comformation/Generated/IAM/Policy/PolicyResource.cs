@@ -6,8 +6,7 @@ namespace Comformation.IAM.Policy
 {
     /// <summary>
     /// AWS::IAM::Policy
-    /// The AWS::IAM::Policy resource associates an IAM policy with IAM users, roles, or groups. For more information
-    /// about IAM policies, see Overview of IAM Policies in the IAM User Guide guide.
+    /// Adds or updates an inline policy document that is embedded in the specified IAM user, group, or role.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
     /// </summary>
     public class PolicyResource : ResourceBase
@@ -16,57 +15,82 @@ namespace Comformation.IAM.Policy
         {
             /// <summary>
             /// Groups
-            /// The names of groups to which you want to add the policy.
-            /// Required: Conditional. You must specify at least one of the following properties: Groups, Roles, or
-            /// Users.
-            /// Type: List of String values
+            /// The name of the group to associate the policy with.
+            /// &amp;amp;regex-name;.
+            /// Required: No
+            /// Type: List of String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// PolicyDocument
-            /// A policy document that contains permissions to add to the specified users or groups.
+            /// The policy document.
+            /// You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted
+            /// in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a
+            /// YAML policy to JSON format before submitting it to IAM.
+            /// The regex pattern used to validate this parameter is a string of characters consisting of the
+            /// following:
+            /// Any printable ASCII character ranging from the space character (\u0020) through the end of the ASCII
+            /// character range The printable characters in the Basic Latin and Latin-1 Supplement character set
+            /// (through \u00FF) The special characters tab (\u0009), line feed (\u000A), and carriage return
+            /// (\u000D)
             /// Required: Yes
-            /// Type: JSON object
-            /// Note AWS Identity and Access Management (IAM) requires that policies be in JSON format. However, for
-            /// templates formatted in YAML, you can create an IAM policy in either JSON or YAML format. AWS
-            /// CloudFormation always converts a policy to JSON format before submitting it to IAM.
+            /// Type: Json
+            /// Minimum: 1
+            /// Maximum: 131072
+            /// Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// PolicyName
-            /// The name of the policy. If you specify multiple policies for an entity, specify unique names. For
-            /// example, if you specify a list of policies for an IAM role, each policy must have a unique name.
+            /// The name of the policy document.
+            /// This parameter allows (through its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
             /// <summary>
             /// Roles
-            /// The names of AWS::IAM::Roles to which this policy will be attached.
-            /// Note If a policy has a Ref to a role and if a resource (such as AWS::ECS::Service) also has a Ref to
-            /// the same role, add a DependsOn attribute to the resource so that the resource depends on the policy.
-            /// This dependency ensures that the role&#39;s policy is available throughout the resource&#39;s lifecycle. For
-            /// example, when you delete a stack with an AWS::ECS::Service resource, the DependsOn attribute ensures
-            /// that the AWS::ECS::Service resource can complete its deletion before its role&#39;s policy is deleted.
-            /// Required: Conditional. You must specify at least one of the following properties: Groups, Roles, or
-            /// Users.
-            /// Type: List of String values
+            /// The name of the role to associate the policy with.
+            /// This parameter allows (per its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-
+            /// Note If an external policy (such as AWS::IAM::Policy or AWS::IAM::ManagedPolicy) has a Ref to a role
+            /// and if a resource (such as AWS::ECS::Service) also has a Ref to the same role, add a DependsOn
+            /// attribute to the resource to make the resource depend on the external policy. This dependency
+            /// ensures that the role&#39;s policy is available throughout the resource&#39;s lifecycle. For example, when
+            /// you delete a stack with an AWS::ECS::Service resource, the DependsOn attribute ensures that AWS
+            /// CloudFormation deletes the AWS::ECS::Service resource before deleting its role&#39;s policy.
+            /// Required: No
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
             /// <summary>
             /// Users
-            /// The names of users for whom you want to add the policy.
-            /// Required: Conditional. You must specify at least one of the following properties: Groups, Roles, or
-            /// Users.
-            /// Type: List of String values
+            /// The name of the user to associate the policy with.
+            /// This parameter allows (through its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-
+            /// Required: No
+            /// Type: List of String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Users { get; set; }

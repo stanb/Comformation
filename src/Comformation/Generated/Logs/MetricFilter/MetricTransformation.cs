@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Logs.MetricFilter
 {
     /// <summary>
-    /// CloudWatch Logs MetricFilter MetricTransformation Property
+    /// AWS::Logs::MetricFilter MetricTransformation
     /// MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log
     /// streams into a CloudWatch metric.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html
@@ -16,28 +16,33 @@ namespace Comformation.Logs.MetricFilter
 
         /// <summary>
         /// DefaultValue
-        /// The value to emit when a filter pattern does not match a log event. This value can be null.
+        /// (Optional) The value to emit when a filter pattern does not match a log event. This value can be
+        /// null.
         /// Required: No
         /// Type: Double
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefaultValue")]
         public Union<double, IntrinsicFunction> DefaultValue { get; set; }
 
         /// <summary>
         /// MetricName
-        /// The name of the CloudWatch metric to which the log information will be published.
+        /// The name of the CloudWatch metric.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricName")]
         public Union<string, IntrinsicFunction> MetricName { get; set; }
 
         /// <summary>
         /// MetricNamespace
-        /// The destination namespace of the CloudWatch metric. Namespaces are containers for metrics. For
-        /// example, you can add related metrics in the same namespace.
+        /// The namespace of the CloudWatch metric.
         /// Required: Yes
         /// Type: String
+        /// Maximum: 255
+        /// Pattern: [^:*$]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricNamespace")]
         public Union<string, IntrinsicFunction> MetricNamespace { get; set; }
@@ -50,6 +55,7 @@ namespace Comformation.Logs.MetricFilter
         /// name of the field that you specified in the filter pattern, such as $size.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricValue")]
         public Union<string, IntrinsicFunction> MetricValue { get; set; }

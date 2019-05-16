@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
-    /// Amazon EC2 EC2Fleet SpotOptionsRequest
-    /// The SpotOptionsRequest property type specifies the configuration of Spot Instances for an EC2 Fleet.
+    /// AWS::EC2::EC2Fleet SpotOptionsRequest
+    /// Specifies the configuration of Spot Instances for an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
     /// </summary>
     public class SpotOptionsRequest
@@ -19,6 +19,7 @@ namespace Comformation.EC2.EC2Fleet
         /// request. The default is lowestPrice.
         /// Required: No
         /// Type: String
+        /// Allowed Values: diversified | lowest-price
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AllocationStrategy")]
@@ -29,6 +30,7 @@ namespace Comformation.EC2.EC2Fleet
         /// The behavior when a Spot Instance is interrupted. The default is terminate.
         /// Required: No
         /// Type: String
+        /// Allowed Values: hibernate | stop | terminate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceInterruptionBehavior")]

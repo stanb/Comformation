@@ -15,28 +15,34 @@ namespace Comformation.Cognito.UserPoolGroup
         {
             /// <summary>
             /// GroupName
-            /// The name of the user group. GroupName must be unique.
-            /// Required: Yes
+            /// The name of the group. Must be unique.
+            /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// Description
-            /// A description of the user group.
+            /// A string containing the description of the group.
             /// Required: No
             /// Type: String
+            /// Maximum: 2048
             /// Update requires: No interruption
-            /// MaxLength: 2048
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// UserPoolId
-            /// The user pool ID.
+            /// The user pool ID for the user pool.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 55
+            /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
@@ -44,17 +50,18 @@ namespace Comformation.Cognito.UserPoolGroup
             /// <summary>
             /// Precedence
             /// A nonnegative integer value that specifies the precedence of this group relative to the other groups
-            /// that a user can belong to in the user pool. Zero is the highest Precedence value. Groups with lower
+            /// that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower
             /// Precedence values take precedence over groups with higher or null Precedence values. If a user
-            /// belongs to two or more groups, the role ARN of the group with the lowest precedence value is used in
-            /// the cognito:roles and cognito:preferred_role claims in the user&#39;s tokens.
+            /// belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will
+            /// be used in the cognito:roles and cognito:preferred_role claims in the user&#39;s tokens.
             /// Two groups can have the same Precedence value. If this happens, neither group takes precedence over
-            /// the other. If two groups with the same Precedence value have the same role ARN, that role is used in
-            /// the cognito:preferred_role claim in tokens for users in each group. If the two groups have different
+            /// the other. If two groups with the same Precedence have the same role ARN, that role is used in the
+            /// cognito:preferred_role claim in tokens for users in each group. If the two groups have different
             /// role ARNs, the cognito:preferred_role claim is not set in users&#39; tokens.
             /// The default Precedence value is null.
             /// Required: No
-            /// Type: Number
+            /// Type: Double
+            /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
 			public Union<double, IntrinsicFunction> Precedence { get; set; }
@@ -64,6 +71,10 @@ namespace Comformation.Cognito.UserPoolGroup
             /// The role ARN for the group.
             /// Required: No
             /// Type: String
+            /// Minimum: 20
+            /// Maximum: 2048
+            /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+            /// @-]+)?(:[\w+=/,. @-]+)?
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }

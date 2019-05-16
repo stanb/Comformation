@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
-    /// AWS Data Pipeline Pipeline ParameterObjects
-    /// ParameterObjects is a property of the AWS::DataPipeline::Pipeline resource that describes parameters that are
-    /// used in a pipeline definition.
+    /// AWS::DataPipeline::Pipeline ParameterObject
+    /// Contains information about a parameter object.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html
     /// </summary>
     public class ParameterObject
@@ -16,18 +15,23 @@ namespace Comformation.DataPipeline.Pipeline
 
         /// <summary>
         /// Attributes
-        /// Key-value pairs that define the attributes of the parameter object.
+        /// The attributes of the parameter object.
         /// Required: Yes
-        /// Type: AWS Data Pipeline Parameter Objects Attributes
+        /// Type: List of ParameterAttribute
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]
         public List<ParameterAttribute> Attributes { get; set; }
 
         /// <summary>
         /// Id
-        /// The identifier of the parameter object.
+        /// The ID of the parameter object.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Id")]
         public Union<string, IntrinsicFunction> Id { get; set; }

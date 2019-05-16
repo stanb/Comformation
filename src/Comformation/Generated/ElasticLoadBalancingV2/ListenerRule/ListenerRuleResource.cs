@@ -6,8 +6,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule
-    /// The AWS::ElasticLoadBalancingV2::ListenerRule resource defines the rules for a listener. For more information,
-    /// see Listener Rules for Your Application Load Balancer in the User Guide for Application Load Balancers.
+    /// Specifies a listener rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html
     /// </summary>
     public class ListenerRuleResource : ResourceBase
@@ -16,18 +15,18 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         {
             /// <summary>
             /// Actions
-            /// The actions that the listener takes when the specified conditions are met.
+            /// The actions.
             /// Required: Yes
-            /// Type: List of Elastic Load Balancing V2 Actions
+            /// Type: List of Action
             /// Update requires: No interruption
             /// </summary>
 			public List<Action> Actions { get; set; }
 
             /// <summary>
             /// Conditions
-            /// The conditions under which the rule takes effect.
+            /// The conditions.
             /// Required: Yes
-            /// Type: List of Elastic Load Balancing V2 Conditions
+            /// Type: List of RuleCondition
             /// Update requires: No interruption
             /// </summary>
 			public List<RuleCondition> Conditions { get; set; }
@@ -43,14 +42,11 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 
             /// <summary>
             /// Priority
-            /// The priority for the rule. Elastic Load Balancing evaluates rules in priority order, from the lowest
-            /// value to the highest value. If a request satisfies a rule, Elastic Load Balancing ignores all
-            /// subsequent rules.
-            /// Note A listener can&#39;t have multiple rules with the same priority.
-            /// For the valid range of values, see the Priority parameter for the CreateRule action in the Elastic
-            /// Load Balancing API Reference version 2015-12-01.
+            /// The rule priority. A listener can&#39;t have multiple rules with the same priority.
             /// Required: Yes
             /// Type: Integer
+            /// Minimum: 1
+            /// Maximum: 50000
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Priority { get; set; }

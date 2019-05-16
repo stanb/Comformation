@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion LocalVolumeResourceData
+    /// AWS::Greengrass::ResourceDefinitionVersion LocalVolumeResourceData
     /// Settings for a 		local volume resource, which represents a file or directory on the root file system. 		 For
     /// more information, see Access Local Resources with Lambda Functions in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html

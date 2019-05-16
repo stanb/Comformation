@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Partition
 {
     /// <summary>
-    /// AWS Glue Partition SerdeInfo
-    /// The SerdeInfo property type specifies information about a serialization/deserialization program (SerDe), which
-    /// serves as an extractor and loader for an AWS Glue partition.
+    /// AWS::Glue::Partition SerdeInfo
+    /// Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html
     /// </summary>
     public class SerdeInfo
@@ -16,10 +15,9 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// Parameters
-        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the initialization parameters for the
-        /// SerDe.
+        /// These key-value pairs define initialization parameters for the SerDe.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -27,9 +25,8 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SerializationLibrary
-        /// The serialization library. This is usually the class that implements the SerDe, such as org. apache.
-        /// hadoop. hive. serde2. columnar. ColumnarSerDe. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// Usually the class that implements the SerDe. An example is org. apache. hadoop. hive. serde2.
+        /// columnar. ColumnarSerDe.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -39,8 +36,7 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// Name
-        /// The name of the SerDe. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// Name of the SerDe.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

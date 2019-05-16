@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask MaintenanceWindowRunCommandParameters
+    /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowRunCommandParameters
     /// The MaintenanceWindowRunCommandParameters property type specifies the parameters for a RUN_COMMAND task type
     /// for a Maintenance Window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
@@ -16,9 +16,11 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// TimeoutSeconds
-        /// If this time is reached and the command hasn&#39;t already started executing, it doesn&#39;t execute.
+        /// If this time is reached and the command has not already started running, it doesn&#39;t run.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 30
+        /// Maximum: 2592000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimeoutSeconds")]
@@ -26,9 +28,10 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// Comment
-        /// Information about the command or commands to execute.
+        /// Information about the command or commands to run.
         /// Required: No
         /// Type: String
+        /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Comment")]
@@ -39,6 +42,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The Amazon S3 bucket subfolder.
         /// Required: No
         /// Type: String
+        /// Maximum: 500
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputS3KeyPrefix")]
@@ -48,7 +52,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Parameters
         /// The parameters for the RUN_COMMAND task execution.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -59,6 +63,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The SHA-256 or SHA-1 hash type. SHA-1 hashes are deprecated.
         /// Required: No
         /// Type: String
+        /// Allowed Values: Sha1 | Sha256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentHashType")]
@@ -66,7 +71,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// ServiceRoleArn
-        /// The IAM service role that&#39;s used during task execution.
+        /// The IAM service role to assume during task execution.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -89,6 +94,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The name of the Amazon S3 bucket.
         /// Required: No
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 63
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputS3BucketName")]
@@ -96,10 +103,11 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// DocumentHash
-        /// The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes are
-        /// deprecated.
+        /// The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have
+        /// been deprecated.
         /// Required: No
         /// Type: String
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentHash")]

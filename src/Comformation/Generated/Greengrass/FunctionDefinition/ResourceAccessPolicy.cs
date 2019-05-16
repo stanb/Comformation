@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinition ResourceAccessPolicy
+    /// AWS::Greengrass::FunctionDefinition ResourceAccessPolicy
     /// A list of the 		resources in the group 				 that the function can access, with the corresponding read-only or
     /// read-write permissions. The maximum is 10 resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html
@@ -16,7 +16,7 @@ namespace Comformation.Greengrass.FunctionDefinition
 
         /// <summary>
         /// ResourceId
-        /// The ID of the resource. This ID is assigned to the resource when you create the resource definiton.
+        /// The ID of the resource. This ID is assigned to the resource when you create the resource definition.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

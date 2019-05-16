@@ -6,12 +6,12 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet
-    /// The AWS::EC2::EC2Fleet resource specifies the configuration information to launch a fleet—or group—of
-    /// instances. An EC2 Fleet can launch multiple instance types across multiple Availability Zones, using the
-    /// On-Demand Instance, Reserved Instance, and Spot Instance purchasing models together. Using EC2 Fleet, you can
-    /// define separate On-Demand and Spot capacity targets, specify the instance types that work best for your
-    /// applications, and specify how Amazon EC2 should distribute your fleet capacity within each purchasing model.
-    /// For more information, see Launching an EC2 Fleet in the Amazon EC2 User Guide for Linux Instances.
+    /// Specifies the configuration information to launch a fleet—or group—of instances. 		 An EC2 Fleet can launch
+    /// multiple instance types across multiple Availability Zones, 		 using the On-Demand Instance, Reserved
+    /// Instance, and Spot Instance purchasing models 		 together. Using EC2 Fleet, you can define separate On-Demand
+    /// and Spot capacity targets, 		 specify the instance types that work best for your applications, and specify how
+    /// 		 Amazon EC2 should distribute your fleet capacity within each purchasing model. For more 		 information, see
+    /// Launching an EC2 Fleet in the Amazon EC2 User Guide for Linux Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html
     /// </summary>
     public class EC2FleetResource : ResourceBase
@@ -44,9 +44,10 @@ namespace Comformation.EC2.EC2Fleet
             /// places a synchronous one-time request, and returns errors for any instances that could not be
             /// launched. A value of request places an asynchronous one-time request without maintaining capacity or
             /// submitting requests in alternative capacity pools if capacity is unavailable. For more information,
-            /// see EC2 Fleet Request Types in the Amazon EC2 User Guide for Linux Instances.
-            /// request Required: No
+            /// see EC2 Fleet Request Types in the Amazon Elastic Compute Cloud User Guide.
+            /// Required: No
             /// Type: String
+            /// Allowed Values: instant | maintain | request
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
@@ -57,6 +58,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Fleet is decreased below the current size of the EC2 Fleet.
             /// Required: No
             /// Type: String
+            /// Allowed Values: no-termination | termination
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ExcessCapacityTerminationPolicy { get; set; }
@@ -67,7 +69,7 @@ namespace Comformation.EC2.EC2Fleet
             /// fleet, otherwise the fleet request fails. To tag instances at launch, specify the tags in the launch
             /// template. For information about tagging after launch, see Tagging Your Resources.
             /// Required: No
-            /// Type: List of TagSpecification property types
+            /// Type: List of TagSpecification
             /// Update requires: Replacement
             /// </summary>
 			public List<TagSpecification> TagSpecifications { get; set; }
@@ -104,7 +106,8 @@ namespace Comformation.EC2.EC2Fleet
             /// LaunchTemplateConfigs
             /// The configuration for the EC2 Fleet.
             /// Required: Yes
-            /// Type: List of FleetLaunchTemplateConfigRequest property types
+            /// Type: List of FleetLaunchTemplateConfigRequest
+            /// Maximum: 50
             /// Update requires: Replacement
             /// </summary>
 			public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs { get; set; }
@@ -121,8 +124,8 @@ namespace Comformation.EC2.EC2Fleet
             /// <summary>
             /// ValidUntil
             /// The end date and time of the request, in UTC format (for example, YYYY-MM-DDTHH:MM:SSZ). At this
-            /// point, no new EC2 Fleet requests are placed or able to fulfill the request. The default end date is
-            /// 7 days from the current date.
+            /// point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is
+            /// specified, the request remains until you cancel it.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

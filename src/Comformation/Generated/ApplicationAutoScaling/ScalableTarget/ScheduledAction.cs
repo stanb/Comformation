@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApplicationAutoScaling.ScalableTarget
 {
     /// <summary>
-    /// Application Auto Scaling ScalableTarget ScheduledAction
-    /// The ScheduledAction property type specifies a scheduled action for an Application Auto Scaling scalable
-    /// target.
+    /// AWS::ApplicationAutoScaling::ScalableTarget ScheduledAction
+    /// ScheduledAction is a property of ScalableTarget that specifies a scheduled action for a scalable target.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html
     /// </summary>
     public class ScheduledAction
@@ -40,14 +39,18 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         /// <summary>
         /// Schedule
         /// The schedule for this action. The following formats are supported:
-        /// At expressions - at(yyyy-mm-ddThh:mm:ss) At expressions are useful for one-time schedules. Specify
-        /// the time in UTC. Rate expressions - rate(value unit) For rate expressions, value is a positive
-        /// integer, and unit is minute, minutes, hour, hours, day, or days. Cron expressions - cron(fields) For
-        /// more information about cron expressions, see Cron Expressions in the Amazon CloudWatch Events User
-        /// Guide.
-        /// For constraints, see the ScheduledAction data type in the Application Auto Scaling API Reference.
+        /// At expressions - &quot;at(yyyy-mm-ddThh:mm:ss)&quot; Rate expressions - &quot;rate(value unit)&quot; Cron expressions -
+        /// &quot;cron(fields)&quot;
+        /// At expressions are useful for one-time schedules. Specify the time, in UTC.
+        /// For rate expressions, value is a positive integer and unit is minute | minutes | hour | hours | day
+        /// | days.
+        /// For more information about cron expressions, see Cron Expressions in the Amazon CloudWatch Events
+        /// User Guide.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1600
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Schedule")]
@@ -55,10 +58,12 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
         /// <summary>
         /// ScheduledActionName
-        /// The name of the scheduled action. For constraints, see the ScheduledAction data type in the
-        /// Application Auto Scaling API Reference.
+        /// The name of the scheduled action.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Pattern: (?!((^[ ]+. *)|(. *([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+. *)|(. *[ ]+$))). +
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ScheduledActionName")]

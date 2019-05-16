@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling AutoScalingGroup TagProperty
-    /// The TagProperty property type adds tags to all associated instances in an Amazon EC2 Auto Scaling group.
+    /// AWS::AutoScaling::AutoScalingGroup TagProperty
+    /// TagProperty specifies a list of tags for the Tag property of AutoScalingGroup. TagProperty adds tags to all
+    /// associated instances in an Amazon EC2 Auto Scaling group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
     /// </summary>
     public class TagProperty
@@ -15,9 +16,13 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Key
-        /// The key name of the tag.
+        /// The tag key.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
@@ -29,15 +34,20 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// group and not copied to any instances launched as part of the Auto Scaling group.
         /// Required: Yes
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PropagateAtLaunch")]
         public Union<bool, IntrinsicFunction> PropagateAtLaunch { get; set; }
 
         /// <summary>
         /// Value
-        /// The value for the tag.
+        /// The tag value.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }

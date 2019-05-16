@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
-    /// Amazon Elastic Container Service TaskDefinition Device
-    /// The Device property type specifies a device on a host container instance.
+    /// AWS::ECS::TaskDefinition Device
+    /// The Device property specifies an object representing a container instance host device.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html
     /// </summary>
     public class Device
@@ -15,7 +15,7 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// ContainerPath
-        /// The path inside the container to expose the host device to.
+        /// The path inside the container at which to expose the host device.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -35,11 +35,10 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Permissions
-        /// The explicit permissions to provide to the container for the device. By default, the container is
-        /// able to read, write, and mknod the device.
+        /// The explicit permissions to provide to the container for the device. By default, the container has
+        /// permissions for read, write, and mknod for the device.
         /// Required: No
-        /// Type: List of String values
-        /// Valid values: read, write, and mknod
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Permissions")]

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline DeviceShadowEnrich
-    /// The DeviceShadowEnrich property type specifies information from the AWS IoT Device Shadows service to add to a
-    /// message for an AWS IoT Analytics pipeline.
+    /// AWS::IoTAnalytics::Pipeline DeviceShadowEnrich
+    /// An activity that adds information from the AWS IoT Device Shadows service to a message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceshadowenrich.html
     /// </summary>
     public class DeviceShadowEnrich
@@ -19,6 +18,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the attribute that is added to the message.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attribute")]
@@ -29,6 +30,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -39,6 +42,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the IoT device whose shadow information is added to the message.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThingName")]
@@ -49,6 +54,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The ARN of the role that allows access to the device&#39;s shadow.
         /// Required: No
         /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
@@ -59,6 +66,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;deviceShadowEnrich&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

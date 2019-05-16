@@ -15,7 +15,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
         {
             /// <summary>
             /// Description
-            /// A friendly description for this DB cluster parameter group.
+            /// Provides the customer-specified description for this DB cluster parameter group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,13 +25,11 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// <summary>
             /// Parameters
             /// The parameters to set for this DB cluster parameter group.
-            /// Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot
-            /// without failover to the DB instance that is associated with the parameter group before the change
-            /// can take effect.
+            /// The parameters are expressed as a JSON object consisting of key-value pairs.
+            /// If you update the parameters, some interruption may occur depending on which parameters you update.
             /// Required: Yes
-            /// Type: A JSON object consisting of string key-value pairs, as shown in the following example:
-            /// &quot;Parameters&quot; : { &quot;Key1&quot; : &quot;Value1&quot;, &quot;Key2&quot; : &quot;Value2&quot;, &quot;Key3&quot; : &quot;Value3&quot; }
-            /// Update requires: No interruption or some interruption, depending on the parameters that you update.
+            /// Type: Json
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
@@ -48,14 +46,14 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Tags
             /// The tags that you want to attach to this parameter group.
             /// Required: No
-            /// Type: A list of resource tags
-            /// Update requires: Updates are not supported.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// A friendly name for the cluster.
+            /// Provides the name of the DB cluster parameter group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

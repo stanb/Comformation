@@ -6,8 +6,7 @@ namespace Comformation.RoboMaker.Robot
 {
     /// <summary>
     /// AWS::RoboMaker::Robot
-    /// The AWS::RoboMaker::Robot resource creates an AWS RoboMaker robot. For more information, see API_CreateRobot
-    /// in the RoboMaker Developer Guide.
+    /// The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html
     /// </summary>
     public class RobotResource : ResourceBase
@@ -16,7 +15,7 @@ namespace Comformation.RoboMaker.Robot
         {
             /// <summary>
             /// Fleet
-            /// The fleet to which the robot is enlisted.
+            /// The Amazon Resource Name (ARN) of the fleet to which the robot will be registered.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -25,28 +24,30 @@ namespace Comformation.RoboMaker.Robot
 
             /// <summary>
             /// Architecture
-            /// The target architecture of the robot.
+            /// The architecture of the robot.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: ARM64 | ARMHF | X86_64
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Architecture { get; set; }
 
             /// <summary>
             /// GreengrassGroupId
-            /// The AWS GreenGrass group id.
+            /// The Greengrass group associated with the robot.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1224
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GreengrassGroupId { get; set; }
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// A map that contains tag keys and tag values that are attached to the robot.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
@@ -56,6 +57,9 @@ namespace Comformation.RoboMaker.Robot
             /// The name of the robot.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

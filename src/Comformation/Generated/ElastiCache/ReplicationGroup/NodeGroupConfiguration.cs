@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElastiCache.ReplicationGroup
 {
     /// <summary>
-    /// Amazon ElastiCache ReplicationGroup NodeGroupConfiguration
+    /// AWS::ElastiCache::ReplicationGroup NodeGroupConfiguration
     /// NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup resource that configures an
     /// Amazon ElastiCache (ElastiCache) Redis cluster node group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html
@@ -18,21 +18,18 @@ namespace Comformation.ElastiCache.ReplicationGroup
         /// NodeGroupId
         /// Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these
         /// configuration values apply to.
-        /// Length Constraints: Minimum length of 1. Maximum length of 4.
-        /// Pattern: \d+
         /// Required: No
         /// Type: String
-        /// Update requires: Some interruptions. Update requires no interruption if the resource contains an
-        /// UseOnlineResharding update policy set to true. Update requires replacement if the resource does not
-        /// contain an UseOnlineResharding update policy, or the policy is set to false. For more information,
-        /// see UseOnlineResharding Policy.
+        /// Minimum: 1
+        /// Maximum: 4
+        /// Pattern: \d+
         /// </summary>
         [JsonProperty("NodeGroupId")]
         public Union<string, IntrinsicFunction> NodeGroupId { get; set; }
 
         /// <summary>
         /// PrimaryAvailabilityZone
-        /// The Availability Zone where ElastiCache launches the node group&#39;s primary node.
+        /// The Availability Zone where the primary node of this node group (shard) is launched.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -42,11 +39,10 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
         /// <summary>
         /// ReplicaAvailabilityZones
-        /// A list of Availability Zones where ElastiCache launches the read replicas. The number of
-        /// Availability Zones must match the value of the ReplicaCount property or, if you don&#39;t specify the
-        /// ReplicaCount property, the replication group&#39;s ReplicasPerNodeGroup property.
+        /// A list of Availability Zones to be used for the read replicas. The number of Availability Zones in
+        /// this list must match the value of ReplicaCount or ReplicasPerNodeGroup if not specified.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ReplicaAvailabilityZones")]
@@ -54,7 +50,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
         /// <summary>
         /// ReplicaCount
-        /// The number of read replica nodes in the node group.
+        /// The number of read replica nodes in this node group (shard).
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement

@@ -6,8 +6,7 @@ namespace Comformation.OpsWorks.App
 {
     /// <summary>
     /// AWS::OpsWorks::App
-    /// Defines an AWS OpsWorks app for an AWS OpsWorks stack. The app specifies the code that you want to run on an
-    /// application server.
+    /// Creates an app for a specified stack. For more information, see Creating Apps.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html
     /// </summary>
     public class AppResource : ResourceBase
@@ -16,27 +15,27 @@ namespace Comformation.OpsWorks.App
         {
             /// <summary>
             /// AppSource
-            /// The information required to retrieve an app from a repository.
+            /// A Source object that specifies the app repository.
             /// Required: No
-            /// Type: AWS OpsWorks Source Type
+            /// Type: Source
             /// Update requires: No interruption
             /// </summary>
 			public Source AppSource { get; set; }
 
             /// <summary>
             /// Attributes
-            /// One or more user-defined key-value pairs to be added to the app attributes bag.
+            /// One or more user-defined key/value pairs to be added to the stack attributes.
             /// Required: No
-            /// Type: A list of key-value pairs
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// DataSources
-            /// A list of databases to associate with the AWS OpsWorks app.
+            /// The app&#39;s data source.
             /// Required: No
-            /// Type: List of AWS OpsWorks App DataSource
+            /// Type: List of DataSource
             /// Update requires: No interruption
             /// </summary>
 			public List<DataSource> DataSources { get; set; }
@@ -52,17 +51,17 @@ namespace Comformation.OpsWorks.App
 
             /// <summary>
             /// Domains
-            /// The app virtual host settings, with multiple domains separated by commas. For example, &#39;www.
-            /// example. com, example. com&#39;.
+            /// The app virtual host settings, with multiple domains separated by commas. For example: &#39;www.
+            /// example. com, example. com&#39;
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Domains { get; set; }
 
             /// <summary>
             /// EnableSsl
-            /// Whether to enable SSL for this app.
+            /// Whether to enable SSL for the app.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -71,16 +70,24 @@ namespace Comformation.OpsWorks.App
 
             /// <summary>
             /// Environment
-            /// The environment variables to associate with the AWS OpsWorks app.
+            /// An array of EnvironmentVariable objects that specify environment variables to be associated with the
+            /// app. After you deploy the app, these variables are defined on the associated app server instance.
+            /// For more information, see Environment Variables.
+            /// There is no specific limit on the number of environment variables. However, the size of the
+            /// associated data structure - which includes the variables&#39; names, values, and protected flag values -
+            /// cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will
+            /// cause an exception with the message, &quot;Environment: is too large (maximum is 20KB). &quot;
+            /// Note If you have specified one or more environment variables, you cannot modify the stack&#39;s Chef
+            /// version.
             /// Required: No
-            /// Type: List of AWS OpsWorks App Environment
+            /// Type: List of EnvironmentVariable
             /// Update requires: No interruption
             /// </summary>
 			public List<EnvironmentVariable> Environment { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the AWS OpsWorks app.
+            /// The app name.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -89,7 +96,7 @@ namespace Comformation.OpsWorks.App
 
             /// <summary>
             /// Shortname
-            /// The app short name, which is used internally by AWS OpsWorks and by Chef recipes.
+            /// The app&#39;s short name.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -98,16 +105,16 @@ namespace Comformation.OpsWorks.App
 
             /// <summary>
             /// SslConfiguration
-            /// The SSL configuration
+            /// An SslConfiguration object with the SSL configuration.
             /// Required: No
-            /// Type: AWS OpsWorks SslConfiguration Type
+            /// Type: SslConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public SslConfiguration SslConfiguration { get; set; }
 
             /// <summary>
             /// StackId
-            /// The ID of the AWS OpsWorks stack to associate this app with.
+            /// The stack ID.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -116,10 +123,13 @@ namespace Comformation.OpsWorks.App
 
             /// <summary>
             /// Type
-            /// The app type. Each supported type is associated with a particular layer. For more information, see
-            /// CreateApp in the AWS OpsWorks Stacks API Reference.
+            /// The app type. Each supported type is associated with a particular layer. For example, PHP
+            /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those
+            /// instances that are members of the corresponding layer. If your app isn&#39;t one of the standard types,
+            /// or you prefer to implement your own Deploy recipes, specify other.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: aws-flow-ruby | java | nodejs | other | php | rails | static
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }

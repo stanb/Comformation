@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
-    /// AWS IoT Analytics Datastore RetentionPeriod
-    /// The RetentionPeriod property type specifies how log, in days, message data is kept for an AWS IoT Analytics
-    /// datastore.
+    /// AWS::IoTAnalytics::Datastore RetentionPeriod
+    /// How long, in days, message data is kept.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-retentionperiod.html
     /// </summary>
     public class RetentionPeriod
@@ -19,6 +18,7 @@ namespace Comformation.IoTAnalytics.Datastore
         /// The number of days that message data is kept. The &quot;unlimited&quot; parameter must be false.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NumberOfDays")]

@@ -6,9 +6,8 @@ namespace Comformation.Lambda.Version
 {
     /// <summary>
     /// AWS::Lambda::Version
-    /// The AWS::Lambda::Version resource publishes a specified version of an AWS Lambda (Lambda) function. When
-    /// publishing a new version of your function, Lambda copies the latest version of your function. For more
-    /// information, see Introduction to AWS Lambda Versioning in the AWS Lambda Developer Guide.
+    /// The AWS::Lambda::Version resource creates a version from the current code and configuration of a function. Use
+    /// versions to create a snapshot of your function code and configuration that doesn&#39;t change.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html
     /// </summary>
     public class VersionResource : ResourceBase
@@ -17,31 +16,39 @@ namespace Comformation.Lambda.Version
         {
             /// <summary>
             /// CodeSha256
-            /// The SHA-256 hash of the deployment package that you want to publish. This value must match the
-            /// SHA-256 hash of the $LATEST version of the function. Specify this property to validate that you are
-            /// publishing the correct package.
+            /// Only publish a version if the hash value matches the value that&#39;s specified. Use this option to
+            /// avoid publishing a version if the function code has changed since you last updated it.
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CodeSha256 { get; set; }
 
             /// <summary>
             /// Description
-            /// A description of the version you are publishing. If you don&#39;t specify a value, Lambda copies the
-            /// description from the $LATEST version of the function.
+            /// A description for the version to override the description in the function configuration.
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Minimum: 0
+            /// Maximum: 256
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// FunctionName
-            /// The Lambda function for which you want to publish a version. You can specify the function&#39;s name or
-            /// its Amazon Resource Name (ARN).
+            /// The name of the Lambda function.
+            /// Name formats Function name - MyFunction. Function ARN -
+            /// arn:aws:lambda:us-west-2:123456789012:function:MyFunction. Partial ARN -
+            /// 123456789012:function:MyFunction.
+            /// The length constraint applies only to the full ARN. If you specify only the function name, it is
+            /// limited to 64 characters in length.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 140
+            /// Pattern:
+            /// (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }

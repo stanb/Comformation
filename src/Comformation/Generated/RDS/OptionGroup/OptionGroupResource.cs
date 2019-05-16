@@ -6,9 +6,8 @@ namespace Comformation.RDS.OptionGroup
 {
     /// <summary>
     /// AWS::RDS::OptionGroup
-    /// Use the AWS::RDS::OptionGroup resource to create an option group that can make managing data and databases
-    /// easier. For more information about option groups, see Working with Option Groups in the Amazon Relational
-    /// Database Service User Guide.
+    /// The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific
+    /// to a particular DB engine.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html
     /// </summary>
     public class OptionGroupResource : ResourceBase
@@ -17,7 +16,7 @@ namespace Comformation.RDS.OptionGroup
         {
             /// <summary>
             /// EngineName
-            /// The name of the database engine that this option group is associated with.
+            /// Specifies the name of the engine that this option group should be associated with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -26,7 +25,7 @@ namespace Comformation.RDS.OptionGroup
 
             /// <summary>
             /// MajorEngineVersion
-            /// The major version number of the database engine that this option group is associated with.
+            /// Specifies the major version of the engine that this option group should be associated with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -35,7 +34,7 @@ namespace Comformation.RDS.OptionGroup
 
             /// <summary>
             /// OptionConfigurations
-            /// The configurations for this option group.
+            /// A list of all available options
             /// Required: Yes
             /// Type: List of OptionConfiguration
             /// Update requires: Replacement
@@ -44,7 +43,7 @@ namespace Comformation.RDS.OptionGroup
 
             /// <summary>
             /// OptionGroupDescription
-            /// A description of the option group.
+            /// The description of the option group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -53,9 +52,9 @@ namespace Comformation.RDS.OptionGroup
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this option group.
+            /// Tags to assign to the option group.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

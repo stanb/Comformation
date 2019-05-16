@@ -6,9 +6,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::SES::ConfigurationSetEventDestination
-    /// The AWS::SES::ConfigurationSetEventDestination resource specifies a configuration set event destination for
-    /// Amazon SES. For more information, see CreateConfigurationSetEventDestination in the Amazon Simple Email
-    /// Service API Reference.
+    /// Specifies a configuration set event destination.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html
     /// </summary>
     public class ConfigurationSetEventDestinationResource : ResourceBase
@@ -17,7 +15,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         {
             /// <summary>
             /// ConfigurationSetName
-            /// The name of the configuration set that the event destination should be associated with.
+            /// The name of the configuration set that contains the event destination that you want to update.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -26,7 +24,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
             /// <summary>
             /// EventDestination
-            /// The AWS service that email sending event information will be published to.
+            /// The event destination object that you want to apply to the specified configuration set.
             /// Required: Yes
             /// Type: EventDestination
             /// Update requires: No interruption

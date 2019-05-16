@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.UsagePlanKey
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlanKey
-    /// The AWS::ApiGateway::UsagePlanKey resource associates an Amazon API Gateway API key with an API Gateway usage
-    /// plan. This association determines which users the usage plan is applied to.
+    /// The AWS::ApiGateway::UsagePlanKey resource associates an API key with a usage plan. This association
+    /// determines which users the usage plan is applied to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
     /// </summary>
     public class UsagePlanKeyResource : ResourceBase
@@ -25,7 +25,7 @@ namespace Comformation.ApiGateway.UsagePlanKey
 
             /// <summary>
             /// KeyType
-            /// The type of usage plan key. Currently, the valid key type is API_KEY.
+            /// The type of usage plan key. Currently, the only valid key type is API_KEY.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

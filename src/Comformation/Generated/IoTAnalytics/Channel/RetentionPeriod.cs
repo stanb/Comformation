@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Channel
 {
     /// <summary>
-    /// AWS IoT Analytics Channel RetentionPeriod
-    /// The RetentionPeriod property type specifies how long, in days, message data is kept for an AWS IoT Analytics
-    /// channel.
+    /// AWS::IoTAnalytics::Channel RetentionPeriod
+    /// How long, in days, message data is kept.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html
     /// </summary>
     public class RetentionPeriod
@@ -16,9 +15,10 @@ namespace Comformation.IoTAnalytics.Channel
 
         /// <summary>
         /// NumberOfDays
-        /// The number of days that message data is kept.
+        /// The number of days that message data is kept. The &quot;unlimited&quot; parameter must be false.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NumberOfDays")]

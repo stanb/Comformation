@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource ReferenceSchema
-    /// The ReferenceSchema property type specifies the format of the data in the streaming source, and how each data
-    /// element maps to corresponding columns created in the in-application stream.
+    /// AWS::KinesisAnalytics::ApplicationReferenceDataSource ReferenceSchema
+    /// The ReferenceSchema property type specifies the format of the data in the reference source for a SQL-based
+    /// Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html
     /// </summary>
     public class ReferenceSchema
@@ -16,9 +16,9 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordEncoding
-        /// Specifies the encoding of the records in the streaming source; For example, UTF-8.
+        /// Specifies the encoding of the records in the reference source. For example, UTF-8.
         /// Required: No
-        /// Type: String;
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordEncoding")]
@@ -26,7 +26,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordColumns
-        /// A list of Amazon Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn objects.
+        /// A list of RecordColumn objects.
         /// Required: Yes
         /// Type: List of RecordColumn
         /// Update requires: No interruption
@@ -36,7 +36,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordFormat
-        /// Specifies the format of the records on the streaming source.
+        /// Specifies the format of the records on the reference source.
         /// Required: Yes
         /// Type: RecordFormat
         /// Update requires: No interruption

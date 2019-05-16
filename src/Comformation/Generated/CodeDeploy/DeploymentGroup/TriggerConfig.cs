@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// CodeDeploy DeploymentGroup TriggerConfig
-    /// The TriggerConfig property type specifies a notification trigger for an CodeDeploy deployment group. The
-    /// TriggerConfigurations property of the AWS::CodeDeploy::DeploymentGroup resource contains a list of
-    /// TriggerConfig property types.
+    /// AWS::CodeDeploy::DeploymentGroup TriggerConfig
+    /// Information about notification triggers for the deployment group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html
     /// </summary>
     public class TriggerConfig
@@ -19,7 +17,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// TriggerEvents
         /// The event type or types that trigger notifications.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TriggerEvents")]
@@ -37,8 +35,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// TriggerTargetArn
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which
-        /// notifications about deployment or instance events are sent.
+        /// The ARN of the Amazon Simple Notification Service topic through which notifications about deployment
+        /// or instance events are sent.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

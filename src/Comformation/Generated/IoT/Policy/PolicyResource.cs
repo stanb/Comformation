@@ -6,7 +6,8 @@ namespace Comformation.IoT.Policy
 {
     /// <summary>
     /// AWS::IoT::Policy
-    /// Use the AWS::IoT::Policy resource to declare an AWS IoT policy.
+    /// Use the AWS::IoT::Policy resource to declare an AWS IoT policy. For more information about working with AWS
+    /// IoT policies, see Authorization in the AWS IoT Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html
     /// </summary>
     public class PolicyResource : ResourceBase
@@ -17,14 +18,14 @@ namespace Comformation.IoT.Policy
             /// PolicyDocument
             /// The JSON document that describes the policy.
             /// Required: Yes
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: Replacement
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// PolicyName
-            /// The name (the physical ID) of the AWS IoT policy.
+            /// The policy name.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

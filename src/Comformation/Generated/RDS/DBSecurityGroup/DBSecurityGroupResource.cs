@@ -6,9 +6,7 @@ namespace Comformation.RDS.DBSecurityGroup
 {
     /// <summary>
     /// AWS::RDS::DBSecurityGroup
-    /// The AWS::RDS::DBSecurityGroup type is used to create or update an Amazon RDS DB Security Group. For more
-    /// information about DB security groups, see Working with DB Security Groups in the Amazon Relational Database
-    /// Service Developer Guide. For details on the settings for DB security groups, see CreateDBSecurityGroup.
+    /// The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
     /// </summary>
     public class DBSecurityGroupResource : ResourceBase
@@ -17,40 +15,39 @@ namespace Comformation.RDS.DBSecurityGroup
         {
             /// <summary>
             /// DBSecurityGroupIngress
-            /// Network ingress authorization for an Amazon EC2 security group or an IP address range.
-            /// Type: List of RDS Security Group Rules.
+            /// Ingress rules to be applied to the DB security group.
             /// Required: Yes
+            /// Type: List of Ingress
             /// Update requires: No interruption
             /// </summary>
 			public List<Ingress> DBSecurityGroupIngress { get; set; }
 
             /// <summary>
             /// EC2VpcId
-            /// The Id of the VPC. Indicates which VPC this DB Security Group should belong to.
-            /// Important The EC2VpcId property exists only for backwards compatibility with older regions and is no
-            /// longer recommended for providing security information to an RDS DB instance. Instead, use
-            /// VPCSecurityGroups.
+            /// The identifier of an Amazon VPC. This property indicates the VPC that this DB security group belongs
+            /// to.
+            /// Important The EC2VpcId property is for backward compatibility with older regions, and is no longer
+            /// recommended for providing security information to an RDS DB instance.
+            /// Required: No
             /// Type: String
-            /// Required: Conditional. Must be specified to create a DB Security Group for a VPC; may not be
-            /// specified otherwise.
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2VpcId { get; set; }
 
             /// <summary>
             /// GroupDescription
-            /// Description of the security group.
-            /// Type: String
+            /// Provides the description of the DB Security Group.
             /// Required: Yes
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupDescription { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the Amazon RDS DB security group.
+            /// Tags to assign to the DB security group.
             /// Required: No
-            /// Type: A list of resource tags.
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

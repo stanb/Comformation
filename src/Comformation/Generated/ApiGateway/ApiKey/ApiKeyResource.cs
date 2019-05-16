@@ -7,8 +7,8 @@ namespace Comformation.ApiGateway.ApiKey
     /// <summary>
     /// AWS::ApiGateway::ApiKey
     /// The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing
-    /// Amazon API Gateway (API Gateway) Method resources that require an API key. To specify which API key clients
-    /// must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
+    /// API Gateway Method resources that require an API key. To specify which API key clients must use, map the API
+    /// key with the RestApi and Stage resources that include the methods that require a key.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html
     /// </summary>
     public class ApiKeyResource : ResourceBase
@@ -68,7 +68,7 @@ namespace Comformation.ApiGateway.ApiKey
             /// StageKeys
             /// A list of stages to associate with this API key.
             /// Required: No
-            /// Type: List of Amazon API Gateway ApiKey StageKey property types
+            /// Type: List of StageKey
             /// Update requires: No interruption
             /// </summary>
 			public List<StageKey> StageKeys { get; set; }

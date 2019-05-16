@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 {
     /// <summary>
     /// AWS::ServiceCatalog::CloudFormationProvisionedProduct
-    /// Provisions the specified product for AWS Service Catalog. For more information, see ProvisionProduct in the
-    /// AWS Service Catalog Developer Guide.
+    /// Provisions the specified product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html
     /// </summary>
     public class CloudFormationProvisionedProductResource : ResourceBase
@@ -16,9 +15,14 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         {
             /// <summary>
             /// PathId
-            /// The path identifier of the product.
+            /// The path identifier of the product. This value is optional if the product has a default path, and
+            /// required if the product has more than one path. To list the paths for a product, use
+            /// ListLaunchPaths.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PathId { get; set; }
@@ -27,19 +31,23 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// ProvisioningParameters
             /// Parameters specified by the administrator that are required for provisioning the product.
             /// Required: No
-            /// Type: List of ProvisioningParameter property types
+            /// Type: List of ProvisioningParameter
             /// Update requires: No interruption
             /// </summary>
 			public List<ProvisioningParameter> ProvisioningParameters { get; set; }
 
             /// <summary>
             /// ProductName
-            /// The product name. This name must be unique for the user. You must specify either the name or the ID
-            /// of the product, but not both.
+            /// A user-friendly name for the provisioned product. This value must be unique for the AWS account and
+            /// cannot be updated after the product is provisioned.
             /// Each time a stack is created or updated, if ProductName is provided it will successfully resolve to
             /// ProductId as long as only one product exists in the account/region with that ProductName.
-            /// Required: No
+            /// Note You must specify either the name or the ID of the product, but not both.
+            /// Required: Conditional
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [a-zA-Z0-9][a-zA-Z0-9. _-]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductName { get; set; }
@@ -47,9 +55,9 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// <summary>
             /// ProvisioningArtifactName
             /// The name of the provisioning artifact (also known as a version) for the product. This name must be
-            /// unique for the product. You must specify either the name or the ID of the provisioning artifact, but
-            /// not both.
-            /// Required: No
+            /// unique for the product.
+            /// Note You must specify either the name or the ID of the provisioning artifact, but not both.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -57,9 +65,10 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 
             /// <summary>
             /// NotificationArns
-            /// The SNS topic ARNs for stack-related events.
+            /// Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
+            /// Maximum: 5
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
@@ -67,17 +76,23 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// ProductId
-            /// The product identifier. You must specify either the ID or the name of the product, but not both.
-            /// Required: No
+            /// The product identifier.
+            /// Note You must specify either the ID or the name of the product, but not both.
+            /// Required: Conditional
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }
@@ -85,28 +100,37 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// <summary>
             /// Tags
             /// One or more tags.
+            /// Note Requires the provisioned product to have an ResourceUpdateConstraint resource with
+            /// TagUpdatesOnProvisionedProduct set to ALLOWED to allow tag updates.
             /// Required: No
-            /// Type: List of Resource Tag property types
-            /// Update requires: Replacement
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// ProvisionedProductName
-            /// A user-friendly name for the provisioned product. This name must be unique for the AWS account and
+            /// A user-friendly name for the provisioned product. This value must be unique for the AWS account and
             /// cannot be updated after the product is provisioned.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [a-zA-Z0-9][a-zA-Z0-9. _-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ProvisionedProductName { get; set; }
 
             /// <summary>
             /// ProvisioningArtifactId
-            /// The identifier of the provisioning artifact (also known as a version) for the product. You must
-            /// specify either the ID or the name of the provisioning artifact, but not both.
-            /// Required: No
+            /// The identifier of the provisioning artifact (also known as a version).
+            /// Note You must specify either the ID or the name of the provisioning artifact, but not both.
+            /// Required: Conditional
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProvisioningArtifactId { get; set; }

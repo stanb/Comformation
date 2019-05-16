@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket EncryptionConfiguration
-    /// The EncryptionConfiguration property type specifies encryption-related information for an Amazon S3 bucket
-    /// that is a destination for replicated objects.
+    /// AWS::S3::Bucket EncryptionConfiguration
+    /// Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html
     /// </summary>
     public class EncryptionConfiguration
@@ -17,7 +16,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// ReplicaKmsKeyID
         /// Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination bucket. Amazon S3 uses this
-        /// key to encrypt replicas.
+        /// key to encrypt replica objects.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

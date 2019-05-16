@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
-    /// Amazon API Gateway Deployment CanarySetting
+    /// AWS::ApiGateway::Deployment CanarySetting
     /// The CanarySetting property type specifies settings for the canary deployment in this stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html
     /// </summary>
@@ -28,9 +28,8 @@ namespace Comformation.ApiGateway.Deployment
         /// Stage variables overridden for a canary release deployment, including new stage variables introduced
         /// in the canary. These stage variables are represented as a string-to-string map between stage
         /// variable names and their values.
-        /// Duplicates are not allowed.
         /// Required: No
-        /// Type: String to String map
+        /// Type: Map of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StageVariableOverrides")]

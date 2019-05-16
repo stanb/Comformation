@@ -6,9 +6,9 @@ namespace Comformation.Route53Resolver.ResolverRule
 {
     /// <summary>
     /// AWS::Route53Resolver::ResolverRule
-    /// The 	AWS::Route53Resolver::ResolverRule resource provides detailed information about a resolver rule, which
-    /// specifies 	how to route DNS queries out of a VPC for Amazon Route&#160;53 Resolver. For more information, see
-    /// 	ResolverRule in the Amazon Route&#160;53 API Reference.
+    /// For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through,
+    /// 			one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your
+    /// network.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html
     /// </summary>
     public class ResolverRuleResource : ResourceBase
@@ -17,72 +17,77 @@ namespace Comformation.Route53Resolver.ResolverRule
         {
             /// <summary>
             /// ResolverEndpointId
+            /// 		
+            /// The ID of the endpoint that the rule is associated with.
             /// 	
-            /// The ID of the outbound endpoint that the rule is associated with.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ResolverEndpointId { get; set; }
 
             /// <summary>
             /// DomainName
-            /// 	
+            /// 		
             /// DNS queries for this domain name are forwarded to the IP addresses that are specified in TargetIps.
-            /// 		If a query matches multiple resolver rules (example. com and www. example. com), the query is
-            /// routed 		using the resolver rule that contains the most specific domain name (www. example. com).
+            /// If a query matches 			multiple resolver rules (example. com and www. example. com), the query is
+            /// routed using the resolver rule that contains the most specific domain name 			(www. example. com).
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// RuleType
+            /// 		
+            /// This value is always FORWARD. Other resolver rule types aren&#39;t supported.
             /// 	
-            /// When you want to forward DNS queries for specified domain name to resolvers on your network, specify
-            /// FORWARD.
-            /// 	
-            /// When you have a forwarding rule to forward DNS queries for a domain to your network and you want
-            /// Resolver to process queries for 		a subdomain of that domain, choose SYSTEM.
-            /// 	
-            /// For example, to forward DNS queries for example. com to resolvers on your network, you create a rule
-            /// and specify FORWARD 		for RuleType. To then have Resolver process queries for apex. example. com,
-            /// you create a rule and specify 		SYSTEM for RuleType.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: FORWARD | RECURSIVE | SYSTEM
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleType { get; set; }
 
             /// <summary>
             /// TargetIps
+            /// 		
+            /// An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
+            /// Typically, 			these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses.
+            /// IPv6 is not supported.
             /// 	
-            /// When a DNS query matches the name that you specify in DomainName, the outbound endpoint forwards the
-            /// query 		to the IP addresses that you specify here, typically the IP addresses for DNS resolvers on
-            /// your network. 		Specify IPv4 addresses. IPv6 is not supported.
             /// Required: No
-            /// Type: List of TargetAddress property types
+            /// Type: List of TargetAddress
             /// Update requires: No interruption
             /// </summary>
 			public List<TargetAddress> TargetIps { get; set; }
 
             /// <summary>
             /// Tags
+            /// 		
+            /// A list of the tag keys and values that you want to associate with the endpoint.
             /// 	
-            /// A list of the tag keys and values that you want to associate with the rule.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
+            /// 		
+            /// The name for the resolver rule, which you specified when you created the resolver rule.
             /// 	
-            /// A friendly name that lets you easily find a rule in the Resolver dashboard in the Route&#160;53 console.
             /// Required: No
             /// Type: String
+            /// Maximum: 64
+            /// Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_&#39; &#39;]+)
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

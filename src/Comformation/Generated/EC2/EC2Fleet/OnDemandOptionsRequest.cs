@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
-    /// Amazon EC2 EC2Fleet OnDemandOptionsRequest
-    /// The OnDemandOptionsRequest property type specifies the allocation strategy of On-Demand Instances in an EC2
-    /// Fleet.
+    /// AWS::EC2::EC2Fleet OnDemandOptionsRequest
+    /// Specifies the allocation strategy of On-Demand Instances in an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html
     /// </summary>
     public class OnDemandOptionsRequest
@@ -23,6 +22,7 @@ namespace Comformation.EC2.EC2Fleet
         /// lowest-price.
         /// Required: No
         /// Type: String
+        /// Allowed Values: lowest-price | prioritized
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AllocationStrategy")]

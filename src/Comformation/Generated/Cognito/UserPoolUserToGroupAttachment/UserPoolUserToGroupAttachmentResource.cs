@@ -16,27 +16,36 @@ namespace Comformation.Cognito.UserPoolUserToGroupAttachment
         {
             /// <summary>
             /// GroupName
-            /// The name of the group.
+            /// The group name.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// UserPoolId
-            /// The ID of the user pool.
+            /// The user pool ID for the user pool.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 55
+            /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// Username
-            /// The user&#39;s user name.
+            /// The username for the user.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Username { get; set; }

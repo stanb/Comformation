@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceCatalog.CloudFormationProduct
 {
     /// <summary>
-    /// AWS Service Catalog CloudFormationProduct ProvisioningArtifactProperties
-    /// The ProvisioningArtifactProperties property type specifies information about a provisioning artifact (also
-    /// known as a version) for a product.
+    /// AWS::ServiceCatalog::CloudFormationProduct ProvisioningArtifactProperties
+    /// Information about a provisioning artifact (also known as a version) for a product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html
     /// </summary>
     public class ProvisioningArtifactProperties
@@ -16,7 +15,8 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 
         /// <summary>
         /// Description
-        /// The description of the provisioning artifact.
+        /// The description of the provisioning artifact, including how it differs from the previous
+        /// provisioning artifact.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -37,7 +37,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 
         /// <summary>
         /// Name
-        /// The name of the provisioning artifact.
+        /// The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

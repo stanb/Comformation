@@ -7,7 +7,7 @@ namespace Comformation.CodeBuild.Project
     /// <summary>
     /// AWS::CodeBuild::Project
     /// The AWS::CodeBuild::Project resource configures how AWS CodeBuild builds your source code. For example, it
-    /// tells AWS CodeBuild where to get the source code and which build environment to use.
+    /// tells CodeBuild where to get the source code and which build environment to use.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
     /// </summary>
     public class ProjectResource : ResourceBase
@@ -16,17 +16,20 @@ namespace Comformation.CodeBuild.Project
         {
             /// <summary>
             /// Description
-            /// A description of the project. Use the description to identify the purpose of the project.
+            /// A description that makes the build project easy to identify.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// VpcConfig
-            /// Settings that enable AWS CodeBuild to access resources in an Amazon VPC. For more information, see
-            /// Use AWS CodeBuild with Amazon Virtual Private Cloud in the AWS CodeBuild User Guide.
+            /// VpcConfig specifies settings that enable AWS CodeBuild to access resources in an Amazon VPC. For
+            /// more information, see Use AWS CodeBuild with Amazon Virtual Private Cloud in the AWS CodeBuild User
+            /// Guide.
             /// Required: No
             /// Type: VpcConfig
             /// Update requires: No interruption
@@ -35,9 +38,10 @@ namespace Comformation.CodeBuild.Project
 
             /// <summary>
             /// SecondarySources
-            /// An array of source objects. Each source object contains source code settings for the project.
+            /// An array of ProjectSource objects.
             /// Required: No
-            /// Type: List of AWS CodeBuild Project Source
+            /// Type: List of Source
+            /// Maximum: 12
             /// Update requires: No interruption
             /// </summary>
 			public List<Source> SecondarySources { get; set; }
@@ -45,10 +49,15 @@ namespace Comformation.CodeBuild.Project
             /// <summary>
             /// EncryptionKey
             /// The alias or Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master
-            /// key (CMK) that AWS CodeBuild uses to encrypt the build output. If you don&#39;t specify a value, AWS
-            /// CodeBuild uses the AWS-managed CMK for Amazon Simple Storage Service.
+            /// key (CMK) that CodeBuild uses to encrypt the build output. If you don&#39;t specify a value, CodeBuild
+            /// uses the AWS-managed CMK for Amazon Simple Storage Service (Amazon S3).
+            /// Note You can use a cross-account KMS key to encrypt the build output artifacts if your service role
+            /// has permission to that key.
+            /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK&#39;s alias
+            /// (using the format alias/alias-name ).
             /// Required: No
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EncryptionKey { get; set; }
@@ -59,17 +68,18 @@ namespace Comformation.CodeBuild.Project
             /// enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
             /// pushed to the repository.
             /// Required: No
-            /// Type: AWS CodeBuild Project ProjectTriggers
+            /// Type: ProjectTriggers
             /// Update requires: No interruption
             /// </summary>
 			public ProjectTriggers Triggers { get; set; }
 
             /// <summary>
             /// SecondaryArtifacts
-            /// An array of artifacts objects. Each artifacts object specifies output settings that the project
+            /// A list of Artifacts objects. Each artifacts object specifies output settings that the project
             /// generates during a build.
             /// Required: No
-            /// Type: List of AWS CodeBuild Project Artifacts
+            /// Type: List of Artifacts
+            /// Maximum: 12
             /// Update requires: No interruption
             /// </summary>
 			public List<Artifacts> SecondaryArtifacts { get; set; }
@@ -78,25 +88,30 @@ namespace Comformation.CodeBuild.Project
             /// Source
             /// The source code settings for the project, such as the source code&#39;s repository type and location.
             /// Required: Yes
-            /// Type: AWS CodeBuild Project Source
+            /// Type: Source
             /// Update requires: No interruption
             /// </summary>
 			public Source Source { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the project. The name must be unique across all of the projects in your AWS account.
+            /// The name of the build project. The name must be unique across all of the projects in your AWS
+            /// account.
             /// Required: No
             /// Type: String
+            /// Minimum: 2
+            /// Maximum: 255
+            /// Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Artifacts
-            /// The output settings for artifacts that the project generates during a build.
+            /// Artifacts is a property of the AWS::CodeBuild::Project resource that specifies output settings for
+            /// artifacts generated by an AWS CodeBuild build.
             /// Required: Yes
-            /// Type: AWS CodeBuild Project Artifacts
+            /// Type: Artifacts
             /// Update requires: No interruption
             /// </summary>
 			public Artifacts Artifacts { get; set; }
@@ -106,7 +121,7 @@ namespace Comformation.CodeBuild.Project
             /// Indicates whether AWS CodeBuild generates a publicly accessible URL for your project&#39;s build badge.
             /// For more information, see Build Badges Sample in the AWS CodeBuild User Guide.
             /// Note Including build badges with your project is currently not supported if the source type is
-            /// CodePipeline. If you specify CODEPIPELINE for the Source property, don&#39;t specify the BadgeEnabled
+            /// CodePipeline. If you specify CODEPIPELINE for the Source property, do not specify the BadgeEnabled
             /// property.
             /// Required: No
             /// Type: Boolean
@@ -116,18 +131,21 @@ namespace Comformation.CodeBuild.Project
 
             /// <summary>
             /// LogsConfig
-            /// Information about logs for this build project.
+            /// Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs,
+            /// an S3 bucket, or both.
             /// Required: No
-            /// Type: AWS CodeBuild Project LogsConfig
+            /// Type: LogsConfig
             /// Update requires: No interruption
             /// </summary>
 			public LogsConfig LogsConfig { get; set; }
 
             /// <summary>
             /// ServiceRole
-            /// The ARN of the service role that AWS CodeBuild uses to interact with services on your behalf.
+            /// The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
+            /// with dependent AWS services on behalf of the AWS account.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
@@ -137,6 +155,8 @@ namespace Comformation.CodeBuild.Project
             /// The number of minutes a build is allowed to be queued before it times out.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 5
+            /// Maximum: 480
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> QueuedTimeoutInMinutes { get; set; }
@@ -146,7 +166,7 @@ namespace Comformation.CodeBuild.Project
             /// The build environment settings for the project, such as the environment type or the environment
             /// variables to use for the build environment.
             /// Required: Yes
-            /// Type: AWS CodeBuild Project Environment
+            /// Type: Environment
             /// Update requires: No interruption
             /// </summary>
 			public Environment Environment { get; set; }
@@ -154,18 +174,22 @@ namespace Comformation.CodeBuild.Project
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key-value pairs) for the AWS CodeBuild project.
+            /// These tags are available for use by AWS services that support AWS CodeBuild build project tags.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TimeoutInMinutes
-            /// The number of minutes after which AWS CodeBuild stops the build if it&#39;s not complete. For valid
-            /// values, see the timeoutInMinutes field in the AWS CodeBuild User Guide.
+            /// How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+            /// related build that did not get marked as completed. The default is 60 minutes.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 5
+            /// Maximum: 480
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
-    /// AWS AppMesh VirtualNode AccessLog
+    /// AWS::AppMesh::VirtualNode AccessLog
     /// An object representing the access logging information for a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
     /// </summary>

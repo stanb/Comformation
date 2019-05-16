@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.Template
 {
     /// <summary>
-    /// Amazon Simple Email Service Template Template
-    /// The Template property type specifies specify the content of the email (composed of a subject line, an HTML
-    /// part, and a text-only part) for Amazon SES.
+    /// AWS::SES::Template Template
+    /// The content of the email, composed of a subject line, an HTML part, and a text-only part.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html
     /// </summary>
     public class Template
@@ -26,7 +25,7 @@ namespace Comformation.SES.Template
 
         /// <summary>
         /// TextPart
-        /// The email body that will be visible to recipients whose email clients do not display HTML.
+        /// The email body that is visible to recipients whose email clients don&#39;t display HTML content.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,8 +35,8 @@ namespace Comformation.SES.Template
 
         /// <summary>
         /// TemplateName
-        /// The name of the template. You will refer to this name when you send email using the
-        /// SendTemplatedEmail or SendBulkTemplatedEmail operations.
+        /// The name of the template. You specify this name when you send email using the SendTemplatedEmail or
+        /// SendBulkTemplatedEmail operations.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

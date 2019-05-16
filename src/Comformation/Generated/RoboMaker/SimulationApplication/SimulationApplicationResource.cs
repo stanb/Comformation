@@ -6,8 +6,7 @@ namespace Comformation.RoboMaker.SimulationApplication
 {
     /// <summary>
     /// AWS::RoboMaker::SimulationApplication
-    /// The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application. For more
-    /// information, see API_CreateSimulationApplication in the RoboMaker Developer Guide.
+    /// The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html
     /// </summary>
     public class SimulationApplicationResource : ResourceBase
@@ -16,7 +15,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         {
             /// <summary>
             /// RenderingEngine
-            /// The rendering engine.
+            /// The rendering engine for the simulation application.
             /// Required: Yes
             /// Type: RenderingEngine
             /// Update requires: Replacement
@@ -25,7 +24,7 @@ namespace Comformation.RoboMaker.SimulationApplication
 
             /// <summary>
             /// SimulationSoftwareSuite
-            /// The simulation software suite.
+            /// The simulation software suite used by the simulation application.
             /// Required: Yes
             /// Type: SimulationSoftwareSuite
             /// Update requires: Replacement
@@ -43,7 +42,7 @@ namespace Comformation.RoboMaker.SimulationApplication
 
             /// <summary>
             /// RobotSoftwareSuite
-            /// The robot software suite.
+            /// The robot software suite of the simulation application.
             /// Required: Yes
             /// Type: RobotSoftwareSuite
             /// Update requires: Replacement
@@ -54,17 +53,16 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Sources
             /// The sources of the simulation application.
             /// Required: Yes
-            /// Type: List of SourceConfig property types
+            /// Type: List of SourceConfig
             /// Update requires: No interruption
             /// </summary>
 			public List<SourceConfig> Sources { get; set; }
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// A map that contains tag keys and tag values that are attached to the simulation application.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
@@ -74,6 +72,9 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// The name of the simulation application.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

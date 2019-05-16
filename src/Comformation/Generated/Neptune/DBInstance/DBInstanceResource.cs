@@ -16,27 +16,32 @@ namespace Comformation.Neptune.DBInstance
             /// <summary>
             /// DBParameterGroupName
             /// The name of an existing DB parameter group or a reference to an AWS::Neptune::DBParameterGroup
-            /// resource created in the template.
+            /// resource created in the template. If any of the data members of the referenced parameter group are
+            /// changed during an update, the DB instance might need to be restarted, which causes some
+            /// interruption. If the parameter group contains static parameters, whether they were changed or not,
+            /// an update triggers a reboot.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption or some interruption. If any of the data members of the referenced
-            /// parameter group are changed during an update, the DB instance might need to be restarted, which
-            /// causes some interruption. If the parameter group contains static parameters, whether they were
-            /// changed or not, an update triggers a reboot.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DBParameterGroupName { get; set; }
 
             /// <summary>
             /// DBInstanceClass
-            /// The name of the compute and memory capacity classes of the DB instance.
+            /// Contains the name of the compute and memory capacity class of the DB instance.
+            /// If you update this property, some interruptions may occur.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
 
             /// <summary>
             /// AllowMajorVersionUpgrade
+            /// Indicates that major version upgrades are allowed. Changing this parameter doesn&#39;t result in an
+            /// outage and the change is asynchronously applied as soon as possible. This parameter must be set to
+            /// true when specifying a value for the EngineVersion parameter that is a different major version than
+            /// the DB instance&#39;s current version.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -45,11 +50,8 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// DBClusterIdentifier
-            /// The name of an existing DB cluster that this instance is associated with.
-            /// Neptune assigns the first DB instance in the cluster as the primary, and additional DB instances as
-            /// replicas.
-            /// If you specify this property, the default deletion policy is Delete. Otherwise, the default deletion
-            /// policy is Snapshot.
+            /// If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB
+            /// instance is a member of.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -58,7 +60,7 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The name of the Availability Zone where the DB instance is located.
+            /// Specifies the name of the Availability Zone the DB instance is located in.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -67,25 +69,21 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// PreferredMaintenanceWindow
-            /// The weekly time range (in UTC) during which system maintenance can occur. For valid values, see the
-            /// PreferredMaintenanceWindow parameter for the CreateDBInstance action in the Amazon Neptune User
-            /// Guide.
-            /// Note This property applies when AWS CloudFormation initially creates the DB instance. If you use AWS
-            /// CloudFormation to update the DB instance, those updates are applied immediately.
+            /// Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated
+            /// Time (UTC).
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption or some interruption. For more information, see ModifyDBInstance in
-            /// the Amazon Neptune User Guide.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates that minor engine upgrades are applied automatically to the DB instance during the
-            /// maintenance window. The default value is true.
+            /// Indicates that minor version patches are applied automatically.
+            /// When updating this property, some interruptions may occur.
             /// Required: No
             /// Type: Boolean
-            /// Update requires: No interruption or some interruption.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
@@ -101,12 +99,8 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// DBInstanceIdentifier
-            /// A name for the DB instance. If you specify a name, AWS CloudFormation converts it to lowercase. If
-            /// you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the
-            /// DB instance. For more information, see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB
+            /// instance.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -117,8 +111,7 @@ namespace Comformation.Neptune.DBInstance
             /// DBSnapshotIdentifier
             /// This parameter is not supported.
             /// AWS::Neptune::DBInstance does not support restoring from snapshots.
-            /// AWS::Neptune::DBCluster supports restoring from snapshots. For more information, see
-            /// AWS::Neptune::DBCluster.
+            /// AWS::Neptune::DBCluster does support restoring from snapshots.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -127,9 +120,9 @@ namespace Comformation.Neptune.DBInstance
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this DB instance.
+            /// An arbitrary set of tags (key-value pairs) for this DB instance.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

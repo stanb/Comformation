@@ -6,9 +6,12 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudTrail.Trail
 {
     /// <summary>
-    /// AWS CloudTrail Trail EventSelector
-    /// The EventSelector property type configures logging of management events and data events for an AWS CloudTrail
-    /// trail. For more information, see PutEventSelectors in the AWS CloudTrail API Reference.
+    /// AWS::CloudTrail::Trail EventSelector
+    /// Use event selectors to further specify the management and data event settings for your trail. By default,
+    /// trails created without specific event selectors will be configured to log all read and write management
+    /// events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for
+    /// all trails. For each trail, if the event matches any event selector, the trail processes and logs the event.
+    /// If the event doesn&#39;t match any event selector, the trail doesn&#39;t log the event.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html
     /// </summary>
     public class EventSelector
@@ -16,8 +19,11 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// DataResources
-        /// The resources for data events. CloudTrail supports logging data events for Amazon S3 objects and AWS
-        /// Lambda functions. For more information, see Data Events in the AWS CloudTrail User Guide.
+        /// CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can
+        /// specify up to 250 resources for an individual event selector, but the total number of data resources
+        /// cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure
+        /// resource logging for all data events.
+        /// For more information, see Data Events and Limits in AWS CloudTrail in the AWS CloudTrail User Guide.
         /// Required: No
         /// Type: List of DataResource
         /// Update requires: No interruption
@@ -27,8 +33,9 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// IncludeManagementEvents
-        /// Specifies whether the event selector includes management events for the trail. The default value is
-        /// true. For more information, see Management Events in the AWS CloudTrail User Guide.
+        /// Specify if you want your event selector to include management events for your trail.
+        /// For more information, see Management Events in the AWS CloudTrail User Guide.
+        /// By default, the value is true.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -38,11 +45,12 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// ReadWriteType
-        /// Specifies whether to log read-only events, write-only events, or all events. The default value is
-        /// All.
+        /// Specify if you want your trail to log read-only events, write-only events, or all. For example, the
+        /// EC2 GetConsoleOutput is a read-only API operation and RunInstances is a write-only API operation.
+        /// By default, the value is All.
         /// Required: No
         /// Type: String
-        /// Valid values: ReadOnly | WriteOnly | All
+        /// Allowed Values: All | ReadOnly | WriteOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReadWriteType")]

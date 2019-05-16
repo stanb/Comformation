@@ -6,10 +6,11 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::ConfigurationTemplate
-    /// Creates a configuration template for an Elastic Beanstalk application. You can use configuration templates to
-    /// deploy different versions of an application by using the configuration settings that you define in the
-    /// configuration template.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html
+    /// The AWS::ElasticBeanstalk::ConfigurationTemplate resource is an AWS Elastic Beanstalk resource type that
+    /// specifies an Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk
+    /// application. You define application configuration settings in a configuration template. You can then use the
+    /// configuration template to deploy different versions of the application with the same configuration settings.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html
     /// </summary>
     public class ConfigurationTemplateResource : ResourceBase
     {
@@ -17,9 +18,11 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
         {
             /// <summary>
             /// ApplicationName
-            /// Name of the Elastic Beanstalk application that is associated with this configuration template.
+            /// The name of the Elastic Beanstalk application to associate with this configuration template.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
@@ -27,30 +30,33 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// <summary>
             /// Description
             /// An optional description for this configuration.
-            /// Type: String
             /// Required: No
-            /// Update requires: Some interruptions
+            /// Type: String
+            /// Maximum: 200
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// EnvironmentId
-            /// An environment whose settings you want to use to create the configuration template. You must specify
-            /// this property if you don&#39;t specify the SolutionStackName or SourceConfiguration properties.
-            /// Type: String
+            /// The ID of an environment whose settings you want to use to create the configuration template. You
+            /// must specify EnvironmentId if you don&#39;t specify PlatformArn, SolutionStackName, or
+            /// SourceConfiguration.
             /// Required: Conditional
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EnvironmentId { get; set; }
 
             /// <summary>
             /// OptionSettings
-            /// The options for the Elastic Beanstalk configuration, such as the instance type. For a complete list
-            /// of Elastic Beanstalk configuration options, see Option Values, in the AWS Elastic Beanstalk
-            /// Developer Guide.
-            /// Type: List of ConfigurationOptionSetting
+            /// Option values for the Elastic Beanstalk configuration, such as the instance type. If specified,
+            /// these values override the values obtained from the solution stack or the source configuration
+            /// template. For a complete list of Elastic Beanstalk configuration options, see Option Values in the
+            /// AWS Elastic Beanstalk Developer Guide.
             /// Required: No
-            /// Update requires: Some interruptions
+            /// Type: List of ConfigurationOptionSetting
+            /// Update requires: No interruption
             /// </summary>
 			public List<ConfigurationOptionSetting> OptionSettings { get; set; }
 
@@ -67,28 +73,32 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
 
             /// <summary>
             /// SolutionStackName
-            /// The name of an Elastic Beanstalk solution stack that this configuration will use. A solution stack
-            /// specifies the operating system, architecture, and application server for a configuration template,
-            /// such as 64bit Amazon Linux 2013. 09 running Tomcat 7 Java 7. For more information, see Supported
-            /// Platforms in the AWS Elastic Beanstalk Developer Guide.
-            /// You must specify this property if you don&#39;t specify the PlatformArn, EnvironmentId, or
-            /// SourceConfiguration properties.
-            /// Type: String
+            /// The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For
+            /// example, 64bit Amazon Linux 2013. 09 running Tomcat 7 Java 7. A solution stack specifies the
+            /// operating system, runtime, and application server for a configuration template. It also determines
+            /// the set of configuration options as well as the possible and default values. For more information,
+            /// see Supported Platforms in the AWS Elastic Beanstalk Developer Guide.
+            /// You must specify SolutionStackName if you don&#39;t specify PlatformArn, EnvironmentId, or
+            /// SourceConfiguration.
+            /// Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
             /// Required: Conditional
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
 
             /// <summary>
             /// SourceConfiguration
-            /// A configuration template that is associated with another Elastic Beanstalk application. If you
-            /// specify the SolutionStackName property and the SourceConfiguration property, the solution stack in
-            /// the source configuration template must match the value that you specified for the SolutionStackName
-            /// property.
-            /// You must specify this property if you don&#39;t specify the EnvironmentId or SolutionStackName
-            /// properties.
-            /// Type: SourceConfiguration
+            /// An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk
+            /// uses the configuration values from the specified configuration template to create a new
+            /// configuration.
+            /// Values specified in OptionSettings override any values obtained from the SourceConfiguration.
+            /// You must specify SourceConfiguration if you don&#39;t specify PlatformArn, EnvironmentId, or
+            /// SolutionStackName.
+            /// Constraint: If both solution stack name and source configuration are specified, the solution stack
+            /// of the source configuration template must match the specified solution stack name.
             /// Required: Conditional
+            /// Type: SourceConfiguration
             /// Update requires: Replacement
             /// </summary>
 			public SourceConfiguration SourceConfiguration { get; set; }

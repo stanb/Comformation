@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Classifier
 {
     /// <summary>
-    /// AWS Glue Classifier JsonClassifier
-    /// The JsonClassifier property type specifies an AWS Glue classifier for JSON content.
+    /// AWS::Glue::Classifier JsonClassifier
+    /// A classifier for JSON content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
     /// </summary>
     public class JsonClassifier
@@ -19,7 +19,7 @@ namespace Comformation.Glue.Classifier
         /// of JsonPath, as described in Writing JsonPath Custom Classifiers.
         /// Required: Yes
         /// Type: String
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("JsonPath")]
         public Union<string, IntrinsicFunction> JsonPath { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.Glue.Classifier
         /// <summary>
         /// Name
         /// The name of the classifier.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Update requires: Replacement
         /// </summary>

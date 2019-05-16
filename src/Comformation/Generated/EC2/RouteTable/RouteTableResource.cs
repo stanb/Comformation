@@ -6,7 +6,7 @@ namespace Comformation.EC2.RouteTable
 {
     /// <summary>
     /// AWS::EC2::RouteTable
-    /// Creates a new route table within a VPC. After you create a new route table, you can add routes and associate
+    /// Specifies a route table for a specified VPC. After you create a route table, you can add routes and associate
     /// the table with a subnet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html
     /// </summary>
@@ -16,17 +16,18 @@ namespace Comformation.EC2.RouteTable
         {
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this route table.
+            /// 	
+            /// Any tags assigned to the route table.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC where the route table will be created.
-            /// Example: vpc-11ad4878
+            /// 	
+            /// The ID of the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

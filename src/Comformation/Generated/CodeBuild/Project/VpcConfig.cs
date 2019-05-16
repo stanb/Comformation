@@ -6,8 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project VpcConfig
-    /// The VpcConfig property type specifies settings that enable AWS CodeBuild to access resources in an Amazon VPC.
+    /// AWS::CodeBuild::Project VpcConfig
+    /// VpcConfig is a property of the AWS::CodeBuild::Project resource that enable AWS CodeBuild to access resources
+    /// in an Amazon VPC. For more information, see Use AWS CodeBuild with Amazon Virtual Private Cloud in the AWS
+    /// CodeBuild User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html
     /// </summary>
     public class VpcConfig
@@ -15,9 +17,10 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Subnets
-        /// The IDs of the subnets in the Amazon VPC. The maximum count is 16.
+        /// A list of one or more subnet IDs in your Amazon VPC. The maximum count is 16.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 16
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Subnets")]
@@ -28,6 +31,7 @@ namespace Comformation.CodeBuild.Project
         /// The ID of the Amazon VPC.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VpcId")]
@@ -35,9 +39,10 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// SecurityGroupIds
-        /// The IDs of the security groups in the Amazon VPC. The maximum count is 5.
+        /// A list of one or more security groups IDs in your Amazon VPC. The maximum count is 5.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 5
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]

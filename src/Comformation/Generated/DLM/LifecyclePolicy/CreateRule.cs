@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DLM.LifecyclePolicy
 {
     /// <summary>
-    /// Amazon Data Lifecycle Manager LifecyclePolicy CreateRule
-    /// The CreateRule property type specifies when to create snapshots of EBS volumes.
+    /// AWS::DLM::LifecyclePolicy CreateRule
+    /// Specifies when to create snapshots of EBS volumes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html
     /// </summary>
     public class CreateRule
@@ -15,9 +15,10 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// IntervalUnit
-        /// The time unit. The supported unit is HOURS.
+        /// The interval unit.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: HOURS
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IntervalUnit")]
@@ -25,9 +26,11 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// Times
-        /// The time, in UTC, to start the operation.
+        /// The time, in UTC, to start the operation. The supported format is hh:mm.
+        /// The operation occurs within a one-hour window following the specified time.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Times")]
@@ -35,9 +38,10 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// Interval
-        /// The time interval between snapshots. Supported values are 12 and 24.
+        /// The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Interval")]

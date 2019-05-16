@@ -16,29 +16,35 @@ namespace Comformation.GameLift.Build
         {
             /// <summary>
             /// Name
-            /// An identifier to associate with this build. Build names don&#39;t need to be unique.
+            /// Descriptive label that is associated with a build. Build names do not need to be unique.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// StorageLocation
-            /// The Amazon Simple Storage Service (Amazon S3) location where your build package files are located.
-            /// Required: No, but we recommend that you specify a location. If you don&#39;t specify this property, you
-            /// must manually upload your build package files to GameLift.
-            /// Type: Amazon GameLift Build StorageLocation
+            /// Information indicating where your game build files are stored. Use this parameter only when creating
+            /// a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an
+            /// Amazon S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon
+            /// GameLift to access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+            /// create a new build in.
+            /// Required: No
+            /// Type: S3Location
             /// Update requires: Replacement
             /// </summary>
 			public S3Location StorageLocation { get; set; }
 
             /// <summary>
             /// Version
-            /// A version to associate with this build. Version is useful if you want to track updates to your build
-            /// package files. Versions don&#39;t need to be unique.
+            /// Version that is associated with this build. Version strings do not need to be unique.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Version { get; set; }

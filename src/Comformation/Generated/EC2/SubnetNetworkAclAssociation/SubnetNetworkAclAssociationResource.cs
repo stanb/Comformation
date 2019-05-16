@@ -7,7 +7,7 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
     /// <summary>
     /// AWS::EC2::SubnetNetworkAclAssociation
     /// Associates a subnet with a network ACL. For more information, see ReplaceNetworkAclAssociation in the Amazon
-    /// EC2 API Reference.
+    /// Elastic Compute Cloud API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
     /// </summary>
     public class SubnetNetworkAclAssociationResource : ResourceBase
@@ -16,7 +16,8 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
         {
             /// <summary>
             /// NetworkAclId
-            /// The ID of the new ACL to associate with the subnet.
+            /// 		
+            /// The ID of the network ACL.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +26,8 @@ namespace Comformation.EC2.SubnetNetworkAclAssociation
 
             /// <summary>
             /// SubnetId
-            /// The ID representing the current association between the original network ACL and the subnet.
+            /// 		
+            /// The ID of the subnet.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion GroupOwnerSetting
+    /// AWS::Greengrass::ResourceDefinitionVersion GroupOwnerSetting
     /// Settings that define additional 		Linux OS group permissions to give to the Lambda function process. You can
     /// give the permissions of the Linux group that 		owns the resource or choose another Linux group. These
     /// permissions are in addition to the function&#39;s RunAs permissions.
@@ -17,8 +17,8 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 
         /// <summary>
         /// AutoAddGroupOwner
-        /// Indicates whether to give the privileges of the Linux group that owns the resource 				 to the
-        /// Lambda process. This gives the Lambda process the file access permissions of the Linux group.
+        /// Indicates whether to give the privileges of the Linux group that owns the resource to the Lambda
+        /// process. This gives 	 the Lambda process the file access permissions of the Linux group.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: Replacement
@@ -28,8 +28,8 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 
         /// <summary>
         /// GroupOwner
-        /// The name of the Linux group whose privileges you want to add to the Lambda process. 				 This value
-        /// is ignored if AutoAddGroupOwner is true.
+        /// The name of the Linux group whose privileges you want to add to the Lambda process. This value is
+        /// ignored if 	 AutoAddGroupOwner is true.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

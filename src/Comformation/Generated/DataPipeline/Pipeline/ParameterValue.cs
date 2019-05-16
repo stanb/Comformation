@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
-    /// AWS Data Pipeline Pipeline ParameterValues
-    /// ParameterValues is a property of the AWS::DataPipeline::Pipeline resource that sets values for parameters that
-    /// are used in a pipeline definition.
+    /// AWS::DataPipeline::Pipeline ParameterValue
+    /// A value or list of parameter values.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html
     /// </summary>
     public class ParameterValue
@@ -16,18 +15,26 @@ namespace Comformation.DataPipeline.Pipeline
 
         /// <summary>
         /// Id
-        /// The ID of a parameter object.
+        /// The ID of the parameter value.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Id")]
         public Union<string, IntrinsicFunction> Id { get; set; }
 
         /// <summary>
         /// StringValue
-        /// A value to associate with the parameter object.
+        /// The field value, expressed as a String.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 10240
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StringValue")]
         public Union<string, IntrinsicFunction> StringValue { get; set; }

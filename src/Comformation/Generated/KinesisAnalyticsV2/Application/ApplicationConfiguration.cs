@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application ApplicationConfiguration
-    /// The ApplicationConfiguration property type define the the creation parameters for an Amazon Kinesis Data
-    /// Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application ApplicationConfiguration
+    /// Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html
     /// </summary>
     public class ApplicationConfiguration

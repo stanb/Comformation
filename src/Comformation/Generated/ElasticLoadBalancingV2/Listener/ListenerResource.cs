@@ -6,11 +6,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::Listener
-    /// The AWS::ElasticLoadBalancingV2::Listener resource creates a listener for an Application Load Balancer or a
-    /// Network Load Balancer. The listener checks for connection requests and forwards them to one or more target
-    /// groups. For more information, see Listeners for Your Application Load Balancers in the User Guide for
-    /// Application Load Balancers or Listeners for Your Network Load Balancers in the User Guide for Network Load
-    /// Balancers.
+    /// Specifies a listener for an Application Load Balancer or Network Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
     /// </summary>
     public class ListenerResource : ResourceBase
@@ -19,19 +15,19 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         {
             /// <summary>
             /// Certificates
-            /// [HTTPS and TLS listeners] The default SSL server certificate for the listener.
-            /// Required: Conditional. If you specify HTTPS or TLS for the Protocol property, you must specify
-            /// exactly one certificate.
-            /// Type: List of Elastic Load Balancing V2 Certificate
+            /// The default SSL server certificate. You must provide exactly one certificate if the listener
+            /// protocol is HTTPS or TLS.
+            /// Required: Conditional
+            /// Type: List of Certificate
             /// Update requires: No interruption
             /// </summary>
 			public List<Certificate> Certificates { get; set; }
 
             /// <summary>
             /// DefaultActions
-            /// The actions for the default rule for the listener.
+            /// The actions for the default rule.
             /// Required: Yes
-            /// Type: List of Elastic Load Balancing V2 Action
+            /// Type: List of Action
             /// Update requires: No interruption
             /// </summary>
 			public List<Action> DefaultActions { get; set; }
@@ -47,30 +43,31 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 
             /// <summary>
             /// Port
-            /// The port on which the listener listens for requests.
-            /// For valid values, see the Port parameter for the CreateListener action in the Elastic Load Balancing
-            /// API Reference version 2015-12-01.
+            /// The port on which the load balancer is listening.
             /// Required: Yes
             /// Type: Integer
+            /// Minimum: 1
+            /// Maximum: 65535
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// Protocol
-            /// The protocol that clients must use to send requests to the listener.
-            /// For valid values, see the Protocol parameter for the CreateListener action in the Elastic Load
-            /// Balancing API Reference version 2015-12-01.
+            /// The protocol for connections from clients to the load balancer. For Application Load Balancers, the
+            /// supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP
+            /// and TLS.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: HTTP | HTTPS | TCP | TLS
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
 
             /// <summary>
             /// SslPolicy
-            /// [HTTPS and TLS listeners] The security policy that defines the ciphers and protocols that the
-            /// listener supports. The default is the current predefined security policy.
+            /// [HTTPS and TLS listeners] The security policy that defines which ciphers and protocols are
+            /// supported. The default is the current predefined security policy.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

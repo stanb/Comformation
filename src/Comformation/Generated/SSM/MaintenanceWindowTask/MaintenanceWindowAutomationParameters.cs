@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask MaintenanceWindowAutomationParameters
+    /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowAutomationParameters
     /// The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type
-    /// for a Maintenance Window task in AWS Systems Manager .
+    /// for a Maintenance Window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html
     /// </summary>
     public class MaintenanceWindowAutomationParameters
@@ -18,7 +18,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Parameters
         /// The parameters for the AUTOMATION task.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -29,6 +29,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The version of an Automation document to use during task execution.
         /// Required: No
         /// Type: String
+        /// Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentVersion")]

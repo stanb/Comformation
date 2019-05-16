@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion SageMakerMachineLearningModelResourceData
+    /// AWS::Greengrass::ResourceDefinitionVersion SageMakerMachineLearningModelResourceData
     /// Settings for an 		Secrets Manager machine learning resource. 		 For more information, see Perform Machine
     /// Learning Inference in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html

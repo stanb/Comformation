@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SecurityGroup
 {
     /// <summary>
-    /// EC2 Security Group Rule Property Type
-    /// The EC2 Security Group Rule is an embedded property of the AWS::EC2::SecurityGroup type.
+    /// AWS::EC2::SecurityGroup Egress
+    /// Specifies an outbound rule for a security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
     /// </summary>
     public class Ingress
@@ -15,48 +15,58 @@ namespace Comformation.EC2.SecurityGroup
 
         /// <summary>
         /// CidrIp
-        /// Specifies an IPv4 CIDR range.
-        /// Required: Conditional. You must specify only one of the following properties: CidrIp, CidrIpv6,
-        /// DestinationPrefixListId, DestinationSecurityGroupId, or SourceSecurityGroupId.
+        /// The IPv4 address range, in CIDR format.
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CidrIp")]
         public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
         /// <summary>
         /// CidrIpv6
-        /// Specifies an IPv6 CIDR range.
-        /// Required: Conditional. You must specify only one of the following properties: CidrIp, CidrIpv6,
-        /// DestinationPrefixListId, DestinationSecurityGroupId, or SourceSecurityGroupId.
+        /// [EC2-VPC only] The IPv6 ranges.
+        /// The IPv6 address range, in CIDR format.
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CidrIpv6")]
         public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
         /// <summary>
         /// Description
-        /// Description of the security group rule.
+        /// A description for the security group rule.
+        /// Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and .
+        /// _-:/()#,@[]+=;{}!$*
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Description")]
         public Union<string, IntrinsicFunction> Description { get; set; }
 
         /// <summary>
         /// FromPort
-        /// The start of port range for the TCP and UDP protocols, or an ICMP type number. An ICMP type number
-        /// of -1 indicates a wildcard (i. e. , any ICMP type number).
+        /// The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of -1
+        /// indicates all ICMP/ICMPv6 types. If you specify all 		ICMP/ICMPv6 types, you must specify all codes.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FromPort")]
         public Union<int, IntrinsicFunction> FromPort { get; set; }
 
         /// <summary>
         /// IpProtocol
-        /// An IP protocol name or number. For valid values, go to the IpProtocol parameter in
-        /// AuthorizeSecurityGroupIngress
+        /// The IP protocol name (tcp, udp, icmp, icmpv6) or number (see Protocol Numbers).
+        /// [VPC only] Use -1 to specify all protocols. When authorizing security group rules, specifying -1 or
+        /// a protocol number other than tcp, udp, icmp, or icmpv6 allows traffic on all ports, regardless of
+        /// any port range you specify. For tcp, udp, and icmp, you must specify a port range. For icmpv6, the
+        /// port range is optional; if you omit the port range, traffic for all types and codes is allowed.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IpProtocol")]
         public Union<string, IntrinsicFunction> IpProtocol { get; set; }
@@ -69,45 +79,29 @@ namespace Comformation.EC2.SecurityGroup
 
         /// <summary>
         /// SourceSecurityGroupId
-        /// For VPC security groups only. Specifies the ID of the Amazon EC2 Security Group to allow access. You
-        /// can use the Ref intrinsic function to refer to the logical ID of a security group defined in the
-        /// same template.
-        /// Required: Conditional. You must specify only one of the following properties: CidrIp, CidrIpv6,
-        /// DestinationPrefixListId, DestinationSecurityGroupId, or SourceSecurityGroupId.
-        /// Type: String
         /// </summary>
         [JsonProperty("SourceSecurityGroupId")]
         public Union<string, IntrinsicFunction> SourceSecurityGroupId { get; set; }
 
         /// <summary>
         /// SourceSecurityGroupName
-        /// For non-VPC security groups only. Specifies the name of the Amazon EC2 Security Group to use for
-        /// access. You can use the Ref intrinsic function to refer to the logical name of a security group that
-        /// is defined in the same template.
-        /// Required: Conditional. If you specify CidrIp, do not specify SourceSecurityGroupName.
-        /// Type: String
         /// </summary>
         [JsonProperty("SourceSecurityGroupName")]
         public Union<string, IntrinsicFunction> SourceSecurityGroupName { get; set; }
 
         /// <summary>
         /// SourceSecurityGroupOwnerId
-        /// Specifies the AWS Account ID of the owner of the Amazon EC2 Security Group that is specified in the
-        /// SourceSecurityGroupName property.
-        /// Required: Conditional. If you specify SourceSecurityGroupName and that security group is owned by a
-        /// different account than the account creating the stack, you must specify the
-        /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
-        /// Type: String
         /// </summary>
         [JsonProperty("SourceSecurityGroupOwnerId")]
         public Union<string, IntrinsicFunction> SourceSecurityGroupOwnerId { get; set; }
 
         /// <summary>
         /// ToPort
-        /// The end of port range for the TCP and UDP protocols, or an ICMP code. An ICMP code of -1 indicates a
-        /// wildcard (i. e. , any ICMP code).
+        /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value 		of -1
+        /// indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ToPort")]
         public Union<int, IntrinsicFunction> ToPort { get; set; }

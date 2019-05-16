@@ -6,8 +6,7 @@ namespace Comformation.EC2.TransitGatewayRoute
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRoute
-    /// Creates a static route for a transit gateway route table. For more information, see Amazon VPC Transit
-    /// Gateways.
+    /// Specifies a static route for a transit gateway route table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html
     /// </summary>
     public class TransitGatewayRouteResource : ResourceBase
@@ -25,7 +24,7 @@ namespace Comformation.EC2.TransitGatewayRoute
 
             /// <summary>
             /// DestinationCidrBlock
-            /// The CIDR range used for destination matches. Routing decisions are based on the most specific match.
+            /// The CIDR block used for destination matches.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -34,7 +33,7 @@ namespace Comformation.EC2.TransitGatewayRoute
 
             /// <summary>
             /// Blackhole
-            /// Indicates whether to drop traffic if the target isn&#39;t available.
+            /// Indicates whether to drop traffic that matches this route.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement

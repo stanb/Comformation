@@ -27,7 +27,7 @@ namespace Comformation.Greengrass.LoggerDefinitionVersion
             /// Loggers
             /// The loggers in this version.
             /// Required: Yes
-            /// Type: List of Logger property types
+            /// Type: List of Logger
             /// Update requires: Replacement
             /// </summary>
 			public List<Logger> Loggers { get; set; }

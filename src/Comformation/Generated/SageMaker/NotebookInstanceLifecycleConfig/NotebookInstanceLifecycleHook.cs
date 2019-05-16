@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
 {
     /// <summary>
-    /// Amazon SageMaker NotebookInstanceLifecycleConfig NotebookInstanceLifecycleHook
-    /// The NotebookInstanceLifecycleHook property type specifies the notebook instance lifecycle configuration
-    /// script.
+    /// AWS::SageMaker::NotebookInstanceLifecycleConfig NotebookInstanceLifecycleHook
+    /// Specifies the notebook instance lifecycle configuration script. Each lifecycle configuration script has a
+    /// limit of 16384 characters.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecyclehook.html
     /// </summary>
     public class NotebookInstanceLifecycleHook
@@ -20,6 +20,9 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
         /// configuration.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 16384
+        /// Pattern: [\S\s]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Content")]

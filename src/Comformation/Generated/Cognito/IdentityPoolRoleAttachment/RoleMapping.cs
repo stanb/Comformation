@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.IdentityPoolRoleAttachment
 {
     /// <summary>
-    /// Amazon Cognito IdentityPoolRoleAttachment RoleMapping
+    /// AWS::Cognito::IdentityPoolRoleAttachment RoleMapping
     /// RoleMapping is a property of the AWS::Cognito::IdentityPoolRoleAttachment resource that defines the role
     /// mapping attributes of an Amazon Cognito identity pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html
@@ -45,7 +45,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
         /// The rules to be used for mapping users to roles. If you specify Rules as the role mapping type,
         /// RulesConfiguration is required.
         /// Required: No
-        /// Type: Amazon Cognito IdentityPoolRoleAttachment RoleMapping RulesConfiguration
+        /// Type: RulesConfigurationType
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RulesConfiguration")]

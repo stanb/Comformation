@@ -6,11 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
-    /// Amazon EMR InstanceFleetConfig InstanceTypeConfig
-    /// Use the InstanceTypeConfig property to configure each instance type in an instance fleet. This configuration
-    /// determines which EC2 instances that Amazon EMR attempts to provision to fulfill On-Demand and Spot target
-    /// capacities. You can configure a maximum of five instance types in a fleet. For a list of InstanceTypeConfig
-    /// property types, see the InstanceTypeConfigs property of the AWS::EMR::InstanceFleetConfig resource.
+    /// AWS::EMR::InstanceFleetConfig InstanceTypeConfig
+    /// InstanceType config is a subproperty of InstanceFleetConfig. An instance type configuration specifies each
+    /// instance type in an instance fleet. The configuration determines the EC2 instances Amazon EMR attempts to
+    /// provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type
+    /// configurations in a fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html
     /// </summary>
     public class InstanceTypeConfig
@@ -18,10 +18,14 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// BidPrice
-        /// The bid price for each EC2 Spot Instance type as defined by InstanceType. BidPrice is expressed in
-        /// USD. For more information, see InstanceTypeConfig in the Amazon EMR API Reference.
+        /// The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If
+        /// neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided,
+        /// BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("BidPrice")]
@@ -29,9 +33,10 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// BidPriceAsPercentageOfOnDemandPrice
-        /// The bid price, as a percentage of the On-Demand price, for each EC2 Spot Instance as defined by
-        /// InstanceType. BidPriceAsPercentageOfOnDemandPrice is expressed as a number. For more information,
-        /// see InstanceTypeConfig in the Amazon EMR API Reference.
+        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+        /// InstanceType. Expressed as a number (for example, 20 specifies 20%). If neither BidPrice nor
+        /// BidPriceAsPercentageOfOnDemandPrice is provided, BidPriceAsPercentageOfOnDemandPrice defaults to
+        /// 100%.
         /// Required: No
         /// Type: Double
         /// Update requires: Replacement
@@ -41,10 +46,14 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// Configurations
-        /// A configuration classification that applies when provisioning cluster instances. You can use this
-        /// property to configure applications and software that run on the cluster. Duplicates are not allowed.
+        /// Note Amazon EMR releases 4. x or later.
+        /// An optional configuration specification to be used when provisioning cluster instances, which can
+        /// include configurations for applications and software bundled with Amazon EMR. A configuration
+        /// consists of a classification, properties, and optional nested configurations. A classification
+        /// refers to an application-specific configuration file. Properties are the settings you want to change
+        /// in that file. For more information, see Configuring Applications.
         /// Required: No
-        /// Type: List of Amazon EMR InstanceFleetConfig Configuration
+        /// Type: List of Configuration
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Configurations")]
@@ -52,10 +61,10 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// EbsConfiguration
-        /// The configuration of Amazon Elastic Block Store (Amazon EBS) that is attached to each instance as
-        /// defined by InstanceType.
+        /// The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+        /// InstanceType.
         /// Required: No
-        /// Type: Amazon EMR InstanceFleetConfig EbsConfiguration
+        /// Type: EbsConfiguration
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EbsConfiguration")]
@@ -63,10 +72,12 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// InstanceType
-        /// An EC2 instance type, such as m3. xlarge. For constraints, see InstanceTypeConfig in the Amazon EMR
-        /// API Reference.
+        /// An EC2 instance type, such as m3. xlarge.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceType")]
@@ -75,10 +86,11 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// <summary>
         /// WeightedCapacity
         /// The number of units that a provisioned instance of this type provides toward fulfilling the target
-        /// capacities defined in InstanceFleetConfig. For more information, see InstanceTypeConfig in the
-        /// Amazon EMR API Reference.
+        /// capacities defined in InstanceFleetConfig. This value is 1 for a master instance fleet, and must be
+        /// 1 or greater for core and task instance fleets. Defaults to 1 if not specified.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 0
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("WeightedCapacity")]

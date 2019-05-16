@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Method
 {
     /// <summary>
-    /// Amazon API Gateway Method Integration
+    /// AWS::ApiGateway::Method Integration
     /// Integration is a property of the AWS::ApiGateway::Method resource that specifies information about the target
-    /// backend that an Amazon API Gateway (API Gateway) method calls.
+    /// backend that a method calls.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html
     /// </summary>
     public class Integration
@@ -19,7 +19,8 @@ namespace Comformation.ApiGateway.Method
         /// A list of request parameters whose values API Gateway caches. These parameters must also be
         /// specified in RequestParameters to be supported in CacheKeyParameters.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheKeyParameters")]
         public List<Union<string, IntrinsicFunction>> CacheKeyParameters { get; set; }
@@ -29,14 +30,14 @@ namespace Comformation.ApiGateway.Method
         /// An API-specific tag group of related cached parameters.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheNamespace")]
         public Union<string, IntrinsicFunction> CacheNamespace { get; set; }
 
         /// <summary>
         /// ConnectionId
-        /// The ID of the VpcLink used for the integration when connectionType=VPC_LINK and undefined,
-        /// otherwise.
+        /// The ID of the VpcLink used for the integration when connectionType=VPC_LINK, otherwise undefined.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -83,6 +84,7 @@ namespace Comformation.ApiGateway.Method
         /// Guide.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Credentials")]
         public Union<string, IntrinsicFunction> Credentials { get; set; }
@@ -90,9 +92,11 @@ namespace Comformation.ApiGateway.Method
         /// <summary>
         /// IntegrationHttpMethod
         /// The integration&#39;s HTTP method type.
-        /// Required: Conditional. For the Type property, if you specify MOCK, this property is optional. For
-        /// all other types, you must specify this property.
+        /// For the Type property, if you specify MOCK, this property is optional. For all other types, you must
+        /// specify this property.
+        /// Required: Conditional
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IntegrationHttpMethod")]
         public Union<string, IntrinsicFunction> IntegrationHttpMethod { get; set; }
@@ -103,7 +107,8 @@ namespace Comformation.ApiGateway.Method
         /// Gateway intercepts the response from the backend so that you can control how API Gateway surfaces
         /// backend responses. For example, you can map the backend status codes to codes that you define.
         /// Required: No
-        /// Type: List of Amazon API Gateway Method Integration IntegrationResponse property types
+        /// Type: List of IntegrationResponse
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IntegrationResponses")]
         public List<IntegrationResponse> IntegrationResponses { get; set; }
@@ -116,6 +121,7 @@ namespace Comformation.ApiGateway.Method
         /// Reference.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PassthroughBehavior")]
         public Union<string, IntrinsicFunction> PassthroughBehavior { get; set; }
@@ -126,12 +132,13 @@ namespace Comformation.ApiGateway.Method
         /// as key-value pairs (string-to-string mappings), with a destination as the key and a source as the
         /// value.
         /// Specify the destination by using the following pattern integration. request. location. name, where
-        /// location is querystring, path, or header, and name is a valid, unique parameter name.
+        /// location is query string, path, or header, and name is a valid, unique parameter name.
         /// The source must be an existing method request parameter or a static value. You must enclose static
         /// values in single quotation marks and pre-encode these values based on their destination in the
         /// request.
         /// Required: No
-        /// Type: Mapping of key-value pairs
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RequestParameters")]
         public Dictionary<string, Union<string, IntrinsicFunction>> RequestParameters { get; set; }
@@ -142,11 +149,12 @@ namespace Comformation.ApiGateway.Method
         /// Gateway uses is based on the value of the Content-Type header that&#39;s sent by the client. The content
         /// type value is the key, and the template is the value (specified as a string), such as the following
         /// snippet:
-        /// &quot;application/json&quot;: &quot;{\n \&quot;statusCode\&quot;: \&quot;200\&quot;\n}&quot;
-        /// For more information about templates, see API Gateway API Request and Response Payload-Mapping
-        /// Template Reference in the API Gateway Developer Guide.
+        /// &quot;application/json&quot;: &quot;{\n \&quot;statusCode\&quot;: 200\n}&quot;
+        /// For more information about templates, see API Gateway Mapping Template and Access Logging Variable
+        /// Reference in the API Gateway Developer Guide.
         /// Required: No
-        /// Type: Mapping of key-value pairs
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RequestTemplates")]
         public Dictionary<string, Union<string, IntrinsicFunction>> RequestTemplates { get; set; }
@@ -166,8 +174,9 @@ namespace Comformation.ApiGateway.Method
         /// Type
         /// The type of backend that your method is running, such as HTTP or MOCK. For all of the valid values,
         /// see the type property for the Integration resource in the Amazon API Gateway REST API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }
@@ -182,9 +191,10 @@ namespace Comformation.ApiGateway.Method
         /// function URI follows this form: arn:aws:apigateway:region:lambda:path/path. The path is usually in
         /// the form /2015-03-31/functions/LambdaFunctionARN/invocations. For more information, see the uri
         /// property of the Integration resource in the Amazon API Gateway REST API Reference.
-        /// Required: Conditional. If you specified HTTP or AWS for the Type property, you must specify this
-        /// property.
+        /// If you specified HTTP or AWS for the Type property, you must specify this property.
+        /// Required: Conditional
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Uri")]
         public Union<string, IntrinsicFunction> Uri { get; set; }

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud SpotFleet LaunchTemplateConfig
-    /// LaunchTemplateConfig is a property of the Amazon EC2 SpotFleet SpotFleetRequestConfigData property that
-    /// describes a launch template and overrides.
+    /// AWS::EC2::SpotFleet LaunchTemplateConfig
+    /// Specifies a launch template and overrides.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html
     /// </summary>
     public class LaunchTemplateConfig
@@ -17,7 +16,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchTemplateSpecification
         /// The launch template.
-        /// Required: Yes
+        /// Required: No
         /// Type: FleetLaunchTemplateSpecification
         /// Update requires: No interruption
         /// </summary>

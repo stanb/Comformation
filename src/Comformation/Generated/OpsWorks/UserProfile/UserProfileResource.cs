@@ -6,8 +6,7 @@ namespace Comformation.OpsWorks.UserProfile
 {
     /// <summary>
     /// AWS::OpsWorks::UserProfile
-    /// The AWS::OpsWorks::UserProfile resource configures SSH access for users who require access to instances in an
-    /// AWS OpsWorks stack.
+    /// Describes a user&#39;s SSH information.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html
     /// </summary>
     public class UserProfileResource : ResourceBase
@@ -16,8 +15,8 @@ namespace Comformation.OpsWorks.UserProfile
         {
             /// <summary>
             /// AllowSelfManagement
-            /// Indicates whether users can use the AWS OpsWorks My Settings page to specify their own SSH public
-            /// key. For more information, see Setting an IAM User&#39;s Public SSH Key in the AWS OpsWorks User Guide.
+            /// Whether users can specify their own SSH public key through the My Settings page. For more
+            /// information, see Managing User Permissions.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -26,8 +25,7 @@ namespace Comformation.OpsWorks.UserProfile
 
             /// <summary>
             /// IamUserArn
-            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) user to associate
-            /// with this configuration.
+            /// The user&#39;s IAM ARN.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -36,8 +34,7 @@ namespace Comformation.OpsWorks.UserProfile
 
             /// <summary>
             /// SshPublicKey
-            /// The public SSH key that is associated with the IAM user. To access instances, the IAM user must have
-            /// or be given the corresponding private key.
+            /// The user&#39;s SSH public key.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

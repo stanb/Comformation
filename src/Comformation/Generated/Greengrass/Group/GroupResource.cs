@@ -21,7 +21,7 @@ namespace Comformation.Greengrass.Group
             /// version, and other version types.
             /// 				
             /// Note To associate a group version after the group is created, 				 create an
-            /// AWS::Greengrass::GroupVersion 				 resource and specify the ID of this group.
+            /// AWS::Greengrass::GroupVersion resource and specify the ID of this group.
             /// Required: No
             /// Type: GroupVersion
             /// Update requires: Replacement
@@ -30,8 +30,8 @@ namespace Comformation.Greengrass.Group
 
             /// <summary>
             /// RoleArn
-            /// The ARN of the IAM role attached to the group. This role contains the permissions that 				Lambda
-            /// functions and connectors use to interact with other AWS services.
+            /// The Amazon Resource Name (ARN) of the IAM role attached to the group. This role contains the
+            /// permissions that 				Lambda functions and connectors use to interact with other AWS services.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

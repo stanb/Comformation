@@ -17,23 +17,27 @@ namespace Comformation.ECS.TaskDefinition
         {
             /// <summary>
             /// ContainerDefinitions
-            /// A list of container definitions in JSON format that describes the containers that make up your task.
-            /// Required: Yes
-            /// Type: List of Amazon Elastic Container Service TaskDefinition ContainerDefinition
+            /// A list of container definitions in JSON format that describe the different containers that make up
+            /// your task. For more information about container definition parameters and defaults, see Amazon ECS
+            /// Task Definitions in the Amazon Elastic Container Service Developer Guide.
+            /// Required: No
+            /// Type: List of ContainerDefinition
             /// Update requires: Replacement
             /// </summary>
 			public List<ContainerDefinition> ContainerDefinitions { get; set; }
 
             /// <summary>
             /// Cpu
-            /// The number of cpu units used by the task. If using the EC2 launch type, this field is optional.
-            /// Supported values are between 128 CPU units (0. 125 vCPUs) and 10240 CPU units (10 vCPUs). If you are
-            /// using the Fargate launch type, this field is required and you must use one of the following values,
-            /// which determines your range of valid values for the memory parameter:
-            /// 256 (. 25 vCPU) - Available memory values: 0. 5GB, 1GB, 2GB 512 (. 5 vCPU) - Available memory
-            /// values: 1GB, 2GB, 3GB, 4GB 1024 (1 vCPU) - Available memory values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
-            /// 8GB 2048 (2 vCPU) - Available memory values: Between 4GB and 16GB in 1GB increments 4096 (4 vCPU) -
-            /// Available memory values: Between 8GB and 30GB in 1GB increments
+            /// The number of cpu units used by the task. If you are using the EC2 launch type, this field is
+            /// optional and any value can be used. If you are using the Fargate launch type, this field is required
+            /// and you must use one of the following values, which determines your range of valid values for the
+            /// memory parameter:
+            /// 256 (. 25 vCPU) - Available memory values: 512 (0. 5 GB), 1024 (1 GB), 2048 (2 GB) 512 (. 5 vCPU) -
+            /// Available memory values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) 1024 (1 vCPU) -
+            /// Available memory values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+            /// GB), 8192 (8 GB) 2048 (2 vCPU) - Available memory values: Between 4096 (4 GB) and 16384 (16 GB) in
+            /// increments of 1024 (1 GB) 4096 (4 vCPU) - Available memory values: Between 8192 (8 GB) and 30720 (30
+            /// GB) in increments of 1024 (1 GB)
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -67,13 +71,14 @@ namespace Comformation.ECS.TaskDefinition
             /// <summary>
             /// Memory
             /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional
-            /// and any value can be used. If you are using the Fargate launch type, this field is required and you
-            /// must use one of the following values, which determines your range of valid values for the cpu
-            /// parameter:
-            /// 0. 5GB, 1GB, 2GB - Available cpu values: 256 (. 25 vCPU) 1GB, 2GB, 3GB, 4GB - Available cpu values:
-            /// 512 (. 5 vCPU) 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available cpu values: 1024 (1 vCPU) Between 4GB
-            /// and 16GB in 1GB increments - Available cpu values: 2048 (2 vCPU) Between 8GB and 30GB in 1GB
-            /// increments - Available cpu values: 4096 (4 vCPU)
+            /// and any value can be used. If using the Fargate launch type, this field is required and you must use
+            /// one of the following values, which determines your range of valid values for the cpu parameter:
+            /// 512 (0. 5 GB), 1024 (1 GB), 2048 (2 GB) - Available cpu values: 256 (. 25 vCPU) 1024 (1 GB), 2048 (2
+            /// GB), 3072 (3 GB), 4096 (4 GB) - Available cpu values: 512 (. 5 vCPU) 2048 (2 GB), 3072 (3 GB), 4096
+            /// (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available cpu values: 1024 (1 vCPU)
+            /// Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available cpu values: 2048 (2
+            /// vCPU) Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available cpu values:
+            /// 4096 (4 vCPU)
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -82,22 +87,42 @@ namespace Comformation.ECS.TaskDefinition
 
             /// <summary>
             /// NetworkMode
-            /// The Docker networking mode to use for the containers in the task, such as none, bridge, or host. For
-            /// information about network modes, see NetworkMode in the Task Definition Parameters topic in the
-            /// Amazon Elastic Container Service Developer Guide.
-            /// For Fargate launch types, you can specify awsvpc only. The none, bridge, or host option won&#39;t work
-            /// for Fargate launch types.
+            /// The Docker networking mode to use for the containers in the task. The valid values are none, bridge,
+            /// awsvpc, and host. The default Docker network mode is bridge. If you are using the Fargate launch
+            /// type, the awsvpc network mode is required. If you are using the EC2 launch type, any network mode
+            /// can be used. If the network mode is set to none, you cannot specify port mappings in your container
+            /// definitions, and the tasks containers do not have external connectivity. The host and awsvpc network
+            /// modes offer the highest networking performance for containers because they use the EC2 network stack
+            /// instead of the virtualized network stack provided by the bridge mode.
+            /// With the host and awsvpc network modes, exposed container ports are mapped directly to the
+            /// corresponding host port (for the host network mode) or the attached elastic network interface port
+            /// (for the awsvpc network mode), so you cannot take advantage of dynamic host port mappings.
+            /// If the network mode is awsvpc, the task is allocated an elastic network interface, and you must
+            /// specify a NetworkConfiguration value when you create a service or run a task with the task
+            /// definition. For more information, see Task Networking in the Amazon Elastic Container Service
+            /// Developer Guide.
+            /// Note Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the ecs-init
+            /// package, or AWS Fargate infrastructure support the awsvpc network mode.
+            /// If the network mode is host, you cannot run multiple instantiations of the same task on a single
+            /// container instance when port mappings are used.
+            /// Docker for Windows uses different network modes than Docker for Linux. When you register a task
+            /// definition with Windows containers, you must not specify a network mode. If you use the console to
+            /// register a task definition with Windows containers, you must choose the &amp;lt;default&amp;gt; network mode
+            /// object.
+            /// For more information, see Network settings in the Docker run reference.
             /// Required: No
             /// Type: String
+            /// Allowed Values: awsvpc | bridge | host | none
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkMode { get; set; }
 
             /// <summary>
             /// PlacementConstraints
-            /// The placement constraints for the tasks in the service.
+            /// An array of placement constraint objects to use for tasks. This field is not valid if you are using
+            /// the Fargate launch type for your task.
             /// Required: No
-            /// Type: Amazon Elastic Container Service Service PlacementConstraint
+            /// Type: List of TaskDefinitionPlacementConstraint
             /// Update requires: Replacement
             /// </summary>
 			public List<TaskDefinitionPlacementConstraint> PlacementConstraints { get; set; }
@@ -107,7 +132,7 @@ namespace Comformation.ECS.TaskDefinition
             /// The launch type the task requires. If no value is specified, it will default to EC2. Valid values
             /// include EC2 and FARGATE.
             /// Required: No
-            /// Type: List of Strings
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> RequiresCompatibilities { get; set; }
@@ -115,8 +140,12 @@ namespace Comformation.ECS.TaskDefinition
             /// <summary>
             /// TaskRoleArn
             /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants
-            /// containers in the task permission to call AWS APIs on your behalf. For more information, see IAM
-            /// Roles for Tasks in the Amazon Elastic Container Service Developer Guide.
+            /// containers in the task permission to call AWS APIs on your behalf. For more information, see Amazon
+            /// ECS Task Role in the Amazon Elastic Container Service Developer Guide.
+            /// IAM roles for tasks on Windows require that the -EnableTaskIAMRole option is set when you launch the
+            /// Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to
+            /// take advantage of the feature. For more information, see Windows IAM Roles for Tasks in the Amazon
+            /// Elastic Container Service Developer Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -125,11 +154,14 @@ namespace Comformation.ECS.TaskDefinition
 
             /// <summary>
             /// Volumes
-            /// A list of volume definitions in JSON format for the volumes that you can use in your container
-            /// definitions.
+            /// The list of volume definitions for the task.
+            /// If your tasks are using the Fargate launch type, the host and sourcePath parameters are not
+            /// supported.
+            /// For more information about volume definition parameters and defaults, see Amazon ECS Task
+            /// Definitions in the Amazon Elastic Container Service Developer Guide.
             /// Required: No
-            /// Type: List of Amazon Elastic Container Service TaskDefinition Volumes
-            /// Update requires: Replacement
+            /// Type: List of Volume
+            /// Update requires: No interruption
             /// </summary>
 			public List<Volume> Volumes { get; set; }
 

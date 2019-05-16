@@ -6,7 +6,7 @@ namespace Comformation.EC2.SecurityGroup
 {
     /// <summary>
     /// AWS::EC2::SecurityGroup
-    /// Creates an Amazon EC2 security group. To create a VPC security group, use the VpcId property.
+    /// Specifies a security group. To create a VPC security group, use the VpcId property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
     /// </summary>
     public class SecurityGroupResource : ResourceBase
@@ -15,7 +15,7 @@ namespace Comformation.EC2.SecurityGroup
         {
             /// <summary>
             /// GroupDescription
-            /// A description of the security group.
+            /// The sets of IP permissions.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -24,13 +24,10 @@ namespace Comformation.EC2.SecurityGroup
 
             /// <summary>
             /// GroupName
-            /// The name of the security group. For valid values, see the GroupName parameter of the
-            /// CreateSecurityGroup action in the Amazon EC2 API Reference.
-            /// If you don&#39;t specify a GroupName, AWS CloudFormation generates a unique physical ID and uses that ID
-            /// for the group name. For more information, see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// The name of the security group.
+            /// Constraints: Up to 255 characters in length. Cannot start with sg-.
+            /// Constraints for EC2-Classic: ASCII characters
+            /// Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and . _-:/()#,@[]+=&amp;amp;;{}!$*
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -39,41 +36,37 @@ namespace Comformation.EC2.SecurityGroup
 
             /// <summary>
             /// SecurityGroupEgress
-            /// A list of Amazon EC2 security group egress rules.
+            /// [VPC only] The outbound rules associated with the security group.
             /// Required: No
-            /// Type: List of SecurityGroupRule
+            /// Type: List of Egress
             /// Update requires: No interruption
             /// </summary>
 			public List<Egress> SecurityGroupEgress { get; set; }
 
             /// <summary>
             /// SecurityGroupIngress
-            /// A list of Amazon EC2 security group ingress rules.
+            /// The inbound rules associated with the security group.
             /// Required: No
-            /// Type: List of SecurityGroupRule
+            /// Type: List of Ingress
             /// Update requires: No interruption
             /// </summary>
 			public List<Ingress> SecurityGroupIngress { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the resource.
+            /// Any tags assigned to the security group.
             /// Required: No
-            /// Type: List of Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
-            /// The physical ID of the VPC. You can obtain the physical ID by using a reference to an AWS::EC2::VPC,
-            /// such as: { &quot;Ref&quot; : &quot;myVPC&quot; }.
-            /// For more information about using the Ref function, see Ref.
-            /// Required: Yes, for VPC security groups without a default VPC
+            /// [VPC only] The ID of the VPC for the security group.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// Note For more information about VPC security groups, see Security Groups in the Amazon VPC User
-            /// Guide.
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

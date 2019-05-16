@@ -6,11 +6,13 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster MetricDimension
-    /// The MetricDimension property type represents a CloudWatch dimension that you specify using a key–value pair.
-    /// The Dimensions subproperty of the Amazon EMR Cluster CloudWatchAlarmDefinition property contains a list of one
-    /// or more MetricDimension property types.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule-scalingtrigger-cloudwatchalarmdefinition-metricdimension.html
+    /// AWS::EMR::Cluster MetricDimension
+    /// MetricDimension is a subproperty of the CloudWatchAlarmDefinition property type. MetricDimension specifies a
+    /// CloudWatch dimension, which is specified with a Key Value pair. The key is known as a Name in CloudWatch. By
+    /// default, Amazon EMR uses one dimension whose Key is JobFlowID and Value is a variable representing the cluster
+    /// ID, which is ${emr. clusterId}. This enables the automatic scaling rule for EMR to bootstrap when the cluster
+    /// ID becomes available during cluster creation.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-metricdimension.html
     /// </summary>
     public class MetricDimension
     {
@@ -20,6 +22,7 @@ namespace Comformation.EMR.Cluster
         /// The dimension name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
@@ -29,6 +32,7 @@ namespace Comformation.EMR.Cluster
         /// The dimension value.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }

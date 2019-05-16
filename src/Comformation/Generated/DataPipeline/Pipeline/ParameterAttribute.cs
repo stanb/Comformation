@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
-    /// AWS Data Pipeline Parameter Objects Attributes
-    /// Attribute is a property of the AWS Data Pipeline Pipeline ParameterObjects property that defines the
-    /// attributes of a parameter object as key-value pairs.
+    /// AWS::DataPipeline::Pipeline ParameterAttribute
+    /// Attribute is a property of ParameterObject that defines the attributes of a parameter object as key-value
+    /// pairs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html
     /// </summary>
     public class ParameterAttribute
@@ -16,19 +16,26 @@ namespace Comformation.DataPipeline.Pipeline
 
         /// <summary>
         /// Key
-        /// Specifies the name of a parameter attribute. To view parameter attributes, see Creating a Pipeline
-        /// Using Parameterized Templates in the AWS Data Pipeline Developer Guide.
+        /// The field identifier.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
 
         /// <summary>
         /// StringValue
-        /// A parameter attribute value.
-        /// Required: Conditional if the key that you are using requires it.
+        /// The field value, expressed as a String.
+        /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 10240
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StringValue")]
         public Union<string, IntrinsicFunction> StringValue { get; set; }

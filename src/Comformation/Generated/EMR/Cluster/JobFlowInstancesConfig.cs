@@ -6,21 +6,20 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster JobFlowInstancesConfig
-    /// Use theJobFlowInstancesConfig, which is a property of the AWS::EMR::Cluster resource, to configure the EC2
-    /// instances (nodes) that will run jobs in an Amazon EMR cluster.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html
+    /// AWS::EMR::Cluster JobFlowInstancesConfig
+    /// JobFlowInstancesConfig is a property of the AWS::EMR::Cluster resource. JobFlowInstancesConfig defines the
+    /// instance groups or instance fleets that comprise the cluster. JobFlowInstancesConfig must contain either
+    /// InstanceFleetConfig or InstanceGroupConfig. They cannot be used together.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html
     /// </summary>
     public class JobFlowInstancesConfig
     {
 
         /// <summary>
         /// AdditionalMasterSecurityGroups
-        /// A list of additional EC2 security group IDs to assign to the master instance (master node) in your
-        /// Amazon EMR cluster. Use this property to supplement the rules specified by the Amazon EMR managed
-        /// master security group.
+        /// A list of additional Amazon EC2 security group IDs for the master node.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AdditionalMasterSecurityGroups")]
@@ -28,11 +27,9 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// AdditionalSlaveSecurityGroups
-        /// A list of additional EC2 security group IDs to assign to the slave instances (slave nodes) in your
-        /// Amazon EMR cluster. Use this property to supplement the rules specified by the Amazon EMR managed
-        /// slave security group.
+        /// A list of additional Amazon EC2 security group IDs for the core and task nodes.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AdditionalSlaveSecurityGroups")]
@@ -40,12 +37,10 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// CoreInstanceFleet
-        /// The instance fleet settings for the core instances in your Amazon EMR cluster. Use this property
-        /// with the MasterInstanceFleet property.
-        /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later,
-        /// excluding 5. 0. x versions.
+        /// Describes the EC2 instances and instance configurations for the core instance fleet when using
+        /// clusters with the instance fleet configuration.
         /// Required: No
-        /// Type: Amazon EMR Cluster InstanceFleetConfig
+        /// Type: InstanceFleetConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("CoreInstanceFleet")]
@@ -53,10 +48,10 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// CoreInstanceGroup
-        /// The settings for the core instances in your Amazon EMR cluster. Use this property with the
-        /// MasterInstanceGroup property.
+        /// Describes the EC2 instances and instance configurations for core instance groups when using clusters
+        /// with the uniform instance group configuration.
         /// Required: No
-        /// Type: Amazon EMR Cluster InstanceGroupConfig
+        /// Type: InstanceGroupConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("CoreInstanceGroup")]
@@ -64,10 +59,13 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// Ec2KeyName
-        /// The name of an Amazon Elastic Compute Cloud (Amazon EC2) key pair, which you can use to access the
-        /// instances in your Amazon EMR cluster.
+        /// The name of the EC2 key pair that can be used to ssh to the master node as the user called &quot;hadoop.
+        /// &quot;
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Ec2KeyName")]
@@ -75,9 +73,19 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// Ec2SubnetId
-        /// The ID of the subnet where you want to launch your instances.
+        /// Applies to clusters that use the uniform instance group configuration. To launch the cluster in
+        /// Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC
+        /// subnet where you want the cluster to launch. If you do not specify this value, the cluster launches
+        /// in the normal Amazon Web Services cloud, outside of an Amazon VPC, if the account launching the
+        /// cluster supports EC2 Classic networks in the region where the cluster launches.
+        /// Amazon VPC currently does not support cluster compute quadruple extra large (cc1. 4xlarge)
+        /// instances. Thus you cannot specify the cc1. 4xlarge instance type for clusters launched in an Amazon
+        /// VPC.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Ec2SubnetId")]
@@ -85,10 +93,12 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// EmrManagedMasterSecurityGroup
-        /// The ID of an EC2 security group (managed by Amazon EMR) that is assigned to the master instance
-        /// (master node) in your Amazon EMR cluster.
+        /// The identifier of the Amazon EC2 security group for the master node.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EmrManagedMasterSecurityGroup")]
@@ -96,10 +106,12 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// EmrManagedSlaveSecurityGroup
-        /// The ID of an EC2 security group (managed by Amazon EMR) that is assigned to the slave instances
-        /// (slave nodes) in your Amazon EMR cluster.
+        /// The identifier of the Amazon EC2 security group for the core and task nodes.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("EmrManagedSlaveSecurityGroup")]
@@ -107,10 +119,16 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// HadoopVersion
-        /// The Hadoop version for the job flow. For valid values, see the HadoopVersion parameter in the Amazon
-        /// EMR API Reference.
+        /// Applies only to Amazon EMR release versions earlier than 4. 0. The Hadoop version for the cluster.
+        /// Valid inputs are &quot;0. 18&quot; (deprecated), &quot;0. 20&quot; (deprecated), &quot;0. 20. 205&quot; (deprecated), &quot;1. 0. 3&quot;,
+        /// &quot;2. 2. 0&quot;, or &quot;2. 4. 0&quot;. If you do not set this value, the default of 0. 18 is used, unless the
+        /// AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for
+        /// that AMI version is used.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("HadoopVersion")]
@@ -128,13 +146,10 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// MasterInstanceFleet
-        /// The instance fleet settings for the master instance (master node).
-        /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later,
-        /// excluding 5. 0. x versions.
-        /// You must use either MasterInstanceFleet or MasterInstanceGroup in your configuration. If you use
-        /// MasterInstanceFleet, then you may also specify the CoreInstanceFleet property.
+        /// Describes the EC2 instances and instance configurations for the master instance fleet when using
+        /// clusters with the instance fleet configuration.
         /// Required: No
-        /// Type: Amazon EMR Cluster InstanceFleetConfig
+        /// Type: InstanceFleetConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("MasterInstanceFleet")]
@@ -142,11 +157,10 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// MasterInstanceGroup
-        /// The settings for the master instance (master node).
-        /// You must use either MasterInstanceGroup or MasterInstanceFleet in your configuration. If you use
-        /// MasterInstanceGroup, then you may also specify the CoreInstanceGroup property.
+        /// Describes the EC2 instances and instance configurations for the master instance group when using
+        /// clusters with the uniform instance group configuration.
         /// Required: No
-        /// Type: Amazon EMR Cluster InstanceGroupConfig
+        /// Type: InstanceGroupConfig
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("MasterInstanceGroup")]
@@ -154,9 +168,9 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// Placement
-        /// The Availability Zone (AZ) in which the job flow runs.
+        /// The Availability Zone in which the cluster runs.
         /// Required: No
-        /// Type: Amazon EMR Cluster PlacementType
+        /// Type: PlacementType
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Placement")]
@@ -164,10 +178,13 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// ServiceAccessSecurityGroup
-        /// The ID of the EC2 security group (managed by Amazon EMR) that services use to access clusters in
+        /// The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC
         /// private subnets.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 256
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ServiceAccessSecurityGroup")]
@@ -175,9 +192,8 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// TerminationProtected
-        /// Indicates whether to prevent the EC2 instances from being terminated by an API call or user
-        /// intervention. If you want to delete a stack with protected instances, update this value to false
-        /// before you delete the stack. By default, AWS CloudFormation sets this property to false.
+        /// Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by
+        /// API call, user intervention, or in the event of a job-flow error.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

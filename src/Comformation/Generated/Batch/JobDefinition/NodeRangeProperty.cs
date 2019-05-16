@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
-    /// AWS Batch JobDefinition NodeRangeProperty
-    /// The NodeRangeProperty property type specifies the properties of a multi-node parallel node range in a job
-    /// definition.
+    /// AWS::Batch::JobDefinition NodeRangeProperty
+    /// An object representing the properties of the node range for a multi-node parallel job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html
     /// </summary>
     public class NodeRangeProperty

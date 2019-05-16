@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application KinesisStreamsInput
-    /// The KinesisStreamsInput property type specifies an Kinesis data stream as the streaming source.
+    /// AWS::KinesisAnalyticsV2::Application KinesisStreamsInput
+    /// Identifies an Amazon Kinesis data stream as the streaming source. You provide the stream&#39;s Amazon Resource
+    /// Name (ARN).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-kinesisstreamsinput.html
     /// </summary>
     public class KinesisStreamsInput
@@ -18,6 +19,9 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// The ARN of the input Kinesis data stream to read.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]

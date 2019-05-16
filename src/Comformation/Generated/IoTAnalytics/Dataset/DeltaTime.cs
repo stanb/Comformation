@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset DeltaTime
-    /// The DeltaTime property type specifies a limit of data to that which has arrived since the last execution of an
-    /// action for an AWS IoT Analytics dataset.
+    /// AWS::IoTAnalytics::Dataset DeltaTime
+    /// Used to limit data to that which has arrived since the last execution of the action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html
     /// </summary>
     public class DeltaTime

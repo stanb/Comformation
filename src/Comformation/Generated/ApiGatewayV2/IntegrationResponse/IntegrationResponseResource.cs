@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
 {
     /// <summary>
     /// AWS::ApiGatewayV2::IntegrationResponse
-    /// The AWS::ApiGatewayV2::IntegrationResponse resource defines an API integration response. For more information,
-    /// see CreateIntegrationResponse in the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API. For more
+    /// information, see Set up WebSocket API Integration Responses in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html
     /// </summary>
     public class IntegrationResponseResource : ResourceBase
@@ -20,7 +20,7 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// key-value pairs. Response templates are represented as a key/value map, with a content-type as the
             /// key and a template as the value.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseTemplates { get; set; }
@@ -45,7 +45,7 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// {JSON-expression} , where {name} is a valid and unique response header name and {JSON-expression} is
             /// a valid JSON expression without the $ prefix.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseParameters { get; set; }
@@ -85,10 +85,10 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
 
             /// <summary>
             /// ApiId
-            /// The API ID.
+            /// The API identifier.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ApiId { get; set; }
 

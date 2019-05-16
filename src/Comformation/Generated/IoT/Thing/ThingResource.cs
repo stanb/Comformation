@@ -15,16 +15,18 @@ namespace Comformation.IoT.Thing
         {
             /// <summary>
             /// AttributePayload
-            /// The attribute payload.
+            /// A string that contains up to three key–value pairs. Maximum length of 800. Duplicates not allowed.
             /// Required: No
-            /// Type: AWS IoT Thing AttributePayload
+            /// Type: AttributePayload
             /// Update requires: No interruption
             /// </summary>
 			public AttributePayload AttributePayload { get; set; }
 
             /// <summary>
             /// ThingName
-            /// The name (the physical ID) of the AWS IoT thing.
+            /// 		
+            /// The name of the thing to update.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

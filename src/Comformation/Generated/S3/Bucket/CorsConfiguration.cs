@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket CorsConfiguration
-    /// Describes the cross-origin access configuration for objects in an AWS::S3::Bucket resource.
+    /// AWS::S3::Bucket CorsConfiguration
+    /// Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see
+    /// Enabling Cross-Origin Resource Sharing in the Amazon Simple Storage Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html
     /// </summary>
     public class CorsConfiguration
@@ -15,9 +16,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// CorsRules
-        /// A set of origins and methods that you allow.
+        /// A set of allowed origins and methods.
         /// Required: Yes
-        /// Type: CorsRule
+        /// Type: List of CorsRule
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CorsRules")]
         public List<CorsRule> CorsRules { get; set; }

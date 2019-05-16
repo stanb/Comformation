@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud SpotFleet FleetLaunchTemplateSpecification
-    /// FleetLaunchTemplateSpecification is a property of the Amazon EC2 SpotFleet SpotFleetRequestConfigData property
-    /// that describes a launch template.
+    /// AWS::EC2::SpotFleet FleetLaunchTemplateSpecification
+    /// Describes a launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html
     /// </summary>
     public class FleetLaunchTemplateSpecification
@@ -17,7 +16,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchTemplateId
         /// The ID of the launch template. You must specify either a template ID or a template name.
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -29,8 +28,11 @@ namespace Comformation.EC2.SpotFleet
         /// The name of the launch template. You must specify either a template name or a template ID.
         /// Minimum length of 3. Maximum length of 128. Names must match the following pattern: [a-zA-Z0-9\(\)\.
         /// -/_]+
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 128
+        /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateName")]
@@ -38,8 +40,8 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// Version
-        /// The version number. AWS CloudFormation does not support specifying $Latest or $Default for the
-        /// template version number.
+        /// The version number of the launch template. You must specify a version number. AWS CloudFormation
+        /// does not support specifying $Latest or $Default for the template version number.
         /// Minimum length of 1. Maximum length of 255. Versions must fit the following pattern:
         /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Required: Yes

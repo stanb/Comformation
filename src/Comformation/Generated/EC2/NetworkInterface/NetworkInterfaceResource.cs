@@ -6,8 +6,7 @@ namespace Comformation.EC2.NetworkInterface
 {
     /// <summary>
     /// AWS::EC2::NetworkInterface
-    /// Describes a network interface in an Elastic Compute Cloud (EC2) instance for AWS CloudFormation. This is
-    /// provided in a list in the NetworkInterfaces property of AWS::EC2::Instance.
+    /// Describes a network interface in an Elastic Compute Cloud (EC2) instance for AWS CloudFormation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html
     /// </summary>
     public class NetworkInterfaceResource : ResourceBase
@@ -16,10 +15,10 @@ namespace Comformation.EC2.NetworkInterface
         {
             /// <summary>
             /// Description
-            /// The description of this network interface.
+            /// A description for the network interface.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -27,19 +26,24 @@ namespace Comformation.EC2.NetworkInterface
             /// GroupSet
             /// A list of security group IDs associated with this network interface.
             /// Required: No
-            /// Type: List of strings.
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> GroupSet { get; set; }
 
             /// <summary>
             /// InterfaceType
+            /// The type of network interface.
+            /// Required: No
+            /// Type: String
+            /// Allowed Values: efa | interface | natGateway
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InterfaceType { get; set; }
 
             /// <summary>
             /// Ipv6AddressCount
-            /// The number of IPv6 addresses to associate with the network interface. EC2 automatically selects the
+            /// The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the
             /// IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the Ipv6Addresses
             /// property and don&#39;t specify this property.
             /// Required: No
@@ -54,7 +58,7 @@ namespace Comformation.EC2.NetworkInterface
             /// the network interface. If you&#39;re specifying a number of IPv6 addresses, use the Ipv6AddressCount
             /// property and don&#39;t specify this property.
             /// Required: No
-            /// Type: List of EC2 NetworkInterface Ipv6Addresses
+            /// Type: InstanceIpv6Address
             /// Update requires: No interruption
             /// </summary>
 			public InstanceIpv6Address Ipv6Addresses { get; set; }
@@ -65,7 +69,7 @@ namespace Comformation.EC2.NetworkInterface
             /// IP address. If you want to specify multiple private IP address, use the PrivateIpAddresses property.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 
@@ -75,37 +79,32 @@ namespace Comformation.EC2.NetworkInterface
             /// IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification
             /// property. If you want EC2 to automatically assign private IP addresses, use the
             /// SecondaryPrivateIpAddressCount property and do not specify this property.
-            /// For information about the maximum number of private IP addresses, see Private IP Addresses Per ENI
-            /// Per Instance Type in the Amazon EC2 User Guide for Linux Instances.
             /// Required: No
-            /// Type: list of PrivateIpAddressSpecification.
-            /// Update requires: Replacement if you change the primary private IP address. If not, update requires
-            /// No interruption.
+            /// Type: List of PrivateIpAddressSpecification
             /// </summary>
 			public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 
             /// <summary>
             /// SecondaryPrivateIpAddressCount
-            /// The number of secondary private IP addresses that EC2 automatically assigns to the network
-            /// interface. EC2 uses the value of the PrivateIpAddress property as the primary private IP address. If
-            /// you don&#39;t specify that property, EC2 automatically assigns both the primary and secondary private IP
-            /// addresses.
-            /// If you want to specify your own list of private IP addresses, use the PrivateIpAddresses property
-            /// and do not specify this property.
-            /// For information about the maximum number of private IP addresses, see Private IP Addresses Per ENI
-            /// Per Instance Type in the Amazon EC2 User Guide for Linux Instances.
+            /// The number of secondary private IPv4 addresses to assign to a network interface. When you specify a
+            /// number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet&#39;s IPv4
+            /// CIDR range. You can&#39;t specify this option and specify more than one private IP address using
+            /// privateIpAddresses.
+            /// The number of IP addresses you can assign to a network interface varies by instance type. For more
+            /// information, see IP Addresses Per ENI Per Instance Type in the Amazon Virtual Private Cloud User
+            /// Guide.
             /// Required: No
-            /// Type: Integer.
-            /// Update requires: No interruption.
+            /// Type: Integer
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
             /// <summary>
             /// SourceDestCheck
-            /// Flag indicating whether traffic to or from the instance is validated.
+            /// Indicates whether traffic to or from the instance is validated.
             /// Required: No
             /// Type: Boolean
-            /// Update requires: No interruption.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
 
@@ -114,7 +113,7 @@ namespace Comformation.EC2.NetworkInterface
             /// The ID of the subnet to associate with the network interface.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
@@ -122,8 +121,8 @@ namespace Comformation.EC2.NetworkInterface
             /// Tags
             /// An arbitrary set of tags (key–value pairs) for this network interface.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 

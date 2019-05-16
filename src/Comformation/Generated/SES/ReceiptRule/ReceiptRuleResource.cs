@@ -6,9 +6,7 @@ namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
     /// AWS::SES::ReceiptRule
-    /// The AWS::SES::ReceiptRule resource specifies which actions Amazon SES should take when it receives mail on
-    /// behalf of one or more email addresses or domains that you own. For more information, see Creating Receipt
-    /// Rules for Amazon SES Email Receiving in the Amazon Simple Email Service Developer Guide.
+    /// Specifies a receipt rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
     /// </summary>
     public class ReceiptRuleResource : ResourceBase
@@ -17,8 +15,8 @@ namespace Comformation.SES.ReceiptRule
         {
             /// <summary>
             /// After
-            /// The name of an existing rule after which the new rule will be placed. If this parameter is null, the
-            /// new rule will be inserted at the beginning of the rule list.
+            /// The name of the existing rule that you want to place the current rule after. If this parameter is
+            /// null, the new rule is added as the first entry in the receipt rule set.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -27,8 +25,8 @@ namespace Comformation.SES.ReceiptRule
 
             /// <summary>
             /// Rule
-            /// The specified rule&#39;s name, actions, recipients, domains, enabled status, scan status, and TLS
-            /// policy.
+            /// A data structure that contains the specified rule&#39;s name, actions, recipients, domains, enabled
+            /// status, scan status, and TLS policy.
             /// Required: Yes
             /// Type: Rule
             /// Update requires: No interruption
@@ -37,7 +35,7 @@ namespace Comformation.SES.ReceiptRule
 
             /// <summary>
             /// RuleSetName
-            /// The name of the rule set that the receipt rule will be added to.
+            /// The name of the rule set that you want to add the receipt rule to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

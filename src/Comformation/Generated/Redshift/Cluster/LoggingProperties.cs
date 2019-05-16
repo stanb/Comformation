@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Redshift.Cluster
 {
     /// <summary>
-    /// Amazon Redshift LoggingProperties
-    /// Use the LoggingProperties property of the AWS::Redshift::Cluster resource to configure audit log files,
-    /// containing information such as queries and connection attempts, for the cluster.
+    /// AWS::Redshift::Cluster LoggingProperties
+    /// Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift
+    /// cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html
     /// </summary>
     public class LoggingProperties
@@ -17,6 +17,9 @@ namespace Comformation.Redshift.Cluster
         /// <summary>
         /// BucketName
         /// The name of an existing S3 bucket where the log files are to be stored.
+        /// Constraints:
+        /// Must be in the same region as the cluster The cluster must have read bucket and put object
+        /// permissions
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -27,6 +30,10 @@ namespace Comformation.Redshift.Cluster
         /// <summary>
         /// S3KeyPrefix
         /// The prefix applied to the log file names.
+        /// Constraints:
+        /// Cannot exceed 512 characters Cannot contain spaces( ), double quotes (&quot;), single quotes (&#39;), a
+        /// backslash (\), or control characters. The hexadecimal codes for invalid characters are: x00 to x20
+        /// x22 x27 x5c x7f or larger
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

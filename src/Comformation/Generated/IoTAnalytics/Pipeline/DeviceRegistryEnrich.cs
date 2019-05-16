@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline DeviceRegistryEnrich
-    /// The DeviceRegistryEnrich property type specifies data from the AWS IoT device registry which you can add to
-    /// your message for an AWS IoT Analytics pipeline.
+    /// AWS::IoTAnalytics::Pipeline DeviceRegistryEnrich
+    /// An activity that adds data from the AWS IoT device registry to your message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceregistryenrich.html
     /// </summary>
     public class DeviceRegistryEnrich
@@ -19,6 +18,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the attribute that is added to the message.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attribute")]
@@ -29,6 +30,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -39,6 +42,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the IoT device whose registry information is added to the message.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThingName")]
@@ -49,6 +54,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The ARN of the role that allows access to the device&#39;s registry information.
         /// Required: No
         /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
@@ -56,9 +63,11 @@ namespace Comformation.IoTAnalytics.Pipeline
 
         /// <summary>
         /// Name
-        /// The name of the &quot;deviceRegistryEnrich&quot; activity.
+        /// The name of the &#39;deviceRegistryEnrich&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling ScalingPolicy MetricDimension
-    /// Use the MetricDimension property to specify the dimension of a metric for a target tracking policy in Amazon
-    /// EC2 Auto Scaling. The Dimensions subproperty of the Amazon EC2 Auto Scaling ScalingPolicy
-    /// CustomizedMetricSpecification property contains a list of MetricDimension property types.
+    /// AWS::AutoScaling::ScalingPolicy MetricDimension
+    /// MetricDimension is a subproperty of CustomizedMetricSpecification that specifies the dimensions of a metric
+    /// for a target tracking scaling policy. Dimensions are arbitrary name/value pairs that can be associated with a
+    /// CloudWatch metric. Duplicate dimensions are not allowed.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdimension.html
     /// </summary>
     public class MetricDimension

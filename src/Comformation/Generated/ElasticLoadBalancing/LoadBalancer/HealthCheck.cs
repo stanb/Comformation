@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing V1 HealthCheck
-    /// The HealthCheck property configures health checks for the availability of your EC2 instances. For more
-    /// information, see Configure Health Checks for Your Classic Load Balancer in the User Guide for Classic Load
-    /// Balancers.
+    /// AWS::ElasticLoadBalancing::LoadBalancer HealthCheck
+    /// Specifies health check settings for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html
     /// </summary>
     public class HealthCheck
@@ -17,59 +15,71 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// HealthyThreshold
-        /// Specifies the number of consecutive health probe successes required before moving the instance to
-        /// the Healthy state.
+        /// The number of consecutive health checks successes required before moving the instance to the Healthy
+        /// state.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 2
+        /// Maximum: 10
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HealthyThreshold")]
         public Union<string, IntrinsicFunction> HealthyThreshold { get; set; }
 
         /// <summary>
         /// Interval
-        /// Specifies the approximate interval, in seconds, between health checks of an individual instance.
-        /// Valid values are 5 to 300. The default is 30.
+        /// The approximate interval, in seconds, between health checks of an individual instance.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 5
+        /// Maximum: 300
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Interval")]
         public Union<string, IntrinsicFunction> Interval { get; set; }
 
         /// <summary>
         /// Target
-        /// Specifies the instance&#39;s protocol and port to check. The protocol can be TCP, HTTP, HTTPS, or SSL.
-        /// The range of valid ports is 1 through 65535.
+        /// The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid
+        /// ports is one (1) through 65535.
+        /// TCP is the default, specified as a TCP: port pair, for example &quot;TCP:5000&quot;. In this case, a health
+        /// check simply attempts to open a TCP connection to the instance on the specified port. Failure to
+        /// connect within the configured timeout is considered unhealthy.
+        /// SSL is also specified as SSL: port pair, for example, SSL:5000.
+        /// For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a
+        /// HTTP:port;/;PathToPing; grouping, for example &quot;HTTP:80/weather/us/wa/seattle&quot;. In this case, a HTTP
+        /// GET request is issued to the instance on the given port and path. Any answer other than &quot;200 OK&quot;
+        /// within the timeout period is considered unhealthy.
+        /// The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.
         /// Required: Yes
         /// Type: String
-        /// Note For TCP and SSL, you specify a port pair. For example, you can specify TCP:5000 or SSL:5000.
-        /// The health check attempts to open a TCP or SSL connection to the instance on the port that you
-        /// specify. If the health check fails to connect within the configured timeout period, the instance is
-        /// considered unhealthy. For HTTP or HTTPS, you specify a port and a path to ping (HTTP or
-        /// HTTPS:port/PathToPing). For example, you can specify HTTP:80/weather/us/wa/seattle. In this case, an
-        /// HTTP GET request is issued to the instance on the given port and path. If the health check receives
-        /// any response other than 200 OK within the configured timeout period, the instance is considered
-        /// unhealthy. The total length of the HTTP or HTTPS ping target cannot be more than 1024 16-bit Unicode
-        /// characters.
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Target")]
         public Union<string, IntrinsicFunction> Target { get; set; }
 
         /// <summary>
         /// Timeout
-        /// Specifies the amount of time, in seconds, during which no response means a failed health probe. This
-        /// value must be less than the value for Interval.
+        /// The amount of time, in seconds, during which no response means a failed health check.
+        /// This value must be less than the Interval value.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 2
+        /// Maximum: 60
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Timeout")]
         public Union<string, IntrinsicFunction> Timeout { get; set; }
 
         /// <summary>
         /// UnhealthyThreshold
-        /// Specifies the number of consecutive health probe failures required before moving the instance to the
-        /// Unhealthy state.
+        /// The number of consecutive health check failures required before moving the instance to the Unhealthy
+        /// state.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 2
+        /// Maximum: 10
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UnhealthyThreshold")]
         public Union<string, IntrinsicFunction> UnhealthyThreshold { get; set; }

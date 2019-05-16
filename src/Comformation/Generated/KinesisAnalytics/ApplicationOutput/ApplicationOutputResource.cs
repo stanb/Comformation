@@ -6,9 +6,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationOutput
-    /// The AWS::KinesisAnalytics::ApplicationOutput resource adds an external destination to your Amazon Kinesis Data
-    /// Analytics application. For more information, see AddApplicationOutput in the Amazon Kinesis Data Analytics
-    /// Developer Guide.
+    /// Adds an external destination to your Amazon Kinesis Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html
     /// </summary>
     public class ApplicationOutputResource : ResourceBase
@@ -17,16 +15,22 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         {
             /// <summary>
             /// ApplicationName
-            /// The name of the application to which you want to add the output configuration.
+            /// Name of the application to which you want to add the output configuration.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// Output
-            /// An array of objects, each describing one output configuration.
+            /// An array of objects, each describing one output configuration. In the output configuration, you
+            /// specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an
+            /// Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use
+            /// when writing to the destination.
             /// Required: Yes
             /// Type: Output
             /// Update requires: No interruption

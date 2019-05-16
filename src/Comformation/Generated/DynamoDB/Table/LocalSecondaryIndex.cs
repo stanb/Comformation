@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// Amazon DynamoDB Table LocalSecondaryIndex
-    /// Describes local secondary indexes for the AWS::DynamoDB::Table resource. Each index is scoped to a given hash
-    /// key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where
-    /// the amount of data within a given item collection cannot exceed 10 GB.
+    /// AWS::DynamoDB::Table LocalSecondaryIndex
+    /// Represents the properties of a local secondary index.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html
     /// </summary>
     public class LocalSecondaryIndex
@@ -17,32 +15,44 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// IndexName
-        /// The name of the local secondary index.
+        /// The name of the local secondary index. The name must be unique among all other indexes on this
+        /// table.
         /// Required: Yes
-        /// Length constraints: Minimum of 3. Maximum of 255.
-        /// Pattern: [a-zA-Z0-9_. -]+
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 255
+        /// Pattern: [a-zA-Z0-9_. -]+
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexName")]
         public Union<string, IntrinsicFunction> IndexName { get; set; }
 
         /// <summary>
         /// KeySchema
-        /// The complete index key schema for the local secondary index, which consists of one or more pairs of
-        /// attribute names and key types. For local secondary indexes, the hash key must be the same as that of
-        /// the source table.
+        /// The complete key schema for the local secondary index, consisting of one or more pairs of attribute
+        /// names and key types:
+        /// HASH - partition key RANGE - sort key
+        /// Note The partition key of an item is also known as its hash attribute. The term &quot;hash attribute&quot;
+        /// derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values. The sort key of an item is also known as its range
+        /// attribute. The term &quot;range attribute&quot; derives from the way DynamoDB stores items with the same
+        /// partition key physically close together, in sorted order by the sort key value.
         /// Required: Yes
         /// Type: List of KeySchema
+        /// Maximum: 2
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeySchema")]
         public List<KeySchema> KeySchema { get; set; }
 
         /// <summary>
         /// Projection
-        /// Attributes that are copied (projected) from the source table into the index. These attributes are
-        /// additions to the primary key attributes and index key attributes, which are automatically projected.
+        /// Represents attributes that are copied (projected) from the table into the local secondary index.
+        /// These are in addition to the primary key attributes and index key attributes, which are
+        /// automatically projected.
         /// Required: Yes
         /// Type: Projection
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Projection")]
         public Projection Projection { get; set; }

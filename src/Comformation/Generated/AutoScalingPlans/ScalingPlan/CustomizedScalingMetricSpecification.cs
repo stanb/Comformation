@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    /// AWS Auto Scaling ScalingPlan CustomizedScalingMetricSpecification
-    /// The CustomizedScalingMetricSpecification property type specifies a customized metric (an Amazon CloudWatch
-    /// metric of your choosing) for a target tracking configuration to use with AWS Auto Scaling.
+    /// AWS::AutoScalingPlans::ScalingPlan CustomizedScalingMetricSpecification
+    /// CustomizedScalingMetricSpecification is a subproperty of TargetTrackingConfiguration that specifies a
+    /// customized scaling metric for a target tracking configuration to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html
     /// </summary>
     public class CustomizedScalingMetricSpecification
@@ -29,7 +29,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// The statistic of the metric.
         /// Required: Yes
         /// Type: String
-        /// Valid Values: Average | Minimum | Maximum | SampleCount | Sum
+        /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]
@@ -38,6 +38,8 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// <summary>
         /// Dimensions
         /// The dimensions of the metric.
+        /// Conditional: If you published your metric with dimensions, you must specify the same dimensions in
+        /// your customized scaling metric specification.
         /// Required: No
         /// Type: List of MetricDimension
         /// Update requires: No interruption

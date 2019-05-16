@@ -7,8 +7,8 @@ namespace Comformation.ApiGateway.RequestValidator
     /// <summary>
     /// AWS::ApiGateway::RequestValidator
     /// The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your
-    /// API Gateway API. For more information, see Enable Basic Request Validation for an API in API Gateway in the
-    /// API Gateway Developer Guide.
+    /// API. For more information, see Enable Basic Request Validation for an API in API Gateway in the API Gateway
+    /// Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
     /// </summary>
     public class RequestValidatorResource : ResourceBase
@@ -18,7 +18,7 @@ namespace Comformation.ApiGateway.RequestValidator
             /// <summary>
             /// Name
             /// The name of this request validator.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

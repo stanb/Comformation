@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Events.Rule
 {
     /// <summary>
-    /// Amazon CloudWatch Events Rule KinesisParameters
-    /// The KinesisParameters property type specifies settings that control shard assignment for a Kinesis stream
+    /// AWS::Events::Rule KinesisParameters
+    /// The KinesisParameters property type specifies settings that control shard assignment for a Kinesis data stream
     /// target.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html
     /// </summary>
@@ -16,11 +16,11 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// PartitionKeyPath
-        /// The JSON path to extract from the event and use as the partition key. The default is to use the
-        /// eventId as the partition key. For more information, see Amazon Kinesis Streams Key Concepts in the
-        /// Kinesis Streams Developer Guide.
+        /// The JSON path to be extracted from the event and used as the partition key. For more information,
+        /// see Partition Key in the Amazon Kinesis Data Streams Developer Guide.
         /// Required: Yes
         /// Type: String
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PartitionKeyPath")]

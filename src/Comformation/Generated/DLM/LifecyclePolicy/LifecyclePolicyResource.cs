@@ -6,9 +6,7 @@ namespace Comformation.DLM.LifecyclePolicy
 {
     /// <summary>
     /// AWS::DLM::LifecyclePolicy
-    /// The AWS::DLM::LifecyclePolicy resource creates a lifecycle policy for Amazon Data Lifecycle Manager. For more
-    /// information, see Automating the Amazon EBS Snapshot Lifecycle in the Amazon EC2 User Guide for Linux Instances
-    /// and CreateLifecyclePolicy in the Amazon Data Lifecycle Manager API Reference.
+    /// Specifies a lifecycle policy, which is used to automate operations on Amazon EBS resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html
     /// </summary>
     public class LifecyclePolicyResource : ResourceBase
@@ -19,7 +17,7 @@ namespace Comformation.DLM.LifecyclePolicy
             /// ExecutionRoleArn
             /// The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle
             /// policy.
-            /// Required: Yes
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -27,9 +25,11 @@ namespace Comformation.DLM.LifecyclePolicy
 
             /// <summary>
             /// Description
-            /// The description of the lifecycle policy.
-            /// Required: No
+            /// A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
+            /// Required: Conditional
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 500
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -37,16 +37,18 @@ namespace Comformation.DLM.LifecyclePolicy
             /// <summary>
             /// State
             /// The activation state of the lifecycle policy.
-            /// Required: Yes
+            /// Required: Conditional
             /// Type: String
+            /// Allowed Values: DISABLED | ENABLED | ERROR
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> State { get; set; }
 
             /// <summary>
             /// PolicyDetails
-            /// The configuration of the lifecycle policy.
-            /// Required: No
+            /// The configuration details of the lifecycle policy.
+            /// Target tags cannot be re-used across lifecycle policies.
+            /// Required: Conditional
             /// Type: PolicyDetails
             /// Update requires: No interruption
             /// </summary>

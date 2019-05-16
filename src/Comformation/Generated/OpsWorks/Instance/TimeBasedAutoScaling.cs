@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Instance
 {
     /// <summary>
-    /// AWS OpsWorks TimeBasedAutoScaling Type
-    /// Describes the automatic time-based scaling configuration for an AWS::OpsWorks::Instance resource type. For
-    /// more information, see SetTimeBasedAutoScaling in the AWS OpsWorks Stacks API Reference.
+    /// AWS::OpsWorks::Instance TimeBasedAutoScaling
+    /// Describes an instance&#39;s time-based auto scaling configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html
     /// </summary>
     public class TimeBasedAutoScaling
@@ -18,7 +17,8 @@ namespace Comformation.OpsWorks.Instance
         /// Friday
         /// The schedule for Friday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Friday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Friday { get; set; }
@@ -27,7 +27,8 @@ namespace Comformation.OpsWorks.Instance
         /// Monday
         /// The schedule for Monday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Monday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Monday { get; set; }
@@ -36,7 +37,8 @@ namespace Comformation.OpsWorks.Instance
         /// Saturday
         /// The schedule for Saturday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Saturday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Saturday { get; set; }
@@ -45,7 +47,8 @@ namespace Comformation.OpsWorks.Instance
         /// Sunday
         /// The schedule for Sunday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Sunday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Sunday { get; set; }
@@ -54,7 +57,8 @@ namespace Comformation.OpsWorks.Instance
         /// Thursday
         /// The schedule for Thursday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Thursday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Thursday { get; set; }
@@ -63,7 +67,8 @@ namespace Comformation.OpsWorks.Instance
         /// Tuesday
         /// The schedule for Tuesday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tuesday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Tuesday { get; set; }
@@ -72,7 +77,8 @@ namespace Comformation.OpsWorks.Instance
         /// Wednesday
         /// The schedule for Wednesday.
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Wednesday")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Wednesday { get; set; }

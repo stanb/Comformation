@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Config.ConfigurationRecorder
 {
     /// <summary>
-    /// AWS Config ConfigurationRecorder RecordingGroup
-    /// RecordingGroup is property of the AWS::Config::ConfigurationRecorder resource that defines which AWS resource
-    /// types to include in a recording group.
+    /// AWS::Config::ConfigurationRecorder RecordingGroup
+    /// Specifies the types of AWS resource for which AWS Config 			records configuration changes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html
     /// </summary>
     public class RecordingGroup
@@ -16,33 +15,61 @@ namespace Comformation.Config.ConfigurationRecorder
 
         /// <summary>
         /// AllSupported
-        /// Indicates whether to record all supported resource types. If you specify this property, do not
-        /// specify the ResourceTypes property.
+        /// 		
+        /// Specifies whether AWS Config records configuration changes for 			every supported type of regional
+        /// resource.
+        /// 		
+        /// If you set this option to true, when AWS Config 			adds support for a new type of regional resource,
+        /// it starts 			recording resources of that type automatically.
+        /// 		
+        /// If you set this option to true, you cannot 			enumerate a list of resourceTypes.
+        /// 	
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AllSupported")]
         public Union<bool, IntrinsicFunction> AllSupported { get; set; }
 
         /// <summary>
         /// IncludeGlobalResourceTypes
-        /// Indicates whether AWS Config records all supported global resource types. When AWS Config supports
-        /// new global resource types, AWS Config will automatically start recording them if you enable this
-        /// property.
-        /// Note If you set this property to true, you must set the AllSupported property to true.
+        /// 		
+        /// Specifies whether AWS Config includes all supported types of 			global resources (for example, IAM
+        /// resources) with the resources 			that it records.
+        /// 		
+        /// Before you can set this option to true, you must 			set the allSupported option to 			true.
+        /// 		
+        /// If you set this option to true, when AWS Config 			adds support for a new type of global resource,
+        /// it starts recording 			resources of that type automatically.
+        /// 		
+        /// The configuration details for any global resource are the same 			in all regions. To prevent
+        /// duplicate configuration items, you should 			consider customizing AWS Config in only one region to
+        /// record global 			resources.
+        /// 	
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeGlobalResourceTypes")]
         public Union<bool, IntrinsicFunction> IncludeGlobalResourceTypes { get; set; }
 
         /// <summary>
         /// ResourceTypes
-        /// A list of valid AWS resource types to include in this recording group, such as AWS::EC2::Instance or
-        /// AWS::CloudTrail::Trail. If you specify this property, do not specify the AllSupported property. For
-        /// a list of supported resource types, see Supported resource types in the AWS Config Developer Guide.
+        /// 		
+        /// A comma-separated list that specifies the types of AWS 			resources for which AWS Config records
+        /// configuration changes (for 			example, AWS::EC2::Instance or 				AWS::CloudTrail::Trail).
+        /// 		
+        /// Before you can set this option to true, you must 			set the allSupported option to 			false.
+        /// 		
+        /// If you set this option to true, when AWS Config 			adds support for a new type of resource, it will
+        /// not record 			resources of that type unless you manually add that type to your 			recording group.
+        /// 		
+        /// For a list of valid resourceTypes values, see the 				resourceType Value column in 				Supported AWS
+        /// Resource Types.
+        /// 	
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceTypes")]
         public List<Union<string, IntrinsicFunction>> ResourceTypes { get; set; }

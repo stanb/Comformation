@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ConnectorDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass ConnectorDefinition Connector
+    /// AWS::Greengrass::ConnectorDefinition Connector
     /// Connectors are modules that provide 		built-in integration with local infrastructure, device protocols, AWS,
     /// and other cloud services. 	For more information, 	see Integrate with Services and Protocols Using Greengrass
     /// Connectors in the AWS IoT Greengrass Developer Guide.
@@ -31,7 +31,6 @@ namespace Comformation.Greengrass.ConnectorDefinition
         /// The parameters or configuration used by the connector.
         /// 				 				
         /// For more information about AWS-provided connectors, see AWS-Provided Greengrass Connectors.
-        /// 				
         /// Required: No
         /// Type: Json
         /// Update requires: Replacement

@@ -6,9 +6,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::AutoScaling::ScalingPolicy
-    /// Adds a scaling policy to an Amazon EC2 Auto Scaling group. A scaling policy specifies whether to scale the
-    /// Auto Scaling group up or down, and by how much. For more information, see Dynamic Scaling in the Amazon EC2
-    /// Auto Scaling User Guide.
+    /// Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html
     /// </summary>
     public class ScalingPolicyResource : ResourceBase
@@ -17,10 +15,15 @@ namespace Comformation.AutoScaling.ScalingPolicy
         {
             /// <summary>
             /// AdjustmentType
-            /// Specifies whether the ScalingAdjustment is an absolute number or a percentage of the current
-            /// capacity. Valid values are ChangeInCapacity, ExactCapacity, and PercentChangeInCapacity.
+            /// Specifies whether the ScalingAdjustment property is an absolute number or a percentage of the
+            /// current capacity. The valid values are ChangeInCapacity, ExactCapacity, and PercentChangeInCapacity.
+            /// Valid only if the policy type is StepScaling or SimpleScaling. For more information, see Scaling
+            /// Adjustment Types in the Amazon EC2 Auto Scaling User Guide.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AdjustmentType { get; set; }
@@ -31,15 +34,20 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// to.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
 
             /// <summary>
             /// Cooldown
-            /// The amount of time, in seconds, after a scaling activity completes before any further
-            /// trigger-related scaling activities can start.
-            /// Do not specify this property if you are using the StepScaling policy type.
+            /// The amount of time, in seconds, after a scaling activity completes before any further dynamic
+            /// scaling activities can start. If this property is not specified, the default cooldown period for the
+            /// group applies.
+            /// Valid only if the policy type is SimpleScaling. For more information, see Scaling Cooldowns in the
+            /// Amazon EC2 Auto Scaling User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -48,9 +56,9 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
             /// <summary>
             /// EstimatedInstanceWarmup
-            /// The estimated time, in seconds, until a newly launched instance can send metrics to CloudWatch. By
-            /// default, Amazon EC2 Auto Scaling uses the cooldown period, as specified in the Cooldown property.
-            /// Do not specify this property if you are using the SimpleScaling policy type.
+            /// The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch
+            /// metrics. The default is to use the value specified for the default cooldown period for the group.
+            /// Valid only if the policy type is StepScaling or TargetTrackingScaling.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -59,20 +67,28 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
             /// <summary>
             /// MetricAggregationType
-            /// The aggregation type for the CloudWatch metrics. You can specify Minimum, Maximum, or Average. By
-            /// default, AWS CloudFormation specifies Average.
-            /// Do not specify this property if you are using the SimpleScaling policy type.
+            /// The aggregation type for the CloudWatch metrics. The valid values are Minimum, Maximum, and Average.
+            /// By default, AWS CloudFormation specifies Average.
+            /// Valid only if the policy type is StepScaling.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 32
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricAggregationType { get; set; }
 
             /// <summary>
             /// MinAdjustmentMagnitude
-            /// For the PercentChangeInCapacity adjustment type, the minimum number of instances to scale. The
-            /// scaling policy changes the desired capacity of the Auto Scaling group by a minimum of this many
+            /// The minimum number of instances to scale. If the value of AdjustmentType is PercentChangeInCapacity,
+            /// the scaling policy changes the DesiredCapacity of the Auto Scaling group by at least this many
             /// instances. This property replaces the MinAdjustmentStep property.
+            /// For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25
+            /// percent and you specify a MinAdjustmentMagnitude of 2. If the group has 4 instances and the scaling
+            /// policy is performed, 25 percent of 4 is 1. However, because you specified a MinAdjustmentMagnitude
+            /// of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
+            /// Valid only if the policy type is StepScaling or SimpleScaling.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -81,26 +97,27 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
             /// <summary>
             /// PolicyType
-            /// An Auto Scaling policy type. You can specify SimpleScaling, StepScaling, or TargetTrackingScaling.
-            /// By default, AWS CloudFormation specifies SimpleScaling. For more information, see Dynamic Scaling in
-            /// the Amazon EC2 Auto Scaling User Guide.
+            /// The policy type. The valid values are SimpleScaling, StepScaling, and TargetTrackingScaling. By
+            /// default, AWS CloudFormation specifies SimpleScaling.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyType { get; set; }
 
             /// <summary>
             /// ScalingAdjustment
-            /// The number of instances by which to scale. The AdjustmentType property determines if AWS
-            /// CloudFormation interprets this number as an absolute number (when the ExactCapacity value is
-            /// specified), increase or decrease capacity by a specified number (when the ChangeInCapacity value is
-            /// specified), or increase or decrease capacity as a percentage of the existing Auto Scaling group size
-            /// (when the PercentChangeInCapacity value is specified). A positive value adds to the current capacity
-            /// and a negative value subtracts from the current capacity. For exact capacity, you must specify a
-            /// positive value.
-            /// Required: Conditional. This property is required if the policy type is&#160;SimpleScaling. This property
-            /// is not supported with any other policy type.
+            /// The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm
+            /// breach. The adjustment is based on the value that you specified in the AdjustmentType property
+            /// (either an absolute number or a percentage). A positive value adds to the current capacity and a
+            /// negative value subtracts from the current capacity. For exact capacity, you must specify a positive
+            /// value.
+            /// If you specify SimpleScaling for the policy type, you must specify this property. (Not used with any
+            /// other policy type. )
+            /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
@@ -109,9 +126,10 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// <summary>
             /// StepAdjustments
             /// A set of adjustments that enable you to scale based on the size of the alarm breach.
-            /// Required: Conditional. This property is required if the policy type is&#160;StepScaling. This property is
-            /// not supported with any other policy type.
-            /// Type: List of Amazon EC2 Auto Scaling ScalingPolicy StepAdjustments
+            /// If you specify StepScaling for the policy type, you must specify this property. (Not used with any
+            /// other policy type. )
+            /// Required: Conditional
+            /// Type: List of StepAdjustment
             /// Update requires: No interruption
             /// </summary>
 			public List<StepAdjustment> StepAdjustments { get; set; }
@@ -119,9 +137,10 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// <summary>
             /// TargetTrackingConfiguration
             /// Configures a target tracking scaling policy.
-            /// Required: Conditional. This property is required if the policy type is TargetTrackingScaling. This
-            /// property is not supported with any other policy type.
-            /// Type: Amazon EC2 Auto Scaling ScalingPolicy TargetTrackingConfiguration
+            /// If you specify TargetTrackingScaling for the policy type, you must specify this property. (Not used
+            /// with any other policy type. )
+            /// Required: Conditional
+            /// Type: TargetTrackingConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public TargetTrackingConfiguration TargetTrackingConfiguration { get; set; }

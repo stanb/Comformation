@@ -16,8 +16,8 @@ namespace Comformation.ECS.Service
         {
             /// <summary>
             /// Cluster
-            /// The name or Amazon Resource Name (ARN) of the cluster that you want to run your Amazon ECS service
-            /// on. If you do not specify a cluster, Amazon ECS uses the default cluster.
+            /// The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service. If
+            /// you do not specify a cluster, the default cluster is assumed.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -26,7 +26,8 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// DeploymentConfiguration
-            /// Configures how many tasks run during a deployment.
+            /// Optional deployment parameters that control how many tasks run during the deployment and the
+            /// ordering of stopping and starting tasks.
             /// Required: No
             /// Type: DeploymentConfiguration
             /// Update requires: No interruption
@@ -35,9 +36,9 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// DesiredCount
-            /// The number of simultaneous tasks that you want to run on the cluster. Specify the tasks with the
-            /// TaskDefinition property.
-            /// Required: Conditional. Required only when creating an Amazon ECS Service.
+            /// The number of instantiations of the specified task definition to place and keep running on your
+            /// cluster.
+            /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
@@ -45,8 +46,13 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// HealthCheckGracePeriodSeconds
-            /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
-            /// Balancing target health checks after a task has first started.
+            /// The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy
+            /// Elastic Load Balancing target health checks after a task has first started. This is only valid if
+            /// your service is configured to use a load balancer. If your service&#39;s tasks take a while to start and
+            /// respond to Elastic Load Balancing health checks, you can specify a health check grace period of up
+            /// to 2,147,483,647 seconds. During that time, the ECS service scheduler ignores health check status.
+            /// This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping
+            /// them before they have time to come up.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -55,10 +61,11 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// LaunchType
-            /// The launch type on which to run your service. If one is not specified, EC2 will be used by default.
-            /// Valid values include EC2 and FARGATE.
+            /// The launch type on which to run your service. For more information, see Amazon ECS Launch Types in
+            /// the Amazon Elastic Container Service Developer Guide.
             /// Required: No
             /// Type: String
+            /// Allowed Values: EC2 | FARGATE
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> LaunchType { get; set; }
@@ -69,8 +76,8 @@ namespace Comformation.ECS.Service
             /// LoadBalancers must be specified as well. For information about the number of load balancers that you
             /// can specify per service, see Service Load Balancing in the Amazon Elastic Container Service
             /// Developer Guide.
-            /// Required: Conditional
-            /// Type: List of LoadBalancers property types
+            /// Required: No
+            /// Type: List of LoadBalancer
             /// Update requires: Replacement
             /// </summary>
 			public List<LoadBalancer> LoadBalancers { get; set; }
@@ -78,7 +85,7 @@ namespace Comformation.ECS.Service
             /// <summary>
             /// NetworkConfiguration
             /// The network configuration for the service. This parameter is required for task definitions that use
-            /// the awsvpc network mode to receive their own Elastic Network Interface, and it is not supported for
+            /// the awsvpc network mode to receive their own elastic network interface, and it is not supported for
             /// other network modes. For more information, see Task Networking in the Amazon Elastic Container
             /// Service Developer Guide.
             /// Required: No
@@ -89,26 +96,32 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// PlacementConstraints
-            /// The placement constraints for the tasks in the service.
+            /// An array of placement constraint objects to use for tasks in your service. You can specify a maximum
+            /// of 10 constraints per task (this limit includes constraints in the task definition and those
+            /// specified at runtime).
             /// Required: No
-            /// Type: List of PlacementConstraint property types
+            /// Type: List of PlacementConstraint
             /// Update requires: Replacement
             /// </summary>
 			public List<PlacementConstraint> PlacementConstraints { get; set; }
 
             /// <summary>
             /// PlacementStrategies
-            /// The placement strategies that determine how tasks for the service are placed.
+            /// The placement strategy objects to use for tasks in your service. You can specify a maximum of five
+            /// strategy rules per service. For more information, see Task Placement Strategies in the Amazon
+            /// Elastic Container Service Developer Guide.
             /// Required: No
-            /// Type: List of PlacementStrategies property types
+            /// Type: List of PlacementStrategy
             /// Update requires: Replacement
             /// </summary>
 			public List<PlacementStrategy> PlacementStrategies { get; set; }
 
             /// <summary>
             /// PlatformVersion
-            /// The platform version on which to run your service. If one is not specified, the latest version will
-            /// be used by default.
+            /// The platform version that your tasks in the service are running on. A platform version is specified
+            /// only for tasks using the Fargate launch type. If one isn&#39;t specified, the LATEST platform version is
+            /// used by default. For more information, see AWS Fargate Platform Versions in the Amazon Elastic
+            /// Container Service Developer Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -117,10 +130,19 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// Role
-            /// The name or ARN of an AWS Identity and Access Management (IAM) role that allows your Amazon ECS
-            /// container agent to make calls to your load balancer.
-            /// Note In some cases, you might need to add a dependency on the service role&#39;s policy. For more
-            /// information, see IAM role policy in DependsOn Attribute.
+            /// The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to
+            /// your load balancer on your behalf. This parameter is only permitted if you are using a load balancer
+            /// with your service and your task definition does not use the awsvpc network mode. If you specify the
+            /// role parameter, you must also specify a load balancer object with the loadBalancers parameter.
+            /// Important If your account has already created the Amazon ECS service-linked role, that role is used
+            /// by default for your service unless you specify a role here. The service-linked role is required if
+            /// your task definition uses the awsvpc network mode, in which case you should not specify a role here.
+            /// For more information, see Using Service-Linked Roles for Amazon ECS in the Amazon Elastic Container
+            /// Service Developer Guide.
+            /// If your specified role has a path other than /, then you must either specify the full role ARN (this
+            /// is recommended) or prefix the role name with the path. For example, if a role with the name bar has
+            /// a path of /foo/ then you would specify /foo/bar as the role name. For more information, see Friendly
+            /// Names and Paths in the IAM User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -129,26 +151,29 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// SchedulingStrategy
-            /// The scheduling strategy to use for the service.
+            /// The scheduling strategy to use for the service. For more information, see Services.
             /// There are two service scheduler strategies available:
-            /// REPLICA: The replica scheduling strategy places and maintains the desired number of tasks across
-            /// your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use
-            /// task placement strategies and constraints to customize task placement decisions. DAEMON: The daemon
-            /// scheduling strategy deploys exactly one task on each container instance in your cluster. When using
-            /// this strategy, do not specify a desired number of tasks or any task placement strategies.
-            /// Valid values include REPLICA and DAEMON.
-            /// Note Fargate tasks do not support the DAEMON scheduling strategy
+            /// REPLICA-The replica scheduling strategy places and maintains the desired number of tasks across your
+            /// cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task
+            /// placement strategies and constraints to customize task placement decisions. This scheduler strategy
+            /// is required if the service is using the CODE_DEPLOY or EXTERNAL deployment controller types.
+            /// DAEMON-The daemon scheduling strategy deploys exactly one task on each active container instance
+            /// that meets all of the task placement constraints that you specify in your cluster. When you&#39;re using
+            /// this strategy, you don&#39;t need to specify a desired number of tasks, a task placement strategy, or
+            /// use Service Auto Scaling policies. Note Tasks using the Fargate launch type or the CODE_DEPLOY or
+            /// EXTERNAL deployment controller types don&#39;t support the DAEMON scheduling strategy.
             /// Required: No
             /// Type: String
+            /// Allowed Values: DAEMON | REPLICA
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SchedulingStrategy { get; set; }
 
             /// <summary>
             /// ServiceName
-            /// The name of your service. The name is limited to 255 letters (uppercase and lowercase), numbers,
-            /// hyphens, and underscores. Service names must be unique within a cluster, but you can have similarly
-            /// named services in multiple clusters within a region or across multiple regions.
+            /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are
+            /// allowed. Service names must be unique within a cluster, but you can have similarly named services in
+            /// multiple clusters within a Region or across multiple Regions.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -157,22 +182,24 @@ namespace Comformation.ECS.Service
 
             /// <summary>
             /// ServiceRegistries
-            /// Details of the service registry.
+            /// The details of the service discovery registries to assign to this service. For more information, see
+            /// Service Discovery.
+            /// Note Service discovery is supported for Fargate tasks if you are using platform version v1. 1. 0 or
+            /// later. For more information, see AWS Fargate Platform Versions.
             /// Required: No
-            /// Type: List of ServiceRegistry property types
+            /// Type: List of ServiceRegistry
             /// Update requires: Replacement
             /// </summary>
 			public List<ServiceRegistry> ServiceRegistries { get; set; }
 
             /// <summary>
             /// TaskDefinition
-            /// The ARN of the task definition (including the revision number) that you want to run on the cluster,
-            /// such as arn:aws:ecs:us-east-1:123456789012:task-definition/mytask:3. You can&#39;t use :latest to
-            /// specify a revision because it&#39;s ambiguous. For example, if AWS CloudFormation needed to roll back an
-            /// update, it wouldn&#39;t know which revision to roll back to.
+            /// The family and revision (family:revision) or full ARN of the task definition to run in your service.
+            /// If a revision is not specified, the latest ACTIVE revision is used.
+            /// A task definition must be specified if the service is using the ECS deployment controller.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TaskDefinition { get; set; }
 

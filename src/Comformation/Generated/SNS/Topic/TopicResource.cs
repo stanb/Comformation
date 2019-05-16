@@ -6,7 +6,7 @@ namespace Comformation.SNS.Topic
 {
     /// <summary>
     /// AWS::SNS::Topic
-    /// The AWS::SNS::Topic type creates an Amazon Simple Notification Service (Amazon SNS) topic.
+    /// The AWS::SNS::Topic resource creates a topic to which notifications can be published.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
     /// </summary>
     public class TopicResource : ResourceBase
@@ -15,7 +15,7 @@ namespace Comformation.SNS.Topic
         {
             /// <summary>
             /// DisplayName
-            /// A developer-defined string that can be used to identify this SNS topic.
+            /// The display name to use for an Amazon SNS topic with SMS subscriptions.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -24,7 +24,10 @@ namespace Comformation.SNS.Topic
 
             /// <summary>
             /// KmsMasterKeyId
-            /// An AWS KMS key identifier. This can be a key ID, key ARN, or key alias.
+            /// The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+            /// information, see Key Terms. For more examples, see KeyId in the AWS Key Management Service API
+            /// Reference.
+            /// This property applies only to server-side-encryption.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -35,16 +38,18 @@ namespace Comformation.SNS.Topic
             /// Subscription
             /// The SNS subscriptions (endpoints) for this topic.
             /// Required: No
-            /// Type: List of SNS Subscriptions
+            /// Type: List of Subscription
             /// Update requires: No interruption
             /// </summary>
 			public List<Subscription> Subscription { get; set; }
 
             /// <summary>
             /// TopicName
-            /// A name for the topic. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
-            /// and uses that ID for the topic name. For more information, see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
+            /// The name of the topic you want to create. Topic names must include only uppercase and lowercase
+            /// ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
+            /// the topic name. For more information, see Name Type.
+            /// Important If you specify a name, you can&#39;t perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
             /// Required: No

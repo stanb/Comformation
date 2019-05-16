@@ -6,10 +6,12 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
-    /// AWS OpsWorks Recipes Type
-    /// Describes custom event recipes for the AWS::OpsWorks::Layer resource type that AWS OpsWorks runs after the
-    /// standard event recipes. For more information, see AWS OpsWorks Lifecycle Events in the AWS OpsWorks User
-    /// Guide.
+    /// AWS::OpsWorks::Layer Recipes
+    /// AWS OpsWorks Stacks supports five lifecycle events: setup, configuration, deploy, undeploy, and shutdown. For
+    /// each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide
+    /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the
+    /// standard recipes. LayerCustomRecipes specifies the custom recipes for a particular layer to be run in response
+    /// to each of the five events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html
     /// </summary>
     public class Recipes
@@ -17,50 +19,50 @@ namespace Comformation.OpsWorks.Layer
 
         /// <summary>
         /// Configure
-        /// Custom recipe names to be run following a Configure event. The event occurs on all of the stack&#39;s
-        /// instances when an instance enters or leaves the online state.
+        /// An array of custom recipe names to be run following a configure event.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Configure")]
         public List<Union<string, IntrinsicFunction>> Configure { get; set; }
 
         /// <summary>
         /// Deploy
-        /// Custom recipe names to be run following a Deploy event. The event occurs when you run a deploy
-        /// command, typically to deploy an application to a set of application server instances.
+        /// An array of custom recipe names to be run following a deploy event.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Deploy")]
         public List<Union<string, IntrinsicFunction>> Deploy { get; set; }
 
         /// <summary>
         /// Setup
-        /// Custom recipe names to be run following a Setup event. This event occurs on a new instance after it
-        /// successfully boots.
+        /// An array of custom recipe names to be run following a setup event.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Setup")]
         public List<Union<string, IntrinsicFunction>> Setup { get; set; }
 
         /// <summary>
         /// Shutdown
-        /// Custom recipe names to be run following a Shutdown event. This event occurs after you direct AWS
-        /// OpsWorks to shut an instance down before the associated Amazon EC2 instance is actually terminated.
+        /// An array of custom recipe names to be run following a shutdown event.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Shutdown")]
         public List<Union<string, IntrinsicFunction>> Shutdown { get; set; }
 
         /// <summary>
         /// Undeploy
-        /// Custom recipe names to be run following a Undeploy event. This event occurs when you delete an app
-        /// or run an undeploy command to remove an app from a set of application server instances.
+        /// An array of custom recipe names to be run following a undeploy event.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Undeploy")]
         public List<Union<string, IntrinsicFunction>> Undeploy { get; set; }

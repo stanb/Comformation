@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion S3MachineLearningModelResourceData
+    /// AWS::Greengrass::ResourceDefinitionVersion S3MachineLearningModelResourceData
     /// Settings for an 		Amazon S3 machine learning resource. 		 For more information, see Perform Machine Learning
     /// Inference in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html
@@ -26,8 +26,8 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 
         /// <summary>
         /// S3Uri
-        /// The URI of the source model in an Amazon S3 bucket. The model package must be in tar. gz or . zip
-        /// format.
+        /// The URI of the source model in an Amazon S3 bucket. The model package must be in tar. gz 				 or .
+        /// zip format.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

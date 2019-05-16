@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application ApplicationSnapshotConfiguration
-    /// The ApplicationSnapshotConfiguration property type describes whether snapshots are enabled for a Java-based
-    /// Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application ApplicationSnapshotConfiguration
+    /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html
     /// </summary>
     public class ApplicationSnapshotConfiguration

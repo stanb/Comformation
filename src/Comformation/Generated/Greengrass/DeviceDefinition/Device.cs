@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.DeviceDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass DeviceDefinition Device
+    /// AWS::Greengrass::DeviceDefinition Device
     /// A device is an AWS IoT device (thing) that&#39;s added to a Greengrass group. 	 Greengrass devices can communicate
     /// with the Greengrass core in the same group. For more information, see What Is AWS IoT Greengrass? in the AWS
     /// IoT Greengrass Developer Guide.
@@ -48,8 +48,8 @@ namespace Comformation.Greengrass.DeviceDefinition
 
         /// <summary>
         /// CertificateArn
-        /// The ARN of the device certificate for the device. This X. 509 certificate is used to authenticate
-        /// the device with AWS IoT and AWS IoT Greengrass services.
+        /// The Amazon Resource Name (ARN) of the device certificate for the device. This X. 509 certificate is
+        /// used to authenticate the device with AWS IoT and AWS IoT Greengrass services.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

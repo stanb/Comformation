@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// CodeDeploy DeploymentGroup OnPremisesTagSet
+    /// AWS::CodeDeploy::DeploymentGroup OnPremisesTagSet
     /// The OnPremisesTagSet property type specifies a list containing other lists of on-premises instance tag groups.
     /// In order for an instance to be included in the deployment group, it must be identified by all the tag groups
     /// in the list.
@@ -17,8 +17,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// OnPremisesTagSetList
-        /// A list containing other lists of on-premises instance tag groups. In order for an instance to be
-        /// included in the deployment group, it must be identified by all the tag groups in the list.
+        /// A list that contains other lists of on-premises instance tag groups. For an instance to be included
+        /// in the deployment group, it must be identified by all of the tag groups in the list.
         /// Duplicates are not allowed.
         /// Required: No
         /// Type: List of OnPremisesTagSetListObject

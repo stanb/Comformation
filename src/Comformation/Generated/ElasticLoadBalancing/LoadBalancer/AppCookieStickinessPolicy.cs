@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing V1 AppCookieStickinessPolicy
-    /// The AppCookieStickinessPolicy type is an embedded property of the AWS::ElasticLoadBalancing::LoadBalancer
-    /// type.
+    /// AWS::ElasticLoadBalancing::LoadBalancer AppCookieStickinessPolicy
+    /// Specifies a policy for application-controlled session stickiness for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html
     /// </summary>
     public class AppCookieStickinessPolicy
@@ -16,21 +15,21 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// CookieName
-        /// Name of the application cookie used for stickiness.
+        /// The name of the application cookie used for stickiness.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CookieName")]
         public Union<string, IntrinsicFunction> CookieName { get; set; }
 
         /// <summary>
         /// PolicyName
-        /// The name of the policy being created. The name must be unique within the set of policies for this
-        /// Load Balancer.
-        /// Note To associate this policy with a listener, include the policy name in the listener&#39;s PolicyNames
-        /// property.
+        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for
+        /// this load balancer.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PolicyName")]
         public Union<string, IntrinsicFunction> PolicyName { get; set; }

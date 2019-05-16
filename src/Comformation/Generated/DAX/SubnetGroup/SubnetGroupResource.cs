@@ -6,8 +6,7 @@ namespace Comformation.DAX.SubnetGroup
 {
     /// <summary>
     /// AWS::DAX::SubnetGroup
-    /// Use the AWS CloudFormation AWS::DAX::SubnetGroup resource to create a subnet group for use with DAX (DynamoDB
-    /// Accelerator).
+    /// Creates a new subnet group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html
     /// </summary>
     public class SubnetGroupResource : ResourceBase
@@ -28,15 +27,15 @@ namespace Comformation.DAX.SubnetGroup
             /// The name of the subnet group.
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
 
             /// <summary>
             /// SubnetIds
-            /// A list of subnets associated with the subnet group.
-            /// Required: No
-            /// Type: List of String values;
+            /// A list of VPC subnet IDs for the subnet group.
+            /// Required: Yes
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }

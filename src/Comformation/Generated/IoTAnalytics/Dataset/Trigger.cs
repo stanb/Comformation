@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset Trigger
-    /// The Trigger property type specifies a list of triggers that cause data set contents to be populated at a
-    /// specific time or when another data set&#39;s contents are created for an AWS IoT Analytics dataset.
+    /// AWS::IoTAnalytics::Dataset Trigger
+    /// The &quot;DatasetTrigger&quot; that specifies when the data set is automatically updated.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html
     /// </summary>
     public class Trigger
@@ -16,7 +15,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// Schedule
-        /// The schedule of when the trigger is initiated (for triggering at a specific time).
+        /// The &quot;Schedule&quot; when the trigger is initiated.
         /// Required: No
         /// Type: Schedule
         /// Update requires: No interruption
@@ -26,7 +25,8 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// TriggeringDataset
-        /// The data set whose content creation will trigger the creation of this data set&#39;s contents.
+        /// Information about the data set whose content generation triggers the new data set content
+        /// generation.
         /// Required: No
         /// Type: TriggeringDataset
         /// Update requires: No interruption

@@ -7,8 +7,7 @@ namespace Comformation.AppStream.ImageBuilder
     /// <summary>
     /// AWS::AppStream::ImageBuilder
     /// The AWS::AppStream::ImageBuilder resource creates an image builder for Amazon AppStream 2. 0. An image builder
-    /// is a virtual machine that is used to create an image. For more information, see CreateImageBuilder in the
-    /// Amazon AppStream 2. 0 API Reference.
+    /// is a virtual machine that is used to create an image.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html
     /// </summary>
     public class ImageBuilderResource : ResourceBase
@@ -20,6 +19,7 @@ namespace Comformation.AppStream.ImageBuilder
             /// The name of the image used to create the image builder.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ImageName { get; set; }
@@ -29,6 +29,7 @@ namespace Comformation.AppStream.ImageBuilder
             /// The description to display.
             /// Required: No
             /// Type: String
+            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -56,6 +57,7 @@ namespace Comformation.AppStream.ImageBuilder
             /// The image builder name to display.
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
@@ -72,10 +74,12 @@ namespace Comformation.AppStream.ImageBuilder
 
             /// <summary>
             /// AppstreamAgentVersion
-            /// The version of the Amazon AppStream 2. 0 agent to use for this image builder. To use the latest
-            /// version of the agent, specify [LATEST].
+            /// The version of the AppStream 2. 0 agent to use for this image builder. To use the latest version of
+            /// the AppStream 2. 0 agent, specify [LATEST].
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AppstreamAgentVersion { get; set; }
@@ -85,16 +89,17 @@ namespace Comformation.AppStream.ImageBuilder
             /// The instance type to use when launching the image builder.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags for the image builder. Each tag specifies a key-value pair, and the value is optional. If
-            /// you do not specify a value, it is set to an empty string (for example, Environment=).
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide.
             /// Required: No
-            /// Type: List of Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
@@ -102,8 +107,9 @@ namespace Comformation.AppStream.ImageBuilder
             /// <summary>
             /// Name
             /// A unique name for the image builder.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
+            /// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,100}$
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
@@ -113,6 +119,8 @@ namespace Comformation.AppStream.ImageBuilder
             /// The ARN of the public, private, or shared image to use.
             /// Required: No
             /// Type: String
+            /// Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/. -]{0,62}:[A-Za-z0-9_/. -]{0,63}:[A-Za-z0-9_/.
+            /// -]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@. -]{0,1023}$
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ImageArn { get; set; }

@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53Resolver.ResolverEndpoint
 {
     /// <summary>
-    /// Amazon Route&#160;53 ResolverEndpoint IpAddressRequest
-    /// The 	IpAddressRequest property type specifies the subnets and IP addresses in your VPC that you want DNS
-    /// queries 	to pass through on the way from your VPCs to your network (for outbound endpoints) or on the way from
-    /// your network to your VPCs 	(for inbound resolver endpoints).
+    /// AWS::Route53Resolver::ResolverEndpoint IpAddressRequest
+    /// In a 			CreateResolverEndpoint 			request, the IP address that DNS queries originate from (for outbound
+    /// endpoints) or that you forward DNS queries to (for inbound endpoints). 			IpAddressRequest also includes the
+    /// ID of the subnet that contains the IP address.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html
     /// </summary>
     public class IpAddressRequest
@@ -17,10 +17,13 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
 
         /// <summary>
         /// Ip
-        /// 	
+        /// 		
         /// The IP address that you want to use for DNS queries.
+        /// 	
         /// Required: No
         /// Type: String
+        /// Minimum: 7
+        /// Maximum: 36
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ip")]
@@ -28,10 +31,13 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
 
         /// <summary>
         /// SubnetId
+        /// 		
+        /// The ID of the subnet that contains the IP address.
         /// 	
-        /// The subnet that contains the IP address.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 32
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubnetId")]

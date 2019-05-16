@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket Destination
-    /// The Destination property type specifies information about where to publish analysis or configuration results
-    /// for an Amazon S3 bucket.
+    /// AWS::S3::Bucket Destination
+    /// Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html
     /// </summary>
     public class Destination
@@ -16,9 +15,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// BucketAccountId
-        /// The ID of the account that owns the destination bucket where the analytics is published.
-        /// Although optional, we recommend that the value be set to prevent problems if the destination bucket
-        /// ownership changes.
+        /// The account ID that owns the destination bucket. If no account ID is provided, the owner will not be
+        /// validated prior to exporting data.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -28,8 +26,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// BucketArn
-        /// The Amazon Resource Name (ARN) of the bucket where analytics results are published. This destination
-        /// bucket must be in the same region as the bucket used for the analytics or inventory configuration.
+        /// The Amazon Resource Name (ARN) of the bucket to which data is exported.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -39,10 +36,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Format
-        /// Specifies the output format of the analytics or inventory results. Currently, Amazon S3 supports the
-        /// comma-separated value (CSV) format.
+        /// Specifies the file format used when exporting data to Amazon S3.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: CSV
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Format")]
@@ -50,7 +47,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Prefix
-        /// The prefix that is prepended to all analytics results.
+        /// The prefix to use when exporting data. The prefix is prepended to all results.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

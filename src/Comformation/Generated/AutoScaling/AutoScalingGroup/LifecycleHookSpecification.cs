@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling AutoScalingGroup LifecycleHookSpecification
-    /// The LifecycleHookSpecification property type defines lifecycle hooks for an Amazon EC2 Auto Scaling group,
-    /// which specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances. For more
-    /// information, see Amazon EC2 Auto Scaling Lifecycle Hooks in the Amazon EC2 Auto Scaling User Guide.
+    /// AWS::AutoScaling::AutoScalingGroup LifecycleHookSpecification
+    /// LifecycleHookSpecification specifies a list of lifecycle hooks for the LifecycleHookSpecificationList property
+    /// of AutoScalingGroup. LifecycleHookSpecification defines lifecycle hooks for an Auto Scaling group that specify
+    /// actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html
     /// </summary>
     public class LifecycleHookSpecification
@@ -17,9 +17,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// DefaultResult
-        /// The action that the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-        /// unexpected failure occurs.
-        /// Valid values: CONTINUE, ABANDON (default)
+        /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
+        /// failure occurs. The valid values are CONTINUE and ABANDON (default).
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -30,7 +29,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// HeartbeatTimeout
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle
-        /// hook times out, Auto Scaling performs the default action.
+        /// hook times out, Amazon EC2 Auto Scaling performs the default action.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -40,10 +39,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// LifecycleHookName
-        /// The name of the lifecycle hook. For constraints, see LifecycleHookSpecification in the Amazon EC2
-        /// Auto Scaling API Reference.
+        /// The name of the lifecycle hook.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Pattern: [A-Za-z0-9\-_\/]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LifecycleHookName")]
@@ -51,8 +52,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// LifecycleTransition
-        /// The state of the EC2 instance to attach the lifecycle hook to. For a list of lifecycle hook types,
-        /// see DescribeLifecycleHookTypes in the Amazon EC2 Auto Scaling API Reference.
+        /// The state of the EC2 instance to attach the lifecycle hook to. The valid values are:
+        /// autoscaling:EC2_INSTANCE_LAUNCHING autoscaling:EC2_INSTANCE_TERMINATING
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -62,11 +63,13 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// NotificationMetadata
-        /// Additional information to include when Amazon EC2 Auto Scaling sends a message to the notification
-        /// target. For constraints, see LifecycleHookSpecification in the Amazon EC2 Auto Scaling API
-        /// Reference.
+        /// Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
+        /// the notification target.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1023
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationMetadata")]
@@ -74,11 +77,14 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// NotificationTargetARN
-        /// The Amazon Resource Name (ARN) of the target that Amazon EC2 Auto Scaling sends notifications to
-        /// when an instance is in the transition state for the lifecycle hook. The notification target can be
-        /// either an Amazon SQS queue or an Amazon SNS topic.
+        /// The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to
+        /// notify you when an instance is in the transition state for the lifecycle hook. You can specify an
+        /// Amazon SQS queue or an Amazon SNS topic.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1600
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationTargetARN")]
@@ -87,9 +93,13 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// RoleARN
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
-        /// target.
+        /// target, for example, an Amazon SNS topic or an Amazon SQS queue. For information about creating this
+        /// role, see Preparing for Notifications in the Amazon EC2 Auto Scaling User Guide.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1600
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

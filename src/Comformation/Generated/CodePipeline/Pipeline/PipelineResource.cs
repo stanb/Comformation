@@ -6,7 +6,7 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline
-    /// The AWS::CodePipeline::Pipeline resource creates an CodePipeline pipeline that describes how software changes
+    /// The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes
     /// go through a release process. For more information, see What Is CodePipeline? in the AWS CodePipeline User
     /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
@@ -17,9 +17,7 @@ namespace Comformation.CodePipeline.Pipeline
         {
             /// <summary>
             /// ArtifactStore
-            /// The Amazon Simple Storage Service (Amazon S3) location where CodePipeline stores pipeline artifacts.
-            /// You can only use either ArtifactStore or ArtifactStores, not both. For more information, see Create
-            /// an Amazon S3 Bucket for Your Application in the AWS CodePipeline User Guide.
+            /// The Amazon S3 bucket where artifacts are stored for the pipeline.
             /// Required: No
             /// Type: ArtifactStore
             /// Update requires: No interruption
@@ -28,30 +26,33 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// ArtifactStores
-            /// Specifies a list of ArtifactStoreMap mappings. There must be an artifact store for the pipeline
-            /// region and for each cross-region action within the pipeline. You can only use either ArtifactStore
-            /// or ArtifactStores, not both.
+            /// A mapping of artifactStore objects and their corresponding regions. There must be an artifact store
+            /// for the pipeline region and for each cross-region action within the pipeline. You can only use
+            /// either artifactStore or artifactStores, not both.
+            /// If you create a cross-region action in your pipeline, you must use artifactStores.
             /// Required: No
-            /// Type: List of ArtifactStoreMap property types
+            /// Type: List of ArtifactStoreMap
             /// Update requires: No interruption
             /// </summary>
 			public List<ArtifactStoreMap> ArtifactStores { get; set; }
 
             /// <summary>
             /// DisableInboundStageTransitions
-            /// Prevents artifacts in a pipeline from transitioning to the stage that you specified. This enables
-            /// you to manually control transitions.
+            /// Represents the input of a DisableStageTransition action.
             /// Required: No
-            /// Type: List of DisableInboundStageTransitions property types
+            /// Type: List of StageTransition
             /// Update requires: No interruption
             /// </summary>
 			public List<StageTransition> DisableInboundStageTransitions { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of your CodePipeline pipeline.
+            /// The name of the pipeline.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
@@ -67,20 +68,21 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// RoleArn
-            /// A service role Amazon Resource Name (ARN) that grants AWS CodePipeline permission to make calls to
-            /// AWS services on your behalf. For more information, see AWS CodePipeline Access Permissions Reference
-            /// in the AWS CodePipeline User Guide.
+            /// The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+            /// actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 1024
+            /// Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/. *
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// Stages
-            /// Defines the CodePipeline pipeline stages.
+            /// Represents information about a stage and its definition.
             /// Required: Yes
-            /// Type: List of Stages property types
+            /// Type: List of StageDeclaration
             /// Update requires: No interruption
             /// </summary>
 			public List<StageDeclaration> Stages { get; set; }

@@ -6,8 +6,7 @@ namespace Comformation.RoboMaker.RobotApplicationVersion
 {
     /// <summary>
     /// AWS::RoboMaker::RobotApplicationVersion
-    /// The AWS::RoboMaker::RobotApplicationVersion resource creates a version of an AWS RoboMaker robot application.
-    /// For more information, see API_CreateRobotApplicationVersion in the RoboMaker Developer Guide.
+    /// The AWS::RoboMaker::RobotApplicationVersion resource creates an AWS RoboMaker robot version.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html
     /// </summary>
     public class RobotApplicationVersionResource : ResourceBase
@@ -16,18 +15,25 @@ namespace Comformation.RoboMaker.RobotApplicationVersion
         {
             /// <summary>
             /// CurrentRevisionId
-            /// Current revision id.
+            /// The current revision id for the robot application. If you provide a value and it matches the latest
+            /// revision ID, a new version will be created.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 40
+            /// Pattern: [a-zA-Z0-9_. \-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
 
             /// <summary>
             /// Application
-            /// The the Amazon Resource Name (ARN) robot application to version.
+            /// The application information for the robot application.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1224
+            /// Pattern: arn:. *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Application { get; set; }

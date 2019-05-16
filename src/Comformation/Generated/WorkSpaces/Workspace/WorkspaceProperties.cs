@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WorkSpaces.Workspace
 {
     /// <summary>
-    /// Amazon WorkSpaces Workspace WorkspaceProperties
-    /// The WorkspaceProperties property type specifies information about a WorkSpace.
+    /// AWS::WorkSpaces::Workspace WorkspaceProperties
+    /// Information about a WorkSpace.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html
     /// </summary>
     public class WorkspaceProperties
@@ -18,7 +18,7 @@ namespace Comformation.WorkSpaces.Workspace
         /// The compute type. For more information, see Amazon WorkSpaces Bundles.
         /// Required: No
         /// Type: String
-        /// Valid Values: VALUE | STANDARD | PERFORMANCE | POWER | GRAPHICS
+        /// Allowed Values: GRAPHICS | GRAPHICSPRO | PERFORMANCE | POWER | POWERPRO | STANDARD | VALUE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComputeTypeName")]
@@ -39,7 +39,7 @@ namespace Comformation.WorkSpaces.Workspace
         /// The running mode. For more information, see Manage the WorkSpace Running Mode.
         /// Required: No
         /// Type: String
-        /// Valid Values: AUTO_STOP | ALWAYS_ON
+        /// Allowed Values: ALWAYS_ON | AUTO_STOP
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RunningMode")]

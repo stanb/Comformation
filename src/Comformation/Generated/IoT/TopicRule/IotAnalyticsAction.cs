@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule IotAnalyticsAction
-    /// The IotAnalyticsAction property type sends messge data to an AWS IoT Analytics channel.
+    /// AWS::IoT::TopicRule IotAnalyticsAction
+    /// Sends message data to an AWS IoT Analytics channel.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html
     /// </summary>
     public class IotAnalyticsAction
@@ -15,7 +15,7 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// ChannelName
-        /// The name of the AWS IoT Analytics channel to which message data will be sent.
+        /// The name of the IoT Analytics channel to which message data will be sent.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -25,8 +25,8 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the role which has a policy that grants AWS IoT Analytics permission to send message data
-        /// via AWS IoT Analytics (iotanalytics:BatchPutMessage).
+        /// The ARN of the role which has a policy that grants IoT Analytics permission to send message data via
+        /// IoT Analytics (iotanalytics:BatchPutMessage).
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

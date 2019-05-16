@@ -19,15 +19,18 @@ namespace Comformation.SSM.Parameter
             /// Note AWS CloudFormation doesn&#39;t support the SecureString parameter type.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: SecureString | String | StringList
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// Description
-            /// Information about the parameter that you want to add to the system.
+            /// Information about the parameter.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -38,13 +41,15 @@ namespace Comformation.SSM.Parameter
             /// restricted to numbers, you can specify the following: AllowedPattern=^\d+$
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AllowedPattern { get; set; }
 
             /// <summary>
             /// Value
-            /// The parameter value. Value must not nest another parameter. Do not use {{}} in the value.
+            /// The parameter value.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -52,12 +57,22 @@ namespace Comformation.SSM.Parameter
 			public Union<string, IntrinsicFunction> Value { get; set; }
 
             /// <summary>
+            /// Tags
+            /// An array of key-value pairs to apply to this resource.
+            /// For more information, see Tag.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the parameter.
-            /// For information about valid values for parameter names, see Requirements and Constraints for
-            /// Parameter Names in the AWS Systems Manager User Guide.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 2048
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

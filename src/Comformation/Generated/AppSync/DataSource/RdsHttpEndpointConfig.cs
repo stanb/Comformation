@@ -6,17 +6,17 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync RelationalDatabase RdsHttpEndpointConfig
+    /// AWS::AppSync::DataSource RdsHttpEndpointConfig
     /// Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AWS AppSync relational database.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig-rdshttpendpointconfig.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html
     /// </summary>
     public class RdsHttpEndpointConfig
     {
 
         /// <summary>
         /// AwsRegion
-        /// The aws region of the rdshttpendpoint.
-        /// Required: No
+        /// AWS Region for RDS HTTP endpoint.
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -25,7 +25,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// Schema
-        /// The schema of the relational database.
+        /// Logical schema name.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -35,7 +35,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// DatabaseName
-        /// The name of the relational database.
+        /// Logical database name.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -45,8 +45,8 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// DbClusterIdentifier
-        /// The database cluster identifier of the rdshttpendpoint.
-        /// Required: No
+        /// Amazon RDS cluster identifier.
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -55,8 +55,8 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// AwsSecretStoreArn
-        /// The secret store ARN of the rdshttpendpoint.
-        /// Required: No
+        /// AWS secret store ARN for database credentials.
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

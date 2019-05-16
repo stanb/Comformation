@@ -6,8 +6,7 @@ namespace Comformation.AppStream.User
 {
     /// <summary>
     /// AWS::AppStream::User
-    /// The AWS::AppStream::User resource creates a new user in the user pool for Amazon AppStream 2. 0. For more
-    /// information, see CreateUser in the Amazon AppStream 2. 0 API Reference.
+    /// The AWS::AppStream::User resource creates a new user in the AppStream 2. 0 user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html
     /// </summary>
     public class UserResource : ResourceBase
@@ -17,8 +16,14 @@ namespace Comformation.AppStream.User
             /// <summary>
             /// UserName
             /// The email address of the user.
+            /// Note Users&#39; email addresses are case-sensitive. During login, if they specify an email address that
+            /// doesn&#39;t use the same capitalization as the email address specified when their user pool account was
+            /// created, a &quot;user does not exist&quot; error message displays.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> UserName { get; set; }
@@ -28,6 +33,8 @@ namespace Comformation.AppStream.User
             /// The first name, or given name, of the user.
             /// Required: No
             /// Type: String
+            /// Maximum: 2048
+            /// Pattern: ^[A-Za-z0-9_\-\s]+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> FirstName { get; set; }
@@ -41,6 +48,7 @@ namespace Comformation.AppStream.User
             /// passwords within 7 days, you must send them a new welcome email.
             /// Required: No
             /// Type: String
+            /// Allowed Values: RESEND | SUPPRESS
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> MessageAction { get; set; }
@@ -50,6 +58,8 @@ namespace Comformation.AppStream.User
             /// The last name, or surname, of the user.
             /// Required: No
             /// Type: String
+            /// Maximum: 2048
+            /// Pattern: ^[A-Za-z0-9_\-\s]+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> LastName { get; set; }
@@ -59,6 +69,7 @@ namespace Comformation.AppStream.User
             /// The authentication type for the user. You must specify USERPOOL.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: API | SAML | USERPOOL
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AuthenticationType { get; set; }

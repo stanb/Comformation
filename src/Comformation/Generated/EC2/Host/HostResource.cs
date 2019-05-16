@@ -6,10 +6,10 @@ namespace Comformation.EC2.Host
 {
     /// <summary>
     /// AWS::EC2::Host
-    /// The AWS::EC2::Host resource allocates a fully dedicated physical server for launching EC2 instances. Because
-    /// the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by
-    /// allowing you to use your existing server-bound software licenses. For more information, see Dedicated Hosts in
-    /// the Amazon EC2 User Guide for Linux Instances.
+    /// Allocates a fully dedicated physical server 			for launching EC2 instances. Because the host is fully
+    /// dedicated for your use, it can 			help you address compliance requirements and reduce costs by allowing you to
+    /// use your 			existing server-bound software licenses. For more information, see 				Dedicated Hosts in the
+    /// Amazon EC2 User Guide for Linux 					Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html
     /// </summary>
     public class HostResource : ResourceBase
@@ -18,20 +18,22 @@ namespace Comformation.EC2.Host
         {
             /// <summary>
             /// AutoPlacement
-            /// Indicates if the host accepts EC2 instances with only matching configurations or if instances must
-            /// also specify the host ID. Instances that don&#39;t specify a host ID can&#39;t launch onto a host with
-            /// AutoPlacement set to off. By default, AWS CloudFormation sets this property to on. For more
-            /// information, see Understanding Instance Placement and Host Affinity in the Amazon EC2 User Guide for
-            /// Linux Instances.
+            /// 	
+            /// Indicates whether the host accepts any untargeted instance launches that 		match its instance type
+            /// configuration, or if it only accepts Host tenancy 		instance launches that specify its unique host
+            /// ID. For more information, 		see 	Understanding Instance Placement and Host Affinity in the 	Amazon
+            /// EC2 User Guide for Linux Instances.
+            /// Default: on
             /// Required: No
             /// Type: String
+            /// Allowed Values: off | on
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoPlacement { get; set; }
 
             /// <summary>
             /// AvailabilityZone
-            /// The Availability Zone (AZ) in which to launch the dedicated host.
+            /// The Availability Zone in which to allocate the Dedicated Host.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -40,9 +42,8 @@ namespace Comformation.EC2.Host
 
             /// <summary>
             /// InstanceType
-            /// The instance type that the dedicated host accepts. Only instances of this type can be launched onto
-            /// the host. For more information, see Supported Instance Types in the Amazon EC2 User Guide for Linux
-            /// Instances.
+            /// Specifies the instance type for which to configure your Dedicated Hosts. When you 			specify the
+            /// instance type, that is the only instance type that you can launch onto that 			host.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

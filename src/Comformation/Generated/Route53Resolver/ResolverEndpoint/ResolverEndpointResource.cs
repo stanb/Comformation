@@ -6,8 +6,7 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
 {
     /// <summary>
     /// AWS::Route53Resolver::ResolverEndpoint
-    /// The 	AWS::Route53Resolver::ResolverEndpoint resource includes settings for inbound or outbound endpoints for
-    /// Amazon Route&#160;53. 	For more information, see ResolverEndpoint in the 	Amazon Route&#160;53 API Reference.
+    /// Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html
     /// </summary>
     public class ResolverEndpointResource : ResourceBase
@@ -16,56 +15,67 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
         {
             /// <summary>
             /// IpAddresses
+            /// 		
+            /// The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or
+            /// that you forward 			DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
             /// 	
-            /// The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from
-            /// your VPCs 		to your network (for outbound endpoints) or on the way from your network to your VPCs
-            /// (for inbound resolver endpoints).
             /// Required: Yes
-            /// Type: List of IpAddressRequest property types
+            /// Type: List of IpAddressRequest
+            /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
 			public List<IpAddressRequest> IpAddresses { get; set; }
 
             /// <summary>
             /// Direction
+            /// 		
+            /// Indicates whether the resolver endpoint allows inbound or outbound DNS queries:
+            /// 		
+            /// 			 			 		 INBOUND: allows DNS queries to your VPC from your network or another VPC OUTBOUND: allows
+            /// DNS queries from your VPC to your network or another VPC
             /// 	
-            /// Indicates whether the resolver endpoint allows inbound or outbound DNS queries.
-            /// Valid values:INBOUND | OUTBOUND
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: INBOUND | OUTBOUND
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Direction { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
+            /// 		
+            /// The ID of one or more security groups that control access to this VPC. The security group must
+            /// include one or more inbound rules 			(for inbound endpoints) or outbound rules (for outbound
+            /// endpoints). Inbound and outbound rules must allow TCP and UDP access. 			For inbound access, open
+            /// port 53. For outbound access, open the port that you&#39;re using for DNS queries on your network.
             /// 	
-            /// The ID of one or more security groups that you want to use to control access to this VPC. The
-            /// security group 		that you specify must include one or more inbound rules (for inbound resolver
-            /// endpoints) or outbound rules 		(for outbound resolver endpoints).
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// Tags
-            /// 	
+            /// 		
             /// A list of the tag keys and values that you want to associate with the endpoint.
+            /// 	
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// 	
+            /// 		
             /// A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53
             /// console.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Maximum: 64
+            /// Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_&#39; &#39;]+)
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

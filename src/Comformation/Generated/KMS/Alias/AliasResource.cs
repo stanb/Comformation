@@ -6,10 +6,8 @@ namespace Comformation.KMS.Alias
 {
     /// <summary>
     /// AWS::KMS::Alias
-    /// The AWS::KMS::Alias resource creates a display name for a customer master key (CMK) in AWS Key Management
-    /// Service (AWS KMS). Using an alias to refer to a key can help you simplify key management. For example, when
-    /// rotating keys, you can just update the alias mapping instead of tracking and changing key IDs. For more
-    /// information, see Working with Aliases in the AWS Key Management Service Developer Guide.
+    /// The AWS::KMS::Alias resource specifies a display name for a customer master key (CMK) in AWS Key Management
+    /// Service (AWS KMS). You can use an alias to identify a CMK in cryptographic operations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html
     /// </summary>
     public class AliasResource : ResourceBase
@@ -18,20 +16,27 @@ namespace Comformation.KMS.Alias
         {
             /// <summary>
             /// AliasName
-            /// The name of the alias. The name must start with alias followed by a forward slash, such as alias/.
-            /// You can&#39;t specify aliases that begin with alias/AWS. These aliases are reserved.
+            /// Specifies the alias name. This value must begin with alias/ followed by a name, such as
+            /// alias/ExampleAlias. The alias name cannot begin with alias/aws/. The alias/aws/ prefix is reserved
+            /// for AWS managed CMKs.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: ^[a-zA-Z0-9:/_-]+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AliasName { get; set; }
 
             /// <summary>
             /// TargetKeyId
-            /// The ID of the key for which you are creating the alias. Specify the key&#39;s globally unique identifier
-            /// or Amazon Resource Name (ARN). You can&#39;t specify another alias.
+            /// Identifies the CMK to which the alias refers. Specify the key ID or the Amazon Resource Name (ARN)
+            /// of the CMK. You cannot specify another alias. For help finding the key ID and ARN, see Finding the
+            /// Key ID and ARN in the AWS Key Management Service Developer Guide.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 2048
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetKeyId { get; set; }

@@ -6,11 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster ScalingConstraints
-    /// The ScalingConstraints property type specifies the upper and lower Amazon EC2 instance limits for an automatic
-    /// scaling policy. ScalingConstraints is the property type for the Constraints subproperty of the Amazon EMR
-    /// Cluster AutoScalingPolicy property type.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingconstraints.html
+    /// AWS::EMR::Cluster ScalingConstraints
+    /// ScalingConstraints is a subproperty of the AutoScalingPolicy property type. ScalingConstraints defines the
+    /// upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by
+    /// automatic scaling rules will not cause an instance group to grow above or shrink below these limits.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html
     /// </summary>
     public class ScalingConstraints
     {
@@ -21,6 +21,7 @@ namespace Comformation.EMR.Cluster
         /// allowed to grow. Scale-out activities will not add instances beyond this boundary.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxCapacity")]
         public Union<int, IntrinsicFunction> MaxCapacity { get; set; }
@@ -31,6 +32,7 @@ namespace Comformation.EMR.Cluster
         /// allowed to shrink. Scale-in activities will not terminate instances below this boundary.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MinCapacity")]
         public Union<int, IntrinsicFunction> MinCapacity { get; set; }

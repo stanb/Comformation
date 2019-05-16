@@ -19,7 +19,7 @@ namespace Comformation.Greengrass.ConnectorDefinitionVersion
             /// The connectors in this version. Only one instance of a given connector can be added to the connector
             /// definition version at a time.
             /// Required: Yes
-            /// Type: List of Connector property types
+            /// Type: List of Connector
             /// Update requires: Replacement
             /// </summary>
 			public List<Connector> Connectors { get; set; }

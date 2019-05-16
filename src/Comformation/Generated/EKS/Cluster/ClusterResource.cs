@@ -15,7 +15,7 @@ namespace Comformation.EKS.Cluster
         {
             /// <summary>
             /// Version
-            /// The desired Kubernetes version for your cluster. If you do not specify a value here, the latest
+            /// The desired Kubernetes version for your cluster. If you don&#39;t specify a value here, the latest
             /// version available in Amazon EKS is used.
             /// Required: No
             /// Type: String
@@ -39,7 +39,7 @@ namespace Comformation.EKS.Cluster
             /// The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
             /// requirements to work properly with Kubernetes. For more information, see Cluster VPC Considerations
             /// and Cluster Security Group Considerations in the Amazon EKS User Guide. You must specify at least
-            /// two subnets. You may specify up to five security groups, but we recommend that you use a dedicated
+            /// two subnets. You can specify up to five security groups, but we recommend that you use a dedicated
             /// security group for your cluster control plane.
             /// Required: Yes
             /// Type: ResourcesVpcConfig

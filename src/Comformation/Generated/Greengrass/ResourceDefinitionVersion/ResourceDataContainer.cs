@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion ResourceDataContainer
+    /// AWS::Greengrass::ResourceDefinitionVersion ResourceDataContainer
     /// A container for resource data, which 		defines the resource type. The container takes only one of the
     /// following supported resource data types: 		LocalDeviceResourceData, LocalVolumeResourceData,
     /// SageMakerMachineLearningModelResourceData, 		S3MachineLearningModelResourceData, or

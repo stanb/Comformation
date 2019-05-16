@@ -6,9 +6,8 @@ namespace Comformation.EC2.VPCEndpointServicePermissions
 {
     /// <summary>
     /// AWS::EC2::VPCEndpointServicePermissions
-    /// Grant or revoke permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to the
-    /// VPC endpoint service. For more information, see ModifyVpcEndpointServicePermissions in the Amazon EC2 API
-    /// Reference.
+    /// Grant or revoke permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to a VPC
+    /// endpoint service.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html
     /// </summary>
     public class VPCEndpointServicePermissionsResource : ResourceBase
@@ -22,14 +21,16 @@ namespace Comformation.EC2.VPCEndpointServicePermissions
             /// specify an asterisk (*). Permissions are revoked for principals not in this list. If the list is
             /// empty, then all permissions are revoked.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AllowedPrincipals { get; set; }
 
             /// <summary>
             /// ServiceId
-            /// The ID of the VPC endpoint service.
+            /// 		
+            /// The ID of the service.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

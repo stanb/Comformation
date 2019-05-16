@@ -7,7 +7,7 @@ namespace Comformation.RoboMaker.Fleet
     /// <summary>
     /// AWS::RoboMaker::Fleet
     /// The AWS::RoboMaker::Fleet resource creates an AWS RoboMaker fleet. Fleets contain robots and can receive
-    /// deployments. For more information, see API_CreateFleet in the RoboMaker Developer Guide.
+    /// deployments.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html
     /// </summary>
     public class FleetResource : ResourceBase
@@ -16,10 +16,9 @@ namespace Comformation.RoboMaker.Fleet
         {
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// The list of all tags added to the fleet.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
@@ -29,6 +28,9 @@ namespace Comformation.RoboMaker.Fleet
             /// The name of the fleet.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

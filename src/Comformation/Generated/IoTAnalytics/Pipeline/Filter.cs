@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline Filter
-    /// The Filter property type specifies a filter for a message based on its attributes for an AWS IoT Analytics
-    /// pipeline.
+    /// AWS::IoTAnalytics::Pipeline Filter
+    /// An activity that filters a message based on its attributes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html
     /// </summary>
     public class Filter
@@ -25,6 +24,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -35,6 +36,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;filter&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

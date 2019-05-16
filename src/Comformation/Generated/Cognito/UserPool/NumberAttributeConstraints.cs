@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.UserPool
 {
     /// <summary>
-    /// Amazon Cognito UserPool NumberAttributeConstraints
+    /// AWS::Cognito::UserPool NumberAttributeConstraints
     /// The NumberAttributeConstraints property type defines the number attribute constraints of an Amazon Cognito
-    /// User Pool. NumberAttributeConstraints is a subproperty of the Amazon Cognito UserPool SchemaAttribute property
-    /// type.
+    /// User Pool. NumberAttributeConstraints is a subproperty of the SchemaAttribute property type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html
     /// </summary>
     public class NumberAttributeConstraints
@@ -18,8 +17,9 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// MinValue
         /// The minimum value of an attribute that is of the number data type.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MinValue")]
         public Union<string, IntrinsicFunction> MinValue { get; set; }
@@ -27,8 +27,9 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// MaxValue
         /// The maximum value of an attribute that is of the number data type.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaxValue")]
         public Union<string, IntrinsicFunction> MaxValue { get; set; }

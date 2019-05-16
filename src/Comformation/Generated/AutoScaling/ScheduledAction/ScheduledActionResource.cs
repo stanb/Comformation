@@ -6,7 +6,7 @@ namespace Comformation.AutoScaling.ScheduledAction
 {
     /// <summary>
     /// AWS::AutoScaling::ScheduledAction
-    /// Creates a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers
+    /// Specifies a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers
     /// available for your application in response to predictable load changes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html
     /// </summary>
@@ -16,7 +16,7 @@ namespace Comformation.AutoScaling.ScheduledAction
         {
             /// <summary>
             /// AutoScalingGroupName
-            /// The name or ARN of the Auto Scaling group.
+            /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,8 +25,8 @@ namespace Comformation.AutoScaling.ScheduledAction
 
             /// <summary>
             /// DesiredCapacity
-            /// The number of Amazon EC2 instances that should be running in the Auto Scaling group. At least one of
-            /// MaxSize, MinSize, or DesiredCapacity must be specified.
+            /// The number of Amazon EC2 instances that should be running in the Auto Scaling group.
+            /// You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
@@ -35,17 +35,17 @@ namespace Comformation.AutoScaling.ScheduledAction
 
             /// <summary>
             /// EndTime
-            /// The time in UTC for this schedule to end. For example, 2010-06-01T00:00:00Z.
+            /// The date and time in UTC for the recurring schedule to end. For example, &quot;2019-06-01T00:00:00Z&quot;.
             /// Required: No
-            /// Type: Time stamp
+            /// Type: String
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EndTime { get; set; }
 
             /// <summary>
             /// MaxSize
-            /// The maximum number of Amazon EC2 instances in the Auto Scaling group. At least one of MaxSize,
-            /// MinSize, or DesiredCapacity must be specified.
+            /// The maximum number of Amazon EC2 instances in the Auto Scaling group.
+            /// You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
@@ -54,8 +54,8 @@ namespace Comformation.AutoScaling.ScheduledAction
 
             /// <summary>
             /// MinSize
-            /// The minimum number of Amazon EC2 instances in the Auto Scaling group. At least one of MaxSize,
-            /// MinSize, or DesiredCapacity must be specified.
+            /// The minimum number of Amazon EC2 instances in the Auto Scaling group.
+            /// You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
@@ -64,9 +64,8 @@ namespace Comformation.AutoScaling.ScheduledAction
 
             /// <summary>
             /// Recurrence
-            /// The time in UTC when recurring future actions will start. You specify the start time by following
-            /// the Unix cron syntax format. For more information about cron syntax, go to http://en. wikipedia.
-            /// org/wiki/Cron.
+            /// The recurring schedule for this action, in Unix cron syntax format. For more information about cron
+            /// syntax, see Crontab.
             /// Specifying the StartTime and EndTime properties with Recurrence property forms the start and stop
             /// boundaries of the recurring action.
             /// Required: No
@@ -77,9 +76,9 @@ namespace Comformation.AutoScaling.ScheduledAction
 
             /// <summary>
             /// StartTime
-            /// The time in UTC for this schedule to start. For example, 2010-06-01T00:00:00Z.
+            /// The date and time in UTC for this action to start. For example, &quot;2019-06-01T00:00:00Z&quot;.
             /// Required: No
-            /// Type: Time stamp
+            /// Type: String
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> StartTime { get; set; }

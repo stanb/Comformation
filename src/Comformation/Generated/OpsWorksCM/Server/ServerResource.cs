@@ -18,7 +18,8 @@ namespace Comformation.OpsWorksCM.Server
         {
             /// <summary>
             /// KeyPair
-            /// The key pair associated with the server.
+            /// The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may
+            /// specify this parameter to connect to your instances by using SSH.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -27,8 +28,8 @@ namespace Comformation.OpsWorksCM.Server
 
             /// <summary>
             /// EngineVersion
-            /// The engine version of the server. For a Chef server, the valid value for EngineVersion is 12. For a
-            /// Puppet server, the valid value is 2017.
+            /// The major release version of the engine that you want to use. For a Chef server, the valid value for
+            /// EngineVersion is currently 12. For a Puppet server, the valid value is 2017.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -37,19 +38,25 @@ namespace Comformation.OpsWorksCM.Server
 
             /// <summary>
             /// ServiceRoleArn
-            /// The service role ARN used to create the server.
+            /// The service role that the AWS OpsWorks CM service backend uses to work with your account. Although
+            /// the AWS OpsWorks management console typically creates the service role for you, if you are using the
+            /// AWS CLI or API commands, run the service-role-creation. yaml AWS CloudFormation template, located at
+            /// https://s3. amazonaws. com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles. yaml.
+            /// This template creates a CloudFormation stack that includes the service role and instance profile
+            /// that you need.
             /// Required: Yes
             /// Type: String
+            /// Pattern: arn:aws:iam::[0-9]{12}:role/. *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
             /// DisableAutomatedBackup
-            /// Enable or disable scheduled backups. Valid values are true or false. The default value is false.
+            /// Enable or disable scheduled backups. Valid values are true or false. The default value is true.
             /// Required: No
             /// Type: Boolean
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> DisableAutomatedBackup { get; set; }
 
@@ -59,13 +66,15 @@ namespace Comformation.OpsWorksCM.Server
             /// BackupId.
             /// Required: No
             /// Type: String
+            /// Maximum: 79
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> BackupId { get; set; }
 
             /// <summary>
             /// EngineModel
-            /// The engine model of the server. Valid values include Monolithic for Puppet and Single for Chef.
+            /// The engine model of the server. Valid values in this release include Monolithic for Puppet and
+            /// Single for Chef.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -74,17 +83,21 @@ namespace Comformation.OpsWorksCM.Server
 
             /// <summary>
             /// PreferredMaintenanceWindow
-            /// The preferred maintenance period specified for the server.
+            /// The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on
+            /// the instance. Valid values must be specified in the following format: DDD:HH:MM. The specified time
+            /// is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
+            /// Wednesday, or Friday. See TimeWindowDefinition for more information.
+            /// Example: Mon:08:00, which represents a start time of every Monday at 08:00 UTC. (8:00 a. m. )
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// AssociatePublicIpAddress
-            /// Associate a public IP address with the server. Valid values are true or false. The default value is
-            /// true.
+            /// Associate a public IP address with a server that you are launching. Valid values are true or false.
+            /// The default value is true.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -93,68 +106,91 @@ namespace Comformation.OpsWorksCM.Server
 
             /// <summary>
             /// InstanceProfileArn
-            /// The instance profile ARN of the server.
+            /// The ARN of the instance profile that your Amazon EC2 instances use.
             /// Required: Yes
             /// Type: String
+            /// Pattern: arn:aws:iam::[0-9]{12}:instance-profile/. *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceProfileArn { get; set; }
 
             /// <summary>
             /// PreferredBackupWindow
-            /// The preferred backup period specified for the server.
+            /// The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on
+            /// your server if automated backups are enabled. Valid values must be specified in one of the following
+            /// formats:
+            /// HH:MM for daily backups DDD:HH:MM for weekly backups
+            /// The specified time is in coordinated universal time (UTC). The default value is a random, daily
+            /// start time.
+            /// Example: 08:00, which represents a daily start time of 08:00 UTC.
+            /// Example: Mon:08:00, which represents a start time of every Monday at 08:00 UTC. (8:00 a. m. )
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
-            /// The security group IDs for the server, as specified in the AWS CloudFormation stack. These might not
-            /// be the same security groups that are shown for the server in the Amazon EC2 console.
+            /// A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the
+            /// specified security groups must be within the VPC that is specified by SubnetIds.
+            /// If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP
+            /// ports 22 and 443, open to 0. 0. 0. 0/0 (everyone).
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// SubnetIds
-            /// The subnet IDs specified in a createServer() request.
+            /// The IDs of subnets in which to launch the server EC2 instance.
+            /// Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC
+            /// must have &quot;Auto Assign Public IP&quot; enabled.
+            /// EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are
+            /// created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must
+            /// have &quot;Auto Assign Public IP&quot; enabled.
+            /// For more information about supported Amazon EC2 platforms, see Supported Platforms.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// ServerName
-            /// The name of the server.
+            /// The name of the server. The server name must be unique within your AWS account, within each region.
+            /// Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a
+            /// maximum of 40 characters.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 40
+            /// Pattern: [a-zA-Z][a-zA-Z0-9\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ServerName { get; set; }
 
             /// <summary>
             /// EngineAttributes
-            /// In a createServer() request, EngineAttributes contains the administrator credentials to access the
-            /// configuration management server. These credentials are not stored by AWS OpsWorks CM.
-            /// Attributes accepted in a createServer request for Chef Automate: CHEF_PIVOTAL_KEY: A base64-encoded
-            /// RSA public key. When no CHEF_PIVOTAL_KEY is set, a private key is generated by AWS OpsWorks for Chef
-            /// Automate and returned in the response. The corresponding private key is required to access the Chef
-            /// API.
-            /// Attributes accepted in a createServer request for Puppet Enterprise: PUPPET_ADMIN_PASSWORD: An
-            /// administrator password that you can use to sign in to the Puppet Enterprise console after the server
-            /// is online. The password must use between 8 and 32 ASCII characters. PUPPET_R10K_REMOTE: The r10k
-            /// remote is the URL of your control repository (for example, ssh://git@your. git-repo.
-            /// com:user/control-repo. git). Specifying an r10k remote opens TCP port 8170. PUPPET_R10K_PRIVATE_KEY:
-            /// If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded
-            /// private SSH key.
+            /// Optional engine attributes on a specified server.
+            /// Attributes accepted in a Chef createServer request: CHEF_AUTOMATE_PIVOTAL_KEY: A base64-encoded RSA
+            /// public key. The corresponding private key is required to access the Chef API. When no
+            /// CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.
+            /// CHEF_AUTOMATE_ADMIN_PASSWORD: The password for the administrative user in the Chef Automate
+            /// web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The
+            /// password can contain letters, numbers, and special characters (!/@#$%^&amp;amp;+=_). The password must
+            /// contain at least one lower case letter, one upper case letter, one number, and one special
+            /// character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the
+            /// response.
+            /// Attributes accepted in a Puppet createServer request: PUPPET_ADMIN_PASSWORD: To work with the Puppet
+            /// Enterprise console, a password must use ASCII characters. PUPPET_R10K_REMOTE: The r10k remote is the
+            /// URL of your control repository (for example, ssh://git@your. git-repo. com:user/control-repo. git).
+            /// Specifying an r10k remote opens TCP port 8170. PUPPET_R10K_PRIVATE_KEY: If you are using a private
+            /// Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.
             /// Required: No
-            /// Type: List of EngineAttribute property types
-            /// Update requires: Replacement
+            /// Type: List of EngineAttribute
+            /// Update requires: No interruption
             /// </summary>
 			public List<EngineAttribute> EngineAttributes { get; set; }
 
@@ -164,14 +200,14 @@ namespace Comformation.OpsWorksCM.Server
             /// OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is 1.
             /// Required: No
             /// Type: Integer
-            /// Update requires: Replacement
+            /// Minimum: 1
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> BackupRetentionCount { get; set; }
 
             /// <summary>
             /// InstanceType
-            /// The instance type for the server, as specified in the AWS CloudFormation stack. This might not be
-            /// the same instance type that is shown for the server in the Amazon EC2 console.
+            /// The Amazon EC2 instance type to use. For example, m5. large.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -180,7 +216,7 @@ namespace Comformation.OpsWorksCM.Server
 
             /// <summary>
             /// Engine
-            /// The configuration management engine to use. Valid values are Chef or Puppet.
+            /// The configuration management engine to use. Valid values include ChefAutomate and Puppet.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

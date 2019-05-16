@@ -6,8 +6,8 @@ namespace Comformation.GuardDuty.Detector
 {
     /// <summary>
     /// AWS::GuardDuty::Detector
-    /// The AWS::GuardDuty::Detector resource creates a single Amazon GuardDuty detector. A detector is an object that
-    /// represents the GuardDuty service. You must create a detector for GuardDuty to become operational.
+    /// The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector. A detector is an object that
+    /// represents the Amazon GuardDuty service. A detector is required for Amazon GuardDuty to become operational.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html
     /// </summary>
     public class DetectorResource : ResourceBase
@@ -16,8 +16,7 @@ namespace Comformation.GuardDuty.Detector
         {
             /// <summary>
             /// FindingPublishingFrequency
-            /// Specifies the frequency of notifications sent about the subsequent finding occurrences. Valid values
-            /// include only the following: FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS.
+            /// A enumeration value that specifies how frequently finding updates are published.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -26,7 +25,7 @@ namespace Comformation.GuardDuty.Detector
 
             /// <summary>
             /// Enable
-            /// A Boolean value that specifies whether the detector is to be enabled.
+            /// Specifies whether or not to enable the detector.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption

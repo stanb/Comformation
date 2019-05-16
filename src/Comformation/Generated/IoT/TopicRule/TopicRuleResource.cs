@@ -6,7 +6,8 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule
-    /// Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule.
+    /// Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule. For information about working with AWS IoT
+    /// rules, see Rules for AWS IoT in the AWS IoT Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
     /// </summary>
     public class TopicRuleResource : ResourceBase
@@ -15,7 +16,7 @@ namespace Comformation.IoT.TopicRule
         {
             /// <summary>
             /// RuleName
-            /// The name (the physical ID) of the AWS IoT rule.
+            /// The name of the rule.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -24,9 +25,9 @@ namespace Comformation.IoT.TopicRule
 
             /// <summary>
             /// TopicRulePayload
-            /// The actions associated with the AWS IoT rule.
+            /// The rule payload.
             /// Required: Yes
-            /// Type: TopicRulePayload object
+            /// Type: TopicRulePayload
             /// Update requires: No interruption
             /// </summary>
 			public TopicRulePayload TopicRulePayload { get; set; }

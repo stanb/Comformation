@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    /// Amazon Simple Email Service ReceiptRule Action
-    /// The Action property type specifies an action for Amazon SES to take when it receives an email on behalf of one
-    /// or more email addresses or domains that you own.
+    /// AWS::SES::ReceiptRule Action
+    /// An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or
+    /// domains that you own. An instance of this data type can represent only one action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html
     /// </summary>
     public class Action
@@ -17,7 +17,7 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// BounceAction
         /// Rejects the received email by returning a bounce response to the sender and, optionally, publishes a
-        /// notification to Amazon SNS.
+        /// notification to Amazon Simple Notification Service (Amazon SNS).
         /// Required: No
         /// Type: BounceAction
         /// Update requires: No interruption
@@ -27,8 +27,8 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// S3Action
-        /// Saves the received message to an Amazon S3 bucket and, optionally, publishes a notification to
-        /// Amazon SNS.
+        /// Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally,
+        /// publishes a notification to Amazon SNS.
         /// Required: No
         /// Type: S3Action
         /// Update requires: No interruption

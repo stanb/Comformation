@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket S3KeyFilter
-    /// S3Key is a property of the Amazon S3 Bucket NotificationFilter property that specifies the key names of Amazon
-    /// Simple Storage Service (Amazon S3) objects for which to send notifications.
+    /// AWS::S3::Bucket S3KeyFilter
+    /// A container for object key name prefix and suffix filtering rules.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html
     /// </summary>
     public class S3KeyFilter
@@ -16,9 +15,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Rules
-        /// The object key name to filter on and whether to filter on the suffix or prefix of the key name.
+        /// A list of containers for the key value pair that defines the criteria for the filter rule.
         /// Required: Yes
         /// Type: List of FilterRule
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Rules")]
         public List<FilterRule> Rules { get; set; }

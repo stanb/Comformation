@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket QueueConfiguration
-    /// QueueConfigurations is a property of the NotificationConfiguration property that describes the S3 bucket
-    /// events about which you want to send messages to Amazon SQS and the queues to which you want to send them.
+    /// AWS::S3::Bucket QueueConfiguration
+    /// Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when
+    /// Amazon S3 detects specified events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html
     /// </summary>
     public class QueueConfiguration
@@ -16,32 +16,34 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Event
-        /// The S3 bucket event about which you want to publish messages to Amazon Simple Queue Service ( Amazon
-        /// SQS). For more information, see Supported Event Types in the Amazon Simple Storage Service Developer
-        /// Guide.
+        /// The Amazon S3 bucket event about which you want to publish messages to Amazon SQS. For more
+        /// information, see Supported Event Types in the Amazon Simple Storage Service Developer Guide.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Event")]
         public Union<string, IntrinsicFunction> Event { get; set; }
 
         /// <summary>
         /// Filter
-        /// The filtering rules that determine for which objects to send notifications. For example, you can
-        /// create a filter so that Amazon Simple Storage Service (Amazon S3) sends notifications only when
-        /// image files with a . jpg extension are added to the bucket.
+        /// The filtering rules that determine which objects trigger notifications. For example, you can create
+        /// a filter so that Amazon S3 sends notifications only when image files with a . jpg extension are
+        /// added to the bucket.
         /// Required: No
         /// Type: NotificationFilter
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Filter")]
         public NotificationFilter Filter { get; set; }
 
         /// <summary>
         /// Queue
-        /// The Amazon Resource Name (ARN) of the Amazon SQS queue that Amazon S3 publishes messages to when the
-        /// specified event type occurs.
+        /// The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when
+        /// it detects events of the specified type.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Queue")]
         public Union<string, IntrinsicFunction> Queue { get; set; }

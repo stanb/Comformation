@@ -6,7 +6,7 @@ namespace Comformation.EC2.DHCPOptions
 {
     /// <summary>
     /// AWS::EC2::DHCPOptions
-    /// Creates a set of DHCP options for your VPC.
+    /// Specifies a set of DHCP options for your VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html
     /// </summary>
     public class DHCPOptionsResource : ResourceBase
@@ -15,70 +15,63 @@ namespace Comformation.EC2.DHCPOptions
         {
             /// <summary>
             /// DomainName
-            /// A domain name of your choice.
-            /// Required: Conditional; see note.
+            /// This value is used to complete unqualified DNS hostnames. If you&#39;re using AmazonProvidedDNS in
+            /// us-east-1, specify ec2. internal. If you&#39;re using AmazonProvidedDNS in another Region, specify
+            /// region. compute. internal (for example, ap-northeast-1. compute. internal). Otherwise, specify a
+            /// domain name (for example, MyCompany. com).
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// Example: &quot;example. com&quot;
             /// </summary>
 			public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// DomainNameServers
-            /// The IP (IPv4) address of a domain name server. You can specify up to four addresses.
-            /// Required: Conditional; see note.
-            /// Type: List of String values
+            /// The IPv4 addresses of up to four domain name servers, or AmazonProvidedDNS. The default DHCP option
+            /// set specifies AmazonProvidedDNS. If specifying more than one domain name server, specify the IP
+            /// addresses in a single parameter, separated by commas. To have your instance to receive a custom DNS
+            /// hostname as specified in DomainName, you must set this to a custom DNS server.
+            /// Required: Conditional
+            /// Type: List of String
             /// Update requires: Replacement
-            /// Example: &quot;DomainNameServers&quot; : [ &quot;10. 0. 0. 1&quot;, &quot;10. 0. 0. 2&quot; ]
-            /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
-            /// &quot;DomainNameServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> DomainNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNameServers
-            /// The IP address (IPv4) of a NetBIOS name server. You can specify up to four addresses.
-            /// Required: Conditional; see note.
-            /// Type: List of String values
+            /// The IPv4 addresses of up to four NetBIOS name servers.
+            /// Required: Conditional
+            /// Type: List of String
             /// Update requires: Replacement
-            /// Example: &quot;NetbiosNameServers&quot; : [ &quot;10. 0. 0. 1&quot;, &quot;10. 0. 0. 2&quot; ]
-            /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
-            /// &quot;NetbiosNameServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> NetbiosNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNodeType
-            /// An integer value indicating the NetBIOS node type:
-            /// 1: Broadcast (&quot;B&quot;) 2: Point-to-point (&quot;P&quot;) 4: Mixed mode (&quot;M&quot;) 8: Hybrid (&quot;H&quot;)
-            /// For more information about these values and about NetBIOS node types, see RFC 2132, RFC 1001, and
-            /// RFC 1002. We recommend that you use only the value 2 at this time (broadcast and multicast are not
-            /// currently supported).
-            /// Required: Required if NetBiosNameServers is specified; optional otherwise.
-            /// Type: List of numbers
+            /// The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast are
+            /// not currently supported).
+            /// Required: No
+            /// Type: Integer
             /// Update requires: Replacement
-            /// Example: &quot;NetbiosNodeType&quot; : 2
             /// </summary>
 			public Union<int, IntrinsicFunction> NetbiosNodeType { get; set; }
 
             /// <summary>
             /// NtpServers
-            /// The IP address (IPv4) of a Network Time Protocol (NTP) server. You can specify up to four addresses.
-            /// Required: Conditional; see note.
-            /// Type: List of String values
+            /// The IPv4 addresses of up to four Network Time Protocol (NTP) servers.
+            /// Required: Conditional
+            /// Type: List of String
             /// Update requires: Replacement
-            /// Example: &quot;NtpServers&quot; : [ &quot;10. 0. 0. 1&quot; ]
-            /// Example: To preserve the order of IP addresses, specify a comma delimited list as a single string:
-            /// &quot;NtpServers&quot; : [ &quot;10. 0. 0. 1, 10. 0. 0. 2&quot; ]
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> NtpServers { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this resource.
+            /// 		
+            /// Any tags assigned to the DHCP options set.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 

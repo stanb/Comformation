@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass ResourceDefinitionVersion ResourceInstance
+    /// AWS::Greengrass::ResourceDefinitionVersion ResourceInstance
     /// A local resource, 		machine learning resource, or secret resource. 	For more information, see Access Local
     /// Resources with Lambda Functions, 	Perform Machine Learning Inference, and 	Deploy Secrets to the AWS IoT
     /// Greengrass Core in the AWS IoT Greengrass Developer Guide.
@@ -21,6 +21,8 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
         /// types: 				 LocalDeviceResourceData, LocalVolumeResourceData, 				
         /// SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or
         /// SecretsManagerSecretResourceData.
+        /// 				 		
+        /// Note Only one resource type can be defined for a ResourceDataContainer instance.
         /// Required: Yes
         /// Type: ResourceDataContainer
         /// Update requires: Replacement

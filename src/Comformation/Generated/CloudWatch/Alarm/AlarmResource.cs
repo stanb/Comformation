@@ -6,7 +6,8 @@ namespace Comformation.CloudWatch.Alarm
 {
     /// <summary>
     /// AWS::CloudWatch::Alarm
-    /// The AWS::CloudWatch::Alarm type creates a CloudWatch alarm.
+    /// The AWS::CloudWatch::Alarm type specifies an alarm and associates it with the specified metric or metric math
+    /// expression.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
     /// </summary>
     public class AlarmResource : ResourceBase
@@ -15,7 +16,9 @@ namespace Comformation.CloudWatch.Alarm
         {
             /// <summary>
             /// ActionsEnabled
-            /// Indicates whether actions should be executed during changes to the CloudWatch alarm&#39;s state.
+            /// 		
+            /// Indicates whether actions should be executed during any changes to the alarm state.
+            /// 	
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -24,118 +27,154 @@ namespace Comformation.CloudWatch.Alarm
 
             /// <summary>
             /// AlarmActions
-            /// The list of actions to execute when this alarm transitions into an ALARM state from any other state.
-            /// Specify each action as an Amazon Resource Name (ARN). For more information about creating alarms and
-            /// the actions that you can specify, see PutMetricAlarm in the Amazon CloudWatch API Reference and
-            /// Creating Amazon CloudWatch Alarms in the Amazon CloudWatch User Guide.
-            /// Note For Auto Scaling scaling polices, you can specify only one policy. If you associate more than
-            /// one policy, Amazon CloudWatch executes only the first scaling policy.
+            /// 		
+            /// The actions to execute when this alarm transitions to the ALARM state 			from any other state. The
+            /// list of actions to execute when this alarm transitions into an ALARM state from any other state.
+            /// 			Specify each action as an Amazon Resource Name (ARN). For more information about creating alarms
+            /// and the actions 			that you can specify, see PutMetricAlarm in the 		 Amazon CloudWatch API
+            /// Reference.
+            /// 	
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
+            /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AlarmActions { get; set; }
 
             /// <summary>
             /// AlarmDescription
+            /// 		
             /// The description of the alarm.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AlarmDescription { get; set; }
 
             /// <summary>
             /// AlarmName
-            /// A name for the alarm. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
-            /// and uses that ID for the alarm name. For more information, see Name Type.
+            /// The name of the alarm. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
+            /// ID and uses that ID for the alarm name.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AlarmName { get; set; }
 
             /// <summary>
             /// ComparisonOperator
-            /// The arithmetic operation to use when comparing the specified Statistic and Threshold. AWS
-            /// CloudFormation uses the value of Statistic as the first operand.
-            /// You can specify the following values: GreaterThanOrEqualToThreshold , GreaterThanThreshold,
+            /// 		
+            /// The arithmetic operation to use when comparing the specified 			statistic and threshold. The
+            /// specified statistic value is used as the first operand.
+            /// You can specify the following values: GreaterThanThreshold, GreaterThanOrEqualToThreshold,
             /// LessThanThreshold, or LessThanOrEqualToThreshold.
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: GreaterThanOrEqualToThreshold | GreaterThanThreshold | LessThanOrEqualToThreshold |
+            /// LessThanThreshold
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ComparisonOperator { get; set; }
 
             /// <summary>
             /// DatapointsToAlarm
-            /// The number of datapoints that must be breaching to trigger the alarm. This is used only if you are
-            /// setting an &quot;M out of N&quot; alarm. In that case, this value is the M. For more information, see
-            /// Evaluating an Alarm in the Amazon CloudWatch User Guide.
+            /// 		
+            /// The number of datapoints that must be breaching to trigger the alarm. 		 This is used only if you
+            /// are setting an &quot;M out of N&quot; alarm. In that case, this value is the M. 		 For more information, see
+            /// Evaluating 		 an Alarm in the Amazon CloudWatch User Guide.
+            /// 	
             /// Required: No
             /// Type: Integer
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> DatapointsToAlarm { get; set; }
 
             /// <summary>
             /// Dimensions
-            /// The dimensions of the metric for the alarm.
+            /// 		
+            /// The dimensions for the metric associated with the alarm.
+            /// 	
             /// Required: No
-            /// Type: List of Metric Dimension
+            /// Type: List of Dimension
+            /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
 			public List<Dimension> Dimensions { get; set; }
 
             /// <summary>
             /// EvaluateLowSampleCountPercentile
-            /// Used only for alarms that are based on percentiles. Specifies whether to evaluate the data and
-            /// potentially change the alarm state if there are too few data points to be statistically significant.
+            /// 		
+            /// Used only for alarms based on percentiles. If ignore, the alarm state does not change 			during
+            /// periods with too few data points to be statistically significant. If evaluate or this 			parameter
+            /// is not used, the alarm is always evaluated and possibly changes state no matter 			how many data
+            /// points are available.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EvaluateLowSampleCountPercentile { get; set; }
 
             /// <summary>
             /// EvaluationPeriods
+            /// 		
             /// The number of periods over which data is compared to the specified threshold.
+            /// 	
             /// Required: Yes
             /// Type: Integer
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> EvaluationPeriods { get; set; }
 
             /// <summary>
             /// ExtendedStatistic
-            /// The percentile statistic for the metric. Specify a value between p0. 0 and p100.
-            /// Required: Conditional. You must specify either the ExtendedStatistic or the Statistic property.
+            /// 		
+            /// The percentile statistic for the metric associated with the alarm. Specify a value between 			p0. 0
+            /// and p100.
+            /// 	
+            /// Required: No
             /// Type: String
+            /// Pattern: p(\d{1,2}(\. \d{0,2})?|100)
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ExtendedStatistic { get; set; }
 
             /// <summary>
             /// InsufficientDataActions
-            /// The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state. Specify
-            /// each action as an Amazon Resource Number (ARN). Currently, the only supported actions are publishing
-            /// to an Amazon SNS topic and publishing to an Auto Scaling policy.
+            /// 		
+            /// The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state 			from any other
+            /// state. Each action is specified as an Amazon Resource Name (ARN).
+            /// 	
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
+            /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> InsufficientDataActions { get; set; }
 
             /// <summary>
             /// MetricName
-            /// The name of the metric associated with the alarm. For more information about the metrics that you
-            /// can specify, see Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference in the Amazon
-            /// CloudWatch User Guide.
+            /// 		
+            /// The name of the metric associated with the alarm.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> MetricName { get; set; }
@@ -143,54 +182,70 @@ namespace Comformation.CloudWatch.Alarm
             /// <summary>
             /// Metrics
             /// Specifies the metric data to return.
+            /// 	
             /// Required: No
-            /// Type: List of MetricDataQuery property types
+            /// Type: List of MetricDataQuery
             /// Update requires: No interruption
             /// </summary>
 			public List<MetricDataQuery> Metrics { get; set; }
 
             /// <summary>
             /// Namespace
-            /// The namespace of the metric that is associated with the alarm.
+            /// 		
+            /// The namespace of the metric associated with the alarm.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [^:]. *
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Namespace { get; set; }
 
             /// <summary>
             /// OKActions
-            /// The list of actions to execute when this alarm transitions into an OK state. Specify each action as
-            /// an Amazon Resource Number (ARN). Currently, the only action supported is publishing to an SNS topic
-            /// or an Auto Scaling policy.
+            /// 		
+            /// The actions to execute when this alarm transitions to the OK state 			from any other state. Each
+            /// action is specified as an Amazon Resource Name (ARN).
+            /// 	
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
+            /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> OKActions { get; set; }
 
             /// <summary>
             /// Period
-            /// The time over which the specified statistic is applied. Specify time in seconds, in multiples of 60.
+            /// 		
+            /// The period, in seconds, over which the statistic is applied.
+            /// 	
             /// Required: No
             /// Type: Integer
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Period { get; set; }
 
             /// <summary>
             /// Statistic
-            /// The statistic to apply to the alarm&#39;s associated metric.
-            /// You can specify the following values: SampleCount, Average, Sum, Minimum, or Maximum.
-            /// Required: Conditional. You must specify either the ExtendedStatistic or the Statistic property.
+            /// 		
+            /// The statistic for the metric associated with the alarm, other than percentile. 		 For percentile
+            /// statistics, use ExtendedStatistic.
+            /// 	
+            /// Required: No
             /// Type: String
+            /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Statistic { get; set; }
 
             /// <summary>
             /// Threshold
-            /// The value against which the specified statistic is compared.
+            /// 		
+            /// The value to compare with the specified statistic.
+            /// 	
             /// Required: Yes
             /// Type: Double
             /// Update requires: No interruption
@@ -199,26 +254,33 @@ namespace Comformation.CloudWatch.Alarm
 
             /// <summary>
             /// TreatMissingData
-            /// Sets how this alarm is to handle missing data points. If TreatMissingData is omitted, the default
-            /// behavior of missing is used. For more information, see PutMetricAlarm in the Amazon CloudWatch API
-            /// Reference and Configuring How CloudWatch Alarms Treats Missing Data in the Amazon CloudWatch User
-            /// Guide.
-            /// Valid values: breaching, notBreaching, ignore, missing
+            /// Sets how this alarm is to handle missing data points. If this parameter is omitted, the default
+            /// behavior of missing is used. For more information, see Configuring How CloudWatch Alarms Treat
+            /// Missing Data in the Amazon CloudWatch User Guide.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TreatMissingData { get; set; }
 
             /// <summary>
             /// Unit
-            /// The unit for the metric that is associated with the alarm.
-            /// You can specify the following values: Seconds, Microseconds, Milliseconds, Bytes, Kilobytes,
-            /// Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count,
-            /// Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second,
-            /// Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, or None.
+            /// 		
+            /// The unit of the metric associated with the alarm. 		 You can specify the following values: Seconds,
+            /// Microseconds, Milliseconds, Bytes, Kilobytes, 		 Megabytes, Gigabytes, Terabytes, Bits, Kilobits,
+            /// Megabits, Gigabits, Terabits, Percent, Count, 		 Bytes/Second, Kilobytes/Second, Megabytes/Second,
+            /// Gigabytes/Second, Terabytes/Second, Bits/Second, 		 Kilobits/Second, Megabits/Second,
+            /// Gigabits/Second, Terabits/Second, Count/Second, or None.
+            /// 	
             /// Required: No
             /// Type: String
+            /// Allowed Values: Bits | Bits/Second | Bytes | Bytes/Second | Count | Count/Second | Gigabits |
+            /// Gigabits/Second | Gigabytes | Gigabytes/Second | Kilobits | Kilobits/Second | Kilobytes |
+            /// Kilobytes/Second | Megabits | Megabits/Second | Megabytes | Megabytes/Second | Microseconds |
+            /// Milliseconds | None | Percent | Seconds | Terabits | Terabits/Second | Terabytes | Terabytes/Second
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Unit { get; set; }

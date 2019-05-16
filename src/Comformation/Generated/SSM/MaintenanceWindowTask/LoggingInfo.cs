@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask LoggingInfo
+    /// AWS::SSM::MaintenanceWindowTask LoggingInfo
     /// The LoggingInfo property type specifies information about the Amazon S3 bucket to write instance-level logs
     /// to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html
@@ -16,9 +16,11 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// S3Bucket
-        /// The name of the Amazon S3 bucket where execution logs are stored.
+        /// The name of an Amazon S3 bucket where execution logs are stored .
         /// Required: Yes
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 63
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Bucket")]
@@ -29,6 +31,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The region where the Amazon S3 bucket is located.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 20
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Region")]
@@ -39,6 +43,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The Amazon S3 bucket subfolder.
         /// Required: No
         /// Type: String
+        /// Maximum: 500
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Prefix")]

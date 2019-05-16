@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 {
     /// <summary>
     /// AWS::ServiceCatalog::CloudFormationProduct
-    /// Creates the specified product for AWS Service Catalog. For more information, see CreateProduct in the AWS
-    /// Service Catalog Developer Guide.
+    /// Specifies a product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
     /// </summary>
     public class CloudFormationProductResource : ResourceBase
@@ -19,6 +18,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The owner of the product.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Owner { get; set; }
@@ -28,6 +28,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The support information about the product.
             /// Required: No
             /// Type: String
+            /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SupportDescription { get; set; }
@@ -37,6 +38,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The description of the product.
             /// Required: No
             /// Type: String
+            /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -46,6 +48,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The distributor of the product.
             /// Required: No
             /// Type: String
+            /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Distributor { get; set; }
@@ -55,6 +58,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The contact email for product support.
             /// Required: No
             /// Type: String
+            /// Maximum: 254
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SupportEmail { get; set; }
@@ -62,8 +66,10 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
@@ -73,6 +79,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The contact URL for product support.
             /// Required: No
             /// Type: String
+            /// Maximum: 2083
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SupportUrl { get; set; }
@@ -81,7 +88,8 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Tags
             /// One or more tags.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
+            /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
@@ -91,15 +99,16 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// The name of the product.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ProvisioningArtifactParameters
-            /// The configuration of the provisioning artifact (also known as a version) for a product.
+            /// The configuration of the provisioning artifact (also known as a version).
             /// Required: Yes
-            /// Type: List of ProvisioningArtifactProperties property types
+            /// Type: List of ProvisioningArtifactProperties
             /// Update requires: No interruption
             /// </summary>
 			public List<ProvisioningArtifactProperties> ProvisioningArtifactParameters { get; set; }

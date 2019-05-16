@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
-    /// Amazon API Gateway UsagePlan QuotaSettings
+    /// AWS::ApiGateway::UsagePlan QuotaSettings
     /// QuotaSettings is a property of the AWS::ApiGateway::UsagePlan resource that specifies the maximum number of
-    /// requests users can make to your Amazon API Gateway (API Gateway) APIs.
+    /// requests users can make to your REST APIs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html
     /// </summary>
     public class QuotaSettings
@@ -19,6 +19,7 @@ namespace Comformation.ApiGateway.UsagePlan
         /// The maximum number of requests that users can make within the specified time period.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Limit")]
         public Union<int, IntrinsicFunction> Limit { get; set; }
@@ -30,6 +31,7 @@ namespace Comformation.ApiGateway.UsagePlan
         /// property, you can decrease the limit for this initial time period.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Offset")]
         public Union<int, IntrinsicFunction> Offset { get; set; }
@@ -41,6 +43,7 @@ namespace Comformation.ApiGateway.UsagePlan
         /// Reference.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Period")]
         public Union<string, IntrinsicFunction> Period { get; set; }

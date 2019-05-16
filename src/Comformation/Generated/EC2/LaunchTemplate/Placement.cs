@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate Placement
-    /// The Placement property type specifies the placement for the instance in an Amazon EC2 launch template.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html
+    /// AWS::EC2::LaunchTemplate Placement
+    /// Specifies the placement of an instance.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
     /// </summary>
     public class Placement
     {
@@ -27,9 +27,9 @@ namespace Comformation.EC2.LaunchTemplate
         /// Tenancy
         /// The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
         /// dedicated runs on single-tenant hardware.
-        /// Valid values include default, dedicated, and host.
         /// Required: No
         /// Type: String
+        /// Allowed Values: dedicated | default | host
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tenancy")]

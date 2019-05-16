@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule SqsAction
-    /// Sqs is a property of the Actions property that describes an action that publishes data to an SQS queue.
+    /// AWS::IoT::TopicRule SqsAction
+    /// Describes an action to publish data to an Amazon SQS queue.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html
     /// </summary>
     public class SqsAction
@@ -15,27 +15,30 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// QueueUrl
-        /// The URL of the Amazon Simple Queue Service (Amazon SQS) queue.
+        /// The URL of the Amazon SQS queue.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("QueueUrl")]
         public Union<string, IntrinsicFunction> QueueUrl { get; set; }
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the IAM role that grants access to Amazon SQS.
+        /// The ARN of the IAM role that grants access.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         /// <summary>
         /// UseBase64
-        /// Specifies whether Base64 encoding should be used.
+        /// Specifies whether to use Base64 encoding.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UseBase64")]
         public Union<bool, IntrinsicFunction> UseBase64 { get; set; }

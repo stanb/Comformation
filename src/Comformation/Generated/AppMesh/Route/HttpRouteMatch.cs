@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.Route
 {
     /// <summary>
-    /// AWS AppMesh Route HttpRouteMatch
+    /// AWS::AppMesh::Route HttpRouteMatch
     /// An object representing the requirements for a route to match HTTP requests for a virtual router.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html
     /// </summary>

@@ -6,8 +6,8 @@ namespace Comformation.EC2.VPCCidrBlock
 {
     /// <summary>
     /// AWS::EC2::VPCCidrBlock
-    /// The AWS::EC2::VPCCidrBlock resource associates a single Amazon-provided IPv6 CIDR block or a single
-    /// user-specified IPv4 CIDR block with a Virtual Private Cloud (VPC).
+    /// Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An
+    /// IPv6 CIDR block must have a prefix length of /64.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
     /// </summary>
     public class VPCCidrBlockResource : ResourceBase
@@ -16,8 +16,8 @@ namespace Comformation.EC2.VPCCidrBlock
         {
             /// <summary>
             /// AmazonProvidedIpv6CidrBlock
-            /// Whether to request an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You
-            /// can&#39;t specify the range of IPv6 addresses or the size of the CIDR block.
+            /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify
+            /// the range of IPv6 addresses, or the size of the CIDR block.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -35,7 +35,7 @@ namespace Comformation.EC2.VPCCidrBlock
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC to associate the Amazon-provided IPv6 CIDR block with.
+            /// The ID of the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

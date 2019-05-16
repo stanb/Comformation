@@ -16,7 +16,7 @@ namespace Comformation.IoT1Click.Device
         {
             /// <summary>
             /// DeviceId
-            /// The unique identifier of the device.
+            /// The ID of the device, such as G030PX0312744DWM.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

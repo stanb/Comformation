@@ -16,9 +16,10 @@ namespace Comformation.Greengrass.CoreDefinitionVersion
         {
             /// <summary>
             /// Cores
-            /// The Greengrass core in this version. Currently, a core definition version can contain only one core.
+            /// The Greengrass core in this version. Currently, the Cores property for a core definition version can
+            /// contain only one core.
             /// Required: Yes
-            /// Type: List of Core property types. This list must contain exactly one Core.
+            /// Type: List of Core
             /// Update requires: Replacement
             /// </summary>
 			public List<Core> Cores { get; set; }

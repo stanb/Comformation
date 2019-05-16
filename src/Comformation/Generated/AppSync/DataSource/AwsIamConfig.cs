@@ -6,16 +6,16 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync AuthorizationConfig AwsIamConfig
+    /// AWS::AppSync::DataSource AwsIamConfig
     /// Use the AwsIamConfig property type to specify AwsIamConfig for a AWS AppSync authorizaton.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig-authorizationconfig-awsiamconfig.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html
     /// </summary>
     public class AwsIamConfig
     {
 
         /// <summary>
         /// SigningRegion
-        /// The region of signing.
+        /// The signing region for AWS IAM authorization.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// SigningServiceName
-        /// The service name of signing.
+        /// The signing service name for AWS IAM authorization.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

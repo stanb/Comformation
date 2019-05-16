@@ -25,10 +25,12 @@ namespace Comformation.Cloud9.EnvironmentEC2
 
             /// <summary>
             /// OwnerArn
-            /// The Amazon Resource Name (ARN) of the environment owner. If this value is not specified, the ARN
-            /// defaults to this environment&#39;s creator.
+            /// The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS Identity
+            /// and Access Management (IAM) principal. If this value is not specified, the ARN defaults to this
+            /// environment&#39;s creator.
             /// Required: No
             /// Type: String
+            /// Pattern: arn:aws:(iam|sts)::\d+:(root|user|federated-user|assumed-role)\/?\S*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> OwnerArn { get; set; }
@@ -38,42 +40,49 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// The description of the environment to create.
             /// Required: No
             /// Type: String
+            /// Maximum: 200
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AutomaticStopTimeMinutes
-            /// The number of minutes until the running instance is shut down after the environment has last been
-            /// used.
+            /// The number of minutes until the running instance is shut down after the environment was last used.
             /// Required: No
             /// Type: Integer
+            /// Maximum: 20160
             /// Update requires: Replacement
             /// </summary>
 			public Union<int, IntrinsicFunction> AutomaticStopTimeMinutes { get; set; }
 
             /// <summary>
             /// SubnetId
-            /// The ID of the subnet in Amazon Virtual Private Cloud (Amazon VPC) to use.
-            /// Required: Yes
+            /// The ID of the subnet in Amazon Virtual Private Cloud (Amazon VPC) that AWS Cloud9 will use to
+            /// communicate with the Amazon Elastic Compute Cloud (Amazon EC2) instance.
+            /// Required: No
             /// Type: String
+            /// Minimum: 5
+            /// Maximum: 30
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
             /// <summary>
             /// InstanceType
-            /// The type of instance to host the environment on (for example, t2. micro).
+            /// The type of instance to connect to the environment (for example, t2. micro).
             /// Required: Yes
             /// Type: String
+            /// Minimum: 5
+            /// Maximum: 20
+            /// Pattern: ^[a-z][1-9][. ][a-z0-9]+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the environment to create.
-            /// Required: Yes
+            /// The name of the environment.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

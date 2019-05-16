@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Webhook
 {
     /// <summary>
-    /// CodePipeline Webhook WebhookAuthConfiguration
-    /// The WebhookAuthConfiguration property type configures the authentication applied to incoming webhook trigger
-    /// requests. For more information, see Webhook Definition in the AWS CodePipeline API Reference.
+    /// AWS::CodePipeline::Webhook WebhookAuthConfiguration
+    /// The authentication applied to incoming webhook trigger requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html
     /// </summary>
     public class WebhookAuthConfiguration
@@ -16,9 +15,12 @@ namespace Comformation.CodePipeline.Webhook
 
         /// <summary>
         /// AllowedIPRange
-        /// The property used to configure acceptance of webhooks within a specific IP range.
+        /// The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+        /// AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AllowedIPRange")]
@@ -26,9 +28,12 @@ namespace Comformation.CodePipeline.Webhook
 
         /// <summary>
         /// SecretToken
-        /// The property used to configure GitHub authentication.
+        /// The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property
+        /// must be set.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecretToken")]

@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationOutput KinesisStreamsOutput
-    /// The KinesisStreamsOutput property type specifies a Kinesis data stream as the destination for a SQL-based
-    /// Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::ApplicationOutput KinesisStreamsOutput
+    /// When you configure an SQL-based Amazon Kinesis Data Analytics application&#39;s output, identifies a Kinesis data
+    /// stream as the destination. You provide the stream Amazon Resource Name (ARN).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisstreamsoutput.html
     /// </summary>
     public class KinesisStreamsOutput
@@ -19,6 +19,9 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
         /// The ARN of the destination Kinesis data stream to write to.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]

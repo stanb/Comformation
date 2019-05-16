@@ -6,8 +6,7 @@ namespace Comformation.RoboMaker.RobotApplication
 {
     /// <summary>
     /// AWS::RoboMaker::RobotApplication
-    /// The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot application. For more
-    /// information, see API_CreateRobotApplication in the RoboMaker Developer Guide.
+    /// The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html
     /// </summary>
     public class RobotApplicationResource : ResourceBase
@@ -25,7 +24,7 @@ namespace Comformation.RoboMaker.RobotApplication
 
             /// <summary>
             /// RobotSoftwareSuite
-            /// The robot software suite.
+            /// The robot software suite used by the robot application.
             /// Required: Yes
             /// Type: RobotSoftwareSuite
             /// Update requires: Replacement
@@ -36,17 +35,16 @@ namespace Comformation.RoboMaker.RobotApplication
             /// Sources
             /// The sources of the robot application.
             /// Required: Yes
-            /// Type: List of SourceConfig property types
+            /// Type: List of SourceConfig
             /// Update requires: No interruption
             /// </summary>
 			public List<SourceConfig> Sources { get; set; }
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// A map that contains tag keys and tag values that are attached to the robot application.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
@@ -56,6 +54,9 @@ namespace Comformation.RoboMaker.RobotApplication
             /// The name of the robot application.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 255
+            /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

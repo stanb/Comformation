@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
-    /// Amazon Elasticsearch Service Domain SnapshotOptions
-    /// SnapshotOptions is a property of the AWS::Elasticsearch::Domain resource that configures the automated
-    /// snapshot of Amazon Elasticsearch Service (Amazon ES) domain indices.
+    /// AWS::Elasticsearch::Domain SnapshotOptions
+    /// The automated snapshot configuration for the Amazon ES domain indices.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html
     /// </summary>
     public class SnapshotOptions
@@ -21,6 +20,7 @@ namespace Comformation.Elasticsearch.Domain
         /// between midnight and 1 am. You can specify a value between 0 and 23.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AutomatedSnapshotStartHour")]
         public Union<int, IntrinsicFunction> AutomatedSnapshotStartHour { get; set; }

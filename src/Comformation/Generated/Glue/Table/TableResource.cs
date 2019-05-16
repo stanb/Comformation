@@ -16,17 +16,17 @@ namespace Comformation.Glue.Table
         {
             /// <summary>
             /// TableInput
-            /// The metadata of the table.
+            /// A structure used to define a table.
             /// Required: Yes
             /// Type: TableInput
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public TableInput TableInput { get; set; }
 
             /// <summary>
             /// DatabaseName
-            /// The name of the catalog database for the table. It must match the single-line string pattern:
-            /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+            /// The name of the database where the table metadata resides. For Hive compatibility, this must be all
+            /// lowercase.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -35,13 +35,11 @@ namespace Comformation.Glue.Table
 
             /// <summary>
             /// CatalogId
-            /// The ID of the data catalog to create the catalog object in. Currently, this should be the AWS
-            /// account ID.
-            /// Note To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId
-            /// pseudo parameter—for example !Ref AWS::AccountId.
+            /// The ID of the Data Catalog in which to create the Table. If none is supplied, the AWS account ID is
+            /// used by default.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 

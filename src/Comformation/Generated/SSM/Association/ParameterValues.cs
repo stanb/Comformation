@@ -6,7 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.Association
 {
     /// <summary>
-    /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html
+    /// AWS::SSM::Association ParameterValues
+    /// ParameterValues is a property of the AWS::SSM::Association resource that specifies the parameters for the
+    /// runtime configuration of the document.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html
     /// </summary>
     public class ParameterValues
     {

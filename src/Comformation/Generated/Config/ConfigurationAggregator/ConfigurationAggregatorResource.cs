@@ -6,9 +6,8 @@ namespace Comformation.Config.ConfigurationAggregator
 {
     /// <summary>
     /// AWS::Config::ConfigurationAggregator
-    /// The AWS::Config::ConfigurationAggregator resource is an AWS Config resource type that collects AWS Config data
-    /// from multiple accounts and regions. Use an aggregator to view the resource configuration and compliance data
-    /// recorded in AWS Config for multiple accounts and regions.
+    /// The details about the configuration aggregator, including 			information about source accounts, regions, and
+    /// metadata of the 			aggregator.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html
     /// </summary>
     public class ConfigurationAggregatorResource : ResourceBase
@@ -17,25 +16,35 @@ namespace Comformation.Config.ConfigurationAggregator
         {
             /// <summary>
             /// AccountAggregationSources
-            /// A collection of accounts and regions.
+            /// 		
+            /// Provides a list of source accounts and regions to be 			aggregated.
+            /// 	
             /// Required: No
-            /// Type: List of AccountAggregationSource property types
+            /// Type: List of AccountAggregationSource
+            /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
 			public List<AccountAggregationSource> AccountAggregationSources { get; set; }
 
             /// <summary>
             /// ConfigurationAggregatorName
-            /// The name of the configuration aggregator.
+            /// 		
+            /// The name of the aggregator.
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: [\w\-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ConfigurationAggregatorName { get; set; }
 
             /// <summary>
             /// OrganizationAggregationSource
-            /// A collection of regions and IAM role to retrieve AWS Organizations details.
+            /// 		
+            /// Provides an organization and list of regions to be 			aggregated.
+            /// 	
             /// Required: No
             /// Type: OrganizationAggregationSource
             /// Update requires: No interruption

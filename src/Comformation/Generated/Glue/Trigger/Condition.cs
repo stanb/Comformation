@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Trigger
 {
     /// <summary>
-    /// AWS Glue Trigger Condition
-    /// The Condition property type specifies a condition for an AWS Glue job trigger predicate.
+    /// AWS::Glue::Trigger Condition
+    /// Defines a condition under which a trigger fires.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
     /// </summary>
     public class Condition
@@ -15,8 +15,7 @@ namespace Comformation.Glue.Trigger
 
         /// <summary>
         /// State
-        /// The state of the condition.
-        /// Valid values: SUCCEEDED
+        /// The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT, and FAILED.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,8 +25,7 @@ namespace Comformation.Glue.Trigger
 
         /// <summary>
         /// LogicalOperator
-        /// The logical operator for the condition.
-        /// Valid values: EQUALS
+        /// A logical operator.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -37,8 +35,7 @@ namespace Comformation.Glue.Trigger
 
         /// <summary>
         /// JobName
-        /// The name of the associated job. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The name of the job whose JobRuns this condition applies to, and on which this trigger waits.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

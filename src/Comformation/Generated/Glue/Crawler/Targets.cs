@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Crawler
 {
     /// <summary>
-    /// AWS Glue Crawler Targets
-    /// The Targets property type specifies AWS Glue crawler targets.
+    /// AWS::Glue::Crawler Targets
+    /// Specifies data stores to crawl.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
     /// </summary>
     public class Targets
@@ -15,7 +15,7 @@ namespace Comformation.Glue.Crawler
 
         /// <summary>
         /// S3Targets
-        /// The Amazon S3 crawler targets.
+        /// Specifies Amazon Simple Storage Service (Amazon S3) targets.
         /// Required: No
         /// Type: List of S3Target
         /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.Glue.Crawler
 
         /// <summary>
         /// JdbcTargets
-        /// The JDBC crawler targets.
+        /// Specifies JDBC targets.
         /// Required: No
         /// Type: List of JdbcTarget
         /// Update requires: No interruption

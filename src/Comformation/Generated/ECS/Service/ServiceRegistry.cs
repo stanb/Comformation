@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.Service
 {
     /// <summary>
-    /// Amazon Elastic Container Service Service ServiceRegistry
-    /// The ServiceRegistry property type specifies details of the service registry.
+    /// AWS::ECS::Service ServiceRegistry
+    /// The ServiceRegistry property specifies details of the service registry.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html
     /// </summary>
     public class ServiceRegistry
@@ -45,7 +45,8 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// Port
-        /// The port value used if your service discovery service specified an SRV record.
+        /// The port value used if your service discovery service specified an SRV record. This field may be
+        /// used if both the awsvpc network mode and SRV records are used.
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
@@ -56,7 +57,7 @@ namespace Comformation.ECS.Service
         /// <summary>
         /// RegistryArn
         /// The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
-        /// Amazon Route 53 auto naming.
+        /// AWS Cloud Map. For more information, see CreateService.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

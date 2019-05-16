@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.RoboMaker.RobotApplication
 {
     /// <summary>
-    /// RoboMaker RobotApplication SourceConfig
-    /// The SourceConfig property type specifies the source configuration for an AWS RoboMaker robot application.
+    /// AWS::RoboMaker::RobotApplication SourceConfig
+    /// Information about a source configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html
     /// </summary>
     public class SourceConfig
@@ -15,9 +15,12 @@ namespace Comformation.RoboMaker.RobotApplication
 
         /// <summary>
         /// S3Bucket
-        /// Amazon S3 bucket name.
+        /// The Amazon S3 bucket name.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 63
+        /// Pattern: [a-z0-9][a-z0-9\-]*[a-z0-9]
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Bucket")]
@@ -28,6 +31,7 @@ namespace Comformation.RoboMaker.RobotApplication
         /// The target processor architecture for the application.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ARM64 | ARMHF | X86_64
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Architecture")]
@@ -35,9 +39,12 @@ namespace Comformation.RoboMaker.RobotApplication
 
         /// <summary>
         /// S3Key
-        /// The Amazon S3 object key.
+        /// The s3 object key.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Key")]

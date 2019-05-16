@@ -18,20 +18,24 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         {
             /// <summary>
             /// DeliveryStreamName
-            /// A name for the delivery stream.
+            /// The name of the delivery stream.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
+            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DeliveryStreamName { get; set; }
 
             /// <summary>
             /// DeliveryStreamType
-            /// The delivery stream type. This property can be one of the following values:
+            /// The delivery stream type. This can be one of the following values:
             /// DirectPut: Provider applications access the delivery stream directly. KinesisStreamAsSource: The
-            /// delivery stream uses a Kinesis stream as a source.
+            /// delivery stream uses a Kinesis data stream as a source.
             /// Required: No
             /// Type: String
+            /// Allowed Values: DirectPut | KinesisStreamAsSource
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DeliveryStreamType { get; set; }
@@ -39,20 +43,24 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// <summary>
             /// ElasticsearchDestinationConfiguration
             /// An Amazon ES destination for the delivery stream.
-            /// Required: Conditional. You must specify only one destination configuration.
+            /// Conditional. You must specify only one destination configuration.
+            /// If you change the delivery stream destination from an Amazon ES destination to an Amazon S3 or
+            /// Amazon Redshift destination, update requires some interruptions.
+            /// Required: Conditional
             /// Type: ElasticsearchDestinationConfiguration
-            /// Update requires: No interruption. If you change the delivery stream destination from an Amazon ES
-            /// destination to an Amazon S3 or Amazon Redshift destination, update requires some interruptions.
+            /// Update requires: No interruption
             /// </summary>
 			public ElasticsearchDestinationConfiguration ElasticsearchDestinationConfiguration { get; set; }
 
             /// <summary>
             /// ExtendedS3DestinationConfiguration
             /// An Amazon S3 destination for the delivery stream.
-            /// Required: Conditional. You must specify only one destination configuration.
+            /// Conditional. You must specify only one destination configuration.
+            /// If you change the delivery stream destination from an Amazon Extended S3 destination to an Amazon ES
+            /// destination, update requires some interruptions.
+            /// Required: Conditional
             /// Type: ExtendedS3DestinationConfiguration
-            /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
-            /// Redshift destination to an Amazon ES destination, update requires some interruptions.
+            /// Update requires: No interruption
             /// </summary>
 			public ExtendedS3DestinationConfiguration ExtendedS3DestinationConfiguration { get; set; }
 
@@ -70,20 +78,25 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// <summary>
             /// RedshiftDestinationConfiguration
             /// An Amazon Redshift destination for the delivery stream.
-            /// Required: Conditional. You must specify only one destination configuration.
+            /// Conditional. You must specify only one destination configuration.
+            /// If you change the delivery stream destination from an Amazon Redshift destination to an Amazon ES
+            /// destination, update requires some interruptions.
+            /// Required: Conditional
             /// Type: RedshiftDestinationConfiguration
-            /// Update requires: No interruption. If you change the delivery stream destination from an Amazon
-            /// Redshift destination to an Amazon ES destination, update requires some interruptions.
+            /// Update requires: No interruption
             /// </summary>
 			public RedshiftDestinationConfiguration RedshiftDestinationConfiguration { get; set; }
 
             /// <summary>
             /// S3DestinationConfiguration
-            /// An Amazon S3 destination for the delivery stream.
-            /// Required: Conditional. You must specify only one destination configuration.
+            /// The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3)
+            /// destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data.
+            /// Conditional. You must specify only one destination configuration.
+            /// If you change the delivery stream destination from an Amazon S3 destination to an Amazon ES
+            /// destination, update requires some interruptions.
+            /// Required: Conditional
             /// Type: S3DestinationConfiguration
-            /// Update requires: No interruption. If you change the delivery stream destination from an Amazon S3
-            /// destination to an Amazon ES destination, update requires some interruptions.
+            /// Update requires: No interruption
             /// </summary>
 			public S3DestinationConfiguration S3DestinationConfiguration { get; set; }
 

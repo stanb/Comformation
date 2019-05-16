@@ -6,9 +6,8 @@ namespace Comformation.RDS.DBCluster
 {
     /// <summary>
     /// AWS::RDS::DBCluster
-    /// The AWS::RDS::DBCluster resource creates a cluster, such as an Aurora for Amazon RDS (Amazon Aurora) DB
-    /// cluster. Amazon Aurora is a fully managed, MySQL-compatible, relational database engine. For more information,
-    /// see Aurora on Amazon RDS in the Amazon RDS User Guide.
+    /// The AWS::RDS::DBCluster resource creates an Amazon Aurora DB cluster. For more information, see Managing an
+    /// Amazon Aurora DB Cluster in the Amazon Aurora User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
@@ -17,17 +16,21 @@ namespace Comformation.RDS.DBCluster
         {
             /// <summary>
             /// AvailabilityZones
-            /// A list of Availability Zones (AZs) in which DB instances in the cluster can be created.
+            /// A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information
+            /// on AWS Regions and Availability Zones, see Choosing the Regions and Availability Zones in the Amazon
+            /// Aurora User Guide.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// BacktrackWindow
-            /// The target backtrack window, in seconds. To disable backtracking, specify 0. If specified, this
-            /// property must be set to a number from 0 to 259,200 (72 hours).
+            /// The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+            /// Default: 0
+            /// Constraints:
+            /// If specified, this value must be set to a number from 0 to 259,200 (72 hours).
             /// Required: No
             /// Type: Long
             /// Update requires: No interruption
@@ -36,8 +39,10 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// BackupRetentionPeriod
-            /// The number of days for which automatic backups are retained. For more information, see
-            /// CreateDBCluster in the Amazon RDS API Reference.
+            /// The number of days for which automated backups are retained.
+            /// Default: 1
+            /// Constraints:
+            /// Must be a value from 1 to 35
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -48,10 +53,9 @@ namespace Comformation.RDS.DBCluster
             /// DBClusterIdentifier
             /// The DB cluster identifier. This parameter is stored as a lowercase string.
             /// Constraints:
-            /// Must contain from 1 to 63 letters, numbers, or hyphens. First character must be a letter. Cannot end
+            /// Must contain from 1 to 63 letters, numbers, or hyphens. First character must be a letter. Can&#39;t end
             /// with a hyphen or contain two consecutive hyphens.
-            /// For additional information, see the DBClusterIdentifier parameter of the CreateDBCluster action in
-            /// the Amazon RDS API Reference.
+            /// Example: my-cluster1
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -65,7 +69,7 @@ namespace Comformation.RDS.DBCluster
             /// specifying aurora-mysql or aurora-postgresql for the Engine property might result in an error.
             /// Required: No
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
 
@@ -80,9 +84,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// DatabaseName
-            /// The name of your database. If you don&#39;t provide a name, Amazon Relational Database Service (Amazon
-            /// RDS) won&#39;t create a database in this DB cluster. For naming constraints, see Naming Constraints in
-            /// Amazon RDS in the Amazon RDS User Guide.
+            /// The name of your database. If you don&#39;t provide a name, then Amazon RDS won&#39;t create a database in
+            /// this DB cluster. For naming constraints, see Naming Constraints in the Amazon RDS User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -91,10 +94,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// DeletionProtection
-            /// Indicates whether the DB cluster should have deletion protection enabled. The database can&#39;t be
-            /// deleted when this value is set to true. If you want to delete a stack with a protected cluster,
-            /// update this value to false before you delete the stack.
-            /// For more information, see Deleting a DB Instance.
+            /// A value that indicates whether the DB cluster has deletion protection enabled. The database can&#39;t be
+            /// deleted when deletion protection is enabled. By default, deletion protection is disabled.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -104,19 +105,18 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// EnableCloudwatchLogsExports
             /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the
-            /// list depend on the DB engine being used. Log types that are excluded or removed from this list
-            /// during updates are disabled. For more information, see Publishing Database Logs to Amazon CloudWatch
-            /// Logs in the Amazon Aurora User Guide.
+            /// list depend on the DB engine being used. For more information, see Publishing Database Logs to
+            /// Amazon CloudWatch Logs in the Amazon Aurora User Guide.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
 
             /// <summary>
             /// EnableIAMDatabaseAuthentication
-            /// If set to true, enables mapping of AWS Identity and Access Management (IAM) accounts to database
-            /// accounts.
+            /// A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM)
+            /// accounts to database accounts. By default, mapping is disabled.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -125,11 +125,9 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// Engine
-            /// The name of the database engine that you want to use for this DB cluster.
-            /// For valid values, see the Engine parameter of the CreateDBCluster action in the Amazon RDS API
-            /// Reference.
-            /// Note If you don&#39;t specify a value for the DBClusterParameterGroupName property and default. aurora5.
-            /// 6 is used, specifying aurora. mysql or aurora-postgresql for this property might result in an error.
+            /// The name of the database engine to be used for this DB cluster.
+            /// Valid Values: aurora (for MySQL 5. 6-compatible Aurora), aurora-mysql (for MySQL 5. 7-compatible
+            /// Aurora), and aurora-postgresql
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -138,7 +136,7 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// EngineMode
-            /// The DB engine mode of the DB cluster. Valid values include provisioned or serverless.
+            /// The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, or global.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -147,7 +145,11 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// EngineVersion
-            /// The version number of the database engine that you want to use.
+            /// The version number of the database engine to use.
+            /// Note To prevent automatic upgrades, be sure to specify the full version number (for example, 5. 6.
+            /// 13). If the default version for the database engine changes and you specify only the major version
+            /// (for example, 5. 6), your DB instance will be upgraded to use the new default version. Note that the
+            /// default version is not necessarily the latest supported version.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -163,15 +165,16 @@ namespace Comformation.RDS.DBCluster
             /// specify this property, you must set the StorageEncrypted property to true.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// MasterUserPassword
-            /// The password for the master database user.
-            /// Required: Conditional. You must specify this property unless you specify the SnapshotIdentifier
-            /// property. In that case, do not specify this property.
+            /// The master password for the DB instance.
+            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don&#39;t specify
+            /// this property. The value is inherited from the source DB instance or snapshot.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -179,18 +182,19 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// MasterUsername
-            /// The master user name for the DB instance.
-            /// Required: Conditional. You must specify this property unless you specify the SnapshotIdentifier
-            /// property. In that case, do not specify this property.
+            /// The name of the master user for the DB cluster.
+            /// Note You must specify MasterUsername, unless you specify SnapshotIdentifier. In that case, don&#39;t
+            /// specify MasterUsername.
+            /// Required: No
             /// Type: String
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
             /// <summary>
             /// Port
-            /// The port number on which the DB instances in the cluster can accept connections. If this argument is
-            /// omitted, 3306 is used.
+            /// The port number on which the instances in the DB cluster accept connections.
+            /// Default: 3306 if engine is set as aurora or 5432 if set to aurora-postgresql.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -199,10 +203,14 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// PreferredBackupWindow
-            /// If automated backups are enabled (see the BackupRetentionPeriod property), the daily time range in
-            /// UTC during which you want to create automated backups.
-            /// For valid values, see the PreferredBackupWindow parameter of the CreateDBInstance action in the
-            /// Amazon RDS API Reference.
+            /// The daily time range during which automated backups are created if automated backups are enabled
+            /// using the BackupRetentionPeriod parameter.
+            /// The default is a 30-minute window selected at random from an 8-hour block of time for each AWS
+            /// Region. To see the time blocks available, see Adjusting the Preferred DB Cluster Maintenance Window
+            /// in the Amazon Aurora User Guide.
+            /// Constraints:
+            /// Must be in the format hh24:mi-hh24:mi. Must be in Universal Coordinated Time (UTC). Must not
+            /// conflict with the preferred maintenance window. Must be at least 30 minutes.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -211,20 +219,24 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// PreferredMaintenanceWindow
-            /// The weekly time range (in UTC) during which system maintenance can occur.
-            /// For valid values, see the PreferredMaintenanceWindow parameter of the CreateDBInstance action in the
-            /// Amazon RDS API Reference.
+            /// The weekly time range during which system maintenance can occur, in Universal Coordinated Time
+            /// (UTC).
+            /// Format: ddd:hh24:mi-ddd:hh24:mi
+            /// The default is a 30-minute window selected at random from an 8-hour block of time for each AWS
+            /// Region, occurring on a random day of the week. To see the time blocks available, see Adjusting the
+            /// Preferred DB Cluster Maintenance Window in the Amazon Aurora User Guide.
+            /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
+            /// Constraints: Minimum 30-minute window.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption or some interruptions. For more information, see ModifyDBInstance
-            /// in the Amazon RDS API Reference.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// ReplicationSourceIdentifier
-            /// The Amazon Resource Name (ARN) of the source Amazon RDS DB instance or DB cluster, if this DB
-            /// cluster is created as a Read Replica.
+            /// The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created
+            /// as a Read Replica.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -233,7 +245,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// ScalingConfiguration
-            /// For DB clusters in serverless DB engine mode, the scaling properties of the DB cluster.
+            /// The ScalingConfiguration property type specifies the scaling configuration of an Aurora Serverless
+            /// DB cluster.
             /// Required: No
             /// Type: ScalingConfiguration
             /// Update requires: No interruption
@@ -242,7 +255,11 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// SnapshotIdentifier
-            /// The identifier for the DB cluster snapshot from which you want to restore.
+            /// The identifier for the DB snapshot or DB cluster snapshot to restore from.
+            /// You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot.
+            /// However, you can use only the ARN to specify a DB snapshot.
+            /// Constraints:
+            /// Must match the identifier of an existing Snapshot.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -261,27 +278,31 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// StorageEncrypted
-            /// Indicates whether the DB instances in the cluster are encrypted.
-            /// Required: Conditional. If you specify the KmsKeyId property, you must enable encryption.
+            /// Indicates whether the DB instance is encrypted.
+            /// If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier
+            /// property, don&#39;t specify this property. The value is inherited from the cluster, snapshot, or source
+            /// DB instance.
+            /// Important If you specify the KmsKeyId property, then you must enable encryption.
+            /// Required: No
             /// Type: Boolean
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to this DB cluster.
+            /// Tags to assign to the DB cluster.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
-            /// A list of VPC security groups to associate with this DB cluster.
+            /// A list of EC2 VPC security groups to associate with this DB cluster.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }

@@ -6,8 +6,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
 {
     /// <summary>
     /// AWS::Redshift::ClusterParameterGroup
-    /// Creates an Amazon Redshift parameter group that you can associate with an Amazon Redshift cluster. The
-    /// parameters in the group apply to all the databases that you create in the cluster.
+    /// Describes a parameter group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
     /// </summary>
     public class ClusterParameterGroupResource : ResourceBase
@@ -16,7 +15,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
         {
             /// <summary>
             /// Description
-            /// A description of the parameter group.
+            /// The description of the parameter group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,8 +24,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
 
             /// <summary>
             /// ParameterGroupFamily
-            /// The Amazon Redshift engine version that applies to this cluster parameter group. The cluster engine
-            /// version determines the set of parameters that you can specify in the Parameters property.
+            /// The name of the cluster parameter group family that this cluster parameter group is compatible with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -35,21 +33,23 @@ namespace Comformation.Redshift.ClusterParameterGroup
 
             /// <summary>
             /// Parameters
-            /// A list of parameter names and values that are allowed by the Amazon Redshift engine version that you
-            /// specified in the ParameterGroupFamily property. For more information, see Amazon Redshift Parameter
-            /// Groups in the Amazon Redshift Cluster Management Guide.
+            /// An array of parameters to be modified. A maximum of 20 parameters can be modified in a single
+            /// request.
+            /// For each parameter to be modified, you must supply at least the parameter name and parameter value;
+            /// other name-value pairs of the parameter are optional.
+            /// For the workload management (WLM) configuration, you must supply all the name-value pairs in the
+            /// wlm_json_configuration parameter.
             /// Required: No
-            /// Type: Amazon Redshift Parameter Type
+            /// Type: List of Parameter
             /// Update requires: No interruption
             /// </summary>
 			public List<Parameter> Parameters { get; set; }
 
             /// <summary>
             /// Tags
-            /// Specifies an arbitrary set of tags (key–value pairs) to associate with this parameter group. Use
-            /// tags to manage your resources.
+            /// The list of tags for the cluster parameter group.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

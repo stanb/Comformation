@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
-    /// Amazon API Gateway Stage AccessLogSetting
+    /// AWS::ApiGateway::Stage AccessLogSetting
     /// The AccessLogSetting property type specifies settings for logging access in this stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
     /// </summary>
@@ -15,7 +15,7 @@ namespace Comformation.ApiGateway.Stage
 
         /// <summary>
         /// DestinationArn
-        /// The Amazon Resource Name (ARN) of the CloudWatch Logs log group to receive access logs
+        /// The Amazon Resource Name (ARN) of the CloudWatch Logs log group to receive access logs.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

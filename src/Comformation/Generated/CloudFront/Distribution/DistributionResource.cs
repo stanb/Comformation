@@ -6,9 +6,7 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution
-    /// Creates an Amazon CloudFront web distribution. For general information about CloudFront distributions, see the
-    /// Introduction to Amazon CloudFront in the Amazon CloudFront Developer Guide. For specific information about
-    /// creating CloudFront web distributions, see CreateDistribution in the Amazon CloudFront API Reference.
+    /// The distribution&#39;s information.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
     /// </summary>
     public class DistributionResource : ResourceBase
@@ -17,20 +15,24 @@ namespace Comformation.CloudFront.Distribution
         {
             /// <summary>
             /// DistributionConfig
-            /// The distribution&#39;s configuration information.
+            /// 		
+            /// The current configuration information for the distribution. Send a GET 			request to the /CloudFront
+            /// API version/distribution ID/config 			resource.
+            /// 	
             /// Required: Yes
-            /// Type: DistributionConfig type
+            /// Type: DistributionConfig
             /// Update requires: No interruption
             /// </summary>
 			public DistributionConfig DistributionConfig { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) to associate with a CloudFront distribution.
+            /// 		
+            /// A complex type that contains zero or more Tag elements.
+            /// 	
             /// Required: No
-            /// Type: List of Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
-            /// Duplicates not allowed.
             /// </summary>
 			public List<Tag> Tags { get; set; }
 

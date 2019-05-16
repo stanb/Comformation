@@ -6,7 +6,9 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig
-    /// The AWS::EMR::InstanceGroupConfig resource configures a task instance group for an Amazon EMR cluster.
+    /// Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance
+    /// groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform
+    /// Instance Groups in the Amazon EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
     /// </summary>
     public class InstanceGroupConfigResource : ResourceBase
@@ -15,48 +17,53 @@ namespace Comformation.EMR.InstanceGroupConfig
         {
             /// <summary>
             /// AutoScalingPolicy
-            /// An automatic scaling policy for a core instance group or task instance group in an Amazon EMR
-            /// cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates
-            /// EC2 instances in response to the value of a CloudWatch metric. For more information, see
-            /// PutAutoScalingPolicy in the Amazon EMR API Reference.
+            /// AutoScalingPolicy is a subproperty of InstanceGroupConfig. AutoScalingPolicy defines how an instance
+            /// group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.
+            /// For more information, see Using Automatic Scaling in Amazon EMR in the Amazon EMR Management Guide.
             /// Required: No
-            /// Type: Amazon EMR InstanceGroupConfig AutoScalingPolicy
+            /// Type: AutoScalingPolicy
             /// Update requires: No interruption
             /// </summary>
 			public AutoScalingPolicy AutoScalingPolicy { get; set; }
 
             /// <summary>
             /// BidPrice
-            /// The bid price in USD for each Amazon EC2 instance in the instance group when launching instances
-            /// (nodes) as Spot Instances.
+            /// The maximum Spot price your are willing to pay for EC2 instances.
+            /// If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group. Specified in USD.
+            /// Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the
+            /// On-Demand price.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> BidPrice { get; set; }
 
             /// <summary>
             /// Configurations
-            /// A list of configurations to apply to this instance group. For more information see, Configuring
-            /// Applications in the Amazon EMR Release Guide.
+            /// Note Amazon EMR releases 4. x or later.
+            /// The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+            /// configuration for each instance group (master, core, and task).
             /// Required: No
-            /// Type: List of Amazon EMR Cluster Configurations
+            /// Type: List of Configuration
             /// Update requires: Replacement
             /// </summary>
 			public List<Configuration> Configurations { get; set; }
 
             /// <summary>
             /// EbsConfiguration
-            /// Configures Amazon Elastic Block Store (Amazon EBS) storage volumes to attach to your instances.
+            /// EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
             /// Required: No
-            /// Type: Amazon EMR EbsConfiguration
+            /// Type: EbsConfiguration
             /// Update requires: Replacement
             /// </summary>
 			public EbsConfiguration EbsConfiguration { get; set; }
 
             /// <summary>
             /// InstanceCount
-            /// The number of instances to launch in the instance group.
+            /// Target number of instances for the instance group.
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
@@ -65,22 +72,22 @@ namespace Comformation.EMR.InstanceGroupConfig
 
             /// <summary>
             /// InstanceRole
-            /// The role of the servers in the Amazon EMR cluster, such as TASK. For more information, see Instance
-            /// Groups in the Amazon EMR Management Guide.
-            /// Note Currently, the only valid value is TASK. You configure the master and core instance groups as
-            /// part of the AWS::EMR::Cluster resource.
+            /// The role of the instance group in the cluster.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: CORE | MASTER | TASK
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceRole { get; set; }
 
             /// <summary>
             /// InstanceType
-            /// The EC2 instance type for all instances in the instance group. For more information, see Instance
-            /// Configurations in the Amazon EMR Management Guide.
+            /// The EC2 instance type for all instances in the instance group.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
@@ -96,19 +103,22 @@ namespace Comformation.EMR.InstanceGroupConfig
 
             /// <summary>
             /// Market
-            /// The type of marketplace from which your instances are provisioned into this group, either ON_DEMAND
-            /// or SPOT. For more information, see Amazon EC2 Purchasing Options.
+            /// Market type of the EC2 instances used to create a cluster node.
             /// Required: No
             /// Type: String
+            /// Allowed Values: ON_DEMAND | SPOT
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Market { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the instance group.
+            /// Friendly name given to the instance group.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

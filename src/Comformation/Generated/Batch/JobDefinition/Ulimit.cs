@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
-    /// AWS Batch JobDefinition Ulimit
-    /// The Ulimit property type specifies the ulimits to use in a job definition.
+    /// AWS::Batch::JobDefinition Ulimit
+    /// The ulimit settings to pass to the container.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html
     /// </summary>
     public class Ulimit
@@ -16,9 +16,9 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// SoftLimit
         /// The soft limit for the ulimit type.
-        /// Required: yes
+        /// Required: Yes
         /// Type: Integer
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SoftLimit")]
         public Union<int, IntrinsicFunction> SoftLimit { get; set; }
@@ -26,9 +26,9 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// HardLimit
         /// The hard limit for the ulimit type.
-        /// Required: yes
+        /// Required: Yes
         /// Type: Integer
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HardLimit")]
         public Union<int, IntrinsicFunction> HardLimit { get; set; }
@@ -36,9 +36,9 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// Name
         /// The type of the ulimit.
-        /// Required: yes
+        /// Required: Yes
         /// Type: String
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

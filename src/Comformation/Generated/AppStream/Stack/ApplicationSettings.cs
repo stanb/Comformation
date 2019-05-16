@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppStream.Stack
 {
     /// <summary>
-    /// Amazon AppStream 2. 0 Stack ApplicationSettings
-    /// The ApplicationSettings property type specifies the persistent application settings for users of an Amazon
-    /// AppStream 2. 0 stack.
+    /// AWS::AppStream::Stack ApplicationSettings
+    /// The persistent application settings for users of a stack.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html
     /// </summary>
     public class ApplicationSettings
@@ -16,11 +15,12 @@ namespace Comformation.AppStream.Stack
 
         /// <summary>
         /// SettingsGroup
-        /// The path prefix for the Amazon S3 bucket where users’ persistent application settings are stored.
-        /// You can allow the same persistent application settings to be used across multiple stacks by
-        /// specifying the same settings group for each stack.
+        /// The path prefix for the S3 bucket where users’ persistent application settings are stored. You can
+        /// allow the same persistent application settings to be used across multiple stacks by specifying the
+        /// same settings group for each stack.
         /// Required: No
         /// Type: String
+        /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SettingsGroup")]
@@ -28,8 +28,7 @@ namespace Comformation.AppStream.Stack
 
         /// <summary>
         /// Enabled
-        /// Specifies whether persistent application settings are enabled for users during their streaming
-        /// sessions.
+        /// Enables or disables persistent application settings for users during their streaming sessions.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption

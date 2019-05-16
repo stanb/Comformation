@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    /// Amazon EMR InstanceGroupConfig ScalingTrigger
-    /// The ScalingTrigger property type specifies the conditions that trigger an automatic scaling activity.
-    /// ScalingTrigger is the property type for the Trigger subproperty of the Amazon EMR InstanceGroupConfig
-    /// ScalingRule property type.
+    /// AWS::EMR::InstanceGroupConfig ScalingTrigger
+    /// ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions
+    /// that trigger an automatic scaling activity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html
     /// </summary>
     public class ScalingTrigger
@@ -20,7 +19,8 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with
         /// other trigger parameters, scaling activity begins.
         /// Required: Yes
-        /// Type: Amazon EMR InstanceGroupConfig CloudWatchAlarmDefinition
+        /// Type: CloudWatchAlarmDefinition
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchAlarmDefinition")]
         public CloudWatchAlarmDefinition CloudWatchAlarmDefinition { get; set; }

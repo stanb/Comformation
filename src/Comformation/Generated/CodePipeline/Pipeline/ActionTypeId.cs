@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
-    /// CodePipeline Pipeline Stages Actions ActionTypeId
-    /// ActionTypeId is a property of the CodePipeline Pipeline Stages Actions property that specifies the action type
-    /// and provider for an CodePipeline action.
+    /// AWS::CodePipeline::Pipeline ActionTypeId
+    /// Represents information about an action type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html
     /// </summary>
     public class ActionTypeId
@@ -16,41 +15,44 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Category
-        /// A category that defines which action type the owner (the entity that performs the action) performs.
-        /// The category that you select determine the providers that you can specify for the Provider property.
-        /// For valid values, see ActionTypeId in the AWS CodePipeline API Reference.
+        /// A category defines what kind of action can be taken in the stage, and constrains the provider type
+        /// for the action. Valid categories are limited to one of the values below.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Category")]
         public Union<string, IntrinsicFunction> Category { get; set; }
 
         /// <summary>
         /// Owner
-        /// The entity that performs the action. For valid values, see ActionTypeId in the AWS CodePipeline API
-        /// Reference.
+        /// The creator of the action being called.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Owner")]
         public Union<string, IntrinsicFunction> Owner { get; set; }
 
         /// <summary>
         /// Provider
-        /// The service provider that the action calls. The providers that you can specify are determined by the
-        /// category that you select. For example, a valid provider for the Deploy category is CodeDeploy, which
-        /// you would specify as CodeDeploy.
+        /// The provider of the service being called by the action. Valid providers are determined by the action
+        /// category. For example, an action in the Deploy category type might have a provider of AWS
+        /// CodeDeploy, which would be specified as CodeDeploy. To reference a list of action providers by
+        /// action type, see Valid Action Types and Providers in CodePipeline.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Provider")]
         public Union<string, IntrinsicFunction> Provider { get; set; }
 
         /// <summary>
         /// Version
-        /// A version identifier for this action.
+        /// A string that describes the action version.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
         public Union<string, IntrinsicFunction> Version { get; set; }

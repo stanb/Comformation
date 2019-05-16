@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application MappingParameters
-    /// The MappingParameters property type specifies additional mapping information specific to the record format
-    /// (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source for a SQL-based
-    /// Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application MappingParameters
+    /// When you configure an SQL-based Amazon Kinesis Data Analytics application&#39;s input at the time of creating or
+    /// updating an application, provides additional mapping information specific to the record format (such as JSON,
+    /// CSV, or record fields delimited by some delimiter) on the streaming source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html
     /// </summary>
     public class MappingParameters

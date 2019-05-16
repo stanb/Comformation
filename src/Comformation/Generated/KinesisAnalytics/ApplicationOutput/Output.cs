@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationOutput Output
-    /// The Output property type specifies an array of output configuration objects for an Amazon Kinesis Data
-    /// Analytics application.
+    /// AWS::KinesisAnalytics::ApplicationOutput Output
+    /// Describes application output configuration in which you identify an in-application stream and a destination
+    /// where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream
+    /// or an Amazon Kinesis Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html
     /// </summary>
     public class Output
@@ -16,7 +17,8 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 
         /// <summary>
         /// DestinationSchema
-        /// The data format when records are written to the destination.
+        /// Describes the data format when records are written to the destination. For more information, see
+        /// Configuring Application Output.
         /// Required: Yes
         /// Type: DestinationSchema
         /// Update requires: No interruption
@@ -26,8 +28,8 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 
         /// <summary>
         /// LambdaOutput
-        /// Identifies a Lambda function as the destination.
-        /// Required: Conditional.
+        /// Identifies an AWS Lambda function as the destination.
+        /// Required: No
         /// Type: LambdaOutput
         /// Update requires: No interruption
         /// </summary>
@@ -36,8 +38,8 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 
         /// <summary>
         /// KinesisFirehoseOutput
-        /// Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
-        /// Required: Conditional.
+        /// Identifies an Amazon Kinesis Firehose delivery stream as the destination.
+        /// Required: No
         /// Type: KinesisFirehoseOutput
         /// Update requires: No interruption
         /// </summary>
@@ -47,7 +49,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// <summary>
         /// KinesisStreamsOutput
         /// Identifies an Amazon Kinesis stream as the destination.
-        /// Required: Conditional.
+        /// Required: No
         /// Type: KinesisStreamsOutput
         /// Update requires: No interruption
         /// </summary>
@@ -56,9 +58,11 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 
         /// <summary>
         /// Name
-        /// The name of the in-application stream.
-        /// Required: Yes
+        /// Name of the in-application stream.
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 32
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Name")]

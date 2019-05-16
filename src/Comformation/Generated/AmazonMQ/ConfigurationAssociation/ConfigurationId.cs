@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AmazonMQ.ConfigurationAssociation
 {
     /// <summary>
-    /// ConfigurationAssociation ConfigurationId
+    /// AWS::AmazonMQ::ConfigurationAssociation ConfigurationId
     /// The ConfigurationId property type specifies a configuration Id and the revision of a configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configurationassociation-configurationid.html
     /// </summary>
@@ -25,7 +25,7 @@ namespace Comformation.AmazonMQ.ConfigurationAssociation
 
         /// <summary>
         /// Id
-        /// The Id of the configuration.
+        /// The unique ID that Amazon MQ generates for the configuration.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

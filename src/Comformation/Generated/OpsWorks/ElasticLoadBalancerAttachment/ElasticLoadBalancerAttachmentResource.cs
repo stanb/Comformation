@@ -15,7 +15,7 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
         {
             /// <summary>
             /// ElasticLoadBalancerName
-            /// Elastic Load Balancing load balancer name.
+            /// The Elastic Load Balancing instance&#39;s name.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

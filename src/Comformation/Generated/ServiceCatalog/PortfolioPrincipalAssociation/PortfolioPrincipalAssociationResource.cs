@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
 {
     /// <summary>
     /// AWS::ServiceCatalog::PortfolioPrincipalAssociation
-    /// Associates the specified principal with the specified portfolio for AWS Service Catalog. For more information,
-    /// see AssociatePrincipalWithPortfolio in the AWS Service Catalog Developer Guide.
+    /// Associates the specified principal ARN with the specified portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html
     /// </summary>
     public class PortfolioPrincipalAssociationResource : ResourceBase
@@ -19,6 +18,8 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
             /// The ARN of the principal (IAM user, role, or group).
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1000
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PrincipalARN { get; set; }
@@ -26,8 +27,10 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
@@ -37,15 +40,19 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
             /// The portfolio identifier.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
             /// PrincipalType
-            /// The principal type (IAM).
+            /// The principal type. The supported value is IAM.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: IAM
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PrincipalType { get; set; }

@@ -6,9 +6,11 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
 {
     /// <summary>
     /// AWS::ServiceDiscovery::PublicDnsNamespace
-    /// The AWS::ServiceDiscovery::PublicDnsNamespace resource specifies information about 		a public namespace for
-    /// AWS Cloud Map. Use a public namespace when you want to route internet traffic to your resources. 		For more
-    /// information, see CreatePublicDnsNamespace 		in the AWS Cloud Map API Reference.
+    /// Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
+    /// service naming scheme. 			For example, if you name your namespace example. com and name your service backend,
+    /// the resulting DNS name 			for the service will be backend. example. com. For the current limit on the number
+    /// of namespaces that you can 			create using the same AWS account, see 			AWS Cloud Map Limits in the 			AWS
+    /// Cloud Map Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html
     /// </summary>
     public class PublicDnsNamespaceResource : ResourceBase
@@ -17,30 +19,25 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
         {
             /// <summary>
             /// Description
-            /// 					
+            /// 		
             /// A description for the namespace.
-            /// 					
+            /// 	
             /// Required: No
-            /// 					
             /// Type: String
-            /// 					
+            /// Maximum: 1024
             /// Update requires: Replacement
-            /// 				
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Name
-            /// 					
-            /// The name that you want to assign to this namespace. When you create a namespace, AWS Cloud Map
-            /// automatically creates a 						hosted zone that has the same name as the namespace.
-            /// 					
+            /// 		
+            /// The name that you want to assign to this namespace.
+            /// 	
             /// Required: Yes
-            /// 					
             /// Type: String
-            /// 					
+            /// Maximum: 1024
             /// Update requires: Replacement
-            /// 				
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 

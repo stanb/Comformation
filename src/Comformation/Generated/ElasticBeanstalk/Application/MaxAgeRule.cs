@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.Application
 {
     /// <summary>
-    /// AWS Elastic Beanstalk Application MaxAgeRule
-    /// The MaxAgeRule property type specifies a lifecycle rule that deletes application versions after the specified
-    /// number of days for an AWS Elastic Beanstalk application.
+    /// AWS::ElasticBeanstalk::Application MaxAgeRule
+    /// A lifecycle rule that deletes application versions after the specified number of days.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html
     /// </summary>
     public class MaxAgeRule

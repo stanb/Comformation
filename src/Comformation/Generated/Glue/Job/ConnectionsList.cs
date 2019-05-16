@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Job
 {
     /// <summary>
-    /// AWS Glue Job ConnectionsList
-    /// The ConnectionsList property type specifies the connections that are used by an AWS Glue job.
+    /// AWS::Glue::Job ConnectionsList
+    /// Specifies the connections used by a job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html
     /// </summary>
     public class ConnectionsList
@@ -15,9 +15,9 @@ namespace Comformation.Glue.Job
 
         /// <summary>
         /// Connections
-        /// A list of UTF-8 strings that specifies the connections that are used by the job.
+        /// A list of connections used by the job.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Connections")]

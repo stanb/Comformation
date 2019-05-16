@@ -17,7 +17,7 @@ namespace Comformation.Glue.Crawler
             /// <summary>
             /// Role
             /// The Amazon Resource Name (ARN) of an IAM role that&#39;s used to access customer resources, such as
-            /// Amazon S3 data.
+            /// Amazon Simple Storage Service (Amazon S3) data.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -28,15 +28,14 @@ namespace Comformation.Glue.Crawler
             /// Classifiers
             /// A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Classifiers { get; set; }
 
             /// <summary>
             /// Description
-            /// A description of the crawler and where it should be used. It must match the URI address multi-line
-            /// string pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+            /// A description of the crawler.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -55,7 +54,7 @@ namespace Comformation.Glue.Crawler
             /// <summary>
             /// Configuration
             /// Crawler configuration information. This versioned JSON string allows users to specify aspects of a
-            /// crawler&#39;s behavior. For more information, see Configuring a Crawler. .
+            /// crawler&#39;s behavior. For more information, see Configuring a Crawler.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -64,7 +63,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// Schedule
-            /// The schedule for the crawler.
+            /// For scheduled crawlers, the schedule when the crawler runs.
             /// Required: No
             /// Type: Schedule
             /// Update requires: No interruption
@@ -73,7 +72,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// DatabaseName
-            /// The name of the database where the crawler&#39;s output is stored.
+            /// The name of the database in which the crawler&#39;s output is stored.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -82,7 +81,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// Targets
-            /// The crawler targets.
+            /// A collection of targets to crawl.
             /// Required: Yes
             /// Type: Targets
             /// Update requires: No interruption
@@ -91,7 +90,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// TablePrefix
-            /// The table prefix that&#39;s used for catalog tables that are created.
+            /// The prefix added to the names of tables that are created.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -100,8 +99,7 @@ namespace Comformation.Glue.Crawler
 
             /// <summary>
             /// Name
-            /// The name of the crawler. Must match the single-line string pattern:
-            /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+            /// The name of the crawler.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

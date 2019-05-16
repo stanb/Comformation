@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Partition
 {
     /// <summary>
-    /// AWS Glue Partition PartitionInput
-    /// The PartitionInput property type specifies the metadata that&#39;s used to create or update an AWS Glue partition.
+    /// AWS::Glue::Partition PartitionInput
+    /// The structure used to create and update a partition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
     /// </summary>
     public class PartitionInput
@@ -15,9 +15,9 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// Parameters
-        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the parameters for the partition.
+        /// These key-value pairs define partition parameters.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -25,7 +25,7 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// StorageDescriptor
-        /// Information about the physical storage of the partition.
+        /// Provides information about the physical location where the partition is stored.
         /// Required: No
         /// Type: StorageDescriptor
         /// Update requires: No interruption
@@ -35,9 +35,10 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// Values
-        /// A list of UTF-8 strings that specify the values of the partition.
+        /// The values of the partition. Although this parameter is not required by the SDK, you must specify
+        /// this parameter for a valid input.
         /// Required: Yes
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Values")]

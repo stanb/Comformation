@@ -6,9 +6,11 @@ namespace Comformation.EMR.SecurityConfiguration
 {
     /// <summary>
     /// AWS::EMR::SecurityConfiguration
-    /// The AWS::EMR::SecurityConfiguration resource creates a security configuration that is stored in the Amazon EMR
-    /// web service. You can specify the security configuration when creating a cluster. For more information, see
-    /// Specifying Amazon EMR Encryption Options Using a Security Configuration in the Amazon EMR Release Guide.
+    /// Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in
+    /// Amazon EMR release version 5. 10. 0 and later), and Amazon S3 authorization for EMRFS (available in EMR 5. 10.
+    /// 0 and later). You can re-use a security configuration for any number of clusters in your account. For more
+    /// information and example security configuration JSON objects, see Create a Security Configuration in the Amazon
+    /// EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
     /// </summary>
     public class SecurityConfigurationResource : ResourceBase
@@ -17,10 +19,12 @@ namespace Comformation.EMR.SecurityConfiguration
         {
             /// <summary>
             /// Name
-            /// The name of the security configuration. For a list of valid parameters for encryption settings, see
-            /// AWS CLI Security Configuration JSON Reference in the Amazon EMR Release Guide.
+            /// The name of the security configuration.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 10280
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
@@ -29,7 +33,7 @@ namespace Comformation.EMR.SecurityConfiguration
             /// SecurityConfiguration
             /// The security configuration details in JSON format.
             /// Required: Yes
-            /// Type: String
+            /// Type: Json
             /// Update requires: Replacement
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SecurityConfiguration { get; set; }

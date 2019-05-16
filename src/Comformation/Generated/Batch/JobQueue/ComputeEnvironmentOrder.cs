@@ -6,11 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobQueue
 {
     /// <summary>
-    /// AWS Batch JobQueue ComputeEnvironmentOrder
-    /// The ComputeEnvironmentOrder property type specifies the order in which compute environments are tried for job
-    /// placement within a queue. Compute environments are tried in ascending order. For example, if two compute
-    /// environments are associated with a job queue, the compute environment with a lower order integer value is
-    /// tried for job placement first.
+    /// AWS::Batch::JobQueue ComputeEnvironmentOrder
+    /// The order in which compute environments are tried for job placement within a queue. Compute environments are
+    /// tried in ascending order. For example, if two compute environments are associated with a job queue, the
+    /// compute environment with a lower order integer value is tried for job placement first.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html
     /// </summary>
     public class ComputeEnvironmentOrder
@@ -19,9 +18,9 @@ namespace Comformation.Batch.JobQueue
         /// <summary>
         /// ComputeEnvironment
         /// The Amazon Resource Name (ARN) of the compute environment.
-        /// Required: yes
+        /// Required: Yes
         /// Type: String
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComputeEnvironment")]
         public Union<string, IntrinsicFunction> ComputeEnvironment { get; set; }
@@ -29,9 +28,9 @@ namespace Comformation.Batch.JobQueue
         /// <summary>
         /// Order
         /// The order of the compute environment.
-        /// Required: yes
+        /// Required: Yes
         /// Type: Integer
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Order")]
         public Union<int, IntrinsicFunction> Order { get; set; }

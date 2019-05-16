@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinitionVersion Execution
+    /// AWS::Greengrass::FunctionDefinitionVersion Execution
     /// Configuration settings for the Lambda execution environment on the AWS IoT Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html
     /// </summary>

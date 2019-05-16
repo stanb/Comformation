@@ -16,7 +16,7 @@ namespace Comformation.Glue.Job
         {
             /// <summary>
             /// Role
-            /// The role that&#39;s associated with the job.
+            /// The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -25,20 +25,22 @@ namespace Comformation.Glue.Job
 
             /// <summary>
             /// DefaultArguments
-            /// UTF-8 string–to–UTF-8 string key-value pairs that specify the default parameters for the job.
+            /// The default arguments for this job, specified as name-value pairs.
             /// You can specify arguments here that your own job-execution script consumes, as well as arguments
-            /// that AWS Glue itself consumes. For information about how to specify and consume your own Job
-            /// arguments, see the Passing and Accessing Python Parameters in AWS Glue in the AWS Glue Developer
-            /// Guide.
+            /// that AWS Glue itself consumes.
+            /// For information about how to specify and consume your own Job arguments, see the Calling AWS Glue
+            /// APIs in Python topic in the developer guide.
+            /// For information about the key-value pairs that AWS Glue consumes to set up your job, see the Special
+            /// Parameters Used by AWS Glue topic in the developer guide.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DefaultArguments { get; set; }
 
             /// <summary>
             /// Connections
-            /// The connections that are used by the job.
+            /// The connections used for this job.
             /// Required: No
             /// Type: ConnectionsList
             /// Update requires: No interruption
@@ -47,7 +49,7 @@ namespace Comformation.Glue.Job
 
             /// <summary>
             /// MaxRetries
-            /// The maximum number of times to retry this job if it fails.
+            /// The maximum number of times to retry this job after a JobRun fails.
             /// Required: No
             /// Type: Double
             /// Update requires: No interruption
@@ -56,7 +58,7 @@ namespace Comformation.Glue.Job
 
             /// <summary>
             /// Description
-            /// The description of the job.
+            /// A description of the job.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -65,7 +67,7 @@ namespace Comformation.Glue.Job
 
             /// <summary>
             /// LogUri
-            /// The location of the logs for the job.
+            /// This field is reserved for future use.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -92,8 +94,7 @@ namespace Comformation.Glue.Job
 
             /// <summary>
             /// ExecutionProperty
-            /// The execution property of the job, which specifies the maximum number of concurrent runs that are
-            /// allowed for the job.
+            /// The maximum number of concurrent runs that are allowed for this job.
             /// Required: No
             /// Type: ExecutionProperty
             /// Update requires: No interruption
@@ -102,8 +103,7 @@ namespace Comformation.Glue.Job
 
             /// <summary>
             /// Name
-            /// The name of the job. It must match the single-line string pattern:
-            /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+            /// The name you assign to this job definition.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

@@ -6,9 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Events.EventBusPolicy
 {
     /// <summary>
-    /// Amazon CloudWatch Events EventBusPolicy Condition
-    /// The Condition property type enables you to grant event bus permissions to all the AWS accounts in an
-    /// organization.
+    /// AWS::Events::EventBusPolicy Condition
+    /// A JSON string which you can use to limit the event bus permissions you are granting to only accounts that
+    /// fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization.
+    /// The string must contain Type, Key, and Value fields. The Value field specifies the ID of the AWS organization.
+    /// Following is an example value for Condition:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html
     /// </summary>
     public class Condition
@@ -16,7 +18,7 @@ namespace Comformation.Events.EventBusPolicy
 
         /// <summary>
         /// Type
-        /// Currently, Type must be StringEquals
+        /// Specifies the type of condition. Currently the only supported value is StringEquals.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +28,7 @@ namespace Comformation.Events.EventBusPolicy
 
         /// <summary>
         /// Value
-        /// Specifies the ID of the AWS organization to which you want to grant permission.
+        /// Specifies the value for the key. Currently, this must be the ID of the organization.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,7 +38,7 @@ namespace Comformation.Events.EventBusPolicy
 
         /// <summary>
         /// Key
-        /// Currently, Key must be aws:PrincipalOrgID
+        /// Specifies the key for the condition. Currently the only supported key is aws:PrincipalOrgID.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

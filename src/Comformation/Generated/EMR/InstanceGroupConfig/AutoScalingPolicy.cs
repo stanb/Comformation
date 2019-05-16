@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    /// Amazon EMR InstanceGroupConfig AutoScalingPolicy
-    /// AutoScalingPolicy is a property of the AWS::EMR::InstanceGroupConfig resource that specifies the constraints
-    /// and rules for an Auto Scaling group policy. For more information, see PutAutoScalingPolicy in the Amazon EMR
-    /// API Reference.
+    /// AWS::EMR::InstanceGroupConfig AutoScalingPolicy
+    /// AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to
+    /// the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR in the
+    /// Amazon EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html
     /// </summary>
     public class AutoScalingPolicy
@@ -17,10 +17,10 @@ namespace Comformation.EMR.InstanceGroupConfig
 
         /// <summary>
         /// Constraints
-        /// The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling
-        /// activity doesn&#39;t cause an instance group to grow above or below these limits.
+        /// The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity
+        /// will not cause an instance group to grow above or below these limits.
         /// Required: Yes
-        /// Type: Amazon EMR InstanceGroupConfig ScalingConstraints
+        /// Type: ScalingConstraints
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Constraints")]
@@ -28,9 +28,9 @@ namespace Comformation.EMR.InstanceGroupConfig
 
         /// <summary>
         /// Rules
-        /// The scale-in and scale-out rules that compose the automatic scaling policy.
+        /// The scale-in and scale-out rules that comprise the automatic scaling policy.
         /// Required: Yes
-        /// Type: List of Amazon EMR InstanceGroupConfig ScalingRule
+        /// Type: List of ScalingRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Rules")]

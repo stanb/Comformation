@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
-    /// Amazon Cognito IdentityPool CognitoIdentityProvider
+    /// AWS::Cognito::IdentityPool CognitoIdentityProvider
     /// CognitoIdentityProvider is a property of the AWS::Cognito::IdentityPool resource that represents an Amazon
     /// Cognito user pool and its client ID.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html
@@ -21,8 +21,9 @@ namespace Comformation.Cognito.IdentityPool
         /// the integrated user pools to make sure that the user has not been globally signed out or deleted
         /// before the identity pool provides an OIDC token or AWS credentials for the user.
         /// If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
-        /// Type: Boolean
         /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ServerSideTokenCheck")]
         public Union<bool, IntrinsicFunction> ServerSideTokenCheck { get; set; }
@@ -31,8 +32,9 @@ namespace Comformation.Cognito.IdentityPool
         /// ProviderName
         /// The provider name for an Amazon Cognito user pool. For example, cognito-idp. us-east-2. amazonaws.
         /// com/us-east-2_123456789.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProviderName")]
         public Union<string, IntrinsicFunction> ProviderName { get; set; }
@@ -40,8 +42,9 @@ namespace Comformation.Cognito.IdentityPool
         /// <summary>
         /// ClientId
         /// The client ID for the Amazon Cognito user pool.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ClientId")]
         public Union<string, IntrinsicFunction> ClientId { get; set; }

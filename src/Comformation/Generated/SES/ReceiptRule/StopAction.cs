@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    /// Amazon Simple Email Service ReceiptRule StopAction
-    /// The StopAction property type includes an action in an Amazon SES receipt rule that terminates the evaluation
-    /// of the receipt rule set and, optionally, publishes a notification to Amazon SNS.
+    /// AWS::SES::ReceiptRule StopAction
+    /// When included in a receipt rule, this action terminates the evaluation of the receipt rule set and,
+    /// optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html
     /// </summary>
     public class StopAction
@@ -17,9 +17,9 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// Scope
         /// The name of the RuleSet that is being stopped.
-        /// Valid values include: RuleSet.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: RuleSet
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Scope")]
@@ -28,7 +28,8 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TopicArn
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An
-        /// example of an Amazon SNS topic ARN is arn:aws:sns:us-west-2:123456789012:MyTopic.
+        /// example of an Amazon SNS topic ARN is arn:aws:sns:us-west-2:123456789012:MyTopic. For more
+        /// information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

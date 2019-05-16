@@ -8,7 +8,7 @@ namespace Comformation.ASK.Skill
     /// <summary>
     /// Alexa::ASK::Skill SkillPackage
     /// The SkillPackage property type contains configuration details for the skill package that contains the
-    /// components of the Alexa Skill. Skill packages are retrieved from an Amazon S3 bucket and key and used to
+    /// components of the Alexa skill. Skill packages are retrieved from an Amazon S3 bucket and key and used to
     /// create and update the skill. More details about the skill package format are located in the Skill Package API
     /// Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html
@@ -19,8 +19,8 @@ namespace Comformation.ASK.Skill
         /// <summary>
         /// S3BucketRole
         /// ARN of the role that grants the Alexa service permission to access the bucket and retrieve the skill
-        /// package. This role is optional, and if not provided the bucket must be configured with a policy
-        /// allowing this access, or be publicly accessible, in order for AWS CloudFormation to create the
+        /// package. This role is optional. If you do not provide it, the bucket must be publicly accessible or
+        /// configured with a policy that allows this access. Otherwise, AWS CloudFormation cannot create the
         /// skill.
         /// Required: No
         /// Type: String

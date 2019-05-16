@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
-    /// Amazon Simple Email Service ConfigurationSetEventDestination EventDestination
-    /// For an Amazon SES configuration set event destination, the EventDestination property type specifies
-    /// information about the event destination that the specified email sending events will be published to.
+    /// AWS::SES::ConfigurationSetEventDestination EventDestination
+    /// Contains information about the event destination that the specified email sending events are published to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html
     /// </summary>
     public class EventDestination
@@ -16,8 +15,8 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// CloudWatchDestination
-        /// The names, default values, and sources of the dimensions associated with an CloudWatch event
-        /// destination.
+        /// An object that contains the names, default values, and sources of the dimensions associated with an
+        /// Amazon CloudWatch event destination.
         /// Required: No
         /// Type: CloudWatchDestination
         /// Update requires: No interruption
@@ -40,9 +39,8 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// <summary>
         /// MatchingEventTypes
         /// The type of email sending events to publish to the event destination.
-        /// For a list of valid values, see EventDestination in the Amazon Simple Email Service API Reference.
         /// Required: Yes
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MatchingEventTypes")]
@@ -50,9 +48,9 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// Name
-        /// The name of the event destination. The name can:
-        /// Contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Contain up to 64
-        /// characters.
+        /// The name of the event destination. The name must:
+        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+        /// Contain less than 64 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -62,8 +60,8 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// KinesisFirehoseDestination
-        /// Contains the delivery stream ARN and the IAM role ARN associated with an Kinesis Data Firehose event
-        /// destination.
+        /// An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon
+        /// Kinesis Data Firehose event destination.
         /// Required: No
         /// Type: KinesisFirehoseDestination
         /// Update requires: No interruption

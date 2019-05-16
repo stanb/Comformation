@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.Integration
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Integration
-    /// The AWS::ApiGatewayV2::Integration resource defines an API integration. For more information, see
-    /// CreateIntegration in the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::Integration resource creates an integration for an API. For more information, see Set
+    /// up a WebSocket API Integration Request in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html
     /// </summary>
     public class IntegrationResource : ResourceBase
@@ -77,7 +77,7 @@ namespace Comformation.ApiGatewayV2.Integration
             /// request. {location}. {name} , where {location} is querystring, path, or header; and {name} must be a
             /// valid and unique method request parameter name.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RequestParameters { get; set; }
@@ -107,9 +107,9 @@ namespace Comformation.ApiGatewayV2.Integration
             /// RequestTemplates
             /// Represents a map of Velocity templates that are applied on the request payload based on the value of
             /// the Content-Type header sent by the client. The content type value is the key in this map, and the
-            /// template (as a string) is the value.
+            /// template (as a String) is the value.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RequestTemplates { get; set; }
@@ -141,7 +141,7 @@ namespace Comformation.ApiGatewayV2.Integration
 
             /// <summary>
             /// ApiId
-            /// The API ID.
+            /// The API identifier.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

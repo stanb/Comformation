@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project WebhookFilter
-    /// WebhookFilter is a property of the AWS::CodeBuild::Project resource that specifies which webhooks trigger an
-    /// AWS CodeBuild build.
+    /// AWS::CodeBuild::Project WebhookFilter
+    /// WebhookFilter is a structure of the FilterGroups property on the AWS CodeBuild Project ProjectTriggers
+    /// property type that specifies which webhooks trigger an AWS CodeBuild build.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html
     /// </summary>
     public class WebhookFilter
@@ -24,6 +24,7 @@ namespace Comformation.CodeBuild.Project
         /// build when the head reference is a branch with a reference name refs/heads/branch-name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Pattern")]
         public Union<string, IntrinsicFunction> Pattern { get; set; }
@@ -47,6 +48,8 @@ namespace Comformation.CodeBuild.Project
         /// the regular expression pattern. Note Works with GitHub and GitHub Enterprise push events only.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ACTOR_ACCOUNT_ID | BASE_REF | EVENT | FILE_PATH | HEAD_REF
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }
@@ -58,6 +61,7 @@ namespace Comformation.CodeBuild.Project
         /// event that matches the pattern triggers a build.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcludeMatchedPattern")]
         public Union<bool, IntrinsicFunction> ExcludeMatchedPattern { get; set; }

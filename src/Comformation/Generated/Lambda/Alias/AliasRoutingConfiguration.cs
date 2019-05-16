@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Lambda.Alias
 {
     /// <summary>
-    /// AWS Lambda Alias AliasRoutingConfiguration
-    /// The AliasRoutingConfiguration property type specifies two different versions of an AWS Lambda function,
-    /// allowing you to dictate what percentage of traffic will invoke each version. For more information, see Routing
-    /// Traffic to Different Function Versions Using Aliases in the AWS Lambda Developer Guide.
+    /// AWS::Lambda::Alias AliasRoutingConfiguration
+    /// The traffic-shifting configuration of a Lambda function alias.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html
     /// </summary>
     public class AliasRoutingConfiguration
@@ -17,7 +15,7 @@ namespace Comformation.Lambda.Alias
 
         /// <summary>
         /// AdditionalVersionWeights
-        /// The percentage of traffic that will invoke the updated function version.
+        /// The name of the second alias, and the percentage of traffic that&#39;s routed to it.
         /// Required: Yes
         /// Type: List of VersionWeight
         /// Update requires: No interruption

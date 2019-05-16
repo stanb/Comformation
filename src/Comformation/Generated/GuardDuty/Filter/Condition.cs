@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
-    /// Amazon GuardDuty Filter Condition
-    /// The Condition property type specifies the condition to be applied to a single field when filtering through
-    /// GuardDuty findings.
+    /// AWS::GuardDuty::Filter Condition
+    /// Specifies the condition to apply to a single field when filtering through GuardDuty findings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
     /// </summary>
     public class Condition
@@ -16,8 +15,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Lt
-        /// Represents the &quot;less than&quot; condition to be applied to a single field when filtering through
-        /// findings.
+        /// Represents the less than condition to apply to a single field when querying for findings.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -27,7 +25,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Gte
-        /// Represents the &quot;greater than equal&quot; condition to be applied to a single field when filtering through
+        /// Represents the greater than or equal condition to apply to a single field when querying for
         /// findings.
         /// Required: No
         /// Type: Integer
@@ -38,10 +36,9 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Neq
-        /// Represents the &quot;not equal to&quot; condition to be applied to a single field when filtering through
-        /// findings.
+        /// Represents the not equal condition to apply to a single field when querying for findings.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Neq")]
@@ -49,9 +46,9 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Eq
-        /// Represents the &quot;equal to&quot; condition to be applied to a single field when filtering through findings.
+        /// Represents the equal condition to apply to a single field when querying for findings.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Eq")]
@@ -59,8 +56,7 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Lte
-        /// Represents the &quot;less than equal&quot; condition to be applied to a single field when filtering through
-        /// findings.
+        /// Represents the less than or equal condition to apply to a single field when querying for findings.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

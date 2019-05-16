@@ -6,10 +6,10 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster
-    /// The AWS::EMR::Cluster resource creates an Amazon EMR cluster. This cluster is a collection of EC2 instances
-    /// that you can run big data frameworks on to process and analyze vast amounts of data. For more information, see
-    /// Plan an Amazon EMR Cluster in the Amazon EMR Management Guide.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html
+    /// The AWS::EMR::Cluster resource specifies an Amazon EMR cluster. This cluster is a collection of Amazon EC2
+    /// instances that run open source big data frameworks and applications to process and analyze vast amounts of
+    /// data. For more information, see the Amazon EMR Management Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
     {
@@ -17,68 +17,75 @@ namespace Comformation.EMR.Cluster
         {
             /// <summary>
             /// AdditionalInfo
-            /// (Intended for advanced uses only. ) Additional features that you want to select. This is meta
-            /// information about third-party applications that third-party vendors use for testing purposes.
+            /// A JSON string for selecting additional features.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
+            /// Minimum: 0
+            /// Maximum: 10280
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AdditionalInfo { get; set; }
 
             /// <summary>
             /// Applications
-            /// The software applications to deploy on the cluster, and the arguments that Amazon EMR passes to
-            /// those applications.
+            /// The applications to install on this cluster, for example, Spark, Flink, Oozie, Zeppelin, and so on.
             /// Required: No
-            /// Type: List of Amazon EMR Cluster Application property types
+            /// Type: List of Application
             /// Update requires: Replacement
             /// </summary>
 			public List<Application> Applications { get; set; }
 
             /// <summary>
             /// AutoScalingRole
-            /// An AWS Identity and Access Management (IAM) role for automatic scaling policies. The default role is
-            /// EMR_AutoScaling_DefaultRole. The IAM role provides permissions that the automatic scaling feature
-            /// requires to launch and terminate Amazon EC2 instances in an instance group.
+            /// An IAM role for automatic scaling policies. The default role is EMR_AutoScaling_DefaultRole. The IAM
+            /// role provides permissions that the automatic scaling feature requires to launch and terminate EC2
+            /// instances in an instance group.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 10280
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoScalingRole { get; set; }
 
             /// <summary>
             /// BootstrapActions
-            /// A list of bootstrap actions that Amazon EMR runs before starting applications on the cluster.
+            /// A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
             /// Required: No
-            /// Type: List of Amazon EMR Cluster BootstrapActionConfig property types
+            /// Type: List of BootstrapActionConfig
             /// Update requires: Replacement
             /// </summary>
 			public List<BootstrapActionConfig> BootstrapActions { get; set; }
 
             /// <summary>
             /// Configurations
-            /// The software configuration of the Amazon EMR cluster.
+            /// Applies only to Amazon EMR releases 4. x and later. The list of Configurations supplied to the EMR
+            /// cluster.
             /// Required: No
-            /// Type: List of Amazon EMR Cluster Configurations property types
+            /// Type: List of Configuration
             /// Update requires: Replacement
             /// </summary>
 			public List<Configuration> Configurations { get; set; }
 
             /// <summary>
             /// CustomAmiId
-            /// A custom Amazon Linux AMI for the cluster (instead of an EMR-owned AMI). For more information, see
-            /// Using a Custom AMI in the Amazon EMR Management Guide.
+            /// Available only in Amazon EMR version 5. 7. 0 and later. The ID of a custom Amazon EBS-backed Linux
+            /// AMI if the cluster uses a custom AMI.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
-            /// Example: &quot;CustomAmiId&quot; : &quot;ami-7fb3bc69&quot;
             /// </summary>
 			public Union<string, IntrinsicFunction> CustomAmiId { get; set; }
 
             /// <summary>
             /// EbsRootVolumeSize
-            /// The size, in GiB, of the EBS root device volume of the Linux AMI that&#39;s used for each EC2 instance.
-            /// Currently, AWS CloudFormation supports only Amazon EMR 4. 0 and later software releases.
+            /// The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+            /// Available in Amazon EMR version 4. x and later.
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
@@ -87,20 +94,22 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// Instances
-            /// Configures the EC2 instances that run jobs in the Amazon EMR cluster.
+            /// A specification of the number and type of Amazon EC2 instances.
             /// Required: Yes
-            /// Type: Amazon EMR Cluster JobFlowInstancesConfig
-            /// Update requires: Some interruptions
+            /// Type: JobFlowInstancesConfig
             /// </summary>
 			public JobFlowInstancesConfig Instances { get; set; }
 
             /// <summary>
             /// JobFlowRole
-            /// (Also called instance profile and EC2 role. ) Accepts an instance profile that&#39;s associated with the
-            /// role that you want to use. All EC2 instances in the cluster assume this role. For more information,
-            /// see Create and Use IAM Roles for Amazon EMR in the Amazon EMR Management Guide.
+            /// Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the
+            /// cluster assume this role. The default role is EMR_EC2_DefaultRole. In order to use the default role,
+            /// you must have already created it using the CLI or console.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 10280
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> JobFlowRole { get; set; }
@@ -108,17 +117,16 @@ namespace Comformation.EMR.Cluster
             /// <summary>
             /// KerberosAttributes
             /// Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
-            /// configuration.
+            /// configuration. For more information see Use Kerberos Authentication in the EMR Management Guide.
             /// Required: No
-            /// Type: Amazon EMR Cluster KerberosAttributes
+            /// Type: KerberosAttributes
             /// Update requires: Replacement
             /// </summary>
 			public KerberosAttributes KerberosAttributes { get; set; }
 
             /// <summary>
             /// LogUri
-            /// An S3 bucket location that Amazon EMR writes logs files to from a job flow. If you don&#39;t specify a
-            /// value, Amazon EMR doesn&#39;t write any log files.
+            /// The path to the Amazon S3 location where logs for this cluster are stored.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -127,7 +135,7 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// Name
-            /// A name for the Amazon EMR cluster.
+            /// The name of the cluster.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -136,11 +144,13 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// ReleaseLabel
-            /// The Amazon EMR software release label. A release is a set of software applications and components
-            /// that you can install and configure on an Amazon EMR cluster. For more information, see About Amazon
-            /// EMR Releases in the Amazon EMR Release Guide.
-            /// Currently, AWS CloudFormation supports only Amazon EMR 4. 0 and later software releases.
-            /// Required: Conditional. If you specify the Applications property, you must specify this property.
+            /// The Amazon EMR release label, which determines the version of open-source application packages
+            /// installed on the cluster. Release labels are in the form emr-x. x. x, where x. x. x is an Amazon EMR
+            /// release version, for example, emr-5. 14. 0. For more information about Amazon EMR release versions
+            /// and included application versions and features, see https://docs. aws. amazon.
+            /// com/emr/latest/ReleaseGuide/. The release label applies only to Amazon EMR releases versions 4. x
+            /// and later. Earlier versions use AmiVersion.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -148,27 +158,38 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// ScaleDownBehavior
-            /// Indicates how individual EC2 instances terminate when an automatic scale-in activity occurs or an
-            /// instance group is resized. For more information, see Cluster in the Amazon EMR API Reference.
+            /// The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or
+            /// an instance group is resized. TERMINATE_AT_INSTANCE_HOUR indicates that Amazon EMR terminates nodes
+            /// at the instance-hour boundary, regardless of when the request to terminate the instance was
+            /// submitted. This option is only available with Amazon EMR 5. 1. 0 and later and is the default for
+            /// clusters created using that version. TERMINATE_AT_TASK_COMPLETION indicates that Amazon EMR
+            /// blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of
+            /// the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first
+            /// and blocks instance termination if it could lead to HDFS corruption. TERMINATE_AT_TASK_COMPLETION is
+            /// available only in Amazon EMR version 4. 1. 0 and later, and is the default for versions of Amazon
+            /// EMR earlier than 5. 1. 0.
             /// Required: No
             /// Type: String
+            /// Allowed Values: TERMINATE_AT_INSTANCE_HOUR | TERMINATE_AT_TASK_COMPLETION
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ScaleDownBehavior { get; set; }
 
             /// <summary>
             /// SecurityConfiguration
-            /// The name of the security configuration that&#39;s applied to the cluster.
+            /// The name of the security configuration applied to the cluster.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 10280
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
 
             /// <summary>
             /// ServiceRole
-            /// The IAM role that Amazon EMR assumes to access AWS resources on your behalf. For more information,
-            /// see Configure IAM Roles for Amazon EMR in the Amazon EMR Management Guide.
+            /// The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -177,31 +198,33 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// Steps
-            /// The cluster (job flow) steps.
+            /// A list of steps to run.
             /// Required: No
-            /// Type: List of Amazon EMR Cluster StepConfig property types
+            /// Type: List of StepConfig
             /// Update requires: Replacement
             /// </summary>
 			public List<StepConfig> Steps { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) to help you identify the Amazon EMR cluster.
+            /// A list of tags associated with a cluster.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VisibleToAllUsers
-            /// Indicates whether the instances in the cluster are visible to all IAM users in the AWS account. If
-            /// you specify true, all IAM users can view and (if they have permissions) manage the instances. If you
-            /// specify false, only the IAM user that created the cluster can view and manage it.
+            /// Indicates whether the cluster is visible to all IAM users of the AWS account associated with the
+            /// cluster. The default value, true, indicates that all IAM users in the AWS account can perform
+            /// cluster actions if they have the proper IAM policy permissions. If this value is false, only the IAM
+            /// user that created the cluster can perform actions. This value can be changed on a running cluster by
+            /// using the SetVisibleToAllUsers action. You can override the default value of true when you create a
+            /// cluster by using the VisibleToAllUsers parameter of the RunJobFlow action.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// Default value: false
             /// </summary>
 			public Union<bool, IntrinsicFunction> VisibleToAllUsers { get; set; }
 

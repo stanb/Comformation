@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.Model
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Model
-    /// The AWS::ApiGatewayV2::Model resource define a data model for an API. For more information, see CreateModel in
-    /// the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::Model resource updates data model for a WebSocket API. For more information, see Model
+    /// Selection Expressions in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html
     /// </summary>
     public class ModelResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.ApiGatewayV2.Model
         {
             /// <summary>
             /// Description
-            /// A description that identifies this model.
+            /// The description of the model.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.ApiGatewayV2.Model
 
             /// <summary>
             /// ContentType
-            /// The content type for the model.
+            /// The content-type for the model, for example, &quot;application/json&quot;.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -34,17 +34,16 @@ namespace Comformation.ApiGatewayV2.Model
 
             /// <summary>
             /// Schema
-            /// The schema to use to transform data to one or more output formats. Specify null ({}) if you don&#39;t
-            /// want to specify a schema.
+            /// The schema for the model. For application/json models, this should be JSON schema draft 4 model.
             /// Required: Yes
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
 
             /// <summary>
             /// ApiId
-            /// The ID of the API with which to associate this model.
+            /// The API identifier.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -53,8 +52,7 @@ namespace Comformation.ApiGatewayV2.Model
 
             /// <summary>
             /// Name
-            /// A name for the model. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
-            /// and uses that ID for the model name. For more information, see Name Type.
+            /// The name of the model.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

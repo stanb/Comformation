@@ -6,8 +6,9 @@ namespace Comformation.IAM.Role
 {
     /// <summary>
     /// AWS::IAM::Role
-    /// Creates an AWS Identity and Access Management (IAM) role. Use an IAM role to enable applications running on an
-    /// EC2 instance to securely access your AWS resources.
+    /// Creates a new role for your AWS account. For more information about roles, go to IAM Roles. For information
+    /// about limitations on role names and the number of roles you can create, go to Limitations on IAM Entities in
+    /// the IAM User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
     /// </summary>
     public class RoleResource : ResourceBase
@@ -16,53 +17,70 @@ namespace Comformation.IAM.Role
         {
             /// <summary>
             /// AssumeRolePolicyDocument
-            /// The trust policy that is associated with this role. You can associate only one assume role policy
-            /// with a role. For an example of an assume role policy, see Template Examples. For more information
-            /// about the elements that you can use in an IAM policy, see IAM Policy Elements Reference in the IAM
-            /// User Guide.
+            /// The trust policy that is associated with this role. Trust policies define which entities can assume
+            /// the role. You can associate only one trust policy with a role. For an example of a policy that can
+            /// be used to assume a role, see Template Examples. For more information about the elements that you
+            /// can use in an IAM policy, see IAM Policy Elements Reference in the IAM User Guide.
             /// Required: Yes
-            /// Type: A JSON policy document
-            /// Note AWS Identity and Access Management (IAM) requires that policies be in JSON format. However, for
-            /// templates formatted in YAML, you can create an IAM policy in either JSON or YAML format. AWS
-            /// CloudFormation always converts a policy to JSON format before submitting it to IAM.
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssumeRolePolicyDocument { get; set; }
 
             /// <summary>
             /// ManagedPolicyArns
-            /// One or more managed policy ARNs to attach to this role.
+            /// A list of Amazon Resource Names (ARNs) of the IAM managed policies that you want to attach to the
+            /// user.
+            /// For more information about ARNs, see Amazon Resource Names (ARNs) and AWS Service Namespaces in the
+            /// AWS General Reference.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// MaxSessionDuration
-            /// The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API
-            /// to assume the role can specify the duration using the optional DurationSeconds API parameter or
-            /// duration-seconds CLI parameter. Minimum value of 3600. Maximum value of 43200.
+            /// The maximum session duration (in seconds) that you want to set for the specified role. If you do not
+            /// specify a value for this setting, the default maximum of one hour is applied. This setting can have
+            /// a value from 1 hour to 12 hours.
+            /// Anyone who assumes the role from the AWS CLI or API can use the DurationSeconds API parameter or the
+            /// duration-seconds CLI parameter to request a longer session. The MaxSessionDuration setting
+            /// determines the maximum duration that can be requested using the DurationSeconds parameter. If users
+            /// don&#39;t specify a value for the DurationSeconds parameter, their security credentials are valid for
+            /// one hour by default. This applies when you use the AssumeRole* API operations or the assume-role*
+            /// CLI operations but does not apply when you use those operations to create a console URL. For more
+            /// information, see Using IAM Roles in the IAM User Guide.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 3600
+            /// Maximum: 43200
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> MaxSessionDuration { get; set; }
 
             /// <summary>
             /// Path
-            /// The path associated with this role. For information about IAM paths, see Friendly Names and Paths in
-            /// IAM User Guide.
+            /// The path to the role. For more information about paths, see IAM Identifiers in the IAM User Guide.
+            /// This parameter is optional. If it is not included, it defaults to a slash (/).
+            /// This parameter allows (through its regex pattern) a string of characters consisting of either a
+            /// forward slash (/) by itself or a string that must begin and end with forward slashes. In addition,
+            /// it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F), including
+            /// most punctuation characters, digits, and upper and lowercased letters.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
+            /// Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// PermissionsBoundary
-            /// The ARN of the policy that is used to set the permissions boundary for the role. Minimum length of
-            /// 20. Maximum length of 2048.
+            /// The ARN of the policy used to set the permissions boundary for the role.
+            /// For more information about permissions boundaries, see Permissions Boundaries for IAM Identities in
+            /// the IAM User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -71,9 +89,15 @@ namespace Comformation.IAM.Role
 
             /// <summary>
             /// Policies
-            /// The policies to associate with this role. For sample templates, see Template Examples.
-            /// Important The name of each policy for a role, user, or group must be unique. If you don&#39;t, updates
-            /// to the IAM role will fail.
+            /// Adds or updates an inline policy document that is embedded in the specified IAM role.
+            /// When you embed an inline policy in a role, the inline policy is used as part of the role&#39;s access
+            /// (permissions) policy. The role&#39;s trust policy is created at the same time as the role. You can
+            /// update a role&#39;s trust policy later. For more information about IAM roles, go to Using Roles to
+            /// Delegate Permissions and Federate Identities.
+            /// A role can also have an attached managed policy. For information about policies, see Managed
+            /// Policies and Inline Policies in the IAM User Guide.
+            /// For information about limits on the number of inline policies that you can embed with a role, see
+            /// Limitations on IAM Entities in the IAM User Guide.
             /// Note If an external policy (such as AWS::IAM::Policy or AWS::IAM::ManagedPolicy) has a Ref to a role
             /// and if a resource (such as AWS::ECS::Service) also has a Ref to the same role, add a DependsOn
             /// attribute to the resource to make the resource depend on the external policy. This dependency
@@ -81,7 +105,7 @@ namespace Comformation.IAM.Role
             /// you delete a stack with an AWS::ECS::Service resource, the DependsOn attribute ensures that AWS
             /// CloudFormation deletes the AWS::ECS::Service resource before deleting its role&#39;s policy.
             /// Required: No
-            /// Type: List of IAM Policies
+            /// Type: List of Policy
             /// Update requires: No interruption
             /// </summary>
 			public List<Policy> Policies { get; set; }
@@ -89,17 +113,19 @@ namespace Comformation.IAM.Role
             /// <summary>
             /// RoleName
             /// A name for the IAM role. For valid values, see the RoleName parameter for the CreateRole action in
-            /// the IAM API Reference. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical
-            /// ID and uses that ID for the group name.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// the IAM User Guide.
+            /// This parameter allows (per its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-. The role name must be unique within the account. Role names are not
+            /// distinguished by case. For example, you cannot create roles named both &quot;Role1&quot; and &quot;role1&quot;.
+            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
+            /// the role name.
             /// If you specify a name, you must specify the CAPABILITY_NAMED_IAM value to acknowledge your
             /// template&#39;s capabilities. For more information, see Acknowledging IAM Resources in AWS CloudFormation
             /// Templates.
-            /// Warning Naming an IAM resource can cause an unrecoverable error if you reuse the same template in
-            /// multiple regions. To prevent this, we recommend using Fn::Join and AWS::Region to create a
-            /// region-specific name, as in the following example: {&quot;Fn::Join&quot;: [&quot;&quot;, [{&quot;Ref&quot;: &quot;AWS::Region&quot;},
+            /// Important Naming an IAM resource can cause an unrecoverable error if you reuse the same template in
+            /// multiple Regions. To prevent this, we recommend using Fn::Join and AWS::Region to create a
+            /// Region-specific name, as in the following example: {&quot;Fn::Join&quot;: [&quot;&quot;, [{&quot;Ref&quot;: &quot;AWS::Region&quot;},
             /// {&quot;Ref&quot;: &quot;MyResourceName&quot;}]]}.
             /// Required: No
             /// Type: String

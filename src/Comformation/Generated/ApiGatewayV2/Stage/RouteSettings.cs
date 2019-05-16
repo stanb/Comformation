@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGatewayV2.Stage
 {
     /// <summary>
-    /// RouteSettings
-    /// The RouteSettings property type is a mapping of RouteId to RouteSettings that specifies route settings for an
-    /// API Gateway stage.
+    /// AWS::ApiGatewayV2::Stage RouteSettings
+    /// Represents a collection of route settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html
     /// </summary>
     public class RouteSettings

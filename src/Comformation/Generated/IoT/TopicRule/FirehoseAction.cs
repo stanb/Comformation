@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule FirehoseAction
-    /// Firehose is a property of the AWS IoT TopicRule Action property that describes an action that writes data to a
-    /// Kinesis Data Firehose stream.
+    /// AWS::IoT::TopicRule FirehoseAction
+    /// Describes an action that writes data to an Amazon Kinesis Firehose stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html
     /// </summary>
     public class FirehoseAction
@@ -19,26 +18,28 @@ namespace Comformation.IoT.TopicRule
         /// The delivery stream name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeliveryStreamName")]
         public Union<string, IntrinsicFunction> DeliveryStreamName { get; set; }
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) of the IAM role that grants access to the Kinesis Data Firehose
-        /// stream.
+        /// The IAM role that grants access to the Amazon Kinesis Firehose stream.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         /// <summary>
         /// Separator
-        /// A character separator that&#39;s used to separate records written to the Kinesis Data Firehose stream.
-        /// For valid values, see Firehose Action in the AWS IoT Developer Guide.
+        /// A character separator that will be used to separate records written to the Firehose stream. Valid
+        /// values are: &#39;\n&#39; (newline), &#39;\t&#39; (tab), &#39;\r\n&#39; (Windows newline), &#39;,&#39; (comma).
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Separator")]
         public Union<string, IntrinsicFunction> Separator { get; set; }
