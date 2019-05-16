@@ -6,9 +6,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationCloudWatchLoggingOption
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption
-    /// The AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to add an Amazon CloudWatch log
-    /// stream to monitor application configuration errors. For more information, see CloudWatchLoggingOption in the
-    /// Amazon Kinesis Data Analytics Developer Guide.
+    /// Adds an Amazon CloudWatch log stream to monitor application configuration errors.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html
     /// </summary>
     public class ApplicationCloudWatchLoggingOptionResource : ResourceBase
@@ -17,17 +15,20 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationCloudWatchLoggingOption
         {
             /// <summary>
             /// ApplicationName
-            /// The name of your application (for example, sample-app).
+            /// The name of the application.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// CloudWatchLoggingOption
-            /// Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration
-            /// errors.
+            /// Provides a description of Amazon CloudWatch logging options, including the log stream Amazon
+            /// Resource Name (ARN).
             /// Required: Yes
             /// Type: CloudWatchLoggingOption
             /// Update requires: No interruption

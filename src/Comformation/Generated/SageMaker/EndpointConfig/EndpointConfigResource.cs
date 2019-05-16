@@ -16,38 +16,43 @@ namespace Comformation.SageMaker.EndpointConfig
         {
             /// <summary>
             /// ProductionVariants
-            /// A list of the production variants that specify the models you want to host at this endpoint.
+            /// A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
             /// Required: Yes
-            /// Type: List of Amazon SageMaker EndpointConfig ProductionVariant
+            /// Type: List of ProductionVariant
             /// Update requires: Replacement
             /// </summary>
 			public List<ProductionVariant> ProductionVariants { get; set; }
 
             /// <summary>
             /// KmsKeyId
-            /// If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage
-            /// volume that is attached to your notebook instance.
+            /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to
+            /// encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
             /// Required: No
             /// Type: String
+            /// Maximum: 2048
+            /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// EndpointConfigName
-            /// The name of the endpoint configuration.
+            /// The name of the endpoint configuration. You specify this name in a CreateEndpoint request.
             /// Required: No
             /// Type: String
+            /// Maximum: 63
+            /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EndpointConfigName { get; set; }
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// A list of key-value pairs to apply to this resource.
+            /// For more information, see Resource Tag and Using Cost Allocation Tags.
             /// Required: No
-            /// Type: List of Resource Tag
+            /// Type: List of Tag
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

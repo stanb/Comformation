@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
-    /// Elastic Load Balancing V2 AuthenticateCognitoConfig
-    /// The AuthenticateCognitoConfig property type specifies request parameters to use when integrating with Amazon
-    /// Cognito to authenticate users.
+    /// AWS::ElasticLoadBalancingV2::Listener AuthenticateCognitoConfig
+    /// Specifies information required when integrating with Amazon Cognito to authenticate users.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html
     /// </summary>
     public class AuthenticateCognitoConfig
@@ -18,7 +17,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// AuthenticationRequestExtraParams
         /// The query parameters (up to 10) to include in the redirect request to the authorization endpoint.
         /// Required: No
-        /// Type: Type: String to String map
+        /// Type: Map of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AuthenticationRequestExtraParams")]
@@ -27,10 +26,12 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// <summary>
         /// OnUnauthenticatedRequest
         /// The behavior if the user is not authenticated. The following are possible values:
-        /// deny: Return an HTTP 401 Unauthorized error. allow: Allow the request to be forwarded to the target.
-        /// authenticate: Redirect the request to the IdP authorization endpoint. This is the default value.
+        /// deny - Return an HTTP 401 Unauthorized error. allow - Allow the request to be forwarded to the
+        /// target. authenticate - Redirect the request to the IdP authorization endpoint. This is the default
+        /// value.
         /// Required: No
         /// Type: String
+        /// Allowed Values: allow | authenticate | deny
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OnUnauthenticatedRequest")]
@@ -62,8 +63,8 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// SessionTimeout
         /// The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7
         /// days).
-        /// Required: Yes
-        /// Type: Type: Number
+        /// Required: No
+        /// Type: Long
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SessionTimeout")]

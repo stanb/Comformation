@@ -6,11 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster ScriptBootstrapActionConfig
-    /// ScriptBootstrapActionConfig is a property of the Amazon EMR Cluster BootstrapActionConfig property that
-    /// specifies the arguments and location of the bootstrap script that Amazon EMR (Amazon EMR) runs before it
-    /// installs applications on the cluster nodes.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig-scriptbootstrapactionconfig.html
+    /// AWS::EMR::Cluster ScriptBootstrapActionConfig
+    /// ScriptBootstrapActionConfig is a subproperty of the BootstrapActionConfig property type.
+    /// ScriptBootstrapActionConfig specifies the arguments and location of the bootstrap script for EMR to run on all
+    /// cluster nodes before it installs open-source big data applications on them.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html
     /// </summary>
     public class ScriptBootstrapActionConfig
     {
@@ -19,17 +19,22 @@ namespace Comformation.EMR.Cluster
         /// Args
         /// A list of command line arguments to pass to the bootstrap action script.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Args")]
         public List<Union<string, IntrinsicFunction>> Args { get; set; }
 
         /// <summary>
         /// Path
-        /// The location of the script that Amazon EMR runs during a bootstrap action. Specify a location in an
-        /// S3 bucket or your local file system.
+        /// Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on
+        /// a local file system.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 10280
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Path")]
         public Union<string, IntrinsicFunction> Path { get; set; }

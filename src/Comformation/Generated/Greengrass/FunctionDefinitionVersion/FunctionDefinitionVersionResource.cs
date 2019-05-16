@@ -28,7 +28,7 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
             /// Functions
             /// The functions in this version.
             /// Required: Yes
-            /// Type: List of Function property types
+            /// Type: List of Function
             /// Update requires: Replacement
             /// </summary>
 			public List<Function> Functions { get; set; }

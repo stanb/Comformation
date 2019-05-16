@@ -16,8 +16,7 @@ namespace Comformation.DMS.ReplicationTask
             /// <summary>
             /// ReplicationTaskSettings
             /// Settings for the task, such as target metadata settings. For a complete list of task settings, see
-            /// Task Settings for AWS Database Migration Service Tasks in the AWS Database Migration Service User
-            /// Guide.
+            /// Task Settings for AWS Database Migration Service Tasks in the AWS Database Migration User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -26,7 +25,10 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// TableMappings
-            /// The JSON that contains additional parameter values.
+            /// When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+            /// Precede the path with &quot;file://&quot;. When working with the DMS API, provide the JSON as the parameter
+            /// value.
+            /// For example, --table-mappings file://mappingfile. json
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -47,7 +49,7 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// SourceEndpointArn
-            /// The ARN string that uniquely identifies the endpoint.
+            /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -57,16 +59,16 @@ namespace Comformation.DMS.ReplicationTask
             /// <summary>
             /// MigrationType
             /// The migration type.
-            /// Valid Values: full-load, cdc, full-load-and-cdc
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Allowed Values: cdc | full-load | full-load-and-cdc
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> MigrationType { get; set; }
 
             /// <summary>
             /// TargetEndpointArn
-            /// The ARN string that uniquely identifies the endpoint.
+            /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -84,18 +86,18 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the migration task.
+            /// Tags to be added to the replication instance.
             /// Required: No
-            /// Type: List of resource tags in key-value format
+            /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// CdcStartTime
-            /// The start time for the Change Data Capture (CDC) operation.
+            /// Indicates the start time for a change data capture (CDC) operation.
             /// Required: No
-            /// Type: Number, epoch value in milliseconds
+            /// Type: Double
             /// Update requires: No interruption
             /// </summary>
 			public Union<double, IntrinsicFunction> CdcStartTime { get; set; }

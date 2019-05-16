@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Config.ConfigRule
 {
     /// <summary>
-    /// AWS Config ConfigRule Source
-    /// Source is a property of the AWS::Config::ConfigRule resource that specifies the rule owner, the rule
-    /// identifier, and the events that trigger an AWS Config evaluation of your AWS resources.
+    /// AWS::Config::ConfigRule Source
+    /// Provides the AWS Config rule owner (AWS or customer), the rule 			identifier, and the events that trigger the
+    /// evaluation of your AWS 			resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html
     /// </summary>
     public class Source
@@ -16,30 +16,45 @@ namespace Comformation.Config.ConfigRule
 
         /// <summary>
         /// Owner
-        /// Indicates who owns and manages the AWS Config rule. For valid values, see the Source data type in
-        /// the AWS Config API Reference.
+        /// 		
+        /// Indicates whether AWS or the customer owns and manages the AWS 			Config rule.
+        /// 	
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: AWS | CUSTOM_LAMBDA
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Owner")]
         public Union<string, IntrinsicFunction> Owner { get; set; }
 
         /// <summary>
         /// SourceDetails
-        /// Provides the source and type of event that triggers AWS Config to evaluate your AWS resources.
+        /// 		
+        /// Provides the source and type of the event that causes AWS 			Config to evaluate your AWS resources.
+        /// 	
         /// Required: No
-        /// Type: List of AWS Config ConfigRule SourceDetails
+        /// Type: List of SourceDetail
+        /// Maximum: 25
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SourceDetails")]
         public List<SourceDetail> SourceDetails { get; set; }
 
         /// <summary>
         /// SourceIdentifier
-        /// For AWS managed rules, the identifier of the rule. For a list of identifiers, see AWS Managed Rules
-        /// in the AWS Config Developer Guide.
-        /// For customer managed rules, the Amazon Resource Name (ARN) of the rule&#39;s Lambda function.
+        /// 		
+        /// For AWS Config managed rules, a predefined identifier from a 			list. For example,
+        /// IAM_PASSWORD_POLICY is a managed 			rule. To reference a managed rule, see Using AWS Managed Config
+        /// Rules.
+        /// 		
+        /// For custom rules, the identifier is the Amazon Resource Name 			(ARN) of the rule&#39;s AWS Lambda
+        /// function, such as 				arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name.
+        /// 	
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SourceIdentifier")]
         public Union<string, IntrinsicFunction> SourceIdentifier { get; set; }

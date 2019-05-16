@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline Math
-    /// The Math property type specifies an arithmetic expression which is computed using the message&#39;s attributes and
-    /// whose result is added to the message for an AWS IoT Analytics pipeline.
+    /// AWS::IoTAnalytics::Pipeline Math
+    /// An activity that computes an arithmetic expression using the message&#39;s attributes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html
     /// </summary>
     public class Math
@@ -16,9 +15,11 @@ namespace Comformation.IoTAnalytics.Pipeline
 
         /// <summary>
         /// Attribute
-        /// The name of the attribute that will contain the result of the math operation.
+        /// The name of the attribute that contains the result of the math operation.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attribute")]
@@ -29,6 +30,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -45,6 +48,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;math&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

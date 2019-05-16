@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.FSx.FileSystem
 {
     /// <summary>
-    /// Amazon FSx FileSystem LustreConfiguration
-    /// The LustreConfiguration property type defines an Amazon FSx for Lustre file system.
+    /// AWS::FSx::FileSystem LustreConfiguration
+    /// The configuration for the Amazon FSx for Lustre file system.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html
     /// </summary>
     public class LustreConfiguration
@@ -16,12 +16,14 @@ namespace Comformation.FSx.FileSystem
         /// <summary>
         /// ImportPath
         /// The path to the Amazon S3 bucket (including the optional prefix) that you&#39;re using as the data
-        /// repository for your Amazon FSx for Lustre file system. The root of your Amazon FSx for Lustre file
-        /// system is mapped to the root of the Amazon S3 bucket that you choose. An example is
+        /// repository for your Amazon FSx for Lustre file system. The root of your FSx for Lustre file system
+        /// will be mapped to the root of the Amazon S3 bucket you select. An example is
         /// s3://import-bucket/optional-prefix. If you specify a prefix after the Amazon S3 bucket name, only
         /// object keys with that prefix are loaded into the file system.
         /// Required: No
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 900
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ImportPath")]
@@ -47,6 +49,8 @@ namespace Comformation.FSx.FileSystem
         /// objects have a maximum size of 5 TB.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 512000
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ImportedFileChunkSize")]
@@ -67,6 +71,8 @@ namespace Comformation.FSx.FileSystem
         /// Amazon FSx exports the contents of your file system to that export prefix in the Amazon S3 bucket.
         /// Required: No
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 900
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ExportPath")]

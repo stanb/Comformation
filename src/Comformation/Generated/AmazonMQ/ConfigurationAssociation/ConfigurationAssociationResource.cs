@@ -6,8 +6,8 @@ namespace Comformation.AmazonMQ.ConfigurationAssociation
 {
     /// <summary>
     /// AWS::AmazonMQ::ConfigurationAssociation
-    /// Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a Configuration with
-    /// a Broker, or return information about the specified configurationassociation. Only use one per broker, and
+    /// Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a configuration with
+    /// a broker, or return information about the specified ConfigurationAssociation. Only use one per broker, and
     /// don&#39;t use a configuration on the broker resource if you have associated a configuration with that broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html
     /// </summary>

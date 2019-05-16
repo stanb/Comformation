@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.Deployment
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Deployment
-    /// The AWS::ApiGatewayV2::Deployment resource represents a deployment for an API. For more information, see
-    /// CreateDeployment in the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::Deployment resource creates a deployment for an API. For more information, see Deploy a
+    /// WebSocket API in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-deployment.html
     /// </summary>
     public class DeploymentResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.ApiGatewayV2.Deployment
         {
             /// <summary>
             /// Description
-            /// Describes the stage that API Gateway creates with this deployment.
+            /// The description for the deployment resource.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -25,8 +25,7 @@ namespace Comformation.ApiGatewayV2.Deployment
 
             /// <summary>
             /// StageName
-            /// A name for the stage that API Gateway creates with this deployment. Use only alphanumeric
-            /// characters.
+            /// The name of the Stage resource for the Deployment resource to create.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -35,7 +34,7 @@ namespace Comformation.ApiGatewayV2.Deployment
 
             /// <summary>
             /// ApiId
-            /// The ID of the Api resource to deploy.
+            /// The API identifier.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

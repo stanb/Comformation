@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule CloudwatchAlarmAction
-    /// CloudwatchAlarm is a property of the Actions property that describes an action that updates a CloudWatch
-    /// alarm.
+    /// AWS::IoT::TopicRule CloudwatchAlarmAction
+    /// Describes an action that updates a CloudWatch alarm.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html
     /// </summary>
     public class CloudwatchAlarmAction
@@ -19,6 +18,7 @@ namespace Comformation.IoT.TopicRule
         /// The CloudWatch alarm name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AlarmName")]
         public Union<string, IntrinsicFunction> AlarmName { get; set; }
@@ -28,24 +28,27 @@ namespace Comformation.IoT.TopicRule
         /// The IAM role that allows access to the CloudWatch alarm.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         /// <summary>
         /// StateReason
-        /// The reason for the change of the alarm state.
+        /// The reason for the alarm change.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StateReason")]
         public Union<string, IntrinsicFunction> StateReason { get; set; }
 
         /// <summary>
         /// StateValue
-        /// The value of the alarm state.
+        /// The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StateValue")]
         public Union<string, IntrinsicFunction> StateValue { get; set; }

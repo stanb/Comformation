@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
     /// AWS::ApiGateway::Deployment
-    /// The AWS::ApiGateway::Deployment resource deploys an Amazon API Gateway (API Gateway) RestApi resource to a
-    /// stage so that clients can call the API over the Internet. The stage acts as an environment.
+    /// The AWS::ApiGateway::Deployment resource deploys an API Gateway RestApi resource to a stage so that clients
+    /// can call the API over the internet. The stage acts as an environment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html
     /// </summary>
     public class DeploymentResource : ResourceBase
@@ -45,7 +45,7 @@ namespace Comformation.ApiGateway.Deployment
             /// StageDescription
             /// Configures the stage that API Gateway creates with this deployment.
             /// Required: No
-            /// Type: Amazon API Gateway Deployment StageDescription
+            /// Type: StageDescription
             /// Update requires: No interruption
             /// </summary>
 			public StageDescription StageDescription { get; set; }

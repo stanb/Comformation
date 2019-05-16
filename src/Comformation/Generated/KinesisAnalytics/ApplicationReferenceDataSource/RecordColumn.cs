@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn
-    /// The RecordColumn property type specifies the mapping of each data element in the streaming source to the
-    /// corresponding column in the in-application stream.
+    /// AWS::KinesisAnalytics::ApplicationReferenceDataSource RecordColumn
+    /// Describes the mapping of each data element in the streaming source to the corresponding column in the
+    /// in-application stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-recordcolumn.html
     /// </summary>
     public class RecordColumn
@@ -16,9 +16,10 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// Mapping
-        /// The reference to the data element in the streaming input of the reference data source.
+        /// Reference to the data element in the streaming input or the reference data source. This element is
+        /// required if the RecordFormatType is JSON.
         /// Required: No
-        /// Type: String;
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Mapping")]
@@ -26,9 +27,10 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// SqlType
-        /// The SQL data type of the column created in the in-application input stream or reference table.
+        /// Type of column created in the in-application input stream or reference table.
         /// Required: Yes
-        /// Type: String;
+        /// Type: String
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SqlType")]
@@ -36,9 +38,9 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// Name
-        /// The name of the column created in the in-application input stream or reference table.
+        /// Name of the column created in the in-application input stream or reference table.
         /// Required: Yes
-        /// Type: String;
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

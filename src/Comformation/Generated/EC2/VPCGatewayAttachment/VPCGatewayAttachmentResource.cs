@@ -6,7 +6,7 @@ namespace Comformation.EC2.VPCGatewayAttachment
 {
     /// <summary>
     /// AWS::EC2::VPCGatewayAttachment
-    /// Attaches a gateway to a VPC.
+    /// Attaches an internet gateway to a VPC, enabling connectivity between the internet and 			the VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
     /// </summary>
     public class VPCGatewayAttachmentResource : ResourceBase
@@ -15,8 +15,10 @@ namespace Comformation.EC2.VPCGatewayAttachment
         {
             /// <summary>
             /// InternetGatewayId
-            /// The ID of the Internet gateway.
-            /// Required: Conditional You must specify either InternetGatewayId or VpnGatewayId, but not both.
+            /// 		
+            /// The ID of the internet gateway.
+            /// You must specify either InternetGatewayId or VpnGatewayId, but not both.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -24,7 +26,8 @@ namespace Comformation.EC2.VPCGatewayAttachment
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC to associate with this gateway.
+            /// 		
+            /// The ID of the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -33,8 +36,9 @@ namespace Comformation.EC2.VPCGatewayAttachment
 
             /// <summary>
             /// VpnGatewayId
-            /// The ID of the virtual private network (VPN) gateway to attach to the VPC.
-            /// Required: Conditional You must specify either InternetGatewayId or VpnGatewayId, but not both.
+            /// The ID of the virtual private gateway.
+            /// You must specify either InternetGatewayId or VpnGatewayId, but not both.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

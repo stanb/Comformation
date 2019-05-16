@@ -15,60 +15,90 @@ namespace Comformation.ElastiCache.CacheCluster
         {
             /// <summary>
             /// AZMode
-            /// For Memcached cache clusters, indicates whether the nodes are created in a single Availability Zone
-            /// or across multiple Availability Zones in the cluster&#39;s region. For valid values, see
-            /// CreateCacheCluster in the Amazon ElastiCache API Reference.
-            /// Required: Conditional. If you specify multiple Availability Zones in the PreferredAvailabilityZones
-            /// property, you must specify cross Availability Zones for this property.
+            /// Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or
+            /// created across multiple Availability Zones in the cluster&#39;s region.
+            /// This parameter is only supported for Memcached clusters.
+            /// If the AZMode and PreferredAvailabilityZones are not specified, ElastiCache assumes single-az mode.
+            /// Required: No
             /// Type: String
-            /// Update requires: No interruption
+            /// Allowed Values: cross-az | single-az
             /// </summary>
 			public Union<string, IntrinsicFunction> AZMode { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates that minor engine upgrades will be applied automatically to the cache cluster during the
-            /// maintenance window.
+            /// This parameter is currently disabled.
             /// Required: No
             /// Type: Boolean
-            /// Default: true
             /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             /// CacheNodeType
-            /// The compute and memory capacity of nodes in a cache cluster.
+            /// The compute and memory capacity of the nodes in the node group (shard).
+            /// The following node types are supported by ElastiCache. 			Generally speaking, the current generation
+            /// types provide more memory and computational power 			at lower cost when compared to their equivalent
+            /// previous generation counterparts.
+            /// 		
+            /// 			 				 			 			 			 General purpose: 				 					 					 					 				 Current generation: 					 T2 node
+            /// types: 					 cache. t2. micro, 						cache. t2. small, 						cache. t2. medium 						 M3 node types:
+            /// 						 cache. m3. medium, 						cache. m3. large, 						cache. m3. xlarge, 						cache. m3. 2xlarge
+            /// 						 M4 node types: 						 cache. m4. large, 						cache. m4. xlarge, 						cache. m4. 2xlarge,
+            /// 						cache. m4. 4xlarge, 						cache. m4. 10xlarge Previous generation: (not recommended) 						 T1
+            /// node types: 					 cache. t1. micro 						 M1 node types: 						 cache. m1. small, 						 cache. m1.
+            /// medium, 						 cache. m1. large, 						 cache. m1. xlarge Compute optimized: 				 			 			 Previous
+            /// generation: (not recommended) 			 C1 node types: 			 cache. c1. xlarge Memory optimized: 				 					
+            /// 						 					 					 				 Current generation: 						 R3 node types: 					 cache. r3. large,
+            /// 						cache. r3. xlarge, 						cache. r3. 2xlarge, 						cache. r3. 4xlarge, 						cache. r3.
+            /// 8xlarge 						 					 R4 node types; 						 cache. r4. large, 					 cache. r4. xlarge, 					 cache.
+            /// r4. 2xlarge, 					 cache. r4. 4xlarge, 					 cache. r4. 8xlarge, 					 cache. r4. 16xlarge Previous
+            /// generation: (not recommended) M2 node types: 					 cache. m2. xlarge, 						cache. m2. 2xlarge,
+            /// 						cache. m2. 4xlarge
+            /// Notes:
+            /// All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC). Redis (cluster mode
+            /// disabled): Redis backup/restore is not supported on T1 and T2 instances. Redis (cluster mode
+            /// enabled): Backup/restore is not supported on T1 instances. Redis Append-only files (AOF)
+            /// functionality is not supported for T1 or T2 instances.
+            /// For a complete listing of node types and specifications, see:
+            /// Amazon ElastiCache Product Features and Details Cache Node Type-Specific Parameters for Memcached
+            /// Cache Node Type-Specific Parameters for Redis
             /// Required: Yes
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
 
             /// <summary>
             /// CacheParameterGroupName
-            /// The name of the cache parameter group that is associated with this cache cluster.
+            /// The name of the parameter group to associate with this cluster. If this argument is omitted, the
+            /// default parameter group for the specified engine is used. You cannot use any parameter group which
+            /// has cluster-enabled=&#39;yes&#39; when creating a cluster.
             /// Required: No
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
 
             /// <summary>
             /// CacheSecurityGroupNames
-            /// A list of cache security group names that are associated with this cache cluster. If your cache
-            /// cluster is in a VPC, specify the VpcSecurityGroupIds property instead.
-            /// Required: Conditional: If your cache cluster isn&#39;t in a VPC, you must specify this property.
-            /// Type: List of String values
+            /// A list of security group names to associate with this cluster.
+            /// Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud
+            /// (Amazon VPC).
+            /// Required: No
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
 
             /// <summary>
             /// CacheSubnetGroupName
-            /// The cache subnet group that you associate with a cache cluster.
-            /// Required: Conditional. If you specified the VpcSecurityGroupIds property, you must specify this
-            /// property.
+            /// The name of the subnet group to be used for the cluster.
+            /// Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon
+            /// VPC).
+            /// Important If you&#39;re going to launch your cluster in an Amazon VPC, you need to create a subnet group
+            /// before you start creating a cluster. For more information, see Subnets and Subnet Groups.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -76,11 +106,8 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// ClusterName
-            /// A name for the cache cluster. If you don&#39;t specify a name, AWS CloudFormation generates a unique
+            /// A name for the cache cluster. If you don&#39;t specify a name, AWSCloudFormation generates a unique
             /// physical ID and uses that ID for the cache cluster. For more information, see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
             /// The name must contain 1 to 20 alphanumeric characters or hyphens. The name must start with a letter
             /// and cannot end with a hyphen or contain two consecutive hyphens.
             /// Required: No
@@ -91,7 +118,8 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// Engine
-            /// The name of the cache engine to be used for this cache cluster, such as memcached or redis.
+            /// The name of the cache engine to be used for this cluster.
+            /// Valid values for this parameter are: memcached | redis
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -100,17 +128,23 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// EngineVersion
-            /// The version of the cache engine to be used for this cluster.
+            /// The version number of the cache engine to be used for this cluster. To view the supported cache
+            /// engine versions, use the DescribeCacheEngineVersions operation.
+            /// Important: You can upgrade to a newer engine version (see Selecting a Cache Engine and Version), but
+            /// you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you
+            /// must delete the existing cluster or replication group and create it anew with the earlier engine
+            /// version.
             /// Required: No
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// NotificationTopicArn
             /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
-            /// notifications will be sent.
+            /// notifications are sent.
+            /// Note The Amazon SNS topic owner must be the same as the cluster owner.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -120,17 +154,16 @@ namespace Comformation.ElastiCache.CacheCluster
             /// <summary>
             /// NumCacheNodes
             /// The number of cache nodes that the cache cluster should have.
+            /// Note However, if the PreferredAvailabilityZone and PreferredAvailabilityZones properties were not
+            /// previously specified and you don&#39;t specify any new values, an update requires replacement.
             /// Required: Yes
             /// Type: Integer
-            /// Update requires: No interruption. However, if the PreferredAvailabilityZone and
-            /// PreferredAvailabilityZones properties were not previously specified and you don&#39;t specify any new
-            /// values, an update requires replacement.
             /// </summary>
 			public Union<int, IntrinsicFunction> NumCacheNodes { get; set; }
 
             /// <summary>
             /// Port
-            /// The port number on which each of the cache nodes will accept connections.
+            /// The port number on which each of the cache nodes accepts connections.
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
@@ -139,36 +172,42 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// PreferredAvailabilityZone
-            /// The Amazon EC2 Availability Zone in which the cache cluster is created.
+            /// The EC2 Availability Zone in which the cluster is created.
+            /// All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you
+            /// want to create your nodes across multiple Availability Zones, use PreferredAvailabilityZones.
+            /// Default: System chosen Availability Zone.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PreferredAvailabilityZone { get; set; }
 
             /// <summary>
             /// PreferredAvailabilityZones
-            /// For Memcached cache clusters, the list of Availability Zones in which cache nodes are created. The
-            /// number of Availability Zones listed must equal the number of cache nodes. For example, if you want
-            /// to create three nodes in two different Availability Zones, you can specify [&quot;us-east-1a&quot;,
-            /// &quot;us-east-1a&quot;, &quot;us-east-1b&quot;], which would create two nodes in us-east-1a and one node in us-east-1b.
-            /// If you specify a subnet group and you&#39;re creating your cache cluster in a VPC, you must specify
-            /// Availability Zones that are associated with the subnets in the subnet group that you&#39;ve chosen.
-            /// If you want all the nodes in the same Availability Zone, use the PreferredAvailabilityZone property
-            /// or repeat the Availability Zone multiple times in the list.
+            /// A list of the Availability Zones in which cache nodes are created. The order of the zones in the
+            /// list is not important.
+            /// This option is only supported on Memcached.
+            /// Note If you are creating your cluster in an Amazon VPC (recommended) you can only locate nodes in
+            /// Availability Zones that are associated with the subnets in the selected subnet group. The number of
+            /// Availability Zones listed must equal the value of NumCacheNodes.
+            /// If you want all the nodes in the same Availability Zone, use PreferredAvailabilityZone instead, or
+            /// repeat the Availability Zone multiple times in the list.
+            /// Default: System chosen Availability Zones.
             /// Required: No
-            /// Type: List of String values
-            /// If you specify an Availability Zone that was previously specified in the template, such as in the
-            /// PreferredAvailabilityZone property, the update requires some interruptions. Also, if the
-            /// PreferredAvailabilityZones property was already specified and you&#39;re updating its values (regardless
-            /// of whether you specify the same Availability Zones), the update requires some interruptions.
-            /// All other updates require replacement.
+            /// Type: List of String
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> PreferredAvailabilityZones { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
-            /// The weekly time range (in UTC) during which system maintenance can occur.
+            /// Specifies the weekly time range during which maintenance on the cluster is performed. It is
+            /// specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+            /// window is a 60 minute period. Valid values for ddd are:
+            /// Specifies the weekly time range during which maintenance on the cluster is performed. It is
+            /// specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+            /// window is a 60 minute period.
+            /// Valid values for ddd are:
+            /// sun mon tue wed thu fri sat
+            /// Example: sun:23:00-mon:01:30
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -177,18 +216,22 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// SnapshotArns
-            /// The ARN of the snapshot file that you want to use to seed a new Redis cache cluster. If you manage a
-            /// Redis instance outside of Amazon ElastiCache, you can create a new cache cluster in ElastiCache by
-            /// using a snapshot file that is stored in an Amazon S3 bucket.
+            /// A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a
+            /// Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group
+            /// (shard). The Amazon S3 object name in the ARN cannot contain any commas.
+            /// Note This parameter is only valid if the Engine parameter is redis.
+            /// Example of an Amazon S3 ARN: arn:aws:s3:::my_bucket/snapshot1. rdb
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
 
             /// <summary>
             /// SnapshotName
-            /// The name of a snapshot from which to restore data into a new Redis cache cluster.
+            /// The name of a Redis snapshot from which to restore data into the new node group (shard). The
+            /// snapshot status changes to restoring while the new node group (shard) is being created.
+            /// Note This parameter is only valid if the Engine parameter is redis.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -197,9 +240,11 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// SnapshotRetentionLimit
-            /// For Redis cache clusters, the number of days for which ElastiCache retains automatic snapshots
-            /// before deleting them. For example, if you set the value to 5, a snapshot that was taken today will
-            /// be retained for 5 days before being deleted.
+            /// The number of days for which ElastiCache retains automatic snapshots before deleting them. For
+            /// example, if you set SnapshotRetentionLimit to 5, a snapshot taken today is retained for 5 days
+            /// before being deleted.
+            /// Note This parameter is only valid if the Engine parameter is redis.
+            /// Default: 0 (i. e. , automatic backups are disabled for this cache cluster).
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -208,8 +253,11 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// SnapshotWindow
-            /// For Redis cache clusters, the daily time range (in UTC) during which ElastiCache will begin taking a
-            /// daily snapshot of your node group. For example, you can specify 05:00-09:00.
+            /// The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node
+            /// group (shard).
+            /// Example: 05:00-09:00
+            /// If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+            /// Note This parameter is only valid if the Engine parameter is redis.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -218,24 +266,20 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this cache cluster.
+            /// A list of cost allocation tags to be added to this resource.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
-            /// A list of VPC security group IDs. If your cache cluster isn&#39;t in a VPC, specify the
-            /// CacheSecurityGroupNames property instead.
-            /// Note To specify an ElastiCache security group that is in a VPC and that was created using AWS
-            /// CloudFormation, you must use the AWS::EC2::SecurityGroup resource instead of the
-            /// AWS::ElastiCache::SecurityGroup resource. In addition, if you use the default VPC for your AWS
-            /// account, you must use the Fn::GetAtt function and the GroupId attribute to retrieve security group
-            /// IDs (instead of the Ref function). To see a sample template, see the Template Snippet section.
-            /// Required: Conditional: If your cache cluster is in a VPC, you must specify this property.
-            /// Type: List of String values
+            /// One or more VPC security groups associated with the cluster.
+            /// Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon
+            /// VPC).
+            /// Required: No
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }

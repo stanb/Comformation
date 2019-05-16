@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Redshift.ClusterParameterGroup
 {
     /// <summary>
-    /// Amazon Redshift Parameter Type
-    /// Describes parameters for the AWS::Redshift::ClusterParameterGroup resource type.
+    /// AWS::Redshift::ClusterParameterGroup Parameter
+    /// Describes a parameter in a cluster parameter group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-property-redshift-clusterparametergroup-parameter.html
     /// </summary>
     public class Parameter
@@ -18,6 +18,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
         /// The name of the parameter.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ParameterName")]
         public Union<string, IntrinsicFunction> ParameterName { get; set; }
@@ -27,6 +28,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
         /// The value of the parameter.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ParameterValue")]
         public Union<string, IntrinsicFunction> ParameterValue { get; set; }

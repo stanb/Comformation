@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
-    /// AWS AppMesh VirtualNode PortMapping
+    /// AWS::AppMesh::VirtualNode PortMapping
     /// An object representing a virtual node or virtual router listener port mapping.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html
     /// </summary>

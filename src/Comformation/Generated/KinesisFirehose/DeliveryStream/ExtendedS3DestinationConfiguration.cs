@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Data Firehose DeliveryStream ExtendedS3DestinationConfiguration
+    /// AWS::KinesisFirehose::DeliveryStream ExtendedS3DestinationConfiguration
     /// The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis
-    /// Data Firehose delivery stream. ExtendedS3DestinationConfiguration is a property of the
-    /// AWS::KinesisFirehose::DeliveryStream resource.
+    /// Data Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html
     /// </summary>
     public class ExtendedS3DestinationConfiguration
@@ -21,6 +20,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// ExtendedS3DestinationConfiguration in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BucketARN")]
@@ -38,7 +40,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// CloudWatchLoggingOptions
-        /// The CloudWatch logging options for the Kinesis Data Firehose delivery stream.
+        /// The Amazon CloudWatch logging options for your delivery stream.
         /// Required: No
         /// Type: CloudWatchLoggingOptions
         /// Update requires: No interruption
@@ -48,11 +50,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// CompressionFormat
-        /// The compression format for the Kinesis Data Firehose delivery stream. The default value is
-        /// UNCOMPRESSED. For valid values, see ExtendedS3DestinationConfiguration in the Amazon Kinesis Data
-        /// Firehose API Reference.
+        /// The compression format. If no value is specified, the default is UNCOMPRESSED.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: GZIP | Snappy | UNCOMPRESSED | ZIP
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CompressionFormat")]
@@ -93,10 +94,13 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// RoleARN
-        /// The ARN of the AWS credentials. For constraints, see ExtendedS3DestinationConfiguration in the
-        /// Amazon Kinesis Data Firehose API Reference.
+        /// The Amazon Resource Name (ARN) of the AWS credentials. For constraints, see
+        /// ExtendedS3DestinationConfiguration in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 512
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]
@@ -114,10 +118,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3BackupMode
-        /// The Amazon S3 backup mode. For valid values, see ExtendedS3DestinationConfiguration in the Amazon
-        /// Kinesis Data Firehose API Reference.
+        /// The Amazon S3 backup mode.
         /// Required: No
         /// Type: String
+        /// Allowed Values: Disabled | Enabled
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupMode")]

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Config.ConfigurationAggregator
 {
     /// <summary>
-    /// AWS Config ConfigurationAggregator AccountAggregationSource
-    /// The AccountAggregationSource property type specifies the accounts and regions of AWS Config data to aggregate
-    /// into an AWS Config configuration aggregator.
+    /// AWS::Config::ConfigurationAggregator AccountAggregationSource
+    /// A collection of accounts and regions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html
     /// </summary>
     public class AccountAggregationSource
@@ -16,7 +15,9 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// AllAwsRegions
-        /// If true, aggregate existing AWS Config regions and future regions.
+        /// 		
+        /// If true, aggregate existing AWS Config regions and future 			regions.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -26,9 +27,11 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// AwsRegions
+        /// 		
         /// The source regions being aggregated.
+        /// 	
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsRegions")]
@@ -36,9 +39,11 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// AccountIds
-        /// The 12 digit account ID of the account being aggregated.
+        /// 		
+        /// The 12-digit account ID of the account being aggregated. 		
+        /// 	
         /// Required: Yes
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AccountIds")]

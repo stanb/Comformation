@@ -17,35 +17,34 @@ namespace Comformation.AmazonMQ.Broker
             /// SecurityGroups
             /// The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// EngineVersion
-            /// The version of the broker engine.
-            /// Note For a list of supported engine versions, see: Broker Engine.
+            /// The version of the broker engine. For a list of supported engine versions, see Engine in the Amazon
+            /// MQ Developer Guide.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// Configuration
-            /// The broker configuration. If no configuration exists for a broker, Amazon MQ creates a default
-            /// configuration.
-            /// Note You can use AWS CloudFormation to modify—but not delete—an Amazon MQ configuration.
+            /// A list of information about the configuration.
             /// Required: No
             /// Type: ConfigurationId
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public ConfigurationId Configuration { get; set; }
 
             /// <summary>
             /// MaintenanceWindowStartTime
-            /// The parameters that determine the WeeklyStartTime.
+            /// The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or
+            /// patches to the broker. .
             /// Required: No
             /// Type: MaintenanceWindow
             /// Update requires: Replacement
@@ -54,8 +53,7 @@ namespace Comformation.AmazonMQ.Broker
 
             /// <summary>
             /// HostInstanceType
-            /// The broker&#39;s instance type. For more information, see Instance Types in the Amazon MQ Developer
-            /// Guide.
+            /// The broker&#39;s instance type.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -75,19 +73,21 @@ namespace Comformation.AmazonMQ.Broker
 
             /// <summary>
             /// Users
-            /// The list of all ActiveMQ usernames for the specified broker.
+            /// The list of ActiveMQ users (persons or applications) who can access queues and topics. This value
+            /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This
+            /// value must be 2-100 characters long.
             /// Required: Yes
-            /// Type: List of User property types
-            /// Update requires: Some interruptions
+            /// Type: List of User
+            /// Update requires: No interruption
             /// </summary>
 			public List<User> Users { get; set; }
 
             /// <summary>
             /// Logs
-            /// The Amazon CloudWatch Logs configuration for the broker.
+            /// Enables Amazon CloudWatch logging for brokers.
             /// Required: No
-            /// Type: LogsConfiguration
-            /// Update requires: Some interruptions
+            /// Type: LogList
+            /// Update requires: No interruption
             /// </summary>
 			public LogList Logs { get; set; }
 
@@ -97,7 +97,7 @@ namespace Comformation.AmazonMQ.Broker
             /// different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the
             /// default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
@@ -105,7 +105,7 @@ namespace Comformation.AmazonMQ.Broker
             /// <summary>
             /// BrokerName
             /// The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must
-            /// contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets,
+            /// contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
             /// wildcard characters, or special characters.
             /// Required: Yes
             /// Type: String
@@ -115,8 +115,7 @@ namespace Comformation.AmazonMQ.Broker
 
             /// <summary>
             /// DeploymentMode
-            /// The deployment mode of the broker. SINGLE_INSTANCE creates a single-instance broker in a single
-            /// Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby broker for high availability.
+            /// The deployment mode of the broker.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -125,8 +124,7 @@ namespace Comformation.AmazonMQ.Broker
 
             /// <summary>
             /// EngineType
-            /// The type of broker engine.
-            /// Note Currently, Amazon MQ supports only ACTIVEMQ.
+            /// The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -147,7 +145,7 @@ namespace Comformation.AmazonMQ.Broker
             /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
             /// and Cost Management User Guide.
             /// Required: No
-            /// Type: List of Resource Tag
+            /// Type: List of TagsEntry
             /// Update requires: No interruption
             /// </summary>
 			public List<TagsEntry> Tags { get; set; }

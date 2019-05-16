@@ -16,10 +16,10 @@ namespace Comformation.EC2.VolumeAttachment
         {
             /// <summary>
             /// Device
-            /// How the device is exposed to the instance (e. g. , /dev/sdh, or xvdh).
+            /// The device name (for example, /dev/sdh or xvdh).
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Device { get; set; }
 
@@ -29,7 +29,7 @@ namespace Comformation.EC2.VolumeAttachment
             /// AWS::EC2::Instance resource, or it can be the physical ID of an existing EC2 instance.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -40,7 +40,7 @@ namespace Comformation.EC2.VolumeAttachment
             /// existing Amazon EBS volume.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeId { get; set; }
 

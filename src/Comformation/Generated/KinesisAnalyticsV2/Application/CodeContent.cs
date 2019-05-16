@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application CodeContent
-    /// The CodeContent property type specifies either the application code, or the location of the application code,
-    /// for a Java-based Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application CodeContent
+    /// Specifies either the application code, or the location of the application code, for a Java-based Amazon
+    /// Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-codecontent.html
     /// </summary>
     public class CodeContent
@@ -39,6 +39,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// The text-format code for a Java-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 102400
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TextContent")]

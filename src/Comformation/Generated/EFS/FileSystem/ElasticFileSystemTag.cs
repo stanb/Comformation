@@ -6,10 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EFS.FileSystem
 {
     /// <summary>
-    /// Amazon Elastic File System FileSystem FileSystemTags
-    /// FileSystemTags is a property of the AWS::EFS::FileSystem resource that associates key-value pairs with a file
-    /// system. You can use any of the following Unicode characters for keys and values: letters, digits, whitespace,
-    /// _, . , /, =, +, and -.
+    /// AWS::EFS::FileSystem ElasticFileSystemTag
+    /// A tag is a key-value pair attached to a file system. Allowed characters in the Key and Value properties are
+    /// letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = . _ :
+    /// /
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html
     /// </summary>
     public class ElasticFileSystemTag
@@ -17,20 +17,23 @@ namespace Comformation.EFS.FileSystem
 
         /// <summary>
         /// Key
-        /// The key name of the tag. You can specify a value that is from 1 to 128 Unicode characters in length,
-        /// but you cannot use the prefix aws:.
-        /// Required: No
+        /// The tag key (String). The key can&#39;t start with aws:.
+        /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
 
         /// <summary>
         /// Value
-        /// The value of the tag key. You can specify a value that is from 0 to 128 Unicode characters in
-        /// length.
-        /// Required: No
+        /// The value of the tag key.
+        /// Required: Yes
         /// Type: String
+        /// Maximum: 256
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }

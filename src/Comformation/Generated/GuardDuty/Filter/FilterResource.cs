@@ -6,8 +6,7 @@ namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
     /// AWS::GuardDuty::Filter
-    /// You can use the AWS::GuardDuty::Filter resource to create a GuardDuty filter using the specified finding
-    /// criteria.
+    /// The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
     /// </summary>
     public class FilterResource : ResourceBase
@@ -16,8 +15,7 @@ namespace Comformation.GuardDuty.Filter
         {
             /// <summary>
             /// Action
-            /// Specifies the action that is to be applied to the findings that match the filter. Valid values are:
-            /// NOOP | ARCHIVE
+            /// Specifies the action that is to be applied to the findings that match the filter.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -35,7 +33,7 @@ namespace Comformation.GuardDuty.Filter
 
             /// <summary>
             /// DetectorId
-            /// The ID of the detector that specifies the GuardDuty service whose findings you want to filter.
+            /// The ID of the detector to associate the Filter with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

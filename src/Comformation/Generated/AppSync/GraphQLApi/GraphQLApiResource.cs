@@ -6,8 +6,8 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi
-    /// The AWS::AppSync::GraphQLApi resource will create a new AWS AppSync GraphQL API. This is the top level
-    /// construct for your application. For more information see Quickstart Guide.
+    /// The AWS::AppSync::GraphQLApi resource creates a new AppSync GraphQL API. This is the top-level construct for
+    /// your application. For more information, see Quick Start in the AWS AppSync Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
     /// </summary>
     public class GraphQLApiResource : ResourceBase
@@ -16,17 +16,16 @@ namespace Comformation.AppSync.GraphQLApi
         {
             /// <summary>
             /// OpenIDConnectConfig
-            /// Optional authorization configuration for using an OpenId Connect compliant service with your GraphQL
-            /// endpoint.
+            /// The OpenID Connect configuration.
             /// Required: No
-            /// Type: OpenId Connect Config
+            /// Type: OpenIDConnectConfig
             /// Update requires: No interruption
             /// </summary>
 			public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
 
             /// <summary>
             /// UserPoolConfig
-            /// Optional authorization configuration for using Amazon Cognito User Pools with your GraphQL endpoint.
+            /// Optional authorization configuration for using Amazon Cognito user pools with your GraphQL endpoint.
             /// Required: No
             /// Type: UserPoolConfig
             /// Update requires: No interruption
@@ -35,7 +34,7 @@ namespace Comformation.AppSync.GraphQLApi
 
             /// <summary>
             /// Name
-            /// Friendly name for your GraphQL API in AWS AppSync.
+            /// The API name.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -54,7 +53,7 @@ namespace Comformation.AppSync.GraphQLApi
 
             /// <summary>
             /// LogConfig
-            /// Logging configuration when writing GraphQL operations and tracing to Amazon Cloudwatch.
+            /// The Amazon CloudWatch Logs configuration.
             /// Required: No
             /// Type: LogConfig
             /// Update requires: No interruption

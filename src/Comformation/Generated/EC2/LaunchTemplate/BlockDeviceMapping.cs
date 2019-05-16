@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate BlockDeviceMapping
-    /// The BlockDeviceMapping property type describes a block device mapping for an Amazon EC2 launch template.
+    /// AWS::EC2::LaunchTemplate BlockDeviceMapping
+    /// Information about a block device mapping for an Amazon EC2 launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html
     /// </summary>
     public class BlockDeviceMapping

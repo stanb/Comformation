@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Data Firehose DeliveryStream SplunkDestinationConfiguration
+    /// AWS::KinesisFirehose::DeliveryStream SplunkDestinationConfiguration
     /// The SplunkDestinationConfiguration property type specifies the configuration of a destination in Splunk for a
     /// Kinesis Data Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html
@@ -16,7 +16,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// CloudWatchLoggingOptions
-        /// The CloudWatch logging options for your delivery stream.
+        /// The Amazon CloudWatch logging options for your delivery stream.
         /// Required: No
         /// Type: CloudWatchLoggingOptions
         /// Update requires: No interruption
@@ -29,9 +29,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after
         /// it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the
         /// data again or considers it an error, based on your retry settings.
-        /// Valid Range: Minimum value of 180. Maximum value of 600.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 180
+        /// Maximum: 600
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HECAcknowledgmentTimeoutInSeconds")]
@@ -52,6 +53,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// This type can be either Raw or Event.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: Event | Raw
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HECEndpointType")]
@@ -59,7 +61,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// HECToken
-        /// A GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
+        /// This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -90,13 +92,13 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3BackupMode
-        /// Defines how documents should be delivered to Amazon S3. When set to FailedEventsOnly, Kinesis Data
-        /// Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set
-        /// to AllEvents, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-        /// failed documents to Amazon S3. Default value is FailedEventsOnly.
-        /// Valid values include FailedEventsOnly and AllEvents.
+        /// Defines how documents should be delivered to Amazon S3. When set to FailedDocumentsOnly, Kinesis
+        /// Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
+        /// When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
+        /// writes failed documents to Amazon S3. Default value is FailedDocumentsOnly.
         /// Required: No
         /// Type: String
+        /// Allowed Values: AllEvents | FailedEventsOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupMode")]

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualService
 {
     /// <summary>
-    /// AWS AppMesh VirtualService VirtualRouterServiceProvider
+    /// AWS::AppMesh::VirtualService VirtualRouterServiceProvider
     /// An object representing a virtual node service provider.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualrouterserviceprovider.html
     /// </summary>

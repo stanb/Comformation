@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
-    /// Amazon EC2 EC2Fleet FleetLaunchTemplateConfigRequest
-    /// The FleetLaunchTemplateConfigRequest property type specifies a launch template and overrides for an EC2 Fleet.
+    /// AWS::EC2::EC2Fleet FleetLaunchTemplateConfigRequest
+    /// Specifies a launch template and overrides for an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html
     /// </summary>
     public class FleetLaunchTemplateConfigRequest
@@ -29,6 +29,7 @@ namespace Comformation.EC2.EC2Fleet
         /// Any parameters that you specify override the same parameters in the launch template.
         /// Required: No
         /// Type: List of FleetLaunchTemplateOverridesRequest
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Overrides")]

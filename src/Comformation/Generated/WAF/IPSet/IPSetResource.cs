@@ -6,9 +6,9 @@ namespace Comformation.WAF.IPSet
 {
     /// <summary>
     /// AWS::WAF::IPSet
-    /// The AWS::WAF::IPSet resource creates an AWS WAF IPSet that specifies which web requests to permit or block
-    /// based on the IP addresses from which the requests originate. For more information, see CreateIPSet in the AWS
-    /// WAF API Reference.
+    /// Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
+    /// notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports
+    /// IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html
     /// </summary>
     public class IPSetResource : ResourceBase
@@ -17,21 +17,27 @@ namespace Comformation.WAF.IPSet
         {
             /// <summary>
             /// IPSetDescriptors
-            /// The IP address type and IP address range (in CIDR notation) from which web requests originate. If
-            /// you associate the IPSet with a web ACL that is associated with an Amazon CloudFront (CloudFront)
-            /// distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this
-            /// descriptor is the value of the c-ip field in the CloudFront access logs.
+            /// 		
+            /// The IP address type (IPV4 or IPV6) and the IP address range (in CIDR notation) that web requests
+            /// originate from. 			If the WebACL is associated with a CloudFront distribution and the viewer did not
+            /// use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
+            /// CloudFront access logs.
+            /// 			 	
             /// Required: No
-            /// Type: List of AWS WAF IPSet IPSetDescriptors
+            /// Type: List of IPSetDescriptor
             /// Update requires: No interruption
             /// </summary>
 			public List<IPSetDescriptor> IPSetDescriptors { get; set; }
 
             /// <summary>
             /// Name
-            /// A friendly name or description of the IPSet.
+            /// A friendly name or description of the IPSet. You can&#39;t change the name of an IPSet after you create
+            /// it.
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

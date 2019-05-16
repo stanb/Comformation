@@ -6,9 +6,8 @@ namespace Comformation.ApiGateway.RestApi
 {
     /// <summary>
     /// AWS::ApiGateway::RestApi
-    /// The AWS::ApiGateway::RestApi resource contains a collection of Amazon API Gateway resources and methods that
-    /// can be invoked through HTTPS endpoints. For more information, see restapi:create in the Amazon API Gateway
-    /// REST API Reference.
+    /// The AWS::ApiGateway::RestApi resource creates a REST API. For more information, see restapi:create in the
+    /// Amazon API Gateway REST API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
     /// </summary>
     public class RestApiResource : ResourceBase
@@ -19,7 +18,7 @@ namespace Comformation.ApiGateway.RestApi
             /// ApiKeySourceType
             /// The source of the API key for metering requests according to a usage plan. Valid values are:
             /// HEADER to read the API key from the X-API-Key header of a request. AUTHORIZER to read the API key
-            /// from the UsageIdentifierKey from a custom authorizer.
+            /// from the UsageIdentifierKey from a Lambda authorizer.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -33,17 +32,17 @@ namespace Comformation.ApiGateway.RestApi
             /// information, see Enable Support for Binary Payloads in API Gateway in the API Gateway Developer
             /// Guide. Duplicates are not allowed.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> BinaryMediaTypes { get; set; }
 
             /// <summary>
             /// Body
-            /// An OpenAPI specification that defines a set of RESTful APIs in the JSON format. For YAML templates,
-            /// you can also provide the specification in the YAML format.
+            /// An OpenAPI specification that defines a set of RESTful APIs in JSON format. For YAML templates, you
+            /// can also provide the specification in YAML format.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Body { get; set; }
@@ -53,14 +52,14 @@ namespace Comformation.ApiGateway.RestApi
             /// The Amazon Simple Storage Service (Amazon S3) location that points to an OpenAPI file, which defines
             /// a set of RESTful APIs in JSON or YAML format.
             /// Required: No
-            /// Type: Amazon API Gateway RestApi S3Location
+            /// Type: S3Location
             /// Update requires: No interruption
             /// </summary>
 			public S3Location BodyS3Location { get; set; }
 
             /// <summary>
             /// CloneFrom
-            /// The ID of the API Gateway RestApi resource that you want to clone.
+            /// The ID of the RestApi resource that you want to clone.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -69,7 +68,7 @@ namespace Comformation.ApiGateway.RestApi
 
             /// <summary>
             /// Description
-            /// A description of the purpose of this API Gateway RestApi resource.
+            /// A description of the RestApi resource.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -110,8 +109,8 @@ namespace Comformation.ApiGateway.RestApi
 
             /// <summary>
             /// Name
-            /// A name for the API Gateway RestApi resource.
-            /// Required: Conditional. Required if you don&#39;t specify a OpenAPI definition.
+            /// A name for the RestApi resource.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -120,19 +119,17 @@ namespace Comformation.ApiGateway.RestApi
             /// <summary>
             /// Parameters
             /// Custom header parameters for the request.
-            /// For more information on specifying parameters when importing an API, see import-rest-api operation
-            /// in the AWS CLI Command Reference.
             /// Required: No
-            /// Type: String to String map
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Policy
-            /// A policy document that contains the permissions for this RestApi resource, in JSON format.
+            /// A policy document that contains the permissions for the RestApi resource, in JSON format.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Policy { get; set; }

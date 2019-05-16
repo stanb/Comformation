@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Lambda.LayerVersion
 {
     /// <summary>
-    /// AWS Lambda LayerVersion Content
-    /// The Content property type specifies the ZIP archive for an AWS Lambda layer version.
+    /// AWS::Lambda::LayerVersion Content
+    /// A ZIP archive that contains the contents of an AWS Lambda layer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html
     /// </summary>
     public class Content
@@ -18,6 +18,8 @@ namespace Comformation.Lambda.LayerVersion
         /// For versioned objects, the version of the layer archive object to use.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("S3ObjectVersion")]
@@ -28,6 +30,9 @@ namespace Comformation.Lambda.LayerVersion
         /// The Amazon S3 bucket of the layer archive.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 63
+        /// Pattern: ^[0-9A-Za-z\. \-_]*(?&amp;lt;!\. )$
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("S3Bucket")]
@@ -38,6 +43,8 @@ namespace Comformation.Lambda.LayerVersion
         /// The Amazon S3 key of the layer archive.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("S3Key")]

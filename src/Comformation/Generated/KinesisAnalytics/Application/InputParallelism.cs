@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application InputParallelism
-    /// The InputParallelism property type specifies the number of in-application streams to create for a given
-    /// streaming source in an Amazon Kinesis Data Analytics application.
+    /// AWS::KinesisAnalytics::Application InputParallelism
+    /// Describes the number of in-application streams to create for a given streaming source. For information about
+    /// parallelism, see Configuring Application Input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputparallelism.html
     /// </summary>
     public class InputParallelism
@@ -16,9 +16,11 @@ namespace Comformation.KinesisAnalytics.Application
 
         /// <summary>
         /// Count
-        /// The number of in-application streams to create.
+        /// Number of in-application streams to create. For more information, see Limits.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 64
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Count")]

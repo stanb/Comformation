@@ -7,8 +7,7 @@ namespace Comformation.Elasticsearch.Domain
     /// <summary>
     /// AWS::Elasticsearch::Domain
     /// The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES) domain that
-    /// encapsulates the Amazon ES engine instances. For more information, see CreateElasticsearchDomain in the Amazon
-    /// Elasticsearch Service Developer Guide.
+    /// encapsulates the Amazon ES engine instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html
     /// </summary>
     public class DomainResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.Elasticsearch.Domain
             /// ES domain and their permissions. For more information, see Configuring Access Policies in the Amazon
             /// Elasticsearch Service Developer Guide.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AccessPolicies { get; set; }
@@ -31,18 +30,16 @@ namespace Comformation.Elasticsearch.Domain
             /// Additional options to specify for the Amazon ES domain. For more information, see Configuring
             /// Advanced Options in the Amazon Elasticsearch Service Developer Guide.
             /// Required: No
-            /// Type: A JSON object that consists of a string key-value pair, such as:
-            /// { &quot;rest. action. multi. allow_explicit_index&quot;: &quot;true&quot; }
-            /// Update requires: Replacement
+            /// Type: Map of String
+            /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> AdvancedOptions { get; set; }
 
             /// <summary>
             /// DomainName
             /// A name for the Amazon ES domain. For valid values, see the DomainName data type in the Amazon
-            /// Elasticsearch Service Developer Guide.
-            /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
-            /// the domain name. For more information, see Name Type.
+            /// Elasticsearch Service Developer Guide. If you don&#39;t specify a name, AWS CloudFormation generates a
+            /// unique physical ID and uses that ID for the domain name. For more information, see Name Type.
             /// Important If you specify a name, you cannot perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
@@ -65,9 +62,8 @@ namespace Comformation.Elasticsearch.Domain
 
             /// <summary>
             /// ElasticsearchClusterConfig
-            /// The cluster configuration for the Amazon ES domain. You can specify options such as the instance
-            /// type and the number of instances. For more information, see Configuring Amazon ES Domains in the
-            /// Amazon Elasticsearch Service Developer Guide.
+            /// ElasticsearchClusterConfig is a property of the AWS::Elasticsearch::Domain resource that configures
+            /// the cluster of an Amazon Elasticsearch Service (Amazon ES) domain.
             /// Required: No
             /// Type: ElasticsearchClusterConfig
             /// Update requires: No interruption
@@ -117,7 +113,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Tags
             /// An arbitrary set of tags (key–value pairs) to associate with the Amazon ES domain.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

@@ -6,10 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask Target
-    /// The Target property type specifies targets (either instances or tags). You specify instances by using
-    /// Key=instanceids,Values=instanceid1,instanceid2. You specify tags by using Key=tag name,Values=tag value for a
-    /// Maintenance Window task in AWS Systems Manager.
+    /// AWS::SSM::MaintenanceWindowTask Target
+    /// The Target property type specifies targets (either instances or window target IDs). You specify instances by
+    /// using Key=InstanceIds,Values=&amp;lt;instanceid1&amp;gt;,&amp;lt;instanceid2&amp;gt;. You specify window target IDs using
+    /// Key=WindowTargetIds,Values=&amp;lt;window-target-id-1&amp;gt;,&amp;lt;window-target-id-2&amp;gt; for a Maintenance Window task
+    /// in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html
     /// </summary>
     public class Target
@@ -17,12 +18,13 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// Values
-        /// User-defined criteria that maps to Key. For example, if you specify tag:ServerRole, you can specify
-        /// value:WebServer to execute a command on instances that include Amazon EC2 tags of
-        /// ServerRole,WebServer. For more information about how to send commands that target instances using
-        /// Key,Value parameters, see Sending Commands to a Fleet in the AWS Systems Manager User Guide.
+        /// User-defined criteria that maps to Key. For example, if you specify InstanceIds, you can specify
+        /// i-1234567890abcdef0,i-9876543210abcdef0 to execute a command on two EC2 instances. For more
+        /// information about how to target instances within a maintenance window task, see About
+        /// &#39;register-task-with-maintenance-window&#39; Options and Values in the AWS Systems Manager User Guide.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Values")]
@@ -31,11 +33,14 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// <summary>
         /// Key
         /// User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-        /// tag:Amazon EC2 tag or InstanceIds. For more information about how to send commands that target
-        /// instances by using Key,Value parameters, see Sending Commands to a Fleet in the AWS Systems Manager
-        /// User Guide.
+        /// InstanceIds or WindowTargetIds. For more information about how to target instances within a
+        /// maintenance window task, see About &#39;register-task-with-maintenance-window&#39; Options and Values in the
+        /// AWS Systems Manager User Guide.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: ^[\p{L}\p{Z}\p{N}_. :/=\-@]*$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]

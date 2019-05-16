@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
-    /// Elastic Load Balancing V2 Action
-    /// The Action property type specifies the default actions that the Elastic Load Balancing listener takes when
-    /// handling incoming requests.
+    /// AWS::ElasticLoadBalancingV2::Listener Action
+    /// Specifies an action for a listener rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html
     /// </summary>
     public class Action
@@ -16,7 +15,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 
         /// <summary>
         /// AuthenticateCognitoConfig
-        /// [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when Type
+        /// [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when Type
         /// is authenticate-cognito.
         /// Required: No
         /// Type: AuthenticateCognitoConfig
@@ -27,7 +26,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 
         /// <summary>
         /// AuthenticateOidcConfig
-        /// [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect
+        /// [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect
         /// (OIDC). Specify only when Type is authenticate-oidc.
         /// Required: No
         /// Type: AuthenticateOidcConfig
@@ -52,9 +51,10 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// The order for the action. This value is required for rules with multiple actions. The action with
         /// the lowest value for order is performed first. The final action to be performed must be a forward or
         /// a fixed-response action.
-        /// Valid Range: Minimum value of 1. Maximum value of 50000.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 50000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Order")]
@@ -73,10 +73,10 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 
         /// <summary>
         /// TargetGroupArn
-        /// The Amazon Resource Name (ARN) of the target group to which Elastic Load Balancing routes the
-        /// traffic. Specify only when Type is forward.
+        /// The Amazon Resource Name (ARN) of the target group. Specify only when Type is forward.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetGroupArn")]
         public Union<string, IntrinsicFunction> TargetGroupArn { get; set; }
@@ -85,9 +85,10 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// Type
         /// The type of action. Each rule must include exactly one of the following types of actions: forward,
         /// fixed-response, or redirect.
-        /// Valid values: forward | authenticate-oidc | authenticate-cognito | redirect | fixed-response
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: authenticate-cognito | authenticate-oidc | fixed-response | forward | redirect
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }

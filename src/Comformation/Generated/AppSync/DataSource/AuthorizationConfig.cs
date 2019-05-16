@@ -6,17 +6,17 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync DataSource AuthorizationConfig
+    /// AWS::AppSync::DataSource AuthorizationConfig
     /// The AuthorizationConfig property type specifies the authorization type and configuration for an AWS AppSync
     /// http data source.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig-authorizationconfig.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html
     /// </summary>
     public class AuthorizationConfig
     {
 
         /// <summary>
         /// AwsIamConfig
-        /// The configuration for the Authorization.
+        /// The AWS IAM settings.
         /// Required: No
         /// Type: AwsIamConfig
         /// Update requires: No interruption
@@ -26,7 +26,8 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// AuthorizationType
-        /// The type for the Authorization.
+        /// The authorization type required by the HTTP endpoint.
+        /// AWS_IAM: The authorization type is Sigv4.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

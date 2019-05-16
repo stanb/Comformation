@@ -6,8 +6,8 @@ namespace Comformation.EMR.Step
 {
     /// <summary>
     /// AWS::EMR::Step
-    /// The AWS::EMR::Step resource creates a unit of work (a job flow step) that you submit to an Amazon EMR (Amazon
-    /// EMR) cluster. The job flow step contains instructions for processing data on the cluster.
+    /// Use Step to specify a cluster (job flow) step, which runs only on the master node. Steps are used to submit
+    /// data processing jobs to a cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html
     /// </summary>
     public class StepResource : ResourceBase
@@ -16,41 +16,42 @@ namespace Comformation.EMR.Step
         {
             /// <summary>
             /// ActionOnFailure
-            /// The action to take if the job flow step fails. Currently, AWS CloudFormation supports CONTINUE and
-            /// CANCEL_AND_WAIT.
-            /// 		
-            /// 		 		 		 CANCEL_AND_WAIT: If the step fails, cancel the remaining steps. If the cluster has
-            /// auto-terminate disabled, the cluster will not terminate. 		 CONTINUE: If the step fails, continue to
-            /// the next step. 		
-            /// 		
-            /// For more information, see Managing Cluster Termination in the Amazon EMR Management Guide.
+            /// The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
+            /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We
+            /// recommend using TERMINATE_CLUSTER instead.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: CANCEL_AND_WAIT | CONTINUE | TERMINATE_CLUSTER | TERMINATE_JOB_FLOW
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ActionOnFailure { get; set; }
 
             /// <summary>
             /// HadoopJarStep
-            /// The JAR file that includes the main function that Amazon EMR executes.
+            /// The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main
+            /// function will be executed. The main function submits a job for the cluster to execute as a step on
+            /// the master node, and then waits for the job to finish or fail before executing subsequent steps.
             /// Required: Yes
-            /// Type: Amazon EMR Step HadoopJarStepConfig
+            /// Type: HadoopJarStepConfig
             /// Update requires: Replacement
             /// </summary>
 			public HadoopJarStepConfig HadoopJarStep { get; set; }
 
             /// <summary>
             /// JobFlowId
-            /// The ID of a cluster in which you want to run this job flow step.
+            /// A string that uniquely identifies the cluster (job flow).
             /// Required: Yes
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> JobFlowId { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the job flow step.
+            /// The name of the cluster step.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

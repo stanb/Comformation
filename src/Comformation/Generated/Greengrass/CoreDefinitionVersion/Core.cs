@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.CoreDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass CoreDefinitionVersion Core
+    /// AWS::Greengrass::CoreDefinitionVersion Core
     /// A core is an AWS IoT device that runs the AWS IoT Greengrass core 		software and manages local processes for a
     /// Greengrass group. For more information, see What Is AWS IoT Greengrass? in the AWS IoT Greengrass Developer
     /// Guide.
@@ -28,7 +28,7 @@ namespace Comformation.Greengrass.CoreDefinitionVersion
 
         /// <summary>
         /// ThingArn
-        /// The ARN of the core, which is an AWS IoT device (thing).
+        /// The Amazon Resource Name (ARN) of the core, which is an AWS IoT device (thing).
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

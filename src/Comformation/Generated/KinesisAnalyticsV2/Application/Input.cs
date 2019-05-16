@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application Input
-    /// The Input property type specifies a SQL application&#39;s streaming source, the in-application stream name that is
-    /// created, and the mapping between the two.
+    /// AWS::KinesisAnalyticsV2::Application Input
+    /// When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you
+    /// specify the streaming source, the in-application stream name that is created, and the mapping between the two.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html
     /// </summary>
     public class Input
@@ -22,6 +22,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// &quot;MyInApplicationStream_001,&quot; &quot;MyInApplicationStream_002,&quot; and so on.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 32
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NamePrefix")]
@@ -31,6 +33,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// InputSchema
         /// Describes the format of the data in the streaming source, and how each data element maps to
         /// corresponding columns in the in-application stream that is being created.
+        /// Also used to describe the format of the reference data source.
         /// Required: Yes
         /// Type: InputSchema
         /// Update requires: No interruption

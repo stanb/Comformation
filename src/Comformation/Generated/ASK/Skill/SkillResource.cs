@@ -7,7 +7,7 @@ namespace Comformation.ASK.Skill
     /// <summary>
     /// Alexa::ASK::Skill
     /// The Alexa::ASK::Skill resource creates an Alexa skill that enables customers to access new abilities. For more
-    /// information on developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation.
+    /// information about developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html
     /// </summary>
     public class SkillResource : ResourceBase
@@ -17,8 +17,8 @@ namespace Comformation.ASK.Skill
             /// <summary>
             /// AuthenticationConfiguration
             /// Login with Amazon (LWA) configuration used to authenticate with the Alexa service. Only Login with
-            /// Amazon clients created through the Amazon Developer Console are supported. The Client ID, Client
-            /// Secret, and Refresh Token are required.
+            /// Amazon clients created through the Amazon Developer Console are supported. The client ID, client
+            /// secret, and refresh token are required.
             /// Required: Yes
             /// Type: AuthenticationConfiguration
             /// Update requires: No interruption
@@ -38,9 +38,9 @@ namespace Comformation.ASK.Skill
 
             /// <summary>
             /// SkillPackage
-            /// Configuration for the skill package that contains the components of the Alexa Skill. Skill packages
-            /// are retrieved from an Amazon S3 bucket and key and used to create and update the skill. More details
-            /// about the skill package format are located in the Skill Package API Reference.
+            /// Configuration for the skill package that contains the components of the Alexa skill. Skill packages
+            /// are retrieved from an Amazon S3 bucket and key and used to create and update the skill. For more
+            /// information about the skill package format, see the Skill Package API Reference.
             /// Required: Yes
             /// Type: SkillPackage
             /// Update requires: No interruption

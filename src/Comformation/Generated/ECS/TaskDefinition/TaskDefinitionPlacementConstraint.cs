@@ -6,19 +6,18 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
-    /// Amazon Elastic Container Service Service PlacementConstraint
-    /// PlacementConstraint is a property of the AWS::ECS::Service resource that specifies the placement constraints
-    /// for the tasks in the service to associate with an Amazon Elastic Container Service (Amazon ECS) service.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-placementconstraints-taskdefinitionplacementconstraint.html
+    /// AWS::ECS::TaskDefinition TaskDefinitionPlacementConstraint
+    /// The TaskDefinitionPlacementConstraint property specifies an object representing a constraint on task placement
+    /// in the task definition.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-taskdefinitionplacementconstraint.html
     /// </summary>
     public class TaskDefinitionPlacementConstraint
     {
 
         /// <summary>
         /// Expression
-        /// A cluster query language expression to apply to the constraint. If the constraint type is
-        /// distinctInstance, you can&#39;t specify an expression. For more information, see Cluster Query Language
-        /// in the Amazon Elastic Container Service Developer Guide.
+        /// A cluster query language expression to apply to the constraint. For more information, see Cluster
+        /// Query Language in the Amazon Elastic Container Service Developer Guide.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -28,12 +27,12 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Type
-        /// The type of constraint: distinctInstance or memberOf.
-        /// To ensure that each task in a particular group is running on a different container instance, use
-        /// distinctInstance. To restrict selection to a group of valid candidates, use memberOf.
-        /// distinctInstance is not supported in task definitions.
+        /// The type of constraint. The DistinctInstance constraint ensures that each task in a particular group
+        /// is running on a different container instance. The MemberOf constraint restricts selection to be from
+        /// a group of valid candidates.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: memberOf
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Type")]

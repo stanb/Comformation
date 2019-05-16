@@ -6,9 +6,10 @@ namespace Comformation.Lambda.Permission
 {
     /// <summary>
     /// AWS::Lambda::Permission
-    /// The AWS::Lambda::Permission resource associates a policy statement with a specific AWS Lambda (Lambda)
-    /// function&#39;s access policy. The function policy grants a specific AWS service or application permission to
-    /// invoke the function. For more information, see AddPermission in the AWS Lambda Developer Guide.
+    /// The AWS::Lambda::Permission resource grants an AWS service or another account permission to use a function.
+    /// You can apply the policy at the function level, or specify a qualifier to restrict access to a single version
+    /// or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or
+    /// alias to invoke the function.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
     /// </summary>
     public class PermissionResource : ResourceBase
@@ -17,70 +18,77 @@ namespace Comformation.Lambda.Permission
         {
             /// <summary>
             /// Action
-            /// The Lambda actions that you want to allow in this statement. For example, you can specify
-            /// lambda:CreateFunction to specify a certain action, or use a wildcard (lambda:*) to grant permission
-            /// to all Lambda actions. For a list of actions, see Actions and Condition Context Keys for AWS Lambda
-            /// in the IAM User Guide.
+            /// The action that the principal can use on the function. For example, lambda:InvokeFunction or
+            /// lambda:GetFunction.
             /// Required: Yes
             /// Type: String
+            /// Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Action { get; set; }
 
             /// <summary>
             /// EventSourceToken
-            /// A unique token that must be supplied by the principal invoking the function.
+            /// For Alexa Smart Home functions, a token that must be supplied by the invoker.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
+            /// Pattern: [a-zA-Z0-9. _\-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EventSourceToken { get; set; }
 
             /// <summary>
             /// FunctionName
-            /// The name (physical ID), Amazon Resource Name (ARN), or alias ARN of the Lambda function that you
-            /// want to associate with this statement. Lambda adds this statement to the function&#39;s access policy.
+            /// The name of the Lambda function, version, or alias.
+            /// Name formats Function name - my-function (name-only), my-function:v1 (with alias). Function ARN -
+            /// arn:aws:lambda:us-west-2:123456789012:function:my-function. Partial ARN -
+            /// 123456789012:function:my-function.
+            /// You can append a version number or alias to any of the formats. The length constraint applies only
+            /// to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 140
+            /// Pattern:
+            /// (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
             /// Principal
-            /// The entity for which you are granting permission to invoke the Lambda function. This entity can be
-            /// any valid AWS service principal, such as s3. amazonaws. com or sns. amazonaws. com, or, if you are
-            /// granting cross-account permission, an AWS account ID. For example, you might want to allow a custom
-            /// application in another AWS account to push events to Lambda by invoking your function.
+            /// The AWS service or account that invokes the function. If you specify a service, use SourceArn or
+            /// SourceAccount to limit who can invoke the function through that service.
             /// Required: Yes
             /// Type: String
+            /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Principal { get; set; }
 
             /// <summary>
             /// SourceAccount
-            /// The AWS account ID (without hyphens) of the source owner. For example, if you specify an S3 bucket
-            /// in the SourceArn property, this value is the bucket owner&#39;s account ID. You can use this property to
-            /// ensure that all source principals are owned by a specific account.
-            /// Important This property is not supported by all event sources. For more information, see the
-            /// SourceAccount parameter for the AddPermission action in the AWS Lambda Developer Guide.
+            /// For AWS services, the ID of the account that owns the resource. Use this instead of SourceArn to
+            /// grant permission to resources that are owned by another account (for example, all of an account&#39;s
+            /// Amazon S3 buckets). Or use it together with SourceArn to ensure that the resource is owned by the
+            /// specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by
+            /// another account.
             /// Required: No
             /// Type: String
+            /// Pattern: \d{12}
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceAccount { get; set; }
 
             /// <summary>
             /// SourceArn
-            /// The ARN of a resource that is invoking your function. When granting Amazon Simple Storage Service
-            /// (Amazon S3) permission to invoke your function, specify this property with the bucket ARN as its
-            /// value. This ensures that events generated only from the specified bucket, not just any bucket from
-            /// any AWS account that creates a mapping to your function, can invoke the function.
-            /// Important This property is not supported by all event sources. For more information, see the
-            /// SourceArn parameter for the AddPermission action in the AWS Lambda Developer Guide.
+            /// For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3
+            /// bucket or Amazon SNS topic.
             /// Required: No
             /// Type: String
+            /// Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(. *)
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceArn { get; set; }

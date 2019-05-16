@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
-    /// Amazon CloudFront StreamingDistribution TrustedSigners
-    /// The TrustedSigners property type specifies the AWS accounts, if any, that you want to allow to create signed
-    /// URLs for private content for an Amazon CloudFront distribution. For more information, see TrustedSigners in
-    /// the Amazon CloudFront API Reference.
+    /// AWS::CloudFront::StreamingDistribution TrustedSigners
+    /// A complex type that specifies the AWS accounts, if any, that you want to allow to 			create signed URLs for
+    /// private content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
     /// </summary>
     public class TrustedSigners
@@ -17,8 +16,10 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// Enabled
-        /// Specifies whether you want to require viewers to use signed URLs to access the files specified by
+        /// 		
+        /// Specifies whether you want to require viewers to use signed URLs to access the files 			specified by
         /// PathPattern and TargetOriginId.
+        /// 	
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption
@@ -28,9 +29,14 @@ namespace Comformation.CloudFront.StreamingDistribution
 
         /// <summary>
         /// AwsAccountNumbers
-        /// The trusted signers for this cache behavior.
+        /// 		
+        /// An AWS account that is included in the TrustedSigners complex type for 			this distribution. Valid
+        /// values include:
+        /// 		
+        /// 			 			 		 self, which is the AWS account used to create the distribution. An AWS account number.
+        /// 	
         /// Required: No
-        /// Type: StringList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AwsAccountNumbers")]

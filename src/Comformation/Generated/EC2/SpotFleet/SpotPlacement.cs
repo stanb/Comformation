@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud SpotFleet Placement
-    /// Placement is a property of the Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications property that
-    /// defines the placement group for the Spot instances.
+    /// AWS::EC2::SpotFleet SpotPlacement
+    /// Describes Spot Instance placement.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html
     /// </summary>
     public class SpotPlacement
@@ -16,7 +15,9 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// AvailabilityZone
-        /// The Availability Zone (AZ) of the placement group.
+        /// The Availability Zone.
+        /// To specify multiple Availability Zones, separate them using commas; for example, &quot;us-west-2a,
+        /// us-west-2b&quot;.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +27,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// GroupName
-        /// The name of the placement group (for cluster instances).
+        /// The name of the placement group.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -40,6 +41,7 @@ namespace Comformation.EC2.SpotFleet
         /// dedicated runs on single-tenant hardware. The host tenancy is not supported for Spot Instances.
         /// Required: No
         /// Type: String
+        /// Allowed Values: dedicated | default | host
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tenancy")]

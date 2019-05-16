@@ -6,8 +6,8 @@ namespace Comformation.ApiGateway.BasePathMapping
 {
     /// <summary>
     /// AWS::ApiGateway::BasePathMapping
-    /// The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your Amazon API
-    /// Gateway API must use in the invocation URL.
+    /// The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in
+    /// the invocation URL.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html
     /// </summary>
     public class BasePathMappingResource : ResourceBase
@@ -36,7 +36,7 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// <summary>
             /// RestApiId
             /// The name of the API.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

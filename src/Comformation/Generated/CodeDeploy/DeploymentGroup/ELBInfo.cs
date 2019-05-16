@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup ELBInfo
+    /// AWS::CodeDeploy::DeploymentGroup ELBInfo
     /// The ELBInfo property type specifies information about the Elastic Load Balancing load balancer used for an AWS
-    /// CodeDeploy deployment group.
+    /// CodeDelpoy deployment group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-elbinfo.html
     /// </summary>
     public class ELBInfo
@@ -16,9 +16,10 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// Name
-        /// The name of the load balancer that instances are deregistered from so they are not serving traffic
-        /// during a deployment, and then re-registered with after the deployment completes. No duplicates
-        /// allowed.
+        /// For blue/green deployments, the name of the load balancer that is used to route traffic from
+        /// original instances to replacement instances in a blue/green deployment. For in-place deployments,
+        /// the name of the load balancer that instances are deregistered from so they are not serving traffic
+        /// during a deployment, and then re-registered with after the deployment is complete.
         /// Note AWS CloudFormation supports blue/green deployments on AWS Lambda compute platforms only.
         /// Required: No
         /// Type: String

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync DataSource ElasticsearchConfig
+    /// AWS::AppSync::DataSource ElasticsearchConfig
     /// The ElasticsearchConfig property type specifies the AwsRegion and Endpoints for an Amazon Elasticsearch
     /// Service domain in your account for an AWS AppSync data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html
@@ -16,7 +16,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// AwsRegion
-        /// The AWS region.
+        /// The AWS Region.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

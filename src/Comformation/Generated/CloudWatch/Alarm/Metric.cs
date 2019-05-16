@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudWatch.Alarm
 {
     /// <summary>
-    /// Amazon CloudWatch Alarm Metric
-    /// The Metric property type represents a specific metric.
+    /// AWS::CloudWatch::Alarm Metric
+    /// The Metric property type represents a specific metric. Metric is a property of the 		 MetricStat property
+    /// type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html
     /// </summary>
     public class Metric
@@ -15,9 +16,12 @@ namespace Comformation.CloudWatch.Alarm
 
         /// <summary>
         /// Dimensions
-        /// The dimensions for the metric. You can specify a maximum of 10 items.
+        /// 		
+        /// The dimensions for the metric.
+        /// 	
         /// Required: No
-        /// Type: List of Dimension property types
+        /// Type: List of Dimension
+        /// Maximum: 10
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]
@@ -25,10 +29,13 @@ namespace Comformation.CloudWatch.Alarm
 
         /// <summary>
         /// MetricName
-        /// The name of the metric.
+        /// 		
+        /// The name of the metric. This is a required field.
+        /// 	
         /// Required: No
         /// Type: String
-        /// Length constraints: Minimum of 1. Maximum of 255.
+        /// Minimum: 1
+        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricName")]
@@ -36,10 +43,14 @@ namespace Comformation.CloudWatch.Alarm
 
         /// <summary>
         /// Namespace
+        /// 		
         /// The namespace of the metric.
+        /// 	
         /// Required: No
         /// Type: String
-        /// Length constraints: Minimum of 1. Maximum of 255.
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Pattern: [^:]. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Namespace")]

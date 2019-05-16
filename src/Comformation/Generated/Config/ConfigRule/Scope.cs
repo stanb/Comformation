@@ -6,11 +6,12 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Config.ConfigRule
 {
     /// <summary>
-    /// AWS Config ConfigRule Scope
-    /// Scope is a property of the AWS::Config::ConfigRule resource that specifies which AWS resources will trigger
-    /// AWS Config to run an evaluation when their configurations change. The scope can include one or more resource
-    /// types, a tag key and value, or one resource type and one resource ID. You cannot specify a tag-key value and a
-    /// resource ID or type.
+    /// AWS::Config::ConfigRule Scope
+    /// Defines which resources trigger an evaluation for an AWS Config 			rule. The scope can include one or more
+    /// resource types, a 			combination of a tag key and value, or a combination of one resource 			type and one
+    /// resource ID. Specify a scope to constrain which 			resources trigger an evaluation for a rule. Otherwise,
+    /// evaluations 			for the rule are triggered when any resource in your recording group 			changes in
+    /// configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html
     /// </summary>
     public class Scope
@@ -18,42 +19,60 @@ namespace Comformation.Config.ConfigRule
 
         /// <summary>
         /// ComplianceResourceId
-        /// The ID of an AWS resource that you want AWS Config to evaluate against a rule. If you specify an ID,
-        /// you must also specify a resource type for the ComplianceResourceTypes property.
+        /// 		
+        /// The ID of the only AWS resource that you want to trigger an 			evaluation for the rule. If you
+        /// specify a resource ID, you must 			specify one resource type for 			ComplianceResourceTypes.
+        /// 	
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 768
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComplianceResourceId")]
         public Union<string, IntrinsicFunction> ComplianceResourceId { get; set; }
 
         /// <summary>
         /// ComplianceResourceTypes
-        /// The types of AWS resources that you want AWS Config to evaluate against the rule. If you specify the
-        /// ComplianceResourceId property, specify only one resource type. For more information, see Supported
-        /// Resources, Configuration Items, and Relationships.
-        /// Required: Conditional. If you specify a value for the ComplianceResourceId property, you must also
-        /// specify this property.
-        /// Type: List of String values
+        /// 		
+        /// The resource types of only those AWS resources that you want to 			trigger an evaluation for the
+        /// rule. You can only specify one type if 			you also specify a resource ID for
+        /// 			ComplianceResourceId.
+        /// 	
+        /// Required: No
+        /// Type: List of String
+        /// Maximum: 100
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComplianceResourceTypes")]
         public List<Union<string, IntrinsicFunction>> ComplianceResourceTypes { get; set; }
 
         /// <summary>
         /// TagKey
-        /// The tag key that is applied to the AWS resources that you want AWS Config to evaluate against the
-        /// rule.
-        /// Required: Conditional. If you specify a tag value, you must specify this property.
+        /// 		
+        /// The tag key that is applied to only those AWS resources that 			you want to trigger an evaluation
+        /// for the rule.
+        /// 	
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagKey")]
         public Union<string, IntrinsicFunction> TagKey { get; set; }
 
         /// <summary>
         /// TagValue
-        /// The tag value that is applied to the AWS resources that you want AWS Config to evaluate against the
-        /// rule.
-        /// Required: Conditional. If you specify a tag key, you must specify this property.
+        /// 		
+        /// The tag value applied to only those AWS resources that you want 			to trigger an evaluation for the
+        /// rule. If you specify a value for 				TagValue, you must also specify a value for 				TagKey.
+        /// 	
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagValue")]
         public Union<string, IntrinsicFunction> TagValue { get; set; }

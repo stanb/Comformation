@@ -6,7 +6,7 @@ namespace Comformation.EC2.CustomerGateway
 {
     /// <summary>
     /// AWS::EC2::CustomerGateway
-    /// Provides information to AWS about your VPN customer gateway device.
+    /// Specifies a customer gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html
     /// </summary>
     public class CustomerGatewayResource : ResourceBase
@@ -15,16 +15,17 @@ namespace Comformation.EC2.CustomerGateway
         {
             /// <summary>
             /// BgpAsn
-            /// The customer gateway&#39;s Border Gateway Protocol (BGP) Autonomous System Number (ASN).
+            /// For devices that support BGP, the customer gateway&#39;s BGP ASN.
+            /// Default: 65000
             /// Required: Yes
-            /// Type: Number BgpAsn is always an integer value.
+            /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
 			public Union<int, IntrinsicFunction> BgpAsn { get; set; }
 
             /// <summary>
             /// IpAddress
-            /// The internet-routable IP address for the customer gateway&#39;s outside interface. The address must be
+            /// The Internet-routable IP address for the customer gateway&#39;s outside interface. The address must be
             /// static.
             /// Required: Yes
             /// Type: String
@@ -34,20 +35,20 @@ namespace Comformation.EC2.CustomerGateway
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the resource.
+            /// One or more tags for the customer gateway.
             /// Required: No
-            /// Type: Resource Tag.
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
-            /// The type of VPN connection that this customer gateway supports.
+            /// The type of VPN connection that this customer gateway supports (ipsec. 1).
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: ipsec. 1
             /// Update requires: Replacement
-            /// Example: ipsec. 1
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 

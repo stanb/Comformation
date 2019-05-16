@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// Amazon EC2 Instance LaunchTemplateSpecification
-    /// The LaunchTemplateSpecification property type specifies the launch template to use. You must specify either
-    /// the launch template ID or launch template name.
+    /// AWS::EC2::Instance LaunchTemplateSpecification
+    /// Specifies a launch template. You must specify either the launch template ID or launch template name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html
     /// </summary>
     public class LaunchTemplateSpecification
@@ -17,9 +16,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// LaunchTemplateId
         /// The ID of the launch template.
-        /// Minimum length of 1. Maximum length of 255. IDs must fit the following pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
-        /// Required: Conditional. You must specify either LaunchTemplateId or LaunchTemplateName, but not both.
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -29,9 +26,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// LaunchTemplateName
         /// The name of the launch template.
-        /// Minimum length of 3. Maximum length of 128. Names must fit the following pattern:
-        /// [a-zA-Z0-9\(\)\. -/_]+
-        /// Required: Conditional. You must specify either LaunchTemplateId or LaunchTemplateName, but not both.
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -40,10 +35,10 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Version
-        /// The version number. AWS CloudFormation does not support specifying $Latest, or $Default for the
-        /// template version number.
-        /// Minimum length of 1. Maximum length of 255. Versions must fit the following pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// 		
+        /// The version number of the launch template. AWS CloudFormation does not support specifying
+        /// 			$Latest, or $Default for the template version number.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

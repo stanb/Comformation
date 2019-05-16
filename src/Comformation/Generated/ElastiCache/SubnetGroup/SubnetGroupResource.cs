@@ -16,11 +16,9 @@ namespace Comformation.ElastiCache.SubnetGroup
         {
             /// <summary>
             /// CacheSubnetGroupName
-            /// A name for the cache subnet group. If you don&#39;t specify a name, AWS CloudFormation generates a
-            /// unique physical ID. For more information, see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// The name for the cache subnet group. This value is stored as a lowercase string.
+            /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+            /// Example: mysubnetgroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -30,17 +28,17 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// <summary>
             /// Description
             /// The description for the cache subnet group.
-            /// Type: String
             /// Required: Yes
+            /// Type: String
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SubnetIds
-            /// The Amazon EC2 subnet IDs for the cache subnet group.
-            /// Type: String list
+            /// The EC2 subnet IDs for the cache subnet group.
             /// Required: Yes
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }

@@ -6,10 +6,8 @@ namespace Comformation.EC2.NetworkInterfacePermission
 {
     /// <summary>
     /// AWS::EC2::NetworkInterfacePermission
-    /// The AWS::EC2::NetworkInterfacePermission resource specifies a permission for an Amazon EC2 network interface.
-    /// For example, you can grant an AWS authorized partner account permission to attach the specified network
-    /// interface to an instance in their account. For more information, see CreateNetworkInterfacePermission and
-    /// NetworkInterfacePermission in the Amazon EC2 API Reference.
+    /// Specifies a permission for an Amazon EC2 network interface. For example, you can grant an AWS authorized
+    /// partner account permission to attach the specified network interface to an instance in their account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html
     /// </summary>
     public class NetworkInterfacePermissionResource : ResourceBase
@@ -18,7 +16,9 @@ namespace Comformation.EC2.NetworkInterfacePermission
         {
             /// <summary>
             /// AwsAccountId
+            /// 		
             /// The AWS account ID.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -27,7 +27,9 @@ namespace Comformation.EC2.NetworkInterfacePermission
 
             /// <summary>
             /// NetworkInterfaceId
+            /// 		
             /// The ID of the network interface.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -39,6 +41,7 @@ namespace Comformation.EC2.NetworkInterfacePermission
             /// The type of permission to grant: INSTANCE-ATTACH or EIP-ASSOCIATE.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: EIP-ASSOCIATE | INSTANCE-ATTACH
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Permission { get; set; }

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
-    /// AWS Systems Manager MaintenanceWindowTask NotificationConfig
+    /// AWS::SSM::MaintenanceWindowTask NotificationConfig
     /// The NotificationConfig property type specifies configurations for sending notifications for a Maintenance
     /// Window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html
@@ -16,9 +16,9 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// NotificationArn
-        /// An Amazon Resource Name (ARN) for an Amazon SNS topic. Run Command pushes notifications about
-        /// command status changes to this topic.
-        /// Required: No
+        /// An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes
+        /// notifications about command status changes to this topic.
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -33,6 +33,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// changes.
         /// Required: No
         /// Type: String
+        /// Allowed Values: Command | Invocation
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationType")]
@@ -42,9 +43,9 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// NotificationEvents
         /// The different events that you can receive notifications for. These events include the following: All
         /// (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see
-        /// Understanding Command Statuses in the AWS Systems Manager User Guide.
+        /// Configuring Amazon SNS Notifications for AWS Systems Manager in the AWS Systems Manager User Guide.
         /// Required: No
-        /// Type: List of strings
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationEvents")]

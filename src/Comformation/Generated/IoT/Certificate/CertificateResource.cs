@@ -6,7 +6,8 @@ namespace Comformation.IoT.Certificate
 {
     /// <summary>
     /// AWS::IoT::Certificate
-    /// Use the AWS::IoT::Certificate resource to declare an X. 509 certificate.
+    /// Use the AWS::IoT::Certificate resource to declare an AWS IoT X. 509 certificate. For information about working
+    /// with X. 509 certificates, see Authentication in AWS IoT in the AWS IoT Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
@@ -25,6 +26,7 @@ namespace Comformation.IoT.Certificate
             /// <summary>
             /// Status
             /// The status of the certificate.
+            /// The status value REGISTER_INACTIVE is deprecated and should not be used.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// AWS CodeDeploy DeploymentGroup LoadBalancerInfo
+    /// AWS::CodeDeploy::DeploymentGroup LoadBalancerInfo
     /// The LoadBalancerInfo property type specifies information about the load balancer or target group used for an
     /// AWS CodeDeploy deployment group. For more information, see Integrating CodeDeploy with Elastic Load Balancing
     /// in the AWS CodeDeploy User Guide.
@@ -17,8 +17,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// ElbInfoList
-        /// Information about the Elastic Load Balancing load balancer to use in the deployment.
-        /// Conditional: You must specify either ElbInfoList or TargetGroupInfoList, but not both.
+        /// An array that contains information about the load balancer to use for load balancing in a
+        /// deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.
+        /// Note Adding more than one load balancer to the array is not supported.
         /// Required: No
         /// Type: List of ELBInfo
         /// Update requires: No interruption
@@ -28,9 +29,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// TargetGroupInfoList
-        /// information about the target groups to use in the deployment. Instances are registered as targets in
-        /// a target group, and traffic is routed to the target group.
-        /// Conditional: You must specify either ElbInfoList or TargetGroupInfoList, but not both.
+        /// An array that contains information about the target group to use for load balancing in a deployment.
+        /// In Elastic Load Balancing, target groups are used with Application Load Balancers.
+        /// Note Adding more than one target group to the array is not supported.
         /// Required: No
         /// Type: List of TargetGroupInfo
         /// Update requires: No interruption

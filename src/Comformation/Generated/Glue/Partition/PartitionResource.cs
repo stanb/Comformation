@@ -16,7 +16,7 @@ namespace Comformation.Glue.Partition
         {
             /// <summary>
             /// TableName
-            /// The name of the metadata table to create the partition in.
+            /// The name of the metadata table in which the partition is to be created.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,8 +25,7 @@ namespace Comformation.Glue.Partition
 
             /// <summary>
             /// DatabaseName
-            /// The name of the catalog database to create the partition in. It must match the single-line string
-            /// pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+            /// The name of the catalog database in which to create the partition.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -35,22 +34,21 @@ namespace Comformation.Glue.Partition
 
             /// <summary>
             /// CatalogId
-            /// The ID of the data catalog to create the catalog object in. Currently, this should be the AWS
-            /// account ID.
+            /// The AWS account ID of the catalog in which the partion is to be created.
             /// Note To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId
-            /// pseudo parameter—for example !Ref AWS::AccountId.
+            /// pseudo parameter. For example: !Ref AWS::AccountId
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
             /// <summary>
             /// PartitionInput
-            /// The metadata of the partition.
+            /// The structure used to create and update a partition.
             /// Required: Yes
             /// Type: PartitionInput
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public PartitionInput PartitionInput { get; set; }
 

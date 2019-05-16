@@ -7,8 +7,7 @@ namespace Comformation.SNS.Subscription
     /// <summary>
     /// AWS::SNS::Subscription
     /// The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon
-    /// SNS) topic. The owner of the endpoint must confirm the subscription before Amazon SNS creates the
-    /// subscription.
+    /// SNS) topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
     /// </summary>
     public class SubscriptionResource : ResourceBase
@@ -20,16 +19,16 @@ namespace Comformation.SNS.Subscription
             /// The JSON serialization of the subscription&#39;s delivery policy. For more information, see
             /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DeliveryPolicy { get; set; }
 
             /// <summary>
             /// Endpoint
-            /// The endpoint that receives notifications from the Amazon SNS topic. The endpoint value depends on
-            /// the protocol that you specify. For more information, see the Subscribe Endpoint parameter in the
-            /// Amazon Simple Notification Service API Reference.
+            /// The subscription&#39;s endpoint. The endpoint value depends on the protocol that you specify. For more
+            /// information, see the Endpoint parameter of the Subscribe action in the Amazon Simple Notification
+            /// Service API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -38,18 +37,18 @@ namespace Comformation.SNS.Subscription
 
             /// <summary>
             /// FilterPolicy
-            /// The filter policy JSON that is assigned to the subscription. For more information, see
+            /// The filter policy JSON assigned to the subscription. For more information, see
             /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> FilterPolicy { get; set; }
 
             /// <summary>
             /// Protocol
-            /// The subscription&#39;s protocol. For more information, see the Subscribe Protocol parameter in the
-            /// Amazon Simple Notification Service API Reference.
+            /// The subscription&#39;s protocol. For more information, see the Protocol parameter of the Subscribe
+            /// action in the Amazon Simple Notification Service API Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -58,9 +57,9 @@ namespace Comformation.SNS.Subscription
 
             /// <summary>
             /// RawMessageDelivery
-            /// true if raw message delivery is enabled for the subscription. Raw messages are free of JSON
-            /// formatting and can be sent to HTTP/S and Amazon SQS endpoints. For more information, see
-            /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
+            /// When set to true, enables raw message delivery. Raw messages don&#39;t contain any JSON formatting and
+            /// can be sent to Amazon SQS and HTTP/S endpoints. For more information, see GetSubscriptionAttributes
+            /// in the Amazon Simple Notification Service API Reference.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -78,7 +77,7 @@ namespace Comformation.SNS.Subscription
 
             /// <summary>
             /// TopicArn
-            /// The Amazon Resource Name (ARN) of the topic to subscribe to.
+            /// The ARN of the topic to subscribe to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

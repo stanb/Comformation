@@ -14,7 +14,7 @@
     <PackageId>Comformation</PackageId>
     <Product>Comformation.NET</Product>
     <PackageTags>cloudformation,aws-cloudformation,cloudformation-template,aws</PackageTags>
-    <Version>1.10.0</Version>
+    <Version>1.11.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\Comformation.xml</DocumentationFile>

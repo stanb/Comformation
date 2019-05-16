@@ -6,8 +6,9 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget
-    /// The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management. For
-    /// more information, see Managing Your Costs with Budgets in the AWS Billing and Cost Management User Guide.
+    /// The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management.
+    /// 			For more information, see 			Managing Your Costs with Budgets 			in the AWS Billing and Cost Management
+    /// User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html
     /// </summary>
     public class BudgetResource : ResourceBase
@@ -16,18 +17,20 @@ namespace Comformation.Budgets.Budget
         {
             /// <summary>
             /// NotificationsWithSubscribers
-            /// The notification that you want associated with the budget. A budget can have up to five
-            /// notifications, and each notification can have one SNS subscriber and up to ten email subscribers.
+            /// A notification that you want to associate with a budget. A budget can have up to five notifications,
+            /// and each notification can have one SNS subscriber and up to 10 email subscribers. If you include
+            /// notifications and subscribers in your CreateBudget call, AWS creates the notifications and
+            /// subscribers for you.
             /// Required: No
-            /// Type: List of NotificationWithSubscribers property types
+            /// Type: List of NotificationWithSubscribers
+            /// Maximum: 5
             /// Update requires: Replacement
             /// </summary>
 			public List<NotificationWithSubscribers> NotificationsWithSubscribers { get; set; }
 
             /// <summary>
             /// Budget
-            /// The budget for tracking your service usage, costs, and RI utilization. Single accounts and master
-            /// and member accounts in an organization can, by default, create budgets.
+            /// The budget object that you want to create.
             /// Required: Yes
             /// Type: BudgetData
             /// Update requires: No interruption

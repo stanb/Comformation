@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Lambda.Alias
 {
     /// <summary>
-    /// AWS Lambda Alias VersionWeight
-    /// The VersionWeight property type specifies the percentages of traffic that will invoke each function versions
-    /// for an AWS Lambda alias. For more information, see Routing Traffic to Different Function Versions Using
-    /// Aliases in the AWS Lambda Developer Guide.
+    /// AWS::Lambda::Alias VersionWeight
+    /// The traffic-shifting configuration of a Lambda function alias.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html
     /// </summary>
     public class VersionWeight
@@ -17,7 +15,7 @@ namespace Comformation.Lambda.Alias
 
         /// <summary>
         /// FunctionVersion
-        /// Function version to which the alias points.
+        /// The name of the second alias.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -27,7 +25,7 @@ namespace Comformation.Lambda.Alias
 
         /// <summary>
         /// FunctionWeight
-        /// The percentage of traffic that will invoke the function version.
+        /// The percentage of traffic that&#39;s routed to the second alias.
         /// Required: Yes
         /// Type: Double
         /// Update requires: No interruption

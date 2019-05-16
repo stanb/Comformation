@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
-    /// Amazon API Gateway UsagePlan ApiStage
-    /// ApiStage is a property of the AWS::ApiGateway::UsagePlan resource that specifies which Amazon API Gateway (API
-    /// Gateway) stages and APIs to associate with a usage plan.
+    /// AWS::ApiGateway::UsagePlan ApiStage
+    /// ApiStage is a property of the AWS::ApiGateway::UsagePlan resource that specifies which stages and APIs to
+    /// associate with a usage plan.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
     /// </summary>
     public class ApiStage
@@ -20,15 +20,17 @@ namespace Comformation.ApiGateway.UsagePlan
         /// plan.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ApiId")]
         public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         /// <summary>
         /// Stage
-        /// The name of an API Gateway stage to associate with the usage plan.
+        /// The name of the stage to associate with the usage plan.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Stage")]
         public Union<string, IntrinsicFunction> Stage { get; set; }
@@ -38,7 +40,7 @@ namespace Comformation.ApiGateway.UsagePlan
         /// Map containing method-level throttling information for API stage in a usage plan.
         /// Duplicates are not allowed.
         /// Required: No
-        /// Type: Map of string-to-ThrottleSettings
+        /// Type: Map of ThrottleSettings
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Throttle")]

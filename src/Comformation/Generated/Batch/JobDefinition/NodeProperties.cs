@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
-    /// AWS Batch JobDefinition NodeProperties
-    /// The NodeProperties property type specifies various properties specific to multi-node parallel jobs in a job
-    /// definition.
+    /// AWS::Batch::JobDefinition NodeProperties
+    /// An object representing the node properties of a multi-node parallel job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html
     /// </summary>
     public class NodeProperties
@@ -16,7 +15,8 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// MainNode
-        /// Specifies the node index for the main node of a multi-node parallel job.
+        /// Specifies the node index for the main node of a multi-node parallel job. This node index value must
+        /// be fewer than the number of nodes.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption
@@ -28,7 +28,7 @@ namespace Comformation.Batch.JobDefinition
         /// NodeRangeProperties
         /// A list of node ranges and their properties associated with a multi-node parallel job.
         /// Required: Yes
-        /// Type: List of NodeRangeProperty property types
+        /// Type: List of NodeRangeProperty
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NodeRangeProperties")]

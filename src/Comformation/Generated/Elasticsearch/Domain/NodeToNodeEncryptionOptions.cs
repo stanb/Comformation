@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
-    /// Elasticsearch Domain NodeToNodeEncryptionOptions
-    /// The NodeToNodeEncryptionOptions property type specifies whether node-to-node encryption is enabled.
+    /// AWS::Elasticsearch::Domain NodeToNodeEncryptionOptions
+    /// Specifies whether node-to-node encryption is enabled.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-nodetonodeencryptionoptions.html
     /// </summary>
     public class NodeToNodeEncryptionOptions
@@ -15,7 +15,7 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// Enabled
-        /// Specifies whether node-to-node encryption is enabled.
+        /// Specifies whether node-to-node encryption is enabled, as a Boolean.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement

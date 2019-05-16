@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync DataSource HttpConfig
+    /// AWS::AppSync::DataSource HttpConfig
     /// Use the HttpConfig property type to specify HttpConfig for an AWS AppSync data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html
     /// </summary>

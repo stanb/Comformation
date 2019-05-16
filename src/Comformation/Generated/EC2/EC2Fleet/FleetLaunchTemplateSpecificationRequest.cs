@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
-    /// Amazon EC2 EC2Fleet FleetLaunchTemplateSpecificationRequest
-    /// The FleetLaunchTemplateSpecificationRequest property type specifies the launch template to use for an EC2
-    /// Fleet. You must specify either the launch template ID or launch template name in the request.
+    /// AWS::EC2::EC2Fleet FleetLaunchTemplateSpecificationRequest
+    /// Specifies the launch template to use for an EC2 Fleet. You must specify either the launch template ID or
+    /// launch template name in the request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html
     /// </summary>
     public class FleetLaunchTemplateSpecificationRequest
@@ -19,6 +19,9 @@ namespace Comformation.EC2.EC2Fleet
         /// The name of the launch template.
         /// Required: No
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 128
+        /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateName")]

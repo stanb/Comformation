@@ -6,8 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// CodeDeploy DeploymentGroup EC2TagSetListObject
-    /// The EC2TagSetListObject property type specifies lists of EC2 tags.
+    /// AWS::CodeDeploy::DeploymentGroup EC2TagSetListObject
+    /// The EC2TagSet property type specifies information about groups of tags applied to EC2 instances. The
+    /// deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same
+    /// template as EC2TagFilters.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagsetlistobject.html
     /// </summary>
     public class EC2TagSetListObject
@@ -15,12 +17,10 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// Ec2TagGroup
-        /// The EC2 tags that are already applied to EC2 instances that you want to include in the deployment
-        /// group. CodeDeploy includes all EC2 instances identified by any of the tags you specify in this
-        /// deployment group.
-        /// Duplicates are not allowed.
+        /// A list that contains other lists of EC2 instance tag groups. For an instance to be included in the
+        /// deployment group, it must be identified by all of the tag groups in the list.
         /// Required: No
-        /// Type: List of CodeDeploy DeploymentGroup Ec2TagFilters
+        /// Type: List of EC2TagFilter
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ec2TagGroup")]

@@ -6,21 +6,22 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster AutoScalingPolicy
-    /// AutoScalingPolicy is a subproperty of the Amazon EMR Cluster InstanceGroupConfig property type that specifies
-    /// the constraints and rules for an Auto Scaling group policy. For more information, see PutAutoScalingPolicy in
-    /// the Amazon EMR API Reference.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy.html
+    /// AWS::EMR::Cluster AutoScalingPolicy
+    /// AutoScalingPolicy is a subproperty of InstanceGroupConfig. AutoScalingPolicy defines how an instance group
+    /// dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more
+    /// information, see Using Automatic Scaling in Amazon EMR in the Amazon EMR Management Guide.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html
     /// </summary>
     public class AutoScalingPolicy
     {
 
         /// <summary>
         /// Constraints
-        /// The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling
-        /// activity will not cause an instance group to grow above or below these limits.
+        /// The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity
+        /// will not cause an instance group to grow above or below these limits.
         /// Required: Yes
-        /// Type: Amazon EMR Cluster ScalingConstraints
+        /// Type: ScalingConstraints
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Constraints")]
         public ScalingConstraints Constraints { get; set; }
@@ -29,7 +30,8 @@ namespace Comformation.EMR.Cluster
         /// Rules
         /// The scale-in and scale-out rules that comprise the automatic scaling policy.
         /// Required: Yes
-        /// Type: Amazon EMR Cluster ScalingRule
+        /// Type: List of ScalingRule
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Rules")]
         public List<ScalingRule> Rules { get; set; }

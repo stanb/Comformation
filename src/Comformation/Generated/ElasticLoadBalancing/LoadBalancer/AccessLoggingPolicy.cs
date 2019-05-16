@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing V1 AccessLoggingPolicy
-    /// The AccessLoggingPolicy property describes where and how access logs are stored for the
-    /// AWS::ElasticLoadBalancing::LoadBalancer resource.
+    /// AWS::ElasticLoadBalancing::LoadBalancer AccessLoggingPolicy
+    /// Specifies where and how access logs are stored for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html
     /// </summary>
     public class AccessLoggingPolicy
@@ -16,39 +15,43 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// EmitInterval
-        /// The interval for publishing access logs in minutes. You can specify an interval of either 5 minutes
-        /// or 60 minutes.
+        /// The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60
+        /// minutes.
+        /// Default: 60 minutes
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EmitInterval")]
         public Union<int, IntrinsicFunction> EmitInterval { get; set; }
 
         /// <summary>
         /// Enabled
-        /// Whether logging is enabled for the load balancer.
+        /// Specifies whether access logs are enabled for the load balancer.
         /// Required: Yes
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         /// <summary>
         /// S3BucketName
-        /// The name of an Amazon S3 bucket where access log files are stored.
+        /// The name of the Amazon S3 bucket where the access logs are stored.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BucketName")]
         public Union<string, IntrinsicFunction> S3BucketName { get; set; }
 
         /// <summary>
         /// S3BucketPrefix
-        /// A prefix for the all log object keys, such as my-load-balancer-logs/prod. If you store log files
-        /// from multiple sources in a single bucket, you can use a prefix to distinguish each log file and its
-        /// source.
+        /// The logical hierarchy you created for your Amazon S3 bucket, for example my-bucket-prefix/prod. If
+        /// the prefix is not provided, the log is placed at the root level of the bucket.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BucketPrefix")]
         public Union<string, IntrinsicFunction> S3BucketPrefix { get; set; }

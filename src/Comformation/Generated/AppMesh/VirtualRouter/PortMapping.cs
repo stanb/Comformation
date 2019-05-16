@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualRouter
 {
     /// <summary>
-    /// AWS AppMesh VirtualRouter PortMapping
+    /// AWS::AppMesh::VirtualRouter PortMapping
     /// An object representing a virtual router listener port mapping.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html
     /// </summary>

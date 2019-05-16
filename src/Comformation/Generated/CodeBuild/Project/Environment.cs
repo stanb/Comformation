@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project Environment
+    /// AWS::CodeBuild::Project Environment
     /// Environment is a property of the AWS::CodeBuild::Project resource that specifies the environment for an AWS
     /// CodeBuild project.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
@@ -16,20 +16,21 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Type
-        /// The type of build environment. For valid values, see the environment-type field in the AWS CodeBuild
-        /// User Guide.
+        /// The type of build environment to use for related builds.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: LINUX_CONTAINER | WINDOWS_CONTAINER
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }
 
         /// <summary>
         /// EnvironmentVariables
-        /// The environment variables that your builds can use. For more information, see the
-        /// environmentVariables field in the AWS CodeBuild User Guide.
+        /// A set of environment variables to make available to builds for this build project.
         /// Required: No
         /// Type: List of EnvironmentVariable
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EnvironmentVariables")]
         public List<EnvironmentVariable> EnvironmentVariables { get; set; }
@@ -40,10 +41,23 @@ namespace Comformation.CodeBuild.Project
         /// inside a Docker container.
         /// This value must be set to true only if this build project will be used to build Docker images, and
         /// the specified build environment image is not one provided by AWS CodeBuild with Docker support.
-        /// Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. For more
+        /// Otherwise, all associated builds that attempt to interact with the Docker daemon fail. For more
         /// information, see the privilegedMode field in the AWS CodeBuild User Guide.
+        /// You must also start the Docker daemon so that builds can interact with it. One way to do this is to
+        /// initialize the Docker daemon during the install phase of your build spec by running the following
+        /// build commands. (Do not run these commands if the specified build environment image is provided by
+        /// AWS CodeBuild with Docker support. )
+        /// If the operating system&#39;s base image is Ubuntu Linux:
+        /// - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker. sock --host=tcp://0. 0. 0. 0:2375
+        /// --storage-driver=overlay&amp;amp;
+        /// - timeout 15 sh -c &quot;until docker info; do echo . ; sleep 1; done&quot;
+        /// If the operating system&#39;s base image is Alpine Linux, add the -t argument to timeout:
+        /// - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker. sock --host=tcp://0. 0. 0. 0:2375
+        /// --storage-driver=overlay&amp;amp;
+        /// - timeout -t 15 sh -c &quot;until docker info; do echo . ; sleep 1; done&quot;
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivilegedMode")]
         public Union<bool, IntrinsicFunction> PrivilegedMode { get; set; }
@@ -52,14 +66,14 @@ namespace Comformation.CodeBuild.Project
         /// ImagePullCredentialsType
         /// The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
         /// CODEBUILD specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
-        /// ECR repository policy to trust the AWS CodeBuild service principal. SERVICE_ROLE specifies that AWS
+        /// ECR repository policy to trust AWS CodeBuild&#39;s service principal. SERVICE_ROLE specifies that AWS
         /// CodeBuild uses your build project&#39;s service role.
         /// When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When
         /// you use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
-        /// The Docker image identifier that the build environment uses. For more information, see the
-        /// imagePullCredentialsType field in the AWS CodeBuild User Guide.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
+        /// Allowed Values: CODEBUILD | SERVICE_ROLE
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ImagePullCredentialsType")]
         public Union<string, IntrinsicFunction> ImagePullCredentialsType { get; set; }
@@ -73,42 +87,47 @@ namespace Comformation.CodeBuild.Project
         /// specify an image with the digest
         /// &quot;sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,&quot; use
         /// registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf.
-        /// For more information, see the image field in the AWS CodeBuild User Guide.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Image")]
         public Union<string, IntrinsicFunction> Image { get; set; }
 
         /// <summary>
         /// RegistryCredential
-        /// RegistryCredential is a property of the AWS::CodeBuild::Project resource that specifies information
-        /// about credentials that provide access to a private Docker registry. When this is set:
+        /// RegistryCredential is a property of the AWS::CodeBuild::Project Environment property that specifies
+        /// information about credentials that provide access to a private Docker registry. When this is set:
         /// imagePullCredentialsType must be set to SERVICE_ROLE. images cannot be curated or an Amazon ECR
         /// image.
-        /// For more information, see the RegistryCredential field in the AWS CodeBuild User Guide.
         /// Required: No
         /// Type: RegistryCredential
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RegistryCredential")]
         public RegistryCredential RegistryCredential { get; set; }
 
         /// <summary>
         /// ComputeType
-        /// The type of compute environment, such as BUILD_GENERAL1_SMALL. The compute type determines the
-        /// number of CPU cores and memory the build environment uses. For valid values, see the computeType
-        /// field in the AWS CodeBuild User Guide.
+        /// The type of compute environment. This determines the number of CPU cores and memory the build
+        /// environment uses. Available values include:
+        /// BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds. BUILD_GENERAL1_MEDIUM: Use up to
+        /// 7 GB memory and 4 vCPUs for builds. BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for
+        /// builds.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComputeType")]
         public Union<string, IntrinsicFunction> ComputeType { get; set; }
 
         /// <summary>
         /// Certificate
-        /// The certificate to use with the build project.
+        /// The certificate to use with this build project.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Certificate")]
         public Union<string, IntrinsicFunction> Certificate { get; set; }

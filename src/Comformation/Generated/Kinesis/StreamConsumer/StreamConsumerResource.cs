@@ -21,15 +21,21 @@ namespace Comformation.Kinesis.StreamConsumer
             /// The name of the consumer is something you choose when you register the consumer.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ConsumerName { get; set; }
 
             /// <summary>
             /// StreamARN
-            /// The ARN of the Kinesis data stream that you want to register the consumer with.
+            /// The ARN of the stream with which you registered the consumer.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 2048
+            /// Pattern: arn:aws. *:kinesis:. *:\d{12}:stream/. +
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> StreamARN { get; set; }

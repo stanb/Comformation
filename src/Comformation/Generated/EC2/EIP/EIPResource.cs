@@ -6,8 +6,7 @@ namespace Comformation.EC2.EIP
 {
     /// <summary>
     /// AWS::EC2::EIP
-    /// The AWS::EC2::EIP resource allocates an Elastic IP (EIP) address and can, optionally, associate it with an
-    /// Amazon EC2 instance.
+    /// Specifies an Elastic IP (EIP) address and can, optionally, associate it with an Amazon EC2 instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
     /// </summary>
     public class EIPResource : ResourceBase
@@ -16,22 +15,29 @@ namespace Comformation.EC2.EIP
         {
             /// <summary>
             /// Domain
-            /// Set to vpc to allocate the address to your Virtual Private Cloud (VPC). No other values are
-            /// supported.
-            /// Note If you define an Elastic IP address and associate it with a VPC that is defined in the same
-            /// template, you must declare a dependency on the VPC-gateway attachment by using the DependsOn
-            /// attribute on this resource. For more information, see DependsOn Attribute.
-            /// For more information, see AllocateAddress in the Amazon EC2 API Reference. For more information
-            /// about Elastic IP Addresses in VPC, go to IP Addressing in Your VPC in the Amazon VPC User Guide.
-            /// Required: Conditional. Required when allocating an address to a VPC
+            /// 		
+            /// Set to vpc to allocate the address for use with instances in a VPC.
+            /// 		
+            /// Default: The address is for use with instances in EC2-Classic.
+            /// 	
+            /// If you define an Elastic IP address and associate it with a VPC that is defined in the same
+            /// template, you 	 must declare a dependency on the VPC-gateway attachment by using the 	 DependsOn
+            /// Attribute on this resource.
+            /// 		
+            /// Required when allocating an address to a VPC
+            /// 	
+            /// Required: Conditional
             /// Type: String
+            /// Allowed Values: standard | vpc
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Domain { get; set; }
 
             /// <summary>
             /// InstanceId
-            /// The Instance ID of the Amazon EC2 instance that you want to associate with this Elastic IP address.
+            /// 		
+            /// The ID of the instance.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -40,8 +46,10 @@ namespace Comformation.EC2.EIP
 
             /// <summary>
             /// PublicIpv4Pool
-            /// Specifies the ID of an address pool that you own to let Amazon EC2 select an address from the
-            /// address pool.
+            /// 		
+            /// The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from
+            /// the address pool.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

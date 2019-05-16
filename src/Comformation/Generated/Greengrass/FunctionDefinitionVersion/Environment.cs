@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinitionVersion Environment
+    /// AWS::Greengrass::FunctionDefinitionVersion Environment
     /// The environment configuration for a Lambda function on the AWS IoT Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html
     /// </summary>
@@ -37,9 +37,8 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
         /// ResourceAccessPolicies
         /// A list of the resources in the group 				 that the function can access, with the corresponding
         /// read-only or read-write permissions. The maximum is 10 resources.
-        /// 				
+        /// 				 				
         /// Note This property applies only to Lambda functions that run in a Greengrass container.
-        /// 				
         /// Required: No
         /// Type: List of ResourceAccessPolicy
         /// Update requires: Replacement

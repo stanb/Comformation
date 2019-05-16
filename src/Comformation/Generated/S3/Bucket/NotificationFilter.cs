@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket NotificationFilter
-    /// Filter is a property of the LambdaConfigurations, QueueConfigurations, and TopicConfigurations properties that
-    /// describes the filtering rules that determine the Amazon Simple Storage Service (Amazon S3) objects for which
-    /// to send notifications.
+    /// AWS::S3::Bucket NotificationFilter
+    /// Specifies object key name filtering rules. For information about key name filtering, see Configuring Event
+    /// Notifications in the Amazon Simple Storage Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html
     /// </summary>
     public class NotificationFilter
@@ -17,9 +16,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// S3Key
-        /// Amazon S3 filtering rules that describe for which object key names to send notifications.
+        /// A container for object key name prefix and suffix filtering rules.
         /// Required: Yes
         /// Type: S3KeyFilter
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Key")]
         public S3KeyFilter S3Key { get; set; }

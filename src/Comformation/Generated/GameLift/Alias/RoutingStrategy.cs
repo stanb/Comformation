@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GameLift.Alias
 {
     /// <summary>
-    /// Amazon GameLift Alias RoutingStrategy
-    /// RoutingStrategy is a property of the AWS::GameLift::Alias resource that configures the routing strategy for an
-    /// Amazon GameLift (GameLift) alias. For more information, see the RoutingStrategy data type in the Amazon
-    /// GameLift API Reference.
+    /// AWS::GameLift::Alias RoutingStrategy
+    /// Routing configuration for a fleet alias.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html
     /// </summary>
     public class RoutingStrategy
@@ -17,30 +15,40 @@ namespace Comformation.GameLift.Alias
 
         /// <summary>
         /// FleetId
-        /// A unique identifier of a GameLift fleet to associate with the alias.
+        /// Unique identifier for a fleet that the alias points to.
         /// Required: Conditional. If you specify SIMPLE for the Type property, you must specify this property.
+        /// Required: No
         /// Type: String
+        /// Pattern: ^fleet-\S+
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FleetId")]
         public Union<string, IntrinsicFunction> FleetId { get; set; }
 
         /// <summary>
         /// Message
-        /// A text message that GameLift displays for the Terminal routing type.
+        /// Message text to be used with a terminal routing strategy.
         /// Required: Conditional. If you specify TERMINAL for the Type property, you must specify this
         /// property.
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Message")]
         public Union<string, IntrinsicFunction> Message { get; set; }
 
         /// <summary>
         /// Type
-        /// The type of routing strategy. For the SIMPLE type, traffic is routed to an active GameLift fleet.
-        /// For the Terminal type, GameLift returns an exception with the message that you specified in the
-        /// Message property.
+        /// Type of routing strategy.
+        /// Possible routing types include the following:
+        /// SIMPLE -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+        /// TERMINAL -- The alias does not resolve to a fleet but instead can be used to display a message to
+        /// the user. A terminal alias throws a TerminalRoutingStrategyException with the message that you
+        /// specified in the Message property.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: SIMPLE | TERMINAL
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }

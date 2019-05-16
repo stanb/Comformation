@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource RecordColumn
-    /// The RecordColumn property type specifies the mapping of each data element in the reference source in a
-    /// SQL-based Amazon Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource RecordColumn
+    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the
+    /// streaming source to the corresponding column in the in-application stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html
     /// </summary>
     public class RecordColumn
@@ -16,7 +16,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 
         /// <summary>
         /// Mapping
-        /// A reference to the data element in the reference data source.
+        /// A reference to the data element in the streaming input or the reference data source.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,9 +26,10 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 
         /// <summary>
         /// SqlType
-        /// The type of column created in the in-application reference table.
+        /// The type of column created in the in-application input stream or reference table.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SqlType")]
@@ -36,7 +37,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 
         /// <summary>
         /// Name
-        /// The name of the column that is created in the in-application reference table.
+        /// The name of the column that is created in the in-application input stream or reference table.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

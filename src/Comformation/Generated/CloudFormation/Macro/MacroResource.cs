@@ -6,9 +6,9 @@ namespace Comformation.CloudFormation.Macro
 {
     /// <summary>
     /// AWS::CloudFormation::Macro
-    /// The AWS::CloudFormation::Macro resource is an AWS CloudFormation resource type that creates an AWS
-    /// CloudFormation macro to perform custom processing on AWS CloudFormation templates. For more information, see
-    /// Using AWS CloudFormation Macros to Perform Custom Processing on Templates.
+    /// The AWS::CloudFormation::Macro resource is an CloudFormation resource type that creates an CloudFormation
+    /// macro to perform custom processing on CloudFormation templates. For more information, see Using AWS
+    /// CloudFormation Macros to Perform Custom Processing on Templates.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html
     /// </summary>
     public class MacroResource : ResourceBase

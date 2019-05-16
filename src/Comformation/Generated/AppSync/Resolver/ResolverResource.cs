@@ -6,9 +6,9 @@ namespace Comformation.AppSync.Resolver
 {
     /// <summary>
     /// AWS::AppSync::Resolver
-    /// The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you will attach to fields in a
-    /// schema. Request and Response templates for resolvers are written in Apache Velocity Template Language (VTL)
-    /// format. More information on resolvers can be found in the Resolver Mapping Template Reference.
+    /// The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a
+    /// schema. Request and response templates for resolvers are written in Apache Velocity Template Language (VTL)
+    /// format. For more information about resolvers, see Resolver Mapping Template Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
     /// </summary>
     public class ResolverResource : ResourceBase
@@ -17,8 +17,9 @@ namespace Comformation.AppSync.Resolver
         {
             /// <summary>
             /// ResponseMappingTemplateS3Location
-            /// A location of a response mapping template on an S3 bucket if you wish to provision with the template
-            /// file living in S3 rather than embedded in your CloudFormation template.
+            /// The location of a response mapping template in an Amazon S3 bucket. Use this if you want to
+            /// provision with a template file in Amazon S3 rather than embedding it in your CloudFormation
+            /// template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -27,7 +28,7 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// TypeName
-            /// The GraphQL type that will invoke this resolver.
+            /// The GraphQL type that invokes this resolver.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -45,8 +46,7 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// DataSourceName
-            /// The AWS AppSync data source that this resolver will run against in order to return data to the
-            /// caller.
+            /// The resolver data source name.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -55,7 +55,7 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// RequestMappingTemplate
-            /// The resolver’s request mapping template, written in text within the CloudFormation template.
+            /// The request mapping template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -64,7 +64,7 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// ResponseMappingTemplate
-            /// The resolver’s response mapping template, written in text within the CloudFormation template.
+            /// The response mapping template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -73,18 +73,21 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// Kind
-            /// The kind of the resolver.
-            /// Valid values: UNIT | PIPELINE.
+            /// The resolver type.
+            /// 	 UNIT: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables
+            /// you to execute a GraphQL query against a single data source. 	 PIPELINE: A PIPELINE resolver type. 	
+            /// A PIPELINE resolver enables you to execute a series of Function in a serial manner. 		 You can use a
+            /// pipeline resolver to execute a GraphQL query against multiple data sources. 	
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Kind { get; set; }
 
             /// <summary>
             /// RequestMappingTemplateS3Location
-            /// A location of a request mapping template on an S3 bucket if you wish to provision with the template
-            /// file living in S3 rather than embedded in your CloudFormation template.
+            /// The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision
+            /// with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -93,7 +96,7 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// ApiId
-            /// The AWS AppSync GraphQL API which you will attach this resolver.
+            /// The AWS AppSync GraphQL API to which you want to attach this resolver.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -102,7 +105,7 @@ namespace Comformation.AppSync.Resolver
 
             /// <summary>
             /// FieldName
-            /// The GraphQL field on a type that will invoke the resolver.
+            /// The GraphQL field on a type that invokes the resolver.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

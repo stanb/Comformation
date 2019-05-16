@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// CodeDeploy DeploymentGroup AlarmConfiguration
-    /// The AlarmConfiguration property type configures CloudWatch alarms for an CodeDeploy deployment group.
-    /// AlarmConfiguration is a property of the AWS::CodeDeploy::DeploymentGroup resource.
+    /// AWS::CodeDeploy::DeploymentGroup AlarmConfiguration
+    /// The AlarmConfiguration property type configuresCloudWatch alarms for an AWS CodeDeploy deployment group.
+    /// AlarmConfiguration is a property of the DeploymentGroup resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html
     /// </summary>
     public class AlarmConfiguration
@@ -16,9 +16,10 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// Alarms
-        /// The list of alarms configured for the deployment group. Duplicates are not allowed.
+        /// A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a
+        /// deployment group.
         /// Required: No
-        /// Type: List of CodeDeploy DeploymentGroup Alarm
+        /// Type: List of Alarm
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Alarms")]
@@ -37,7 +38,10 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// <summary>
         /// IgnorePollAlarmFailure
         /// Indicates whether a deployment should continue if information about the current state of alarms
-        /// cannot be retrieved from CloudWatch. The default value is false.
+        /// cannot be retrieved from Amazon CloudWatch. The default value is false.
+        /// true: The deployment proceeds even if alarm status information can&#39;t be retrieved from Amazon
+        /// CloudWatch. false: The deployment stops if alarm status information can&#39;t be retrieved from Amazon
+        /// CloudWatch.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
 {
     /// <summary>
     /// AWS::ServiceCatalog::TagOptionAssociation
-    /// Associates the specified TagOption with the specified AWS Service Catalog resource. For more information, see
-    /// AWS Service Catalog TagOptionLibrary in the AWS Service Catalog Administrator Guide.
+    /// Associate the specified TagOption with the specified portfolio or product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html
     /// </summary>
     public class TagOptionAssociationResource : ResourceBase

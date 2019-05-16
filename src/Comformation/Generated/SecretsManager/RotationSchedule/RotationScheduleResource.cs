@@ -8,9 +8,9 @@ namespace Comformation.SecretsManager.RotationSchedule
     /// AWS::SecretsManager::RotationSchedule
     /// The AWS::SecretsManager::RotationSchedule resource configures rotation for a secret. The secret must already
     /// be configured with the details of the database or service. If you define both the secret and the database or
-    /// service in a AWS CloudFormation template, then define the AWS::SecretsManager::SecretTargetAttachment resource
-    /// to populate the secret with the connection details of the database or service before you attempt to configure
-    /// rotation.
+    /// service in an AWS CloudFormation template, then define the AWS::SecretsManager::SecretTargetAttachment
+    /// resource to populate the secret with the connection details of the database or service before you attempt to
+    /// configure rotation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html
     /// </summary>
     public class RotationScheduleResource : ResourceBase
@@ -44,7 +44,7 @@ namespace Comformation.SecretsManager.RotationSchedule
             /// RotationRules
             /// Specifies a structure that defines the rotation schedule for this secret.
             /// Required: No
-            /// Type: Secrets Manager RotationSchedule RotationRules
+            /// Type: RotationRules
             /// Update requires: No interruption
             /// </summary>
 			public RotationRules RotationRules { get; set; }

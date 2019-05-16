@@ -6,7 +6,7 @@ namespace Comformation.EC2.VPNConnection
 {
     /// <summary>
     /// AWS::EC2::VPNConnection
-    /// Creates a new VPN connection between an existing virtual private gateway and a VPN customer gateway.
+    /// Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
     /// </summary>
     public class VPNConnectionResource : ResourceBase
@@ -15,8 +15,7 @@ namespace Comformation.EC2.VPNConnection
         {
             /// <summary>
             /// CustomerGatewayId
-            /// The ID of the customer gateway. This can either be an embedded JSON object or a reference to a
-            /// Gateway ID.
+            /// The ID of the customer gateway at your end of the VPN connection.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,9 +24,11 @@ namespace Comformation.EC2.VPNConnection
 
             /// <summary>
             /// StaticRoutesOnly
-            /// Indicates whether the VPN connection requires static routes.
-            /// Required: Conditional. If you are creating a VPN connection for a device that does not support
-            /// Border Gateway Protocol (BGP), you must specify true.
+            /// Indicates whether the VPN connection uses static routes only. Static routes must be used for devices
+            /// that don&#39;t support BGP.
+            /// If you are creating a VPN connection for a device that does not support Border Gateway Protocol
+            /// (BGP), you must specify true.
+            /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
@@ -35,27 +36,26 @@ namespace Comformation.EC2.VPNConnection
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the resource.
+            /// Any tags assigned to the VPN connection.
             /// Required: No
-            /// Type: Resource Tag.
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
-            /// The type of VPN connection this virtual private gateway supports.
-            /// Example: &quot;ipsec. 1&quot;
+            /// The type of VPN connection.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: ipsec. 1
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// VpnGatewayId
-            /// The ID of the virtual private gateway. This can either be an embedded JSON object or a reference to
-            /// a Gateway ID.
+            /// The ID of the virtual private gateway at the AWS side of the VPN connection.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -64,7 +64,9 @@ namespace Comformation.EC2.VPNConnection
 
             /// <summary>
             /// VpnTunnelOptionsSpecifications
-            /// The tunnel options for the VPN connection. Duplicates not allowed.
+            /// 		
+            /// The tunnel options for a VPN connection.
+            /// 	
             /// Required: No
             /// Type: List of VpnTunnelOptionsSpecification
             /// Update requires: Replacement

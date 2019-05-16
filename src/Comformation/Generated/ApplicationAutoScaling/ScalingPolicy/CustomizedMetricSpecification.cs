@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 {
     /// <summary>
-    /// Application Auto Scaling ScalingPolicy CustomizedMetricSpecification
-    /// The CustomizedMetricSpecification property configures a customized metric (an Amazon CloudWatch metric of your
-    /// choosing) for a target tracking policy to use with Application Auto Scaling. CustomizedMetricSpecification is
-    /// a subproperty of the Application Auto Scaling ScalingPolicy TargetTrackingScalingPolicyConfiguration property.
+    /// AWS::ApplicationAutoScaling::ScalingPolicy CustomizedMetricSpecification
+    /// CustomizedMetricSpecification is a subproperty of TargetTrackingScalingPolicyConfiguration that configures a
+    /// customized metric for a target tracking scaling policy to use with Application Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html
     /// </summary>
     public class CustomizedMetricSpecification
@@ -17,9 +16,11 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 
         /// <summary>
         /// Dimensions
-        /// The dimensions of the metric. Duplicates not allowed.
+        /// The dimensions of the metric.
+        /// Conditional: If you published your metric with dimensions, you must specify the same dimensions in
+        /// your scaling policy.
         /// Required: No
-        /// Type: List of Application Auto Scaling ScalingPolicy MetricDimension
+        /// Type: List of MetricDimension
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]
@@ -48,9 +49,9 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// <summary>
         /// Statistic
         /// The statistic of the metric.
-        /// For valid values, see CustomizedMetricSpecification in the Application Auto Scaling API Reference.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]

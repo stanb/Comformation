@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Table
 {
     /// <summary>
-    /// AWS Glue Table TableInput
-    /// The TableInput property type specifies the metadata that&#39;s used to create or update an AWS Glue table.
+    /// AWS::Glue::Table TableInput
+    /// A structure used to define a table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html
     /// </summary>
     public class TableInput
@@ -15,8 +15,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Owner
-        /// The owner of the table. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The table owner.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +25,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// ViewOriginalText
-        /// The original text of the view, if the table is a view. Otherwise, it&#39;s null.
+        /// If the table is a view, the original text of the view; otherwise null.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,8 +35,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Description
-        /// The description of the table. It must match the URI address multi-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// A description of the table.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -47,7 +45,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// TableType
-        /// The type of the table, such as EXTERNAL_TABLE or VIRTUAL_VIEW.
+        /// The type of this table (EXTERNAL_TABLE, VIRTUAL_VIEW, etc. ).
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -57,10 +55,9 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Parameters
-        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the properties that are associated with
-        /// the table.
+        /// These key-value pairs define properties associated with the table.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -68,7 +65,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// ViewExpandedText
-        /// The expanded text of the view, if the table is a view. Otherwise it&#39;s null.
+        /// If the table is a view, the expanded text of the view; otherwise null.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -78,7 +75,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// StorageDescriptor
-        /// Information about the physical storage of the table.
+        /// A storage descriptor containing information about the physical storage of this table.
         /// Required: No
         /// Type: StorageDescriptor
         /// Update requires: No interruption
@@ -88,7 +85,12 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// PartitionKeys
-        /// The columns in the table.
+        /// A list of columns by which the table is partitioned. Only primitive types are supported as partition
+        /// keys.
+        /// 	
+        /// When you create a table used by Amazon Athena, and you do not specify any partitionKeys, you must at
+        /// least set the value of partitionKeys to an empty list. For example:
+        /// &quot;PartitionKeys&quot;: []
         /// Required: No
         /// Type: List of Column
         /// Update requires: No interruption
@@ -98,7 +100,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Retention
-        /// The retention time for the table.
+        /// The retention time for this table.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -108,9 +110,8 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Name
-        /// The name of the table. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
-        /// Required: Yes
+        /// The table name. For Hive compatibility, this is folded to lowercase when it is stored.
+        /// Required: No
         /// Type: String
         /// Update requires: Replacement
         /// </summary>

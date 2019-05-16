@@ -6,11 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Budgets.Budget
 {
     /// <summary>
-    /// AWS Billing and Cost Management Budget BudgetData
-    /// The BudgetData property type specifies all of the parameters that AWS CloudFormation uses to create the
-    /// budget. These parameters include the time period that the budget covers, the amount that the budget is for,
-    /// the name of the budget, what costs, usage, or RI utilization the Billing and Cost Management budget is for,
-    /// and whether the budget tracks what you have spent or what you are forecast to spend.
+    /// AWS::Budgets::Budget BudgetData
+    /// Represents the output of the CreateBudget operation. The content consists of the detailed metadata and data
+    /// file information, and the current status of the budget object.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html
     /// </summary>
     public class BudgetData
@@ -18,9 +16,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// BudgetLimit
-        /// The total amount of cost, usage, or RI utilization that you want to track with your budget.
-        /// The BudgetLimit is required for cost or usage budgets, but optional for RI utilization budgets. RI
-        /// utilization budgets default to the only valid value for RI utilization budgets, which is 100.
+        /// The total amount of cost, usage, RI utilization, or RI coverage that you want to track with your
+        /// budget.
+        /// BudgetLimit is required for cost or usage budgets, but optional for RI utilization or coverage
+        /// budgets. RI utilization or coverage budgets default to 100, which is the only valid value for RI
+        /// utilization or coverage budgets.
         /// Required: No
         /// Type: Spend
         /// Update requires: No interruption
@@ -30,14 +30,20 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// TimePeriod
-        /// The period of time covered by a budget. Has a start date and an end date. The start date must come
-        /// before the end date. There are no restrictions on the end date.
-        /// If you create your budget and don&#39;t specify a start date, AWS defaults to the start of your chosen
-        /// time period (i. e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you create your budget on
-        /// January 24th 2018, choose DAILY, and don&#39;t set a start date, AWS sets your start date to 01/24/18
-        /// 00:00 UTC. If you choose MONTHLY, AWS sets your start date to 01/01/18 00:00 UTC. If you don&#39;t
-        /// specify an end date, AWS sets your end date to 06/15/87 00:00 UTC.
+        /// 		 		 		
+        /// The period of time that is covered by a budget. The period has a start date and an end 			date. The
+        /// start date must come before the end date. There are no restrictions on the end date.
+        /// 		
+        /// The start date for a budget. If you created your budget and didn&#39;t specify a start 			date, the
+        /// start date defaults to the start of the chosen time period (MONTHLY, QUARTERLY, or 			ANNUALLY). For
+        /// example, if you create your budget on January 24, 2019, choose 			MONTHLY, and don&#39;t set a start
+        /// date, the start date defaults to 			01/01/19 00:00 UTC. The defaults are the same for the AWS
+        /// Billing and Cost 			Management console and the API.
+        /// 		
+        /// You can change your start date with the UpdateBudget operation.
+        /// 		
         /// After the end date, AWS deletes the budget and all associated notifications and subscribers.
+        /// 	
         /// Required: No
         /// Type: TimePeriod
         /// Update requires: No interruption
@@ -47,10 +53,13 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// TimeUnit
-        /// The length of time until a budget resets the actual and forecasted spend to zero.
-        /// Valid values are: DAILY, MONTHLY, QUARTERLY, and ANNUALLY.
+        /// 		
+        /// The length of time until a budget resets the actual and forecasted spend. DAILY is available only
+        /// for 			RI_UTILIZATION and RI_COVERAGE budgets.
+        /// 	
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ANNUALLY | DAILY | MONTHLY | QUARTERLY
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimeUnit")]
@@ -58,7 +67,10 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// CostFilters
-        /// The cost filters applied to a budget, such as service or region.
+        /// The cost filters, such as service or region, that are applied to a budget.
+        /// AWS Budgets supports the following services as a filter for RI budgets:
+        /// Amazon Elastic Compute Cloud - Compute Amazon Redshift Amazon Relational Database Service Amazon
+        /// ElastiCache Amazon Elasticsearch Service
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -68,9 +80,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// BudgetName
-        /// The name of a budget. Unique within accounts. : and \ characters are not allowed in the BudgetName.
-        /// If you do not include a BudgetName in the template, Billing and Cost Management assigns your budget
-        /// a randomly generated name.
+        /// 		
+        /// The name of a budget. The value must be unique within an account. BudgetName can&#39;t include 			: and
+        /// \ characters. If you don&#39;t include value for BudgetName in the template, 			Billing and Cost
+        /// Management assigns your budget a randomly generated name.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -80,7 +94,8 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// CostTypes
-        /// The types of costs included in this budget, such as credits, subscriptions, or taxes.
+        /// The types of costs that are included in this COST budget.
+        /// USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
         /// Required: No
         /// Type: CostTypes
         /// Update requires: No interruption
@@ -90,10 +105,10 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// BudgetType
-        /// Whether this budget tracks monetary costs, usage, or RI utilization.
-        /// Valid values are USAGE, COST, RI_UTILIZATION, and RI_COVERAGE.
+        /// Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: COST | RI_COVERAGE | RI_UTILIZATION | USAGE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BudgetType")]

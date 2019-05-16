@@ -27,7 +27,7 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
             /// Subscriptions
             /// The subscriptions in this version.
             /// Required: Yes
-            /// Type: List of Subscription property types
+            /// Type: List of Subscription
             /// Update requires: Replacement
             /// </summary>
 			public List<Subscription> Subscriptions { get; set; }

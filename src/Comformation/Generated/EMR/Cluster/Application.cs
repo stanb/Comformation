@@ -6,38 +6,41 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.Cluster
 {
     /// <summary>
-    /// Amazon EMR Cluster Application
-    /// Application is a property of the AWS::EMR::Cluster resource that adds an Amazon EMR (Amazon EMR) application
-    /// bundle or third-party software to an Amazon EMR cluster.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html
+    /// AWS::EMR::Cluster Application
+    /// Application is a property of AWS::EMR::Cluster. The Application property type defines the open-source big data
+    /// applications for EMR to install and configure when a cluster is created.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html
     /// </summary>
     public class Application
     {
 
         /// <summary>
         /// AdditionalInfo
-        /// Metadata about third-party applications that third-party vendors use for testing purposes.
+        /// This option is for advanced users only. This is meta information about clusters and applications
+        /// that are used for testing and troubleshooting.
         /// Required: No
-        /// Type: String-to-string map
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AdditionalInfo")]
         public Dictionary<string, Union<string, IntrinsicFunction>> AdditionalInfo { get; set; }
 
         /// <summary>
         /// Args
-        /// Arguments that Amazon EMR passes to the application.
+        /// Arguments for Amazon EMR to pass to the application.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Args")]
         public List<Union<string, IntrinsicFunction>> Args { get; set; }
 
         /// <summary>
         /// Name
-        /// The name of the application to add to your cluster, such as Hadoop or Hive. For valid values, see
-        /// the Applications parameter in the Amazon EMR API Reference.
+        /// The name of the application.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
@@ -47,6 +50,7 @@ namespace Comformation.EMR.Cluster
         /// The version of the application.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
         public Union<string, IntrinsicFunction> Version { get; set; }

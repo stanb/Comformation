@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DLM.LifecyclePolicy
 {
     /// <summary>
-    /// Amazon Data Lifecycle Manager LifecyclePolicy PolicyDetails
-    /// The PolicyDetails property type specifies details for an Amazon Data Lifecycle Manager lifecycle policy.
+    /// AWS::DLM::LifecyclePolicy PolicyDetails
+    /// Specifies the configuration of a lifecycle policy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html
     /// </summary>
     public class PolicyDetails
@@ -15,9 +15,10 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// ResourceTypes
-        /// The type of AWS resource. The supported value is VOLUME.
+        /// The resource type. The supported value is VOLUME.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceTypes")]
@@ -27,7 +28,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// Schedules
         /// The schedule of policy-defined actions.
         /// Required: No
-        /// Type: List of Schedule property types
+        /// Type: List of Schedule
+        /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Schedules")]
@@ -35,9 +37,10 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// TargetTags
-        /// The single tag that identifies targeted resources for a policy.
+        /// The single tag that identifies targeted resources for this policy.
         /// Required: No
-        /// Type: List of Resource Tag property types
+        /// Type: List of Tag
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetTags")]

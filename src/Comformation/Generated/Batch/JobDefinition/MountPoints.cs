@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
-    /// AWS Batch JobDefinition MountPoints
-    /// The MountPoints property type specifies mount points for data volumes in your container. This parameter maps
-    /// to Volumes in the Create a container section of the Docker Remote API and the --volume option to docker run.
+    /// AWS::Batch::JobDefinition MountPoints
+    /// Details on a Docker volume mount point that is used in a job&#39;s container properties. This parameter maps to
+    /// Volumes in the Create a container section of the Docker Remote API and the --volume option to docker run.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html
     /// </summary>
     public class MountPoints
@@ -18,9 +18,9 @@ namespace Comformation.Batch.JobDefinition
         /// ReadOnly
         /// If this value is true, the container has read-only access to the volume; otherwise, the container
         /// can write to the volume. The default value is false.
-        /// Required: no
+        /// Required: No
         /// Type: Boolean
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReadOnly")]
         public Union<bool, IntrinsicFunction> ReadOnly { get; set; }
@@ -28,9 +28,9 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// SourceVolume
         /// The name of the volume to mount.
-        /// Required: no
+        /// Required: No
         /// Type: String
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SourceVolume")]
         public Union<string, IntrinsicFunction> SourceVolume { get; set; }
@@ -38,9 +38,9 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// ContainerPath
         /// The path on the container at which to mount the host volume.
-        /// Required: no
+        /// Required: No
         /// Type: String
-        /// Update requires: No Interruption
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ContainerPath")]
         public Union<string, IntrinsicFunction> ContainerPath { get; set; }

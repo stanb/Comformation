@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.Portfolio
 {
     /// <summary>
     /// AWS::ServiceCatalog::Portfolio
-    /// Creates a portfolio for AWS Service Catalog. For more information, see CreatePortfolio in the AWS Service
-    /// Catalog Developer Guide.
+    /// Specifies a portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
     /// </summary>
     public class PortfolioResource : ResourceBase
@@ -19,6 +18,8 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// The name of the portfolio provider.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ProviderName { get; set; }
@@ -28,6 +29,7 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// The description of the portfolio.
             /// Required: No
             /// Type: String
+            /// Maximum: 2000
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
@@ -37,6 +39,8 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// The name to use for display purposes.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DisplayName { get; set; }
@@ -44,8 +48,10 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
@@ -54,7 +60,8 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Tags
             /// One or more tags.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
+            /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

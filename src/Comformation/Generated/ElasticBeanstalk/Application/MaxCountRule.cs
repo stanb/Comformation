@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.Application
 {
     /// <summary>
-    /// AWS Elastic Beanstalk Application MaxCountRule
-    /// The MaxCountRule property type specifies a lifecycle rule that deletes the oldest application version when the
-    /// maximum count is exceeded for an AWS Elastic Beanstalk application.
+    /// AWS::ElasticBeanstalk::Application MaxCountRule
+    /// A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html
     /// </summary>
     public class MaxCountRule

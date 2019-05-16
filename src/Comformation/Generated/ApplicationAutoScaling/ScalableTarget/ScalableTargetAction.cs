@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApplicationAutoScaling.ScalableTarget
 {
     /// <summary>
-    /// Application Auto Scaling ScalableTarget ScalableTargetAction
-    /// The ScalableTargetAction property type specifies the minimum and maximum capacity of a scheduled action for an
-    /// Application Auto Scaling scalable target.
+    /// AWS::ApplicationAutoScaling::ScalableTarget ScalableTargetAction
+    /// ScalableTargetAction is a subproperty of ScheduledAction that represents the minimum and maximum capacity for
+    /// a scheduled action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html
     /// </summary>
     public class ScalableTargetAction

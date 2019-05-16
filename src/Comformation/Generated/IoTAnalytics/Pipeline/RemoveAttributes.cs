@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline RemoveAttributes
-    /// The RemoveAttributes property type specifies the attributes to remove from a message for an AWS IoT Analytics
-    /// pipeline.
+    /// AWS::IoTAnalytics::Pipeline RemoveAttributes
+    /// An activity that removes attributes from a message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-removeattributes.html
     /// </summary>
     public class RemoveAttributes
@@ -19,6 +18,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -26,9 +27,10 @@ namespace Comformation.IoTAnalytics.Pipeline
 
         /// <summary>
         /// Attributes
-        /// Specifies the attributes to remove from the message.
+        /// A list of 1-50 attributes to remove from the message.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]
@@ -39,6 +41,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;removeAttributes&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

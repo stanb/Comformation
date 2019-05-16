@@ -6,8 +6,7 @@ namespace Comformation.CodeCommit.Repository
 {
     /// <summary>
     /// AWS::CodeCommit::Repository
-    /// The AWS::CodeCommit::Repository resource creates an CodeCommit repository that is hosted by Amazon Web
-    /// Services. For more information, see Create an CodeCommit Repository in the AWS CodeCommit User Guide.
+    /// Creates a new, empty repository.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html
     /// </summary>
     public class RepositoryResource : ResourceBase
@@ -16,29 +15,38 @@ namespace Comformation.CodeCommit.Repository
         {
             /// <summary>
             /// RepositoryName
-            /// A name for the CodeCommit repository.
+            /// The name of the new repository to be created.
+            /// Note The repository name must be unique across the calling AWS account. In addition, repository
+            /// names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain
+            /// characters. For a full description of the limits on repository names, see Limits in the AWS
+            /// CodeCommit User Guide. The suffix &quot;. git&quot; is prohibited.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: [\w\. -]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RepositoryName { get; set; }
 
             /// <summary>
             /// Triggers
-            /// Defines the actions to take in response to events that occur in the repository. For example, you can
-            /// send email notifications when someone pushes to the repository.
+            /// The JSON block of configuration information for each trigger.
             /// Required: No
-            /// Type: List of CodeCommit Repository Trigger
-            /// Update requires: No interruption
+            /// Type: List of RepositoryTrigger
             /// </summary>
 			public List<RepositoryTrigger> Triggers { get; set; }
 
             /// <summary>
             /// RepositoryDescription
-            /// A description about the CodeCommit repository. For constraints, see the CreateRepository action in
-            /// the AWS CodeCommit API Reference.
+            /// A comment or description about the new repository.
+            /// Note The description field for a repository accepts all HTML characters and all valid Unicode
+            /// characters. Applications that do not HTML-encode the description and display it in a web page could
+            /// expose users to potentially malicious code. Make sure that you HTML-encode the description field in
+            /// any application that uses this API to display the repository description on a web page.
             /// Required: No
             /// Type: String
+            /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RepositoryDescription { get; set; }

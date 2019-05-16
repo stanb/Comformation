@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Classifier
 {
     /// <summary>
-    /// AWS Glue Classifier GrokClassifier
-    /// The GrokClassifier property type specifies an AWS Glue classifier that uses grok.
+    /// AWS::Glue::Classifier GrokClassifier
+    /// A classifier that uses grok patterns.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html
     /// </summary>
     public class GrokClassifier
@@ -15,8 +15,8 @@ namespace Comformation.Glue.Classifier
 
         /// <summary>
         /// CustomPatterns
-        /// Custom grok patterns that are used by this classifier. It must match the URI address multi-line
-        /// string pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Optional custom grok patterns defined by this classifier. For more information, see custom patterns
+        /// in Writing Custom Classifiers.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,8 +26,8 @@ namespace Comformation.Glue.Classifier
 
         /// <summary>
         /// GrokPattern
-        /// The grok pattern that&#39;s used by this classifier. It must match the Logstash grok string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\t]*
+        /// The grok pattern applied to a data store by this classifier. For more information, see built-in
+        /// patterns in Writing Custom Classifiers.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -37,7 +37,8 @@ namespace Comformation.Glue.Classifier
 
         /// <summary>
         /// Classification
-        /// The data form that the classifier matches—such as Twitter, JSON, or Omniture logs.
+        /// An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
+        /// and so on.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -47,8 +48,7 @@ namespace Comformation.Glue.Classifier
 
         /// <summary>
         /// Name
-        /// The name of the classifier. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The name of the classifier.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

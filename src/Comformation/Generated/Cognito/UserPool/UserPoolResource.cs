@@ -16,19 +16,19 @@ namespace Comformation.Cognito.UserPool
         {
             /// <summary>
             /// UserPoolTags
-            /// The cost allocation tags for the user pool. For more information, see Adding Cost Allocation Tags to
-            /// Your User Pool in the Amazon Cognito Developer Guide.
+            /// The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize
+            /// and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
             /// Required: No
-            /// Type: String to String map
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> UserPoolTags { get; set; }
 
             /// <summary>
             /// Policies
-            /// The policies associated with the Amazon Cognito user pool.
+            /// The policy associated with a user pool.
             /// Required: No
-            /// Type: Amazon Cognito UserPool Policies
+            /// Type: Policies
             /// Update requires: No interruption
             /// </summary>
 			public Policies Policies { get; set; }
@@ -49,10 +49,11 @@ namespace Comformation.Cognito.UserPool
 
             /// <summary>
             /// Schema
-            /// A list of schema attributes for the new user pool. These attributes can be standard or custom
+            /// An array of schema attributes for the new user pool. These attributes can be standard or custom
             /// attributes.
             /// Required: No
             /// Type: List of SchemaAttribute
+            /// Maximum: 50
             /// Update requires: Replacement
             /// </summary>
 			public List<SchemaAttribute> Schema { get; set; }
@@ -61,16 +62,19 @@ namespace Comformation.Cognito.UserPool
             /// AdminCreateUserConfig
             /// The type of configuration for creating a new user profile.
             /// Required: No
-            /// Type: Amazon Cognito UserPool AdminCreateUserConfig
+            /// Type: AdminCreateUserConfig
             /// Update requires: No interruption
             /// </summary>
 			public AdminCreateUserConfig AdminCreateUserConfig { get; set; }
 
             /// <summary>
             /// SmsAuthenticationMessage
-            /// A string representing the SMS authentication message. Must contain {####} in the message.
+            /// A string representing the SMS authentication message.
             /// Required: No
             /// Type: String
+            /// Minimum: 6
+            /// Maximum: 140
+            /// Pattern: . *\{####\}. *
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SmsAuthenticationMessage { get; set; }
@@ -78,17 +82,23 @@ namespace Comformation.Cognito.UserPool
             /// <summary>
             /// UserPoolName
             /// A string used to name the user pool.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w\s+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolName { get; set; }
 
             /// <summary>
             /// SmsVerificationMessage
-            /// A string representing the SMS verification message. Must contain {####} in the message.
+            /// A string representing the SMS verification message.
             /// Required: No
             /// Type: String
+            /// Minimum: 6
+            /// Maximum: 140
+            /// Pattern: . *\{####\}. *
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SmsVerificationMessage { get; set; }
@@ -97,16 +107,16 @@ namespace Comformation.Cognito.UserPool
             /// EmailConfiguration
             /// The email configuration.
             /// Required: No
-            /// Type: Amazon Cognito UserPool EmailConfiguration
+            /// Type: EmailConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public EmailConfiguration EmailConfiguration { get; set; }
 
             /// <summary>
             /// SmsConfiguration
-            /// The Short Message Service (SMS) configuration.
+            /// The SMS configuration.
             /// Required: No
-            /// Type: Amazon Cognito UserPool SmsConfiguration
+            /// Type: SmsConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public SmsConfiguration SmsConfiguration { get; set; }
@@ -116,7 +126,7 @@ namespace Comformation.Cognito.UserPool
             /// Attributes supported as an alias for this user pool. Possible values: phone_number, email, or
             /// preferred_username.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AliasAttributes { get; set; }
@@ -126,34 +136,41 @@ namespace Comformation.Cognito.UserPool
             /// A string representing the email verification subject.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 140
+            /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}\s]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EmailVerificationSubject { get; set; }
 
             /// <summary>
             /// LambdaConfig
-            /// The AWS Lambda trigger configuration information for the Amazon Cognito user pool.
+            /// The Lambda trigger configuration information for the new user pool.
+            /// Note In a push model, event sources (such as Amazon S3 and custom applications) need permission to
+            /// invoke a function. So you will need to make an extra call to add permission for these event sources
+            /// to invoke your Lambda function. For more information on using the Lambda API to add permission, see
+            /// AddPermission . For adding permission using the AWS CLI, see add-permission .
             /// Required: No
-            /// Type: Amazon Cognito UserPool LambdaConfig
+            /// Type: LambdaConfig
             /// Update requires: No interruption
             /// </summary>
 			public LambdaConfig LambdaConfig { get; set; }
 
             /// <summary>
             /// UsernameAttributes
-            /// Specifies whether email addresses or phone numbers can be specified as usernames when a user signs
+            /// Specifies whether email addresses or phone numbers can be specified as user names when a user signs
             /// up. Possible values: phone_number or email.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> UsernameAttributes { get; set; }
 
             /// <summary>
             /// AutoVerifiedAttributes
-            /// The attributes to be auto-verified. Possible values: email or phone_number.
+            /// The attributes to be auto-verified. Possible values: email, phone_number.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AutoVerifiedAttributes { get; set; }
@@ -162,16 +179,19 @@ namespace Comformation.Cognito.UserPool
             /// DeviceConfiguration
             /// The type of configuration for the user pool&#39;s device tracking.
             /// Required: No
-            /// Type: Amazon Cognito UserPool DeviceConfiguration
+            /// Type: DeviceConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public DeviceConfiguration DeviceConfiguration { get; set; }
 
             /// <summary>
             /// EmailVerificationMessage
-            /// A string representing the email verification message. Must contain {####} in the description.
+            /// A string representing the email verification message.
             /// Required: No
             /// Type: String
+            /// Minimum: 6
+            /// Maximum: 20000
+            /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}\s*]*\{####\}[\p{L}\p{M}\p{S}\p{N}\p{P}\s*]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EmailVerificationMessage { get; set; }

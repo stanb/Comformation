@@ -6,8 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling AutoScalingGroup LaunchTemplate
-    /// The LaunchTemplate property type describes a launch template and overrides.
+    /// AWS::AutoScaling::AutoScalingGroup LaunchTemplate
+    /// LaunchTemplate is a subproperty of MixedInstancesPolicy that describes a launch template and overrides. The
+    /// overrides are used to override the instance type specified by the launch template with multiple instance types
+    /// that can be used to launch On-Demand Instances and Spot Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplate.html
     /// </summary>
     public class LaunchTemplate
@@ -26,11 +28,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Overrides
-        /// Any parameters that you specify override the same parameters in the launch template. Currently, the
+        /// Any properties that you specify override the same properties in the launch template. Currently, the
         /// only supported override is instance type.
         /// You must specify between 2 and 20 overrides.
-        /// Required: Yes
-        /// Type: List of LaunchTemplateOverrides property types
+        /// Required: No
+        /// Type: List of LaunchTemplateOverrides
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Overrides")]

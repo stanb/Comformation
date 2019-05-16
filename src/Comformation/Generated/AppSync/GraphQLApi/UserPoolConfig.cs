@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
-    /// AWS AppSync GraphQLApi UserPoolConfig
+    /// AWS::AppSync::GraphQLApi UserPoolConfig
     /// The UserPoolConfig property type specifies the optional authorization configuration for using Amazon Cognito
-    /// User Pools with your GraphQL endpoint for an AWS AppSync GraphQL API.
+    /// user pools with your GraphQL endpoint for an AWS AppSync GraphQL API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html
     /// </summary>
     public class UserPoolConfig
@@ -16,7 +16,7 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// AppIdClientRegex
-        /// A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+        /// A regular expression for validating the incoming Amazon Cognito user pool app client ID.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,7 +36,7 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// AwsRegion
-        /// The AWS region in which the user pool was created.
+        /// The AWS Region in which the user pool was created.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -46,8 +46,8 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// DefaultAction
-        /// The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-        /// authentication doesn&#39;t match the Amazon Cognito User Pool configuration.
+        /// The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+        /// authentication doesn&#39;t match the Amazon Cognito user pool configuration.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

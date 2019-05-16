@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    /// Amazon EMR Cluster Configurations
-    /// Configurations is a property of the AWS::EMR::Cluster resource that specifies the software configuration of an
-    /// Amazon EMR (Amazon EMR) cluster. For example configurations, see Configuring Applications in the Amazon EMR
-    /// Release Guide.
+    /// AWS::EMR::InstanceGroupConfig Configuration
+    /// Configurations is a property of the AWS::EMR::Cluster resource that specifies the configuration of
+    /// applications on an Amazon EMR cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html
     /// </summary>
     public class Configuration
@@ -17,31 +16,31 @@ namespace Comformation.EMR.InstanceGroupConfig
 
         /// <summary>
         /// Classification
-        /// The name of an application-specific configuration file. For more information see, Configuring
-        /// Applications in the Amazon EMR Release Guide.
+        /// The classification within a configuration.
         /// Required: No
         /// Type: String
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Classification")]
         public Union<string, IntrinsicFunction> Classification { get; set; }
 
         /// <summary>
         /// ConfigurationProperties
-        /// The settings that you want to change in the application-specific configuration file. For more
-        /// information see, Configuring Applications in the Amazon EMR Release Guide.
+        /// Within a configuration classification, a set of properties that represent the settings that you want
+        /// to change in the configuration file. Duplicates not allowed.
         /// Required: No
-        /// Type: String-to-string map
+        /// Type: Map of String
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ConfigurationProperties")]
         public Dictionary<string, Union<string, IntrinsicFunction>> ConfigurationProperties { get; set; }
 
         /// <summary>
         /// Configurations
-        /// A list of configurations to apply to this configuration. You can nest configurations so that a
-        /// single configuration can have its own configurations. In other words, you can configure a
-        /// configuration. For more information see, Configuring Applications in the Amazon EMR Release Guide.
+        /// A list of additional configurations to apply within a configuration object.
         /// Required: No
-        /// Type: List of Amazon EMR Cluster Configurations
+        /// Type: List of Configuration
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Configurations")]
         public List<Configuration> Configurations { get; set; }

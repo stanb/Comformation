@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project ProjectCache
-    /// The ProjectCache property type specifies settings that AWS CodeBuild uses to store and reuse build
-    /// dependencies.
+    /// AWS::CodeBuild::Project ProjectCache
+    /// ProjectCache is a property of the AWS CodeBuild Project resource that specifies information about the cache
+    /// for the build project.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html
     /// </summary>
     public class ProjectCache
@@ -25,7 +25,7 @@ namespace Comformation.CodeBuild.Project
         /// Bitbucket), the option is ignored. LOCAL_DOCKER_LAYER_CACHE mode caches existing Docker layers. This
         /// mode is a good choice for projects that build or pull large Docker images. It can prevent the
         /// performance issues caused by pulling large Docker images down from the network. Note You can use a
-        /// Docker layer cache in the Linux enviornment only. The privileged flag must be set so that your
+        /// Docker layer cache in the Linux environment only. The privileged flag must be set so that your
         /// project has the required Docker permissions. You should consider the security implications before
         /// you use a Docker layer cache.
         /// LOCAL_CUSTOM_CACHE mode caches directories you specify in the buildspec file. This mode is a good
@@ -35,7 +35,7 @@ namespace Comformation.CodeBuild.Project
         /// before it downloads its project sources. Cached items are overriden if a source item has the same
         /// name. Directories are specified using cache paths in the buildspec file.
         /// Required: No
-        /// Type: An array of strings.
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Modes")]
@@ -49,6 +49,7 @@ namespace Comformation.CodeBuild.Project
         /// that build host.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: LOCAL | NO_CACHE | S3
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

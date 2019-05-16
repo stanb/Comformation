@@ -6,9 +6,9 @@ namespace Comformation.WAF.Rule
 {
     /// <summary>
     /// AWS::WAF::Rule
-    /// The AWS::WAF::Rule resource creates an AWS WAF rule that specifies a combination of IPSet, ByteMatchSet, and
-    /// SqlInjectionMatchSet objects that identify the web requests to allow, block, or count. To implement rules, you
-    /// must associate them with a web ACL.
+    /// A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that
+    /// you 			want to allow, block, or count. For example, you might create a Rule that includes the following
+    /// predicates:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
@@ -17,8 +17,10 @@ namespace Comformation.WAF.Rule
         {
             /// <summary>
             /// MetricName
-            /// A friendly name or description for the metrics of the rule. For valid values, see the MetricName
-            /// parameter for the CreateRule action in the AWS WAF API Reference.
+            /// A friendly name or description for the metrics for this Rule. The name can contain only alphanumeric
+            /// characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can&#39;t contain
+            /// whitespace or metric names reserved for AWS WAF, including &quot;All&quot; and &quot;Default_Action. &quot; You can&#39;t
+            /// change MetricName after you create the Rule.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -27,20 +29,25 @@ namespace Comformation.WAF.Rule
 
             /// <summary>
             /// Name
-            /// A friendly name or description of the rule.
+            /// 		
+            /// The friendly name or description for the Rule. You can&#39;t change the name of a Rule after you create
+            /// it.
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Predicates
-            /// The ByteMatchSet, IPSet, SizeConstraintSet, SqlInjectionMatchSet, or XssMatchSet objects to include
-            /// in a rule. If you add more than one predicate to a rule, a request must match all conditions in
-            /// order to be allowed or blocked.
+            /// The Predicates object contains one Predicate element for each ByteMatchSet, IPSet, or
+            /// SqlInjectionMatchSet object that you want to include in a Rule.
+            /// 	
             /// Required: No
-            /// Type: List of AWS WAF Rule Predicates
+            /// Type: List of Predicate
             /// Update requires: No interruption
             /// </summary>
 			public List<Predicate> Predicates { get; set; }

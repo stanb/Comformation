@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    /// Amazon EMR InstanceGroupConfig ScalingAction
-    /// The ScalingAction property type specifies the scaling actions for an Auto Scaling group policy. ScalingAction
-    /// is the property type for the Action subproperty of the Amazon EMR InstanceGroupConfig ScalingRule property
-    /// type.
+    /// AWS::EMR::InstanceGroupConfig ScalingAction
+    /// ScalingAction is a subproperty of the ScalingRule property type. ScalingAction determines the type of
+    /// adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html
     /// </summary>
     public class ScalingAction
@@ -18,19 +17,21 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// <summary>
         /// Market
         /// Not available for instance groups. Instance groups use the market type specified for the group.
-        /// Valid values: ON_DEMAND or SPOT.
         /// Required: No
         /// Type: String
+        /// Allowed Values: ON_DEMAND | SPOT
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Market")]
         public Union<string, IntrinsicFunction> Market { get; set; }
 
         /// <summary>
         /// SimpleScalingPolicyConfiguration
-        /// The type of adjustment that the automatic scaling activity makes when triggered, and the periodicity
-        /// of the adjustment.
+        /// The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of
+        /// the adjustment.
         /// Required: Yes
-        /// Type: Amazon EMR InstanceGroupConfig SimpleScalingPolicyConfiguration
+        /// Type: SimpleScalingPolicyConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SimpleScalingPolicyConfiguration")]
         public SimpleScalingPolicyConfiguration SimpleScalingPolicyConfiguration { get; set; }

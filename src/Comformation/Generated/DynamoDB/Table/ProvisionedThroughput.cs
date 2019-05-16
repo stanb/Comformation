@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// Amazon DynamoDB Table ProvisionedThroughput
-    /// Describes a set of provisioned throughput values for an AWS::DynamoDB::Table resource. DynamoDB uses these
-    /// capacity units to allocate sufficient resources to provide the requested throughput.
+    /// AWS::DynamoDB::Table ProvisionedThroughput
+    /// Throughput for the specified table, which consists of values for ReadCapacityUnits and WriteCapacityUnits. For
+    /// more information about the contents of a provisioned throughput structure, see Amazon DynamoDB Table
+    /// ProvisionedThroughput.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
     /// </summary>
     public class ProvisionedThroughput
@@ -16,20 +17,25 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// ReadCapacityUnits
-        /// Sets the desired minimum number of consistent reads of items (up to 4KB in size) per second for the
-        /// specified table before Amazon DynamoDB balances the load.
+        /// The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
+        /// ThrottlingException. For more information, see Specifying Read and Write Requirements in the Amazon
+        /// DynamoDB Developer Guide.
+        /// If read/write capacity mode is PAY_PER_REQUEST the value is set to 0.
         /// Required: Yes
-        /// Type: Number
+        /// Type: Long
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReadCapacityUnits")]
         public Union<long, IntrinsicFunction> ReadCapacityUnits { get; set; }
 
         /// <summary>
         /// WriteCapacityUnits
-        /// Sets the desired minimum number of consistent writes of items (up to 1KB in size) per second for the
-        /// specified table before Amazon DynamoDB balances the load.
+        /// The maximum number of writes consumed per second before DynamoDB returns a ThrottlingException. For
+        /// more information, see Specifying Read and Write Requirements in the Amazon DynamoDB Developer Guide.
+        /// If read/write capacity mode is PAY_PER_REQUEST the value is set to 0.
         /// Required: Yes
-        /// Type: Number
+        /// Type: Long
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("WriteCapacityUnits")]
         public Union<long, IntrinsicFunction> WriteCapacityUnits { get; set; }

@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
-    /// Amazon EMR InstanceFleetConfig Configuration
-    /// Use the Configuration property to configure fleet instances for Amazon EMR and applications and software
-    /// bundled with Amazon EMR. For more information, see Configuring Applications in the Amazon EMR Release Guide.
-    /// Configuration is a subproperty of the Amazon EMR InstanceFleetConfig InstanceTypeConfig property.
+    /// AWS::EMR::InstanceFleetConfig Configuration
+    /// Note Used only with Amazon EMR release 4. 0 and later.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html
     /// </summary>
     public class Configuration
@@ -17,7 +15,7 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// Classification
-        /// The application-specific configuration file.
+        /// The classification within a configuration.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -30,7 +28,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// Within a configuration classification, a set of properties that represent the settings that you want
         /// to change in the configuration file. Duplicates not allowed.
         /// Required: No
-        /// Type: String to String map
+        /// Type: Map of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ConfigurationProperties")]
@@ -38,10 +36,9 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// Configurations
-        /// The list of additional configurations to apply within a configuration object. Duplicates not
-        /// allowed.
+        /// A list of additional configurations to apply within a configuration object.
         /// Required: No
-        /// Type: List of Amazon EMR InstanceFleetConfig Configuration
+        /// Type: List of Configuration
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Configurations")]

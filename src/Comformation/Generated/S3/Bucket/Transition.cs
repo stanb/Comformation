@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket Transition
-    /// Describes when an object transitions to a specified storage class for the Rule property.
+    /// AWS::S3::Bucket Transition
+    /// Specifies when an object transitions to a specified storage class.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html
     /// </summary>
     public class Transition
@@ -15,11 +15,11 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// StorageClass
-        /// The storage class to which you want the object to transition, such as GLACIER. For valid values, see
-        /// the StorageClass request element of the PUT Bucket lifecycle action in the Amazon Simple Storage
-        /// Service API Reference.
+        /// The storage class to which you want the object to transition.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | STANDARD_IA
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageClass")]
         public Union<string, IntrinsicFunction> StorageClass { get; set; }
@@ -29,7 +29,8 @@ namespace Comformation.S3.Bucket
         /// Indicates when objects are transitioned to the specified storage class. The date value must be in
         /// ISO 8601 format. The time is always midnight UTC.
         /// Required: Conditional
-        /// Type: String
+        /// Type: Timestamp
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TransitionDate")]
         public Union<string, IntrinsicFunction> TransitionDate { get; set; }
@@ -37,9 +38,10 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// TransitionInDays
         /// Indicates the number of days after creation when objects are transitioned to the specified storage
-        /// class.
+        /// class. The value must be a positive integer.
         /// Required: Conditional
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TransitionInDays")]
         public Union<int, IntrinsicFunction> TransitionInDays { get; set; }

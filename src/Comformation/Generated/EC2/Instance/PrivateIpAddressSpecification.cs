@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// Amazon EC2 NetworkInterface PrivateIpAddressSpecification
-    /// The PrivateIpAddressSpecification type is an embedded property of the AWS::EC2::NetworkInterface type.
+    /// AWS::EC2::NetworkInterface PrivateIpAddressSpecification
+    /// Describes a secondary private IPv4 address for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html
     /// </summary>
     public class PrivateIpAddressSpecification
@@ -20,6 +20,7 @@ namespace Comformation.EC2.Instance
         /// primary private IP address.
         /// Required: Yes
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Primary")]
         public Union<bool, IntrinsicFunction> Primary { get; set; }
@@ -29,6 +30,7 @@ namespace Comformation.EC2.Instance
         /// The private IP address of the network interface.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivateIpAddress")]
         public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }

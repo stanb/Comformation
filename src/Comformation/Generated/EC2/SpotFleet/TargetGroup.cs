@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon EC2 SpotFleet TargetGroup
-    /// The TargetGroup property type describes a load balancer target group.
+    /// AWS::EC2::SpotFleet TargetGroup
+    /// Describes a load balancer target group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html
     /// </summary>
     public class TargetGroup

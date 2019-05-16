@@ -6,8 +6,8 @@ namespace Comformation.Batch.ComputeEnvironment
 {
     /// <summary>
     /// AWS::Batch::ComputeEnvironment
-    /// The AWS::Batch::ComputeEnvironment resource to define your AWS Batch compute environment. For more
-    /// information, see Compute Environments in the AWS Batch User Guide.
+    /// The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment. For more information,
+    /// see Compute Environments in the AWS Batch User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
     /// </summary>
     public class ComputeEnvironmentResource : ResourceBase
@@ -16,17 +16,25 @@ namespace Comformation.Batch.ComputeEnvironment
         {
             /// <summary>
             /// Type
-            /// The type of the compute environment.
+            /// The type of the compute environment. For more information, see Compute Environments in the AWS Batch
+            /// User Guide.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: MANAGED | UNMANAGED
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// ServiceRole
-            /// The service role associated with the compute environment that allows AWS Batch to make calls to AWS
-            /// API operations on your behalf.
+            /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
+            /// services on your behalf.
+            /// If your specified role has a path other than /, then you must either specify the full role ARN (this
+            /// is recommended) or prefix the role name with the path.
+            /// Note Depending on how you created your AWS Batch service role, its ARN may contain the service-role
+            /// path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN
+            /// does not use the service-role path prefix. Because of this, we recommend that you specify the full
+            /// ARN of your service role when you create compute environments.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -35,7 +43,8 @@ namespace Comformation.Batch.ComputeEnvironment
 
             /// <summary>
             /// ComputeEnvironmentName
-            /// The name of the compute environment.
+            /// The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers,
+            /// hyphens, and underscores are allowed.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -44,20 +53,22 @@ namespace Comformation.Batch.ComputeEnvironment
 
             /// <summary>
             /// ComputeResources
-            /// The compute resources defined for the compute environment.
-            /// Required: Yes
-            /// Type: AWS Batch ComputeEnvironment ComputeResources
+            /// The ComputeResources property type specifies details of the compute resources managed by the compute
+            /// environment. This parameter is required for managed compute environments. For more information, see
+            /// Compute Environments in the AWS Batch User Guide.
+            /// Required: No
+            /// Type: ComputeResources
             /// Update requires: No interruption
             /// </summary>
 			public ComputeResources ComputeResources { get; set; }
 
             /// <summary>
             /// State
-            /// The state of the compute environment. The valid values are ENABLED or DISABLED. An ENABLED state
-            /// indicates that you can register instances with the compute environment and that the associated
-            /// instances can accept jobs.
+            /// The state of the compute environment. If the state is ENABLED, then the compute environment accepts
+            /// jobs from a queue and can scale out automatically based on queues.
             /// Required: No
             /// Type: String
+            /// Allowed Values: DISABLED | ENABLED
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> State { get; set; }

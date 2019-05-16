@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate Ebs
-    /// The Ebs property type specifies parameters for a block device for an EBS volume in a Amazon EC2 launch
-    /// template.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html
+    /// AWS::EC2::LaunchTemplate Ebs
+    /// Parameters for a block device for an EBS volume in an Amazon EC2 launch template.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html
     /// </summary>
     public class Ebs
     {
@@ -27,9 +26,9 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// VolumeType
         /// The volume type.
-        /// Valid values include: standard, io1, gp2, sc1, and st1.
         /// Required: No
         /// Type: String
+        /// Allowed Values: gp2 | io1 | sc1 | st1 | standard
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeType")]
@@ -59,11 +58,12 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// Iops
+        /// 	
         /// The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents
         /// the number of IOPS that are provisioned for the volume. For gp2, this represents the baseline
         /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
         /// more information about General Purpose SSD baseline performance, I/O credits, and bursting, see
-        /// Amazon EBS Volume Types in the Amazon EC2 User Guide for Linux Instances.
+        /// Amazon EBS Volume Types in the Amazon Elastic Compute Cloud User Guide.
         /// Condition: This parameter is required for requests to create io1 volumes; it is not used in requests
         /// to create gp2, st1, sc1, or standard volumes.
         /// Required: No

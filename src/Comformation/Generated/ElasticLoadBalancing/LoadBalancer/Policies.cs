@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing V1 Policy
-    /// The ElasticLoadBalancing policy type is an embedded property of the AWS::ElasticLoadBalancing::LoadBalancer
-    /// resource. You associate policies with a listener by referencing a policy&#39;s name in the listener&#39;s PolicyNames
-    /// property.
+    /// AWS::ElasticLoadBalancing::LoadBalancer Policies
+    /// Specifies policies for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html
     /// </summary>
     public class Policies
@@ -17,47 +15,50 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// Attributes
-        /// The attributes for this policy. If you don&#39;t need to specify any policy attributes, specify an empty
-        /// list ([]).
+        /// The policy attributes.
         /// Required: Yes
-        /// Type: List of JSON name-value pairs.
+        /// Type: List of Json
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]
         public List<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>> Attributes { get; set; }
 
         /// <summary>
         /// InstancePorts
-        /// The instance ports for the policy. These are the ports associated with the back-end server.
+        /// The instance ports for the policy. Required only for some policy types.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstancePorts")]
         public List<Union<string, IntrinsicFunction>> InstancePorts { get; set; }
 
         /// <summary>
         /// LoadBalancerPorts
-        /// The load balancer ports for the policy.
-        /// Required: Only for some policies.
-        /// Type: List of String values
+        /// The load balancer ports for the policy. Required only for some policy types.
+        /// Required: No
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LoadBalancerPorts")]
         public List<Union<string, IntrinsicFunction>> LoadBalancerPorts { get; set; }
 
         /// <summary>
         /// PolicyName
-        /// A name for this policy that is unique to the load balancer.
+        /// The name of the policy.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PolicyName")]
         public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
         /// <summary>
         /// PolicyType
-        /// The name of the policy type for this policy. This must be one of the types reported by the Elastic
-        /// Load Balancing DescribeLoadBalancerPolicyTypes action.
+        /// The name of the policy type.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PolicyType")]
         public Union<string, IntrinsicFunction> PolicyType { get; set; }

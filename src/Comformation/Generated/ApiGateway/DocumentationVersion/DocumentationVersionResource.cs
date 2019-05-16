@@ -6,9 +6,8 @@ namespace Comformation.ApiGateway.DocumentationVersion
 {
     /// <summary>
     /// AWS::ApiGateway::DocumentationVersion
-    /// The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an Amazon API
-    /// Gateway API entity. For more information, see Representation of API Documentation in API Gateway in the API
-    /// Gateway Developer Guide.
+    /// The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an API. For
+    /// more information, see Representation of API Documentation in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html
     /// </summary>
     public class DocumentationVersionResource : ResourceBase
@@ -35,7 +34,7 @@ namespace Comformation.ApiGateway.DocumentationVersion
 
             /// <summary>
             /// RestApiId
-            /// The identifier of the targeted API entity.
+            /// The identifier of the API.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

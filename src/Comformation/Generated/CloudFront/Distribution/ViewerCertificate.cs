@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    /// CloudFront Distribution ViewerCertificate
-    /// ViewerCertificate is a property of the CloudFront Distribution DistributionConfig property that specifies
-    /// which certificate to use when viewers use HTTPS to request objects.
+    /// AWS::CloudFront::Distribution ViewerCertificate
+    /// A complex type that specifies the following:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
     /// </summary>
     public class ViewerCertificate
@@ -16,12 +15,18 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// IamCertificateId
-        /// If you&#39;re using an alternate domain name, the ID of a server certificate that was purchased from a
-        /// certificate authority. This ID is the ServerCertificateId value, which AWS Identity and Access
-        /// Management (IAM) returns when the certificate is added to the IAM certificate store, such as
-        /// ASCACKCEVSQ6CEXAMPLE1.
-        /// Required: Conditional. You must specify one of the following properties: AcmCertificateArn,
-        /// CloudFrontDefaultCertificate, or IamCertificateId.
+        /// 		
+        /// If you want viewers to use HTTPS to request your objects and you&#39;re using an alternate domain name,
+        /// 			you must choose the type of certificate that you want to use. Specify the following value if you
+        /// purchased your certificate from 			a third-party certificate authority:
+        /// 				
+        /// 					 				 						 &amp;lt;IAMCertificateId&amp;gt;IAM certificate ID&amp;lt;IAMCertificateId&amp;gt; where 							
+        /// IAM certificate ID is the ID that IAM returned when you added the certificate 							to the IAM
+        /// certificate store. 					
+        /// 		
+        /// If you specify IAMCertificateId, you must also specify a value for SSLSupportMethod.
+        /// 	
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -30,10 +35,30 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// SslSupportMethod
-        /// Specifies how CloudFront serves HTTPS requests. For valid values, see the SslSupportMethod content
-        /// for the ViewerCertificate data type in the Amazon CloudFront API Reference.
-        /// Required: Conditional. Required if you specified the IamCertificateId or AcmCertificateArn property.
+        /// 		
+        /// If you specify a value for ACMCertificateArn or for 			IAMCertificateId, 			you must also specify
+        /// how you want CloudFront to serve HTTPS requests: using a method that works for browsers and clients
+        /// released after 2010 or one that works for all 			clients.
+        /// 		
+        /// 			 			 		 				 sni-only: CloudFront can respond to HTTPS requests from viewers that support Server
+        /// Name Indication (SNI). 					All modern browsers support SNI, but there are a few that don&#39;t. For a
+        /// current list of the browsers that support SNI, see the 					Wikipedia entry Server Name Indication.
+        /// To learn 					about options to explore if you have users with browsers that don&#39;t include SNI
+        /// support, see Choosing 						How CloudFront Serves HTTPS Requests in the Amazon CloudFront Developer
+        /// Guide. 			 				 vip: CloudFront uses dedicated IP addresses for your content and can respond to
+        /// HTTPS requests from any viewer. 					However, there are additional monthly charges. For details,
+        /// including specific pricing information, see Custom SSL options for Amazon CloudFront 					on the AWS
+        /// marketing site. 				 			
+        /// 		
+        /// Don&#39;t specify a value for SSLSupportMethod if you specified
+        /// 				&amp;lt;CloudFrontDefaultCertificate&amp;gt;true&amp;lt;CloudFrontDefaultCertificate&amp;gt;.
+        /// 		
+        /// For more information, see Choosing 			How CloudFront Serves HTTPS Requests in the Amazon CloudFront
+        /// Developer Guide.
+        /// 	
+        /// Required: Conditional
         /// Type: String
+        /// Allowed Values: sni-only | vip
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SslSupportMethod")]
@@ -41,16 +66,35 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// MinimumProtocolVersion
-        /// The minimum version of the SSL protocol that you want CloudFront to use for HTTPS connections.
-        /// CloudFront serves your objects only to browsers or devices that support at least the SSL version
-        /// that you specify. For valid values, see the MinimumProtocolVersion content for the ViewerCertificate
-        /// data type in the Amazon CloudFront API Reference.
-        /// AWS CloudFormation specifies SSLv3 by default. However, if you specify the IamCertificateId or
-        /// AcmCertificateArn property and specify SNI only for the SslSupportMethod property, AWS
-        /// CloudFormation specifies TLSv1 for the minimum protocol version.
+        /// 		
+        /// Specify the security policy that you want CloudFront to use for HTTPS connections. A security policy
+        /// determines two settings:
+        /// 			
+        /// 				 				 			 The minimum SSL/TLS protocol that CloudFront uses to communicate with viewers The
+        /// cipher that CloudFront uses to encrypt the content that it returns to viewers
+        /// 		
         /// Note On the CloudFront console, this setting is called Security policy.
+        /// 		 		
+        /// We recommend that you specify TLSv1. 1_2016 unless your users are using browsers or devices 			that
+        /// do not support TLSv1. 1 or later.
+        /// 		
+        /// When both of the following are true, you must specify TLSv1 or later for the security policy:
+        /// 			
+        /// 				 				 			 					 You&#39;re using a custom certificate: you specified a value for ACMCertificateArn
+        /// or for IAMCertificateId 				 					 You&#39;re using SNI: you specified sni-only for SSLSupportMethod
+        /// 				
+        /// 		
+        /// If you specify true for CloudFrontDefaultCertificate, CloudFront automatically sets the security
+        /// policy to 			TLSv1 regardless of the value that you specify for MinimumProtocolVersion.
+        /// 		
+        /// For information about the relationship between the security policy that you choose and the protocols
+        /// and ciphers that CloudFront 			uses to communicate with viewers, see 			 				Supported SSL/TLS
+        /// Protocols and Ciphers for Communication Between Viewers and CloudFront in the Amazon CloudFront
+        /// Developer Guide.
+        /// 	
         /// Required: No
         /// Type: String
+        /// Allowed Values: SSLv3 | TLSv1 | TLSv1. 1_2016 | TLSv1. 2_2018 | TLSv1_2016
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MinimumProtocolVersion")]
@@ -58,10 +102,14 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// CloudFrontDefaultCertificate
-        /// Indicates whether to use the default certificate for your CloudFront domain name when viewers use
-        /// HTTPS to request your content.
-        /// Required: Conditional. You must specify one of the following properties: AcmCertificateArn,
-        /// CloudFrontDefaultCertificate, or IamCertificateId.
+        /// 		
+        /// If you&#39;re using the CloudFront domain name for your distribution, such as d111111abcdef8.
+        /// cloudfront. net, specify the 			following value:
+        /// 		
+        /// 			 		 				 					 &amp;lt;CloudFrontDefaultCertificate&amp;gt;true&amp;lt;CloudFrontDefaultCertificate&amp;gt; 				
+        /// 			
+        /// 		 	
+        /// Required: Conditional
         /// Type: Boolean
         /// Update requires: No interruption
         /// </summary>
@@ -70,12 +118,18 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// AcmCertificateArn
-        /// If you&#39;re using an alternate domain name, the Amazon Resource Name (ARN) of an AWS Certificate
-        /// Manager (ACM) certificate. Use the ACM service to provision and manage your certificates. For more
-        /// information, see the AWS Certificate Manager User Guide.
-        /// Note Currently, you can specify only certificates that are in the US East (N. Virginia) region.
-        /// Required: Conditional. You must specify one of the following properties: AcmCertificateArn,
-        /// CloudFrontDefaultCertificate, or IamCertificateId.
+        /// 		
+        /// If you want viewers to use HTTPS to request your objects and you&#39;re using an alternate domain name,
+        /// 			you must choose the type of certificate that you want to use. Specify the following value if ACM
+        /// provided your certificate:
+        /// 				
+        /// 					 				 						 &amp;lt;ACMCertificateArn&amp;gt;ARN for ACM SSL/TLS certificate&amp;lt;ACMCertificateArn&amp;gt;
+        /// where 							 ARN for ACM SSL/TLS certificate is the ARN for the ACM SSL/TLS certificate that you
+        /// want to use 							for this distribution. 					
+        /// 				
+        /// If you specify ACMCertificateArn, you must also specify a value for SSLSupportMethod.
+        /// 		 	
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

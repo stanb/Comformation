@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket ReplicationDestination
-    /// Destination is a property of the ReplicationRule property that specifies which Amazon Simple Storage Service
-    /// (Amazon S3) bucket to store replicated objects and their storage class.
+    /// AWS::S3::Bucket ReplicationDestination
+    /// Specifies which Amazon S3 bucket to store replicated objects in and their storage class.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html
     /// </summary>
     public class ReplicationDestination
@@ -22,6 +21,7 @@ namespace Comformation.S3.Bucket
         /// AWS account that owns the source object.
         /// Required: No
         /// Type: AccessControlTranslation
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AccessControlTranslation")]
         public AccessControlTranslation AccessControlTranslation { get; set; }
@@ -33,21 +33,24 @@ namespace Comformation.S3.Bucket
         /// AccessControlTranslation property, this is the account ID of the destination bucket owner. For more
         /// information, see Cross-Region Replication Additional Configuration: Change Replica Owner in the
         /// Amazon Simple Storage Service Developer Guide.
-        /// Conditional: If you specify the AccessControlTranslation property, the Account property is required.
-        /// Required: No
+        /// If you specify the AccessControlTranslation property, the Account property is required.
+        /// Required: Conditional
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Account")]
         public Union<string, IntrinsicFunction> Account { get; set; }
 
         /// <summary>
         /// Bucket
-        /// The Amazon resource name (ARN) of an S3 bucket where Amazon S3 stores replicated objects. This
-        /// destination bucket must be in a different region than your source bucket.
-        /// If you have multiple rules in your replication configuration, specify the same destination bucket
-        /// for all of the rules.
+        /// The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store replicas of the
+        /// object identified by the rule.
+        /// A replication configuration can replicate objects to only one destination bucket. If there are
+        /// multiple rules in your replication configuration, all rules must specify the same destination
+        /// bucket.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Bucket")]
         public Union<string, IntrinsicFunction> Bucket { get; set; }
@@ -57,6 +60,7 @@ namespace Comformation.S3.Bucket
         /// Specifies encryption-related information.
         /// Required: No
         /// Type: EncryptionConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EncryptionConfiguration")]
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
@@ -64,11 +68,14 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// StorageClass
         /// The storage class to use when replicating objects, such as standard or reduced redundancy. By
-        /// default, Amazon S3 uses the storage class of the source object to create object replica. For valid
-        /// values, see the StorageClass element of the PUT Bucket replication action in the Amazon Simple
-        /// Storage Service API Reference.
+        /// default, Amazon S3 uses the storage class of the source object to create the object replica.
+        /// For valid values, see the StorageClass element of the PUT Bucket replication action in the Amazon
+        /// Simple Storage Service API Reference.
         /// Required: No
         /// Type: String
+        /// Allowed Values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | REDUCED_REDUNDANCY |
+        /// STANDARD | STANDARD_IA
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageClass")]
         public Union<string, IntrinsicFunction> StorageClass { get; set; }

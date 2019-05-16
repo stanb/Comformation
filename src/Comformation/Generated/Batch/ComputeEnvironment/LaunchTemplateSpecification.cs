@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Batch.ComputeEnvironment
 {
     /// <summary>
-    /// AWS Batch ComputeEnvironment LaunchTemplateSpecification
-    /// The LaunchTemplateSpecification property type specifies a launch template to use with your compute
-    /// environment.
+    /// AWS::Batch::ComputeEnvironment LaunchTemplateSpecification
+    /// An object representing a launch template associated with a compute resource. You must specify either the
+    /// launch template ID or launch template name in the request, but not both.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html
     /// </summary>
     public class LaunchTemplateSpecification
@@ -27,6 +27,7 @@ namespace Comformation.Batch.ComputeEnvironment
         /// <summary>
         /// Version
         /// The version number of the launch template.
+        /// Default: The default version of the launch template.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

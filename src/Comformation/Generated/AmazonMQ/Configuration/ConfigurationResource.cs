@@ -6,7 +6,8 @@ namespace Comformation.AmazonMQ.Configuration
 {
     /// <summary>
     /// AWS::AmazonMQ::Configuration
-    /// A configuration contains all of the settings for your ActiveMQ broker, in XML format.
+    /// Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
+    /// (the engine type and version).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html
     /// </summary>
     public class ConfigurationResource : ResourceBase
@@ -15,8 +16,8 @@ namespace Comformation.AmazonMQ.Configuration
         {
             /// <summary>
             /// EngineVersion
-            /// The version of the broker engine.
-            /// Note For a list of supported engine versions, see: Broker Engine.
+            /// The version of the broker engine. For a list of supported engine versions, see https://docs. aws.
+            /// amazon. com/amazon-mq/latest/developer-guide/broker-engine. html
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -34,8 +35,7 @@ namespace Comformation.AmazonMQ.Configuration
 
             /// <summary>
             /// EngineType
-            /// The type of broker engine.
-            /// Note Currently, Amazon MQ supports only ACTIVEMQ.
+            /// The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -53,10 +53,9 @@ namespace Comformation.AmazonMQ.Configuration
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// Create tags when creating the configuration.
             /// Required: No
-            /// Type: List of Resource Tag
+            /// Type: List of TagsEntry
             /// Update requires: No interruption
             /// </summary>
 			public List<TagsEntry> Tags { get; set; }

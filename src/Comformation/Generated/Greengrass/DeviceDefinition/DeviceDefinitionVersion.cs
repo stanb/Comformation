@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.DeviceDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass DeviceDefinition DeviceDefinitionVersion
+    /// AWS::Greengrass::DeviceDefinition DeviceDefinitionVersion
     /// A device definition version contains a list of devices.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html
     /// </summary>

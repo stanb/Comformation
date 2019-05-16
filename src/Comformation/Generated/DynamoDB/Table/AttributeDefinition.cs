@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// Amazon DynamoDB Table AttributeDefinition
-    /// The AttributeDefinition property type represents an attribute for describing the key schema for a DynamoDB
-    /// table and indexes.
+    /// AWS::DynamoDB::Table AttributeDefinition
+    /// Represents an attribute for describing the key schema for the table and indexes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html
     /// </summary>
     public class AttributeDefinition
@@ -16,20 +15,25 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// AttributeName
-        /// The name of an attribute. Attribute names can be 1 – 255 characters long and have no character
-        /// restrictions.
+        /// A name for the attribute.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeName")]
         public Union<string, IntrinsicFunction> AttributeName { get; set; }
 
         /// <summary>
         /// AttributeType
-        /// The data type for the attribute. You can specify S for string data, N for numeric data, or B for
-        /// binary data.
+        /// The data type for the attribute, where:
+        /// S - the attribute is of type String N - the attribute is of type Number B - the attribute is of type
+        /// Binary
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: B | N | S
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeType")]
         public Union<string, IntrinsicFunction> AttributeType { get; set; }

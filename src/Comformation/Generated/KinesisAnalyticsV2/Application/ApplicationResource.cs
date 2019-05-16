@@ -6,8 +6,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application
-    /// The AWS::KinesisAnalyticsV2::Application resource creates an Amazon Kinesis Data Analytics application. For
-    /// more information, see the Amazon Kinesis Data Analytics Developer Guide.
+    /// Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
+    /// application, see Creating an Application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
@@ -16,9 +16,12 @@ namespace Comformation.KinesisAnalyticsV2.Application
         {
             /// <summary>
             /// ApplicationName
-            /// The name of your Amazon Kinesis Analytics application (for example, sample-app).
+            /// The name of the application.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
@@ -28,6 +31,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
             /// The runtime environment for the application (SQL-1. 0 or FLINK-1_6).
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: FLINK-1_6 | SQL-1_0
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> RuntimeEnvironment { get; set; }
@@ -43,19 +47,23 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
             /// <summary>
             /// ApplicationDescription
-            /// A summary description of the application.
+            /// The description of the application.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationDescription { get; set; }
 
             /// <summary>
             /// ServiceExecutionRole
-            /// The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery
-            /// streams, Amazon S3 objects, and other external resources.
+            /// Specifies the IAM role that the application uses to access external resources.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 2048
+            /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceExecutionRole { get; set; }

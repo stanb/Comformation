@@ -27,7 +27,7 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
             /// Devices
             /// The devices in this version.
             /// Required: Yes
-            /// Type: List of Device property types
+            /// Type: List of Device
             /// Update requires: Replacement
             /// </summary>
 			public List<Device> Devices { get; set; }

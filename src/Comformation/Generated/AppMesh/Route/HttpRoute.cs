@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.Route
 {
     /// <summary>
-    /// AWS AppMesh Route HttpRoute
+    /// AWS::AppMesh::Route HttpRoute
     /// An object representing the HTTP routing specification for a route.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
     /// </summary>

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// EC2 NetworkInterface
-    /// The EC2 Network Interface type is an embedded property of the AWS::EC2::Instance type. It specifies a network
-    /// interface that is to be attached.
+    /// AWS::EC2::Instance NetworkInterface
+    /// Specifies a network interface that is to be attached to an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
     /// </summary>
     public class NetworkInterface
@@ -16,133 +15,136 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// AssociatePublicIpAddress
-        /// Indicates whether the network interface receives a public IP address. You can associate a public IP
-        /// address with a network interface only if it has a device index of eth0 and if it is a new network
-        /// interface (not an existing one). In other words, if you specify true, don&#39;t specify a network
-        /// interface ID. For more information, see Amazon EC2 Instance IP Addressing.
+        /// One or more IPv6 addresses to assign to the network interface. You cannot specify this option and
+        /// the option to assign a number of IPv6 addresses in the same request. You cannot specify this option
+        /// if you&#39;ve specified a minimum number of instances to launch.
         /// Required: No
-        /// Type: Boolean.
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AssociatePublicIpAddress")]
         public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
         /// <summary>
         /// DeleteOnTermination
-        /// Whether to delete the network interface when the instance terminates.
+        /// If set to true, the interface is deleted when the instance is terminated. You can specify true only
+        /// if creating a new network interface when launching an instance.
         /// Required: No
-        /// Type: Boolean.
+        /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
         public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
         /// <summary>
         /// Description
-        /// The description of this network interface.
+        /// The description of the network interface. Applies only if creating a network interface when
+        /// launching an instance.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Description")]
         public Union<string, IntrinsicFunction> Description { get; set; }
 
         /// <summary>
         /// DeviceIndex
-        /// The network interface&#39;s position in the attachment order.
+        /// The position of the network interface in the attachment order. A primary network interface has a
+        /// device index of 0.
+        /// If you specify a network interface when launching an instance, you must specify the device index.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeviceIndex")]
         public Union<string, IntrinsicFunction> DeviceIndex { get; set; }
 
         /// <summary>
         /// GroupSet
-        /// A list of security group IDs associated with this network interface.
+        /// The IDs of the security groups for the network interface. Applies only if creating a network
+        /// interface when launching an instance.
         /// Required: No
-        /// Type: List of strings.
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GroupSet")]
         public List<Union<string, IntrinsicFunction>> GroupSet { get; set; }
 
         /// <summary>
         /// Ipv6AddressCount
-        /// The number of IPv6 addresses to associate with the network interface. Amazon EC2 automatically
-        /// selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the
-        /// Ipv6Addresses property and don&#39;t specify this property.
-        /// For restrictions on which instance types support IPv6 addresses, see the RunInstances action in the
-        /// Amazon EC2 API Reference.
+        /// A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses
+        /// from the range of the subnet. You cannot specify this option and the option to assign specific IPv6
+        /// addresses in the same request. You can specify this option if you&#39;ve specified a minimum number of
+        /// instances to launch.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ipv6AddressCount")]
         public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
         /// <summary>
         /// Ipv6Addresses
-        /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with
-        /// the network interface. To specify a number of IPv6 addresses, use the Ipv6AddressCount property and
-        /// don&#39;t specify this property.
-        /// For information about restrictions on which instance types support IPv6 addresses, see the
-        /// RunInstances action in the Amazon EC2 API Reference.
+        /// The IPv6 addresses associated with the network interface.
         /// Required: No
-        /// Type: List of EC2 NetworkInterface Ipv6Addresses
+        /// Type: List of InstanceIpv6Address
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Ipv6Addresses")]
         public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
 
         /// <summary>
         /// NetworkInterfaceId
-        /// An existing network interface ID.
-        /// Required: Conditional. If you don&#39;t specify the SubnetId property, you must specify this property.
+        /// The ID of the network interface.
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NetworkInterfaceId")]
         public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
         /// <summary>
         /// PrivateIpAddress
-        /// Assigns a single private IP address to the network interface, which is used as the primary private
-        /// IP address. If you want to specify multiple private IP address, use the PrivateIpAddresses property.
+        /// The private IPv4 address of the network interface. Applies only if creating a network interface when
+        /// launching an instance. You cannot specify this option if you&#39;re launching 	more than one instance in
+        /// a RunInstances request.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivateIpAddress")]
         public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 
         /// <summary>
         /// PrivateIpAddresses
-        /// Assigns a list of private IP addresses to the network interface. You can specify a primary private
-        /// IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification
-        /// property. If you want Amazon EC2 to automatically assign private IP addresses, use the
-        /// SecondaryPrivateIpAddressCount property and do not specify this property.
-        /// For information about the maximum number of private IP addresses, see Private IP Addresses Per ENI
-        /// Per Instance Type in the Amazon EC2 User Guide for Linux Instances.
+        /// One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address
+        /// can be designated as primary. You cannot specify this option if you&#39;re 	launching more than one
+        /// instance in a RunInstances request.
         /// Required: No
-        /// Type: list of PrivateIpAddressSpecification
+        /// Type: List of PrivateIpAddressSpecification
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivateIpAddresses")]
         public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 
         /// <summary>
         /// SecondaryPrivateIpAddressCount
-        /// The number of secondary private IP addresses that Amazon EC2 auto assigns to the network interface.
-        /// Amazon EC2 uses the value of the PrivateIpAddress property as the primary private IP address. If you
-        /// don&#39;t specify that property, Amazon EC2 auto assigns both the primary and secondary private IP
-        /// addresses.
-        /// If you want to specify your own list of private IP addresses, use the PrivateIpAddresses property
-        /// and do not specify this property.
-        /// For information about the maximum number of private IP addresses, see Private IP Addresses Per ENI
-        /// Per Instance Type in the Amazon EC2 User Guide for Linux Instances.
+        /// The number of secondary private IPv4 addresses. You can&#39;t specify this option and specify more than
+        /// one private IP address using the private IP addresses option. You cannot specify this option if
+        /// you&#39;re 	launching more than one instance in a RunInstances request.
         /// Required: No
-        /// Type: Integer.
+        /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecondaryPrivateIpAddressCount")]
         public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
         /// <summary>
         /// SubnetId
-        /// The ID of the subnet to associate with the network interface.
-        /// Required: Conditional. If you don&#39;t specify the NetworkInterfaceId property, you must specify this
-        /// property.
+        /// The ID of the subnet.
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubnetId")]
         public Union<string, IntrinsicFunction> SubnetId { get; set; }

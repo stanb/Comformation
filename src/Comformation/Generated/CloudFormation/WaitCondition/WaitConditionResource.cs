@@ -17,14 +17,15 @@ namespace Comformation.CloudFormation.WaitCondition
         {
             /// <summary>
             /// Count
-            /// The number of success signals that AWS CloudFormation must receive before it continues the stack
-            /// creation process. When the wait condition receives the requisite number of success signals, AWS
+            /// The number of success signals that CloudFormation must receive before it continues the stack
+            /// creation process. When the wait condition receives the requisite number of success signals,
             /// CloudFormation resumes the creation of the stack. If the wait condition does not receive the
-            /// specified number of success signals before the Timeout period expires, AWS CloudFormation assumes
-            /// that the wait condition has failed and rolls the stack back.
+            /// specified number of success signals before the Timeout period expires, CloudFormation assumes that
+            /// the wait condition has failed and rolls the stack back.
+            /// Updates are not supported.
             /// Required: No
             /// Type: Integer
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Count { get; set; }
 
@@ -36,9 +37,10 @@ namespace Comformation.CloudFormation.WaitCondition
             /// condition with a new WaitConditionHandle resource. Do not reuse an old wait condition handle that
             /// has already been defined in the template. If you reuse a wait condition handle, the wait condition
             /// might evaluate old signals from a previous create or update stack command.
-            /// Required: Yes
+            /// Updates are not supported.
+            /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Handle { get; set; }
 
@@ -48,9 +50,10 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Timeout is a minimum-bound property, meaning the timeout occurs no sooner than the time you specify,
             /// but can occur shortly thereafter. The maximum time that can be specified for this property is 12
             /// hours (43200 seconds).
-            /// Required: Yes
+            /// Updates are not supported.
+            /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Timeout { get; set; }
 

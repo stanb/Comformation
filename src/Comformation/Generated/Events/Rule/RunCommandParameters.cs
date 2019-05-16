@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Events.Rule
 {
     /// <summary>
-    /// Amazon CloudWatch Events Rule RunCommandParameters
+    /// AWS::Events::Rule RunCommandParameters
     /// The RunCommandParameters property type specifies the parameters to use when an Amazon CloudWatch Events rule
     /// invokes the AWS Systems Manager Run Command.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html
@@ -22,6 +22,7 @@ namespace Comformation.Events.Rule
         /// InstanceIds or a tag.
         /// Required: Yes
         /// Type: List of RunCommandTarget
+        /// Maximum: 5
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RunCommandTargets")]

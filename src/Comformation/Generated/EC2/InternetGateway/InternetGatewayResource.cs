@@ -6,8 +6,8 @@ namespace Comformation.EC2.InternetGateway
 {
     /// <summary>
     /// AWS::EC2::InternetGateway
-    /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to
-    /// a VPC.
+    /// Allocates an internet gateway for use with a VPC. After creating the Internet gateway, you then attach it to a
+    /// VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html
     /// </summary>
     public class InternetGatewayResource : ResourceBase
@@ -16,9 +16,11 @@ namespace Comformation.EC2.InternetGateway
         {
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this resource.
+            /// 		
+            /// Any tags to assign to the internet gateway.
+            /// 	
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

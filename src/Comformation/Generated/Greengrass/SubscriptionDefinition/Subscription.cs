@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.SubscriptionDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass SubscriptionDefinition Subscription
+    /// AWS::Greengrass::SubscriptionDefinition Subscription
     /// Subscriptions define how MQTT messages can be exchanged between devices, functions, and connectors in the
     /// group, and with AWS IoT or the local shadow service. A subscription defines a message source, message target,
     /// and a topic (or subject) that&#39;s used to route messages from the source to the target. A subscription defines

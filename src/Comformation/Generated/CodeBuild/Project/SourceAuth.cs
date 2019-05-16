@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project SourceAuth
-    /// The SourceAuth property type specifies authorization settings for AWS CodeBuild to access the source code to
-    /// be built.
+    /// AWS::CodeBuild::Project SourceAuth
+    /// SourceAuth is a property of the AWS CodeBuild Project Source property type that specifies authorization
+    /// settings for AWS CodeBuild to access the source code to be built.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html
     /// </summary>
     public class SourceAuth
@@ -18,8 +18,10 @@ namespace Comformation.CodeBuild.Project
         /// Type
         /// The authorization type to use. The only valid value is OAUTH, which represents the OAuth
         /// authorization type.
+        /// Note This data type is used by the AWS CodeBuild console only.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: OAUTH
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
@@ -28,6 +30,7 @@ namespace Comformation.CodeBuild.Project
         /// <summary>
         /// Resource
         /// The resource value that applies to the specified authorization type.
+        /// Note This data type is used by the AWS CodeBuild console only.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

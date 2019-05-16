@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Connection
 {
     /// <summary>
-    /// AWS Glue Connection ConnectionInput
-    /// The ConnectionInput property type specifies the AWS Glue connection to create.
+    /// AWS::Glue::Connection ConnectionInput
+    /// A structure that is used to specify a connection to create or update.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html
     /// </summary>
     public class ConnectionInput
@@ -25,7 +25,7 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// ConnectionType
-        /// The type of the connection. Valid values are JDBC or SFTP.
+        /// The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -35,9 +35,9 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// MatchCriteria
-        /// A list of UTF-8 strings that specify the criteria that you can use in selecting this connection.
-        /// Required: Yes
-        /// Type: List of String values
+        /// A list of criteria that can be used in selecting this connection.
+        /// Required: No
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MatchCriteria")]
@@ -45,9 +45,9 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// PhysicalConnectionRequirements
-        /// A map of physical connection requirements that are needed to make the connection, such as VPC and
-        /// SecurityGroup.
-        /// Required: Yes
+        /// A map of physical connection requirements, such as virtual private cloud (VPC) and SecurityGroup,
+        /// that are needed to successfully make this connection.
+        /// Required: No
         /// Type: PhysicalConnectionRequirements
         /// Update requires: No interruption
         /// </summary>
@@ -56,9 +56,9 @@ namespace Comformation.Glue.Connection
 
         /// <summary>
         /// ConnectionProperties
-        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the parameters for this connection.
+        /// These key-value pairs define parameters for the connection.
         /// Required: Yes
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConnectionProperties")]

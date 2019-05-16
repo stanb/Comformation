@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    /// CloudFront Distribution DistributionConfig
-    /// DistributionConfig is a property of the AWS::CloudFront::Distribution property that describes which Amazon
-    /// CloudFront origin servers to get your files from when users request the files through your website or
-    /// application.
+    /// AWS::CloudFront::Distribution DistributionConfig
+    /// A distribution configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
     /// </summary>
     public class DistributionConfig
@@ -17,10 +15,13 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Logging
-        /// Controls whether access logs are written for the distribution. To turn on access logs, specify this
-        /// property.
+        /// 		
+        /// A complex type that controls whether access logs are written for the 			distribution.
+        /// 		
+        /// For more information about logging, see Access 				Logs in the Amazon CloudFront Developer Guide.
+        /// 	
         /// Required: No
-        /// Type: Logging type
+        /// Type: Logging
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Logging")]
@@ -28,9 +29,16 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Comment
-        /// Any comments that you want to include about the distribution. Optional.
-        /// When you create a distribution, you can include a comment of up to 128 characters. You can update
-        /// the comment at any time.
+        /// 		
+        /// Any comments you want to include about the distribution.
+        /// 		
+        /// If you don&#39;t want to specify a comment, include an empty Comment 			element.
+        /// 		
+        /// To delete an existing comment, update the distribution configuration and include an 			empty Comment
+        /// element.
+        /// 		
+        /// To add or change a comment, update the distribution configuration and specify the new 			comment.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -40,9 +48,26 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// DefaultRootObject
-        /// The object (such as index. html) that you want CloudFront to request from your origin when the root
-        /// URL for your distribution (such as http://example. com/) is requested.
-        /// Note Specifying a default root object avoids exposing the contents of your distribution.
+        /// 		
+        /// The object that you want CloudFront to request from your origin (for example, 				index. html) when
+        /// a viewer requests the root URL for your distribution 				(http://www. example. com) instead of an
+        /// object in your distribution 				(http://www. example. com/product-description. html). Specifying a
+        /// default root 			object avoids exposing the contents of your distribution.
+        /// 		
+        /// Specify only the object name, for example, index. html. Don&#39;t add a 				/ before the object name.
+        /// 		
+        /// If you don&#39;t want to specify a default root object when you create a distribution, 			include an
+        /// empty DefaultRootObject element.
+        /// 		
+        /// To delete the default root object from an existing distribution, update the 			distribution
+        /// configuration and include an empty DefaultRootObject 			element.
+        /// 		
+        /// To replace the default root object, update the distribution configuration and specify 			the new
+        /// object.
+        /// 		
+        /// For more information about the default root object, see Creating a Default Root Object in the
+        /// 				Amazon CloudFront Developer Guide.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -52,10 +77,11 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Origins
-        /// A list of origins for this CloudFront distribution. For each origin, you can specify whether it is
-        /// an Amazon S3 or custom origin.
-        /// Required: Yes
-        /// Type: List of Origins.
+        /// 		
+        /// A complex type that contains information about origins for this distribution. 		
+        /// 	
+        /// Required: No
+        /// Type: List of Origin
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Origins")]
@@ -63,9 +89,13 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// ViewerCertificate
-        /// The certificate to use when viewers use HTTPS to request objects.
+        /// 		
+        /// A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects,
+        /// 			whether you&#39;re using an alternate domain name with HTTPS, and if so, if you&#39;re using AWS
+        /// Certificate Manager (ACM) 			or a third-party certificate authority.
+        /// 	
         /// Required: No
-        /// Type: CloudFront Distribution ViewerCertificate
+        /// Type: ViewerCertificate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ViewerCertificate")]
@@ -73,13 +103,24 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// PriceClass
-        /// The price class that corresponds with the maximum price that you want to pay for the CloudFront
-        /// service. For more information, see Choosing the Price Class in the Amazon CloudFront Developer
-        /// Guide.
-        /// For more information about the valid values, see the PriceClass content for the DistributionConfig
-        /// data type in the Amazon CloudFront API Reference.
+        /// 		
+        /// The price class that corresponds with the maximum price that you want to pay for CloudFront
+        /// 			service. If you specify PriceClass_All, CloudFront responds to requests for your 			objects from
+        /// all CloudFront edge locations.
+        /// 		
+        /// If you specify a price class other than PriceClass_All, CloudFront serves your 			objects from the
+        /// CloudFront edge location that has the lowest latency among the edge locations in 			your price
+        /// class. Viewers who are in or near regions that are excluded from your specified 			price class may
+        /// encounter slower performance.
+        /// 		
+        /// For more information about price classes, see Choosing the Price Class for a CloudFront Distribution
+        /// in the 			Amazon CloudFront Developer Guide. For information about CloudFront pricing, including how
+        /// price 			classes (such as Price Class 100) map to CloudFront regions, see 			Amazon CloudFront
+        /// Pricing. 			For price class information, scroll down to see the table at the bottom of the page.
+        /// 	
         /// Required: No
         /// Type: String
+        /// Allowed Values: PriceClass_100 | PriceClass_200 | PriceClass_All
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PriceClass")]
@@ -87,10 +128,13 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// DefaultCacheBehavior
-        /// The default cache behavior that is triggered if you do not specify the CacheBehavior property or if
-        /// files don&#39;t match any of the values of PathPattern in the CacheBehavior property.
-        /// Required: Yes
-        /// Type: DefaultCacheBehavior type
+        /// 		
+        /// A complex type that describes the default cache behavior if you don&#39;t specify a 				CacheBehavior
+        /// element or if files don&#39;t match any of the values of 				PathPattern in CacheBehavior elements. You
+        /// must create exactly one 			default cache behavior.
+        /// 	
+        /// Required: No
+        /// Type: DefaultCacheBehavior
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefaultCacheBehavior")]
@@ -98,10 +142,18 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// CustomErrorResponses
-        /// Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages
-        /// before returning the response to the viewer.
+        /// 		
+        /// A complex type that controls the following:
+        /// 		
+        /// 			 			 		 				 Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom
+        /// error 					messages before returning the response to the viewer. 			 				 How long CloudFront caches
+        /// HTTP status codes in the 4xx and 5xx range. 			
+        /// 		
+        /// For more information about custom error pages, see Customizing Error Responses in the 				Amazon
+        /// CloudFront Developer Guide.
+        /// 	
         /// Required: No
-        /// Type List of CloudFront Distribution CustomErrorResponse
+        /// Type: List of CustomErrorResponse
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomErrorResponses")]
@@ -109,7 +161,9 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Enabled
-        /// Controls whether the distribution is enabled to accept end user requests for content.
+        /// 		
+        /// From this field, you can enable or disable the selected distribution.
+        /// 		 	
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption
@@ -119,9 +173,12 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Aliases
-        /// CNAMEs (alternate domain names), if any, for the distribution.
+        /// 		
+        /// A complex type that contains information about CNAMEs (alternate domain names), if any, 			for this
+        /// distribution.
+        /// 	
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Aliases")]
@@ -129,11 +186,34 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// IPV6Enabled
-        /// If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution,
-        /// specify true. If you specify false, CloudFront responds to IPv6 DNS requests with the DNS response
-        /// code NOERROR and with no IP addresses. This allows viewers to submit a second request, for an IPv4
-        /// address for your distribution. For more information and usage guidance, see CreateDistribution in
-        /// the Amazon CloudFront API Reference.
+        /// 		
+        /// If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your
+        /// 			distribution, specify true. If you specify false, CloudFront responds to 			IPv6 DNS requests
+        /// with the DNS response code NOERROR and with no IP addresses. 			This allows viewers to submit a
+        /// second request, for an IPv4 address for your distribution.
+        /// 		
+        /// In general, you should enable IPv6 if you have users on IPv6 networks who want to 			access your
+        /// content. However, if you&#39;re using signed URLs or signed cookies to restrict access 			to your
+        /// content, and if you&#39;re using a custom policy that includes the IpAddress 			parameter to restrict
+        /// the IP addresses that can access your content, don&#39;t enable IPv6. If 			you want to restrict access
+        /// to some content by IP address and not restrict access to other 			content (or restrict access but
+        /// not by IP address), you can create two distributions. For more 			information, see 			Creating a
+        /// Signed URL Using a Custom Policy in the Amazon CloudFront Developer 				Guide.
+        /// 		
+        /// If you&#39;re using an Amazon Route 53 alias resource record set to route traffic to your CloudFront
+        /// 			distribution, you need to create a second alias resource record set when both of the following
+        /// 			are true:
+        /// 		
+        /// 			 			 		 				 You enable IPv6 for the distribution 			 				 You&#39;re using alternate domain names in
+        /// the URLs for your objects 			
+        /// 		
+        /// For more information, see Routing Traffic 				to an Amazon CloudFront Web Distribution by Using Your
+        /// Domain Name in the Amazon Route 53 				Developer Guide.
+        /// 		
+        /// If you created a CNAME resource record set, either with Amazon Route 53 or with another DNS
+        /// 			service, you don&#39;t need to make any changes. A CNAME record will route traffic to your
+        /// 			distribution regardless of the IP address format of the viewer request.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -143,10 +223,17 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// WebACLId
-        /// The AWS WAF web ACL to associate with this distribution. AWS WAF is a web application firewall that
-        /// enables you to monitor the HTTP and HTTPS requests that are forwarded to CloudFront and to control
-        /// who can access your content. CloudFront permits or forbids requests based on conditions that you
-        /// specify, such as the IP addresses from which requests originate or the values of query strings.
+        /// 		
+        /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate with 			this
+        /// distribution.
+        /// 		
+        /// AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS 			requests that are
+        /// forwarded to CloudFront, and lets you control access to your content. Based on 			conditions that
+        /// you specify, such as the IP addresses that requests originate from or the 			values of query
+        /// strings, CloudFront responds to requests either with the requested content or with 			an HTTP 403
+        /// status code (Forbidden). You can also configure CloudFront to return a custom error page 			when a
+        /// request is blocked. For more information about AWS WAF, see the AWS WAF 				Developer Guide.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -156,13 +243,21 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// HttpVersion
-        /// The latest HTTP version that viewers can use to communicate with CloudFront. Viewers that don&#39;t
-        /// support the latest version automatically use an earlier HTTP version. By default, AWS CloudFormation
-        /// specifies http1. 1.
-        /// For valid values, see the HttpVersion content for the DistributionConfig data type in the Amazon
-        /// CloudFront API Reference.
+        /// 		
+        /// (Optional) Specify the maximum HTTP version that you want viewers to use to communicate 			with
+        /// CloudFront. The default value for new web distributions is http2. Viewers that don&#39;t support
+        /// 			HTTP/2 automatically use an earlier HTTP version.
+        /// 		
+        /// For viewers and CloudFront to use HTTP/2, viewers must support TLS 1. 2 or later, and must
+        /// 			support Server Name Identification (SNI).
+        /// 		
+        /// In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. 			You
+        /// can improve performance by optimizing for HTTP/2. For more information, do an Internet 			search for
+        /// &quot;http/2 optimization. &quot;
+        /// 	
         /// Required: No
         /// Type: String
+        /// Allowed Values: http1. 1 | http2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HttpVersion")]
@@ -170,9 +265,11 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Restrictions
-        /// Specifies restrictions on who or how viewers can access your content.
+        /// 		
+        /// A complex type that identifies ways in which you want to restrict distribution of your 			content.
+        /// 	
         /// Required: No
-        /// Type: CloudFront Distribution Restrictions
+        /// Type: Restrictions
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Restrictions")]
@@ -180,9 +277,11 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// CacheBehaviors
-        /// A list of CacheBehavior types for the distribution.
+        /// 		
+        /// A complex type that contains zero or more CacheBehavior elements. 		
+        /// 	
         /// Required: No
-        /// Type: List of CloudFront Distribution CacheBehavior
+        /// Type: List of CacheBehavior
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheBehaviors")]

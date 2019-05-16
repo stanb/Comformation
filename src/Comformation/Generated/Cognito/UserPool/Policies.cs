@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.UserPool
 {
     /// <summary>
-    /// Amazon Cognito UserPool Policies
+    /// AWS::Cognito::UserPool Policies
     /// Policies is a property of the AWS::Cognito::UserPool resource that defines the password policies of an Amazon
     /// Cognito User Pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html
@@ -16,9 +16,10 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// PasswordPolicy
-        /// Specifies information about the user pool password policy.
-        /// Type: Amazon Cognito UserPool PasswordPolicy
+        /// The password policy.
         /// Required: No
+        /// Type: PasswordPolicy
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PasswordPolicy")]
         public PasswordPolicy PasswordPolicy { get; set; }

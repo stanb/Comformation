@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Cognito.UserPool
 {
     /// <summary>
-    /// Amazon Cognito UserPool LambdaConfig
+    /// AWS::Cognito::UserPool LambdaConfig
     /// LambdaConfig is a property of the AWS::Cognito::UserPool resource that defines the AWS Lambda configuration of
     /// an Amazon Cognito User Pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
@@ -17,8 +17,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// CreateAuthChallenge
         /// Creates an authentication challenge.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CreateAuthChallenge")]
         public Union<string, IntrinsicFunction> CreateAuthChallenge { get; set; }
@@ -26,8 +31,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// PreAuthentication
         /// A pre-authentication AWS Lambda trigger.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PreAuthentication")]
         public Union<string, IntrinsicFunction> PreAuthentication { get; set; }
@@ -35,8 +45,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// DefineAuthChallenge
         /// Defines the authentication challenge.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefineAuthChallenge")]
         public Union<string, IntrinsicFunction> DefineAuthChallenge { get; set; }
@@ -44,8 +59,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// PreSignUp
         /// A pre-registration AWS Lambda trigger.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PreSignUp")]
         public Union<string, IntrinsicFunction> PreSignUp { get; set; }
@@ -53,8 +73,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// PostAuthentication
         /// A post-authentication AWS Lambda trigger.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PostAuthentication")]
         public Union<string, IntrinsicFunction> PostAuthentication { get; set; }
@@ -62,8 +87,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// PostConfirmation
         /// A post-confirmation AWS Lambda trigger.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PostConfirmation")]
         public Union<string, IntrinsicFunction> PostConfirmation { get; set; }
@@ -71,8 +101,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// CustomMessage
         /// A custom Message AWS Lambda trigger.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomMessage")]
         public Union<string, IntrinsicFunction> CustomMessage { get; set; }
@@ -80,8 +115,13 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// VerifyAuthChallengeResponse
         /// Verifies the authentication challenge response.
-        /// Type: String
         /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VerifyAuthChallengeResponse")]
         public Union<string, IntrinsicFunction> VerifyAuthChallengeResponse { get; set; }

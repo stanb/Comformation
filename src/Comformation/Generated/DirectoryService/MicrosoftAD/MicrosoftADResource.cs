@@ -6,10 +6,9 @@ namespace Comformation.DirectoryService.MicrosoftAD
 {
     /// <summary>
     /// AWS::DirectoryService::MicrosoftAD
-    /// The AWS::DirectoryService::MicrosoftAD resource creates a Microsoft Active Directory in AWS so that your
+    /// The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your
     /// directory users and groups can access the AWS Management Console and AWS applications using their existing
-    /// credentials. For more information, see What Is AWS Directory Service? in the AWS Directory Service
-    /// Administration Guide.
+    /// credentials. For more information, see AWS Managed Microsoft AD in the AWS Directory Service Admin Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
     /// </summary>
     public class MicrosoftADResource : ResourceBase
@@ -18,9 +17,11 @@ namespace Comformation.DirectoryService.MicrosoftAD
         {
             /// <summary>
             /// CreateAlias
-            /// A unique alias to assign to the Microsoft Active Directory in AWS. AWS Directory Service uses the
-            /// alias to construct the access URL for the directory, such as http://alias. awsapps. com. By default,
+            /// Specifies an alias for a directory and assigns the alias to the directory. The alias is used to
+            /// construct the access URL for the directory, such as http://&amp;lt;alias&amp;gt;. awsapps. com. By default,
             /// AWS CloudFormation does not create an alias.
+            /// Important After an alias has been created, it cannot be deleted or reused, so this operation should
+            /// only be used when absolutely necessary.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -29,10 +30,11 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
             /// <summary>
             /// Edition
-            /// The AWS Microsoft AD edition. Valid values include Standard and Enterprise. The default is
-            /// Enterprise.
+            /// AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the
+            /// default.
             /// Required: No
             /// Type: String
+            /// Allowed Values: Enterprise | Standard
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Edition { get; set; }
@@ -51,39 +53,44 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
             /// <summary>
             /// Name
-            /// The fully qualified name for the Microsoft Active Directory in AWS, such as corp. example. com. The
-            /// name doesn&#39;t need to be publicly resolvable; it will resolve inside your VPC only.
+            /// The fully qualified domain name for the directory, such as corp. example. com. This name will
+            /// resolve inside your VPC only. It does not need to be publicly resolvable.
             /// Required: Yes
             /// Type: String
+            /// Pattern: ^([a-zA-Z0-9]+[\\. -])+([a-zA-Z0-9])+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Password
-            /// The password for the default administrative user, Admin.
+            /// The password for the default administrative user named Admin.
             /// Required: Yes
             /// Type: String
+            /// Pattern: (?=^. {8,64}$)((?=. *\d)(?=. *[A-Z])(?=. *[a-z])|(?=. *\d)(?=. *[^A-Za-z0-9\s])(?=.
+            /// *[a-z])|(?=. *[^A-Za-z0-9\s])(?=. *[A-Z])(?=. *[a-z])|(?=. *\d)(?=. *[A-Z])(?=. *[^A-Za-z0-9\s]))^.
+            /// *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
             /// ShortName
-            /// The NetBIOS name for your domain, such as CORP. If you don&#39;t specify a value, AWS Directory Service
-            /// uses the first part of your directory DNS server name. For example, if your directory DNS server
-            /// name is corp. example. com, AWS Directory Service specifies CORP for the NetBIOS name.
+            /// The NetBIOS name for your domain. A short identifier for your domain, such as CORP. If you don&#39;t
+            /// specify a NetBIOS name, it will default to the first part of your directory DNS. For example, CORP
+            /// for the directory DNS corp. example. com.
             /// Required: No
             /// Type: String
+            /// Pattern: ^[^\\/:*?\&quot;\&amp;lt;\&amp;gt;|. ]+[^\\/:*?\&quot;&amp;lt;&amp;gt;|]*$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ShortName { get; set; }
 
             /// <summary>
             /// VpcSettings
-            /// Specifies the VPC settings of the Microsoft Active Directory server in AWS.
+            /// Specifies the VPC settings of the Microsoft AD directory server in AWS.
             /// Required: Yes
-            /// Type: AWS Directory Service MicrosoftAD VpcSettings
+            /// Type: VpcSettings
             /// Update requires: Replacement
             /// </summary>
 			public VpcSettings VpcSettings { get; set; }

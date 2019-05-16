@@ -6,9 +6,9 @@ namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlan
-    /// The AWS::ApiGateway::UsagePlan resource specifies a usage plan for deployed Amazon API Gateway (API Gateway)
-    /// APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information,
-    /// see Creating and Using API Usage Plans in Amazon API Gateway in the API Gateway Developer Guide.
+    /// The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs. A usage plan enforces
+    /// throttling and quota limits on individual client API keys. For more information, see Creating and Using API
+    /// Usage Plans in Amazon API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
     /// </summary>
     public class UsagePlanResource : ResourceBase
@@ -19,14 +19,14 @@ namespace Comformation.ApiGateway.UsagePlan
             /// ApiStages
             /// The API stages to associate with this usage plan.
             /// Required: No
-            /// Type: List of Amazon API Gateway UsagePlan ApiStage
+            /// Type: List of ApiStage
             /// Update requires: No interruption
             /// </summary>
 			public List<ApiStage> ApiStages { get; set; }
 
             /// <summary>
             /// Description
-            /// The purpose of this usage plan.
+            /// A description of the usage plan.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -37,7 +37,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Quota
             /// Configures the number of requests that users can make within a given interval.
             /// Required: No
-            /// Type: Amazon API Gateway UsagePlan QuotaSettings
+            /// Type: QuotaSettings
             /// Update requires: No interruption
             /// </summary>
 			public QuotaSettings Quota { get; set; }
@@ -46,14 +46,14 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Throttle
             /// Configures the overall request rate (average requests per second) and burst capacity.
             /// Required: No
-            /// Type: Amazon API Gateway UsagePlan ThrottleSettings
+            /// Type: ThrottleSettings
             /// Update requires: No interruption
             /// </summary>
 			public ThrottleSettings Throttle { get; set; }
 
             /// <summary>
             /// UsagePlanName
-            /// A name for this usage plan.
+            /// A name for the usage plan.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

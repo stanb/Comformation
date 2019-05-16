@@ -8,9 +8,9 @@ namespace Comformation.GuardDuty.Member
     /// AWS::GuardDuty::Member
     /// You can use the AWS::GuardDuty::Member resource to add an AWS account as a GuardDuty member account to the
     /// current GuardDuty master account. If the value of the Status property is not provided or is set to Created, a
-    /// member account is only created. If the value of the Status property is set to Invited, a member account is
-    /// created and invited. AWS::GuardDuty::Member resource has to be created with the Status property set to Invited
-    /// before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
+    /// member account is created but not invited. If the value of the Status property is set to Invited, a member
+    /// account is created and invited. A AWS::GuardDuty::Member resource must be created with the Status property set
+    /// to Invited before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html
     /// </summary>
     public class MemberResource : ResourceBase
@@ -19,10 +19,11 @@ namespace Comformation.GuardDuty.Member
         {
             /// <summary>
             /// Status
-            /// You can use this property to update the status of the relationship between the member account and
-            /// its master account. Valid values are Created | Invited | Disabled | Enabled | Removed | Resigned. If
-            /// the value for this property is not provided or set to Created, a member account is only created. If
-            /// the value of this property is set to Invited, a member account is created and invited.
+            /// You can use the Status property to update the status of the relationship between the member account
+            /// and its master account. Valid values are Created and Invited when using a AWS::GuardDuty::Member
+            /// resource. If the value for this property is not provided or set to Created, a member account is
+            /// created but not invited. If the value of this property is set to Invited, a member account is
+            /// created and invited.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -31,7 +32,7 @@ namespace Comformation.GuardDuty.Member
 
             /// <summary>
             /// MemberId
-            /// The account ID of the member GuardDuty account.
+            /// The AWS account ID of the account to designate as a member.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -40,7 +41,7 @@ namespace Comformation.GuardDuty.Member
 
             /// <summary>
             /// Email
-            /// The email address of the GuardDuty member account.
+            /// The email address associated with the member account.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -49,8 +50,7 @@ namespace Comformation.GuardDuty.Member
 
             /// <summary>
             /// Message
-            /// The invitation message that you want to send to the account that you invite to GuardDuty as a
-            /// member.
+            /// The message to include with the invitation sent to the member accounts.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -59,8 +59,7 @@ namespace Comformation.GuardDuty.Member
 
             /// <summary>
             /// DisableEmailNotification
-            /// Specifies whether an email notification is sent to the accounts that you want to invite to GuardDuty
-            /// as members. When set to &#39;True&#39;, email notification is not sent to the invitees.
+            /// Specifies whether or not to disable email notification for the member account that you invite.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -69,7 +68,7 @@ namespace Comformation.GuardDuty.Member
 
             /// <summary>
             /// DetectorId
-            /// The unique ID of the detector in a GuardDuty master account.
+            /// The ID of the detector associated with the GuardDuty service to add the member to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

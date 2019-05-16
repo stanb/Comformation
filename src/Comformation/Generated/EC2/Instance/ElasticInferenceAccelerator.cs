@@ -6,19 +6,17 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud Instance ElasticInferenceAccelerator
-    /// The ElasticInferenceAccelerator property type specifies an elastic inference accelerator for an instance.
-    /// Elastic Inference (EI) accelerators are a resource you can attach to your Amazon EC2 instances to accelerate
-    /// your Deep Learning (DL) inference workloads.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticInferenceaccelerator.html
+    /// AWS::EC2::Instance ElasticInferenceAccelerator
+    /// Specifies the Elastic Inference Accelerator for the instance.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html
     /// </summary>
     public class ElasticInferenceAccelerator
     {
 
         /// <summary>
         /// Type
-        /// The type of elastic inference accelerator. The possible values are eia1. medium, eia1. large, and
-        /// eia1. xlarge.
+        /// 	The type of elastic inference accelerator. The possible values are eia1. small, eia1. medium, and
+        /// eia1. large.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

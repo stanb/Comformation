@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
-    /// Amazon EC2 Auto Scaling AutoScalingGroup LaunchTemplateOverrides
-    /// The LaunchTemplateOverrides property type describes an override for a launch template.
+    /// AWS::AutoScaling::AutoScalingGroup LaunchTemplateOverrides
+    /// LaunchTemplateOverrides is a subproperty of LaunchTemplate that describes an override for a launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplateoverrides.html
     /// </summary>
     public class LaunchTemplateOverrides
@@ -15,14 +15,14 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// InstanceType
-        /// The instance type.
-        /// For information about available instance types, see Available Instance Types in the Amazon EC2 User
-        /// Guide for Linux Instances.
+        /// The instance type. For more information, see Available Instance Types in the Amazon EC2 User Guide
+        /// for Linux Instances.
         /// Required: No
         /// Type: String
-        /// Length constraints: Minimum length of 1. Maximum length of 255.
+        /// Minimum: 1
+        /// Maximum: 255
         /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceType")]
         public Union<string, IntrinsicFunction> InstanceType { get; set; }

@@ -6,8 +6,9 @@ namespace Comformation.EC2.VPC
 {
     /// <summary>
     /// AWS::EC2::VPC
-    /// Creates a Virtual Private Cloud (VPC) with the CIDR block that you specify. To name a VPC resource, use the
-    /// Tags property and specify a value for the Name key.
+    /// Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create 			uses a /28 netmask (16
+    /// IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 			addresses). For more information about how
+    /// large to make your VPC, see Your VPC and 		 Subnets in the Amazon Virtual Private Cloud User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
     /// </summary>
     public class VPCResource : ResourceBase
@@ -16,7 +17,8 @@ namespace Comformation.EC2.VPC
         {
             /// <summary>
             /// CidrBlock
-            /// The CIDR block you want the VPC to cover. For example: &quot;10. 0. 0. 0/16&quot;.
+            /// 		
+            /// The primary IPv4 CIDR block for the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,10 +27,9 @@ namespace Comformation.EC2.VPC
 
             /// <summary>
             /// EnableDnsHostnames
-            /// Specifies whether the instances launched in the VPC get DNS hostnames. If this attribute is true,
-            /// instances in the VPC get DNS hostnames; otherwise, they do not. You can only set EnableDnsHostnames
-            /// to true if you also set the EnableDnsSupport attribute to true. By default, the value is set to
-            /// false.
+            /// Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the
+            /// VPC get DNS hostnames; otherwise, they do not.
+            /// You can only enable DNS hostnames if you&#39;ve enabled DNS support.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -37,9 +38,11 @@ namespace Comformation.EC2.VPC
 
             /// <summary>
             /// EnableDnsSupport
-            /// Specifies whether DNS resolution is supported for the VPC. If this attribute is true, the Amazon DNS
-            /// server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it
-            /// does not. By default the value is set to true.
+            /// 		
+            /// Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to 			the Amazon
+            /// provided DNS server at the 169. 254. 169. 253 IP address, or the reserved IP 			address at the base
+            /// of the VPC network range &quot;plus two&quot; succeed. If disabled, the Amazon 			provided DNS service in the
+            /// VPC that resolves public DNS hostnames to IP addresses is 			not enabled.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -51,23 +54,22 @@ namespace Comformation.EC2.VPC
             /// The allowed tenancy of instances launched into the VPC.
             /// &quot;default&quot;: Instances can be launched with any tenancy. &quot;dedicated&quot;: Any instance launched into the
             /// VPC automatically has dedicated tenancy, unless you launch it with the default tenancy.
-            /// Update: Conditional. Updating InstanceTenancy requires no replacement only if you are updating its
-            /// value from &quot;dedicated&quot; to &quot;default&quot;. Updating InstanceTenancy from &quot;default&quot; to &quot;dedicated&quot; requires
-            /// replacement.
+            /// Updating InstanceTenancy requires no replacement only if you are updating its value from &quot;dedicated&quot;
+            /// to &quot;default&quot;. Updating InstanceTenancy from &quot;default&quot; to &quot;dedicated&quot; requires replacement.
             /// Required: No
             /// Type: String
-            /// Valid values: &quot;default&quot; or &quot;dedicated&quot;
+            /// Allowed Values: dedicated | default | host
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceTenancy { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this VPC. To name a VPC resource, specify a value for
-            /// the Name key.
+            /// 	
+            /// The tags for the VPC.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 

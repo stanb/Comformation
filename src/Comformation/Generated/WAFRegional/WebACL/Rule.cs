@@ -6,10 +6,11 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.WAFRegional.WebACL
 {
     /// <summary>
-    /// AWS WAF Regional WebACL Rules
-    /// Rules is a property of the AWS::WAFRegional::WebACL resource that specifies the rule to associate with an AWS
-    /// WAF Regional web access control list (ACL) and the rule&#39;s settings.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rules.html
+    /// AWS::WAFRegional::WebACL Rule
+    /// A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that
+    /// you want to allow, block, or count. For example, you might create a Rule that includes the following
+    /// predicates:
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html
     /// </summary>
     public class Rule
     {
@@ -19,7 +20,8 @@ namespace Comformation.WAFRegional.WebACL
         /// The action that AWS WAF takes when a web request matches all conditions in the rule, such as allow,
         /// block, or count the request.
         /// Required: Yes
-        /// Type: AWS WAF Regional WebACL Action
+        /// Type: Action
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Action")]
         public Action Action { get; set; }
@@ -31,6 +33,7 @@ namespace Comformation.WAFRegional.WebACL
         /// rules in a web ACL, the priority numbers do not need to be consecutive.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Priority")]
         public Union<int, IntrinsicFunction> Priority { get; set; }
@@ -38,8 +41,12 @@ namespace Comformation.WAFRegional.WebACL
         /// <summary>
         /// RuleId
         /// The ID of an AWS WAF Regional rule to associate with a web ACL.
+        /// 		 	
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RuleId")]
         public Union<string, IntrinsicFunction> RuleId { get; set; }

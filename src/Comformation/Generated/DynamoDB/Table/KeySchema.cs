@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// Amazon DynamoDB Table KeySchema
-    /// Describes a primary key for the AWS::DynamoDB::Table resource or a key schema for an index. Each element is
-    /// composed of an AttributeName and KeyType.
+    /// AWS::DynamoDB::Table KeySchema
+    /// Represents a single element of a key schema. A key schema specifies the attributes that make up the primary
+    /// key of a table, or the key attributes of an index.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html
     /// </summary>
     public class KeySchema
@@ -16,20 +16,29 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// AttributeName
-        /// The attribute name that is used as the primary key for this table. Primary key element names can be
-        /// 1 – 255 characters long and have no character restrictions.
+        /// The name of a key attribute.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeName")]
         public Union<string, IntrinsicFunction> AttributeName { get; set; }
 
         /// <summary>
         /// KeyType
-        /// Represents the attribute data, consisting of the data type and the attribute value itself. You can
-        /// specify HASH or RANGE.
+        /// The role that this key attribute will assume:
+        /// HASH - partition key RANGE - sort key
+        /// Note The partition key of an item is also known as its hash attribute. The term &quot;hash attribute&quot;
+        /// derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across
+        /// partitions, based on their partition key values. The sort key of an item is also known as its range
+        /// attribute. The term &quot;range attribute&quot; derives from the way DynamoDB stores items with the same
+        /// partition key physically close together, in sorted order by the sort key value.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: HASH | RANGE
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeyType")]
         public Union<string, IntrinsicFunction> KeyType { get; set; }

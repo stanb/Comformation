@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.Instance
 {
     /// <summary>
-    /// Amazon EC2 Instance SsmAssociations AssociationParameters
-    /// AssociationParameters is a property of the Amazon EC2 Instance SsmAssociations property that specifies input
-    /// parameter values for an SSM document in AWS Systems Manager.
+    /// AWS::EC2::Instance AssociationParameter
+    /// Specifies input parameter values for an SSM document in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html
     /// </summary>
     public class AssociationParameter
@@ -16,18 +15,24 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Key
+        /// 		
         /// The name of an input parameter that is in the associated SSM document.
+        /// 	
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
 
         /// <summary>
         /// Value
+        /// 		
         /// The value of an input parameter.
+        /// 	
         /// Required: Yes
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
         public List<Union<string, IntrinsicFunction>> Value { get; set; }

@@ -6,8 +6,7 @@ namespace Comformation.ApiGateway.Model
 {
     /// <summary>
     /// AWS::ApiGateway::Model
-    /// The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an Amazon API
-    /// Gateway (API Gateway) method.
+    /// The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html
     /// </summary>
     public class ModelResource : ResourceBase
@@ -17,7 +16,7 @@ namespace Comformation.ApiGateway.Model
             /// <summary>
             /// ContentType
             /// The content type for the model.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -58,8 +57,8 @@ namespace Comformation.ApiGateway.Model
             /// Schema
             /// The schema to use to transform data to one or more output formats. Specify null ({}) if you don&#39;t
             /// want to specify a schema.
-            /// Required: Yes
-            /// Type: JSON object
+            /// Required: No
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }

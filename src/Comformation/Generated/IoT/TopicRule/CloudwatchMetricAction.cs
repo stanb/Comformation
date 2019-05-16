@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule CloudwatchMetricAction
-    /// CloudwatchMetric is a property of the Actions property that describes an action that captures a CloudWatch
-    /// metric.
+    /// AWS::IoT::TopicRule CloudwatchMetricAction
+    /// Describes an action that captures a CloudWatch metric.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html
     /// </summary>
     public class CloudwatchMetricAction
@@ -16,18 +15,20 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// MetricName
-        /// The name of the CloudWatch metric.
+        /// The CloudWatch metric name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricName")]
         public Union<string, IntrinsicFunction> MetricName { get; set; }
 
         /// <summary>
         /// MetricNamespace
-        /// The name of the CloudWatch metric namespace.
+        /// The CloudWatch metric namespace name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricNamespace")]
         public Union<string, IntrinsicFunction> MetricNamespace { get; set; }
@@ -37,34 +38,37 @@ namespace Comformation.IoT.TopicRule
         /// An optional Unix timestamp.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricTimestamp")]
         public Union<string, IntrinsicFunction> MetricTimestamp { get; set; }
 
         /// <summary>
         /// MetricUnit
-        /// The metric unit supported by Amazon CloudWatch.
+        /// The metric unit supported by CloudWatch.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricUnit")]
         public Union<string, IntrinsicFunction> MetricUnit { get; set; }
 
         /// <summary>
         /// MetricValue
-        /// The value to publish to the metric. For example, if you count the occurrences of a particular term
-        /// such as Error, the value will be 1 for each occurrence.
+        /// The CloudWatch metric value.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricValue")]
         public Union<string, IntrinsicFunction> MetricValue { get; set; }
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the IAM role that grants access to the CloudWatch metric.
+        /// The IAM role that allows access to the CloudWatch metric.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }

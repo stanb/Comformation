@@ -8,7 +8,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
     /// AWS::CodeDeploy::DeploymentGroup
     /// The AWS::CodeDeploy::DeploymentGroup resource creates an AWS CodeDeploy deployment group that specifies which
     /// instances your application revisions are deployed to, along with other deployment options. For more
-    /// information, see CreateDeploymentGroup in the AWS CodeDeploy API Reference.
+    /// information, see CreateDeploymentGroup in the CodeDeploy API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html
     /// </summary>
     public class DeploymentGroupResource : ResourceBase
@@ -29,6 +29,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// The name of an existing CodeDeploy application to associate this deployment group with.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
@@ -48,7 +50,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// A list of associated Auto Scaling groups that CodeDeploy automatically deploys revisions to when new
             /// instances are created. Duplicates are not allowed.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AutoScalingGroups { get; set; }
@@ -56,7 +58,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// <summary>
             /// Deployment
             /// The application revision to deploy to this deployment group. If you specify this property, your
-            /// target application revision will be deployed as soon as the provisioning process is complete. If you
+            /// target application revision is deployed as soon as the provisioning process is complete. If you
             /// specify this property, don&#39;t specify the AutoRollbackConfiguration property.
             /// Required: No
             /// Type: Deployment
@@ -72,6 +74,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Configurations in the AWS CodeDeploy User Guide.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
@@ -85,6 +89,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// resource, specify a new name.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DeploymentGroupName { get; set; }
@@ -95,8 +101,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// behind a load balancer.
             /// If you specify this property with a blue/green deployment type, don&#39;t specify the AutoScalingGroups,
             /// LoadBalancerInfo, or Deployment properties.
-            /// Note For blue/green deployments, AWS CloudFormation supports deployments on AWS Lambda compute
-            /// platforms only.
+            /// Note For blue/green deployments, AWS CloudFormation supports deployments on Lambda compute platforms
+            /// only.
             /// Required: No
             /// Type: DeploymentStyle
             /// Update requires: No interruption
@@ -110,16 +116,15 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// deployment group. Duplicates are not allowed.
             /// You can specify EC2TagFilters or Ec2TagSet, but not both.
             /// Required: No
-            /// Type: List of Ec2TagFilters
+            /// Type: List of EC2TagFilter
             /// Update requires: No interruption
             /// </summary>
 			public List<EC2TagFilter> Ec2TagFilters { get; set; }
 
             /// <summary>
             /// Ec2TagSet
-            /// Specifies information about groups of tags applied to EC2 instances. The deployment group will
-            /// include only EC2 instances identified by all the tag groups.
-            /// You can specify EC2TagFilters or Ec2TagSet, but not both.
+            /// Information about groups of tags applied to EC2 instances. The deployment group includes only EC2
+            /// instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilter.
             /// Required: No
             /// Type: EC2TagSet
             /// Update requires: No interruption
@@ -128,7 +133,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
             /// <summary>
             /// LoadBalancerInfo
-            /// Information about the load balancer used in the deployment. For more information, see Integrating
+            /// Information about the load balancer to use in a deployment. For more information, see Integrating
             /// CodeDeploy with Elastic Load Balancing in the AWS CodeDeploy User Guide.
             /// Required: No
             /// Type: LoadBalancerInfo
@@ -145,18 +150,18 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// allowed.
             /// You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
             /// Required: No
-            /// Type: List of TagFilters
+            /// Type: List of TagFilter
             /// Update requires: No interruption
             /// </summary>
 			public List<TagFilter> OnPremisesInstanceTagFilters { get; set; }
 
             /// <summary>
             /// OnPremisesTagSet
-            /// Information about groups of tags applied to on-premises instances. The deployment group will include
+            /// Information about groups of tags applied to on-premises instances. The deployment group includes
             /// only on-premises instances identified by all the tag groups.
             /// You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
             /// Required: No
-            /// Type:OnPremisesTagSet
+            /// Type: OnPremisesTagSet
             /// Update requires: No interruption
             /// </summary>
 			public OnPremisesTagSet OnPremisesTagSet { get; set; }
@@ -176,7 +181,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
             /// <summary>
             /// TriggerConfigurations
-            /// Information about the notification triggers for the deployment group. Duplicates are not allowed.
+            /// Information about triggers associated with the deployment group. Duplicates are not allowed
             /// Required: No
             /// Type: List of TriggerConfig
             /// Update requires: No interruption

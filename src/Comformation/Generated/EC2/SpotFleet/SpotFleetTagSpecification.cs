@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud SpotFleet SpotFleetTagSpecification
-    /// SpotFleetTagSpecification is a property of the Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications
-    /// property that specifies the tags for a Spot fleet resource.
+    /// AWS::EC2::SpotFleet SpotFleetTagSpecification
+    /// The tags for a Spot Fleet resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html
     /// </summary>
     public class SpotFleetTagSpecification
@@ -16,10 +15,14 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// ResourceType
-        /// The type of resource.
-        /// For valid resource types, see SpotFleetTagSpecification operation in the Amazon EC2 API Reference
+        /// The type of resource. Currently, the only resource type that is supported is instance.
         /// Required: No
         /// Type: String
+        /// Allowed Values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options | elastic-ip
+        /// | fleet | fpga-image | host-reservation | image | instance | internet-gateway | launch-template |
+        /// natgateway | network-acl | network-interface | reserved-instances | route-table | security-group |
+        /// snapshot | spot-instances-request | subnet | transit-gateway | transit-gateway-attachment |
+        /// transit-gateway-route-table | volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceType")]
@@ -27,10 +30,9 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// Tags
-        /// Specifies an arbitrary set of tags (key–value pairs) to associate with this spot fleet. Use tags to
-        /// manage your resources.
+        /// The tags.
         /// Required: No
-        /// Type: Resource Tag
+        /// Type: List of Tag
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tags")]

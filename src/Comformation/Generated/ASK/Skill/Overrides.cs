@@ -20,7 +20,7 @@ namespace Comformation.ASK.Skill
         /// Overrides to apply to the skill manifest inside of the skill package. The skill manifest contains
         /// metadata about the skill. For more information, see Skill Manifest Schemas.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Manifest")]

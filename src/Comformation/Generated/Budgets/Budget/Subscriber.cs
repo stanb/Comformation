@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Budgets.Budget
 {
     /// <summary>
-    /// AWS Billing and Cost Management Budget Subscriber
+    /// AWS::Budgets::Budget Subscriber
     /// The Subscriber property type specifies who to notify for a Billing and Cost Management budget notification.
+    /// 			The subscriber consists of a subscription type, and either an Amazon SNS topic or an email address.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html
     /// </summary>
     public class Subscriber
@@ -15,10 +16,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// SubscriptionType
-        /// The type of notification that AWS sends to a subscriber, such as EMAIL or SNS.
+        /// The type of notification that AWS sends to a subscriber.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Allowed Values: EMAIL | SNS
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubscriptionType")]
         public Union<string, IntrinsicFunction> SubscriptionType { get; set; }
@@ -26,9 +28,10 @@ namespace Comformation.Budgets.Budget
         /// <summary>
         /// Address
         /// The address that AWS sends budget notifications to, either an SNS topic or an email.
+        /// AWS validates the address for a CreateSubscriber request with the . * regex.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Address")]
         public Union<string, IntrinsicFunction> Address { get; set; }

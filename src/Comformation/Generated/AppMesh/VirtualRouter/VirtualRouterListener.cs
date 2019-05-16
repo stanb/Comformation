@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualRouter
 {
     /// <summary>
-    /// AWS AppMesh VirtualRouter VirtualRouterListener
+    /// AWS::AppMesh::VirtualRouter VirtualRouterListener
     /// An object representing a virtual router listener.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html
     /// </summary>

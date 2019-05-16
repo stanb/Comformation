@@ -17,7 +17,7 @@ namespace Comformation.IoT1Click.Project
         {
             /// <summary>
             /// Description
-            /// An optional description for the project.
+            /// The description of the project.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -26,10 +26,7 @@ namespace Comformation.IoT1Click.Project
 
             /// <summary>
             /// PlacementTemplate
-            /// The template defining the placement to be created. A placement template defines placement default
-            /// attributes and device templates. You cannot add or remove device templates after the project has
-            /// been created. However, you can update callbackOverrides for the device templates using the
-            /// UpdateProject API.
+            /// An object describing the project&#39;s placement specifications.
             /// Required: Yes
             /// Type: PlacementTemplate
             /// Update requires: No interruption
@@ -38,7 +35,7 @@ namespace Comformation.IoT1Click.Project
 
             /// <summary>
             /// ProjectName
-            /// The name of the project to create.
+            /// The name of the project from which to obtain information.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

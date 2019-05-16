@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGatewayV2.Stage
 {
     /// <summary>
-    /// AccessLogSettings
-    /// The AccessLogSettings property type specifies access log settings for an API Gateway stage.
+    /// AWS::ApiGatewayV2::Stage AccessLogSettings
+    /// Settings for logging access in a stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-accesslogsettings.html
     /// </summary>
     public class AccessLogSettings

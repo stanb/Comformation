@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.NetworkAclEntry
 {
     /// <summary>
-    /// EC2 NetworkAclEntry Icmp
-    /// The Icmp property is an embedded property of the AWS::EC2::NetworkAclEntry type.
+    /// AWS::EC2::NetworkAclEntry Icmp
+    /// Describes the ICMP type and code.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html
     /// </summary>
     public class Icmp
@@ -16,10 +16,11 @@ namespace Comformation.EC2.NetworkAclEntry
         /// <summary>
         /// Code
         /// The Internet Control Message Protocol (ICMP) code. You can use -1 to specify all ICMP codes for the
-        /// given ICMP type.
-        /// Required: Conditional. Required if you specify 1 (ICMP) for the CreateNetworkAclEntry protocol
+        /// given ICMP type. Requirement is conditional: Required if you specify 1 (ICMP) for the protocol
         /// parameter.
+        /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Code")]
         public Union<int, IntrinsicFunction> Code { get; set; }
@@ -27,9 +28,11 @@ namespace Comformation.EC2.NetworkAclEntry
         /// <summary>
         /// Type
         /// The Internet Control Message Protocol (ICMP) type. You can use -1 to specify all ICMP types.
-        /// Required: Conditional. Required if you specify 1 (ICMP) for the CreateNetworkAclEntry protocol
+        /// Conditional requirement: Required if you specify 1 (ICMP) for the CreateNetworkAclEntry protocol
         /// parameter.
+        /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<int, IntrinsicFunction> Type { get; set; }

@@ -6,8 +6,7 @@ namespace Comformation.DAX.ParameterGroup
 {
     /// <summary>
     /// AWS::DAX::ParameterGroup
-    /// Use the AWS CloudFormation AWS::DAX::ParameterGroup resource to create a parameter group for use with Amazon
-    /// DynamoDB.
+    /// A named set of parameters that are applied to all of the nodes in a DAX cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html
     /// </summary>
     public class ParameterGroupResource : ResourceBase
@@ -16,9 +15,10 @@ namespace Comformation.DAX.ParameterGroup
         {
             /// <summary>
             /// ParameterNameValues
-            /// A map of DAX parameter names and values.
+            /// An array of name-value pairs for the parameters in the group. Each element in the array represents a
+            /// single parameter.
             /// Required: No
-            /// Type: String to String map
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ParameterNameValues { get; set; }
@@ -28,7 +28,7 @@ namespace Comformation.DAX.ParameterGroup
             /// A description of the parameter group.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption;
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -37,7 +37,7 @@ namespace Comformation.DAX.ParameterGroup
             /// The name of the parameter group.
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
 

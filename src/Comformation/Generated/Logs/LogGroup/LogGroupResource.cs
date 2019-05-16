@@ -6,9 +6,8 @@ namespace Comformation.Logs.LogGroup
 {
     /// <summary>
     /// AWS::Logs::LogGroup
-    /// The AWS::Logs::LogGroup resource creates an Amazon CloudWatch Logs log group that defines common properties
-    /// for log streams, such as their retention and access control rules. Each log stream must belong to one log
-    /// group.
+    /// The AWS::Logs::LogGroup resource specifies a log group. A log group defines common properties for log streams,
+    /// such as their retention and access control rules. Each log stream must belong to one log group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html
     /// </summary>
     public class LogGroupResource : ResourceBase
@@ -17,22 +16,21 @@ namespace Comformation.Logs.LogGroup
         {
             /// <summary>
             /// LogGroupName
-            /// A name for the log group. If you don&#39;t specify a name, AWS CloudFormation generates a unique
-            /// physical ID and uses that ID for the log group. For more information, see Name Type.
-            /// Important If you specify a name, you cannot perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// The name of the log group. If you don&#39;t specify a name, AWS CloudFormation generates a unique ID for
+            /// the log group.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
+            /// Pattern: [\. \-_/#A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// RetentionInDays
-            /// The number of days log events are kept in CloudWatch Logs. When a log event expires, CloudWatch Logs
-            /// automatically deletes it. For valid values, see PutRetentionPolicy in the Amazon CloudWatch Logs API
-            /// Reference.
+            /// The number of days to retain the log events in the specified log group. Possible values are: 1, 3,
+            /// 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption

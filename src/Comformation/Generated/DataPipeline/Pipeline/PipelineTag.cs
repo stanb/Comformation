@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
-    /// AWS Data Pipeline Pipeline PipelineTags
-    /// PipelineTags is a property of the AWS::DataPipeline::Pipeline resource that defines arbitrary key-value pairs
-    /// for a pipeline.
+    /// AWS::DataPipeline::Pipeline PipelineTag
+    /// A list of arbitrary tags (key-value pairs) to associate with the pipeline, which you can use to control
+    /// permissions. For more information, see Controlling Access to Pipelines and Resources in the AWS Data Pipeline
+    /// Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html
     /// </summary>
     public class PipelineTag
@@ -19,6 +20,7 @@ namespace Comformation.DataPipeline.Pipeline
         /// The key name of a tag.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
@@ -28,6 +30,7 @@ namespace Comformation.DataPipeline.Pipeline
         /// The value to associate with the key name.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
         public Union<string, IntrinsicFunction> Value { get; set; }

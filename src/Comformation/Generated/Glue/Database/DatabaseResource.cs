@@ -16,7 +16,7 @@ namespace Comformation.Glue.Database
         {
             /// <summary>
             /// DatabaseInput
-            /// The metadata of the database.
+            /// The metadata for the database.
             /// Required: Yes
             /// Type: DatabaseInput
             /// Update requires: No interruption
@@ -25,13 +25,12 @@ namespace Comformation.Glue.Database
 
             /// <summary>
             /// CatalogId
-            /// The ID of the data catalog to create the catalog object in. Currently, this should be the AWS
-            /// account ID.
+            /// The AWS account ID for the account in which to create the catalog object.
             /// Note To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId
-            /// pseudo parameter—for example !Ref AWS::AccountId.
+            /// pseudo parameter. For example: !Ref AWS::AccountId
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CatalogId { get; set; }
 

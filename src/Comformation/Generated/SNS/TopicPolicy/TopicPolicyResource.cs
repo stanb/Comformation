@@ -6,7 +6,8 @@ namespace Comformation.SNS.TopicPolicy
 {
     /// <summary>
     /// AWS::SNS::TopicPolicy
-    /// The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy.
+    /// The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy. For an example snippet, see
+    /// Declaring an Amazon SNS Policy in the AWS CloudFormation User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html
     /// </summary>
     public class TopicPolicyResource : ResourceBase
@@ -17,7 +18,7 @@ namespace Comformation.SNS.TopicPolicy
             /// PolicyDocument
             /// A policy document that contains permissions to add to the specified SNS topics.
             /// Required: Yes
-            /// JSON or YAML
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
@@ -27,7 +28,7 @@ namespace Comformation.SNS.TopicPolicy
             /// The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the
             /// Ref function to specify an AWS::SNS::Topic resource.
             /// Required: Yes
-            /// Type: A list of Amazon SNS topics ARNs
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Topics { get; set; }

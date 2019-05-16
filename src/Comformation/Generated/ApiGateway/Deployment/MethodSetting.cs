@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
-    /// Amazon API Gateway Deployment MethodSetting
-    /// The MethodSetting property type configures settings for all methods in an Amazon API Gateway (API Gateway)
-    /// stage.
+    /// AWS::ApiGateway::Deployment MethodSetting
+    /// The MethodSetting property type configures settings for all methods in a stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html
     /// </summary>
     public class MethodSetting
@@ -19,6 +18,7 @@ namespace Comformation.ApiGateway.Deployment
         /// Indicates whether the cached responses are encrypted.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheDataEncrypted")]
         public Union<bool, IntrinsicFunction> CacheDataEncrypted { get; set; }
@@ -28,6 +28,7 @@ namespace Comformation.ApiGateway.Deployment
         /// The time-to-live (TTL) period, in seconds, that specifies how long API Gateway caches responses.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CacheTtlInSeconds")]
         public Union<int, IntrinsicFunction> CacheTtlInSeconds { get; set; }
@@ -39,6 +40,7 @@ namespace Comformation.ApiGateway.Deployment
         /// Enhance API Performance in the API Gateway Developer Guide.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CachingEnabled")]
         public Union<bool, IntrinsicFunction> CachingEnabled { get; set; }
@@ -49,6 +51,7 @@ namespace Comformation.ApiGateway.Deployment
         /// logs to Amazon CloudWatch Logs.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataTraceEnabled")]
         public Union<bool, IntrinsicFunction> DataTraceEnabled { get; set; }
@@ -58,6 +61,7 @@ namespace Comformation.ApiGateway.Deployment
         /// The HTTP method.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HttpMethod")]
         public Union<string, IntrinsicFunction> HttpMethod { get; set; }
@@ -68,6 +72,7 @@ namespace Comformation.ApiGateway.Deployment
         /// resource in the Amazon API Gateway API Reference.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LoggingLevel")]
         public Union<string, IntrinsicFunction> LoggingLevel { get; set; }
@@ -77,6 +82,7 @@ namespace Comformation.ApiGateway.Deployment
         /// Indicates whether Amazon CloudWatch metrics are enabled for methods in the stage.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricsEnabled")]
         public Union<bool, IntrinsicFunction> MetricsEnabled { get; set; }
@@ -88,6 +94,7 @@ namespace Comformation.ApiGateway.Deployment
         /// /~1resource~1subresource. To specify the root path, use only a slash (/).
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourcePath")]
         public Union<string, IntrinsicFunction> ResourcePath { get; set; }
@@ -99,6 +106,7 @@ namespace Comformation.ApiGateway.Deployment
         /// Gateway Developer Guide.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThrottlingBurstLimit")]
         public Union<int, IntrinsicFunction> ThrottlingBurstLimit { get; set; }
@@ -109,7 +117,8 @@ namespace Comformation.ApiGateway.Deployment
         /// methods in your AWS account. For more information, see Manage API Request Throttling in the API
         /// Gateway Developer Guide.
         /// Required: No
-        /// Type: Number
+        /// Type: Double
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThrottlingRateLimit")]
         public Union<double, IntrinsicFunction> ThrottlingRateLimit { get; set; }

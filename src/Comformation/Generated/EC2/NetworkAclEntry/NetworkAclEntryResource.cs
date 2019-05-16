@@ -6,8 +6,8 @@ namespace Comformation.EC2.NetworkAclEntry
 {
     /// <summary>
     /// AWS::EC2::NetworkAclEntry
-    /// Creates an entry (i. e. , a rule) in a network ACL with a rule number you specify. Each network ACL has a set
-    /// of numbered ingress rules and a separate set of numbered egress rules.
+    /// Specifies an entry, known as a rule, in a network ACL with a rule number you specify. Each network ACL has a
+    /// set of numbered ingress rules and a separate set of numbered egress rules.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html
     /// </summary>
     public class NetworkAclEntryResource : ResourceBase
@@ -16,8 +16,9 @@ namespace Comformation.EC2.NetworkAclEntry
         {
             /// <summary>
             /// CidrBlock
-            /// The IPv4 CIDR range to allow or deny, in CIDR notation (e. g. , 172. 16. 0. 0/24).
-            /// Required: Conditional. You must specify the CidrBlock or Ipv6CidrBlock property.
+            /// The IPv4 CIDR range to allow or deny, in CIDR notation (for example, 172. 16. 0. 0/24). Requirement
+            /// is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -29,23 +30,25 @@ namespace Comformation.EC2.NetworkAclEntry
             /// (false). By default, AWS CloudFormation specifies false.
             /// Required: No
             /// Type: Boolean
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<bool, IntrinsicFunction> Egress { get; set; }
 
             /// <summary>
             /// Icmp
-            /// The Internet Control Message Protocol (ICMP) code and type.
-            /// Required: Conditional required if specifying 1 (ICMP) for the protocol parameter.
-            /// Type: EC2 NetworkAclEntry Icmp
+            /// The Internet Control Message Protocol (ICMP) code and type. Requirement is conditional: Required if
+            /// specifying 1 (ICMP) for the protocol parameter.
+            /// Required: No
+            /// Type: Icmp
             /// Update requires: No interruption
             /// </summary>
 			public Icmp Icmp { get; set; }
 
             /// <summary>
             /// Ipv6CidrBlock
-            /// The IPv6 CIDR range to allow or deny, in CIDR notation.
-            /// Required: Conditional. You must specify the CidrBlock or Ipv6CidrBlock property.
+            /// The IPv6 network range to allow or deny, in CIDR notation. Requirement is conditional: You must
+            /// specify the CidrBlock or Ipv6CidrBlock property.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -53,29 +56,30 @@ namespace Comformation.EC2.NetworkAclEntry
 
             /// <summary>
             /// NetworkAclId
-            /// ID of the ACL where the entry will be created.
+            /// The ID of the ACL for the entry.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement.
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkAclId { get; set; }
 
             /// <summary>
             /// PortRange
-            /// The range of port numbers for the UDP/TCP protocol.
-            /// Required: Conditional Required if specifying 6 (TCP) or 17 (UDP) for the protocol parameter.
-            /// Type: EC2 NetworkAclEntry PortRange
+            /// The range of port numbers for the UDP/TCP protocol. Conditional required if specifying 6 (TCP) or 17
+            /// (UDP) for the protocol parameter.
+            /// Required: No
+            /// Type: PortRange
             /// Update requires: No interruption
             /// </summary>
 			public PortRange PortRange { get; set; }
 
             /// <summary>
             /// Protocol
-            /// The IP protocol that the rule applies to. You must specify -1 or a protocol number (go to Protocol
-            /// Numbers at iana. org). You can specify -1 for all protocols.
+            /// The IP protocol that the rule applies to. You must specify -1 or a protocol number. You can specify
+            /// -1 for all protocols.
             /// Note If you specify -1, all ports are opened and the PortRange property is ignored.
             /// Required: Yes
-            /// Type: Number
+            /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> Protocol { get; set; }
@@ -85,6 +89,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Whether to allow or deny traffic that matches the rule; valid values are &quot;allow&quot; or &quot;deny&quot;.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: allow | deny
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RuleAction { get; set; }
@@ -93,11 +98,10 @@ namespace Comformation.EC2.NetworkAclEntry
             /// RuleNumber
             /// Rule number to assign to the entry, such as 100. ACL entries are processed in ascending order by
             /// rule number. Entries can&#39;t use the same rule number unless one is an egress rule and the other is an
-            /// ingress rule. For valid values, see the CreateNetworkAclEntry action in the Amazon EC2 API
-            /// Reference.
+            /// ingress rule.
             /// Required: Yes
-            /// Type: Number
-            /// Update requires: Replacement.
+            /// Type: Integer
+            /// Update requires: Replacement
             /// </summary>
 			public Union<int, IntrinsicFunction> RuleNumber { get; set; }
 

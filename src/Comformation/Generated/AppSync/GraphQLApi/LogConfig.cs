@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
-    /// AWS AppSync GraphQLApi LogConfig
+    /// AWS::AppSync::GraphQLApi LogConfig
     /// The LogConfig property type specifies the logging configuration when writing GraphQL operations and tracing to
-    /// Amazon Cloudwatch for a AWS AppSync GraphQL API.
+    /// Amazon CloudWatch for a AWS AppSync GraphQL API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
     /// </summary>
     public class LogConfig
@@ -16,7 +16,7 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// CloudWatchLogsRoleArn
-        /// The IAM role that will allow publishing CloudWatch logs into the customer&#39;s account.
+        /// The service role that AWS AppSync will assume to publish to Amazon CloudWatch Logs in your account.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +26,12 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// FieldLogLevel
-        /// The desired level of logging.
+        /// The field logging level. Values can be NONE, ERROR, or ALL.
+        /// NONE: No field-level logs are captured. ERROR: Logs the following information only for the fields
+        /// that are in error: The error section in the server response. Field-level errors. The generated
+        /// request/response functions that got resolved for error fields. ALL: The following information is
+        /// logged for all fields in the query: Field-level tracing information. The generated request/response
+        /// functions that got resolved for each field.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

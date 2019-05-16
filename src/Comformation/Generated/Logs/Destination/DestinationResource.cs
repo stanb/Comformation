@@ -6,10 +6,9 @@ namespace Comformation.Logs.Destination
 {
     /// <summary>
     /// AWS::Logs::Destination
-    /// The AWS::Logs::Destination resource creates an Amazon CloudWatch Logs (CloudWatch Logs) destination, which
-    /// enables you to specify a physical resource (such as an Kinesis stream) that subscribes to CloudWatch Logs log
-    /// events from another AWS account. For more information, see Cross-Account Log Data Sharing with Subscriptions
-    /// in the Amazon CloudWatch User Guide.
+    /// The AWS::Logs::Destination resource specifies a CloudWatch Logs destination. A destination encapsulates a
+    /// physical resource (such as an Amazon Kinesis data stream) and enables you to subscribe that resource to a
+    /// stream of log events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
     /// </summary>
     public class DestinationResource : ResourceBase
@@ -18,39 +17,44 @@ namespace Comformation.Logs.Destination
         {
             /// <summary>
             /// DestinationName
-            /// The name of the CloudWatch Logs destination that you will reference in the DestinationPolicy
-            /// property.
+            /// The name of the destination.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
+            /// Pattern: [^:*]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationName { get; set; }
 
             /// <summary>
             /// DestinationPolicy
-            /// An AWS Identity and Access Management (IAM) policy that specifies who can write to your destination.
+            /// An IAM policy document that governs which AWS accounts can create subscription filters against this
+            /// destination.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DestinationPolicy { get; set; }
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) of an IAM role that permits CloudWatch Logs to send data to the
-            /// specified AWS resource (TargetArn).
+            /// The ARN of an IAM role that permits CloudWatch Logs to send data to the specified AWS resource.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// TargetArn
-            /// The ARN of the AWS resource that receives log events. Currently, you can specify only an Kinesis
-            /// stream.
+            /// The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for
+            /// example, a Kinesis stream).
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetArn { get; set; }

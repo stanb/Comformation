@@ -6,9 +6,9 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
 {
     /// <summary>
     /// AWS::EC2::VPCEndpointConnectionNotification
-    /// Creates a connection notification for the specified VPC endpoint or VPC endpoint service. A connection
-    /// notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications.
-    /// For more information, see CreateVpcEndpointConnectionNotification.
+    /// Specifies a connection notification for a VPC endpoint or VPC endpoint service. A connection notification
+    /// notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more
+    /// information, see Create a Topic in the Amazon Simple Notification Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html
     /// </summary>
     public class VPCEndpointConnectionNotificationResource : ResourceBase
@@ -20,7 +20,7 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
             /// One or more endpoint events for which to receive notifications. Valid values are Accept, Connect,
             /// Delete, and Reject.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> ConnectionEvents { get; set; }
@@ -30,7 +30,7 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
             /// The ID of the endpoint.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> VPCEndpointId { get; set; }
 
@@ -39,7 +39,7 @@ namespace Comformation.EC2.VPCEndpointConnectionNotification
             /// The ID of the endpoint service.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceId { get; set; }
 

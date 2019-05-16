@@ -6,9 +6,9 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
 {
     /// <summary>
     /// AWS::SageMaker::NotebookInstanceLifecycleConfig
-    /// The AWS::SageMaker::NotebookInstanceLifecycleConfig resource specifies shell scripts that run when you create
-    /// and/or start a notebook instance. For more information, see Customize a Notebook Instance in the Amazon
-    /// SageMaker Developer Guide.
+    /// The AWS::SageMaker::NotebookInstanceLifecycleConfig resource creates shell scripts that run when you create
+    /// and/or start a notebook instance. For information about notebook instance lifestyle configurations, see
+    /// Customize a Notebook Instance in the Amazon SageMaker Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html
     /// </summary>
     public class NotebookInstanceLifecycleConfigResource : ResourceBase
@@ -17,10 +17,11 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
         {
             /// <summary>
             /// OnStart
-            /// A shell script that runs once when you create a notebook instance, and then each time you start the
-            /// notebook instance.
+            /// A shell script that runs every time you start a notebook instance, including when you create the
+            /// notebook instance. The shell script must be a base64-encoded string.
             /// Required: No
-            /// Type: List of Amazon SageMaker NotebookInstanceLifecycleConfig NotebookInstanceLifecycleHook
+            /// Type: List of NotebookInstanceLifecycleHook
+            /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
 			public List<NotebookInstanceLifecycleHook> OnStart { get; set; }
@@ -30,15 +31,19 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
             /// The name of the lifecycle configuration.
             /// Required: No
             /// Type: String
+            /// Maximum: 63
+            /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> NotebookInstanceLifecycleConfigName { get; set; }
 
             /// <summary>
             /// OnCreate
-            /// A shell script that runs only once, when you create a notebook instance.
+            /// A shell script that runs only once, when you create a notebook instance. The shell script must be a
+            /// base64-encoded string.
             /// Required: No
-            /// Type: List of Amazon SageMaker NotebookInstanceLifecycleConfig NotebookInstanceLifecycleHook
+            /// Type: List of NotebookInstanceLifecycleHook
+            /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
 			public List<NotebookInstanceLifecycleHook> OnCreate { get; set; }

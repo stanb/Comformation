@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Budgets.Budget
 {
     /// <summary>
-    /// AWS Billing and Cost Management Budget Notification
-    /// The Notification property type specifies who to notify for a Billing and Cost Management budget.
+    /// AWS::Budgets::Budget Notification
+    /// A notification that is associated with a budget. A budget can have up to five notifications.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html
     /// </summary>
     public class Notification
@@ -15,44 +15,48 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// ComparisonOperator
-        /// The comparison used for this notification. Valid Values are GREATER_THAN, LESS_THAN, and EQUAL_TO.
+        /// The comparison that is used for this notification.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Allowed Values: EQUAL_TO | GREATER_THAN | LESS_THAN
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComparisonOperator")]
         public Union<string, IntrinsicFunction> ComparisonOperator { get; set; }
 
         /// <summary>
         /// NotificationType
-        /// Whether the notification is for how much you have spent or for how much you are forecasted to spend.
-        /// For ACTUAL thresholds, AWS notifies you when you go over the threshold, and for FORECASTED
-        /// thresholds AWS notifies you when you are forecasted to go over the threshold. Valid values are
-        /// ACTUAL and FORECASTED.
+        /// Whether the notification is for how much you have spent (ACTUAL) or for how much you&#39;re forecasted
+        /// to spend (FORECASTED).
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Allowed Values: ACTUAL | FORECASTED
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationType")]
         public Union<string, IntrinsicFunction> NotificationType { get; set; }
 
         /// <summary>
         /// Threshold
-        /// The threshold associated with a notification. The minimum valid value is 0. 1, and the maximum valid
-        /// value is 1000000000.
+        /// The threshold that is associated with a notification. Thresholds are always a percentage.
         /// Required: Yes
         /// Type: Double
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Threshold")]
         public Union<double, IntrinsicFunction> Threshold { get; set; }
 
         /// <summary>
         /// ThresholdType
-        /// The type of threshold for a notification. Valid values are PERCENTAGE and ABSOLUTE_VALUE.
+        /// The type of threshold for a notification. For ABSOLUTE_VALUE thresholds, AWS notifies you when you
+        /// go over or are forecasted to go over your total cost threshold. For PERCENTAGE thresholds, AWS
+        /// notifies you when you go over or are forecasted to go over a certain percentage of your forecasted
+        /// spend. For example, if you have a budget for 200 dollars and you have a PERCENTAGE threshold of 80%,
+        /// AWS notifies you when you go over 160 dollars.
         /// Required: No
         /// Type: String
-        /// Update requires: Replacement
+        /// Allowed Values: ABSOLUTE_VALUE | PERCENTAGE
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThresholdType")]
         public Union<string, IntrinsicFunction> ThresholdType { get; set; }

@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    /// Amazon Simple Email Service ReceiptRule Rule
-    /// The Rule property type specifies which actions Amazon SES should take when it receives mail on behalf of one
-    /// or more email addresses or domains that you own.
+    /// AWS::SES::ReceiptRule Rule
+    /// Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of
+    /// one or more email addresses or domains that you own.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html
     /// </summary>
     public class Rule
@@ -27,10 +27,10 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Recipients
-        /// The recipient domains and email addresses that the receipt rule applies to. If this field is not
-        /// specified, this rule will match all recipients under all verified domains.
+        /// Containts the recipient domains and email addresses that the receipt rule applies to. If this field
+        /// isn&#39;t specified, this rule matches all recipients on all verified domains.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Recipients")]
@@ -60,8 +60,8 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// Name
         /// The name of the receipt rule. The name must:
-        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Start and end
-        /// with a letter or number. Contain less than 64 characters.
+        /// This value can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+        /// Start and end with a letter or number. Contain fewer than 64 characters.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -72,9 +72,8 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TlsPolicy
         /// Specifies whether Amazon SES should require that incoming email is delivered over a connection
-        /// encrypted with Transport Layer Security (TLS). If this parameter is set to Require, Amazon SES will
-        /// bounce emails that are not received over TLS. The default is Optional.
-        /// Valid values include Optional and Require.
+        /// encrypted with Transport Layer Security (TLS). If this parameter is set to Require, Amazon SES
+        /// bounces emails that are not received over TLS. The default is Optional.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

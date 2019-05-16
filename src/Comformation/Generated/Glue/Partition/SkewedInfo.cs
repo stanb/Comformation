@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Partition
 {
     /// <summary>
-    /// AWS Glue Partition SkewedInfo
-    /// The SkewedInfo property type specifies skewed values (values that occur with very high frequency) in an AWS
-    /// Glue partition.
+    /// AWS::Glue::Partition SkewedInfo
+    /// Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-skewedinfo.html
     /// </summary>
     public class SkewedInfo
@@ -16,9 +15,9 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SkewedColumnNames
-        /// A list of UTF-8 strings that specify the names of columns that contain skewed values.
+        /// A list of names of columns that contain skewed values.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnNames")]
@@ -26,10 +25,9 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SkewedColumnValues
-        /// A list of UTF-8 strings that specify values that appear so frequently that they&#39;re considered to be
-        /// skewed.
+        /// A list of values that appear so frequently as to be considered skewed.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnValues")]
@@ -37,10 +35,9 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SkewedColumnValueLocationMaps
-        /// UTF-8 string–to–UTF-8 string key-value pairs that map skewed values to the columns that contain
-        /// them.
+        /// A mapping of skewed values to the columns that contain them.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkewedColumnValueLocationMaps")]

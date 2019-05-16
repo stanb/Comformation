@@ -6,7 +6,7 @@ namespace Comformation.EC2.Subnet
 {
     /// <summary>
     /// AWS::EC2::Subnet
-    /// Creates a subnet in an existing VPC.
+    /// Specifies a subnet for a VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
     /// </summary>
     public class SubnetResource : ResourceBase
@@ -17,41 +17,43 @@ namespace Comformation.EC2.Subnet
             /// AssignIpv6AddressOnCreation
             /// Indicates whether a network interface created in this subnet receives an IPv6 address. The default
             /// value is false.
-            /// Required: Conditional. If you specify a true or false value for AssignIpv6AddressOnCreation,
-            /// Ipv6CidrBlock must also be specified.
+            /// If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must also be
+            /// specified.
+            /// Note If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
+            /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// Note If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
             /// </summary>
 			public Union<bool, IntrinsicFunction> AssignIpv6AddressOnCreation { get; set; }
 
             /// <summary>
             /// AvailabilityZone
-            /// The availability zone in which you want the subnet. Default: AWS selects a zone for you
-            /// (recommended).
+            /// 	
+            /// The Availability Zone of the subnet.
+            /// Note If you update this property, you must also update the CidrBlock property.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
-            /// Note If you update this property, you must also update the CidrBlock property.
             /// </summary>
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// CidrBlock
-            /// The CIDR block that you want the subnet to cover (for example, &quot;10. 0. 0. 0/24&quot;).
+            /// 	
+            /// The IPv4 CIDR block assigned to the subnet.
+            /// If you update this property, you must also update the AvailabilityZone property.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
-            /// Note If you update this property, you must also update the AvailabilityZone property.
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
             /// Ipv6CidrBlock
-            /// The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix
-            /// length.
-            /// Required: Conditional. If you specify a true or false value for AssignIpv6AddressOnCreation,
-            /// Ipv6CidrBlock must be specified.
+            /// The IPv6 CIDR block.
+            /// If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must be
+            /// specified.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -59,32 +61,34 @@ namespace Comformation.EC2.Subnet
 
             /// <summary>
             /// MapPublicIpOnLaunch
-            /// Indicates whether instances that are launched in this subnet receive a public IP address. By
-            /// default, the value is false.
+            /// 	
+            /// Indicates whether instances launched in this subnet receive a public IPv4 address.
+            /// Note If MapPublicIpOnLaunch is specified. AssignIpv6AddressOnCreation cannot be specified.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
-            /// Note If MapPublicIpOnLaunch is specified. AssignIpv6AddressOnCreation cannot be specified.
             /// </summary>
 			public Union<bool, IntrinsicFunction> MapPublicIpOnLaunch { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this subnet.
+            /// 	
+            /// Any tags assigned to the subnet.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
-            /// A Ref structure that contains the ID of the VPC on which you want to create the subnet. The VPC ID
-            /// is provided as the value of the &quot;Ref&quot; property, as: { &quot;Ref&quot;: &quot;VPCID&quot; }.
+            /// 	
+            /// The ID of the VPC the subnet is in.
+            /// 	
+            /// Note If you update this property, you must also update the 	 CidrBlock property.
             /// Required: Yes
-            /// Type: Ref ID
+            /// Type: String
             /// Update requires: Replacement
-            /// Note If you update this property, you must also update the CidrBlock property.
             /// </summary>
 			public Union<string, IntrinsicFunction> VpcId { get; set; }
 

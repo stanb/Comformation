@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticBeanstalk.Environment
 {
     /// <summary>
-    /// Elastic Beanstalk Environment EnvironmentTier
+    /// AWS::ElasticBeanstalk::Environment Tier
     /// Describes the environment tier for an AWS::ElasticBeanstalk::Environment resource. For more information, see
     /// Environment Tiers in the AWS Elastic Beanstalk Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html
@@ -16,7 +16,9 @@ namespace Comformation.ElasticBeanstalk.Environment
 
         /// <summary>
         /// Name
-        /// The name of the environment tier. You can specify WebServer or Worker.
+        /// The name of this environment tier.
+        /// Valid values:
+        /// For Web server tier – WebServer For Worker tier – Worker
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -26,8 +28,9 @@ namespace Comformation.ElasticBeanstalk.Environment
 
         /// <summary>
         /// Type
-        /// The type of this environment tier. You can specify Standard for the WebServer tier or SQS/HTTP for
-        /// the Worker tier.
+        /// The type of this environment tier.
+        /// Valid values:
+        /// For Web server tier – Standard For Worker tier – SQS/HTTP
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -37,10 +40,10 @@ namespace Comformation.ElasticBeanstalk.Environment
 
         /// <summary>
         /// Version
-        /// The version of this environment tier. If you don&#39;t specify this member, the latest compatible worker
-        /// tier version is used.
-        /// Note This member is deprecated. Any specific version that you specify may become outdated. We
-        /// recommend leaving this unspecified.
+        /// The version of this environment tier. When you don&#39;t set a value to it, Elastic Beanstalk uses the
+        /// latest compatible worker tier version.
+        /// Note This member is deprecated. Any specific version that you set may become out of date. We
+        /// recommend leaving it unspecified.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

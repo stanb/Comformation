@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
-    /// Amazon EMR EbsConfiguration EbsBlockDeviceConfig VolumeSpecification
-    /// VolumeSpecification is a property of the Amazon EMR EbsConfiguration property that configures the Amazon
-    /// Elastic Block Store (Amazon EBS) volumes that Amazon EMR (Amazon EMR) associates with your instances.
+    /// AWS::EMR::InstanceGroupConfig VolumeSpecification
+    /// VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines
+    /// the volume type, IOPS, and size (GiB) for EBS volumes attached to EC2 instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html
     /// </summary>
     public class VolumeSpecification
@@ -16,30 +16,31 @@ namespace Comformation.EMR.InstanceGroupConfig
 
         /// <summary>
         /// Iops
-        /// The number of I/O operations per second (IOPS) that the volume supports. For more information, see
-        /// Iops for the EbsBlockDevice action in the Amazon EC2 API Reference.
+        /// The number of I/O operations per second (IOPS) that the volume supports.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Iops")]
         public Union<int, IntrinsicFunction> Iops { get; set; }
 
         /// <summary>
         /// SizeInGB
-        /// The volume size, in Gibibytes (GiB). For more information about specifying the volume size, see
-        /// VolumeSize for the EbsBlockDevice action in the Amazon EC2 API Reference.
+        /// The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is
+        /// EBS-optimized, the minimum value is 10.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SizeInGB")]
         public Union<int, IntrinsicFunction> SizeInGB { get; set; }
 
         /// <summary>
         /// VolumeType
-        /// The volume type, such as standard or io1. For more information about specifying the volume type, see
-        /// VolumeType for the EbsBlockDevice action in the Amazon EC2 API Reference.
+        /// The volume type. Volume types supported are gp2, io1, standard.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeType")]
         public Union<string, IntrinsicFunction> VolumeType { get; set; }

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule DynamoDBv2Action
-    /// The DynamoDBv2Action property type is a property of the Actions property that describes an AWS IoT action that
-    /// writes data to a DynamoDB table.
+    /// AWS::IoT::TopicRule DynamoDBv2Action
+    /// Describes an action to write to a DynamoDB table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html
     /// </summary>
     public class DynamoDBv2Action
@@ -16,7 +15,9 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// PutItem
-        /// Specifies the database table to which to write the item for an AWS IoT topic rule.
+        /// Specifies the DynamoDB table to which the message data will be written. For example:
+        /// { &quot;dynamoDBv2&quot;: { &quot;roleArn&quot;: &quot;aws:iam:12341251:my-role&quot; &quot;putItem&quot;: { &quot;tableName&quot;: &quot;my-table&quot; } } }
+        /// Each attribute in the message payload will be written to a separate column in the DynamoDB database.
         /// Required: No
         /// Type: PutItemInput
         /// Update requires: No interruption
@@ -26,8 +27,7 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// RoleArn
-        /// The IAM role that allows access to the DynamoDB table. At a minimum, the role must allow the
-        /// dynamoDB:PutItem IAM action.
+        /// The ARN of the IAM role that grants access to the DynamoDB table.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

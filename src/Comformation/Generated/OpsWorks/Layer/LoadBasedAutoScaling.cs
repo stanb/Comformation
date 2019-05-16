@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
-    /// AWS OpsWorks LoadBasedAutoScaling Type
-    /// Describes the load-based automatic scaling configuration for an AWS::OpsWorks::Layer resource type. For more
-    /// information, see SetLoadBasedAutoScaling in the AWS OpsWorks Stacks API Reference.
+    /// AWS::OpsWorks::Layer LoadBasedAutoScaling
+    /// Describes a layer&#39;s load-based auto scaling configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html
     /// </summary>
     public class LoadBasedAutoScaling
@@ -16,29 +15,32 @@ namespace Comformation.OpsWorks.Layer
 
         /// <summary>
         /// DownScaling
-        /// The threshold below which the instances are scaled down (stopped). If the load falls below this
-        /// threshold for a specified amount of time, AWS OpsWorks stops a specified number of instances.
+        /// An AutoScalingThresholds object that describes the downscaling configuration, which defines how and
+        /// when AWS OpsWorks Stacks reduces the number of instances.
         /// Required: No
-        /// Type: AWS OpsWorks AutoScalingThresholds Type
+        /// Type: AutoScalingThresholds
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DownScaling")]
         public AutoScalingThresholds DownScaling { get; set; }
 
         /// <summary>
         /// Enable
-        /// Whether to enable automatic load-based scaling for the layer.
+        /// Whether load-based auto scaling is enabled for the layer.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Enable")]
         public Union<bool, IntrinsicFunction> Enable { get; set; }
 
         /// <summary>
         /// UpScaling
-        /// The threshold above which the instances are scaled up (added). If the load exceeds this thresholds
-        /// for a specified amount of time, AWS OpsWorks starts a specified number of instances.
+        /// An AutoScalingThresholds object that describes the upscaling configuration, which defines how and
+        /// when AWS OpsWorks Stacks increases the number of instances.
         /// Required: No
-        /// Type: AWS OpsWorks AutoScalingThresholds Type
+        /// Type: AutoScalingThresholds
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UpScaling")]
         public AutoScalingThresholds UpScaling { get; set; }

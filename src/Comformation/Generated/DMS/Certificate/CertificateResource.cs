@@ -36,7 +36,7 @@ namespace Comformation.DMS.Certificate
             /// CertificateWallet
             /// The location of the imported Oracle Wallet certificate for use with SSL.
             /// Required: No
-            /// Type: Base64-encoded binary data object
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CertificateWallet { get; set; }

@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationOutput KinesisFirehoseOutput
-    /// The KinesisFirehoseOutput property type specifies a Kinesis Data Firehose delivery stream as the destination
-    /// for a SQL-based Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::ApplicationOutput KinesisFirehoseOutput
+    /// For an SQL-based Amazon Kinesis Data Analytics application, when configuring application output, identifies a
+    /// Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of
+    /// the delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisfirehoseoutput.html
     /// </summary>
     public class KinesisFirehoseOutput
@@ -19,6 +20,9 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
         /// The ARN of the destination delivery stream to write to.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]

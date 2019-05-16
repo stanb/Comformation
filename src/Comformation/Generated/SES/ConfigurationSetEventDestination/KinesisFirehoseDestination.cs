@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
-    /// Amazon Simple Email Service ConfigurationSetEventDestination KinesisFirehoseDestination
-    /// The KinesisFirehoseDestination property type specifies the delivery stream ARN and the IAM role ARN associated
-    /// with an Kinesis Data Firehose event destination for an Amazon SES configuration set.
+    /// AWS::SES::ConfigurationSetEventDestination KinesisFirehoseDestination
+    /// Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Data Firehose event
+    /// destination.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html
     /// </summary>
     public class KinesisFirehoseDestination
@@ -16,7 +16,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// IAMRoleARN
-        /// The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis
+        /// The ARN of the IAM role that Amazon SES uses to publish email sending events to the Amazon Kinesis
         /// Data Firehose stream.
         /// Required: Yes
         /// Type: String

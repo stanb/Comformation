@@ -6,7 +6,7 @@ namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
     /// AWS::ApiGateway::Stage
-    /// The AWS::ApiGateway::Stage resource creates a stage for an Amazon API Gateway (API Gateway) deployment.
+    /// The AWS::ApiGateway::Stage resource creates a stage for a deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html
     /// </summary>
     public class StageResource : ResourceBase
@@ -51,8 +51,8 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// ClientCertificateId
-            /// The identifier of the client certificate that API Gateway uses to call your integration endpoints in
-            /// the stage.
+            /// The ID of the client certificate that API Gateway uses to call your integration endpoints in the
+            /// stage.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -61,8 +61,8 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// DeploymentId
-            /// The ID of the deployment that the stage points to.
-            /// Required: Yes
+            /// The ID of the deployment that the stage is associated with.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -70,7 +70,7 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// Description
-            /// A description of the stage&#39;s purpose.
+            /// A description of the stage.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -79,9 +79,10 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// DocumentationVersion
-            /// The version identifier of the API documentation snapshot.
+            /// The version ID of the API documentation snapshot.
             /// Required: No
             /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> DocumentationVersion { get; set; }
 
@@ -107,7 +108,7 @@ namespace Comformation.ApiGateway.Stage
             /// StageName
             /// The name of the stage, which API Gateway uses as the first path segment in the invoked Uniform
             /// Resource Identifier (URI).
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -117,14 +118,14 @@ namespace Comformation.ApiGateway.Stage
             /// Tags
             /// An array of arbitrary tags (key-value pairs) to associate with the stage.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TracingEnabled
-            /// Specifies whether active tracing with X-ray is enabled for this stage.
+            /// Specifies whether active X-Ray tracing is enabled for this stage.
             /// For more information, see Trace API Gateway API Execution with AWS X-Ray in the API Gateway
             /// Developer Guide.
             /// Required: No
@@ -137,9 +138,9 @@ namespace Comformation.ApiGateway.Stage
             /// Variables
             /// A map (string-to-string map) that defines the stage variables, where the variable name is the key
             /// and the variable value is the value. Variable names are limited to alphanumeric characters. Values
-            /// must match the following regular expression: [A-Za-z0-9-. _~:/?#&amp;amp;amp;=,]+.
+            /// must match the following regular expression: [A-Za-z0-9-. _~:/?#&amp;amp;=,]+.
             /// Required: No
-            /// Type: Mapping of key-value pairs
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }

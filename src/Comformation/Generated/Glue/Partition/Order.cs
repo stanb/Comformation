@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Partition
 {
     /// <summary>
-    /// AWS Glue Partition Order
-    /// The Order property type specifies the sort order of a column in an AWS Glue partition.
+    /// AWS::Glue::Partition Order
+    /// Specifies the sort order of a sorted column.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html
     /// </summary>
     public class Order
@@ -15,8 +15,7 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// Column
-        /// The name of the column. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The name of the column.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +25,7 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SortOrder
-        /// Indicates whether the column is sorted in ascending order (1) or descending order (0).
+        /// Indicates that the column is sorted in ascending order (== 1), or in descending order (==0).
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

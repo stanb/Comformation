@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
-    /// Amazon GuardDuty Filter FindingCriteria
-    /// The FindingCriteria property type specifies the attributes to be used in the filter and the conditions to be
-    /// applied to the selected attributes for filtering through your GuardDuty findings.
+    /// AWS::GuardDuty::Filter FindingCriteria
+    /// Represents a map of finding properties that match specified conditions and values when querying findings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html
     /// </summary>
     public class FindingCriteria
@@ -16,8 +15,8 @@ namespace Comformation.GuardDuty.Filter
 
         /// <summary>
         /// Criterion
-        /// Specifies the finding attributes (for example, region, type, severity, etc. ) that you want to
-        /// include in the finding criteria for a filter.
+        /// Represents a map of finding properties that match specified conditions and values when querying
+        /// findings.
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption

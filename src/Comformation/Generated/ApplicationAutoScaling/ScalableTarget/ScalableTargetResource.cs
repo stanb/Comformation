@@ -7,8 +7,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
     /// <summary>
     /// AWS::ApplicationAutoScaling::ScalableTarget
     /// The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling
-    /// can scale. For more information, see the RegisterScalableTarget action in the Application Auto Scaling API
-    /// Reference.
+    /// can scale.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
     /// </summary>
     public class ScalableTargetResource : ResourceBase
@@ -17,7 +16,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         {
             /// <summary>
             /// MaxCapacity
-            /// The maximum value that Application Auto Scaling can use to scale a target during a scaling activity.
+            /// The maximum value to scale to in response to a scale-out event.
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
@@ -26,7 +25,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
             /// <summary>
             /// MinCapacity
-            /// The minimum value that Application Auto Scaling can use to scale a target during a scaling activity.
+            /// The minimum value to scale to in response to a scale-in event.
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
@@ -36,9 +35,8 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// <summary>
             /// ResourceId
             /// The resource identifier to associate with this scalable target. This string consists of the resource
-            /// type and unique identifier. For more information, see the ResourceId parameter for the
-            /// RegisterScalableTarget action in the Application Auto Scaling API Reference, or see the
-            /// ScalableTarget examples.
+            /// type and unique identifier. For valid values, see the ResourceId parameter for
+            /// RegisterScalableTarget in the Application Auto Scaling API Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -48,7 +46,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// <summary>
             /// RoleARN
             /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that allows
-            /// Application Auto Scaling to modify your scalable target.
+            /// Application Auto Scaling to modify the scalable target on your behalf.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -57,10 +55,10 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
             /// <summary>
             /// ScalableDimension
-            /// The scalable dimension that&#39;s associated with the scalable target. Specify the service namespace,
-            /// resource type, and scaling property—for example, ecs:service:DesiredCount for the desired task count
-            /// of an Amazon Elastic Container Service service. For valid values, see the ScalableDimension content
-            /// for the ScalingPolicy data type in the Application Auto Scaling API Reference.
+            /// The scalable dimension that is associated with the scalable target. Specify the service namespace,
+            /// resource type, and scaling property, for example, ecs:service:DesiredCount for the desired task
+            /// count of an Amazon ECS service. For valid values, see the ScalableDimension parameter for
+            /// RegisterScalableTarget in the Application Auto Scaling API Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -71,7 +69,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// ScheduledActions
             /// The scheduled actions for the scalable target. Duplicates aren&#39;t allowed.
             /// Required: No
-            /// Type: List of ScheduledAction property types
+            /// Type: List of ScheduledAction
             /// Update requires: No interruption
             /// </summary>
 			public List<ScheduledAction> ScheduledActions { get; set; }
@@ -79,8 +77,8 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// <summary>
             /// ServiceNamespace
             /// The namespace of the AWS service that provides the resource or custom-resource for a resource
-            /// provided by your own application or service. For valid AWS service namespace values, see the
-            /// RegisterScalableTarget action in the Application Auto Scaling API Reference.
+            /// provided by your own application or service. For valid values, see the ServiceNamespace parameter
+            /// for RegisterScalableTarget in the Application Auto Scaling API Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

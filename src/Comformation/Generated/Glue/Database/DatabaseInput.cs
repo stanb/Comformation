@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Database
 {
     /// <summary>
-    /// AWS Glue Database DatabaseInput
-    /// The DatabaseInput property type specifies the metadata that is used to create or update an AWS Glue database.
+    /// AWS::Glue::Database DatabaseInput
+    /// The structure used to create or update a database.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html
     /// </summary>
     public class DatabaseInput
@@ -15,8 +15,7 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// LocationUri
-        /// The location of the database (for example, an HDFS path). It must match the URI address multi-line
-        /// string pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// The location of the database (for example, an HDFS path).
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,8 +25,7 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// Description
-        /// The description of the database. It must match the URI address multi-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// A description of the database.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -37,10 +35,10 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// Parameters
-        /// UTF-8 string–to–UTF-8 string key-value pairs that specify the properties that are associated with
-        /// the database.
+        /// These key-value pairs define parameters and properties of the database.
+        /// These key-value pairs define parameters and properties of the database.
         /// Required: No
-        /// Type: JSON object
+        /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
@@ -48,8 +46,7 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// Name
-        /// The name of the database. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

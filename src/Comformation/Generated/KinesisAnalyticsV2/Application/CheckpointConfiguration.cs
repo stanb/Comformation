@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application CheckpointConfiguration
-    /// The CheckpointConfiguration property type specifies an application&#39;s checkpointing configuration.
-    /// Checkpointing is the process of persisting application state for fault tolerance.
+    /// AWS::KinesisAnalyticsV2::Application CheckpointConfiguration
+    /// Describes an application&#39;s checkpointing configuration. Checkpointing is the process of persisting application
+    /// state for fault tolerance. For more information, see Checkpoints for Fault Tolerance in the Apache Flink
+    /// Documentation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html
     /// </summary>
     public class CheckpointConfiguration
@@ -20,6 +21,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// behavior.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: CUSTOM | DEFAULT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConfigurationType")]
@@ -39,7 +41,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// MinPauseBetweenCheckpoints
         /// Describes the minimum time in milliseconds after a checkpoint operation completes that a new
         /// checkpoint operation can start. If a checkpoint operation takes longer than the CheckpointInterval,
-        /// the application otherwise performs continual checkpoint operations.
+        /// the application otherwise performs continual checkpoint operations. For more information, see Tuning
+        /// Checkpointing in the Apache Flink Documentation.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

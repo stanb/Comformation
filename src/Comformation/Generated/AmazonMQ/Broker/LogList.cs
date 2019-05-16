@@ -6,20 +6,20 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
-    /// Amazon MQ Broker LogsConfiguration
-    /// The LogsConfiguration property type enables general or audit logging for an Amazon MQ broker.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-logsconfiguration.html
+    /// AWS::AmazonMQ::Broker LogList
+    /// The list of information about logs to be enabled for the specified broker.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html
     /// </summary>
     public class LogList
     {
 
         /// <summary>
         /// Audit
-        /// Enables audit logging. Every user management action made using JMS or the ActiveMQ Web Console is
+        /// Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is
         /// logged.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Audit")]
         public Union<bool, IntrinsicFunction> Audit { get; set; }
@@ -29,7 +29,7 @@ namespace Comformation.AmazonMQ.Broker
         /// Enables general logging.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("General")]
         public Union<bool, IntrinsicFunction> General { get; set; }

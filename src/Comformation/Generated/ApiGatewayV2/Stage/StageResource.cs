@@ -6,8 +6,8 @@ namespace Comformation.ApiGatewayV2.Stage
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Stage
-    /// The AWS::ApiGatewayV2::Stage resource creates a stage for an Amazon API Gateway deployment. For more
-    /// information, see CreateStage in the Amazon API Gateway V2 API Reference.
+    /// The AWS::ApiGatewayV2::Stage resource updates a stage for a WebSocket API. For more information, see Deploy a
+    /// WebSocket API in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html
     /// </summary>
     public class StageResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.ApiGatewayV2.Stage
         {
             /// <summary>
             /// ClientCertificateId
-            /// The ID of a client certificate for the stage.
+            /// The identifier of a client certificate for a Stage.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -25,8 +25,8 @@ namespace Comformation.ApiGatewayV2.Stage
 
             /// <summary>
             /// DeploymentId
-            /// The ID of the deployment that the stage is associated with.
-            /// Required: No
+            /// The deployment identifier for the API stage.
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -34,7 +34,7 @@ namespace Comformation.ApiGatewayV2.Stage
 
             /// <summary>
             /// Description
-            /// Description of the stage.
+            /// The description for the API stage.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -52,16 +52,17 @@ namespace Comformation.ApiGatewayV2.Stage
 
             /// <summary>
             /// RouteSettings
-            /// Route settings for the stage. This is a mapping of Strings to RouteSettings.
+            /// Route settings for the stage.
             /// Required: No
-            /// Type: Mapping of key-value pairs
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RouteSettings { get; set; }
 
             /// <summary>
             /// StageName
-            /// The name of the stage.
+            /// The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores.
+            /// Maximum length is 128 characters.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -70,17 +71,17 @@ namespace Comformation.ApiGatewayV2.Stage
 
             /// <summary>
             /// StageVariables
-            /// A String to String mapping that defines the stage variables for a stage resource. Variable names can
-            /// have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-. _~:/?#&amp;amp;=,]+.
+            /// A map that defines the stage variables for a Stage. Variable names can have alphanumeric and
+            /// underscore characters, and the values must match [A-Za-z0-9-. _~:/?#&amp;amp;=,]+.
             /// Required: No
-            /// Type: Mapping of key-value pairs
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> StageVariables { get; set; }
 
             /// <summary>
             /// ApiId
-            /// The API ID.
+            /// The API identifier.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -89,7 +90,7 @@ namespace Comformation.ApiGatewayV2.Stage
 
             /// <summary>
             /// DefaultRouteSettings
-            /// Default route settings for the stage.
+            /// The default route settings for the stage.
             /// Required: No
             /// Type: RouteSettings
             /// Update requires: No interruption

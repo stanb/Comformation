@@ -6,7 +6,7 @@ namespace Comformation.IAM.UserToGroupAddition
 {
     /// <summary>
     /// AWS::IAM::UserToGroupAddition
-    /// The AWS::IAM::UserToGroupAddition type adds AWS Identity and Access Management (IAM) users to a group.
+    /// Adds the specified user to the specified group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
     /// </summary>
     public class UserToGroupAdditionResource : ResourceBase
@@ -15,17 +15,24 @@ namespace Comformation.IAM.UserToGroupAddition
         {
             /// <summary>
             /// GroupName
-            /// The name of group to add users to.
+            /// The name of the group to update.
+            /// This parameter allows (through its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// Users
+            /// A list of the names of the users that you want to add to the group.
             /// Required: Yes
-            /// Type: List of users
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Users { get; set; }

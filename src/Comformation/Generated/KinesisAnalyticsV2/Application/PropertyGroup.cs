@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application PropertyGroup
-    /// The PropertyGroup property type specifies property key-value pairs passed into a Java-based Kinesis Data
-    /// Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application PropertyGroup
+    /// Property key-value pairs passed into a Java-based Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-propertygroup.html
     /// </summary>
     public class PropertyGroup
@@ -29,6 +28,9 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Describes the key of an application execution property key-value pair.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 50
+        /// Pattern: [a-zA-Z0-9_. -]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PropertyGroupId")]

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule Action
-    /// Action is a property of the TopicRulePayload property that describes an action associated with an AWS IoT
-    /// rule. For more information, see Rules for AWS IoT.
+    /// AWS::IoT::TopicRule Action
+    /// Describes the actions associated with a rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html
     /// </summary>
     public class Action
@@ -16,54 +15,61 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// CloudwatchAlarm
-        /// Changes the state of a CloudWatch alarm.
+        /// Change the state of a CloudWatch alarm.
         /// Required: No
-        /// Type: AWS IoT TopicRule CloudwatchAlarmAction
+        /// Type: CloudwatchAlarmAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudwatchAlarm")]
         public CloudwatchAlarmAction CloudwatchAlarm { get; set; }
 
         /// <summary>
         /// CloudwatchMetric
-        /// Captures a CloudWatch metric.
+        /// Capture a CloudWatch metric.
         /// Required: No
-        /// Type: AWS IoT TopicRule CloudwatchMetricAction
+        /// Type: CloudwatchMetricAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudwatchMetric")]
         public CloudwatchMetricAction CloudwatchMetric { get; set; }
 
         /// <summary>
         /// DynamoDB
-        /// Writes data to a DynamoDB table.
+        /// Write to a DynamoDB table.
         /// Required: No
-        /// Type: AWS IoT TopicRule DynamoDBAction
+        /// Type: DynamoDBAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DynamoDB")]
         public DynamoDBAction DynamoDB { get; set; }
 
         /// <summary>
         /// DynamoDBv2
-        /// Writes data to a DynamoDB table.
+        /// Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each
+        /// attribute in an MQTT message payload into a separate DynamoDB column.
         /// Required: No
-        /// Type: AWS IoT TopicRule DynamoDBv2Action
+        /// Type: DynamoDBv2Action
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DynamoDBv2")]
         public DynamoDBv2Action DynamoDBv2 { get; set; }
 
         /// <summary>
         /// Elasticsearch
-        /// Writes data to an Elasticsearch domain.
+        /// Write data to an Amazon Elasticsearch Service domain.
         /// Required: No
-        /// Type: AWS IoT TopicRule ElasticsearchAction
+        /// Type: ElasticsearchAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Elasticsearch")]
         public ElasticsearchAction Elasticsearch { get; set; }
 
         /// <summary>
         /// Firehose
-        /// Writes data to a Kinesis Data Firehose stream.
+        /// Write to an Amazon Kinesis Firehose stream.
         /// Required: No
-        /// Type: AWS IoT TopicRule FirehoseAction
+        /// Type: FirehoseAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Firehose")]
         public FirehoseAction Firehose { get; set; }
@@ -72,61 +78,68 @@ namespace Comformation.IoT.TopicRule
         /// IotAnalytics
         /// Sends message data to an AWS IoT Analytics channel.
         /// Required: No
-        /// Type: AWS IoT TopicRule IotAnalyticsAction
+        /// Type: IotAnalyticsAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IotAnalytics")]
         public IotAnalyticsAction IotAnalytics { get; set; }
 
         /// <summary>
         /// Kinesis
-        /// Writes data to an Kinesis stream.
+        /// Write data to an Amazon Kinesis stream.
         /// Required: No
-        /// Type: AWS IoT TopicRule KinesisAction
+        /// Type: KinesisAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Kinesis")]
         public KinesisAction Kinesis { get; set; }
 
         /// <summary>
         /// Lambda
-        /// Invokes a Lambda function.
+        /// Invoke a Lambda function.
         /// Required: No
-        /// Type: AWS IoT TopicRule LambdaAction
+        /// Type: LambdaAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Lambda")]
         public LambdaAction Lambda { get; set; }
 
         /// <summary>
         /// Republish
-        /// Publishes data to an MQ Telemetry Transport (MQTT) topic different from the one currently specified.
+        /// Publish to another MQTT topic.
         /// Required: No
-        /// Type: AWS IoT TopicRule RepublishAction
+        /// Type: RepublishAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Republish")]
         public RepublishAction Republish { get; set; }
 
         /// <summary>
         /// S3
-        /// Writes data to an S3 bucket.
+        /// Write to an Amazon S3 bucket.
         /// Required: No
-        /// Type: AWS IoT TopicRule S3Action
+        /// Type: S3Action
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3")]
         public S3Action S3 { get; set; }
 
         /// <summary>
         /// Sns
-        /// Publishes data to an SNS topic.
+        /// Publish to an Amazon SNS topic.
         /// Required: No
-        /// Type: AWS IoT TopicRule SnsAction
+        /// Type: SnsAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Sns")]
         public SnsAction Sns { get; set; }
 
         /// <summary>
         /// Sqs
-        /// Publishes data to an SQS queue.
+        /// Publish to an Amazon SQS queue.
         /// Required: No
-        /// Type: AWS IoT TopicRule SqsAction
+        /// Type: SqsAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Sqs")]
         public SqsAction Sqs { get; set; }
@@ -135,7 +148,8 @@ namespace Comformation.IoT.TopicRule
         /// StepFunctions
         /// Starts execution of a Step Functions state machine.
         /// Required: No
-        /// Type: AWS IoT TopicRule StepFunctionsAction
+        /// Type: StepFunctionsAction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StepFunctions")]
         public StepFunctionsAction StepFunctions { get; set; }

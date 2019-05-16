@@ -16,7 +16,7 @@ namespace Comformation.AppSync.ApiKey
         {
             /// <summary>
             /// Description
-            /// Unique description of your API Key.
+            /// Unique description of your API key.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -25,18 +25,18 @@ namespace Comformation.AppSync.ApiKey
 
             /// <summary>
             /// Expires
-            /// Expiration time of the API Key in seconds (using Unix Epoch time), with a minimum of 1 day and a
+            /// Expiration time of the API key in seconds (using Unix Epoch time), with a minimum of 1 day and a
             /// maximum of 365 days. The default value is 7 days.
             /// Required: No
-            /// Type: Number
+            /// Type: Double
             /// Update requires: No interruption
             /// </summary>
 			public Union<double, IntrinsicFunction> Expires { get; set; }
 
             /// <summary>
             /// ApiId
-            /// Unique AWS AppSync GraphQL API Identifier for this API Key.
-            /// Required: No
+            /// Unique AWS AppSync GraphQL API ID for this API key.
+            /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

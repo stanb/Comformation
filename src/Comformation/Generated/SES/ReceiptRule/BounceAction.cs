@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
-    /// Amazon Simple Email Service ReceiptRule BounceAction
-    /// The BounceAction property type includes an action in an Amazon SES receipt rule that rejects the received
-    /// email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon SNS.
+    /// AWS::SES::ReceiptRule BounceAction
+    /// When included in a receipt rule, this action rejects the received email by returning a bounce response to the
+    /// sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html
     /// </summary>
     public class BounceAction
@@ -16,8 +16,8 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Sender
-        /// The email address of the sender of the bounced email. This is the address from which the bounce
-        /// message will be sent.
+        /// The email address of the sender of the bounced email. This is the address that the bounce message is
+        /// sent from.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -49,8 +49,7 @@ namespace Comformation.SES.ReceiptRule
         /// TopicArn
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
         /// example of an Amazon SNS topic ARN is arn:aws:sns:us-west-2:123456789012:MyTopic. For more
-        /// information about Amazon SNS topics, see Create a Topic in the Amazon Simple Notification Service
-        /// Developer Guide.
+        /// information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

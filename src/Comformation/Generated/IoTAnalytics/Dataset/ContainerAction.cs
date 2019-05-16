@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset ContainerAction
-    /// The ContainerAction property type specifies information which allows the system to run a containerized
-    /// application in order to create the data set contents for an AWS IoT Analytics dataset.
+    /// AWS::IoTAnalytics::Dataset ContainerAction
+    /// Information needed to run the &quot;containerAction&quot; to produce data set contents.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html
     /// </summary>
     public class ContainerAction
@@ -20,7 +19,8 @@ namespace Comformation.IoTAnalytics.Dataset
         /// (basically, parameters passed to the application). Each variable must have a name and a value given
         /// by one of &quot;stringValue&quot;, &quot;datasetContentVersionValue&quot;, or &quot;outputFileUriValue&quot;.
         /// Required: No
-        /// Type: List of Variable property types
+        /// Type: List of Variable
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Variables")]
@@ -29,10 +29,12 @@ namespace Comformation.IoTAnalytics.Dataset
         /// <summary>
         /// ExecutionRoleArn
         /// The ARN of the role which gives permission to the system to access needed resources in order to run
-        /// the &#39;containerAction&#39;. This includes, at minimum, permission to retrieve the data set contents which
+        /// the &quot;containerAction&quot;. This includes, at minimum, permission to retrieve the data set contents which
         /// are the input to the containerized application.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExecutionRoleArn")]
@@ -44,6 +46,7 @@ namespace Comformation.IoTAnalytics.Dataset
         /// and needed support libraries and is used to generate data set contents.
         /// Required: Yes
         /// Type: String
+        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Image")]
@@ -51,9 +54,9 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// ResourceConfiguration
-        /// Configuration of the resource that executes the &#39;containerAction&#39;.
-        /// Required: No
-        /// Type: List of Variable property types
+        /// Configuration of the resource which executes the &quot;containerAction&quot;.
+        /// Required: Yes
+        /// Type: ResourceConfiguration
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceConfiguration")]

@@ -6,8 +6,7 @@ namespace Comformation.OpsWorks.Volume
 {
     /// <summary>
     /// AWS::OpsWorks::Volume
-    /// The AWS::OpsWorks::Volume resource registers an Amazon Elastic Block Store (Amazon EBS) volume with an AWS
-    /// OpsWorks stack.
+    /// Describes an instance&#39;s Amazon EBS volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html
     /// </summary>
     public class VolumeResource : ResourceBase
@@ -16,7 +15,7 @@ namespace Comformation.OpsWorks.Volume
         {
             /// <summary>
             /// Ec2VolumeId
-            /// The ID of the Amazon EBS volume to register with the AWS OpsWorks stack.
+            /// The Amazon EC2 volume ID.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +24,7 @@ namespace Comformation.OpsWorks.Volume
 
             /// <summary>
             /// MountPoint
-            /// The mount point for the Amazon EBS volume, such as /mnt/disk1.
+            /// The volume mount point. For example, &quot;/mnt/disk1&quot;.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -34,7 +33,7 @@ namespace Comformation.OpsWorks.Volume
 
             /// <summary>
             /// Name
-            /// A name for the Amazon EBS volume.
+            /// The volume name.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -43,7 +42,7 @@ namespace Comformation.OpsWorks.Volume
 
             /// <summary>
             /// StackId
-            /// The ID of the AWS OpsWorks stack that AWS OpsWorks registers the volume to.
+            /// The stack ID.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

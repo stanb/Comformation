@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    /// AWS Auto Scaling ScalingPlan TargetTrackingConfiguration
-    /// The TargetTrackingConfiguration property type specifies a target tracking configuration to use with AWS Auto
-    /// Scaling.
+    /// AWS::AutoScalingPlans::ScalingPlan TargetTrackingConfiguration
+    /// TargetTrackingConfiguration is a subproperty of ScalingInstruction that specifies a target tracking
+    /// configuration to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html
     /// </summary>
     public class TargetTrackingConfiguration
@@ -16,7 +16,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// ScaleOutCooldown
-        /// The amount of time, in seconds, after a scale out activity completes before another scale out
+        /// The amount of time, in seconds, after a scale-out activity completes before another scale-out
         /// activity can start. This value is not used if the scalable resource is an Auto Scaling group.
         /// Required: No
         /// Type: Integer
@@ -38,7 +38,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// PredefinedScalingMetricSpecification
-        /// A predefined metric.
+        /// A predefined metric. You can specify either a predefined metric or a customized metric.
         /// Required: No
         /// Type: PredefinedScalingMetricSpecification
         /// Update requires: No interruption
@@ -48,10 +48,11 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// DisableScaleIn
-        /// Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in
-        /// is disabled and the target tracking policy won&#39;t remove capacity from the scalable resource.
-        /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
-        /// resource. The default value is false.
+        /// Indicates whether scale in by the target tracking scaling policy is disabled. If the value is true,
+        /// scale in is disabled and the target tracking scaling policy doesn&#39;t remove capacity from the
+        /// scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove
+        /// capacity from the scalable resource.
+        /// The default value is false.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -61,7 +62,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// ScaleInCooldown
-        /// The amount of time, in seconds, after a scale in activity completes before another scale in activity
+        /// The amount of time, in seconds, after a scale-in activity completes before another scale in activity
         /// can start. This value is not used if the scalable resource is an Auto Scaling group.
         /// Required: No
         /// Type: Integer
@@ -83,7 +84,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// CustomizedScalingMetricSpecification
-        /// A customized metric.
+        /// A customized metric. You can specify either a predefined metric or a customized metric.
         /// Required: No
         /// Type: CustomizedScalingMetricSpecification
         /// Update requires: No interruption

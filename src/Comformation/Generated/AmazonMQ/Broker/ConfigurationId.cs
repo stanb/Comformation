@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
-    /// Amazon MQ Broker ConfigurationId
-    /// The ConfigurationId property type specifies the unique ID that Amazon MQ generates for the configuration.
+    /// AWS::AmazonMQ::Broker ConfigurationId
+    /// A list of information about the configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html
     /// </summary>
     public class ConfigurationId
@@ -18,7 +18,7 @@ namespace Comformation.AmazonMQ.Broker
         /// The revision number of the configuration.
         /// Required: Yes
         /// Type: Integer
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Revision")]
         public Union<int, IntrinsicFunction> Revision { get; set; }
@@ -28,7 +28,7 @@ namespace Comformation.AmazonMQ.Broker
         /// The unique ID that Amazon MQ generates for the configuration.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Some interruptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Id")]
         public Union<string, IntrinsicFunction> Id { get; set; }

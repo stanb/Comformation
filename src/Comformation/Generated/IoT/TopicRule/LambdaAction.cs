@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule LambdaAction
-    /// Lambda is a property of the Actions property that describes an action that invokes a Lambda function.
+    /// AWS::IoT::TopicRule LambdaAction
+    /// Describes an action to invoke a Lambda function.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html
     /// </summary>
     public class LambdaAction
@@ -16,8 +16,9 @@ namespace Comformation.IoT.TopicRule
         /// <summary>
         /// FunctionArn
         /// The ARN of the Lambda function.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FunctionArn")]
         public Union<string, IntrinsicFunction> FunctionArn { get; set; }

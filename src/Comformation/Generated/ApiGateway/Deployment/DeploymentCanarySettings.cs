@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
-    /// Amazon API Gateway Deployment DeploymentCanarySettings
+    /// AWS::ApiGateway::Deployment DeploymentCanarySettings
     /// The DeploymentCanarySettings property type specifies settings for the canary deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html
     /// </summary>
@@ -15,7 +15,7 @@ namespace Comformation.ApiGateway.Deployment
 
         /// <summary>
         /// PercentTraffic
-        /// The percent (0-100) of traffic diverted to a canary deployment.
+        /// The percentage (0-100) of traffic diverted to a canary deployment.
         /// Required: No
         /// Type: Double
         /// Update requires: Replacement
@@ -30,7 +30,7 @@ namespace Comformation.ApiGateway.Deployment
         /// variable names and their values.
         /// Duplicates are not allowed.
         /// Required: No
-        /// Type: String to String map
+        /// Type: Map of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("StageVariableOverrides")]
@@ -38,7 +38,7 @@ namespace Comformation.ApiGateway.Deployment
 
         /// <summary>
         /// UseStageCache
-        /// Whether the canary deployment uses the stage cache or not.
+        /// Whether the canary deployment uses the stage cache.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement

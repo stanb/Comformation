@@ -6,7 +6,7 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
 {
     /// <summary>
     /// AWS::EC2::VPCDHCPOptionsAssociation
-    /// Associates a set of DHCP options (that you&#39;ve previously created) with the specified VPC.
+    /// Associates a set of DHCP options with a VPC, or associates no DHCP options with the VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
     /// </summary>
     public class VPCDHCPOptionsAssociationResource : ResourceBase
@@ -15,8 +15,7 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
         {
             /// <summary>
             /// DhcpOptionsId
-            /// The ID of the DHCP options you want to associate with the VPC. Specify default if you want the VPC
-            /// to use no DHCP options.
+            /// The ID of the DHCP options set, or default to associate no DHCP options with the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.EC2.VPCDHCPOptionsAssociation
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC to associate with this DHCP options set.
+            /// The ID of the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
-    /// AWS Systems Manager PatchBaseline PatchFilterGroup
+    /// AWS::SSM::PatchBaseline PatchFilterGroup
     /// The PatchFilterGroup property type specifies a set of patch filters for an AWS Systems Manager patch baseline,
     /// typically used for approval rules for a Systems Manager patch baseline.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html
@@ -19,6 +19,7 @@ namespace Comformation.SSM.PatchBaseline
         /// The set of patch filters that make up the group.
         /// Required: No
         /// Type: List of PatchFilter
+        /// Maximum: 4
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PatchFilters")]

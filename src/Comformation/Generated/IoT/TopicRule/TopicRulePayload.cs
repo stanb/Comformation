@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule TopicRulePayload
-    /// TopicRulePayload is a property of the AWS::IoT::TopicRule resource that describes the payload of an AWS IoT
-    /// rule.
+    /// AWS::IoT::TopicRule TopicRulePayload
+    /// Describes a rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
     /// </summary>
     public class TopicRulePayload
@@ -18,7 +17,7 @@ namespace Comformation.IoT.TopicRule
         /// Actions
         /// The actions associated with the rule.
         /// Required: Yes
-        /// Type: Array of Action objects
+        /// Type: List of Action
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Actions")]
@@ -66,8 +65,8 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// Sql
-        /// The SQL statement that queries the topic. For more information, see Rules for AWS IoT in the AWS IoT
-        /// Developer Guide.
+        /// The SQL statement used to query the topic. For more information, see AWS IoT SQL Reference in the
+        /// AWS IoT Developer Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

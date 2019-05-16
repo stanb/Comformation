@@ -8,7 +8,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
     /// AWS::DMS::ReplicationSubnetGroup
     /// The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group. Subnet groups must
     /// contain at least two subnets in two different Availability Zones in the same region.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnet-group.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html
     /// </summary>
     public class ReplicationSubnetGroupResource : ResourceBase
     {
@@ -16,7 +16,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
         {
             /// <summary>
             /// ReplicationSubnetGroupDescription
-            /// The description for the replication subnet group.
+            /// The description for the subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// <summary>
             /// ReplicationSubnetGroupIdentifier
             /// The identifier for the replication subnet group. If you don&#39;t specify a name, AWS CloudFormation
-            /// generates a unique physical ID and uses that ID for the identifier.
+            /// generates a unique ID and uses that ID for the identifier.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -35,18 +35,18 @@ namespace Comformation.DMS.ReplicationSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// The EC2 subnet IDs for the replication subnet group.
+            /// The EC2 subnet IDs for the subnet group.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the AWS DMS replication subnet group.
+            /// The tag to be assigned to the subnet group.
             /// Required: No
-            /// Type: A list of resource tags in key-value format.
+            /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
 			public List<Tag> Tags { get; set; }

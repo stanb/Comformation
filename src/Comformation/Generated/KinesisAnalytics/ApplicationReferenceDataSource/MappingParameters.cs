@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource MappingParameters
+    /// AWS::KinesisAnalytics::ApplicationReferenceDataSource MappingParameters
     /// When configuring application input at the time of creating or updating an application, provides additional
     /// mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
     /// delimiter) on the streaming source.

@@ -6,8 +6,7 @@ namespace Comformation.RDS.DBParameterGroup
 {
     /// <summary>
     /// AWS::RDS::DBParameterGroup
-    /// Creates a custom parameter group for an RDS database family. For more information about RDS parameter groups,
-    /// see Working with DB Parameter Groups in the Amazon Relational Database Service User Guide.
+    /// The AWS::RDS::DBParameterGroup resource creates a custom parameter group for an RDS database family.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html
     /// </summary>
     public class DBParameterGroupResource : ResourceBase
@@ -16,39 +15,44 @@ namespace Comformation.RDS.DBParameterGroup
         {
             /// <summary>
             /// Description
-            /// A friendly description of the RDS parameter group. For example, &quot;My Parameter Group&quot;.
+            /// Provides the customer-specified description for this DB Parameter Group.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Family
-            /// The database family of this RDS parameter group. For example, &quot;MySQL5. 1&quot;.
+            /// Provides the name of the DB Parameter Group Family that this DB Parameter Group is compatible with.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
             /// Parameters
-            /// The parameters to set for this RDS parameter group.
+            /// An array of parameter names, values, and the apply method for the parameter update. At least one
+            /// parameter name, value, and apply method must be supplied; subsequent arguments are optional. A
+            /// maximum of 20 parameters may be modified in a single request.
+            /// MySQL
+            /// Valid Values (for Apply method): immediate | pending-reboot
+            /// You can use the immediate value with dynamic parameters only. You can use the pending-reboot value
+            /// for both dynamic and static parameters, and changes are applied when DB Instance reboots.
+            /// Oracle
+            /// Valid Values (for Apply method): pending-reboot
             /// Required: No
-            /// Type: A JSON object consisting of string key-value pairs, as shown in the following example:
-            /// &quot;Parameters&quot; : { &quot;Key1&quot; : &quot;Value1&quot;, &quot;Key2&quot; : &quot;Value2&quot;, &quot;Key3&quot; : &quot;Value3&quot; }
-            /// Update requires: No interruption or Some interruptions. Changes to dynamic parameters are applied
-            /// immediately. During an update, if you have static parameters (whether they were changed or not),
-            /// triggers AWS CloudFormation to reboot the associated DB instance without failover.
+            /// Type: Map of String
+            /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the RDS parameter group.
+            /// Tags to assign to the DB parameter group.
             /// Required: No
-            /// Type: A list of resource tags.
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

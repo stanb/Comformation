@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket AnalyticsConfiguration
-    /// The AnalyticsConfiguration property type specifies the configuration and any analyses for the analytics filter
-    /// of an Amazon S3 bucket.
+    /// AWS::S3::Bucket AnalyticsConfiguration
+    /// Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html
     /// </summary>
     public class AnalyticsConfiguration
@@ -48,7 +47,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// TagFilters
         /// The tags to use when evaluating an analytics filter.
-        /// The analytics only includes objects that meet the filter&#39;s criteria. If no filter is speciified, all
+        /// The analytics only includes objects that meet the filter&#39;s criteria. If no filter is specified, all
         /// of the contents of the bucket are included in the analysis.
         /// Required: No
         /// Type: List of TagFilter

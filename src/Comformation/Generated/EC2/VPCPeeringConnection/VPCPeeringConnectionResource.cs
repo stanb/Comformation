@@ -6,9 +6,10 @@ namespace Comformation.EC2.VPCPeeringConnection
 {
     /// <summary>
     /// AWS::EC2::VPCPeeringConnection
-    /// A VPC peering connection enables a network connection between two virtual private clouds (VPCs) so that you
-    /// can route traffic between them using a private IP address. For more information about VPC peering and its
-    /// limitations, see VPC Peering Overview in the Amazon VPC Peering Guide.
+    /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and 			an accepter VPC with
+    /// which to create the connection. The accepter VPC can belong to 			another AWS account and can be in a
+    /// different Region to the requester VPC. The requester 			VPC and accepter VPC cannot have overlapping CIDR
+    /// blocks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
     /// </summary>
     public class VPCPeeringConnectionResource : ResourceBase
@@ -17,7 +18,8 @@ namespace Comformation.EC2.VPCPeeringConnection
         {
             /// <summary>
             /// PeerOwnerId
-            /// The AWS account ID of the owner of the VPC that you want to peer with.
+            /// The AWS account ID of the owner of the accepter VPC.
+            /// Default: Your AWS account ID
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -26,8 +28,10 @@ namespace Comformation.EC2.VPCPeeringConnection
 
             /// <summary>
             /// PeerRegion
-            /// The region code for the accepter VPC, if the accepter VPC is located in a region other than the
-            /// region in which you make the request. The default is the region in which you make the request.
+            /// The Region code for the accepter VPC, if the accepter VPC is located in a Region other than the
+            /// Region in which you make the request.
+            /// 		
+            /// Default: The Region in which you make the request.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -46,7 +50,8 @@ namespace Comformation.EC2.VPCPeeringConnection
 
             /// <summary>
             /// PeerVpcId
-            /// The ID of the VPC with which you are creating the peering connection.
+            /// The ID of the VPC with which you are creating the VPC peering connection. You must 			specify this
+            /// parameter in the request.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -55,16 +60,16 @@ namespace Comformation.EC2.VPCPeeringConnection
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this resource.
+            /// Any tags assigned to the resource.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC that is requesting a peering connection.
+            /// The ID of the VPC.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

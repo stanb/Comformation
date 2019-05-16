@@ -6,7 +6,7 @@ namespace Comformation.EC2.TransitGateway
 {
     /// <summary>
     /// AWS::EC2::TransitGateway
-    /// Creates a transit gateway. For more information, see Amazon VPC Transit Gateways.
+    /// Specifies a transit gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html
     /// </summary>
     public class TransitGatewayResource : ResourceBase
@@ -15,17 +15,18 @@ namespace Comformation.EC2.TransitGateway
         {
             /// <summary>
             /// DefaultRouteTablePropagation
-            /// Enable or disable automatic propagation of routes to the default propagation route table. The
-            /// default is enable.
+            /// Indicates whether resource attachments automatically propagate routes to the default propagation
+            /// route table.
             /// Required: No
             /// Type: String
+            /// Allowed Values: disable | enable
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultRouteTablePropagation { get; set; }
 
             /// <summary>
             /// Description
-            /// A description of the transit gateway.
+            /// The description of the transit gateway.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -34,37 +35,41 @@ namespace Comformation.EC2.TransitGateway
 
             /// <summary>
             /// AutoAcceptSharedAttachments
-            /// Indicates whether attachment requests are automatically accepted. The default is disable.
+            /// Indicates whether attachment requests are automatically accepted.
             /// Required: No
             /// Type: String
+            /// Allowed Values: disable | enable
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AutoAcceptSharedAttachments { get; set; }
 
             /// <summary>
             /// DefaultRouteTableAssociation
-            /// Enable or disable automatic association with the default association route table. The default is
-            /// enable.
+            /// Indicates whether resource attachments are automatically associated with the default association
+            /// route table.
             /// Required: No
             /// Type: String
+            /// Allowed Values: disable | enable
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DefaultRouteTableAssociation { get; set; }
 
             /// <summary>
             /// VpnEcmpSupport
-            /// Enable or disable Equal Cost Multipath Protocol. The default is enable.
+            /// Indicates whether Equal Cost Multipath Protocol support is enabled.
             /// Required: No
             /// Type: String
+            /// Allowed Values: disable | enable
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> VpnEcmpSupport { get; set; }
 
             /// <summary>
             /// DnsSupport
-            /// Enable or disable DNS support. The default is enable.
+            /// Indicates whether DNS support is enabled.
             /// Required: No
             /// Type: String
+            /// Allowed Values: disable | enable
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DnsSupport { get; set; }
@@ -81,9 +86,9 @@ namespace Comformation.EC2.TransitGateway
 
             /// <summary>
             /// Tags
-            /// The tags to apply to the transit gateway.
+            /// The tags for the transit gateway.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
 			public List<Tag> Tags { get; set; }

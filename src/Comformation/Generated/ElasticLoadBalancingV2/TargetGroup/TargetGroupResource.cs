@@ -6,10 +6,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::TargetGroup
-    /// The AWS::ElasticLoadBalancingV2::TargetGroup resource creates a target group that routes requests to one or
-    /// more registered targets. For more information, see Target Groups for Your Application Load Balancers in the
-    /// User Guide for Application Load Balancers or Target Groups for Your Network Load Balancers in the User Guide
-    /// for Network Load Balancers.
+    /// Specifies a target group for an Application Load Balancer or Network Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
     /// </summary>
     public class TargetGroupResource : ResourceBase
@@ -18,35 +15,45 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         {
             /// <summary>
             /// HealthCheckEnabled
+            /// Indicates whether health checks are enabled. If the target type is lambda, health checks are
+            /// disabled by default but can be enabled. If the target type is instance or ip, health checks are
+            /// always enabled and cannot be disabled.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> HealthCheckEnabled { get; set; }
 
             /// <summary>
             /// HealthCheckIntervalSeconds
-            /// The approximate number of seconds between health checks for an individual target.
-            /// For valid and default values, see the HealthCheckIntervalSeconds parameter for the CreateTargetGroup
-            /// action in the Elastic Load Balancing API Reference version 2015-12-01.
+            /// The approximate amount of time, in seconds, between health checks of an individual target. For HTTP
+            /// and HTTPS health checks, the range is 5–300 seconds. For TCP health checks, the supported values are
+            /// 10 and 30 seconds. If the target type is instance or ip, the default is 30 seconds. If the target
+            /// type is lambda, the default is 35 seconds.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 5
+            /// Maximum: 300
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthCheckIntervalSeconds { get; set; }
 
             /// <summary>
             /// HealthCheckPath
-            /// [HTTP/HTTPS health checks] The ping path destination where Elastic Load Balancing sends health check
-            /// requests. The default is /.
+            /// [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks.
+            /// The default is /.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckPath { get; set; }
 
             /// <summary>
             /// HealthCheckPort
-            /// The port that the load balancer uses when performing health checks on the targets.
-            /// For valid and default values, see the HealthCheckPort parameter for the CreateTargetGroup action in
-            /// the Elastic Load Balancing API Reference version 2015-12-01.
+            /// The port the load balancer uses when performing health checks on targets. The default is
+            /// traffic-port, which is the port on which each target receives traffic from the load balancer.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -55,55 +62,59 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// HealthCheckProtocol
-            /// The protocol that the load balancer uses when performing health checks on the targets.
-            /// For valid and default values, see the HealthCheckProtocol parameter for the CreateTargetGroup action
-            /// in the Elastic Load Balancing API Reference version 2015-12-01.
+            /// The protocol the load balancer uses when performing health checks on targets. For Application Load
+            /// Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
+            /// supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol
+            /// is not supported for health checks.
             /// Required: No
             /// Type: String
+            /// Allowed Values: HTTP | HTTPS | TCP | TLS
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckProtocol { get; set; }
 
             /// <summary>
             /// HealthCheckTimeoutSeconds
-            /// The number of seconds to wait for a response before considering that a health check has failed. For
-            /// Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load
-            /// Balancers, this value is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health
-            /// checks.
+            /// The amount of time, in seconds, during which no response from a target means a failed health check.
+            /// For target groups with a protocol of HTTP or HTTPS, the default is 5 seconds. For target groups with
+            /// a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP
+            /// and HTTPS health checks. If the target type is lambda, the default is 30 seconds.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 2
+            /// Maximum: 120
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthCheckTimeoutSeconds { get; set; }
 
             /// <summary>
             /// HealthyThresholdCount
-            /// The number of consecutive successful health checks that are required before an unhealthy target is
-            /// considered healthy.
+            /// The number of consecutive health checks successes required before considering an unhealthy target
+            /// healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups
+            /// with a protocol of TCP or TLS, the default is 3. If the target type is lambda, the default is 5.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 2
+            /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> HealthyThresholdCount { get; set; }
 
             /// <summary>
             /// Matcher
-            /// [HTTP/HTTPS health checks] The HTTP codes that a healthy target uses when responding to a health
-            /// check.
-            /// For more information about specifying this property, see Matcher in the Elastic Load Balancing API
-            /// Reference version 2015-12-01.
+            /// [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
+            /// target.
             /// Required: No
-            /// Type: Elastic Load Balancing V2 Matcher
+            /// Type: Matcher
             /// Update requires: No interruption
             /// </summary>
 			public Matcher Matcher { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the target group.
-            /// Important This name must be unique per account, per region. The target group name should be shorter
-            /// than 32 characters because AWS CloudFormation uses the target group name to create the name of the
-            /// load balancer.
+            /// The name of the target group.
+            /// This name must be unique per region per account, can have a maximum of 32 characters, must contain
+            /// only alphanumeric characters or hyphens, and must not begin or end with a hyphen.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -112,74 +123,90 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
             /// <summary>
             /// Port
-            /// The port on which the targets receive traffic.
-            /// Required: Yes
+            /// The port on which the targets receive traffic. This port is used unless you specify a port override
+            /// when registering the target. If the target is a Lambda function, this parameter does not apply.
+            /// Required: No
             /// Type: Integer
+            /// Minimum: 1
+            /// Maximum: 65535
             /// Update requires: Replacement
             /// </summary>
 			public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// Protocol
-            /// The protocol to use for routing traffic to the targets.
-            /// Required: Yes
+            /// The protocol to use for routing traffic to the targets. For Application Load Balancers, the
+            /// supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP
+            /// and TLS. If the target is a Lambda function, this parameter does not apply.
+            /// Required: No
             /// Type: String
+            /// Allowed Values: HTTP | HTTPS | TCP | TLS
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for the target group. Use tags to help manage resources.
+            /// The tags. Each resource can have a maximum of 10 tags.
             /// Required: No
-            /// Type: Resource Tag
-            /// Update requires: No interruption.
+            /// Type: List of Tag
+            /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TargetGroupAttributes
-            /// Target group configurations.
+            /// The attributes.
             /// Required: No
-            /// Type: List of Elastic Load Balancing V2 TargetGroupAttributes
+            /// Type: List of TargetGroupAttribute
             /// Update requires: No interruption
             /// </summary>
 			public List<TargetGroupAttribute> TargetGroupAttributes { get; set; }
 
             /// <summary>
             /// TargetType
-            /// The type of targets that you must specify when registering targets with this target group.
-            /// For valid and default values, see the TargetType parameter for the CreateTargetGroup action in the
-            /// Elastic Load Balancing API Reference version 2015-12-01.
+            /// The type of target that you must specify when registering targets with this target group. You can&#39;t
+            /// specify targets for a target group using more than one target type.
+            /// instance - Targets are specified by instance ID. This is the default value. ip - Targets are
+            /// specified by IP address. You can specify IP addresses from the subnets of the virtual private cloud
+            /// (VPC) for the target group, the RFC 1918 range (10. 0. 0. 0/8, 172. 16. 0. 0/12, and 192. 168. 0.
+            /// 0/16), and the RFC 6598 range (100. 64. 0. 0/10). You can&#39;t specify publicly routable IP addresses.
+            /// lambda - The target groups contains a single Lambda function.
             /// Required: No
             /// Type: String
+            /// Allowed Values: instance | ip | lambda
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetType { get; set; }
 
             /// <summary>
             /// Targets
-            /// The targets to add to this target group.
+            /// The targets.
             /// Required: No
-            /// Type: List of Elastic Load Balancing V2 TargetDescription
+            /// Type: List of TargetDescription
             /// Update requires: No interruption
             /// </summary>
 			public List<TargetDescription> Targets { get; set; }
 
             /// <summary>
             /// UnhealthyThresholdCount
-            /// The number of consecutive failed health checks that are required before a target is considered
-            /// unhealthy.
+            /// The number of consecutive health check failures required before considering a target unhealthy. For
+            /// target groups with a protocol of HTTP or HTTPS, the default is 2. For target groups with a protocol
+            /// of TCP or TLS, this value must be the same as the healthy threshold count. If the target type is
+            /// lambda, the default is 2.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 2
+            /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> UnhealthyThresholdCount { get; set; }
 
             /// <summary>
             /// VpcId
-            /// The ID of the VPC.
-            /// Required: Yes
+            /// The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this
+            /// parameter does not apply.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

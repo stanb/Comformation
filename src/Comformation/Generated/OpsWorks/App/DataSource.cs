@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.OpsWorks.App
 {
     /// <summary>
-    /// AWS OpsWorks App DataSource
-    /// DataSource is a property of the AWS::OpsWorks::App resource that specifies a database to associate with an AWS
-    /// OpsWorks app.
+    /// AWS::OpsWorks::App DataSource
+    /// Describes an app&#39;s data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html
     /// </summary>
     public class DataSource
@@ -16,28 +15,31 @@ namespace Comformation.OpsWorks.App
 
         /// <summary>
         /// Arn
-        /// The ARN of the data source.
+        /// The data source&#39;s ARN.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Arn")]
         public Union<string, IntrinsicFunction> Arn { get; set; }
 
         /// <summary>
         /// DatabaseName
-        /// The name of the database.
+        /// The database name.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DatabaseName")]
         public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
         /// <summary>
         /// Type
-        /// The type of the data source, such as AutoSelectOpsworksMysqlInstance, OpsworksMysqlInstance, or
-        /// RdsDbInstance. For valid values, see the DataSource type in the AWS OpsWorks Stacks API Reference.
+        /// The data source&#39;s type, AutoSelectOpsworksMysqlInstance, OpsworksMysqlInstance, RdsDbInstance, or
+        /// None.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }

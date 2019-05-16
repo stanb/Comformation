@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate NetworkInterface
-    /// The NetworkInterface property type specifies parameters for a network interface in an Amazon EC2 launch
-    /// template.
+    /// AWS::EC2::LaunchTemplate NetworkInterface
+    /// Specifies the parameters for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html
     /// </summary>
     public class NetworkInterface
@@ -70,7 +69,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// Groups
         /// The IDs of one or more security groups.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Groups")]

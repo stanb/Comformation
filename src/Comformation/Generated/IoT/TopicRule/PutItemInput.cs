@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule PutItemInput
-    /// The PutItemInput property type specifies the database table for an AWS IoT topic rule.
+    /// AWS::IoT::TopicRule PutItemInput
+    /// The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be
+    /// written.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html
     /// </summary>
     public class PutItemInput
@@ -15,10 +16,7 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// TableName
-        /// The name of the DynamoDB table.
-        /// Note The MQTT message payload must contain a root-level key that matches the table&#39;s primary
-        /// partition key and a root-level key that matches the table&#39;s primary sort key, if one is defined.
-        /// 				 For more information, see DynamoDBv2 Action in the AWS IoT Developer Guide. .
+        /// The table where the message data will be written.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.Thing
 {
     /// <summary>
-    /// AWS IoT Thing AttributePayload
+    /// AWS::IoT::Thing AttributePayload
     /// The AttributePayload property specifies up to three attributes for an AWS IoT as key–value pairs.
     /// AttributePayload is a property of the AWS::IoT::Thing resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html
@@ -16,9 +16,13 @@ namespace Comformation.IoT.Thing
 
         /// <summary>
         /// Attributes
-        /// A string that contains up to three key–value pairs. Maximum length of 800. Duplicates not allowed.
+        /// 		
+        /// A JSON string containing up to three key-value pair in JSON format. For example:
+        /// 		
+        /// 			 {\&quot;attributes\&quot;:{\&quot;string1\&quot;:\&quot;string2\&quot;}} 		
+        /// 	
         /// Required: No
-        /// Type: String to string map
+        /// Type: Map of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]

@@ -6,8 +6,11 @@ namespace Comformation.SecretsManager.ResourcePolicy
 {
     /// <summary>
     /// AWS::SecretsManager::ResourcePolicy
-    /// The AWS::SecretsManager::ResourcePolicy resource lets you define a resource-based policy and attach it to a
-    /// secret that&#39;s stored in Secrets Manager.
+    /// Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy
+    /// is optional. Alternatively, you can use IAM identity-based policies that specify the secret&#39;s Amazon Resource
+    /// Name (ARN) in the policy statement&#39;s Resources element. You can also use a combination of both identity-based
+    /// and resource-based policies. The affected users and roles receive the permissions that are permitted by all
+    /// relevant policies.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html
     /// </summary>
     public class ResourcePolicyResource : ResourceBase
@@ -17,8 +20,7 @@ namespace Comformation.SecretsManager.ResourcePolicy
             /// <summary>
             /// SecretId
             /// Specifies the Amazon Resource Name (ARN) or the friendly name of the secret that you want to attach
-            /// a resource-based permissions policy to. To reference a secret that&#39;s also created in this template,
-            /// use the Ref function with the secret&#39;s logical ID.
+            /// a resource-based permissions policy to.
             /// Important If you use this property to change the SecretId for an existing resource-based policy, it
             /// removes the policy from the original secret, and then attaches the policy to the secret with the
             /// specified SecretId. This results in changing the permissions for two secrets.
@@ -30,13 +32,12 @@ namespace Comformation.SecretsManager.ResourcePolicy
 
             /// <summary>
             /// ResourcePolicy
-            /// Specifies a JSON object that&#39;s constructed according to the grammar and syntax for an
-            /// AWSresource-based policy. The policy identifies who can access or manage this secret and its
-            /// versions. For information on how to format a JSON object as a parameter for this resource type, see
-            /// Using Resource-based Policies for Secrets Manager in the AWS Secrets Manager User Guide. Those same
-            /// rules apply here.
+            /// Specifies a JSON object that&#39;s constructed according to the grammar and syntax for a resource-based
+            /// policy. The policy identifies who can access or manage this secret and its versions. For information
+            /// on how to format a JSON object as a parameter for this resource type, see Using Resource-based
+            /// Policies for Secrets Managerin the AWS Secrets Manager User Guide. Those same rules apply here.
             /// Required: Yes
-            /// Type: JSON object
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResourcePolicy { get; set; }

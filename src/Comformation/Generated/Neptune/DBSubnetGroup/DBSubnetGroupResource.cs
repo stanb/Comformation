@@ -16,9 +16,7 @@ namespace Comformation.Neptune.DBSubnetGroup
         {
             /// <summary>
             /// DBSubnetGroupName
-            /// The name for the DB subnet group. This value is stored as a lowercase string.
-            /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
-            /// hyphens. Must not be default.
+            /// The name of the DB subnet group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -27,7 +25,7 @@ namespace Comformation.Neptune.DBSubnetGroup
 
             /// <summary>
             /// DBSubnetGroupDescription
-            /// The description for the DB subnet group.
+            /// Provides the description of the DB subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -38,16 +36,16 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// SubnetIds
             /// The Amazon EC2 subnet IDs for the DB subnet group.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the Amazon RDS database subnet group.
+            /// The tags that you want to attach to the DB subnet group.
             /// Required: No
-            /// Type: A list of resource tags in key-value format.
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

@@ -6,8 +6,8 @@ namespace Comformation.Config.DeliveryChannel
 {
     /// <summary>
     /// AWS::Config::DeliveryChannel
-    /// The AWS::Config::DeliveryChannel resource describes where AWS Config sends notifications and updated
-    /// configuration states for AWS resources.
+    /// Specifies a delivery channel object to deliver configuration 			information to an Amazon S3 bucket and Amazon
+    /// SNS topic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html
     /// </summary>
     public class DeliveryChannelResource : ResourceBase
@@ -16,10 +16,11 @@ namespace Comformation.Config.DeliveryChannel
         {
             /// <summary>
             /// ConfigSnapshotDeliveryProperties
-            /// Provides options for how AWS Config delivers configuration snapshots to the S3 bucket in your
-            /// delivery channel.
+            /// 		
+            /// The options for how often AWS Config delivers configuration 			snapshots to the Amazon S3 bucket.
+            /// 	
             /// Required: No
-            /// Type: AWS Config DeliveryChannel ConfigSnapshotDeliveryProperties
+            /// Type: ConfigSnapshotDeliveryProperties
             /// Update requires: No interruption
             /// </summary>
 			public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties { get; set; }
@@ -28,17 +29,27 @@ namespace Comformation.Config.DeliveryChannel
             /// Name
             /// A name for the delivery channel. If you don&#39;t specify a name, AWS CloudFormation generates a unique
             /// physical ID and uses that ID for the delivery channel name. For more information, see Name Type.
+            /// Updates are not supported. To change the name, you must run two separate updates. In the first
+            /// update, delete this resource, and then recreate it with a new name in the second update.
+            /// 	
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported. To change the name, you must run two separate updates.
-            /// In the first update, delete this resource, and then recreate it with a new name in the second
-            /// update.
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// S3BucketName
-            /// The name of an S3 bucket where you want to store configuration history for the delivery channel.
+            /// 		
+            /// The name of the Amazon S3 bucket to which AWS Config delivers 			configuration snapshots and
+            /// configuration history files.
+            /// 		
+            /// If you specify a bucket that belongs to another AWS account, 			that bucket must have policies that
+            /// grant access permissions to AWS 			Config. For more information, see Permissions for the Amazon S3
+            /// Bucket in the AWS Config 			Developer Guide.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -47,7 +58,9 @@ namespace Comformation.Config.DeliveryChannel
 
             /// <summary>
             /// S3KeyPrefix
-            /// A key prefix (folder) for the specified S3 bucket.
+            /// 		
+            /// The prefix for the specified Amazon S3 bucket.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -56,8 +69,14 @@ namespace Comformation.Config.DeliveryChannel
 
             /// <summary>
             /// SnsTopicARN
-            /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic that AWS
-            /// Config delivers notifications to.
+            /// 		
+            /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which 			AWS Config sends notifications
+            /// about configuration 			changes.
+            /// 		
+            /// If you choose a topic from another account, the topic must have 			policies that grant access
+            /// permissions to AWS Config. For more 			information, see Permissions for the Amazon SNS Topic in the
+            /// AWS Config 			Developer Guide.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

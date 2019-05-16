@@ -16,7 +16,7 @@ namespace Comformation.Glue.Trigger
         {
             /// <summary>
             /// Type
-            /// The type of job trigger. Valid values are SCHEDULED, CONDITIONAL, or ON_DEMAND.
+            /// The type of trigger that this is.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.Glue.Trigger
 
             /// <summary>
             /// Description
-            /// The description of the job trigger.
+            /// A description of this trigger.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.Glue.Trigger
 
             /// <summary>
             /// Actions
-            /// The actions that the job trigger initiates when it fires.
+            /// The actions initiated by this trigger.
             /// Required: Yes
             /// Type: List of Action
             /// Update requires: No interruption
@@ -43,7 +43,8 @@ namespace Comformation.Glue.Trigger
 
             /// <summary>
             /// Schedule
-            /// The cron schedule expression for the job trigger.
+            /// A cron expression used to specify the schedule (see Time-Based Schedules for Jobs and Crawlers. For
+            /// example, to run something every day at 12:15 UTC, you would specify: cron(15 12 * * ? *).
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -52,7 +53,7 @@ namespace Comformation.Glue.Trigger
 
             /// <summary>
             /// Name
-            /// The name of the job trigger.
+            /// The name of the trigger.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -61,7 +62,7 @@ namespace Comformation.Glue.Trigger
 
             /// <summary>
             /// Predicate
-            /// The predicate of the job trigger, which determines when the trigger fires.
+            /// The predicate of this trigger, which defines when it will fire.
             /// Required: No
             /// Type: Predicate
             /// Update requires: No interruption

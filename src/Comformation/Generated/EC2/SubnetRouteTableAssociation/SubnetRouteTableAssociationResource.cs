@@ -6,7 +6,9 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
 {
     /// <summary>
     /// AWS::EC2::SubnetRouteTableAssociation
-    /// Associates a subnet with a route table.
+    /// Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association
+    /// causes traffic originating from the subnet to be routed according to the routes in the route table. A route
+    /// table can be associated with multiple subnets.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html
     /// </summary>
     public class SubnetRouteTableAssociationResource : ResourceBase
@@ -15,21 +17,19 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
         {
             /// <summary>
             /// RouteTableId
-            /// The ID of the route table. This is commonly written as a reference to a route table declared
-            /// elsewhere in the template. For example:
-            /// &quot;RouteTableId&quot; : { &quot;Ref&quot; : &quot;myRouteTable&quot; }
+            /// 		
+            /// The ID of the route table.
+            /// The physical ID changes when the route table ID is changed.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption. However, the physical ID changes when the route table ID is
-            /// changed.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RouteTableId { get; set; }
 
             /// <summary>
             /// SubnetId
-            /// The ID of the subnet. This is commonly written as a reference to a subnet declared elsewhere in the
-            /// template. For example:
-            /// &quot;SubnetId&quot; : { &quot;Ref&quot; : &quot;mySubnet&quot; }
+            /// 		
+            /// The ID of the subnet.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

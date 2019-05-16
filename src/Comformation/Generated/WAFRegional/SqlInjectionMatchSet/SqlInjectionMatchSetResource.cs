@@ -6,9 +6,11 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
 {
     /// <summary>
     /// AWS::WAFRegional::SqlInjectionMatchSet
-    /// The AWS::WAFRegional::SqlInjectionMatchSet resource creates an AWS WAF Regional SqlInjectionMatchSet, which
-    /// you use to allow, block, or count requests that contain malicious SQL code in a specific part of web requests.
-    /// For more information, see CreateSqlInjectionMatchSet in the AWS WAF Regional API Reference.
+    /// A complex type that contains SqlInjectionMatchTuple objects, which specify the parts of web requests that you
+    /// 			want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header,
+    /// the name of the header. If a 			SqlInjectionMatchSet contains more than one SqlInjectionMatchTuple object, a
+    /// request needs to 			include snippets of SQL code in only one of the specified parts of the request to be
+    /// considered a match.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html
     /// </summary>
     public class SqlInjectionMatchSetResource : ResourceBase
@@ -17,19 +19,24 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
         {
             /// <summary>
             /// SqlInjectionMatchTuples
-            /// The parts of web requests that you want AWS WAF to inspect for malicious SQL code and, if you want
-            /// AWS WAF to inspect a header, the name of the header.
+            /// 		
+            /// Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.
+            /// 	
             /// Required: No
-            /// Type: List of AWS WAF Regional SqlInjectionMatchSet SqlInjectionMatchTuples
+            /// Type: List of SqlInjectionMatchTuple
             /// Update requires: No interruption
             /// </summary>
 			public List<SqlInjectionMatchTuple> SqlInjectionMatchTuples { get; set; }
 
             /// <summary>
             /// Name
-            /// A friendly name or description of the SqlInjectionMatchSet.
+            /// 		
+            /// The name, if any, of the SqlInjectionMatchSet.
+            /// 	
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }

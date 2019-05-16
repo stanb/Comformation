@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application FlinkApplicationConfiguration
-    /// The FlinkApplicationConfiguration property type describes configuration parameters for a Java-based Kinesis
-    /// Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application FlinkApplicationConfiguration
+    /// Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html
     /// </summary>
     public class FlinkApplicationConfiguration
@@ -17,7 +16,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// <summary>
         /// CheckpointConfiguration
         /// Describes an application&#39;s checkpointing configuration. Checkpointing is the process of persisting
-        /// application state for fault tolerance.
+        /// application state for fault tolerance. For more information, see Checkpoints for Fault Tolerance in
+        /// the Apache Flink Documentation.
         /// Required: No
         /// Type: CheckpointConfiguration
         /// Update requires: No interruption

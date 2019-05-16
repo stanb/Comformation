@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
-    /// Elastic Load Balancing V1 ConnectionSettings
-    /// ConnectionSettings is a property of the AWS::ElasticLoadBalancing::LoadBalancer resource that describes how
-    /// long the front-end and back-end connections of your load balancer can remain idle. For more information, see
-    /// Configure the Idle Connection Timeout in the User Guide for Classic Load Balancers.
+    /// AWS::ElasticLoadBalancing::LoadBalancer ConnectionSettings
+    /// Specifies the idle timeout value for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html
     /// </summary>
     public class ConnectionSettings
@@ -17,10 +15,13 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
         /// <summary>
         /// IdleTimeout
-        /// The time (in seconds) that a connection to the load balancer can remain idle, which means no data is
-        /// sent over the connection. After the specified time, the load balancer closes the connection.
+        /// The time, in seconds, that the connection is allowed to be idle (no data has been sent over the
+        /// connection) before it is closed by the load balancer.
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 3600
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IdleTimeout")]
         public Union<int, IntrinsicFunction> IdleTimeout { get; set; }

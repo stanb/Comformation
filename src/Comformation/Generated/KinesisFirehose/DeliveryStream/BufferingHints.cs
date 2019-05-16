@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Data Firehose DeliveryStream BufferingHints
+    /// AWS::KinesisFirehose::DeliveryStream BufferingHints
     /// The BufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose) buffers
     /// incoming data before delivering it to the destination. The first buffer condition that is satisfied triggers
     /// Kinesis Data Firehose to deliver the data.
@@ -22,6 +22,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// data type in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 60
+        /// Maximum: 900
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IntervalInSeconds")]
         public Union<int, IntrinsicFunction> IntervalInSeconds { get; set; }
@@ -33,6 +36,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// in the Amazon Kinesis Data Firehose API Reference.
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SizeInMBs")]
         public Union<int, IntrinsicFunction> SizeInMBs { get; set; }

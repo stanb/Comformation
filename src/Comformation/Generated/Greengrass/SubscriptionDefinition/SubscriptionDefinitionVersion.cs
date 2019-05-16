@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.SubscriptionDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass SubscriptionDefinition SubscriptionDefinitionVersion
+    /// AWS::Greengrass::SubscriptionDefinition SubscriptionDefinitionVersion
     /// 		A subscription definition version contains a list of subscriptions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html
     /// </summary>

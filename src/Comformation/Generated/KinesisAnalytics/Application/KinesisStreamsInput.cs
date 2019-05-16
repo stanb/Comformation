@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application KinesisStreamsInput
-    /// The KinesisStreamsInput property type specifies an Amazon Kinesis stream as the streaming source for an Amazon
-    /// Kinesis Data Analytics application.
+    /// AWS::KinesisAnalytics::Application KinesisStreamsInput
+    /// Identifies an Amazon Kinesis stream as the streaming source. You provide the stream&#39;s Amazon Resource Name
+    /// (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html
     /// </summary>
     public class KinesisStreamsInput
@@ -16,9 +16,12 @@ namespace Comformation.KinesisAnalytics.Application
 
         /// <summary>
         /// ResourceARN
-        /// The Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.
+        /// ARN of the input Amazon Kinesis stream to read.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceARN")]
@@ -26,9 +29,13 @@ namespace Comformation.KinesisAnalytics.Application
 
         /// <summary>
         /// RoleARN
-        /// The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream on your behalf.
+        /// ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.
+        /// You need to grant the necessary permissions to this role.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
+        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

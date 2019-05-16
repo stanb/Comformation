@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud SpotFleet SecurityGroups
-    /// SecurityGroups is a property of the Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications property that
-    /// specifies a security group to associate with the instances.
+    /// AWS::EC2::SpotFleet GroupIdentifier
+    /// Describes a security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-securitygroups.html
     /// </summary>
     public class GroupIdentifier
@@ -16,9 +15,10 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// GroupId
-        /// The ID of a security group.
+        /// The ID of the security group.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GroupId")]
         public Union<string, IntrinsicFunction> GroupId { get; set; }

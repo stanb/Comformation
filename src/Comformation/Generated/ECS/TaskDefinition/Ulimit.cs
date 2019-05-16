@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
-    /// Amazon Elastic Container Service TaskDefinition Ulimit
-    /// Ulimit is a property of the Amazon Elastic Container Service TaskDefinition ContainerDefinition property that
-    /// specifies resource limits for an Amazon Elastic Container Service (Amazon ECS) container.
+    /// AWS::ECS::TaskDefinition Ulimit
+    /// The Ulimit property specifies the ulimit settings to pass to the container.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html
     /// </summary>
     public class Ulimit
@@ -19,16 +18,19 @@ namespace Comformation.ECS.TaskDefinition
         /// The hard limit for the ulimit type.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("HardLimit")]
         public Union<int, IntrinsicFunction> HardLimit { get; set; }
 
         /// <summary>
         /// Name
-        /// The type of ulimit. For valid values, see the name content for the Ulimit data type in the Amazon
-        /// Elastic Container Service API Reference.
-        /// Required: No
+        /// The type of the ulimit.
+        /// Required: Yes
         /// Type: String
+        /// Allowed Values: core | cpu | data | fsize | locks | memlock | msgqueue | nice | nofile | nproc | rss
+        /// | rtprio | rttime | sigpending | stack
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
@@ -38,6 +40,7 @@ namespace Comformation.ECS.TaskDefinition
         /// The soft limit for the ulimit type.
         /// Required: Yes
         /// Type: Integer
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SoftLimit")]
         public Union<int, IntrinsicFunction> SoftLimit { get; set; }

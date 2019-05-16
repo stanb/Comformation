@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Data Firehose DeliveryStream ElasticsearchRetryOptions
+    /// AWS::KinesisFirehose::DeliveryStream ElasticsearchRetryOptions
     /// The ElasticsearchRetryOptions property type configures the retry behavior for when Amazon Kinesis Data
     /// Firehose (Kinesis Data Firehose) can&#39;t deliver data to Amazon Elasticsearch Service (Amazon ES).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html
@@ -23,6 +23,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Data Firehose API Reference.
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 0
+        /// Maximum: 7200
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DurationInSeconds")]
         public Union<int, IntrinsicFunction> DurationInSeconds { get; set; }

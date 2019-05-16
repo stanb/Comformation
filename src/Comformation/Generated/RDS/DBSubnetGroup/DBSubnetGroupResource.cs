@@ -6,7 +6,7 @@ namespace Comformation.RDS.DBSubnetGroup
 {
     /// <summary>
     /// AWS::RDS::DBSubnetGroup
-    /// The AWS::RDS::DBSubnetGroup type creates an RDS database subnet group. Subnet groups must contain at least two
+    /// The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two
     /// subnets in two different Availability Zones in the same region.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html
     /// </summary>
@@ -26,8 +26,9 @@ namespace Comformation.RDS.DBSubnetGroup
             /// <summary>
             /// DBSubnetGroupName
             /// The name for the DB Subnet Group. This value is stored as a lowercase string.
-            /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
-            /// hyphens. Must not be default.
+            /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be
+            /// &quot;Default&quot;.
+            /// Example: mySubnetgroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -38,16 +39,16 @@ namespace Comformation.RDS.DBSubnetGroup
             /// SubnetIds
             /// The EC2 Subnet IDs for the DB Subnet Group.
             /// Required: Yes
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the RDS database subnet group.
+            /// Tags to assign to the DB subnet group.
             /// Required: No
-            /// Type: A list of resource tags in key-value format.
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

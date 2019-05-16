@@ -6,8 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    /// AWS Auto Scaling ScalingPlan MetricDimension
-    /// The MetricDimension property type specifies a dimension for a customized metric to use with AWS Auto Scaling.
+    /// AWS::AutoScalingPlans::ScalingPlan MetricDimension
+    /// MetricDimension is a subproperty of CustomizedScalingMetricSpecification that specifies a dimension for a
+    /// customized metric to use with AWS Auto Scaling. Dimensions are arbitrary name/value pairs that can be
+    /// associated with a CloudWatch metric. Duplicate dimensions are not allowed.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html
     /// </summary>
     public class MetricDimension

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
-    /// Amazon EC2 LaunchTemplate PrivateIpAdd
-    /// The PrivateIpAdd property type describes a private IPv4 address for a network interface in an Amazon EC2
-    /// launch template.
+    /// AWS::EC2::LaunchTemplate PrivateIpAdd
+    /// Specifies a secondary private IPv4 address for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html
     /// </summary>
     public class PrivateIpAdd
@@ -16,7 +15,7 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// PrivateIpAddress
-        /// The private IPv4 address.
+        /// The private IPv4 addresses.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

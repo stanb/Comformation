@@ -6,11 +6,8 @@ namespace Comformation.Lambda.Alias
 {
     /// <summary>
     /// AWS::Lambda::Alias
-    /// The AWS::Lambda::Alias resource creates an alias that points to the version of an AWS Lambda (Lambda) function
-    /// that you specify. Use aliases when you want to control which version of your function other services or
-    /// applications invoke. Those services or applications can use your function&#39;s alias so that they don&#39;t need to
-    /// be updated whenever you release a new version of your function. For more information, see Introduction to AWS
-    /// Lambda Aliases in the AWS Lambda Developer Guide.
+    /// The AWS::Lambda::Alias resource creates an alias for a Lambda function version. Use aliases to provide clients
+    /// with a function identifier that you can update to invoke a different version.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html
     /// </summary>
     public class AliasResource : ResourceBase
@@ -19,46 +16,60 @@ namespace Comformation.Lambda.Alias
         {
             /// <summary>
             /// Description
-            /// Information about the alias, such as its purpose or the Lambda function that is associated with it.
+            /// A description of the alias.
             /// Required: No
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// FunctionName
-            /// The Lambda function that you want to associate with this alias. You can specify the function&#39;s name
-            /// or its Amazon Resource Name (ARN).
+            /// The name of the Lambda function.
+            /// Name formats Function name - MyFunction. Function ARN -
+            /// arn:aws:lambda:us-west-2:123456789012:function:MyFunction. Partial ARN -
+            /// 123456789012:function:MyFunction.
+            /// The length constraint applies only to the full ARN. If you specify only the function name, it is
+            /// limited to 64 characters in length.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 140
+            /// Pattern:
+            /// (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
             /// FunctionVersion
-            /// The version of the Lambda function that you want to associate with this alias.
+            /// The function version that the alias invokes.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1024
+            /// Pattern: (\$LATEST|[0-9]+)
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> FunctionVersion { get; set; }
 
             /// <summary>
             /// Name
-            /// A name for the alias.
+            /// The name of the alias.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RoutingConfig
-            /// Use this parameter to point your alias to two different function versions, allowing you to dictate
-            /// what percentage of traffic will invoke each version. For more information, see Routing Traffic to
-            /// Different Function Versions Using Aliases in the AWS Lambda Developer Guide.
+            /// The routing configuration of the alias.
             /// Required: No
             /// Type: AliasRoutingConfiguration
             /// Update requires: No interruption

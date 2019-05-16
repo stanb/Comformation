@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.DeviceDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass DeviceDefinitionVersion Device
+    /// AWS::Greengrass::DeviceDefinitionVersion Device
     /// A device is an AWS IoT device (thing) that&#39;s added to a Greengrass group. 	 Greengrass devices can communicate
     /// with the Greengrass core in the same group. 	 For more information, see What Is AWS IoT Greengrass? in the AWS
     /// IoT Greengrass Developer Guide.
@@ -17,7 +17,7 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
 
         /// <summary>
         /// SyncShadow
-        /// Indicates whether the devices&#39;s local shadow is synced with the cloud automatically.
+        /// Indicates whether the device&#39;s local shadow is synced with the cloud automatically.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -27,7 +27,7 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
 
         /// <summary>
         /// ThingArn
-        /// The ARN of the device, which is an AWS IoT device (thing).
+        /// The Amazon Resource Name (ARN) of the device, which is an AWS IoT device (thing).
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

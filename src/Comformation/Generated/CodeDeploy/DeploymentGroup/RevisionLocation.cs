@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// CodeDeploy DeploymentGroup Revision
-    /// Revision is a property of the AWS::CodeDeploy::DeploymentGroup property that defines the location of the
-    /// CodeDeploy application revision to deploy.
+    /// AWS::CodeDeploy::DeploymentGroup RevisionLocation
+    /// RevisionLocation is a property that defines the location of the CodeDeploy application revision to deploy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html
     /// </summary>
     public class RevisionLocation
@@ -16,28 +15,34 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// GitHubLocation
-        /// If your application revision is stored in GitHub, information about the location where it is stored.
+        /// Information about the location of application artifacts stored in GitHub.
         /// Required: No
-        /// Type: CodeDeploy DeploymentGroup Deployment Revision GitHubLocation
+        /// Type: GitHubLocation
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GitHubLocation")]
         public GitHubLocation GitHubLocation { get; set; }
 
         /// <summary>
         /// RevisionType
-        /// The application revision&#39;s location, such as in an S3 bucket or GitHub repository. For valid values,
-        /// see RevisionLocation in the AWS CodeDeploy API Reference.
+        /// The type of application revision:
+        /// S3: An application revision stored in Amazon S3. GitHub: An application revision stored in GitHub
+        /// (EC2/On-premises deployments only). String: A YAML-formatted or JSON-formatted string (AWS Lambda
+        /// deployments only).
         /// Required: No
         /// Type: String
+        /// Allowed Values: AppSpecContent | GitHub | S3 | String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RevisionType")]
         public Union<string, IntrinsicFunction> RevisionType { get; set; }
 
         /// <summary>
         /// S3Location
-        /// If the application revision is stored in an S3 bucket, information about the location.
+        /// Information about the location of a revision stored in Amazon S3.
         /// Required: No
-        /// Type: CodeDeploy DeploymentGroup Deployment Revision S3Location
+        /// Type: S3Location
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Location")]
         public S3Location S3Location { get; set; }

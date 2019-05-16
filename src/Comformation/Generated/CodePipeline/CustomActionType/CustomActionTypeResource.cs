@@ -18,10 +18,12 @@ namespace Comformation.CodePipeline.CustomActionType
         {
             /// <summary>
             /// Category
-            /// The category of the custom action, such as a source action or a build action. For valid values, see
-            /// CreateCustomActionType in the AWS CodePipeline API Reference.
+            /// The category of the custom action, such as a build action or a test action.
+            /// Note Although Source and Approval are listed as valid values, they are not currently functional.
+            /// These values are reserved for future use.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: Approval | Build | Deploy | Invoke | Source | Test
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Category { get; set; }
@@ -29,35 +31,42 @@ namespace Comformation.CodePipeline.CustomActionType
             /// <summary>
             /// ConfigurationProperties
             /// The configuration properties for the custom action.
+            /// Note You can refer to a name in the configuration properties of the custom action within the URL
+            /// templates by following the format of {Config:name}, as long as the configuration property is both
+            /// required and not secret. For more information, see Create a Custom Action for a Pipeline.
             /// Required: No
-            /// Type: List of CodePipeline CustomActionType ConfigurationProperties
+            /// Type: List of ConfigurationProperties
+            /// Maximum: 10
             /// Update requires: Replacement
             /// </summary>
 			public List<ConfigurationProperties> ConfigurationProperties { get; set; }
 
             /// <summary>
             /// InputArtifactDetails
-            /// The input artifact details for this custom action.
+            /// The details of the input artifact for the action, such as its commit ID.
             /// Required: Yes
-            /// Type: CodePipeline CustomActionType ArtifactDetails
+            /// Type: ArtifactDetails
             /// Update requires: Replacement
             /// </summary>
 			public ArtifactDetails InputArtifactDetails { get; set; }
 
             /// <summary>
             /// OutputArtifactDetails
-            /// The output artifact details for this custom action.
+            /// The details of the output artifact of the action, such as its commit ID.
             /// Required: Yes
-            /// Type: CodePipeline CustomActionType ArtifactDetails
+            /// Type: ArtifactDetails
             /// Update requires: Replacement
             /// </summary>
 			public ArtifactDetails OutputArtifactDetails { get; set; }
 
             /// <summary>
             /// Provider
-            /// The name of the service provider that CodePipeline uses for this custom action.
+            /// The provider of the service used in the custom action, such as AWS CodeDeploy.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 25
+            /// Pattern: [0-9A-Za-z_-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Provider { get; set; }
@@ -66,17 +75,19 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Settings
             /// URLs that provide users information about this custom action.
             /// Required: No
-            /// Type: CodePipeline CustomActionType Settings
+            /// Type: Settings
             /// Update requires: Replacement
             /// </summary>
 			public Settings Settings { get; set; }
 
             /// <summary>
             /// Version
-            /// The version number of this custom action. For length constraints, see the version parameter of the
-            /// CreateCustomActionType action in the AWS CodePipeline API Reference.
-            /// Required: Yes
+            /// The version identifier of the custom action.
+            /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 9
+            /// Pattern: [0-9A-Za-z_-]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Version { get; set; }

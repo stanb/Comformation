@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.DocumentationPart
 {
     /// <summary>
-    /// Amazon API Gateway DocumentationPart Location
+    /// AWS::ApiGateway::DocumentationPart Location
     /// The Location property specifies the location of the Amazon API Gateway API entity that the documentation
     /// applies to. Location is a property of the AWS::ApiGateway::DocumentationPart resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html

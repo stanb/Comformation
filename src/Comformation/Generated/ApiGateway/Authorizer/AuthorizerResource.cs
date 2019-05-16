@@ -6,9 +6,8 @@ namespace Comformation.ApiGateway.Authorizer
 {
     /// <summary>
     /// AWS::ApiGateway::Authorizer
-    /// The AWS::ApiGateway::Authorizer resource creates an authorization layer that Amazon API Gateway (API Gateway)
-    /// activates for methods that have authorization enabled. API Gateway activates the authorizer when a client
-    /// calls those methods.
+    /// The AWS::ApiGateway::Authorizer resource creates an authorization layer that API Gateway activates for methods
+    /// that have authorization enabled. API Gateway activates the authorizer when a client calls those methods.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html
     /// </summary>
     public class AuthorizerResource : ResourceBase
@@ -17,7 +16,7 @@ namespace Comformation.ApiGateway.Authorizer
         {
             /// <summary>
             /// AuthType
-            /// An optional customer-defined field that&#39;s used in Swagger imports and exports without functional
+            /// An optional customer-defined field that&#39;s used in OpenApi imports and exports without functional
             /// impact.
             /// Required: No
             /// Type: String
@@ -27,9 +26,9 @@ namespace Comformation.ApiGateway.Authorizer
 
             /// <summary>
             /// AuthorizerCredentials
-            /// The credentials that are required for the authorizer. To specify an AWS Identity and Access
-            /// Management (IAM) role that API Gateway assumes, specify the role&#39;s Amazon Resource Name (ARN). To
-            /// use resource-based permissions on the AWS Lambda (Lambda) function, specify null.
+            /// The credentials that are required for the authorizer. To specify an IAM role that API Gateway
+            /// assumes, specify the role&#39;s Amazon Resource Name (ARN). To use resource-based permissions on the
+            /// Lambda function, specify null.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -53,7 +52,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// property, specify a Lambda function URI that has the form
             /// arn:aws:apigateway:region:lambda:path/path. The path usually has the form
             /// /2015-03-31/functions/LambdaFunctionARN/invocations.
-            /// Required: Conditional. Specify this property for Lambda functions only.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -69,7 +68,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// mapping expressions of the specified request parameter using the form method. request. parameter.
             /// name. For supported parameter types, see Configure Lambda Authorizer Using the API Gateway Console
             /// in the API Gateway Developer Guide.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -90,7 +89,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// <summary>
             /// Name
             /// The name of the authorizer.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -102,7 +101,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// authorizer. For more information, see Use Amazon Cognito User Pools in the API Gateway Developer
             /// Guide.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> ProviderARNs { get; set; }

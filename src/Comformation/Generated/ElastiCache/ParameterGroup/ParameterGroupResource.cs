@@ -16,31 +16,33 @@ namespace Comformation.ElastiCache.ParameterGroup
         {
             /// <summary>
             /// CacheParameterGroupFamily
-            /// The name of the cache parameter group family that the cache parameter group can be used with.
+            /// The name of the cache parameter group family that this cache parameter group is compatible with.
+            /// Valid values are: memcached1. 4 | memcached1. 5 | redis2. 6 | redis2. 8 | redis3. 2 | redis4. 0 |
+            /// redis5. 0 |
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheParameterGroupFamily { get; set; }
 
             /// <summary>
             /// Description
-            /// The description for the Cache Parameter Group.
+            /// The description for this cache parameter group.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Properties
-            /// A comma-delimited list of parameter name/value pairs. For more information, go to
+            /// A comma-delimited list of parameter name/value pairs. For more information, see
             /// ModifyCacheParameterGroup in the Amazon ElastiCache API Reference Guide.
-            /// Example:
+            /// For example:
             /// &quot;Properties&quot; : { &quot;cas_disabled&quot; : &quot;1&quot;, &quot;chunk_size_growth_factor&quot; : &quot;1. 02&quot; }
             /// Required: No
-            /// Type: Mapping of key-value pairs
-            /// Update requires: Updates are not supported.
+            /// Type: Map of String
+            /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> Properties { get; set; }
 

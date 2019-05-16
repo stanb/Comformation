@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.CoreDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass CoreDefinition Core
+    /// AWS::Greengrass::CoreDefinition Core
     /// A core is an AWS IoT device that runs the AWS IoT Greengrass core software 		and manages local processes for a
     /// Greengrass group. For more information, see What Is AWS IoT Greengrass? in the AWS IoT Greengrass Developer
     /// Guide.
@@ -49,8 +49,8 @@ namespace Comformation.Greengrass.CoreDefinition
 
         /// <summary>
         /// CertificateArn
-        /// The ARN of the device certificate for the core. This X. 509 certificate is used to authenticate the
-        /// core with AWS IoT and AWS IoT Greengrass services.
+        /// The Amazon Resource Name (ARN) of the device certificate for the core. This X. 509 certificate is
+        /// used to authenticate the core with AWS IoT and AWS IoT Greengrass services.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinition FunctionConfiguration
+    /// AWS::Greengrass::FunctionDefinition FunctionConfiguration
     /// The group-specific configuration settings for a Lambda function. These settings configure the function&#39;s
     /// behavior in the Greengrass group. 		 For more information, 	see Controlling Execution of Greengrass Lambda
     /// Functions by Using Group-Specific Configuration in the AWS IoT Greengrass Developer Guide.
@@ -19,9 +19,8 @@ namespace Comformation.Greengrass.FunctionDefinition
         /// MemorySize
         /// The memory size (in KB) required by the function.
         /// 				
-        /// Note When you run the Lambda function without containerization, this setting is not applicable and
-        /// should be cleared.
-        /// Required: Yes
+        /// Note This property applies only to Lambda functions that run in a Greengrass container.
+        /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
         /// </summary>
@@ -53,7 +52,7 @@ namespace Comformation.Greengrass.FunctionDefinition
         /// Timeout
         /// The allowed execution time (in seconds) after which the function should terminate. For pinned
         /// functions, this timeout applies for each request.
-        /// Required: Yes
+        /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
         /// </summary>

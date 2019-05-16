@@ -6,9 +6,8 @@ namespace Comformation.SES.ReceiptFilter
 {
     /// <summary>
     /// AWS::SES::ReceiptFilter
-    /// The AWS::SES::ReceiptFilter resource whether to accept or reject mail originating from an IP address or range
-    /// of IP addresses for Amazon SES. For more information, see Creating IP Address Filters for Amazon SES Email
-    /// Receiving in the Amazon Simple Email Service Developer Guide.
+    /// Specify a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more
+    /// information, see the Amazon SES Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
     /// </summary>
     public class ReceiptFilterResource : ResourceBase
@@ -17,7 +16,9 @@ namespace Comformation.SES.ReceiptFilter
         {
             /// <summary>
             /// Filter
-            /// The IP addresses to block or allow, and whether to block or allow incoming mail from them.
+            /// A data structure that describes the IP address filter that you want to specify. This object consists
+            /// of a name, an IP address range, and a boolean that indicates whether to allow or block mail from the
+            /// IP range.
             /// Required: Yes
             /// Type: Filter
             /// Update requires: Replacement

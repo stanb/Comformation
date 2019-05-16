@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule StepFunctionsAction
-    /// The StepFunctionsAction property type starts execution of a Step Functions state machine.
+    /// AWS::IoT::TopicRule StepFunctionsAction
+    /// Starts execution of a Step Functions state machine.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-stepfunctionsaction.html
     /// </summary>
     public class StepFunctionsAction
@@ -15,9 +15,9 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// ExecutionNamePrefix
-        /// A name will be given to the state machine execution consisting of this prefix followed by a UUID.
-        /// Step Functions automatically creates a unique name for each state machine execution if one is not
-        /// provided.
+        /// (Optional) A name will be given to the state machine execution consisting of this prefix followed by
+        /// a UUID. Step Functions automatically creates a unique name for each state machine execution if one
+        /// is not provided.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

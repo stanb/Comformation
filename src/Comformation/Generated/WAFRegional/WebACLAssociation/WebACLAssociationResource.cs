@@ -7,7 +7,7 @@ namespace Comformation.WAFRegional.WebACLAssociation
     /// <summary>
     /// AWS::WAFRegional::WebACLAssociation
     /// The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL)
-    /// with a resource. For more information, see AssociateWebACL in the AWS WAF Regional API Reference.
+    /// with a resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
     /// </summary>
     public class WebACLAssociationResource : ResourceBase

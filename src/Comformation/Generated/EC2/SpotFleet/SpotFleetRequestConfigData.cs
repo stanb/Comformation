@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon EC2 SpotFleet SpotFleetRequestConfigData
-    /// SpotFleetRequestConfigData is a property of the AWS::EC2::SpotFleet resource that defines the configuration of
-    /// a Spot fleet request.
+    /// AWS::EC2::SpotFleet SpotFleetRequestConfigData
+    /// Specifies the configuration of a Spot Fleet request. For more information, see How Spot Fleet Works in the
+    /// Amazon EC2 User Guide for Linux Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html
     /// </summary>
     public class SpotFleetRequestConfigData
@@ -16,10 +16,11 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// AllocationStrategy
-        /// Indicates how to allocate the target capacity across the Spot pools that you specified in the Spot
-        /// fleet request.
+        /// Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet
+        /// request. The default is lowestPrice.
         /// Required: No
         /// Type: String
+        /// Allowed Values: diversified | lowestPrice
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AllocationStrategy")]
@@ -27,10 +28,11 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// ExcessCapacityTerminationPolicy
-        /// Indicates whether running Spot instances are terminated if you decrease the target capacity of the
-        /// Spot fleet request below the current size of the Spot fleet.
+        /// Indicates whether running Spot Instances should be terminated if you decrease the target capacity of
+        /// the Spot Fleet request below the current size of the Spot Fleet.
         /// Required: No
         /// Type: String
+        /// Allowed Values: default | noTermination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcessCapacityTerminationPolicy")]
@@ -39,8 +41,10 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// IamFleetRole
         /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the
-        /// Spot fleet the ability to bid on, launch, and terminate instances on your behalf. For more
-        /// information, see Spot Fleet Prerequisites in the Amazon EC2 User Guide for Linux Instances.
+        /// Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
+        /// information, see Spot Fleet Prerequisites in the Amazon EC2 User Guide for Linux Instances. Spot
+        /// Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request or when the
+        /// Spot Fleet request expires, if you set TerminateInstancesWithExpiration.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement
@@ -50,9 +54,10 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// InstanceInterruptionBehavior
-        /// The behavior when a Spot Instance is interrupted.
+        /// The behavior when a Spot Instance is interrupted. The default is terminate.
         /// Required: No
         /// Type: String
+        /// Allowed Values: hibernate | stop | terminate
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceInterruptionBehavior")]
@@ -60,9 +65,11 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// LaunchSpecifications
-        /// The launch specifications for the Spot fleet request.
-        /// Required: Conditional. You must specify either LaunchSpecifications or LaunchTemplateConfigs.
-        /// Type: List of Amazon Elastic Compute Cloud SpotFleet LaunchSpecifications
+        /// The launch specifications for the Spot Fleet request. If you specify LaunchSpecifications, you can&#39;t
+        /// specify LaunchTemplateConfigs. If you include On-Demand capacity in your request, you must use
+        /// LaunchTemplateConfigs.
+        /// Required: Conditional
+        /// Type: List of SpotFleetLaunchSpecification
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchSpecifications")]
@@ -70,8 +77,10 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// LaunchTemplateConfigs
-        /// Describes a launch template and overrides.
-        /// Required: Conditional. You must specify either LaunchSpecifications or LaunchTemplateConfigs.
+        /// The launch template and overrides. If you specify LaunchTemplateConfigs, you can&#39;t specify
+        /// LaunchSpecifications. If you include On-Demand capacity in your request, you must use
+        /// LaunchTemplateConfigs.
+        /// Required: Conditional
         /// Type: List of LaunchTemplateConfig
         /// Update requires: Replacement
         /// </summary>
@@ -82,6 +91,8 @@ namespace Comformation.EC2.SpotFleet
         /// LoadBalancersConfig
         /// One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet
         /// registers the running Spot Instances with the specified Classic Load Balancers and target groups.
+        /// With Network Load Balancers, Spot Fleet cannot register instances that have the following instance
+        /// types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
         /// Required: No
         /// Type: LoadBalancersConfig
         /// Update requires: Replacement
@@ -91,7 +102,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// ReplaceUnhealthyInstances
-        /// Indicates whether the Spot fleet should replace unhealthy instances.
+        /// Indicates whether Spot Fleet should replace unhealthy instances.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -101,8 +112,8 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// SpotPrice
-        /// The bid price per unit hour. For more information, see How Spot Fleet Works in the Amazon EC2 User
-        /// Guide for Linux Instances.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
+        /// On-Demand price.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -112,10 +123,10 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// TargetCapacity
-        /// The number of units to request for the spot fleet. You can choose to set the target capacity as the
-        /// number of instances or as a performance characteristic that is important to your application
-        /// workload, such as vCPUs, memory, or I/O. For more information, see How Spot Fleet Works in the
-        /// Amazon EC2 User Guide for Linux Instances.
+        /// The number of units to request for the Spot Fleet. You can choose to set the target capacity in
+        /// terms of instances or a performance characteristic that is important to your application workload,
+        /// such as vCPUs, memory, or I/O. If the request type is maintain, you can specify a target capacity of
+        /// 0 and add capacity later.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption
@@ -125,7 +136,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// TerminateInstancesWithExpiration
-        /// Indicates whether running Spot instances are terminated when the Spot fleet request expires.
+        /// Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -135,10 +146,16 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// Type
-        /// The type of request, which indicates whether the fleet will only request the target capacity or also
-        /// attempt to maintain it.
+        /// The type of request. Indicates whether the Spot Fleet only requests the target capacity or also
+        /// attempts to maintain it. When this value is request, the Spot Fleet only places the required
+        /// requests. It does not attempt to replenish Spot Instances if capacity is diminished, nor does it
+        /// submit requests in alternative Spot pools if capacity is not available. When this value is maintain,
+        /// the Spot Fleet maintains the target capacity. The Spot Fleet places the required requests to meet
+        /// capacity and automatically replenishes any interrupted instances. Default: maintain. instant is
+        /// listed but is not used by Spot Fleet.
         /// Required: No
         /// Type: String
+        /// Allowed Values: instant | maintain | request
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Type")]
@@ -146,8 +163,8 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// ValidFrom
-        /// The start date and time of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ). By default, Amazon
-        /// Elastic Compute Cloud (Amazon EC2 ) starts fulfilling the request immediately.
+        /// The start date and time of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ). By default, Amazon EC2
+        /// starts fulfilling the request immediately.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -158,7 +175,8 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// ValidUntil
         /// The end date and time of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ). After the end date and
-        /// time, Amazon EC2 doesn&#39;t request new Spot instances or enable them to fulfill the request.
+        /// time, no new Spot Instance requests are placed or able to fulfill the request. If no value is
+        /// specified, the Spot Fleet request remains until you cancel it.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

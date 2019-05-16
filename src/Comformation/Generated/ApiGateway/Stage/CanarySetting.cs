@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
-    /// Amazon API Gateway Stage CanarySetting
+    /// AWS::ApiGateway::Stage CanarySetting
     /// The CanarySetting property type specifies settings for the canary deployment in this stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html
     /// </summary>
@@ -25,7 +25,7 @@ namespace Comformation.ApiGateway.Stage
 
         /// <summary>
         /// PercentTraffic
-        /// The percent (0-100) of traffic diverted to a canary deployment.
+        /// The percentage (0-100) of traffic diverted to a canary deployment.
         /// Required: No
         /// Type: Double
         /// Update requires: No interruption
@@ -40,7 +40,7 @@ namespace Comformation.ApiGateway.Stage
         /// variable names and their values.
         /// Duplicates are not allowed.
         /// Required: No
-        /// Type: String to String map
+        /// Type: Map of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StageVariableOverrides")]

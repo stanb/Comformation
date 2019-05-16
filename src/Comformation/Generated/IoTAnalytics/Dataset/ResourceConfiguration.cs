@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
-    /// AWS IoT Analytics Dataset ResourceConfiguration
-    /// The ResourceConfiguration property type specifies the configuration of the resource which executes the
-    /// &#39;containerAction&#39; for an AWS IoT Analytics dataset.
+    /// AWS::IoTAnalytics::Dataset ResourceConfiguration
+    /// The configuration of the resource used to execute the &quot;containerAction&quot;.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-resourceconfiguration.html
     /// </summary>
     public class ResourceConfiguration
@@ -16,10 +15,12 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// VolumeSizeInGB
-        /// The size of the persistent storage available to the resource instance used to execute the
-        /// &#39;containerAction&#39;.
+        /// The size (in GB) of the persistent storage available to the resource instance used to execute the
+        /// &quot;containerAction&quot; (min: 1, max: 50).
         /// Required: Yes
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeSizeInGB")]
@@ -27,9 +28,11 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// ComputeType
-        /// The type of the compute resource used to execute the &#39;containerAction&#39; (ACU_1|ACU_2).
+        /// The type of the compute resource used to execute the &quot;containerAction&quot;. Possible values are: ACU_1
+        /// (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ACU_1 | ACU_2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComputeType")]

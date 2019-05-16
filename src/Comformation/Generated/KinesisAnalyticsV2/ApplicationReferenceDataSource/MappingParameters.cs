@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource MappingParameters
-    /// The MappingParameters property type specifies additional mapping information specific to the record format
-    /// (such as JSON, CSV, or record fields delimited by some delimiter) on the reference source.
+    /// AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource MappingParameters
+    /// When you configure an SQL-based Amazon Kinesis Data Analytics application&#39;s input at the time of creating or
+    /// updating an application, provides additional mapping information specific to the record format (such as JSON,
+    /// CSV, or record fields delimited by some delimiter) on the streaming source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters.html
     /// </summary>
     public class MappingParameters
@@ -16,7 +17,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 
         /// <summary>
         /// JSONMappingParameters
-        /// Provides additional mapping information when JSON is the record format on the reference source.
+        /// Provides additional mapping information when JSON is the record format on the streaming source.
         /// Required: No
         /// Type: JSONMappingParameters
         /// Update requires: No interruption
@@ -26,8 +27,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 
         /// <summary>
         /// CSVMappingParameters
-        /// Provides additional mapping information when the reference source record format uses delimiters (for
-        /// example, CSV).
+        /// Provides additional mapping information when the record format uses delimiters (for example, CSV).
         /// Required: No
         /// Type: CSVMappingParameters
         /// Update requires: No interruption

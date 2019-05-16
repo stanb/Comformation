@@ -6,7 +6,10 @@ namespace Comformation.StepFunctions.Activity
 {
     /// <summary>
     /// AWS::StepFunctions::Activity
-    /// Use the AWS::StepFunctions::Activity resource to create an AWS Step Functions activity.
+    /// An activity is a task that you write in any programming language and host on any machine that has access to
+    /// AWS Step Functions. Activities must poll Step Functions using the GetActivityTask API action and respond using
+    /// SendTask* API actions. This function lets Step Functions know the existence of your activity and returns an
+    /// identifier for use in a state machine and when polling from the activity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
     /// </summary>
     public class ActivityResource : ResourceBase
@@ -15,17 +18,20 @@ namespace Comformation.StepFunctions.Activity
         {
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide, and Controlling Access Using IAM Tags.
+            /// The list of tags to add to a resource.
+            /// Tags may only contain unicode letters, digits, whitespace, or these symbols: _ . : / = + - @.
             /// Required: No
-            /// Type: List of Resource Tag
+            /// Type: List of TagsEntry
             /// Update requires: No interruption
             /// </summary>
 			public List<TagsEntry> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the activity to create. This name must be unique for your AWS account and region.
+            /// The name of the activity.
+            /// A name must not contain:
+            /// whitespace brackets &amp;lt; &amp;gt; { } [ ] wildcard characters ? * special characters &quot; # % \ ^ | ~ ` $
+            /// &amp;amp; , ; : / control characters (U+0000-001F, U+007F-009F)
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

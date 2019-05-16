@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppSync.DataSource
 {
     /// <summary>
-    /// AWS AppSync DataSource DynamoDBConfig
+    /// AWS::AppSync::DataSource DynamoDBConfig
     /// The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your
     /// account for an AWS AppSync data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
@@ -26,7 +26,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// AwsRegion
-        /// The AWS region.
+        /// The AWS Region.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

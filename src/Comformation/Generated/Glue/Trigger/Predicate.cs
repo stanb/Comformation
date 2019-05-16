@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Trigger
 {
     /// <summary>
-    /// AWS Glue Trigger Predicate
-    /// The Predicate property type specifies the predicate of an AWS Glue job trigger, which determines when it
-    /// fires.
+    /// AWS::Glue::Trigger Predicate
+    /// Defines the predicate of the trigger, which determines when it fires.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html
     /// </summary>
     public class Predicate
@@ -16,10 +15,9 @@ namespace Comformation.Glue.Trigger
 
         /// <summary>
         /// Logical
-        /// The logical operator for the predicate.
-        /// Valid values: AND
-        /// Required: Optional field if only one condition is listed. If multiple conditions are listed, then
-        /// this field is required.
+        /// An optional field if only one condition is listed. If multiple conditions are listed, then this
+        /// field is required.
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -28,7 +26,7 @@ namespace Comformation.Glue.Trigger
 
         /// <summary>
         /// Conditions
-        /// The conditions that determine when the trigger fires.
+        /// A list of the conditions that determine when the trigger will fire.
         /// Required: No
         /// Type: List of Condition
         /// Update requires: No interruption

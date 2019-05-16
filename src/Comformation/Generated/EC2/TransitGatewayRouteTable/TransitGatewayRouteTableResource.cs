@@ -6,7 +6,7 @@ namespace Comformation.EC2.TransitGatewayRouteTable
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRouteTable
-    /// Creates a route table for a transit gateway. For more information, see Amazon VPC Transit Gateways.
+    /// Specifies a route table for a transit gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html
     /// </summary>
     public class TransitGatewayRouteTableResource : ResourceBase
@@ -24,9 +24,9 @@ namespace Comformation.EC2.TransitGatewayRouteTable
 
             /// <summary>
             /// Tags
-            /// The tags to apply to the transit gateway route table.
+            /// Any tags assigned to the route table.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
 			public List<Tag> Tags { get; set; }

@@ -15,7 +15,7 @@ namespace Comformation.Cognito.UserPoolClient
         {
             /// <summary>
             /// GenerateSecret
-            /// Specifies whether you want to generate a secret for the user pool client being created.
+            /// Boolean to specify whether you want to generate a secret for the user pool client being created.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -24,20 +24,24 @@ namespace Comformation.Cognito.UserPoolClient
 
             /// <summary>
             /// ClientName
-            /// The client name for the user pool client that you want to create.
+            /// The client name for the user pool client you would like to create.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: [\w\s+=,. @-]+
             /// Update requires: No interruption
-            /// MinLength: 1
-            /// MaxLength: 128
             /// </summary>
 			public Union<string, IntrinsicFunction> ClientName { get; set; }
 
             /// <summary>
             /// UserPoolId
-            /// The user pool ID for the user pool where you want to create a client.
+            /// The user pool ID for the user pool where you want to create a user pool client.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 55
+            /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
@@ -47,16 +51,18 @@ namespace Comformation.Cognito.UserPoolClient
             /// The explicit authentication flows, which can be one of the following: ADMIN_NO_SRP_AUTH,
             /// CUSTOM_AUTH_FLOW_ONLY, or USER_PASSWORD_AUTH.
             /// Required: No
-            /// Type: List of Strings
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> ExplicitAuthFlows { get; set; }
 
             /// <summary>
             /// RefreshTokenValidity
-            /// The time limit, in days, after which the refresh token is no longer valid.
+            /// The time limit, in days, after which the refresh token is no longer valid and cannot be used.
             /// Required: No
-            /// Type: Integer
+            /// Type: Double
+            /// Minimum: 0
+            /// Maximum: 3650
             /// Update requires: No interruption
             /// </summary>
 			public Union<double, IntrinsicFunction> RefreshTokenValidity { get; set; }
@@ -65,16 +71,22 @@ namespace Comformation.Cognito.UserPoolClient
             /// ReadAttributes
             /// The read attributes.
             /// Required: No
-            /// Type: List of Strings
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> ReadAttributes { get; set; }
 
             /// <summary>
             /// WriteAttributes
-            /// The write attributes.
+            /// The user pool attributes that the app client can write to.
+            /// If your app client allows users to sign in through an identity provider, this array must include all
+            /// attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes
+            /// when users sign in to your application through an identity provider. If your app client lacks write
+            /// access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the
+            /// attribute. For more information, see Specifying Identity Provider Attribute Mappings for Your User
+            /// Pool.
             /// Required: No
-            /// Type: List of Strings
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> WriteAttributes { get; set; }

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Events.Rule
 {
     /// <summary>
-    /// Amazon CloudWatch Events Rule EcsParameters
-    /// The EcsParameters property type specifies information about an Amazon Elastic Container Service (Amazon ECS)
-    /// task target.
+    /// AWS::Events::Rule EcsParameters
+    /// The EcsParameters property type specifies custom parameters to be used when the target is an Amazon ECS task.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html
     /// </summary>
     public class EcsParameters
@@ -16,9 +15,10 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// TaskCount
-        /// The number of tasks to create based on the task definition. The default is 1.
+        /// The number of tasks to create based on TaskDefinition. The default is 1.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TaskCount")]
@@ -26,9 +26,11 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// TaskDefinitionArn
-        /// The Amazon Resource Name (ARN) of the task definition to use.
+        /// The ARN of the task definition to use.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1600
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TaskDefinitionArn")]

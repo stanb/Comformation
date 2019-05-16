@@ -17,7 +17,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
         {
             /// <summary>
             /// Description
-            /// Provides the customer-specified description for this DB cluster parameter group.
+            /// The description for the DB cluster parameter group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -26,7 +26,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Parameters
-            /// Provides the name of the DB cluster parameter group.
+            /// Provides a list of parameters for the DB cluster parameter group.
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption
@@ -35,8 +35,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Family
-            /// The DB cluster parameter group from which user created DB cluster parameter groups are created. For
-            /// example, default. docdb3. 6.
+            /// The DB cluster parameter group family name.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -45,18 +44,19 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Tags
-            /// A list of up to 50 tags. A tag is metadata assigned to an Amazon DocumentDB resource consisting of a
-            /// key-value pair.
+            /// The tags to be assigned to the DB cluster parameter group.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// Provides the name of the DB parameter group family that this DB cluster parameter group is
-            /// compatible with.
+            /// The name of the DB cluster parameter group.
+            /// Constraints:
+            /// Must match the name of an existing DBClusterParameterGroup.
+            /// Note This value is stored as a lowercase string.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

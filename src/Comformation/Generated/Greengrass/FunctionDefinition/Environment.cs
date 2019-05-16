@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinition Environment
+    /// AWS::Greengrass::FunctionDefinition Environment
     /// The environment configuration for a Lambda function on the AWS IoT Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html
     /// </summary>

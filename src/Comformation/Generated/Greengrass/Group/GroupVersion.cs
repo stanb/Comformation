@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.Group
 {
     /// <summary>
-    /// AWS IoT Greengrass Group GroupVersion
+    /// AWS::Greengrass::Group GroupVersion
     /// A group version in AWS IoT Greengrass, 		 which references of a core definition version, device definition
     /// version, subscription definition version, and other version types 				 that contain the components you want to
     /// deploy to a Greengrass core device. 		The group version must reference a core definition version that contains
@@ -18,8 +18,8 @@ namespace Comformation.Greengrass.Group
 
         /// <summary>
         /// LoggerDefinitionVersionArn
-        /// The Amazon Resource Name (ARN) of the logger definition version that contains the loggers you want
-        /// to deploy with the group version.
+        /// The ARN of the logger definition version that contains the loggers you want to deploy with the group
+        /// version.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -73,8 +73,8 @@ namespace Comformation.Greengrass.Group
 
         /// <summary>
         /// ConnectorDefinitionVersionArn
-        /// The ARN of the connector definition version that contains the connectors you want to deploy with the
-        /// group version.
+        /// The Amazon Resource Name (ARN) of the connector definition version that contains the connectors you
+        /// want to deploy with the group version.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

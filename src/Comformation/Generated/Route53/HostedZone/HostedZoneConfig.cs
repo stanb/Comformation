@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53.HostedZone
 {
     /// <summary>
-    /// Route&#160;53 HostedZoneConfig Property
-    /// The HostedZoneConfig property is part of the AWS::Route53::HostedZone resource that can contain a comment
-    /// about the hosted zone.
+    /// AWS::Route53::HostedZone HostedZoneConfig
+    /// A complex type that contains an optional comment about your hosted zone. If you don&#39;t 			want to specify a
+    /// comment, omit both the HostedZoneConfig and 			Comment elements.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html
     /// </summary>
     public class HostedZoneConfig
@@ -16,9 +16,13 @@ namespace Comformation.Route53.HostedZone
 
         /// <summary>
         /// Comment
+        /// 		
         /// Any comments that you want to include about the hosted zone.
-        /// Type: String
+        /// 	
         /// Required: No
+        /// Type: String
+        /// Maximum: 256
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Comment")]
         public Union<string, IntrinsicFunction> Comment { get; set; }

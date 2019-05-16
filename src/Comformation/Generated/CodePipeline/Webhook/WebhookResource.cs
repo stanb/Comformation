@@ -17,8 +17,10 @@ namespace Comformation.CodePipeline.Webhook
         {
             /// <summary>
             /// AuthenticationConfiguration
-            /// Properties that configure the authentication applied to incoming webhook trigger requests. For more
-            /// information, see Webhook Definition in the AWS CodePipeline API Reference.
+            /// Properties that configure the authentication applied to incoming webhook trigger requests. The
+            /// required properties depend on the authentication type. For GITHUB_HMAC, only the SecretToken
+            /// property must be set. For IP, only the AllowedIPRange property must be set to a valid CIDR range.
+            /// For UNAUTHENTICATED, no properties can be set.
             /// Required: Yes
             /// Type: WebhookAuthConfiguration
             /// Update requires: No interruption
@@ -30,17 +32,22 @@ namespace Comformation.CodePipeline.Webhook
             /// A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined
             /// rules must pass for the request to be accepted and the pipeline started.
             /// Required: Yes
-            /// Type: List of WebhookFilterRule property types
+            /// Type: List of WebhookFilterRule
+            /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
 			public List<WebhookFilterRule> Filters { get; set; }
 
             /// <summary>
             /// Authentication
-            /// The type of authentication scheme that allows the trigger request to be accepted. For more
-            /// information, see Webhook Definition in the AWS CodePipeline API Reference.
+            /// Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+            /// For information about the authentication scheme implemented by GITHUB_HMAC, see Securing your
+            /// webhooks on the GitHub Developer website. IP will reject webhooks trigger requests unless they
+            /// originate from an IP within the IP range whitelisted in the authentication configuration.
+            /// UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: GITHUB_HMAC | IP | UNAUTHENTICATED
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Authentication { get; set; }
@@ -50,6 +57,9 @@ namespace Comformation.CodePipeline.Webhook
             /// The name of the pipeline you want to connect to the webhook.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetPipeline { get; set; }
@@ -60,15 +70,21 @@ namespace Comformation.CodePipeline.Webhook
             /// source (first) stage of the pipeline.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TargetAction { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the webhook to be created and, if applicable, to register with a supported third party.
+            /// The name of the webhook.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
@@ -79,14 +95,16 @@ namespace Comformation.CodePipeline.Webhook
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
+            /// Required: Yes
+            /// Type: Integer
+            /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> TargetPipelineVersion { get; set; }
 
             /// <summary>
             /// RegisterWithThirdParty
-            /// Indicates whether to register the webhook with a third party. Third party registration configures a
-            /// connection between the webhook that was created and the external tool, such as GitHub, with events
-            /// to be detected.
+            /// Configures a connection between the webhook that was created and the external tool with events to be
+            /// detected.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

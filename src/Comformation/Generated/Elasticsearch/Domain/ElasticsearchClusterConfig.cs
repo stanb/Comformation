@@ -6,9 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
-    /// Amazon Elasticsearch Service Domain ElasticsearchClusterConfig
-    /// ElasticsearchClusterConfig is a property of the AWS::Elasticsearch::Domain resource that configures the
-    /// cluster of an Amazon Elasticsearch Service (Amazon ES) domain.
+    /// AWS::Elasticsearch::Domain ElasticsearchClusterConfig
+    /// The cluster configuration for the Amazon ES domain. You can specify options such as the instance type and the
+    /// number of instances. For more information, see Configuring Amazon ES Domains in the Amazon Elasticsearch
+    /// Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html
     /// </summary>
     public class ElasticsearchClusterConfig
@@ -16,10 +17,11 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// DedicatedMasterCount
-        /// The number of instances to use for the master node.
-        /// If you specify this property, you must specify true for the DedicatedMasterEnabled property
+        /// The number of instances to use for the master node. If you specify this property, you must specify
+        /// true for the DedicatedMasterEnabled property.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DedicatedMasterCount")]
         public Union<int, IntrinsicFunction> DedicatedMasterCount { get; set; }
@@ -32,6 +34,7 @@ namespace Comformation.Elasticsearch.Domain
         /// of your search clusters.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DedicatedMasterEnabled")]
         public Union<bool, IntrinsicFunction> DedicatedMasterEnabled { get; set; }
@@ -39,11 +42,12 @@ namespace Comformation.Elasticsearch.Domain
         /// <summary>
         /// DedicatedMasterType
         /// The hardware configuration of the computer that hosts the dedicated master node, such as m3. medium.
-        /// elasticsearch. For valid values, see Configuring Amazon ES Domains in the Amazon Elasticsearch
-        /// Service Developer Guide.
-        /// If you specify this property, you must specify true for the DedicatedMasterEnabled property
+        /// elasticsearch. If you specify this property, you must specify true for the DedicatedMasterEnabled
+        /// property. For valid values, see Configuring Amazon ES Domains in the Amazon Elasticsearch Service
+        /// Developer Guide.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DedicatedMasterType")]
         public Union<string, IntrinsicFunction> DedicatedMasterType { get; set; }
@@ -53,6 +57,7 @@ namespace Comformation.Elasticsearch.Domain
         /// The number of data nodes (instances) to use in the Amazon ES domain.
         /// Required: No
         /// Type: Integer
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceCount")]
         public Union<int, IntrinsicFunction> InstanceCount { get; set; }
@@ -63,6 +68,7 @@ namespace Comformation.Elasticsearch.Domain
         /// Configuring Amazon ES Domains in the Amazon Elasticsearch Service Developer Guide.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceType")]
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
@@ -77,6 +83,7 @@ namespace Comformation.Elasticsearch.Domain
         /// Elasticsearch Service Developer Guide.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ZoneAwarenessEnabled")]
         public Union<bool, IntrinsicFunction> ZoneAwarenessEnabled { get; set; }

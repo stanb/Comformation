@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline Activity
-    /// The Activity property type specifies a list of activities for an AWS IoT Analytics pipeline.
+    /// AWS::IoTAnalytics::Pipeline Activity
+    /// An activity that performs a transformation on a message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html
     /// </summary>
     public class Activity

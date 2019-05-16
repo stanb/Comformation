@@ -15,9 +15,7 @@ namespace Comformation.DMS.ReplicationInstance
         {
             /// <summary>
             /// ReplicationInstanceIdentifier
-            /// A name for the replication instance. If you specify a name, AWS CloudFormation converts it to lower
-            /// case. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that
-            /// ID for the replication instance identifier. For more information, see Name Type.
+            /// The replication instance identifier. This parameter is stored as a lowercase string.
             /// Constraints:
             /// Must contain from 1 to 63 alphanumeric characters or hyphens. First character must be a letter.
             /// Cannot end with a hyphen or contain two consecutive hyphens.
@@ -33,16 +31,16 @@ namespace Comformation.DMS.ReplicationInstance
             /// The engine version number of the replication instance.
             /// Required: No
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// KmsKeyId
-            /// The KMS key identifier that will be used to encrypt the content on the replication instance. If you
-            /// do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption
-            /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a
-            /// different default encryption key for each AWS region.
+            /// The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you
+            /// don&#39;t specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key. AWS
+            /// KMS creates the default encryption key for your AWS account. Your AWS account has a different
+            /// default encryption key for each AWS Region.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -51,9 +49,9 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The EC2 Availability Zone that the replication instance will be created in. The default value is a
-            /// random, system-chosen Availability Zone in the endpoint&#39;s region.
-            /// Example: us-east-1d
+            /// The Availability Zone that the replication instance will be created in.
+            /// The default value is a random, system-chosen Availability Zone in the endpoint&#39;s AWS Region, for
+            /// example: us-east-1d
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -67,8 +65,8 @@ namespace Comformation.DMS.ReplicationInstance
             /// Format: ddd:hh24:mi-ddd:hh24:mi
             /// Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on
             /// a random day of the week.
-            /// Valid Values: Mon, Tue, Wed, Thu, Fri, Sat, Sun
-            /// Constraints: Minimum 30-minute window
+            /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+            /// Constraints: Minimum 30-minute window.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -79,6 +77,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// AutoMinorVersionUpgrade
             /// Indicates that minor engine upgrades will be applied automatically to the replication instance
             /// during the maintenance window.
+            /// Default: true
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -105,11 +104,23 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// VpcSecurityGroupIds
+            /// Specifies the VPC security group to be used with the replication instance. The VPC security group
+            /// must work with the VPC containing the replication instance.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
             /// <summary>
             /// AllowMajorVersionUpgrade
+            /// Indicates that major version upgrades are allowed. Changing this parameter does not result in an
+            /// outage and the change is asynchronously applied as soon as possible.
+            /// Constraints: This parameter must be set to true when specifying a value for the EngineVersion
+            /// parameter that is a different major version than the replication instance&#39;s current version.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
@@ -117,11 +128,11 @@ namespace Comformation.DMS.ReplicationInstance
             /// ReplicationInstanceClass
             /// The compute and memory capacity of the replication instance as specified by the replication instance
             /// class.
-            /// Valid Values: dms. t2. micro, dms. t2. small, dms. t2. medium , dms. t2. large, dms. c4. large, dms.
-            /// c4. xlarge, dms. c4. 2xlarge, dms. c4. 4xlarge
+            /// Valid Values: dms. t2. micro | dms. t2. small | dms. t2. medium | dms. t2. large | dms. c4. large |
+            /// dms. c4. xlarge | dms. c4. 2xlarge | dms. c4. 4xlarge
             /// Required: Yes
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> ReplicationInstanceClass { get; set; }
 
@@ -129,7 +140,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// PubliclyAccessible
             /// Specifies the accessibility options for the replication instance. A value of true represents an
             /// instance with a public IP address. A value of false represents an instance with a private IP
-            /// address. The default value is true .
+            /// address. The default value is true.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -139,7 +150,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             /// MultiAZ
             /// Specifies if the replication instance is a Multi-AZ deployment. You cannot set the AvailabilityZone
-            /// parameter if the MultiAZ parameter is set to true .
+            /// parameter if the Multi-AZ parameter is set to true.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -148,9 +159,9 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// Tags
-            /// The tags that you want to attach to the DMS endpoint.
+            /// Tags to be associated with the replication instance.
             /// Required: No
-            /// Type: List of resource tags in key-value format
+            /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
 			public List<Tag> Tags { get; set; }

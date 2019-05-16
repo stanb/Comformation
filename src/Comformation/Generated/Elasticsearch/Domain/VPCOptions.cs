@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
-    /// Amazon Elasticsearch Service Domain VPCOptions
-    /// The VPCOptions property type specifies a virtual private cloud (VPC) configuration for an Amazon Elasticsearch
-    /// Service (Amazon ES) domain.
+    /// AWS::Elasticsearch::Domain VPCOptions
+    /// The virtual private cloud (VPC) configuration for the Amazon ES domain. For more information, see VPC Support
+    /// for Amazon Elasticsearch Service Domains in the Amazon Elasticsearch Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html
     /// </summary>
     public class VPCOptions
@@ -20,7 +20,7 @@ namespace Comformation.Elasticsearch.Domain
         /// don&#39;t provide a security group ID, Amazon ES uses the default security group for the VPC. To learn
         /// more, see Security Groups for your VPC in the Amazon VPC User Guide.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
@@ -32,7 +32,7 @@ namespace Comformation.Elasticsearch.Domain
         /// zone awareness enabled, you need to provide two subnet IDs, one per zone. Otherwise, provide only
         /// one. To learn more, see VPCs and Subnets in the Amazon VPC User Guide.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubnetIds")]

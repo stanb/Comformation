@@ -6,8 +6,7 @@ namespace Comformation.EC2.SecurityGroupEgress
 {
     /// <summary>
     /// AWS::EC2::SecurityGroupEgress
-    /// The AWS::EC2::SecurityGroupEgress resource adds an egress rule to an Amazon VPC security group. When you use
-    /// the AWS::EC2::SecurityGroupEgress resource, the default rule is removed from the security group.
+    /// [EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
     /// </summary>
     public class SecurityGroupEgressResource : ResourceBase
@@ -16,9 +15,10 @@ namespace Comformation.EC2.SecurityGroupEgress
         {
             /// <summary>
             /// CidrIp
-            /// An IPv4 CIDR range.
-            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// The IPv4 ranges.
+            /// You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -26,17 +26,20 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// CidrIpv6
-            /// An IPv6 CIDR range.
-            /// Type: String
-            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// The IPv6 ranges.
+            /// You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: No
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
             /// <summary>
             /// Description
-            /// Description of the egress rule.
+            /// 		
+            /// The description of an egress (outbound) security group rule.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -45,10 +48,11 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// DestinationPrefixListId
-            /// The AWS service prefix of an Amazon VPC endpoint. For more information, see VPC Endpoints in the
-            /// Amazon VPC User Guide.
-            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// [EC2-VPC only] The prefix list IDs for an AWS service. This is the AWS service that you want to
+            /// access through a VPC endpoint from instances associated with the security group.
+            /// You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -56,9 +60,10 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// DestinationSecurityGroupId
-            /// Specifies the group ID of the destination Amazon VPC security group.
-            /// Required: Conditional. You must specify a destination security group (DestinationPrefixListId or
+            /// The ID of the security group.
+            /// You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -66,9 +71,9 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// FromPort
-            /// Start of port range for the TCP and UDP protocols, or an ICMP type number. If you specify icmp for
-            /// the IpProtocol property, you can specify -1 as a wildcard (i. e. , any ICMP type number).
-            /// Required: Yes
+            /// The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of -1
+            /// indicates all ICMP/ICMPv6 types. If you specify all 		ICMP/ICMPv6 types, you must specify all codes.
+            /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
@@ -76,9 +81,11 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// GroupId
-            /// ID of the Amazon VPC security group to modify. This value can be a reference to an
-            /// AWS::EC2::SecurityGroup resource that has a valid VpcId property or the ID of an existing Amazon VPC
-            /// security group.
+            /// 		
+            /// The ID of the security group. You must specify either the security group ID or the 			security group
+            /// name in the request. For security groups in a nondefault VPC, you must 			specify the security group
+            /// ID.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -87,8 +94,11 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// IpProtocol
-            /// IP protocol name or number. For valid values, see the IpProtocol parameter in
-            /// AuthorizeSecurityGroupIngress
+            /// The IP protocol name (tcp, udp, icmp, icmpv6) or number (see Protocol Numbers).
+            /// [VPC only] Use -1 to specify all protocols. When authorizing security group rules, specifying -1 or
+            /// a protocol number other than tcp, udp, icmp, or icmpv6 allows traffic on all ports, regardless of
+            /// any port range you specify. For tcp, udp, and icmp, you must specify a port range. For icmpv6, the
+            /// port range is optional; if you omit the port range, traffic for all types and codes is allowed.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -97,9 +107,9 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// ToPort
-            /// End of port range for the TCP and UDP protocols, or an ICMP code. If you specify icmp for the
-            /// IpProtocol property, you can specify -1 as a wildcard (i. e. , any ICMP code).
-            /// Required: Yes
+            /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value 		of -1
+            /// indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
+            /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>

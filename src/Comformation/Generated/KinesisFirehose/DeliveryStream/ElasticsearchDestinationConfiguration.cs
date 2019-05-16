@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
-    /// Amazon Kinesis Data Firehose DeliveryStream ElasticsearchDestinationConfiguration
+    /// AWS::KinesisFirehose::DeliveryStream ElasticsearchDestinationConfiguration
     /// The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES)
     /// domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html
@@ -20,6 +20,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// domain.
         /// Required: Yes
         /// Type: ElasticsearchBufferingHints
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BufferingHints")]
         public ElasticsearchBufferingHints BufferingHints { get; set; }
@@ -29,6 +30,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The Amazon CloudWatch Logs logging options for the delivery stream.
         /// Required: No
         /// Type: CloudWatchLoggingOptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CloudWatchLoggingOptions")]
         public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
@@ -38,6 +40,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The Amazon Resource Name (ARN) of the Amazon ES domain that Kinesis Data Firehose delivers data to.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 512
+        /// Pattern: arn:. *
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DomainARN")]
         public Union<string, IntrinsicFunction> DomainARN { get; set; }
@@ -47,6 +53,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The name of the Elasticsearch index to which Kinesis Data Firehose adds data for indexing.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 80
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexName")]
         public Union<string, IntrinsicFunction> IndexName { get; set; }
@@ -59,6 +68,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Amazon Kinesis Data Firehose Developer Guide.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: NoRotation | OneDay | OneHour | OneMonth | OneWeek
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexRotationPeriod")]
         public Union<string, IntrinsicFunction> IndexRotationPeriod { get; set; }
@@ -68,6 +79,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The data processing configuration for the Kinesis Data Firehose delivery stream.
         /// Required: No
         /// Type: ProcessingConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProcessingConfiguration")]
         public ProcessingConfiguration ProcessingConfiguration { get; set; }
@@ -77,6 +89,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The retry behavior when Kinesis Data Firehose is unable to deliver data to Amazon ES.
         /// Required: Yes
         /// Type: ElasticsearchRetryOptions
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RetryOptions")]
         public ElasticsearchRetryOptions RetryOptions { get; set; }
@@ -84,12 +97,14 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// RoleARN
         /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling
-        /// the Amazon ES Configuration API and for indexing documents.
-        /// For more information, see Grant Kinesis Data Firehose Access to an Amazon S3 Destination in the
-        /// Amazon Kinesis Data Firehose Developer Guide and Amazon Resource Names (ARNs) and AWS Service
-        /// Namespaces in the Amazon Web Services General Reference.
+        /// the Amazon ES Configuration API and for indexing documents. For more information, see Grant Kinesis
+        /// Data Firehose Access to an Amazon S3 Destination.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 512
+        /// Pattern: arn:. *
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]
         public Union<string, IntrinsicFunction> RoleARN { get; set; }
@@ -101,8 +116,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Firehose could not deliver to the Amazon ES destination. For more information and valid values, see
         /// the S3BackupMode content for the ElasticsearchDestinationConfiguration data type in the Amazon
         /// Kinesis Data Firehose API Reference.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
+        /// Allowed Values: AllDocuments | FailedDocumentsOnly
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupMode")]
         public Union<string, IntrinsicFunction> S3BackupMode { get; set; }
@@ -112,6 +129,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The S3 bucket where Kinesis Data Firehose backs up incoming data.
         /// Required: Yes
         /// Type: S3DestinationConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Configuration")]
         public S3DestinationConfiguration S3Configuration { get; set; }
@@ -121,6 +139,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The Elasticsearch type name that Amazon ES adds to documents when indexing data.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 100
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TypeName")]
         public Union<string, IntrinsicFunction> TypeName { get; set; }

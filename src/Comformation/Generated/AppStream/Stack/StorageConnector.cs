@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppStream.Stack
 {
     /// <summary>
-    /// Amazon AppStream 2. 0 Stack StorageConnector
-    /// The StorageConnector property type specifies a connector to enable persistent storage for users of an Amazon
-    /// AppStream 2. 0 stack.
+    /// AWS::AppStream::Stack StorageConnector
+    /// A connector that enables persistent storage for users.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html
     /// </summary>
     public class StorageConnector
@@ -18,7 +17,8 @@ namespace Comformation.AppStream.Stack
         /// Domains
         /// The names of the domains for the account.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 10
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Domains")]
@@ -39,6 +39,7 @@ namespace Comformation.AppStream.Stack
         /// The type of storage connector.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: GOOGLE_DRIVE | HOMEFOLDERS | ONE_DRIVE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConnectorType")]

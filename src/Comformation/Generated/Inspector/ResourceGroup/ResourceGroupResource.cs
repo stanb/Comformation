@@ -16,9 +16,11 @@ namespace Comformation.Inspector.ResourceGroup
         {
             /// <summary>
             /// ResourceGroupTags
-            /// The tags (key and value pairs) of the resource group.
+            /// The tags (key and value pairs) that will be associated with the resource group.
+            /// For more information, see Tag.
             /// Required: Yes
-            /// Type: List of Resource Tag
+            /// Type: List of Tag
+            /// Maximum: 10
             /// Update requires: Replacement
             /// </summary>
 			public List<Tag> ResourceGroupTags { get; set; }

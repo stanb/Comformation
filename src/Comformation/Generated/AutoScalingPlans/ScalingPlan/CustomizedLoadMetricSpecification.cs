@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
-    /// AWS Auto Scaling ScalingPlan CustomizedLoadMetricSpecification
-    /// The CustomizedLoadMetricSpecification property type specifies a customized load metric (an Amazon CloudWatch
-    /// metric of your choosing) for predictive scaling to use with AWS Auto Scaling.
+    /// AWS::AutoScalingPlans::ScalingPlan CustomizedLoadMetricSpecification
+    /// CustomizedLoadMetricSpecification is a subproperty of ScalingInstruction that specifies a customized load
+    /// metric for predictive scaling to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html
     /// </summary>
     public class CustomizedLoadMetricSpecification
@@ -26,10 +26,10 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// Statistic
-        /// The statistic of the metric.
-        /// For valid values, see CustomizedLoadMetricSpecification in the AWS Auto Scaling API Reference.
+        /// The statistic of the metric. Currently, the value must always be Sum.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]
@@ -38,8 +38,10 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// <summary>
         /// Dimensions
         /// The dimensions of the metric.
+        /// Conditional: If you published your metric with dimensions, you must specify the same dimensions in
+        /// your customized load metric specification.
         /// Required: No
-        /// Type: List of MetricDimension property types
+        /// Type: List of MetricDimension
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Dimensions")]

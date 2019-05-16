@@ -6,8 +6,7 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
 {
     /// <summary>
     /// AWS::ServiceCatalog::PortfolioProductAssociation
-    /// Associates the specified product with the specified portfolio for AWS Service Catalog. For more information,
-    /// see AssociateProductWithPortfolio in the AWS Service Catalog Developer Guide.
+    /// Associates the specified product with the specified portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html
     /// </summary>
     public class PortfolioProductAssociationResource : ResourceBase
@@ -19,6 +18,9 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// The identifier of the source portfolio.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SourcePortfolioId { get; set; }
@@ -26,8 +28,10 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
@@ -37,6 +41,9 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// The portfolio identifier.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
@@ -46,6 +53,9 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// The product identifier.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ProductId { get; set; }

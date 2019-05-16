@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    /// Elastic Load Balancing V2 RedirectConfig
-    /// The RedirectConfig property type specifies information about a redirect action.
+    /// AWS::ElasticLoadBalancingV2::ListenerRule RedirectConfig
+    /// Information about a redirect action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html
     /// </summary>
     public class RedirectConfig
@@ -16,9 +16,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// Host
         /// The hostname. This component is not percent-encoded. The hostname can contain #{host}.
-        /// Length Constraints: Minimum length of 1. Maximum length of 128.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Host")]
@@ -28,9 +29,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// Path
         /// The absolute path, starting with the leading &quot;/&quot;. This component is not percent-encoded. The path
         /// can contain #{host}, #{path}, and #{port}.
-        /// Length Constraints: Minimum length of 1. Maximum length of 128.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Path")]
@@ -50,9 +52,9 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// Protocol
         /// The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to
         /// HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.
-        /// Pattern: ^(HTTPS?|#\{protocol\})$
         /// Required: No
         /// Type: String
+        /// Pattern: ^(HTTPS?|#\{protocol\})$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Protocol")]
@@ -62,9 +64,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// Query
         /// The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the
         /// leading &quot;?&quot;, as it is automatically added. You can specify any of the reserved keywords.
-        /// Length Constraints: Minimum length of 0. Maximum length of 128.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Query")]
@@ -73,9 +76,9 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// StatusCode
         /// The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).
-        /// Valid Values: HTTP_301 | HTTP_302
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: HTTP_301 | HTTP_302
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatusCode")]

@@ -6,8 +6,7 @@ namespace Comformation.ApiGateway.DomainName
 {
     /// <summary>
     /// AWS::ApiGateway::DomainName
-    /// The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in Amazon API Gateway
-    /// (API Gateway).
+    /// The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in API Gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html
     /// </summary>
     public class DomainNameResource : ResourceBase
@@ -28,7 +27,7 @@ namespace Comformation.ApiGateway.DomainName
 
             /// <summary>
             /// DomainName
-            /// The custom domain name for your API in Amazon API Gateway. Uppercase letters are not supported.
+            /// The custom domain name for your API. Uppercase letters are not supported.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

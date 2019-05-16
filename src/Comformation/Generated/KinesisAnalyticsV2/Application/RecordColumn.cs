@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics Application RecordColumn
-    /// The RecordColumn property type specifies the mapping of each data element in the streaming source to the
-    /// corresponding column in the in-application stream for a Amazon Kinesis Data Analytics application.
+    /// AWS::KinesisAnalyticsV2::Application RecordColumn
+    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the
+    /// streaming source to the corresponding column in the in-application stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html
     /// </summary>
     public class RecordColumn
@@ -16,7 +16,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// Mapping
-        /// A reference to the data element in the streaming input.
+        /// A reference to the data element in the streaming input or the reference data source.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,9 +26,10 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// SqlType
-        /// The type of column created in the in-application input stream.
+        /// The type of column created in the in-application input stream or reference table.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SqlType")]
@@ -36,7 +37,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// Name
-        /// The name of the column that is created in the in-application input stream.
+        /// The name of the column that is created in the in-application input stream or reference table.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

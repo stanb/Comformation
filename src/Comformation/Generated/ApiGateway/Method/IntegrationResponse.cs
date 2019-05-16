@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApiGateway.Method
 {
     /// <summary>
-    /// Amazon API Gateway Method Integration IntegrationResponse
+    /// AWS::ApiGateway::Method IntegrationResponse
     /// IntegrationResponse is a property of the Amazon API Gateway Method Integration property type that specifies
-    /// the response that Amazon API Gateway (API Gateway) sends after a method&#39;s backend finishes processing a
-    /// request.
+    /// the response that API Gateway sends after a method&#39;s backend finishes processing a request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html
     /// </summary>
     public class IntegrationResponse
@@ -38,10 +37,11 @@ namespace Comformation.ApiGateway.Method
         /// must be an existing method request parameter or a static value. You must enclose static values in
         /// single quotation marks and pre-encode these values based on the destination specified in the
         /// request.
-        /// For more information, see API Gateway API Request and Response Parameter-Mapping Reference in the
-        /// API Gateway Developer Guide.
+        /// For more information about templates, see API Gateway Mapping Template and Access Logging Variable
+        /// Reference in the API Gateway Developer Guide.
         /// Required: No
-        /// Type: Mapping of key-value pairs
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResponseParameters")]
         public Dictionary<string, Union<string, IntrinsicFunction>> ResponseParameters { get; set; }
@@ -50,10 +50,11 @@ namespace Comformation.ApiGateway.Method
         /// ResponseTemplates
         /// The templates that are used to transform the integration response body. Specify templates as
         /// key-value pairs (string-to-string mappings), with a content type as the key and a template as the
-        /// value. For more information, see API Gateway API Request and Response Payload-Mapping Template
-        /// Reference in the API Gateway Developer Guide.
+        /// value. For more information, see API Gateway Mapping Template and Access Logging Variable Reference
+        /// in the API Gateway Developer Guide.
         /// Required: No
-        /// Type: Mapping of key-value pairs
+        /// Type: Map of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResponseTemplates")]
         public Dictionary<string, Union<string, IntrinsicFunction>> ResponseTemplates { get; set; }
@@ -64,6 +65,7 @@ namespace Comformation.ApiGateway.Method
         /// integration response.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SelectionPattern")]
         public Union<string, IntrinsicFunction> SelectionPattern { get; set; }
@@ -74,6 +76,7 @@ namespace Comformation.ApiGateway.Method
         /// code.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatusCode")]
         public Union<string, IntrinsicFunction> StatusCode { get; set; }

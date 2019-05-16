@@ -6,21 +6,20 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DynamoDB.Table
 {
     /// <summary>
-    /// Amazon DynamoDB Table TimeToLiveSpecification
-    /// The TimeToLiveSpecification property specifies the Time to Live (TTL) settings for an AWS::DynamoDB::Table
-    /// resource. It is expressed as an attribute on the items in the table. For more information, see
-    /// UpdateTimeToLive in the Amazon DynamoDB API Reference.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-timetolivespecification.html
+    /// AWS::DynamoDB::Table TimeToLiveSpecification
+    /// Represents the settings used to enable or disable Time to Live for the specified table.
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html
     /// </summary>
     public class TimeToLiveSpecification
     {
 
         /// <summary>
         /// AttributeName
-        /// The name of the TTL attribute that stores the expiration time for items in the table. The name can
-        /// be 1–255 characters long, and has no character restrictions.
+        /// The name of the Time to Live attribute used to store the expiration time for items in the table.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeName")]
@@ -28,7 +27,7 @@ namespace Comformation.DynamoDB.Table
 
         /// <summary>
         /// Enabled
-        /// Indicates whether to enable (by specifying true) or disable (by specifying false) TTL on the table.
+        /// Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption

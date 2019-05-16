@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
-    /// CodeDeploy DeploymentGroup Alarm
-    /// The Alarm property type specifies a CloudWatch alarm to use for an CodeDeploy deployment group. The Alarm
+    /// AWS::CodeDeploy::DeploymentGroup Alarm
+    /// The Alarm property type specifies a CloudWatch alarm to use for an AWS CodeDeploy deployment group. The Alarm
     /// property of the CodeDeploy DeploymentGroup AlarmConfiguration property contains a list of Alarm property
     /// types.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html
@@ -17,7 +17,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// Name
-        /// The name of the alarm. For more information, see Alarm in the AWS CodeDeploy API Reference.
+        /// The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a
+        /// list of alarms.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

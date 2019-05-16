@@ -6,8 +6,9 @@ namespace Comformation.ServiceCatalog.PortfolioShare
 {
     /// <summary>
     /// AWS::ServiceCatalog::PortfolioShare
-    /// Shares the specified portfolio for AWS Service Catalog with the specified account. For more information, see
-    /// CreatePortfolioShare in the AWS Service Catalog Developer Guide.
+    /// Shares the specified portfolio with the specified account or organization node. Shares to an organization node
+    /// can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order
+    /// to create a portfolio share to an organization node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html
     /// </summary>
     public class PortfolioShareResource : ResourceBase
@@ -16,9 +17,10 @@ namespace Comformation.ServiceCatalog.PortfolioShare
         {
             /// <summary>
             /// AccountId
-            /// The AWS account ID.
+            /// The AWS account ID. For example, 123456789012.
             /// Required: Yes
             /// Type: String
+            /// Pattern: ^[0-9]{12}$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AccountId { get; set; }
@@ -26,8 +28,10 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// <summary>
             /// AcceptLanguage
             /// The language code.
+            /// en - English (default) jp - Japanese zh - Chinese
             /// Required: No
             /// Type: String
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
@@ -37,6 +41,9 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// The portfolio identifier.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> PortfolioId { get; set; }

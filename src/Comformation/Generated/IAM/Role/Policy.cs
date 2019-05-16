@@ -6,10 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IAM.Role
 {
     /// <summary>
-    /// IAM Policies
-    /// Policies is a property of the AWS::IAM::Role, AWS::IAM::Group, and AWS::IAM::User resources. The Policies
-    /// property describes what actions are allowed on what resources. For more information about IAM policies, see
-    /// Overview of Policies and AWS IAM Policy Reference in the IAM User Guide.
+    /// AWS::IAM::Role Policy
+    /// Contains information about an attached policy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
     /// </summary>
     public class Policy
@@ -17,9 +15,12 @@ namespace Comformation.IAM.Role
 
         /// <summary>
         /// PolicyDocument
-        /// A policy document that describes what actions are allowed on which resources.
+        /// The policy document.
         /// Required: Yes
-        /// Type: JSON object
+        /// Type: Json
+        /// Minimum: 1
+        /// Maximum: 131072
+        /// Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PolicyDocument")]
@@ -27,9 +28,12 @@ namespace Comformation.IAM.Role
 
         /// <summary>
         /// PolicyName
-        /// The name of the policy.
+        /// The friendly name (not ARN) identifying the policy.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: [\w+=,. @-]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PolicyName")]

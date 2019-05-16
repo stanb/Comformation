@@ -6,11 +6,10 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudTrail.Trail
 {
     /// <summary>
-    /// AWS CloudTrail Trail DataResource
-    /// The DataResource property type specifies Amazon S3 objects for event selectors in a CloudTrail trail. Data
-    /// events are object-level API operations that access Amazon S3 objects, such as GetObject, DeleteObject, and
-    /// PutObject. You can specify up to 250 Amazon S3 buckets and object prefixes for a trail. For more information,
-    /// see DataResource in the AWS CloudTrail API Reference.
+    /// AWS::CloudTrail::Trail DataResource
+    /// The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log
+    /// data events. Data events provide insight into the resource operations performed on or within a resource
+    /// itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html
     /// </summary>
     public class DataResource
@@ -18,8 +17,8 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// Type
-        /// The resource type to log data events for. You can specify the following values: AWS::S3::Object or
-        /// AWS::Lambda::Function.
+        /// The resource type in which you want to log data events. You can specify AWS::S3::Object or
+        /// AWS::Lambda::Function resources.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -29,17 +28,24 @@ namespace Comformation.CloudTrail.Trail
 
         /// <summary>
         /// Values
-        /// A list of ARN-like strings for the specified Amazon S3 objects.
-        /// To log data events for all objects in all Amazon S3 buckets in your AWS account, specify the prefix
-        /// as arn:aws:s3:::.
-        /// To log data events for all objects in an Amazon S3 bucket, specify the bucket and an empty object
-        /// prefix such as arn:aws:s3:::bucket-1/. The trail logs data events for all objects in this Amazon S3
-        /// bucket.
-        /// To log data events for specific objects, specify the Amazon S3 bucket and object prefix such as
-        /// arn:aws:s3:::bucket-1/example-images. The trail logs data events for objects in the bucket that
-        /// match the prefix.
+        /// An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.
+        /// To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+        /// arn:aws:s3:::. Note This will also enable logging of data event activity performed by any user or
+        /// role in your AWS account, even if that activity is performed on a bucket that belongs to another AWS
+        /// account. To log data events for all objects in an S3 bucket, specify the bucket and an empty object
+        /// prefix such as arn:aws:s3:::bucket-1/. The trail logs data events for all objects in this S3 bucket.
+        /// To log data events for specific objects, specify the S3 bucket and object prefix such as
+        /// arn:aws:s3:::bucket-1/example-images. The trail logs data events for objects in this S3 bucket that
+        /// match the prefix. To log data events for all functions in your AWS account, specify the prefix as
+        /// arn:aws:lambda. Note This will also enable logging of Invoke activity performed by any user or role
+        /// in your AWS account, even if that activity is performed on a function that belongs to another AWS
+        /// account. To log data events for a specific Lambda function, specify the function ARN. Note Lambda
+        /// function ARNs are exact. For example, if you specify a function ARN
+        /// arn:aws:lambda:us-west-2:111111111111:function:helloworld, data events will only be logged for
+        /// arn:aws:lambda:us-west-2:111111111111:function:helloworld. They will not be logged for
+        /// arn:aws:lambda:us-west-2:111111111111:function:helloworld2.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Values")]

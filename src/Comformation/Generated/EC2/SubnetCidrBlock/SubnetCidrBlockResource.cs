@@ -6,7 +6,7 @@ namespace Comformation.EC2.SubnetCidrBlock
 {
     /// <summary>
     /// AWS::EC2::SubnetCidrBlock
-    /// The AWS::EC2::SubnetCidrBlock resource associates a single IPv6 CIDR block with an Amazon VPC subnet.
+    /// Associates a single IPv6 CIDR block with a VPC subnet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html
     /// </summary>
     public class SubnetCidrBlockResource : ResourceBase
@@ -15,7 +15,8 @@ namespace Comformation.EC2.SubnetCidrBlock
         {
             /// <summary>
             /// Ipv6CidrBlock
-            /// The IPv6 CIDR block for the subnet. The CIDR block must have a prefix length of /64.
+            /// The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix
+            /// length.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -24,7 +25,8 @@ namespace Comformation.EC2.SubnetCidrBlock
 
             /// <summary>
             /// SubnetId
-            /// The ID of the subnet to associate the IPv6 CIDR block with.
+            /// 	
+            /// The ID of the subnet.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket InventoryConfiguration
-    /// The InventoryConfiguration property type specifies the inventory configuration for an Amazon S3 bucket.
+    /// AWS::S3::Bucket InventoryConfiguration
+    /// Specifies the inventory configuration for an Amazon S3 bucket. For more information, see GET Bucket inventory
+    /// in the Amazon Simple Storage Service API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html
     /// </summary>
     public class InventoryConfiguration
@@ -15,7 +16,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Destination
-        /// Information about where to publish the inventory results.
+        /// Contains information about where to publish the inventory results.
         /// Required: Yes
         /// Type: Destination
         /// Update requires: No interruption
@@ -36,7 +37,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Id
-        /// The ID that identifies the inventory configuration.
+        /// The ID used to identify the inventory configuration.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -47,10 +48,11 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// IncludedObjectVersions
         /// Object versions to include in the inventory list. If set to All, the list includes all the object
-        /// versions, which adds the version related fields VersionId, IsLatest, and DeleteMarker to the list.
-        /// If set to Current, the list does not contain these version related fields.
+        /// versions, which adds the version-related fields VersionId, IsLatest, and DeleteMarker to the list.
+        /// If set to Current, the list does not contain these version-related fields.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: All | Current
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludedObjectVersions")]
@@ -58,9 +60,9 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// OptionalFields
-        /// The optional fields that are included in the inventory results.
+        /// Contains the optional fields that are included in the inventory results.
         /// Required: No
-        /// Type: StringList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OptionalFields")]
@@ -78,7 +80,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ScheduleFrequency
-        /// The frequency of inventory results generation.
+        /// Specifies the schedule for generating inventory results.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

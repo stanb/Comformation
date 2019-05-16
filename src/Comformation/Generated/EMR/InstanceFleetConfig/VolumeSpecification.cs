@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
-    /// Amazon EMR InstanceFleetConfig VolumeSpecification
-    /// Use the VolumeSpecification property to specify settings—such as volume type, IOPS, and size (GiB)—for the
-    /// Amazon EBS volume attached to an EC2 instance in the fleet. VolumeSpecification is a subproperty of the Amazon
-    /// EMR InstanceFleetConfig EbsBlockDeviceConfig property.
+    /// AWS::EMR::InstanceFleetConfig VolumeSpecification
+    /// VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines
+    /// the volume type, IOPS, and size (GiB) for EBS volumes attached to EC2 instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html
     /// </summary>
     public class VolumeSpecification
@@ -27,8 +26,8 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// SizeInGB
-        /// The volume size, in gibibytes (GiB). For valid values, see VolumeSpecification in the Amazon EMR API
-        /// Reference.
+        /// The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is
+        /// EBS-optimized, the minimum value is 10.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: Replacement
@@ -38,7 +37,7 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// VolumeType
-        /// The volume type. For valid values, see VolumeSpecification in the Amazon EMR API Reference.
+        /// The volume type. Volume types supported are gp2, io1, standard.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

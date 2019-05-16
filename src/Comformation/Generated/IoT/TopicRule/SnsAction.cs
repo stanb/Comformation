@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoT.TopicRule
 {
     /// <summary>
-    /// AWS IoT TopicRule SnsAction
-    /// Sns is a property of the Actions property that describes an action that publishes data to an SNS topic.
+    /// AWS::IoT::TopicRule SnsAction
+    /// Describes an action to publish to an Amazon SNS topic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html
     /// </summary>
     public class SnsAction
@@ -15,30 +15,33 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// MessageFormat
-        /// The format of the published message. Amazon SNS uses this setting to determine whether it should
-        /// parse the payload and extract the platform-specific bits from the payload.
-        /// For more information, see Appendix: Message and JSON Formats in the Amazon Simple Notification
-        /// Service Developer Guide.
+        /// (Optional) The message format of the message to publish. Accepted values are &quot;JSON&quot; and &quot;RAW&quot;. The
+        /// default value of the attribute is &quot;RAW&quot;. SNS uses this setting to determine if the payload should be
+        /// parsed and relevant platform-specific bits of the payload should be extracted. For more information,
+        /// see Amazon SNS Message and JSON Formats in the Amazon Simple Notification Service Developer Guide.
         /// Required: No
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MessageFormat")]
         public Union<string, IntrinsicFunction> MessageFormat { get; set; }
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the IAM role that grants access to Amazon SNS.
+        /// The ARN of the IAM role that grants access.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         /// <summary>
         /// TargetArn
-        /// The ARN of the Amazon SNS topic.
+        /// The ARN of the SNS topic.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetArn")]
         public Union<string, IntrinsicFunction> TargetArn { get; set; }

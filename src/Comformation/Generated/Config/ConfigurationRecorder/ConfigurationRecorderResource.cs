@@ -22,9 +22,13 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Name Type.
             /// Note After you create a configuration recorder, you cannot rename it. If you don&#39;t want a name that
             /// AWS CloudFormation generates, specify a value for this property.
+            /// Updates are not supported.
+            /// 	
             /// Required: No
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -32,8 +36,9 @@ namespace Comformation.Config.ConfigurationRecorder
             /// RecordingGroup
             /// Indicates whether to record configurations for all supported resources or for a list of resource
             /// types. The resource types that you list must be supported by AWS Config.
+            /// 	
             /// Required: No
-            /// Type: AWS Config ConfigurationRecorder RecordingGroup
+            /// Type: RecordingGroup
             /// Update requires: No interruption
             /// </summary>
 			public RecordingGroup RecordingGroup { get; set; }
@@ -44,6 +49,7 @@ namespace Comformation.Config.ConfigurationRecorder
             /// make read or write requests to the delivery channel that you specify and to get configuration
             /// details for supported AWS resources. For more information, see Permissions for the IAM Role Assigned
             /// to AWS Config in the AWS Config Developer Guide.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

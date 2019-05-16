@@ -6,8 +6,8 @@ namespace Comformation.EC2.TransitGatewayRouteTableAssociation
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRouteTableAssociation
-    /// Associate an attachment with a transit gateway route table. For more information, see Amazon VPC Transit
-    /// Gateways.
+    /// Associates the specified attachment with the specified transit gateway route table. You can associate only one
+    /// route table with an attachment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html
     /// </summary>
     public class TransitGatewayRouteTableAssociationResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.EC2.TransitGatewayRouteTableAssociation
         {
             /// <summary>
             /// TransitGatewayRouteTableId
-            /// The ID of the transit gateway route table.
+            /// The ID of the route table for the transit gateway.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

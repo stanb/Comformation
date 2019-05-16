@@ -6,10 +6,9 @@ namespace Comformation.Logs.MetricFilter
 {
     /// <summary>
     /// AWS::Logs::MetricFilter
-    /// The AWS::Logs::MetricFilter resource creates a metric filter that describes how Amazon CloudWatch Logs
-    /// extracts information from logs that you specify and transforms it into Amazon CloudWatch metrics. If you have
-    /// multiple metric filters that are associated with a log group, all the filters are applied to the log streams
-    /// in that group.
+    /// The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts
+    /// information from logs and transforms it into Amazon CloudWatch metrics. If you have multiple metric filters
+    /// that are associated with a log group, all the filters are applied to the log streams in that group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html
     /// </summary>
     public class MetricFilterResource : ResourceBase
@@ -18,12 +17,7 @@ namespace Comformation.Logs.MetricFilter
         {
             /// <summary>
             /// FilterPattern
-            /// Describes the pattern that CloudWatch Logs follows to interpret each entry in a log. A log entry
-            /// might contain fields such as timestamps, IP addresses, error codes, bytes transferred, and so on.
-            /// You use the pattern to specify those fields and to specify what to look for in the log file. For
-            /// example, if you&#39;re interested in error codes that begin with 1234, your filter pattern might be
-            /// [timestamps, ip_addresses, error_codes = 1234*, size, . . . ]. For more information, see Filter and
-            /// Pattern Syntax in the Amazon CloudWatch User Guide.
+            /// A filter pattern for extracting metric data out of ingested log events.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -35,17 +29,19 @@ namespace Comformation.Logs.MetricFilter
             /// The name of an existing log group that you want to associate with this metric filter.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
+            /// Pattern: [\. \-_/#A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// MetricTransformations
-            /// Describes how to transform data from a log into a CloudWatch metric.
+            /// The metric transformations.
             /// Required: Yes
-            /// Type: A list of CloudWatch Logs MetricFilter MetricTransformation Property
-            /// Important Currently, you can specify only one metric transformation for each metric filter. If you
-            /// want to specify multiple metric transformations, you must specify multiple metric filters.
+            /// Type: List of MetricTransformation
+            /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
 			public List<MetricTransformation> MetricTransformations { get; set; }

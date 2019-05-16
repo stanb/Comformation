@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Table
 {
     /// <summary>
-    /// AWS Glue Table Column
-    /// The Column property type specifies a column for an AWS Glue table.
+    /// AWS::Glue::Table Column
+    /// A column in a Table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html
     /// </summary>
     public class Column
@@ -15,8 +15,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Comment
-        /// A free-form text comment. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// A free-form text comment.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,8 +25,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Type
-        /// The data type of the column data. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The data type of the Column.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -37,8 +35,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Name
-        /// The name of the column. It must match the single-line string pattern:
-        /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*
+        /// The name of the Column.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

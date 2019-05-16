@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.AppMesh.VirtualRouter
 {
     /// <summary>
-    /// AWS AppMesh VirtualRouter VirtualRouterSpec
+    /// AWS::AppMesh::VirtualRouter VirtualRouterSpec
     /// An object representing the specification of a virtual router.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
     /// </summary>

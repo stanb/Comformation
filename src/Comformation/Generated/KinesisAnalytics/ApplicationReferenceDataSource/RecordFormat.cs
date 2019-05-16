@@ -6,9 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
-    /// Amazon Kinesis Data Analytics ApplicationReferenceDataSource RecordFormat
-    /// The RecordFormat property type specifies the record format and relevant mapping information that should be
-    /// applied to schematize the records on the stream.
+    /// AWS::KinesisAnalytics::ApplicationReferenceDataSource RecordFormat
+    /// Describes the record format and relevant mapping information that should be applied to schematize the records
+    /// on the stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-recordformat.html
     /// </summary>
     public class RecordFormat
@@ -28,9 +28,10 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 
         /// <summary>
         /// RecordFormatType
-        /// The type of record format (CSV or JSON).
+        /// The type of record format.
         /// Required: Yes
-        /// Type: String;
+        /// Type: String
+        /// Allowed Values: CSV | JSON
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormatType")]

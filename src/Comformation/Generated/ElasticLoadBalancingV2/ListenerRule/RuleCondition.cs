@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    /// Elastic Load Balancing V2 Conditions
-    /// Conditions is a property of the AWS::ElasticLoadBalancingV2::ListenerRule resource that specifies the
-    /// conditions when an Elastic Load Balancing listener rule takes effect.
+    /// AWS::ElasticLoadBalancingV2::ListenerRule RuleCondition
+    /// Specifies a condition for a listener rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html
     /// </summary>
     public class RuleCondition
@@ -16,30 +15,33 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 
         /// <summary>
         /// Field
-        /// The name of the condition that you want to define, such as path-pattern (which forwards requests
-        /// based on the URL of the request).
-        /// Valid values: host-header | path-pattern
-        /// Length constraints: Maximum length of 64
+        /// The field in the HTTP request. The following are the possible values:
+        /// http-header http-request-method host-header path-pattern query-string source-ip
         /// Required: No
         /// Type: String
+        /// Maximum: 64
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Field")]
         public Union<string, IntrinsicFunction> Field { get; set; }
 
         /// <summary>
         /// Values
-        /// The value for the field that you specified in the Field property.
-        /// If you specified host-header for Field, you can specify a single host name (for example, my.
-        /// example. com). A host name is case insensitive, can be up to 128 characters in length, and can
-        /// contain any of the following characters. You can include up to three wildcard characters.
+        /// The condition value. You can use Values if the rule contains only host-header and path-pattern
+        /// conditions. Otherwise, you can use HostHeaderConfig for host-header conditions and PathPatternConfig
+        /// for path-pattern conditions.
+        /// If Field is host-header, you can specify a single host name (for example, my. example. com). A host
+        /// name is case insensitive, can be up to 128 characters in length, and can contain any of the
+        /// following characters.
         /// A-Z, a-z, 0-9 - . * (matches 0 or more characters) ? (matches exactly 1 character)
-        /// If you specified path-pattern for Field, you can specify a single path pattern (for example,
-        /// /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain
-        /// any of the following characters. You can include up to three wildcard characters.
+        /// If Field is path-pattern, you can specify a single path pattern (for example, /img/*). A path
+        /// pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the
+        /// following characters.
         /// A-Z, a-z, 0-9 _ - . $ / ~ &quot; &#39; @ : + &amp;amp; (using &amp;amp;amp;) * (matches 0 or more characters) ?
         /// (matches exactly 1 character)
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Values")]
         public List<Union<string, IntrinsicFunction>> Values { get; set; }

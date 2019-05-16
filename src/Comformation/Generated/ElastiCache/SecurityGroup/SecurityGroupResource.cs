@@ -7,7 +7,7 @@ namespace Comformation.ElastiCache.SecurityGroup
     /// <summary>
     /// AWS::ElastiCache::SecurityGroup
     /// The AWS::ElastiCache::SecurityGroup resource creates a cache security group. For more information about cache
-    /// security groups, go to Cache Security Groups in the Amazon ElastiCache User Guide or go to
+    /// security groups, go to CacheSecurityGroups in the Amazon ElastiCache User Guide or go to
     /// CreateCacheSecurityGroup in the Amazon ElastiCache API Reference Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html
     /// </summary>
@@ -18,9 +18,9 @@ namespace Comformation.ElastiCache.SecurityGroup
             /// <summary>
             /// Description
             /// A description for the cache security group.
+            /// Required: Yes
             /// Type: String
-            /// Required: No
-            /// Update requires: Updates are not supported.
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 

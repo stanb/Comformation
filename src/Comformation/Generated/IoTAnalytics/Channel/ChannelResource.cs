@@ -20,6 +20,9 @@ namespace Comformation.IoTAnalytics.Channel
             /// The name of the channel.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: ^[a-zA-Z0-9_]+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ChannelName { get; set; }
@@ -36,8 +39,10 @@ namespace Comformation.IoTAnalytics.Channel
             /// <summary>
             /// Tags
             /// Metadata which can be used to manage the channel.
+            /// For more information, see Tag.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

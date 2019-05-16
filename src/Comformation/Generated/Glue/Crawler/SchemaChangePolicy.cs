@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Glue.Crawler
 {
     /// <summary>
-    /// AWS Glue Crawler SchemaChangePolicy
-    /// The SchemaChangePolicy property type specifies update and delete behaviors for an AWS Glue crawler.
+    /// AWS::Glue::Crawler SchemaChangePolicy
+    /// A policy that specifies update and deletion behaviors for the crawler.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html
     /// </summary>
     public class SchemaChangePolicy
@@ -15,7 +15,7 @@ namespace Comformation.Glue.Crawler
 
         /// <summary>
         /// UpdateBehavior
-        /// The update behavior. Valid values are LOG or UPDATE_IN_DATABASE.
+        /// The update behavior when the crawler finds a changed schema.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.Glue.Crawler
 
         /// <summary>
         /// DeleteBehavior
-        /// The deletion behavior. Valid values are LOG, DELETE_FROM_DATABASE, or DEPRECATE_IN_DATABASE.
+        /// The deletion behavior when the crawler finds a deleted object.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

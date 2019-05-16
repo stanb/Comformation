@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.S3.Bucket
 {
     /// <summary>
-    /// Amazon S3 Bucket LambdaConfiguration
-    /// LambdaConfigurations is a property of the NotificationConfiguration property that describes the AWS Lambda
-    /// (Lambda) functions to invoke and the events for which to invoke them.
+    /// AWS::S3::Bucket LambdaConfiguration
+    /// Describes the AWS Lambda functions to invoke and the events for which to invoke them.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html
     /// </summary>
     public class LambdaConfiguration
@@ -16,31 +15,34 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Event
-        /// The S3 bucket event for which to invoke the Lambda function. For more information, see Supported
-        /// Event Types in the Amazon Simple Storage Service Developer Guide.
+        /// The Amazon S3 bucket event for which to invoke the AWS Lambda function. For more information, see
+        /// Supported Event Types in the Amazon Simple Storage Service Developer Guide.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Event")]
         public Union<string, IntrinsicFunction> Event { get; set; }
 
         /// <summary>
         /// Filter
-        /// The filtering rules that determine which objects invoke the Lambda function. For example, you can
-        /// create a filter so that only image files with a . jpg extension invoke the function when they are
-        /// added to the S3 bucket.
+        /// The filtering rules that determine which objects invoke the AWS Lambda function. For example, you
+        /// can create a filter so that only image files with a . jpg extension invoke the function when they
+        /// are added to the Amazon S3 bucket.
         /// Required: No
         /// Type: NotificationFilter
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Filter")]
         public NotificationFilter Filter { get; set; }
 
         /// <summary>
         /// Function
-        /// The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified
+        /// The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the specified
         /// event type occurs.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Function")]
         public Union<string, IntrinsicFunction> Function { get; set; }

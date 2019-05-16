@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline Lambda
-    /// The Lambda property type specifies a Lambda function to run to modify a message for an AWS IoT Analytics
-    /// pipeline.
+    /// AWS::IoTAnalytics::Pipeline Lambda
+    /// An activity that runs a Lambda function to modify the message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html
     /// </summary>
     public class Lambda
@@ -16,9 +15,13 @@ namespace Comformation.IoTAnalytics.Pipeline
 
         /// <summary>
         /// BatchSize
-        /// The number of messages that should be passed to the Lambda function for processing within 5 minutes.
+        /// The number of messages passed to the Lambda function for processing.
+        /// The AWS Lambda function must be able to process all of these messages within five minutes, which is
+        /// the maximum timeout duration for Lambda functions.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 1000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BatchSize")]
@@ -29,6 +32,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -39,6 +44,9 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the Lambda function that is run on the message.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 64
+        /// Pattern: ^[a-zA-Z0-9_-]+$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LambdaName")]
@@ -49,6 +57,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;lambda&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

@@ -6,8 +6,8 @@ namespace Comformation.GuardDuty.IPSet
 {
     /// <summary>
     /// AWS::GuardDuty::IPSet
-    /// The AWS::GuardDuty::IPSet resource creates an Amazon GuardDuty IP set. An IP set is a list of trusted IP
-    /// addresses that have been whitelisted for secure communication with your AWS environment.
+    /// The AWS::GuardDuty::IPSet resource specifies a new IPSet. An IPSet is a list of trusted IP addresses from
+    /// which secure communication is allowed with AWS infrastructure and applications.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html
     /// </summary>
     public class IPSetResource : ResourceBase
@@ -16,7 +16,7 @@ namespace Comformation.GuardDuty.IPSet
         {
             /// <summary>
             /// Format
-            /// The format of the file that contains the IP set. Valid values are TXT, STIX, and OTX_CSV.
+            /// The format of the file that contains the IPSet.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +25,7 @@ namespace Comformation.GuardDuty.IPSet
 
             /// <summary>
             /// Activate
-            /// A Boolean value that indicates whether GuardDuty is to start using the uploaded IP set.
+            /// Indicated whether or not GuardDuty uses the IPSet.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.GuardDuty.IPSet
 
             /// <summary>
             /// DetectorId
-            /// The detector ID that specifies the GuardDuty service for which an IP set is to be created.
+            /// The unique ID of the detector for the GuardDuty service to associate the IPSet with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -43,8 +43,8 @@ namespace Comformation.GuardDuty.IPSet
 
             /// <summary>
             /// Name
-            /// The friendly name to identify the IP set. This name is displayed in all findings that are triggered
-            /// by activity that involves IP addresses included in this IP set.
+            /// The name for the IPSet. This name is displayed in all findings that are triggered by activity
+            /// associated with the IP addresses included in this IPSet.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -53,7 +53,7 @@ namespace Comformation.GuardDuty.IPSet
 
             /// <summary>
             /// Location
-            /// The URI of the file that contains the IP set.
+            /// The URI of the file that contains the IPSet.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

@@ -16,7 +16,7 @@ namespace Comformation.IoT.PolicyPrincipalAttachment
         {
             /// <summary>
             /// PolicyName
-            /// The name of the policy.
+            /// The name of the AWS IoT policy.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

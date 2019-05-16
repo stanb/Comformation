@@ -6,8 +6,8 @@ namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
     /// AWS::IoTAnalytics::Datastore
-    /// The AWS::IoTAnalytics::Datastore resource is a repository for messages. For more information, see How to Use
-    /// AWS IoT Analytics in the AWS IoT Analytics User Guide.
+    /// AWS::IoTAnalytics::Datastore resource is a repository for messages. For more information, see How to Use AWS
+    /// IoT Analytics in the AWS IoT Analytics User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html
     /// </summary>
     public class DatastoreResource : ResourceBase
@@ -19,6 +19,9 @@ namespace Comformation.IoTAnalytics.Datastore
             /// The name of the data store.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: ^[a-zA-Z0-9_]+$
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DatastoreName { get; set; }
@@ -35,8 +38,10 @@ namespace Comformation.IoTAnalytics.Datastore
             /// <summary>
             /// Tags
             /// Metadata which can be used to manage the data store.
+            /// For more information, see Tag.
             /// Required: No
-            /// Type: List of Resource Tag property types
+            /// Type: List of Tag
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }

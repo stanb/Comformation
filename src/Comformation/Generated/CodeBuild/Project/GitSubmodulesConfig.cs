@@ -6,8 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CodeBuild.Project
 {
     /// <summary>
-    /// AWS CodeBuild Project GitSubmodulesConfig
-    /// The GitSubmodulesConfig property type specifies information about Git submodules for an AWS CodeBuild project.
+    /// AWS::CodeBuild::Project GitSubmodulesConfig
+    /// GitSubmodulesConfig is a property of the AWS CodeBuild Project Source property type that specifies information
+    /// about the Git submodules configuration for the build project.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html
     /// </summary>
     public class GitSubmodulesConfig
@@ -15,7 +16,7 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// FetchSubmodules
-        /// Set to true to fetch Git submodules for your AWS CodeBuild project.
+        /// Set to true to fetch Git submodules for your AWS CodeBuild build project.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption

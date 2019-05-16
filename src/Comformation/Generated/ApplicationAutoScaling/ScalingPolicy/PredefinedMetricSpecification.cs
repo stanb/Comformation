@@ -6,10 +6,9 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 {
     /// <summary>
-    /// Application Auto Scaling ScalingPolicy PredefinedMetricSpecification
-    /// Use the PredefinedMetricSpecification property to configure a predefined metric for a target tracking policy
-    /// to use with Application Auto Scaling. PredefinedMetricSpecification is a subproperty of the Application Auto
-    /// Scaling ScalingPolicy TargetTrackingScalingPolicyConfiguration property.
+    /// AWS::ApplicationAutoScaling::ScalingPolicy PredefinedMetricSpecification
+    /// PredefinedMetricSpecification is a subproperty of TargetTrackingScalingPolicyConfiguration that configures a
+    /// predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predefinedmetricspecification.html
     /// </summary>
     public class PredefinedMetricSpecification
@@ -17,9 +16,16 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 
         /// <summary>
         /// PredefinedMetricType
-        /// The metric type.
+        /// The metric type. The ALBRequestCountPerTarget metric type applies only to Spot fleet requests and
+        /// ECS services.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ALBRequestCountPerTarget | DynamoDBReadCapacityUtilization |
+        /// DynamoDBWriteCapacityUtilization | EC2SpotFleetRequestAverageCPUUtilization |
+        /// EC2SpotFleetRequestAverageNetworkIn | EC2SpotFleetRequestAverageNetworkOut |
+        /// ECSServiceAverageCPUUtilization | ECSServiceAverageMemoryUtilization |
+        /// RDSReaderAverageCPUUtilization | RDSReaderAverageDatabaseConnections |
+        /// SageMakerVariantInvocationsPerInstance
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredefinedMetricType")]
@@ -36,9 +42,10 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt; is the final portion of the load balancer
         /// ARN targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt; is the final portion of the target
         /// group ARN.
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
-        /// Length constraints: Minimum length of 1. Maximum length of 1023.
+        /// Minimum: 1
+        /// Maximum: 1023
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceLabel")]

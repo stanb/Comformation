@@ -7,7 +7,7 @@ namespace Comformation.CodeDeploy.DeploymentConfig
     /// <summary>
     /// AWS::CodeDeploy::DeploymentConfig
     /// The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success
-    /// conditions, and deployment failure conditions that CodeDeploy uses during a deployment. The deployment
+    /// conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment
     /// configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances
     /// that must remain available at any time during a deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html
@@ -26,21 +26,29 @@ namespace Comformation.CodeDeploy.DeploymentConfig
             /// resource, specify a new name.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
 
             /// <summary>
             /// MinimumHealthyHosts
-            /// The minimum number of healthy instances that must be available at any time during an CodeDeploy
-            /// deployment. For example, for a fleet of nine instances, if you specify a minimum of six healthy
-            /// instances, CodeDeploy deploys your application up to three instances at a time so that you always
-            /// have six healthy instances. The deployment succeeds if your application successfully deploys to six
-            /// or more instances; otherwise, the deployment fails.
+            /// The minimum number of healthy instances that should be available at any time during the deployment.
+            /// There are two parameters expected in the input: type and value.
+            /// The type parameter takes either of the following values:
+            /// HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute
+            /// value. FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a
+            /// percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the
+            /// start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instance
+            /// and rounds up fractional instances.
+            /// The value parameter takes an integer.
+            /// For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value
+            /// of 95.
             /// For more information about instance health, see CodeDeploy Instance Health in the AWS CodeDeploy
             /// User Guide.
-            /// Required: Yes
-            /// Type: CodeDeploy DeploymentConfig MinimumHealthyHosts
+            /// Required: No
+            /// Type: MinimumHealthyHosts
             /// Update requires: Replacement
             /// </summary>
 			public MinimumHealthyHosts MinimumHealthyHosts { get; set; }

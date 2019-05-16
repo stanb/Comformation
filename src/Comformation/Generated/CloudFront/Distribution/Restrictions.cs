@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    /// CloudFront Distribution Restrictions
-    /// Restrictions is a property of the CloudFront Distribution DistributionConfig property type that lets you limit
-    /// which viewers can access your content.
+    /// AWS::CloudFront::Distribution Restrictions
+    /// A complex type that identifies ways in which you want to restrict distribution of your 			content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
     /// </summary>
     public class Restrictions
@@ -16,9 +15,13 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// GeoRestriction
-        /// The countries in which viewers are able to access your content.
+        /// 		
+        /// A complex type that controls the countries in which your content is distributed. CloudFront
+        /// 			determines the location of your users using MaxMind GeoIP databases.
+        /// 	
         /// Required: Yes
-        /// Type: CloudFront Distribution GeoRestriction
+        /// Type: GeoRestriction
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GeoRestriction")]
         public GeoRestriction GeoRestriction { get; set; }

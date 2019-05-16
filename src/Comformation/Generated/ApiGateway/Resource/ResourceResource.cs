@@ -6,7 +6,7 @@ namespace Comformation.ApiGateway.Resource
 {
     /// <summary>
     /// AWS::ApiGateway::Resource
-    /// The AWS::ApiGateway::Resource resource creates a resource in an Amazon API Gateway (API Gateway) API.
+    /// The AWS::ApiGateway::Resource resource creates a resource in an API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
     /// </summary>
     public class ResourceResource : ResourceBase

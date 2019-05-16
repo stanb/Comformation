@@ -6,7 +6,8 @@ namespace Comformation.ElasticBeanstalk.Application
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::Application
-    /// Creates an Elastic Beanstalk application.
+    /// The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an
+    /// Elastic Beanstalk application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html
     /// </summary>
     public class ApplicationResource : ResourceBase
@@ -23,26 +24,29 @@ namespace Comformation.ElasticBeanstalk.Application
             /// resource, specify a new name.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// Description
-            /// An optional description of this application.
+            /// Your description of the application.
             /// Required: No
             /// Type: String
+            /// Maximum: 200
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ResourceLifecycleConfig
-            /// Defines lifecycle settings for resources that belong to the application, and the service role that
-            /// Elastic Beanstalk assumes in order to apply lifecycle settings.
+            /// Specifies an application resource lifecycle configuration to prevent your application from
+            /// accumulating too many versions.
             /// Required: No
             /// Type: ApplicationResourceLifecycleConfig
-            /// Update requires:&#160;No interruption
+            /// Update requires: No interruption
             /// </summary>
 			public ApplicationResourceLifecycleConfig ResourceLifecycleConfig { get; set; }
 

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.RoboMaker.SimulationApplication
 {
     /// <summary>
-    /// RoboMaker SimulationApplication RobotSoftwareSuite
-    /// The RobotSoftwareSuite property type specifies robot software suite for an AWS RoboMaker simulation
-    /// application.
+    /// AWS::RoboMaker::SimulationApplication RobotSoftwareSuite
+    /// Information about a robot software suite.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html
     /// </summary>
     public class RobotSoftwareSuite
@@ -16,9 +15,10 @@ namespace Comformation.RoboMaker.SimulationApplication
 
         /// <summary>
         /// Version
-        /// Robot software suite version.
+        /// The version of the robot software suite.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: Kinetic
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
@@ -26,9 +26,10 @@ namespace Comformation.RoboMaker.SimulationApplication
 
         /// <summary>
         /// Name
-        /// Robot software suite name.
+        /// The name of the robot software suite.
         /// Required: Yes
         /// Type: String
+        /// Allowed Values: ROS
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

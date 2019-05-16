@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
-    /// CloudFront Distribution OriginCustomHeader
-    /// OriginCustomHeader is a property of the Amazon CloudFront Origin property that specifies the custom headers
-    /// CloudFront includes when it forwards requests to your origin.
+    /// AWS::CloudFront::Distribution OriginCustomHeader
+    /// A complex type that contains HeaderName and HeaderValue 			elements, if any, for this distribution.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html
     /// </summary>
     public class OriginCustomHeader
@@ -16,19 +15,26 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// HeaderValue
-        /// The value for the header that you specified in the HeaderName property.
+        /// 		
+        /// The value for the header that you specified in the HeaderName 			field.
+        /// 	
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HeaderValue")]
         public Union<string, IntrinsicFunction> HeaderValue { get; set; }
 
         /// <summary>
         /// HeaderName
-        /// The name of a header that CloudFront forwards to your origin. For more information, see Forwarding
-        /// Custom Headers to Your Origin (Web Distributions Only) in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// The name of a header that you want CloudFront to forward to your origin. For more 			information,
+        /// see Forwarding Custom 				Headers to Your Origin (Web Distributions Only) in the 				Amazon
+        /// CloudFront Developer Guide.
+        /// 	
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HeaderName")]
         public Union<string, IntrinsicFunction> HeaderName { get; set; }

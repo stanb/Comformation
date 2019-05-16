@@ -17,10 +17,13 @@ namespace Comformation.AppSync.DataSource
         {
             /// <summary>
             /// Type
-            /// Mandatory resource to return data from in customer AWS account. For a complete list of values, see
-            /// CreateDataSource in the AWS AppSync API Reference for more information.
-            /// You can also specify NONE to use local resolvers. See Local Resolvers Tutorial in the AWS AppSync
-            /// Developer Guide for more information.
+            /// The type of the data source.
+            /// AMAZON_DYNAMODB: The data source is an Amazon DynamoDB table. AMAZON_ELASTICSEARCH: The data source
+            /// is an Amazon Elasticsearch Service domain. AWS_LAMBDA: The data source is an AWS Lambda function.
+            /// NONE: There is no data source. This type is used when you wish to invoke a GraphQL operation without
+            /// connecting to a data source, such as performing data transformation with resolvers or triggering a
+            /// subscription to be invoked from a mutation. HTTP: The data source is an HTTP endpoint.
+            /// RELATIONAL_DATABASE: The data source is a relational database.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -29,7 +32,7 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// Description
-            /// Friendly description for this data source.
+            /// The description of the data source.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -38,10 +41,10 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// ServiceRoleArn
-            /// The Amazon Resource Name (ARN) of the IAM role which the data source will use to connect to a
-            /// resource.
-            /// Required: Conditional. Required if Type is specified as AWS_LAMBDA, AMAZON_DYNAMODB, or
-            /// AMAZON_ELASTICSEARCH.
+            /// The AWS IAM service role ARN for the data source. The system assumes this role when accessing the
+            /// data source.
+            /// Required if Type is specified as AWS_LAMBDA, AMAZON_DYNAMODB, or AMAZON_ELASTICSEARCH.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -49,7 +52,7 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// HttpConfig
-            /// Endpoints for an HTTP DataSource.
+            /// Endpoints for an HTTP data source.
             /// Required: No
             /// Type: HttpConfig
             /// Update requires: No interruption
@@ -76,7 +79,7 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// ApiId
-            /// Unique AWS AppSync GraphQL API Identifier where this data source will be created.
+            /// Unique AWS AppSync GraphQL API identifier where this data source will be created.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

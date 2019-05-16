@@ -6,9 +6,9 @@ namespace Comformation.AppSync.GraphQLSchema
 {
     /// <summary>
     /// AWS::AppSync::GraphQLSchema
-    /// The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema which controls the data
-    /// model for your API. Schema files are text written in Schema Definition Language (SDL) format. You can find
-    /// information on schema authoring at Designing a GraphQL API.
+    /// The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data
+    /// model for your API. Schema files are text written in Schema Definition Language (SDL) format. For more
+    /// information about schema authoring, see Designing a GraphQL API in the AWS AppSync Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
     /// </summary>
     public class GraphQLSchemaResource : ResourceBase
@@ -18,6 +18,7 @@ namespace Comformation.AppSync.GraphQLSchema
             /// <summary>
             /// Definition
             /// The text representation of a GraphQL schema in SDL format.
+            /// For more information about using the Ref function, see Ref.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -26,8 +27,8 @@ namespace Comformation.AppSync.GraphQLSchema
 
             /// <summary>
             /// DefinitionS3Location
-            /// A location of a GraphQL schema file on an S3 bucket if you wish to provision with the schema living
-            /// in S3 rather than embedded in your CloudFormation template.
+            /// The location of a GraphQL schema file in an Amazon S3 bucket. Use this if you want to provision with
+            /// the schema living in Amazon S3 rather than embedding it in your CloudFormation template.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -36,7 +37,7 @@ namespace Comformation.AppSync.GraphQLSchema
 
             /// <summary>
             /// ApiId
-            /// The AWS AppSync GraphQL API identifier to which you will apply this schema.
+            /// The AWS AppSync GraphQL API identifier to which you want to apply this schema.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

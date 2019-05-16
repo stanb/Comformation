@@ -6,8 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DLM.LifecyclePolicy
 {
     /// <summary>
-    /// Amazon Data Lifecycle Manager LifecyclePolicy Schedule
-    /// The Schedule property type specifies a backup schedule for an Amazon Data Lifecycle Manager lifecycle policy.
+    /// AWS::DLM::LifecyclePolicy Schedule
+    /// Specifies a backup schedule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html
     /// </summary>
     public class Schedule
@@ -18,7 +18,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// The tags to apply to policy-created resources. These user-defined tags are in addition to the
         /// AWS-added lifecycle tags.
         /// Required: No
-        /// Type: List of Resource Tag property types
+        /// Type: List of Tag
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TagsToAdd")]
@@ -26,7 +27,7 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// CreateRule
-        /// The create rule for a policy.
+        /// The create rule.
         /// Required: No
         /// Type: CreateRule
         /// Update requires: No interruption
@@ -36,7 +37,7 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// RetainRule
-        /// The retention rule for a policy.
+        /// The retain rule.
         /// Required: No
         /// Type: RetainRule
         /// Update requires: No interruption
@@ -49,6 +50,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// The name of the schedule.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 500
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]
@@ -56,7 +59,7 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// CopyTags
-        /// Copy all user-defined tags on a source volume to snapshots of the volume created by a policy.
+        /// Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

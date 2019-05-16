@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
-    /// Elastic Load Balancing V2 FixedResponseConfig
-    /// The FixedResponseConfig property type specifies information about an action that returns a custom HTTP
-    /// response.
+    /// AWS::ElasticLoadBalancingV2::ListenerRule FixedResponseConfig
+    /// Specifies information required when returning a custom HTTP response.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html
     /// </summary>
     public class FixedResponseConfig
@@ -18,9 +17,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// ContentType
         /// The content type.
         /// Valid Values: text/plain | text/css | text/html | application/javascript | application/json
-        /// Length Constraints: Minimum length of 0. Maximum length of 32.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 32
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ContentType")]
@@ -29,9 +29,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// MessageBody
         /// The message.
-        /// Length Constraints: Minimum length of 0. Maximum length of 1024.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MessageBody")]
@@ -40,9 +41,9 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// StatusCode
         /// The HTTP response code (2XX, 4XX, or 5XX).
-        /// Pattern: ^(2|4|5)\d\d$
         /// Required: Yes
         /// Type: String
+        /// Pattern: ^(2|4|5)\d\d$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatusCode")]

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
-    /// AWS IoT Analytics Pipeline SelectAttributes
-    /// The SelectAttributes property type creates a new message using only the specified attributes from the original
-    /// message for an AWS IoT Analytics pipeline.
+    /// AWS::IoTAnalytics::Pipeline SelectAttributes
+    /// Creates a new message using only the specified attributes from the original message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html
     /// </summary>
     public class SelectAttributes
@@ -19,6 +18,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The next activity in the pipeline.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Next")]
@@ -28,7 +29,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// Attributes
         /// A list of the attributes to select from the message.
         /// Required: No
-        /// Type: List of String values
+        /// Type: List of String
+        /// Maximum: 50
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Attributes")]
@@ -39,6 +41,8 @@ namespace Comformation.IoTAnalytics.Pipeline
         /// The name of the &#39;selectAttributes&#39; activity.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

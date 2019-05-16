@@ -6,9 +6,8 @@ namespace Comformation.Route53.HealthCheck
 {
     /// <summary>
     /// AWS::Route53::HealthCheck
-    /// Use the AWS::Route53::HealthCheck resource to check the health of your resources before Amazon Route&#160;53
-    /// responds to a DNS query. For more information, see How Health Checks Work in Simple Amazon Route&#160;53
-    /// Configurations in the Amazon Route&#160;53 Developer Guide.
+    /// The AWS::Route53::HealthCheck resource is a Route 53 resource type that contains settings for 			a Route 53
+    /// health check.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html
     /// </summary>
     public class HealthCheckResource : ResourceBase
@@ -17,18 +16,23 @@ namespace Comformation.Route53.HealthCheck
         {
             /// <summary>
             /// HealthCheckConfig
-            /// An Amazon Route&#160;53 health check.
+            /// 		
+            /// A complex type that contains detailed information about one health check.
+            /// 	
             /// Required: Yes
-            /// Type: Route&#160;53 HealthCheck HealthCheckConfig
+            /// Type: HealthCheckConfig
             /// Update requires: No interruption
             /// </summary>
 			public HealthCheckConfig HealthCheckConfig { get; set; }
 
             /// <summary>
             /// HealthCheckTags
-            /// An arbitrary set of tags (key–value pairs) for this health check.
+            /// 		
+            /// The HealthCheckTags property describes key-value pairs that are associated with an
+            /// AWS::Route53::HealthCheck resource.
+            /// 	
             /// Required: No
-            /// Type: A list of Amazon Route&#160;53 HealthCheck HealthCheckTags
+            /// Type: List of HealthCheckTag
             /// Update requires: No interruption
             /// </summary>
 			public List<HealthCheckTag> HealthCheckTags { get; set; }

@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
-    /// Amazon Elastic Compute Cloud SpotFleet NetworkInterfaces PrivateIpAddresses
-    /// PrivateIpAddresses is a property of the Amazon Elastic Compute Cloud SpotFleet NetworkInterfaces property that
-    /// specifies the private IP address that you want to assign to the network interface.
+    /// AWS::EC2::SpotFleet PrivateIpAddressSpecification
+    /// Describes a secondary private IPv4 address for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces-privateipaddresses.html
     /// </summary>
     public class PrivateIpAddressSpecification
@@ -16,19 +15,21 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// Primary
-        /// Indicates whether the private IP address is the primary private IP address. You can designate only
-        /// one IP address as primary.
+        /// Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4
+        /// address can be designated as primary.
         /// Required: No
         /// Type: Boolean
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Primary")]
         public Union<bool, IntrinsicFunction> Primary { get; set; }
 
         /// <summary>
         /// PrivateIpAddress
-        /// The private IP address.
+        /// The private IPv4 addresses.
         /// Required: Yes
         /// Type: String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PrivateIpAddress")]
         public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }

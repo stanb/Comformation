@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
-    /// AWS IoT Greengrass FunctionDefinitionVersion Function
+    /// AWS::Greengrass::FunctionDefinitionVersion Function
     /// A function is a Lambda function 		that&#39;s referenced from an AWS IoT Greengrass group. The function is deployed
     /// to a Greengrass core where it runs locally. 	For more information, 	see Run Lambda Functions on the AWS IoT
     /// Greengrass Core in the AWS IoT Greengrass Developer Guide.
@@ -17,7 +17,8 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
 
         /// <summary>
         /// FunctionArn
-        /// The Amazon Resource Name (ARN) of the referenced Lambda function.
+        /// The Amazon Resource Name (ARN) of the alias (recommended) or version of the referenced Lambda
+        /// function.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

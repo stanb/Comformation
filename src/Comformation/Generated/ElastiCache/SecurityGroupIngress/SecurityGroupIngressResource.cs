@@ -18,18 +18,18 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// <summary>
             /// CacheSecurityGroupName
             /// The name of the Cache Security Group to authorize.
-            /// Type: String
             /// Required: Yes
-            /// Update requires: Updates are not supported.
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> CacheSecurityGroupName { get; set; }
 
             /// <summary>
             /// EC2SecurityGroupName
             /// Name of the EC2 Security Group to include in the authorization.
-            /// Type: String
             /// Required: Yes
-            /// Update requires: Updates are not supported.
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
@@ -37,9 +37,9 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// EC2SecurityGroupOwnerId
             /// Specifies the AWS Account ID of the owner of the EC2 security group specified in the
             /// EC2SecurityGroupName property. The AWS access key ID is not an acceptable value.
-            /// Type: String
             /// Required: No
-            /// Update requires: Updates are not supported.
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 

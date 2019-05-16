@@ -6,8 +6,7 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer
-    /// Creates an AWS OpsWorks layer. A layer defines, for example, which packages and applications are installed and
-    /// how they are configured.
+    /// Creates a layer. For more information, see How to Create a Layer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html
     /// </summary>
     public class LayerResource : ResourceBase
@@ -16,16 +15,18 @@ namespace Comformation.OpsWorks.Layer
         {
             /// <summary>
             /// Attributes
-            /// One or more user-defined key-value pairs to be added to the stack attributes bag.
+            /// One or more user-defined key-value pairs to be added to the stack attributes.
+            /// To create a cluster layer, set the EcsClusterArn attribute to the cluster&#39;s ARN.
             /// Required: No
-            /// Type: A list of key-value pairs
+            /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
 			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// AutoAssignElasticIps
-            /// Whether to automatically assign an Elastic IP address to Amazon EC2 instances in this layer.
+            /// Whether to automatically assign an Elastic IP address to the layer&#39;s instances. For more
+            /// information, see How to Edit a Layer.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -34,8 +35,8 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// AutoAssignPublicIps
-            /// For AWS OpsWorks stacks that are running in a VPC, whether to automatically assign a public IP
-            /// address to Amazon EC2 instances in this layer.
+            /// For stacks that are running in a VPC, whether to automatically assign a public IP address to the
+            /// layer&#39;s instances. For more information, see How to Edit a Layer.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -44,8 +45,8 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// CustomInstanceProfileArn
-            /// The Amazon Resource Name (ARN) of an IAM instance profile that is to be used for the Amazon EC2
-            /// instances in this layer.
+            /// The ARN of an IAM profile to be used for the layer&#39;s EC2 instances. For more information about IAM
+            /// ARNs, see Using Identifiers.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -54,35 +55,36 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// CustomJson
-            /// A custom stack configuration and deployment attributes that AWS OpsWorks installs on the layer&#39;s
-            /// instances. For more information, see the CustomJson parameter for the CreateLayer action in the AWS
-            /// OpsWorks Stacks API Reference.
+            /// A JSON-formatted string containing custom stack configuration and deployment attributes to be
+            /// installed on the layer&#39;s instances. For more information, see Using Custom JSON. This feature is
+            /// supported as of version 1. 7. 42 of the AWS CLI.
             /// Required: No
-            /// Type: JSON object
+            /// Type: Json
+            /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
 
             /// <summary>
             /// CustomRecipes
-            /// Custom event recipes for this layer.
+            /// A LayerCustomRecipes object that specifies the layer custom recipes.
             /// Required: No
-            /// Type: AWS OpsWorks Recipes Type
+            /// Type: Recipes
             /// Update requires: No interruption
             /// </summary>
 			public Recipes CustomRecipes { get; set; }
 
             /// <summary>
             /// CustomSecurityGroupIds
-            /// Custom security group IDs for this layer.
+            /// An array containing the layer custom security group IDs.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> CustomSecurityGroupIds { get; set; }
 
             /// <summary>
             /// EnableAutoHealing
-            /// Whether to automatically heal Amazon EC2 instances that have become disconnected or timed out.
+            /// Whether to disable auto healing for the layer.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -91,7 +93,12 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// InstallUpdatesOnBoot
-            /// Whether to install operating system and package updates when the instance boots.
+            /// Whether to install operating system and package updates when the instance boots. The default value
+            /// is true. To control when updates are installed, set this value to false. You must then update your
+            /// instances manually by using CreateDeployment to run the update_dependencies stack command or by
+            /// manually running yum (Amazon Linux) or apt-get (Ubuntu) on the instances.
+            /// Note To ensure that your instances have the latest security updates, we strongly recommend using the
+            /// default value of true.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -100,9 +107,10 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// LifecycleEventConfiguration
-            /// The lifecycle events for the AWS OpsWorks layer.
+            /// A LifeCycleEventConfiguration object that you can use to configure the Shutdown event to specify an
+            /// execution timeout and enable or disable Elastic Load Balancer connection draining.
             /// Required: No
-            /// Type: AWS OpsWorks Layer LifeCycleConfiguration
+            /// Type: LifecycleEventConfiguration
             /// Update requires: No interruption
             /// </summary>
 			public LifecycleEventConfiguration LifecycleEventConfiguration { get; set; }
@@ -111,14 +119,14 @@ namespace Comformation.OpsWorks.Layer
             /// LoadBasedAutoScaling
             /// The load-based scaling configuration for the AWS OpsWorks layer.
             /// Required: No
-            /// Type: AWS OpsWorks LoadBasedAutoScaling Type
+            /// Type: LoadBasedAutoScaling
             /// Update requires: No interruption
             /// </summary>
 			public LoadBasedAutoScaling LoadBasedAutoScaling { get; set; }
 
             /// <summary>
             /// Name
-            /// The AWS OpsWorks layer name.
+            /// The layer name, which is used by the console.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -127,21 +135,21 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// Packages
-            /// The packages for this layer.
+            /// An array of Package objects that describes the layer packages.
             /// Required: No
-            /// Type: List of String values
+            /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Packages { get; set; }
 
             /// <summary>
             /// Shortname
-            /// The layer short name, which is used internally by AWS OpsWorks and by Chef recipes. The short name
-            /// is also used as the name for the directory where your app files are installed.
-            /// The name can have a maximum of 200 characters, which are limited to the alphanumeric characters,
-            /// &#39;-&#39;, &#39;_&#39;, and &#39;. &#39;.
-            /// Important If you update a property that requires the layer to be replaced, you must specify a new
-            /// short name. You cannot have multiple layers with the same short name.
+            /// For custom layers only, use this parameter to specify the layer&#39;s short name, which is used
+            /// internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for
+            /// the directory where your app files are installed. It can have a maximum of 200 characters, which are
+            /// limited to the alphanumeric characters, &#39;-&#39;, &#39;_&#39;, and &#39;. &#39;.
+            /// The built-in layers&#39; short names are defined by AWS OpsWorks Stacks. For more information, see the
+            /// Layer Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -150,7 +158,7 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// StackId
-            /// The ID of the AWS OpsWorks stack that this layer will be associated with.
+            /// The layer stack ID.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -159,38 +167,41 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// Tags
-            /// Specifies an arbitrary set of tags (key–value pairs) to associate with this AWS OpsWorks layer. Use
+            /// Specifies one or more sets of tags (key–value pairs) to associate with this AWS OpsWorks layer. Use
             /// tags to manage your resources.
             /// Required: No
-            /// Type: Resource Tag
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
-            /// The layer type. A stack cannot have more than one layer of the same type, except for the custom
-            /// type. You can have any number of custom types. For more information, see CreateLayer in the AWS
-            /// OpsWorks Stacks API Reference.
-            /// Important If you update a property that requires the layer to be replaced, you must specify a new
-            /// type unless you have a custom type. You can have any number of custom types.
+            /// The layer type. A stack cannot have more than one built-in layer of the same type. It can have any
+            /// number of custom layers. Built-in layers are not available in Chef 12 stacks.
             /// Required: Yes
             /// Type: String
+            /// Allowed Values: aws-flow-ruby | custom | db-master | ecs-cluster | java-app | lb | memcached |
+            /// monitoring-master | nodejs-app | php-app | rails-app | web
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// UseEbsOptimizedInstances
+            /// Whether to use Amazon EBS-optimized instances.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
             /// </summary>
 			public Union<bool, IntrinsicFunction> UseEbsOptimizedInstances { get; set; }
 
             /// <summary>
             /// VolumeConfigurations
-            /// Describes the Amazon EBS volumes for this layer.
+            /// A VolumeConfigurations object that describes the layer&#39;s Amazon EBS volumes.
             /// Required: No
-            /// Type: A list of AWS OpsWorks VolumeConfiguration
-            /// Update requires: Some interruptions
+            /// Type: List of VolumeConfiguration
+            /// Update requires: No interruption
             /// </summary>
 			public List<VolumeConfiguration> VolumeConfigurations { get; set; }
 
