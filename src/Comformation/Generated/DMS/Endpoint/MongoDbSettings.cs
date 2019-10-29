@@ -15,7 +15,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// AuthSource
-        /// The MongoDB database name. This attribute is not used when authType=NO.
+        /// The MongoDB database name. This setting is not used when authType=NO.
         /// The default is admin.
         /// Required: No
         /// Type: String
@@ -29,7 +29,7 @@ namespace Comformation.DMS.Endpoint
         /// The authentication mechanism you use to access the MongoDB source endpoint.
         /// Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
         /// DEFAULT – For MongoDB version 2. x, use MONGODB_CR. For MongoDB version 3. x, use SCRAM_SHA_1. This
-        /// attribute is not used when authType=No.
+        /// setting is not used when authType=No.
         /// Required: No
         /// Type: String
         /// Allowed Values: default | mongodb_cr | scram_sha_1
@@ -51,7 +51,7 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// DocsToInvestigate
         /// Indicates the number of documents to preview to determine the document organization. Use this
-        /// attribute when NestingLevel is set to ONE.
+        /// setting when NestingLevel is set to ONE.
         /// Must be a positive value greater than 0. Default value is 1000.
         /// Required: No
         /// Type: String
@@ -82,7 +82,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ExtractDocId
-        /// Specifies the document ID. Use this attribute when NestingLevel is set to NONE.
+        /// Specifies the document ID. Use this setting when NestingLevel is set to NONE.
         /// Default value is false.
         /// Required: No
         /// Type: String

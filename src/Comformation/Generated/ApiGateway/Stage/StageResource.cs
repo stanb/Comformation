@@ -61,7 +61,7 @@ namespace Comformation.ApiGateway.Stage
 
             /// <summary>
             /// DeploymentId
-            /// The ID of the deployment that the stage is associated with.
+            /// The ID of the deployment that the stage is associated with. This parameter is required.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

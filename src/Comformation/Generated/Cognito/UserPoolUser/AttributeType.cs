@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPoolUser
     /// <summary>
     /// AWS::Cognito::UserPoolUser AttributeType
     /// AttributeType is a property of the AWS::Cognito::UserPoolUser resource that defines name-value pairs for a
-    /// user in an Amazon Cognito User Pool.
+    /// user in an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html
     /// </summary>
     public class AttributeType

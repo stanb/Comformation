@@ -35,7 +35,9 @@ namespace Comformation.DAX.Cluster
             /// ReplicationFactor
             /// The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster,
             /// without any read replicas. For additional fault tolerance, you can create a multiple node cluster
-            /// with one or more read replicas. To do this, set ReplicationFactor to 2 or more.
+            /// with one or more read replicas. To do this, set ReplicationFactor to a number between 3 (one primary
+            /// and two read replicas) and 10 (one primary and nine read replicas). If the AvailabilityZones
+            /// parameter is provided, its length must equal the ReplicationFactor.
             /// Note AWS recommends that you have at least two read replicas per cluster.
             /// Required: Yes
             /// Type: Integer
@@ -54,9 +56,10 @@ namespace Comformation.DAX.Cluster
 
             /// <summary>
             /// AvailabilityZones
-            /// The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the
-            /// cluster are placed in these Availability Zones. Use this parameter if you want to distribute the
-            /// nodes across multiple AZs.
+            /// The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been
+            /// created or updated. If provided, the length of this list must equal the ReplicationFactor parameter.
+            /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest
+            /// availability.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -67,10 +70,9 @@ namespace Comformation.DAX.Cluster
             /// IAMRoleARN
             /// A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this
             /// role and use the role&#39;s permissions to access DynamoDB on your behalf.
-            /// Note Updates are not supported for this property.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> IAMRoleARN { get; set; }
 
@@ -78,11 +80,10 @@ namespace Comformation.DAX.Cluster
             /// SubnetGroupName
             /// The name of the subnet group to be used for the replication group.
             /// Important DAX clusters can only run in an Amazon VPC environment. All of the subnets that you
-            /// specify in a subnet group must exist in the same VPC. Note Updates are not supported for this
-            /// property.
+            /// specify in a subnet group must exist in the same VPC.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
 
@@ -121,20 +122,18 @@ namespace Comformation.DAX.Cluster
             /// <summary>
             /// NodeType
             /// The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type. )
-            /// Note Updates are not supported for this property.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> NodeType { get; set; }
 
             /// <summary>
             /// ClusterName
             /// The name of the DAX cluster.
-            /// Note Updates are not supported for this property.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> ClusterName { get; set; }
 

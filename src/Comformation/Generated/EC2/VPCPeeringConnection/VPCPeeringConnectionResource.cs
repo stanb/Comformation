@@ -42,7 +42,8 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// PeerRoleArn
             /// The Amazon Resource Name (ARN) of the VPC peer role for the peering connection in another AWS
             /// account.
-            /// Required: No
+            /// This is required when you are peering a VPC in a different AWS account.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

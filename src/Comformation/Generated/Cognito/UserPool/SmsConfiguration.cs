@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool SmsConfiguration
     /// SmsConfiguration is a property of the AWS::Cognito::UserPool resource that defines the SMS configuration of an
-    /// Amazon Cognito User Pool.
+    /// Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html
     /// </summary>
     public class SmsConfiguration
@@ -28,7 +28,8 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// SnsCallerArn
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the
+        /// ARN of the IAM role in your AWS account which Cognito will use to send SMS messages.
         /// Required: No
         /// Type: String
         /// Minimum: 20

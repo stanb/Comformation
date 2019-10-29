@@ -43,7 +43,7 @@ namespace Comformation.Elasticsearch.Domain
         /// DedicatedMasterType
         /// The hardware configuration of the computer that hosts the dedicated master node, such as m3. medium.
         /// elasticsearch. If you specify this property, you must specify true for the DedicatedMasterEnabled
-        /// property. For valid values, see Configuring Amazon ES Domains in the Amazon Elasticsearch Service
+        /// property. For valid values, see Supported Instance Types in the Amazon Elasticsearch Service
         /// Developer Guide.
         /// Required: No
         /// Type: String
@@ -65,13 +65,23 @@ namespace Comformation.Elasticsearch.Domain
         /// <summary>
         /// InstanceType
         /// The instance type for your data nodes, such as m3. medium. elasticsearch. For valid values, see
-        /// Configuring Amazon ES Domains in the Amazon Elasticsearch Service Developer Guide.
+        /// Supported Instance Types in the Amazon Elasticsearch Service Developer Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceType")]
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
+
+        /// <summary>
+        /// ZoneAwarenessConfig
+        /// Specifies zone awareness configuration options. Only use if ZoneAwarenessEnabled is true.
+        /// Required: No
+        /// Type: ZoneAwarenessConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ZoneAwarenessConfig")]
+        public ZoneAwarenessConfig ZoneAwarenessConfig { get; set; }
 
         /// <summary>
         /// ZoneAwarenessEnabled

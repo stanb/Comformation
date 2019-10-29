@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool SchemaAttribute
     /// SchemaAttribute is a property of the AWS::Cognito::UserPool resource that defines the schema attributes of an
-    /// Amazon Cognito User Pool.
+    /// Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html
     /// </summary>
     public class SchemaAttribute

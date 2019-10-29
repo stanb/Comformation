@@ -46,7 +46,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
         /// <summary>
         /// Port
-        /// The port on which the target is listening.
+        /// The port on which the target is listening. Not used if the target is a Lambda function.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1

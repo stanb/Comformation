@@ -16,11 +16,15 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// BudgetLimit
+        /// 		
         /// The total amount of cost, usage, RI utilization, or RI coverage that you want to track with your
         /// budget.
+        /// 		
         /// BudgetLimit is required for cost or usage budgets, but optional for RI utilization or coverage
         /// budgets. RI utilization or coverage budgets default to 100, which is the only valid value for RI
-        /// utilization or coverage budgets.
+        /// utilization or coverage budgets. You can&#39;t use BudgetLimit with PlannedBudgetLimits for CreateBudget
+        /// and UpdateBudget actions.
+        /// 	
         /// Required: No
         /// Type: Spend
         /// Update requires: No interruption
@@ -66,11 +70,54 @@ namespace Comformation.Budgets.Budget
         public Union<string, IntrinsicFunction> TimeUnit { get; set; }
 
         /// <summary>
+        /// PlannedBudgetLimits
+        /// 		
+        /// A map containing multiple BudgetLimit, including current or future limits.
+        /// 		
+        /// PlannedBudgetLimits is available for cost or usage budget and supports monthly and quarterly
+        /// TimeUnit.
+        /// 		
+        /// For monthly budgets, provide 12 months of PlannedBudgetLimits values. This must start from the
+        /// current month and include the next 11 months. The key is the start of the month, UTC in epoch
+        /// seconds.
+        /// 		
+        /// For quarterly budgets, provide 4 quarters of PlannedBudgetLimits value entries in standard calendar
+        /// quarter increments. This must start from the current quarter and include the next 3 quarters. The
+        /// key is the start of the quarter, UTC in epoch seconds.
+        /// 		
+        /// If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+        /// PlannedBudgetLimits values only for the remaining periods.
+        /// 		
+        /// If the budget begins at a date in the future, provide PlannedBudgetLimits values from the start date
+        /// of the budget.
+        /// 		
+        /// After all of the BudgetLimit values in PlannedBudgetLimits are used, the budget continues to use the
+        /// last limit as the BudgetLimit. At that point, the planned budget provides the same experience as a
+        /// fixed budget.
+        /// 		
+        /// DescribeBudget and DescribeBudgets response along with PlannedBudgetLimits will also contain
+        /// BudgetLimit representing the current month or quarter limit present in PlannedBudgetLimits. This
+        /// only applies to budgets created with PlannedBudgetLimits. Budgets created without
+        /// PlannedBudgetLimits will only contain BudgetLimit, and no PlannedBudgetLimits.
+        /// 	
+        /// Required: No
+        /// Type: Json
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("PlannedBudgetLimits")]
+        public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PlannedBudgetLimits { get; set; }
+
+        /// <summary>
         /// CostFilters
-        /// The cost filters, such as service or region, that are applied to a budget.
+        /// 		
+        /// The cost filters, such as service or tag, that are applied to a budget.
+        /// 		
         /// AWS Budgets supports the following services as a filter for RI budgets:
-        /// Amazon Elastic Compute Cloud - Compute Amazon Redshift Amazon Relational Database Service Amazon
-        /// ElastiCache Amazon Elasticsearch Service
+        /// 		
+        /// 			 			 			 			 			 		 				 Amazon Elastic Compute Cloud - Compute 			 				 Amazon Redshift 			 				
+        /// Amazon Relational Database Service 			 				 Amazon ElastiCache 			 				 Amazon Elasticsearch Service
+        /// 			
+        /// 	
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -94,8 +141,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// CostTypes
+        /// 		
         /// The types of costs that are included in this COST budget.
+        /// 		
         /// USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
+        /// 	
         /// Required: No
         /// Type: CostTypes
         /// Update requires: No interruption
@@ -105,7 +155,9 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// BudgetType
-        /// Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+        /// 		
+        /// Whether this budget tracks costs, usage, RI utilization, or RI coverage.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Allowed Values: COST | RI_COVERAGE | RI_UTILIZATION | USAGE

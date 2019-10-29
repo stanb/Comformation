@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool Policies
     /// Policies is a property of the AWS::Cognito::UserPool resource that defines the password policies of an Amazon
-    /// Cognito User Pool.
+    /// Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html
     /// </summary>
     public class Policies

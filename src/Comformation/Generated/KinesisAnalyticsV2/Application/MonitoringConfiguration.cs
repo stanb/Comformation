@@ -16,7 +16,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// ConfigurationType
-        /// Describes whether to use the default CloudWatch logging configuration for an application.
+        /// Describes whether to use the default CloudWatch logging configuration for an application. You must
+        /// set this property to CUSTOM in order to set the LogLevel or MetricsLevel parameters.
         /// Required: Yes
         /// Type: String
         /// Allowed Values: CUSTOM | DEFAULT

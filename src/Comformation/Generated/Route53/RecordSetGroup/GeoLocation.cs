@@ -16,9 +16,11 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// ContinentCode
         /// 		
-        /// The two-letter code for the continent.
+        /// For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Route
+        /// 53 supports the following continent codes:
         /// 		
-        /// Valid values: AF | AN | AS | EU | OC | NA | SA
+        /// 			 			 			 			 			 			 			 		 AF: Africa AN: Antarctica AS: Asia EU: Europe OC: Oceania NA: North
+        /// America SA: South America
         /// 		
         /// Constraint: Specifying ContinentCode with either CountryCode or SubdivisionCode returns an
         /// 			InvalidInput error.
@@ -35,7 +37,9 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// CountryCode
         /// 		
-        /// The two-letter code for the country.
+        /// For geolocation resource record sets, the two-letter code for a country.
+        /// 		
+        /// Route 53 uses the two-letter country codes that are specified in 			ISO standard 3166-1 alpha-2.
         /// 	
         /// Required: No
         /// Type: String
@@ -49,7 +53,12 @@ namespace Comformation.Route53.RecordSetGroup
         /// <summary>
         /// SubdivisionCode
         /// 		
-        /// The code for the subdivision. Route 53 currently supports only states in the United States.
+        /// For geolocation resource record sets, the two-letter code for a state of the United States. 			Route
+        /// 53 doesn&#39;t support any other values for SubdivisionCode. For a list of state abbreviations, see
+        /// 			Appendix B: Two–Letter State and Possession Abbreviations 			on the United States Postal Service
+        /// website.
+        /// 		
+        /// If you specify subdivisioncode, you must also specify US for CountryCode.
         /// 	
         /// Required: No
         /// Type: String

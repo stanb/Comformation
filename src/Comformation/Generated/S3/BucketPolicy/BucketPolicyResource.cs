@@ -6,7 +6,9 @@ namespace Comformation.S3.BucketPolicy
 {
     /// <summary>
     /// AWS::S3::BucketPolicy
-    /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
+    /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity other than the root
+    /// user of the AWS account that owns the bucket, the calling identity must have the PutBucketPolicy permissions
+    /// on the specified bucket and belong to the bucket owner&#39;s account in order to use this operation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html
     /// </summary>
     public class BucketPolicyResource : ResourceBase

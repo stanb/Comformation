@@ -19,6 +19,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// Required: Yes
             /// Type: String
             /// Pattern: ^wsb-[0-9a-z]{8,63}$
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> BundleId { get; set; }
 
@@ -28,6 +29,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// Required: Yes
             /// Type: String
             /// Pattern: ^d-[0-9a-f]{8,63}$
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> DirectoryId { get; set; }
 
@@ -36,6 +38,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// Indicates whether the data stored on the root volume is encrypted.
             /// Required: No
             /// Type: Boolean
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<bool, IntrinsicFunction> RootVolumeEncryptionEnabled { get; set; }
 
@@ -65,6 +68,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// Indicates whether the data stored on the user volume is encrypted.
             /// Required: No
             /// Type: Boolean
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<bool, IntrinsicFunction> UserVolumeEncryptionEnabled { get; set; }
 
@@ -73,6 +77,7 @@ namespace Comformation.WorkSpaces.Workspace
             /// The KMS key used to encrypt data stored on your WorkSpace.
             /// Required: No
             /// Type: String
+            /// Update requires: Updates are not supported.
             /// </summary>
 			public Union<string, IntrinsicFunction> VolumeEncryptionKey { get; set; }
 

@@ -16,7 +16,7 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Scope
-        /// The name of the RuleSet that is being stopped.
+        /// The scope of the StopAction. The only acceptable value is RuleSet.
         /// Required: Yes
         /// Type: String
         /// Allowed Values: RuleSet

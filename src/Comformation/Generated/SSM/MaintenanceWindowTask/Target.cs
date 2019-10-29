@@ -9,7 +9,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
     /// AWS::SSM::MaintenanceWindowTask Target
     /// The Target property type specifies targets (either instances or window target IDs). You specify instances by
     /// using Key=InstanceIds,Values=&amp;lt;instanceid1&amp;gt;,&amp;lt;instanceid2&amp;gt;. You specify window target IDs using
-    /// Key=WindowTargetIds,Values=&amp;lt;window-target-id-1&amp;gt;,&amp;lt;window-target-id-2&amp;gt; for a Maintenance Window task
+    /// Key=WindowTargetIds,Values=&amp;lt;window-target-id-1&amp;gt;,&amp;lt;window-target-id-2&amp;gt; for a maintenance window task
     /// in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html
     /// </summary>
@@ -19,8 +19,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// <summary>
         /// Values
         /// User-defined criteria that maps to Key. For example, if you specify InstanceIds, you can specify
-        /// i-1234567890abcdef0,i-9876543210abcdef0 to execute a command on two EC2 instances. For more
-        /// information about how to target instances within a maintenance window task, see About
+        /// i-1234567890abcdef0,i-9876543210abcdef0 to run a command on two EC2 instances. For more information
+        /// about how to target instances within a maintenance window task, see About
         /// &#39;register-task-with-maintenance-window&#39; Options and Values in the AWS Systems Manager User Guide.
         /// Required: No
         /// Type: List of String
@@ -39,8 +39,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
-        /// Maximum: 128
-        /// Pattern: ^[\p{L}\p{Z}\p{N}_. :/=\-@]*$
+        /// Maximum: 163
+        /// Pattern: ^[\p{L}\p{Z}\p{N}_. :/=\-@]*$|resource-groups:ResourceTypeFilters|resource-groups:Name
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]

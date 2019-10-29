@@ -6,7 +6,7 @@ namespace Comformation.EC2.SecurityGroupIngress
 {
     /// <summary>
     /// AWS::EC2::SecurityGroupIngress
-    /// Adds the specified ingress rules to a security group.
+    /// Adds an inbound rule to a security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html
     /// </summary>
     public class SecurityGroupIngressResource : ResourceBase
@@ -59,7 +59,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// name in the request. For security groups in a nondefault VPC, you must 			specify the security group
             /// ID.
             /// You must specify the GroupName property or the GroupId property. For security groups that are in a
-            /// VPC, you must use the GroupId property. For example, EC2-VPC accounts must use the GroupId property.
+            /// VPC, you must use the GroupId property.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -95,8 +95,6 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// SourcePrefixListId
             /// [EC2-VPC only] The prefix list IDs for an AWS service. This is the AWS service that you want to
             /// access through a VPC endpoint from instances associated with the security group.
-            /// You must specify a source security group (SourcePrefixListId, SourceSecurityGroupId, or
-            /// SourceSecurityGroupName) or a CIDR range (CidrIp or CidrIpv6).
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -105,14 +103,8 @@ namespace Comformation.EC2.SecurityGroupIngress
 
             /// <summary>
             /// SourceSecurityGroupId
-            /// [nondefault VPC] The AWS account ID for the source security group, if the source security group is
-            /// in a different account. You can&#39;t specify this parameter in combination with the following
-            /// parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of
-            /// the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a
-            /// specific IP protocol and port range, use a set of IP permissions instead.
-            /// If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by
-            /// a different account than the account creating the stack, you must specify the
-            /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
+            /// The ID of the security group. You must specify either the security group ID or the security group
+            /// name. For security groups in a nondefault VPC, you must specify the security group ID.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -121,13 +113,9 @@ namespace Comformation.EC2.SecurityGroupIngress
 
             /// <summary>
             /// SourceSecurityGroupName
-            /// [EC2-Classic, default VPC] The name of the source security group. You can&#39;t specify this parameter
-            /// in combination with the following parameters: the CIDR IP address range, the start of the port
-            /// range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and
-            /// TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions
-            /// instead. For EC2-VPC, the source security group must be in the same VPC.
+            /// [EC2-Classic, default VPC] The name of the source security group.
             /// You must specify the GroupName property or the GroupId property. For security groups that are in a
-            /// VPC, you must use the GroupId property. For example, EC2-VPC accounts must use the GroupId property.
+            /// VPC, you must use the GroupId property.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -136,13 +124,14 @@ namespace Comformation.EC2.SecurityGroupIngress
 
             /// <summary>
             /// SourceSecurityGroupOwnerId
-            /// The ID of the security group. You must specify either the security group ID or the 			security group
-            /// name in the request. For security groups in a nondefault VPC, you must 			specify the security group
-            /// ID.
+            /// [nondefault VPC] The AWS account ID for the source security group, if the source security group is
+            /// in a different account. You can&#39;t specify this parameter in combination with the following
+            /// parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of
+            /// the port range. Creates rules that grant full ICMP, UDP, and TCP access.
             /// If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by
             /// a different account than the account creating the stack, you must specify the
             /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
-            /// Required: No
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

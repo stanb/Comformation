@@ -47,10 +47,10 @@ namespace Comformation.AppMesh.VirtualRouter
             /// can have a maximum character length of 128 characters, and tag values can have a maximum length of
             /// 256 characters.
             /// Required: No
-            /// Type: List of TagRef
+            /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<TagRef> Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
         }
 

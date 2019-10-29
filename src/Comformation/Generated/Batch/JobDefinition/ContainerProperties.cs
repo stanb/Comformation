@@ -52,6 +52,16 @@ namespace Comformation.Batch.JobDefinition
         public Union<bool, IntrinsicFunction> Privileged { get; set; }
 
         /// <summary>
+        /// LinuxParameters
+        /// Linux-specific modifications that are applied to the container, such as details for device mappings.
+        /// Required: No
+        /// Type: LinuxParameters
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("LinuxParameters")]
+        public LinuxParameters LinuxParameters { get; set; }
+
+        /// <summary>
         /// JobRoleArn
         /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
         /// Required: No

@@ -30,7 +30,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// JSON tar: A tar archive file. tgz: A compressed tar archive file. YAML zip: A zip archive file.
         /// Required: No
         /// Type: String
-        /// Allowed Values: JSON | YAML | tar | tgz | zip
+        /// Allowed Values: JSON | tar | tgz | YAML | zip
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BundleType")]

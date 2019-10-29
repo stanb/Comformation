@@ -26,10 +26,73 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public Union<string, IntrinsicFunction> Field { get; set; }
 
         /// <summary>
+        /// HostHeaderConfig
+        /// Information for a host header condition. Specify only when Field is host-header.
+        /// Required: No
+        /// Type: HostHeaderConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HostHeaderConfig")]
+        public HostHeaderConfig HostHeaderConfig { get; set; }
+
+        /// <summary>
+        /// HttpHeaderConfig
+        /// Information for an HTTP header condition. Specify only when Field is http-header.
+        /// Required: No
+        /// Type: HttpHeaderConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HttpHeaderConfig")]
+        public HttpHeaderConfig HttpHeaderConfig { get; set; }
+
+        /// <summary>
+        /// HttpRequestMethodConfig
+        /// Information for an HTTP method condition. Specify only when Field is http-request-method.
+        /// Required: No
+        /// Type: HttpRequestMethodConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HttpRequestMethodConfig")]
+        public HttpRequestMethodConfig HttpRequestMethodConfig { get; set; }
+
+        /// <summary>
+        /// PathPatternConfig
+        /// Information for a path pattern condition. Specify only when Field is path-pattern.
+        /// Conditional: Required if HttpHeaderConfig is used.
+        /// Required: No
+        /// Type: PathPatternConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PathPatternConfig")]
+        public PathPatternConfig PathPatternConfig { get; set; }
+
+        /// <summary>
+        /// QueryStringConfig
+        /// Information for a query string condition. Specify only when Field is query-string.
+        /// Conditional: Required if HttpHeaderConfig is used.
+        /// Required: No
+        /// Type: QueryStringConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("QueryStringConfig")]
+        public QueryStringConfig QueryStringConfig { get; set; }
+
+        /// <summary>
+        /// SourceIpConfig
+        /// Information for a source IP condition. Specify only when Field is source-ip.
+        /// Conditional: Required if HttpHeaderConfig is used.
+        /// Required: No
+        /// Type: SourceIpConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SourceIpConfig")]
+        public SourceIpConfig SourceIpConfig { get; set; }
+
+        /// <summary>
         /// Values
-        /// The condition value. You can use Values if the rule contains only host-header and path-pattern
-        /// conditions. Otherwise, you can use HostHeaderConfig for host-header conditions and PathPatternConfig
-        /// for path-pattern conditions.
+        /// The condition value.
+        /// You can only use Values if the condition type is host-header and path-pattern. You can not specify
+        /// both Values and HostHeaderConfig at the same time.
         /// If Field is host-header, you can specify a single host name (for example, my. example. com). A host
         /// name is case insensitive, can be up to 128 characters in length, and can contain any of the
         /// following characters.

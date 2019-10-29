@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode VirtualNodeSpec
-    /// An object representing the specification of a virtual node.
+    /// An object that represents the specification of a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html
     /// </summary>
     public class VirtualNodeSpec
@@ -35,8 +35,8 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// Listeners
-        /// The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
-        /// listener is supported per virtual node.
+        /// The listener that the virtual node is expected to receive inbound traffic from. You can specify one
+        /// listener.
         /// Required: No
         /// Type: List of Listener
         /// Update requires: No interruption
@@ -47,7 +47,8 @@ namespace Comformation.AppMesh.VirtualNode
         /// <summary>
         /// ServiceDiscovery
         /// The service discovery information for the virtual node. If your virtual node does not expect ingress
-        /// traffic, you can omit this parameter.
+        /// traffic, you can omit this parameter. If you specify a listener, then you must specify service
+        /// discovery information.
         /// Required: No
         /// Type: ServiceDiscovery
         /// Update requires: No interruption

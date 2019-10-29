@@ -15,7 +15,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Reason
-        /// The reason given to the user why a stage is disabled, such as waiting for manual approval or manual
+        /// The reason given to the user that a stage is disabled, such as waiting for manual approval or manual
         /// tests. This message is displayed in the pipeline console UI.
         /// Required: Yes
         /// Type: String

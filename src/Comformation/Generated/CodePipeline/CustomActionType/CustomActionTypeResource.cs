@@ -83,7 +83,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// <summary>
             /// Version
             /// The version identifier of the custom action.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Minimum: 1
             /// Maximum: 9

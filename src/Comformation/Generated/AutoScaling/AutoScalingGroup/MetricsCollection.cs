@@ -16,13 +16,10 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Granularity
-        /// The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid
-        /// value is 1Minute.
+        /// The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch.
+        /// Allowed Values: 1Minute
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Granularity")]
@@ -32,13 +29,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// Metrics
         /// The list of Auto Scaling group metrics to collect. If you specify Granularity and don&#39;t specify any
         /// metrics, all metrics are enabled.
+        /// Allowed Values:
         /// GroupMinSize GroupMaxSize GroupDesiredCapacity GroupInServiceInstances GroupPendingInstances
         /// GroupStandbyInstances GroupTerminatingInstances GroupTotalInstances
         /// Required: No
         /// Type: List of String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Metrics")]

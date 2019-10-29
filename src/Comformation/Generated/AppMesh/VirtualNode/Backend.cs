@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode Backend
-    /// An object representing the backends that a virtual node is expected to send outbound traffic to.
+    /// An object that represents the backends that a virtual node is expected to send outbound traffic to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html
     /// </summary>
     public class Backend

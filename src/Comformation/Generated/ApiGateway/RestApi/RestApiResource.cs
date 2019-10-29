@@ -28,9 +28,10 @@ namespace Comformation.ApiGateway.RestApi
             /// <summary>
             /// BinaryMediaTypes
             /// The list of binary media types that are supported by the RestApi resource, such as image/png or
-            /// application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. For more
-            /// information, see Enable Support for Binary Payloads in API Gateway in the API Gateway Developer
-            /// Guide. Duplicates are not allowed.
+            /// application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. Duplicates
+            /// are not allowed. Slashes must be escaped with ~1. For example, image/png would be image~1png in the
+            /// BinaryMediaTypes list. For more information, see Enable Support for Binary Payloads in API Gateway
+            /// in the API Gateway Developer Guide.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -127,7 +128,9 @@ namespace Comformation.ApiGateway.RestApi
 
             /// <summary>
             /// Policy
-            /// A policy document that contains the permissions for the RestApi resource, in JSON format.
+            /// A policy document that contains the permissions for the RestApi resource, in JSON format. To set the
+            /// ARN for the policy, use the !Join intrinsic function with &quot;&quot; as delimiter and values of
+            /// &quot;execute-api:/&quot; and &quot;*&quot;.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption

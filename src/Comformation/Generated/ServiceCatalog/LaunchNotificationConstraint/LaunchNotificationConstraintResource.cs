@@ -28,7 +28,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// The notification ARNs.
             /// Required: Yes
             /// Type: List of String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
 

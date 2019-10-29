@@ -16,7 +16,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// CorsRules
-        /// A set of allowed origins and methods.
+        /// A set of origins and methods (cross-origin access that you want to allow). You can add up to 100
+        /// rules to the configuration.
         /// Required: Yes
         /// Type: List of CorsRule
         /// Update requires: No interruption

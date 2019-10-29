@@ -26,7 +26,8 @@ namespace Comformation.Greengrass.ResourceDefinition
 
         /// <summary>
         /// SageMakerJobArn
-        /// The Amazon Resource Name (ARN) of the Secrets Manager training job that represents the source model.
+        /// The Amazon Resource Name (ARN) of the Amazon SageMaker training job that represents the source
+        /// model.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

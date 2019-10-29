@@ -32,7 +32,7 @@ namespace Comformation.Route53Resolver.ResolverRule
         /// 		
         /// The port at Ip that you want to forward DNS queries to.
         /// 	
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Minimum: 0
         /// Maximum: 65535

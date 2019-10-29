@@ -8,7 +8,7 @@ namespace Comformation.Events.Rule
     /// <summary>
     /// AWS::Events::Rule Target
     /// The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream,
-    /// that CloudWatch Events invokes when a rule is triggered.
+    /// that EventBridge invokes when a rule is triggered.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
     /// </summary>
     public class Target
@@ -28,7 +28,7 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// EcsParameters
-        /// Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon
+        /// Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon
         /// ECS task. For more information about Amazon ECS tasks, see Task Definitions in the Amazon EC2
         /// Container Service Developer Guide.
         /// Required: No
@@ -40,8 +40,9 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// Id
-        /// The ID of the target. It can include alphanumeric characters, periods (. ), hyphens (-), and
-        /// underscores (_).
+        /// A name for the target. Use a string that will help you identify the target. Each target associated
+        /// with a rule must have an Id unique for that rule.
+        /// The Id can include alphanumeric characters, periods (. ), hyphens (-), and underscores (_).
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -90,8 +91,8 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// KinesisParameters
-        /// The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
-        /// stream. If you do not include this parameter, the default is to use the eventId as the partition
+        /// The custom parameter that you can use to control the shard assignment when the target is a Kinesis
+        /// data stream. If you don&#39;t include this parameter, the default is to use the eventId as the partition
         /// key.
         /// Required: No
         /// Type: KinesisParameters
@@ -104,6 +105,9 @@ namespace Comformation.Events.Rule
         /// RoleArn
         /// The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
         /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.
+        /// If you&#39;re setting an event bus in another account as the target and that account granted permission
+        /// to your account through an organization instead of directly by the account ID, you must specify a
+        /// RoleArn with proper permissions here in this parameter.
         /// Required: No
         /// Type: String
         /// Minimum: 1

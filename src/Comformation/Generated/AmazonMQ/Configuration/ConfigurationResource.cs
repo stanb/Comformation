@@ -16,8 +16,7 @@ namespace Comformation.AmazonMQ.Configuration
         {
             /// <summary>
             /// EngineVersion
-            /// The version of the broker engine. For a list of supported engine versions, see https://docs. aws.
-            /// amazon. com/amazon-mq/latest/developer-guide/broker-engine. html
+            /// The version of the broker engine. For a list of supported engine versions, see Engine.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

@@ -16,17 +16,17 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         {
             /// <summary>
             /// AssociatePublicIpAddress
-            /// Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to
-            /// assign a public IP address to each instance. If you specify true, each instance in the Auto Scaling
-            /// group receives a unique public IP address.
-            /// For more information, see Launching Auto Scaling Instances in a VPC in the Amazon EC2 Auto Scaling
-            /// User Guide.
-            /// Default: If the instance is launched into a default subnet, the default is to assign a public IP
-            /// address. If the instance is launched into a nondefault subnet, the default is not to assign a public
-            /// IP address.
-            /// Note If this resource has a public IP address and is also in a VPC that is defined in the same
+            /// For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to
+            /// assign a public IP address to the group&#39;s instances. If you specify true, each instance in the Auto
+            /// Scaling group receives a unique public IP address. For more information, see Launching Auto Scaling
+            /// Instances in a VPC in the Amazon EC2 Auto Scaling User Guide.
+            /// If an instance receives a public IP address and is also in a VPC that is defined in the same stack
             /// template, you must use the DependsOn attribute to declare a dependency on the VPC-gateway
             /// attachment.
+            /// Note If the instance is launched into a default subnet, the default is to assign a public IP
+            /// address, unless you disabled the option to assign a public IP address on the subnet. If the instance
+            /// is launched into a nondefault subnet, the default is not to assign a public IP address, unless you
+            /// enabled the option to assign a public IP address on the subnet.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -194,10 +194,10 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
             /// <summary>
             /// PlacementTenancy
-            /// The tenancy of the instance, either default or dedicated. An instance with dedicated tenancy runs in
-            /// an isolated, single-tenant hardware and can only be launched into a VPC. You must set the value of
-            /// this property to dedicated if want to launch dedicated instances in a shared tenancy VPC (a VPC with
-            /// the instance placement tenancy attribute set to default).
+            /// The tenancy of the instance, either default or dedicated. An instance with dedicated tenancy runs on
+            /// isolated, single-tenant hardware and can only be launched into a VPC. You must set the value of this
+            /// property to dedicated if want to launch dedicated instances in a shared tenancy VPC (a VPC with the
+            /// instance placement tenancy attribute set to default).
             /// If you specify this property, you must specify at least one subnet in the VPCZoneIdentifier property
             /// of the AutoScalingGroup resource.
             /// For more information, see Instance Placement Tenancy in the Amazon EC2 Auto Scaling User Guide.
@@ -227,7 +227,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// <summary>
             /// SecurityGroups
             /// A list that contains the security groups to assign to the instances in the Auto Scaling group. The
-            /// list can contain the IDs of existing security groups or references to SecurityGroup resources
+            /// list can contain both the IDs of existing security groups and references to SecurityGroup resources
             /// created in the template.
             /// For more information, see Security Groups for Your VPC in the Amazon Virtual Private Cloud User
             /// Guide.
@@ -240,14 +240,12 @@ namespace Comformation.AutoScaling.LaunchConfiguration
             /// <summary>
             /// SpotPrice
             /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot
-            /// Instances are launched when the price you specify exceeds the current Spot market price. For more
+            /// Instances are launched when the price you specify exceeds the current Spot price. For more
             /// information, see Launching Spot Instances in your Auto Scaling Group in the Amazon EC2 Auto Scaling
             /// User Guide.
-            /// If a Spot price is set, then the Auto Scaling group will only launch when the Spot price has been
-            /// met, regardless of the setting in the Auto Scaling group&#39;s DesiredCapacity.
-            /// Note When you change your Spot price by creating a new launch configuration, running instances will
-            /// continue to run as long as the Spot price for those running instances is higher than the current
-            /// Spot market price.
+            /// Note When you change your maximum price by creating a new launch configuration, running instances
+            /// will continue to run as long as the maximum price for those running instances is higher than the
+            /// current Spot price.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -258,7 +256,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
             /// <summary>
             /// UserData
-            /// The user data available to the launched EC2 instances.
+            /// The Base64-encoded user data to make available to the launched EC2 instances.
             /// For more information, see Instance Metadata and User Data in the Amazon EC2 User Guide for Linux
             /// Instances.
             /// Required: No

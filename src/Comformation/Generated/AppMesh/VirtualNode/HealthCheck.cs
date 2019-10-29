@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode HealthCheck
-    /// An object representing the health check policy for a virtual node&#39;s listener.
+    /// An object that represents the health check policy for a virtual node&#39;s listener.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html
     /// </summary>
     public class HealthCheck
@@ -15,8 +15,8 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// Path
-        /// The destination path for the health check request. This is required only if the specified protocol
-        /// is HTTP. If the protocol is TCP, this parameter is ignored.
+        /// The destination path for the health check request. This value is only used if the specified protocol
+        /// is HTTP or HTTP/2. For any other protocol, this value is ignored.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

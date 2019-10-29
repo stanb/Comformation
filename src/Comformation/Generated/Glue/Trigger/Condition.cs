@@ -14,6 +14,16 @@ namespace Comformation.Glue.Trigger
     {
 
         /// <summary>
+        /// CrawlerName
+        /// The name of the crawler to which this condition applies.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CrawlerName")]
+        public Union<string, IntrinsicFunction> CrawlerName { get; set; }
+
+        /// <summary>
         /// State
         /// The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT, and FAILED.
         /// Required: No
@@ -22,6 +32,16 @@ namespace Comformation.Glue.Trigger
         /// </summary>
         [JsonProperty("State")]
         public Union<string, IntrinsicFunction> State { get; set; }
+
+        /// <summary>
+        /// CrawlState
+        /// The state of the crawler to which this condition applies.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CrawlState")]
+        public Union<string, IntrinsicFunction> CrawlState { get; set; }
 
         /// <summary>
         /// LogicalOperator

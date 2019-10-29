@@ -6,7 +6,8 @@ namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
     /// AWS::CloudFront::StreamingDistribution
-    /// A streaming distribution.
+    /// A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details
+    /// about how to 			track and manage content delivery.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html
     /// </summary>
     public class StreamingDistributionResource : ResourceBase

@@ -6,12 +6,12 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet
-    /// Specifies the configuration information to launch a fleet—or group—of instances. 		 An EC2 Fleet can launch
-    /// multiple instance types across multiple Availability Zones, 		 using the On-Demand Instance, Reserved
-    /// Instance, and Spot Instance purchasing models 		 together. Using EC2 Fleet, you can define separate On-Demand
-    /// and Spot capacity targets, 		 specify the instance types that work best for your applications, and specify how
-    /// 		 Amazon EC2 should distribute your fleet capacity within each purchasing model. For more 		 information, see
-    /// Launching an EC2 Fleet in the Amazon EC2 User Guide for Linux Instances.
+    /// Specifies the configuration information to launch a fleet—or group—of instances. An EC2 Fleet can launch
+    /// multiple instance types across multiple Availability Zones, using the On-Demand Instance, Reserved Instance,
+    /// and Spot Instance purchasing models together. Using EC2 Fleet, you can define separate On-Demand and Spot
+    /// capacity targets, specify the instance types that work best for your applications, and specify how Amazon EC2
+    /// should distribute your fleet capacity within each purchasing model. For more information, see Launching an EC2
+    /// Fleet in the Amazon EC2 User Guide for Linux Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html
     /// </summary>
     public class EC2FleetResource : ResourceBase
@@ -20,8 +20,7 @@ namespace Comformation.EC2.EC2Fleet
         {
             /// <summary>
             /// TargetCapacitySpecification
-            /// The TotalTargetCapacity, OnDemandTargetCapacity, SpotTargetCapacity, and DefaultCapacityType
-            /// structure.
+            /// The number of units to request.
             /// Required: Yes
             /// Type: TargetCapacitySpecificationRequest
             /// Update requires: No interruption
@@ -30,7 +29,7 @@ namespace Comformation.EC2.EC2Fleet
 
             /// <summary>
             /// OnDemandOptions
-            /// The allocation strategy of On-Demand Instances in an EC2 Fleet.
+            /// Describes the configuration of On-Demand Instances in an EC2 Fleet.
             /// Required: No
             /// Type: OnDemandOptionsRequest
             /// Update requires: Replacement

@@ -37,8 +37,8 @@ namespace Comformation.SSM.Document
 
             /// <summary>
             /// Tags
-            /// AWS CloudFormation resource tags to apply to the document, which can help you identify and
-            /// categorize these resources.
+            /// AWS CloudFormation resource tags to apply to the document. Use tags to help you identify and
+            /// categorize resources.
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 1000

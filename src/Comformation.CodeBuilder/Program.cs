@@ -23,8 +23,8 @@ namespace Comformation.CodeBuilder
 
                 var schemaBuilder = new SchemaLoader();
                 var schema = await schemaBuilder.Load(url);
-                var schemaParser = new SchemaParser();
-                (var propertyTypes, var resources) = schemaParser.Parse(schema);
+                var schemaParser = new SchemaParser(schema);
+                (var propertyTypes, var resources) = schemaParser.Parse();
 
                 var propertyTypeTemplate = await ReadTemplate("Comformation.CodeBuilder.PropertyTypeTemplate.liquid");
                 var resourceTypeTemplate = await ReadTemplate("Comformation.CodeBuilder.ResourceTypeTemplate.liquid");

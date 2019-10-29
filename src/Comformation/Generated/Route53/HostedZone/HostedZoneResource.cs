@@ -18,13 +18,9 @@ namespace Comformation.Route53.HostedZone
             /// <summary>
             /// HostedZoneConfig
             /// 		
-            /// (Optional) A complex type that contains the following optional values:
+            /// A complex type that contains an optional comment.
             /// 		
-            /// 			 			 		 For public and private hosted zones, an optional comment For private hosted zones, an
-            /// optional PrivateZone element
-            /// 		
-            /// If you don&#39;t specify a comment or the PrivateZone element, omit HostedZoneConfig and 			the other
-            /// elements.
+            /// If you don&#39;t want to specify a comment, omit the HostedZoneConfig and Comment elements.
             /// 	
             /// Required: No
             /// Type: HostedZoneConfig
@@ -56,8 +52,8 @@ namespace Comformation.Route53.HostedZone
             /// 		
             /// If you&#39;re creating a public hosted zone, this is the name you have registered with your DNS
             /// registrar. If your domain name 			is registered with a registrar other than Route 53, change the
-            /// name servers for your domain to the set of NameServers that 			CreateHostedZone returns in
-            /// DelegationSet.
+            /// name servers for your domain to the set of NameServers that 			are returned by the Fn::GetAtt
+            /// intrinsic function.
             /// 	
             /// Required: Yes
             /// Type: String
@@ -133,11 +129,14 @@ namespace Comformation.Route53.HostedZone
             /// <summary>
             /// VPCs
             /// 		
-            /// A complex type that contains information about the VPCs that are associated with the specified
-            /// hosted zone.
+            /// Private hosted zones: A complex type that contains information about the VPCs that are 			associated
+            /// with the specified hosted zone.
+            /// 		
+            /// Note For public hosted zones, omit VPCs, VPCId, and VPCRegion.
             /// 	
             /// Required: No
             /// Type: List of VPC
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<VPC> VPCs { get; set; }
 

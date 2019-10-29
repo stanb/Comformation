@@ -17,8 +17,8 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Role
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that Amazon S3
-        /// assumes when replicating objects. For more information, see How to Set Up Cross-Region Replication
-        /// in the Amazon Simple Storage Service Developer Guide.
+        /// assumes when replicating objects. For more information, see How to Set Up Replication in the Amazon
+        /// Simple Storage Service Developer Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

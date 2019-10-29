@@ -58,6 +58,16 @@ namespace Comformation.EFS.FileSystem
 			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
+            /// LifecyclePolicies
+            /// A list of policies used by EFS lifecycle management to transition files to the Infrequent Access
+            /// (IA) storage class.
+            /// Required: No
+            /// Type: List of LifecyclePolicy
+            /// Update requires: No interruption
+            /// </summary>
+			public List<LifecyclePolicy> LifecyclePolicies { get; set; }
+
+            /// <summary>
             /// PerformanceMode
             /// The performance mode of the file system. We recommend generalPurpose performance mode for most file
             /// systems. File systems using the maxIO performance mode can scale to higher levels of aggregate

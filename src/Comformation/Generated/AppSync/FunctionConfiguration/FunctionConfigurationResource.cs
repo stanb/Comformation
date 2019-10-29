@@ -38,7 +38,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// <summary>
             /// DataSourceName
             /// The name of data source this function will attach.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -67,7 +67,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// FunctionVersion
             /// The version of the request mapping template. Currently only the 2018-05-29 version of the template
             /// is supported.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -95,7 +95,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// <summary>
             /// Name
             /// The name of the function.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

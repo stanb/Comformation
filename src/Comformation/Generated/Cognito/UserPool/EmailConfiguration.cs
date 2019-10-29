@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool EmailConfiguration
     /// EmailConfiguration is a property of the AWS::Cognito::UserPool resource that defines the email configuration
-    /// of an Amazon Cognito User Pool.
+    /// of an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-emailconfiguration.html
     /// </summary>
     public class EmailConfiguration

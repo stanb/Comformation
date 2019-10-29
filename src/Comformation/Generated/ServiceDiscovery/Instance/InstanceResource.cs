@@ -78,10 +78,10 @@ namespace Comformation.ServiceDiscovery.Instance
             /// you created the service.
             /// 	
             /// Required: Yes
-            /// Type: Map
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> InstanceAttributes { get; set; }
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InstanceAttributes { get; set; }
 
             /// <summary>
             /// InstanceId

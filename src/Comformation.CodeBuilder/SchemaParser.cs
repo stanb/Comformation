@@ -10,20 +10,26 @@ namespace Comformation.CodeBuilder
     public class SchemaParser
     {
         private const string BaseNamespace = "Comformation";
+        private readonly Schema _schema;
+        private readonly IDictionary<string, Property> _aliases;
 
-        public (IEnumerable<PropertyTypeClass>, IEnumerable<ResourceClass>) Parse(Schema schema)
+        public SchemaParser(Schema schema)
         {
-            var propertyTypes = Parse(schema.PropertyTypes);
-            var resources = Parse(schema.ResourceTypes);
+            _schema = schema;
+            _aliases = schema.PropertyTypes
+                .Where(x => x.Value.Properties == null)
+                .ToDictionary(x => x.Key, x => x.Value as Property);
+        }
+
+        public (IEnumerable<PropertyTypeClass>, IEnumerable<ResourceClass>) Parse()
+        {
+            var propertyTypes = Parse(_schema.PropertyTypes);
+            var resources = Parse(_schema.ResourceTypes);
             return (propertyTypes, resources);
         }
 
         private IEnumerable<PropertyTypeClass> Parse(IDictionary<string, PropertySpec> propertySpecs)
         {
-            var aliases = propertySpecs
-                .Where(x => x.Value.Properties == null)
-                .ToDictionary(x => x.Key, x => x.Value as Property);
-
             var propertyClasses = propertySpecs.Where(x => x.Value.Properties != null).Select(x =>
             {
                 var keyParts = x.Key.Split('.').Reverse().ToArray();
@@ -49,7 +55,7 @@ namespace Comformation.CodeBuilder
                 foreach (var prop in x.Value.Properties)
                 {
                     var aliasName = $"{x.Key.Split(".")[0]}.{prop.Value.ItemType ?? prop.Value.Type}";
-                    if (aliases.TryGetValue(aliasName, out var aliasType))
+                    if (_aliases.TryGetValue(aliasName, out var aliasType))
                     {
                         prop.Value.Type = aliasType.Type;
                         prop.Value.ItemType = aliasType.ItemType;
@@ -91,6 +97,27 @@ namespace Comformation.CodeBuilder
             var namespaceName = string.Join(".", nameParts.Prepend(BaseNamespace));
             var path = Path.ChangeExtension(Path.Combine(Path.Combine(nameParts.ToArray()), className + "Resource"), ".cs");
 
+            // Fix aliases
+            foreach (var prop in resourceSpec.Properties)
+            {
+                var aliasName = $"{type}.{prop.Value.ItemType ?? prop.Value.Type}";
+                if (_aliases.TryGetValue(aliasName, out var aliasType))
+                {
+                    if (prop.Value.ItemType != null)
+                    {
+                        prop.Value.ItemType = aliasType.Type;
+                        prop.Value.PrimitiveItemType = aliasType.PrimitiveType;
+                    }
+                    else
+                    {
+                        prop.Value.Type = aliasType.Type;
+                        prop.Value.ItemType = aliasType.ItemType;
+                        prop.Value.PrimitiveType = aliasType.PrimitiveType;
+                        prop.Value.PrimitiveItemType = aliasType.PrimitiveItemType;
+                    }
+                }
+            }
+
             var resourceClass = new ResourceClass
             {
                 Type = type,
@@ -101,6 +128,7 @@ namespace Comformation.CodeBuilder
                 Attributes = Parse(resourceSpec.Attributes),
                 Properties = Parse(resourceSpec.Properties)
             };
+
             return resourceClass;
         }
 

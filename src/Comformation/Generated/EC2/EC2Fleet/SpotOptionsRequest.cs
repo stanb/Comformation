@@ -15,11 +15,17 @@ namespace Comformation.EC2.EC2Fleet
 
         /// <summary>
         /// AllocationStrategy
-        /// Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet
-        /// request. The default is lowestPrice.
+        /// Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified
+        /// by the EC2 Fleet.
+        /// If the allocation strategy is lowestPrice, EC2 Fleet launches instances from the Spot Instance pools
+        /// with the lowest price. This is the default allocation strategy.
+        /// If the allocation strategy is diversified, EC2 Fleet launches instances from all the Spot Instance
+        /// pools that you specify.
+        /// If the allocation strategy is capacityOptimized, EC2 Fleet launches instances from Spot Instance
+        /// pools that are optimally chosen based on the available Spot Instance capacity.
+        /// Allowed Values: lowestPrice | diversified | capacityOptimized
         /// Required: No
         /// Type: String
-        /// Allowed Values: diversified | lowest-price
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AllocationStrategy")]

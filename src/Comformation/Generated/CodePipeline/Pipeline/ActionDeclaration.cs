@@ -15,7 +15,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// ActionTypeId
-        /// The configuration information for the action type.
+        /// Specifies the action type and the provider of the action.
         /// Required: Yes
         /// Type: ActionTypeId
         /// Update requires: No interruption
@@ -25,7 +25,15 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Configuration
-        /// The action declaration&#39;s configuration.
+        /// The action&#39;s configuration. These are key-value pairs that specify input values for an action. For
+        /// more information, see Action Structure Requirements in CodePipeline. For the list of configuration
+        /// properties for the AWS CloudFormation action type in CodePipeline, see Configuration Properties
+        /// Reference in the AWS CloudFormation User Guide. For template snippets with examples, see Using
+        /// Parameter Override Functions with CodePipeline Pipelines in the AWS CloudFormation User Guide.
+        /// The values can be represented in either JSON or YAML format. For example, the JSON configuration
+        /// item format is as follows:
+        /// JSON:
+        /// &quot;Configuration&quot; : { Key : Value },
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -80,7 +88,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the IAM service role that will perform the declared action. This is assumed through the
+        /// The ARN of the IAM service role that performs the declared action. This is assumed through the
         /// roleArn for the pipeline.
         /// Required: No
         /// Type: String

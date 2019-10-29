@@ -34,6 +34,16 @@ namespace Comformation.Cognito.UserPool
 			public Policies Policies { get; set; }
 
             /// <summary>
+            /// VerificationMessageTemplate
+            /// The template for the verification message that the user sees when the app requests permission to
+            /// access the user&#39;s information.
+            /// Required: No
+            /// Type: VerificationMessageTemplate
+            /// Update requires: No interruption
+            /// </summary>
+			public VerificationMessageTemplate VerificationMessageTemplate { get; set; }
+
+            /// <summary>
             /// MfaConfiguration
             /// Specifies multi-factor authentication (MFA) configuration details. Can be one of the following
             /// values:
@@ -54,7 +64,7 @@ namespace Comformation.Cognito.UserPool
             /// Required: No
             /// Type: List of SchemaAttribute
             /// Maximum: 50
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public List<SchemaAttribute> Schema { get; set; }
 
@@ -87,7 +97,7 @@ namespace Comformation.Cognito.UserPool
             /// Minimum: 1
             /// Maximum: 128
             /// Pattern: [\w\s+=,. @-]+
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> UserPoolName { get; set; }
 
@@ -102,6 +112,16 @@ namespace Comformation.Cognito.UserPool
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> SmsVerificationMessage { get; set; }
+
+            /// <summary>
+            /// UserPoolAddOns
+            /// Used to enable advanced security risk detection. Set the key AdvancedSecurityMode to the value
+            /// &quot;AUDIT&quot;.
+            /// Required: No
+            /// Type: UserPoolAddOns
+            /// Update requires: No interruption
+            /// </summary>
+			public UserPoolAddOns UserPoolAddOns { get; set; }
 
             /// <summary>
             /// EmailConfiguration
@@ -127,9 +147,24 @@ namespace Comformation.Cognito.UserPool
             /// preferred_username.
             /// Required: No
             /// Type: List of String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AliasAttributes { get; set; }
+
+            /// <summary>
+            /// EnabledMfas
+            /// Enables MFA on a specified user pool. To disable all MFAs after it has been enabled, set
+            /// MfaConfiguration to “OFF” and remove EnabledMfas. MFAs can only be all disabled if MfaConfiguration
+            /// is OFF. Once SMS_MFA is enabled, SMS_MFA can only be disabled by setting MfaConfiguration to “OFF”.
+            /// Can be one of the following values:
+            /// SMS_MFA - Enables SMS MFA for the user pool. SMS_MFA can only be enabled if SMS configuration is
+            /// provided. SOFTWARE_TOKEN_MFA - Enables software token MFA for the user pool.
+            /// Allowed values: SMS_MFA | SOFTWARE_TOKEN_MFA
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> EnabledMfas { get; set; }
 
             /// <summary>
             /// EmailVerificationSubject
@@ -162,7 +197,7 @@ namespace Comformation.Cognito.UserPool
             /// up. Possible values: phone_number or email.
             /// Required: No
             /// Type: List of String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> UsernameAttributes { get; set; }
 

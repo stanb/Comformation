@@ -29,7 +29,8 @@ namespace Comformation.EC2.EC2Fleet
 
         /// <summary>
         /// Version
-        /// The version number of the launch template.
+        /// The version number of the launch template. Note: This is a required parameter and will be updated
+        /// soon.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

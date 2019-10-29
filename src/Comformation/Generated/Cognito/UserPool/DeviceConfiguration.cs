@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool DeviceConfiguration
     /// DeviceConfiguration is a property of the AWS::Cognito::UserPool resource that defines the device configuration
-    /// of an Amazon Cognito User Pool.
+    /// of an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html
     /// </summary>
     public class DeviceConfiguration

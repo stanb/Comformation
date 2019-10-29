@@ -19,8 +19,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// InstancesDistribution
         /// The instances distribution to use.
-        /// If you leave this property unspecified when creating a mixed instances policy, the default values
-        /// are used.
+        /// If you leave this property unspecified, the value for each property in InstancesDistribution uses a
+        /// default value.
         /// Required: No
         /// Type: InstancesDistribution
         /// Update requires: No interruption
@@ -31,8 +31,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// LaunchTemplate
         /// The launch template and instance types (overrides).
-        /// This property must be specified when creating a mixed instances policy.
-        /// Required: Conditional
+        /// Required: Yes
         /// Type: LaunchTemplate
         /// Update requires: No interruption
         /// </summary>

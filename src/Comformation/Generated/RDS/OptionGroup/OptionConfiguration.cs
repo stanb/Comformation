@@ -16,7 +16,7 @@ namespace Comformation.RDS.OptionGroup
 
         /// <summary>
         /// DBSecurityGroupMemberships
-        /// A list of DBSecurityGroupMemebrship name strings used for this option.
+        /// A list of DBSecurityGroupMembership name strings used for this option.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

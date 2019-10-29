@@ -35,7 +35,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// The EC2 subnet IDs for the subnet group.
+            /// One or more subnet IDs to be assigned to the subnet group.
             /// Required: Yes
             /// Type: List of String
             /// Update requires: No interruption
@@ -44,7 +44,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
 
             /// <summary>
             /// Tags
-            /// The tag to be assigned to the subnet group.
+            /// One or more tags to be assigned to the subnet group.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: Replacement

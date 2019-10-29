@@ -16,11 +16,17 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// AllocationStrategy
-        /// Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet
-        /// request. The default is lowestPrice.
+        /// Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified
+        /// by the Spot Fleet request.
+        /// If the allocation strategy is lowestPrice, Spot Fleet launches instances from the Spot Instance
+        /// pools with the lowest price. This is the default allocation strategy.
+        /// If the allocation strategy is diversified, Spot Fleet launches instances from all the Spot Instance
+        /// pools that you specify.
+        /// If the allocation strategy is capacityOptimized, Spot Fleet launches instances from Spot Instance
+        /// pools with optimal capacity for the number of instances that are launching.
         /// Required: No
         /// Type: String
-        /// Allowed Values: diversified | lowestPrice
+        /// Allowed Values: capacityOptimized | diversified | lowestPrice
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AllocationStrategy")]
@@ -66,8 +72,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchSpecifications
         /// The launch specifications for the Spot Fleet request. If you specify LaunchSpecifications, you can&#39;t
-        /// specify LaunchTemplateConfigs. If you include On-Demand capacity in your request, you must use
-        /// LaunchTemplateConfigs.
+        /// specify LaunchTemplateConfigs.
         /// Required: Conditional
         /// Type: List of SpotFleetLaunchSpecification
         /// Update requires: Replacement
@@ -78,8 +83,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// LaunchTemplateConfigs
         /// The launch template and overrides. If you specify LaunchTemplateConfigs, you can&#39;t specify
-        /// LaunchSpecifications. If you include On-Demand capacity in your request, you must use
-        /// LaunchTemplateConfigs.
+        /// LaunchSpecifications.
         /// Required: Conditional
         /// Type: List of LaunchTemplateConfig
         /// Update requires: Replacement

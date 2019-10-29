@@ -22,7 +22,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// enable encryption at rest on a replication group you must set AtRestEncryptionEnabled to true when
             /// you create the replication group.
             /// Required: Only available when creating a replication group in an Amazon VPC using redis version 3.
-            /// 2. 6 or 4. x.
+            /// 2. 6 or 4. x onward.
             /// Default: false
             /// Required: No
             /// Type: Boolean
@@ -78,29 +78,19 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// The following node types are supported by ElastiCache. 			Generally speaking, the current generation
             /// types provide more memory and computational power 			at lower cost when compared to their equivalent
             /// previous generation counterparts.
-            /// 		
-            /// 			 				 			 			 			 General purpose: 				 					 					 					 				 Current generation: 					 T2 node
-            /// types: 					 cache. t2. micro, 						cache. t2. small, 						cache. t2. medium 						 M3 node types:
-            /// 						 cache. m3. medium, 						cache. m3. large, 						cache. m3. xlarge, 						cache. m3. 2xlarge
-            /// 						 M4 node types: 						 cache. m4. large, 						cache. m4. xlarge, 						cache. m4. 2xlarge,
-            /// 						cache. m4. 4xlarge, 						cache. m4. 10xlarge Previous generation: (not recommended) 						 T1
-            /// node types: 					 cache. t1. micro 						 M1 node types: 						 cache. m1. small, 						 cache. m1.
-            /// medium, 						 cache. m1. large, 						 cache. m1. xlarge Compute optimized: 				 			 			 Previous
-            /// generation: (not recommended) 			 C1 node types: 			 cache. c1. xlarge Memory optimized: 				 					
-            /// 						 					 					 				 Current generation: 						 R3 node types: 					 cache. r3. large,
-            /// 						cache. r3. xlarge, 						cache. r3. 2xlarge, 						cache. r3. 4xlarge, 						cache. r3.
-            /// 8xlarge 						 					 R4 node types; 						 cache. r4. large, 					 cache. r4. xlarge, 					 cache.
-            /// r4. 2xlarge, 					 cache. r4. 4xlarge, 					 cache. r4. 8xlarge, 					 cache. r4. 16xlarge Previous
-            /// generation: (not recommended) M2 node types: 					 cache. m2. xlarge, 						cache. m2. 2xlarge,
-            /// 						cache. m2. 4xlarge
-            /// Notes:
-            /// All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC). Redis (cluster mode
-            /// disabled): Redis backup/restore is not supported on T1 and T2 instances. Redis (cluster mode
-            /// enabled): Backup/restore is not supported on T1 instances. Redis Append-only files (AOF)
-            /// functionality is not supported for T1 or T2 instances.
-            /// For a complete listing of node types and specifications, see:
-            /// Amazon ElastiCache Product Features and Details Cache Node Type-Specific Parameters for Memcached
-            /// Cache Node Type-Specific Parameters for Redis
+            /// General purpose: Current generation: M5 node types: cache. m5. large, cache. m5. xlarge, cache. m5.
+            /// 2xlarge, cache. m5. 4xlarge, cache. m5. 12xlarge, cache. m5. 24xlarge 	 M4 node types: cache. m4.
+            /// large, cache. m4. xlarge, cache. m4. 2xlarge, cache. m4. 4xlarge, cache. m4. 10xlarge T2 node types:
+            /// cache. t2. micro, cache. t2. small, cache. t2. medium Previous generation: (not recommended) T1 node
+            /// types: cache. t1. micro M1 node types: cache. m1. small, cache. m1. medium, cache. m1. large, cache.
+            /// m1. xlarge M3 node types: cache. m3. medium, cache. m3. large, cache. m3. xlarge, cache. m3. 2xlarge
+            /// Compute optimized: Previous generation: (not recommended) C1 node types: cache. c1. xlarge Memory
+            /// optimized: Current generation: R5 node types: cache. r5. large, cache. r5. xlarge, cache. r5.
+            /// 2xlarge, cache. r5. 4xlarge, cache. r5. 12xlarge, cache. r5. 24xlarge R4 node types: cache. r4.
+            /// large, cache. r4. xlarge, cache. r4. 2xlarge, cache. r4. 4xlarge, cache. r4. 8xlarge, cache. r4.
+            /// 16xlarge Previous generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2.
+            /// 2xlarge, cache. m2. 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge,
+            /// cache. r3. 4xlarge, cache. r3. 8xlarge
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -168,11 +158,24 @@ namespace Comformation.ElastiCache.ReplicationGroup
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
+            /// KmsKeyId
+            /// The ID of the KMS key used to encrypt the disk on the cluster.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
             /// NodeGroupConfiguration
             /// NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup resource that
             /// configures an Amazon ElastiCache (ElastiCache) Redis cluster node group.
+            /// If you set UseOnlineResharding to true, you can update NodeGroupConfiguration without interruption.
+            /// When UseOnlineResharding is set to false, or is not specified, updating NodeGroupConfiguration
+            /// results in replacement.
             /// Required: No
             /// Type: List of NodeGroupConfiguration
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<NodeGroupConfiguration> NodeGroupConfiguration { get; set; }
 
@@ -207,9 +210,13 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode
             /// enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it
             /// to 1.
+            /// If you set UseOnlineResharding to true, you can update NumNodeGroups without interruption. When
+            /// UseOnlineResharding is set to false, or is not specified, updating NumNodeGroups results in
+            /// replacement.
             /// Default: 1
             /// Required: No
             /// Type: Integer
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<int, IntrinsicFunction> NumNodeGroups { get; set; }
 
@@ -291,7 +298,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// ReplicationGroupId
             /// The replication group identifier. This parameter is stored as a lowercase string.
             /// Constraints:
-            /// A name must contain from 1 to 20 alphanumeric characters or hyphens. The first character must be a
+            /// A name must contain from 1 to 40 alphanumeric characters or hyphens. The first character must be a
             /// letter. A name cannot end with a hyphen or contain two consecutive hyphens.
             /// Required: No
             /// Type: String
@@ -386,10 +393,10 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// in-transit encryption on a cluster you must set TransitEncryptionEnabled to true when you create a
             /// cluster.
             /// This parameter is valid only if the Engine parameter is redis, the EngineVersion parameter is 3. 2.
-            /// 6 or 4. x, and the cluster is being created in an Amazon VPC.
+            /// 6 or 4. x or 5. x, and the cluster is being created in an Amazon VPC.
             /// If you enable in-transit encryption, you must also specify a value for CacheSubnetGroup.
             /// Required: Only available when creating a replication group in an Amazon VPC using redis version 3.
-            /// 2. 6 or 4. x.
+            /// 2. 6 or 4. x onward.
             /// Default: false
             /// Important For HIPAA compliance, you must specify TransitEncryptionEnabled as true, an AuthToken, and
             /// a CacheSubnetGroup.

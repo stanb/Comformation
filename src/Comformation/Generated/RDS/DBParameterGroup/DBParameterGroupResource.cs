@@ -15,7 +15,7 @@ namespace Comformation.RDS.DBParameterGroup
         {
             /// <summary>
             /// Description
-            /// Provides the customer-specified description for this DB Parameter Group.
+            /// Provides the customer-specified description for this DB parameter group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -24,7 +24,14 @@ namespace Comformation.RDS.DBParameterGroup
 
             /// <summary>
             /// Family
-            /// Provides the name of the DB Parameter Group Family that this DB Parameter Group is compatible with.
+            /// The DB parameter group family name. A DB parameter group can be associated with one and only one DB
+            /// parameter group family, and can be applied only to a DB instance running a DB engine and engine
+            /// version compatible with that DB parameter group family.
+            /// Note The DB parameter group family can&#39;t be changed when updating a DB parameter group.
+            /// To list all of the available parameter group families, use the following command:
+            /// aws rds describe-db-engine-versions --query &quot;DBEngineVersions[]. DBParameterGroupFamily&quot;
+            /// The output contains duplicates.
+            /// For more information, see CreateDBParameterGroup.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -35,7 +42,8 @@ namespace Comformation.RDS.DBParameterGroup
             /// Parameters
             /// An array of parameter names, values, and the apply method for the parameter update. At least one
             /// parameter name, value, and apply method must be supplied; subsequent arguments are optional. A
-            /// maximum of 20 parameters may be modified in a single request.
+            /// maximum of 20 parameters may be modified in a single request. For more information, see Working with
+            /// DB Parameter Groups in the Amazon RDS User Guide.
             /// MySQL
             /// Valid Values (for Apply method): immediate | pending-reboot
             /// You can use the immediate value with dynamic parameters only. You can use the pending-reboot value

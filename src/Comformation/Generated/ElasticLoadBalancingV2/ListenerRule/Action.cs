@@ -49,8 +49,8 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// <summary>
         /// Order
         /// The order for the action. This value is required for rules with multiple actions. The action with
-        /// the lowest value for order is performed first. The final action to be performed must be a forward or
-        /// a fixed-response action.
+        /// the lowest value for order is performed first. The last action to be performed must be one of the
+        /// following types of actions: a forward, fixed-response, or redirect.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1
@@ -83,8 +83,7 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 
         /// <summary>
         /// Type
-        /// The type of action. Each rule must include exactly one of the following types of actions: forward,
-        /// fixed-response, or redirect.
+        /// The type of action.
         /// Required: Yes
         /// Type: String
         /// Allowed Values: authenticate-cognito | authenticate-oidc | fixed-response | forward | redirect

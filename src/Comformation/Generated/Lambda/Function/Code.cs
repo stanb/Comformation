@@ -62,7 +62,8 @@ namespace Comformation.Lambda.Function
         /// characters such as newline (\n) with a backslash.
         /// If you specify a function that interacts with an AWS CloudFormation custom resource, you don&#39;t have
         /// to write your own functions to send responses to the custom resource that invoked the function. AWS
-        /// CloudFormation provides a response module (cfn-module) that simplifies sending responses.
+        /// CloudFormation provides a response module (cfn-response) that simplifies sending responses. See
+        /// Using AWS Lambda with AWS CloudFormation for details.
         /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption

@@ -16,8 +16,8 @@ namespace Comformation.DocDB.DBInstance
         {
             /// <summary>
             /// DBInstanceClass
-            /// The compute and memory capacity of the DB instance; for example, db. m4. large. If you change the
-            /// class of an instance there can be some interruption in the cluster&#39;s service.
+            /// The compute and memory capacity of the instance; for example, db. m4. large. If you change the class
+            /// of an instance there can be some interruption in the cluster&#39;s service.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.DocDB.DBInstance
 
             /// <summary>
             /// DBClusterIdentifier
-            /// The identifier of the DB cluster that the instance will belong to.
+            /// The identifier of the cluster that the instance will belong to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -35,7 +35,7 @@ namespace Comformation.DocDB.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The Amazon EC2 Availability Zone that the DB instance is created in.
+            /// The Amazon EC2 Availability Zone that the instance is created in.
             /// Default: A random, system-chosen Availability Zone in the endpoint&#39;s AWS Region.
             /// Example: us-east-1d
             /// Constraint: The AvailabilityZone parameter can&#39;t be specified if the MultiAZ parameter is set to
@@ -63,7 +63,7 @@ namespace Comformation.DocDB.DBInstance
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates that minor engine upgrades are applied automatically to the DB instance during the
+            /// Indicates that minor engine upgrades are applied automatically to the instance during the
             /// maintenance window.
             /// Default: true
             /// Required: No
@@ -74,7 +74,7 @@ namespace Comformation.DocDB.DBInstance
 
             /// <summary>
             /// DBInstanceIdentifier
-            /// The DB instance identifier. This parameter is stored as a lowercase string.
+            /// The instance identifier. This parameter is stored as a lowercase string.
             /// Constraints:
             /// Must contain from 1 to 63 letters, numbers, or hyphens. The first character must be a letter. Cannot
             /// end with a hyphen or contain two consecutive hyphens.
@@ -87,7 +87,7 @@ namespace Comformation.DocDB.DBInstance
 
             /// <summary>
             /// Tags
-            /// The tags to be assigned to the DB instance.
+            /// The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

@@ -29,13 +29,14 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// Specifies whether the EBS volume is encrypted. Encrypted EBS volumes can only be attached to
         /// instances that support Amazon EBS encryption. For more information, see Supported Instance Types. If
         /// your AMI uses encrypted volumes, you can also only launch it on supported instance types.
-        /// Note If you are creating a volume from a snapshot, you cannot specify an encryption value. This is
-        /// because only blank volumes can be encrypted on creation. Volumes that are created from encrypted
-        /// snapshots are automatically encrypted, and volumes that are created from unencrypted snapshots are
-        /// automatically unencrypted. By default, encrypted snapshots use the default CMK (AWS managed key),
-        /// but when you create the snapshot, you can specify a custom CMK. The ability to encrypt a snapshot
-        /// during copying also allows you to apply a new CMK to an already-encrypted snapshot that you own.
-        /// Volumes restored from the resulting copy are only accessible using the new CMK.
+        /// Note If you are creating a volume from a snapshot, you cannot specify an encryption value. Volumes
+        /// that are created from encrypted snapshots are automatically encrypted, and volumes that are created
+        /// from unencrypted snapshots are automatically unencrypted. By default, encrypted snapshots use the
+        /// AWS managed CMK that is used for EBS encryption, but you can specify a custom CMK when you create
+        /// the snapshot. The ability to encrypt a snapshot during copying also allows you to apply a new CMK to
+        /// an already-encrypted snapshot. Volumes restored from the resulting copy are only accessible using
+        /// the new CMK. Enabling encryption by default results in all EBS volumes being encrypted with the AWS
+        /// managed CMK or a customer managed CMK, whether or not the snapshot was encrypted.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

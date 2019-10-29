@@ -64,11 +64,11 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// HealthCheckProtocol
             /// The protocol the load balancer uses when performing health checks on targets. For Application Load
             /// Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
-            /// supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol
-            /// is not supported for health checks.
+            /// supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
+            /// The TLS, UDP, and TCP_UDP protocols are not supported for health checks.
             /// Required: No
             /// Type: String
-            /// Allowed Values: HTTP | HTTPS | TCP | TLS
+            /// Allowed Values: HTTP | HTTPS | TCP | TCP_UDP | TLS | UDP
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> HealthCheckProtocol { get; set; }
@@ -136,11 +136,12 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// <summary>
             /// Protocol
             /// The protocol to use for routing traffic to the targets. For Application Load Balancers, the
-            /// supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP
-            /// and TLS. If the target is a Lambda function, this parameter does not apply.
+            /// supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP,
+            /// TLS, UDP, or TCP_UDP. A TCP_UDP listener must be associated with a TCP_UDP target group. If the
+            /// target is a Lambda function, this parameter does not apply.
             /// Required: No
             /// Type: String
-            /// Allowed Values: HTTP | HTTPS | TCP | TLS
+            /// Allowed Values: HTTP | HTTPS | TCP | TCP_UDP | TLS | UDP
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }
@@ -167,11 +168,12 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// TargetType
             /// The type of target that you must specify when registering targets with this target group. You can&#39;t
             /// specify targets for a target group using more than one target type.
-            /// instance - Targets are specified by instance ID. This is the default value. ip - Targets are
-            /// specified by IP address. You can specify IP addresses from the subnets of the virtual private cloud
-            /// (VPC) for the target group, the RFC 1918 range (10. 0. 0. 0/8, 172. 16. 0. 0/12, and 192. 168. 0.
-            /// 0/16), and the RFC 6598 range (100. 64. 0. 0/10). You can&#39;t specify publicly routable IP addresses.
-            /// lambda - The target groups contains a single Lambda function.
+            /// instance - Targets are specified by instance ID. This is the default value. If the target group
+            /// protocol is UDP or TCP_UDP, the target type must be instance. ip - Targets are specified by IP
+            /// address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the
+            /// target group, the RFC 1918 range (10. 0. 0. 0/8, 172. 16. 0. 0/12, and 192. 168. 0. 0/16), and the
+            /// RFC 6598 range (100. 64. 0. 0/10). You can&#39;t specify publicly routable IP addresses. lambda - The
+            /// target groups contains a single Lambda function.
             /// Required: No
             /// Type: String
             /// Allowed Values: instance | ip | lambda
@@ -205,8 +207,8 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             /// <summary>
             /// VpcId
             /// The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this
-            /// parameter does not apply.
-            /// Required: No
+            /// parameter does not apply. Otherwise, this parameter is required.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

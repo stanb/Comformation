@@ -63,6 +63,27 @@ namespace Comformation.CodeBuild.Project
 			public Union<string, IntrinsicFunction> EncryptionKey { get; set; }
 
             /// <summary>
+            /// SourceVersion
+            /// A version of the build input to be built for this project. If not specified, the latest version is
+            /// used. If specified, it must be one of:
+            /// For AWS CodeCommit: the commit ID to use. For GitHub: the commit ID, pull request ID, branch name,
+            /// or tag name that corresponds to the version of the source code you want to build. If a pull request
+            /// ID is specified, it must use the format pr/pull-request-ID (for example pr/25). If a branch name is
+            /// specified, the branch&#39;s HEAD commit ID is used. If not specified, the default branch&#39;s HEAD commit
+            /// ID is used. For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
+            /// of the source code you want to build. If a branch name is specified, the branch&#39;s HEAD commit ID is
+            /// used. If not specified, the default branch&#39;s HEAD commit ID is used. For Amazon Simple Storage
+            /// Service (Amazon S3): the version ID of the object that represents the build input ZIP file to use.
+            /// If sourceVersion is specified at the build level, then that version takes precedence over this
+            /// sourceVersion (at the project level).
+            /// For more information, see Source Version Sample with CodeBuild in the AWS CodeBuild User Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> SourceVersion { get; set; }
+
+            /// <summary>
             /// Triggers
             /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository,
             /// enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
@@ -170,6 +191,17 @@ namespace Comformation.CodeBuild.Project
             /// Update requires: No interruption
             /// </summary>
 			public Environment Environment { get; set; }
+
+            /// <summary>
+            /// SecondarySourceVersions
+            /// An array of ProjectSourceVersion objects. If secondarySourceVersions is specified at the build
+            /// level, then they take over these secondarySourceVersions (at the project level).
+            /// Required: No
+            /// Type: List of ProjectSourceVersion
+            /// Maximum: 12
+            /// Update requires: No interruption
+            /// </summary>
+			public List<ProjectSourceVersion> SecondarySourceVersions { get; set; }
 
             /// <summary>
             /// Tags

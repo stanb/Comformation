@@ -28,9 +28,9 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// SubnetIds
-        /// A list of subnet IDs that are associated with the VPC endpoints for the domain. If your domain has
-        /// zone awareness enabled, you need to provide two subnet IDs, one per zone. Otherwise, provide only
-        /// one. To learn more, see VPCs and Subnets in the Amazon VPC User Guide.
+        /// Provide one subnet ID for each Availability Zone that your domain uses. For example, you must
+        /// specify three subnet IDs for a three Availability Zone domain. To learn more, see VPCs and Subnets
+        /// in the Amazon VPC User Guide.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

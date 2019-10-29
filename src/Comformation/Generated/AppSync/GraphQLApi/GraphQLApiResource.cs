@@ -33,6 +33,15 @@ namespace Comformation.AppSync.GraphQLApi
 			public UserPoolConfig UserPoolConfig { get; set; }
 
             /// <summary>
+            /// Tags
+            /// An arbitrary set of tags (key-value pairs) for this GraphQL API.
+            /// Required: No
+            /// Type: Tags
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The API name.
             /// Required: Yes
@@ -59,6 +68,15 @@ namespace Comformation.AppSync.GraphQLApi
             /// Update requires: No interruption
             /// </summary>
 			public LogConfig LogConfig { get; set; }
+
+            /// <summary>
+            /// AdditionalAuthenticationProviders
+            /// A list of additional authentication providers for the GraphqlApi API.
+            /// Required: No
+            /// Type: AdditionalAuthenticationProviders
+            /// Update requires: No interruption
+            /// </summary>
+			public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders { get; set; }
 
         }
 

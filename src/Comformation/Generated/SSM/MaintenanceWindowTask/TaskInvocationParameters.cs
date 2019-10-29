@@ -7,7 +7,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask TaskInvocationParameters
-    /// The TaskInvocationParameters property type specifies the task execution parameters for a Maintenance Window
+    /// The TaskInvocationParameters property type specifies the task execution parameters for a maintenance window
     /// task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html
     /// </summary>
@@ -36,7 +36,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// MaintenanceWindowStepFunctionsParameters
-        /// The parameters for a STEP_FUNCTION task type.
+        /// The parameters for a STEP_FUNCTIONS task type.
         /// Required: No
         /// Type: MaintenanceWindowStepFunctionsParameters
         /// Update requires: No interruption

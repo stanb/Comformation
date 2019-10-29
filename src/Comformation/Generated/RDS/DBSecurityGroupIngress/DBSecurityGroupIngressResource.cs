@@ -27,7 +27,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
 
             /// <summary>
             /// DBSecurityGroupName
-            /// The name of the DB Security Group to add authorization to.
+            /// The name of the DB security group to add authorization to.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -36,7 +36,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
 
             /// <summary>
             /// EC2SecurityGroupId
-            /// Id of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be
+            /// Id of the EC2 security group to authorize. For VPC DB security groups, EC2SecurityGroupId must be
             /// provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId
             /// must be provided.
             /// Required: No
@@ -47,7 +47,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
 
             /// <summary>
             /// EC2SecurityGroupName
-            /// Name of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be
+            /// Name of the EC2 security group to authorize. For VPC DB security groups, EC2SecurityGroupId must be
             /// provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId
             /// must be provided.
             /// Required: No
@@ -58,8 +58,8 @@ namespace Comformation.RDS.DBSecurityGroupIngress
 
             /// <summary>
             /// EC2SecurityGroupOwnerId
-            /// AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName
-            /// parameter. The AWS Access Key ID is not an acceptable value. For VPC DB Security Groups,
+            /// AWS account number of the owner of the EC2 security group specified in the EC2SecurityGroupName
+            /// parameter. The AWS access key ID isn&#39;t an acceptable value. For VPC DB security groups,
             /// EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either
             /// EC2SecurityGroupName or EC2SecurityGroupId must be provided.
             /// Required: No

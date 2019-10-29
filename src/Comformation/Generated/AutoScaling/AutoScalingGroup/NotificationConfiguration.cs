@@ -18,15 +18,13 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// NotificationTypes
         /// A list of event types that trigger a notification. Event types can include any of the following
-        /// types:
+        /// types.
+        /// Allowed Values:
         /// autoscaling:EC2_INSTANCE_LAUNCH autoscaling:EC2_INSTANCE_LAUNCH_ERROR
         /// autoscaling:EC2_INSTANCE_TERMINATE autoscaling:EC2_INSTANCE_TERMINATE_ERROR
         /// autoscaling:TEST_NOTIFICATION
         /// Required: No
         /// Type: List of String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationTypes")]

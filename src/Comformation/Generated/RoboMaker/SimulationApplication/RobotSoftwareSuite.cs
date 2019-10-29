@@ -18,7 +18,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The version of the robot software suite.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Kinetic
+        /// Allowed Values: Dashing | Kinetic | Melodic
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
@@ -29,7 +29,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The name of the robot software suite.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ROS
+        /// Allowed Values: ROS | ROS2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

@@ -15,7 +15,7 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Name
-        /// The name of the artifact to be worked on, for example, &quot;My App&quot;.
+        /// The name of the artifact to be worked on (for example, &quot;My App&quot;).
         /// The input artifact of an action must exactly match the output artifact declared in a preceding
         /// action, but the input artifact does not have to be the next action in strict sequence from the
         /// action that provided the output artifact. Actions in parallel can declare different output

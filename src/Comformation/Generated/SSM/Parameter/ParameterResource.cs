@@ -15,11 +15,11 @@ namespace Comformation.SSM.Parameter
         {
             /// <summary>
             /// Type
-            /// The type of parameter. Valid values include the following: String or StringList.
-            /// Note AWS CloudFormation doesn&#39;t support the SecureString parameter type.
+            /// The type of parameter.
+            /// Note AWS CloudFormation doesn&#39;t support creating a SecureString parameter type.
+            /// Allowed Values: String | StringList
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: SecureString | String | StringList
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Type { get; set; }
@@ -36,6 +36,16 @@ namespace Comformation.SSM.Parameter
 			public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
+            /// Policies
+            /// Information about the policies assigned to a parameter.
+            /// Working with Parameter Policies in the AWS Systems Manager User Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> Policies { get; set; }
+
+            /// <summary>
             /// AllowedPattern
             /// A regular expression used to validate the parameter value. For example, for String types with values
             /// restricted to numbers, you can specify the following: AllowedPattern=^\d+$
@@ -48,6 +58,16 @@ namespace Comformation.SSM.Parameter
 			public Union<string, IntrinsicFunction> AllowedPattern { get; set; }
 
             /// <summary>
+            /// Tier
+            /// The parameter tier.
+            /// Required: No
+            /// Type: String
+            /// Allowed Values: Advanced | Intelligent-Tiering | Standard
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> Tier { get; set; }
+
+            /// <summary>
             /// Value
             /// The parameter value.
             /// Required: Yes
@@ -58,10 +78,14 @@ namespace Comformation.SSM.Parameter
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs to apply to this resource.
-            /// For more information, see Tag.
+            /// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value
+            /// pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
+            /// environment. For example, you might want to tag a Systems Manager parameter to identify the type of
+            /// resource to which it applies, the environment, or the type of configuration data referenced by the
+            /// parameter.
             /// Required: No
             /// Type: Json
+            /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }

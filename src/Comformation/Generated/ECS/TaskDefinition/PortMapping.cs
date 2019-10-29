@@ -25,6 +25,8 @@ namespace Comformation.ECS.TaskDefinition
         /// and not a host port, your container automatically receives a host port in the ephemeral port range.
         /// For more information, see hostPort. Port mappings that are automatically assigned in this way do not
         /// count toward the 100 reserved ports limit of a container instance.
+        /// Important You cannot expose the same container port for multiple protocols. An error will be
+        /// returned if this is attempted.
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
