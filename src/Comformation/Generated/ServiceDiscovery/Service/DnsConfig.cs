@@ -83,6 +83,9 @@ namespace Comformation.ServiceDiscovery.Service
         /// NamespaceId
         /// 		
         /// The ID of the namespace to use for DNS configuration.
+        /// 		
+        /// Important You must specify a value for NamespaceId either for DnsConfig or for the 				service
+        /// properties. 				Don&#39;t specify a value in both places. 			
         /// 	
         /// Required: No
         /// Type: String

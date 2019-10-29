@@ -18,14 +18,14 @@ namespace Comformation.AmazonMQ.Broker
             /// The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
             /// Required: No
             /// Type: List of String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// EngineVersion
-            /// The version of the broker engine. For a list of supported engine versions, see Engine in the Amazon
-            /// MQ Developer Guide.
+            /// The version of the broker engine. For a list of supported engine versions, see https://docs. aws.
+            /// amazon. com/amazon-mq/latest/developer-guide/broker-engine. html.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -56,7 +56,7 @@ namespace Comformation.AmazonMQ.Broker
             /// The broker&#39;s instance type.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> HostInstanceType { get; set; }
 
@@ -115,7 +115,8 @@ namespace Comformation.AmazonMQ.Broker
 
             /// <summary>
             /// DeploymentMode
-            /// The deployment mode of the broker.
+            /// The deployment mode of the broker. Available values:
+            /// SINGLE_INSTANCE ACTIVE_STANDBY_MULTI_AZ
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -139,6 +140,15 @@ namespace Comformation.AmazonMQ.Broker
             /// Update requires: Replacement
             /// </summary>
 			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
+
+            /// <summary>
+            /// EncryptionOptions
+            /// Encryption options for the broker.
+            /// Required: No
+            /// Type: EncryptionOptions
+            /// Update requires: Replacement
+            /// </summary>
+			public EncryptionOptions EncryptionOptions { get; set; }
 
             /// <summary>
             /// Tags

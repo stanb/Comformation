@@ -7,7 +7,9 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket RoutingRuleCondition
-    /// Specifies a condition that must be met for a redirect to apply.
+    /// A container for describing a condition that must be met for the specified redirect to apply. For example, 1.
+    /// If request is for pages in the /docs folder, redirect to the /documents folder. 2. If request results in HTTP
+    /// error 4xx, redirect request to another host where you might process the error.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html
     /// </summary>
     public class RoutingRuleCondition

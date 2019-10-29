@@ -18,7 +18,7 @@ namespace Comformation.CodeCommit.Repository
         /// The repository events that will cause the trigger to run actions in another service, such as sending
         /// a notification through Amazon SNS.
         /// Note The valid value &quot;all&quot; cannot be used with any other values.
-        /// Required: No
+        /// Required: Yes
         /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
@@ -52,7 +52,7 @@ namespace Comformation.CodeCommit.Repository
         /// DestinationArn
         /// The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon
         /// SNS.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -62,7 +62,7 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// Name
         /// The name of the trigger.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

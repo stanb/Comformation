@@ -19,9 +19,6 @@ namespace Comformation.DynamoDB.Table
         /// table.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 3
-        /// Maximum: 255
-        /// Pattern: [a-zA-Z0-9_. -]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexName")]
@@ -33,13 +30,12 @@ namespace Comformation.DynamoDB.Table
         /// attribute names and key types:
         /// HASH - partition key RANGE - sort key
         /// Note The partition key of an item is also known as its hash attribute. The term &quot;hash attribute&quot;
-        /// derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across
+        /// derives from DynamoDB&#39;s usage of an internal hash function to evenly distribute data items across
         /// partitions, based on their partition key values. The sort key of an item is also known as its range
         /// attribute. The term &quot;range attribute&quot; derives from the way DynamoDB stores items with the same
         /// partition key physically close together, in sorted order by the sort key value.
         /// Required: Yes
         /// Type: List of KeySchema
-        /// Maximum: 2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeySchema")]

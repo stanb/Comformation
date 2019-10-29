@@ -39,9 +39,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// The default value is 0. If you leave this property set to 0, On-Demand Instances are launched as a
         /// percentage of the Auto Scaling group&#39;s desired capacity, per the OnDemandPercentageAboveBaseCapacity
         /// setting.
+        /// Note An update to this property means a gradual replacement of instances to maintain the specified
+        /// number of On-Demand Instances for your base capacity. When replacing instances, Amazon EC2 Auto
+        /// Scaling launches new instances before terminating the old ones.
         /// Required: No
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Some interruptions
         /// </summary>
         [JsonProperty("OnDemandBaseCapacity")]
         public Union<int, IntrinsicFunction> OnDemandBaseCapacity { get; set; }
@@ -52,9 +55,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// beyond OnDemandBaseCapacity.
         /// The range is 0–100. The default value is 100. If you leave this property set to 100, the percentages
         /// are 100% for On-Demand Instances and 0% for Spot Instances.
+        /// Note An update to this property means a gradual replacement of instances to maintain the percentage
+        /// of On-Demand Instances for your additional capacity above the base capacity. When replacing
+        /// instances, Amazon EC2 Auto Scaling launches new instances before terminating the old ones.
         /// Required: No
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Some interruptions
         /// </summary>
         [JsonProperty("OnDemandPercentageAboveBaseCapacity")]
         public Union<int, IntrinsicFunction> OnDemandPercentageAboveBaseCapacity { get; set; }
@@ -62,9 +68,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// SpotAllocationStrategy
         /// Indicates how to allocate Spot capacity across Spot pools.
-        /// The only valid value is lowest-price, which is also the default value. The Auto Scaling group
-        /// selects the cheapest Spot pools and evenly allocates your Spot capacity across the number of Spot
-        /// pools that you specify.
+        /// If the allocation strategy is lowest-price, the Auto Scaling group launches instances using the Spot
+        /// pools with the lowest price, and evenly allocates your instances across the number of Spot pools
+        /// that you specify. If the allocation strategy is capacity-optimized, the Auto Scaling group launches
+        /// instances using Spot pools that are optimally chosen based on the available Spot capacity.
+        /// The default is lowest-price.
+        /// Valid values: lowest-price | capacity-optimized
         /// Required: No
         /// Type: String
         /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
@@ -76,8 +85,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// SpotInstancePools
         /// The number of Spot pools to use to allocate your Spot capacity. The Spot pools are determined from
-        /// the different instance types in the Overrides array of LaunchTemplate.
-        /// The range is 1–20 and the default is 2.
+        /// the different instance types in the Overrides array of LaunchTemplate. The range is 1–20. The
+        /// default value is 2.
+        /// Valid only when the Spot allocation strategy is lowest-price.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

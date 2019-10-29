@@ -54,28 +54,6 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
         /// <summary>
-        /// Ipv6AddressCount
-        /// The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the
-        /// IPv6 addresses from the subnet range. You can&#39;t use this option if specifying specific IPv6
-        /// addresses.
-        /// Required: No
-        /// Type: Integer
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Ipv6AddressCount")]
-        public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
-
-        /// <summary>
-        /// Groups
-        /// The IDs of one or more security groups.
-        /// Required: No
-        /// Type: List of String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Groups")]
-        public List<Union<string, IntrinsicFunction>> Groups { get; set; }
-
-        /// <summary>
         /// DeviceIndex
         /// The device index for the network interface attachment.
         /// Required: No
@@ -125,6 +103,45 @@ namespace Comformation.EC2.LaunchTemplate
         /// </summary>
         [JsonProperty("NetworkInterfaceId")]
         public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
+
+        /// <summary>
+        /// InterfaceType
+        /// 		
+        /// The type of network interface. To create an Elastic Fabric Adapter (EFA), specify 			efa. For more
+        /// information, see Elastic Fabric Adapter in the 			Amazon Elastic Compute Cloud User Guide.
+        /// 		
+        /// If you are not creating an EFA, specify interface or omit this parameter.
+        /// 		
+        /// Valid values: interface | efa
+        /// 	
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("InterfaceType")]
+        public Union<string, IntrinsicFunction> InterfaceType { get; set; }
+
+        /// <summary>
+        /// Ipv6AddressCount
+        /// The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the
+        /// IPv6 addresses from the subnet range. You can&#39;t use this option if specifying specific IPv6
+        /// addresses.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Ipv6AddressCount")]
+        public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
+
+        /// <summary>
+        /// Groups
+        /// The IDs of one or more security groups.
+        /// Required: No
+        /// Type: List of String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Groups")]
+        public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
         /// <summary>
         /// DeleteOnTermination

@@ -17,7 +17,7 @@ namespace Comformation.Cognito.IdentityPool
         /// <summary>
         /// ServerSideTokenCheck
         /// TRUE if server-side token validation is enabled for the identity provider’s token.
-        /// Once you set ServerSideTokenCheck to TRUE for an identity pool, that identity pool will check with
+        /// After you set ServerSideTokenCheck to TRUE for an identity pool, that identity pool will check with
         /// the integrated user pools to make sure that the user has not been globally signed out or deleted
         /// before the identity pool provides an OIDC token or AWS credentials for the user.
         /// If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
@@ -30,7 +30,7 @@ namespace Comformation.Cognito.IdentityPool
 
         /// <summary>
         /// ProviderName
-        /// The provider name for an Amazon Cognito user pool. For example, cognito-idp. us-east-2. amazonaws.
+        /// The provider name for an Amazon Cognito user pool. For example: cognito-idp. us-east-2. amazonaws.
         /// com/us-east-2_123456789.
         /// Required: No
         /// Type: String

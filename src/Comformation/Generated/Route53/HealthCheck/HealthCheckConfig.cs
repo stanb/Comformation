@@ -92,7 +92,7 @@ namespace Comformation.Route53.HealthCheck
         /// 		
         /// Amazon Route 53 behavior depends on whether you specify a value for IPAddress.
         /// 		 		
-        /// If you specify a value for IPAddress:
+        /// 			If you specify a value for 			IPAddress:
         /// 		
         /// Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the
         /// value of FullyQualifiedDomainName 			in the Host header for all health checks except TCP health
@@ -111,26 +111,26 @@ namespace Comformation.Route53.HealthCheck
         /// If you don&#39;t specify a value for FullyQualifiedDomainName, Route 53 substitutes the value of
         /// IPAddress in the 			Host header in each of the preceding cases.
         /// 		 		
-        /// If you don&#39;t specify a value for IPAddress :
+        /// 			If you don&#39;t specify a value for IPAddress 			:
         /// 		
         /// Route 53 sends a DNS request to the domain that you specify for FullyQualifiedDomainName at the
         /// interval that you specify for 			RequestInterval. Using an IPv4 address that DNS returns, Route 53
         /// then checks the health of the endpoint.
         /// 		
         /// Note If you don&#39;t specify a value for IPAddress, Route 53 uses only IPv4 to send health checks to
-        /// the endpoint. If there&#39;s 			no resource record set with a type of A for the name that you specify
-        /// for FullyQualifiedDomainName, the health check fails with a 			&quot;DNS resolution failed&quot; error.
+        /// the endpoint. If there&#39;s 				no record with a type of A for the name that you specify for
+        /// FullyQualifiedDomainName, the health check fails with a 				&quot;DNS resolution failed&quot; error.
         /// 		
-        /// If you want to check the health of weighted, latency, or failover resource record sets and you
-        /// choose to specify the endpoint only by 			FullyQualifiedDomainName, we recommend that you create a
-        /// separate health check for each endpoint. For example, create a 			health check for each HTTP server
-        /// that is serving content for www. example. com. For the value of FullyQualifiedDomainName, 			specify
-        /// the domain name of the server (such as us-east-2-www. example. com), not the name of the resource
-        /// record sets (www. example. com).
+        /// If you want to check the health of multiple records that have the same name and type, such as
+        /// multiple weighted records, and if you 			choose to specify the endpoint only by
+        /// FullyQualifiedDomainName, we recommend that you create a separate health check 			for each endpoint.
+        /// For example, create a health check for each HTTP server that is serving content for www. example.
+        /// com. For the value of 			FullyQualifiedDomainName, specify the domain name of the server (such as
+        /// us-east-2-www. example. com), not the name of the 			records (www. example. com).
         /// 		
         /// Important In this configuration, if you create a health check for which the value of
-        /// FullyQualifiedDomainName matches the name of the 				resource record sets and you then associate the
-        /// health check with those resource record sets, health check results will be unpredictable.
+        /// FullyQualifiedDomainName matches the name of the 				records and you then associate the health check
+        /// with those records, health check results will be unpredictable.
         /// 		
         /// In addition, if the value that you specify for Type is HTTP, HTTPS, HTTP_STR_MATCH, or
         /// 			HTTPS_STR_MATCH, Route 53 passes the value of FullyQualifiedDomainName in the Host header, as it
@@ -263,8 +263,10 @@ namespace Comformation.Route53.HealthCheck
         /// <summary>
         /// Port
         /// 		
-        /// The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value
-        /// for Port only when you 			specify a value for IPAddress.
+        /// The port on the endpoint that you want Amazon Route 53 to perform health checks on.
+        /// 		
+        /// Note Don&#39;t specify a value for Port when you specify a value for 				Type 				of CLOUDWATCH_METRIC
+        /// or CALCULATED.
         /// 	
         /// Required: No
         /// Type: Integer
@@ -385,7 +387,7 @@ namespace Comformation.Route53.HealthCheck
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CALCULATED | CLOUDWATCH_METRIC | HTTP | HTTPS | HTTPS_STR_MATCH | HTTP_STR_MATCH |
+        /// Allowed Values: CALCULATED | CLOUDWATCH_METRIC | HTTP | HTTP_STR_MATCH | HTTPS | HTTPS_STR_MATCH |
         /// TCP
         /// Update requires: Replacement
         /// </summary>

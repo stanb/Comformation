@@ -19,6 +19,7 @@ namespace Comformation.SageMaker.EndpointConfig
             /// A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
             /// Required: Yes
             /// Type: List of ProductionVariant
+            /// Maximum: 10
             /// Update requires: Replacement
             /// </summary>
 			public List<ProductionVariant> ProductionVariants { get; set; }
@@ -27,6 +28,14 @@ namespace Comformation.SageMaker.EndpointConfig
             /// KmsKeyId
             /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to
             /// encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+            /// Note Certain Nitro-based instances include local storage, dependent on the instance type. Local
+            /// storage volumes are encrypted using a hardware module on the instance. You can&#39;t request a KmsKeyId
+            /// when using an instance type with local storage. If any of the models that you specify in the
+            /// ProductionVariants parameter use nitro-based instances with local storage, do not specify a value
+            /// for the KmsKeyId parameter. If you specify a value for KmsKeyId when using any nitro-based instances
+            /// with local storage, the call to CreateEndpointConfig fails. For a list of instance types that
+            /// support local instance storage, see Instance Store Volumes. For more information about local
+            /// instance storage encryption, see SSD Instance Store Volumes.
             /// Required: No
             /// Type: String
             /// Maximum: 2048

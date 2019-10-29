@@ -37,9 +37,10 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// KmsKeyId
-            /// The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you
-            /// don&#39;t specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key. AWS
-            /// KMS creates the default encryption key for your AWS account. Your AWS account has a different
+            /// An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+            /// If you don&#39;t specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption
+            /// key.
+            /// AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
             /// default encryption key for each AWS Region.
             /// Required: No
             /// Type: String
@@ -63,8 +64,8 @@ namespace Comformation.DMS.ReplicationInstance
             /// The weekly time range during which system maintenance can occur, in Universal Coordinated Time
             /// (UTC).
             /// Format: ddd:hh24:mi-ddd:hh24:mi
-            /// Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on
-            /// a random day of the week.
+            /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region,
+            /// occurring on a random day of the week.
             /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
             /// Constraints: Minimum 30-minute window.
             /// Required: No
@@ -75,8 +76,8 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates that minor engine upgrades will be applied automatically to the replication instance
-            /// during the maintenance window.
+            /// Indicates whether minor engine upgrades will be applied automatically to the replication instance
+            /// during the maintenance window. This parameter defaults to true.
             /// Default: true
             /// Required: No
             /// Type: Boolean
@@ -115,9 +116,9 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             /// AllowMajorVersionUpgrade
             /// Indicates that major version upgrades are allowed. Changing this parameter does not result in an
-            /// outage and the change is asynchronously applied as soon as possible.
-            /// Constraints: This parameter must be set to true when specifying a value for the EngineVersion
-            /// parameter that is a different major version than the replication instance&#39;s current version.
+            /// outage, and the change is asynchronously applied as soon as possible.
+            /// This parameter must be set to true when specifying a value for the EngineVersion parameter that is a
+            /// different major version than the replication instance&#39;s current version.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -149,8 +150,8 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// MultiAZ
-            /// Specifies if the replication instance is a Multi-AZ deployment. You cannot set the AvailabilityZone
-            /// parameter if the Multi-AZ parameter is set to true.
+            /// Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+            /// AvailabilityZone parameter if the Multi-AZ parameter is set to true.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -159,7 +160,7 @@ namespace Comformation.DMS.ReplicationInstance
 
             /// <summary>
             /// Tags
-            /// Tags to be associated with the replication instance.
+            /// One or more tags to be assigned to the replication instance.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: Replacement

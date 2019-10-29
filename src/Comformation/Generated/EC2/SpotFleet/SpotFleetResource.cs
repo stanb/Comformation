@@ -19,6 +19,7 @@ namespace Comformation.EC2.SpotFleet
             /// Describes the configuration of a Spot Fleet request.
             /// Required: Yes
             /// Type: SpotFleetRequestConfigData
+            /// Update requires: Some interruptions
             /// </summary>
 			public SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
 

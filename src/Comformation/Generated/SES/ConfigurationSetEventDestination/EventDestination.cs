@@ -7,7 +7,10 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::SES::ConfigurationSetEventDestination EventDestination
-    /// Contains information about the event destination that the specified email sending events are published to.
+    /// Contains information about the event destination that email sending events are published to. Event
+    /// destinations are associated with configuration sets. When you specify an event destination, you provide one,
+    /// and only one, destination. You can send event data to Amazon CloudWatch or Amazon Kinesis Data Firehose. For
+    /// more information about using configuration sets, see the Amazon SES Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html
     /// </summary>
     public class EventDestination
@@ -49,8 +52,8 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// <summary>
         /// Name
         /// The name of the event destination. The name must:
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
-        /// Contain less than 64 characters.
+        /// This value can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+        /// Contain fewer than 64 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

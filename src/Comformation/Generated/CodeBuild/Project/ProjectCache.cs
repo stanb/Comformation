@@ -8,7 +8,7 @@ namespace Comformation.CodeBuild.Project
     /// <summary>
     /// AWS::CodeBuild::Project ProjectCache
     /// ProjectCache is a property of the AWS CodeBuild Project resource that specifies information about the cache
-    /// for the build project.
+    /// for the build project. If ProjectCache is not specified, then both of its properties default to NO_CACHE.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html
     /// </summary>
     public class ProjectCache

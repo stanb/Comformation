@@ -17,7 +17,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
         {
             /// <summary>
             /// Description
-            /// The description for the DB cluster parameter group.
+            /// The description for the cluster parameter group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -26,7 +26,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Parameters
-            /// Provides a list of parameters for the DB cluster parameter group.
+            /// Provides a list of parameters for the cluster parameter group.
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption
@@ -35,7 +35,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Family
-            /// The DB cluster parameter group family name.
+            /// The cluster parameter group family name.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -44,7 +44,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Tags
-            /// The tags to be assigned to the DB cluster parameter group.
+            /// The tags to be assigned to the cluster parameter group.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
@@ -53,7 +53,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 
             /// <summary>
             /// Name
-            /// The name of the DB cluster parameter group.
+            /// The name of the cluster parameter group.
             /// Constraints:
             /// Must match the name of an existing DBClusterParameterGroup.
             /// Note This value is stored as a lowercase string.

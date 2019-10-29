@@ -72,6 +72,29 @@ namespace Comformation.ECS.TaskDefinition
         public Union<int, IntrinsicFunction> Cpu { get; set; }
 
         /// <summary>
+        /// DependsOn
+        /// The dependencies defined for container startup and shutdown. A container can contain multiple
+        /// dependencies. When a dependency is defined for container startup, for container shutdown it is
+        /// reversed.
+        /// For tasks using the EC2 launch type, the container instances require at least version 1. 26. 0 of
+        /// the container agent to enable container dependencies. However, we recommend using the latest
+        /// container agent version. For information about checking your agent version and updating to the
+        /// latest version, see Updating the Amazon ECS Container Agent in the Amazon Elastic Container Service
+        /// Developer Guide. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least
+        /// version 1. 26. 0-1 of the ecs-init package. If your container instances are launched from version
+        /// 20190301 or later, then they contain the required versions of the container agent and ecs-init. For
+        /// more information, see Amazon ECS-optimized Linux AMI in the Amazon Elastic Container Service
+        /// Developer Guide.
+        /// For tasks using the Fargate launch type, the task or service requires platform version 1. 3. 0 or
+        /// later.
+        /// Required: No
+        /// Type: List of ContainerDependency
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("DependsOn")]
+        public List<ContainerDependency> DependsOn { get; set; }
+
+        /// <summary>
         /// DisableNetworking
         /// When this parameter is true, networking is disabled within the container. This parameter maps to
         /// NetworkDisabled in the Create a container section of the Docker Remote API.
@@ -131,8 +154,8 @@ namespace Comformation.ECS.TaskDefinition
         /// Note The Amazon ECS container agent running on a container instance must register with the
         /// ECS_SELINUX_CAPABLE=true or ECS_APPARMOR_CAPABLE=true environment variables before containers placed
         /// on that instance can use these security options. For more information, see Amazon ECS Container
-        /// Agent Configuration in the Amazon Elastic Container Service Developer Guide. This parameter is not
-        /// supported for Windows containers.
+        /// Agent Configuration in the Amazon Elastic Container Service Developer Guide.
+        /// Note This parameter is not supported for Windows containers.
         /// Required: No
         /// Type: List of String
         /// Update requires: Replacement
@@ -250,14 +273,25 @@ namespace Comformation.ECS.TaskDefinition
         public Union<string, IntrinsicFunction> Image { get; set; }
 
         /// <summary>
+        /// Interactive
+        /// When this parameter is true, this allows you to deploy containerized applications that require stdin
+        /// or a tty to be allocated. This parameter maps to OpenStdin in the Create a container section of the
+        /// Docker Remote API and the --interactive option to docker run.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("Interactive")]
+        public Union<bool, IntrinsicFunction> Interactive { get; set; }
+
+        /// <summary>
         /// Links
-        /// The link parameter allows containers to communicate with each other without the need for port
-        /// mappings. Only supported if the network mode of a task definition is set to bridge. The
+        /// The links parameter allows containers to communicate with each other without the need for port
+        /// mappings. This parameter is only supported if the network mode of a task definition is bridge. The
         /// name:internalName construct is analogous to name:alias in Docker links. Up to 255 letters (uppercase
         /// and lowercase), numbers, and hyphens are allowed. For more information about linking Docker
-        /// containers, go to https://docs. docker.
-        /// com/engine/userguide/networking/default_network/dockerlinks/. This parameter maps to Links in the
-        /// Create a container section of the Docker Remote API and the --link option to docker run .
+        /// containers, go to Legacy container links in the Docker documentation. This parameter maps to Links
+        /// in the Create a container section of the Docker Remote API and the --link option to docker run.
         /// Note This parameter is not supported for Windows containers.
         /// Important Containers that are collocated on a single container instance may be able to communicate
         /// with each other without requiring links or host port mappings. Network isolation is achieved on the
@@ -313,17 +347,17 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Memory
-        /// The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed
-        /// the memory specified here, the container is killed. This parameter maps to Memory in the Create a
-        /// container section of the Docker Remote API and the --memory option to docker run.
-        /// If your containers are part of a task using the Fargate launch type, this field is optional and the
-        /// only requirement is that the total amount of memory reserved for all containers within a task be
-        /// lower than the task memory value.
-        /// For containers that are part of a task using the EC2 launch type, you must specify a non-zero
-        /// integer for one or both of memory or memoryReservation in container definitions. If you specify
-        /// both, memory must be greater than memoryReservation. If you specify memoryReservation, then that
-        /// value is subtracted from the available memory resources for the container instance on which the
-        /// container is placed. Otherwise, the value of memory is used.
+        /// The amount (in MiB) of memory to present to the container. If your container attempts to exceed the
+        /// memory specified here, the container is killed. The total amount of memory reserved for all
+        /// containers within a task must be lower than the task memory value, if one is specified. This
+        /// parameter maps to Memory in the Create a container section of the Docker Remote API and the --memory
+        /// option to docker run.
+        /// If using the Fargate launch type, this parameter is optional.
+        /// If using the EC2 launch type, you must specify either a task-level memory value or a container-level
+        /// memory value. If you specify both a container-level memory and memoryReservation value, memory must
+        /// be greater than memoryReservation. If you specify memoryReservation, then that value is subtracted
+        /// from the available memory resources for the container instance on which the container is placed.
+        /// Otherwise, the value of memory is used.
         /// The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify
         /// fewer than 4 MiB of memory for your containers.
         /// Required: No
@@ -341,10 +375,11 @@ namespace Comformation.ECS.TaskDefinition
         /// parameter (if applicable), or all of the available memory on the container instance, whichever comes
         /// first. This parameter maps to MemoryReservation in the Create a container section of the Docker
         /// Remote API and the --memory-reservation option to docker run.
-        /// You must specify a non-zero integer for one or both of memory or memoryReservation in container
-        /// definitions. If you specify both, memory must be greater than memoryReservation. If you specify
-        /// memoryReservation, then that value is subtracted from the available memory resources for the
-        /// container instance on which the container is placed. Otherwise, the value of memory is used.
+        /// If a task-level memory value is not specified, you must specify a non-zero integer for one or both
+        /// of memory or memoryReservation in a container definition. If you specify both, memory must be
+        /// greater than memoryReservation. If you specify memoryReservation, then that value is subtracted from
+        /// the available memory resources for the container instance on which the container is placed.
+        /// Otherwise, the value of memory is used.
         /// For example, if your container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB
         /// of memory for short periods of time, you can set a memoryReservation of 128 MiB, and a memory hard
         /// limit of 300 MiB. This configuration would allow the container to only reserve 128 MiB of memory
@@ -423,6 +458,17 @@ namespace Comformation.ECS.TaskDefinition
         public Union<bool, IntrinsicFunction> Privileged { get; set; }
 
         /// <summary>
+        /// PseudoTerminal
+        /// When this parameter is true, a TTY is allocated. This parameter maps to Tty in the Create a
+        /// container section of the Docker Remote API and the --tty option to docker run.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("PseudoTerminal")]
+        public Union<bool, IntrinsicFunction> PseudoTerminal { get; set; }
+
+        /// <summary>
         /// ReadonlyRootFilesystem
         /// When this parameter is true, the container is given read-only access to its root file system. This
         /// parameter maps to ReadonlyRootfs in the Create a container section of the Docker Remote API and the
@@ -444,6 +490,91 @@ namespace Comformation.ECS.TaskDefinition
         /// </summary>
         [JsonProperty("RepositoryCredentials")]
         public RepositoryCredentials RepositoryCredentials { get; set; }
+
+        /// <summary>
+        /// ResourceRequirements
+        /// The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+        /// Required: No
+        /// Type: List of ResourceRequirement
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("ResourceRequirements")]
+        public List<ResourceRequirement> ResourceRequirements { get; set; }
+
+        /// <summary>
+        /// Secrets
+        /// The secrets to pass to the container. For more information, see Specifying Sensitive Data in the
+        /// Amazon Elastic Container Service Developer Guide.
+        /// Required: No
+        /// Type: List of Secret
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("Secrets")]
+        public List<Secret> Secrets { get; set; }
+
+        /// <summary>
+        /// StartTimeout
+        /// Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
+        /// example, you specify two containers in a task definition with containerA having a dependency on
+        /// containerB reaching a COMPLETE, SUCCESS, or HEALTHY status. If a startTimeout value is specified for
+        /// containerB and it does not reach the desired status within that time then containerA will give up
+        /// and not start. This results in the task transitioning to a STOPPED state.
+        /// For tasks using the EC2 launch type, the container instances require at least version 1. 26. 0 of
+        /// the container agent to enable a container start timeout value. However, we recommend using the
+        /// latest container agent version. For information about checking your agent version and updating to
+        /// the latest version, see Updating the Amazon ECS Container Agent in the Amazon Elastic Container
+        /// Service Developer Guide. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at
+        /// least version 1. 26. 0-1 of the ecs-init package. If your container instances are launched from
+        /// version 20190301 or later, then they contain the required versions of the container agent and
+        /// ecs-init. For more information, see Amazon ECS-optimized Linux AMI in the Amazon Elastic Container
+        /// Service Developer Guide.
+        /// For tasks using the Fargate launch type, the task or service requires platform version 1. 3. 0 or
+        /// later.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("StartTimeout")]
+        public Union<int, IntrinsicFunction> StartTimeout { get; set; }
+
+        /// <summary>
+        /// StopTimeout
+        /// Time duration (in seconds) to wait before the container is forcefully killed if it doesn&#39;t exit
+        /// normally on its own.
+        /// For tasks using the Fargate launch type, the max stopTimeout value is 2 minutes and the task or
+        /// service requires platform version 1. 3. 0 or later.
+        /// For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over
+        /// the ECS_CONTAINER_STOP_TIMEOUT container agent configuration parameter, if used. Container instances
+        /// require at least version 1. 26. 0 of the container agent to enable a container stop timeout value.
+        /// However, we recommend using the latest container agent version. For information about checking your
+        /// agent version and updating to the latest version, see Updating the Amazon ECS Container Agent in the
+        /// Amazon Elastic Container Service Developer Guide. If you are using an Amazon ECS-optimized Linux
+        /// AMI, your instance needs at least version 1. 26. 0-1 of the ecs-init package. If your container
+        /// instances are launched from version 20190301 or later, then they contain the required versions of
+        /// the container agent and ecs-init. For more information, see Amazon ECS-optimized Linux AMI in the
+        /// Amazon Elastic Container Service Developer Guide.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("StopTimeout")]
+        public Union<int, IntrinsicFunction> StopTimeout { get; set; }
+
+        /// <summary>
+        /// SystemControls
+        /// A list of namespaced kernel parameters to set in the container. This parameter maps to Sysctls in
+        /// the Create a container section of the Docker Remote API and the --sysctl option to docker run.
+        /// Note It is not recommended that you specify network-related systemControls parameters for multiple
+        /// containers in a single task that also uses either the awsvpc or host network modes. For tasks that
+        /// use the awsvpc network mode, the container that is started last determines which systemControls
+        /// parameters take effect. For tasks that use the host network mode, it changes the container
+        /// instance&#39;s namespaced kernel parameters as well as the containers.
+        /// Required: No
+        /// Type: List of SystemControl
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SystemControls")]
+        public List<SystemControl> SystemControls { get; set; }
 
         /// <summary>
         /// Ulimits

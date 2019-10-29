@@ -55,7 +55,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Therefore, Internet-facing load balancers can route requests from clients over the internet.
             /// The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal
             /// load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal
-            /// load balancers can only route requests from clients with access to the VPC for the load balancer.
+            /// load balancers can route requests only from clients with access to the VPC for the load balancer.
             /// The default is an Internet-facing load balancer.
             /// Required: No
             /// Type: String
@@ -80,7 +80,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// [Application Load Balancers] You must specify subnets from at least two Availability Zones. You
             /// cannot specify Elastic IP addresses for your subnets.
             /// [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can
-            /// specify one Elastic IP address per subnet.
+            /// specify one Elastic IP address per subnet if you need static IP addresses for your load balancer.
             /// Required: No
             /// Type: List of SubnetMapping
             /// Update requires: Replacement
@@ -89,8 +89,8 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
             /// <summary>
             /// Subnets
-            /// The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must
-            /// specify either subnets or subnet mappings.
+            /// The IDs of the subnets. You can specify only one subnet per Availability Zone. You must specify
+            /// either subnets or subnet mappings.
             /// [Application Load Balancers] You must specify subnets from at least two Availability Zones. When you
             /// specify subnets for an existing Application Load Balancer, they replace the previously enabled
             /// subnets.
@@ -104,7 +104,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
             /// <summary>
             /// Tags
-            /// The tags. Each resource can have a maximum of 10 tags.
+            /// One or more tags to assign to the load balancer.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

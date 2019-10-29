@@ -7,8 +7,7 @@ namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
     /// AWS::CloudFront::StreamingDistribution TrustedSigners
-    /// A complex type that specifies the AWS accounts, if any, that you want to allow to 			create signed URLs for
-    /// private content.
+    /// Specifies the AWS accounts, if any, that you want to allow to create signed URLs 			for private content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
     /// </summary>
     public class TrustedSigners

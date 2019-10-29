@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route TcpRoute
-    /// An object representing the TCP routing specification for a route.
+    /// An object that represents a TCP route type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
     /// </summary>
     public class TcpRoute

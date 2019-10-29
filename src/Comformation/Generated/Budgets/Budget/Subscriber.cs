@@ -16,7 +16,9 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// SubscriptionType
+        /// 		
         /// The type of notification that AWS sends to a subscriber.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Allowed Values: EMAIL | SNS
@@ -27,8 +29,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// Address
+        /// 		
         /// The address that AWS sends budget notifications to, either an SNS topic or an email.
-        /// AWS validates the address for a CreateSubscriber request with the . * regex.
+        /// 		
+        /// When you create a subscriber, the value of Address can&#39;t contain line breaks.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.Mesh
 {
     /// <summary>
     /// AWS::AppMesh::Mesh MeshSpec
-    /// An object representing the specification of a service mesh.
+    /// An object that represents the specification of a service mesh.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html
     /// </summary>
     public class MeshSpec

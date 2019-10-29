@@ -63,7 +63,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// The constraint rules.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Rules { get; set; }
 

@@ -75,7 +75,7 @@ namespace Comformation.ApiGateway.ApiKey
 
             /// <summary>
             /// Value
-            /// The value of the API key.
+            /// The value of the API key. Must be at least 20 characters long.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

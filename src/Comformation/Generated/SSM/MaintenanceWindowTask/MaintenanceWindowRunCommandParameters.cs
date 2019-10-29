@@ -8,7 +8,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowRunCommandParameters
     /// The MaintenanceWindowRunCommandParameters property type specifies the parameters for a RUN_COMMAND task type
-    /// for a Maintenance Window task in AWS Systems Manager.
+    /// for a maintenance window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
     /// </summary>
     public class MaintenanceWindowRunCommandParameters
@@ -71,7 +71,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// ServiceRoleArn
-        /// The IAM service role to assume during task execution.
+        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+        /// notifications for maintenance window Run Command tasks.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

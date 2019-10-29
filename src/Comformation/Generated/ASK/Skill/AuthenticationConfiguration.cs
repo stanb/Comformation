@@ -8,11 +8,12 @@ namespace Comformation.ASK.Skill
     /// <summary>
     /// Alexa::ASK::Skill AuthenticationConfiguration
     /// The AuthenticationConfiguration property type specifies the Login with Amazon (LWA) configuration used to
-    /// authenticate with the Alexa service. Only Login with Amazon security profiles created through the Amazon
-    /// Developer Console are supported for authentication. A client ID, client secret, and refresh token are
-    /// required. You can generate a client ID and client secret by creating a new security profile on the Amazon
-    /// Developer Portal or you can retrieve them from an existing profile. You can then produce the refresh token by
-    /// providing the client ID and client secret to the generate-lwa-tokens command in the ASK CLI.
+    /// authenticate with the Alexa service. Only Login with Amazon security profiles created through the Build Skills
+    /// with the Alexa Skills Kit developer documentation are supported for authentication. A client ID, client
+    /// secret, and refresh token are required. You can generate a client ID and client secret by creating a new
+    /// security profile on the Amazon Developer Portal or you can retrieve them from an existing profile. You can
+    /// then retrieve the refresh token using the Alexa Skills Kit CLI. For instructions, see util-command in the ASK
+    /// CLI Command Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html
     /// </summary>
     public class AuthenticationConfiguration

@@ -53,7 +53,7 @@ namespace Comformation.EC2.SpotFleet
         /// The position of the network interface in the attachment order. A primary network interface has a
         /// device index of 0.
         /// If you specify a network interface when launching an instance, you must specify the device index.
-        /// Required: No
+        /// Required: Conditional
         /// Type: Integer
         /// Update requires: No interruption
         /// </summary>
@@ -132,7 +132,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// SubnetId
-        /// The ID of the subnet associated with the network string. Applies only if creating a network
+        /// The ID of the subnet associated with the network interface. Applies only if creating a network
         /// interface when launching an instance.
         /// Required: No
         /// Type: String

@@ -28,9 +28,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Overrides
-        /// Any properties that you specify override the same properties in the launch template. Currently, the
-        /// only supported override is instance type.
-        /// You must specify between 2 and 20 overrides.
+        /// An optional setting. Any properties that you specify override the same properties in the launch
+        /// template. Currently, the only supported override is instance type. You can specify between 1 and 20
+        /// instance types.
         /// Required: No
         /// Type: List of LaunchTemplateOverrides
         /// Update requires: No interruption

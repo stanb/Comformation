@@ -31,7 +31,7 @@ namespace Comformation.DirectoryService.SimpleAD
 
             /// <summary>
             /// Description
-            /// A textual description for the directory.
+            /// A description for the directory.
             /// Required: No
             /// Type: String
             /// Minimum: 0
@@ -65,6 +65,8 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Password
             /// The password for the directory administrator. The directory creation process creates a directory
             /// administrator account with the user name Administrator and this password.
+            /// If you need to change the password for the administrator account, see the ResetUserPassword API call
+            /// in the AWS Directory Service API Reference.
             /// Required: Yes
             /// Type: String
             /// Pattern: (?=^. {8,64}$)((?=. *\d)(?=. *[A-Z])(?=. *[a-z])|(?=. *\d)(?=. *[^A-Za-z0-9\s])(?=.
@@ -76,7 +78,7 @@ namespace Comformation.DirectoryService.SimpleAD
 
             /// <summary>
             /// ShortName
-            /// The short name of the directory, such as CORP.
+            /// The NetBIOS name of the directory, such as CORP.
             /// Required: No
             /// Type: String
             /// Pattern: ^[^\\/:*?\&quot;\&amp;lt;\&amp;gt;|. ]+[^\\/:*?\&quot;&amp;lt;&amp;gt;|]*$

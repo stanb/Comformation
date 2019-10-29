@@ -7,7 +7,9 @@ namespace Comformation.EC2.SecurityGroup
 {
     /// <summary>
     /// AWS::EC2::SecurityGroup Egress
-    /// Specifies an outbound rule for a security group.
+    /// Specifies an outbound rule for a security group. An outbound rule permits instances to send traffic to the
+    /// specified IPv4 or IPv6 CIDR address ranges, or to the instances associated with the specified destination
+    /// security groups.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
     /// </summary>
     public class Ingress

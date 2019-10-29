@@ -16,6 +16,10 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// SpotInstanceType
         /// The Spot Instance request type.
+        /// 	
+        /// If you are using Spot Instances with an Auto Scaling group, use one-time requests, as the Amazon EC2
+        /// Auto Scaling 	 service handles requesting new Spot Instances whenever the group is below its desired
+        /// capacity.
         /// Required: No
         /// Type: String
         /// Allowed Values: one-time | persistent
@@ -44,6 +48,30 @@ namespace Comformation.EC2.LaunchTemplate
         /// </summary>
         [JsonProperty("MaxPrice")]
         public Union<string, IntrinsicFunction> MaxPrice { get; set; }
+
+        /// <summary>
+        /// BlockDurationMinutes
+        /// The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value
+        /// must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BlockDurationMinutes")]
+        public Union<int, IntrinsicFunction> BlockDurationMinutes { get; set; }
+
+        /// <summary>
+        /// ValidUntil
+        /// The end date of the request. For a one-time request, the request remains active until all instances
+        /// launch, the request is canceled, or this date is reached. If the request is persistent, it remains
+        /// active until it is canceled or this date and time is reached. The default end date is 7 days from
+        /// the current date.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ValidUntil")]
+        public Union<string, IntrinsicFunction> ValidUntil { get; set; }
 
     }
 }

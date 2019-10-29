@@ -15,16 +15,15 @@ namespace Comformation.EC2.EC2Fleet
 
         /// <summary>
         /// ResourceType
-        /// 		
         /// The type of resource to tag. ResourceType must be fleet.
-        /// 	
         /// Required: No
         /// Type: String
         /// Allowed Values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options | elastic-ip
         /// | fleet | fpga-image | host-reservation | image | instance | internet-gateway | launch-template |
         /// natgateway | network-acl | network-interface | reserved-instances | route-table | security-group |
-        /// snapshot | spot-instances-request | subnet | transit-gateway | transit-gateway-attachment |
-        /// transit-gateway-route-table | volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
+        /// snapshot | spot-instances-request | subnet | traffic-mirror-filter | traffic-mirror-session |
+        /// traffic-mirror-target | transit-gateway | transit-gateway-attachment | transit-gateway-route-table |
+        /// volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceType")]

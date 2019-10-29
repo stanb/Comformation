@@ -97,13 +97,10 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
             /// <summary>
             /// PolicyType
-            /// The policy type. The valid values are SimpleScaling, StepScaling, and TargetTrackingScaling. By
-            /// default, AWS CloudFormation specifies SimpleScaling.
+            /// The policy type. The default value is SimpleScaling.
+            /// Allowed Values: SimpleScaling, StepScaling, or TargetTrackingScaling
             /// Required: No
             /// Type: String
-            /// Minimum: 1
-            /// Maximum: 64
-            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> PolicyType { get; set; }

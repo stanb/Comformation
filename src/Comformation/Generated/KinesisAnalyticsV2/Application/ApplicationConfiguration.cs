@@ -16,7 +16,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// <summary>
         /// ApplicationCodeConfiguration
         /// The code location and type parameters for a Java-based Kinesis Data Analytics application.
-        /// Required: No
+        /// Required: Conditional
         /// Type: ApplicationCodeConfiguration
         /// Update requires: No interruption
         /// </summary>

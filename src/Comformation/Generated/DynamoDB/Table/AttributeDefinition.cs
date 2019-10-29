@@ -18,8 +18,6 @@ namespace Comformation.DynamoDB.Table
         /// A name for the attribute.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeName")]
@@ -32,7 +30,6 @@ namespace Comformation.DynamoDB.Table
         /// Binary
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: B | N | S
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeType")]

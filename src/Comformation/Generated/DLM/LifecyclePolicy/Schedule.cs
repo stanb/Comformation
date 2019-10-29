@@ -36,6 +36,20 @@ namespace Comformation.DLM.LifecyclePolicy
         public CreateRule CreateRule { get; set; }
 
         /// <summary>
+        /// VariableTags
+        /// A collection of key/value pairs with values determined dynamically when the policy is executed. Keys
+        /// may be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
+        /// $(instance-id) or $(timestamp). Variable tags are only valid for EBS Snapshot Management – Instance
+        /// policies.
+        /// Required: No
+        /// Type: List of Tag
+        /// Maximum: 50
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("VariableTags")]
+        public List<Tag> VariableTags { get; set; }
+
+        /// <summary>
         /// RetainRule
         /// The retain rule.
         /// Required: No

@@ -30,8 +30,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
-        /// Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&amp;lt;!-)\. )+redshift\. amazonaws\.
-        /// com:\d{1,5}/[a-zA-Z0-9_$]+
+        /// Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&amp;lt;!-)\. )+redshift\. ([a-zA-Z0-9\.
+        /// ]+):\d{1,5}/[a-zA-Z0-9_$]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ClusterJDBCURL")]

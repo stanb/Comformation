@@ -41,6 +41,22 @@ namespace Comformation.EC2.Host
 			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
+            /// HostRecovery
+            /// 		
+            /// Indicates whether to enable or disable host recovery for the Dedicated Host. 			Host recovery is
+            /// disabled by default. For more information, see 			 				Host Recovery in the Amazon Elastic Compute
+            /// Cloud User Guide.
+            /// 		
+            /// Default: off
+            /// 	
+            /// Required: No
+            /// Type: String
+            /// Allowed Values: off | on
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> HostRecovery { get; set; }
+
+            /// <summary>
             /// InstanceType
             /// Specifies the instance type for which to configure your Dedicated Hosts. When you 			specify the
             /// instance type, that is the only instance type that you can launch onto that 			host.

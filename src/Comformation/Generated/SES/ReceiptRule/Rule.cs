@@ -27,7 +27,7 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Recipients
-        /// Containts the recipient domains and email addresses that the receipt rule applies to. If this field
+        /// Contains the recipient domains and email addresses that the receipt rule applies to. If this field
         /// isn&#39;t specified, this rule matches all recipients on all verified domains.
         /// Required: No
         /// Type: List of String

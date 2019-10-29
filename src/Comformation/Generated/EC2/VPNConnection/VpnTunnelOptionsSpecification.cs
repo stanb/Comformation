@@ -19,8 +19,9 @@ namespace Comformation.EC2.VPNConnection
         /// The pre-shared key (PSK) to establish initial authentication between the virtual private 			gateway
         /// and customer gateway.
         /// 		
-        /// Constraints: Allowed characters are alphanumeric characters and . _. Must be between 8 and 64
-        /// characters in length and cannot start with zero (0).
+        /// Constraints: Allowed characters are alphanumeric characters, periods (. ), and underscores (_). Must
+        /// be between 8 and 64 characters in length and cannot start with zero (0).
+        /// Note You cannot update the pre-shared key using CreateVPNConnection.
         /// 	
         /// Required: No
         /// Type: String
@@ -41,6 +42,7 @@ namespace Comformation.EC2.VPNConnection
         /// 			 			 			 			 			 			 			 		 				 169. 254. 0. 0/30 			 				 169. 254. 1. 0/30 			 				 169. 254.
         /// 2. 0/30 			 				 169. 254. 3. 0/30 			 				 169. 254. 4. 0/30 			 				 169. 254. 5. 0/30 			 				
         /// 169. 254. 169. 252/30 			
+        /// Note You cannot update the pre-shared key using CreateVPNConnection.
         /// 	
         /// Required: No
         /// Type: String

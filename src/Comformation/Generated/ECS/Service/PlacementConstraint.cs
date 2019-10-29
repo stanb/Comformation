@@ -31,7 +31,7 @@ namespace Comformation.ECS.Service
         /// Type
         /// The type of constraint. Use distinctInstance to ensure that each task in a particular group is
         /// running on a different container instance. Use memberOf to restrict the selection to a group of
-        /// valid candidates. The value distinctInstance is not supported in task definitions.
+        /// valid candidates.
         /// Required: Yes
         /// Type: String
         /// Allowed Values: distinctInstance | memberOf

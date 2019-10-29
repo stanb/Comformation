@@ -40,10 +40,13 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// End
+        /// 		
         /// The end date for a budget. If you didn&#39;t specify an end date, AWS set your end date to 06/15/87
         /// 00:00 UTC. The defaults are the same for the AWS Billing and Cost Management console and the API.
+        /// 		
         /// After the end date, AWS deletes the budget and all associated notifications and subscribers. You can
         /// change your end date with the UpdateBudget operation.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

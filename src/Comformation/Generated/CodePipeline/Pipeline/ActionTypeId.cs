@@ -17,6 +17,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Category
         /// A category defines what kind of action can be taken in the stage, and constrains the provider type
         /// for the action. Valid categories are limited to one of the values below.
+        /// Source Build Test Deploy Invoke Approval
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -38,8 +39,8 @@ namespace Comformation.CodePipeline.Pipeline
         /// Provider
         /// The provider of the service being called by the action. Valid providers are determined by the action
         /// category. For example, an action in the Deploy category type might have a provider of AWS
-        /// CodeDeploy, which would be specified as CodeDeploy. To reference a list of action providers by
-        /// action type, see Valid Action Types and Providers in CodePipeline.
+        /// CodeDeploy, which would be specified as CodeDeploy. For more information, see Valid Action Types and
+        /// Providers in CodePipeline.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

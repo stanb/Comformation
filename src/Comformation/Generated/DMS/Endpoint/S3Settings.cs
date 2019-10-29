@@ -36,8 +36,8 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// BucketFolder
         /// An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the
-        /// path &amp;lt;bucketFolder&amp;gt;/&amp;lt;schema_name&amp;gt;/&amp;lt;table_name&amp;gt;/. If this parameter is not
-        /// specified, then the path used is &amp;lt;schema_name&amp;gt;/&amp;lt;table_name&amp;gt;/.
+        /// path bucketFolder/schema_name/table_name/. If this parameter is not specified, then the path used is
+        /// schema_name/table_name/.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -78,8 +78,8 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// CompressionType
         /// An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target
-        /// files. Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both CSV
-        /// and PARQUET data formats.
+        /// files. Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both .
+        /// csv and . parquet file formats.
         /// Required: No
         /// Type: String
         /// Allowed Values: gzip | none

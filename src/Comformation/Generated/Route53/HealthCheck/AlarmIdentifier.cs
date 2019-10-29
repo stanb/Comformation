@@ -40,15 +40,15 @@ namespace Comformation.Route53.HealthCheck
         /// For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this
         /// health check is healthy, 			the region that the alarm was created in.
         /// 		
-        /// For the current list of CloudWatch regions, see Amazon CloudWatch in 			the AWS Regions and
-        /// Endpoints chapter of the Amazon Web Services General Reference.
+        /// For the current list of CloudWatch regions, see Amazon CloudWatch in 			the AWS Service Endpoints
+        /// chapter of the Amazon Web Services General Reference.
         /// 	
         /// Required: Yes
         /// Type: String
         /// Allowed Values: ap-east-1 | ap-northeast-1 | ap-northeast-2 | ap-northeast-3 | ap-south-1 |
         /// ap-southeast-1 | ap-southeast-2 | ca-central-1 | cn-north-1 | cn-northwest-1 | eu-central-1 |
-        /// eu-north-1 | eu-west-1 | eu-west-2 | eu-west-3 | sa-east-1 | us-east-1 | us-east-2 | us-west-1 |
-        /// us-west-2
+        /// eu-north-1 | eu-west-1 | eu-west-2 | eu-west-3 | me-south-1 | sa-east-1 | us-east-1 | us-east-2 |
+        /// us-west-1 | us-west-2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Region")]

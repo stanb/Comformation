@@ -64,7 +64,7 @@ namespace Comformation.SQS.Queue
             /// <summary>
             /// KmsMasterKeyId
             /// The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom CMK. To use the AWS
-            /// managed CMK for Amazon SQS, specify the alias alias/aws/sqs. For more information, see the
+            /// managed CMK for Amazon SQS, specify the (default) alias alias/aws/sqs. For more information, see the
             /// following:
             /// Protecting Data Using Server-Side Encryption (SSE) and AWS KMS in the Amazon Simple Queue Service
             /// Developer Guide CreateQueue in the Amazon Simple Queue Service API Reference The Customer Master

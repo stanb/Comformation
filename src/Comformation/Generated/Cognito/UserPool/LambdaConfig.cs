@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool LambdaConfig
     /// LambdaConfig is a property of the AWS::Cognito::UserPool resource that defines the AWS Lambda configuration of
-    /// an Amazon Cognito User Pool.
+    /// an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
     /// </summary>
     public class LambdaConfig
@@ -69,6 +69,34 @@ namespace Comformation.Cognito.UserPool
         /// </summary>
         [JsonProperty("PreSignUp")]
         public Union<string, IntrinsicFunction> PreSignUp { get; set; }
+
+        /// <summary>
+        /// PreTokenGeneration
+        /// A Lambda trigger that is invoked before token generation.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PreTokenGeneration")]
+        public Union<string, IntrinsicFunction> PreTokenGeneration { get; set; }
+
+        /// <summary>
+        /// UserMigration
+        /// The user migration Lambda config type.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("UserMigration")]
+        public Union<string, IntrinsicFunction> UserMigration { get; set; }
 
         /// <summary>
         /// PostAuthentication

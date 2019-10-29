@@ -41,7 +41,7 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// Size
         /// The size (in MiB) of the tmpfs volume.
-        /// Required: No
+        /// Required: Yes
         /// Type: Integer
         /// Update requires: Replacement
         /// </summary>

@@ -39,6 +39,7 @@ namespace Comformation.RoboMaker.Robot
             /// Type: String
             /// Minimum: 1
             /// Maximum: 1224
+            /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> GreengrassGroupId { get; set; }

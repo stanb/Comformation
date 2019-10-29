@@ -29,7 +29,7 @@ namespace Comformation.GameLift.Build
             /// StorageLocation
             /// Information indicating where your game build files are stored. Use this parameter only when creating
             /// a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an
-            /// Amazon S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon
+            /// Amazon S3 bucket name and key, as well as the ARN for a role that you set up to allow Amazon
             /// GameLift to access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
             /// create a new build in.
             /// Required: No

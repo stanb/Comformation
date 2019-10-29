@@ -18,10 +18,10 @@ namespace Comformation.ASK.Skill
 
         /// <summary>
         /// S3BucketRole
-        /// ARN of the role that grants the Alexa service permission to access the bucket and retrieve the skill
-        /// package. This role is optional. If you do not provide it, the bucket must be publicly accessible or
-        /// configured with a policy that allows this access. Otherwise, AWS CloudFormation cannot create the
-        /// skill.
+        /// ARN of the IAM role that grants the Alexa service (alexa-appkit. amazon. com) permission to access
+        /// the bucket and retrieve the skill package. This property is optional. If you do not provide it, the
+        /// bucket must be publicly accessible or configured with a policy that allows this access. Otherwise,
+        /// AWS CloudFormation cannot create the skill.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

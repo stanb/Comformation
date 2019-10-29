@@ -29,7 +29,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// <summary>
         /// ResourceLabel
         /// Identifies the resource associated with the metric type. You can&#39;t specify a resource label unless
-        /// the metric type is ALBRequestCountPerTarget and there is a target group for an Application Load
+        /// the metric type is ALBTargetGroupRequestCount and there is a target group for an Application Load
         /// Balancer attached to the Auto Scaling group.
         /// The format is
         /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt;/targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt;,

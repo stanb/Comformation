@@ -7,9 +7,9 @@ namespace Comformation.ServiceDiscovery.Service
 {
     /// <summary>
     /// AWS::ServiceDiscovery::Service HealthCheckConfig
-    /// Public DNS namespaces only. A complex type that contains settings for an optional health check. If you
-    /// 			specify settings for a health check, AWS Cloud Map associates the health check with the records that you
-    /// specify in 			DnsConfig.
+    /// Public DNS and HTTP namespaces only. A complex type that contains settings for an optional health check. If
+    /// you 			specify settings for a health check, AWS Cloud Map associates the health check with the records that
+    /// you specify in 			DnsConfig.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html
     /// </summary>
     public class HealthCheckConfig

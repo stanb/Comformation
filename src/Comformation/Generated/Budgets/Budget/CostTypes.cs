@@ -15,8 +15,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeSupport
+        /// 		
         /// Specifies whether a budget includes support subscription fees.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -26,8 +29,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeOtherSubscription
+        /// 		
         /// Specifies whether a budget includes non-RI subscription costs.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -37,8 +43,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeTax
+        /// 		
         /// Specifies whether a budget includes taxes.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -48,8 +57,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeSubscription
+        /// 		
         /// Specifies whether a budget includes subscriptions.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -59,8 +71,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// UseBlended
+        /// 		
         /// Specifies whether a budget uses a blended rate.
+        /// 		
         /// The default value is false.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -70,8 +85,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeUpfront
+        /// 		
         /// Specifies whether a budget includes upfront RI costs.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -81,8 +99,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeDiscount
+        /// 		
         /// Specifies whether a budget includes discounts.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -92,8 +113,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeCredit
+        /// 		
         /// Specifies whether a budget includes credits.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -103,8 +127,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeRecurring
+        /// 		
         /// Specifies whether a budget includes recurring fees such as monthly RI fees.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -114,8 +141,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// UseAmortized
+        /// 		
         /// Specifies whether a budget uses the amortized rate.
+        /// 		
         /// The default value is false.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -125,8 +155,11 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// IncludeRefund
+        /// 		
         /// Specifies whether a budget includes refunds.
+        /// 		
         /// The default value is true.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

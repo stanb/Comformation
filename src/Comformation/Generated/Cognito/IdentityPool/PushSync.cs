@@ -16,7 +16,7 @@ namespace Comformation.Cognito.IdentityPool
 
         /// <summary>
         /// ApplicationArns
-        /// List of Amazon SNS platform application ARNs that could be used by clients.
+        /// A list of Amazon SNS platform application ARNs that could be used by clients.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.Cognito.IdentityPool
 
         /// <summary>
         /// RoleArn
-        /// An IAM role configured to allow Amazon Cognito to call SNS on behalf of the developer.
+        /// An IAM role configured to allow Amazon Cognito to call Amazon SNS on behalf of the developer.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

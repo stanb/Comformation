@@ -33,6 +33,8 @@ namespace Comformation.OpsWorksCM.Server
         /// PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.
         /// Required: No
         /// Type: String
+        /// Maximum: 10000
+        /// Pattern: (?s). *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]
@@ -47,6 +49,8 @@ namespace Comformation.OpsWorksCM.Server
         /// PUPPET_ADMIN_PASSWORD PUPPET_R10K_REMOTE PUPPET_R10K_PRIVATE_KEY
         /// Required: No
         /// Type: String
+        /// Maximum: 10000
+        /// Pattern: (?s). *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

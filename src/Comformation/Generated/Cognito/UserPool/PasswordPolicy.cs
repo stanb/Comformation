@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool PasswordPolicy
     /// PasswordPolicy is a subproperty of the Policies property that defines the password policy of an Amazon Cognito
-    /// User Pool.
+    /// user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html
     /// </summary>
     public class PasswordPolicy
@@ -36,6 +36,22 @@ namespace Comformation.Cognito.UserPool
         /// </summary>
         [JsonProperty("MinimumLength")]
         public Union<int, IntrinsicFunction> MinimumLength { get; set; }
+
+        /// <summary>
+        /// TemporaryPasswordValidityDays
+        /// In the password policy you have set, refers to the number of days a temporary password is valid. If
+        /// the user does not sign-in during this time, their password will need to be reset by an
+        /// administrator.
+        /// Note When you set TemporaryPasswordValidityDays for a user pool, you will no longer be able to set
+        /// the deprecated UnusedAccountValidityDays value for that user pool.
+        /// Required: No
+        /// Type: Integer
+        /// Minimum: 0
+        /// Maximum: 365
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TemporaryPasswordValidityDays")]
+        public Union<int, IntrinsicFunction> TemporaryPasswordValidityDays { get; set; }
 
         /// <summary>
         /// RequireUppercase

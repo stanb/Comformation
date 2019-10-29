@@ -36,7 +36,7 @@ namespace Comformation.SSM.PatchBaseline
         /// Required: No
         /// Type: String
         /// Minimum: 1
-        /// Maximum: 512
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Configuration")]

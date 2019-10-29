@@ -25,8 +25,15 @@ namespace Comformation.RDS.DBClusterParameterGroup
 
             /// <summary>
             /// Family
-            /// Provides the name of the DB parameter group family that this DB cluster parameter group is
-            /// compatible with.
+            /// The DB cluster parameter group family name. A DB cluster parameter group can be associated with one
+            /// and only one DB cluster parameter group family, and can be applied only to a DB cluster running a DB
+            /// engine and engine version compatible with that DB cluster parameter group family.
+            /// Note The DB cluster parameter group family can&#39;t be changed when updating a DB cluster parameter
+            /// group.
+            /// To list all of the available parameter group families, use the following command:
+            /// aws rds describe-db-engine-versions --query &quot;DBEngineVersions[]. DBParameterGroupFamily&quot;
+            /// The output contains duplicates.
+            /// For more information, see CreateDBClusterParameterGroup.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

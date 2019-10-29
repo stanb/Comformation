@@ -20,7 +20,7 @@ namespace Comformation.RoboMaker.RobotApplication
         /// Type: String
         /// Minimum: 3
         /// Maximum: 63
-        /// Pattern: [a-z0-9][a-z0-9\-]*[a-z0-9]
+        /// Pattern: [a-z0-9][a-z0-9. \-]*[a-z0-9]
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3Bucket")]

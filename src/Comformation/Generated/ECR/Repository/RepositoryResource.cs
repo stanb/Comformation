@@ -55,6 +55,15 @@ namespace Comformation.ECR.Repository
             /// </summary>
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RepositoryPolicyText { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// An array of key-value pairs to apply to this resource.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ECR::Repository";

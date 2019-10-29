@@ -15,9 +15,9 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// ImportPath
-        /// The path to the Amazon S3 bucket (including the optional prefix) that you&#39;re using as the data
-        /// repository for your Amazon FSx for Lustre file system. The root of your FSx for Lustre file system
-        /// will be mapped to the root of the Amazon S3 bucket you select. An example is
+        /// (Optional) The path to the Amazon S3 bucket (including the optional prefix) that you&#39;re using as the
+        /// data repository for your Amazon FSx for Lustre file system. The root of your FSx for Lustre file
+        /// system will be mapped to the root of the Amazon S3 bucket you select. An example is
         /// s3://import-bucket/optional-prefix. If you specify a prefix after the Amazon S3 bucket name, only
         /// object keys with that prefix are loaded into the file system.
         /// Required: No
@@ -41,10 +41,10 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// ImportedFileChunkSize
-        /// For files imported from a data repository, this value determines the stripe count and maximum amount
-        /// of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a
-        /// single file can be striped across is limited by the total number of disks that make up the file
-        /// system.
+        /// (Optional) For files imported from a data repository, this value determines the stripe count and
+        /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of
+        /// disks that a single file can be striped across is limited by the total number of disks that make up
+        /// the file system.
         /// The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3
         /// objects have a maximum size of 5 TB.
         /// Required: No
@@ -58,10 +58,10 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// ExportPath
-        /// The path in Amazon S3 where the root of your Amazon FSx file system is exported. The path must use
-        /// the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which
-        /// new and changed data is to be exported from your Amazon FSx for Lustre file system. If an ExportPath
-        /// value is not provided, Amazon FSx sets a default export path,
+        /// (Optional) The path in Amazon S3 where the root of your Amazon FSx file system is exported. The path
+        /// must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to
+        /// which new and changed data is to be exported from your Amazon FSx for Lustre file system. If an
+        /// ExportPath value is not provided, Amazon FSx sets a default export path,
         /// s3://import-bucket/FSxLustre[creation-timestamp]. The timestamp is in UTC format, for example
         /// s3://import-bucket/FSxLustre20181105T222312Z.
         /// The Amazon S3 export bucket must be the same as the import bucket specified by ImportPath. If you

@@ -25,6 +25,17 @@ namespace Comformation.AppSync.GraphQLApi
         public Union<string, IntrinsicFunction> CloudWatchLogsRoleArn { get; set; }
 
         /// <summary>
+        /// ExcludeVerboseContent
+        /// Set to TRUE to exclude sections that contain information such as headers, context, and evaluated
+        /// mapping templates, regardless of logging level.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ExcludeVerboseContent")]
+        public Union<bool, IntrinsicFunction> ExcludeVerboseContent { get; set; }
+
+        /// <summary>
         /// FieldLogLevel
         /// The field logging level. Values can be NONE, ERROR, or ALL.
         /// NONE: No field-level logs are captured. ERROR: Logs the following information only for the fields

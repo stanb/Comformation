@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route HttpRoute
-    /// An object representing the HTTP routing specification for a route.
+    /// An object that represents an HTTP or HTTP/2 route type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
     /// </summary>
     public class HttpRoute
@@ -15,7 +15,7 @@ namespace Comformation.AppMesh.Route
 
         /// <summary>
         /// Action
-        /// The action to take if a match is determined.
+        /// An object that represents the action to take if a match is determined.
         /// Required: Yes
         /// Type: HttpRouteAction
         /// Update requires: No interruption
@@ -24,8 +24,18 @@ namespace Comformation.AppMesh.Route
         public HttpRouteAction Action { get; set; }
 
         /// <summary>
+        /// RetryPolicy
+        /// An object that represents a retry policy.
+        /// Required: No
+        /// Type: HttpRetryPolicy
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RetryPolicy")]
+        public HttpRetryPolicy RetryPolicy { get; set; }
+
+        /// <summary>
         /// Match
-        /// The criteria for determining an HTTP request match.
+        /// An object that represents the criteria for determining a request match.
         /// Required: Yes
         /// Type: HttpRouteMatch
         /// Update requires: No interruption

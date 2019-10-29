@@ -7,15 +7,27 @@ namespace Comformation.FSx.FileSystem
 {
     /// <summary>
     /// AWS::FSx::FileSystem WindowsConfiguration
-    /// The configuration for this Microsoft Windows file system.
+    /// The Microsoft Windows configuration for the file system being created. This value is required if
+    /// FileSystemType is set to WINDOWS.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
     /// </summary>
     public class WindowsConfiguration
     {
 
         /// <summary>
+        /// SelfManagedActiveDirectoryConfiguration
+        /// The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed
+        /// (including on-premises) Microsoft Active Directory (AD) directory.
+        /// Required: No
+        /// Type: SelfManagedActiveDirectoryConfiguration
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SelfManagedActiveDirectoryConfiguration")]
+        public SelfManagedActiveDirectoryConfiguration SelfManagedActiveDirectoryConfiguration { get; set; }
+
+        /// <summary>
         /// WeeklyMaintenanceStartTime
-        /// The preferred start time to perform weekly maintenance, in the UTC time zone.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -25,8 +37,8 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// ActiveDirectoryId
-        /// The ID for an existing Microsoft Active Directory instance that the file system should join when
-        /// it&#39;s created.
+        /// The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system
+        /// should join when it&#39;s created.
         /// Required: No
         /// Type: String
         /// Minimum: 12
@@ -52,10 +64,10 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// CopyTagsToBackups
-        /// A boolean flag indicating whether tags on the file system should be copied to backups. This value
-        /// defaults to false. If it&#39;s set to true, all tags on the file system are copied to all automatic
-        /// backups and any user-initiated backups where the user doesn&#39;t specify any tags. If this value is
-        /// true, and you specify one or more tags, only the specified tags are copied to backups.
+        /// A boolean flag indicating whether tags for the file system should be copied to backups. This value
+        /// defaults to false. If it&#39;s set to true, all tags for the file system are copied to all automatic and
+        /// user-initiated backups where the user doesn&#39;t specify tags. If this value is true, and you specify
+        /// one or more tags, only the specified tags are copied to backups.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -65,7 +77,7 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// DailyAutomaticBackupStartTime
-        /// The preferred time to take daily automatic backups, in the UTC time zone.
+        /// The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

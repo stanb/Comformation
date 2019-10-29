@@ -34,7 +34,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// <summary>
         /// ResourceLabel
         /// Identifies the resource associated with the metric type. You can&#39;t specify a resource label unless
-        /// the metric type is ALBRequestCountPerTarget and there is a target group attached to the Spot fleet
+        /// the metric type is ALBRequestCountPerTarget and there is a target group attached to the Spot Fleet
         /// request or ECS service.
         /// The format is
         /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt;/targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt;,

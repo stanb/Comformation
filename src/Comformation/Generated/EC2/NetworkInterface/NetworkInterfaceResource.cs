@@ -33,10 +33,13 @@ namespace Comformation.EC2.NetworkInterface
 
             /// <summary>
             /// InterfaceType
-            /// The type of network interface.
+            /// 		
+            /// Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify 			efa.
+            /// For more information, see 		 Elastic Fabric Adapter in the Amazon Elastic Compute Cloud User Guide.
+            /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: efa | interface | natGateway
+            /// Allowed Values: efa
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InterfaceType { get; set; }
@@ -81,6 +84,7 @@ namespace Comformation.EC2.NetworkInterface
             /// SecondaryPrivateIpAddressCount property and do not specify this property.
             /// Required: No
             /// Type: List of PrivateIpAddressSpecification
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 

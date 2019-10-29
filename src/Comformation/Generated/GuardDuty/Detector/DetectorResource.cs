@@ -16,7 +16,8 @@ namespace Comformation.GuardDuty.Detector
         {
             /// <summary>
             /// FindingPublishingFrequency
-            /// A enumeration value that specifies how frequently finding updates are published.
+            /// A enumeration value that specifies how frequently finding updates are published. Valid values
+            /// include: FIFTEEN_MINUTES | ONE_HOUR | SIX_HOURS. The default value is SIX_HOURS.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

@@ -39,7 +39,8 @@ namespace Comformation.ApiGateway.Method
 
             /// <summary>
             /// AuthorizationType
-            /// The method&#39;s authorization type. For valid values, see Method in the API Gateway API Reference.
+            /// The method&#39;s authorization type. This parameter is required. For valid values, see Method in the API
+            /// Gateway API Reference.
             /// Note If you specify the AuthorizerId property, specify CUSTOM for this property.
             /// Required: No
             /// Type: String
@@ -96,7 +97,7 @@ namespace Comformation.ApiGateway.Method
 
             /// <summary>
             /// RequestModels
-            /// The resources that are used for the response&#39;s content type. Specify response models as key-value
+            /// The resources that are used for the request&#39;s content type. Specify request models as key-value
             /// pairs (string-to-string mapping), with a content type as the key and a Model resource name as the
             /// value.
             /// Required: No

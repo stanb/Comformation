@@ -36,7 +36,7 @@ namespace Comformation.RDS.DBSecurityGroup
 
             /// <summary>
             /// GroupDescription
-            /// Provides the description of the DB Security Group.
+            /// Provides the description of the DB security group.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

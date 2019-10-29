@@ -16,7 +16,9 @@ namespace Comformation.IAM.Policy
             /// <summary>
             /// Groups
             /// The name of the group to associate the policy with.
-            /// &amp;amp;regex-name;.
+            /// This parameter allows (through its regex pattern) a string of characters consisting of upper and
+            /// lowercase alphanumeric characters with no spaces. You can also include any of the following
+            /// characters: _+=,. @-.
             /// Required: No
             /// Type: List of String
             /// Minimum: 1

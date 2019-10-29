@@ -28,6 +28,17 @@ namespace Comformation.IAM.Role
 			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssumeRolePolicyDocument { get; set; }
 
             /// <summary>
+            /// Description
+            /// A description of the role that you provide.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 1000
+            /// Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
             /// ManagedPolicyArns
             /// A list of Amazon Resource Names (ARNs) of the IAM managed policies that you want to attach to the
             /// user.
@@ -132,6 +143,17 @@ namespace Comformation.IAM.Role
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleName { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A list of tags that are attached to the specified role. For more information about tagging, see
+            /// Tagging IAM Identities in the IAM User Guide.
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
 
         }
 

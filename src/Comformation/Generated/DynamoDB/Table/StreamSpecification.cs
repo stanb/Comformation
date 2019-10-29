@@ -23,7 +23,6 @@ namespace Comformation.DynamoDB.Table
         /// new and the old item images of the item are written to the stream.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: KEYS_ONLY | NEW_AND_OLD_IMAGES | NEW_IMAGE | OLD_IMAGE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StreamViewType")]

@@ -18,7 +18,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// <summary>
         /// ConfigurationType
         /// Describes whether the application uses the default parallelism for the Kinesis Data Analytics
-        /// service.
+        /// service. You must set this property to CUSTOM in order to change your application&#39;s
+        /// AutoScalingEnabled, Parallelism, or ParallelismPerKPU properties.
         /// Required: Yes
         /// Type: String
         /// Allowed Values: CUSTOM | DEFAULT

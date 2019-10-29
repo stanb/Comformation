@@ -7,8 +7,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask NotificationConfig
-    /// The NotificationConfig property type specifies configurations for sending notifications for a Maintenance
-    /// Window task in AWS Systems Manager.
+    /// The NotificationConfig property type specifies configurations for sending notifications for a maintenance
+    /// window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html
     /// </summary>
     public class NotificationConfig
@@ -16,8 +16,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// NotificationArn
-        /// An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes
-        /// notifications about command status changes to this topic.
+        /// An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run
+        /// Command pushes notifications about command status changes to this topic.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
