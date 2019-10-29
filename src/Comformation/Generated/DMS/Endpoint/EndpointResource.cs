@@ -15,10 +15,11 @@ namespace Comformation.DMS.Endpoint
         {
             /// <summary>
             /// KmsKeyId
-            /// The AWS KMS key identifier to use to encrypt the connection parameters. If you don&#39;t specify a value
-            /// for the KmsKeyId parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-            /// default encryption key for your AWS account. Your AWS account has a different default encryption key
-            /// for each AWS Region.
+            /// An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+            /// If you don&#39;t specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption
+            /// key.
+            /// AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
+            /// default encryption key for each AWS Region.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -67,7 +68,7 @@ namespace Comformation.DMS.Endpoint
 
             /// <summary>
             /// EngineName
-            /// The type of engine for the endpoint. Valid values, depending on the EndPointType value, include
+            /// The type of engine for the endpoint. Valid values, depending on the EndpointType value, include
             /// mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase,
             /// dynamodb, mongodb, and sqlserver.
             /// Required: Yes
@@ -109,8 +110,7 @@ namespace Comformation.DMS.Endpoint
 
             /// <summary>
             /// SslMode
-            /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four
-            /// values: none, require, verify-ca, verify-full. The default value is none.
+            /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is none
             /// Required: No
             /// Type: String
             /// Allowed Values: none | require | verify-ca | verify-full
@@ -129,7 +129,11 @@ namespace Comformation.DMS.Endpoint
 
             /// <summary>
             /// ExtraConnectionAttributes
-            /// Additional attributes associated with the connection.
+            /// Additional attributes associated with the connection. Each attribute is specified as a name-value
+            /// pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no
+            /// additional white space. For information on the attributes available for connecting your source or
+            /// target endpoint, see Working with AWS DMS Endpoints in the AWS Database Migration Service User
+            /// Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -138,7 +142,7 @@ namespace Comformation.DMS.Endpoint
 
             /// <summary>
             /// EndpointType
-            /// The type of endpoint.
+            /// The type of endpoint. Valid values are source and target.
             /// Required: Yes
             /// Type: String
             /// Allowed Values: source | target
@@ -148,7 +152,7 @@ namespace Comformation.DMS.Endpoint
 
             /// <summary>
             /// Tags
-            /// Tags to be added to the endpoint.
+            /// One or more tags to be assigned to the endpoint.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: Replacement

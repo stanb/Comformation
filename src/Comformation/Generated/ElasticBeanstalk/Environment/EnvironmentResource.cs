@@ -134,6 +134,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// HTTP(S) requests or a web application that handles background-processing tasks.
             /// Required: No
             /// Type: Tier
+            /// Update requires: Some interruptions
             /// </summary>
 			public Tier Tier { get; set; }
 

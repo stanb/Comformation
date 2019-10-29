@@ -6,8 +6,11 @@ namespace Comformation.Greengrass.Group
 {
     /// <summary>
     /// AWS::Greengrass::Group
-    /// The AWS::Greengrass::Group resource represents a group in AWS IoT Greengrass. In the AWS IoT Greengrass API,
-    /// groups are used to organize your group versions.
+    /// AWS IoT Greengrass seamlessly extends AWS to edge devices so they can act locally on the data they generate,
+    /// while still using the cloud for management, analytics, and durable storage. With AWS IoT Greengrass, connected
+    /// devices can run AWS Lambda functions, execute predictions based on machine learning models, keep device data
+    /// in sync, and communicate with other devices securely – even when not connected to the internet. For more
+    /// information, see the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html
     /// </summary>
     public class GroupResource : ResourceBase
@@ -18,7 +21,9 @@ namespace Comformation.Greengrass.Group
             /// InitialVersion
             /// The group version to include when the group is created. A group version references the Amazon
             /// Resource Name (ARN) of a core definition version, device definition version, subscription definition
-            /// version, and other version types.
+            /// version, and other version types. 				 The group version must reference a core definition version
+            /// that contains one core. 				 Other version types are optionally included, depending on your business
+            /// need.
             /// 				
             /// Note To associate a group version after the group is created, 				 create an
             /// AWS::Greengrass::GroupVersion resource and specify the ID of this group.
@@ -37,6 +42,22 @@ namespace Comformation.Greengrass.Group
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// Application-specific metadata to attach to the group. 		 You can use tags in IAM policies to control
+            /// access to AWS IoT Greengrass resources. 		 You can also use tags to categorize your resources. For
+            /// more information, see 		 Tagging Your AWS IoT Greengrass 		 Resources in the AWS IoT Greengrass
+            /// Developer Guide.
+            /// 		
+            /// This Json property type is processed as a map of key-value pairs. It uses the following format,
+            /// which 		 is different from most Tags implementations in AWS CloudFormation templates.
+            /// &quot;Tags&quot;: { &quot;KeyName0&quot;: &quot;value&quot;, &quot;KeyName1&quot;: &quot;value&quot;, &quot;KeyName2&quot;: &quot;value&quot; }
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name

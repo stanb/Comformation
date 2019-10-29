@@ -6,7 +6,8 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution
-    /// The distribution&#39;s information.
+    /// A distribution tells CloudFront where you want content to be delivered from, and the details about how to
+    /// 			track and manage content delivery.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
     /// </summary>
     public class DistributionResource : ResourceBase

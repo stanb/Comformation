@@ -15,8 +15,10 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// Amount
+        /// 		
         /// The cost or usage amount that is associated with a budget forecast, actual spend, or budget
         /// threshold.
+        /// 	
         /// Required: Yes
         /// Type: Double
         /// Update requires: No interruption
@@ -26,8 +28,10 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// Unit
+        /// 		
         /// The unit of measurement that is used for the budget forecast, actual spend, or budget threshold,
         /// such as dollars or GB.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

@@ -38,6 +38,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// removing all Availability Zones. Otherwise, update requires no interruption.
             /// Required: No
             /// Type: List of String
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
@@ -83,6 +84,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// removing the health check settings. Otherwise, update requires no interruption.
             /// Required: No
             /// Type: HealthCheck
+            /// Update requires: Some interruptions
             /// </summary>
 			public HealthCheck HealthCheck { get; set; }
 
@@ -171,6 +173,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// to the new subnet in the original Availability Zone.
             /// Required: No
             /// Type: List of String
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 

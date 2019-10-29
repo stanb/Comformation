@@ -60,6 +60,17 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         public Union<string, IntrinsicFunction> CompressionFormat { get; set; }
 
         /// <summary>
+        /// DataFormatConversionConfiguration
+        /// The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or
+        /// ORC format before writing it to Amazon S3.
+        /// Required: No
+        /// Type: DataFormatConversionConfiguration
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DataFormatConversionConfiguration")]
+        public DataFormatConversionConfiguration DataFormatConversionConfiguration { get; set; }
+
+        /// <summary>
         /// EncryptionConfiguration
         /// The encryption configuration for the Kinesis Data Firehose delivery stream. The default value is
         /// NoEncryption.
@@ -71,11 +82,23 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
+        /// ErrorOutputPrefix
+        /// A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3.
+        /// This prefix appears immediately following the bucket name. For information about how to specify this
+        /// prefix, see Custom Prefixes for Amazon S3 Objects.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ErrorOutputPrefix")]
+        public Union<string, IntrinsicFunction> ErrorOutputPrefix { get; set; }
+
+        /// <summary>
         /// Prefix
         /// The YYYY/MM/DD/HH time format prefix is automatically used for delivered Amazon S3 files. For more
         /// information, see ExtendedS3DestinationConfiguration in the Amazon Kinesis Data Firehose API
         /// Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

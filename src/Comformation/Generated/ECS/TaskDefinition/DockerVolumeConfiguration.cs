@@ -33,7 +33,7 @@ namespace Comformation.ECS.TaskDefinition
         /// docker plugin ls to retrieve the driver name from your container instance. If the driver was
         /// installed using another method, use Docker plugin discovery to retrieve the driver name. For more
         /// information, see Docker plugin discovery. This parameter maps to Driver in the Create a volume
-        /// section of the Docker Remote API and the xxdriver option to docker volume create .
+        /// section of the Docker Remote API and the xxdriver option to docker volume create.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -44,7 +44,7 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// DriverOpts
         /// A map of Docker driver-specific options passed through. This parameter maps to DriverOpts in the
-        /// Create a volume section of the Docker Remote API and the xxopt option to docker volume create .
+        /// Create a volume section of the Docker Remote API and the xxopt option to docker volume create.
         /// Required: No
         /// Type: Map of String
         /// Update requires: Replacement
@@ -55,7 +55,7 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// Labels
         /// Custom metadata to add to your Docker volume. This parameter maps to Labels in the Create a volume
-        /// section of the Docker Remote API and the xxlabel option to docker volume create .
+        /// section of the Docker Remote API and the xxlabel option to docker volume create.
         /// Required: No
         /// Type: Map of String
         /// Update requires: Replacement

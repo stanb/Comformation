@@ -28,7 +28,7 @@ namespace Comformation.StepFunctions.StateMachine
             /// StateMachineName
             /// The name of the state machine.
             /// A name must not contain:
-            /// whitespace brackets &amp;lt; &amp;gt; { } [ ] wildcard characters ? * special characters &quot; # % \ ^ | ~ ` $
+            /// white space brackets &amp;lt; &amp;gt; { } [ ] wildcard characters ? * special characters &quot; # % \ ^ | ~ ` $
             /// &amp;amp; , ; : / control characters (U+0000-001F, U+007F-009F)
             /// Required: No
             /// Type: String
@@ -48,7 +48,7 @@ namespace Comformation.StepFunctions.StateMachine
             /// <summary>
             /// Tags
             /// The list of tags to add to a resource.
-            /// Tags may only contain unicode letters, digits, whitespace, or these symbols: _ . : / = + - @.
+            /// Tags may only contain Unicode letters, digits, white space, or these symbols: _ . : / = + - @.
             /// Required: No
             /// Type: List of TagsEntry
             /// Update requires: No interruption

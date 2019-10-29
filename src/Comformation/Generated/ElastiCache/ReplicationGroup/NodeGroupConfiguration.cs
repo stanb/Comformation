@@ -23,6 +23,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
         /// Minimum: 1
         /// Maximum: 4
         /// Pattern: \d+
+        /// Update requires: Some interruptions
         /// </summary>
         [JsonProperty("NodeGroupId")]
         public Union<string, IntrinsicFunction> NodeGroupId { get; set; }

@@ -17,7 +17,8 @@ namespace Comformation.FSx.FileSystem
             /// <summary>
             /// KmsKeyId
             /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system&#39;s data for an
-            /// Amazon FSx for Windows File Server file system.
+            /// Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS
+            /// encryption.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -26,7 +27,7 @@ namespace Comformation.FSx.FileSystem
 
             /// <summary>
             /// StorageCapacity
-            /// The storage capacity of the file system.
+            /// The storage capacity of the file system being created.
             /// For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536
             /// GiB.
             /// For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is
@@ -40,8 +41,8 @@ namespace Comformation.FSx.FileSystem
 
             /// <summary>
             /// FileSystemType
-            /// Type of file system. Currently the only supported type is WINDOWS.
-            /// Required: No
+            /// The type of Amazon FSx file system, either LUSTRE or WINDOWS.
+            /// Required: Yes
             /// Type: String
             /// Allowed Values: LUSTRE | WINDOWS
             /// Update requires: Replacement
@@ -50,8 +51,9 @@ namespace Comformation.FSx.FileSystem
 
             /// <summary>
             /// LustreConfiguration
-            /// The configuration object for Lustre file systems used in the CreateFileSystem operation.
-            /// Required: No
+            /// The Lustre configuration for the file system being created. This value is required if FileSystemType
+            /// is set to LUSTRE.
+            /// Required: Conditional
             /// Type: LustreConfiguration
             /// Update requires: No interruption
             /// </summary>
@@ -69,9 +71,9 @@ namespace Comformation.FSx.FileSystem
 
             /// <summary>
             /// SubnetIds
-            /// The IDs of the subnets to contain the endpoint for the file system. One and only one is supported.
-            /// The file system is launched in the Availability Zone associated with this subnet.
-            /// Required: No
+            /// The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The
+            /// file system is launched in the Availability Zone associated with this subnet.
+            /// Required: Yes
             /// Type: List of String
             /// Maximum: 50
             /// Update requires: Replacement
@@ -80,9 +82,8 @@ namespace Comformation.FSx.FileSystem
 
             /// <summary>
             /// SecurityGroupIds
-            /// A list of IDs for the security groups that apply to the specified network interfaces created for
-            /// file system access. These security groups will apply to all network interfaces. This list isn&#39;t
-            /// returned in later describe requests.
+            /// A list of IDs specifying the security groups to apply to all network interfaces created for file
+            /// system access. This list isn&#39;t returned in later requests to describe the file system.
             /// Required: No
             /// Type: List of String
             /// Maximum: 50
@@ -103,8 +104,9 @@ namespace Comformation.FSx.FileSystem
 
             /// <summary>
             /// WindowsConfiguration
-            /// The configuration object for the Microsoft Windows file system you are creating.
-            /// Required: No
+            /// The configuration object for the Microsoft Windows file system you are creating. This value is
+            /// required if FileSystemType is set to WINDOWS.
+            /// Required: Conditional
             /// Type: WindowsConfiguration
             /// Update requires: No interruption
             /// </summary>

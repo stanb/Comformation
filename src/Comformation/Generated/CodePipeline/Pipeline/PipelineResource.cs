@@ -17,8 +17,10 @@ namespace Comformation.CodePipeline.Pipeline
         {
             /// <summary>
             /// ArtifactStore
-            /// The Amazon S3 bucket where artifacts are stored for the pipeline.
-            /// Required: No
+            /// The Amazon S3 bucket where artifacts for the pipeline are stored.
+            /// Note You must include either artifactStore or artifactStores in your pipeline, but you cannot use
+            /// both. If you create a cross-region action in your pipeline, you must use artifactStores.
+            /// Required: Conditional
             /// Type: ArtifactStore
             /// Update requires: No interruption
             /// </summary>
@@ -26,11 +28,11 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// ArtifactStores
-            /// A mapping of artifactStore objects and their corresponding regions. There must be an artifact store
-            /// for the pipeline region and for each cross-region action within the pipeline. You can only use
-            /// either artifactStore or artifactStores, not both.
-            /// If you create a cross-region action in your pipeline, you must use artifactStores.
-            /// Required: No
+            /// A mapping of artifactStore objects and their corresponding AWS Regions. There must be an artifact
+            /// store for the pipeline Region and for each cross-region action in the pipeline.
+            /// Note You must include either artifactStore or artifactStores in your pipeline, but you cannot use
+            /// both. If you create a cross-region action in your pipeline, you must use artifactStores.
+            /// Required: Conditional
             /// Type: List of ArtifactStoreMap
             /// Update requires: No interruption
             /// </summary>

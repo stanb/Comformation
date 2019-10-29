@@ -17,12 +17,9 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// ActionOnFailure
-        /// The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
-        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We
-        /// recommend using TERMINATE_CLUSTER instead.
+        /// The action to take when the cluster step fails. Possible values are CANCEL_AND_WAIT and CONTINUE.
         /// Required: No
         /// Type: String
-        /// Allowed Values: CANCEL_AND_WAIT | CONTINUE | TERMINATE_CLUSTER | TERMINATE_JOB_FLOW
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ActionOnFailure")]

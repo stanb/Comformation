@@ -7,7 +7,7 @@ namespace Comformation.Route53.RecordSetGroup
     /// <summary>
     /// AWS::Route53::RecordSetGroup
     /// A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make
-    /// changes in, 			and values for the resource record sets that you want to add, update, or delete.
+    /// changes in, 			and values for the records that you want to create.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html
     /// </summary>
     public class RecordSetGroupResource : ResourceBase
@@ -41,7 +41,7 @@ namespace Comformation.Route53.RecordSetGroup
             /// <summary>
             /// HostedZoneName
             /// 		
-            /// The name of the hosted zone that you want to create, update, or delete resource record sets in.
+            /// The name of the hosted zone that you want to create records in.
             /// 	
             /// Required: No
             /// Type: String
@@ -53,8 +53,7 @@ namespace Comformation.Route53.RecordSetGroup
             /// <summary>
             /// RecordSets
             /// 		
-            /// A complex type that contains one RecordSet element for each resource record set that you want to
-            /// add, update, or delete.
+            /// A complex type that contains one RecordSet element for each record that you want to create.
             /// 	
             /// Required: No
             /// Type: List of RecordSet

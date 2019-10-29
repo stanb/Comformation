@@ -53,8 +53,8 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
             /// <summary>
             /// Name
-            /// The fully qualified domain name for the directory, such as corp. example. com. This name will
-            /// resolve inside your VPC only. It does not need to be publicly resolvable.
+            /// The fully qualified domain name for the AWS Managed Microsoft AD directory, such as corp. example.
+            /// com. This name will resolve inside your VPC only. It does not need to be publicly resolvable.
             /// Required: Yes
             /// Type: String
             /// Pattern: ^([a-zA-Z0-9]+[\\. -])+([a-zA-Z0-9])+$
@@ -65,6 +65,8 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// <summary>
             /// Password
             /// The password for the default administrative user named Admin.
+            /// If you need to change the password for the administrator account, see the ResetUserPassword API call
+            /// in the AWS Directory Service API Reference.
             /// Required: Yes
             /// Type: String
             /// Pattern: (?=^. {8,64}$)((?=. *\d)(?=. *[A-Z])(?=. *[a-z])|(?=. *\d)(?=. *[^A-Za-z0-9\s])(?=.
@@ -76,9 +78,8 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
             /// <summary>
             /// ShortName
-            /// The NetBIOS name for your domain. A short identifier for your domain, such as CORP. If you don&#39;t
-            /// specify a NetBIOS name, it will default to the first part of your directory DNS. For example, CORP
-            /// for the directory DNS corp. example. com.
+            /// The NetBIOS name for your domain, such as CORP. If you don&#39;t specify a NetBIOS name, it will default
+            /// to the first part of your directory DNS. For example, CORP for the directory DNS corp. example. com.
             /// Required: No
             /// Type: String
             /// Pattern: ^[^\\/:*?\&quot;\&amp;lt;\&amp;gt;|. ]+[^\\/:*?\&quot;&amp;lt;&amp;gt;|]*$

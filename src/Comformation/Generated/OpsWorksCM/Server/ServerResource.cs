@@ -22,6 +22,8 @@ namespace Comformation.OpsWorksCM.Server
             /// specify this parameter to connect to your instances by using SSH.
             /// Required: No
             /// Type: String
+            /// Maximum: 10000
+            /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> KeyPair { get; set; }
@@ -32,6 +34,8 @@ namespace Comformation.OpsWorksCM.Server
             /// EngineVersion is currently 12. For a Puppet server, the valid value is 2017.
             /// Required: No
             /// Type: String
+            /// Maximum: 10000
+            /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
@@ -46,6 +50,7 @@ namespace Comformation.OpsWorksCM.Server
             /// that you need.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 10000
             /// Pattern: arn:aws:iam::[0-9]{12}:role/. *
             /// Update requires: Replacement
             /// </summary>
@@ -67,6 +72,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Required: No
             /// Type: String
             /// Maximum: 79
+            /// Pattern: [a-zA-Z][a-zA-Z0-9\-\. \:]*
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> BackupId { get; set; }
@@ -77,6 +83,8 @@ namespace Comformation.OpsWorksCM.Server
             /// Single for Chef.
             /// Required: No
             /// Type: String
+            /// Maximum: 10000
+            /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> EngineModel { get; set; }
@@ -109,6 +117,7 @@ namespace Comformation.OpsWorksCM.Server
             /// The ARN of the instance profile that your Amazon EC2 instances use.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 10000
             /// Pattern: arn:aws:iam::[0-9]{12}:instance-profile/. *
             /// Update requires: Replacement
             /// </summary>
@@ -176,7 +185,9 @@ namespace Comformation.OpsWorksCM.Server
             /// Optional engine attributes on a specified server.
             /// Attributes accepted in a Chef createServer request: CHEF_AUTOMATE_PIVOTAL_KEY: A base64-encoded RSA
             /// public key. The corresponding private key is required to access the Chef API. When no
-            /// CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.
+            /// CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. When you
+            /// are specifying the value of CHEF_AUTOMATE_PIVOTAL_KEY as a parameter in the AWS CloudFormation
+            /// console, you must add newline (\n) characters at the end of each line of the pivotal key value.
             /// CHEF_AUTOMATE_ADMIN_PASSWORD: The password for the administrative user in the Chef Automate
             /// web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The
             /// password can contain letters, numbers, and special characters (!/@#$%^&amp;amp;+=_). The password must
@@ -210,6 +221,8 @@ namespace Comformation.OpsWorksCM.Server
             /// The Amazon EC2 instance type to use. For example, m5. large.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 10000
+            /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceType { get; set; }
@@ -219,6 +232,8 @@ namespace Comformation.OpsWorksCM.Server
             /// The configuration management engine to use. Valid values include ChefAutomate and Puppet.
             /// Required: No
             /// Type: String
+            /// Maximum: 10000
+            /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> Engine { get; set; }

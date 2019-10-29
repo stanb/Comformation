@@ -6,16 +6,25 @@ namespace Comformation.Events.EventBusPolicy
 {
     /// <summary>
     /// AWS::Events::EventBusPolicy
-    /// The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon CloudWatch Events. An event
-    /// bus policy enables your account to receive events from other AWS accounts. These events can trigger CloudWatch
-    /// Events rules created in your account. For more information, see Sending and Receiving Events Between AWS
-    /// Accounts in the Amazon CloudWatch Events User Guide.
+    /// The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon EventBridge. An event bus
+    /// policy enables your account to receive events from other AWS accounts. These events can trigger EventBridge
+    /// rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts in
+    /// the Amazon EventBridge User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html
     /// </summary>
     public class EventBusPolicyResource : ResourceBase
     {
         public class EventBusPolicyProperties
         {
+            /// <summary>
+            /// EventBusName
+            /// The name of the event bus to associate with this policy.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> EventBusName { get; set; }
+
             /// <summary>
             /// Condition
             /// Condition is a JSON string that you can use to limit the event bus permissions that you&#39;re granting
@@ -33,7 +42,7 @@ namespace Comformation.Events.EventBusPolicy
 
             /// <summary>
             /// Action
-            /// The action that you are enabling the other account to perform. Currently, this must be
+            /// The action that you&#39;re enabling the other account to perform. Currently, this must be
             /// events:PutEvents.
             /// Required: Yes
             /// Type: String
@@ -61,10 +70,10 @@ namespace Comformation.Events.EventBusPolicy
             /// Principal
             /// The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify
             /// &quot;*&quot; to permit any account to put events to your default event bus.
-            /// If you specify &quot;*&quot; without specifying Condition, avoid creating rules that may match undesirable
+            /// If you specify &quot;*&quot; without specifying Condition, avoid creating rules that might match undesirable
             /// events. To create more secure rules, make sure that the event pattern for each rule contains an
-            /// account field with a specific account ID from which to receive events. Rules with an account field
-            /// do not match any events sent from other accounts.
+            /// account field with a specific account ID to receive events from. Rules that have an account field
+            /// match events sent only from accounts that are listed in the rule&#39;s account field.
             /// Required: Yes
             /// Type: String
             /// Minimum: 1

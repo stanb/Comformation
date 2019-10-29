@@ -19,6 +19,7 @@ namespace Comformation.EC2.EIPAssociation
             /// [EC2-VPC] The allocation ID. This is required for EC2-VPC.
             /// Required: Conditional
             /// Type: String
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> AllocationId { get; set; }
 
@@ -27,6 +28,7 @@ namespace Comformation.EC2.EIPAssociation
             /// The Elastic IP address to associate with the instance. This is required for EC2-Classic.
             /// Required: Conditional
             /// Type: String
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> EIP { get; set; }
 
@@ -37,6 +39,7 @@ namespace Comformation.EC2.EIPAssociation
             /// instance ID unless exactly one network interface is attached.
             /// Required: Conditional
             /// Type: String
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
@@ -48,6 +51,7 @@ namespace Comformation.EC2.EIPAssociation
             /// For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
             /// Required: Conditional
             /// Type: String
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 

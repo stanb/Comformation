@@ -25,6 +25,17 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
         public Union<string, IntrinsicFunction> Description { get; set; }
 
         /// <summary>
+        /// DisableTemplateValidation
+        /// If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it
+        /// is invalid.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DisableTemplateValidation")]
+        public Union<bool, IntrinsicFunction> DisableTemplateValidation { get; set; }
+
+        /// <summary>
         /// Info
         /// The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
         /// &quot;LoadTemplateFromURL&quot;: &quot;https://s3. amazonaws. com/cf-templates-ozkq9d3hgiq2-us-east-1/. . . &quot;

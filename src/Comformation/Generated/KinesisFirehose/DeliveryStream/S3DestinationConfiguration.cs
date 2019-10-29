@@ -74,6 +74,18 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
+        /// ErrorOutputPrefix
+        /// A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3.
+        /// This prefix appears immediately following the bucket name. For information about how to specify this
+        /// prefix, see Custom Prefixes for Amazon S3 Objects.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ErrorOutputPrefix")]
+        public Union<string, IntrinsicFunction> ErrorOutputPrefix { get; set; }
+
+        /// <summary>
         /// Prefix
         /// A prefix that Kinesis Data Firehose adds to the files that it delivers to the Amazon S3 bucket. The
         /// prefix helps you identify the files that Kinesis Data Firehose delivered.

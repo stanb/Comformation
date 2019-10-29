@@ -6,7 +6,10 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::SES::ConfigurationSetEventDestination
-    /// Specifies a configuration set event destination.
+    /// Specifies a configuration set event destination. An event destination is an AWS service that Amazon SES
+    /// publishes email sending events to. When you specify an event destination, you provide one, and only one,
+    /// destination. You can send event data to Amazon CloudWatch or Amazon Kinesis Data Firehose. For information
+    /// about using configuration sets, see the Amazon SES Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html
     /// </summary>
     public class ConfigurationSetEventDestinationResource : ResourceBase

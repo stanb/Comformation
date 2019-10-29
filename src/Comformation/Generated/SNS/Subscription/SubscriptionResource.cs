@@ -69,9 +69,14 @@ namespace Comformation.SNS.Subscription
             /// <summary>
             /// Region
             /// For cross-region subscriptions, the region in which the topic resides.
+            /// If no region is specified, CloudFormation uses the region of the caller as the default.
+            /// If you perform an update operation that only updates the Region property of a AWS::SNS::Subscription
+            /// resource, that operation will fail unless you are either:
+            /// Updating the Region from NULL to the caller region. Updating the Region from the caller region to
+            /// NULL.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Region { get; set; }
 

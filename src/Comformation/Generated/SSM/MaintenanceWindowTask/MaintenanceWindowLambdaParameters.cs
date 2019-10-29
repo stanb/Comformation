@@ -8,7 +8,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowLambdaParameters
     /// The MaintenanceWindowLambdaParameters property type specifies the parameters for a LAMBDA task type for a
-    /// Maintenance Window task in AWS Systems Manager.
+    /// maintenance window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html
     /// </summary>
     public class MaintenanceWindowLambdaParameters

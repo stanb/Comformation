@@ -6,9 +6,7 @@ namespace Comformation.Route53.RecordSet
 {
     /// <summary>
     /// AWS::Route53::RecordSet
-    /// Information about the resource record set to create, update, or delete. The AWS::Route53::RecordSet type can
-    /// be used 			as a standalone resource or as an embedded property in the AWS::Route53::RecordSetGroup type. Note
-    /// that some 			AWS::Route53::RecordSet properties are valid only when used within AWS::Route53::RecordSetGroup.
+    /// Information about the record that you want to create.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
     /// </summary>
     public class RecordSetResource : ResourceBase
@@ -115,10 +113,10 @@ namespace Comformation.Route53.RecordSet
             /// mapped to geographic locations, 				so even if you create geolocation resource record sets that
             /// cover all seven continents, Route 53 will receive some DNS queries from locations 				that it can&#39;t
             /// identify. We recommend that you create a resource record set for which the value of CountryCode is
-            /// *, 				which handles both queries that come from locations for which you haven&#39;t created geolocation
-            /// resource record sets and queries from IP addresses 				that aren&#39;t mapped to a location. If you
-            /// don&#39;t create a * resource record set, Route 53 returns a &quot;no answer&quot; response for queries 				from
-            /// those locations.
+            /// *. 				Two groups of queries are routed to the resource that you specify in this record: queries
+            /// that come from locations for which you haven&#39;t 				created geolocation resource record sets and
+            /// queries from IP addresses that aren&#39;t mapped to a location. If you don&#39;t create a 				* resource
+            /// record set, Route 53 returns a &quot;no answer&quot; response for queries from those locations.
             /// 		
             /// You can&#39;t create non-geolocation resource record sets that have the same values for the Name and
             /// Type elements 			as geolocation resource record sets.
@@ -215,7 +213,10 @@ namespace Comformation.Route53.RecordSet
             /// <summary>
             /// HostedZoneId
             /// 		
-            /// The ID of the hosted zone that contains the resource record sets that you want to change.
+            /// The ID of the hosted zone that you want to create the record in.
+            /// 		
+            /// Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones
+            /// 			with the same domain name, you must specify the hosted zone using HostedZoneId.
             /// 	
             /// Required: No
             /// Type: String
@@ -227,15 +228,15 @@ namespace Comformation.Route53.RecordSet
             /// <summary>
             /// HostedZoneName
             /// 		
-            /// The name of the domain for the hosted zone where you want to add the resource record set.
+            /// The name of the domain for the hosted zone where you want to add the record.
             /// 		
             /// When you create a stack using an AWS::Route53::RecordSet that specifies HostedZoneName, AWS
             /// CloudFormation attempts to find a hosted zone 			whose name matches the HostedZoneName. If AWS
             /// CloudFormation cannot find a hosted zone with a matching domain name, or if there is more than one
             /// 			hosted zone with the specified domain name, AWS CloudFormation will not create the stack.
             /// 		
-            /// If you have multiple hosted zones with the same domain name, you must explicitly specify the hosted
-            /// zone using HostedZoneId.
+            /// Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones
+            /// 			with the same domain name, you must specify the hosted zone using HostedZoneId.
             /// 	
             /// Required: No
             /// Type: String
@@ -337,8 +338,8 @@ namespace Comformation.Route53.RecordSet
             /// Type: String
             /// Allowed Values: ap-east-1 | ap-northeast-1 | ap-northeast-2 | ap-northeast-3 | ap-south-1 |
             /// ap-southeast-1 | ap-southeast-2 | ca-central-1 | cn-north-1 | cn-northwest-1 | eu-central-1 |
-            /// eu-north-1 | eu-west-1 | eu-west-2 | eu-west-3 | sa-east-1 | us-east-1 | us-east-2 | us-west-1 |
-            /// us-west-2
+            /// eu-north-1 | eu-west-1 | eu-west-2 | eu-west-3 | me-south-1 | sa-east-1 | us-east-1 | us-east-2 |
+            /// us-west-1 | us-west-2
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Region { get; set; }
@@ -346,10 +347,16 @@ namespace Comformation.Route53.RecordSet
             /// <summary>
             /// ResourceRecords
             /// 		
-            /// Information about the resource record sets that you want to add to the hosted zone. Each record
-            /// should be in the format appropriate for the 			record type specified by the Type property. For
-            /// information about different record types and their record formats, see 			Values That You Specify
-            /// When You Create or Edit Amazon Route 53 Records 			in the Amazon Route 53 Developer Guide.
+            /// One or more values that correspond with the value that you specified for the Type property. For
+            /// example, if you specified 			A for Type, you specify one or more IP addresses in IPv4 format for
+            /// ResourceRecords. 			For information about the format of values for each record type, see
+            /// 			Supported DNS Resource Record Types 			in the Amazon Route 53 Developer Guide.
+            /// 		
+            /// Note the following:
+            /// 		
+            /// 			 			 			 		 You can specify more than one value for all record types except CNAME and SOA. The
+            /// maximum length of a value is 4000 characters. If you&#39;re creating an alias record, omit
+            /// ResourceRecords.
             /// 	
             /// Required: No
             /// Type: List of String

@@ -29,8 +29,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// AvailabilityZones
             /// A list of Availability Zones for the group. You must specify one of the following properties:
             /// VPCZoneIdentifier or AvailabilityZones.
-            /// If your account supports EC2-Classic and VPC, this property is required to launch instances into
-            /// EC2-Classic.
+            /// If your account supports EC2-Classic and VPC, this property is required to create an Auto Scaling
+            /// group that launches instances into EC2-Classic.
             /// Required: Conditional
             /// Type: List of String
             /// Update requires: No interruption
@@ -56,13 +56,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// be greater than or equal to the minimum size of the group and less than or equal to the maximum size
             /// of the group. If you do not specify a desired capacity, the default is the minimum size of the
             /// group.
-            /// If SpotPrice is not set in the LaunchConfiguration for the Auto Scaling group, then Amazon EC2 Auto
-            /// Scaling will begin to launch instances based on DesiredCapacity. CloudFormation will not mark the
-            /// Auto Scaling group as successful (by setting its status to CREATE_COMPLETE) until the desired
-            /// capacity is reached.
-            /// If SpotPrice is set, then DesiredCapacity will not be used as a criteria for success, since
-            /// instances will only be started when the Spot price has been matched. After the Spot price has been
-            /// matched, however, Amazon EC2 Auto Scaling uses DesiredCapacity as the target capacity for the group.
+            /// CloudFormation marks the Auto Scaling group as successful (by setting its status to CREATE_COMPLETE)
+            /// when the desired capacity is reached. However, if SpotPrice is set in the launch configuration, then
+            /// desired capacity is not used as a criteria for success, because whether your request is fulfilled
+            /// depends on Spot Instance capacity and your maximum price. If the current Spot price is less than
+            /// your specified maximum price, Amazon EC2 Auto Scaling uses DesiredCapacity as the target capacity
+            /// for the group.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -72,7 +71,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             /// HealthCheckGracePeriod
             /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-            /// of an EC2 instance that has come into service.
+            /// of an EC2 instance that has come into service. The default value is 0.
             /// For more information, see Health Checks for Auto Scaling Instances in the Amazon EC2 Auto Scaling
             /// User Guide.
             /// If you are adding an ELB health check, you must specify this property.
@@ -106,8 +105,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// properties from the instance, with the exception of BlockDeviceMapping and AssociatePublicIpAddress.
             /// For more information, see Create an Auto Scaling Group Using an EC2 Instance in the Amazon EC2 Auto
             /// Scaling User Guide.
-            /// When you create an Auto Scaling group, you must specify one of the following properties in your
-            /// request: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
+            /// You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate,
+            /// InstanceId, or MixedInstancesPolicy.
             /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
@@ -117,10 +116,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             /// LaunchConfigurationName
             /// The name of the LaunchConfiguration to use to launch instances.
-            /// If this resource has a public IP address and is also in a VPC that is defined in the same template,
-            /// you must use the DependsOn attribute to declare a dependency on the VPC-gateway attachment.
-            /// When you create an Auto Scaling group, you must specify one of the following properties in your
-            /// request: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
+            /// You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate,
+            /// InstanceId, or MixedInstancesPolicy.
             /// Note When you update LaunchConfigurationName, existing Amazon EC2 instances continue to run with the
             /// configuration that they were originally launched with. To update existing instances, specify an
             /// UpdatePolicy attribute for the Auto Scaling group.
@@ -136,8 +133,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             /// LaunchTemplate
             /// The LaunchTemplate to use to launch instances.
-            /// When you create an Auto Scaling group, you must specify one of the following properties in your
-            /// request: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
+            /// You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate,
+            /// InstanceId, or MixedInstancesPolicy.
             /// Note When you update LaunchTemplate, existing Amazon EC2 instances continue to run with the
             /// configuration that they were originally launched with. To update existing instances, specify an
             /// UpdatePolicy attribute for the Auto Scaling group.
@@ -159,8 +156,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// LoadBalancerNames
-            /// A list of Classic Load Balancers associated with this Auto Scaling group. To specify Application
-            /// Load Balancers or Network Load Balancers, use TargetGroupARNs instead.
+            /// A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load
+            /// Balancers and Network Load Balancers, specify a list of target groups using the TargetGroupARNs
+            /// property instead.
+            /// For more information, see Using a Load Balancer with an Auto Scaling Group in the Amazon EC2 Auto
+            /// Scaling User Guide.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -199,13 +199,13 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// MixedInstancesPolicy
             /// An embedded object that specifies a mixed instances policy.
             /// The policy includes properties that not only define the distribution of On-Demand Instances and Spot
-            /// Instances, the maximum price to pay for Spot instances, and how the Auto Scaling group allocates
+            /// Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates
             /// instance types to fulfill On-Demand and Spot capacity, but also the properties that specify the
             /// instance configuration information—the launch template and instance types.
             /// For more information, see Auto Scaling Groups with Multiple Instance Types and Purchase Options in
             /// the Amazon EC2 Auto Scaling User Guide.
-            /// When you create an Auto Scaling group, you must specify one of the following properties in your
-            /// request: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
+            /// You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate,
+            /// InstanceId, or MixedInstancesPolicy.
             /// Required: Conditional
             /// Type: MixedInstancesPolicy
             /// Update requires: No interruption
@@ -261,6 +261,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// <summary>
             /// TargetGroupARNs
             /// A list of Amazon Resource Names (ARN) of target groups to associate with the Auto Scaling group.
+            /// Instances are registered as targets in a target group, and traffic is routed to the target group.
+            /// For more information, see Using a Load Balancer with an Auto Scaling Group in the Amazon EC2 Auto
+            /// Scaling User Guide.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -283,12 +286,14 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
             /// <summary>
             /// VPCZoneIdentifier
-            /// A list of subnet IDs for a virtual private cloud (VPC). You must specify one of the following
-            /// properties: VPCZoneIdentifier or AvailabilityZones. If you specify VPCZoneIdentifier with
+            /// A list of subnet IDs for a virtual private cloud (VPC). If you specify VPCZoneIdentifier with
             /// AvailabilityZones, the subnets that you specify for this property must reside in those Availability
             /// Zones.
-            /// If your account supports EC2-Classic and VPC, this property is required to launch instances into a
-            /// VPC.
+            /// If your account supports EC2-Classic and VPC, this property is required to create an Auto Scaling
+            /// group that launches instances into a VPC.
+            /// If this resource has a public IP address and is also in a VPC that is defined in the same stack
+            /// template, you must use the DependsOn attribute to declare a dependency on the VPC-gateway
+            /// attachment.
             /// Note When you update VPCZoneIdentifier, this retains the same Auto Scaling group and replaces old
             /// instances with new ones, according to the specified subnets. You can specify how AWS CloudFormation
             /// handles these updates by using an UpdatePolicy attribute.
@@ -297,7 +302,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// Minimum: 1
             /// Maximum: 2047
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
-            /// Update requires: No interruption
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<Union<string, IntrinsicFunction>> VPCZoneIdentifier { get; set; }
 

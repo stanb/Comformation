@@ -60,6 +60,15 @@ namespace Comformation.ApiGatewayV2.Api
 			public Union<bool, IntrinsicFunction> DisableSchemaValidation { get; set; }
 
             /// <summary>
+            /// Tags
+            /// The collection of tags. Each tag element is associated with a given resource.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+
+            /// <summary>
             /// Name
             /// The name of the API.
             /// Required: Yes

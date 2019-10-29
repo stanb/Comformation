@@ -37,8 +37,6 @@ namespace Comformation.Kinesis.Stream
             /// Period in the Amazon Kinesis Developer Guide.
             /// Required: No
             /// Type: Integer
-            /// Minimum: 1
-            /// Maximum: 168
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> RetentionPeriodHours { get; set; }
@@ -50,7 +48,6 @@ namespace Comformation.Kinesis.Stream
             /// Required: Yes
             /// Type: Integer
             /// Minimum: 1
-            /// Maximum: 100000
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> ShardCount { get; set; }

@@ -40,11 +40,11 @@ namespace Comformation.CodePipeline.Webhook
 
             /// <summary>
             /// Authentication
-            /// Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+            /// Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
             /// For information about the authentication scheme implemented by GITHUB_HMAC, see Securing your
-            /// webhooks on the GitHub Developer website. IP will reject webhooks trigger requests unless they
-            /// originate from an IP within the IP range whitelisted in the authentication configuration.
-            /// UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+            /// webhooks on the GitHub Developer website. IP rejects webhooks trigger requests unless they originate
+            /// from an IP address in the IP range whitelisted in the authentication configuration. UNAUTHENTICATED
+            /// accepts all webhook trigger requests regardless of origin.
             /// Required: Yes
             /// Type: String
             /// Allowed Values: GITHUB_HMAC | IP | UNAUTHENTICATED

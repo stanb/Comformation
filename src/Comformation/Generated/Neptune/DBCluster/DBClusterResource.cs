@@ -47,7 +47,7 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// SnapshotIdentifier
-            /// Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+            /// Not supported by Neptune.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -153,6 +153,15 @@ namespace Comformation.Neptune.DBCluster
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// EnableCloudwatchLogsExports
+            /// Specifies a list of log types that are enabled for export to CloudWatch Logs.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
 
         }
 

@@ -139,7 +139,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The Elasticsearch type name that Amazon ES adds to documents when indexing data.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
+        /// Minimum: 0
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>

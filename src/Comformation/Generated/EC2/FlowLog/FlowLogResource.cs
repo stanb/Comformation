@@ -6,11 +6,11 @@ namespace Comformation.EC2.FlowLog
 {
     /// <summary>
     /// AWS::EC2::FlowLog
-    /// Specifies an Amazon Elastic Compute Cloud 			(Amazon EC2) flow log that captures IP traffic for a specified
-    /// network interface, subnet, 			or VPC. To view the log data, use Amazon CloudWatch Logs (CloudWatch Logs) to
-    /// help 			troubleshoot connection issues. For example, you can use a flow log to investigate why 			certain
-    /// traffic isn&#39;t reaching an instance, which can help you diagnose overly restrictive 			security group rules.
-    /// For more information, see 			VPC Flow Logs 			in the Amazon VPC User Guide.
+    /// Specifies an Amazon Elastic Compute Cloud (Amazon EC2) flow log that captures IP traffic for a specified
+    /// network interface, subnet, or VPC. To view the log data, use Amazon CloudWatch Logs (CloudWatch Logs) to help
+    /// troubleshoot connection issues. For example, you can use a flow log to investigate why certain traffic isn&#39;t
+    /// reaching an instance, which can help you diagnose overly restrictive security group rules. For more
+    /// information, see VPC Flow Logs in the Amazon VPC User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html
     /// </summary>
     public class FlowLogResource : ResourceBase
@@ -37,8 +37,9 @@ namespace Comformation.EC2.FlowLog
             /// published 			to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this
             /// parameter depends on the value specified 			for LogDestinationType.
             /// 		
-            /// If LogDestinationType is not specified or cloud-watch-logs, specify the Amazon Resource Name
-            /// 			(ARN) of the CloudWatch Logs log group.
+            /// If LogDestinationType is not specified or cloud-watch-logs, specify the Amazon Resource Name (ARN)
+            /// of the CloudWatch Logs log group. For example, to publish to a log group called my-logs, specify
+            /// arn:aws:logs:us-east-1:123456789012:log-group:my-logs. Alternatively, use LogGroupName instead.
             /// 		
             /// If LogDestinationType is s3, specify the ARN of the Amazon S3 bucket. You can also specify a
             /// 			subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:

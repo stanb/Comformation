@@ -17,9 +17,11 @@ namespace Comformation.DynamoDB.Table
             /// <summary>
             /// AttributeDefinitions
             /// A list of attributes that describe the key schema for the table and indexes. Duplicates are allowed.
+            /// This property is required to create a DynamoDB table.
             /// Update requires: Some interruptions. Replacement if you edit an existing AttributeDefinition.
-            /// Required: No
+            /// Required: Conditional
             /// Type: List of AttributeDefinition
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<AttributeDefinition> AttributeDefinitions { get; set; }
 
@@ -27,9 +29,9 @@ namespace Comformation.DynamoDB.Table
             /// BillingMode
             /// Specify how you are charged for read and write throughput and how you manage capacity.
             /// Valid values include:
-            /// PROVISIONED - Sets the billing mode to PROVISIONED. We recommend using PROVISIONED for predictable
-            /// workloads. PAY_PER_REQUEST - Sets the billing mode to PAY_PER_REQUEST. We recommend using
-            /// PAY_PER_REQUEST for unpredictable workloads.
+            /// PROVISIONED - We recommend using PROVISIONED for predictable workloads. PROVISIONED sets the billing
+            /// mode to Provisioned Mode. PAY_PER_REQUEST - We recommend using PAY_PER_REQUEST for unpredictable
+            /// workloads. PAY_PER_REQUEST sets the billing mode to On-Demand Mode.
             /// If not specified, the default is PROVISIONED.
             /// Required: No
             /// Type: String
@@ -107,6 +109,7 @@ namespace Comformation.DynamoDB.Table
             /// Update requires: Some interruptions.
             /// Required: No
             /// Type: SSESpecification
+            /// Update requires: Some interruptions
             /// </summary>
 			public SSESpecification SSESpecification { get; set; }
 

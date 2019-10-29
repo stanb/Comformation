@@ -85,6 +85,25 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
             /// </summary>
 			public Union<string, IntrinsicFunction> ServiceNamespace { get; set; }
 
+            /// <summary>
+            /// SuspendedState
+            /// An embedded object that contains attributes and attribute values that are used to suspend and resume
+            /// automatic scaling. Setting the value of an attribute to true suspends the specified scaling
+            /// activities. Setting it to false (default) resumes the specified scaling activities.
+            /// Suspension Outcomes
+            /// For DynamicScalingInSuspended, while a suspension is in effect, all scale-in activities that are
+            /// triggered by a scaling policy are suspended. For DynamicScalingOutSuspended, while a suspension is
+            /// in effect, all scale-out activities that are triggered by a scaling policy are suspended. For
+            /// ScheduledScalingSuspended, while a suspension is in effect, all scaling activities that involve
+            /// scheduled actions are suspended.
+            /// For more information, see Suspend and Resume Application Auto Scaling in the Application Auto
+            /// Scaling User Guide.
+            /// Required: No
+            /// Type: SuspendedState
+            /// Update requires: No interruption
+            /// </summary>
+			public SuspendedState SuspendedState { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ApplicationAutoScaling::ScalableTarget";

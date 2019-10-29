@@ -27,7 +27,7 @@ namespace Comformation.EC2.Route
             /// <summary>
             /// DestinationIpv6CidrBlock
             /// The IPv6 CIDR block used for the destination match.
-            /// You must specify the DestinationCidrBlock or DestinationCidrBlock property.
+            /// You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -99,6 +99,15 @@ namespace Comformation.EC2.Route
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> RouteTableId { get; set; }
+
+            /// <summary>
+            /// TransitGatewayId
+            /// The ID of a transit gateway.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
 
             /// <summary>
             /// VpcPeeringConnectionId

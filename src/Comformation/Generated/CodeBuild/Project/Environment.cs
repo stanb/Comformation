@@ -37,21 +37,17 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// PrivilegedMode
-        /// Indicates how the project builds Docker images. Specify true to enable running the Docker daemon
-        /// inside a Docker container.
-        /// This value must be set to true only if this build project will be used to build Docker images, and
-        /// the specified build environment image is not one provided by AWS CodeBuild with Docker support.
-        /// Otherwise, all associated builds that attempt to interact with the Docker daemon fail. For more
-        /// information, see the privilegedMode field in the AWS CodeBuild User Guide.
-        /// You must also start the Docker daemon so that builds can interact with it. One way to do this is to
-        /// initialize the Docker daemon during the install phase of your build spec by running the following
-        /// build commands. (Do not run these commands if the specified build environment image is provided by
-        /// AWS CodeBuild with Docker support. )
+        /// Enables running the Docker daemon inside a Docker container. Set to true only if the build project
+        /// is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon
+        /// fails.
+        /// You can initialize the Docker daemon during the install phase of your build by adding one of the
+        /// following sets of commands to the install phase of your buildspec file:
         /// If the operating system&#39;s base image is Ubuntu Linux:
         /// - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker. sock --host=tcp://0. 0. 0. 0:2375
         /// --storage-driver=overlay&amp;amp;
         /// - timeout 15 sh -c &quot;until docker info; do echo . ; sleep 1; done&quot;
-        /// If the operating system&#39;s base image is Alpine Linux, add the -t argument to timeout:
+        /// If the operating system&#39;s base image is Alpine Linux and the previous command does not work, add the
+        /// -t argument to timeout:
         /// - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker. sock --host=tcp://0. 0. 0. 0:2375
         /// --storage-driver=overlay&amp;amp;
         /// - timeout -t 15 sh -c &quot;until docker info; do echo . ; sleep 1; done&quot;

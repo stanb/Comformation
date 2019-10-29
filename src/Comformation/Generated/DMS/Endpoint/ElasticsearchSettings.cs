@@ -15,7 +15,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// EndpointUri
-        /// The endpoint for the ElasticSearch cluster.
+        /// The endpoint for the Elasticsearch cluster.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

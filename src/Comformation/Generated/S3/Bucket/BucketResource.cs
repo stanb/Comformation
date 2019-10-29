@@ -28,6 +28,10 @@ namespace Comformation.S3.Bucket
             /// AccessControl
             /// A canned access control list (ACL) that grants predefined permissions to the bucket. For more
             /// information about canned ACLs, see Canned ACL in the Amazon Simple Storage Service Developer Guide.
+            /// Be aware that the syntax for this property differs from the information provided in the Amazon
+            /// Simple Storage Service Developer Guide. The AccessControl property is case-sensitive and must be one
+            /// of the following values: Private, PublicRead, PublicReadWrite, AuthenticatedRead, LogDeliveryWrite,
+            /// BucketOwnerRead, BucketOwnerFullControl, or AwsExecRead.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -37,7 +41,6 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// AnalyticsConfigurations
             /// Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
-            /// For more information, see GET Bucket analytics in the Amazon Simple Storage Service API Reference.
             /// Required: No
             /// Type: List of AnalyticsConfiguration
             /// Update requires: No interruption
@@ -133,6 +136,28 @@ namespace Comformation.S3.Bucket
 			public NotificationConfiguration NotificationConfiguration { get; set; }
 
             /// <summary>
+            /// ObjectLockConfiguration
+            /// Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock
+            /// configuration will be applied by default to every new object placed in the specified bucket.
+            /// Note DefaultRetention requires either Days or Years. You can&#39;t specify both at the same time.
+            /// Related Resources Locking Objects
+            /// Required: No
+            /// Type: ObjectLockConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+			public ObjectLockConfiguration ObjectLockConfiguration { get; set; }
+
+            /// <summary>
+            /// ObjectLockEnabled
+            /// Indicates whether this bucket has an Object Lock configuration enabled.
+            /// Required: No
+            /// Type: Boolean
+            /// Allowed Values: Enabled
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<bool, IntrinsicFunction> ObjectLockEnabled { get; set; }
+
+            /// <summary>
             /// PublicAccessBlockConfiguration
             /// Configuration that defines how Amazon S3 handles public access.
             /// Required: No
@@ -156,8 +181,6 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// Tags
             /// An arbitrary set of tags (key-value pairs) for this S3 bucket.
-            /// Important We recommend limiting the number of tags to seven. Applying more than seven tags prevents
-            /// the AWS CLI and the AWS CloudFormation console and API actions from listing the tags for the bucket.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

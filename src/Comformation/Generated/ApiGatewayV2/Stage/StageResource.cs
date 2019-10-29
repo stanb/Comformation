@@ -97,6 +97,15 @@ namespace Comformation.ApiGatewayV2.Stage
             /// </summary>
 			public RouteSettings DefaultRouteSettings { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// The collection of tags. Each tag element is associated with a given resource.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ApiGatewayV2::Stage";

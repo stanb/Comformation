@@ -15,8 +15,8 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Type
-        /// 	The type of elastic inference accelerator. The possible values are eia1. small, eia1. medium, and
-        /// eia1. large.
+        /// 	The type of elastic inference accelerator. The possible values are eia1. medium, eia1. large, and
+        /// eia1. xlarge.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

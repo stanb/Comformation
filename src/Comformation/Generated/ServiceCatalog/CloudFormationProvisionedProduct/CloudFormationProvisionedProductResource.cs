@@ -37,6 +37,16 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 			public List<ProvisioningParameter> ProvisioningParameters { get; set; }
 
             /// <summary>
+            /// ProvisioningPreferences
+            /// StackSet preferences that are required for provisioning the product or updating a provisioned
+            /// product.
+            /// Required: No
+            /// Type: ProvisioningPreferences
+            /// Update requires: No interruption
+            /// </summary>
+			public ProvisioningPreferences ProvisioningPreferences { get; set; }
+
+            /// <summary>
             /// ProductName
             /// A user-friendly name for the provisioned product. This value must be unique for the AWS account and
             /// cannot be updated after the product is provisioned.
@@ -101,7 +111,8 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// Tags
             /// One or more tags.
             /// Note Requires the provisioned product to have an ResourceUpdateConstraint resource with
-            /// TagUpdatesOnProvisionedProduct set to ALLOWED to allow tag updates.
+            /// TagUpdatesOnProvisionedProduct set to ALLOWED to allow tag updates. If RESOURCE_UPDATE constraint is
+            /// not present, tags updates are ignored.
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 50

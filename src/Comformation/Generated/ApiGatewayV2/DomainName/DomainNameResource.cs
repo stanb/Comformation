@@ -32,6 +32,15 @@ namespace Comformation.ApiGatewayV2.DomainName
             /// </summary>
 			public List<DomainNameConfiguration> DomainNameConfigurations { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// The collection of tags associated with a domain name.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ApiGatewayV2::DomainName";

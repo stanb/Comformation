@@ -15,8 +15,8 @@ namespace Comformation.DMS.ReplicationTask
         {
             /// <summary>
             /// ReplicationTaskSettings
-            /// Settings for the task, such as target metadata settings. For a complete list of task settings, see
-            /// Task Settings for AWS Database Migration Service Tasks in the AWS Database Migration User Guide.
+            /// Overall settings for the task, in JSON format. For more information, see Task Settings in the AWS
+            /// Database Migration User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -25,10 +25,8 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// TableMappings
-            /// When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-            /// Precede the path with &quot;file://&quot;. When working with the DMS API, provide the JSON as the parameter
-            /// value.
-            /// For example, --table-mappings file://mappingfile. json
+            /// The table mappings for the task, in JSON format. For more information, see Table Mapping in the AWS
+            /// Database Migration User Guide.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -36,8 +34,24 @@ namespace Comformation.DMS.ReplicationTask
 			public Union<string, IntrinsicFunction> TableMappings { get; set; }
 
             /// <summary>
+            /// CdcStartPosition
+            /// Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition
+            /// or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in
+            /// an error.
+            /// The value can be in date, checkpoint, or LSN/SCN format.
+            /// Date Example: --cdc-start-position “2018-03-08T12:12:12”
+            /// Checkpoint Example: --cdc-start-position &quot;checkpoint:V1#27#mysql-bin-changelog.
+            /// 157832:1975:-1:2002:677883278264080:mysql-bin-changelog. 157832:1876#0#0#*#0#93&quot;
+            /// LSN Example: --cdc-start-position “mysql-bin-changelog. 000024:373”
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> CdcStartPosition { get; set; }
+
+            /// <summary>
             /// ReplicationTaskIdentifier
-            /// The replication task identifier.
+            /// An identifier for the replication task.
             /// Constraints:
             /// Must contain from 1 to 255 alphanumeric characters or hyphens. First character must be a letter.
             /// Cannot end with a hyphen or contain two consecutive hyphens.
@@ -48,8 +62,20 @@ namespace Comformation.DMS.ReplicationTask
 			public Union<string, IntrinsicFunction> ReplicationTaskIdentifier { get; set; }
 
             /// <summary>
+            /// CdcStopPosition
+            /// Indicates when you want a change data capture (CDC) operation to stop. The value can be either
+            /// server time or commit time.
+            /// Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+            /// Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> CdcStopPosition { get; set; }
+
+            /// <summary>
             /// SourceEndpointArn
-            /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+            /// An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -58,7 +84,7 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// MigrationType
-            /// The migration type.
+            /// The migration type. Valid values: full-load | cdc | full-load-and-cdc
             /// Required: Yes
             /// Type: String
             /// Allowed Values: cdc | full-load | full-load-and-cdc
@@ -68,7 +94,7 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// TargetEndpointArn
-            /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+            /// An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -77,7 +103,7 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// ReplicationInstanceArn
-            /// The Amazon Resource Name (ARN) of the replication instance.
+            /// The Amazon Resource Name (ARN) of a replication instance.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -86,7 +112,7 @@ namespace Comformation.DMS.ReplicationTask
 
             /// <summary>
             /// Tags
-            /// Tags to be added to the replication instance.
+            /// One or more tags to be assigned to the replication task.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: Replacement

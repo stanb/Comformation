@@ -7,7 +7,7 @@ namespace Comformation.Events.Rule
     /// <summary>
     /// AWS::Events::Rule
     /// The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more
-    /// targets for processing. For more information, see What Is Amazon CloudWatch Events?.
+    /// targets for processing. For more information, see What Is Amazon Eventbridge?.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
@@ -26,9 +26,14 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// EventPattern
-            /// Describes which events CloudWatch Events routes to the specified target. For more information, see
-            /// Event Patterns in CloudWatch Events in the Amazon CloudWatch Events User Guide.
-            /// Required: No
+            /// Describes which events are routed to the specified target. For more information, see Events and
+            /// Event Patterns in EventBridge in the Amazon EventBridge User Guide.
+            /// When using CloudFormation, you must enclose each part of the event pattern in square brackets, as
+            /// follows:
+            /// &quot;EventPattern&quot;: { &quot;source&quot;: [ &quot;aws. ec2&quot; ], &quot;detail-type&quot;: [ &quot;EC2 Instance State-change
+            /// Notification&quot; ] }
+            /// A rule must contain either EventPattern or ScheduleExpression.
+            /// Required: Conditional
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
@@ -53,6 +58,9 @@ namespace Comformation.Events.Rule
             /// <summary>
             /// RoleArn
             /// The Amazon Resource Name (ARN) of the role that is used for target invocation.
+            /// If you&#39;re setting an event bus in another account as the target and that account granted permission
+            /// to your account through an organization instead of directly by the account ID, you must specify a
+            /// RoleArn with proper permissions in the Target structure, instead of here in this parameter.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -65,7 +73,8 @@ namespace Comformation.Events.Rule
             /// ScheduleExpression
             /// The scheduling expression that determines when and how often the rule runs. For more information,
             /// see Schedule Expressions for Rules.
-            /// Required: No
+            /// A rule must contain either ScheduleExpression or EventPattern.
+            /// Required: Conditional
             /// Type: String
             /// Maximum: 256
             /// Update requires: No interruption
@@ -84,12 +93,12 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// Targets
-            /// The resources that CloudWatch Events routes events to and invokes when the rule is triggered. For
-            /// information about valid targets, see PutTargets.
+            /// The AWS resources that are invoked when the rule is triggered. For information about valid targets,
+            /// see PutTargets.
             /// If you&#39;re setting the event bus of another account as the target and that account granted permission
             /// to your account through an organization instead of directly by the account ID, you must specify a
             /// RoleArn with proper permissions in the Target structure. For more information, see Sending and
-            /// Receiving Events Between AWS Accounts in the Amazon CloudWatch Events User Guide.
+            /// Receiving Events Between AWS Accounts in the Amazon EventBridge User Guide.
             /// Required: No
             /// Type: List of Target
             /// Update requires: No interruption

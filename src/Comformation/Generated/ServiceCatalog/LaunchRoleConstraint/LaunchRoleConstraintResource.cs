@@ -63,7 +63,7 @@ namespace Comformation.ServiceCatalog.LaunchRoleConstraint
             /// The ARN of the launch role.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RoleArn { get; set; }
 

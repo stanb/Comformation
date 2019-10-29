@@ -15,8 +15,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Status
-        /// Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS
-        /// KMS-managed key.
+        /// Specifies whether Amazon S3 replicates objects created with server-side encryption using a customer
+        /// master key (CMK) stored in AWS Key Management Service.
         /// Required: Yes
         /// Type: String
         /// Allowed Values: Disabled | Enabled

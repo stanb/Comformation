@@ -25,7 +25,7 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// Protocol
-        /// The protocol used for the port mapping.
+        /// The protocol used for the port mapping. Specify one protocol.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

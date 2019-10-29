@@ -115,10 +115,10 @@ namespace Comformation.KMS.Key
             /// Master Key in the AWS Key Management Service Developer Guide. For more information about deleting
             /// CMKs, see the ScheduleKeyDeletion operation in the AWS Key Management Service API Reference and
             /// Deleting Customer Master Keys in the AWS Key Management Service Developer Guide.
+            /// Minimum: 7
+            /// Maximum: 30
             /// Required: No
             /// Type: Integer
-            /// Minimum: 1
-            /// Maximum: 365
             /// Update requires: No interruption
             /// </summary>
 			public Union<int, IntrinsicFunction> PendingWindowInDays { get; set; }

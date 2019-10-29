@@ -15,9 +15,10 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// AssociatePublicIpAddress
-        /// One or more IPv6 addresses to assign to the network interface. You cannot specify this option and
-        /// the option to assign a number of IPv6 addresses in the same request. You cannot specify this option
-        /// if you&#39;ve specified a minimum number of instances to launch.
+        /// Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP
+        /// address can only be assigned to a network interface for eth0, and can only be assigned to a new
+        /// network interface, not an existing one. You cannot specify more than one network interface in the
+        /// request. If launching into a default subnet, the default value is true.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -52,7 +53,7 @@ namespace Comformation.EC2.Instance
         /// The position of the network interface in the attachment order. A primary network interface has a
         /// device index of 0.
         /// If you specify a network interface when launching an instance, you must specify the device index.
-        /// Required: Yes
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

@@ -58,10 +58,13 @@ namespace Comformation.SageMaker.EndpointConfig
         /// Type: String
         /// Allowed Values: ml. c4. 2xlarge | ml. c4. 4xlarge | ml. c4. 8xlarge | ml. c4. large | ml. c4. xlarge
         /// | ml. c5. 18xlarge | ml. c5. 2xlarge | ml. c5. 4xlarge | ml. c5. 9xlarge | ml. c5. large | ml. c5.
-        /// xlarge | ml. m4. 10xlarge | ml. m4. 16xlarge | ml. m4. 2xlarge | ml. m4. 4xlarge | ml. m4. xlarge |
-        /// ml. m5. 12xlarge | ml. m5. 24xlarge | ml. m5. 2xlarge | ml. m5. 4xlarge | ml. m5. large | ml. m5.
-        /// xlarge | ml. p2. 16xlarge | ml. p2. 8xlarge | ml. p2. xlarge | ml. p3. 16xlarge | ml. p3. 2xlarge |
-        /// ml. p3. 8xlarge | ml. t2. 2xlarge | ml. t2. large | ml. t2. medium | ml. t2. xlarge
+        /// xlarge | ml. g4dn. 12xlarge | ml. g4dn. 16xlarge | ml. g4dn. 2xlarge | ml. g4dn. 4xlarge | ml. g4dn.
+        /// 8xlarge | ml. g4dn. xlarge | ml. m4. 10xlarge | ml. m4. 16xlarge | ml. m4. 2xlarge | ml. m4. 4xlarge
+        /// | ml. m4. xlarge | ml. m5. 12xlarge | ml. m5. 24xlarge | ml. m5. 2xlarge | ml. m5. 4xlarge | ml. m5.
+        /// large | ml. m5. xlarge | ml. p2. 16xlarge | ml. p2. 8xlarge | ml. p2. xlarge | ml. p3. 16xlarge |
+        /// ml. p3. 2xlarge | ml. p3. 8xlarge | ml. r5. 12xlarge | ml. r5. 24xlarge | ml. r5. 2xlarge | ml. r5.
+        /// 4xlarge | ml. r5. large | ml. r5. xlarge | ml. t2. 2xlarge | ml. t2. large | ml. t2. medium | ml.
+        /// t2. xlarge
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceType")]
@@ -71,10 +74,11 @@ namespace Comformation.SageMaker.EndpointConfig
         /// AcceleratorType
         /// The size of the Elastic Inference (EI) instance to use for the production variant. EI instances
         /// provide on-demand GPU computing for inference. For more information, see Using Elastic Inference in
-        /// Amazon SageMaker. For more information, see Using Elastic Inference in Amazon SageMaker.
+        /// Amazon SageMaker.
         /// Required: No
         /// Type: String
-        /// Allowed Values: ml. eia1. large | ml. eia1. medium | ml. eia1. xlarge
+        /// Allowed Values: ml. eia1. large | ml. eia1. medium | ml. eia1. xlarge | ml. eia2. large | ml. eia2.
+        /// medium | ml. eia2. xlarge
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AcceleratorType")]

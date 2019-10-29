@@ -17,9 +17,8 @@ namespace Comformation.EC2.Subnet
             /// AssignIpv6AddressOnCreation
             /// Indicates whether a network interface created in this subnet receives an IPv6 address. The default
             /// value is false.
-            /// If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must also be
-            /// specified.
-            /// Note If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
+            /// If you specify AssignIpv6AddressOnCreation, you must also specify Ipv6CidrBlock.
+            /// If you specify AssignIpv6AddressOnCreation, you cannot specify MapPublicIpOnLaunch.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -30,7 +29,7 @@ namespace Comformation.EC2.Subnet
             /// AvailabilityZone
             /// 	
             /// The Availability Zone of the subnet.
-            /// Note If you update this property, you must also update the CidrBlock property.
+            /// If you update this property, you must also update the CidrBlock property.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -51,9 +50,8 @@ namespace Comformation.EC2.Subnet
             /// <summary>
             /// Ipv6CidrBlock
             /// The IPv6 CIDR block.
-            /// If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must be
-            /// specified.
-            /// Required: No
+            /// If you specify AssignIpv6AddressOnCreation, you must also specify Ipv6CidrBlock.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -63,7 +61,7 @@ namespace Comformation.EC2.Subnet
             /// MapPublicIpOnLaunch
             /// 	
             /// Indicates whether instances launched in this subnet receive a public IPv4 address.
-            /// Note If MapPublicIpOnLaunch is specified. AssignIpv6AddressOnCreation cannot be specified.
+            /// If you specify MapPublicIpOnLaunch, you cannot specify AssignIpv6AddressOnCreation.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -84,8 +82,7 @@ namespace Comformation.EC2.Subnet
             /// VpcId
             /// 	
             /// The ID of the VPC the subnet is in.
-            /// 	
-            /// Note If you update this property, you must also update the 	 CidrBlock property.
+            /// If you update this property, you must also update the CidrBlock property.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

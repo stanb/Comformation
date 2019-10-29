@@ -56,7 +56,8 @@ namespace Comformation.EC2.VPCEndpoint
             /// SecurityGroupIds
             /// (Interface endpoint) The ID of one or more security groups to associate with the endpoint network
             /// interface.
-            /// Required: No
+            /// This field is required when the endpoint is an interface.
+            /// Required: Conditional
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
@@ -75,7 +76,8 @@ namespace Comformation.EC2.VPCEndpoint
             /// <summary>
             /// SubnetIds
             /// (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
-            /// Required: No
+            /// This field is required when the endpoint is an interface.
+            /// Required: Conditional
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
@@ -95,7 +97,8 @@ namespace Comformation.EC2.VPCEndpoint
             /// <summary>
             /// VpcId
             /// The ID of the VPC in which the endpoint will be used.
-            /// Required: Yes
+            /// This field is required when the endpoint is an interface.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

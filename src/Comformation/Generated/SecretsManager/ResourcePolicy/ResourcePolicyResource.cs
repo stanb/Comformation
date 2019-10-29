@@ -35,7 +35,7 @@ namespace Comformation.SecretsManager.ResourcePolicy
             /// Specifies a JSON object that&#39;s constructed according to the grammar and syntax for a resource-based
             /// policy. The policy identifies who can access or manage this secret and its versions. For information
             /// on how to format a JSON object as a parameter for this resource type, see Using Resource-based
-            /// Policies for Secrets Managerin the AWS Secrets Manager User Guide. Those same rules apply here.
+            /// Policies for Secrets Manager in the AWS Secrets Manager User Guide. Those same rules apply here.
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption

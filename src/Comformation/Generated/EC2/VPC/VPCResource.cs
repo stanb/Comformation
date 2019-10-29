@@ -28,7 +28,8 @@ namespace Comformation.EC2.VPC
             /// <summary>
             /// EnableDnsHostnames
             /// Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the
-            /// VPC get DNS hostnames; otherwise, they do not.
+            /// VPC get DNS hostnames; otherwise, they do not. Disabled by default for nondefault VPCs. For more
+            /// information, see DNS Support in Your VPC.
             /// You can only enable DNS hostnames if you&#39;ve enabled DNS support.
             /// Required: No
             /// Type: Boolean
@@ -42,7 +43,8 @@ namespace Comformation.EC2.VPC
             /// Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to 			the Amazon
             /// provided DNS server at the 169. 254. 169. 253 IP address, or the reserved IP 			address at the base
             /// of the VPC network range &quot;plus two&quot; succeed. If disabled, the Amazon 			provided DNS service in the
-            /// VPC that resolves public DNS hostnames to IP addresses is 			not enabled.
+            /// VPC that resolves public DNS hostnames to IP addresses is 			not enabled. Enabled by default. For
+            /// more information, see DNS Support in Your VPC.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -52,8 +54,10 @@ namespace Comformation.EC2.VPC
             /// <summary>
             /// InstanceTenancy
             /// The allowed tenancy of instances launched into the VPC.
-            /// &quot;default&quot;: Instances can be launched with any tenancy. &quot;dedicated&quot;: Any instance launched into the
-            /// VPC automatically has dedicated tenancy, unless you launch it with the default tenancy.
+            /// &quot;default&quot;: An instance launched into the VPC runs on shared hardware by default, unless you
+            /// explicitly specify a different tenancy during instance launch. &quot;dedicated&quot;: An instance launched
+            /// into the VPC is a Dedicated Instance by default, unless you explicitly specify a tenancy of host
+            /// during instance launch. You cannot specify a tenancy of default during instance launch.
             /// Updating InstanceTenancy requires no replacement only if you are updating its value from &quot;dedicated&quot;
             /// to &quot;default&quot;. Updating InstanceTenancy from &quot;default&quot; to &quot;dedicated&quot; requires replacement.
             /// Required: No

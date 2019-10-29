@@ -43,6 +43,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
             /// <summary>
             /// Priority
             /// The rule priority. A listener can&#39;t have multiple rules with the same priority.
+            /// If you try to reorder rules by updating their priorities, do not specify a new priority if an
+            /// existing rule already uses this priority, as this can cause an error. If you need to reuse a
+            /// priority with a different rule, you must remove it as a priority first, and then specify it in a
+            /// subsequent update.
             /// Required: Yes
             /// Type: Integer
             /// Minimum: 1

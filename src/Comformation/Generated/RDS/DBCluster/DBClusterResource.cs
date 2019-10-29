@@ -15,6 +15,17 @@ namespace Comformation.RDS.DBCluster
         public class DBClusterProperties
         {
             /// <summary>
+            /// AssociatedRoles
+            /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
+            /// DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to
+            /// access other AWS services on your behalf.
+            /// Required: No
+            /// Type: List of DBClusterRole
+            /// Update requires: No interruption
+            /// </summary>
+			public List<DBClusterRole> AssociatedRoles { get; set; }
+
+            /// <summary>
             /// AvailabilityZones
             /// A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information
             /// on AWS Regions and Availability Zones, see Choosing the Regions and Availability Zones in the Amazon
@@ -65,6 +76,8 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// DBClusterParameterGroupName
             /// The name of the DB cluster parameter group to associate with this DB cluster.
+            /// Important If you apply a parameter group to an existing DB cluster, then its DB instances might need
+            /// to reboot. This can result in an outage while the DB instances are rebooting.
             /// Note If this argument is omitted, default. aurora5. 6 is used. If default. aurora5. 6 is used,
             /// specifying aurora-mysql or aurora-postgresql for the Engine property might result in an error.
             /// Required: No
@@ -117,6 +130,7 @@ namespace Comformation.RDS.DBCluster
             /// EnableIAMDatabaseAuthentication
             /// A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM)
             /// accounts to database accounts. By default, mapping is disabled.
+            /// For more information, see IAM Database Authentication in the Amazon Aurora User Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -136,7 +150,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// EngineMode
-            /// The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, or global.
+            /// The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, global, or
+            /// multimaster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -146,10 +161,16 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// EngineVersion
             /// The version number of the database engine to use.
-            /// Note To prevent automatic upgrades, be sure to specify the full version number (for example, 5. 6.
-            /// 13). If the default version for the database engine changes and you specify only the major version
-            /// (for example, 5. 6), your DB instance will be upgraded to use the new default version. Note that the
-            /// default version is not necessarily the latest supported version.
+            /// To list all of the available engine versions for aurora (for MySQL 5. 6-compatible Aurora), use the
+            /// following command:
+            /// aws rds describe-db-engine-versions --engine aurora --query &quot;DBEngineVersions[]. EngineVersion&quot;
+            /// To list all of the available engine versions for aurora-mysql (for MySQL 5. 7-compatible Aurora),
+            /// use the following command:
+            /// aws rds describe-db-engine-versions --engine aurora-mysql --query &quot;DBEngineVersions[].
+            /// EngineVersion&quot;
+            /// To list all of the available engine versions for aurora-postgresql, use the following command:
+            /// aws rds describe-db-engine-versions --engine aurora-postgresql --query &quot;DBEngineVersions[].
+            /// EngineVersion&quot;
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -244,6 +265,21 @@ namespace Comformation.RDS.DBCluster
 			public Union<string, IntrinsicFunction> ReplicationSourceIdentifier { get; set; }
 
             /// <summary>
+            /// RestoreType
+            /// The type of restore to be performed. You can specify one of the following values:
+            /// full-copy - The new DB cluster is restored as a full copy of the source DB cluster. copy-on-write -
+            /// The new DB cluster is restored as a clone of the source DB cluster.
+            /// Constraints: You can&#39;t specify copy-on-write if the engine version of the source DB cluster is
+            /// earlier than 1. 11.
+            /// If you don&#39;t specify a RestoreType value, then the new DB cluster is restored as a full copy of the
+            /// source DB cluster.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> RestoreType { get; set; }
+
+            /// <summary>
             /// ScalingConfiguration
             /// The ScalingConfiguration property type specifies the scaling configuration of an Aurora Serverless
             /// DB cluster.
@@ -258,6 +294,13 @@ namespace Comformation.RDS.DBCluster
             /// The identifier for the DB snapshot or DB cluster snapshot to restore from.
             /// You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot.
             /// However, you can use only the ARN to specify a DB snapshot.
+            /// After you restore a DB cluster with a SnapshotIdentifier property, you must specify the same
+            /// SnapshotIdentifier property for any future updates to the DB cluster. When you specify this property
+            /// for an update, the DB cluster is not restored from the snapshot again, and the data in the database
+            /// is not changed. However, if you don&#39;t specify the SnapshotIdentifier property, an empty DB cluster
+            /// is created, and the original DB cluster is deleted. If you specify a property that is different from
+            /// the previous snapshot restore property, the DB cluster is restored from the specified
+            /// SnapshotIdentifier property, and the original DB cluster is deleted.
             /// Constraints:
             /// Must match the identifier of an existing Snapshot.
             /// Required: No
@@ -265,6 +308,17 @@ namespace Comformation.RDS.DBCluster
             /// Update requires: Replacement
             /// </summary>
 			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
+
+            /// <summary>
+            /// SourceDBClusterIdentifier
+            /// The identifier of the source DB cluster from which to restore.
+            /// Constraints:
+            /// Must match the identifier of an existing DBCluster.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> SourceDBClusterIdentifier { get; set; }
 
             /// <summary>
             /// SourceRegion
@@ -297,6 +351,16 @@ namespace Comformation.RDS.DBCluster
             /// Update requires: No interruption
             /// </summary>
 			public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// UseLatestRestorableTime
+            /// A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
+            /// default, the DB cluster is not restored to the latest restorable backup time.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<bool, IntrinsicFunction> UseLatestRestorableTime { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds

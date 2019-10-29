@@ -7,11 +7,31 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route HttpRouteMatch
-    /// An object representing the requirements for a route to match HTTP requests for a virtual router.
+    /// An object that represents the requirements for a route to match HTTP requests for a virtual router.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html
     /// </summary>
     public class HttpRouteMatch
     {
+
+        /// <summary>
+        /// Scheme
+        /// The client request scheme to match on. Specify only one.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Scheme")]
+        public Union<string, IntrinsicFunction> Scheme { get; set; }
+
+        /// <summary>
+        /// Headers
+        /// An object that represents the client request headers to match on.
+        /// Required: No
+        /// Type: List of HttpRouteHeader
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Headers")]
+        public List<HttpRouteHeader> Headers { get; set; }
 
         /// <summary>
         /// Prefix
@@ -25,6 +45,16 @@ namespace Comformation.AppMesh.Route
         /// </summary>
         [JsonProperty("Prefix")]
         public Union<string, IntrinsicFunction> Prefix { get; set; }
+
+        /// <summary>
+        /// Method
+        /// The client request method to match on. Specify only one.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Method")]
+        public Union<string, IntrinsicFunction> Method { get; set; }
 
     }
 }

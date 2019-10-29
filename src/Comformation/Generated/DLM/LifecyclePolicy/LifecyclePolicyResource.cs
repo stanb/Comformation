@@ -47,7 +47,6 @@ namespace Comformation.DLM.LifecyclePolicy
             /// <summary>
             /// PolicyDetails
             /// The configuration details of the lifecycle policy.
-            /// Target tags cannot be re-used across lifecycle policies.
             /// Required: Conditional
             /// Type: PolicyDetails
             /// Update requires: No interruption

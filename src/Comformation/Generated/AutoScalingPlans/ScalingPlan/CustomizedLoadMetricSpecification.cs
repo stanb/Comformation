@@ -26,10 +26,10 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// Statistic
-        /// The statistic of the metric. Currently, the value must always be Sum.
+        /// The statistic of the metric.
+        /// Allowed Values: Sum
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]

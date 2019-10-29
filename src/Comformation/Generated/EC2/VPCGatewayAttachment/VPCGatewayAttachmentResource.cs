@@ -6,7 +6,8 @@ namespace Comformation.EC2.VPCGatewayAttachment
 {
     /// <summary>
     /// AWS::EC2::VPCGatewayAttachment
-    /// Attaches an internet gateway to a VPC, enabling connectivity between the internet and 			the VPC.
+    /// Attaches an internet gateway, or a virtual private gateway to a VPC, enabling connectivity between the
+    /// internet and 			the VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
     /// </summary>
     public class VPCGatewayAttachmentResource : ResourceBase

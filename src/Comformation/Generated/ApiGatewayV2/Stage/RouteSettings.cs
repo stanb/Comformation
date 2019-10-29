@@ -15,7 +15,7 @@ namespace Comformation.ApiGatewayV2.Stage
 
         /// <summary>
         /// LoggingLevel
-        /// Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log
+        /// Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log
         /// entries pushed to Amazon CloudWatch Logs.
         /// Required: No
         /// Type: String

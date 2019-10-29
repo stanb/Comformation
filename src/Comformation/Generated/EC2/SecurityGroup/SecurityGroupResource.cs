@@ -6,7 +6,8 @@ namespace Comformation.EC2.SecurityGroup
 {
     /// <summary>
     /// AWS::EC2::SecurityGroup
-    /// Specifies a security group. To create a VPC security group, use the VpcId property.
+    /// Specifies a security group. To create a security group, use the VpcId property to specify the VPC for which to
+    /// create the security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
     /// </summary>
     public class SecurityGroupResource : ResourceBase
@@ -15,7 +16,13 @@ namespace Comformation.EC2.SecurityGroup
         {
             /// <summary>
             /// GroupDescription
-            /// The sets of IP permissions.
+            /// A description for the security group. This is informational only.
+            /// 		
+            /// Constraints: Up to 255 characters in length
+            /// 		
+            /// Constraints for EC2-Classic: ASCII characters
+            /// 		
+            /// Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and . _-:/()#,@[]+=&amp;amp;;{}!$*
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

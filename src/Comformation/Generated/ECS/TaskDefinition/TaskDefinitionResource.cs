@@ -69,10 +69,38 @@ namespace Comformation.ECS.TaskDefinition
 			public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
+            /// IpcMode
+            /// The IPC resource namespace to use for the containers in the task. The valid values are host, task,
+            /// or none. If host is specified, then all containers within the tasks that specified the host IPC mode
+            /// on the same container instance share the same IPC resources with the host Amazon EC2 instance. If
+            /// task is specified, all containers within the specified task share the same IPC resources. If none is
+            /// specified, then IPC resources within the containers of a task are private and not shared with other
+            /// containers in a task or on the container instance. If no value is specified, then the IPC resource
+            /// namespace sharing depends on the Docker daemon setting on the container instance. For more
+            /// information, see IPC settings in the Docker run reference.
+            /// If the host IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+            /// expose. For more information, see Docker security.
+            /// If you are setting namespaced kernel parameters using systemControls for the containers in the task,
+            /// the following will apply to your IPC resource namespace. For more information, see System Controls
+            /// in the Amazon Elastic Container Service Developer Guide.
+            /// For tasks that use the host IPC mode, IPC namespace related systemControls are not supported. For
+            /// tasks that use the task IPC mode, IPC namespace related systemControls will apply to all containers
+            /// within a task.
+            /// Note This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+            /// Required: No
+            /// Type: String
+            /// Allowed Values: host | none | task
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> IpcMode { get; set; }
+
+            /// <summary>
             /// Memory
-            /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional
-            /// and any value can be used. If using the Fargate launch type, this field is required and you must use
-            /// one of the following values, which determines your range of valid values for the cpu parameter:
+            /// The amount (in MiB) of memory used by the task.
+            /// If using the EC2 launch type, this field is optional and any value can be used. If a task-level
+            /// memory value is specified then the container-level memory value is optional.
+            /// If using the Fargate launch type, this field is required and you must use one of the following
+            /// values, which determines your range of valid values for the cpu parameter:
             /// 512 (0. 5 GB), 1024 (1 GB), 2048 (2 GB) - Available cpu values: 256 (. 25 vCPU) 1024 (1 GB), 2048 (2
             /// GB), 3072 (3 GB), 4096 (4 GB) - Available cpu values: 512 (. 5 vCPU) 2048 (2 GB), 3072 (3 GB), 4096
             /// (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available cpu values: 1024 (1 vCPU)
@@ -118,6 +146,24 @@ namespace Comformation.ECS.TaskDefinition
 			public Union<string, IntrinsicFunction> NetworkMode { get; set; }
 
             /// <summary>
+            /// PidMode
+            /// The process namespace to use for the containers in the task. The valid values are host or task. If
+            /// host is specified, then all containers within the tasks that specified the host PID mode on the same
+            /// container instance share the same process namespace with the host Amazon EC2 instance. If task is
+            /// specified, all containers within the specified task share the same process namespace. If no value is
+            /// specified, the default is a private namespace. For more information, see PID settings in the Docker
+            /// run reference.
+            /// If the host PID mode is used, be aware that there is a heightened risk of undesired process
+            /// namespace expose. For more information, see Docker security.
+            /// Note This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+            /// Required: No
+            /// Type: String
+            /// Allowed Values: host | task
+            /// Update requires: Replacement
+            /// </summary>
+			public Union<string, IntrinsicFunction> PidMode { get; set; }
+
+            /// <summary>
             /// PlacementConstraints
             /// An array of placement constraint objects to use for tasks. This field is not valid if you are using
             /// the Fargate launch type for your task.
@@ -126,6 +172,20 @@ namespace Comformation.ECS.TaskDefinition
             /// Update requires: Replacement
             /// </summary>
 			public List<TaskDefinitionPlacementConstraint> PlacementConstraints { get; set; }
+
+            /// <summary>
+            /// ProxyConfiguration
+            /// The ProxyConfiguration property specifies the configuration details for the App Mesh proxy.
+            /// Your Amazon ECS container instances require at least version 1. 26. 0 of the container agent and at
+            /// least version 1. 26. 0-1 of the ecs-init package to enable a proxy configuration. If your container
+            /// instances are launched from the Amazon ECS-optimized AMI version 20190301 or later, then they
+            /// contain the required versions of the container agent and ecs-init. For more information, see Amazon
+            /// ECS-optimized Linux AMI in the Amazon Elastic Container Service Developer Guide.
+            /// Required: No
+            /// Type: ProxyConfiguration
+            /// Update requires: Replacement
+            /// </summary>
+			public ProxyConfiguration ProxyConfiguration { get; set; }
 
             /// <summary>
             /// RequiresCompatibilities
@@ -138,10 +198,31 @@ namespace Comformation.ECS.TaskDefinition
 			public List<Union<string, IntrinsicFunction>> RequiresCompatibilities { get; set; }
 
             /// <summary>
+            /// Tags
+            /// The metadata that you apply to the task definition to help you categorize and organize them. Each
+            /// tag consists of a key and an optional value, both of which you define.
+            /// The following basic restrictions apply to tags:
+            /// Maximum number of tags per resource - 50 For each resource, each tag key must be unique, and each
+            /// tag key can have only one value. Maximum key length - 128 Unicode characters in UTF-8 Maximum value
+            /// length - 256 Unicode characters in UTF-8 If your tagging schema is used across multiple services and
+            /// resources, remember that other services may have restrictions on allowed characters. Generally
+            /// allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+            /// characters: + - = . _ : / @. Tag keys and values are case-sensitive. Do not use aws:, AWS:, or any
+            /// upper or lowercase combination of such as a prefix for either keys or values as it is reserved for
+            /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not
+            /// count against your tags per resource limit.
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
+
+            /// <summary>
             /// TaskRoleArn
-            /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants
-            /// containers in the task permission to call AWS APIs on your behalf. For more information, see Amazon
-            /// ECS Task Role in the Amazon Elastic Container Service Developer Guide.
+            /// The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM)
+            /// role that grants containers in the task permission to call AWS APIs on your behalf. For more
+            /// information, see Amazon ECS Task Role in the Amazon Elastic Container Service Developer Guide.
             /// IAM roles for tasks on Windows require that the -EnableTaskIAMRole option is set when you launch the
             /// Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to
             /// take advantage of the feature. For more information, see Windows IAM Roles for Tasks in the Amazon
@@ -161,7 +242,7 @@ namespace Comformation.ECS.TaskDefinition
             /// Definitions in the Amazon Elastic Container Service Developer Guide.
             /// Required: No
             /// Type: List of Volume
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
 			public List<Volume> Volumes { get; set; }
 

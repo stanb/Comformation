@@ -26,7 +26,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// MarketType
         /// The market type.
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
         /// Allowed Values: spot
         /// Update requires: No interruption

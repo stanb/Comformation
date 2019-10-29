@@ -32,7 +32,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// An array that contains information about the target group to use for load balancing in a deployment.
         /// In Elastic Load Balancing, target groups are used with Application Load Balancers.
         /// Note Adding more than one target group to the array is not supported.
-        /// Required: No
+        /// Required: Conditional
         /// Type: List of TargetGroupInfo
         /// Update requires: No interruption
         /// </summary>

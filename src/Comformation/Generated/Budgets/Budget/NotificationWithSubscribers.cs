@@ -16,7 +16,9 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// Subscribers
+        /// 		
         /// A list of subscribers who are subscribed to this notification.
+        /// 	
         /// Required: Yes
         /// Type: List of Subscriber
         /// Maximum: 11
@@ -27,7 +29,9 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// Notification
+        /// 		
         /// The notification that is associated with a budget.
+        /// 	
         /// Required: Yes
         /// Type: Notification
         /// Update requires: No interruption

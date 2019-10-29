@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualRouter
 {
     /// <summary>
     /// AWS::AppMesh::VirtualRouter VirtualRouterSpec
-    /// An object representing the specification of a virtual router.
+    /// An object that represents the specification of a virtual router.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
     /// </summary>
     public class VirtualRouterSpec
@@ -15,8 +15,8 @@ namespace Comformation.AppMesh.VirtualRouter
 
         /// <summary>
         /// Listeners
-        /// The listeners that the virtual router is expected to receive inbound traffic from. Currently only
-        /// one listener is supported per virtual router.
+        /// The listeners that the virtual router is expected to receive inbound traffic from. You can specify
+        /// one listener.
         /// Required: Yes
         /// Type: List of VirtualRouterListener
         /// Update requires: No interruption

@@ -34,8 +34,19 @@ namespace Comformation.CodeCommit.Repository
             /// The JSON block of configuration information for each trigger.
             /// Required: No
             /// Type: List of RepositoryTrigger
+            /// Update requires: Some interruptions
             /// </summary>
 			public List<RepositoryTrigger> Triggers { get; set; }
+
+            /// <summary>
+            /// Code
+            /// Information about code to be committed to a repository after it is created in an AWS CloudFormation
+            /// stack.
+            /// Required: No
+            /// Type: Code
+            /// Update requires: No interruption
+            /// </summary>
+			public Code Code { get; set; }
 
             /// <summary>
             /// RepositoryDescription
@@ -50,6 +61,15 @@ namespace Comformation.CodeCommit.Repository
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> RepositoryDescription { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// One or more tag key-value pairs to use when tagging this repository.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+			public List<Tag> Tags { get; set; }
 
         }
 

@@ -35,7 +35,7 @@ namespace Comformation.CloudFront.Distribution
         /// CloudFront also caches 			separate versions of a specified object that is based on the header values
         /// in viewer requests.
         /// 		
-        /// For more information, see Caching Content Based on 			Request Headers in the Amazon CloudFront
+        /// For more information, see 			Caching Content Based on Request Headers in the Amazon CloudFront
         /// Developer Guide.
         /// 	
         /// Required: No

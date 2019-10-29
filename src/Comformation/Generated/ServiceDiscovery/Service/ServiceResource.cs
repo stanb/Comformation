@@ -56,6 +56,9 @@ namespace Comformation.ServiceDiscovery.Service
             /// NamespaceId
             /// 		
             /// The ID of the namespace that was used to create the service.
+            /// 		
+            /// Important You must specify a value for NamespaceId either for the service properties or for
+            /// 				DnsConfig. 				Don&#39;t specify a value in both places. 			
             /// 	
             /// Required: No
             /// Type: String
@@ -67,9 +70,9 @@ namespace Comformation.ServiceDiscovery.Service
             /// <summary>
             /// HealthCheckConfig
             /// 		
-            /// Public DNS namespaces only. A complex type that contains settings for an optional health check. If
-            /// you 			specify settings for a health check, AWS Cloud Map associates the health check with the
-            /// records that you specify in 			DnsConfig.
+            /// Public DNS and HTTP namespaces only. A complex type that contains settings for an optional health
+            /// check. If you 			specify settings for a health check, AWS Cloud Map associates the health check with
+            /// the records that you specify in 			DnsConfig.
             /// 		
             /// For information about the charges for health checks, see Amazon Route 53 Pricing.
             /// 	

@@ -7,7 +7,7 @@ namespace Comformation.DocDB.DBSubnetGroup
     /// <summary>
     /// AWS::DocDB::DBSubnetGroup
     /// The AWS::DocDB::DBSubnetGroup Amazon DocumentDB (with MongoDB compatibility) resource describes a
-    /// DBSubnetGroup. DB subnet groups must contain at least one subnet in at least two Availability Zones in the AWS
+    /// DBSubnetGroup. subnet groups must contain at least one subnet in at least two Availability Zones in the AWS
     /// Region. For more information, see DBSubnetGroup in the Amazon DocumentDB Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html
     /// </summary>
@@ -17,7 +17,7 @@ namespace Comformation.DocDB.DBSubnetGroup
         {
             /// <summary>
             /// DBSubnetGroupName
-            /// The name for the DB subnet group. This value is stored as a lowercase string.
+            /// The name for the subnet group. This value is stored as a lowercase string.
             /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
             /// hyphens. Must not be default.
             /// Example: mySubnetgroup
@@ -29,7 +29,7 @@ namespace Comformation.DocDB.DBSubnetGroup
 
             /// <summary>
             /// DBSubnetGroupDescription
-            /// The description for the DB subnet group.
+            /// The description for the subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -38,7 +38,7 @@ namespace Comformation.DocDB.DBSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// The Amazon EC2 subnet IDs for the DB subnet group.
+            /// The Amazon EC2 subnet IDs for the subnet group.
             /// Required: Yes
             /// Type: List of String
             /// Update requires: No interruption
@@ -47,7 +47,7 @@ namespace Comformation.DocDB.DBSubnetGroup
 
             /// <summary>
             /// Tags
-            /// The tags to be assigned to the DB subnet group.
+            /// The tags to be assigned to the subnet group.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

@@ -15,6 +15,15 @@ namespace Comformation.IoTAnalytics.Datastore
         public class DatastoreProperties
         {
             /// <summary>
+            /// DatastoreStorage
+            /// Where data store data is stored.
+            /// Required: No
+            /// Type: DatastoreStorage
+            /// Update requires: No interruption
+            /// </summary>
+			public DatastoreStorage DatastoreStorage { get; set; }
+
+            /// <summary>
             /// DatastoreName
             /// The name of the data store.
             /// Required: No
@@ -28,7 +37,8 @@ namespace Comformation.IoTAnalytics.Datastore
 
             /// <summary>
             /// RetentionPeriod
-            /// How long, in days, message data is kept for the data store.
+            /// How long, in days, message data is kept for the data store. When &quot;customerManagedS3&quot; storage is
+            /// selected, this parameter is ignored.
             /// Required: No
             /// Type: RetentionPeriod
             /// Update requires: No interruption

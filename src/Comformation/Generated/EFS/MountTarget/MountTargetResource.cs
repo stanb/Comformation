@@ -60,4 +60,9 @@ namespace Comformation.EFS.MountTarget
         public MountTargetProperties Properties { get; } = new MountTargetProperties();
 
     }
+
+	public static class MountTargetAttributes
+	{
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IpAddress = new ResourceAttribute<Union<string, IntrinsicFunction>>("IpAddress");
+	}
 }

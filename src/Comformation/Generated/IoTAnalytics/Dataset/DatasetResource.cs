@@ -39,6 +39,16 @@ namespace Comformation.IoTAnalytics.Dataset
 			public Union<string, IntrinsicFunction> DatasetName { get; set; }
 
             /// <summary>
+            /// ContentDeliveryRules
+            /// When data set contents are created they are delivered to destinations specified here.
+            /// Required: No
+            /// Type: List of DatasetContentDeliveryRule
+            /// Maximum: 20
+            /// Update requires: No interruption
+            /// </summary>
+			public List<DatasetContentDeliveryRule> ContentDeliveryRules { get; set; }
+
+            /// <summary>
             /// Triggers
             /// The &quot;DatasetTrigger&quot; objects that specify when the data set is automatically updated.
             /// Required: No
@@ -47,6 +57,18 @@ namespace Comformation.IoTAnalytics.Dataset
             /// Update requires: No interruption
             /// </summary>
 			public List<Trigger> Triggers { get; set; }
+
+            /// <summary>
+            /// VersioningConfiguration
+            /// [Optional] How many versions of data set contents are kept. If not specified or set to null, only
+            /// the latest version plus the latest succeeded version (if they are different) are kept for the time
+            /// period specified by the &quot;retentionPeriod&quot; parameter. (For more information, see https://docs. aws.
+            /// amazon. com/iotanalytics/latest/userguide/getting-started. html#aws-iot-analytics-dataset-versions)
+            /// Required: No
+            /// Type: VersioningConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+			public VersioningConfiguration VersioningConfiguration { get; set; }
 
             /// <summary>
             /// RetentionPeriod

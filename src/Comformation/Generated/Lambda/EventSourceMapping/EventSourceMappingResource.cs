@@ -68,6 +68,17 @@ namespace Comformation.Lambda.EventSourceMapping
 			public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
+            /// MaximumBatchingWindowInSeconds
+            /// The maximum amount of time to gather records before invoking the function, in seconds.
+            /// Required: No
+            /// Type: Integer
+            /// Minimum: 0
+            /// Maximum: 300
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<int, IntrinsicFunction> MaximumBatchingWindowInSeconds { get; set; }
+
+            /// <summary>
             /// StartingPosition
             /// The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon
             /// DynamoDB Streams sources. AT_TIMESTAMP is only supported for Amazon Kinesis streams.

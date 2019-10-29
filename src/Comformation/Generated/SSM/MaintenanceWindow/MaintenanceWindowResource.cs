@@ -6,10 +6,10 @@ namespace Comformation.SSM.MaintenanceWindow
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindow
-    /// The AWS::SSM::MaintenanceWindow resource represents general information about a Maintenance Window for AWS
+    /// The AWS::SSM::MaintenanceWindow resource represents general information about a maintenance window for AWS
     /// Systems Manager. Maintenance Windows let you define a schedule for when to perform potentially disruptive
     /// actions on your instances, such as patching an operating system (OS), updating drivers, or installing
-    /// software. Each Maintenance Window has a schedule, a duration, a set of registered targets, and a set of
+    /// software. Each maintenance window has a schedule, a duration, a set of registered targets, and a set of
     /// registered tasks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html
     /// </summary>
@@ -19,7 +19,7 @@ namespace Comformation.SSM.MaintenanceWindow
         {
             /// <summary>
             /// StartDate
-            /// The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to
+            /// The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to
             /// become active. StartDate allows you to delay activation of the Maintenance Window until the
             /// specified future date.
             /// Required: No
@@ -41,9 +41,9 @@ namespace Comformation.SSM.MaintenanceWindow
 
             /// <summary>
             /// AllowUnassociatedTargets
-            /// Enables a Maintenance Window task to run on managed instances, even if you have not registered those
+            /// Enables a maintenance window task to run on managed instances, even if you have not registered those
             /// instances as targets. If enabled, then you must specify the unregistered instances (by instance ID)
-            /// when you register a task with the Maintenance Window
+            /// when you register a task with the maintenance window.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -98,7 +98,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Tags
             /// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value
             /// pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
-            /// environment. For example, you might want to tag a Maintenance Window to identify the type of tasks
+            /// environment. For example, you might want to tag a maintenance window to identify the type of tasks
             /// it will run, the types of targets, and the environment it will run in.
             /// Required: No
             /// Type: List of Tag

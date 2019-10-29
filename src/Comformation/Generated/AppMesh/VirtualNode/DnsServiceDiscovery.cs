@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode DnsServiceDiscovery
-    /// An object representing the DNS service discovery information for your virtual node.
+    /// An object that represents the DNS service discovery information for your virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html
     /// </summary>
     public class DnsServiceDiscovery

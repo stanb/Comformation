@@ -47,7 +47,7 @@ namespace Comformation.WorkSpaces.Workspace
 
         /// <summary>
         /// RunningModeAutoStopTimeoutInMinutes
-        /// The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+        /// The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute
         /// intervals.
         /// Required: No
         /// Type: Integer

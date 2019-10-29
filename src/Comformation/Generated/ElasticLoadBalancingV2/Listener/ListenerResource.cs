@@ -17,6 +17,7 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// Certificates
             /// The default SSL server certificate. You must provide exactly one certificate if the listener
             /// protocol is HTTPS or TLS.
+            /// To create a certificate list for the listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate.
             /// Required: Conditional
             /// Type: List of Certificate
             /// Update requires: No interruption
@@ -55,11 +56,11 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
             /// <summary>
             /// Protocol
             /// The protocol for connections from clients to the load balancer. For Application Load Balancers, the
-            /// supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP
-            /// and TLS.
+            /// supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP,
+            /// TLS, UDP, and TCP_UDP.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: HTTP | HTTPS | TCP | TLS
+            /// Allowed Values: HTTP | HTTPS | TCP | TCP_UDP | TLS | UDP
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> Protocol { get; set; }

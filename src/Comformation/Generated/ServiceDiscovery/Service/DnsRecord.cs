@@ -43,27 +43,29 @@ namespace Comformation.ServiceDiscovery.Service
         /// 		
         /// Route 53 returns the domain name of the resource, such as www. example. com. Note the following:
         /// 		
-        /// 			 			 			 		 You specify the domain name that you want to route traffic to when you register an
-        /// instance. For more information, 				see 				Attributes 				in the topic RegisterInstance. You must
-        /// specify WEIGHTED for the value of RoutingPolicy. You can&#39;t specify both CNAME for Type and settings
-        /// for HealthCheckConfig. 				If you do, the request will fail with an InvalidInput error.
+        /// 			 			 			 		 				 You specify the domain name that you want to route traffic to when you register
+        /// an instance. For more information, see 				Attributes 				in the topic RegisterInstance. 			 				
+        /// You must specify WEIGHTED for the value of RoutingPolicy. 			 				 You can&#39;t specify both CNAME for
+        /// Type and settings for HealthCheckConfig. 					If you do, the request will fail with an InvalidInput
+        /// error. 			
         /// 		 		
         /// SRV
         /// 		
         /// Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
-        /// 		
+        /// 		 		
         /// priority weight port service-hostname
-        /// 		
+        /// 		 		
         /// Note the following about the values:
         /// 			
-        /// 				 				 				 			 The values of priority and weight are both set to 1 and can&#39;t be changed. The
-        /// value of port comes from the value that you specify for the AWS_INSTANCE_PORT attribute 					when
-        /// you submit a RegisterInstance request. The value of service-hostname is a concatenation of the
-        /// following values: 					 						 						 						 					 The value that you specify for InstanceId when
-        /// you register an instance. The name of the service. The name of the namespace. 					 For example, if
-        /// the value of InstanceId is test, the name of the service is backend, and the 						name of the
-        /// namespace is example. com, the value of service-hostname is: 					 test. backend. example. com 				
-        /// 		
+        /// 				 				 				 			 					 The values of priority and weight are both set to 1 and can&#39;t be changed.
+        /// 				 					 The value of port comes from the value that you specify for the AWS_INSTANCE_PORT
+        /// attribute 						when you submit a RegisterInstance request. 				 					 The value of service-hostname
+        /// is a concatenation of the following values: 					 						 						 						 					 The value that you
+        /// specify for InstanceId when you register an instance. The name of the service. The name of the
+        /// namespace. 		 					 For example, if the value of InstanceId is test, the name of the service is
+        /// backend, and the 						name of the namespace is example. com, the value of service-hostname is:
+        /// 					 					 test. backend. example. com 				
+        /// 		 		
         /// If you specify settings for an SRV record and if you specify values for AWS_INSTANCE_IPV4,
         /// AWS_INSTANCE_IPV6, or both 			in the RegisterInstance request, AWS Cloud Map automatically creates A
         /// and/or AAAA records that have the same name 			as the value of service-hostname in the SRV record.

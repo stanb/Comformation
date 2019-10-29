@@ -28,6 +28,15 @@ namespace Comformation.IoTAnalytics.Channel
 			public Union<string, IntrinsicFunction> ChannelName { get; set; }
 
             /// <summary>
+            /// ChannelStorage
+            /// Where channel data is stored.
+            /// Required: No
+            /// Type: ChannelStorage
+            /// Update requires: No interruption
+            /// </summary>
+			public ChannelStorage ChannelStorage { get; set; }
+
+            /// <summary>
             /// RetentionPeriod
             /// How long, in days, message data is kept for the channel.
             /// Required: No

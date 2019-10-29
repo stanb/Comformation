@@ -71,6 +71,8 @@ namespace Comformation.IAM.ManagedPolicy
             /// most punctuation characters, digits, and upper and lowercased letters.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 512
             /// Pattern: ((/[A-Za-z0-9\. ,\+@=_-]+)*)/
             /// Update requires: Replacement
             /// </summary>

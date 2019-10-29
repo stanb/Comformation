@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode AccessLog
-    /// An object representing the access logging information for a virtual node.
+    /// An object that represents the access logging information for a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
     /// </summary>
     public class AccessLog

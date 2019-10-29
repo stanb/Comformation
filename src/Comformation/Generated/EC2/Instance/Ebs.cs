@@ -15,7 +15,9 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// DeleteOnTermination
-        /// Indicates whether the EBS volume is deleted on instance termination.
+        /// Indicates whether the EBS volume is deleted on instance termination. For more information, see
+        /// Preserving Amazon EBS Volumes on Instance Termination in the Amazon Elastic Compute Cloud User
+        /// Guide.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -25,14 +27,12 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Encrypted
-        /// 		
-        /// Indicates whether the volume is encrypted. Encrypted Amazon EBS volumes can only be attached to
-        /// 			instance types that support Amazon EBS encryption. Volumes that are created from encrypted
-        /// snapshots 			are automatically encrypted. You cannot create an encrypted volume from an unencrypted
-        /// snapshot or 			vice versa. If your AMI uses encrypted volumes, you can only launch the AMI on
-        /// supported instance 			types. For more information, see 				Amazon EBS Volume Types in the Amazon
-        /// Elastic Compute Cloud User 					Guide.
-        /// 	
+        /// Specifies whether the volume should be encrypted. The effect of setting the encryption state to true
+        /// depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and
+        /// whether encryption by default is enabled. For more information, see Encryption by Default in the
+        /// Amazon Elastic Compute Cloud User Guide.
+        /// Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For
+        /// more information, see Supported Instance Types.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -48,7 +48,7 @@ namespace Comformation.EC2.Instance
         /// bursting. For more information, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud User
         /// Guide.
         /// Constraints: Range is 100-16,000 IOPS for gp2 volumes and 100 to 64,000IOPS for io1 volumes in most
-        /// Regions. Maximum io1IOPS of 64,000 is guaranteed only on Nitro-based instances. Other instance
+        /// Regions. Maximum io1 IOPS of 64,000 is guaranteed only on Nitro-based instances. Other instance
         /// families guarantee performance up to 32,000 IOPS. For more information, see Amazon EBS Volume Types
         /// in the Amazon Elastic Compute Cloud User Guide.
         /// Condition: This parameter is required for requests to create io1 volumes; it is not used in requests
@@ -59,6 +59,17 @@ namespace Comformation.EC2.Instance
         /// </summary>
         [JsonProperty("Iops")]
         public Union<int, IntrinsicFunction> Iops { get; set; }
+
+        /// <summary>
+        /// KmsKeyId
+        /// Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS
+        /// volume is encrypted.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("KmsKeyId")]
+        public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
         /// <summary>
         /// SnapshotId
@@ -93,8 +104,9 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// VolumeType
-        /// The volume type. If you set the type to io1, you must also set the Iops property.
-        /// Default: standard
+        /// The volume type. If you set the type to io1, you must also specify the IOPS that the volume
+        /// supports.
+        /// Default: gp2
         /// Required: No
         /// Type: String
         /// Allowed Values: gp2 | io1 | sc1 | st1 | standard

@@ -19,8 +19,8 @@ namespace Comformation.ECS.TaskDefinition
         /// The log driver to use for the container. The valid values listed for this parameter are log drivers
         /// that the Amazon ECS container agent can communicate with by default.
         /// For tasks using the Fargate launch type, the supported log drivers are awslogs and splunk.
-        /// For tasks using the EC2 launch type, the supported log drivers are awslogs, syslog, gelf, fluentd,
-        /// splunk, journald, and json-file.
+        /// For tasks using the EC2 launch type, the supported log drivers are awslogs, fluentd, gelf,
+        /// json-file, journald, logentries, syslog, and splunk.
         /// For more information about using the awslogs log driver, see Using the awslogs Log Driver in the
         /// Amazon Elastic Container Service Developer Guide.
         /// Note If you have a custom driver that is not listed above that you would like to work with the
@@ -34,7 +34,7 @@ namespace Comformation.ECS.TaskDefinition
         /// APIVersion}}&#39;
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: awslogs | fluentd | gelf | journald | json-file | splunk | syslog
+        /// Allowed Values: awsfirelens | awslogs | fluentd | gelf | journald | json-file | splunk | syslog
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LogDriver")]
@@ -52,6 +52,17 @@ namespace Comformation.ECS.TaskDefinition
         /// </summary>
         [JsonProperty("Options")]
         public Dictionary<string, Union<string, IntrinsicFunction>> Options { get; set; }
+
+        /// <summary>
+        /// SecretOptions
+        /// The secrets to pass to the log configuration. For more information, see Specifying Sensitive Data in
+        /// the Amazon Elastic Container Service Developer Guide.
+        /// Required: No
+        /// Type: List of Secret
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SecretOptions")]
+        public List<Secret> SecretOptions { get; set; }
 
     }
 }

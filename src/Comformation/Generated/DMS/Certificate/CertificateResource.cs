@@ -16,7 +16,9 @@ namespace Comformation.DMS.Certificate
         {
             /// <summary>
             /// CertificateIdentifier
-            /// The customer-assigned name of the certificate. Valid characters are A-z and 0-9.
+            /// A customer-assigned name for the certificate. Identifiers must begin with a letter; must contain
+            /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive
+            /// hyphens.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -25,7 +27,7 @@ namespace Comformation.DMS.Certificate
 
             /// <summary>
             /// CertificatePem
-            /// The contents of the . pem X. 509 certificate file for the certificate.
+            /// The contents of a . pem file, which contains an X. 509 certificate.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -34,7 +36,7 @@ namespace Comformation.DMS.Certificate
 
             /// <summary>
             /// CertificateWallet
-            /// The location of the imported Oracle Wallet certificate for use with SSL.
+            /// The location of an imported Oracle Wallet certificate for use with SSL.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

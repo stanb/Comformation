@@ -34,6 +34,15 @@ namespace Comformation.Glue.Classifier
 			public JsonClassifier JsonClassifier { get; set; }
 
             /// <summary>
+            /// CsvClassifier
+            /// A classifier for comma-separated values (CSV).
+            /// Required: No
+            /// Type: CsvClassifier
+            /// Update requires: No interruption
+            /// </summary>
+			public CsvClassifier CsvClassifier { get; set; }
+
+            /// <summary>
             /// GrokClassifier
             /// A classifier that uses grok.
             /// Required: No

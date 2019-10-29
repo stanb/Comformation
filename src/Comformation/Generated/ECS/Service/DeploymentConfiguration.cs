@@ -8,7 +8,7 @@ namespace Comformation.ECS.Service
     /// <summary>
     /// AWS::ECS::Service DeploymentConfiguration
     /// The DeploymentConfiguration property specifies optional deployment parameters that control how many tasks run
-    /// during the deploymentand the ordering of stopping and starting tasks.
+    /// during the deployment and the ordering of stopping and starting tasks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html
     /// </summary>
     public class DeploymentConfiguration

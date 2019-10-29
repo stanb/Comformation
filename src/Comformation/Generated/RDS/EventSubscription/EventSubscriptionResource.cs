@@ -72,6 +72,7 @@ namespace Comformation.RDS.EventSubscription
             /// Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
             /// Required: No
             /// Type: String
+            /// Update requires: Some interruptions
             /// </summary>
 			public Union<string, IntrinsicFunction> SourceType { get; set; }
 

@@ -7,7 +7,7 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode Listener
-    /// An object representing a listener for a virtual node.
+    /// An object that represents a listener for a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
     /// </summary>
     public class Listener

@@ -89,6 +89,15 @@ namespace Comformation.Glue.Crawler
 			public Targets Targets { get; set; }
 
             /// <summary>
+            /// CrawlerSecurityConfiguration
+            /// The name of the SecurityConfiguration structure to be used by this crawler.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<string, IntrinsicFunction> CrawlerSecurityConfiguration { get; set; }
+
+            /// <summary>
             /// TablePrefix
             /// The prefix added to the names of tables that are created.
             /// Required: No
@@ -96,6 +105,15 @@ namespace Comformation.Glue.Crawler
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> TablePrefix { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// The tags to use with this crawler.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name

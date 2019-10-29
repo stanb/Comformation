@@ -8,7 +8,7 @@ namespace Comformation.Cognito.UserPool
     /// <summary>
     /// AWS::Cognito::UserPool AdminCreateUserConfig
     /// AdminCreateUserConfig is a property of the AWS::Cognito::UserPool resource. The AdminCreateUserConfig property
-    /// configures the AdminCreateUser requests for an Amazon Cognito User Pool.
+    /// configures the AdminCreateUser requests for an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html
     /// </summary>
     public class AdminCreateUserConfig
@@ -33,13 +33,13 @@ namespace Comformation.Cognito.UserPool
         /// Note If you set a value for TemporaryPasswordValidityDays in PasswordPolicy, that value will be used
         /// and UnusedAccountValidityDays will be deprecated for that user pool.
         /// Required: No
-        /// Type: Double
+        /// Type: Integer
         /// Minimum: 0
         /// Maximum: 365
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UnusedAccountValidityDays")]
-        public Union<double, IntrinsicFunction> UnusedAccountValidityDays { get; set; }
+        public Union<int, IntrinsicFunction> UnusedAccountValidityDays { get; set; }
 
         /// <summary>
         /// AllowAdminCreateUserOnly

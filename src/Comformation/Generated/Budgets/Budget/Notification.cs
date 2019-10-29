@@ -15,7 +15,9 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// ComparisonOperator
+        /// 		
         /// The comparison that is used for this notification.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Allowed Values: EQUAL_TO | GREATER_THAN | LESS_THAN
@@ -26,8 +28,10 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// NotificationType
+        /// 		
         /// Whether the notification is for how much you have spent (ACTUAL) or for how much you&#39;re forecasted
         /// to spend (FORECASTED).
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Allowed Values: ACTUAL | FORECASTED
@@ -38,7 +42,9 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// Threshold
+        /// 		
         /// The threshold that is associated with a notification. Thresholds are always a percentage.
+        /// 	
         /// Required: Yes
         /// Type: Double
         /// Update requires: No interruption
@@ -48,11 +54,13 @@ namespace Comformation.Budgets.Budget
 
         /// <summary>
         /// ThresholdType
+        /// 		
         /// The type of threshold for a notification. For ABSOLUTE_VALUE thresholds, AWS notifies you when you
         /// go over or are forecasted to go over your total cost threshold. For PERCENTAGE thresholds, AWS
         /// notifies you when you go over or are forecasted to go over a certain percentage of your forecasted
         /// spend. For example, if you have a budget for 200 dollars and you have a PERCENTAGE threshold of 80%,
         /// AWS notifies you when you go over 160 dollars.
+        /// 	
         /// Required: No
         /// Type: String
         /// Allowed Values: ABSOLUTE_VALUE | PERCENTAGE

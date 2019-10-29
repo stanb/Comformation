@@ -17,8 +17,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// KMSMasterKeyID
-        /// KMS master key ID to use for the default encryption. This parameter is allowed if and only if
-        /// SSEAlgorithm is set to aws:kms.
+        /// KMS key ID to use for the default encryption. This parameter is allowed if SSEAlgorithm is aws:kms.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

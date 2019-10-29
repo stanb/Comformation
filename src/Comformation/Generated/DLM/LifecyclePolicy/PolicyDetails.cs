@@ -15,7 +15,7 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// ResourceTypes
-        /// The resource type. The supported value is VOLUME.
+        /// The resource type.
         /// Required: No
         /// Type: List of String
         /// Maximum: 1
@@ -34,6 +34,28 @@ namespace Comformation.DLM.LifecyclePolicy
         /// </summary>
         [JsonProperty("Schedules")]
         public List<Schedule> Schedules { get; set; }
+
+        /// <summary>
+        /// PolicyType
+        /// This field determines the valid target resource types and actions a policy can manage. This field
+        /// defaults to EBS_SNAPSHOT_MANAGEMENT if not present.
+        /// Required: No
+        /// Type: String
+        /// Allowed Values: EBS_SNAPSHOT_MANAGEMENT
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PolicyType")]
+        public Union<string, IntrinsicFunction> PolicyType { get; set; }
+
+        /// <summary>
+        /// Parameters
+        /// A set of optional parameters that can be provided by the policy.
+        /// Required: No
+        /// Type: Parameters
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Parameters")]
+        public Parameters Parameters { get; set; }
 
         /// <summary>
         /// TargetTags
