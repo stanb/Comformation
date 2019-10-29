@@ -22,7 +22,7 @@ namespace Comformation.LakeFormation.DataLakeSettings
             /// Type: Admins
             /// Update requires: No interruption
             /// </summary>
-			public Admins Admins { get; set; }
+			public List<DataLakePrincipal> Admins { get; set; }
 
         }
 

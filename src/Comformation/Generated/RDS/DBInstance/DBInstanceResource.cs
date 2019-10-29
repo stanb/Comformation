@@ -27,10 +27,10 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// AllowMajorVersionUpgrade
-            /// Indicates that major version upgrades are allowed. Changing this parameter does not result in an
-            /// outage and the change is asynchronously applied as soon as possible.
-            /// Constraints: This parameter must be set to true when specifying a value for the EngineVersion
-            /// parameter that is a different major version than the DB Instance&#39;s current version.
+            /// A value that indicates whether major version upgrades are allowed. Changing this parameter doesn&#39;t
+            /// result in an outage and the change is asynchronously applied as soon as possible.
+            /// Constraints: Major version upgrades must be allowed when specifying a value for the EngineVersion
+            /// parameter that is a different major version than the DB instance&#39;s current version.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -48,9 +48,8 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates that minor engine upgrades will be applied automatically to the DB Instance during the
-            /// maintenance window.
-            /// Default: true
+            /// A value that indicates whether minor engine upgrades are applied automatically to the DB instance
+            /// during the maintenance window. By default, minor engine upgrades are applied automatically.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Some interruptions
@@ -59,11 +58,15 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The Availability Zone that the database instance will be created in.
-            /// Default: A random, system-chosen Availability Zone in the endpoint&#39;s region.
+            /// The Availability Zone (AZ) where the database will be created. For information on AWS Regions and
+            /// Availability Zones, see Regions and Availability Zones.
+            /// Default: A random, system-chosen Availability Zone in the endpoint&#39;s AWS Region.
             /// Example: us-east-1d
-            /// Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
-            /// true. The specified Availability Zone must be in the same region as the current endpoint.
+            /// Constraint: The AvailabilityZone parameter can&#39;t be specified if the DB instance is a Multi-AZ
+            /// deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+            /// Note If you&#39;re creating a DB instance in an RDS on VMware environment, specify the identifier of the
+            /// custom Availability Zone to create the DB instance in. For more information about RDS on VMware, see
+            /// the RDS on VMware User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -74,10 +77,11 @@ namespace Comformation.RDS.DBInstance
             /// BackupRetentionPeriod
             /// The number of days for which automated backups are retained. Setting this parameter to a positive
             /// number enables backups. Setting this parameter to 0 disables automated backups.
+            /// Amazon Aurora
+            /// Not applicable. The retention period for automated backups is managed by the DB cluster.
             /// Default: 1
             /// Constraints:
-            /// Must be a value from 0 to 8 Cannot be set to 0 if the DB Instance is a master instance with read
-            /// replicas
+            /// Must be a value from 0 to 35 Can&#39;t be set to 0 if the DB instance is a source to Read Replicas
             /// Required: No
             /// Type: Integer
             /// Update requires: Some interruptions
@@ -86,8 +90,11 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// CharacterSetName
-            /// For supported engines, indicates that the DB Instance should be associated with the specified
+            /// For supported engines, indicates that the DB instance should be associated with the specified
             /// CharacterSet.
+            /// Amazon Aurora
+            /// Not applicable. The character set is managed by the DB cluster. For more information, see
+            /// CreateDBCluster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -372,14 +379,22 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// EngineVersion
             /// The version number of the database engine to use.
+            /// For a list of valid engine versions, use the DescribeDBEngineVersions action.
+            /// The following are the database engines and links to information about the major and minor versions
+            /// that are available with Amazon RDS. Not every database engine is available for every AWS Region.
+            /// Amazon Aurora
+            /// Not applicable. The version number of the database engine to be used by the DB instance is managed
+            /// by the DB cluster.
+            /// MariaDB
+            /// See MariaDB on Amazon RDS Versions in the Amazon RDS User Guide.
+            /// Microsoft SQL Server
+            /// See Version and Feature Support on Amazon RDS in the Amazon RDS User Guide.
             /// MySQL
-            /// Example: 5. 1. 42
-            /// Type: String
+            /// See MySQL on Amazon RDS Versions in the Amazon RDS User Guide.
             /// Oracle
-            /// Example: 11. 2. 0. 2. v2
-            /// Type: String
-            /// SQL Server
-            /// Example: 10. 50. 2789. 0. v1
+            /// See Oracle Database Engine Release Notes in the Amazon RDS User Guide.
+            /// PostgreSQL
+            /// See Supported PostgreSQL Database Versions in the Amazon RDS User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
@@ -436,15 +451,20 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// MasterUserPassword
-            /// The password for the master database user. Can be any printable ASCII character except &quot;/&quot;, &quot;\&quot;, or
-            /// &quot;@&quot;.
-            /// Type: String
+            /// The password for the master user. The password can include any printable ASCII character except &quot;/&quot;,
+            /// &quot;&quot;&quot;, or &quot;@&quot;.
+            /// Amazon Aurora
+            /// Not applicable. The password for the master user is managed by the DB cluster.
+            /// MariaDB
+            /// Constraints: Must contain from 8 to 41 characters.
+            /// Microsoft SQL Server
+            /// Constraints: Must contain from 8 to 128 characters.
             /// MySQL
-            /// Constraints: Must contain from 8 to 41 alphanumeric characters.
+            /// Constraints: Must contain from 8 to 41 characters.
             /// Oracle
-            /// Constraints: Must contain from 8 to 30 alphanumeric characters.
-            /// SQL Server
-            /// Constraints: Must contain from 8 to 128 alphanumeric characters.
+            /// Constraints: Must contain from 8 to 30 characters.
+            /// PostgreSQL
+            /// Constraints: Must contain from 8 to 128 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -501,7 +521,10 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// OptionGroupName
-            /// Indicates that the DB Instance should be associated with the specified option group.
+            /// Indicates that the DB instance should be associated with the specified option group.
+            /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can&#39;t be removed from an
+            /// option group, and that option group can&#39;t be removed from a DB instance once it is associated with a
+            /// DB instance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -543,15 +566,16 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// PreferredBackupWindow
             /// The daily time range during which automated backups are created if automated backups are enabled,
-            /// using the BackupRetentionPeriod parameter.
-            /// Default: A 30-minute window selected at random from an 8-hour block of time per region. The
-            /// following list shows the time blocks for each region from which the default backup windows are
-            /// assigned.
-            /// US-East (Northern Virginia) Region: 03:00-11:00 UTC US-West (Northern California) Region:
-            /// 06:00-14:00 UTC EU (Ireland) Region: 22:00-06:00 UTC Asia Pacific (Singapore) Region: 14:00-22:00
-            /// UTC Asia Pacific (Tokyo) Region: 17:00-03:00 UTC
-            /// Constraints: Must be in the format hh24:mi-hh24:mi. Times should be Universal Time Coordinated
-            /// (UTC). Must not conflict with the preferred maintenance window. Must be at least 30 minutes.
+            /// using the BackupRetentionPeriod parameter. For more information, see The Backup Window in the Amazon
+            /// RDS User Guide.
+            /// Amazon Aurora
+            /// Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
+            /// The default is a 30-minute window selected at random from an 8-hour block of time for each AWS
+            /// Region. To see the time blocks available, see Adjusting the Preferred DB Instance Maintenance Window
+            /// in the Amazon RDS User Guide.
+            /// Constraints:
+            /// Must be in the format hh24:mi-hh24:mi. Must be in Universal Coordinated Time (UTC). Must not
+            /// conflict with the preferred maintenance window. Must be at least 30 minutes.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -671,7 +695,10 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// StorageType
-            /// Specifies storage type to be associated with the DB Instance.
+            /// Specifies the storage type to be associated with the DB instance.
+            /// Valid values: standard | gp2 | io1
+            /// If you specify io1, you must also include a value for the Iops parameter.
+            /// Default: io1 if the Iops parameter is specified, otherwise gp2
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions

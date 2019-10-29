@@ -19,9 +19,6 @@ namespace Comformation.DynamoDB.Table
         /// table.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 3
-        /// Maximum: 255
-        /// Pattern: [a-zA-Z0-9_. -]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexName")]
@@ -39,7 +36,6 @@ namespace Comformation.DynamoDB.Table
         /// partition key physically close together, in sorted order by the sort key value.
         /// Required: Yes
         /// Type: List of KeySchema
-        /// Maximum: 2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeySchema")]

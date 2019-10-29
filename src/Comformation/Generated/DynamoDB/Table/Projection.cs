@@ -22,7 +22,6 @@ namespace Comformation.DynamoDB.Table
         /// this counts as two distinct attributes when determining the total.
         /// Required: No
         /// Type: List of String
-        /// Maximum: 20
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NonKeyAttributes")]
@@ -36,7 +35,6 @@ namespace Comformation.DynamoDB.Table
         /// NonKeyAttributes. ALL - All of the table attributes are projected into the index.
         /// Required: No
         /// Type: String
-        /// Allowed Values: ALL | INCLUDE | KEYS_ONLY
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ProjectionType")]

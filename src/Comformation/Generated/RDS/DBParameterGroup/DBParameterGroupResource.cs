@@ -15,7 +15,7 @@ namespace Comformation.RDS.DBParameterGroup
         {
             /// <summary>
             /// Description
-            /// Provides the customer-specified description for this DB Parameter Group.
+            /// Provides the customer-specified description for this DB parameter group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

@@ -35,7 +35,6 @@ namespace Comformation.DynamoDB.Table
             /// If not specified, the default is PROVISIONED.
             /// Required: No
             /// Type: String
-            /// Allowed Values: PAY_PER_REQUEST | PROVISIONED
             /// Update requires: No interruption
             /// </summary>
 			public Union<string, IntrinsicFunction> BillingMode { get; set; }

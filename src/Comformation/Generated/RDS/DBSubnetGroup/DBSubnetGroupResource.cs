@@ -16,7 +16,7 @@ namespace Comformation.RDS.DBSubnetGroup
         {
             /// <summary>
             /// DBSubnetGroupDescription
-            /// The description for the DB Subnet Group.
+            /// The description for the DB subnet group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -25,9 +25,9 @@ namespace Comformation.RDS.DBSubnetGroup
 
             /// <summary>
             /// DBSubnetGroupName
-            /// The name for the DB Subnet Group. This value is stored as a lowercase string.
-            /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be
-            /// &quot;Default&quot;.
+            /// The name for the DB subnet group. This value is stored as a lowercase string.
+            /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
+            /// hyphens. Must not be default.
             /// Example: mySubnetgroup
             /// Required: No
             /// Type: String
@@ -37,7 +37,7 @@ namespace Comformation.RDS.DBSubnetGroup
 
             /// <summary>
             /// SubnetIds
-            /// The EC2 Subnet IDs for the DB Subnet Group.
+            /// The EC2 Subnet IDs for the DB subnet group.
             /// Required: Yes
             /// Type: List of String
             /// Update requires: No interruption

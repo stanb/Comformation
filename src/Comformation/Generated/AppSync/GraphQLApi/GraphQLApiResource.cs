@@ -39,7 +39,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: Tags
             /// Update requires: No interruption
             /// </summary>
-			public Tags Tags { get; set; }
+			public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -76,7 +76,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: AdditionalAuthenticationProviders
             /// Update requires: No interruption
             /// </summary>
-			public AdditionalAuthenticationProviders AdditionalAuthenticationProviders { get; set; }
+			public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders { get; set; }
 
         }
 

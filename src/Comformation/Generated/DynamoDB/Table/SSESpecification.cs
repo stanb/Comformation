@@ -46,7 +46,6 @@ namespace Comformation.DynamoDB.Table
         /// account and is managed by AWS KMS (AWS KMS charges apply).
         /// Required: No
         /// Type: String
-        /// Allowed Values: AES256 | KMS
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SSEType")]

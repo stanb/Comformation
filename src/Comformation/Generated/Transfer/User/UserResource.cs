@@ -91,7 +91,7 @@ namespace Comformation.Transfer.User
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<SshPublicKey> SshPublicKeys { get; set; }
+			public List<Union<string, IntrinsicFunction>> SshPublicKeys { get; set; }
 
             /// <summary>
             /// Tags

@@ -37,7 +37,6 @@ namespace Comformation.DynamoDB.Table
         /// partition key physically close together, in sorted order by the sort key value.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: HASH | RANGE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeyType")]

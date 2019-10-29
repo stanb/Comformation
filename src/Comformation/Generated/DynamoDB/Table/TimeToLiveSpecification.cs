@@ -18,8 +18,6 @@ namespace Comformation.DynamoDB.Table
         /// The name of the TTL attribute used to store the expiration time for items in the table.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeName")]
