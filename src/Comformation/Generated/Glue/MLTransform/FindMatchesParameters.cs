@@ -7,7 +7,6 @@ namespace Comformation.Glue.MLTransform
 {
     /// <summary>
     /// AWS::Glue::MLTransform FindMatchesParameters
-    /// The parameters to configure the find matches transform.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html
     /// </summary>
     public class FindMatchesParameters

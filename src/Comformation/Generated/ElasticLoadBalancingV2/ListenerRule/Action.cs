@@ -7,33 +7,34 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule Action
-    /// Specifies an action for a listener rule.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html
     /// </summary>
     public class Action
     {
 
         /// <summary>
-        /// AuthenticateCognitoConfig
-        /// [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when Type
-        /// is authenticate-cognito.
+        /// Order
+        /// The order for the action. This value is required for rules with multiple actions. The action with
+        /// the lowest value for order is performed first.
         /// Required: No
-        /// Type: AuthenticateCognitoConfig
+        /// Type: Integer
+        /// Minimum: 1
+        /// Maximum: 50000
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("AuthenticateCognitoConfig")]
-        public AuthenticateCognitoConfig AuthenticateCognitoConfig { get; set; }
+        [JsonProperty("Order")]
+        public Union<int, IntrinsicFunction> Order { get; set; }
 
         /// <summary>
-        /// AuthenticateOidcConfig
-        /// [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect
-        /// (OIDC). Specify only when Type is authenticate-oidc.
+        /// TargetGroupArn
+        /// The Amazon Resource Name (ARN) of the target group. Specify only when Type is forward and you want
+        /// to route to a single target group. To route to one or more target groups, use ForwardConfig instead.
         /// Required: No
-        /// Type: AuthenticateOidcConfig
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("AuthenticateOidcConfig")]
-        public AuthenticateOidcConfig AuthenticateOidcConfig { get; set; }
+        [JsonProperty("TargetGroupArn")]
+        public Union<string, IntrinsicFunction> TargetGroupArn { get; set; }
 
         /// <summary>
         /// FixedResponseConfig
@@ -47,18 +48,26 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public FixedResponseConfig FixedResponseConfig { get; set; }
 
         /// <summary>
-        /// Order
-        /// The order for the action. This value is required for rules with multiple actions. The action with
-        /// the lowest value for order is performed first. The last action to be performed must be one of the
-        /// following types of actions: a forward, fixed-response, or redirect.
+        /// AuthenticateCognitoConfig
+        /// [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when Type
+        /// is authenticate-cognito.
         /// Required: No
-        /// Type: Integer
-        /// Minimum: 1
-        /// Maximum: 50000
+        /// Type: AuthenticateCognitoConfig
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("Order")]
-        public Union<int, IntrinsicFunction> Order { get; set; }
+        [JsonProperty("AuthenticateCognitoConfig")]
+        public AuthenticateCognitoConfig AuthenticateCognitoConfig { get; set; }
+
+        /// <summary>
+        /// Type
+        /// The type of action.
+        /// Required: Yes
+        /// Type: String
+        /// Allowed values: authenticate-cognito | authenticate-oidc | fixed-response | forward | redirect
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Type")]
+        public Union<string, IntrinsicFunction> Type { get; set; }
 
         /// <summary>
         /// RedirectConfig
@@ -72,25 +81,28 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public RedirectConfig RedirectConfig { get; set; }
 
         /// <summary>
-        /// TargetGroupArn
-        /// The Amazon Resource Name (ARN) of the target group. Specify only when Type is forward.
+        /// ForwardConfig
+        /// Information for creating an action that distributes requests among one or more target groups. For
+        /// Network Load Balancers, you can specify a single target group. Specify only when Type is forward. If
+        /// you specify both ForwardConfig and TargetGroupArn, you can specify only one target group using
+        /// ForwardConfig and it must be the same target group specified in TargetGroupArn.
         /// Required: No
-        /// Type: String
+        /// Type: ForwardConfig
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("TargetGroupArn")]
-        public Union<string, IntrinsicFunction> TargetGroupArn { get; set; }
+        [JsonProperty("ForwardConfig")]
+        public ForwardConfig ForwardConfig { get; set; }
 
         /// <summary>
-        /// Type
-        /// The type of action.
-        /// Required: Yes
-        /// Type: String
-        /// Allowed Values: authenticate-cognito | authenticate-oidc | fixed-response | forward | redirect
+        /// AuthenticateOidcConfig
+        /// [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect
+        /// (OIDC). Specify only when Type is authenticate-oidc.
+        /// Required: No
+        /// Type: AuthenticateOidcConfig
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("Type")]
-        public Union<string, IntrinsicFunction> Type { get; set; }
+        [JsonProperty("AuthenticateOidcConfig")]
+        public AuthenticateOidcConfig AuthenticateOidcConfig { get; set; }
 
     }
 }

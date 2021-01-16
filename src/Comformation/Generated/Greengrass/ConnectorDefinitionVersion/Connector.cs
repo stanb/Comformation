@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.ConnectorDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::ConnectorDefinitionVersion Connector
-    /// Connectors are modules that provide 		built-in integration with local infrastructure, device protocols, AWS,
-    /// and other cloud services. 	For more information, 	see Integrate with Services and Protocols Using Greengrass
-    /// Connectors in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html
     /// </summary>
     public class Connector

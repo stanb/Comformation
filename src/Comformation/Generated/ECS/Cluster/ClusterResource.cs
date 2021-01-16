@@ -6,7 +6,6 @@ namespace Comformation.ECS.Cluster
 {
     /// <summary>
     /// AWS::ECS::Cluster
-    /// The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS) cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -14,19 +13,11 @@ namespace Comformation.ECS.Cluster
         public class ClusterProperties
         {
             /// <summary>
-            /// ClusterName
-            /// A user-generated string that you use to identify your cluster. If you don&#39;t specify a name, AWS
-            /// CloudFormation generates a unique physical ID for the name.
-            /// Required: No
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-			public Union<string, IntrinsicFunction> ClusterName { get; set; }
-
-            /// <summary>
             /// Tags
-            /// The metadata that you apply to the cluster to help you categorize and organize them. Each tag
+            /// 		
+            /// The metadata that you apply to the cluster to help you categorize and organize them. 			Each tag
             /// consists of a key and an optional value, both of which you define.
+            /// 		
             /// The following basic restrictions apply to tags:
             /// Maximum number of tags per resource - 50 For each resource, each tag key must be unique, and each
             /// tag key can have only one value. Maximum key length - 128 Unicode characters in UTF-8 Maximum value
@@ -42,7 +33,52 @@ namespace Comformation.ECS.Cluster
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// ClusterName
+            /// A user-generated string that you use to identify your cluster. If you don&#39;t specify a name, AWS
+            /// CloudFormation generates a unique physical ID for the name.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ClusterName { get; set; }
+
+            /// <summary>
+            /// ClusterSettings
+            /// The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container
+            /// Insights for a cluster. If this value is specified, it will override the containerInsights value set
+            /// with PutAccountSetting or PutAccountSettingDefault.
+            /// Required: No
+            /// Type: List of ClusterSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public List<ClusterSettings> ClusterSettings { get; set; }
+
+            /// <summary>
+            /// CapacityProviders
+            /// 		
+            /// The capacity providers associated with the cluster.
+            /// 	
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> CapacityProviders { get; set; }
+
+            /// <summary>
+            /// DefaultCapacityProviderStrategy
+            /// 		
+            /// The default capacity provider strategy for the cluster. When services or tasks are run 			in the
+            /// cluster with no launch type or capacity provider strategy specified, the default 			capacity
+            /// provider strategy is used.
+            /// 	
+            /// Required: No
+            /// Type: List of CapacityProviderStrategyItem
+            /// Update requires: No interruption
+            /// </summary>
+            public List<CapacityProviderStrategyItem> DefaultCapacityProviderStrategy { get; set; }
 
         }
 
@@ -52,8 +88,8 @@ namespace Comformation.ECS.Cluster
 
     }
 
-	public static class ClusterAttributes
-	{
+    public static class ClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

@@ -7,8 +7,6 @@ namespace Comformation.DLM.LifecyclePolicy
 {
     /// <summary>
     /// AWS::DLM::LifecyclePolicy Parameters
-    /// Optional parameters that can be added to the policy. The set of valid parameters depends on the combination of
-    /// policyType and resourceType values.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html
     /// </summary>
     public class Parameters
@@ -16,15 +14,31 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// ExcludeBootVolume
-        /// When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with
-        /// the excludeBootVolume set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-        /// Management – Instance policies.
+        /// 		
+        /// [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the 			root volume
+        /// from snapshots created using CreateSnapshots. 			The default is false.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcludeBootVolume")]
         public Union<bool, IntrinsicFunction> ExcludeBootVolume { get; set; }
+
+        /// <summary>
+        /// NoReboot
+        /// 		
+        /// Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
+        /// lifecycle 			policy runs. true indicates that targeted instances are not rebooted when the policy
+        /// 			runs. false indicates that target instances are rebooted when the policy runs. The 			default is
+        /// true (instances are not rebooted).
+        /// 	
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("NoReboot")]
+        public Union<bool, IntrinsicFunction> NoReboot { get; set; }
 
     }
 }

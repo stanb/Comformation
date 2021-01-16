@@ -6,7 +6,6 @@ namespace Comformation.IAM.UserToGroupAddition
 {
     /// <summary>
     /// AWS::IAM::UserToGroupAddition
-    /// Adds the specified user to the specified group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
     /// </summary>
     public class UserToGroupAdditionResource : ResourceBase
@@ -26,7 +25,7 @@ namespace Comformation.IAM.UserToGroupAddition
             /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupName { get; set; }
+            public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// Users
@@ -35,7 +34,7 @@ namespace Comformation.IAM.UserToGroupAddition
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Users { get; set; }
+            public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 {
     /// <summary>
     /// AWS::AutoScaling::LaunchConfiguration BlockDeviceMapping
-    /// BlockDeviceMapping is a property of LaunchConfiguration that describes a block device mapping for an Amazon
-    /// EC2 Auto Scaling group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html
     /// </summary>
     public class BlockDeviceMapping
@@ -17,12 +15,9 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// <summary>
         /// DeviceName
         /// The device name exposed to the EC2 instance (for example, /dev/sdh or xvdh). For more information,
-        /// see Device Naming on Linux Instances in the Amazon EC2 User Guide for Linux Instances.
+        /// see Device naming on Linux instances in the Amazon EC2 User Guide for Linux Instances.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeviceName")]
@@ -30,7 +25,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// Ebs
-        /// The information about the Amazon EBS volume.
+        /// Parameters used to automatically set up EBS volumes when an instance is launched.
         /// You can specify either VirtualName or Ebs, but not both.
         /// Required: No
         /// Type: BlockDevice
@@ -41,9 +36,11 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// NoDevice
-        /// Suppresses the device mapping. If this property is set to true for the root device, the instance
-        /// might fail the Amazon EC2 health check. Amazon EC2 Auto Scaling launches a replacement instance if
-        /// the instance fails the health check.
+        /// Setting this value to true suppresses the specified device included in the block device mapping of
+        /// the AMI.
+        /// If NoDevice is true for the root device, instances might fail the EC2 health check. In that case,
+        /// Amazon EC2 Auto Scaling launches replacement instances.
+        /// If you specify NoDevice, you cannot specify Ebs.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -58,9 +55,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// You can specify either VirtualName or Ebs, but not both.
         /// Required: No
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VirtualName")]

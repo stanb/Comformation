@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode AwsCloudMapServiceDiscovery
-    /// An object that represents the AWS Cloud Map service discovery information for your virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html
     /// </summary>
     public class AwsCloudMapServiceDiscovery

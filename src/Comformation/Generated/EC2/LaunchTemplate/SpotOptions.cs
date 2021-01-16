@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate SpotOptions
-    /// Specifies options for Spot instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html
     /// </summary>
     public class SpotOptions
@@ -22,7 +21,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// capacity.
         /// Required: No
         /// Type: String
-        /// Allowed Values: one-time | persistent
+        /// Allowed values: one-time | persistent
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SpotInstanceType")]
@@ -33,7 +32,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// The behavior when a Spot Instance is interrupted. The default is terminate.
         /// Required: No
         /// Type: String
-        /// Allowed Values: hibernate | stop | terminate
+        /// Allowed values: hibernate | stop | terminate
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InstanceInterruptionBehavior")]

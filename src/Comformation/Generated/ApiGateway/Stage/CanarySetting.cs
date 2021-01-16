@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
     /// AWS::ApiGateway::Stage CanarySetting
-    /// The CanarySetting property type specifies settings for the canary deployment in this stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html
     /// </summary>
     public class CanarySetting

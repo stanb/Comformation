@@ -7,7 +7,6 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
 {
     /// <summary>
     /// AWS::EC2::TrafficMirrorFilterRule TrafficMirrorPortRange
-    /// Describes the Traffic Mirror port range.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html
     /// </summary>
     public class TrafficMirrorPortRange

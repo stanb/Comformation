@@ -6,7 +6,6 @@ namespace Comformation.Neptune.DBClusterParameterGroup
 {
     /// <summary>
     /// AWS::Neptune::DBClusterParameterGroup
-    /// The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html
     /// </summary>
     public class DBClusterParameterGroupResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Parameters
@@ -31,7 +30,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
             /// Family
@@ -40,7 +39,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Family { get; set; }
+            public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
             /// Tags
@@ -49,7 +48,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -58,7 +57,7 @@ namespace Comformation.Neptune.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

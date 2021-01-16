@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule Action
-    /// Describes the actions associated with a rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html
     /// </summary>
     public class Action
@@ -75,6 +74,16 @@ namespace Comformation.IoT.TopicRule
         public FirehoseAction Firehose { get; set; }
 
         /// <summary>
+        /// Http
+        /// Send data to an HTTPS endpoint.
+        /// Required: No
+        /// Type: HttpAction
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Http")]
+        public HttpAction Http { get; set; }
+
+        /// <summary>
         /// IotAnalytics
         /// Sends message data to an AWS IoT Analytics channel.
         /// Required: No
@@ -83,6 +92,26 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("IotAnalytics")]
         public IotAnalyticsAction IotAnalytics { get; set; }
+
+        /// <summary>
+        /// IotEvents
+        /// Sends an input to an AWS IoT Events detector.
+        /// Required: No
+        /// Type: IotEventsAction
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IotEvents")]
+        public IotEventsAction IotEvents { get; set; }
+
+        /// <summary>
+        /// IotSiteWise
+        /// Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+        /// Required: No
+        /// Type: IotSiteWiseAction
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IotSiteWise")]
+        public IotSiteWiseAction IotSiteWise { get; set; }
 
         /// <summary>
         /// Kinesis

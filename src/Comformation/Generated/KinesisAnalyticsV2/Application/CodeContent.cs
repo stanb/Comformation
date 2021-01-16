@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application CodeContent
-    /// Specifies either the application code, or the location of the application code, for a Java-based Amazon
-    /// Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-codecontent.html
     /// </summary>
     public class CodeContent
@@ -16,7 +14,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// ZipFileContent
-        /// The zip-format code for a Java-based Kinesis Data Analytics application.
+        /// The zip-format code for a Flink-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,7 +34,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// TextContent
-        /// The text-format code for a Java-based Kinesis Data Analytics application.
+        /// The text-format code for a Flink-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: String
         /// Minimum: 0

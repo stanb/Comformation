@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel OnInput
-    /// When an input is received and the &quot;condition&quot; is TRUE, perform the specified &quot;actions&quot;.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html
     /// </summary>
     public class OnInput
@@ -15,7 +14,7 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// Events
-        /// Specifies the actions that are performed when an input is received and the &quot;condition&quot; is TRUE.
+        /// Specifies the actions performed when the condition evaluates to TRUE.
         /// Required: No
         /// Type: List of Event
         /// Update requires: No interruption
@@ -25,8 +24,7 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// TransitionEvents
-        /// Specifies the actions performed, and the next state entered, when an input is received and a
-        /// &quot;condition&quot; evaluates to TRUE.
+        /// Specifies the actions performed, and the next state entered, when a condition evaluates to TRUE.
         /// Required: No
         /// Type: List of TransitionEvent
         /// Update requires: No interruption

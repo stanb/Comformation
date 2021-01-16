@@ -6,8 +6,6 @@ namespace Comformation.ApiGatewayV2.ApiMapping
 {
     /// <summary>
     /// AWS::ApiGatewayV2::ApiMapping
-    /// The AWS::ApiGatewayV2::ApiMapping resource contains an API mapping. For more information, see CreateApiMapping
-    /// in the Amazon API Gateway V2 API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html
     /// </summary>
     public class ApiMappingResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGatewayV2.ApiMapping
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DomainName { get; set; }
+            public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// Stage
@@ -30,7 +28,7 @@ namespace Comformation.ApiGatewayV2.ApiMapping
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Stage { get; set; }
+            public Union<string, IntrinsicFunction> Stage { get; set; }
 
             /// <summary>
             /// ApiMappingKey
@@ -39,7 +37,7 @@ namespace Comformation.ApiGatewayV2.ApiMapping
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiMappingKey { get; set; }
+            public Union<string, IntrinsicFunction> ApiMappingKey { get; set; }
 
             /// <summary>
             /// ApiId
@@ -48,7 +46,7 @@ namespace Comformation.ApiGatewayV2.ApiMapping
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         }
 

@@ -59,7 +59,7 @@ namespace Comformation.CodeBuilder
                                 clazz.Namespace,
                                 Documentation = classDesc,
                                 clazz.Path,
-                                Properties = clazz.Properties.Select(prop =>
+                                Properties = clazz.Properties.Where(prop => prop.Type != null).Select(prop =>
                                 {
                                     var propDoc = docParser != null ? docParser.GetPropertyDocumentation(prop.Name) : new[] { prop.Name };
                                     var x = new
@@ -111,7 +111,7 @@ namespace Comformation.CodeBuilder
                                 clazz.Type,
                                 clazz.HasCreationPolicy,
                                 clazz.HasUpdatePolicy,
-                                Properties = clazz.Properties.Select(prop =>
+                                Properties = clazz.Properties.Where(prop => prop.Type != null).Select(prop =>
                                 {
                                     var propDoc = docParser != null ? docParser.GetPropertyDocumentation(prop.Name) : new[] { prop.Name };
                                     var x = new

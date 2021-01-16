@@ -7,9 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment SourceSegments
-    /// The base segment to build the segment on. A base segment, also called a source segment, defines the initial
-    /// population of endpoints for a segment. When you add dimensions to the segment, Amazon Pinpoint filters the
-    /// base segment by using the dimensions that you specify.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html
     /// </summary>
     public class SourceSegments
@@ -17,7 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Version
-        /// The version number of the source segment.
+        /// The version number of the segment.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -27,7 +24,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Id
-        /// The unique ID of the source segment.
+        /// The unique identifier for the segment.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

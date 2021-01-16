@@ -6,9 +6,6 @@ namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceFleetConfig
-    /// Use InstanceFleetConfig to define instance fleets for an EMR cluster. A cluster can not use both instance
-    /// fleets and instance groups. For more information, see Configure Instance Fleets in the Amazon EMR Management
-    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html
     /// </summary>
     public class InstanceFleetConfigResource : ResourceBase
@@ -22,17 +19,17 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterId { get; set; }
+            public Union<string, IntrinsicFunction> ClusterId { get; set; }
 
             /// <summary>
             /// InstanceFleetType
             /// The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: CORE | MASTER | TASK
+            /// Allowed values: CORE | MASTER | TASK
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceFleetType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceFleetType { get; set; }
 
             /// <summary>
             /// InstanceTypeConfigs
@@ -45,7 +42,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Type: List of InstanceTypeConfig
             /// Update requires: Replacement
             /// </summary>
-			public List<InstanceTypeConfig> InstanceTypeConfigs { get; set; }
+            public List<InstanceTypeConfig> InstanceTypeConfigs { get; set; }
 
             /// <summary>
             /// LaunchSpecifications
@@ -54,7 +51,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Type: InstanceFleetProvisioningSpecifications
             /// Update requires: Replacement
             /// </summary>
-			public InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
+            public InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
 
             /// <summary>
             /// Name
@@ -66,7 +63,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// TargetOnDemandCapacity
@@ -87,7 +84,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
+            public Union<int, IntrinsicFunction> TargetOnDemandCapacity { get; set; }
 
             /// <summary>
             /// TargetSpotCapacity
@@ -108,7 +105,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> TargetSpotCapacity { get; set; }
+            public Union<int, IntrinsicFunction> TargetSpotCapacity { get; set; }
 
         }
 

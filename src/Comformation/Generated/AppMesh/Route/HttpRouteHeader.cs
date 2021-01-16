@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route HttpRouteHeader
-    /// An object that represents the HTTP header in the request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html
     /// </summary>
     public class HttpRouteHeader

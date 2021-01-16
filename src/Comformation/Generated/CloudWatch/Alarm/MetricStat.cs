@@ -7,7 +7,6 @@ namespace Comformation.CloudWatch.Alarm
 {
     /// <summary>
     /// AWS::CloudWatch::Alarm MetricStat
-    /// This structure defines the metric to be returned, along with the statistics, period, and units.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html
     /// </summary>
     public class MetricStat
@@ -73,7 +72,7 @@ namespace Comformation.CloudWatch.Alarm
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: Bits | Bits/Second | Bytes | Bytes/Second | Count | Count/Second | Gigabits |
+        /// Allowed values: Bits | Bits/Second | Bytes | Bytes/Second | Count | Count/Second | Gigabits |
         /// Gigabits/Second | Gigabytes | Gigabytes/Second | Kilobits | Kilobits/Second | Kilobytes |
         /// Kilobytes/Second | Megabits | Megabits/Second | Megabytes | Megabytes/Second | Microseconds |
         /// Milliseconds | None | Percent | Seconds | Terabits | Terabits/Second | Terabytes | Terabytes/Second

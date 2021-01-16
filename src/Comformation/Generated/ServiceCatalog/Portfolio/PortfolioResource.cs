@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.Portfolio
 {
     /// <summary>
     /// AWS::ServiceCatalog::Portfolio
-    /// Specifies a portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
     /// </summary>
     public class PortfolioResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ProviderName { get; set; }
+            public Union<string, IntrinsicFunction> ProviderName { get; set; }
 
             /// <summary>
             /// Description
@@ -32,7 +31,7 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Maximum: 2000
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DisplayName
@@ -43,7 +42,7 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DisplayName { get; set; }
+            public Union<string, IntrinsicFunction> DisplayName { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -54,7 +53,7 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// Tags
@@ -64,7 +63,7 @@ namespace Comformation.ServiceCatalog.Portfolio
             /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -74,8 +73,8 @@ namespace Comformation.ServiceCatalog.Portfolio
 
     }
 
-	public static class PortfolioAttributes
-	{
+    public static class PortfolioAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PortfolioName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PortfolioName");
-	}
+    }
 }

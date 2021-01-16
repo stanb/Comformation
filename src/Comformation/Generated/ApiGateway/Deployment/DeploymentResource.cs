@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
     /// AWS::ApiGateway::Deployment
-    /// The AWS::ApiGateway::Deployment resource deploys an API Gateway RestApi resource to a stage so that clients
-    /// can call the API over the internet. The stage acts as an environment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html
     /// </summary>
     public class DeploymentResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGateway.Deployment
             /// Type: DeploymentCanarySettings
             /// Update requires: Replacement
             /// </summary>
-			public DeploymentCanarySettings DeploymentCanarySettings { get; set; }
+            public DeploymentCanarySettings DeploymentCanarySettings { get; set; }
 
             /// <summary>
             /// Description
@@ -30,7 +28,7 @@ namespace Comformation.ApiGateway.Deployment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -39,7 +37,7 @@ namespace Comformation.ApiGateway.Deployment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// StageDescription
@@ -48,7 +46,7 @@ namespace Comformation.ApiGateway.Deployment
             /// Type: StageDescription
             /// Update requires: No interruption
             /// </summary>
-			public StageDescription StageDescription { get; set; }
+            public StageDescription StageDescription { get; set; }
 
             /// <summary>
             /// StageName
@@ -58,7 +56,7 @@ namespace Comformation.ApiGateway.Deployment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StageName { get; set; }
+            public Union<string, IntrinsicFunction> StageName { get; set; }
 
         }
 

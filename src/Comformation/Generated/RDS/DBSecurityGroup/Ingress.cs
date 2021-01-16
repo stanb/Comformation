@@ -7,7 +7,6 @@ namespace Comformation.RDS.DBSecurityGroup
 {
     /// <summary>
     /// AWS::RDS::DBSecurityGroup Ingress
-    /// The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html
     /// </summary>
     public class Ingress

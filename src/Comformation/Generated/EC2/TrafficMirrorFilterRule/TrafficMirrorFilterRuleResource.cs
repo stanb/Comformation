@@ -6,7 +6,6 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
 {
     /// <summary>
     /// AWS::EC2::TrafficMirrorFilterRule
-    /// Creates a Traffic Mirror filter rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html
     /// </summary>
     public class TrafficMirrorFilterRuleResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: TrafficMirrorPortRange
             /// Update requires: No interruption
             /// </summary>
-			public TrafficMirrorPortRange DestinationPortRange { get; set; }
+            public TrafficMirrorPortRange DestinationPortRange { get; set; }
 
             /// <summary>
             /// Description
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SourcePortRange
@@ -38,17 +37,17 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: TrafficMirrorPortRange
             /// Update requires: No interruption
             /// </summary>
-			public TrafficMirrorPortRange SourcePortRange { get; set; }
+            public TrafficMirrorPortRange SourcePortRange { get; set; }
 
             /// <summary>
             /// RuleAction
             /// The action to take (accept | reject) on the filtered traffic.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: accept | reject
+            /// Allowed values: accept | reject
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RuleAction { get; set; }
+            public Union<string, IntrinsicFunction> RuleAction { get; set; }
 
             /// <summary>
             /// SourceCidrBlock
@@ -57,7 +56,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceCidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> SourceCidrBlock { get; set; }
 
             /// <summary>
             /// RuleNumber
@@ -67,7 +66,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> RuleNumber { get; set; }
+            public Union<int, IntrinsicFunction> RuleNumber { get; set; }
 
             /// <summary>
             /// DestinationCidrBlock
@@ -76,7 +75,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
 
             /// <summary>
             /// TrafficMirrorFilterId
@@ -85,17 +84,17 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TrafficMirrorFilterId { get; set; }
+            public Union<string, IntrinsicFunction> TrafficMirrorFilterId { get; set; }
 
             /// <summary>
             /// TrafficDirection
             /// The type of traffic (ingress | egress).
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: egress | ingress
+            /// Allowed values: egress | ingress
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TrafficDirection { get; set; }
+            public Union<string, IntrinsicFunction> TrafficDirection { get; set; }
 
             /// <summary>
             /// Protocol
@@ -106,7 +105,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Protocol { get; set; }
+            public Union<int, IntrinsicFunction> Protocol { get; set; }
 
         }
 

@@ -6,10 +6,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset
-    /// The AWS::IoTAnalytics::Dataset resource stores data retrieved from a data store by applying a &quot;queryAction&quot;
-    /// (an SQL query) or a &quot;containerAction&quot; (executing a containerized application). The data set can be populated
-    /// manually by calling &quot;CreateDatasetContent&quot; or automatically according to a &quot;trigger&quot; you specify. For more
-    /// information, see How to Use AWS IoT Analytics in the AWS IoT Analytics User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html
     /// </summary>
     public class DatasetResource : ResourceBase
@@ -18,13 +14,13 @@ namespace Comformation.IoTAnalytics.Dataset
         {
             /// <summary>
             /// Actions
-            /// The &quot;DatasetAction&quot; objects that automatically create the data set contents.
+            /// The DatasetAction objects that automatically create the data set contents.
             /// Required: Yes
             /// Type: List of Action
             /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
-			public List<Action> Actions { get; set; }
+            public List<Action> Actions { get; set; }
 
             /// <summary>
             /// DatasetName
@@ -36,48 +32,48 @@ namespace Comformation.IoTAnalytics.Dataset
             /// Pattern: ^[a-zA-Z0-9_]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DatasetName { get; set; }
+            public Union<string, IntrinsicFunction> DatasetName { get; set; }
 
             /// <summary>
             /// ContentDeliveryRules
-            /// When data set contents are created they are delivered to destinations specified here.
+            /// When dataset contents are created they are delivered to destinations specified here.
             /// Required: No
             /// Type: List of DatasetContentDeliveryRule
             /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
-			public List<DatasetContentDeliveryRule> ContentDeliveryRules { get; set; }
+            public List<DatasetContentDeliveryRule> ContentDeliveryRules { get; set; }
 
             /// <summary>
             /// Triggers
-            /// The &quot;DatasetTrigger&quot; objects that specify when the data set is automatically updated.
+            /// The DatasetTrigger objects that specify when the data set is automatically updated.
             /// Required: No
             /// Type: List of Trigger
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Trigger> Triggers { get; set; }
+            public List<Trigger> Triggers { get; set; }
 
             /// <summary>
             /// VersioningConfiguration
-            /// [Optional] How many versions of data set contents are kept. If not specified or set to null, only
-            /// the latest version plus the latest succeeded version (if they are different) are kept for the time
-            /// period specified by the &quot;retentionPeriod&quot; parameter. (For more information, see https://docs. aws.
-            /// amazon. com/iotanalytics/latest/userguide/getting-started. html#aws-iot-analytics-dataset-versions)
+            /// Optional. How many versions of dataset contents are kept. If not specified or set to null, only the
+            /// latest version plus the latest succeeded version (if they are different) are kept for the time
+            /// period specified by the retentionPeriod parameter. For more information, see Keeping Multiple
+            /// Versions of AWS IoT Analytics Data Sets in the AWS IoT Analytics User Guide.
             /// Required: No
             /// Type: VersioningConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public VersioningConfiguration VersioningConfiguration { get; set; }
+            public VersioningConfiguration VersioningConfiguration { get; set; }
 
             /// <summary>
             /// RetentionPeriod
-            /// [Optional] How long, in days, message data is kept for the data set.
+            /// Optional. How long, in days, message data is kept for the data set.
             /// Required: No
             /// Type: RetentionPeriod
             /// Update requires: No interruption
             /// </summary>
-			public RetentionPeriod RetentionPeriod { get; set; }
+            public RetentionPeriod RetentionPeriod { get; set; }
 
             /// <summary>
             /// Tags
@@ -88,7 +84,7 @@ namespace Comformation.IoTAnalytics.Dataset
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

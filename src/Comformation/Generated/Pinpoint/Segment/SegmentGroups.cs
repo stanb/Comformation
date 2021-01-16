@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment SegmentGroups
-    /// Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html
     /// </summary>
     public class SegmentGroups
@@ -15,7 +14,8 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Groups
-        /// Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
+        /// An array that defines the set of segment criteria to evaluate when handling segment groups for the
+        /// segment.
         /// Required: No
         /// Type: List of Groups
         /// Update requires: No interruption

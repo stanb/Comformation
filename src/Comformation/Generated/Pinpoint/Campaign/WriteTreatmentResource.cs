@@ -7,8 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign WriteTreatmentResource
-    /// Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that&#39;s used for A/B
-    /// testing of a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html
     /// </summary>
     public class WriteTreatmentResource
@@ -16,7 +14,7 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// TreatmentDescription
-        /// The custom description of the treatment.
+        /// A custom description of the treatment.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -56,8 +54,7 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// TreatmentName
-        /// The custom name of the treatment. A treatment is a variation of a campaign that&#39;s used for A/B
-        /// testing of a campaign.
+        /// A custom name for the treatment.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

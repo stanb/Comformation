@@ -7,7 +7,6 @@ namespace Comformation.Glue.Connection
 {
     /// <summary>
     /// AWS::Glue::Connection PhysicalConnectionRequirements
-    /// Specifies the physical requirements for a connection.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html
     /// </summary>
     public class PhysicalConnectionRequirements

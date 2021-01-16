@@ -6,9 +6,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster
-    /// The AWS::EMR::Cluster resource specifies an Amazon EMR cluster. This cluster is a collection of Amazon EC2
-    /// instances that run open source big data frameworks and applications to process and analyze vast amounts of
-    /// data. For more information, see the Amazon EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.EMR.Cluster
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AdditionalInfo { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AdditionalInfo { get; set; }
 
             /// <summary>
             /// Applications
@@ -34,7 +31,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of Application
             /// Update requires: Replacement
             /// </summary>
-			public List<Application> Applications { get; set; }
+            public List<Application> Applications { get; set; }
 
             /// <summary>
             /// AutoScalingRole
@@ -48,7 +45,7 @@ namespace Comformation.EMR.Cluster
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AutoScalingRole { get; set; }
+            public Union<string, IntrinsicFunction> AutoScalingRole { get; set; }
 
             /// <summary>
             /// BootstrapActions
@@ -57,7 +54,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of BootstrapActionConfig
             /// Update requires: Replacement
             /// </summary>
-			public List<BootstrapActionConfig> BootstrapActions { get; set; }
+            public List<BootstrapActionConfig> BootstrapActions { get; set; }
 
             /// <summary>
             /// Configurations
@@ -67,7 +64,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of Configuration
             /// Update requires: Replacement
             /// </summary>
-			public List<Configuration> Configurations { get; set; }
+            public List<Configuration> Configurations { get; set; }
 
             /// <summary>
             /// CustomAmiId
@@ -80,17 +77,17 @@ namespace Comformation.EMR.Cluster
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CustomAmiId { get; set; }
+            public Union<string, IntrinsicFunction> CustomAmiId { get; set; }
 
             /// <summary>
             /// EbsRootVolumeSize
-            /// The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
-            /// Available in Amazon EMR version 4. x and later.
+            /// The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
+            /// instance. Available in Amazon EMR version 4. x and later.
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> EbsRootVolumeSize { get; set; }
+            public Union<int, IntrinsicFunction> EbsRootVolumeSize { get; set; }
 
             /// <summary>
             /// Instances
@@ -99,7 +96,7 @@ namespace Comformation.EMR.Cluster
             /// Type: JobFlowInstancesConfig
             /// Update requires: Some interruptions
             /// </summary>
-			public JobFlowInstancesConfig Instances { get; set; }
+            public JobFlowInstancesConfig Instances { get; set; }
 
             /// <summary>
             /// JobFlowRole
@@ -113,17 +110,28 @@ namespace Comformation.EMR.Cluster
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> JobFlowRole { get; set; }
+            public Union<string, IntrinsicFunction> JobFlowRole { get; set; }
 
             /// <summary>
             /// KerberosAttributes
             /// Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
-            /// configuration. For more information see Use Kerberos Authentication in the EMR Management Guide.
+            /// configuration. For more information see Use Kerberos Authentication in the Amazon EMR Management
+            /// Guide.
             /// Required: No
             /// Type: KerberosAttributes
             /// Update requires: Replacement
             /// </summary>
-			public KerberosAttributes KerberosAttributes { get; set; }
+            public KerberosAttributes KerberosAttributes { get; set; }
+
+            /// <summary>
+            /// LogEncryptionKmsKeyId
+            /// The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only
+            /// available with EMR version 5. 30. 0 and later, excluding EMR 6. 0. 0.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> LogEncryptionKmsKeyId { get; set; }
 
             /// <summary>
             /// LogUri
@@ -132,7 +140,19 @@ namespace Comformation.EMR.Cluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LogUri { get; set; }
+            public Union<string, IntrinsicFunction> LogUri { get; set; }
+
+            /// <summary>
+            /// ManagedScalingPolicy
+            /// Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy
+            /// defines the limits for resources, such as EC2 instances that can be added or terminated from a
+            /// cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after
+            /// initial configuration.
+            /// Required: No
+            /// Type: ManagedScalingPolicy
+            /// Update requires: No interruption
+            /// </summary>
+            public ManagedScalingPolicy ManagedScalingPolicy { get; set; }
 
             /// <summary>
             /// Name
@@ -141,7 +161,7 @@ namespace Comformation.EMR.Cluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ReleaseLabel
@@ -155,7 +175,7 @@ namespace Comformation.EMR.Cluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ReleaseLabel { get; set; }
+            public Union<string, IntrinsicFunction> ReleaseLabel { get; set; }
 
             /// <summary>
             /// ScaleDownBehavior
@@ -163,18 +183,18 @@ namespace Comformation.EMR.Cluster
             /// an instance group is resized. TERMINATE_AT_INSTANCE_HOUR indicates that Amazon EMR terminates nodes
             /// at the instance-hour boundary, regardless of when the request to terminate the instance was
             /// submitted. This option is only available with Amazon EMR 5. 1. 0 and later and is the default for
-            /// clusters created using that version. TERMINATE_AT_TASK_COMPLETION indicates that Amazon EMR
-            /// blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of
-            /// the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first
-            /// and blocks instance termination if it could lead to HDFS corruption. TERMINATE_AT_TASK_COMPLETION is
-            /// available only in Amazon EMR version 4. 1. 0 and later, and is the default for versions of Amazon
-            /// EMR earlier than 5. 1. 0.
+            /// clusters created using that version. TERMINATE_AT_TASK_COMPLETION indicates that Amazon EMR adds
+            /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances,
+            /// regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active
+            /// nodes first and blocks instance termination if it could lead to HDFS corruption.
+            /// TERMINATE_AT_TASK_COMPLETION is available only in Amazon EMR version 4. 1. 0 and later, and is the
+            /// default for versions of Amazon EMR earlier than 5. 1. 0.
             /// Required: No
             /// Type: String
-            /// Allowed Values: TERMINATE_AT_INSTANCE_HOUR | TERMINATE_AT_TASK_COMPLETION
+            /// Allowed values: TERMINATE_AT_INSTANCE_HOUR | TERMINATE_AT_TASK_COMPLETION
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ScaleDownBehavior { get; set; }
+            public Union<string, IntrinsicFunction> ScaleDownBehavior { get; set; }
 
             /// <summary>
             /// SecurityConfiguration
@@ -186,7 +206,7 @@ namespace Comformation.EMR.Cluster
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
 
             /// <summary>
             /// ServiceRole
@@ -195,7 +215,17 @@ namespace Comformation.EMR.Cluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRole { get; set; }
+
+            /// <summary>
+            /// StepConcurrencyLevel
+            /// Specifies the number of steps that can be executed concurrently. The default value is 1. The maximum
+            /// value is 256.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<int, IntrinsicFunction> StepConcurrencyLevel { get; set; }
 
             /// <summary>
             /// Steps
@@ -204,7 +234,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of StepConfig
             /// Update requires: Replacement
             /// </summary>
-			public List<StepConfig> Steps { get; set; }
+            public List<StepConfig> Steps { get; set; }
 
             /// <summary>
             /// Tags
@@ -213,7 +243,7 @@ namespace Comformation.EMR.Cluster
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VisibleToAllUsers
@@ -228,7 +258,7 @@ namespace Comformation.EMR.Cluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> VisibleToAllUsers { get; set; }
+            public Union<bool, IntrinsicFunction> VisibleToAllUsers { get; set; }
 
         }
 
@@ -238,8 +268,8 @@ namespace Comformation.EMR.Cluster
 
     }
 
-	public static class ClusterAttributes
-	{
+    public static class ClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MasterPublicDNS = new ResourceAttribute<Union<string, IntrinsicFunction>>("MasterPublicDNS");
-	}
+    }
 }

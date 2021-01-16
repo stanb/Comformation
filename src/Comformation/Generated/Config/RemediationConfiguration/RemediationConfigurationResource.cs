@@ -6,8 +6,6 @@ namespace Comformation.Config.RemediationConfiguration
 {
     /// <summary>
     /// AWS::Config::RemediationConfiguration
-    /// An object that represents the details about the remediation configuration that includes the remediation
-    /// action, parameters, and data to execute the action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html
     /// </summary>
     public class RemediationConfigurationResource : ResourceBase
@@ -18,12 +16,17 @@ namespace Comformation.Config.RemediationConfiguration
             /// TargetVersion
             /// 		
             /// Version of the target. For example, version of the SSM document.
-            /// 	
+            /// 		
+            /// Note If you make backward incompatible changes to the SSM document, 			you must call
+            /// PutRemediationConfiguration API again to ensure the remediations can run.
+            /// 		 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetVersion { get; set; }
+            public Union<string, IntrinsicFunction> TargetVersion { get; set; }
 
             /// <summary>
             /// ExecutionControls
@@ -34,18 +37,17 @@ namespace Comformation.Config.RemediationConfiguration
             /// Type: ExecutionControls
             /// Update requires: No interruption
             /// </summary>
-			public ExecutionControls ExecutionControls { get; set; }
+            public ExecutionControls ExecutionControls { get; set; }
 
             /// <summary>
             /// Parameters
             /// An object of the RemediationParameterValue.
             /// Note The type is a map of strings to RemediationParameterValue.
-            /// 	
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
             /// TargetType
@@ -54,10 +56,10 @@ namespace Comformation.Config.RemediationConfiguration
             /// 	
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: SSM_DOCUMENT
+            /// Allowed values: SSM_DOCUMENT
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetType { get; set; }
+            public Union<string, IntrinsicFunction> TargetType { get; set; }
 
             /// <summary>
             /// ConfigRuleName
@@ -71,7 +73,7 @@ namespace Comformation.Config.RemediationConfiguration
             /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConfigRuleName { get; set; }
+            public Union<string, IntrinsicFunction> ConfigRuleName { get; set; }
 
             /// <summary>
             /// ResourceType
@@ -80,9 +82,11 @@ namespace Comformation.Config.RemediationConfiguration
             /// 	
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceType { get; set; }
+            public Union<string, IntrinsicFunction> ResourceType { get; set; }
 
             /// <summary>
             /// RetryAttemptSeconds
@@ -90,14 +94,14 @@ namespace Comformation.Config.RemediationConfiguration
             /// Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the
             /// default is 60 seconds.
             /// 		
-            /// For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5,
-            /// AWS Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
+            /// For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5,
+            /// 		AWS Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
             /// 	
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> RetryAttemptSeconds { get; set; }
+            public Union<int, IntrinsicFunction> RetryAttemptSeconds { get; set; }
 
             /// <summary>
             /// MaximumAutomaticAttempts
@@ -105,8 +109,9 @@ namespace Comformation.Config.RemediationConfiguration
             /// The maximum number of failed attempts for auto-remediation. If you do not select a number, the
             /// default is 5.
             /// 		
-            /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds,
-            /// AWS Config throws an exception after the 5th failed attempt within 50 seconds.
+            /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
+            /// 			 			AWS Config will put a RemediationException on your behalf for the failing resource after the
+            /// 5th failed attempt within 50 seconds.
             /// 	
             /// Required: No
             /// Type: Integer
@@ -114,7 +119,7 @@ namespace Comformation.Config.RemediationConfiguration
             /// Maximum: 25
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MaximumAutomaticAttempts { get; set; }
+            public Union<int, IntrinsicFunction> MaximumAutomaticAttempts { get; set; }
 
             /// <summary>
             /// TargetId
@@ -127,7 +132,7 @@ namespace Comformation.Config.RemediationConfiguration
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetId { get; set; }
+            public Union<string, IntrinsicFunction> TargetId { get; set; }
 
             /// <summary>
             /// Automatic
@@ -138,7 +143,7 @@ namespace Comformation.Config.RemediationConfiguration
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Automatic { get; set; }
+            public Union<bool, IntrinsicFunction> Automatic { get; set; }
 
         }
 

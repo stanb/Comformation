@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline BlockerDeclaration
-    /// Reserved for future use.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html
     /// </summary>
     public class BlockerDeclaration
@@ -30,7 +29,7 @@ namespace Comformation.CodePipeline.Pipeline
         /// Reserved for future use.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Schedule
+        /// Allowed values: Schedule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

@@ -7,9 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate HibernationOptions
-    /// Specifies whether your instance is configured for hibernation. This parameter is valid 			only if the instance
-    /// meets the hibernation 				prerequisites. Hibernation is currently supported only for Amazon Linux. For 			more
-    /// information, see Hibernate Your Instance in the 			Amazon Elastic Compute Cloud User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-hibernationoptions.html
     /// </summary>
     public class HibernationOptions

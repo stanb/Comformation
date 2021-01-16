@@ -6,8 +6,6 @@ namespace Comformation.Glue.Crawler
 {
     /// <summary>
     /// AWS::Glue::Crawler
-    /// The AWS::Glue::Crawler resource specifies an AWS Glue crawler. For more information, see Cataloging Tables
-    /// with a Crawler and Crawler Structure in the AWS Glue Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html
     /// </summary>
     public class CrawlerResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Glue.Crawler
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Role { get; set; }
+            public Union<string, IntrinsicFunction> Role { get; set; }
 
             /// <summary>
             /// Classifiers
@@ -31,7 +29,7 @@ namespace Comformation.Glue.Crawler
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Classifiers { get; set; }
+            public List<Union<string, IntrinsicFunction>> Classifiers { get; set; }
 
             /// <summary>
             /// Description
@@ -40,7 +38,7 @@ namespace Comformation.Glue.Crawler
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SchemaChangePolicy
@@ -49,7 +47,7 @@ namespace Comformation.Glue.Crawler
             /// Type: SchemaChangePolicy
             /// Update requires: No interruption
             /// </summary>
-			public SchemaChangePolicy SchemaChangePolicy { get; set; }
+            public SchemaChangePolicy SchemaChangePolicy { get; set; }
 
             /// <summary>
             /// Configuration
@@ -59,7 +57,7 @@ namespace Comformation.Glue.Crawler
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Configuration { get; set; }
+            public Union<string, IntrinsicFunction> Configuration { get; set; }
 
             /// <summary>
             /// Schedule
@@ -68,16 +66,16 @@ namespace Comformation.Glue.Crawler
             /// Type: Schedule
             /// Update requires: No interruption
             /// </summary>
-			public Schedule Schedule { get; set; }
+            public Schedule Schedule { get; set; }
 
             /// <summary>
             /// DatabaseName
             /// The name of the database in which the crawler&#39;s output is stored.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+            public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
             /// <summary>
             /// Targets
@@ -86,7 +84,7 @@ namespace Comformation.Glue.Crawler
             /// Type: Targets
             /// Update requires: No interruption
             /// </summary>
-			public Targets Targets { get; set; }
+            public Targets Targets { get; set; }
 
             /// <summary>
             /// CrawlerSecurityConfiguration
@@ -95,7 +93,7 @@ namespace Comformation.Glue.Crawler
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CrawlerSecurityConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> CrawlerSecurityConfiguration { get; set; }
 
             /// <summary>
             /// TablePrefix
@@ -104,7 +102,7 @@ namespace Comformation.Glue.Crawler
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TablePrefix { get; set; }
+            public Union<string, IntrinsicFunction> TablePrefix { get; set; }
 
             /// <summary>
             /// Tags
@@ -113,7 +111,7 @@ namespace Comformation.Glue.Crawler
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -122,7 +120,7 @@ namespace Comformation.Glue.Crawler
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

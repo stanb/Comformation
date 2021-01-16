@@ -6,8 +6,6 @@ namespace Comformation.EC2.VPNConnection
 {
     /// <summary>
     /// AWS::EC2::VPNConnection
-    /// Specifies a VPN connection between a virtual private gateway and a VPN customer gateway or a transit gateway
-    /// and a VPN customer gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
     /// </summary>
     public class VPNConnectionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.EC2.VPNConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CustomerGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> CustomerGatewayId { get; set; }
 
             /// <summary>
             /// StaticRoutesOnly
@@ -33,7 +31,7 @@ namespace Comformation.EC2.VPNConnection
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> StaticRoutesOnly { get; set; }
+            public Union<bool, IntrinsicFunction> StaticRoutesOnly { get; set; }
 
             /// <summary>
             /// Tags
@@ -42,7 +40,7 @@ namespace Comformation.EC2.VPNConnection
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TransitGatewayId
@@ -52,17 +50,17 @@ namespace Comformation.EC2.VPNConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
 
             /// <summary>
             /// Type
             /// The type of VPN connection.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: ipsec. 1
+            /// Allowed values: ipsec. 1
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// VpnGatewayId
@@ -72,18 +70,18 @@ namespace Comformation.EC2.VPNConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 
             /// <summary>
             /// VpnTunnelOptionsSpecifications
             /// 		
-            /// The tunnel options for a VPN connection.
+            /// The tunnel options for the VPN connection.
             /// 	
             /// Required: No
             /// Type: List of VpnTunnelOptionsSpecification
             /// Update requires: Replacement
             /// </summary>
-			public List<VpnTunnelOptionsSpecification> VpnTunnelOptionsSpecifications { get; set; }
+            public List<VpnTunnelOptionsSpecification> VpnTunnelOptionsSpecifications { get; set; }
 
         }
 

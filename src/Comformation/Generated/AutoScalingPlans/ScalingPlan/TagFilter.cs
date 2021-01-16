@@ -7,8 +7,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan TagFilter
-    /// TagFilter is a subproperty of ApplicationSource that specifies a tag for an application source to use with AWS
-    /// Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html
     /// </summary>
     public class TagFilter

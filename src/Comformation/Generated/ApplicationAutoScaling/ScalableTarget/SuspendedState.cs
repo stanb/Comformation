@@ -7,7 +7,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 {
     /// <summary>
     /// AWS::ApplicationAutoScaling::ScalableTarget SuspendedState
-    /// Specifies whether the scaling activities for a scalable target are in a suspended state.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html
     /// </summary>
     public class SuspendedState

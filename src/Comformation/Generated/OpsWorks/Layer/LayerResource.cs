@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer
-    /// Creates a layer. For more information, see How to Create a Layer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html
     /// </summary>
     public class LayerResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// AutoAssignElasticIps
@@ -31,7 +30,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoAssignElasticIps { get; set; }
+            public Union<bool, IntrinsicFunction> AutoAssignElasticIps { get; set; }
 
             /// <summary>
             /// AutoAssignPublicIps
@@ -41,7 +40,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoAssignPublicIps { get; set; }
+            public Union<bool, IntrinsicFunction> AutoAssignPublicIps { get; set; }
 
             /// <summary>
             /// CustomInstanceProfileArn
@@ -51,7 +50,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CustomInstanceProfileArn { get; set; }
+            public Union<string, IntrinsicFunction> CustomInstanceProfileArn { get; set; }
 
             /// <summary>
             /// CustomJson
@@ -62,7 +61,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
 
             /// <summary>
             /// CustomRecipes
@@ -71,7 +70,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Recipes
             /// Update requires: No interruption
             /// </summary>
-			public Recipes CustomRecipes { get; set; }
+            public Recipes CustomRecipes { get; set; }
 
             /// <summary>
             /// CustomSecurityGroupIds
@@ -80,7 +79,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> CustomSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> CustomSecurityGroupIds { get; set; }
 
             /// <summary>
             /// EnableAutoHealing
@@ -89,7 +88,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableAutoHealing { get; set; }
+            public Union<bool, IntrinsicFunction> EnableAutoHealing { get; set; }
 
             /// <summary>
             /// InstallUpdatesOnBoot
@@ -103,7 +102,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
+            public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
 
             /// <summary>
             /// LifecycleEventConfiguration
@@ -113,7 +112,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: LifecycleEventConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public LifecycleEventConfiguration LifecycleEventConfiguration { get; set; }
+            public LifecycleEventConfiguration LifecycleEventConfiguration { get; set; }
 
             /// <summary>
             /// LoadBasedAutoScaling
@@ -122,7 +121,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: LoadBasedAutoScaling
             /// Update requires: No interruption
             /// </summary>
-			public LoadBasedAutoScaling LoadBasedAutoScaling { get; set; }
+            public LoadBasedAutoScaling LoadBasedAutoScaling { get; set; }
 
             /// <summary>
             /// Name
@@ -131,7 +130,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Packages
@@ -140,7 +139,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Packages { get; set; }
+            public List<Union<string, IntrinsicFunction>> Packages { get; set; }
 
             /// <summary>
             /// Shortname
@@ -154,7 +153,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Shortname { get; set; }
+            public Union<string, IntrinsicFunction> Shortname { get; set; }
 
             /// <summary>
             /// StackId
@@ -163,7 +162,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StackId { get; set; }
+            public Union<string, IntrinsicFunction> StackId { get; set; }
 
             /// <summary>
             /// Tags
@@ -173,7 +172,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
@@ -181,11 +180,11 @@ namespace Comformation.OpsWorks.Layer
             /// number of custom layers. Built-in layers are not available in Chef 12 stacks.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: aws-flow-ruby | custom | db-master | ecs-cluster | java-app | lb | memcached |
+            /// Allowed values: aws-flow-ruby | custom | db-master | ecs-cluster | java-app | lb | memcached |
             /// monitoring-master | nodejs-app | php-app | rails-app | web
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// UseEbsOptimizedInstances
@@ -194,7 +193,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> UseEbsOptimizedInstances { get; set; }
+            public Union<bool, IntrinsicFunction> UseEbsOptimizedInstances { get; set; }
 
             /// <summary>
             /// VolumeConfigurations
@@ -203,7 +202,7 @@ namespace Comformation.OpsWorks.Layer
             /// Type: List of VolumeConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public List<VolumeConfiguration> VolumeConfigurations { get; set; }
+            public List<VolumeConfiguration> VolumeConfigurations { get; set; }
 
         }
 

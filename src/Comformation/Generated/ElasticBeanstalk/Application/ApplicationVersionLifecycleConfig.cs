@@ -7,8 +7,6 @@ namespace Comformation.ElasticBeanstalk.Application
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::Application ApplicationVersionLifecycleConfig
-    /// The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk
-    /// applies to an application&#39;s versions in order to avoid hitting the per-region limit for application versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html
     /// </summary>
     public class ApplicationVersionLifecycleConfig

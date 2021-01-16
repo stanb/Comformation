@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel MediaPackageOutputDestinationSettings
-    /// Destination settings for a MediaPackage output.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html
     /// </summary>
     public class MediaPackageOutputDestinationSettings

@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application Input
-    /// When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you
-    /// specify the streaming source, the in-application stream name that is created, and the mapping between the two.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html
     /// </summary>
     public class Input
@@ -24,6 +22,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Type: String
         /// Minimum: 1
         /// Maximum: 32
+        /// Pattern: [^-\s&amp;lt;&amp;gt;&amp;amp;]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NamePrefix")]

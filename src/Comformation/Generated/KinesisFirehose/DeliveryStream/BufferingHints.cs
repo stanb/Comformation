@@ -7,9 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream BufferingHints
-    /// The BufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose) buffers
-    /// incoming data before delivering it to the destination. The first buffer condition that is satisfied triggers
-    /// Kinesis Data Firehose to deliver the data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html
     /// </summary>
     public class BufferingHints
@@ -20,7 +17,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The length of time, in seconds, that Kinesis Data Firehose buffers incoming data before delivering
         /// it to the destination. For valid values, see the IntervalInSeconds content for the BufferingHints
         /// data type in the Amazon Kinesis Data Firehose API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: Integer
         /// Minimum: 60
         /// Maximum: 900
@@ -34,7 +31,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The size of the buffer, in MBs, that Kinesis Data Firehose uses for incoming data before delivering
         /// it to the destination. For valid values, see the SizeInMBs content for the BufferingHints data type
         /// in the Amazon Kinesis Data Firehose API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: Integer
         /// Minimum: 1
         /// Maximum: 128

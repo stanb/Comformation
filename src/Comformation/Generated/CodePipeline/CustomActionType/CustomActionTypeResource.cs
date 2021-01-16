@@ -6,10 +6,6 @@ namespace Comformation.CodePipeline.CustomActionType
 {
     /// <summary>
     /// AWS::CodePipeline::CustomActionType
-    /// The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren&#39;t included
-    /// in the CodePipeline default actions, such as running an internally developed build process or a test suite.
-    /// You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a Custom
-    /// Action in AWS CodePipeline in the AWS CodePipeline User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html
     /// </summary>
     public class CustomActionTypeResource : ResourceBase
@@ -19,14 +15,12 @@ namespace Comformation.CodePipeline.CustomActionType
             /// <summary>
             /// Category
             /// The category of the custom action, such as a build action or a test action.
-            /// Note Although Source and Approval are listed as valid values, they are not currently functional.
-            /// These values are reserved for future use.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: Approval | Build | Deploy | Invoke | Source | Test
+            /// Allowed values: Approval | Build | Deploy | Invoke | Source | Test
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Category { get; set; }
+            public Union<string, IntrinsicFunction> Category { get; set; }
 
             /// <summary>
             /// ConfigurationProperties
@@ -39,7 +33,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Maximum: 10
             /// Update requires: Replacement
             /// </summary>
-			public List<ConfigurationProperties> ConfigurationProperties { get; set; }
+            public List<ConfigurationProperties> ConfigurationProperties { get; set; }
 
             /// <summary>
             /// InputArtifactDetails
@@ -48,7 +42,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: ArtifactDetails
             /// Update requires: Replacement
             /// </summary>
-			public ArtifactDetails InputArtifactDetails { get; set; }
+            public ArtifactDetails InputArtifactDetails { get; set; }
 
             /// <summary>
             /// OutputArtifactDetails
@@ -57,7 +51,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: ArtifactDetails
             /// Update requires: Replacement
             /// </summary>
-			public ArtifactDetails OutputArtifactDetails { get; set; }
+            public ArtifactDetails OutputArtifactDetails { get; set; }
 
             /// <summary>
             /// Provider
@@ -69,7 +63,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Pattern: [0-9A-Za-z_-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Provider { get; set; }
+            public Union<string, IntrinsicFunction> Provider { get; set; }
 
             /// <summary>
             /// Settings
@@ -78,7 +72,16 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Type: Settings
             /// Update requires: Replacement
             /// </summary>
-			public Settings Settings { get; set; }
+            public Settings Settings { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// The tags for the custom action.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Version
@@ -90,7 +93,7 @@ namespace Comformation.CodePipeline.CustomActionType
             /// Pattern: [0-9A-Za-z_-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Version { get; set; }
+            public Union<string, IntrinsicFunction> Version { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.Glue.SecurityConfiguration
 {
     /// <summary>
     /// AWS::Glue::SecurityConfiguration EncryptionConfiguration
-    /// Specifies an encryption configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html
     /// </summary>
     public class EncryptionConfiguration

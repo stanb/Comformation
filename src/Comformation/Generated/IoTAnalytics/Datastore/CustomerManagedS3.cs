@@ -7,9 +7,6 @@ namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
     /// AWS::IoTAnalytics::Datastore CustomerManagedS3
-    /// Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected,
-    /// the &quot;retentionPeriod&quot; parameter is ignored. The choice of service-managed or customer-managed S3 storage
-    /// cannot be changed after creation of the data store.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-customermanageds3.html
     /// </summary>
     public class CustomerManagedS3

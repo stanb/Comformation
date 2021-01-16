@@ -7,7 +7,6 @@ namespace Comformation.Amplify.Branch
 {
     /// <summary>
     /// AWS::Amplify::Branch BasicAuthConfig
-    /// Use the BasicAuthConfig property type to set password protection for a specific branch.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html
     /// </summary>
     public class BasicAuthConfig
@@ -25,7 +24,7 @@ namespace Comformation.Amplify.Branch
 
         /// <summary>
         /// EnableBasicAuth
-        /// Enables Basic Auth for the branch.
+        /// Enables basic authorization for the branch.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

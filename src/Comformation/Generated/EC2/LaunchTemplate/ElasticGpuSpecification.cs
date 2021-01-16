@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate ElasticGpuSpecification
-    /// Specifies a specification for an Elastic GPU for an Amazon EC2 launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-elasticgpuspecification.html
     /// </summary>
     public class ElasticGpuSpecification

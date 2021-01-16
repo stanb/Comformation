@@ -6,9 +6,6 @@ namespace Comformation.S3.BucketPolicy
 {
     /// <summary>
     /// AWS::S3::BucketPolicy
-    /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity other than the root
-    /// user of the AWS account that owns the bucket, the calling identity must have the PutBucketPolicy permissions
-    /// on the specified bucket and belong to the bucket owner&#39;s account in order to use this operation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html
     /// </summary>
     public class BucketPolicyResource : ResourceBase
@@ -22,17 +19,20 @@ namespace Comformation.S3.BucketPolicy
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Bucket { get; set; }
+            public Union<string, IntrinsicFunction> Bucket { get; set; }
 
             /// <summary>
             /// PolicyDocument
-            /// A policy document containing permissions to add to the specified bucket. For more information, see
-            /// Access Policy Language Overview in the Amazon Simple Storage Service Developer Guide.
+            /// A policy document containing permissions to add to the specified bucket. In IAM, you must provide
+            /// policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or
+            /// YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. For more
+            /// information, see the AWS::IAM::Policy PolicyDocument resource description in this guide and Access
+            /// Policy Language Overview in the Amazon Simple Storage Service Developer Guide.
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
         }
 

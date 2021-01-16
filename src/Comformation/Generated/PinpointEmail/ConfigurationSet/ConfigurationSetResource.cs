@@ -6,10 +6,6 @@ namespace Comformation.PinpointEmail.ConfigurationSet
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSet
-    /// Create a configuration set. Configuration sets are groups of rules that you can apply to the emails you send
-    /// using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration
-    /// set in the headers of the email. When you apply a configuration set to an email, all of the rules in that
-    /// configuration set are applied to the email.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html
     /// </summary>
     public class ConfigurationSetResource : ResourceBase
@@ -24,7 +20,7 @@ namespace Comformation.PinpointEmail.ConfigurationSet
             /// Type: SendingOptions
             /// Update requires: No interruption
             /// </summary>
-			public SendingOptions SendingOptions { get; set; }
+            public SendingOptions SendingOptions { get; set; }
 
             /// <summary>
             /// TrackingOptions
@@ -34,7 +30,7 @@ namespace Comformation.PinpointEmail.ConfigurationSet
             /// Type: TrackingOptions
             /// Update requires: No interruption
             /// </summary>
-			public TrackingOptions TrackingOptions { get; set; }
+            public TrackingOptions TrackingOptions { get; set; }
 
             /// <summary>
             /// ReputationOptions
@@ -44,7 +40,7 @@ namespace Comformation.PinpointEmail.ConfigurationSet
             /// Type: ReputationOptions
             /// Update requires: No interruption
             /// </summary>
-			public ReputationOptions ReputationOptions { get; set; }
+            public ReputationOptions ReputationOptions { get; set; }
 
             /// <summary>
             /// DeliveryOptions
@@ -54,7 +50,7 @@ namespace Comformation.PinpointEmail.ConfigurationSet
             /// Type: DeliveryOptions
             /// Update requires: No interruption
             /// </summary>
-			public DeliveryOptions DeliveryOptions { get; set; }
+            public DeliveryOptions DeliveryOptions { get; set; }
 
             /// <summary>
             /// Tags
@@ -64,7 +60,7 @@ namespace Comformation.PinpointEmail.ConfigurationSet
             /// Type: List of Tags
             /// Update requires: No interruption
             /// </summary>
-			public List<Tags> Tags { get; set; }
+            public List<Tags> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -73,7 +69,7 @@ namespace Comformation.PinpointEmail.ConfigurationSet
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet FleetLaunchTemplateSpecification
-    /// Describes a launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html
     /// </summary>
     public class FleetLaunchTemplateSpecification
@@ -15,7 +14,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// LaunchTemplateId
-        /// The ID of the launch template. You must specify either a template ID or a template name.
+        /// The ID of the launch template. If you specify the template ID, you can&#39;t specify the template name.
         /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption

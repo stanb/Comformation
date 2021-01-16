@@ -7,7 +7,6 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi AdditionalAuthenticationProvider
-    /// Describes an additional authentication provider.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html
     /// </summary>
     public class AdditionalAuthenticationProvider
@@ -35,7 +34,8 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// AuthenticationType
-        /// The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.
+        /// The authentication type for API key, AWS IAM, OIDC, or Amazon Cognito user pools.
+        /// Valid Values: API_KEY | AWS_IAM | OPENID_CONNECT | AMAZON_COGNITO_USER_POOLS
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

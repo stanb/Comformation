@@ -7,8 +7,6 @@ namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
     /// AWS::SSM::PatchBaseline RuleGroup
-    /// The RuleGroup property type specifies a set of rules that define the approval rules for an AWS Systems Manager
-    /// patch baseline.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html
     /// </summary>
     public class RuleGroup

@@ -6,8 +6,6 @@ namespace Comformation.CloudTrail.Trail
 {
     /// <summary>
     /// AWS::CloudTrail::Trail
-    /// Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five
-    /// trails can exist in a region, irrespective of the region in which they were created.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
     /// </summary>
     public class TrailResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CloudWatchLogsLogGroupArn { get; set; }
+            public Union<string, IntrinsicFunction> CloudWatchLogsLogGroupArn { get; set; }
 
             /// <summary>
             /// CloudWatchLogsRoleArn
@@ -32,7 +30,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CloudWatchLogsRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> CloudWatchLogsRoleArn { get; set; }
 
             /// <summary>
             /// EnableLogFileValidation
@@ -47,7 +45,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableLogFileValidation { get; set; }
+            public Union<bool, IntrinsicFunction> EnableLogFileValidation { get; set; }
 
             /// <summary>
             /// EventSelectors
@@ -58,11 +56,12 @@ namespace Comformation.CloudTrail.Trail
             /// selector, the trail processes and logs the event. If the event doesn&#39;t match any event selector, the
             /// trail doesn&#39;t log the event.
             /// You can configure up to five event selectors for a trail.
+            /// You cannot apply both event selectors and advanced event selectors to a trail.
             /// Required: No
             /// Type: List of EventSelector
             /// Update requires: No interruption
             /// </summary>
-			public List<EventSelector> EventSelectors { get; set; }
+            public List<EventSelector> EventSelectors { get; set; }
 
             /// <summary>
             /// IncludeGlobalServiceEvents
@@ -71,7 +70,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> IncludeGlobalServiceEvents { get; set; }
+            public Union<bool, IntrinsicFunction> IncludeGlobalServiceEvents { get; set; }
 
             /// <summary>
             /// IsLogging
@@ -80,7 +79,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> IsLogging { get; set; }
+            public Union<bool, IntrinsicFunction> IsLogging { get; set; }
 
             /// <summary>
             /// IsMultiRegionTrail
@@ -94,7 +93,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> IsMultiRegionTrail { get; set; }
+            public Union<bool, IntrinsicFunction> IsMultiRegionTrail { get; set; }
 
             /// <summary>
             /// KMSKeyId
@@ -109,7 +108,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> KMSKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KMSKeyId { get; set; }
 
             /// <summary>
             /// S3BucketName
@@ -119,7 +118,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> S3BucketName { get; set; }
+            public Union<string, IntrinsicFunction> S3BucketName { get; set; }
 
             /// <summary>
             /// S3KeyPrefix
@@ -130,7 +129,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
+            public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
 
             /// <summary>
             /// SnsTopicName
@@ -140,7 +139,7 @@ namespace Comformation.CloudTrail.Trail
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SnsTopicName { get; set; }
+            public Union<string, IntrinsicFunction> SnsTopicName { get; set; }
 
             /// <summary>
             /// Tags
@@ -149,23 +148,20 @@ namespace Comformation.CloudTrail.Trail
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TrailName
-            /// Specifies the name of the trail or trail ARN. If Name is a trail name, the string must meet the
-            /// following requirements:
+            /// Specifies the name of the trail. The name must meet the following requirements:
             /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (. ), underscores (_), or dashes (-)
             /// Start with a letter or number, and end with a letter or number Be between 3 and 128 characters Have
             /// no adjacent periods, underscores or dashes. Names like my-_namespace and my--namespace are invalid.
             /// Not be in IP address format (for example, 192. 168. 5. 4)
-            /// If Name is a trail ARN, it must be in the format:
-            /// arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TrailName { get; set; }
+            public Union<string, IntrinsicFunction> TrailName { get; set; }
 
         }
 
@@ -175,9 +171,9 @@ namespace Comformation.CloudTrail.Trail
 
     }
 
-	public static class TrailAttributes
-	{
+    public static class TrailAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SnsTopicArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("SnsTopicArn");
-	}
+    }
 }

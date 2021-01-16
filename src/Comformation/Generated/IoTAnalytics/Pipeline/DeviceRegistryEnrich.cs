@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline DeviceRegistryEnrich
-    /// An activity that adds data from the AWS IoT device registry to your message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceregistryenrich.html
     /// </summary>
     public class DeviceRegistryEnrich

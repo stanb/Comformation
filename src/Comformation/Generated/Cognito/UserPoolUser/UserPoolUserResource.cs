@@ -6,7 +6,6 @@ namespace Comformation.Cognito.UserPoolUser
 {
     /// <summary>
     /// AWS::Cognito::UserPoolUser
-    /// The AWS::Cognito::UserPoolUser resource creates an Amazon Cognito user pool user.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html
     /// </summary>
     public class UserPoolUserResource : ResourceBase
@@ -27,7 +26,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: List of AttributeType
             /// Update requires: Replacement
             /// </summary>
-			public List<AttributeType> ValidationData { get; set; }
+            public List<AttributeType> ValidationData { get; set; }
 
             /// <summary>
             /// UserPoolId
@@ -39,7 +38,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// Username
@@ -52,7 +51,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Username { get; set; }
+            public Union<string, IntrinsicFunction> Username { get; set; }
 
             /// <summary>
             /// MessageAction
@@ -61,10 +60,35 @@ namespace Comformation.Cognito.UserPoolUser
             /// value can be specified.
             /// Required: No
             /// Type: String
-            /// Allowed Values: RESEND | SUPPRESS
+            /// Allowed values: RESEND | SUPPRESS
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MessageAction { get; set; }
+            public Union<string, IntrinsicFunction> MessageAction { get; set; }
+
+            /// <summary>
+            /// ClientMetadata
+            /// A map of custom key-value pairs that you can provide as input for the custom workflow that is
+            /// invoked by the pre sign-up trigger.
+            /// You create custom workflows by assigning AWS Lambda functions to user pool triggers. When you create
+            /// a UserPoolUser resource and include the ClientMetadata property, Amazon Cognito invokes the function
+            /// that is assigned to the pre sign-up trigger. When Amazon Cognito invokes this function, it passes a
+            /// JSON payload, which the function receives as input. This payload contains a clientMetadata
+            /// attribute, which provides the data that you assigned to the ClientMetadata property. In your
+            /// function code in AWS Lambda, you can process the clientMetadata value to enhance your workflow for
+            /// your specific needs.
+            /// For more information, see Customizing User Pool Workflows with Lambda Triggers in the Amazon Cognito
+            /// Developer Guide.
+            /// Note Take the following limitations into consideration when you use the ClientMetadata parameter:
+            /// Amazon Cognito does not store the ClientMetadata value. This data is available only to AWS Lambda
+            /// triggers that are assigned to a user pool to support custom workflows. If your user pool
+            /// configuration does not include triggers, the ClientMetadata parameter serves no purpose. Amazon
+            /// Cognito does not validate the ClientMetadata value. Amazon Cognito does not encrypt the the
+            /// ClientMetadata value, so don&#39;t use it to provide sensitive information.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ClientMetadata { get; set; }
 
             /// <summary>
             /// DesiredDeliveryMediums
@@ -74,7 +98,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> DesiredDeliveryMediums { get; set; }
+            public List<Union<string, IntrinsicFunction>> DesiredDeliveryMediums { get; set; }
 
             /// <summary>
             /// ForceAliasCreation
@@ -90,13 +114,13 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> ForceAliasCreation { get; set; }
+            public Union<bool, IntrinsicFunction> ForceAliasCreation { get; set; }
 
             /// <summary>
             /// UserAttributes
-            /// An array of name-value pairs that contain user attributes and attribute values to be set for the
-            /// user to be created. You can create a user without specifying any attributes other than Username.
-            /// However, any attributes that you specify as required (in https://docs. aws. amazon.
+            /// The user attributes and attribute values to be set for the user to be created. These are name-value
+            /// pairs You can create a user without specifying any attributes other than Username. However, any
+            /// attributes that you specify as required (in https://docs. aws. amazon.
             /// com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool. html or in the Attributes
             /// tab of the console) must be supplied either by you (in your call to AdminCreateUser) or by the user
             /// (when they sign up in response to your welcome message).
@@ -116,7 +140,7 @@ namespace Comformation.Cognito.UserPoolUser
             /// Type: List of AttributeType
             /// Update requires: Replacement
             /// </summary>
-			public List<AttributeType> UserAttributes { get; set; }
+            public List<AttributeType> UserAttributes { get; set; }
 
         }
 

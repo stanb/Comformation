@@ -7,8 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign MetricDimension
-    /// Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive
-    /// from custom metrics that you define for endpoints.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html
     /// </summary>
     public class MetricDimension

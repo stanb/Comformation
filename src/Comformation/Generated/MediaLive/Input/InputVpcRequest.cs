@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Input
 {
     /// <summary>
     /// AWS::MediaLive::Input InputVpcRequest
-    /// The settings for an Amazon VPC input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html
     /// </summary>
     public class InputVpcRequest

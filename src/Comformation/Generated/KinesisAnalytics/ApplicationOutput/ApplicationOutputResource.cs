@@ -6,7 +6,6 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationOutput
-    /// Adds an external destination to your Amazon Kinesis Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html
     /// </summary>
     public class ApplicationOutputResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// Output
@@ -35,7 +34,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
             /// Type: Output
             /// Update requires: No interruption
             /// </summary>
-			public Output Output { get; set; }
+            public Output Output { get; set; }
 
         }
 

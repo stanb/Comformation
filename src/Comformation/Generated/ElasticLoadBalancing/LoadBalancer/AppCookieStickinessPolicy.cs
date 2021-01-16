@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer AppCookieStickinessPolicy
-    /// Specifies a policy for application-controlled session stickiness for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html
     /// </summary>
     public class AppCookieStickinessPolicy

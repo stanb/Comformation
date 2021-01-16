@@ -7,8 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget Subscriber
-    /// The Subscriber property type specifies who to notify for a Billing and Cost Management budget notification.
-    /// 			The subscriber consists of a subscription type, and either an Amazon SNS topic or an email address.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html
     /// </summary>
     public class Subscriber
@@ -21,7 +19,7 @@ namespace Comformation.Budgets.Budget
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: EMAIL | SNS
+        /// Allowed values: EMAIL | SNS
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SubscriptionType")]

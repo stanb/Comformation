@@ -7,8 +7,6 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::SES::ConfigurationSetEventDestination CloudWatchDestination
-    /// Contains information associated with an Amazon CloudWatch event destination to which email sending events are
-    /// published.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html
     /// </summary>
     public class CloudWatchDestination

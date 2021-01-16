@@ -7,8 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route HttpRetryPolicy
-    /// An object that represents a retry policy. Specify at least one value for at least one of the types of
-    /// RetryEvents, a value for maxRetries, and a value for perRetryTimeout.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html
     /// </summary>
     public class HttpRetryPolicy
@@ -26,7 +24,7 @@ namespace Comformation.AppMesh.Route
 
         /// <summary>
         /// PerRetryTimeout
-        /// An object that represents a duration of time.
+        /// The timeout for each retry attempt.
         /// Required: Yes
         /// Type: Duration
         /// Update requires: No interruption
@@ -49,7 +47,8 @@ namespace Comformation.AppMesh.Route
 
         /// <summary>
         /// TcpRetryEvents
-        /// Specify a valid value.
+        /// Specify a valid value. The event occurs before any processing of a request has started and is
+        /// encountered when the upstream is temporarily or permanently unavailable.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

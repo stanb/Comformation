@@ -6,7 +6,6 @@ namespace Comformation.RDS.DBSecurityGroup
 {
     /// <summary>
     /// AWS::RDS::DBSecurityGroup
-    /// The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
     /// </summary>
     public class DBSecurityGroupResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: List of Ingress
             /// Update requires: No interruption
             /// </summary>
-			public List<Ingress> DBSecurityGroupIngress { get; set; }
+            public List<Ingress> DBSecurityGroupIngress { get; set; }
 
             /// <summary>
             /// EC2VpcId
@@ -32,7 +31,7 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EC2VpcId { get; set; }
+            public Union<string, IntrinsicFunction> EC2VpcId { get; set; }
 
             /// <summary>
             /// GroupDescription
@@ -41,7 +40,7 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> GroupDescription { get; set; }
 
             /// <summary>
             /// Tags
@@ -50,7 +49,7 @@ namespace Comformation.RDS.DBSecurityGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

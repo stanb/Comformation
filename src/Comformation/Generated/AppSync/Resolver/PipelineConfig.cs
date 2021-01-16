@@ -7,7 +7,6 @@ namespace Comformation.AppSync.Resolver
 {
     /// <summary>
     /// AWS::AppSync::Resolver PipelineConfig
-    /// Use the PipelineConfig property type to specify PipelineConfig for an AWS AppSync resolver.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html
     /// </summary>
     public class PipelineConfig

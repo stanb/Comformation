@@ -6,9 +6,6 @@ namespace Comformation.DocDB.DBClusterParameterGroup
 {
     /// <summary>
     /// AWS::DocDB::DBClusterParameterGroup
-    /// The AWS::DocDB::DBClusterParameterGroup Amazon DocumentDB (with MongoDB compatibility) resource describes a
-    /// DBClusterParameterGroup. For more information, see DBClusterParameterGroup in the Amazon DocumentDB Developer
-    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html
     /// </summary>
     public class DBClusterParameterGroupResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Parameters
@@ -31,7 +28,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
             /// Family
@@ -40,7 +37,7 @@ namespace Comformation.DocDB.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Family { get; set; }
+            public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
             /// Tags
@@ -49,19 +46,19 @@ namespace Comformation.DocDB.DBClusterParameterGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the cluster parameter group.
+            /// The name of the DB cluster parameter group.
             /// Constraints:
-            /// Must match the name of an existing DBClusterParameterGroup.
+            /// Must not match the name of an existing DBClusterParameterGroup.
             /// Note This value is stored as a lowercase string.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

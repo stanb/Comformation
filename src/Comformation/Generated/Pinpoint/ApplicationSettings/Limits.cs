@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.ApplicationSettings
 {
     /// <summary>
     /// AWS::Pinpoint::ApplicationSettings Limits
-    /// The default sending limits for campaigns in the application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-limits.html
     /// </summary>
     public class Limits

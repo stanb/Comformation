@@ -7,7 +7,6 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline ParameterValue
-    /// A value or list of parameter values.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html
     /// </summary>
     public class ParameterValue

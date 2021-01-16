@@ -7,9 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster StepConfig
-    /// StepConfig is a property of the AWS::EMR::Cluster resource. The StepConfig property type specifies a cluster
-    /// (job flow) step, which runs only on the master node. Steps are used to submit data processing jobs to the
-    /// cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html
     /// </summary>
     public class StepConfig

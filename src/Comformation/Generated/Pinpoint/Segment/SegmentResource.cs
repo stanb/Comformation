@@ -6,8 +6,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment
-    /// Creates a new segment for an application or updates the configuration, dimension, and other settings for an
-    /// existing segment that&#39;s associated with an application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html
     /// </summary>
     public class SegmentResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.Pinpoint.Segment
             /// Type: SegmentGroups
             /// Update requires: No interruption
             /// </summary>
-			public SegmentGroups SegmentGroups { get; set; }
+            public SegmentGroups SegmentGroups { get; set; }
 
             /// <summary>
             /// Dimensions
@@ -32,16 +30,16 @@ namespace Comformation.Pinpoint.Segment
             /// Type: SegmentDimensions
             /// Update requires: No interruption
             /// </summary>
-			public SegmentDimensions Dimensions { get; set; }
+            public SegmentDimensions Dimensions { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app that the segment is associated with.
+            /// The unique identifier for the Amazon Pinpoint application that the segment is associated with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// Tags
@@ -51,7 +49,7 @@ namespace Comformation.Pinpoint.Segment
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -60,7 +58,7 @@ namespace Comformation.Pinpoint.Segment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -70,9 +68,9 @@ namespace Comformation.Pinpoint.Segment
 
     }
 
-	public static class SegmentAttributes
-	{
+    public static class SegmentAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SegmentId = new ResourceAttribute<Union<string, IntrinsicFunction>>("SegmentId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

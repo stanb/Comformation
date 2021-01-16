@@ -7,8 +7,6 @@ namespace Comformation.Route53.HealthCheck
 {
     /// <summary>
     /// AWS::Route53::HealthCheck HealthCheckTag
-    /// The HealthCheckTag property describes one key-value pair that is associated with an AWS::Route53::HealthCheck
-    /// resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthchecktag.html
     /// </summary>
     public class HealthCheckTag

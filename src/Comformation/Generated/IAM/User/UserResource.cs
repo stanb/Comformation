@@ -6,7 +6,6 @@ namespace Comformation.IAM.User
 {
     /// <summary>
     /// AWS::IAM::User
-    /// Creates a new IAM user for your AWS account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
     /// </summary>
     public class UserResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.IAM.User
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
+            public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// LoginProfile
@@ -31,7 +30,7 @@ namespace Comformation.IAM.User
             /// Type: LoginProfile
             /// Update requires: No interruption
             /// </summary>
-			public LoginProfile LoginProfile { get; set; }
+            public LoginProfile LoginProfile { get; set; }
 
             /// <summary>
             /// ManagedPolicyArns
@@ -43,7 +42,7 @@ namespace Comformation.IAM.User
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// Path
@@ -61,7 +60,7 @@ namespace Comformation.IAM.User
             /// Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Path { get; set; }
+            public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// PermissionsBoundary
@@ -70,7 +69,7 @@ namespace Comformation.IAM.User
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PermissionsBoundary { get; set; }
+            public Union<string, IntrinsicFunction> PermissionsBoundary { get; set; }
 
             /// <summary>
             /// Policies
@@ -84,7 +83,21 @@ namespace Comformation.IAM.User
             /// Type: List of Policy
             /// Update requires: No interruption
             /// </summary>
-			public List<Policy> Policies { get; set; }
+            public List<Policy> Policies { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A list of tags that you want to attach to the newly created user. Each tag consists of a key name
+            /// and an associated value. For more information about tagging, see Tagging IAM Identities in the IAM
+            /// User Guide.
+            /// Note If any one of the tags is invalid or if you exceed the allowed number of tags per user, then
+            /// the entire request fails and the user is not created.
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// UserName
@@ -106,7 +119,7 @@ namespace Comformation.IAM.User
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserName { get; set; }
+            public Union<string, IntrinsicFunction> UserName { get; set; }
 
         }
 
@@ -116,8 +129,8 @@ namespace Comformation.IAM.User
 
     }
 
-	public static class UserAttributes
-	{
+    public static class UserAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

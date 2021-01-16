@@ -6,12 +6,6 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet
-    /// Specifies the configuration information to launch a fleet—or group—of instances. An EC2 Fleet can launch
-    /// multiple instance types across multiple Availability Zones, using the On-Demand Instance, Reserved Instance,
-    /// and Spot Instance purchasing models together. Using EC2 Fleet, you can define separate On-Demand and Spot
-    /// capacity targets, specify the instance types that work best for your applications, and specify how Amazon EC2
-    /// should distribute your fleet capacity within each purchasing model. For more information, see Launching an EC2
-    /// Fleet in the Amazon EC2 User Guide for Linux Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html
     /// </summary>
     public class EC2FleetResource : ResourceBase
@@ -25,7 +19,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: TargetCapacitySpecificationRequest
             /// Update requires: No interruption
             /// </summary>
-			public TargetCapacitySpecificationRequest TargetCapacitySpecification { get; set; }
+            public TargetCapacitySpecificationRequest TargetCapacitySpecification { get; set; }
 
             /// <summary>
             /// OnDemandOptions
@@ -34,22 +28,24 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: OnDemandOptionsRequest
             /// Update requires: Replacement
             /// </summary>
-			public OnDemandOptionsRequest OnDemandOptions { get; set; }
+            public OnDemandOptionsRequest OnDemandOptions { get; set; }
 
             /// <summary>
             /// Type
-            /// The type of the request. By default, the EC2 Fleet places an asynchronous request for your desired
-            /// capacity, and maintains it by replenishing interrupted Spot Instances (maintain). A value of instant
-            /// places a synchronous one-time request, and returns errors for any instances that could not be
-            /// launched. A value of request places an asynchronous one-time request without maintaining capacity or
-            /// submitting requests in alternative capacity pools if capacity is unavailable. For more information,
-            /// see EC2 Fleet Request Types in the Amazon Elastic Compute Cloud User Guide.
+            /// The type of request. The default value is maintain.
+            /// maintain - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
+            /// maintain your desired Spot capacity by replenishing interrupted Spot Instances. request - The EC2
+            /// Fleet places an asynchronous one-time request for your desired capacity, but does submit Spot
+            /// requests in alternative capacity pools if Spot capacity is unavailable, and does not maintain Spot
+            /// capacity if Spot Instances are interrupted. instant - The EC2 Fleet places a synchronous one-time
+            /// request for your desired capacity, and returns errors for any instances that could not be launched.
+            /// For more information, see EC2 Fleet request types in the Amazon EC2 User Guide.
             /// Required: No
             /// Type: String
-            /// Allowed Values: instant | maintain | request
+            /// Allowed values: instant | maintain | request
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// ExcessCapacityTerminationPolicy
@@ -57,21 +53,21 @@ namespace Comformation.EC2.EC2Fleet
             /// Fleet is decreased below the current size of the EC2 Fleet.
             /// Required: No
             /// Type: String
-            /// Allowed Values: no-termination | termination
+            /// Allowed values: no-termination | termination
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ExcessCapacityTerminationPolicy { get; set; }
+            public Union<string, IntrinsicFunction> ExcessCapacityTerminationPolicy { get; set; }
 
             /// <summary>
             /// TagSpecifications
             /// The key-value pair for tagging the EC2 Fleet request on creation. The value for ResourceType must be
             /// fleet, otherwise the fleet request fails. To tag instances at launch, specify the tags in the launch
-            /// template. For information about tagging after launch, see Tagging Your Resources.
+            /// template. For information about tagging after launch, see Tagging your resources.
             /// Required: No
             /// Type: List of TagSpecification
             /// Update requires: Replacement
             /// </summary>
-			public List<TagSpecification> TagSpecifications { get; set; }
+            public List<TagSpecification> TagSpecifications { get; set; }
 
             /// <summary>
             /// SpotOptions
@@ -80,7 +76,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: SpotOptionsRequest
             /// Update requires: Replacement
             /// </summary>
-			public SpotOptionsRequest SpotOptions { get; set; }
+            public SpotOptionsRequest SpotOptions { get; set; }
 
             /// <summary>
             /// ValidFrom
@@ -90,7 +86,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ValidFrom { get; set; }
+            public Union<string, IntrinsicFunction> ValidFrom { get; set; }
 
             /// <summary>
             /// ReplaceUnhealthyInstances
@@ -99,7 +95,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> ReplaceUnhealthyInstances { get; set; }
+            public Union<bool, IntrinsicFunction> ReplaceUnhealthyInstances { get; set; }
 
             /// <summary>
             /// LaunchTemplateConfigs
@@ -109,7 +105,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Maximum: 50
             /// Update requires: Replacement
             /// </summary>
-			public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs { get; set; }
+            public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs { get; set; }
 
             /// <summary>
             /// TerminateInstancesWithExpiration
@@ -118,7 +114,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> TerminateInstancesWithExpiration { get; set; }
+            public Union<bool, IntrinsicFunction> TerminateInstancesWithExpiration { get; set; }
 
             /// <summary>
             /// ValidUntil
@@ -129,7 +125,7 @@ namespace Comformation.EC2.EC2Fleet
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ValidUntil { get; set; }
+            public Union<string, IntrinsicFunction> ValidUntil { get; set; }
 
         }
 

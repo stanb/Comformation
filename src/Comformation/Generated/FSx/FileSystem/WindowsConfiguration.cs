@@ -7,8 +7,6 @@ namespace Comformation.FSx.FileSystem
 {
     /// <summary>
     /// AWS::FSx::FileSystem WindowsConfiguration
-    /// The Microsoft Windows configuration for the file system being created. This value is required if
-    /// FileSystemType is set to WINDOWS.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
     /// </summary>
     public class WindowsConfiguration
@@ -27,7 +25,8 @@ namespace Comformation.FSx.FileSystem
 
         /// <summary>
         /// WeeklyMaintenanceStartTime
-        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone,
+        /// where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -50,14 +49,32 @@ namespace Comformation.FSx.FileSystem
         public Union<string, IntrinsicFunction> ActiveDirectoryId { get; set; }
 
         /// <summary>
+        /// DeploymentType
+        /// Specifies the file system deployment type, valid values are the following:
+        /// MULTI_AZ_1 - Deploys a high availability file system that is configured for Multi-AZ redundancy to
+        /// tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system
+        /// in AWS Regions that have a minimum of three Availability Zones. Also supports HDD storage type
+        /// SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for single AZ redundancy.
+        /// SINGLE_AZ_2 - The latest generation Single AZ file system. Specifies a file system that is
+        /// configured for single AZ redundancy and supports HDD storage type.
+        /// For more information, see Availability and Durability: Single-AZ and Multi-AZ File Systems.
+        /// Required: No
+        /// Type: String
+        /// Allowed values: MULTI_AZ_1 | SINGLE_AZ_1 | SINGLE_AZ_2
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("DeploymentType")]
+        public Union<string, IntrinsicFunction> DeploymentType { get; set; }
+
+        /// <summary>
         /// ThroughputCapacity
         /// The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the nth
         /// increments, between 2^3 (8) and 2^11 (2048).
-        /// Required: No
+        /// Required: Yes
         /// Type: Integer
         /// Minimum: 8
         /// Maximum: 2048
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThroughputCapacity")]
         public Union<int, IntrinsicFunction> ThroughputCapacity { get; set; }
@@ -67,7 +84,9 @@ namespace Comformation.FSx.FileSystem
         /// A boolean flag indicating whether tags for the file system should be copied to backups. This value
         /// defaults to false. If it&#39;s set to true, all tags for the file system are copied to all automatic and
         /// user-initiated backups where the user doesn&#39;t specify tags. If this value is true, and you specify
-        /// one or more tags, only the specified tags are copied to backups.
+        /// one or more tags, only the specified tags are copied to backups. If you specify one or more tags
+        /// when creating a user-initiated backup, no tags are copied from the file system, regardless of this
+        /// value.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -89,15 +108,28 @@ namespace Comformation.FSx.FileSystem
         /// AutomaticBackupRetentionDays
         /// The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting
         /// this value to 0 disables the creation of automatic backups. The maximum retention period for backups
-        /// is 35 days.
+        /// is 90 days.
         /// Required: No
         /// Type: Integer
         /// Minimum: 0
-        /// Maximum: 35
+        /// Maximum: 90
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AutomaticBackupRetentionDays")]
         public Union<int, IntrinsicFunction> AutomaticBackupRetentionDays { get; set; }
+
+        /// <summary>
+        /// PreferredSubnetId
+        /// Required when DeploymentType is set to MULTI_AZ_1. This specifies the subnet in which you want the
+        /// preferred file server to be located. For in-AWS applications, we recommend that you launch your
+        /// clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data
+        /// transfer costs and minimize latency.
+        /// Required: Conditional
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("PreferredSubnetId")]
+        public Union<string, IntrinsicFunction> PreferredSubnetId { get; set; }
 
     }
 }

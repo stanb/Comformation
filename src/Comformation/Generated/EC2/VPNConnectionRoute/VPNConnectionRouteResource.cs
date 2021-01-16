@@ -6,9 +6,6 @@ namespace Comformation.EC2.VPNConnectionRoute
 {
     /// <summary>
     /// AWS::EC2::VPNConnectionRoute
-    /// Specifies a static route for a VPN connection between an existing virtual private gateway and a VPN customer
-    /// gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer
-    /// gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html
     /// </summary>
     public class VPNConnectionRouteResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.EC2.VPNConnectionRoute
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
 
             /// <summary>
             /// VpnConnectionId
@@ -31,7 +28,7 @@ namespace Comformation.EC2.VPNConnectionRoute
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpnConnectionId { get; set; }
+            public Union<string, IntrinsicFunction> VpnConnectionId { get; set; }
 
         }
 

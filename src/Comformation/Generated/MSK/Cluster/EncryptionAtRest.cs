@@ -7,7 +7,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster EncryptionAtRest
-    /// The data volume encryption details.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionatrest.html
     /// </summary>
     public class EncryptionAtRest

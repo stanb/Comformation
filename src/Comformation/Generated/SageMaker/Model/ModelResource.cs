@@ -6,9 +6,6 @@ namespace Comformation.SageMaker.Model
 {
     /// <summary>
     /// AWS::SageMaker::Model
-    /// The AWS::SageMaker::Model resource to create a model to host at an Amazon SageMaker endpoint. For more
-    /// information, see Deploying a Model on Amazon SageMaker Hosting Services in the Amazon SageMaker Developer
-    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html
     /// </summary>
     public class ModelResource : ResourceBase
@@ -30,7 +27,17 @@ namespace Comformation.SageMaker.Model
             /// Pattern: ^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ExecutionRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> ExecutionRoleArn { get; set; }
+
+            /// <summary>
+            /// EnableNetworkIsolation
+            /// Isolates the model container. No inbound or outbound network calls can be made to or from the model
+            /// container.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<bool, IntrinsicFunction> EnableNetworkIsolation { get; set; }
 
             /// <summary>
             /// PrimaryContainer
@@ -40,7 +47,7 @@ namespace Comformation.SageMaker.Model
             /// Type: ContainerDefinition
             /// Update requires: Replacement
             /// </summary>
-			public ContainerDefinition PrimaryContainer { get; set; }
+            public ContainerDefinition PrimaryContainer { get; set; }
 
             /// <summary>
             /// ModelName
@@ -51,7 +58,7 @@ namespace Comformation.SageMaker.Model
             /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ModelName { get; set; }
+            public Union<string, IntrinsicFunction> ModelName { get; set; }
 
             /// <summary>
             /// VpcConfig
@@ -63,7 +70,7 @@ namespace Comformation.SageMaker.Model
             /// Type: VpcConfig
             /// Update requires: Replacement
             /// </summary>
-			public VpcConfig VpcConfig { get; set; }
+            public VpcConfig VpcConfig { get; set; }
 
             /// <summary>
             /// Containers
@@ -73,7 +80,7 @@ namespace Comformation.SageMaker.Model
             /// Maximum: 5
             /// Update requires: Replacement
             /// </summary>
-			public List<ContainerDefinition> Containers { get; set; }
+            public List<ContainerDefinition> Containers { get; set; }
 
             /// <summary>
             /// Tags
@@ -85,7 +92,7 @@ namespace Comformation.SageMaker.Model
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -95,8 +102,8 @@ namespace Comformation.SageMaker.Model
 
     }
 
-	public static class ModelAttributes
-	{
+    public static class ModelAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ModelName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ModelName");
-	}
+    }
 }

@@ -7,10 +7,6 @@ namespace Comformation.Greengrass.LoggerDefinition
 {
     /// <summary>
     /// AWS::Greengrass::LoggerDefinition Logger
-    /// A logger represents logging settings for the AWS IoT Greengrass group, which can be stored in CloudWatch and
-    /// the local file system of your core device. All log entries include a timestamp, log level, and information
-    /// about the event. For more information, see Monitoring with AWS IoT Greengrass Logs in the AWS IoT Greengrass
-    /// Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html
     /// </summary>
     public class Logger

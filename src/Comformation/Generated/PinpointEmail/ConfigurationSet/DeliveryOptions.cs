@@ -7,7 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSet
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSet DeliveryOptions
-    /// Used to associate a configuration set with a dedicated IP pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-deliveryoptions.html
     /// </summary>
     public class DeliveryOptions

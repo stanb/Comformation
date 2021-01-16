@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.LoggerDefinition
 {
     /// <summary>
     /// AWS::Greengrass::LoggerDefinition LoggerDefinitionVersion
-    /// 		A logger definition version contains a list of loggers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html
     /// </summary>
     public class LoggerDefinitionVersion

@@ -7,7 +7,6 @@ namespace Comformation.EC2.ClientVpnEndpoint
 {
     /// <summary>
     /// AWS::EC2::ClientVpnEndpoint DirectoryServiceAuthenticationRequest
-    /// Describes the Active Directory to be used for client authentication.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html
     /// </summary>
     public class DirectoryServiceAuthenticationRequest

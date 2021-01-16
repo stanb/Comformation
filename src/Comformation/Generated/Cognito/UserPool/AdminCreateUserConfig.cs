@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool AdminCreateUserConfig
-    /// AdminCreateUserConfig is a property of the AWS::Cognito::UserPool resource. The AdminCreateUserConfig property
-    /// configures the AdminCreateUser requests for an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html
     /// </summary>
     public class AdminCreateUserConfig

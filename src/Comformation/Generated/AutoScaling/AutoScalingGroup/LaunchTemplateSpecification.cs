@@ -7,8 +7,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup LaunchTemplateSpecification
-    /// LaunchTemplateSpecification is a property of AutoScalingGroup that specifies the launch template to use to
-    /// launch instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html
     /// </summary>
     public class LaunchTemplateSpecification
@@ -16,12 +14,10 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// LaunchTemplateId
-        /// The ID of the launch template. You must specify either a template ID or a template name.
+        /// The ID of the AWS::EC2::LaunchTemplate. You must specify either a LaunchTemplateName or a
+        /// LaunchTemplateId.
         /// Required: Conditional
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateId")]
@@ -29,12 +25,10 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// LaunchTemplateName
-        /// The name of the launch template. You must specify either a template name or a template ID.
+        /// The name of the AWS::EC2::LaunchTemplate. You must specify either a LaunchTemplateName or a
+        /// LaunchTemplateId.
         /// Required: Conditional
         /// Type: String
-        /// Minimum: 3
-        /// Maximum: 128
-        /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchTemplateName")]
@@ -43,12 +37,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// <summary>
         /// Version
         /// The version number. AWS CloudFormation does not support specifying $Latest, or $Default for the
-        /// template version number.
+        /// template version number. However, you can specify LatestVersionNumber or DefaultVersionNumber using
+        /// the Fn::GetAtt function. For more information, see Fn::GetAtt in the AWS::EC2::LaunchTemplate
+        /// documentation.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]

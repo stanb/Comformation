@@ -6,7 +6,6 @@ namespace Comformation.CloudFormation.Stack
 {
     /// <summary>
     /// AWS::CloudFormation::Stack
-    /// The AWS::CloudFormation::Stack type nests a stack as a resource in a top-level template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html
     /// </summary>
     public class StackResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.CloudFormation.Stack
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> NotificationARNs { get; set; }
+            public List<Union<string, IntrinsicFunction>> NotificationARNs { get; set; }
 
             /// <summary>
             /// Parameters
@@ -39,7 +38,7 @@ namespace Comformation.CloudFormation.Stack
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Tags
@@ -50,12 +49,12 @@ namespace Comformation.CloudFormation.Stack
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TemplateURL
             /// Location of file containing the template body. The URL must point to a template (max size: 460,800
-            /// bytes) that is located in an Amazon S3 bucket. For more information, see Template Anatomy.
+            /// bytes) that is located in an Amazon S3 bucket. For more information, see Template anatomy.
             /// Whether an update causes interruptions depends on the resources that are being updated. An update
             /// never causes a nested stack to be replaced.
             /// Required: Yes
@@ -64,7 +63,7 @@ namespace Comformation.CloudFormation.Stack
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TemplateURL { get; set; }
+            public Union<string, IntrinsicFunction> TemplateURL { get; set; }
 
             /// <summary>
             /// TimeoutInMinutes
@@ -80,7 +79,7 @@ namespace Comformation.CloudFormation.Stack
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
+            public Union<int, IntrinsicFunction> TimeoutInMinutes { get; set; }
 
         }
 

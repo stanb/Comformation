@@ -7,8 +7,6 @@ namespace Comformation.EMR.Step
 {
     /// <summary>
     /// AWS::EMR::Step HadoopJarStepConfig
-    /// A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job
-    /// for Hadoop to execute and waits for the job to finish or fail.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html
     /// </summary>
     public class HadoopJarStepConfig

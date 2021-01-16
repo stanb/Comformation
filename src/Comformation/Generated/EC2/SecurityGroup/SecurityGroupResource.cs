@@ -6,8 +6,6 @@ namespace Comformation.EC2.SecurityGroup
 {
     /// <summary>
     /// AWS::EC2::SecurityGroup
-    /// Specifies a security group. To create a security group, use the VpcId property to specify the VPC for which to
-    /// create the security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
     /// </summary>
     public class SecurityGroupResource : ResourceBase
@@ -27,7 +25,7 @@ namespace Comformation.EC2.SecurityGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> GroupDescription { get; set; }
 
             /// <summary>
             /// GroupName
@@ -39,25 +37,27 @@ namespace Comformation.EC2.SecurityGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupName { get; set; }
+            public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// SecurityGroupEgress
-            /// [VPC only] The outbound rules associated with the security group.
+            /// [VPC only] The outbound rules associated with the security group. There is a short interruption
+            /// during which you cannot connect to the security group.
             /// Required: No
             /// Type: List of Egress
             /// Update requires: No interruption
             /// </summary>
-			public List<Egress> SecurityGroupEgress { get; set; }
+            public List<Egress> SecurityGroupEgress { get; set; }
 
             /// <summary>
             /// SecurityGroupIngress
-            /// The inbound rules associated with the security group.
+            /// The inbound rules associated with the security group. There is a short interruption during which you
+            /// cannot connect to the security group.
             /// Required: No
             /// Type: List of Ingress
             /// Update requires: No interruption
             /// </summary>
-			public List<Ingress> SecurityGroupIngress { get; set; }
+            public List<Ingress> SecurityGroupIngress { get; set; }
 
             /// <summary>
             /// Tags
@@ -66,7 +66,7 @@ namespace Comformation.EC2.SecurityGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -75,7 +75,7 @@ namespace Comformation.EC2.SecurityGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 
@@ -85,9 +85,9 @@ namespace Comformation.EC2.SecurityGroup
 
     }
 
-	public static class SecurityGroupAttributes
-	{
+    public static class SecurityGroupAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> GroupId = new ResourceAttribute<Union<string, IntrinsicFunction>>("GroupId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> VpcId = new ResourceAttribute<Union<string, IntrinsicFunction>>("VpcId");
-	}
+    }
 }

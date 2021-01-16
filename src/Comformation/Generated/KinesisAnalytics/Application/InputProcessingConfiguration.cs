@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application InputProcessingConfiguration
-    /// Provides a description of a processor that is used to preprocess the records in the stream before being
-    /// processed by your application code. Currently, the only input processor available is AWS Lambda.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputprocessingconfiguration.html
     /// </summary>
     public class InputProcessingConfiguration

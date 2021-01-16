@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationReferenceDataSource CSVMappingParameters
-    /// Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the
-    /// following sample records use CSV format, where the records use the &#39;\n&#39; as the row delimiter and a comma (&quot;,&quot;)
-    /// as the column delimiter:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html
     /// </summary>
     public class CSVMappingParameters

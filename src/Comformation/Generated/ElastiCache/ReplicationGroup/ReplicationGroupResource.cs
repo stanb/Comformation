@@ -6,9 +6,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
 {
     /// <summary>
     /// AWS::ElastiCache::ReplicationGroup
-    /// The AWS::ElastiCache::ReplicationGroup resource creates an Amazon ElastiCache Redis replication group. A
-    /// replication group is a collection of cache clusters, where one of the clusters is a primary read-write cluster
-    /// and the others are read-only replicas.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html
     /// </summary>
     public class ReplicationGroupResource : ResourceBase
@@ -28,12 +25,13 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> AtRestEncryptionEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> AtRestEncryptionEnabled { get; set; }
 
             /// <summary>
             /// AuthToken
             /// Reserved parameter. The password used to access a password protected server.
-            /// AuthToken can be specified only on replication groups where TransitEncryptionEnabled is true.
+            /// AuthToken can be specified only on replication groups where TransitEncryptionEnabled is true. For
+            /// more information, see Authenticating Users with the Redis AUTH Command.
             /// Important For HIPAA compliance, you must specify TransitEncryptionEnabled as true, an AuthToken, and
             /// a CacheSubnetGroup.
             /// Password constraints:
@@ -42,9 +40,9 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// For more information, see AUTH password at http://redis. io/commands/AUTH.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthToken { get; set; }
+            public Union<string, IntrinsicFunction> AuthToken { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
@@ -53,24 +51,19 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             /// AutomaticFailoverEnabled
             /// Specifies whether a read-only replica is automatically promoted to read/write primary if the
             /// existing primary fails.
-            /// If true, Multi-AZ is enabled for this replication group. If false, Multi-AZ is disabled for this
-            /// replication group.
             /// AutomaticFailoverEnabled must be enabled for Redis (cluster mode enabled) replication groups.
             /// Default: false
-            /// Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-            /// Redis versions earlier than 2. 8. 6. Redis (cluster mode disabled): T1 node types. Redis (cluster
-            /// mode enabled): T1 node types.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutomaticFailoverEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> AutomaticFailoverEnabled { get; set; }
 
             /// <summary>
             /// CacheNodeType
@@ -78,24 +71,31 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// The following node types are supported by ElastiCache. 			Generally speaking, the current generation
             /// types provide more memory and computational power 			at lower cost when compared to their equivalent
             /// previous generation counterparts.
-            /// General purpose: Current generation: M5 node types: cache. m5. large, cache. m5. xlarge, cache. m5.
-            /// 2xlarge, cache. m5. 4xlarge, cache. m5. 12xlarge, cache. m5. 24xlarge 	 M4 node types: cache. m4.
-            /// large, cache. m4. xlarge, cache. m4. 2xlarge, cache. m4. 4xlarge, cache. m4. 10xlarge T2 node types:
-            /// cache. t2. micro, cache. t2. small, cache. t2. medium Previous generation: (not recommended) T1 node
-            /// types: cache. t1. micro M1 node types: cache. m1. small, cache. m1. medium, cache. m1. large, cache.
-            /// m1. xlarge M3 node types: cache. m3. medium, cache. m3. large, cache. m3. xlarge, cache. m3. 2xlarge
-            /// Compute optimized: Previous generation: (not recommended) C1 node types: cache. c1. xlarge Memory
-            /// optimized: Current generation: R5 node types: cache. r5. large, cache. r5. xlarge, cache. r5.
-            /// 2xlarge, cache. r5. 4xlarge, cache. r5. 12xlarge, cache. r5. 24xlarge R4 node types: cache. r4.
-            /// large, cache. r4. xlarge, cache. r4. 2xlarge, cache. r4. 4xlarge, cache. r4. 8xlarge, cache. r4.
-            /// 16xlarge Previous generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2.
-            /// 2xlarge, cache. m2. 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge,
-            /// cache. r3. 4xlarge, cache. r3. 8xlarge
+            /// Changing the CacheNodeType of a Memcached instance is currently not supported. If you need to scale
+            /// using Memcached, we recommend forcing a replacement update by changing the LogicalResourceId of the
+            /// resource.
+            /// General purpose: Current generation: M6g node types: cache. m6g. large, cache. m6g. xlarge, cache.
+            /// m6g. 2xlarge, cache. m6g. 4xlarge, cache. m6g. 12xlarge, cache. m6g. 24xlarge 	 M5 node types:
+            /// cache. m5. large, cache. m5. xlarge, cache. m5. 2xlarge, cache. m5. 4xlarge, cache. m5. 12xlarge,
+            /// cache. m5. 24xlarge 	 M4 node types: cache. m4. large, cache. m4. xlarge, cache. m4. 2xlarge, cache.
+            /// m4. 4xlarge, cache. m4. 10xlarge T3 node types: cache. t3. micro, cache. t3. small, cache. t3.
+            /// medium T2 node types: cache. t2. micro, cache. t2. small, cache. t2. medium Previous generation:
+            /// (not recommended) T1 node types: cache. t1. micro M1 node types: cache. m1. small, cache. m1.
+            /// medium, cache. m1. large, cache. m1. xlarge M3 node types: cache. m3. medium, cache. m3. large,
+            /// cache. m3. xlarge, cache. m3. 2xlarge Compute optimized: Previous generation: (not recommended) C1
+            /// node types: cache. c1. xlarge Memory optimized: Current generation: R6g node types: cache. r6g.
+            /// large, cache. r6g. xlarge, cache. r6g. 2xlarge, cache. r6g. 4xlarge, cache. r6g. 12xlarge, cache.
+            /// r6g. 24xlarge R5 node types: cache. r5. large, cache. r5. xlarge, cache. r5. 2xlarge, cache. r5.
+            /// 4xlarge, cache. r5. 12xlarge, cache. r5. 24xlarge R4 node types: cache. r4. large, cache. r4.
+            /// xlarge, cache. r4. 2xlarge, cache. r4. 4xlarge, cache. r4. 8xlarge, cache. r4. 16xlarge Previous
+            /// generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2. 2xlarge, cache. m2.
+            /// 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge, cache. r3. 4xlarge,
+            /// cache. r3. 8xlarge
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
+            public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
 
             /// <summary>
             /// CacheParameterGroupName
@@ -112,7 +112,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
 
             /// <summary>
             /// CacheSecurityGroupNames
@@ -121,18 +121,18 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
+            public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
 
             /// <summary>
             /// CacheSubnetGroupName
             /// The name of the cache subnet group to be used for the replication group.
             /// Important If you&#39;re going to launch your cluster in an Amazon VPC, you need to create a subnet group
-            /// before you start creating a cluster. For more information, see Subnets and Subnet Groups.
+            /// before you start creating a cluster. For more information, see AWS::ElastiCache::SubnetGroup.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
 
             /// <summary>
             /// Engine
@@ -141,7 +141,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Engine { get; set; }
+            public Union<string, IntrinsicFunction> Engine { get; set; }
 
             /// <summary>
             /// EngineVersion
@@ -155,7 +155,16 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+
+            /// <summary>
+            /// GlobalReplicationGroupId
+            /// The name of the Global Datastore
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> GlobalReplicationGroupId { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -164,7 +173,17 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
+            /// MultiAZEnabled
+            /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see
+            /// Minimizing Downtime: Multi-AZ.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> MultiAZEnabled { get; set; }
 
             /// <summary>
             /// NodeGroupConfiguration
@@ -177,7 +196,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of NodeGroupConfiguration
             /// Update requires: Some interruptions
             /// </summary>
-			public List<NodeGroupConfiguration> NodeGroupConfiguration { get; set; }
+            public List<NodeGroupConfiguration> NodeGroupConfiguration { get; set; }
 
             /// <summary>
             /// NotificationTopicArn
@@ -188,7 +207,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NotificationTopicArn { get; set; }
+            public Union<string, IntrinsicFunction> NotificationTopicArn { get; set; }
 
             /// <summary>
             /// NumCacheClusters
@@ -203,7 +222,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumCacheClusters { get; set; }
+            public Union<int, IntrinsicFunction> NumCacheClusters { get; set; }
 
             /// <summary>
             /// NumNodeGroups
@@ -218,7 +237,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Integer
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<int, IntrinsicFunction> NumNodeGroups { get; set; }
+            public Union<int, IntrinsicFunction> NumNodeGroups { get; set; }
 
             /// <summary>
             /// Port
@@ -227,7 +246,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// PreferredCacheClusterAZs
@@ -244,13 +263,10 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> PreferredCacheClusterAZs { get; set; }
+            public List<Union<string, IntrinsicFunction>> PreferredCacheClusterAZs { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
-            /// Specifies the weekly time range during which maintenance on the cluster is performed. It is
-            /// specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-            /// window is a 60 minute period. Valid values for ddd are:
             /// Specifies the weekly time range during which maintenance on the cluster is performed. It is
             /// specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
             /// window is a 60 minute period.
@@ -261,7 +277,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// PrimaryClusterId
@@ -273,7 +289,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PrimaryClusterId { get; set; }
+            public Union<string, IntrinsicFunction> PrimaryClusterId { get; set; }
 
             /// <summary>
             /// ReplicasPerNodeGroup
@@ -283,7 +299,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> ReplicasPerNodeGroup { get; set; }
+            public Union<int, IntrinsicFunction> ReplicasPerNodeGroup { get; set; }
 
             /// <summary>
             /// ReplicationGroupDescription
@@ -292,7 +308,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationGroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationGroupDescription { get; set; }
 
             /// <summary>
             /// ReplicationGroupId
@@ -304,7 +320,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationGroupId { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationGroupId { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
@@ -315,7 +331,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// SnapshotArns
@@ -329,7 +345,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
 
             /// <summary>
             /// SnapshotName
@@ -339,7 +355,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotName { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotName { get; set; }
 
             /// <summary>
             /// SnapshotRetentionLimit
@@ -351,7 +367,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
+            public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
 
             /// <summary>
             /// SnapshotWindow
@@ -363,7 +379,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotWindow { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotWindow { get; set; }
 
             /// <summary>
             /// SnapshottingClusterId
@@ -373,7 +389,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshottingClusterId { get; set; }
+            public Union<string, IntrinsicFunction> SnapshottingClusterId { get; set; }
 
             /// <summary>
             /// Tags
@@ -384,7 +400,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TransitEncryptionEnabled
@@ -404,7 +420,16 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> TransitEncryptionEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> TransitEncryptionEnabled { get; set; }
+
+            /// <summary>
+            /// UserGroupIds
+            /// The list of user groups to associate with the replication group.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> UserGroupIds { get; set; }
 
         }
 
@@ -414,8 +439,8 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
     }
 
-	public static class ReplicationGroupAttributes
-	{
+    public static class ReplicationGroupAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndPoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndPoint", "Address");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndPoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndPoint", "Port");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrimaryEndPoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrimaryEndPoint", "Address");
@@ -424,5 +449,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReadEndPoint_Addresses_List = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReadEndPoint", "Addresses", "List");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndPoint_Ports = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndPoint", "Ports");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReadEndPoint_Ports_List = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReadEndPoint", "Ports", "List");
-	}
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReaderEndPoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReaderEndPoint", "Address");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReaderEndPoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReaderEndPoint", "Port");
+    }
 }

@@ -6,10 +6,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline
-    /// The AWS::IoTAnalytics::Pipeline resource consumes messages from one or more channels and allows you to process
-    /// the messages before storing them in a data store. You must specify both a channel and a datastore activity
-    /// and, optionally, as many as 23 additional activities in the pipelineActivities array. For more information,
-    /// see How to Use AWS IoT Analytics in the AWS IoT Analytics User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
@@ -26,7 +22,7 @@ namespace Comformation.IoTAnalytics.Pipeline
             /// Pattern: ^[a-zA-Z0-9_]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PipelineName { get; set; }
+            public Union<string, IntrinsicFunction> PipelineName { get; set; }
 
             /// <summary>
             /// Tags
@@ -37,7 +33,7 @@ namespace Comformation.IoTAnalytics.Pipeline
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// PipelineActivities
@@ -53,7 +49,7 @@ namespace Comformation.IoTAnalytics.Pipeline
             /// Maximum: 25
             /// Update requires: No interruption
             /// </summary>
-			public List<Activity> PipelineActivities { get; set; }
+            public List<Activity> PipelineActivities { get; set; }
 
         }
 

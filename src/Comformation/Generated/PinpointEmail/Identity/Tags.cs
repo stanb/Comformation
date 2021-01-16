@@ -7,7 +7,6 @@ namespace Comformation.PinpointEmail.Identity
 {
     /// <summary>
     /// AWS::PinpointEmail::Identity Tags
-    /// An object that defines the tags (keys and values) that you want to associate with the identity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html
     /// </summary>
     public class Tags

@@ -7,7 +7,6 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 {
     /// <summary>
     /// AWS::ServiceCatalog::CloudFormationProduct ProvisioningArtifactProperties
-    /// Information about a provisioning artifact (also known as a version) for a product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html
     /// </summary>
     public class ProvisioningArtifactProperties
@@ -19,6 +18,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
         /// provisioning artifact.
         /// Required: No
         /// Type: String
+        /// Maximum: 8192
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Description")]
@@ -37,8 +37,13 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 
         /// <summary>
         /// Info
+        /// Specify the template source with one of the following options, but not both. Keys accepted: [
+        /// LoadTemplateFromURL, ImportFromPhysicalId ]
         /// The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
         /// &quot;LoadTemplateFromURL&quot;: &quot;https://s3. amazonaws. com/cf-templates-ozkq9d3hgiq2-us-east-1/. . . &quot;
+        /// ImportFromPhysicalId: The physical id of the resource that contains the template. Currently only
+        /// supports CloudFormation stack arn. Specify the physical id in JSON format as follows:
+        /// ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]
         /// Required: Yes
         /// Type: Json
         /// Update requires: No interruption
@@ -51,6 +56,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
         /// The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
         /// Required: No
         /// Type: String
+        /// Maximum: 8192
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

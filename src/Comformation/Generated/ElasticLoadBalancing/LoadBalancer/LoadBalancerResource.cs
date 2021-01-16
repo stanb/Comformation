@@ -6,7 +6,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer
-    /// Specifies a Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: AccessLoggingPolicy
             /// Update requires: No interruption
             /// </summary>
-			public AccessLoggingPolicy AccessLoggingPolicy { get; set; }
+            public AccessLoggingPolicy AccessLoggingPolicy { get; set; }
 
             /// <summary>
             /// AppCookieStickinessPolicy
@@ -29,7 +28,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of AppCookieStickinessPolicy
             /// Update requires: No interruption
             /// </summary>
-			public List<AppCookieStickinessPolicy> AppCookieStickinessPolicy { get; set; }
+            public List<AppCookieStickinessPolicy> AppCookieStickinessPolicy { get; set; }
 
             /// <summary>
             /// AvailabilityZones
@@ -40,7 +39,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of String
             /// Update requires: Some interruptions
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
+            public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// ConnectionDrainingPolicy
@@ -51,7 +50,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: ConnectionDrainingPolicy
             /// Update requires: No interruption
             /// </summary>
-			public ConnectionDrainingPolicy ConnectionDrainingPolicy { get; set; }
+            public ConnectionDrainingPolicy ConnectionDrainingPolicy { get; set; }
 
             /// <summary>
             /// ConnectionSettings
@@ -64,7 +63,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: ConnectionSettings
             /// Update requires: No interruption
             /// </summary>
-			public ConnectionSettings ConnectionSettings { get; set; }
+            public ConnectionSettings ConnectionSettings { get; set; }
 
             /// <summary>
             /// CrossZone
@@ -75,7 +74,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> CrossZone { get; set; }
+            public Union<bool, IntrinsicFunction> CrossZone { get; set; }
 
             /// <summary>
             /// HealthCheck
@@ -86,7 +85,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: HealthCheck
             /// Update requires: Some interruptions
             /// </summary>
-			public HealthCheck HealthCheck { get; set; }
+            public HealthCheck HealthCheck { get; set; }
 
             /// <summary>
             /// Instances
@@ -95,7 +94,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Instances { get; set; }
+            public List<Union<string, IntrinsicFunction>> Instances { get; set; }
 
             /// <summary>
             /// LBCookieStickinessPolicy
@@ -104,7 +103,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of LBCookieStickinessPolicy
             /// Update requires: No interruption
             /// </summary>
-			public List<LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
+            public List<LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
 
             /// <summary>
             /// Listeners
@@ -116,7 +115,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of Listeners
             /// Update requires: No interruption
             /// </summary>
-			public List<Listeners> Listeners { get; set; }
+            public List<Listeners> Listeners { get; set; }
 
             /// <summary>
             /// LoadBalancerName
@@ -130,7 +129,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LoadBalancerName { get; set; }
+            public Union<string, IntrinsicFunction> LoadBalancerName { get; set; }
 
             /// <summary>
             /// Policies
@@ -139,7 +138,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of Policies
             /// Update requires: No interruption
             /// </summary>
-			public List<Policies> Policies { get; set; }
+            public List<Policies> Policies { get; set; }
 
             /// <summary>
             /// Scheme
@@ -152,7 +151,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Scheme { get; set; }
+            public Union<string, IntrinsicFunction> Scheme { get; set; }
 
             /// <summary>
             /// SecurityGroups
@@ -161,7 +160,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// Subnets
@@ -175,7 +174,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of String
             /// Update requires: Some interruptions
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
+            public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
             /// <summary>
             /// Tags
@@ -184,7 +183,7 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -194,12 +193,12 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 
     }
 
-	public static class LoadBalancerAttributes
-	{
+    public static class LoadBalancerAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CanonicalHostedZoneName = new ResourceAttribute<Union<string, IntrinsicFunction>>("CanonicalHostedZoneName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CanonicalHostedZoneNameID = new ResourceAttribute<Union<string, IntrinsicFunction>>("CanonicalHostedZoneNameID");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DNSName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DNSName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SourceSecurityGroup_GroupName = new ResourceAttribute<Union<string, IntrinsicFunction>>("SourceSecurityGroup", "GroupName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SourceSecurityGroup_OwnerAlias = new ResourceAttribute<Union<string, IntrinsicFunction>>("SourceSecurityGroup", "OwnerAlias");
-	}
+    }
 }

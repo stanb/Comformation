@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlan ThrottleSettings
-    /// ThrottleSettings is a property of the AWS::ApiGateway::UsagePlan resource that specifies the overall request
-    /// rate (average requests per second) and burst capacity when users call your REST APIs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html
     /// </summary>
     public class ThrottleSettings

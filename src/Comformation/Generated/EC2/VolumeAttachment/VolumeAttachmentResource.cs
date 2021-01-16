@@ -6,8 +6,6 @@ namespace Comformation.EC2.VolumeAttachment
 {
     /// <summary>
     /// AWS::EC2::VolumeAttachment
-    /// Attaches an Amazon EBS volume to a running instance and exposes it to the instance with the specified device
-    /// name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html
     /// </summary>
     public class VolumeAttachmentResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.EC2.VolumeAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Device { get; set; }
+            public Union<string, IntrinsicFunction> Device { get; set; }
 
             /// <summary>
             /// InstanceId
@@ -31,7 +29,7 @@ namespace Comformation.EC2.VolumeAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceId { get; set; }
+            public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
             /// <summary>
             /// VolumeId
@@ -42,7 +40,7 @@ namespace Comformation.EC2.VolumeAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VolumeId { get; set; }
+            public Union<string, IntrinsicFunction> VolumeId { get; set; }
 
         }
 

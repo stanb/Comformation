@@ -7,7 +7,6 @@ namespace Comformation.SageMaker.Workteam
 {
     /// <summary>
     /// AWS::SageMaker::Workteam NotificationConfiguration
-    /// Configures SNS notifications of available or expiring work items for work teams.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html
     /// </summary>
     public class NotificationConfiguration

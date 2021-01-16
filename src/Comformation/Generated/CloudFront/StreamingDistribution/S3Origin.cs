@@ -7,8 +7,6 @@ namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
     /// AWS::CloudFront::StreamingDistribution S3Origin
-    /// A complex type that contains information about the Amazon S3 bucket from which you want 			CloudFront to get
-    /// your media files for distribution.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html
     /// </summary>
     public class S3Origin

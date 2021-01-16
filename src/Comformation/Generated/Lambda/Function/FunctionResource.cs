@@ -6,10 +6,6 @@ namespace Comformation.Lambda.Function
 {
     /// <summary>
     /// AWS::Lambda::Function
-    /// The AWS::Lambda::Function resource creates a Lambda function. To create a function, you need a deployment
-    /// package and an execution role. The deployment package contains your function code. The execution role grants
-    /// the function permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray
-    /// for request tracing.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html
     /// </summary>
     public class FunctionResource : ResourceBase
@@ -23,7 +19,16 @@ namespace Comformation.Lambda.Function
             /// Type: Code
             /// Update requires: No interruption
             /// </summary>
-			public Code Code { get; set; }
+            public Code Code { get; set; }
+
+            /// <summary>
+            /// CodeSigningConfigArn
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> CodeSigningConfigArn { get; set; }
 
             /// <summary>
             /// DeadLetterConfig
@@ -33,7 +38,7 @@ namespace Comformation.Lambda.Function
             /// Type: DeadLetterConfig
             /// Update requires: No interruption
             /// </summary>
-			public DeadLetterConfig DeadLetterConfig { get; set; }
+            public DeadLetterConfig DeadLetterConfig { get; set; }
 
             /// <summary>
             /// Description
@@ -44,7 +49,7 @@ namespace Comformation.Lambda.Function
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Environment
@@ -53,7 +58,21 @@ namespace Comformation.Lambda.Function
             /// Type: Environment
             /// Update requires: No interruption
             /// </summary>
-			public Environment Environment { get; set; }
+            public Environment Environment { get; set; }
+
+            /// <summary>
+            /// FileSystemConfigs
+            /// Connection settings for an Amazon EFS file system. To connect a function to a file system, a mount
+            /// target must be available in every Availability Zone that your function connects to. If your template
+            /// contains an AWS::EFS::MountTarget resource, you must also specify a DependsOn attribute to ensure
+            /// that the mount target is created or updated before the function.
+            /// For more information about using the DependsOn attribute, see DependsOn Attribute.
+            /// Required: No
+            /// Type: List of FileSystemConfig
+            /// Maximum: 1
+            /// Update requires: No interruption
+            /// </summary>
+            public List<FileSystemConfig> FileSystemConfigs { get; set; }
 
             /// <summary>
             /// FunctionName
@@ -64,26 +83,31 @@ namespace Comformation.Lambda.Function
             /// new name.
             /// Required: No
             /// Type: String
-            /// Minimum: 1
-            /// Maximum: 140
-            /// Pattern:
-            /// (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionName { get; set; }
+            public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
             /// Handler
             /// The name of the method within your code that Lambda calls to execute your function. The format
             /// includes the file name. It can also include namespaces and other qualifiers, depending on the
             /// runtime. For more information, see Programming Model.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Maximum: 128
             /// Pattern: [^\s]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Handler { get; set; }
+            public Union<string, IntrinsicFunction> Handler { get; set; }
+
+            /// <summary>
+            /// ImageConfig
+            /// Configuration values that override the container image Dockerfile settings. See Container settings.
+            /// Required: No
+            /// Type: ImageConfig
+            /// Update requires: No interruption
+            /// </summary>
+            public ImageConfig ImageConfig { get; set; }
 
             /// <summary>
             /// KmsKeyArn
@@ -94,7 +118,7 @@ namespace Comformation.Lambda.Function
             /// Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-. ]+:. *)|()
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyArn { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyArn { get; set; }
 
             /// <summary>
             /// Layers
@@ -104,19 +128,29 @@ namespace Comformation.Lambda.Function
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Layers { get; set; }
+            public List<Union<string, IntrinsicFunction>> Layers { get; set; }
 
             /// <summary>
             /// MemorySize
-            /// The amount of memory that your function has access to. Increasing the function&#39;s memory also
-            /// increases its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+            /// The amount of memory available to the function at runtime. Increasing the function&#39;s memory also
+            /// increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
             /// Required: No
             /// Type: Integer
             /// Minimum: 128
-            /// Maximum: 3008
+            /// Maximum: 10240
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MemorySize { get; set; }
+            public Union<int, IntrinsicFunction> MemorySize { get; set; }
+
+            /// <summary>
+            /// PackageType
+            /// The type of deployment package. Set to Image for container image and set Zip for . zip file archive.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: Image | Zip
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> PackageType { get; set; }
 
             /// <summary>
             /// ReservedConcurrentExecutions
@@ -126,7 +160,7 @@ namespace Comformation.Lambda.Function
             /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> ReservedConcurrentExecutions { get; set; }
+            public Union<int, IntrinsicFunction> ReservedConcurrentExecutions { get; set; }
 
             /// <summary>
             /// Role
@@ -136,18 +170,20 @@ namespace Comformation.Lambda.Function
             /// Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Role { get; set; }
+            public Union<string, IntrinsicFunction> Role { get; set; }
 
             /// <summary>
             /// Runtime
             /// The identifier of the function&#39;s runtime.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
-            /// Allowed Values: dotnetcore1. 0 | dotnetcore2. 1 | go1. x | java8 | nodejs10. x | nodejs8. 10 |
-            /// provided | python2. 7 | python3. 6 | python3. 7 | ruby2. 5
+            /// Allowed values: dotnetcore1. 0 | dotnetcore2. 0 | dotnetcore2. 1 | dotnetcore3. 1 | go1. x | java11
+            /// | java8 | java8. al2 | nodejs | nodejs10. x | nodejs12. x | nodejs4. 3 | nodejs4. 3-edge | nodejs6.
+            /// 10 | nodejs8. 10 | provided | provided. al2 | python2. 7 | python3. 6 | python3. 7 | python3. 8 |
+            /// ruby2. 5 | ruby2. 7
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Runtime { get; set; }
+            public Union<string, IntrinsicFunction> Runtime { get; set; }
 
             /// <summary>
             /// Tags
@@ -156,7 +192,7 @@ namespace Comformation.Lambda.Function
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Timeout
@@ -167,7 +203,7 @@ namespace Comformation.Lambda.Function
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Timeout { get; set; }
+            public Union<int, IntrinsicFunction> Timeout { get; set; }
 
             /// <summary>
             /// TracingConfig
@@ -176,18 +212,17 @@ namespace Comformation.Lambda.Function
             /// Type: TracingConfig
             /// Update requires: No interruption
             /// </summary>
-			public TracingConfig TracingConfig { get; set; }
+            public TracingConfig TracingConfig { get; set; }
 
             /// <summary>
             /// VpcConfig
             /// For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in
-            /// the VPC. When you connect a function to a VPC, it can only access resources and the internet through
-            /// that VPC. For more information, see VPC Settings.
+            /// the VPC.
             /// Required: No
             /// Type: VpcConfig
             /// Update requires: No interruption
             /// </summary>
-			public VpcConfig VpcConfig { get; set; }
+            public VpcConfig VpcConfig { get; set; }
 
         }
 
@@ -197,8 +232,8 @@ namespace Comformation.Lambda.Function
 
     }
 
-	public static class FunctionAttributes
-	{
+    public static class FunctionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

@@ -7,7 +7,6 @@ namespace Comformation.IAM.Group
 {
     /// <summary>
     /// AWS::IAM::Role Policy
-    /// Contains information about an attached policy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
     /// </summary>
     public class Policy

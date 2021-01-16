@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline StageDeclaration
-    /// Represents information about a stage and its definition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html
     /// </summary>
     public class StageDeclaration

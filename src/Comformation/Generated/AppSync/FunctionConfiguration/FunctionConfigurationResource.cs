@@ -6,9 +6,6 @@ namespace Comformation.AppSync.FunctionConfiguration
 {
     /// <summary>
     /// AWS::AppSync::FunctionConfiguration
-    /// The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL APIs to perform certain
-    /// operations. You can use pipeline resolvers to attach functions. For more information, see Pipeline Resolvers
-    /// in the AWS AppSync Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html
     /// </summary>
     public class FunctionConfigurationResource : ResourceBase
@@ -24,7 +21,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResponseMappingTemplateS3Location { get; set; }
+            public Union<string, IntrinsicFunction> ResponseMappingTemplateS3Location { get; set; }
 
             /// <summary>
             /// Description
@@ -33,7 +30,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DataSourceName
@@ -42,7 +39,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DataSourceName { get; set; }
+            public Union<string, IntrinsicFunction> DataSourceName { get; set; }
 
             /// <summary>
             /// RequestMappingTemplate
@@ -52,7 +49,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RequestMappingTemplate { get; set; }
+            public Union<string, IntrinsicFunction> RequestMappingTemplate { get; set; }
 
             /// <summary>
             /// ResponseMappingTemplate
@@ -61,7 +58,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResponseMappingTemplate { get; set; }
+            public Union<string, IntrinsicFunction> ResponseMappingTemplate { get; set; }
 
             /// <summary>
             /// FunctionVersion
@@ -71,7 +68,16 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionVersion { get; set; }
+            public Union<string, IntrinsicFunction> FunctionVersion { get; set; }
+
+            /// <summary>
+            /// SyncConfig
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: SyncConfig
+            /// Update requires: No interruption
+            /// </summary>
+            public SyncConfig SyncConfig { get; set; }
 
             /// <summary>
             /// RequestMappingTemplateS3Location
@@ -81,7 +87,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RequestMappingTemplateS3Location { get; set; }
+            public Union<string, IntrinsicFunction> RequestMappingTemplateS3Location { get; set; }
 
             /// <summary>
             /// ApiId
@@ -90,7 +96,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
             /// Name
@@ -99,7 +105,7 @@ namespace Comformation.AppSync.FunctionConfiguration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -109,11 +115,11 @@ namespace Comformation.AppSync.FunctionConfiguration
 
     }
 
-	public static class FunctionConfigurationAttributes
-	{
+    public static class FunctionConfigurationAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FunctionId = new ResourceAttribute<Union<string, IntrinsicFunction>>("FunctionId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FunctionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("FunctionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DataSourceName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DataSourceName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

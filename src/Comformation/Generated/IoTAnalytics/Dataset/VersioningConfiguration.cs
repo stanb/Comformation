@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset VersioningConfiguration
-    /// Information about the versioning of data set contents.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-versioningconfiguration.html
     /// </summary>
     public class VersioningConfiguration
@@ -15,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// MaxVersions
-        /// How many versions of data set contents will be kept. The &quot;unlimited&quot; parameter must be false.
+        /// How many versions of dataset contents are kept. The unlimited parameter must be false.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1
@@ -27,7 +26,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// Unlimited
-        /// If true, unlimited versions of data set contents will be kept.
+        /// If true, unlimited versions of dataset contents are kept.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

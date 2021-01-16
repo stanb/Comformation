@@ -6,10 +6,6 @@ namespace Comformation.CodeBuild.SourceCredential
 {
     /// <summary>
     /// AWS::CodeBuild::SourceCredential
-    /// Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly
-    /// recommend that you use AWS Secrets Manager to store your credentials or the NoEcho parameter to mask your
-    /// credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information,
-    /// see Using Dynamic References to Specify Template Values.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html
     /// </summary>
     public class SourceCredentialResource : ResourceBase
@@ -21,10 +17,10 @@ namespace Comformation.CodeBuild.SourceCredential
             /// The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: BITBUCKET | GITHUB | GITHUB_ENTERPRISE
+            /// Allowed values: BITBUCKET | GITHUB | GITHUB_ENTERPRISE
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServerType { get; set; }
+            public Union<string, IntrinsicFunction> ServerType { get; set; }
 
             /// <summary>
             /// Username
@@ -35,7 +31,7 @@ namespace Comformation.CodeBuild.SourceCredential
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Username { get; set; }
+            public Union<string, IntrinsicFunction> Username { get; set; }
 
             /// <summary>
             /// Token
@@ -46,7 +42,7 @@ namespace Comformation.CodeBuild.SourceCredential
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Token { get; set; }
+            public Union<string, IntrinsicFunction> Token { get; set; }
 
             /// <summary>
             /// AuthType
@@ -54,10 +50,10 @@ namespace Comformation.CodeBuild.SourceCredential
             /// PERSONAL_ACCESS_TOKEN.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: BASIC_AUTH | OAUTH | PERSONAL_ACCESS_TOKEN
+            /// Allowed values: BASIC_AUTH | OAUTH | PERSONAL_ACCESS_TOKEN
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthType { get; set; }
+            public Union<string, IntrinsicFunction> AuthType { get; set; }
 
         }
 

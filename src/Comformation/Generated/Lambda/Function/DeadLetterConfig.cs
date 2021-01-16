@@ -7,7 +7,6 @@ namespace Comformation.Lambda.Function
 {
     /// <summary>
     /// AWS::Lambda::Function DeadLetterConfig
-    /// The dead letter queue for failed asynchronous invocations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html
     /// </summary>
     public class DeadLetterConfig

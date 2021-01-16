@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel DetectorModelDefinition
-    /// Information that defines how a detector operates.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html
     /// </summary>
     public class DetectorModelDefinition

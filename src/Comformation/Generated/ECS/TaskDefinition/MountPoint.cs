@@ -7,7 +7,6 @@ namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
     /// AWS::ECS::TaskDefinition MountPoint
-    /// The MountPoint property specifies details on a volume mount point that is used in a container definition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html
     /// </summary>
     public class MountPoint
@@ -15,7 +14,9 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// ContainerPath
+        /// 		
         /// The path on the container to mount the host volume at.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -25,8 +26,10 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// ReadOnly
-        /// If this value is true, the container has read-only access to the volume. If this value is false,
-        /// then the container can write to the volume. The default value is false.
+        /// 		
+        /// If this value is true, the container has read-only access to the volume. 			If this value is false,
+        /// then the container can write to the volume. The 			default value is false.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -36,8 +39,10 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// SourceVolume
-        /// The name of the volume to mount. Must be a volume name referenced in the name parameter of task
+        /// 		
+        /// The name of the volume to mount. Must be a volume name referenced in the 				name parameter of task
         /// definition volume.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

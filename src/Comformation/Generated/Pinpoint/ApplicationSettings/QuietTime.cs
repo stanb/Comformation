@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.ApplicationSettings
 {
     /// <summary>
     /// AWS::Pinpoint::ApplicationSettings QuietTime
-    /// Specifies the start and end times that define a time range when messages aren&#39;t sent to endpoints.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-quiettime.html
     /// </summary>
     public class QuietTime

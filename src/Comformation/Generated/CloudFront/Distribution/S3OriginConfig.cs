@@ -7,8 +7,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution S3OriginConfig
-    /// A complex type that contains information about the Amazon S3 origin. If the origin is a 			custom origin, use
-    /// the CustomOriginConfig element instead.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html
     /// </summary>
     public class S3OriginConfig

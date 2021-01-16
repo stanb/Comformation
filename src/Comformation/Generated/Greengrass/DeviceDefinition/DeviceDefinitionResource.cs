@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.DeviceDefinition
 {
     /// <summary>
     /// AWS::Greengrass::DeviceDefinition
-    /// The AWS::Greengrass::DeviceDefinition resource represents a device definition for AWS IoT Greengrass.
-    /// 			Device definitions are used to organize your device definition versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html
     /// </summary>
     public class DeviceDefinitionResource : ResourceBase
@@ -25,7 +23,7 @@ namespace Comformation.Greengrass.DeviceDefinition
             /// Type: DeviceDefinitionVersion
             /// Update requires: Replacement
             /// </summary>
-			public DeviceDefinitionVersion InitialVersion { get; set; }
+            public DeviceDefinitionVersion InitialVersion { get; set; }
 
             /// <summary>
             /// Tags
@@ -41,7 +39,7 @@ namespace Comformation.Greengrass.DeviceDefinition
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -50,7 +48,7 @@ namespace Comformation.Greengrass.DeviceDefinition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -60,11 +58,11 @@ namespace Comformation.Greengrass.DeviceDefinition
 
     }
 
-	public static class DeviceDefinitionAttributes
-	{
+    public static class DeviceDefinitionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

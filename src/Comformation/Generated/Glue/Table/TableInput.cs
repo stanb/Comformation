@@ -7,7 +7,6 @@ namespace Comformation.Glue.Table
 {
     /// <summary>
     /// AWS::Glue::Table TableInput
-    /// A structure used to define a table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html
     /// </summary>
     public class TableInput
@@ -82,6 +81,16 @@ namespace Comformation.Glue.Table
         /// </summary>
         [JsonProperty("StorageDescriptor")]
         public StorageDescriptor StorageDescriptor { get; set; }
+
+        /// <summary>
+        /// TargetTable
+        /// A TableIdentifier structure that describes a target table for resource linking.
+        /// Required: No
+        /// Type: TableIdentifier
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TargetTable")]
+        public TableIdentifier TargetTable { get; set; }
 
         /// <summary>
         /// PartitionKeys

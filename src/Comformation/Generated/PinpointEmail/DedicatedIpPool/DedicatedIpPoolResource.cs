@@ -6,7 +6,6 @@ namespace Comformation.PinpointEmail.DedicatedIpPool
 {
     /// <summary>
     /// AWS::PinpointEmail::DedicatedIpPool
-    /// A request to create a new dedicated IP pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html
     /// </summary>
     public class DedicatedIpPoolResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.PinpointEmail.DedicatedIpPool
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PoolName { get; set; }
+            public Union<string, IntrinsicFunction> PoolName { get; set; }
 
             /// <summary>
             /// Tags
@@ -30,7 +29,7 @@ namespace Comformation.PinpointEmail.DedicatedIpPool
             /// Type: List of Tags
             /// Update requires: No interruption
             /// </summary>
-			public List<Tags> Tags { get; set; }
+            public List<Tags> Tags { get; set; }
 
         }
 

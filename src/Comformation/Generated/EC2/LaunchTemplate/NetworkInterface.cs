@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate NetworkInterface
-    /// Specifies the parameters for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html
     /// </summary>
     public class NetworkInterface
@@ -105,6 +104,17 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
         /// <summary>
+        /// NetworkCardIndex
+        /// The index of the network card. Some instance types support multiple network cards. The primary
+        /// network interface must be assigned to network card index 0. The default is network card index 0.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("NetworkCardIndex")]
+        public Union<int, IntrinsicFunction> NetworkCardIndex { get; set; }
+
+        /// <summary>
         /// InterfaceType
         /// 		
         /// The type of network interface. To create an Elastic Fabric Adapter (EFA), specify 			efa. For more
@@ -120,6 +130,19 @@ namespace Comformation.EC2.LaunchTemplate
         /// </summary>
         [JsonProperty("InterfaceType")]
         public Union<string, IntrinsicFunction> InterfaceType { get; set; }
+
+        /// <summary>
+        /// AssociateCarrierIpAddress
+        /// Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+        /// Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+        /// address with the network interface. For more information about Carrier IP addresses, see Carrier IP
+        /// addresses in the AWS Wavelength Developer Guide.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AssociateCarrierIpAddress")]
+        public Union<bool, IntrinsicFunction> AssociateCarrierIpAddress { get; set; }
 
         /// <summary>
         /// Ipv6AddressCount

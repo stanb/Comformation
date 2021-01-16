@@ -7,7 +7,6 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolRiskConfigurationAttachment AccountTakeoverActionsType
-    /// Account takeover actions type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html
     /// </summary>
     public class AccountTakeoverActionsType

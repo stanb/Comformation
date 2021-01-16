@@ -7,10 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster KerberosAttributes
-    /// KerberosAttributes is a property of the AWS::EMR::Cluster resource. KerberosAttributes define the
-    /// cluster-specific Kerberos configuration when Kerberos authentication is enabled using a security
-    /// configuration. The cluster-specific configuration must be compatible with the security configuration. For more
-    /// information see Use Kerberos Authentication in the EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html
     /// </summary>
     public class KerberosAttributes

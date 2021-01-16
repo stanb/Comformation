@@ -7,11 +7,21 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet SpotOptionsRequest
-    /// Specifies the configuration of Spot Instances for an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
     /// </summary>
     public class SpotOptionsRequest
     {
+
+        /// <summary>
+        /// SingleAvailabilityZone
+        /// Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only
+        /// for fleets of type instant.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SingleAvailabilityZone")]
+        public Union<bool, IntrinsicFunction> SingleAvailabilityZone { get; set; }
 
         /// <summary>
         /// AllocationStrategy
@@ -26,18 +36,50 @@ namespace Comformation.EC2.EC2Fleet
         /// Allowed Values: lowestPrice | diversified | capacityOptimized
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AllocationStrategy")]
         public Union<string, IntrinsicFunction> AllocationStrategy { get; set; }
+
+        /// <summary>
+        /// SingleInstanceType
+        /// Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+        /// Supported only for fleets of type instant.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SingleInstanceType")]
+        public Union<bool, IntrinsicFunction> SingleInstanceType { get; set; }
+
+        /// <summary>
+        /// MinTargetCapacity
+        /// The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not
+        /// reached, the fleet launches no instances.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("MinTargetCapacity")]
+        public Union<int, IntrinsicFunction> MinTargetCapacity { get; set; }
+
+        /// <summary>
+        /// MaxTotalPrice
+        /// The maximum amount per hour for Spot Instances that you&#39;re willing to pay.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("MaxTotalPrice")]
+        public Union<string, IntrinsicFunction> MaxTotalPrice { get; set; }
 
         /// <summary>
         /// InstanceInterruptionBehavior
         /// The behavior when a Spot Instance is interrupted. The default is terminate.
         /// Required: No
         /// Type: String
-        /// Allowed Values: hibernate | stop | terminate
-        /// Update requires: No interruption
+        /// Allowed values: hibernate | stop | terminate
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceInterruptionBehavior")]
         public Union<string, IntrinsicFunction> InstanceInterruptionBehavior { get; set; }
@@ -49,7 +91,7 @@ namespace Comformation.EC2.EC2Fleet
         /// allocates your target Spot capacity across the number of Spot pools that you specify.
         /// Required: No
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstancePoolsToUseCount")]
         public Union<int, IntrinsicFunction> InstancePoolsToUseCount { get; set; }

@@ -7,7 +7,6 @@ namespace Comformation.Lambda.Alias
 {
     /// <summary>
     /// AWS::Lambda::Alias VersionWeight
-    /// The traffic-shifting configuration of a Lambda function alias.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html
     /// </summary>
     public class VersionWeight
@@ -15,7 +14,7 @@ namespace Comformation.Lambda.Alias
 
         /// <summary>
         /// FunctionVersion
-        /// The name of the second alias.
+        /// The qualifier of the second version.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.Lambda.Alias
 
         /// <summary>
         /// FunctionWeight
-        /// The percentage of traffic that&#39;s routed to the second alias.
+        /// The percentage of traffic that the alias routes to the second version.
         /// Required: Yes
         /// Type: Double
         /// Update requires: No interruption

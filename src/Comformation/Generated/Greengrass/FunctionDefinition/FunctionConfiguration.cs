@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinition FunctionConfiguration
-    /// The group-specific configuration settings for a Lambda function. These settings configure the function&#39;s
-    /// behavior in the Greengrass group. 		 For more information, 	see Controlling Execution of Greengrass Lambda
-    /// Functions by Using Group-Specific Configuration in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html
     /// </summary>
     public class FunctionConfiguration

@@ -7,7 +7,6 @@ namespace Comformation.Glue.Classifier
 {
     /// <summary>
     /// AWS::Glue::Classifier XMLClassifier
-    /// A classifier for XML content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html
     /// </summary>
     public class XMLClassifier

@@ -6,7 +6,6 @@ namespace Comformation.Neptune.DBInstance
 {
     /// <summary>
     /// AWS::Neptune::DBInstance
-    /// The AWS::Neptune::DBInstance type creates an Amazon Neptune DB instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html
     /// </summary>
     public class DBInstanceResource : ResourceBase
@@ -24,7 +23,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBParameterGroupName { get; set; }
 
             /// <summary>
             /// DBInstanceClass
@@ -34,7 +33,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
+            public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
 
             /// <summary>
             /// AllowMajorVersionUpgrade
@@ -46,7 +45,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
             /// <summary>
             /// DBClusterIdentifier
@@ -56,7 +55,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
             /// <summary>
             /// AvailabilityZone
@@ -65,7 +64,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -75,7 +74,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
@@ -85,7 +84,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             /// DBSubnetGroupName
@@ -95,7 +94,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
             /// DBInstanceIdentifier
@@ -105,7 +104,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBInstanceIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBInstanceIdentifier { get; set; }
 
             /// <summary>
             /// DBSnapshotIdentifier
@@ -116,7 +115,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSnapshotIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBSnapshotIdentifier { get; set; }
 
             /// <summary>
             /// Tags
@@ -125,7 +124,7 @@ namespace Comformation.Neptune.DBInstance
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -135,9 +134,9 @@ namespace Comformation.Neptune.DBInstance
 
     }
 
-	public static class DBInstanceAttributes
-	{
+    public static class DBInstanceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Port");
-	}
+    }
 }

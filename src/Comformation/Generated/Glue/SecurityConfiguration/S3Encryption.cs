@@ -7,7 +7,6 @@ namespace Comformation.Glue.SecurityConfiguration
 {
     /// <summary>
     /// AWS::Glue::SecurityConfiguration S3Encryption
-    /// Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-s3encryption.html
     /// </summary>
     public class S3Encryption

@@ -7,8 +7,6 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS::CodeBuild::Project Environment
-    /// Environment is a property of the AWS::CodeBuild::Project resource that specifies the environment for an AWS
-    /// CodeBuild project.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
     /// </summary>
     public class Environment
@@ -17,9 +15,20 @@ namespace Comformation.CodeBuild.Project
         /// <summary>
         /// Type
         /// The type of build environment to use for related builds.
+        /// The environment type ARM_CONTAINER is available only in regions US East (N. Virginia), US East
+        /// (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific
+        /// (Sydney), and EU (Frankfurt). The environment type LINUX_CONTAINER with compute type build.
+        /// general1. 2xlarge is available only in regions US East (N. Virginia), US East (Ohio), US West
+        /// (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+        /// Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+        /// (Ningxia). The environment type LINUX_GPU_CONTAINER is available only in regions US East (N.
+        /// Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU
+        /// (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney) , China (Beijing), and China (Ningxia).
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: LINUX_CONTAINER | WINDOWS_CONTAINER
+        /// Allowed values: ARM_CONTAINER | LINUX_CONTAINER | LINUX_GPU_CONTAINER | WINDOWS_CONTAINER |
+        /// WINDOWS_SERVER_2019_CONTAINER
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
@@ -39,7 +48,7 @@ namespace Comformation.CodeBuild.Project
         /// PrivilegedMode
         /// Enables running the Docker daemon inside a Docker container. Set to true only if the build project
         /// is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon
-        /// fails.
+        /// fails. The default setting is false.
         /// You can initialize the Docker daemon during the install phase of your build by adding one of the
         /// following sets of commands to the install phase of your buildspec file:
         /// If the operating system&#39;s base image is Ubuntu Linux:
@@ -68,7 +77,7 @@ namespace Comformation.CodeBuild.Project
         /// you use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
         /// Required: No
         /// Type: String
-        /// Allowed Values: CODEBUILD | SERVICE_ROLE
+        /// Allowed values: CODEBUILD | SERVICE_ROLE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ImagePullCredentialsType")]
@@ -78,11 +87,12 @@ namespace Comformation.CodeBuild.Project
         /// Image
         /// The image tag or image digest that identifies the Docker image to use for this build project. Use
         /// the following formats:
-        /// For an image tag: registry/repository:tag. For example, to specify an image with the tag &quot;latest,&quot;
-        /// use registry/repository:latest. For an image digest: registry/repository@digest. For example, to
-        /// specify an image with the digest
-        /// &quot;sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,&quot; use
-        /// registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf.
+        /// For an image tag: &amp;lt;registry&amp;gt;/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt;. For example, in the Docker
+        /// repository that CodeBuild uses to manage its Docker images, this would be aws/codebuild/standard:4.
+        /// 0. For an image digest: &amp;lt;registry&amp;gt;/&amp;lt;repository&amp;gt;@&amp;lt;digest&amp;gt;. For example, to specify
+        /// an image with the digest &quot;sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,&quot;
+        /// use
+        /// &amp;lt;registry&amp;gt;/&amp;lt;repository&amp;gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -111,6 +121,7 @@ namespace Comformation.CodeBuild.Project
         /// BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds. BUILD_GENERAL1_MEDIUM: Use up to
         /// 7 GB memory and 4 vCPUs for builds. BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for
         /// builds.
+        /// For more information, see Build Environment Compute Types in the AWS CodeBuild User Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -120,7 +131,9 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Certificate
-        /// The certificate to use with this build project.
+        /// The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that
+        /// contains the PEM-encoded certificate for the build project. For more information, see certificate in
+        /// the AWS CodeBuild User Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

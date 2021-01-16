@@ -6,8 +6,6 @@ namespace Comformation.RoboMaker.Fleet
 {
     /// <summary>
     /// AWS::RoboMaker::Fleet
-    /// The AWS::RoboMaker::Fleet resource creates an AWS RoboMaker fleet. Fleets contain robots and can receive
-    /// deployments.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html
     /// </summary>
     public class FleetResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.RoboMaker.Fleet
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -33,7 +31,7 @@ namespace Comformation.RoboMaker.Fleet
             /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -43,8 +41,8 @@ namespace Comformation.RoboMaker.Fleet
 
     }
 
-	public static class FleetAttributes
-	{
+    public static class FleetAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

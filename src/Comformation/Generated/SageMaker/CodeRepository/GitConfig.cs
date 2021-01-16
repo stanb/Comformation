@@ -7,7 +7,6 @@ namespace Comformation.SageMaker.CodeRepository
 {
     /// <summary>
     /// AWS::SageMaker::CodeRepository GitConfig
-    /// Specifies configuration details for a Git repository in your AWS account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html
     /// </summary>
     public class GitConfig

@@ -6,7 +6,6 @@ namespace Comformation.ApiGateway.Resource
 {
     /// <summary>
     /// AWS::ApiGateway::Resource
-    /// The AWS::ApiGateway::Resource resource creates a resource in an API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
     /// </summary>
     public class ResourceResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.ApiGateway.Resource
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ParentId { get; set; }
+            public Union<string, IntrinsicFunction> ParentId { get; set; }
 
             /// <summary>
             /// PathPart
@@ -31,7 +30,7 @@ namespace Comformation.ApiGateway.Resource
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PathPart { get; set; }
+            public Union<string, IntrinsicFunction> PathPart { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -40,7 +39,7 @@ namespace Comformation.ApiGateway.Resource
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
 

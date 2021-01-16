@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.DocumentationVersion
 {
     /// <summary>
     /// AWS::ApiGateway::DocumentationVersion
-    /// The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an API. For
-    /// more information, see Representation of API Documentation in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html
     /// </summary>
     public class DocumentationVersionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGateway.DocumentationVersion
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DocumentationVersion
@@ -30,7 +28,7 @@ namespace Comformation.ApiGateway.DocumentationVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DocumentationVersion { get; set; }
+            public Union<string, IntrinsicFunction> DocumentationVersion { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -39,7 +37,7 @@ namespace Comformation.ApiGateway.DocumentationVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
 

@@ -6,9 +6,6 @@ namespace Comformation.EC2.VPCEndpoint
 {
     /// <summary>
     /// AWS::EC2::VPCEndpoint
-    /// Specifies a VPC endpoint for a service. An endpoint enables you to create a private connection between your
-    /// VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
-    /// For more information, see VPC Endpoints in the Amazon Virtual Private Cloud User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html
     /// </summary>
     public class VPCEndpointResource : ResourceBase
@@ -17,14 +14,14 @@ namespace Comformation.EC2.VPCEndpoint
         {
             /// <summary>
             /// PolicyDocument
-            /// A policy to attach to the endpoint that controls access to the service. The policy must be in valid
-            /// JSON format. If this parameter is not specified, we attach a default policy that allows full access
-            /// to the service.
+            /// (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the
+            /// service. The policy must be in valid JSON format. If this parameter is not specified, we attach a
+            /// default policy that allows full access to the service.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// PrivateDnsEnabled
@@ -41,7 +38,7 @@ namespace Comformation.EC2.VPCEndpoint
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> PrivateDnsEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> PrivateDnsEnabled { get; set; }
 
             /// <summary>
             /// RouteTableIds
@@ -50,18 +47,17 @@ namespace Comformation.EC2.VPCEndpoint
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> RouteTableIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> RouteTableIds { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
             /// (Interface endpoint) The ID of one or more security groups to associate with the endpoint network
             /// interface.
-            /// This field is required when the endpoint is an interface.
-            /// Required: Conditional
+            /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// ServiceName
@@ -71,17 +67,17 @@ namespace Comformation.EC2.VPCEndpoint
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceName { get; set; }
+            public Union<string, IntrinsicFunction> ServiceName { get; set; }
 
             /// <summary>
             /// SubnetIds
-            /// (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
-            /// This field is required when the endpoint is an interface.
+            /// (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an
+            /// endpoint network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
             /// Required: Conditional
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// VpcEndpointType
@@ -89,20 +85,19 @@ namespace Comformation.EC2.VPCEndpoint
             /// Default: Gateway
             /// Required: No
             /// Type: String
-            /// Allowed Values: Gateway | Interface
+            /// Allowed values: Gateway | GatewayLoadBalancer | Interface
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcEndpointType { get; set; }
+            public Union<string, IntrinsicFunction> VpcEndpointType { get; set; }
 
             /// <summary>
             /// VpcId
             /// The ID of the VPC in which the endpoint will be used.
-            /// This field is required when the endpoint is an interface.
-            /// Required: Conditional
+            /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 
@@ -112,10 +107,10 @@ namespace Comformation.EC2.VPCEndpoint
 
     }
 
-	public static class VPCEndpointAttributes
-	{
+    public static class VPCEndpointAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CreationTimestamp = new ResourceAttribute<Union<string, IntrinsicFunction>>("CreationTimestamp");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> DnsEntries = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("DnsEntries");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> NetworkInterfaceIds = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("NetworkInterfaceIds");
-	}
+    }
 }

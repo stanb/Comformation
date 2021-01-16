@@ -6,8 +6,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet
-    /// Specifies a Spot Fleet request. A Spot Fleet request contains the configuration information to launch a fleet,
-    /// or group, of instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html
     /// </summary>
     public class SpotFleetResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.EC2.SpotFleet
             /// Type: SpotFleetRequestConfigData
             /// Update requires: Some interruptions
             /// </summary>
-			public SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
+            public SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
 
         }
 

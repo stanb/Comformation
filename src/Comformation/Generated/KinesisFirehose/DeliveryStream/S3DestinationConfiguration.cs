@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream S3DestinationConfiguration
-    /// The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3)
-    /// destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html
     /// </summary>
     public class S3DestinationConfiguration
@@ -31,7 +29,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// BufferingHints
         /// Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon S3
         /// bucket.
-        /// Required: Yes
+        /// Required: No
         /// Type: BufferingHints
         /// Update requires: No interruption
         /// </summary>
@@ -53,9 +51,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The type of compression that Kinesis Data Firehose uses to compress the data that it delivers to the
         /// Amazon S3 bucket. For valid values, see the CompressionFormat content for the
         /// S3DestinationConfiguration data type in the Amazon Kinesis Data Firehose API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
-        /// Allowed Values: GZIP | Snappy | UNCOMPRESSED | ZIP
+        /// Allowed values: GZIP | HADOOP_SNAPPY | Snappy | UNCOMPRESSED | ZIP
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CompressionFormat")]
@@ -80,6 +78,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// prefix, see Custom Prefixes for Amazon S3 Objects.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ErrorOutputPrefix")]
@@ -91,6 +92,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// prefix helps you identify the files that Kinesis Data Firehose delivered.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Prefix")]

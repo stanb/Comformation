@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinitionVersion
-    /// The AWS::Greengrass::FunctionDefinitionVersion resource represents a function definition version for AWS IoT
-    /// Greengrass. A function definition version contains contain a list of functions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html
     /// </summary>
     public class FunctionDefinitionVersionResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
             /// Type: DefaultConfig
             /// Update requires: Replacement
             /// </summary>
-			public DefaultConfig DefaultConfig { get; set; }
+            public DefaultConfig DefaultConfig { get; set; }
 
             /// <summary>
             /// Functions
@@ -31,7 +29,7 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
             /// Type: List of Function
             /// Update requires: Replacement
             /// </summary>
-			public List<Function> Functions { get; set; }
+            public List<Function> Functions { get; set; }
 
             /// <summary>
             /// FunctionDefinitionId
@@ -40,7 +38,7 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> FunctionDefinitionId { get; set; }
 
         }
 

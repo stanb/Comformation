@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance BlockDeviceMapping
-    /// Specifies a block device mapping for an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html
     /// </summary>
     public class BlockDeviceMapping
@@ -39,7 +38,7 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// NoDevice
-        /// Suppresses the specified device included in the block device mapping of the AMI.
+        /// To omit the device from the block device mapping, specify an empty string.
         /// Required: No
         /// Type: NoDevice
         /// Update requires: No interruption

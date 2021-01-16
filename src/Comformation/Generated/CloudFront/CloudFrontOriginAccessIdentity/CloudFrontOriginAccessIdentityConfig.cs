@@ -7,8 +7,6 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
 {
     /// <summary>
     /// AWS::CloudFront::CloudFrontOriginAccessIdentity CloudFrontOriginAccessIdentityConfig
-    /// Origin access identity configuration. Send a GET request to the 					/CloudFront API
-    /// version/CloudFront/identity ID/config resource. 		
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html
     /// </summary>
     public class CloudFrontOriginAccessIdentityConfig

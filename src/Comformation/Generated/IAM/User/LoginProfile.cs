@@ -7,7 +7,6 @@ namespace Comformation.IAM.User
 {
     /// <summary>
     /// AWS::IAM::User LoginProfile
-    /// Contains the user name and password create date for a user.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html
     /// </summary>
     public class LoginProfile

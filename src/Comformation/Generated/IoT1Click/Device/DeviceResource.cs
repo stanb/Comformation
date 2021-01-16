@@ -6,8 +6,6 @@ namespace Comformation.IoT1Click.Device
 {
     /// <summary>
     /// AWS::IoT1Click::Device
-    /// The AWS::IoT1Click::Device resource controls the enabled state of an AWS IoT 1-Click compatible device. For
-    /// more information, see Device in the AWS IoT 1-Click Devices API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html
     /// </summary>
     public class DeviceResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.IoT1Click.Device
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeviceId { get; set; }
+            public Union<string, IntrinsicFunction> DeviceId { get; set; }
 
             /// <summary>
             /// Enabled
@@ -30,7 +28,7 @@ namespace Comformation.IoT1Click.Device
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
         }
 
@@ -40,10 +38,10 @@ namespace Comformation.IoT1Click.Device
 
     }
 
-	public static class DeviceAttributes
-	{
+    public static class DeviceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DeviceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("DeviceId");
         public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> Enabled = new ResourceAttribute<Union<bool, IntrinsicFunction>>("Enabled");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

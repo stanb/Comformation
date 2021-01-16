@@ -6,7 +6,6 @@ namespace Comformation.EC2.TransitGateway
 {
     /// <summary>
     /// AWS::EC2::TransitGateway
-    /// Specifies a transit gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html
     /// </summary>
     public class TransitGatewayResource : ResourceBase
@@ -15,14 +14,14 @@ namespace Comformation.EC2.TransitGateway
         {
             /// <summary>
             /// DefaultRouteTablePropagation
-            /// Indicates whether resource attachments automatically propagate routes to the default propagation
-            /// route table.
+            /// Enable or disable automatic propagation of routes to the default propagation route table. Enabled by
+            /// default.
             /// Required: No
             /// Type: String
-            /// Allowed Values: disable | enable
+            /// Allowed values: disable | enable
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultRouteTablePropagation { get; set; }
+            public Union<string, IntrinsicFunction> DefaultRouteTablePropagation { get; set; }
 
             /// <summary>
             /// Description
@@ -31,58 +30,68 @@ namespace Comformation.EC2.TransitGateway
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AutoAcceptSharedAttachments
-            /// Indicates whether attachment requests are automatically accepted.
+            /// Enable or disable automatic acceptance of attachment requests. Disabled by default.
             /// Required: No
             /// Type: String
-            /// Allowed Values: disable | enable
+            /// Allowed values: disable | enable
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AutoAcceptSharedAttachments { get; set; }
+            public Union<string, IntrinsicFunction> AutoAcceptSharedAttachments { get; set; }
 
             /// <summary>
             /// DefaultRouteTableAssociation
-            /// Indicates whether resource attachments are automatically associated with the default association
-            /// route table.
+            /// Enable or disable automatic association with the default association route table. Enabled by
+            /// default.
             /// Required: No
             /// Type: String
-            /// Allowed Values: disable | enable
+            /// Allowed values: disable | enable
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultRouteTableAssociation { get; set; }
+            public Union<string, IntrinsicFunction> DefaultRouteTableAssociation { get; set; }
 
             /// <summary>
             /// VpnEcmpSupport
-            /// Indicates whether Equal Cost Multipath Protocol support is enabled.
+            /// Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
             /// Required: No
             /// Type: String
-            /// Allowed Values: disable | enable
+            /// Allowed values: disable | enable
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpnEcmpSupport { get; set; }
+            public Union<string, IntrinsicFunction> VpnEcmpSupport { get; set; }
 
             /// <summary>
             /// DnsSupport
-            /// Indicates whether DNS support is enabled.
+            /// Enable or disable DNS support. Enabled by default.
             /// Required: No
             /// Type: String
-            /// Allowed Values: disable | enable
+            /// Allowed values: disable | enable
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DnsSupport { get; set; }
+            public Union<string, IntrinsicFunction> DnsSupport { get; set; }
+
+            /// <summary>
+            /// MulticastSupport
+            /// Indicates whether multicast is enabled on the transit gateway
+            /// Required: No
+            /// Type: String
+            /// Allowed values: disable | enable
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> MulticastSupport { get; set; }
 
             /// <summary>
             /// AmazonSideAsn
             /// A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to
-            /// 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+            /// 65534 for 16-bit ASNs. The default is 64512.
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> AmazonSideAsn { get; set; }
+            public Union<int, IntrinsicFunction> AmazonSideAsn { get; set; }
 
             /// <summary>
             /// Tags
@@ -91,7 +100,7 @@ namespace Comformation.EC2.TransitGateway
             /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

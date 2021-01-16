@@ -6,9 +6,6 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
 {
     /// <summary>
     /// AWS::SageMaker::NotebookInstanceLifecycleConfig
-    /// The AWS::SageMaker::NotebookInstanceLifecycleConfig resource creates shell scripts that run when you create
-    /// and/or start a notebook instance. For information about notebook instance lifestyle configurations, see
-    /// Customize a Notebook Instance in the Amazon SageMaker Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html
     /// </summary>
     public class NotebookInstanceLifecycleConfigResource : ResourceBase
@@ -24,7 +21,7 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
             /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
-			public List<NotebookInstanceLifecycleHook> OnStart { get; set; }
+            public List<NotebookInstanceLifecycleHook> OnStart { get; set; }
 
             /// <summary>
             /// NotebookInstanceLifecycleConfigName
@@ -35,7 +32,7 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
             /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NotebookInstanceLifecycleConfigName { get; set; }
+            public Union<string, IntrinsicFunction> NotebookInstanceLifecycleConfigName { get; set; }
 
             /// <summary>
             /// OnCreate
@@ -46,7 +43,7 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
             /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
-			public List<NotebookInstanceLifecycleHook> OnCreate { get; set; }
+            public List<NotebookInstanceLifecycleHook> OnCreate { get; set; }
 
         }
 
@@ -56,8 +53,8 @@ namespace Comformation.SageMaker.NotebookInstanceLifecycleConfig
 
     }
 
-	public static class NotebookInstanceLifecycleConfigAttributes
-	{
+    public static class NotebookInstanceLifecycleConfigAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NotebookInstanceLifecycleConfigName = new ResourceAttribute<Union<string, IntrinsicFunction>>("NotebookInstanceLifecycleConfigName");
-	}
+    }
 }

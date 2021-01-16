@@ -7,8 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask LoggingInfo
-    /// The LoggingInfo property type specifies information about the Amazon S3 bucket to write instance-level logs
-    /// to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html
     /// </summary>
     public class LoggingInfo
@@ -16,7 +14,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// S3Bucket
-        /// The name of an Amazon S3 bucket where execution logs are stored .
+        /// The name of an S3 bucket where execution logs are stored .
         /// Required: Yes
         /// Type: String
         /// Minimum: 3
@@ -28,7 +26,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// Region
-        /// The region where the Amazon S3 bucket is located.
+        /// The Region where the S3 bucket is located.
         /// Required: Yes
         /// Type: String
         /// Minimum: 3

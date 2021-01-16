@@ -6,8 +6,6 @@ namespace Comformation.Glue.Trigger
 {
     /// <summary>
     /// AWS::Glue::Trigger
-    /// The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs. For more information, see
-    /// Triggering Jobs in AWS Glue and Trigger Structure in the AWS Glue Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html
     /// </summary>
     public class TriggerResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Glue.Trigger
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// StartOnCreation
@@ -31,7 +29,7 @@ namespace Comformation.Glue.Trigger
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> StartOnCreation { get; set; }
+            public Union<bool, IntrinsicFunction> StartOnCreation { get; set; }
 
             /// <summary>
             /// Description
@@ -40,7 +38,7 @@ namespace Comformation.Glue.Trigger
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Actions
@@ -49,7 +47,7 @@ namespace Comformation.Glue.Trigger
             /// Type: List of Action
             /// Update requires: No interruption
             /// </summary>
-			public List<Action> Actions { get; set; }
+            public List<Action> Actions { get; set; }
 
             /// <summary>
             /// WorkflowName
@@ -58,7 +56,7 @@ namespace Comformation.Glue.Trigger
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> WorkflowName { get; set; }
+            public Union<string, IntrinsicFunction> WorkflowName { get; set; }
 
             /// <summary>
             /// Schedule
@@ -69,7 +67,7 @@ namespace Comformation.Glue.Trigger
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Schedule { get; set; }
+            public Union<string, IntrinsicFunction> Schedule { get; set; }
 
             /// <summary>
             /// Tags
@@ -78,7 +76,7 @@ namespace Comformation.Glue.Trigger
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -87,7 +85,7 @@ namespace Comformation.Glue.Trigger
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Predicate
@@ -96,7 +94,7 @@ namespace Comformation.Glue.Trigger
             /// Type: Predicate
             /// Update requires: No interruption
             /// </summary>
-			public Predicate Predicate { get; set; }
+            public Predicate Predicate { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member NetworkConfiguration
-    /// Configuration properties of the network to which the member belongs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html
     /// </summary>
     public class NetworkConfiguration
@@ -51,7 +50,7 @@ namespace Comformation.ManagedBlockchain.Member
         /// The blockchain framework that the network uses.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: HYPERLEDGER_FABRIC
+        /// Allowed values: ETHEREUM | HYPERLEDGER_FABRIC
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Framework")]

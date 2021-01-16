@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.DomainName
 {
     /// <summary>
     /// AWS::ApiGateway::DomainName EndpointConfiguration
-    /// The EndpointConfiguration property type specifies the endpoint types of an Amazon API Gateway domain name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html
     /// </summary>
     public class EndpointConfiguration

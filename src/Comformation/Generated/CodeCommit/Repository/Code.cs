@@ -7,7 +7,6 @@ namespace Comformation.CodeCommit.Repository
 {
     /// <summary>
     /// AWS::CodeCommit::Repository Code
-    /// Information about code to be committed.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-code.html
     /// </summary>
     public class Code
@@ -23,6 +22,18 @@ namespace Comformation.CodeCommit.Repository
         /// </summary>
         [JsonProperty("S3")]
         public S3 S3 { get; set; }
+
+        /// <summary>
+        /// BranchName
+        /// Optional. Specifies a branch name to be used as the default branch when importing code into a
+        /// repository. If this property is not set, the name master will be used for the default branch for the
+        /// repository.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("BranchName")]
+        public Union<string, IntrinsicFunction> BranchName { get; set; }
 
     }
 }

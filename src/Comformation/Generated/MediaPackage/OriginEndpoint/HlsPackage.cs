@@ -1,0 +1,148 @@
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Comformation.IntrinsicFunctions;
+
+namespace Comformation.MediaPackage.OriginEndpoint
+{
+    /// <summary>
+    /// AWS::MediaPackage::OriginEndpoint HlsPackage
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html
+    /// </summary>
+    public class HlsPackage
+    {
+
+        /// <summary>
+        /// SegmentDurationSeconds
+        /// Duration (in seconds) of each fragment. Actual fragments are rounded to the nearest multiple of the
+        /// source fragment duration.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SegmentDurationSeconds")]
+        public Union<int, IntrinsicFunction> SegmentDurationSeconds { get; set; }
+
+        /// <summary>
+        /// PlaylistWindowSeconds
+        /// Time window (in seconds) contained in each parent manifest.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PlaylistWindowSeconds")]
+        public Union<int, IntrinsicFunction> PlaylistWindowSeconds { get; set; }
+
+        /// <summary>
+        /// PlaylistType
+        /// When specified as either event or vod, a corresponding EXT-X-PLAYLIST-TYPE entry is included in the
+        /// media playlist. Indicates if the playlist is live-to-VOD content.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PlaylistType")]
+        public Union<string, IntrinsicFunction> PlaylistType { get; set; }
+
+        /// <summary>
+        /// AdMarkers
+        /// Controls how ad markers are included in the packaged endpoint. Valid values are none, passthrough,
+        /// or scte35_enhanced.
+        /// NONE - omits all SCTE-35 ad markers from the output. PASSTHROUGH - creates a copy in the output of
+        /// the SCTE-35 ad markers (comments) taken directly from the input manifest. SCTE35_ENHANCED -
+        /// generates ad markers and blackout tags in the output based on the SCTE-35 messages from the input
+        /// manifest.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AdMarkers")]
+        public Union<string, IntrinsicFunction> AdMarkers { get; set; }
+
+        /// <summary>
+        /// AdTriggers
+        /// Specifies the SCTE-35 message types that MediaPackage treats as ad markers in the output manifest.
+        /// Valid values:
+        /// BREAK DISTRIBUTOR_ADVERTISEMENT DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
+        /// DISTRIBUTOR_PLACEMENT_OPPORTUNITY PROVIDER_ADVERTISEMENT PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY
+        /// PROVIDER_PLACEMENT_OPPORTUNITY SPLICE_INSERT
+        /// Required: No
+        /// Type: List of String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AdTriggers")]
+        public List<Union<string, IntrinsicFunction>> AdTriggers { get; set; }
+
+        /// <summary>
+        /// AdsOnDeliveryRestrictions
+        /// The flags on SCTE-35 segmentation descriptors that have to be present for MediaPackage to insert ad
+        /// markers in the output manifest. For information about SCTE-35 in MediaPackage, see SCTE-35 Message
+        /// Options in AWS Elemental MediaPackage.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AdsOnDeliveryRestrictions")]
+        public Union<string, IntrinsicFunction> AdsOnDeliveryRestrictions { get; set; }
+
+        /// <summary>
+        /// ProgramDateTimeIntervalSeconds
+        /// Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify.
+        /// Additionally, ID3Timed metadata messages are generated every 5 seconds starting when the content was
+        /// ingested.
+        /// Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through
+        /// to the HLS output.
+        /// Omit this attribute or enter 0 to indicate that the EXT-X-PROGRAM-DATE-TIME tags are not included in
+        /// the manifest.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ProgramDateTimeIntervalSeconds")]
+        public Union<int, IntrinsicFunction> ProgramDateTimeIntervalSeconds { get; set; }
+
+        /// <summary>
+        /// IncludeIframeOnlyStream
+        /// Only applies to stream sets with a single video track. When true, the stream set includes an
+        /// additional I-frame only stream, along with the other tracks. If false, this extra stream is not
+        /// included.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IncludeIframeOnlyStream")]
+        public Union<bool, IntrinsicFunction> IncludeIframeOnlyStream { get; set; }
+
+        /// <summary>
+        /// UseAudioRenditionGroup
+        /// When true, AWS Elemental MediaPackage bundles all audio tracks in a rendition group. All other
+        /// tracks in the stream can be used with any audio rendition from the group.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("UseAudioRenditionGroup")]
+        public Union<bool, IntrinsicFunction> UseAudioRenditionGroup { get; set; }
+
+        /// <summary>
+        /// Encryption
+        /// Parameters for encrypting content.
+        /// Required: No
+        /// Type: HlsEncryption
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Encryption")]
+        public HlsEncryption Encryption { get; set; }
+
+        /// <summary>
+        /// StreamSelection
+        /// Limitations for outputs from the endpoint, based on the video bitrate.
+        /// Required: No
+        /// Type: StreamSelection
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("StreamSelection")]
+        public StreamSelection StreamSelection { get; set; }
+
+    }
+}

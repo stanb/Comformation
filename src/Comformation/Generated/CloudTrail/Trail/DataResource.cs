@@ -7,9 +7,6 @@ namespace Comformation.CloudTrail.Trail
 {
     /// <summary>
     /// AWS::CloudTrail::Trail DataResource
-    /// The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log
-    /// data events. Data events provide insight into the resource operations performed on or within a resource
-    /// itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html
     /// </summary>
     public class DataResource
@@ -19,6 +16,8 @@ namespace Comformation.CloudTrail.Trail
         /// Type
         /// The resource type in which you want to log data events. You can specify AWS::S3::Object or
         /// AWS::Lambda::Function resources.
+        /// The AWS::S3Outposts::Object resource type is not valid in basic event selectors. To log data events
+        /// on this resource type, use advanced event selectors.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

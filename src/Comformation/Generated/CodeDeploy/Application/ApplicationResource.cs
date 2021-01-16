@@ -6,11 +6,6 @@ namespace Comformation.CodeDeploy.Application
 {
     /// <summary>
     /// AWS::CodeDeploy::Application
-    /// The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In CodeDeploy, an application
-    /// is a name that functions as a container to ensure that the correct combination of revision, deployment
-    /// configuration, and deployment group are referenced during a deployment. You can use the
-    /// AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group. For
-    /// more information, see CodeDeploy Deployments in the AWS CodeDeploy User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
@@ -28,17 +23,17 @@ namespace Comformation.CodeDeploy.Application
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// ComputePlatform
             /// The compute platform that CodeDeploy deploys the application to.
             /// Required: No
             /// Type: String
-            /// Allowed Values: ECS | Lambda | Server
+            /// Allowed values: ECS | Lambda | Server
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
+            public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
 
         }
 

@@ -7,9 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table ProvisionedThroughput
-    /// Throughput for the specified table, which consists of values for ReadCapacityUnits and WriteCapacityUnits. For
-    /// more information about the contents of a provisioned throughput structure, see Amazon DynamoDB Table
-    /// ProvisionedThroughput.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
     /// </summary>
     public class ProvisionedThroughput

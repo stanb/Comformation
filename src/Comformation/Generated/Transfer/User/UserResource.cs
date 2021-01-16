@@ -6,11 +6,6 @@ namespace Comformation.Transfer.User
 {
     /// <summary>
     /// AWS::Transfer::User
-    /// Creates a user and associates them with an existing Secure File Transfer Protocol (SFTP) server. You can only
-    /// create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using
-    /// parameters for CreateUser, you can specify the user name, set the home directory, store the user&#39;s public key,
-    /// and assign the user&#39;s AWS Identity and Access Management (IAM) role. You can also optionally add a scope-down
-    /// policy, and assign metadata with tags that can be used to group and search for users.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html
     /// </summary>
     public class UserResource : ResourceBase
@@ -23,75 +18,133 @@ namespace Comformation.Transfer.User
             /// policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use
             /// inside this policy include ${Transfer:UserName}, ${Transfer:HomeDirectory}, and
             /// ${Transfer:HomeBucket}.
-            /// Note For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the
+            /// Note For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the
             /// Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-            /// Policy argument. For an example of a scope-down policy, see Creating a Scope-Down Policy. For more
+            /// Policy argument. For an example of a scope-down policy, see Example scope-down policy. For more
             /// information, see AssumeRole in the AWS Security Token Service API Reference.
             /// Required: No
             /// Type: String
+            /// Maximum: 2048
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Policy { get; set; }
+            public Union<string, IntrinsicFunction> Policy { get; set; }
 
             /// <summary>
             /// Role
-            /// The IAM role that controls your user&#39;s access to your Amazon S3 bucket. The policies attached to
-            /// this role will determine the level of access you want to provide your users when transferring files
-            /// into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust
-            /// relationship that allows the SFTP server to access your resources when servicing your SFTP user&#39;s
-            /// transfer requests.
+            /// Specifies the IAM role that controls your users&#39; access to your Amazon S3 bucket or EFS file system.
+            /// The policies attached to this role will determine the level of access you want to provide your users
+            /// when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+            /// should also contain a trust relationship that allows the server to access your resources when
+            /// servicing your users&#39; transfer requests.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 20
+            /// Maximum: 2048
             /// Pattern: arn:. *role/. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Role { get; set; }
+            public Union<string, IntrinsicFunction> Role { get; set; }
 
             /// <summary>
             /// HomeDirectory
-            /// The landing directory (folder) for a user when they log in to the server using their SFTP client. An
-            /// example is /home/username .
+            /// The landing directory (folder) for a user when they log in to the server using the client.
+            /// A HomeDirectory example is /bucket_name/home/mydirectory.
             /// Required: No
             /// Type: String
             /// Maximum: 1024
             /// Pattern: ^$|/. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HomeDirectory { get; set; }
+            public Union<string, IntrinsicFunction> HomeDirectory { get; set; }
+
+            /// <summary>
+            /// HomeDirectoryType
+            /// The type of landing directory (folder) you want your users&#39; home directory to be when they log into
+            /// the server. If you set it to PATH, the user will see the absolute Amazon S3 bucket paths as is in
+            /// their file transfer protocol clients. If you set it LOGICAL, you will need to provide mappings in
+            /// the HomeDirectoryMappings for how you want to make Amazon S3 paths visible to your users.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: LOGICAL | PATH
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> HomeDirectoryType { get; set; }
 
             /// <summary>
             /// ServerId
-            /// A system-assigned unique identifier for an SFTP server instance. This is the specific SFTP server
-            /// that you added your user to.
+            /// A system-assigned unique identifier for a server instance. This is the specific server that you
+            /// added your user to.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 19
+            /// Maximum: 19
             /// Pattern: ^s-([0-9a-f]{17})$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServerId { get; set; }
+            public Union<string, IntrinsicFunction> ServerId { get; set; }
 
             /// <summary>
             /// UserName
-            /// A unique string that identifies a user and is associated with a server as specified by the ServerId.
-            /// This user name must be a minimum of 3 and a maximum of 32 characters long. The following are valid
-            /// characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can&#39;t start with a hyphen.
+            /// A unique string that identifies a user and is associated with a as specified by the ServerId. This
+            /// user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid
+            /// characters: a-z, A-Z, 0-9, underscore &#39;_&#39;, hyphen &#39;-&#39;, period &#39;. &#39;, and at sign &#39;@&#39;. The user name
+            /// can&#39;t start with a hyphen, period, or at sign.
             /// Required: Yes
             /// Type: String
-            /// Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+            /// Minimum: 3
+            /// Maximum: 100
+            /// Pattern: ^[\w][\w@. -]{2,99}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserName { get; set; }
+            public Union<string, IntrinsicFunction> UserName { get; set; }
+
+            /// <summary>
+            /// HomeDirectoryMappings
+            /// Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user
+            /// and how you want to make them visible. You will need to specify the &quot;Entry&quot; and &quot;Target&quot; pair, where
+            /// Entry shows how the path is made visible and Target is the actual Amazon S3 path. If you only
+            /// specify a target, it will be displayed as is. You will need to also make sure that your IAM role
+            /// provides access to paths in Target. The following is an example.
+            /// &#39;[ { &quot;Entry&quot;: &quot;your-personal-report. pdf&quot;, &quot;Target&quot;:
+            /// &quot;/bucket3/customized-reports/${transfer:UserName}. pdf&quot; } ]&#39;
+            /// In most cases, you can use this value instead of the scope-down policy to lock your user down to the
+            /// designated home directory (&quot;chroot&quot;). To do this, you can set Entry to &#39;/&#39; and set Target to the
+            /// HomeDirectory parameter value.
+            /// Note If the target of a logical directory entry does not exist in Amazon S3, the entry will be
+            /// ignored. As a workaround, you can use the Amazon S3 API to create 0 byte objects as place holders
+            /// for your directory. If using the CLI, use the s3api call instead of s3 so you can use the put-object
+            /// operation. For example, you use the following: aws s3api put-object --bucket bucketname --key
+            /// path/to/folder/. Make sure that the end of the key name ends in a &#39;/&#39; for it to be considered a
+            /// folder.
+            /// Required: No
+            /// Type: List of HomeDirectoryMapEntry
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+            public List<HomeDirectoryMapEntry> HomeDirectoryMappings { get; set; }
+
+            /// <summary>
+            /// PosixProfile
+            /// Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups
+            /// IDs (SecondaryGids), that controls your users&#39; access to your Amazon Elastic File System (Amazon
+            /// EFS) file systems. The POSIX permissions that are set on files and directories in your file system
+            /// determine the level of access your users get when transferring files into and out of your Amazon EFS
+            /// file systems.
+            /// Required: No
+            /// Type: PosixProfile
+            /// Update requires: No interruption
+            /// </summary>
+            public PosixProfile PosixProfile { get; set; }
 
             /// <summary>
             /// SshPublicKeys
-            /// This property contains the public key portion of the Secure Shell (SSH) keys stored for the
-            /// described user.
+            /// Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.
             /// Required: No
             /// Type: List of SshPublicKey
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SshPublicKeys { get; set; }
+            public List<Union<string, IntrinsicFunction>> SshPublicKeys { get; set; }
 
             /// <summary>
             /// Tags
@@ -102,7 +155,7 @@ namespace Comformation.Transfer.User
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -112,10 +165,10 @@ namespace Comformation.Transfer.User
 
     }
 
-	public static class UserAttributes
-	{
+    public static class UserAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ServerId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ServerId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> UserName = new ResourceAttribute<Union<string, IntrinsicFunction>>("UserName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

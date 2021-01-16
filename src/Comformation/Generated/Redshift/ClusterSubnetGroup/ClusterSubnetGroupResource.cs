@@ -6,8 +6,6 @@ namespace Comformation.Redshift.ClusterSubnetGroup
 {
     /// <summary>
     /// AWS::Redshift::ClusterSubnetGroup
-    /// Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing
-    /// Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
     /// </summary>
     public class ClusterSubnetGroupResource : ResourceBase
@@ -19,9 +17,10 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// A description for the subnet group.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -30,7 +29,7 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -40,7 +39,7 @@ namespace Comformation.Redshift.ClusterSubnetGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

@@ -6,11 +6,6 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
 {
     /// <summary>
     /// AWS::ServiceDiscovery::PublicDnsNamespace
-    /// Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
-    /// service naming scheme. 			For example, if you name your namespace example. com and name your service backend,
-    /// the resulting DNS name 			for the service will be backend. example. com. For the current limit on the number
-    /// of namespaces that you can 			create using the same AWS account, see 			AWS Cloud Map Limits in the 			AWS
-    /// Cloud Map Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html
     /// </summary>
     public class PublicDnsNamespaceResource : ResourceBase
@@ -19,27 +14,35 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
         {
             /// <summary>
             /// Description
-            /// 		
             /// A description for the namespace.
-            /// 	
             /// Required: No
             /// Type: String
             /// Maximum: 1024
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// The tags for the namespace. Each tag consists of a key and an optional value, both of which you
+            /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have a
+            /// maximum length of 256 characters.
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 200
+            /// Update requires: Updates are not supported.
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// 		
             /// The name that you want to assign to this namespace.
-            /// 	
             /// Required: Yes
             /// Type: String
             /// Maximum: 1024
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -49,9 +52,9 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
 
     }
 
-	public static class PublicDnsNamespaceAttributes
-	{
+    public static class PublicDnsNamespaceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

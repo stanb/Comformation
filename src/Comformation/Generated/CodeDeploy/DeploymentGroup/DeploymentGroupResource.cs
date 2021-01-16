@@ -6,9 +6,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup
-    /// The AWS::CodeDeploy::DeploymentGroup resource creates an AWS CodeDeploy deployment group that specifies which
-    /// instances your application revisions are deployed to, along with other deployment options. For more
-    /// information, see CreateDeploymentGroup in the CodeDeploy API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html
     /// </summary>
     public class DeploymentGroupResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AlarmConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public AlarmConfiguration AlarmConfiguration { get; set; }
+            public AlarmConfiguration AlarmConfiguration { get; set; }
 
             /// <summary>
             /// ApplicationName
@@ -33,7 +30,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// AutoRollbackConfiguration
@@ -43,7 +40,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: AutoRollbackConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public AutoRollbackConfiguration AutoRollbackConfiguration { get; set; }
+            public AutoRollbackConfiguration AutoRollbackConfiguration { get; set; }
 
             /// <summary>
             /// AutoScalingGroups
@@ -53,7 +50,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AutoScalingGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> AutoScalingGroups { get; set; }
 
             /// <summary>
             /// Deployment
@@ -64,13 +61,14 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: Deployment
             /// Update requires: No interruption
             /// </summary>
-			public Deployment Deployment { get; set; }
+            public Deployment Deployment { get; set; }
 
             /// <summary>
             /// DeploymentConfigName
             /// A deployment configuration name or a predefined configuration name. With predefined configurations,
-            /// you can deploy application revisions to one instance at a time, half of the instances at a time, or
-            /// all the instances at once. For more information and valid values, see Working with Deployment
+            /// you can deploy application revisions to one instance at a time (CodeDeployDefault. OneAtATime), half
+            /// of the instances at a time (CodeDeployDefault. HalfAtATime), or all the instances at once
+            /// (CodeDeployDefault. AllAtOnce). For more information and valid values, see Working with Deployment
             /// Configurations in the AWS CodeDeploy User Guide.
             /// Required: No
             /// Type: String
@@ -78,7 +76,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
+            public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
 
             /// <summary>
             /// DeploymentGroupName
@@ -93,7 +91,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeploymentGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DeploymentGroupName { get; set; }
 
             /// <summary>
             /// DeploymentStyle
@@ -102,12 +100,13 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// If you specify this property with a blue/green deployment type, don&#39;t specify the AutoScalingGroups,
             /// LoadBalancerInfo, or Deployment properties.
             /// Note For blue/green deployments, AWS CloudFormation supports deployments on Lambda compute platforms
-            /// only.
+            /// only. You can perform ECS blue/green deployments using AWS::CodeDeploy::BlueGreen hook. See Perform
+            /// ECS blue/green deployments through CodeDeploy using AWS CloudFormation for more information.
             /// Required: No
             /// Type: DeploymentStyle
             /// Update requires: No interruption
             /// </summary>
-			public DeploymentStyle DeploymentStyle { get; set; }
+            public DeploymentStyle DeploymentStyle { get; set; }
 
             /// <summary>
             /// Ec2TagFilters
@@ -119,7 +118,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: List of EC2TagFilter
             /// Update requires: No interruption
             /// </summary>
-			public List<EC2TagFilter> Ec2TagFilters { get; set; }
+            public List<EC2TagFilter> Ec2TagFilters { get; set; }
 
             /// <summary>
             /// Ec2TagSet
@@ -129,7 +128,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: EC2TagSet
             /// Update requires: No interruption
             /// </summary>
-			public EC2TagSet Ec2TagSet { get; set; }
+            public EC2TagSet Ec2TagSet { get; set; }
 
             /// <summary>
             /// LoadBalancerInfo
@@ -139,7 +138,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: LoadBalancerInfo
             /// Update requires: No interruption
             /// </summary>
-			public LoadBalancerInfo LoadBalancerInfo { get; set; }
+            public LoadBalancerInfo LoadBalancerInfo { get; set; }
 
             /// <summary>
             /// OnPremisesInstanceTagFilters
@@ -153,7 +152,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: List of TagFilter
             /// Update requires: No interruption
             /// </summary>
-			public List<TagFilter> OnPremisesInstanceTagFilters { get; set; }
+            public List<TagFilter> OnPremisesInstanceTagFilters { get; set; }
 
             /// <summary>
             /// OnPremisesTagSet
@@ -164,7 +163,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: OnPremisesTagSet
             /// Update requires: No interruption
             /// </summary>
-			public OnPremisesTagSet OnPremisesTagSet { get; set; }
+            public OnPremisesTagSet OnPremisesTagSet { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -177,7 +176,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
             /// TriggerConfigurations
@@ -186,7 +185,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// Type: List of TriggerConfig
             /// Update requires: No interruption
             /// </summary>
-			public List<TriggerConfig> TriggerConfigurations { get; set; }
+            public List<TriggerConfig> TriggerConfigurations { get; set; }
 
         }
 

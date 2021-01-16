@@ -7,8 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet SpotFleetRequestConfigData
-    /// Specifies the configuration of a Spot Fleet request. For more information, see How Spot Fleet Works in the
-    /// Amazon EC2 User Guide for Linux Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html
     /// </summary>
     public class SpotFleetRequestConfigData
@@ -26,7 +24,7 @@ namespace Comformation.EC2.SpotFleet
         /// pools with optimal capacity for the number of instances that are launching.
         /// Required: No
         /// Type: String
-        /// Allowed Values: capacityOptimized | diversified | lowestPrice
+        /// Allowed values: capacityOptimized | diversified | lowestPrice
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AllocationStrategy")]
@@ -38,7 +36,7 @@ namespace Comformation.EC2.SpotFleet
         /// the Spot Fleet request below the current size of the Spot Fleet.
         /// Required: No
         /// Type: String
-        /// Allowed Values: default | noTermination
+        /// Allowed values: default | noTermination
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcessCapacityTerminationPolicy")]
@@ -63,11 +61,23 @@ namespace Comformation.EC2.SpotFleet
         /// The behavior when a Spot Instance is interrupted. The default is terminate.
         /// Required: No
         /// Type: String
-        /// Allowed Values: hibernate | stop | terminate
+        /// Allowed values: hibernate | stop | terminate
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("InstanceInterruptionBehavior")]
         public Union<string, IntrinsicFunction> InstanceInterruptionBehavior { get; set; }
+
+        /// <summary>
+        /// InstancePoolsToUseCount
+        /// The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+        /// AllocationStrategy is set to lowest-price. Spot Fleet selects the cheapest Spot pools and evenly
+        /// allocates your target Spot capacity across the number of Spot pools that you specify.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("InstancePoolsToUseCount")]
+        public Union<int, IntrinsicFunction> InstancePoolsToUseCount { get; set; }
 
         /// <summary>
         /// LaunchSpecifications
@@ -105,6 +115,49 @@ namespace Comformation.EC2.SpotFleet
         public LoadBalancersConfig LoadBalancersConfig { get; set; }
 
         /// <summary>
+        /// OnDemandAllocationStrategy
+        /// The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify
+        /// lowestPrice, Spot Fleet uses price to determine the order, launching the lowest price first. If you
+        /// specify prioritized, Spot Fleet uses the priority that you assign to each Spot Fleet launch template
+        /// override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults
+        /// to lowestPrice.
+        /// Required: No
+        /// Type: String
+        /// Allowed values: lowestPrice | prioritized
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("OnDemandAllocationStrategy")]
+        public Union<string, IntrinsicFunction> OnDemandAllocationStrategy { get; set; }
+
+        /// <summary>
+        /// OnDemandMaxTotalPrice
+        /// The maximum amount per hour for On-Demand Instances that you&#39;re willing to pay. You can use the
+        /// onDemandMaxTotalPrice parameter, the spotMaxTotalPrice parameter, or both parameters to ensure that
+        /// your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand
+        /// Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the
+        /// maximum amount you&#39;re willing to pay. When the maximum amount you&#39;re willing to pay is reached, the
+        /// fleet stops launching instances even if it hasn’t met the target capacity.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("OnDemandMaxTotalPrice")]
+        public Union<string, IntrinsicFunction> OnDemandMaxTotalPrice { get; set; }
+
+        /// <summary>
+        /// OnDemandTargetCapacity
+        /// The number of On-Demand units to request. You can choose to set the target capacity in terms of
+        /// instances or a performance characteristic that is important to your application workload, such as
+        /// vCPUs, memory, or I/O. If the request type is maintain, you can specify a target capacity of 0 and
+        /// add capacity later.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("OnDemandTargetCapacity")]
+        public Union<int, IntrinsicFunction> OnDemandTargetCapacity { get; set; }
+
+        /// <summary>
         /// ReplaceUnhealthyInstances
         /// Indicates whether Spot Fleet should replace unhealthy instances.
         /// Required: No
@@ -113,6 +166,31 @@ namespace Comformation.EC2.SpotFleet
         /// </summary>
         [JsonProperty("ReplaceUnhealthyInstances")]
         public Union<bool, IntrinsicFunction> ReplaceUnhealthyInstances { get; set; }
+
+        /// <summary>
+        /// SpotMaintenanceStrategies
+        /// The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+        /// Required: No
+        /// Type: SpotMaintenanceStrategies
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SpotMaintenanceStrategies")]
+        public SpotMaintenanceStrategies SpotMaintenanceStrategies { get; set; }
+
+        /// <summary>
+        /// SpotMaxTotalPrice
+        /// The maximum amount per hour for Spot Instances that you&#39;re willing to pay. You can use the
+        /// spotdMaxTotalPrice parameter, the onDemandMaxTotalPrice parameter, or both parameters to ensure that
+        /// your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand
+        /// Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the
+        /// maximum amount you&#39;re willing to pay. When the maximum amount you&#39;re willing to pay is reached, the
+        /// fleet stops launching instances even if it hasn’t met the target capacity.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("SpotMaxTotalPrice")]
+        public Union<string, IntrinsicFunction> SpotMaxTotalPrice { get; set; }
 
         /// <summary>
         /// SpotPrice
@@ -159,7 +237,7 @@ namespace Comformation.EC2.SpotFleet
         /// listed but is not used by Spot Fleet.
         /// Required: No
         /// Type: String
-        /// Allowed Values: instant | maintain | request
+        /// Allowed values: instant | maintain | request
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Type")]

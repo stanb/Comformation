@@ -7,7 +7,6 @@ namespace Comformation.Amplify.App
 {
     /// <summary>
     /// AWS::Amplify::App BasicAuthConfig
-    /// Use the BasicAuthConfig property type to set password protection at an app level to all your branches.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-basicauthconfig.html
     /// </summary>
     public class BasicAuthConfig
@@ -25,7 +24,7 @@ namespace Comformation.Amplify.App
 
         /// <summary>
         /// EnableBasicAuth
-        /// Enables Basic Authorization for branches for the Amplify App.
+        /// Enables basic authorization for the Amplify app&#39;s branches.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

@@ -6,7 +6,6 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::LoadBalancer
-    /// Specifies an Application Load Balancer or a Network Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html
     /// </summary>
     public class LoadBalancerResource : ResourceBase
@@ -16,13 +15,14 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// <summary>
             /// IpAddressType
             /// The IP address type. The possible values are ipv4 (for IPv4 addresses) and dualstack (for IPv4 and
-            /// IPv6 addresses). Internal load balancers must use ipv4. Network Load Balancers must use ipv4.
+            /// IPv6 addresses). Internal load balancers must use ipv4. You can’t specify dualstack for a load
+            /// balancer with a UDP or TCP_UDP listener.
             /// Required: No
             /// Type: String
-            /// Allowed Values: dualstack | ipv4
+            /// Allowed values: dualstack | ipv4
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IpAddressType { get; set; }
+            public Union<string, IntrinsicFunction> IpAddressType { get; set; }
 
             /// <summary>
             /// LoadBalancerAttributes
@@ -32,7 +32,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
-			public List<LoadBalancerAttribute> LoadBalancerAttributes { get; set; }
+            public List<LoadBalancerAttribute> LoadBalancerAttributes { get; set; }
 
             /// <summary>
             /// Name
@@ -46,7 +46,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Scheme
@@ -57,12 +57,13 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal
             /// load balancers can route requests only from clients with access to the VPC for the load balancer.
             /// The default is an Internet-facing load balancer.
+            /// You cannot specify a scheme for a Gateway Load Balancer.
             /// Required: No
             /// Type: String
-            /// Allowed Values: internal | internet-facing
+            /// Allowed values: internal | internet-facing
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Scheme { get; set; }
+            public Union<string, IntrinsicFunction> Scheme { get; set; }
 
             /// <summary>
             /// SecurityGroups
@@ -71,7 +72,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// SubnetMappings
@@ -79,13 +80,20 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// specify either subnets or subnet mappings.
             /// [Application Load Balancers] You must specify subnets from at least two Availability Zones. You
             /// cannot specify Elastic IP addresses for your subnets.
+            /// [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+            /// [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
             /// [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can
-            /// specify one Elastic IP address per subnet if you need static IP addresses for your load balancer.
-            /// Required: No
+            /// specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing
+            /// load balancer. For internal load balancers, you can specify one private IP address per subnet from
+            /// the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address
+            /// per subnet.
+            /// [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot
+            /// specify Elastic IP addresses for your subnets.
+            /// Required: Conditional
             /// Type: List of SubnetMapping
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public List<SubnetMapping> SubnetMappings { get; set; }
+            public List<SubnetMapping> SubnetMappings { get; set; }
 
             /// <summary>
             /// Subnets
@@ -96,30 +104,30 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// subnets.
             /// [Network Load Balancers] You can specify subnets from one or more Availability Zones when you create
             /// the load balancer. You can&#39;t change the subnets for an existing Network Load Balancer.
-            /// Required: No
+            /// Required: Conditional
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
+            public List<Union<string, IntrinsicFunction>> Subnets { get; set; }
 
             /// <summary>
             /// Tags
-            /// One or more tags to assign to the load balancer.
+            /// The tags to assign to the load balancer.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
             /// The type of load balancer. The default is application.
             /// Required: No
             /// Type: String
-            /// Allowed Values: application | network
+            /// Allowed values: application | gateway | network
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
 
@@ -129,12 +137,12 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
 
     }
 
-	public static class LoadBalancerAttributes
-	{
+    public static class LoadBalancerAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CanonicalHostedZoneID = new ResourceAttribute<Union<string, IntrinsicFunction>>("CanonicalHostedZoneID");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DNSName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DNSName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoadBalancerFullName = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoadBalancerFullName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoadBalancerName = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoadBalancerName");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> SecurityGroups = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("SecurityGroups");
-	}
+    }
 }

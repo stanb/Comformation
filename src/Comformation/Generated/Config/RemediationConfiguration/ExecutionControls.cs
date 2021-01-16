@@ -7,7 +7,6 @@ namespace Comformation.Config.RemediationConfiguration
 {
     /// <summary>
     /// AWS::Config::RemediationConfiguration ExecutionControls
-    /// The controls that AWS Config uses for executing remediations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html
     /// </summary>
     public class ExecutionControls

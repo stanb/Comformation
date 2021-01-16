@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.Mesh
 {
     /// <summary>
     /// AWS::AppMesh::Mesh EgressFilter
-    /// An object that represents the egress filter rules for a service mesh.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-egressfilter.html
     /// </summary>
     public class EgressFilter

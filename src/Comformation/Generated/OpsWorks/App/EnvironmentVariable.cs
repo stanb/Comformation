@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.App
 {
     /// <summary>
     /// AWS::OpsWorks::App EnvironmentVariable
-    /// Represents an app&#39;s environment variable.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html
     /// </summary>
     public class EnvironmentVariable

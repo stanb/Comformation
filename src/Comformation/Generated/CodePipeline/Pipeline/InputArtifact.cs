@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline InputArtifact
-    /// Represents information about an artifact to be worked on, such as a test or build artifact.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html
     /// </summary>
     public class InputArtifact

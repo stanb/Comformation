@@ -6,8 +6,6 @@ namespace Comformation.SNS.TopicPolicy
 {
     /// <summary>
     /// AWS::SNS::TopicPolicy
-    /// The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy. For an example snippet, see
-    /// Declaring an Amazon SNS Policy in the AWS CloudFormation User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html
     /// </summary>
     public class TopicPolicyResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.SNS.TopicPolicy
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// Topics
@@ -31,7 +29,7 @@ namespace Comformation.SNS.TopicPolicy
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Topics { get; set; }
+            public List<Union<string, IntrinsicFunction>> Topics { get; set; }
 
         }
 

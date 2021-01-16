@@ -6,9 +6,6 @@ namespace Comformation.IoTAnalytics.Channel
 {
     /// <summary>
     /// AWS::IoTAnalytics::Channel
-    /// The AWS::IoTAnalytics::Channel resource collects data from an MQTT topic and archives the raw, unprocessed
-    /// messages before publishing the data to a pipeline. For more information, see How to Use AWS IoT Analytics in
-    /// the AWS IoT Analytics User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html
     /// </summary>
     public class ChannelResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.IoTAnalytics.Channel
             /// Pattern: ^[a-zA-Z0-9_]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ChannelName { get; set; }
+            public Union<string, IntrinsicFunction> ChannelName { get; set; }
 
             /// <summary>
             /// ChannelStorage
@@ -34,7 +31,7 @@ namespace Comformation.IoTAnalytics.Channel
             /// Type: ChannelStorage
             /// Update requires: No interruption
             /// </summary>
-			public ChannelStorage ChannelStorage { get; set; }
+            public ChannelStorage ChannelStorage { get; set; }
 
             /// <summary>
             /// RetentionPeriod
@@ -43,7 +40,7 @@ namespace Comformation.IoTAnalytics.Channel
             /// Type: RetentionPeriod
             /// Update requires: No interruption
             /// </summary>
-			public RetentionPeriod RetentionPeriod { get; set; }
+            public RetentionPeriod RetentionPeriod { get; set; }
 
             /// <summary>
             /// Tags
@@ -54,7 +51,7 @@ namespace Comformation.IoTAnalytics.Channel
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

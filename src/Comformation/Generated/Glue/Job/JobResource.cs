@@ -6,8 +6,6 @@ namespace Comformation.Glue.Job
 {
     /// <summary>
     /// AWS::Glue::Job
-    /// The AWS::Glue::Job resource specifies an AWS Glue job in the data catalog. For more information, see Adding
-    /// Jobs in AWS Glue and Job Structure in the AWS Glue Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html
     /// </summary>
     public class JobResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Glue.Job
             /// Type: ConnectionsList
             /// Update requires: No interruption
             /// </summary>
-			public ConnectionsList Connections { get; set; }
+            public ConnectionsList Connections { get; set; }
 
             /// <summary>
             /// MaxRetries
@@ -30,7 +28,7 @@ namespace Comformation.Glue.Job
             /// Type: Double
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> MaxRetries { get; set; }
+            public Union<double, IntrinsicFunction> MaxRetries { get; set; }
 
             /// <summary>
             /// Description
@@ -39,7 +37,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Timeout
@@ -49,7 +47,7 @@ namespace Comformation.Glue.Job
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Timeout { get; set; }
+            public Union<int, IntrinsicFunction> Timeout { get; set; }
 
             /// <summary>
             /// AllocatedCapacity
@@ -58,7 +56,7 @@ namespace Comformation.Glue.Job
             /// Type: Double
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> AllocatedCapacity { get; set; }
+            public Union<double, IntrinsicFunction> AllocatedCapacity { get; set; }
 
             /// <summary>
             /// Name
@@ -67,7 +65,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Role
@@ -76,7 +74,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Role { get; set; }
+            public Union<string, IntrinsicFunction> Role { get; set; }
 
             /// <summary>
             /// DefaultArguments
@@ -91,7 +89,7 @@ namespace Comformation.Glue.Job
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DefaultArguments { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DefaultArguments { get; set; }
 
             /// <summary>
             /// NotificationProperty
@@ -100,7 +98,7 @@ namespace Comformation.Glue.Job
             /// Type: NotificationProperty
             /// Update requires: No interruption
             /// </summary>
-			public NotificationProperty NotificationProperty { get; set; }
+            public NotificationProperty NotificationProperty { get; set; }
 
             /// <summary>
             /// WorkerType
@@ -117,7 +115,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> WorkerType { get; set; }
+            public Union<string, IntrinsicFunction> WorkerType { get; set; }
 
             /// <summary>
             /// LogUri
@@ -126,7 +124,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> LogUri { get; set; }
+            public Union<string, IntrinsicFunction> LogUri { get; set; }
 
             /// <summary>
             /// Command
@@ -135,7 +133,7 @@ namespace Comformation.Glue.Job
             /// Type: JobCommand
             /// Update requires: No interruption
             /// </summary>
-			public JobCommand Command { get; set; }
+            public JobCommand Command { get; set; }
 
             /// <summary>
             /// GlueVersion
@@ -149,7 +147,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> GlueVersion { get; set; }
+            public Union<string, IntrinsicFunction> GlueVersion { get; set; }
 
             /// <summary>
             /// ExecutionProperty
@@ -158,7 +156,7 @@ namespace Comformation.Glue.Job
             /// Type: ExecutionProperty
             /// Update requires: No interruption
             /// </summary>
-			public ExecutionProperty ExecutionProperty { get; set; }
+            public ExecutionProperty ExecutionProperty { get; set; }
 
             /// <summary>
             /// SecurityConfiguration
@@ -167,7 +165,7 @@ namespace Comformation.Glue.Job
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
 
             /// <summary>
             /// NumberOfWorkers
@@ -178,7 +176,7 @@ namespace Comformation.Glue.Job
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumberOfWorkers { get; set; }
+            public Union<int, IntrinsicFunction> NumberOfWorkers { get; set; }
 
             /// <summary>
             /// Tags
@@ -187,7 +185,7 @@ namespace Comformation.Glue.Job
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// MaxCapacity
@@ -209,7 +207,7 @@ namespace Comformation.Glue.Job
             /// Type: Double
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> MaxCapacity { get; set; }
+            public Union<double, IntrinsicFunction> MaxCapacity { get; set; }
 
         }
 

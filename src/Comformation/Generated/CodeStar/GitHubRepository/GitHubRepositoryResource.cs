@@ -6,12 +6,6 @@ namespace Comformation.CodeStar.GitHubRepository
 {
     /// <summary>
     /// AWS::CodeStar::GitHubRepository
-    /// The AWS::CodeStar::GitHubRepository resource creates a GitHub repository where users can store source code for
-    /// use with AWS workflows. You must provide a location for the source code ZIP file in the AWS CloudFormation
-    /// template, so the code can be uploaded to the created repository. You must have created a personal access token
-    /// in GitHub to provide in the AWS CloudFormation template. AWS uses this token to connect to GitHub on your
-    /// behalf. For more information about using a GitHub source repository with AWS CodeStar projects, see AWS
-    /// CodeStar Project Files and Resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html
     /// </summary>
     public class GitHubRepositoryResource : ResourceBase
@@ -26,7 +20,16 @@ namespace Comformation.CodeStar.GitHubRepository
             /// Type: Boolean
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableIssues { get; set; }
+            public Union<bool, IntrinsicFunction> EnableIssues { get; set; }
+
+            /// <summary>
+            /// ConnectionArn
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> ConnectionArn { get; set; }
 
             /// <summary>
             /// RepositoryName
@@ -35,16 +38,16 @@ namespace Comformation.CodeStar.GitHubRepository
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> RepositoryName { get; set; }
+            public Union<string, IntrinsicFunction> RepositoryName { get; set; }
 
             /// <summary>
             /// RepositoryAccessToken
             /// The GitHub user&#39;s personal access token for the GitHub repository.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> RepositoryAccessToken { get; set; }
+            public Union<string, IntrinsicFunction> RepositoryAccessToken { get; set; }
 
             /// <summary>
             /// RepositoryOwner
@@ -54,7 +57,7 @@ namespace Comformation.CodeStar.GitHubRepository
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> RepositoryOwner { get; set; }
+            public Union<string, IntrinsicFunction> RepositoryOwner { get; set; }
 
             /// <summary>
             /// IsPrivate
@@ -64,7 +67,7 @@ namespace Comformation.CodeStar.GitHubRepository
             /// Type: Boolean
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<bool, IntrinsicFunction> IsPrivate { get; set; }
+            public Union<bool, IntrinsicFunction> IsPrivate { get; set; }
 
             /// <summary>
             /// Code
@@ -74,7 +77,7 @@ namespace Comformation.CodeStar.GitHubRepository
             /// Type: Code
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Code Code { get; set; }
+            public Code Code { get; set; }
 
             /// <summary>
             /// RepositoryDescription
@@ -84,7 +87,7 @@ namespace Comformation.CodeStar.GitHubRepository
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> RepositoryDescription { get; set; }
+            public Union<string, IntrinsicFunction> RepositoryDescription { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member VotingPolicy
-    /// The voting rules for the network to decide if a proposal is accepted
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html
     /// </summary>
     public class VotingPolicy

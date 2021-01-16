@@ -6,8 +6,6 @@ namespace Comformation.Route53.HealthCheck
 {
     /// <summary>
     /// AWS::Route53::HealthCheck
-    /// The AWS::Route53::HealthCheck resource is a Route 53 resource type that contains settings for 			a Route 53
-    /// health check.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html
     /// </summary>
     public class HealthCheckResource : ResourceBase
@@ -20,10 +18,10 @@ namespace Comformation.Route53.HealthCheck
             /// A complex type that contains detailed information about one health check.
             /// 	
             /// Required: Yes
-            /// Type: HealthCheckConfig
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public HealthCheckConfig HealthCheckConfig { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> HealthCheckConfig { get; set; }
 
             /// <summary>
             /// HealthCheckTags
@@ -35,7 +33,7 @@ namespace Comformation.Route53.HealthCheck
             /// Type: List of HealthCheckTag
             /// Update requires: No interruption
             /// </summary>
-			public List<HealthCheckTag> HealthCheckTags { get; set; }
+            public List<HealthCheckTag> HealthCheckTags { get; set; }
 
         }
 
@@ -43,5 +41,10 @@ namespace Comformation.Route53.HealthCheck
 
         public HealthCheckProperties Properties { get; } = new HealthCheckProperties();
 
+    }
+
+    public static class HealthCheckAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> HealthCheckId = new ResourceAttribute<Union<string, IntrinsicFunction>>("HealthCheckId");
     }
 }

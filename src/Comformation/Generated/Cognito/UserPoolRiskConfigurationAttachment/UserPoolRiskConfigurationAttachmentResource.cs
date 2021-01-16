@@ -6,8 +6,6 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolRiskConfigurationAttachment
-    /// The AWS::Cognito::UserPoolRiskConfigurationAttachment resource sets the risk configuration that is used for
-    /// Amazon Cognito advanced security features.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html
     /// </summary>
     public class UserPoolRiskConfigurationAttachmentResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
             /// Type: CompromisedCredentialsRiskConfigurationType
             /// Update requires: No interruption
             /// </summary>
-			public CompromisedCredentialsRiskConfigurationType CompromisedCredentialsRiskConfiguration { get; set; }
+            public CompromisedCredentialsRiskConfigurationType CompromisedCredentialsRiskConfiguration { get; set; }
 
             /// <summary>
             /// UserPoolId
@@ -33,7 +31,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
             /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// ClientId
@@ -46,7 +44,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
             /// Pattern: [\w+]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClientId { get; set; }
+            public Union<string, IntrinsicFunction> ClientId { get; set; }
 
             /// <summary>
             /// AccountTakeoverRiskConfiguration
@@ -56,7 +54,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
             /// Type: AccountTakeoverRiskConfigurationType
             /// Update requires: No interruption
             /// </summary>
-			public AccountTakeoverRiskConfigurationType AccountTakeoverRiskConfiguration { get; set; }
+            public AccountTakeoverRiskConfigurationType AccountTakeoverRiskConfiguration { get; set; }
 
             /// <summary>
             /// RiskExceptionConfiguration
@@ -65,7 +63,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
             /// Type: RiskExceptionConfigurationType
             /// Update requires: No interruption
             /// </summary>
-			public RiskExceptionConfigurationType RiskExceptionConfiguration { get; set; }
+            public RiskExceptionConfigurationType RiskExceptionConfiguration { get; set; }
 
         }
 

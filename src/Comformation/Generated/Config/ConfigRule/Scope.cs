@@ -7,11 +7,6 @@ namespace Comformation.Config.ConfigRule
 {
     /// <summary>
     /// AWS::Config::ConfigRule Scope
-    /// Defines which resources trigger an evaluation for an AWS Config 			rule. The scope can include one or more
-    /// resource types, a 			combination of a tag key and value, or a combination of one resource 			type and one
-    /// resource ID. Specify a scope to constrain which 			resources trigger an evaluation for a rule. Otherwise,
-    /// evaluations 			for the rule are triggered when any resource in your recording group 			changes in
-    /// configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html
     /// </summary>
     public class Scope

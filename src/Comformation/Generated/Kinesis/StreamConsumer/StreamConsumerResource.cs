@@ -6,10 +6,6 @@ namespace Comformation.Kinesis.StreamConsumer
 {
     /// <summary>
     /// AWS::Kinesis::StreamConsumer
-    /// Use the AWS CloudFormation AWS::Kinesis::StreamConsumer resource to register a consumer with a Kinesis data
-    /// stream. The consumer you register can then call SubscribeToShard to receive data from the stream using
-    /// enhanced fan-out, at a rate of up to 2 MiB per second for every shard you subscribe to. This rate is
-    /// unaffected by the total number of consumers that read from the same stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html
     /// </summary>
     public class StreamConsumerResource : ResourceBase
@@ -26,7 +22,7 @@ namespace Comformation.Kinesis.StreamConsumer
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConsumerName { get; set; }
+            public Union<string, IntrinsicFunction> ConsumerName { get; set; }
 
             /// <summary>
             /// StreamARN
@@ -38,7 +34,7 @@ namespace Comformation.Kinesis.StreamConsumer
             /// Pattern: arn:aws. *:kinesis:. *:\d{12}:stream/. +
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StreamARN { get; set; }
+            public Union<string, IntrinsicFunction> StreamARN { get; set; }
 
         }
 
@@ -48,12 +44,12 @@ namespace Comformation.Kinesis.StreamConsumer
 
     }
 
-	public static class StreamConsumerAttributes
-	{
+    public static class StreamConsumerAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConsumerCreationTimestamp = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConsumerCreationTimestamp");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConsumerName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConsumerName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConsumerARN = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConsumerARN");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConsumerStatus = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConsumerStatus");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StreamARN = new ResourceAttribute<Union<string, IntrinsicFunction>>("StreamARN");
-	}
+    }
 }

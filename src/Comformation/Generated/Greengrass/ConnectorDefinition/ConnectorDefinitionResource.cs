@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.ConnectorDefinition
 {
     /// <summary>
     /// AWS::Greengrass::ConnectorDefinition
-    /// The AWS::Greengrass::ConnectorDefinition resource represents a connector definition for AWS IoT Greengrass.
-    /// Connector definitions are used to organize your connector definition versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html
     /// </summary>
     public class ConnectorDefinitionResource : ResourceBase
@@ -26,7 +24,7 @@ namespace Comformation.Greengrass.ConnectorDefinition
             /// Type: ConnectorDefinitionVersion
             /// Update requires: Replacement
             /// </summary>
-			public ConnectorDefinitionVersion InitialVersion { get; set; }
+            public ConnectorDefinitionVersion InitialVersion { get; set; }
 
             /// <summary>
             /// Tags
@@ -42,7 +40,7 @@ namespace Comformation.Greengrass.ConnectorDefinition
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -51,7 +49,7 @@ namespace Comformation.Greengrass.ConnectorDefinition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -61,11 +59,11 @@ namespace Comformation.Greengrass.ConnectorDefinition
 
     }
 
-	public static class ConnectorDefinitionAttributes
-	{
+    public static class ConnectorDefinitionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

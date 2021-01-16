@@ -6,7 +6,6 @@ namespace Comformation.RDS.DBParameterGroup
 {
     /// <summary>
     /// AWS::RDS::DBParameterGroup
-    /// The AWS::RDS::DBParameterGroup resource creates a custom parameter group for an RDS database family.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html
     /// </summary>
     public class DBParameterGroupResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.RDS.DBParameterGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Family
@@ -36,25 +35,25 @@ namespace Comformation.RDS.DBParameterGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Family { get; set; }
+            public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
             /// Parameters
-            /// An array of parameter names, values, and the apply method for the parameter update. At least one
-            /// parameter name, value, and apply method must be supplied; subsequent arguments are optional. A
-            /// maximum of 20 parameters may be modified in a single request. For more information, see Working with
-            /// DB Parameter Groups in the Amazon RDS User Guide.
-            /// MySQL
-            /// Valid Values (for Apply method): immediate | pending-reboot
-            /// You can use the immediate value with dynamic parameters only. You can use the pending-reboot value
-            /// for both dynamic and static parameters, and changes are applied when DB Instance reboots.
-            /// Oracle
-            /// Valid Values (for Apply method): pending-reboot
+            /// An array of parameter names and values for the parameter update. At least one parameter name and
+            /// value must be supplied. Subsequent arguments are optional. You can modify a maximum of 20 parameters
+            /// in a single request.
+            /// For more information about DB parameters and DB parameter groups for Amazon RDS DB engines, see
+            /// Working with DB Parameter Groups in the Amazon RDS User Guide.
+            /// For more information about DB cluster and DB instance parameters and parameter groups for Amazon
+            /// Aurora DB engines, see Working with DB Parameter Groups and DB Cluster Parameter Groups in the
+            /// Amazon Aurora User Guide.
+            /// Note AWS CloudFormation doesn&#39;t support specifying an apply method for each individual parameter.
+            /// The default apply method for each parameter is used.
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Tags
@@ -63,7 +62,7 @@ namespace Comformation.RDS.DBParameterGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster InstanceTypeConfig
-    /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later, excluding 5.
-    /// 0. x versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html
     /// </summary>
     public class InstanceTypeConfig
@@ -16,7 +14,7 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// BidPrice
-        /// The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If
+        /// The bid price for each EC2 Spot Instance type as defined by InstanceType. Expressed in USD. If
         /// neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided,
         /// BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
         /// Required: No
@@ -31,7 +29,7 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// BidPriceAsPercentageOfOnDemandPrice
-        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
         /// InstanceType. Expressed as a number (for example, 20 specifies 20%). If neither BidPrice nor
         /// BidPriceAsPercentageOfOnDemandPrice is provided, BidPriceAsPercentageOfOnDemandPrice defaults to
         /// 100%.
@@ -55,8 +53,8 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// EbsConfiguration
-        /// The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
-        /// InstanceType.
+        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined
+        /// by InstanceType.
         /// Required: No
         /// Type: EbsConfiguration
         /// Update requires: Replacement

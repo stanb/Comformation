@@ -7,8 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule AwsVpcConfiguration
-    /// This structure specifies the VPC subnets and security groups for the task and whether a public IP address is
-    /// to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html
     /// </summary>
     public class AwsVpcConfiguration
@@ -20,7 +18,7 @@ namespace Comformation.Events.Rule
         /// ENABLED only when LaunchType in EcsParameters is set to FARGATE.
         /// Required: No
         /// Type: String
-        /// Allowed Values: DISABLED | ENABLED
+        /// Allowed values: DISABLED | ENABLED
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AssignPublicIp")]
@@ -29,7 +27,7 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// SecurityGroups
         /// Specifies the security groups associated with the task. These security groups must all be in the
-        /// same VPC. You can specify as many as five security groups. If you don&#39;t specify a security group,
+        /// same VPC. You can specify as many as five security groups. If you do not specify a security group,
         /// the default security group for the VPC is used.
         /// Required: No
         /// Type: List of String

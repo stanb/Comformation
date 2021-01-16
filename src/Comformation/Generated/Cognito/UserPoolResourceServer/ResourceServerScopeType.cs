@@ -7,7 +7,6 @@ namespace Comformation.Cognito.UserPoolResourceServer
 {
     /// <summary>
     /// AWS::Cognito::UserPoolResourceServer ResourceServerScopeType
-    /// A resource server scope.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html
     /// </summary>
     public class ResourceServerScopeType

@@ -6,8 +6,6 @@ namespace Comformation.Neptune.DBParameterGroup
 {
     /// <summary>
     /// AWS::Neptune::DBParameterGroup
-    /// AWS::Neptune::DBParameterGroup creates a new DB parameter group. This type can be declared in a template and
-    /// referenced in the DBParameterGroupName parameter of AWS::Neptune::DBInstance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html
     /// </summary>
     public class DBParameterGroupResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Parameters
@@ -34,7 +32,7 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
             /// Family
@@ -43,7 +41,7 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Family { get; set; }
+            public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
             /// Tags
@@ -52,7 +50,7 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -61,7 +59,7 @@ namespace Comformation.Neptune.DBParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

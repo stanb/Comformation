@@ -7,9 +7,6 @@ namespace Comformation.SageMaker.Model
 {
     /// <summary>
     /// AWS::SageMaker::Model VpcConfig
-    /// Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your
-    /// training and model containers by configuring the VPC. For more information, see Protect Endpoints by Using an
-    /// Amazon Virtual Private Cloud and Protect Training Jobs by Using an Amazon Virtual Private Cloud.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html
     /// </summary>
     public class VpcConfig
@@ -17,10 +14,9 @@ namespace Comformation.SageMaker.Model
 
         /// <summary>
         /// Subnets
-        /// The ID of the subnets in the VPC to which you want to connect your training job or model.
-        /// Note Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones
-        /// of region us-east-1. If you want to create endpoints with P3 instances in VPC mode in region
-        /// us-east-1, create subnets in a/b/f availability zones instead.
+        /// The ID of the subnets in the VPC to which you want to connect your training job or model. For
+        /// information about the availability of specific instance types, see Supported Instance Types and
+        /// Availability Zones.
         /// Required: Yes
         /// Type: List of String
         /// Maximum: 16

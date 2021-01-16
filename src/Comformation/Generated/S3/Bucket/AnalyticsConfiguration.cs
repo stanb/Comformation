@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket AnalyticsConfiguration
-    /// Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html
     /// </summary>
     public class AnalyticsConfiguration

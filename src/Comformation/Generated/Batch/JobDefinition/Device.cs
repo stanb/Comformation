@@ -7,7 +7,6 @@ namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
     /// AWS::Batch::JobDefinition Device
-    /// An object representing a container instance host device.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html
     /// </summary>
     public class Device
@@ -36,8 +35,7 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// ContainerPath
-        /// The path inside the container at which to expose the host device. By default the hostPath value is
-        /// used.
+        /// The path inside the container used to expose the host device. By default the hostPath value is used.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

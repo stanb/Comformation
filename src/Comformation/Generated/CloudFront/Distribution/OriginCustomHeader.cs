@@ -7,7 +7,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution OriginCustomHeader
-    /// A complex type that contains HeaderName and HeaderValue 			elements, if any, for this distribution.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html
     /// </summary>
     public class OriginCustomHeader
@@ -28,9 +27,8 @@ namespace Comformation.CloudFront.Distribution
         /// <summary>
         /// HeaderName
         /// 		
-        /// The name of a header that you want CloudFront to forward to your origin. For more 			information,
-        /// see Forwarding Custom 				Headers to Your Origin (Web Distributions Only) in the 				Amazon
-        /// CloudFront Developer Guide.
+        /// The name of a header that you want CloudFront to send to your origin. For more information, see
+        /// 			Adding Custom 			Headers to Origin Requests in the Amazon CloudFront Developer Guide.
         /// 	
         /// Required: Yes
         /// Type: String

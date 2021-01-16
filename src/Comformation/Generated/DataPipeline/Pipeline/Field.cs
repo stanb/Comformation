@@ -7,9 +7,6 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline Field
-    /// A key-value pair that describes a property of a PipelineObject. The value is specified as either a string
-    /// value (StringValue) or a reference to another object (RefValue) but not as both. To view fields for a data
-    /// pipeline object, see Pipeline Object Reference in the AWS Data Pipeline Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects-fields.html
     /// </summary>
     public class Field

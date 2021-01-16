@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel CaptionSelectorSettings
-    /// Captions Selector Settings
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html
     /// </summary>
     public class CaptionSelectorSettings
@@ -72,6 +71,16 @@ namespace Comformation.MediaLive.Channel
         /// </summary>
         [JsonProperty("TeletextSourceSettings")]
         public TeletextSourceSettings TeletextSourceSettings { get; set; }
+
+        /// <summary>
+        /// AncillarySourceSettings
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: AncillarySourceSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AncillarySourceSettings")]
+        public AncillarySourceSettings AncillarySourceSettings { get; set; }
 
     }
 }

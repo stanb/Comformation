@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application S3ContentLocation
-    /// For a Java-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 object,
-    /// including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the
-    /// data, and the version number of the Amazon S3 object that contains the data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentlocation.html
     /// </summary>
     public class S3ContentLocation
@@ -45,6 +42,8 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// The version of the object containing the application code.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ObjectVersion")]

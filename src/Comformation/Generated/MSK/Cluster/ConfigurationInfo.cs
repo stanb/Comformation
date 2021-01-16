@@ -7,7 +7,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster ConfigurationInfo
-    /// Specifies the Amazon MSK configuration to use for the brokers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html
     /// </summary>
     public class ConfigurationInfo
@@ -18,7 +17,7 @@ namespace Comformation.MSK.Cluster
         /// The revision of the Amazon MSK configuration to use.
         /// Required: Yes
         /// Type: Integer
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Revision")]
         public Union<int, IntrinsicFunction> Revision { get; set; }
@@ -29,7 +28,7 @@ namespace Comformation.MSK.Cluster
         /// arn:aws:kafka:us-east-1:123456789012:configuration/example-configuration-name/abcdabcd-1234-abcd-1234-abcd123e8e8e-1.
         /// Required: Yes
         /// Type: String
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Arn")]
         public Union<string, IntrinsicFunction> Arn { get; set; }

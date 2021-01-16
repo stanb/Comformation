@@ -6,9 +6,6 @@ namespace Comformation.Logs.Destination
 {
     /// <summary>
     /// AWS::Logs::Destination
-    /// The AWS::Logs::Destination resource specifies a CloudWatch Logs destination. A destination encapsulates a
-    /// physical resource (such as an Amazon Kinesis data stream) and enables you to subscribe that resource to a
-    /// stream of log events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
     /// </summary>
     public class DestinationResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.Logs.Destination
             /// Pattern: [^:*]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationName { get; set; }
+            public Union<string, IntrinsicFunction> DestinationName { get; set; }
 
             /// <summary>
             /// DestinationPolicy
@@ -36,7 +33,7 @@ namespace Comformation.Logs.Destination
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationPolicy { get; set; }
+            public Union<string, IntrinsicFunction> DestinationPolicy { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -46,18 +43,18 @@ namespace Comformation.Logs.Destination
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// TargetArn
-            /// The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for
+            /// The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for
             /// example, a Kinesis stream).
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetArn { get; set; }
+            public Union<string, IntrinsicFunction> TargetArn { get; set; }
 
         }
 
@@ -67,8 +64,8 @@ namespace Comformation.Logs.Destination
 
     }
 
-	public static class DestinationAttributes
-	{
+    public static class DestinationAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

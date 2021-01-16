@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.ConfigurationAssociation
 {
     /// <summary>
     /// AWS::AmazonMQ::ConfigurationAssociation ConfigurationId
-    /// The ConfigurationId property type specifies a configuration Id and the revision of a configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configurationassociation-configurationid.html
     /// </summary>
     public class ConfigurationId

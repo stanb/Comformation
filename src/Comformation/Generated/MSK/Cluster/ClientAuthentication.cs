@@ -7,11 +7,20 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster ClientAuthentication
-    /// Includes information related to client authentication.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html
     /// </summary>
     public class ClientAuthentication
     {
+
+        /// <summary>
+        /// Sasl
+        /// Details for ClientAuthentication using SASL.
+        /// Required: No
+        /// Type: Sasl
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("Sasl")]
+        public Sasl Sasl { get; set; }
 
         /// <summary>
         /// Tls

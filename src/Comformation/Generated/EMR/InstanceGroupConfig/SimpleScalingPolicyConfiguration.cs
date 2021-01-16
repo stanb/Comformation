@@ -7,10 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig SimpleScalingPolicyConfiguration
-    /// SimpleScalingPolicyConfiguration is a subproperty of the ScalingAction property type.
-    /// SimpleScalingPolicyConfiguration determines how an automatic scaling action adds or removes instances, the
-    /// cooldown period, and the number of EC2 instances that are added each time the CloudWatch metric alarm
-    /// condition is satisfied.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html
     /// </summary>
     public class SimpleScalingPolicyConfiguration
@@ -29,7 +25,7 @@ namespace Comformation.EMR.InstanceGroupConfig
         /// should be expressed as a positive integer.
         /// Required: No
         /// Type: String
-        /// Allowed Values: CHANGE_IN_CAPACITY | EXACT_CAPACITY | PERCENT_CHANGE_IN_CAPACITY
+        /// Allowed values: CHANGE_IN_CAPACITY | EXACT_CAPACITY | PERCENT_CHANGE_IN_CAPACITY
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AdjustmentType")]

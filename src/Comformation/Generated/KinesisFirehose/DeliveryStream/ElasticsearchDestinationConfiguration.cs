@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream ElasticsearchDestinationConfiguration
-    /// The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES)
-    /// domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivers data to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html
     /// </summary>
     public class ElasticsearchDestinationConfiguration
@@ -18,7 +16,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// BufferingHints
         /// Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon ES
         /// domain.
-        /// Required: Yes
+        /// Required: No
         /// Type: ElasticsearchBufferingHints
         /// Update requires: No interruption
         /// </summary>
@@ -37,8 +35,11 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// DomainARN
-        /// The Amazon Resource Name (ARN) of the Amazon ES domain that Kinesis Data Firehose delivers data to.
-        /// Required: Yes
+        /// The ARN of the Amazon ES domain. The IAM role must have permissions for&#160;DescribeElasticsearchDomain,
+        /// DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig&#160;after assuming the role
+        /// specified in RoleARN.
+        /// Specify either ClusterEndpoint or DomainARN.
+        /// Required: No
         /// Type: String
         /// Minimum: 1
         /// Maximum: 512
@@ -55,6 +56,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: String
         /// Minimum: 1
         /// Maximum: 80
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexName")]
@@ -66,9 +68,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// appends a portion of the UTC arrival timestamp to the specified index name, and rotates the appended
         /// timestamp accordingly. For more information, see Index Rotation for the Amazon ES Destination in the
         /// Amazon Kinesis Data Firehose Developer Guide.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
-        /// Allowed Values: NoRotation | OneDay | OneHour | OneMonth | OneWeek
+        /// Allowed values: NoRotation | OneDay | OneHour | OneMonth | OneWeek
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IndexRotationPeriod")]
@@ -87,7 +89,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// RetryOptions
         /// The retry behavior when Kinesis Data Firehose is unable to deliver data to Amazon ES.
-        /// Required: Yes
+        /// Required: No
         /// Type: ElasticsearchRetryOptions
         /// Update requires: No interruption
         /// </summary>
@@ -97,8 +99,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// RoleARN
         /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling
-        /// the Amazon ES Configuration API and for indexing documents. For more information, see Grant Kinesis
-        /// Data Firehose Access to an Amazon S3 Destination.
+        /// the Amazon ES Configuration API and for indexing documents. For more information, see Controlling
+        /// Access with Amazon Kinesis Data Firehose.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -116,9 +118,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Firehose could not deliver to the Amazon ES destination. For more information and valid values, see
         /// the S3BackupMode content for the ElasticsearchDestinationConfiguration data type in the Amazon
         /// Kinesis Data Firehose API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
-        /// Allowed Values: AllDocuments | FailedDocumentsOnly
+        /// Allowed values: AllDocuments | FailedDocumentsOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupMode")]
@@ -135,16 +137,38 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         public S3DestinationConfiguration S3Configuration { get; set; }
 
         /// <summary>
+        /// ClusterEndpoint
+        /// The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+        /// DomainARN field.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ClusterEndpoint")]
+        public Union<string, IntrinsicFunction> ClusterEndpoint { get; set; }
+
+        /// <summary>
         /// TypeName
         /// The Elasticsearch type name that Amazon ES adds to documents when indexing data.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Minimum: 0
         /// Maximum: 100
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TypeName")]
         public Union<string, IntrinsicFunction> TypeName { get; set; }
+
+        /// <summary>
+        /// VpcConfiguration
+        /// The details of the VPC of the Amazon ES destination.
+        /// Required: No
+        /// Type: VpcConfiguration
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("VpcConfiguration")]
+        public VpcConfiguration VpcConfiguration { get; set; }
 
     }
 }

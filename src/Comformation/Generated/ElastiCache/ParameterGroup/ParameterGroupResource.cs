@@ -6,8 +6,6 @@ namespace Comformation.ElastiCache.ParameterGroup
 {
     /// <summary>
     /// AWS::ElastiCache::ParameterGroup
-    /// The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group. Cache parameter groups control
-    /// the parameters for a cache cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html
     /// </summary>
     public class ParameterGroupResource : ResourceBase
@@ -17,13 +15,13 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// <summary>
             /// CacheParameterGroupFamily
             /// The name of the cache parameter group family that this cache parameter group is compatible with.
-            /// Valid values are: memcached1. 4 | memcached1. 5 | redis2. 6 | redis2. 8 | redis3. 2 | redis4. 0 |
-            /// redis5. 0 |
+            /// Valid values are: memcached1. 4 | memcached1. 5 | memcached1. 6 | redis2. 6 | redis2. 8 | redis3. 2
+            /// | redis4. 0 | redis5. 0 | redis6. x
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheParameterGroupFamily { get; set; }
+            public Union<string, IntrinsicFunction> CacheParameterGroupFamily { get; set; }
 
             /// <summary>
             /// Description
@@ -32,7 +30,7 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Properties
@@ -44,7 +42,7 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Properties { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Properties { get; set; }
 
         }
 

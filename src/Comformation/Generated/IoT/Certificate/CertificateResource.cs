@@ -6,8 +6,6 @@ namespace Comformation.IoT.Certificate
 {
     /// <summary>
     /// AWS::IoT::Certificate
-    /// Use the AWS::IoT::Certificate resource to declare an AWS IoT X. 509 certificate. For information about working
-    /// with X. 509 certificates, see Authentication in AWS IoT in the AWS IoT Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
@@ -15,23 +13,55 @@ namespace Comformation.IoT.Certificate
         public class CertificateProperties
         {
             /// <summary>
-            /// CertificateSigningRequest
-            /// The certificate signing request (CSR).
-            /// Required: Yes
+            /// CACertificatePem
+            /// The CA certificate used to sign the device certificate being registered, not available when
+            /// CertificateMode is SNI_ONLY.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CertificateSigningRequest { get; set; }
+            public Union<string, IntrinsicFunction> CACertificatePem { get; set; }
+
+            /// <summary>
+            /// CertificatePem
+            /// The certificate data in PEM format. Requires SNI_ONLY for the certificate mode or the accompanying
+            /// CACertificatePem for registration.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CertificatePem { get; set; }
+
+            /// <summary>
+            /// CertificateSigningRequest
+            /// The certificate signing request (CSR).
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CertificateSigningRequest { get; set; }
+
+            /// <summary>
+            /// CertificateMode
+            /// Specifies which mode of certificate registration to use with this resource. Valid options are
+            /// DEFAULT with CaCertificatePem and CertificatePem, SNI_ONLY with CertificatePem, and Default with
+            /// CertificateSigningRequest.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CertificateMode { get; set; }
 
             /// <summary>
             /// Status
             /// The status of the certificate.
+            /// Valid values are ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, and PENDING_ACTIVATION.
             /// The status value REGISTER_INACTIVE is deprecated and should not be used.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Status { get; set; }
+            public Union<string, IntrinsicFunction> Status { get; set; }
 
         }
 
@@ -41,8 +71,9 @@ namespace Comformation.IoT.Certificate
 
     }
 
-	public static class CertificateAttributes
-	{
+    public static class CertificateAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

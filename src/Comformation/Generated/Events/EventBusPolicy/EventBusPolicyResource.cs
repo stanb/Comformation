@@ -6,10 +6,6 @@ namespace Comformation.Events.EventBusPolicy
 {
     /// <summary>
     /// AWS::Events::EventBusPolicy
-    /// The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon EventBridge. An event bus
-    /// policy enables your account to receive events from other AWS accounts. These events can trigger EventBridge
-    /// rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts in
-    /// the Amazon EventBridge User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html
     /// </summary>
     public class EventBusPolicyResource : ResourceBase
@@ -23,7 +19,7 @@ namespace Comformation.Events.EventBusPolicy
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EventBusName { get; set; }
+            public Union<string, IntrinsicFunction> EventBusName { get; set; }
 
             /// <summary>
             /// Condition
@@ -38,20 +34,20 @@ namespace Comformation.Events.EventBusPolicy
             /// Type: Condition
             /// Update requires: No interruption
             /// </summary>
-			public Condition Condition { get; set; }
+            public Condition Condition { get; set; }
 
             /// <summary>
             /// Action
-            /// The action that you&#39;re enabling the other account to perform. Currently, this must be
+            /// The action that you are enabling the other account to perform. Currently, this must be
             /// events:PutEvents.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 64
             /// Pattern: events:[a-zA-Z]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Action { get; set; }
+            public Union<string, IntrinsicFunction> Action { get; set; }
 
             /// <summary>
             /// StatementId
@@ -64,24 +60,33 @@ namespace Comformation.Events.EventBusPolicy
             /// Pattern: [a-zA-Z0-9-_]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StatementId { get; set; }
+            public Union<string, IntrinsicFunction> StatementId { get; set; }
+
+            /// <summary>
+            /// Statement
+            /// A statement in the policy attached to the event bus to manage access to send events to it.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Statement { get; set; }
 
             /// <summary>
             /// Principal
             /// The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify
             /// &quot;*&quot; to permit any account to put events to your default event bus.
-            /// If you specify &quot;*&quot; without specifying Condition, avoid creating rules that might match undesirable
+            /// If you specify &quot;*&quot; without specifying Condition, avoid creating rules that may match undesirable
             /// events. To create more secure rules, make sure that the event pattern for each rule contains an
-            /// account field with a specific account ID to receive events from. Rules that have an account field
-            /// match events sent only from accounts that are listed in the rule&#39;s account field.
-            /// Required: Yes
+            /// account field with a specific account ID from which to receive events. Rules with an account field
+            /// do not match any events sent from other accounts.
+            /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 12
             /// Pattern: (\d{12}|\*)
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Principal { get; set; }
+            public Union<string, IntrinsicFunction> Principal { get; set; }
 
         }
 

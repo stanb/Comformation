@@ -7,7 +7,6 @@ namespace Comformation.WAFRegional.WebACL
 {
     /// <summary>
     /// AWS::WAFRegional::WebACL Action
-    /// Specifies the action AWS WAF takes when a web request matches or doesn&#39;t match all rule conditions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html
     /// </summary>
     public class Action

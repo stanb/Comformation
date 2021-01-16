@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application CSVMappingParameters
-    /// For an SQL-based application, provides additional mapping information when the record format uses delimiters,
-    /// such as CSV. For example, the following sample records use CSV format, where the records use the &#39;\n&#39; as the
-    /// row delimiter and a comma (&quot;,&quot;) as the column delimiter:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-csvmappingparameters.html
     /// </summary>
     public class CSVMappingParameters
@@ -21,6 +18,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordRowDelimiter")]
@@ -32,6 +30,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordColumnDelimiter")]

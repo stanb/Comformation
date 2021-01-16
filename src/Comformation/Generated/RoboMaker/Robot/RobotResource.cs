@@ -6,7 +6,6 @@ namespace Comformation.RoboMaker.Robot
 {
     /// <summary>
     /// AWS::RoboMaker::Robot
-    /// The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html
     /// </summary>
     public class RobotResource : ResourceBase
@@ -20,17 +19,17 @@ namespace Comformation.RoboMaker.Robot
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Fleet { get; set; }
+            public Union<string, IntrinsicFunction> Fleet { get; set; }
 
             /// <summary>
             /// Architecture
             /// The architecture of the robot.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: ARM64 | ARMHF | X86_64
+            /// Allowed values: ARM64 | ARMHF | X86_64
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Architecture { get; set; }
+            public Union<string, IntrinsicFunction> Architecture { get; set; }
 
             /// <summary>
             /// GreengrassGroupId
@@ -42,7 +41,7 @@ namespace Comformation.RoboMaker.Robot
             /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GreengrassGroupId { get; set; }
+            public Union<string, IntrinsicFunction> GreengrassGroupId { get; set; }
 
             /// <summary>
             /// Tags
@@ -51,7 +50,7 @@ namespace Comformation.RoboMaker.Robot
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -63,7 +62,7 @@ namespace Comformation.RoboMaker.Robot
             /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

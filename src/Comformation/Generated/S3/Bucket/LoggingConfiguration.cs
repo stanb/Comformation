@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket LoggingConfiguration
-    /// Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For
-    /// more information, see PUT Bucket logging in the Amazon Simple Storage Service API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-loggingconfig.html
     /// </summary>
     public class LoggingConfiguration

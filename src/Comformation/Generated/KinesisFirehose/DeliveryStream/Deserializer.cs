@@ -7,9 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream Deserializer
-    /// The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data
-    /// Firehose then serializes the data to its final format using the Serializer. Kinesis Data Firehose supports two
-    /// types of deserializers: the Apache Hive JSON SerDe and the OpenX JSON SerDe.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html
     /// </summary>
     public class Deserializer

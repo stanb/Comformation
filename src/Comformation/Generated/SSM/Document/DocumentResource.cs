@@ -6,8 +6,6 @@ namespace Comformation.SSM.Document
 {
     /// <summary>
     /// AWS::SSM::Document
-    /// The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that
-    /// Systems Manager performs, which you can use to set up and run commands on your instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html
     /// </summary>
     public class DocumentResource : ResourceBase
@@ -16,24 +14,36 @@ namespace Comformation.SSM.Document
         {
             /// <summary>
             /// Content
-            /// A valid JSON or YAML string.
+            /// The content for the new SSM document in JSON or YAML format.
             /// Required: Yes
             /// Type: Json
             /// Minimum: 1
             /// Update requires: Replacement
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Content { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Content { get; set; }
 
             /// <summary>
             /// DocumentType
-            /// The type of document to create. Valid document types include: Command, Policy, Automation, Session,
-            /// and Package.
+            /// The type of document to create.
+            /// Allowed Values: ApplicationConfigurationSchema | Automation | ChangeCalendar | Command |
+            /// DeploymentStrategy | Package | Policy | Session
             /// Required: No
             /// Type: String
-            /// Allowed Values: Automation | Command | Package | Policy | Session
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DocumentType { get; set; }
+            public Union<string, IntrinsicFunction> DocumentType { get; set; }
+
+            /// <summary>
+            /// Name
+            /// A name for the Systems Manager document.
+            /// Important You can&#39;t use the following strings as document name prefixes. These are reserved by AWS
+            /// for use as document name prefixes: aws- amazon amzn
+            /// Required: No
+            /// Type: String
+            /// Pattern: ^[a-zA-Z0-9_\-. ]{3,128}$
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Tags
@@ -44,7 +54,7 @@ namespace Comformation.SSM.Document
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

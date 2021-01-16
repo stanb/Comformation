@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.CoreDefinition
 {
     /// <summary>
     /// AWS::Greengrass::CoreDefinition CoreDefinitionVersion
-    /// A core definition version contains a Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html
     /// </summary>
     public class CoreDefinitionVersion

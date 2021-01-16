@@ -7,7 +7,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution Logging
-    /// A complex type that controls whether access logs are written for the 			distribution.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html
     /// </summary>
     public class Logging

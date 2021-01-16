@@ -7,12 +7,21 @@ namespace Comformation.Greengrass.ResourceDefinition
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinition S3MachineLearningModelResourceData
-    /// Settings for an 		Amazon S3 machine learning resource. 		 For more information, see Perform Machine Learning
-    /// Inference in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html
     /// </summary>
     public class S3MachineLearningModelResourceData
     {
+
+        /// <summary>
+        /// OwnerSetting
+        /// The owner setting for the downloaded machine learning resource. For more information, see 	 Access
+        /// Machine Learning Resources from Lambda 	 Functions in the AWS IoT Greengrass Developer Guide.
+        /// Required: No
+        /// Type: ResourceDownloadOwnerSetting
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("OwnerSetting")]
+        public ResourceDownloadOwnerSetting OwnerSetting { get; set; }
 
         /// <summary>
         /// DestinationPath

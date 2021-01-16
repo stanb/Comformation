@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline Datastore
-    /// The &#39;datastore&#39; activity that specifies where to store the processed data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html
     /// </summary>
     public class Datastore
@@ -28,7 +27,7 @@ namespace Comformation.IoTAnalytics.Pipeline
 
         /// <summary>
         /// Name
-        /// The name of the &#39;datastore&#39; activity.
+        /// The name of the datastore activity.
         /// Required: No
         /// Type: String
         /// Minimum: 1

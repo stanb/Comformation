@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.ApiKey
 {
     /// <summary>
     /// AWS::ApiGateway::ApiKey StageKey
-    /// StageKey is a property of the AWS::ApiGateway::ApiKey resource that specifies the stage to associate with the
-    /// API key. This association allows only clients with the key to make requests to methods in that stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html
     /// </summary>
     public class StageKey

@@ -7,9 +7,6 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline PipelineObject
-    /// PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a
-    /// pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of
-    /// components of a pipeline defines the pipeline.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html
     /// </summary>
     public class PipelineObject

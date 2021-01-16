@@ -6,7 +6,6 @@ namespace Comformation.AppMesh.VirtualRouter
 {
     /// <summary>
     /// AWS::AppMesh::VirtualRouter
-    /// Creates a virtual router within a service mesh.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html
     /// </summary>
     public class VirtualRouterResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.AppMesh.VirtualRouter
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MeshName { get; set; }
+            public Union<string, IntrinsicFunction> MeshName { get; set; }
 
             /// <summary>
             /// VirtualRouterName
@@ -29,7 +28,18 @@ namespace Comformation.AppMesh.VirtualRouter
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VirtualRouterName { get; set; }
+            public Union<string, IntrinsicFunction> VirtualRouterName { get; set; }
+
+            /// <summary>
+            /// MeshOwner
+            /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the
+            /// account that you specify must share the mesh with your account before you can create the resource in
+            /// the service mesh. For more information about mesh sharing, see Working with shared meshes.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> MeshOwner { get; set; }
 
             /// <summary>
             /// Spec
@@ -38,7 +48,7 @@ namespace Comformation.AppMesh.VirtualRouter
             /// Type: VirtualRouterSpec
             /// Update requires: No interruption
             /// </summary>
-			public VirtualRouterSpec Spec { get; set; }
+            public VirtualRouterSpec Spec { get; set; }
 
             /// <summary>
             /// Tags
@@ -50,7 +60,7 @@ namespace Comformation.AppMesh.VirtualRouter
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -60,11 +70,13 @@ namespace Comformation.AppMesh.VirtualRouter
 
     }
 
-	public static class VirtualRouterAttributes
-	{
+    public static class VirtualRouterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Uid = new ResourceAttribute<Union<string, IntrinsicFunction>>("Uid");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MeshName = new ResourceAttribute<Union<string, IntrinsicFunction>>("MeshName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> VirtualRouterName = new ResourceAttribute<Union<string, IntrinsicFunction>>("VirtualRouterName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MeshOwner = new ResourceAttribute<Union<string, IntrinsicFunction>>("MeshOwner");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ResourceOwner = new ResourceAttribute<Union<string, IntrinsicFunction>>("ResourceOwner");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

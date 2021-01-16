@@ -7,7 +7,6 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::AutoScaling::ScalingPolicy StepAdjustment
-    /// StepAdjustments is a subproperty of ScalingPolicy that represents a step adjustment for a step scaling policy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html
     /// </summary>
     public class StepAdjustment
@@ -19,7 +18,6 @@ namespace Comformation.AutoScaling.ScalingPolicy
         /// metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater
         /// than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be
         /// greater than the threshold plus the lower bound). A null value indicates negative infinity.
-        /// You must specify at least one upper or lower bound.
         /// Required: Conditional
         /// Type: Double
         /// Update requires: No interruption
@@ -33,7 +31,6 @@ namespace Comformation.AutoScaling.ScalingPolicy
         /// metric value is above the breach threshold, the upper bound is exclusive (the metric must be less
         /// than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than
         /// or equal to the threshold plus the upper bound). A null value indicates positive infinity.
-        /// You must specify at least one upper or lower bound.
         /// Required: Conditional
         /// Type: Double
         /// Update requires: No interruption

@@ -7,9 +7,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup LaunchTemplate
-    /// LaunchTemplate is a subproperty of MixedInstancesPolicy that describes a launch template and overrides. The
-    /// overrides are used to override the instance type specified by the launch template with multiple instance types
-    /// that can be used to launch On-Demand Instances and Spot Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplate.html
     /// </summary>
     public class LaunchTemplate
@@ -17,8 +14,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// LaunchTemplateSpecification
-        /// The launch template to use. You must specify either the launch template ID or launch template name
-        /// in the request.
+        /// The EC2 launch template to use.
         /// Required: Yes
         /// Type: LaunchTemplateSpecification
         /// Update requires: No interruption
@@ -28,9 +24,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Overrides
-        /// An optional setting. Any properties that you specify override the same properties in the launch
-        /// template. Currently, the only supported override is instance type. You can specify between 1 and 20
-        /// instance types.
+        /// Any properties that you specify override the same properties in the launch template. The maximum
+        /// number of instance types that can be associated with an Auto Scaling group is 40. The maximum number
+        /// of distinct launch templates you can define for an Auto Scaling group is 20. For more information
+        /// about configuring overrides, see Configuring overrides in the Amazon EC2 Auto Scaling User Guide.
+        /// If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template
+        /// to launch instances.
         /// Required: No
         /// Type: List of LaunchTemplateOverrides
         /// Update requires: No interruption

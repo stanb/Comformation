@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
 {
     /// <summary>
     /// AWS::OpsWorks::ElasticLoadBalancerAttachment
-    /// Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html
     /// </summary>
     public class ElasticLoadBalancerAttachmentResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ElasticLoadBalancerName { get; set; }
+            public Union<string, IntrinsicFunction> ElasticLoadBalancerName { get; set; }
 
             /// <summary>
             /// LayerId
@@ -29,7 +28,7 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> LayerId { get; set; }
+            public Union<string, IntrinsicFunction> LayerId { get; set; }
 
         }
 

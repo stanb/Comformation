@@ -7,8 +7,6 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer AutoScalingThresholds
-    /// Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS
-    /// OpsWorks Stacks starts or stops load-based instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html
     /// </summary>
     public class AutoScalingThresholds

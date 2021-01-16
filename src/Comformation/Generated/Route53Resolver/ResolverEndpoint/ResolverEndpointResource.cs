@@ -6,7 +6,6 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
 {
     /// <summary>
     /// AWS::Route53Resolver::ResolverEndpoint
-    /// Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html
     /// </summary>
     public class ResolverEndpointResource : ResourceBase
@@ -24,22 +23,22 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
             /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
-			public List<IpAddressRequest> IpAddresses { get; set; }
+            public List<IpAddressRequest> IpAddresses { get; set; }
 
             /// <summary>
             /// Direction
             /// 		
-            /// Indicates whether the resolver endpoint allows inbound or outbound DNS queries:
+            /// Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:
             /// 		
-            /// 			 			 		 INBOUND: allows DNS queries to your VPC from your network or another VPC OUTBOUND: allows
-            /// DNS queries from your VPC to your network or another VPC
+            /// 			 			 		 INBOUND: allows DNS queries to your VPC from your network OUTBOUND: allows DNS queries
+            /// from your VPC to your network
             /// 	
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: INBOUND | OUTBOUND
+            /// Allowed values: INBOUND | OUTBOUND
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Direction { get; set; }
+            public Union<string, IntrinsicFunction> Direction { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
@@ -53,18 +52,19 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// Tags
-            /// 		
-            /// A list of the tag keys and values that you want to associate with the endpoint.
+            /// 	
+            /// Route 53 Resolver doesn&#39;t support updating tags through CloudFormation.
             /// 	
             /// Required: No
             /// Type: List of Tag
+            /// Maximum: 200
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -75,10 +75,10 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
             /// Required: No
             /// Type: String
             /// Maximum: 64
-            /// Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_&#39; &#39;]+)
+            /// Pattern: (?!^[0-9]+$)([a-zA-Z0-9\-_&#39; &#39;]+)
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -88,13 +88,13 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
 
     }
 
-	public static class ResolverEndpointAttributes
-	{
+    public static class ResolverEndpointAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ResolverEndpointId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ResolverEndpointId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IpAddressCount = new ResourceAttribute<Union<string, IntrinsicFunction>>("IpAddressCount");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Direction = new ResourceAttribute<Union<string, IntrinsicFunction>>("Direction");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> HostVPCId = new ResourceAttribute<Union<string, IntrinsicFunction>>("HostVPCId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

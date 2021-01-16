@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.ConnectorDefinition
 {
     /// <summary>
     /// AWS::Greengrass::ConnectorDefinition ConnectorDefinitionVersion
-    /// A connector definition version contains a list of connectors.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html
     /// </summary>
     public class ConnectorDefinitionVersion

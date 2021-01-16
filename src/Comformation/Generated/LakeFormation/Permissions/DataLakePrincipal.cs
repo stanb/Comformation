@@ -7,7 +7,6 @@ namespace Comformation.LakeFormation.Permissions
 {
     /// <summary>
     /// AWS::LakeFormation::Permissions DataLakePrincipal
-    /// The AWS Lake Formation principal.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalakeprincipal.html
     /// </summary>
     public class DataLakePrincipal

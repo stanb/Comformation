@@ -7,8 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig Configuration
-    /// Configurations is a property of the AWS::EMR::Cluster resource that specifies the configuration of
-    /// applications on an Amazon EMR cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html
     /// </summary>
     public class Configuration

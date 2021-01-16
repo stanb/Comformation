@@ -7,8 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel Sqs
-    /// Sends information about the detector model instance and the event which triggered the action to an Amazon SQS
-    /// queue.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html
     /// </summary>
     public class Sqs
@@ -16,7 +14,7 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// UseBase64
-        /// Set this to TRUE if you want the data to be Base-64 encoded before it is written to the queue.
+        /// Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
         /// Otherwise, set this to FALSE.
         /// Required: No
         /// Type: Boolean
@@ -26,8 +24,18 @@ namespace Comformation.IoTEvents.DetectorModel
         public Union<bool, IntrinsicFunction> UseBase64 { get; set; }
 
         /// <summary>
+        /// Payload
+        /// You can configure the action payload when you send a message to an Amazon SQS queue.
+        /// Required: No
+        /// Type: Payload
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Payload")]
+        public Payload Payload { get; set; }
+
+        /// <summary>
         /// QueueUrl
-        /// The URL of the Amazon SQS queue where the data is written.
+        /// The URL of the SQS queue where the data is written.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

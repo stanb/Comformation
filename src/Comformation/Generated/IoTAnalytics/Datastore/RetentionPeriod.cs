@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
     /// AWS::IoTAnalytics::Datastore RetentionPeriod
-    /// How long, in days, message data is kept.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-retentionperiod.html
     /// </summary>
     public class RetentionPeriod
@@ -15,7 +14,7 @@ namespace Comformation.IoTAnalytics.Datastore
 
         /// <summary>
         /// NumberOfDays
-        /// The number of days that message data is kept. The &quot;unlimited&quot; parameter must be false.
+        /// The number of days that message data is kept. The unlimited parameter must be false.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1

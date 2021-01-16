@@ -6,8 +6,6 @@ namespace Comformation.ApiGatewayV2.Deployment
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Deployment
-    /// The AWS::ApiGatewayV2::Deployment resource creates a deployment for an API. For more information, see Deploy a
-    /// WebSocket API in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-deployment.html
     /// </summary>
     public class DeploymentResource : ResourceBase
@@ -21,16 +19,16 @@ namespace Comformation.ApiGatewayV2.Deployment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// StageName
-            /// The name of the Stage resource for the Deployment resource to create.
+            /// The name of an existing stage to associate with the deployment.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StageName { get; set; }
+            public Union<string, IntrinsicFunction> StageName { get; set; }
 
             /// <summary>
             /// ApiId
@@ -39,7 +37,7 @@ namespace Comformation.ApiGatewayV2.Deployment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         }
 

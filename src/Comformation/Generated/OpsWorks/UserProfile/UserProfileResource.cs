@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.UserProfile
 {
     /// <summary>
     /// AWS::OpsWorks::UserProfile
-    /// Describes a user&#39;s SSH information.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html
     /// </summary>
     public class UserProfileResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.OpsWorks.UserProfile
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowSelfManagement { get; set; }
+            public Union<bool, IntrinsicFunction> AllowSelfManagement { get; set; }
 
             /// <summary>
             /// IamUserArn
@@ -30,7 +29,7 @@ namespace Comformation.OpsWorks.UserProfile
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> IamUserArn { get; set; }
+            public Union<string, IntrinsicFunction> IamUserArn { get; set; }
 
             /// <summary>
             /// SshPublicKey
@@ -39,7 +38,7 @@ namespace Comformation.OpsWorks.UserProfile
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SshPublicKey { get; set; }
+            public Union<string, IntrinsicFunction> SshPublicKey { get; set; }
 
             /// <summary>
             /// SshUsername
@@ -48,7 +47,7 @@ namespace Comformation.OpsWorks.UserProfile
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SshUsername { get; set; }
+            public Union<string, IntrinsicFunction> SshUsername { get; set; }
 
         }
 
@@ -58,8 +57,8 @@ namespace Comformation.OpsWorks.UserProfile
 
     }
 
-	public static class UserProfileAttributes
-	{
+    public static class UserProfileAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SshUsername = new ResourceAttribute<Union<string, IntrinsicFunction>>("SshUsername");
-	}
+    }
 }

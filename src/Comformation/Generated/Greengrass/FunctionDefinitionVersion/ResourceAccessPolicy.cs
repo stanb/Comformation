@@ -7,8 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinitionVersion ResourceAccessPolicy
-    /// A list of the 		resources in the group 				 that the function can access, with the corresponding read-only or
-    /// read-write permissions. The maximum is 10 resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy.html
     /// </summary>
     public class ResourceAccessPolicy

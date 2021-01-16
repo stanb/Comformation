@@ -6,8 +6,6 @@ namespace Comformation.IoT.ThingPrincipalAttachment
 {
     /// <summary>
     /// AWS::IoT::ThingPrincipalAttachment
-    /// Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X. 509 certificate or another
-    /// credential) to a thing.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html
     /// </summary>
     public class ThingPrincipalAttachmentResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.IoT.ThingPrincipalAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Principal { get; set; }
+            public Union<string, IntrinsicFunction> Principal { get; set; }
 
             /// <summary>
             /// ThingName
@@ -31,7 +29,7 @@ namespace Comformation.IoT.ThingPrincipalAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ThingName { get; set; }
+            public Union<string, IntrinsicFunction> ThingName { get; set; }
 
         }
 

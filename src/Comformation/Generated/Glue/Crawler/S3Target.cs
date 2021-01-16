@@ -7,11 +7,22 @@ namespace Comformation.Glue.Crawler
 {
     /// <summary>
     /// AWS::Glue::Crawler S3Target
-    /// Specifies a data store in Amazon Simple Storage Service (Amazon S3).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html
     /// </summary>
     public class S3Target
     {
+
+        /// <summary>
+        /// ConnectionName
+        /// 	
+        /// The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon
+        /// Virtual Private Cloud environment (Amazon VPC).
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ConnectionName")]
+        public Union<string, IntrinsicFunction> ConnectionName { get; set; }
 
         /// <summary>
         /// Path

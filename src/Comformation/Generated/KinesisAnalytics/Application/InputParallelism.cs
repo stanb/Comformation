@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application InputParallelism
-    /// Describes the number of in-application streams to create for a given streaming source. For information about
-    /// parallelism, see Configuring Application Input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputparallelism.html
     /// </summary>
     public class InputParallelism

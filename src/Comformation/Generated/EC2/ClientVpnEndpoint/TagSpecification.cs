@@ -7,7 +7,6 @@ namespace Comformation.EC2.ClientVpnEndpoint
 {
     /// <summary>
     /// AWS::EC2::ClientVpnEndpoint TagSpecification
-    /// The tags to apply to a resource when the resource is being created.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html
     /// </summary>
     public class TagSpecification
@@ -20,12 +19,15 @@ namespace Comformation.EC2.ClientVpnEndpoint
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options | elastic-ip
-        /// | fleet | fpga-image | host-reservation | image | instance | internet-gateway | launch-template |
-        /// natgateway | network-acl | network-interface | reserved-instances | route-table | security-group |
-        /// snapshot | spot-instances-request | subnet | traffic-mirror-filter | traffic-mirror-session |
-        /// traffic-mirror-target | transit-gateway | transit-gateway-attachment | transit-gateway-route-table |
-        /// volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
+        /// Allowed values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options |
+        /// egress-only-internet-gateway | elastic-gpu | elastic-ip | export-image-task | export-instance-task |
+        /// fleet | fpga-image | host-reservation | image | import-image-task | import-snapshot-task | instance
+        /// | internet-gateway | key-pair | launch-template | local-gateway-route-table-vpc-association |
+        /// natgateway | network-acl | network-interface | placement-group | reserved-instances | route-table |
+        /// security-group | snapshot | spot-fleet-request | spot-instances-request | subnet |
+        /// traffic-mirror-filter | traffic-mirror-session | traffic-mirror-target | transit-gateway |
+        /// transit-gateway-attachment | transit-gateway-multicast-domain | transit-gateway-route-table | volume
+        /// | vpc | vpc-flow-log | vpc-peering-connection | vpn-connection | vpn-gateway
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceType")]

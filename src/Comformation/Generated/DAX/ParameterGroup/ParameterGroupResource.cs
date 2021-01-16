@@ -6,7 +6,6 @@ namespace Comformation.DAX.ParameterGroup
 {
     /// <summary>
     /// AWS::DAX::ParameterGroup
-    /// A named set of parameters that are applied to all of the nodes in a DAX cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html
     /// </summary>
     public class ParameterGroupResource : ResourceBase
@@ -17,11 +16,13 @@ namespace Comformation.DAX.ParameterGroup
             /// ParameterNameValues
             /// An array of name-value pairs for the parameters in the group. Each element in the array represents a
             /// single parameter.
+            /// Note record-ttl-millis and query-ttl-millis are the only supported parameter names. For more
+            /// details, see Configuring TTL Settings.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ParameterNameValues { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ParameterNameValues { get; set; }
 
             /// <summary>
             /// Description
@@ -30,7 +31,7 @@ namespace Comformation.DAX.ParameterGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ParameterGroupName
@@ -39,7 +40,7 @@ namespace Comformation.DAX.ParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
 
         }
 

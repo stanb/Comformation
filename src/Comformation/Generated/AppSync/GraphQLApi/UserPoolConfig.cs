@@ -7,8 +7,6 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi UserPoolConfig
-    /// The UserPoolConfig property type specifies the optional authorization configuration for using Amazon Cognito
-    /// user pools with your GraphQL endpoint for an AWS AppSync GraphQL API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html
     /// </summary>
     public class UserPoolConfig
@@ -48,6 +46,8 @@ namespace Comformation.AppSync.GraphQLApi
         /// DefaultAction
         /// The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
         /// authentication doesn&#39;t match the Amazon Cognito user pool configuration.
+        /// When specifying Cognito user pools as the default authentication, you must set the value for
+        /// DefaultAction to ALLOW if specifying AdditionalAuthenticationProviders.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

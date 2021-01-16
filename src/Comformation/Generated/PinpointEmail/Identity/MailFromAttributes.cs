@@ -7,7 +7,6 @@ namespace Comformation.PinpointEmail.Identity
 {
     /// <summary>
     /// AWS::PinpointEmail::Identity MailFromAttributes
-    /// A list of attributes that are associated with a MAIL FROM domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-mailfromattributes.html
     /// </summary>
     public class MailFromAttributes
@@ -33,7 +32,7 @@ namespace Comformation.PinpointEmail.Identity
         /// and TemporaryFailure states.
         /// Required: No
         /// Type: String
-        /// Allowed Values: REJECT_MESSAGE | USE_DEFAULT_VALUE
+        /// Allowed values: REJECT_MESSAGE | USE_DEFAULT_VALUE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BehaviorOnMxFailure")]

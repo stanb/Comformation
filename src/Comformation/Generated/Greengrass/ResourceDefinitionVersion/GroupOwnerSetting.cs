@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinitionVersion GroupOwnerSetting
-    /// Settings that define additional 		Linux OS group permissions to give to the Lambda function process. You can
-    /// give the permissions of the Linux group that 		owns the resource or choose another Linux group. These
-    /// permissions are in addition to the function&#39;s RunAs permissions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html
     /// </summary>
     public class GroupOwnerSetting

@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule S3Action
-    /// Describes an action to write data to an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html
     /// </summary>
     public class S3Action
@@ -25,7 +24,7 @@ namespace Comformation.IoT.TopicRule
 
         /// <summary>
         /// Key
-        /// The object key.
+        /// The object key. For more information, see Actions, resources, and condition keys for Amazon S3.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

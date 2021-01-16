@@ -7,8 +7,6 @@ namespace Comformation.Amplify.App
 {
     /// <summary>
     /// AWS::Amplify::App EnvironmentVariable
-    /// Environment variables are key-value pairs that are available at build time. Set environment variables for all
-    /// branches in your app.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-environmentvariable.html
     /// </summary>
     public class EnvironmentVariable

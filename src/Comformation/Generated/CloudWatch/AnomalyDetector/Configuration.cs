@@ -7,8 +7,6 @@ namespace Comformation.CloudWatch.AnomalyDetector
 {
     /// <summary>
     /// AWS::CloudWatch::AnomalyDetector Configuration
-    /// Specifies details about how the anomaly detection model is to be trained, including time ranges to exclude
-    /// when training and updating the model. The configuration can also include the time zone to use for the metric.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html
     /// </summary>
     public class Configuration

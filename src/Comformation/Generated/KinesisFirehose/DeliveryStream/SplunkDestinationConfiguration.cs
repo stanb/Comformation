@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream SplunkDestinationConfiguration
-    /// The SplunkDestinationConfiguration property type specifies the configuration of a destination in Splunk for a
-    /// Kinesis Data Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html
     /// </summary>
     public class SplunkDestinationConfiguration
@@ -43,6 +41,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 2048
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HECEndpoint")]
@@ -53,7 +54,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// This type can be either Raw or Event.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Event | Raw
+        /// Allowed values: Event | Raw
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HECEndpointType")]
@@ -64,6 +65,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 2048
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HECToken")]
@@ -92,13 +96,15 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3BackupMode
-        /// Defines how documents should be delivered to Amazon S3. When set to FailedDocumentsOnly, Kinesis
-        /// Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
-        /// When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
-        /// writes failed documents to Amazon S3. Default value is FailedDocumentsOnly.
+        /// Defines how documents should be delivered to Amazon S3. When set to FailedEventsOnly, Kinesis Data
+        /// Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set
+        /// to AllEvents, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
+        /// failed documents to Amazon S3. The default value is FailedEventsOnly.
+        /// You can update this backup mode from FailedEventsOnly to AllEvents. You can&#39;t update it from
+        /// AllEvents to FailedEventsOnly.
         /// Required: No
         /// Type: String
-        /// Allowed Values: AllEvents | FailedEventsOnly
+        /// Allowed values: AllEvents | FailedEventsOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupMode")]

@@ -6,8 +6,6 @@ namespace Comformation.ASK.Skill
 {
     /// <summary>
     /// Alexa::ASK::Skill
-    /// The Alexa::ASK::Skill resource creates an Alexa skill that enables customers to access new abilities. For more
-    /// information about developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html
     /// </summary>
     public class SkillResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.ASK.Skill
             /// Type: AuthenticationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public AuthenticationConfiguration AuthenticationConfiguration { get; set; }
+            public AuthenticationConfiguration AuthenticationConfiguration { get; set; }
 
             /// <summary>
             /// VendorId
@@ -34,7 +32,7 @@ namespace Comformation.ASK.Skill
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VendorId { get; set; }
+            public Union<string, IntrinsicFunction> VendorId { get; set; }
 
             /// <summary>
             /// SkillPackage
@@ -45,7 +43,7 @@ namespace Comformation.ASK.Skill
             /// Type: SkillPackage
             /// Update requires: No interruption
             /// </summary>
-			public SkillPackage SkillPackage { get; set; }
+            public SkillPackage SkillPackage { get; set; }
 
         }
 

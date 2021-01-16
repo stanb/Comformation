@@ -6,7 +6,6 @@ namespace Comformation.Amplify.App
 {
     /// <summary>
     /// AWS::Amplify::App
-    /// The AWS::Amplify::App resource creates Apps in the Amplify Console. An App is a collection of branches.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html
     /// </summary>
     public class AppResource : ResourceBase
@@ -20,44 +19,63 @@ namespace Comformation.Amplify.App
             /// Type: AutoBranchCreationConfig
             /// Update requires: No interruption
             /// </summary>
-			public AutoBranchCreationConfig AutoBranchCreationConfig { get; set; }
+            public AutoBranchCreationConfig AutoBranchCreationConfig { get; set; }
 
             /// <summary>
             /// OauthToken
-            /// OAuth token for 3rd party source control system for an Amplify App, used to create webhook and
-            /// read-only deploy key. OAuth token is not stored.
+            /// The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used
+            /// to create a webhook and a read-only deploy key. The OAuth token is not stored.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> OauthToken { get; set; }
-
-            /// <summary>
-            /// Repository
-            /// Repository for an Amplify App
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<string, IntrinsicFunction> Repository { get; set; }
+            public Union<string, IntrinsicFunction> OauthToken { get; set; }
 
             /// <summary>
             /// Description
-            /// Description for an Amplify App
+            /// The description for an Amplify app.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
+            /// EnableBranchAutoDeletion
+            /// Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
+            /// repository.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> EnableBranchAutoDeletion { get; set; }
+
+            /// <summary>
+            /// Name
+            /// The name for an Amplify app.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Name { get; set; }
+
+            /// <summary>
+            /// Repository
+            /// The repository for an Amplify app.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Repository { get; set; }
 
             /// <summary>
             /// EnvironmentVariables
-            /// Environment variables map for an Amplify App.
+            /// The environment variables map for an Amplify app.
             /// Required: No
             /// Type: List of EnvironmentVariable
             /// Update requires: No interruption
             /// </summary>
-			public List<EnvironmentVariable> EnvironmentVariables { get; set; }
+            public List<EnvironmentVariable> EnvironmentVariables { get; set; }
 
             /// <summary>
             /// AccessToken
@@ -67,61 +85,62 @@ namespace Comformation.Amplify.App
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AccessToken { get; set; }
+            public Union<string, IntrinsicFunction> AccessToken { get; set; }
 
             /// <summary>
             /// BuildSpec
-            /// BuildSpec for an Amplify App
+            /// The build specification (build spec) for an Amplify app.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> BuildSpec { get; set; }
+            public Union<string, IntrinsicFunction> BuildSpec { get; set; }
 
             /// <summary>
             /// CustomRules
-            /// Custom rewrite / redirect rules for an Amplify App.
+            /// The custom rewrite and redirect rules for an Amplify app.
             /// Required: No
             /// Type: List of CustomRule
             /// Update requires: No interruption
             /// </summary>
-			public List<CustomRule> CustomRules { get; set; }
+            public List<CustomRule> CustomRules { get; set; }
 
             /// <summary>
             /// BasicAuthConfig
-            /// Credentials for Basic Authorization for an Amplify App.
+            /// The credentials for basic authorization for an Amplify app.
             /// Required: No
             /// Type: BasicAuthConfig
             /// Update requires: No interruption
             /// </summary>
-			public BasicAuthConfig BasicAuthConfig { get; set; }
+            public BasicAuthConfig BasicAuthConfig { get; set; }
+
+            /// <summary>
+            /// CustomHeaders
+            /// The custom HTTP headers for an Amplify app.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> CustomHeaders { get; set; }
 
             /// <summary>
             /// Tags
-            /// Tag for an Amplify App
+            /// The tag for an Amplify app.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
-
-            /// <summary>
-            /// Name
-            /// Name for the Amplify App
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// IAMServiceRole
-            /// IAM service role ARN for the Amplify App.
+            /// The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the
+            /// Amplify app.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IAMServiceRole { get; set; }
+            public Union<string, IntrinsicFunction> IAMServiceRole { get; set; }
 
         }
 
@@ -131,11 +150,11 @@ namespace Comformation.Amplify.App
 
     }
 
-	public static class AppAttributes
-	{
+    public static class AppAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AppId = new ResourceAttribute<Union<string, IntrinsicFunction>>("AppId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultDomain = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultDomain");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AppName = new ResourceAttribute<Union<string, IntrinsicFunction>>("AppName");
-	}
+    }
 }

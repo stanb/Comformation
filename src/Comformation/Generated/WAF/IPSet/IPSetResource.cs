@@ -6,9 +6,6 @@ namespace Comformation.WAF.IPSet
 {
     /// <summary>
     /// AWS::WAF::IPSet
-    /// Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
-    /// notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports
-    /// IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html
     /// </summary>
     public class IPSetResource : ResourceBase
@@ -27,7 +24,7 @@ namespace Comformation.WAF.IPSet
             /// Type: List of IPSetDescriptor
             /// Update requires: No interruption
             /// </summary>
-			public List<IPSetDescriptor> IPSetDescriptors { get; set; }
+            public List<IPSetDescriptor> IPSetDescriptors { get; set; }
 
             /// <summary>
             /// Name
@@ -38,9 +35,10 @@ namespace Comformation.WAF.IPSet
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

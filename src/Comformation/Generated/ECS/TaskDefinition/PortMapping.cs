@@ -7,9 +7,6 @@ namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
     /// AWS::ECS::TaskDefinition PortMapping
-    /// The PortMapping property specifies a port mapping. Port mappings allow containers to access ports on the host
-    /// container instance to send or receive traffic. Port mappings are specified as part of the container
-    /// definition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html
     /// </summary>
     public class PortMapping
@@ -17,16 +14,18 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// ContainerPort
-        /// The port number on the container that is bound to the user-specified or automatically assigned host
-        /// port.
-        /// If you are using containers in a task with the awsvpc or host network mode, exposed ports should be
-        /// specified using containerPort.
-        /// If you are using containers in a task with the bridge network mode and you specify a container port
-        /// and not a host port, your container automatically receives a host port in the ephemeral port range.
-        /// For more information, see hostPort. Port mappings that are automatically assigned in this way do not
-        /// count toward the 100 reserved ports limit of a container instance.
-        /// Important You cannot expose the same container port for multiple protocols. An error will be
-        /// returned if this is attempted.
+        /// 		
+        /// The port number on the container that is bound to the user-specified or automatically 			assigned
+        /// host port.
+        /// 		
+        /// If you are using containers in a task with the awsvpc or 				host network mode, exposed ports should
+        /// be specified using 				containerPort.
+        /// 		
+        /// If you are using containers in a task with the bridge network mode and 			you specify a container
+        /// port and not a host port, your container automatically receives 			a host port in the ephemeral port
+        /// range. For more information, see 			hostPort. Port mappings that are automatically assigned in this
+        /// way do not 			count toward the 100 reserved ports limit of a container instance.
+        /// 	
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
@@ -65,10 +64,12 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Protocol
-        /// The protocol used for the port mapping. Valid values are tcp and udp. The default is tcp.
+        /// 		
+        /// The protocol used for the port mapping. Valid values are tcp and 				udp. The default is tcp.
+        /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: tcp | udp
+        /// Allowed values: tcp | udp
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Protocol")]

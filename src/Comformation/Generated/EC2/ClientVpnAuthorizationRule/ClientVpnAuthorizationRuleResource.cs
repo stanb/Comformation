@@ -6,9 +6,6 @@ namespace Comformation.EC2.ClientVpnAuthorizationRule
 {
     /// <summary>
     /// AWS::EC2::ClientVpnAuthorizationRule
-    /// Specifies an ingress authorization rule to add to a Client VPN endpoint. Ingress authorization 			rules act as
-    /// firewall rules that grant access to networks. You must configure ingress authorization 			rules to enable
-    /// clients to access resources in AWS or on-premises networks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html
     /// </summary>
     public class ClientVpnAuthorizationRuleResource : ResourceBase
@@ -24,7 +21,7 @@ namespace Comformation.EC2.ClientVpnAuthorizationRule
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClientVpnEndpointId { get; set; }
+            public Union<string, IntrinsicFunction> ClientVpnEndpointId { get; set; }
 
             /// <summary>
             /// Description
@@ -35,18 +32,19 @@ namespace Comformation.EC2.ClientVpnAuthorizationRule
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AccessGroupId
-            /// 		
-            /// The ID of the Active Directory group to grant access.
+            /// 	
+            /// The ID of the group to grant access to, for example, the Active Directory group or identity provider
+            /// (IdP) group. Required if AuthorizeAllGroups is false or not specified.
             /// 	
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AccessGroupId { get; set; }
+            public Union<string, IntrinsicFunction> AccessGroupId { get; set; }
 
             /// <summary>
             /// TargetNetworkCidr
@@ -57,19 +55,20 @@ namespace Comformation.EC2.ClientVpnAuthorizationRule
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetNetworkCidr { get; set; }
+            public Union<string, IntrinsicFunction> TargetNetworkCidr { get; set; }
 
             /// <summary>
             /// AuthorizeAllGroups
             /// 		
-            /// Indicates whether to grant access to all clients. Use true to grant all clients 			who successfully
-            /// establish a VPN connection access to the network.
+            /// Indicates whether to grant access to all clients. Specify true to grant all clients who successfully
+            /// establish a VPN connection access to the network. Must be set to true if AccessGroupId is not
+            /// specified.
             /// 	
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> AuthorizeAllGroups { get; set; }
+            public Union<bool, IntrinsicFunction> AuthorizeAllGroups { get; set; }
 
         }
 

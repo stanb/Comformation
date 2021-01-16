@@ -6,8 +6,6 @@ namespace Comformation.KMS.Alias
 {
     /// <summary>
     /// AWS::KMS::Alias
-    /// The AWS::KMS::Alias resource specifies a display name for a customer master key (CMK) in AWS Key Management
-    /// Service (AWS KMS). You can use an alias to identify a CMK in cryptographic operations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html
     /// </summary>
     public class AliasResource : ResourceBase
@@ -17,20 +15,27 @@ namespace Comformation.KMS.Alias
             /// <summary>
             /// AliasName
             /// Specifies the alias name. This value must begin with alias/ followed by a name, such as
-            /// alias/ExampleAlias. The alias name cannot begin with alias/aws/. The alias/aws/ prefix is reserved
-            /// for AWS managed CMKs.
-            /// Required: Yes
-            /// Type: String
+            /// alias/ExampleAlias.
+            /// The alias must be string of 1-256 characters. It can contain only alphanumeric characters, forward
+            /// slashes (/), underscores (_), and dashes (-). The alias name cannot begin with alias/aws/. The
+            /// alias/aws/ prefix is reserved for AWS managed CMKs.
+            /// Pattern: alias/^[a-zA-Z0-9/_-]+$
             /// Minimum: 1
             /// Maximum: 256
-            /// Pattern: ^[a-zA-Z0-9:/_-]+$
+            /// Required: Yes
+            /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AliasName { get; set; }
+            public Union<string, IntrinsicFunction> AliasName { get; set; }
 
             /// <summary>
             /// TargetKeyId
-            /// Identifies the CMK to which the alias refers.
+            /// Associates the alias with the specified customer managed CMK. The CMK must be in the same AWS
+            /// account and Region.
+            /// A valid CMK ID is required. If you supply a null or empty string value, this operation returns an
+            /// error.
+            /// For help finding the key ID and ARN, see Finding the key ID and ARN in the AWS Key Management
+            /// Service Developer Guide.
             /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
             /// For example:
             /// Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab Key ARN:
@@ -42,7 +47,7 @@ namespace Comformation.KMS.Alias
             /// Maximum: 2048
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetKeyId { get; set; }
+            public Union<string, IntrinsicFunction> TargetKeyId { get; set; }
 
         }
 

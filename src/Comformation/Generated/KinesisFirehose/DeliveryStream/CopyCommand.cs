@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream CopyCommand
-    /// The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose
-    /// (Kinesis Data Firehose) uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html
     /// </summary>
     public class CopyCommand
@@ -20,6 +18,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// for the CopyCommand data type in the Amazon Kinesis Data Firehose API Reference.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 204800
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CopyOptions")]
@@ -30,6 +31,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// A comma-separated list of column names.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 204800
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataTableColumns")]
@@ -41,6 +45,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
+        /// Maximum: 512
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataTableName")]

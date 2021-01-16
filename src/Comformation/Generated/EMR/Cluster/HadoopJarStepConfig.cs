@@ -7,9 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster HadoopJarStepConfig
-    /// The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main function
-    /// will be executed. The main function submits a job for the cluster to execute as a step on the master node, and
-    /// then waits for the job to finish or fail before executing subsequent steps.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html
     /// </summary>
     public class HadoopJarStepConfig

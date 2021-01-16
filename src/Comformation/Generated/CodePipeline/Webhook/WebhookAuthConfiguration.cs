@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Webhook
 {
     /// <summary>
     /// AWS::CodePipeline::Webhook WebhookAuthConfiguration
-    /// The authentication applied to incoming webhook trigger requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html
     /// </summary>
     public class WebhookAuthConfiguration

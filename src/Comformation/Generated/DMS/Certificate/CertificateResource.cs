@@ -6,8 +6,6 @@ namespace Comformation.DMS.Certificate
 {
     /// <summary>
     /// AWS::DMS::Certificate
-    /// The AWS::DMS::Certificate resource creates an SSL certificate that encrypts connections between AWS DMS
-    /// endpoints and the replication instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
@@ -16,14 +14,14 @@ namespace Comformation.DMS.Certificate
         {
             /// <summary>
             /// CertificateIdentifier
-            /// A customer-assigned name for the certificate. Identifiers must begin with a letter; must contain
-            /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive
+            /// A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain
+            /// only ASCII letters, digits, and hyphens. They can&#39;t end with a hyphen or contain two consecutive
             /// hyphens.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CertificateIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> CertificateIdentifier { get; set; }
 
             /// <summary>
             /// CertificatePem
@@ -32,7 +30,7 @@ namespace Comformation.DMS.Certificate
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CertificatePem { get; set; }
+            public Union<string, IntrinsicFunction> CertificatePem { get; set; }
 
             /// <summary>
             /// CertificateWallet
@@ -41,7 +39,7 @@ namespace Comformation.DMS.Certificate
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CertificateWallet { get; set; }
+            public Union<string, IntrinsicFunction> CertificateWallet { get; set; }
 
         }
 

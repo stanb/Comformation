@@ -7,7 +7,6 @@ namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
     /// AWS::SSM::PatchBaseline PatchSource
-    /// PatchSource is the property type for the Sources resource of the AWS::SSM::PatchBaseline resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html
     /// </summary>
     public class PatchSource
@@ -30,9 +29,11 @@ namespace Comformation.SSM.PatchBaseline
         /// Configuration
         /// The value of the yum repo configuration. For example:
         /// [main]
-        /// cachedir=/var/cache/yum/$basesearch$releasever
-        /// keepcache=0
-        /// debuglevel=2
+        /// name=MyCustomRepository
+        /// baseurl=https://my-custom-repository
+        /// enabled=1
+        /// Note For information about other options available for your yum repository configuration, see dnf.
+        /// conf(5).
         /// Required: No
         /// Type: String
         /// Minimum: 1

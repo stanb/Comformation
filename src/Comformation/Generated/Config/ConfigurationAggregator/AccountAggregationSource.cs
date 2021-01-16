@@ -7,7 +7,6 @@ namespace Comformation.Config.ConfigurationAggregator
 {
     /// <summary>
     /// AWS::Config::ConfigurationAggregator AccountAggregationSource
-    /// A collection of accounts and regions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html
     /// </summary>
     public class AccountAggregationSource

@@ -7,7 +7,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution DistributionConfig
-    /// A distribution configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
     /// </summary>
     public class DistributionConfig
@@ -90,9 +89,8 @@ namespace Comformation.CloudFront.Distribution
         /// <summary>
         /// ViewerCertificate
         /// 		
-        /// A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects,
-        /// 			whether you&#39;re using an alternate domain name with HTTPS, and if so, if you&#39;re using AWS
-        /// Certificate Manager (ACM) 			or a third-party certificate authority.
+        /// A complex type that determines the distribution’s SSL/TLS configuration for 			communicating with
+        /// viewers.
         /// 	
         /// Required: No
         /// Type: ViewerCertificate
@@ -113,14 +111,14 @@ namespace Comformation.CloudFront.Distribution
         /// class. Viewers who are in or near regions that are excluded from your specified 			price class may
         /// encounter slower performance.
         /// 		
-        /// For more information about price classes, see Choosing the Price Class for a CloudFront Distribution
-        /// in the 			Amazon CloudFront Developer Guide. For information about CloudFront pricing, including how
-        /// price 			classes (such as Price Class 100) map to CloudFront regions, see 			Amazon CloudFront
-        /// Pricing. 			For price class information, scroll down to see the table at the bottom of the page.
+        /// For more information about price classes, see Choosing the Price Class 			for a CloudFront
+        /// Distribution in the Amazon CloudFront Developer Guide. For 			information about CloudFront pricing,
+        /// including how price classes (such as Price Class 100) 			map to CloudFront regions, see Amazon
+        /// CloudFront 			Pricing.
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: PriceClass_100 | PriceClass_200 | PriceClass_All
+        /// Allowed values: PriceClass_100 | PriceClass_200 | PriceClass_All
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PriceClass")]
@@ -160,10 +158,22 @@ namespace Comformation.CloudFront.Distribution
         public List<CustomErrorResponse> CustomErrorResponses { get; set; }
 
         /// <summary>
+        /// OriginGroups
+        /// 		
+        /// A complex type that contains information about origin groups for this 			distribution.
+        /// 	
+        /// Required: No
+        /// Type: OriginGroups
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OriginGroups")]
+        public OriginGroups OriginGroups { get; set; }
+
+        /// <summary>
         /// Enabled
         /// 		
         /// From this field, you can enable or disable the selected distribution.
-        /// 		 	
+        /// 	
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption
@@ -224,8 +234,12 @@ namespace Comformation.CloudFront.Distribution
         /// <summary>
         /// WebACLId
         /// 		
-        /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate with 			this
-        /// distribution.
+        /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate 			with this
+        /// distribution. To specify a web ACL created using the latest version of AWS 			WAF, use the ACL ARN,
+        /// for example
+        /// 			arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a.
+        /// 			To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+        /// 			473e64fd-f30b-4765-81a0-62ad96dd167a.
         /// 		
         /// AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS 			requests that are
         /// forwarded to CloudFront, and lets you control access to your content. Based on 			conditions that
@@ -243,21 +257,19 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// HttpVersion
+        /// 	 		
+        /// (Optional) Specify the maximum HTTP version that you want viewers to use to 			communicate with
+        /// CloudFront. The default value for new web distributions is 			http1. 1.
         /// 		
-        /// (Optional) Specify the maximum HTTP version that you want viewers to use to communicate 			with
-        /// CloudFront. The default value for new web distributions is http2. Viewers that don&#39;t support
-        /// 			HTTP/2 automatically use an earlier HTTP version.
+        /// For viewers and CloudFront to use HTTP/2, viewers must support TLS 1. 2 or later, and 			must
+        /// support server name identification (SNI).
         /// 		
-        /// For viewers and CloudFront to use HTTP/2, viewers must support TLS 1. 2 or later, and must
-        /// 			support Server Name Identification (SNI).
-        /// 		
-        /// In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. 			You
-        /// can improve performance by optimizing for HTTP/2. For more information, do an Internet 			search for
-        /// &quot;http/2 optimization. &quot;
+        /// In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces 			latency. You
+        /// can improve performance by optimizing for HTTP/2.
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: http1. 1 | http2
+        /// Allowed values: http1. 1 | http2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("HttpVersion")]

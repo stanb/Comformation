@@ -6,7 +6,6 @@ namespace Comformation.SES.ReceiptRuleSet
 {
     /// <summary>
     /// AWS::SES::ReceiptRuleSet
-    /// Specifies an empty receipt rule set.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html
     /// </summary>
     public class ReceiptRuleSetResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.SES.ReceiptRuleSet
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
+            public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 
         }
 

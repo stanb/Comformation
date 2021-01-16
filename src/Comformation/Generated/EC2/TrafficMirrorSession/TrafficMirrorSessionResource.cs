@@ -6,7 +6,6 @@ namespace Comformation.EC2.TrafficMirrorSession
 {
     /// <summary>
     /// AWS::EC2::TrafficMirrorSession
-    /// Creates a Traffic Mirror session.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html
     /// </summary>
     public class TrafficMirrorSessionResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TrafficMirrorTargetId { get; set; }
+            public Union<string, IntrinsicFunction> TrafficMirrorTargetId { get; set; }
 
             /// <summary>
             /// Description
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SessionNumber
@@ -40,7 +39,7 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> SessionNumber { get; set; }
+            public Union<int, IntrinsicFunction> SessionNumber { get; set; }
 
             /// <summary>
             /// VirtualNetworkId
@@ -50,7 +49,7 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> VirtualNetworkId { get; set; }
+            public Union<int, IntrinsicFunction> VirtualNetworkId { get; set; }
 
             /// <summary>
             /// PacketLength
@@ -64,7 +63,7 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> PacketLength { get; set; }
+            public Union<int, IntrinsicFunction> PacketLength { get; set; }
 
             /// <summary>
             /// NetworkInterfaceId
@@ -73,7 +72,7 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
             /// <summary>
             /// TrafficMirrorFilterId
@@ -82,16 +81,16 @@ namespace Comformation.EC2.TrafficMirrorSession
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TrafficMirrorFilterId { get; set; }
+            public Union<string, IntrinsicFunction> TrafficMirrorFilterId { get; set; }
 
             /// <summary>
             /// Tags
             /// The tags to assign to a Traffic Mirror session.
             /// Required: No
             /// Type: List of Tag
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

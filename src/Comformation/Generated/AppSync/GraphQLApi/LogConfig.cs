@@ -7,8 +7,6 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi LogConfig
-    /// The LogConfig property type specifies the logging configuration when writing GraphQL operations and tracing to
-    /// Amazon CloudWatch for a AWS AppSync GraphQL API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
     /// </summary>
     public class LogConfig

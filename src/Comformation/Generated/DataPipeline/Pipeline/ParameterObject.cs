@@ -7,7 +7,6 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline ParameterObject
-    /// Contains information about a parameter object.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html
     /// </summary>
     public class ParameterObject

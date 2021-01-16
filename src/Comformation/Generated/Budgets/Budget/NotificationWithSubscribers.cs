@@ -7,8 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget NotificationWithSubscribers
-    /// A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers,
-    /// for a total of 11 subscribers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html
     /// </summary>
     public class NotificationWithSubscribers

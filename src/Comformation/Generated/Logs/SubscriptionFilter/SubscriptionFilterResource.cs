@@ -6,9 +6,6 @@ namespace Comformation.Logs.SubscriptionFilter
 {
     /// <summary>
     /// AWS::Logs::SubscriptionFilter
-    /// The AWS::Logs::SubscriptionFilter resource specifies a subscription filter and associates it with the
-    /// specified log group. Subscription filters allow you to subscribe to a real-time stream of log events and have
-    /// them delivered to a specific destination. Currently, the supported destinations are:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
     /// </summary>
     public class SubscriptionFilterResource : ResourceBase
@@ -23,7 +20,7 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Minimum: 1
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationArn { get; set; }
+            public Union<string, IntrinsicFunction> DestinationArn { get; set; }
 
             /// <summary>
             /// FilterPattern
@@ -33,7 +30,7 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FilterPattern { get; set; }
+            public Union<string, IntrinsicFunction> FilterPattern { get; set; }
 
             /// <summary>
             /// LogGroupName
@@ -47,18 +44,19 @@ namespace Comformation.Logs.SubscriptionFilter
             /// Pattern: [\. \-_/#A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
+            public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// RoleArn
             /// The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the
-            /// destination stream.
+            /// destination stream. You don&#39;t need to provide the ARN when you are working with a logical
+            /// destination for cross-account delivery.
             /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
 

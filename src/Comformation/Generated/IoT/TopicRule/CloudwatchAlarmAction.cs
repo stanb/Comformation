@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule CloudwatchAlarmAction
-    /// Describes an action that updates a CloudWatch alarm.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html
     /// </summary>
     public class CloudwatchAlarmAction

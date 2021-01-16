@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::DeviceDefinitionVersion Device
-    /// A device is an AWS IoT device (thing) that&#39;s added to a Greengrass group. 	 Greengrass devices can communicate
-    /// with the Greengrass core in the same group. 	 For more information, see What Is AWS IoT Greengrass? in the AWS
-    /// IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html
     /// </summary>
     public class Device

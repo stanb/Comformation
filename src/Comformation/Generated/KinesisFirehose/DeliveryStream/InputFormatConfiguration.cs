@@ -7,7 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream InputFormatConfiguration
-    /// Specifies the deserializer you want to use to convert the format of the input data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html
     /// </summary>
     public class InputFormatConfiguration
@@ -17,7 +16,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Deserializer
         /// Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX
         /// JSON SerDe. If both are non-null, the server rejects the request.
-        /// Required: Yes
+        /// Required: No
         /// Type: Deserializer
         /// Update requires: No interruption
         /// </summary>

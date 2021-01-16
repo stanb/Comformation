@@ -7,8 +7,6 @@ namespace Comformation.Config.ConfigRule
 {
     /// <summary>
     /// AWS::Config::ConfigRule Source
-    /// Provides the AWS Config rule owner (AWS or customer), the rule 			identifier, and the events that trigger the
-    /// evaluation of your AWS 			resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html
     /// </summary>
     public class Source
@@ -21,7 +19,7 @@ namespace Comformation.Config.ConfigRule
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: AWS | CUSTOM_LAMBDA
+        /// Allowed values: AWS | CUSTOM_LAMBDA
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Owner")]

@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
     /// AWS::ApiGateway::Deployment MethodSetting
-    /// The MethodSetting property type configures settings for all methods in a stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html
     /// </summary>
     public class MethodSetting

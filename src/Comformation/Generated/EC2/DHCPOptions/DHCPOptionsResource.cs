@@ -6,7 +6,6 @@ namespace Comformation.EC2.DHCPOptions
 {
     /// <summary>
     /// AWS::EC2::DHCPOptions
-    /// Specifies a set of DHCP options for your VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html
     /// </summary>
     public class DHCPOptionsResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DomainName { get; set; }
+            public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// DomainNameServers
@@ -35,7 +34,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> DomainNameServers { get; set; }
+            public List<Union<string, IntrinsicFunction>> DomainNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNameServers
@@ -44,7 +43,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> NetbiosNameServers { get; set; }
+            public List<Union<string, IntrinsicFunction>> NetbiosNameServers { get; set; }
 
             /// <summary>
             /// NetbiosNodeType
@@ -54,7 +53,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> NetbiosNodeType { get; set; }
+            public Union<int, IntrinsicFunction> NetbiosNodeType { get; set; }
 
             /// <summary>
             /// NtpServers
@@ -63,7 +62,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> NtpServers { get; set; }
+            public List<Union<string, IntrinsicFunction>> NtpServers { get; set; }
 
             /// <summary>
             /// Tags
@@ -73,7 +72,7 @@ namespace Comformation.EC2.DHCPOptions
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

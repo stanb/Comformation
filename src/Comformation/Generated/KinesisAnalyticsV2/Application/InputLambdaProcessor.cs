@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application InputLambdaProcessor
-    /// An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess
-    /// records in the stream in an SQL-based Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputlambdaprocessor.html
     /// </summary>
     public class InputLambdaProcessor

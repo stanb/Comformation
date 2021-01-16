@@ -6,10 +6,6 @@ namespace Comformation.DirectoryService.SimpleAD
 {
     /// <summary>
     /// AWS::DirectoryService::SimpleAD
-    /// The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory
-    /// (Simple AD) in AWS so that your directory users and groups can access the AWS Management Console and AWS
-    /// applications using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory.
-    /// For more information, see Simple Active Directory in the AWS Directory Service Admin Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
     /// </summary>
     public class SimpleADResource : ResourceBase
@@ -27,7 +23,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
+            public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
 
             /// <summary>
             /// Description
@@ -39,7 +35,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?. /!\s-]*$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// EnableSso
@@ -49,7 +45,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
+            public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
             /// <summary>
             /// Name
@@ -59,7 +55,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Pattern: ^([a-zA-Z0-9]+[\\. -])+([a-zA-Z0-9])+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Password
@@ -74,17 +70,17 @@ namespace Comformation.DirectoryService.SimpleAD
             /// *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Password { get; set; }
+            public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
             /// ShortName
             /// The NetBIOS name of the directory, such as CORP.
             /// Required: No
             /// Type: String
-            /// Pattern: ^[^\\/:*?\&quot;\&amp;lt;\&amp;gt;|. ]+[^\\/:*?\&quot;&amp;lt;&amp;gt;|]*$
+            /// Pattern: ^[^\\/:*?&quot;&amp;lt;&amp;gt;|. ]+[^\\/:*?&quot;&amp;lt;&amp;gt;|]*$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ShortName { get; set; }
+            public Union<string, IntrinsicFunction> ShortName { get; set; }
 
             /// <summary>
             /// Size
@@ -92,10 +88,10 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Reference.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: Large | Small
+            /// Allowed values: Large | Small
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Size { get; set; }
+            public Union<string, IntrinsicFunction> Size { get; set; }
 
             /// <summary>
             /// VpcSettings
@@ -104,7 +100,7 @@ namespace Comformation.DirectoryService.SimpleAD
             /// Type: VpcSettings
             /// Update requires: Replacement
             /// </summary>
-			public VpcSettings VpcSettings { get; set; }
+            public VpcSettings VpcSettings { get; set; }
 
         }
 
@@ -114,9 +110,9 @@ namespace Comformation.DirectoryService.SimpleAD
 
     }
 
-	public static class SimpleADAttributes
-	{
+    public static class SimpleADAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Alias = new ResourceAttribute<Union<string, IntrinsicFunction>>("Alias");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> DnsIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("DnsIpAddresses");
-	}
+    }
 }

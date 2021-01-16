@@ -6,11 +6,6 @@ namespace Comformation.GuardDuty.Master
 {
     /// <summary>
     /// AWS::GuardDuty::Master
-    /// You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a
-    /// GuardDuty master account. The invitation to the member account must be sent prior to using the
-    /// AWS::GuardDuty::Master resource to accept the master account&#39;s invitation. You can invite a member account by
-    /// using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member
-    /// resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html
     /// </summary>
     public class MasterResource : ResourceBase
@@ -19,12 +14,14 @@ namespace Comformation.GuardDuty.Master
         {
             /// <summary>
             /// DetectorId
-            /// The unique ID of the detector associated with the GuardDuty master account.
+            /// The unique ID of the detector of the GuardDuty member account.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 300
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DetectorId { get; set; }
+            public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
             /// <summary>
             /// MasterId
@@ -33,7 +30,7 @@ namespace Comformation.GuardDuty.Master
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterId { get; set; }
+            public Union<string, IntrinsicFunction> MasterId { get; set; }
 
             /// <summary>
             /// InvitationId
@@ -43,7 +40,7 @@ namespace Comformation.GuardDuty.Master
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InvitationId { get; set; }
+            public Union<string, IntrinsicFunction> InvitationId { get; set; }
 
         }
 

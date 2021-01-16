@@ -7,7 +7,6 @@ namespace Comformation.Glue.Database
 {
     /// <summary>
     /// AWS::Glue::Database DatabaseInput
-    /// The structure used to create or update a database.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html
     /// </summary>
     public class DatabaseInput
@@ -36,13 +35,22 @@ namespace Comformation.Glue.Database
         /// <summary>
         /// Parameters
         /// These key-value pairs define parameters and properties of the database.
-        /// These key-value pairs define parameters and properties of the database.
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Parameters")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+
+        /// <summary>
+        /// TargetDatabase
+        /// A DatabaseIdentifier structure that describes a target database for resource linking.
+        /// Required: No
+        /// Type: DatabaseIdentifier
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TargetDatabase")]
+        public DatabaseIdentifier TargetDatabase { get; set; }
 
         /// <summary>
         /// Name

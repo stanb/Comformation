@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool SmsConfiguration
-    /// SmsConfiguration is a property of the AWS::Cognito::UserPool resource that defines the SMS configuration of an
-    /// Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html
     /// </summary>
     public class SmsConfiguration
@@ -16,9 +14,12 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// ExternalId
-        /// The external ID used in IAM role trust relationships.
-        /// For more information about using external IDs, see How to Use an External ID When Granting Access to
-        /// Your AWS Resources to a Third Party in the AWS Identity and Access Management User Guide.
+        /// The external ID is a value. We recommend you use ExternalIdto add security to your IAM role, which
+        /// is used to call Amazon SNS to send SMS messages for your user pool. If you provide an ExternalId,
+        /// the Cognito User Pool uses it when attempting to assume your IAM role. You can also set your roles
+        /// trust policy to require the ExternalID. If you use the Cognito Management Console to create a role
+        /// for SMS MFA, Cognito creates a role with the required permissions and a trust policy that uses
+        /// ExternalId.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -29,7 +30,8 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// SnsCallerArn
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the
-        /// ARN of the IAM role in your AWS account which Cognito will use to send SMS messages.
+        /// ARN of the IAM role in your AWS account which Cognito will use to send SMS messages. SMS messages
+        /// are subject to a spending limit.
         /// Required: No
         /// Type: String
         /// Minimum: 20

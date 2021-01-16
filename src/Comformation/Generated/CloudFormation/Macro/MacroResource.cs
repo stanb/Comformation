@@ -6,9 +6,6 @@ namespace Comformation.CloudFormation.Macro
 {
     /// <summary>
     /// AWS::CloudFormation::Macro
-    /// The AWS::CloudFormation::Macro resource is an CloudFormation resource type that creates an CloudFormation
-    /// macro to perform custom processing on CloudFormation templates. For more information, see Using AWS
-    /// CloudFormation Macros to Perform Custom Processing on Templates.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html
     /// </summary>
     public class MacroResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.CloudFormation.Macro
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// FunctionName
@@ -32,7 +29,7 @@ namespace Comformation.CloudFormation.Macro
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionName { get; set; }
+            public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
             /// LogGroupName
@@ -42,7 +39,7 @@ namespace Comformation.CloudFormation.Macro
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
+            public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// LogRoleARN
@@ -51,7 +48,7 @@ namespace Comformation.CloudFormation.Macro
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> LogRoleARN { get; set; }
+            public Union<string, IntrinsicFunction> LogRoleARN { get; set; }
 
             /// <summary>
             /// Name
@@ -60,7 +57,7 @@ namespace Comformation.CloudFormation.Macro
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

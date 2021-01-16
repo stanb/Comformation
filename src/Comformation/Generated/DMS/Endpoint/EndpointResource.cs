@@ -6,7 +6,6 @@ namespace Comformation.DMS.Endpoint
 {
     /// <summary>
     /// AWS::DMS::Endpoint
-    /// The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html
     /// </summary>
     public class EndpointResource : ResourceBase
@@ -24,7 +23,18 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
+            /// KafkaSettings
+            /// Settings in JSON format for the target Apache Kafka endpoint. For more information about the
+            /// available settings, see Using Apache Kafka as a Target for AWS Database Migration Service in the AWS
+            /// Database Migration Service User Guide.
+            /// Required: No
+            /// Type: KafkaSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public KafkaSettings KafkaSettings { get; set; }
 
             /// <summary>
             /// Port
@@ -33,7 +43,7 @@ namespace Comformation.DMS.Endpoint
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -42,18 +52,27 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+            public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+
+            /// <summary>
+            /// NeptuneSettings
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: NeptuneSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public NeptuneSettings NeptuneSettings { get; set; }
 
             /// <summary>
             /// ElasticsearchSettings
             /// Settings in JSON format for the target Elasticsearch endpoint. For more information about the
             /// available settings, see Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS
-            /// in the AWS Database Migration User Guide.
+            /// in the AWS Database Migration Service User Guide.
             /// Required: No
             /// Type: ElasticsearchSettings
             /// Update requires: No interruption
             /// </summary>
-			public ElasticsearchSettings ElasticsearchSettings { get; set; }
+            public ElasticsearchSettings ElasticsearchSettings { get; set; }
 
             /// <summary>
             /// S3Settings
@@ -64,40 +83,41 @@ namespace Comformation.DMS.Endpoint
             /// Type: S3Settings
             /// Update requires: No interruption
             /// </summary>
-			public S3Settings S3Settings { get; set; }
+            public S3Settings S3Settings { get; set; }
 
             /// <summary>
             /// EngineName
             /// The type of engine for the endpoint. Valid values, depending on the EndpointType value, include
-            /// mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase,
-            /// dynamodb, mongodb, and sqlserver.
+            /// &quot;mysql&quot;, &quot;oracle&quot;, &quot;postgres&quot;, &quot;mariadb&quot;, &quot;aurora&quot;, &quot;aurora-postgresql&quot;, &quot;redshift&quot;, &quot;s3&quot;, &quot;db2&quot;,
+            /// &quot;azuredb&quot;, &quot;sybase&quot;, &quot;dynamodb&quot;, &quot;mongodb&quot;, &quot;kinesis&quot;, &quot;kafka&quot;, &quot;elasticsearch&quot;, &quot;docdb&quot;,
+            /// &quot;sqlserver&quot;, and &quot;neptune&quot;.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineName { get; set; }
+            public Union<string, IntrinsicFunction> EngineName { get; set; }
 
             /// <summary>
             /// DynamoDbSettings
-            /// Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the
+            /// Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
             /// available settings, see Using Object Mapping to Migrate Data to DynamoDB in the AWS Database
             /// Migration Service User Guide.
             /// Required: No
             /// Type: DynamoDbSettings
             /// Update requires: No interruption
             /// </summary>
-			public DynamoDbSettings DynamoDbSettings { get; set; }
+            public DynamoDbSettings DynamoDbSettings { get; set; }
 
             /// <summary>
             /// KinesisSettings
-            /// Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information
-            /// about the available settings, see Using Object Mapping to Migrate Data to a Kinesis Data Stream in
-            /// the AWS Database Migration User Guide.
+            /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more
+            /// information about the available settings, see Using Amazon Kinesis Data Streams as a Target for AWS
+            /// Database Migration Service in the AWS Database Migration Service User Guide.
             /// Required: No
             /// Type: KinesisSettings
             /// Update requires: No interruption
             /// </summary>
-			public KinesisSettings KinesisSettings { get; set; }
+            public KinesisSettings KinesisSettings { get; set; }
 
             /// <summary>
             /// Username
@@ -106,17 +126,18 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Username { get; set; }
+            public Union<string, IntrinsicFunction> Username { get; set; }
 
             /// <summary>
             /// SslMode
             /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is none
+            /// Note When engine_name is set to S3 then the only alowed value is none
             /// Required: No
             /// Type: String
-            /// Allowed Values: none | require | verify-ca | verify-full
+            /// Allowed values: none | require | verify-ca | verify-full
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SslMode { get; set; }
+            public Union<string, IntrinsicFunction> SslMode { get; set; }
 
             /// <summary>
             /// ServerName
@@ -125,7 +146,7 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ServerName { get; set; }
+            public Union<string, IntrinsicFunction> ServerName { get; set; }
 
             /// <summary>
             /// ExtraConnectionAttributes
@@ -138,17 +159,17 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ExtraConnectionAttributes { get; set; }
+            public Union<string, IntrinsicFunction> ExtraConnectionAttributes { get; set; }
 
             /// <summary>
             /// EndpointType
             /// The type of endpoint. Valid values are source and target.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: source | target
+            /// Allowed values: source | target
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EndpointType { get; set; }
+            public Union<string, IntrinsicFunction> EndpointType { get; set; }
 
             /// <summary>
             /// Tags
@@ -157,17 +178,17 @@ namespace Comformation.DMS.Endpoint
             /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// EndpointIdentifier
-            /// The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII
-            /// letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+            /// The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+            /// letters, digits, and hyphens. They can&#39;t end with a hyphen, or contain two consecutive hyphens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EndpointIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> EndpointIdentifier { get; set; }
 
             /// <summary>
             /// Password
@@ -176,7 +197,7 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Password { get; set; }
+            public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
             /// CertificateArn
@@ -185,18 +206,18 @@ namespace Comformation.DMS.Endpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CertificateArn { get; set; }
+            public Union<string, IntrinsicFunction> CertificateArn { get; set; }
 
             /// <summary>
             /// MongoDbSettings
             /// Settings in JSON format for the source MongoDB endpoint. For more information about the available
-            /// settings, see the configuration properties section in Using MongoDB as a Target for AWS Database
-            /// Migration Service in the AWS Database Migration Service User Guide.
+            /// settings, see Using MongoDB as a Target for AWS Database Migration Service in the AWS Database
+            /// Migration Service User Guide.
             /// Required: No
             /// Type: MongoDbSettings
             /// Update requires: No interruption
             /// </summary>
-			public MongoDbSettings MongoDbSettings { get; set; }
+            public MongoDbSettings MongoDbSettings { get; set; }
 
         }
 
@@ -206,8 +227,8 @@ namespace Comformation.DMS.Endpoint
 
     }
 
-	public static class EndpointAttributes
-	{
+    public static class EndpointAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ExternalId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ExternalId");
-	}
+    }
 }

@@ -7,27 +7,15 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 {
     /// <summary>
     /// AWS::ServiceCatalog::CloudFormationProvisionedProduct ProvisioningParameter
-    /// Information about a parameter used to provision a product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html
     /// </summary>
     public class ProvisioningParameter
     {
 
         /// <summary>
-        /// Value
-        /// The parameter value.
-        /// Required: No
-        /// Type: String
-        /// Maximum: 4096
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Value")]
-        public Union<string, IntrinsicFunction> Value { get; set; }
-
-        /// <summary>
         /// Key
         /// The parameter key.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 1000
@@ -35,6 +23,17 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         /// </summary>
         [JsonProperty("Key")]
         public Union<string, IntrinsicFunction> Key { get; set; }
+
+        /// <summary>
+        /// Value
+        /// The parameter value.
+        /// Required: Yes
+        /// Type: String
+        /// Maximum: 4096
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Value")]
+        public Union<string, IntrinsicFunction> Value { get; set; }
 
     }
 }

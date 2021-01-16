@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.Volume
 {
     /// <summary>
     /// AWS::OpsWorks::Volume
-    /// Describes an instance&#39;s Amazon EBS volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html
     /// </summary>
     public class VolumeResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.OpsWorks.Volume
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Ec2VolumeId { get; set; }
+            public Union<string, IntrinsicFunction> Ec2VolumeId { get; set; }
 
             /// <summary>
             /// MountPoint
@@ -29,7 +28,7 @@ namespace Comformation.OpsWorks.Volume
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MountPoint { get; set; }
+            public Union<string, IntrinsicFunction> MountPoint { get; set; }
 
             /// <summary>
             /// Name
@@ -38,7 +37,7 @@ namespace Comformation.OpsWorks.Volume
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// StackId
@@ -47,7 +46,7 @@ namespace Comformation.OpsWorks.Volume
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StackId { get; set; }
+            public Union<string, IntrinsicFunction> StackId { get; set; }
 
         }
 

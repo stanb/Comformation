@@ -7,7 +7,6 @@ namespace Comformation.Glue.Crawler
 {
     /// <summary>
     /// AWS::Glue::Crawler Schedule
-    /// A scheduling object using a cron statement to schedule an event.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html
     /// </summary>
     public class Schedule

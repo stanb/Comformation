@@ -7,8 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowRunCommandParameters
-    /// The MaintenanceWindowRunCommandParameters property type specifies the parameters for a RUN_COMMAND task type
-    /// for a maintenance window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
     /// </summary>
     public class MaintenanceWindowRunCommandParameters
@@ -39,7 +37,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// OutputS3KeyPrefix
-        /// The Amazon S3 bucket subfolder.
+        /// The S3 bucket subfolder.
         /// Required: No
         /// Type: String
         /// Maximum: 500
@@ -51,6 +49,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// <summary>
         /// Parameters
         /// The parameters for the RUN_COMMAND task execution.
+        /// The supported parameters are the same as those for the SendCommand API call. For more information,
+        /// see SendCommand in the AWS Systems Manager API Reference.
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -63,7 +63,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// The SHA-256 or SHA-1 hash type. SHA-1 hashes are deprecated.
         /// Required: No
         /// Type: String
-        /// Allowed Values: Sha1 | Sha256
+        /// Allowed values: Sha1 | Sha256
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DocumentHashType")]
@@ -92,7 +92,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// OutputS3BucketName
-        /// The name of the Amazon S3 bucket.
+        /// The name of the S3 bucket.
         /// Required: No
         /// Type: String
         /// Minimum: 3

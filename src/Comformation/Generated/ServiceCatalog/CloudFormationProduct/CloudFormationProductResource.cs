@@ -6,13 +6,27 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 {
     /// <summary>
     /// AWS::ServiceCatalog::CloudFormationProduct
-    /// Specifies a product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
     /// </summary>
     public class CloudFormationProductResource : ResourceBase
     {
         public class CloudFormationProductProperties
         {
+            /// <summary>
+            /// ReplaceProvisioningArtifacts
+            /// This property is turned off by default. If turned off, you can update provisioning artifacts or
+            /// product attributes (such as description, distributor, name, owner, and more) and the associated
+            /// provisioning artifacts will retain the same unique identifier. Provisioning artifacts are matched
+            /// within the CloudFormationProduct resource, and only those that have been updated will be changed.
+            /// Provisioning artifacts are matched by a combinaton of provisioning artifact template URL and name.
+            /// If turned on, provisioning artifacts will be given a new unique identifier when you update the
+            /// product or provisioning artifacts.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> ReplaceProvisioningArtifacts { get; set; }
+
             /// <summary>
             /// Owner
             /// The owner of the product.
@@ -21,7 +35,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Owner { get; set; }
+            public Union<string, IntrinsicFunction> Owner { get; set; }
 
             /// <summary>
             /// SupportDescription
@@ -31,7 +45,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SupportDescription { get; set; }
+            public Union<string, IntrinsicFunction> SupportDescription { get; set; }
 
             /// <summary>
             /// Description
@@ -41,7 +55,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Distributor
@@ -51,7 +65,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Distributor { get; set; }
+            public Union<string, IntrinsicFunction> Distributor { get; set; }
 
             /// <summary>
             /// SupportEmail
@@ -61,7 +75,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 254
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SupportEmail { get; set; }
+            public Union<string, IntrinsicFunction> SupportEmail { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -72,17 +86,18 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// SupportUrl
             /// The contact URL for product support.
+            /// ^https?:\/\// / is the pattern used to validate SupportUrl.
             /// Required: No
             /// Type: String
             /// Maximum: 2083
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SupportUrl { get; set; }
+            public Union<string, IntrinsicFunction> SupportUrl { get; set; }
 
             /// <summary>
             /// Tags
@@ -92,7 +107,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -102,7 +117,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Maximum: 8191
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ProvisioningArtifactParameters
@@ -111,7 +126,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
             /// Type: List of ProvisioningArtifactProperties
             /// Update requires: No interruption
             /// </summary>
-			public List<ProvisioningArtifactProperties> ProvisioningArtifactParameters { get; set; }
+            public List<ProvisioningArtifactProperties> ProvisioningArtifactParameters { get; set; }
 
         }
 
@@ -121,10 +136,10 @@ namespace Comformation.ServiceCatalog.CloudFormationProduct
 
     }
 
-	public static class CloudFormationProductAttributes
-	{
+    public static class CloudFormationProductAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProductName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProductName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProvisioningArtifactIds = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProvisioningArtifactIds");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProvisioningArtifactNames = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProvisioningArtifactNames");
-	}
+    }
 }

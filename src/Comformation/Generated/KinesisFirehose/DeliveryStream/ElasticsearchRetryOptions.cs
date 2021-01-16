@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream ElasticsearchRetryOptions
-    /// The ElasticsearchRetryOptions property type configures the retry behavior for when Amazon Kinesis Data
-    /// Firehose (Kinesis Data Firehose) can&#39;t deliver data to Amazon Elasticsearch Service (Amazon ES).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html
     /// </summary>
     public class ElasticsearchRetryOptions
@@ -21,7 +19,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// the data within the specified time, it writes the data to the backup S3 bucket. For valid values,
         /// see the DurationInSeconds content for the ElasticsearchRetryOptions data type in the Amazon Kinesis
         /// Data Firehose API Reference.
-        /// Required: Yes
+        /// Required: No
         /// Type: Integer
         /// Minimum: 0
         /// Maximum: 7200

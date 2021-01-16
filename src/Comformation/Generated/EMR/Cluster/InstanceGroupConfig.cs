@@ -7,9 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster InstanceGroupConfig
-    /// Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance
-    /// groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform
-    /// Instance Groups in the Amazon EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html
     /// </summary>
     public class InstanceGroupConfig
@@ -31,7 +28,7 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// BidPrice
-        /// The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If
+        /// The bid price for each EC2 Spot Instance type as defined by InstanceType. Expressed in USD. If
         /// neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided,
         /// BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
         /// Required: No
@@ -94,7 +91,7 @@ namespace Comformation.EMR.Cluster
         /// Market type of the EC2 instances used to create a cluster node.
         /// Required: No
         /// Type: String
-        /// Allowed Values: ON_DEMAND | SPOT
+        /// Allowed values: ON_DEMAND | SPOT
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Market")]

@@ -7,9 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSetEventDestination PinpointDestination
-    /// An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to
-    /// create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your
-    /// campaigns.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html
     /// </summary>
     public class PinpointDestination

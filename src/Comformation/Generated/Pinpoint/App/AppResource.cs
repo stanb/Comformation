@@ -6,8 +6,6 @@ namespace Comformation.Pinpoint.App
 {
     /// <summary>
     /// AWS::Pinpoint::App
-    /// Specifies an app. In Amazon Pinpoint, an app (also referred to as a project) is a collection of settings,
-    /// customer information, segments, and campaigns.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html
     /// </summary>
     public class AppResource : ResourceBase
@@ -22,16 +20,17 @@ namespace Comformation.Pinpoint.App
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
-            /// The display name of the application.
+            /// The display name of the application. This name is displayed as the Project name on the Amazon
+            /// Pinpoint console.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -41,8 +40,8 @@ namespace Comformation.Pinpoint.App
 
     }
 
-	public static class AppAttributes
-	{
+    public static class AppAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

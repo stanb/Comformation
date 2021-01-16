@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
     /// AWS::OpsWorks::Stack RdsDbInstance
-    /// Describes an Amazon RDS instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html
     /// </summary>
     public class RdsDbInstance

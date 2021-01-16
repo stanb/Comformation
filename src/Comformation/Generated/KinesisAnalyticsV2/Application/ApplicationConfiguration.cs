@@ -7,7 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application ApplicationConfiguration
-    /// Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html
     /// </summary>
     public class ApplicationConfiguration
@@ -15,7 +14,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// ApplicationCodeConfiguration
-        /// The code location and type parameters for a Java-based Kinesis Data Analytics application.
+        /// The code location and type parameters for a Flink-based Kinesis Data Analytics application.
         /// Required: Conditional
         /// Type: ApplicationCodeConfiguration
         /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// EnvironmentProperties
-        /// Describes execution properties for a Java-based Kinesis Data Analytics application.
+        /// Describes execution properties for a Flink-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: EnvironmentProperties
         /// Update requires: No interruption
@@ -35,7 +34,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// FlinkApplicationConfiguration
-        /// The creation and update parameters for a Java-based Kinesis Data Analytics application.
+        /// The creation and update parameters for a Flink-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: FlinkApplicationConfiguration
         /// Update requires: No interruption
@@ -45,7 +44,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// SqlApplicationConfiguration
-        /// The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+        /// The creation and update parameters for a SQL-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: SqlApplicationConfiguration
         /// Update requires: No interruption
@@ -55,7 +54,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// ApplicationSnapshotConfiguration
-        /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// Required: No
         /// Type: ApplicationSnapshotConfiguration
         /// Update requires: No interruption

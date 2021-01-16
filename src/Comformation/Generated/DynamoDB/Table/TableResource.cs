@@ -6,8 +6,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table
-    /// The AWS::DynamoDB::Table resource creates a DynamoDB table. For more information, see CreateTable in the
-    /// Amazon DynamoDB API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html
     /// </summary>
     public class TableResource : ResourceBase
@@ -16,14 +14,14 @@ namespace Comformation.DynamoDB.Table
         {
             /// <summary>
             /// AttributeDefinitions
-            /// A list of attributes that describe the key schema for the table and indexes. Duplicates are allowed.
+            /// A list of attributes that describe the key schema for the table and indexes.
             /// This property is required to create a DynamoDB table.
             /// Update requires: Some interruptions. Replacement if you edit an existing AttributeDefinition.
             /// Required: Conditional
             /// Type: List of AttributeDefinition
             /// Update requires: Some interruptions
             /// </summary>
-			public List<AttributeDefinition> AttributeDefinitions { get; set; }
+            public List<AttributeDefinition> AttributeDefinitions { get; set; }
 
             /// <summary>
             /// BillingMode
@@ -37,7 +35,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> BillingMode { get; set; }
+            public Union<string, IntrinsicFunction> BillingMode { get; set; }
 
             /// <summary>
             /// GlobalSecondaryIndexes
@@ -58,7 +56,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of GlobalSecondaryIndex
             /// Update requires: No interruption
             /// </summary>
-			public List<GlobalSecondaryIndex> GlobalSecondaryIndexes { get; set; }
+            public List<GlobalSecondaryIndex> GlobalSecondaryIndexes { get; set; }
 
             /// <summary>
             /// KeySchema
@@ -68,7 +66,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of KeySchema
             /// Update requires: Replacement
             /// </summary>
-			public List<KeySchema> KeySchema { get; set; }
+            public List<KeySchema> KeySchema { get; set; }
 
             /// <summary>
             /// LocalSecondaryIndexes
@@ -78,7 +76,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of LocalSecondaryIndex
             /// Update requires: Replacement
             /// </summary>
-			public List<LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
+            public List<LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
 
             /// <summary>
             /// PointInTimeRecoverySpecification
@@ -87,7 +85,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: PointInTimeRecoverySpecification
             /// Update requires: No interruption
             /// </summary>
-			public PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
+            public PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
 
             /// <summary>
             /// ProvisionedThroughput
@@ -100,17 +98,16 @@ namespace Comformation.DynamoDB.Table
             /// Type: ProvisionedThroughput
             /// Update requires: No interruption
             /// </summary>
-			public ProvisionedThroughput ProvisionedThroughput { get; set; }
+            public ProvisionedThroughput ProvisionedThroughput { get; set; }
 
             /// <summary>
             /// SSESpecification
             /// Specifies the settings to enable server-side encryption.
-            /// Update requires: Some interruptions.
             /// Required: No
             /// Type: SSESpecification
             /// Update requires: Some interruptions
             /// </summary>
-			public SSESpecification SSESpecification { get; set; }
+            public SSESpecification SSESpecification { get; set; }
 
             /// <summary>
             /// StreamSpecification
@@ -119,7 +116,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: StreamSpecification
             /// Update requires: No interruption
             /// </summary>
-			public StreamSpecification StreamSpecification { get; set; }
+            public StreamSpecification StreamSpecification { get; set; }
 
             /// <summary>
             /// TableName
@@ -135,7 +132,7 @@ namespace Comformation.DynamoDB.Table
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TableName { get; set; }
+            public Union<string, IntrinsicFunction> TableName { get; set; }
 
             /// <summary>
             /// Tags
@@ -145,7 +142,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TimeToLiveSpecification
@@ -156,7 +153,7 @@ namespace Comformation.DynamoDB.Table
             /// Type: TimeToLiveSpecification
             /// Update requires: No interruption
             /// </summary>
-			public TimeToLiveSpecification TimeToLiveSpecification { get; set; }
+            public TimeToLiveSpecification TimeToLiveSpecification { get; set; }
 
         }
 
@@ -166,9 +163,9 @@ namespace Comformation.DynamoDB.Table
 
     }
 
-	public static class TableAttributes
-	{
+    public static class TableAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StreamArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("StreamArn");
-	}
+    }
 }

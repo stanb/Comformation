@@ -6,8 +6,6 @@ namespace Comformation.AppStream.Fleet
 {
     /// <summary>
     /// AWS::AppStream::Fleet
-    /// The AWS::AppStream::Fleet resource creates a fleet for Amazon AppStream 2. 0. A fleet consists of streaming
-    /// instances that run a specified image.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html
     /// </summary>
     public class FleetResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.AppStream.Fleet
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ComputeCapacity
@@ -31,7 +29,7 @@ namespace Comformation.AppStream.Fleet
             /// Type: ComputeCapacity
             /// Update requires: No interruption
             /// </summary>
-			public ComputeCapacity ComputeCapacity { get; set; }
+            public ComputeCapacity ComputeCapacity { get; set; }
 
             /// <summary>
             /// VpcConfig
@@ -40,7 +38,7 @@ namespace Comformation.AppStream.Fleet
             /// Type: VpcConfig
             /// Update requires: No interruption
             /// </summary>
-			public VpcConfig VpcConfig { get; set; }
+            public VpcConfig VpcConfig { get; set; }
 
             /// <summary>
             /// FleetType
@@ -51,10 +49,10 @@ namespace Comformation.AppStream.Fleet
             /// streaming when users are connected and a small hourly fee for instances that are not streaming apps.
             /// Required: No
             /// Type: String
-            /// Allowed Values: ALWAYS_ON | ON_DEMAND
+            /// Allowed values: ALWAYS_ON | ON_DEMAND
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FleetType { get; set; }
+            public Union<string, IntrinsicFunction> FleetType { get; set; }
 
             /// <summary>
             /// EnableDefaultInternetAccess
@@ -63,7 +61,7 @@ namespace Comformation.AppStream.Fleet
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableDefaultInternetAccess { get; set; }
+            public Union<bool, IntrinsicFunction> EnableDefaultInternetAccess { get; set; }
 
             /// <summary>
             /// DomainJoinInfo
@@ -73,17 +71,17 @@ namespace Comformation.AppStream.Fleet
             /// Type: DomainJoinInfo
             /// Update requires: No interruption
             /// </summary>
-			public DomainJoinInfo DomainJoinInfo { get; set; }
+            public DomainJoinInfo DomainJoinInfo { get; set; }
 
             /// <summary>
             /// Name
             /// A unique name for the fleet.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,100}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ImageName
@@ -93,7 +91,7 @@ namespace Comformation.AppStream.Fleet
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ImageName { get; set; }
+            public Union<string, IntrinsicFunction> ImageName { get; set; }
 
             /// <summary>
             /// MaxUserDurationInSeconds
@@ -106,7 +104,7 @@ namespace Comformation.AppStream.Fleet
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MaxUserDurationInSeconds { get; set; }
+            public Union<int, IntrinsicFunction> MaxUserDurationInSeconds { get; set; }
 
             /// <summary>
             /// IdleDisconnectTimeoutInSeconds
@@ -130,7 +128,7 @@ namespace Comformation.AppStream.Fleet
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> IdleDisconnectTimeoutInSeconds { get; set; }
+            public Union<int, IntrinsicFunction> IdleDisconnectTimeoutInSeconds { get; set; }
 
             /// <summary>
             /// DisconnectTimeoutInSeconds
@@ -143,7 +141,7 @@ namespace Comformation.AppStream.Fleet
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> DisconnectTimeoutInSeconds { get; set; }
+            public Union<int, IntrinsicFunction> DisconnectTimeoutInSeconds { get; set; }
 
             /// <summary>
             /// DisplayName
@@ -153,23 +151,56 @@ namespace Comformation.AppStream.Fleet
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DisplayName { get; set; }
+            public Union<string, IntrinsicFunction> DisplayName { get; set; }
+
+            /// <summary>
+            /// StreamView
+            /// The AppStream 2. 0 view that is displayed to your users when they stream from the fleet. When APP is
+            /// specified, only the windows of applications opened by users display. When DESKTOP is specified, the
+            /// standard desktop that is provided by the operating system displays.
+            /// The default value is APP.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: APP | DESKTOP
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> StreamView { get; set; }
+
+            /// <summary>
+            /// IamRoleArn
+            /// The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the
+            /// AWS Security Token Service (STS) AssumeRole API operation and passes the ARN of the role to use. The
+            /// operation creates a new session with temporary credentials. AppStream 2. 0 retrieves the temporary
+            /// credentials and creates the appstream_machine_role credential profile on the instance.
+            /// For more information, see Using an IAM Role to Grant Permissions to Applications and Scripts Running
+            /// on AppStream 2. 0 Streaming Instances in the Amazon AppStream 2. 0 Administration Guide.
+            /// Required: No
+            /// Type: String
+            /// Pattern: ^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/. -]{0,62}:[A-Za-z0-9_/.
+            /// -]{0,63}:[A-Za-z0-9_/. -]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@. \\-]{0,1023}$
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> IamRoleArn { get; set; }
 
             /// <summary>
             /// InstanceType
             /// The instance type to use when launching fleet instances. The following instance types are available:
-            /// stream. standard. medium stream. standard. large stream. compute. large stream. compute. xlarge
-            /// stream. compute. 2xlarge stream. compute. 4xlarge stream. compute. 8xlarge stream. memory. large
-            /// stream. memory. xlarge stream. memory. 2xlarge stream. memory. 4xlarge stream. memory. 8xlarge
-            /// stream. graphics-design. large stream. graphics-design. xlarge stream. graphics-design. 2xlarge
-            /// stream. graphics-design. 4xlarge stream. graphics-desktop. 2xlarge stream. graphics-pro. 4xlarge
-            /// stream. graphics-pro. 8xlarge stream. graphics-pro. 16xlarge
+            /// stream. standard. small stream. standard. medium stream. standard. large stream. compute. large
+            /// stream. compute. xlarge stream. compute. 2xlarge stream. compute. 4xlarge stream. compute. 8xlarge
+            /// stream. memory. large stream. memory. xlarge stream. memory. 2xlarge stream. memory. 4xlarge stream.
+            /// memory. 8xlarge stream. memory. z1d. large stream. memory. z1d. xlarge stream. memory. z1d. 2xlarge
+            /// stream. memory. z1d. 3xlarge stream. memory. z1d. 6xlarge stream. memory. z1d. 12xlarge stream.
+            /// graphics-design. large stream. graphics-design. xlarge stream. graphics-design. 2xlarge stream.
+            /// graphics-design. 4xlarge stream. graphics-desktop. 2xlarge stream. graphics. g4dn. xlarge stream.
+            /// graphics. g4dn. 2xlarge stream. graphics. g4dn. 4xlarge stream. graphics. g4dn. 8xlarge stream.
+            /// graphics. g4dn. 12xlarge stream. graphics. g4dn. 16xlarge stream. graphics-pro. 4xlarge stream.
+            /// graphics-pro. 8xlarge stream. graphics-pro. 16xlarge
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// Tags
@@ -179,18 +210,18 @@ namespace Comformation.AppStream.Fleet
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// ImageArn
             /// The ARN of the public, private, or shared image to use.
             /// Required: No
             /// Type: String
-            /// Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/. -]{0,62}:[A-Za-z0-9_/. -]{0,63}:[A-Za-z0-9_/.
-            /// -]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@. -]{0,1023}$
+            /// Pattern: ^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/. -]{0,62}:[A-Za-z0-9_/.
+            /// -]{0,63}:[A-Za-z0-9_/. -]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@. \\-]{0,1023}$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ImageArn { get; set; }
+            public Union<string, IntrinsicFunction> ImageArn { get; set; }
 
         }
 

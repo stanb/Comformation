@@ -6,7 +6,6 @@ namespace Comformation.EC2.SecurityGroupIngress
 {
     /// <summary>
     /// AWS::EC2::SecurityGroupIngress
-    /// Adds an inbound rule to a security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html
     /// </summary>
     public class SecurityGroupIngressResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrIp { get; set; }
+            public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
             /// <summary>
             /// CidrIpv6
@@ -29,7 +28,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
+            public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
             /// <summary>
             /// Description
@@ -39,7 +38,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// FromPort
@@ -51,7 +50,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> FromPort { get; set; }
+            public Union<int, IntrinsicFunction> FromPort { get; set; }
 
             /// <summary>
             /// GroupId
@@ -64,7 +63,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupId { get; set; }
+            public Union<string, IntrinsicFunction> GroupId { get; set; }
 
             /// <summary>
             /// GroupName
@@ -76,7 +75,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupName { get; set; }
+            public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// IpProtocol
@@ -89,17 +88,16 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
+            public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
             /// <summary>
             /// SourcePrefixListId
-            /// [EC2-VPC only] The prefix list IDs for an AWS service. This is the AWS service that you want to
-            /// access through a VPC endpoint from instances associated with the security group.
+            /// [EC2-VPC only] The ID of a prefix list.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourcePrefixListId { get; set; }
+            public Union<string, IntrinsicFunction> SourcePrefixListId { get; set; }
 
             /// <summary>
             /// SourceSecurityGroupId
@@ -109,7 +107,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceSecurityGroupId { get; set; }
+            public Union<string, IntrinsicFunction> SourceSecurityGroupId { get; set; }
 
             /// <summary>
             /// SourceSecurityGroupName
@@ -120,14 +118,12 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceSecurityGroupName { get; set; }
+            public Union<string, IntrinsicFunction> SourceSecurityGroupName { get; set; }
 
             /// <summary>
             /// SourceSecurityGroupOwnerId
-            /// [nondefault VPC] The AWS account ID for the source security group, if the source security group is
-            /// in a different account. You can&#39;t specify this parameter in combination with the following
-            /// parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of
-            /// the port range. Creates rules that grant full ICMP, UDP, and TCP access.
+            /// [nondefault VPC] The AWS account ID that owns the source security group. You can&#39;t specify this
+            /// property with an IP address range.
             /// If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by
             /// a different account than the account creating the stack, you must specify the
             /// SourceSecurityGroupOwnerId; otherwise, this property is optional.
@@ -135,7 +131,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceSecurityGroupOwnerId { get; set; }
+            public Union<string, IntrinsicFunction> SourceSecurityGroupOwnerId { get; set; }
 
             /// <summary>
             /// ToPort
@@ -147,7 +143,7 @@ namespace Comformation.EC2.SecurityGroupIngress
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> ToPort { get; set; }
+            public Union<int, IntrinsicFunction> ToPort { get; set; }
 
         }
 

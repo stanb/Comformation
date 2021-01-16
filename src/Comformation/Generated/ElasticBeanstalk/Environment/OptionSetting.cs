@@ -7,7 +7,6 @@ namespace Comformation.ElasticBeanstalk.Environment
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::Environment OptionSetting
-    /// The OptionSetting property type specifies an option for an AWS Elastic Beanstalk environment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html
     /// </summary>
     public class OptionSetting

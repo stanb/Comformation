@@ -7,8 +7,6 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS::CodeBuild::Project LogsConfig
-    /// LogsConfig is a property of the AWS CodeBuild Project resource that specifies information about logs for a
-    /// build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html
     /// </summary>
     public class LogsConfig

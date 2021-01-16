@@ -6,7 +6,6 @@ namespace Comformation.Config.AggregationAuthorization
 {
     /// <summary>
     /// AWS::Config::AggregationAuthorization
-    /// An object that represents the authorizations granted to 			aggregator accounts and regions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html
     /// </summary>
     public class AggregationAuthorizationResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.Config.AggregationAuthorization
             /// Pattern: \d{12}
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizedAccountId { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizedAccountId { get; set; }
 
             /// <summary>
             /// AuthorizedAwsRegion
@@ -36,7 +35,19 @@ namespace Comformation.Config.AggregationAuthorization
             /// Maximum: 64
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizedAwsRegion { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizedAwsRegion { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// 		
+            /// An array of tag object.
+            /// 	
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 

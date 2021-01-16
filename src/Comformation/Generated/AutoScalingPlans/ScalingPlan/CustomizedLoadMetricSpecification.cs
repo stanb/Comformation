@@ -7,8 +7,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan CustomizedLoadMetricSpecification
-    /// CustomizedLoadMetricSpecification is a subproperty of ScalingInstruction that specifies a customized load
-    /// metric for predictive scaling to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html
     /// </summary>
     public class CustomizedLoadMetricSpecification

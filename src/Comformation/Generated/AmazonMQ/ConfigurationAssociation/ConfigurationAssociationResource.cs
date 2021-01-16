@@ -6,9 +6,6 @@ namespace Comformation.AmazonMQ.ConfigurationAssociation
 {
     /// <summary>
     /// AWS::AmazonMQ::ConfigurationAssociation
-    /// Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a configuration with
-    /// a broker, or return information about the specified ConfigurationAssociation. Only use one per broker, and
-    /// don&#39;t use a configuration on the broker resource if you have associated a configuration with that broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html
     /// </summary>
     public class ConfigurationAssociationResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.AmazonMQ.ConfigurationAssociation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Broker { get; set; }
+            public Union<string, IntrinsicFunction> Broker { get; set; }
 
             /// <summary>
             /// Configuration
@@ -31,7 +28,7 @@ namespace Comformation.AmazonMQ.ConfigurationAssociation
             /// Type: ConfigurationId
             /// Update requires: No interruption
             /// </summary>
-			public ConfigurationId Configuration { get; set; }
+            public ConfigurationId Configuration { get; set; }
 
         }
 

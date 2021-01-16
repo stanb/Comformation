@@ -7,9 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster JobFlowInstancesConfig
-    /// JobFlowInstancesConfig is a property of the AWS::EMR::Cluster resource. JobFlowInstancesConfig defines the
-    /// instance groups or instance fleets that comprise the cluster. JobFlowInstancesConfig must contain either
-    /// InstanceFleetConfig or InstanceGroupConfig. They cannot be used together.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html
     /// </summary>
     public class JobFlowInstancesConfig
@@ -59,8 +56,8 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// Ec2KeyName
-        /// The name of the EC2 key pair that can be used to ssh to the master node as the user called &quot;hadoop.
-        /// &quot;
+        /// The name of the EC2 key pair that can be used to connect to the master node using SSH as the user
+        /// called &quot;hadoop. &quot;
         /// Required: No
         /// Type: String
         /// Minimum: 0
@@ -129,10 +126,10 @@ namespace Comformation.EMR.Cluster
         /// <summary>
         /// HadoopVersion
         /// Applies only to Amazon EMR release versions earlier than 4. 0. The Hadoop version for the cluster.
-        /// Valid inputs are &quot;0. 18&quot; (deprecated), &quot;0. 20&quot; (deprecated), &quot;0. 20. 205&quot; (deprecated), &quot;1. 0. 3&quot;,
-        /// &quot;2. 2. 0&quot;, or &quot;2. 4. 0&quot;. If you do not set this value, the default of 0. 18 is used, unless the
-        /// AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for
-        /// that AMI version is used.
+        /// Valid inputs are &quot;0. 18&quot; (no longer maintained), &quot;0. 20&quot; (no longer maintained), &quot;0. 20. 205&quot; (no
+        /// longer maintained), &quot;1. 0. 3&quot;, &quot;2. 2. 0&quot;, or &quot;2. 4. 0&quot;. If you do not set this value, the default of
+        /// 0. 18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the
+        /// default version of Hadoop for that AMI version is used.
         /// Required: No
         /// Type: String
         /// Minimum: 0

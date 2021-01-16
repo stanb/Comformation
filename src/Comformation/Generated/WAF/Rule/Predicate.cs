@@ -7,9 +7,6 @@ namespace Comformation.WAF.Rule
 {
     /// <summary>
     /// AWS::WAF::Rule Predicate
-    /// Specifies the ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatchSet, GeoMatchSet, and
-    /// SizeConstraintSet objects 			that you want to add to a Rule and, for each object, indicates whether you want
-    /// to negate the settings, for example, requests that do 			NOT originate from the IP address 192. 0. 2. 44.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html
     /// </summary>
     public class Predicate
@@ -25,6 +22,7 @@ namespace Comformation.WAF.Rule
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataId")]
@@ -57,7 +55,7 @@ namespace Comformation.WAF.Rule
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ByteMatch | GeoMatch | IPMatch | RegexMatch | SizeConstraint | SqlInjectionMatch |
+        /// Allowed values: ByteMatch | GeoMatch | IPMatch | RegexMatch | SizeConstraint | SqlInjectionMatch |
         /// XssMatch
         /// Update requires: No interruption
         /// </summary>

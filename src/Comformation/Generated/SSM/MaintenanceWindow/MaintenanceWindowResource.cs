@@ -6,11 +6,6 @@ namespace Comformation.SSM.MaintenanceWindow
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindow
-    /// The AWS::SSM::MaintenanceWindow resource represents general information about a maintenance window for AWS
-    /// Systems Manager. Maintenance Windows let you define a schedule for when to perform potentially disruptive
-    /// actions on your instances, such as patching an operating system (OS), updating drivers, or installing
-    /// software. Each maintenance window has a schedule, a duration, a set of registered targets, and a set of
-    /// registered tasks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html
     /// </summary>
     public class MaintenanceWindowResource : ResourceBase
@@ -26,7 +21,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StartDate { get; set; }
+            public Union<string, IntrinsicFunction> StartDate { get; set; }
 
             /// <summary>
             /// Description
@@ -37,7 +32,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AllowUnassociatedTargets
@@ -48,7 +43,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowUnassociatedTargets { get; set; }
+            public Union<bool, IntrinsicFunction> AllowUnassociatedTargets { get; set; }
 
             /// <summary>
             /// Cutoff
@@ -60,7 +55,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Maximum: 23
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Cutoff { get; set; }
+            public Union<int, IntrinsicFunction> Cutoff { get; set; }
 
             /// <summary>
             /// Schedule
@@ -71,7 +66,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Schedule { get; set; }
+            public Union<string, IntrinsicFunction> Schedule { get; set; }
 
             /// <summary>
             /// Duration
@@ -82,7 +77,19 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Maximum: 24
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Duration { get; set; }
+            public Union<int, IntrinsicFunction> Duration { get; set; }
+
+            /// <summary>
+            /// ScheduleOffset
+            /// The number of days to wait to run a maintenance window after the scheduled CRON expression date and
+            /// time.
+            /// Required: No
+            /// Type: Integer
+            /// Minimum: 1
+            /// Maximum: 6
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<int, IntrinsicFunction> ScheduleOffset { get; set; }
 
             /// <summary>
             /// EndDate
@@ -92,7 +99,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EndDate { get; set; }
+            public Union<string, IntrinsicFunction> EndDate { get; set; }
 
             /// <summary>
             /// Tags
@@ -105,7 +112,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -117,7 +124,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Pattern: ^[a-zA-Z0-9_\-. ]{3,128}$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ScheduleTimezone
@@ -127,7 +134,7 @@ namespace Comformation.SSM.MaintenanceWindow
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ScheduleTimezone { get; set; }
+            public Union<string, IntrinsicFunction> ScheduleTimezone { get; set; }
 
         }
 

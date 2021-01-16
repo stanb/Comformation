@@ -7,7 +7,6 @@ namespace Comformation.EC2.ClientVpnEndpoint
 {
     /// <summary>
     /// AWS::EC2::ClientVpnEndpoint ConnectionLogOptions
-    /// Describes the client connection logging options for the Client VPN endpoint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html
     /// </summary>
     public class ConnectionLogOptions
@@ -40,7 +39,7 @@ namespace Comformation.EC2.ClientVpnEndpoint
         /// <summary>
         /// CloudwatchLogGroup
         /// 		
-        /// The name of the CloudWatch Logs log group.
+        /// The name of the CloudWatch Logs log group. Required if connection logging is enabled.
         /// 	
         /// Required: No
         /// Type: String

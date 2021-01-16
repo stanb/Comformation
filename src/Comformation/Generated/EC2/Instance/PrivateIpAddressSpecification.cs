@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::NetworkInterface PrivateIpAddressSpecification
-    /// Describes a secondary private IPv4 address for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html
     /// </summary>
     public class PrivateIpAddressSpecification

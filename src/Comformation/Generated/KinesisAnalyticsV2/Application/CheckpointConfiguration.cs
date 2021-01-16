@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application CheckpointConfiguration
-    /// Describes an application&#39;s checkpointing configuration. Checkpointing is the process of persisting application
-    /// state for fault tolerance. For more information, see Checkpoints for Fault Tolerance in the Apache Flink
-    /// Documentation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html
     /// </summary>
     public class CheckpointConfiguration
@@ -17,15 +14,15 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// ConfigurationType
-        /// Describes whether the application uses Amazon Kinesis Data Analytics&#39; default checkpointing
-        /// behavior. You must set this property to CUSTOM in order to set the CheckpointingEnabled,
-        /// CheckpointInterval, or MinPauseBetweenCheckpoints parameters.
+        /// Describes whether the application uses Kinesis Data Analytics&#39; default checkpointing behavior. You
+        /// must set this property to CUSTOM in order to set the CheckpointingEnabled, CheckpointInterval, or
+        /// MinPauseBetweenCheckpoints parameters.
         /// Note If this value is set to DEFAULT, the application will use the following values, even if they
         /// are set to other values using APIs or application code: CheckpointingEnabled: true
         /// CheckpointInterval: 60000 MinPauseBetweenCheckpoints: 5000
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CUSTOM | DEFAULT
+        /// Allowed values: CUSTOM | DEFAULT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConfigurationType")]
@@ -62,7 +59,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// CheckpointingEnabled
-        /// Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
         /// Note If CheckpointConfiguration. ConfigurationType is DEFAULT, the application will use a
         /// CheckpointingEnabled value of true, even if this value is set to another value using this API or in
         /// application code.

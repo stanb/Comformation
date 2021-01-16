@@ -7,10 +7,6 @@ namespace Comformation.Config.OrganizationConfigRule
 {
     /// <summary>
     /// AWS::Config::OrganizationConfigRule OrganizationCustomRuleMetadata
-    /// An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource,
-    /// Lamdba function ARN, 			and organization trigger types that trigger AWS Config to evaluate your AWS resources
-    /// against a rule. 			It also provides the frequency with which you want AWS Config to run evaluations for the
-    /// rule if the trigger type is periodic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustomrulemetadata.html
     /// </summary>
     public class OrganizationCustomRuleMetadata
@@ -133,7 +129,7 @@ namespace Comformation.Config.OrganizationConfigRule
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
+        /// Allowed values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaximumExecutionFrequency")]

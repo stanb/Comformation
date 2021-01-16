@@ -6,8 +6,6 @@ namespace Comformation.EC2.NetworkInterfacePermission
 {
     /// <summary>
     /// AWS::EC2::NetworkInterfacePermission
-    /// Specifies a permission for an Amazon EC2 network interface. For example, you can grant an AWS authorized
-    /// partner account permission to attach the specified network interface to an instance in their account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html
     /// </summary>
     public class NetworkInterfacePermissionResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.EC2.NetworkInterfacePermission
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AwsAccountId { get; set; }
+            public Union<string, IntrinsicFunction> AwsAccountId { get; set; }
 
             /// <summary>
             /// NetworkInterfaceId
@@ -34,17 +32,17 @@ namespace Comformation.EC2.NetworkInterfacePermission
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
             /// <summary>
             /// Permission
             /// The type of permission to grant: INSTANCE-ATTACH or EIP-ASSOCIATE.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: EIP-ASSOCIATE | INSTANCE-ATTACH
+            /// Allowed values: EIP-ASSOCIATE | INSTANCE-ATTACH
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Permission { get; set; }
+            public Union<string, IntrinsicFunction> Permission { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket NotificationFilter
-    /// Specifies object key name filtering rules. For information about key name filtering, see Configuring Event
-    /// Notifications in the Amazon Simple Storage Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html
     /// </summary>
     public class NotificationFilter

@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket EncryptionConfiguration
-    /// Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html
     /// </summary>
     public class EncryptionConfiguration
@@ -15,8 +14,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ReplicaKmsKeyID
-        /// Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination bucket. Amazon S3 uses this
-        /// key to encrypt replica objects.
+        /// Specifies the ID (Key ARN or Alias ARN) of the customer managed customer master key (CMK) stored in
+        /// AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt
+        /// replica objects. Amazon S3 only supports symmetric customer managed CMKs. For more information, see
+        /// Using Symmetric and Asymmetric Keys in the AWS Key Management Service Developer Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

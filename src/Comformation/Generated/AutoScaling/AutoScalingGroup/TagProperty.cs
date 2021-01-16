@@ -7,8 +7,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup TagProperty
-    /// TagProperty specifies a list of tags for the Tag property of AutoScalingGroup. TagProperty adds tags to all
-    /// associated instances in an Amazon EC2 Auto Scaling group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
     /// </summary>
     public class TagProperty

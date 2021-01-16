@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment Groups
-    /// An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html
     /// </summary>
     public class Groups
@@ -39,7 +38,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Dimensions
-        /// An array that defines the dimensions to include or exclude from the segment.
+        /// An array that defines the dimensions for the segment.
         /// Required: No
         /// Type: List of SegmentDimensions
         /// Update requires: No interruption
@@ -49,12 +48,10 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// SourceSegments
-        /// The base segment to build the segment on. A base segment, also called a source segment, defines the
-        /// initial population of endpoints for a segment. When you add dimensions to the segment, Amazon
-        /// Pinpoint filters the base segment by using the dimensions that you specify.
-        /// You can specify more than one dimensional segment or only one imported segment. If you specify an
-        /// imported segment, the segment size estimate that displays on the Amazon Pinpoint console indicates
-        /// the size of the imported segment without any filters applied to it.
+        /// The base segment to build the segment on. A base segment, also referred to as a source segment,
+        /// defines the initial population of endpoints for a segment. When you add dimensions to a segment,
+        /// Amazon Pinpoint filters the base segment by using the dimensions that you specify. You can specify
+        /// more than one dimensional segment or only one imported segment.
         /// Required: No
         /// Type: List of SourceSegments
         /// Update requires: No interruption

@@ -6,8 +6,6 @@ namespace Comformation.RDS.DBSubnetGroup
 {
     /// <summary>
     /// AWS::RDS::DBSubnetGroup
-    /// The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two
-    /// subnets in two different Availability Zones in the same region.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
@@ -21,19 +19,19 @@ namespace Comformation.RDS.DBSubnetGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
 
             /// <summary>
             /// DBSubnetGroupName
-            /// The name for the DB subnet group. This value is stored as a lowercase string.
-            /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or
-            /// hyphens. Must not be default.
-            /// Example: mySubnetgroup
+            /// The name for the DB Subnet Group. This value is stored as a lowercase string.
+            /// Constraints: Must contain no more than 255 lowercase alphanumeric characters or hyphens. Must not be
+            /// &quot;Default&quot;.
+            /// Example: mysubnetgroup
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -42,7 +40,7 @@ namespace Comformation.RDS.DBSubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -51,7 +49,7 @@ namespace Comformation.RDS.DBSubnetGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

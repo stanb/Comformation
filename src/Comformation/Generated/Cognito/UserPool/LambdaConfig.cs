@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool LambdaConfig
-    /// LambdaConfig is a property of the AWS::Cognito::UserPool resource that defines the AWS Lambda configuration of
-    /// an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
     /// </summary>
     public class LambdaConfig
@@ -29,34 +27,6 @@ namespace Comformation.Cognito.UserPool
         public Union<string, IntrinsicFunction> CreateAuthChallenge { get; set; }
 
         /// <summary>
-        /// PreAuthentication
-        /// A pre-authentication AWS Lambda trigger.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 20
-        /// Maximum: 2048
-        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
-        /// @-]+)?(:[\w+=/,. @-]+)?
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("PreAuthentication")]
-        public Union<string, IntrinsicFunction> PreAuthentication { get; set; }
-
-        /// <summary>
-        /// DefineAuthChallenge
-        /// Defines the authentication challenge.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 20
-        /// Maximum: 2048
-        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
-        /// @-]+)?(:[\w+=/,. @-]+)?
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("DefineAuthChallenge")]
-        public Union<string, IntrinsicFunction> DefineAuthChallenge { get; set; }
-
-        /// <summary>
         /// PreSignUp
         /// A pre-registration AWS Lambda trigger.
         /// Required: No
@@ -71,18 +41,14 @@ namespace Comformation.Cognito.UserPool
         public Union<string, IntrinsicFunction> PreSignUp { get; set; }
 
         /// <summary>
-        /// PreTokenGeneration
-        /// A Lambda trigger that is invoked before token generation.
+        /// KMSKeyID
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
-        /// Minimum: 20
-        /// Maximum: 2048
-        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
-        /// @-]+)?(:[\w+=/,. @-]+)?
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("PreTokenGeneration")]
-        public Union<string, IntrinsicFunction> PreTokenGeneration { get; set; }
+        [JsonProperty("KMSKeyID")]
+        public Union<string, IntrinsicFunction> KMSKeyID { get; set; }
 
         /// <summary>
         /// UserMigration
@@ -113,6 +79,72 @@ namespace Comformation.Cognito.UserPool
         public Union<string, IntrinsicFunction> PostAuthentication { get; set; }
 
         /// <summary>
+        /// VerifyAuthChallengeResponse
+        /// Verifies the authentication challenge response.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("VerifyAuthChallengeResponse")]
+        public Union<string, IntrinsicFunction> VerifyAuthChallengeResponse { get; set; }
+
+        /// <summary>
+        /// PreAuthentication
+        /// A pre-authentication AWS Lambda trigger.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PreAuthentication")]
+        public Union<string, IntrinsicFunction> PreAuthentication { get; set; }
+
+        /// <summary>
+        /// DefineAuthChallenge
+        /// Defines the authentication challenge.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DefineAuthChallenge")]
+        public Union<string, IntrinsicFunction> DefineAuthChallenge { get; set; }
+
+        /// <summary>
+        /// PreTokenGeneration
+        /// A Lambda trigger that is invoked before token generation.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
+        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
+        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PreTokenGeneration")]
+        public Union<string, IntrinsicFunction> PreTokenGeneration { get; set; }
+
+        /// <summary>
+        /// CustomSMSSender
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: CustomSMSSender
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CustomSMSSender")]
+        public CustomSMSSender CustomSMSSender { get; set; }
+
+        /// <summary>
         /// PostConfirmation
         /// A post-confirmation AWS Lambda trigger.
         /// Required: No
@@ -141,18 +173,14 @@ namespace Comformation.Cognito.UserPool
         public Union<string, IntrinsicFunction> CustomMessage { get; set; }
 
         /// <summary>
-        /// VerifyAuthChallengeResponse
-        /// Verifies the authentication challenge response.
+        /// CustomEmailSender
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
-        /// Type: String
-        /// Minimum: 20
-        /// Maximum: 2048
-        /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:([\w+=/,. @-]*)?:[0-9]+:[\w+=/,. @-]+(:[\w+=/,.
-        /// @-]+)?(:[\w+=/,. @-]+)?
+        /// Type: CustomEmailSender
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("VerifyAuthChallengeResponse")]
-        public Union<string, IntrinsicFunction> VerifyAuthChallengeResponse { get; set; }
+        [JsonProperty("CustomEmailSender")]
+        public CustomEmailSender CustomEmailSender { get; set; }
 
     }
 }

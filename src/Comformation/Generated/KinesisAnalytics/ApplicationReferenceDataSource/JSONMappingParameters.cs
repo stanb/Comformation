@@ -7,7 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationReferenceDataSource JSONMappingParameters
-    /// Provides additional mapping information when JSON is the record format on the streaming source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-jsonmappingparameters.html
     /// </summary>
     public class JSONMappingParameters

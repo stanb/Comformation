@@ -6,7 +6,6 @@ namespace Comformation.RoboMaker.SimulationApplication
 {
     /// <summary>
     /// AWS::RoboMaker::SimulationApplication
-    /// The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html
     /// </summary>
     public class SimulationApplicationResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Type: RenderingEngine
             /// Update requires: Replacement
             /// </summary>
-			public RenderingEngine RenderingEngine { get; set; }
+            public RenderingEngine RenderingEngine { get; set; }
 
             /// <summary>
             /// SimulationSoftwareSuite
@@ -29,7 +28,7 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Type: SimulationSoftwareSuite
             /// Update requires: Replacement
             /// </summary>
-			public SimulationSoftwareSuite SimulationSoftwareSuite { get; set; }
+            public SimulationSoftwareSuite SimulationSoftwareSuite { get; set; }
 
             /// <summary>
             /// CurrentRevisionId
@@ -38,16 +37,16 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
+            public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
 
             /// <summary>
             /// RobotSoftwareSuite
-            /// The robot software suite of the simulation application.
+            /// The robot software suite (ROS distribution) used by the simulation application.
             /// Required: Yes
             /// Type: RobotSoftwareSuite
             /// Update requires: Replacement
             /// </summary>
-			public RobotSoftwareSuite RobotSoftwareSuite { get; set; }
+            public RobotSoftwareSuite RobotSoftwareSuite { get; set; }
 
             /// <summary>
             /// Sources
@@ -56,7 +55,7 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Type: List of SourceConfig
             /// Update requires: No interruption
             /// </summary>
-			public List<SourceConfig> Sources { get; set; }
+            public List<SourceConfig> Sources { get; set; }
 
             /// <summary>
             /// Tags
@@ -65,7 +64,7 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -77,7 +76,7 @@ namespace Comformation.RoboMaker.SimulationApplication
             /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -87,9 +86,9 @@ namespace Comformation.RoboMaker.SimulationApplication
 
     }
 
-	public static class SimulationApplicationAttributes
-	{
+    public static class SimulationApplicationAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CurrentRevisionId = new ResourceAttribute<Union<string, IntrinsicFunction>>("CurrentRevisionId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

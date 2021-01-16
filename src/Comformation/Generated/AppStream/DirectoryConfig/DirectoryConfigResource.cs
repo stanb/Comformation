@@ -6,8 +6,6 @@ namespace Comformation.AppStream.DirectoryConfig
 {
     /// <summary>
     /// AWS::AppStream::DirectoryConfig
-    /// The AWS::AppStream::DirectoryConfig resource specifies the configuration information required to join Amazon
-    /// AppStream 2. 0 fleets and image builders to Microsoft Active Directory domains.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html
     /// </summary>
     public class DirectoryConfigResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.AppStream.DirectoryConfig
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> OrganizationalUnitDistinguishedNames { get; set; }
+            public List<Union<string, IntrinsicFunction>> OrganizationalUnitDistinguishedNames { get; set; }
 
             /// <summary>
             /// ServiceAccountCredentials
@@ -33,7 +31,7 @@ namespace Comformation.AppStream.DirectoryConfig
             /// Type: ServiceAccountCredentials
             /// Update requires: No interruption
             /// </summary>
-			public ServiceAccountCredentials ServiceAccountCredentials { get; set; }
+            public ServiceAccountCredentials ServiceAccountCredentials { get; set; }
 
             /// <summary>
             /// DirectoryName
@@ -42,7 +40,7 @@ namespace Comformation.AppStream.DirectoryConfig
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DirectoryName { get; set; }
+            public Union<string, IntrinsicFunction> DirectoryName { get; set; }
 
         }
 

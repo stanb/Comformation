@@ -6,9 +6,6 @@ namespace Comformation.IoTEvents.Input
 {
     /// <summary>
     /// AWS::IoTEvents::Input
-    /// The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a
-    /// way to get telemetry data into AWS IoT Events. This is done by sending messages as inputs to AWS IoT Events.
-    /// For more information, see How to Use AWS IoT Events in the AWS IoT Events Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html
     /// </summary>
     public class InputResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.IoTEvents.Input
             /// Type: InputDefinition
             /// Update requires: No interruption
             /// </summary>
-			public InputDefinition InputDefinition { get; set; }
+            public InputDefinition InputDefinition { get; set; }
 
             /// <summary>
             /// InputName
@@ -34,7 +31,7 @@ namespace Comformation.IoTEvents.Input
             /// Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InputName { get; set; }
+            public Union<string, IntrinsicFunction> InputName { get; set; }
 
             /// <summary>
             /// InputDescription
@@ -44,7 +41,7 @@ namespace Comformation.IoTEvents.Input
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InputDescription { get; set; }
+            public Union<string, IntrinsicFunction> InputDescription { get; set; }
 
             /// <summary>
             /// Tags
@@ -54,7 +51,7 @@ namespace Comformation.IoTEvents.Input
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

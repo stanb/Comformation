@@ -7,8 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster PlacementType
-    /// PlacementType is a property of the AWS::EMR::Cluster resource. PlacementType determines the Amazon EC2
-    /// Availability Zone configuration of the cluster (job flow).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html
     /// </summary>
     public class PlacementType

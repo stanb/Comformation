@@ -7,8 +7,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
 {
     /// <summary>
     /// AWS::ElastiCache::ReplicationGroup NodeGroupConfiguration
-    /// NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup resource that configures an
-    /// Amazon ElastiCache (ElastiCache) Redis cluster node group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html
     /// </summary>
     public class NodeGroupConfiguration

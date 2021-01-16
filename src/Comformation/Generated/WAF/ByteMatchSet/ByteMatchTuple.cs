@@ -7,8 +7,6 @@ namespace Comformation.WAF.ByteMatchSet
 {
     /// <summary>
     /// AWS::WAF::ByteMatchSet ByteMatchTuple
-    /// The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in
-    /// web requests, the location in requests that you want AWS WAF to search, and other settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html
     /// </summary>
     public class ByteMatchTuple
@@ -67,7 +65,7 @@ namespace Comformation.WAF.ByteMatchSet
         /// 		 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CONTAINS | CONTAINS_WORD | ENDS_WITH | EXACTLY | STARTS_WITH
+        /// Allowed values: CONTAINS | CONTAINS_WORD | ENDS_WITH | EXACTLY | STARTS_WITH
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PositionalConstraint")]
@@ -129,7 +127,7 @@ namespace Comformation.WAF.ByteMatchSet
         /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
         /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on TargetString before inspecting a request for a match.
+        /// on FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// CMD_LINE
@@ -176,7 +174,7 @@ namespace Comformation.WAF.ByteMatchSet
         /// 		 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CMD_LINE | COMPRESS_WHITE_SPACE | HTML_ENTITY_DECODE | LOWERCASE | NONE | URL_DECODE
+        /// Allowed values: CMD_LINE | COMPRESS_WHITE_SPACE | HTML_ENTITY_DECODE | LOWERCASE | NONE | URL_DECODE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TextTransformation")]

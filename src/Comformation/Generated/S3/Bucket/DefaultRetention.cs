@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket DefaultRetention
-    /// The default retention period that you want to apply to new objects placed in the specified bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html
     /// </summary>
     public class DefaultRetention
@@ -26,10 +25,12 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Mode
         /// The default Object Lock retention mode you want to apply to new objects placed in the specified
-        /// bucket.
+        /// bucket. Bucket default settings require both a mode and a period. The period can be either Days or
+        /// Years. For more information, see S3 Object Lock overview in the Amazon Simple Storage Service
+        /// Developer Guide.
         /// Required: No
         /// Type: String
-        /// Allowed Values: COMPLIANCE | GOVERNANCE
+        /// Allowed values: COMPLIANCE | GOVERNANCE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Mode")]

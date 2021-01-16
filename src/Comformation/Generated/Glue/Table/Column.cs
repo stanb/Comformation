@@ -7,7 +7,6 @@ namespace Comformation.Glue.Table
 {
     /// <summary>
     /// AWS::Glue::Table Column
-    /// A column in a Table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html
     /// </summary>
     public class Column

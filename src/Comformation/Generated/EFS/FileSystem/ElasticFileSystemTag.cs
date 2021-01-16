@@ -7,10 +7,7 @@ namespace Comformation.EFS.FileSystem
 {
     /// <summary>
     /// AWS::EFS::FileSystem ElasticFileSystemTag
-    /// A tag is a key-value pair attached to a file system. Allowed characters in the Key and Value properties are
-    /// letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = . _ :
-    /// /
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-elasticfilesystemtag.html
     /// </summary>
     public class ElasticFileSystemTag
     {
@@ -22,6 +19,7 @@ namespace Comformation.EFS.FileSystem
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
+        /// Pattern: ^(?![aA]{1}[wW]{1}[sS]{1}:)([\p{L}\p{Z}\p{N}_. :/=+\-@]+)$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]
@@ -33,6 +31,7 @@ namespace Comformation.EFS.FileSystem
         /// Required: Yes
         /// Type: String
         /// Maximum: 256
+        /// Pattern: ^([\p{L}\p{Z}\p{N}_. :/=+\-@]*)$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]

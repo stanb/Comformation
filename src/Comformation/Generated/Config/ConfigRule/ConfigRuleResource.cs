@@ -6,8 +6,6 @@ namespace Comformation.Config.ConfigRule
 {
     /// <summary>
     /// AWS::Config::ConfigRule
-    /// Specifies an AWS Config rule for evaluating whether your 			AWS resources comply with your desired
-    /// configurations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html
     /// </summary>
     public class ConfigRuleResource : ResourceBase
@@ -22,10 +20,11 @@ namespace Comformation.Config.ConfigRule
             /// Required: No
             /// Type: String
             /// Minimum: 1
-            /// Maximum: 64
+            /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConfigRuleName { get; set; }
+            public Union<string, IntrinsicFunction> ConfigRuleName { get; set; }
 
             /// <summary>
             /// Description
@@ -38,7 +37,7 @@ namespace Comformation.Config.ConfigRule
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// InputParameters
@@ -51,7 +50,7 @@ namespace Comformation.Config.ConfigRule
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InputParameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InputParameters { get; set; }
 
             /// <summary>
             /// MaximumExecutionFrequency
@@ -68,10 +67,10 @@ namespace Comformation.Config.ConfigRule
             /// 		 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
+            /// Allowed values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MaximumExecutionFrequency { get; set; }
+            public Union<string, IntrinsicFunction> MaximumExecutionFrequency { get; set; }
 
             /// <summary>
             /// Scope
@@ -81,12 +80,14 @@ namespace Comformation.Config.ConfigRule
             /// key 			and value. Specify a scope to constrain the resources that can 			trigger an evaluation for
             /// the rule. If you do not specify a scope, 			evaluations are triggered when any resource in the
             /// recording group 			changes.
+            /// 		
+            /// Note The scope can be empty.
             /// 	
             /// Required: No
             /// Type: Scope
             /// Update requires: No interruption
             /// </summary>
-			public Scope Scope { get; set; }
+            public Scope Scope { get; set; }
 
             /// <summary>
             /// Source
@@ -98,7 +99,7 @@ namespace Comformation.Config.ConfigRule
             /// Type: Source
             /// Update requires: No interruption
             /// </summary>
-			public Source Source { get; set; }
+            public Source Source { get; set; }
 
         }
 
@@ -108,10 +109,10 @@ namespace Comformation.Config.ConfigRule
 
     }
 
-	public static class ConfigRuleAttributes
-	{
+    public static class ConfigRuleAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Compliance_Type = new ResourceAttribute<Union<string, IntrinsicFunction>>("Compliance", "Type");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigRuleId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigRuleId");
-	}
+    }
 }

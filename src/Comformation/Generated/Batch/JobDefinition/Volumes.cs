@@ -7,7 +7,6 @@ namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
     /// AWS::Batch::JobDefinition Volumes
-    /// A list of volumes associated with the job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html
     /// </summary>
     public class Volumes
@@ -17,8 +16,9 @@ namespace Comformation.Batch.JobDefinition
         /// Host
         /// The contents of the host parameter determine whether your data volume persists on the host container
         /// instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a
-        /// host path for your data volume. However, the data is not guaranteed to persist after the containers
+        /// host path for your data volume. However, the data isn&#39;t guaranteed to persist after the containers
         /// associated with it stop running.
+        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
         /// Required: No
         /// Type: VolumesHost
         /// Update requires: No interruption

@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
     /// AWS::OpsWorks::Stack
-    /// Creates a new stack. For more information, see Create a New Stack.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html
     /// </summary>
     public class StackResource : ResourceBase
@@ -31,7 +30,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AgentVersion { get; set; }
+            public Union<string, IntrinsicFunction> AgentVersion { get; set; }
 
             /// <summary>
             /// Attributes
@@ -40,7 +39,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// ChefConfiguration
@@ -50,7 +49,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: ChefConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ChefConfiguration ChefConfiguration { get; set; }
+            public ChefConfiguration ChefConfiguration { get; set; }
 
             /// <summary>
             /// CloneAppIds
@@ -60,7 +59,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> CloneAppIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> CloneAppIds { get; set; }
 
             /// <summary>
             /// ClonePermissions
@@ -69,7 +68,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> ClonePermissions { get; set; }
+            public Union<bool, IntrinsicFunction> ClonePermissions { get; set; }
 
             /// <summary>
             /// ConfigurationManager
@@ -80,7 +79,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: StackConfigurationManager
             /// Update requires: No interruption
             /// </summary>
-			public StackConfigurationManager ConfigurationManager { get; set; }
+            public StackConfigurationManager ConfigurationManager { get; set; }
 
             /// <summary>
             /// CustomCookbooksSource
@@ -90,7 +89,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: Source
             /// Update requires: No interruption
             /// </summary>
-			public Source CustomCookbooksSource { get; set; }
+            public Source CustomCookbooksSource { get; set; }
 
             /// <summary>
             /// CustomJson
@@ -104,7 +103,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CustomJson { get; set; }
 
             /// <summary>
             /// DefaultAvailabilityZone
@@ -115,7 +114,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultAvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> DefaultAvailabilityZone { get; set; }
 
             /// <summary>
             /// DefaultInstanceProfileArn
@@ -125,7 +124,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultInstanceProfileArn { get; set; }
+            public Union<string, IntrinsicFunction> DefaultInstanceProfileArn { get; set; }
 
             /// <summary>
             /// DefaultOs
@@ -145,7 +144,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultOs { get; set; }
+            public Union<string, IntrinsicFunction> DefaultOs { get; set; }
 
             /// <summary>
             /// DefaultRootDeviceType
@@ -154,10 +153,10 @@ namespace Comformation.OpsWorks.Stack
             /// see Storage for the Root Device.
             /// Required: No
             /// Type: String
-            /// Allowed Values: ebs | instance-store
+            /// Allowed values: ebs | instance-store
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultRootDeviceType { get; set; }
+            public Union<string, IntrinsicFunction> DefaultRootDeviceType { get; set; }
 
             /// <summary>
             /// DefaultSshKeyName
@@ -170,7 +169,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultSshKeyName { get; set; }
+            public Union<string, IntrinsicFunction> DefaultSshKeyName { get; set; }
 
             /// <summary>
             /// DefaultSubnetId
@@ -182,7 +181,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultSubnetId { get; set; }
+            public Union<string, IntrinsicFunction> DefaultSubnetId { get; set; }
 
             /// <summary>
             /// EcsClusterArn
@@ -194,7 +193,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EcsClusterArn { get; set; }
+            public Union<string, IntrinsicFunction> EcsClusterArn { get; set; }
 
             /// <summary>
             /// ElasticIps
@@ -205,7 +204,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of ElasticIp
             /// Update requires: No interruption
             /// </summary>
-			public List<ElasticIp> ElasticIps { get; set; }
+            public List<ElasticIp> ElasticIps { get; set; }
 
             /// <summary>
             /// HostnameTheme
@@ -220,7 +219,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HostnameTheme { get; set; }
+            public Union<string, IntrinsicFunction> HostnameTheme { get; set; }
 
             /// <summary>
             /// Name
@@ -229,7 +228,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RdsDbInstances
@@ -241,7 +240,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of RdsDbInstance
             /// Update requires: No interruption
             /// </summary>
-			public List<RdsDbInstance> RdsDbInstances { get; set; }
+            public List<RdsDbInstance> RdsDbInstances { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -252,7 +251,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
             /// SourceStackId
@@ -261,7 +260,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceStackId { get; set; }
+            public Union<string, IntrinsicFunction> SourceStackId { get; set; }
 
             /// <summary>
             /// Tags
@@ -275,7 +274,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// UseCustomCookbooks
@@ -284,7 +283,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> UseCustomCookbooks { get; set; }
+            public Union<bool, IntrinsicFunction> UseCustomCookbooks { get; set; }
 
             /// <summary>
             /// UseOpsworksSecurityGroups
@@ -304,7 +303,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> UseOpsworksSecurityGroups { get; set; }
+            public Union<bool, IntrinsicFunction> UseOpsworksSecurityGroups { get; set; }
 
             /// <summary>
             /// VpcId
@@ -326,7 +325,7 @@ namespace Comformation.OpsWorks.Stack
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 

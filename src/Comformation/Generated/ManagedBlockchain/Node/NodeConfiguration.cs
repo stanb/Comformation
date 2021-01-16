@@ -7,7 +7,6 @@ namespace Comformation.ManagedBlockchain.Node
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Node NodeConfiguration
-    /// Configuration properties of a peer node within a membership.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html
     /// </summary>
     public class NodeConfiguration
@@ -15,7 +14,8 @@ namespace Comformation.ManagedBlockchain.Node
 
         /// <summary>
         /// AvailabilityZone
-        /// The Availability Zone in which the node exists.
+        /// The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
+        /// Blockchain is in preview release and is subject to change.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

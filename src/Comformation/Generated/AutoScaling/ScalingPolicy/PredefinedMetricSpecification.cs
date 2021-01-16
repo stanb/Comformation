@@ -7,8 +7,6 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::AutoScaling::ScalingPolicy PredefinedMetricSpecification
-    /// PredefinedMetricSpecification is a subproperty of TargetTrackingConfiguration that configures a predefined
-    /// metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html
     /// </summary>
     public class PredefinedMetricSpecification
@@ -24,7 +22,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
         /// Load Balancer target group.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ALBRequestCountPerTarget | ASGAverageCPUUtilization | ASGAverageNetworkIn |
+        /// Allowed values: ALBRequestCountPerTarget | ASGAverageCPUUtilization | ASGAverageNetworkIn |
         /// ASGAverageNetworkOut
         /// Update requires: No interruption
         /// </summary>

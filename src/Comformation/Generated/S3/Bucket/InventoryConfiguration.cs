@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket InventoryConfiguration
-    /// Specifies the inventory configuration for an Amazon S3 bucket. For more information, see GET Bucket inventory
-    /// in the Amazon Simple Storage Service API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html
     /// </summary>
     public class InventoryConfiguration
@@ -52,7 +50,7 @@ namespace Comformation.S3.Bucket
         /// If set to Current, the list does not contain these version-related fields.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: All | Current
+        /// Allowed values: All | Current
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludedObjectVersions")]
@@ -70,7 +68,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Prefix
-        /// The prefix that is prepended to all inventory results.
+        /// Specifies the inventory filter prefix.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -80,7 +78,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ScheduleFrequency
-        /// Specifies the schedule for generating inventory results.
+        /// Specifies the schedule for generating inventory results. Valid Values: Daily | Weekly.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

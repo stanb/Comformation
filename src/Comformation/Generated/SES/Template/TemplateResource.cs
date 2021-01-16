@@ -6,8 +6,6 @@ namespace Comformation.SES.Template
 {
     /// <summary>
     /// AWS::SES::Template
-    /// Specifies an email template. Email templates enable you to send personalized email to one or more destinations
-    /// in a single API operation. For more information, see the Amazon SES Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html
     /// </summary>
     public class TemplateResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.SES.Template
             /// Type: Template
             /// Update requires: No interruption
             /// </summary>
-			public Template Template { get; set; }
+            public Template Template { get; set; }
 
         }
 

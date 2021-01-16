@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application InputLambdaProcessor
-    /// An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess
-    /// records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputlambdaprocessor.html
     /// </summary>
     public class InputLambdaProcessor
@@ -37,7 +35,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2048
-        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

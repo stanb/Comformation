@@ -7,8 +7,6 @@ namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceFleetConfig EbsBlockDeviceConfig
-    /// EbsBlockDeviceConfig is a subproperty of the EbsConfiguration property type. EbsBlockDeviceConfig defines the
-    /// number and type of EBS volumes to associate with all EC2 instances in an EMR cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html
     /// </summary>
     public class EbsBlockDeviceConfig
@@ -27,7 +25,6 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// VolumesPerInstance
-        /// 	
         /// Number of EBS volumes with a specific volume configuration that will be associated with every
         /// instance in the instance group
         /// Required: No

@@ -7,7 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain ZoneAwarenessConfig
-    /// Specifies zone awareness configuration options. Only use if ZoneAwarenessEnabled is true.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-zoneawarenessconfig.html
     /// </summary>
     public class ZoneAwarenessConfig

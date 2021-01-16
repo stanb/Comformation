@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel SetVariable
-    /// Sets a variable to a specified value.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html
     /// </summary>
     public class SetVariable
@@ -18,6 +17,9 @@ namespace Comformation.IoTEvents.DetectorModel
         /// The name of the variable.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VariableName")]
@@ -28,6 +30,8 @@ namespace Comformation.IoTEvents.DetectorModel
         /// The new value of the variable.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]

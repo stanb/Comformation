@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
     /// AWS::ApiGateway::Deployment AccessLogSetting
-    /// The AccessLogSetting property type specifies settings for logging access in this stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html
     /// </summary>
     public class AccessLogSetting

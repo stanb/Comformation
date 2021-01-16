@@ -7,8 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowAutomationParameters
-    /// The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type
-    /// for a maintenance window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html
     /// </summary>
     public class MaintenanceWindowAutomationParameters

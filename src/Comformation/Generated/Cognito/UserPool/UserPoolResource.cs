@@ -6,8 +6,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool
-    /// The AWS::Cognito::UserPool resource creates an Amazon Cognito user pool. For more information on working with
-    /// Amazon Cognito user pools, see Amazon Cognito User Pools and CreateUserPool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html
     /// </summary>
     public class UserPoolResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> UserPoolTags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> UserPoolTags { get; set; }
 
             /// <summary>
             /// Policies
@@ -31,7 +29,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: Policies
             /// Update requires: No interruption
             /// </summary>
-			public Policies Policies { get; set; }
+            public Policies Policies { get; set; }
 
             /// <summary>
             /// VerificationMessageTemplate
@@ -41,41 +39,40 @@ namespace Comformation.Cognito.UserPool
             /// Type: VerificationMessageTemplate
             /// Update requires: No interruption
             /// </summary>
-			public VerificationMessageTemplate VerificationMessageTemplate { get; set; }
+            public VerificationMessageTemplate VerificationMessageTemplate { get; set; }
 
             /// <summary>
             /// MfaConfiguration
-            /// Specifies multi-factor authentication (MFA) configuration details. Can be one of the following
-            /// values:
-            /// OFF - MFA tokens are not required and cannot be specified during user registration.
-            /// ON - MFA tokens are required for all user registrations. You can only specify required when you are
-            /// initially creating a user pool.
-            /// OPTIONAL - Users have the option when registering to create an MFA token.
+            /// The multi-factor (MFA) configuration. Valid values include:
+            /// OFF MFA will not be used for any users. ON MFA is required for all users to sign in. OPTIONAL MFA
+            /// will be required only for individual users who have an MFA factor enabled.
             /// Required: No
             /// Type: String
+            /// Allowed values: OFF | ON | OPTIONAL
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MfaConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> MfaConfiguration { get; set; }
 
             /// <summary>
             /// Schema
-            /// An array of schema attributes for the new user pool. These attributes can be standard or custom
-            /// attributes.
+            /// The schema attributes for the new user pool. These attributes can be standard or custom attributes.
+            /// Note During a user pool update, you can add new schema attributes but you cannot modify or delete an
+            /// existing schema attribute.
             /// Required: No
             /// Type: List of SchemaAttribute
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<SchemaAttribute> Schema { get; set; }
+            public List<SchemaAttribute> Schema { get; set; }
 
             /// <summary>
             /// AdminCreateUserConfig
-            /// The type of configuration for creating a new user profile.
+            /// The configuration for creating a new user profile.
             /// Required: No
             /// Type: AdminCreateUserConfig
             /// Update requires: No interruption
             /// </summary>
-			public AdminCreateUserConfig AdminCreateUserConfig { get; set; }
+            public AdminCreateUserConfig AdminCreateUserConfig { get; set; }
 
             /// <summary>
             /// SmsAuthenticationMessage
@@ -87,7 +84,18 @@ namespace Comformation.Cognito.UserPool
             /// Pattern: . *\{####\}. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SmsAuthenticationMessage { get; set; }
+            public Union<string, IntrinsicFunction> SmsAuthenticationMessage { get; set; }
+
+            /// <summary>
+            /// UsernameConfiguration
+            /// You can choose to set case sensitivity on the username input for the selected sign-in option. For
+            /// example, when this is set to False, users will be able to sign in using either &quot;username&quot; or
+            /// &quot;Username&quot;. This configuration is immutable once it has been set.
+            /// Required: No
+            /// Type: UsernameConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public UsernameConfiguration UsernameConfiguration { get; set; }
 
             /// <summary>
             /// UserPoolName
@@ -99,7 +107,7 @@ namespace Comformation.Cognito.UserPool
             /// Pattern: [\w\s+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolName { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolName { get; set; }
 
             /// <summary>
             /// SmsVerificationMessage
@@ -111,7 +119,7 @@ namespace Comformation.Cognito.UserPool
             /// Pattern: . *\{####\}. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SmsVerificationMessage { get; set; }
+            public Union<string, IntrinsicFunction> SmsVerificationMessage { get; set; }
 
             /// <summary>
             /// UserPoolAddOns
@@ -121,7 +129,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: UserPoolAddOns
             /// Update requires: No interruption
             /// </summary>
-			public UserPoolAddOns UserPoolAddOns { get; set; }
+            public UserPoolAddOns UserPoolAddOns { get; set; }
 
             /// <summary>
             /// EmailConfiguration
@@ -130,7 +138,7 @@ namespace Comformation.Cognito.UserPool
             /// Type: EmailConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public EmailConfiguration EmailConfiguration { get; set; }
+            public EmailConfiguration EmailConfiguration { get; set; }
 
             /// <summary>
             /// SmsConfiguration
@@ -139,17 +147,18 @@ namespace Comformation.Cognito.UserPool
             /// Type: SmsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public SmsConfiguration SmsConfiguration { get; set; }
+            public SmsConfiguration SmsConfiguration { get; set; }
 
             /// <summary>
             /// AliasAttributes
             /// Attributes supported as an alias for this user pool. Possible values: phone_number, email, or
             /// preferred_username.
+            /// Note This user pool property cannot be updated.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AliasAttributes { get; set; }
+            public List<Union<string, IntrinsicFunction>> AliasAttributes { get; set; }
 
             /// <summary>
             /// EnabledMfas
@@ -164,11 +173,12 @@ namespace Comformation.Cognito.UserPool
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> EnabledMfas { get; set; }
+            public List<Union<string, IntrinsicFunction>> EnabledMfas { get; set; }
 
             /// <summary>
             /// EmailVerificationSubject
-            /// A string representing the email verification subject.
+            /// A string representing the email verification subject. EmailVerificationSubject is allowed only if
+            /// EmailSendingAccount is DEVELOPER.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -176,7 +186,7 @@ namespace Comformation.Cognito.UserPool
             /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}\s]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EmailVerificationSubject { get; set; }
+            public Union<string, IntrinsicFunction> EmailVerificationSubject { get; set; }
 
             /// <summary>
             /// LambdaConfig
@@ -189,17 +199,18 @@ namespace Comformation.Cognito.UserPool
             /// Type: LambdaConfig
             /// Update requires: No interruption
             /// </summary>
-			public LambdaConfig LambdaConfig { get; set; }
+            public LambdaConfig LambdaConfig { get; set; }
 
             /// <summary>
             /// UsernameAttributes
-            /// Specifies whether email addresses or phone numbers can be specified as user names when a user signs
+            /// Determines whether email addresses or phone numbers can be specified as user names when a user signs
             /// up. Possible values: phone_number or email.
+            /// This user pool property cannot be updated.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> UsernameAttributes { get; set; }
+            public List<Union<string, IntrinsicFunction>> UsernameAttributes { get; set; }
 
             /// <summary>
             /// AutoVerifiedAttributes
@@ -208,20 +219,21 @@ namespace Comformation.Cognito.UserPool
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AutoVerifiedAttributes { get; set; }
+            public List<Union<string, IntrinsicFunction>> AutoVerifiedAttributes { get; set; }
 
             /// <summary>
             /// DeviceConfiguration
-            /// The type of configuration for the user pool&#39;s device tracking.
+            /// The device configuration.
             /// Required: No
             /// Type: DeviceConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public DeviceConfiguration DeviceConfiguration { get; set; }
+            public DeviceConfiguration DeviceConfiguration { get; set; }
 
             /// <summary>
             /// EmailVerificationMessage
-            /// A string representing the email verification message.
+            /// A string representing the email verification message. EmailVerificationMessage is allowed only if
+            /// EmailSendingAccount is DEVELOPER.
             /// Required: No
             /// Type: String
             /// Minimum: 6
@@ -229,7 +241,20 @@ namespace Comformation.Cognito.UserPool
             /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}\s*]*\{####\}[\p{L}\p{M}\p{S}\p{N}\p{P}\s*]*
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EmailVerificationMessage { get; set; }
+            public Union<string, IntrinsicFunction> EmailVerificationMessage { get; set; }
+
+            /// <summary>
+            /// AccountRecoverySetting
+            /// Use this setting to define which verified available method a user can use to recover their password
+            /// when they call ForgotPassword. It allows you to define a preferred method when a user has more than
+            /// one method available. With this setting, SMS does not qualify for a valid password recovery
+            /// mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the
+            /// legacy behavior to determine the recovery method where SMS is preferred over email.
+            /// Required: No
+            /// Type: AccountRecoverySetting
+            /// Update requires: No interruption
+            /// </summary>
+            public AccountRecoverySetting AccountRecoverySetting { get; set; }
 
         }
 
@@ -239,10 +264,10 @@ namespace Comformation.Cognito.UserPool
 
     }
 
-	public static class UserPoolAttributes
-	{
+    public static class UserPoolAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProviderName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProviderName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProviderURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProviderURL");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

@@ -7,18 +7,30 @@ namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceFleetConfig InstanceFleetProvisioningSpecifications
-    /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later, excluding 5.
-    /// 0. x versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html
     /// </summary>
     public class InstanceFleetProvisioningSpecifications
     {
 
         /// <summary>
+        /// OnDemandSpecification
+        /// The launch specification for On-Demand Instances in the instance fleet, which determines the
+        /// allocation strategy.
+        /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later,
+        /// excluding 5. 0. x versions. On-Demand Instances allocation strategy is available in Amazon EMR
+        /// version 5. 12. 1 and later.
+        /// Required: No
+        /// Type: OnDemandProvisioningSpecification
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OnDemandSpecification")]
+        public OnDemandProvisioningSpecification OnDemandSpecification { get; set; }
+
+        /// <summary>
         /// SpotSpecification
-        /// The launch specification for Spot instances in the fleet, which determines the defined duration and
-        /// provisioning timeout behavior.
-        /// Required: Yes
+        /// The launch specification for Spot Instances in the fleet, which determines the defined duration,
+        /// provisioning timeout behavior, and allocation strategy.
+        /// Required: No
         /// Type: SpotProvisioningSpecification
         /// Update requires: No interruption
         /// </summary>

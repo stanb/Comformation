@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule IotAnalyticsAction
-    /// Sends message data to an AWS IoT Analytics channel.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html
     /// </summary>
     public class IotAnalyticsAction

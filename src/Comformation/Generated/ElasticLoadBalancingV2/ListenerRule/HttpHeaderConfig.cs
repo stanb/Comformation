@@ -7,22 +7,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule HttpHeaderConfig
-    /// Information about an HTTP header condition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html
     /// </summary>
     public class HttpHeaderConfig
     {
-
-        /// <summary>
-        /// HttpHeaderName
-        /// The name of the HTTP header field. The maximum size is 40 characters. The header name is case
-        /// insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("HttpHeaderName")]
-        public Union<string, IntrinsicFunction> HttpHeaderName { get; set; }
 
         /// <summary>
         /// Values
@@ -39,6 +27,17 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// </summary>
         [JsonProperty("Values")]
         public List<Union<string, IntrinsicFunction>> Values { get; set; }
+
+        /// <summary>
+        /// HttpHeaderName
+        /// The name of the HTTP header field. The maximum size is 40 characters. The header name is case
+        /// insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HttpHeaderName")]
+        public Union<string, IntrinsicFunction> HttpHeaderName { get; set; }
 
     }
 }

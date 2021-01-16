@@ -7,7 +7,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster EncryptionInTransit
-    /// The settings for encrypting data in transit.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html
     /// </summary>
     public class EncryptionInTransit
@@ -20,7 +19,7 @@ namespace Comformation.MSK.Cluster
         /// TLS means that client-broker communication is enabled with TLS only. TLS_PLAINTEXT means that
         /// client-broker communication is enabled for both TLS-encrypted, as well as plaintext data. PLAINTEXT
         /// means that client-broker communication is enabled in plaintext only.
-        /// The default value is TLS_PLAINTEXT.
+        /// The default value is TLS.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

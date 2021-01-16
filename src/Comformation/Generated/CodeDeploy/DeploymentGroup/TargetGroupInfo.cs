@@ -7,9 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup TargetGroupInfo
-    /// The TargetGroupInfo property type specifies information about a target group in Elastic Load Balancing to use
-    /// in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target
-    /// group. For more information, see TargetGroupInfo in the AWS CodeDeploy API Reference
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgroupinfo.html
     /// </summary>
     public class TargetGroupInfo

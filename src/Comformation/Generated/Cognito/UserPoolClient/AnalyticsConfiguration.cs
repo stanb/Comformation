@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPoolClient
 {
     /// <summary>
     /// AWS::Cognito::UserPoolClient AnalyticsConfiguration
-    /// AnalyticsConfiguration is a property of the AWS::Cognito::UserPoolClient resource that defines the Amazon
-    /// Pinpoint analytics configuration for collecting metrics for this user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html
     /// </summary>
     public class AnalyticsConfiguration

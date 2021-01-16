@@ -7,7 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain NodeToNodeEncryptionOptions
-    /// Specifies whether node-to-node encryption is enabled.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-nodetonodeencryptionoptions.html
     /// </summary>
     public class NodeToNodeEncryptionOptions

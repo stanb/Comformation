@@ -7,8 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule Target
-    /// The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream,
-    /// that EventBridge invokes when a rule is triggered.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
     /// </summary>
     public class Target
@@ -27,8 +25,31 @@ namespace Comformation.Events.Rule
         public Union<string, IntrinsicFunction> Arn { get; set; }
 
         /// <summary>
+        /// BatchParameters
+        /// If the event target is an AWS Batch job, this contains the job definition, job name, and other
+        /// parameters. For more information, see Jobs in the AWS Batch User Guide.
+        /// Required: No
+        /// Type: BatchParameters
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BatchParameters")]
+        public BatchParameters BatchParameters { get; set; }
+
+        /// <summary>
+        /// DeadLetterConfig
+        /// The DeadLetterConfig that defines the target queue to send dead-letter queue events to.
+        /// To learn more using a dead-letter queue to send events that fail to be delivered to a target, see
+        /// Event retry policy and using dead-letter queues.
+        /// Required: No
+        /// Type: DeadLetterConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DeadLetterConfig")]
+        public DeadLetterConfig DeadLetterConfig { get; set; }
+
+        /// <summary>
         /// EcsParameters
-        /// Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon
+        /// Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon
         /// ECS task. For more information about Amazon ECS tasks, see Task Definitions in the Amazon EC2
         /// Container Service Developer Guide.
         /// Required: No
@@ -37,6 +58,18 @@ namespace Comformation.Events.Rule
         /// </summary>
         [JsonProperty("EcsParameters")]
         public EcsParameters EcsParameters { get; set; }
+
+        /// <summary>
+        /// HttpParameters
+        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+        /// If you specify an API Gateway REST API as a target, you can use this parameter to specify headers,
+        /// path parameter, query string keys/values as part of your target invoking request.
+        /// Required: No
+        /// Type: HttpParameters
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HttpParameters")]
+        public HttpParameters HttpParameters { get; set; }
 
         /// <summary>
         /// Id
@@ -91,8 +124,8 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// KinesisParameters
-        /// The custom parameter that you can use to control the shard assignment when the target is a Kinesis
-        /// data stream. If you don&#39;t include this parameter, the default is to use the eventId as the partition
+        /// The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
+        /// stream. If you do not include this parameter, the default is to use the eventId as the partition
         /// key.
         /// Required: No
         /// Type: KinesisParameters
@@ -100,6 +133,30 @@ namespace Comformation.Events.Rule
         /// </summary>
         [JsonProperty("KinesisParameters")]
         public KinesisParameters KinesisParameters { get; set; }
+
+        /// <summary>
+        /// RedshiftDataParameters
+        /// Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+        /// If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+        /// Redshift Data API ExecuteStatement based on EventBridge events.
+        /// Required: No
+        /// Type: RedshiftDataParameters
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RedshiftDataParameters")]
+        public RedshiftDataParameters RedshiftDataParameters { get; set; }
+
+        /// <summary>
+        /// RetryPolicy
+        /// A RetryPolicy object that includes information about the retry policy settings.
+        /// To learn more using retry policy settings and using dead-letter queues, see Event retry policy and
+        /// using dead-letter queues.
+        /// Required: No
+        /// Type: RetryPolicy
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RetryPolicy")]
+        public RetryPolicy RetryPolicy { get; set; }
 
         /// <summary>
         /// RoleArn

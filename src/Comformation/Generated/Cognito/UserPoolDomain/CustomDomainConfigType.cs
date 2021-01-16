@@ -7,7 +7,6 @@ namespace Comformation.Cognito.UserPoolDomain
 {
     /// <summary>
     /// AWS::Cognito::UserPoolDomain CustomDomainConfigType
-    /// The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html
     /// </summary>
     public class CustomDomainConfigType

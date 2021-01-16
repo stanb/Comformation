@@ -7,9 +7,6 @@ namespace Comformation.IoTAnalytics.Channel
 {
     /// <summary>
     /// AWS::IoTAnalytics::Channel CustomerManagedS3
-    /// Use this to store channel data in an S3 bucket that you manage. When customer managed storage is selected, the
-    /// &quot;retentionPeriod&quot; parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-    /// changed after creation of the channel.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-customermanageds3.html
     /// </summary>
     public class CustomerManagedS3

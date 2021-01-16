@@ -7,7 +7,6 @@ namespace Comformation.Glue.DataCatalogEncryptionSettings
 {
     /// <summary>
     /// AWS::Glue::DataCatalogEncryptionSettings DataCatalogEncryptionSettings
-    /// Contains configuration information for maintaining Data Catalog security.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-datacatalogencryptionsettings.html
     /// </summary>
     public class DataCatalogEncryptionSettings

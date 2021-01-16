@@ -7,7 +7,6 @@ namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
     /// AWS::ECS::TaskDefinition Ulimit
-    /// The Ulimit property specifies the ulimit settings to pass to the container.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html
     /// </summary>
     public class Ulimit
@@ -15,7 +14,9 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// HardLimit
+        /// 		
         /// The hard limit for the ulimit type.
+        /// 	
         /// Required: Yes
         /// Type: Integer
         /// Update requires: Replacement
@@ -25,10 +26,12 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Name
+        /// 		
         /// The type of the ulimit.
+        /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: core | cpu | data | fsize | locks | memlock | msgqueue | nice | nofile | nproc | rss
+        /// Allowed values: core | cpu | data | fsize | locks | memlock | msgqueue | nice | nofile | nproc | rss
         /// | rtprio | rttime | sigpending | stack
         /// Update requires: Replacement
         /// </summary>
@@ -37,7 +40,9 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// SoftLimit
+        /// 		
         /// The soft limit for the ulimit type.
+        /// 	
         /// Required: Yes
         /// Type: Integer
         /// Update requires: Replacement

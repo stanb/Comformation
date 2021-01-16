@@ -6,9 +6,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
-    /// AWS::ElasticLoadBalancingV2::ListenerCertificate Certificate
-    /// Specifies an SSL server certificate.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html
+    /// AWS::ElasticLoadBalancingV2::Listener Certificate
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificate.html
     /// </summary>
     public class Certificate
     {

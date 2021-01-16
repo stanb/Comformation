@@ -7,10 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask Target
-    /// The Target property type specifies targets (either instances or window target IDs). You specify instances by
-    /// using Key=InstanceIds,Values=&amp;lt;instanceid1&amp;gt;,&amp;lt;instanceid2&amp;gt;. You specify window target IDs using
-    /// Key=WindowTargetIds,Values=&amp;lt;window-target-id-1&amp;gt;,&amp;lt;window-target-id-2&amp;gt; for a maintenance window task
-    /// in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html
     /// </summary>
     public class Target

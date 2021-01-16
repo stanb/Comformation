@@ -6,9 +6,6 @@ namespace Comformation.QLDB.Ledger
 {
     /// <summary>
     /// AWS::QLDB::Ledger
-    /// The AWS::QLDB::Ledger resource creates a new Amazon Quantum Ledger Database (Amazon QLDB) ledger in your AWS
-    /// account. Amazon QLDB is a fully managed ledger database owned by a central trusted authority that provides a
-    /// transparent, immutable, and cryptographically verifiable transaction log of all of your application changes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html
     /// </summary>
     public class LedgerResource : ResourceBase
@@ -20,10 +17,10 @@ namespace Comformation.QLDB.Ledger
             /// The permissions mode to assign to the ledger that you want to create.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: ALLOW_ALL
+            /// Allowed values: ALLOW_ALL
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PermissionsMode { get; set; }
+            public Union<string, IntrinsicFunction> PermissionsMode { get; set; }
 
             /// <summary>
             /// DeletionProtection
@@ -37,7 +34,7 @@ namespace Comformation.QLDB.Ledger
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
+            public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
 
             /// <summary>
             /// Tags
@@ -47,12 +44,14 @@ namespace Comformation.QLDB.Ledger
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
             /// The name of the ledger that you want to create. The name must be unique among all of your ledgers in
             /// the current AWS Region.
+            /// Naming constraints for ledger names are defined in Quotas in Amazon QLDB in the Amazon QLDB
+            /// Developer Guide.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -60,7 +59,7 @@ namespace Comformation.QLDB.Ledger
             /// Pattern: (?!^. *--)(?!^[0-9]+$)(?!^-)(?!. *-$)^[A-Za-z0-9-]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

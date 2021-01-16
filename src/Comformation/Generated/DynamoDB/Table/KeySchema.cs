@@ -7,8 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table KeySchema
-    /// Represents a single element of a key schema. A key schema specifies the attributes that make up the primary
-    /// key of a table, or the key attributes of an index.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html
     /// </summary>
     public class KeySchema

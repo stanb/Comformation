@@ -6,8 +6,6 @@ namespace Comformation.Cognito.UserPoolUICustomizationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolUICustomizationAttachment
-    /// The AWS::Cognito::UserPoolUICustomizationAttachment resource sets the UI customization information for a user
-    /// pool&#39;s built-in app UI.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html
     /// </summary>
     public class UserPoolUICustomizationAttachmentResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Cognito.UserPoolUICustomizationAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CSS { get; set; }
+            public Union<string, IntrinsicFunction> CSS { get; set; }
 
             /// <summary>
             /// UserPoolId
@@ -33,7 +31,7 @@ namespace Comformation.Cognito.UserPoolUICustomizationAttachment
             /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// ClientId
@@ -46,7 +44,7 @@ namespace Comformation.Cognito.UserPoolUICustomizationAttachment
             /// Pattern: [\w+]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClientId { get; set; }
+            public Union<string, IntrinsicFunction> ClientId { get; set; }
 
         }
 

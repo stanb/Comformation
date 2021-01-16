@@ -7,10 +7,6 @@ namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceFleetConfig InstanceTypeConfig
-    /// InstanceType config is a subproperty of InstanceFleetConfig. An instance type configuration specifies each
-    /// instance type in an instance fleet. The configuration determines the EC2 instances Amazon EMR attempts to
-    /// provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type
-    /// configurations in a fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html
     /// </summary>
     public class InstanceTypeConfig
@@ -18,7 +14,7 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// BidPrice
-        /// The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If
+        /// The bid price for each EC2 Spot Instance type as defined by InstanceType. Expressed in USD. If
         /// neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided,
         /// BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
         /// Required: No
@@ -33,7 +29,7 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// BidPriceAsPercentageOfOnDemandPrice
-        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
         /// InstanceType. Expressed as a number (for example, 20 specifies 20%). If neither BidPrice nor
         /// BidPriceAsPercentageOfOnDemandPrice is provided, BidPriceAsPercentageOfOnDemandPrice defaults to
         /// 100%.
@@ -61,8 +57,8 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// EbsConfiguration
-        /// The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
-        /// InstanceType.
+        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined
+        /// by InstanceType.
         /// Required: No
         /// Type: EbsConfiguration
         /// Update requires: Replacement

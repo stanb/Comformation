@@ -7,12 +7,20 @@ namespace Comformation.Lambda.Function
 {
     /// <summary>
     /// AWS::Lambda::Function Code
-    /// The deployment package for a Lambda function. For all runtimes, you can specify the location of an object in
-    /// Amazon S3. For Node. js and Python functions, you can specify the function code inline in the template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html
     /// </summary>
     public class Code
     {
+
+        /// <summary>
+        /// ImageUri
+        /// URI of a container image in the Amazon ECR registry.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ImageUri")]
+        public Union<string, IntrinsicFunction> ImageUri { get; set; }
 
         /// <summary>
         /// S3Bucket

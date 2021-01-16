@@ -6,9 +6,6 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinitionVersion
-    /// The AWS::Greengrass::ResourceDefinitionVersion resource represents a resource definition version for AWS IoT
-    /// Greengrass. A resource definition version contains a list of resources. (In AWS CloudFormation, resources are
-    /// named resource instances. )
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html
     /// </summary>
     public class ResourceDefinitionVersionResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
             /// Type: List of ResourceInstance
             /// Update requires: Replacement
             /// </summary>
-			public List<ResourceInstance> Resources { get; set; }
+            public List<ResourceInstance> Resources { get; set; }
 
             /// <summary>
             /// ResourceDefinitionId
@@ -31,7 +28,7 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> ResourceDefinitionId { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget Notification
-    /// A notification that is associated with a budget. A budget can have up to five notifications.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html
     /// </summary>
     public class Notification
@@ -20,7 +19,7 @@ namespace Comformation.Budgets.Budget
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: EQUAL_TO | GREATER_THAN | LESS_THAN
+        /// Allowed values: EQUAL_TO | GREATER_THAN | LESS_THAN
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComparisonOperator")]
@@ -34,7 +33,7 @@ namespace Comformation.Budgets.Budget
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ACTUAL | FORECASTED
+        /// Allowed values: ACTUAL | FORECASTED
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationType")]
@@ -43,7 +42,9 @@ namespace Comformation.Budgets.Budget
         /// <summary>
         /// Threshold
         /// 		
-        /// The threshold that is associated with a notification. Thresholds are always a percentage.
+        /// The threshold that is associated with a notification. Thresholds are always a percentage, and many
+        /// customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for
+        /// your threshold is 1,000,000% above the budgeted amount.
         /// 	
         /// Required: Yes
         /// Type: Double
@@ -63,7 +64,7 @@ namespace Comformation.Budgets.Budget
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: ABSOLUTE_VALUE | PERCENTAGE
+        /// Allowed values: ABSOLUTE_VALUE | PERCENTAGE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThresholdType")]

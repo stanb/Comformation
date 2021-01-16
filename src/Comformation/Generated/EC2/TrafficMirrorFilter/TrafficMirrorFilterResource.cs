@@ -6,7 +6,6 @@ namespace Comformation.EC2.TrafficMirrorFilter
 {
     /// <summary>
     /// AWS::EC2::TrafficMirrorFilter
-    /// Specifies a Traffic Mirror filter.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html
     /// </summary>
     public class TrafficMirrorFilterResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TrafficMirrorFilter
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// NetworkServices
@@ -30,16 +29,16 @@ namespace Comformation.EC2.TrafficMirrorFilter
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> NetworkServices { get; set; }
+            public List<Union<string, IntrinsicFunction>> NetworkServices { get; set; }
 
             /// <summary>
             /// Tags
             /// The tags to assign to a Traffic Mirror filter.
             /// Required: No
             /// Type: List of Tag
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.Amplify.Domain
 {
     /// <summary>
     /// AWS::Amplify::Domain SubDomainSetting
-    /// The SubDomainSetting property type allows you to connect a subdomain (e. g. foo. yourdomain. com) to a
-    /// specific branch.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-domain-subdomainsetting.html
     /// </summary>
     public class SubDomainSetting
@@ -16,7 +14,7 @@ namespace Comformation.Amplify.Domain
 
         /// <summary>
         /// Prefix
-        /// Prefix setting for the Subdomain.
+        /// The prefix setting for the subdomain.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +24,7 @@ namespace Comformation.Amplify.Domain
 
         /// <summary>
         /// BranchName
-        /// Branch name setting for the Subdomain.
+        /// The branch name setting for the subdomain.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

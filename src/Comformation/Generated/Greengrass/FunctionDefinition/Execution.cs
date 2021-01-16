@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinition Execution
-    /// Configuration settings for the Lambda execution environment on the AWS IoT Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html
     /// </summary>
     public class Execution

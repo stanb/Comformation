@@ -7,8 +7,6 @@ namespace Comformation.CloudWatch.AnomalyDetector
 {
     /// <summary>
     /// AWS::CloudWatch::AnomalyDetector Range
-    /// Each Range specifies one range of days or times to exclude from use for training or updating an anomaly
-    /// detection model.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-range.html
     /// </summary>
     public class Range

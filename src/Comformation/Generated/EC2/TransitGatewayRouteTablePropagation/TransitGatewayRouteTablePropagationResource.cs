@@ -6,7 +6,6 @@ namespace Comformation.EC2.TransitGatewayRouteTablePropagation
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRouteTablePropagation
-    /// Enables the specified attachment to propagate routes to the specified propagation route table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html
     /// </summary>
     public class TransitGatewayRouteTablePropagationResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TransitGatewayRouteTablePropagation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayRouteTableId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayRouteTableId { get; set; }
 
             /// <summary>
             /// TransitGatewayAttachmentId
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TransitGatewayRouteTablePropagation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayAttachmentId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayAttachmentId { get; set; }
 
         }
 

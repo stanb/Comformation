@@ -7,7 +7,6 @@ namespace Comformation.RoboMaker.RobotApplication
 {
     /// <summary>
     /// AWS::RoboMaker::RobotApplication SourceConfig
-    /// Information about a source configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html
     /// </summary>
     public class SourceConfig
@@ -31,7 +30,7 @@ namespace Comformation.RoboMaker.RobotApplication
         /// The target processor architecture for the application.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ARM64 | ARMHF | X86_64
+        /// Allowed values: ARM64 | ARMHF | X86_64
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Architecture")]

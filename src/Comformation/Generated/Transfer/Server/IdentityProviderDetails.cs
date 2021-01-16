@@ -7,9 +7,6 @@ namespace Comformation.Transfer.Server
 {
     /// <summary>
     /// AWS::Transfer::Server IdentityProviderDetails
-    /// This parameter is required when the IdentityProviderType is set to API_GATEWAY. Accepts an array containing
-    /// all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-    /// This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html
     /// </summary>
     public class IdentityProviderDetails
@@ -17,10 +14,11 @@ namespace Comformation.Transfer.Server
 
         /// <summary>
         /// InvocationRole
-        /// The InvocationRole parameter provides the type of InvocationRole used to authenticate the user
-        /// account.
+        /// Provides the type of InvocationRole used to authenticate the user account.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
         /// Pattern: arn:. *role/. *
         /// Update requires: No interruption
         /// </summary>
@@ -29,9 +27,10 @@ namespace Comformation.Transfer.Server
 
         /// <summary>
         /// Url
-        /// The Url parameter provides contains the location of the service endpoint used to authenticate users.
+        /// Provides the location of the service endpoint used to authenticate users.
         /// Required: Yes
         /// Type: String
+        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Url")]

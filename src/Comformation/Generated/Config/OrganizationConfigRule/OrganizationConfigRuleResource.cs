@@ -6,8 +6,6 @@ namespace Comformation.Config.OrganizationConfigRule
 {
     /// <summary>
     /// AWS::Config::OrganizationConfigRule
-    /// An organization config rule that has information about config rules that AWS Config creates in member
-    /// accounts. Only a master account can create or update an organization config rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html
     /// </summary>
     public class OrganizationConfigRuleResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.Config.OrganizationConfigRule
             /// Type: OrganizationManagedRuleMetadata
             /// Update requires: No interruption
             /// </summary>
-			public OrganizationManagedRuleMetadata OrganizationManagedRuleMetadata { get; set; }
+            public OrganizationManagedRuleMetadata OrganizationManagedRuleMetadata { get; set; }
 
             /// <summary>
             /// OrganizationConfigRuleName
@@ -37,7 +35,7 @@ namespace Comformation.Config.OrganizationConfigRule
             /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> OrganizationConfigRuleName { get; set; }
+            public Union<string, IntrinsicFunction> OrganizationConfigRuleName { get; set; }
 
             /// <summary>
             /// OrganizationCustomRuleMetadata
@@ -48,7 +46,7 @@ namespace Comformation.Config.OrganizationConfigRule
             /// Type: OrganizationCustomRuleMetadata
             /// Update requires: No interruption
             /// </summary>
-			public OrganizationCustomRuleMetadata OrganizationCustomRuleMetadata { get; set; }
+            public OrganizationCustomRuleMetadata OrganizationCustomRuleMetadata { get; set; }
 
             /// <summary>
             /// ExcludedAccounts
@@ -60,7 +58,7 @@ namespace Comformation.Config.OrganizationConfigRule
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ExcludedAccounts { get; set; }
+            public List<Union<string, IntrinsicFunction>> ExcludedAccounts { get; set; }
 
         }
 

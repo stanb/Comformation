@@ -7,8 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget BudgetData
-    /// Represents the output of the CreateBudget operation. The content consists of the detailed metadata and data
-    /// file information, and the current status of the budget object.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html
     /// </summary>
     public class BudgetData
@@ -17,13 +15,13 @@ namespace Comformation.Budgets.Budget
         /// <summary>
         /// BudgetLimit
         /// 		
-        /// The total amount of cost, usage, RI utilization, or RI coverage that you want to track with your
-        /// budget.
+        /// The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings
+        /// Plans coverage that you want to track with your budget.
         /// 		
-        /// BudgetLimit is required for cost or usage budgets, but optional for RI utilization or coverage
-        /// budgets. RI utilization or coverage budgets default to 100, which is the only valid value for RI
-        /// utilization or coverage budgets. You can&#39;t use BudgetLimit with PlannedBudgetLimits for CreateBudget
-        /// and UpdateBudget actions.
+        /// BudgetLimit is required for cost or usage budgets, but optional for RI or Savings Plans utilization
+        /// or coverage budgets. RI and Savings Plans utilization or coverage budgets default to 100, which is
+        /// the only valid value for RI or Savings Plans utilization or coverage budgets. You can&#39;t use
+        /// BudgetLimit with PlannedBudgetLimits for CreateBudget and UpdateBudget actions.
         /// 	
         /// Required: No
         /// Type: Spend
@@ -63,7 +61,7 @@ namespace Comformation.Budgets.Budget
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ANNUALLY | DAILY | MONTHLY | QUARTERLY
+        /// Allowed values: ANNUALLY | DAILY | MONTHLY | QUARTERLY
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimeUnit")]
@@ -144,7 +142,8 @@ namespace Comformation.Budgets.Budget
         /// 		
         /// The types of costs that are included in this COST budget.
         /// 		
-        /// USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
+        /// USAGE, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, and SAVINGS_PLANS_COVERAGE budgets do
+        /// not have CostTypes.
         /// 	
         /// Required: No
         /// Type: CostTypes
@@ -156,11 +155,13 @@ namespace Comformation.Budgets.Budget
         /// <summary>
         /// BudgetType
         /// 		
-        /// Whether this budget tracks costs, usage, RI utilization, or RI coverage.
+        /// Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or
+        /// Savings Plans coverage.
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: COST | RI_COVERAGE | RI_UTILIZATION | USAGE
+        /// Allowed values: COST | RI_COVERAGE | RI_UTILIZATION | SAVINGS_PLANS_COVERAGE |
+        /// SAVINGS_PLANS_UTILIZATION | USAGE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BudgetType")]

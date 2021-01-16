@@ -7,8 +7,6 @@ namespace Comformation.WAF.SizeConstraintSet
 {
     /// <summary>
     /// AWS::WAF::SizeConstraintSet FieldToMatch
-    /// Specifies the part of a web request that you want AWS WAF to check for a size constraint, such as a specific
-    /// header or a query string.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html
     /// </summary>
     public class FieldToMatch
@@ -27,6 +25,9 @@ namespace Comformation.WAF.SizeConstraintSet
         /// 	
         /// Required: Conditional
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Data")]
@@ -56,7 +57,7 @@ namespace Comformation.WAF.SizeConstraintSet
         /// 		 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ALL_QUERY_ARGS | BODY | HEADER | METHOD | QUERY_STRING | SINGLE_QUERY_ARG | URI
+        /// Allowed values: ALL_QUERY_ARGS | BODY | HEADER | METHOD | QUERY_STRING | SINGLE_QUERY_ARG | URI
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

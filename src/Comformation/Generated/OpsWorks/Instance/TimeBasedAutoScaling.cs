@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Instance
 {
     /// <summary>
     /// AWS::OpsWorks::Instance TimeBasedAutoScaling
-    /// Describes an instance&#39;s time-based auto scaling configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html
     /// </summary>
     public class TimeBasedAutoScaling

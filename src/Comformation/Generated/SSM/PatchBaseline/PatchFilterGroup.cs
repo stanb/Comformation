@@ -7,8 +7,6 @@ namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
     /// AWS::SSM::PatchBaseline PatchFilterGroup
-    /// The PatchFilterGroup property type specifies a set of patch filters for an AWS Systems Manager patch baseline,
-    /// typically used for approval rules for a Systems Manager patch baseline.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html
     /// </summary>
     public class PatchFilterGroup

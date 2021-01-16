@@ -6,7 +6,6 @@ namespace Comformation.DAX.SubnetGroup
 {
     /// <summary>
     /// AWS::DAX::SubnetGroup
-    /// Creates a new subnet group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html
     /// </summary>
     public class SubnetGroupResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.DAX.SubnetGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SubnetGroupName
@@ -29,7 +28,7 @@ namespace Comformation.DAX.SubnetGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -38,7 +37,7 @@ namespace Comformation.DAX.SubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         }
 

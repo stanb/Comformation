@@ -7,8 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule RunCommandTarget
-    /// The RunCommandTarget property type specifies information about the Amazon EC2 instances that the Run Command
-    /// is sent to. A RunCommandTarget block can include only one key, but the key can specify multiple values.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html
     /// </summary>
     public class RunCommandTarget

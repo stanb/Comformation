@@ -6,8 +6,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket
-    /// The AWS::S3::Bucket resource creates an Amazon S3 bucket in the same AWS Region where you create the AWS
-    /// CloudFormation stack.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
     /// </summary>
     public class BucketResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.S3.Bucket
             /// Type: AccelerateConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public AccelerateConfiguration AccelerateConfiguration { get; set; }
+            public AccelerateConfiguration AccelerateConfiguration { get; set; }
 
             /// <summary>
             /// AccessControl
@@ -36,7 +34,7 @@ namespace Comformation.S3.Bucket
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AccessControl { get; set; }
+            public Union<string, IntrinsicFunction> AccessControl { get; set; }
 
             /// <summary>
             /// AnalyticsConfigurations
@@ -45,7 +43,7 @@ namespace Comformation.S3.Bucket
             /// Type: List of AnalyticsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public List<AnalyticsConfiguration> AnalyticsConfigurations { get; set; }
+            public List<AnalyticsConfiguration> AnalyticsConfigurations { get; set; }
 
             /// <summary>
             /// BucketEncryption
@@ -57,13 +55,15 @@ namespace Comformation.S3.Bucket
             /// Type: BucketEncryption
             /// Update requires: No interruption
             /// </summary>
-			public BucketEncryption BucketEncryption { get; set; }
+            public BucketEncryption BucketEncryption { get; set; }
 
             /// <summary>
             /// BucketName
             /// A name for the bucket. If you don&#39;t specify a name, AWS CloudFormation generates a unique ID and
-            /// uses that ID for the bucket name. For more information, see Name Type. The bucket name must contain
-            /// only lowercase letters, numbers, periods (. ), and dashes (-).
+            /// uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers,
+            /// periods (. ), and dashes (-) and must follow Amazon S3 bucket restrictions and limitations. For more
+            /// information, see Rules for naming Amazon S3 buckets in the Amazon Simple Storage Service Developer
+            /// Guide.
             /// Important If you specify a name, you can&#39;t perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you need to replace the
             /// resource, specify a new name.
@@ -71,7 +71,7 @@ namespace Comformation.S3.Bucket
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> BucketName { get; set; }
+            public Union<string, IntrinsicFunction> BucketName { get; set; }
 
             /// <summary>
             /// CorsConfiguration
@@ -82,7 +82,16 @@ namespace Comformation.S3.Bucket
             /// Type: CorsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public CorsConfiguration CorsConfiguration { get; set; }
+            public CorsConfiguration CorsConfiguration { get; set; }
+
+            /// <summary>
+            /// IntelligentTieringConfigurations
+            /// Defines how Amazon S3 handles Intelligent-Tiering storage.
+            /// Required: No
+            /// Type: List of IntelligentTieringConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public List<IntelligentTieringConfiguration> IntelligentTieringConfigurations { get; set; }
 
             /// <summary>
             /// InventoryConfigurations
@@ -92,7 +101,7 @@ namespace Comformation.S3.Bucket
             /// Type: List of InventoryConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public List<InventoryConfiguration> InventoryConfigurations { get; set; }
+            public List<InventoryConfiguration> InventoryConfigurations { get; set; }
 
             /// <summary>
             /// LifecycleConfiguration
@@ -102,7 +111,7 @@ namespace Comformation.S3.Bucket
             /// Type: LifecycleConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public LifecycleConfiguration LifecycleConfiguration { get; set; }
+            public LifecycleConfiguration LifecycleConfiguration { get; set; }
 
             /// <summary>
             /// LoggingConfiguration
@@ -111,7 +120,7 @@ namespace Comformation.S3.Bucket
             /// Type: LoggingConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public LoggingConfiguration LoggingConfiguration { get; set; }
+            public LoggingConfiguration LoggingConfiguration { get; set; }
 
             /// <summary>
             /// MetricsConfigurations
@@ -124,7 +133,7 @@ namespace Comformation.S3.Bucket
             /// Type: List of MetricsConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public List<MetricsConfiguration> MetricsConfigurations { get; set; }
+            public List<MetricsConfiguration> MetricsConfigurations { get; set; }
 
             /// <summary>
             /// NotificationConfiguration
@@ -133,7 +142,7 @@ namespace Comformation.S3.Bucket
             /// Type: NotificationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public NotificationConfiguration NotificationConfiguration { get; set; }
+            public NotificationConfiguration NotificationConfiguration { get; set; }
 
             /// <summary>
             /// ObjectLockConfiguration
@@ -145,17 +154,25 @@ namespace Comformation.S3.Bucket
             /// Type: ObjectLockConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ObjectLockConfiguration ObjectLockConfiguration { get; set; }
+            public ObjectLockConfiguration ObjectLockConfiguration { get; set; }
 
             /// <summary>
             /// ObjectLockEnabled
             /// Indicates whether this bucket has an Object Lock configuration enabled.
             /// Required: No
             /// Type: Boolean
-            /// Allowed Values: Enabled
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> ObjectLockEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> ObjectLockEnabled { get; set; }
+
+            /// <summary>
+            /// OwnershipControls
+            /// Configuration that defines how Amazon S3 handles object ownership rules.
+            /// Required: No
+            /// Type: OwnershipControls
+            /// Update requires: No interruption
+            /// </summary>
+            public OwnershipControls OwnershipControls { get; set; }
 
             /// <summary>
             /// PublicAccessBlockConfiguration
@@ -164,19 +181,19 @@ namespace Comformation.S3.Bucket
             /// Type: PublicAccessBlockConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
+            public PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
 
             /// <summary>
             /// ReplicationConfiguration
             /// Configuration for replicating objects in an S3 bucket. To enable replication, you must also enable
             /// versioning by using the VersioningConfiguration property.
             /// Amazon S3 can store replicated objects in only one destination bucket. The destination bucket must
-            /// already exist and be in a different AWS Region than your source bucket.
+            /// already exist.
             /// Required: No
             /// Type: ReplicationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ReplicationConfiguration ReplicationConfiguration { get; set; }
+            public ReplicationConfiguration ReplicationConfiguration { get; set; }
 
             /// <summary>
             /// Tags
@@ -185,7 +202,7 @@ namespace Comformation.S3.Bucket
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VersioningConfiguration
@@ -196,7 +213,7 @@ namespace Comformation.S3.Bucket
             /// Type: VersioningConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public VersioningConfiguration VersioningConfiguration { get; set; }
+            public VersioningConfiguration VersioningConfiguration { get; set; }
 
             /// <summary>
             /// WebsiteConfiguration
@@ -206,7 +223,7 @@ namespace Comformation.S3.Bucket
             /// Type: WebsiteConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public WebsiteConfiguration WebsiteConfiguration { get; set; }
+            public WebsiteConfiguration WebsiteConfiguration { get; set; }
 
         }
 
@@ -216,12 +233,12 @@ namespace Comformation.S3.Bucket
 
     }
 
-	public static class BucketAttributes
-	{
+    public static class BucketAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DualStackDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DualStackDomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RegionalDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("RegionalDomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> WebsiteURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("WebsiteURL");
-	}
+    }
 }

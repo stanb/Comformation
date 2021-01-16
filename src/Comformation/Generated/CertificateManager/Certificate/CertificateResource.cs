@@ -6,16 +6,45 @@ namespace Comformation.CertificateManager.Certificate
 {
     /// <summary>
     /// AWS::CertificateManager::Certificate
-    /// The AWS::CertificateManager::Certificate resource requests an AWS Certificate Manager (ACM) certificate that
-    /// you can use to enable secure connections. For example, you can deploy an ACM certificate to an Elastic Load
-    /// Balancer to enable HTTPS support. For more information, see RequestCertificate in the AWS Certificate Manager
-    /// API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html
     /// </summary>
     public class CertificateResource : ResourceBase
     {
         public class CertificateProperties
         {
+            /// <summary>
+            /// CertificateAuthorityArn
+            /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue
+            /// the certificate. If you do not provide an ARN and you are trying to request a private certificate,
+            /// ACM will attempt to issue a public certificate. For more information about private CAs, see the AWS
+            /// Certificate Manager Private Certificate Authority (PCA) user guide. The ARN must have the following
+            /// form:
+            /// arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012
+            /// Required: No
+            /// Type: String
+            /// Minimum: 20
+            /// Maximum: 2048
+            /// Pattern: arn:[\w+=/,. @-]+:[\w+=/,. @-]+:[\w+=/,. @-]*:[0-9]+:[\w+=,. @-]+(/[\w+=,. @-]+)*
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CertificateAuthorityArn { get; set; }
+
+            /// <summary>
+            /// CertificateTransparencyLoggingPreference
+            /// You can opt out of certificate transparency logging by specifying the DISABLED option. Opt in by
+            /// specifying ENABLED.
+            /// If you do not specify a certificate transparency logging preference on a new CloudFormation
+            /// template, or if you remove the logging preference from an existing template, this is the same as
+            /// explicitly enabling the preference.
+            /// Changing the certificate transparency logging preference will update the existing resource by
+            /// calling UpdateCertificateOptions on the certificate. This action will not create a new resource.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: DISABLED | ENABLED
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> CertificateTransparencyLoggingPreference { get; set; }
+
             /// <summary>
             /// DomainName
             /// The fully qualified domain name (FQDN), such as www. example. com, with which you want to secure an
@@ -29,7 +58,7 @@ namespace Comformation.CertificateManager.Certificate
             /// Pattern: ^(\*\. )?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\. )+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DomainName { get; set; }
+            public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// DomainValidationOptions
@@ -39,7 +68,7 @@ namespace Comformation.CertificateManager.Certificate
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public List<DomainValidationOption> DomainValidationOptions { get; set; }
+            public List<DomainValidationOption> DomainValidationOptions { get; set; }
 
             /// <summary>
             /// SubjectAlternativeNames
@@ -51,17 +80,17 @@ namespace Comformation.CertificateManager.Certificate
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubjectAlternativeNames { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubjectAlternativeNames { get; set; }
 
             /// <summary>
             /// Tags
-            /// Key-value pairs that can identity the certificate.
+            /// Key-value pairs that can identify the certificate.
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// ValidationMethod
@@ -70,10 +99,10 @@ namespace Comformation.CertificateManager.Certificate
             /// validation.
             /// Required: No
             /// Type: String
-            /// Allowed Values: DNS | EMAIL
+            /// Allowed values: DNS | EMAIL
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ValidationMethod { get; set; }
+            public Union<string, IntrinsicFunction> ValidationMethod { get; set; }
 
         }
 

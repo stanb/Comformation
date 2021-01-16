@@ -6,9 +6,6 @@ namespace Comformation.ApiGatewayV2.Authorizer
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Authorizer
-    /// The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function. For more information about
-    /// Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function in the API
-    /// Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html
     /// </summary>
     public class AuthorizerResource : ResourceBase
@@ -17,12 +14,12 @@ namespace Comformation.ApiGatewayV2.Authorizer
         {
             /// <summary>
             /// IdentityValidationExpression
-            /// The validation expression does not apply to the REQUEST authorizer.
+            /// This parameter is not used.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IdentityValidationExpression { get; set; }
+            public Union<string, IntrinsicFunction> IdentityValidationExpression { get; set; }
 
             /// <summary>
             /// AuthorizerUri
@@ -33,62 +30,100 @@ namespace Comformation.ApiGatewayV2.Authorizer
             /// {region} is the same as the region hosting the Lambda function, path indicates that the remaining
             /// substring in the URI should be treated as the path to the resource, including the initial /. For
             /// Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizerUri { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizerUri { get; set; }
 
             /// <summary>
             /// AuthorizerCredentialsArn
             /// Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To
             /// specify an IAM role for API Gateway to assume, use the role&#39;s Amazon Resource Name (ARN). To use
-            /// resource-based permissions on the Lambda function, specify null.
+            /// resource-based permissions on the Lambda function, specify null. Supported only for REQUEST
+            /// authorizers.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizerCredentialsArn { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizerCredentialsArn { get; set; }
 
             /// <summary>
             /// AuthorizerType
-            /// The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming
-            /// request parameters.
+            /// The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters.
+            /// Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizerType { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizerType { get; set; }
+
+            /// <summary>
+            /// JwtConfiguration
+            /// The JWTConfiguration property specifies the configuration of a JWT authorizer. Required for the JWT
+            /// authorizer type. Supported only for HTTP APIs.
+            /// Required: No
+            /// Type: JWTConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public JWTConfiguration JwtConfiguration { get; set; }
 
             /// <summary>
             /// AuthorizerResultTtlInSeconds
-            /// The time to live (TTL), in seconds, of cached authorizer results. If it is zero, authorization
-            /// caching is disabled. If it is greater than zero, API Gateway will cache authorizer responses. If
-            /// this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+            /// The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization
+            /// caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum
+            /// value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
+            public Union<int, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
 
             /// <summary>
             /// IdentitySource
             /// The identity source for which authorization is requested.
-            /// For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-            /// comma-separated string of one or more mapping expressions of the specified request parameters. For
-            /// example, if an Auth header, a Name query string parameter are defined as identity sources, this
-            /// value is $method. request. header. Auth, $method. request. querystring. Name. These parameters will
-            /// be used to derive the authorization caching key and to perform runtime validation of the REQUEST
-            /// authorizer by verifying all of the identity-related request parameters are present, not null and
-            /// non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function,
-            /// otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
-            /// value is a string of comma-separated mapping expressions of the specified request parameters. When
-            /// the authorization caching is not enabled, this property is optional.
+            /// For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of
+            /// the specified request parameters. The identity source can be headers, query string parameters, stage
+            /// variables, and context parameters. For example, if an Auth header and a Name query string parameter
+            /// are defined as identity sources, this value is route. request. header. Auth, route. request.
+            /// querystring. Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for
+            /// example, $request. header. Auth, $request. querystring. Name. These parameters are used to perform
+            /// runtime validation for Lambda-based authorizers by verifying all of the identity-related request
+            /// parameters are present in the request, not null, and non-empty. Only when this is true does the
+            /// authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response
+            /// without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key
+            /// when caching is enabled. To learn more, see Working with AWS Lambda authorizers for HTTP APIs.
+            /// For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound
+            /// requests. Currently only header-based and query parameter-based selections are supported, for
+            /// example $request. header. Authorization.
             /// Required: Yes
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> IdentitySource { get; set; }
+            public List<Union<string, IntrinsicFunction>> IdentitySource { get; set; }
+
+            /// <summary>
+            /// AuthorizerPayloadFormatVersion
+            /// Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API
+            /// Lambda authorizers. Supported values are 1. 0 and 2. 0. To learn more, see Working with AWS Lambda
+            /// authorizers for HTTP APIs.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> AuthorizerPayloadFormatVersion { get; set; }
+
+            /// <summary>
+            /// EnableSimpleResponses
+            /// Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda
+            /// authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value
+            /// instead of an IAM policy. Supported only for HTTP APIs. To learn more, see Working with AWS Lambda
+            /// authorizers for HTTP APIs.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> EnableSimpleResponses { get; set; }
 
             /// <summary>
             /// ApiId
@@ -97,7 +132,7 @@ namespace Comformation.ApiGatewayV2.Authorizer
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
             /// Name
@@ -106,7 +141,7 @@ namespace Comformation.ApiGatewayV2.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

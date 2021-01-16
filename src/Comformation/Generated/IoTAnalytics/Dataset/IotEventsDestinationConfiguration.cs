@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset IotEventsDestinationConfiguration
-    /// Configuration information for delivery of data set contents to AWS IoT Events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-ioteventsdestinationconfiguration.html
     /// </summary>
     public class IotEventsDestinationConfiguration
@@ -15,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// InputName
-        /// The name of the AWS IoT Events input to which data set contents are delivered.
+        /// The name of the AWS IoT Events input to which dataset contents are delivered.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -28,7 +27,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS
+        /// The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS
         /// IoT Events input.
         /// Required: Yes
         /// Type: String

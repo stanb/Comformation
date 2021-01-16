@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinitionVersion ResourceInstance
-    /// A local resource, 		machine learning resource, or secret resource. 	For more information, see Access Local
-    /// Resources with Lambda Functions, 	Perform Machine Learning Inference, and 	Deploy Secrets to the AWS IoT
-    /// Greengrass Core in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html
     /// </summary>
     public class ResourceInstance

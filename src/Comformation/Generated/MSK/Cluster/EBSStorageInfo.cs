@@ -7,7 +7,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster EBSStorageInfo
-    /// Contains information about the EBS storage volumes attached to brokers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html
     /// </summary>
     public class EBSStorageInfo

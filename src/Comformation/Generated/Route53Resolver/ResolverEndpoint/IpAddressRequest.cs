@@ -7,9 +7,6 @@ namespace Comformation.Route53Resolver.ResolverEndpoint
 {
     /// <summary>
     /// AWS::Route53Resolver::ResolverEndpoint IpAddressRequest
-    /// In a 			CreateResolverEndpoint 			request, the IP address that DNS queries originate from (for outbound
-    /// endpoints) or that you forward DNS queries to (for inbound endpoints). 			IpAddressRequest also includes the
-    /// ID of the subnet that contains the IP address.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html
     /// </summary>
     public class IpAddressRequest

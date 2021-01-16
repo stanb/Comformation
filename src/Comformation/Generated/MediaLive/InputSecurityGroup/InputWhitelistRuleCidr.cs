@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.InputSecurityGroup
 {
     /// <summary>
     /// AWS::MediaLive::InputSecurityGroup InputWhitelistRuleCidr
-    /// An IPv4 CIDR range to include in this input security group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html
     /// </summary>
     public class InputWhitelistRuleCidr

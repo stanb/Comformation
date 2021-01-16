@@ -7,7 +7,6 @@ namespace Comformation.ApiGatewayV2.Stage
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Stage AccessLogSettings
-    /// Settings for logging access in a stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-accesslogsettings.html
     /// </summary>
     public class AccessLogSettings
@@ -16,8 +15,9 @@ namespace Comformation.ApiGatewayV2.Stage
         /// <summary>
         /// Format
         /// A single line format of the access logs of data, as specified by selected $context variables. The
-        /// format must include at least $context. requestId.
-        /// Required: No
+        /// format must include at least $context. requestId. This parameter is required to enable access
+        /// logging.
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -26,8 +26,9 @@ namespace Comformation.ApiGatewayV2.Stage
 
         /// <summary>
         /// DestinationArn
-        /// The ARN of the CloudWatch Logs log group to receive access logs.
-        /// Required: No
+        /// The ARN of the CloudWatch Logs log group to receive access logs. This parameter is required to
+        /// enable access logging.
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

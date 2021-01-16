@@ -7,8 +7,6 @@ namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
     /// AWS::Cognito::IdentityPool CognitoStreams
-    /// CognitoStreams is a property of the AWS::Cognito::IdentityPool resource that defines configuration options for
-    /// Amazon Cognito streams.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html
     /// </summary>
     public class CognitoStreams

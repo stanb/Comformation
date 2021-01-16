@@ -7,7 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application FlinkApplicationConfiguration
-    /// Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html
     /// </summary>
     public class FlinkApplicationConfiguration

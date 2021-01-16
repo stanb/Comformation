@@ -7,9 +7,6 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::AutoScaling::ScalingPolicy MetricDimension
-    /// MetricDimension is a subproperty of CustomizedMetricSpecification that specifies the dimensions of a metric
-    /// for a target tracking scaling policy. Dimensions are arbitrary name/value pairs that can be associated with a
-    /// CloudWatch metric. Duplicate dimensions are not allowed.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdimension.html
     /// </summary>
     public class MetricDimension

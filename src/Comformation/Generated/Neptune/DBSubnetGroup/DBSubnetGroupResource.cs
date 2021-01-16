@@ -6,8 +6,6 @@ namespace Comformation.Neptune.DBSubnetGroup
 {
     /// <summary>
     /// AWS::Neptune::DBSubnetGroup
-    /// The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group. Subnet groups must contain at
-    /// least two subnets in two different Availability Zones in the same AWS Region.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
             /// DBSubnetGroupDescription
@@ -30,7 +28,7 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -39,7 +37,7 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -48,7 +46,7 @@ namespace Comformation.Neptune.DBSubnetGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

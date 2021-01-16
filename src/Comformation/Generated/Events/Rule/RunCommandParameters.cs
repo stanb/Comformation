@@ -7,8 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule RunCommandParameters
-    /// The RunCommandParameters property type specifies the parameters to use when a rule invokes the AWS Systems
-    /// Manager Run Command.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html
     /// </summary>
     public class RunCommandParameters

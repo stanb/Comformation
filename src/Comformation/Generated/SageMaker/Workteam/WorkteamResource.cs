@@ -6,8 +6,6 @@ namespace Comformation.SageMaker.Workteam
 {
     /// <summary>
     /// AWS::SageMaker::Workteam
-    /// Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user
-    /// pools. You must first create the user pools before you can create a work team.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html
     /// </summary>
     public class WorkteamResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.SageMaker.Workteam
             /// Pattern: . +
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// NotificationConfiguration
@@ -33,7 +31,7 @@ namespace Comformation.SageMaker.Workteam
             /// Type: NotificationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public NotificationConfiguration NotificationConfiguration { get; set; }
+            public NotificationConfiguration NotificationConfiguration { get; set; }
 
             /// <summary>
             /// WorkteamName
@@ -42,32 +40,33 @@ namespace Comformation.SageMaker.Workteam
             /// Type: String
             /// Minimum: 1
             /// Maximum: 63
-            /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
+            /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> WorkteamName { get; set; }
+            public Union<string, IntrinsicFunction> WorkteamName { get; set; }
 
             /// <summary>
             /// MemberDefinitions
-            /// The Amazon Cognito user groups that make up the work team.
+            /// A list of MemberDefinition objects that contains objects that identify the workers that make up the
+            /// work team.
+            /// Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+            /// workforces created using Amazon Cognito use CognitoMemberDefinition. For workforces created using
+            /// your own OIDC identity provider (IdP) use OidcMemberDefinition.
             /// Required: No
             /// Type: List of MemberDefinition
             /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
-			public List<MemberDefinition> MemberDefinitions { get; set; }
+            public List<MemberDefinition> MemberDefinitions { get; set; }
 
             /// <summary>
             /// Tags
-            /// A list of key-value pairs to apply to this resource.
-            /// For more information, see Resource Tag and Using Cost Allocation Tags in the AWS Billing and Cost
-            /// Management User Guide.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: List of Tag
-            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -77,8 +76,8 @@ namespace Comformation.SageMaker.Workteam
 
     }
 
-	public static class WorkteamAttributes
-	{
+    public static class WorkteamAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> WorkteamName = new ResourceAttribute<Union<string, IntrinsicFunction>>("WorkteamName");
-	}
+    }
 }

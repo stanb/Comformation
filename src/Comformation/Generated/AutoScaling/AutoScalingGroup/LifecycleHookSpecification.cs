@@ -7,9 +7,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup LifecycleHookSpecification
-    /// LifecycleHookSpecification specifies a list of lifecycle hooks for the LifecycleHookSpecificationList property
-    /// of AutoScalingGroup. LifecycleHookSpecification defines lifecycle hooks for an Auto Scaling group that specify
-    /// actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html
     /// </summary>
     public class LifecycleHookSpecification
@@ -82,9 +79,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// Amazon SQS queue or an Amazon SNS topic.
         /// Required: No
         /// Type: String
-        /// Minimum: 0
-        /// Maximum: 1600
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NotificationTargetARN")]
@@ -94,12 +88,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// RoleARN
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
         /// target, for example, an Amazon SNS topic or an Amazon SQS queue. For information about creating this
-        /// role, see Preparing for Notifications in the Amazon EC2 Auto Scaling User Guide.
+        /// role, see Preparing for notifications in the Amazon EC2 Auto Scaling User Guide.
         /// Required: No
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 1600
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

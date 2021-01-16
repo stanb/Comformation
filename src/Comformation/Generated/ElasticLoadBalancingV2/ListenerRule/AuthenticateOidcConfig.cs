@@ -7,65 +7,10 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule AuthenticateOidcConfig
-    /// Specifies information required using an identity provide (IdP) that is compliant with OpenID Connect (OIDC) to
-    /// authenticate users.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html
     /// </summary>
     public class AuthenticateOidcConfig
     {
-
-        /// <summary>
-        /// AuthenticationRequestExtraParams
-        /// The query parameters (up to 10) to include in the redirect request to the authorization endpoint.
-        /// Required: No
-        /// Type: Map of String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("AuthenticationRequestExtraParams")]
-        public Dictionary<string, Union<string, IntrinsicFunction>> AuthenticationRequestExtraParams { get; set; }
-
-        /// <summary>
-        /// AuthorizationEndpoint
-        /// The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
-        /// domain, and the path.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("AuthorizationEndpoint")]
-        public Union<string, IntrinsicFunction> AuthorizationEndpoint { get; set; }
-
-        /// <summary>
-        /// ClientId
-        /// The OAuth 2. 0 client identifier.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("ClientId")]
-        public Union<string, IntrinsicFunction> ClientId { get; set; }
-
-        /// <summary>
-        /// ClientSecret
-        /// The OAuth 2. 0 client secret. This parameter is required if you are creating a rule. If you are
-        /// modifying a rule, you can omit this parameter if you set UseExistingClientSecret to true.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("ClientSecret")]
-        public Union<string, IntrinsicFunction> ClientSecret { get; set; }
-
-        /// <summary>
-        /// Issuer
-        /// The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the
-        /// domain, and the path.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Issuer")]
-        public Union<string, IntrinsicFunction> Issuer { get; set; }
 
         /// <summary>
         /// OnUnauthenticatedRequest
@@ -75,11 +20,33 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// value.
         /// Required: No
         /// Type: String
-        /// Allowed Values: allow | authenticate | deny
+        /// Allowed values: allow | authenticate | deny
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OnUnauthenticatedRequest")]
         public Union<string, IntrinsicFunction> OnUnauthenticatedRequest { get; set; }
+
+        /// <summary>
+        /// TokenEndpoint
+        /// The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain,
+        /// and the path.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TokenEndpoint")]
+        public Union<string, IntrinsicFunction> TokenEndpoint { get; set; }
+
+        /// <summary>
+        /// SessionTimeout
+        /// The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7
+        /// days).
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SessionTimeout")]
+        public Union<int, IntrinsicFunction> SessionTimeout { get; set; }
 
         /// <summary>
         /// Scope
@@ -94,36 +61,26 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public Union<string, IntrinsicFunction> Scope { get; set; }
 
         /// <summary>
-        /// SessionCookieName
-        /// The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("SessionCookieName")]
-        public Union<string, IntrinsicFunction> SessionCookieName { get; set; }
-
-        /// <summary>
-        /// SessionTimeout
-        /// The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7
-        /// days).
-        /// Required: No
-        /// Type: Long
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("SessionTimeout")]
-        public Union<long, IntrinsicFunction> SessionTimeout { get; set; }
-
-        /// <summary>
-        /// TokenEndpoint
-        /// The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain,
-        /// and the path.
+        /// Issuer
+        /// The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the
+        /// domain, and the path.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("TokenEndpoint")]
-        public Union<string, IntrinsicFunction> TokenEndpoint { get; set; }
+        [JsonProperty("Issuer")]
+        public Union<string, IntrinsicFunction> Issuer { get; set; }
+
+        /// <summary>
+        /// ClientSecret
+        /// The OAuth 2. 0 client secret. This parameter is required if you are creating a rule. If you are
+        /// modifying a rule, you can omit this parameter if you set UseExistingClientSecret to true.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ClientSecret")]
+        public Union<string, IntrinsicFunction> ClientSecret { get; set; }
 
         /// <summary>
         /// UserInfoEndpoint
@@ -135,6 +92,57 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// </summary>
         [JsonProperty("UserInfoEndpoint")]
         public Union<string, IntrinsicFunction> UserInfoEndpoint { get; set; }
+
+        /// <summary>
+        /// ClientId
+        /// The OAuth 2. 0 client identifier.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ClientId")]
+        public Union<string, IntrinsicFunction> ClientId { get; set; }
+
+        /// <summary>
+        /// AuthorizationEndpoint
+        /// The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
+        /// domain, and the path.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AuthorizationEndpoint")]
+        public Union<string, IntrinsicFunction> AuthorizationEndpoint { get; set; }
+
+        /// <summary>
+        /// SessionCookieName
+        /// The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SessionCookieName")]
+        public Union<string, IntrinsicFunction> SessionCookieName { get; set; }
+
+        /// <summary>
+        /// UseExistingClientSecret
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("UseExistingClientSecret")]
+        public Union<bool, IntrinsicFunction> UseExistingClientSecret { get; set; }
+
+        /// <summary>
+        /// AuthenticationRequestExtraParams
+        /// The query parameters (up to 10) to include in the redirect request to the authorization endpoint.
+        /// Required: No
+        /// Type: Map of String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AuthenticationRequestExtraParams")]
+        public Dictionary<string, Union<string, IntrinsicFunction>> AuthenticationRequestExtraParams { get; set; }
 
     }
 }

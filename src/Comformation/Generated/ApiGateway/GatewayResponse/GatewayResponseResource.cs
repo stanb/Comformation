@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.GatewayResponse
 {
     /// <summary>
     /// AWS::ApiGateway::GatewayResponse
-    /// The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API. For more information,
-    /// see API Gateway Responses in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html
     /// </summary>
     public class GatewayResponseResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> ResponseParameters { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> ResponseParameters { get; set; }
 
             /// <summary>
             /// ResponseTemplates
@@ -31,7 +29,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> ResponseTemplates { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> ResponseTemplates { get; set; }
 
             /// <summary>
             /// ResponseType
@@ -40,7 +38,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ResponseType { get; set; }
+            public Union<string, IntrinsicFunction> ResponseType { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -49,7 +47,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// StatusCode
@@ -58,7 +56,7 @@ namespace Comformation.ApiGateway.GatewayResponse
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StatusCode { get; set; }
+            public Union<string, IntrinsicFunction> StatusCode { get; set; }
 
         }
 

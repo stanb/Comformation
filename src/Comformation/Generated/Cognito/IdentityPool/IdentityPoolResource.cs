@@ -6,7 +6,6 @@ namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
     /// AWS::Cognito::IdentityPool
-    /// The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
     /// </summary>
     public class IdentityPoolResource : ResourceBase
@@ -15,21 +14,21 @@ namespace Comformation.Cognito.IdentityPool
         {
             /// <summary>
             /// PushSync
-            /// Configuration options to be applied to the identity pool.
+            /// The configuration options to be applied to the identity pool.
             /// Required: No
             /// Type: PushSync
             /// Update requires: No interruption
             /// </summary>
-			public PushSync PushSync { get; set; }
+            public PushSync PushSync { get; set; }
 
             /// <summary>
             /// CognitoIdentityProviders
-            /// An array of Amazon Cognito user pools and their client IDs.
+            /// The Amazon Cognito user pools and their client IDs.
             /// Required: No
             /// Type: List of CognitoIdentityProvider
             /// Update requires: No interruption
             /// </summary>
-			public List<CognitoIdentityProvider> CognitoIdentityProviders { get; set; }
+            public List<CognitoIdentityProvider> CognitoIdentityProviders { get; set; }
 
             /// <summary>
             /// CognitoEvents
@@ -38,11 +37,11 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CognitoEvents { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> CognitoEvents { get; set; }
 
             /// <summary>
             /// DeveloperProviderName
-            /// The &quot;domain&quot; by which Amazon Cognito refers to your users. This name acts as a placeholder that
+            /// The &quot;domain&quot; Amazon Cognito uses when referencing your users. This name acts as a placeholder that
             /// allows your backend and the Amazon Cognito service to communicate about the developer provider. For
             /// the DeveloperProviderName, you can use letters and periods (. ), underscores (_), and dashes (-).
             /// Minimum length: 1
@@ -51,7 +50,7 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DeveloperProviderName { get; set; }
+            public Union<string, IntrinsicFunction> DeveloperProviderName { get; set; }
 
             /// <summary>
             /// CognitoStreams
@@ -60,19 +59,19 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: CognitoStreams
             /// Update requires: No interruption
             /// </summary>
-			public CognitoStreams CognitoStreams { get; set; }
+            public CognitoStreams CognitoStreams { get; set; }
 
             /// <summary>
             /// IdentityPoolName
             /// The name of your Amazon Cognito identity pool.
             /// Minimum length: 1
             /// Maximum length: 128
-            /// Pattern: [\w ]+
+            /// Pattern: [\w\s+=,. @-]+
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IdentityPoolName { get; set; }
+            public Union<string, IntrinsicFunction> IdentityPoolName { get; set; }
 
             /// <summary>
             /// AllowUnauthenticatedIdentities
@@ -81,7 +80,7 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowUnauthenticatedIdentities { get; set; }
+            public Union<bool, IntrinsicFunction> AllowUnauthenticatedIdentities { get; set; }
 
             /// <summary>
             /// SupportedLoginProviders
@@ -90,25 +89,34 @@ namespace Comformation.Cognito.IdentityPool
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SupportedLoginProviders { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> SupportedLoginProviders { get; set; }
 
             /// <summary>
             /// SamlProviderARNs
-            /// A list of Amazon Resource Names (ARNs) of Security Assertion Markup Language (SAML) providers.
+            /// The Amazon Resource Names (ARNs) of the Security Assertion Markup Language (SAML) providers.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SamlProviderARNs { get; set; }
+            public List<Union<string, IntrinsicFunction>> SamlProviderARNs { get; set; }
 
             /// <summary>
             /// OpenIdConnectProviderARNs
-            /// A list of ARNs for the OpendID Connect provider.
+            /// The Amazon Resource Names (ARNs) of the OpenID connect providers.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> OpenIdConnectProviderARNs { get; set; }
+            public List<Union<string, IntrinsicFunction>> OpenIdConnectProviderARNs { get; set; }
+
+            /// <summary>
+            /// AllowClassicFlow
+            /// Enables the Basic (Classic) authentication flow.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> AllowClassicFlow { get; set; }
 
         }
 
@@ -118,8 +126,8 @@ namespace Comformation.Cognito.IdentityPool
 
     }
 
-	public static class IdentityPoolAttributes
-	{
+    public static class IdentityPoolAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinition FunctionDefinitionVersion
-    /// A function definition version contains a list of functions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html
     /// </summary>
     public class FunctionDefinitionVersion

@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationOutput LambdaOutput
-    /// When configuring application output, identifies an AWS Lambda function as the destination. You provide the
-    /// function Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to
-    /// the function on your behalf.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html
     /// </summary>
     public class LambdaOutput
@@ -39,7 +36,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2048
-        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

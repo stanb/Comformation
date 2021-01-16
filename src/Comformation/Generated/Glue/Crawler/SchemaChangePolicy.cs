@@ -7,7 +7,6 @@ namespace Comformation.Glue.Crawler
 {
     /// <summary>
     /// AWS::Glue::Crawler SchemaChangePolicy
-    /// A policy that specifies update and deletion behaviors for the crawler.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html
     /// </summary>
     public class SchemaChangePolicy

@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
 {
     /// <summary>
     /// AWS::ServiceCatalog::PortfolioPrincipalAssociation
-    /// Associates the specified principal ARN with the specified portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html
     /// </summary>
     public class PortfolioPrincipalAssociationResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
             /// Maximum: 1000
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PrincipalARN { get; set; }
+            public Union<string, IntrinsicFunction> PrincipalARN { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -33,7 +32,7 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -45,17 +44,17 @@ namespace Comformation.ServiceCatalog.PortfolioPrincipalAssociation
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
             /// PrincipalType
             /// The principal type. The supported value is IAM.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: IAM
+            /// Allowed values: IAM
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PrincipalType { get; set; }
+            public Union<string, IntrinsicFunction> PrincipalType { get; set; }
 
         }
 

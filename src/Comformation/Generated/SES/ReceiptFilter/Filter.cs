@@ -7,8 +7,6 @@ namespace Comformation.SES.ReceiptFilter
 {
     /// <summary>
     /// AWS::SES::ReceiptFilter Filter
-    /// A data structure that describes the IP address filter that you want to specify. This structure consists of a
-    /// name, an IP address range, and whether to allow or block mail from it.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html
     /// </summary>
     public class Filter

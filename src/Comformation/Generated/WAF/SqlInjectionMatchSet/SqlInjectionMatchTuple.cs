@@ -7,8 +7,6 @@ namespace Comformation.WAF.SqlInjectionMatchSet
 {
     /// <summary>
     /// AWS::WAF::SqlInjectionMatchSet SqlInjectionMatchTuple
-    /// Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and,
-    /// if you want AWS WAF to inspect a header, the name of the header.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sqlinjectionmatchset-sqlinjectionmatchtuples.html
     /// </summary>
     public class SqlInjectionMatchTuple
@@ -29,7 +27,7 @@ namespace Comformation.WAF.SqlInjectionMatchSet
         /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
         /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on FieldToMatch before inspecting a request for a match.
+        /// on FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// CMD_LINE
@@ -76,7 +74,7 @@ namespace Comformation.WAF.SqlInjectionMatchSet
         /// 		 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CMD_LINE | COMPRESS_WHITE_SPACE | HTML_ENTITY_DECODE | LOWERCASE | NONE | URL_DECODE
+        /// Allowed values: CMD_LINE | COMPRESS_WHITE_SPACE | HTML_ENTITY_DECODE | LOWERCASE | NONE | URL_DECODE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TextTransformation")]

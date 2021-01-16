@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream Serializer
-    /// The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing
-    /// it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the ORC SerDe and the Parquet SerDe.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html
     /// </summary>
     public class Serializer

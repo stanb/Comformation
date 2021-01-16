@@ -6,7 +6,6 @@ namespace Comformation.SSM.Parameter
 {
     /// <summary>
     /// AWS::SSM::Parameter
-    /// The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html
     /// </summary>
     public class ParameterResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.SSM.Parameter
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// Description
@@ -33,17 +32,17 @@ namespace Comformation.SSM.Parameter
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Policies
             /// Information about the policies assigned to a parameter.
-            /// Working with Parameter Policies in the AWS Systems Manager User Guide.
+            /// Assigning parameter policies in the AWS Systems Manager User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Policies { get; set; }
+            public Union<string, IntrinsicFunction> Policies { get; set; }
 
             /// <summary>
             /// AllowedPattern
@@ -55,17 +54,17 @@ namespace Comformation.SSM.Parameter
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AllowedPattern { get; set; }
+            public Union<string, IntrinsicFunction> AllowedPattern { get; set; }
 
             /// <summary>
             /// Tier
             /// The parameter tier.
             /// Required: No
             /// Type: String
-            /// Allowed Values: Advanced | Intelligent-Tiering | Standard
+            /// Allowed values: Advanced | Intelligent-Tiering | Standard
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Tier { get; set; }
+            public Union<string, IntrinsicFunction> Tier { get; set; }
 
             /// <summary>
             /// Value
@@ -74,7 +73,18 @@ namespace Comformation.SSM.Parameter
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Value { get; set; }
+            public Union<string, IntrinsicFunction> Value { get; set; }
+
+            /// <summary>
+            /// DataType
+            /// The data type of the parameter, such as text or aws:ec2:image. The default is text.
+            /// Required: No
+            /// Type: String
+            /// Minimum: 0
+            /// Maximum: 128
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> DataType { get; set; }
 
             /// <summary>
             /// Tags
@@ -88,7 +98,7 @@ namespace Comformation.SSM.Parameter
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -99,7 +109,7 @@ namespace Comformation.SSM.Parameter
             /// Maximum: 2048
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -109,9 +119,9 @@ namespace Comformation.SSM.Parameter
 
     }
 
-	public static class ParameterAttributes
-	{
+    public static class ParameterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Type = new ResourceAttribute<Union<string, IntrinsicFunction>>("Type");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Value = new ResourceAttribute<Union<string, IntrinsicFunction>>("Value");
-	}
+    }
 }

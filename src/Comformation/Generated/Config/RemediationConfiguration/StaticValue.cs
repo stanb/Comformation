@@ -7,7 +7,6 @@ namespace Comformation.Config.RemediationConfiguration
 {
     /// <summary>
     /// AWS::Config::RemediationConfiguration StaticValue
-    /// The static value of the resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html
     /// </summary>
     public class StaticValue

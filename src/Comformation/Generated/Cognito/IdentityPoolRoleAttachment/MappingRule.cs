@@ -7,7 +7,6 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
 {
     /// <summary>
     /// AWS::Cognito::IdentityPoolRoleAttachment MappingRule
-    /// Defines how to map a claim to a role ARN.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html
     /// </summary>
     public class MappingRule

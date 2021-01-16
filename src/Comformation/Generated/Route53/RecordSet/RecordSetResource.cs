@@ -6,7 +6,6 @@ namespace Comformation.Route53.RecordSet
 {
     /// <summary>
     /// AWS::Route53::RecordSet
-    /// Information about the record that you want to create.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
     /// </summary>
     public class RecordSetResource : ResourceBase
@@ -31,7 +30,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: AliasTarget
             /// Update requires: No interruption
             /// </summary>
-			public AliasTarget AliasTarget { get; set; }
+            public AliasTarget AliasTarget { get; set; }
 
             /// <summary>
             /// Comment
@@ -43,7 +42,7 @@ namespace Comformation.Route53.RecordSet
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Comment { get; set; }
+            public Union<string, IntrinsicFunction> Comment { get; set; }
 
             /// <summary>
             /// Failover
@@ -83,10 +82,10 @@ namespace Comformation.Route53.RecordSet
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: PRIMARY | SECONDARY
+            /// Allowed values: PRIMARY | SECONDARY
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Failover { get; set; }
+            public Union<string, IntrinsicFunction> Failover { get; set; }
 
             /// <summary>
             /// GeoLocation
@@ -96,8 +95,8 @@ namespace Comformation.Route53.RecordSet
             /// queries from Africa to be routed to a web server with an IP address 			of 192. 0. 2. 111, create a
             /// resource record set with a Type of A and a ContinentCode of 			AF.
             /// 		
-            /// Note Creating geolocation and geolocation alias resource record sets in private hosted zones is not
-            /// supported.
+            /// Note Although creating geolocation and geolocation alias resource record sets in a private hosted
+            /// zone is allowed, 				it&#39;s not supported.
             /// 		
             /// If you create separate resource record sets for overlapping geographic regions (for example, one
             /// resource record set for a continent and 			one for a country on the same continent), priority goes
@@ -125,7 +124,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: GeoLocation
             /// Update requires: No interruption
             /// </summary>
-			public GeoLocation GeoLocation { get; set; }
+            public GeoLocation GeoLocation { get; set; }
 
             /// <summary>
             /// HealthCheckId
@@ -208,12 +207,12 @@ namespace Comformation.Route53.RecordSet
             /// Maximum: 64
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HealthCheckId { get; set; }
+            public Union<string, IntrinsicFunction> HealthCheckId { get; set; }
 
             /// <summary>
             /// HostedZoneId
             /// 		
-            /// The ID of the hosted zone that you want to create the record in.
+            /// The ID of the hosted zone that you want to create records in.
             /// 		
             /// Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones
             /// 			with the same domain name, you must specify the hosted zone using HostedZoneId.
@@ -223,12 +222,12 @@ namespace Comformation.Route53.RecordSet
             /// Maximum: 32
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> HostedZoneId { get; set; }
+            public Union<string, IntrinsicFunction> HostedZoneId { get; set; }
 
             /// <summary>
             /// HostedZoneName
             /// 		
-            /// The name of the domain for the hosted zone where you want to add the record.
+            /// The name of the hosted zone that you want to create records in.
             /// 		
             /// When you create a stack using an AWS::Route53::RecordSet that specifies HostedZoneName, AWS
             /// CloudFormation attempts to find a hosted zone 			whose name matches the HostedZoneName. If AWS
@@ -243,7 +242,7 @@ namespace Comformation.Route53.RecordSet
             /// Maximum: 32
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> HostedZoneName { get; set; }
+            public Union<string, IntrinsicFunction> HostedZoneName { get; set; }
 
             /// <summary>
             /// MultiValueAnswer
@@ -269,7 +268,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> MultiValueAnswer { get; set; }
+            public Union<bool, IntrinsicFunction> MultiValueAnswer { get; set; }
 
             /// <summary>
             /// Name
@@ -307,7 +306,7 @@ namespace Comformation.Route53.RecordSet
             /// Maximum: 1024
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Region
@@ -317,8 +316,8 @@ namespace Comformation.Route53.RecordSet
             /// instance or an ELB load balancer, and is 			referred to by an IP address or a DNS domain name,
             /// depending on the record type.
             /// 		
-            /// Note Creating latency and latency alias resource record sets in private hosted zones is not
-            /// supported.
+            /// Note Although creating latency and latency alias resource record sets in a private hosted zone is
+            /// allowed, 				it&#39;s not supported.
             /// 		
             /// When Amazon Route 53 receives a DNS query for a domain name and type for which you have created
             /// latency resource record sets, Route 53 			selects the latency resource record set that has the
@@ -336,13 +335,13 @@ namespace Comformation.Route53.RecordSet
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: ap-east-1 | ap-northeast-1 | ap-northeast-2 | ap-northeast-3 | ap-south-1 |
-            /// ap-southeast-1 | ap-southeast-2 | ca-central-1 | cn-north-1 | cn-northwest-1 | eu-central-1 |
-            /// eu-north-1 | eu-west-1 | eu-west-2 | eu-west-3 | me-south-1 | sa-east-1 | us-east-1 | us-east-2 |
-            /// us-west-1 | us-west-2
+            /// Allowed values: af-south-1 | ap-east-1 | ap-northeast-1 | ap-northeast-2 | ap-northeast-3 |
+            /// ap-south-1 | ap-southeast-1 | ap-southeast-2 | ca-central-1 | cn-north-1 | cn-northwest-1 |
+            /// eu-central-1 | eu-north-1 | eu-south-1 | eu-west-1 | eu-west-2 | eu-west-3 | me-south-1 | sa-east-1
+            /// | us-east-1 | us-east-2 | us-west-1 | us-west-2
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Region { get; set; }
+            public Union<string, IntrinsicFunction> Region { get; set; }
 
             /// <summary>
             /// ResourceRecords
@@ -362,7 +361,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ResourceRecords { get; set; }
+            public List<Union<string, IntrinsicFunction>> ResourceRecords { get; set; }
 
             /// <summary>
             /// SetIdentifier
@@ -382,7 +381,7 @@ namespace Comformation.Route53.RecordSet
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SetIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SetIdentifier { get; set; }
 
             /// <summary>
             /// TTL
@@ -404,16 +403,16 @@ namespace Comformation.Route53.RecordSet
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TTL { get; set; }
+            public Union<string, IntrinsicFunction> TTL { get; set; }
 
             /// <summary>
             /// Type
             /// 		
             /// The DNS record type. For information about different record types and how data is encoded for them,
-            /// see 			Supported DNS Resource Record Types in the Amazon Route 53 Developer Guide.
+            /// see 			Supported DNS Resource Record Types 			in the Amazon Route 53 Developer Guide.
             /// 		
-            /// Valid values for basic resource record sets: A | AAAA | CAA | CNAME | MX | 			NAPTR | NS | PTR | SOA
-            /// | SPF | SRV | TXT
+            /// Valid values for basic resource record sets: A | AAAA | CAA | CNAME | DS |MX | 			NAPTR | NS | PTR |
+            /// SOA | SPF | SRV | TXT
             /// 		
             /// Values for weighted, latency, geolocation, and failover resource record sets: A | AAAA | CAA |
             /// 			CNAME | MX | NAPTR | PTR | SPF | SRV | TXT. 			When creating a group of weighted, latency,
@@ -435,7 +434,7 @@ namespace Comformation.Route53.RecordSet
             /// 			 			 			 			 			 			 			 		 				 Amazon API Gateway custom regional APIs and edge-optimized APIs:
             /// A 			 				 CloudFront distributions: A 				 If IPv6 is enabled for the distribution, create two
             /// resource record sets to route traffic to your distribution, 					one with a value of A and one with
-            /// a value of AAAA. 			 				 AWS Elastic Beanstalk environment that has a regionalized subdomain: A 			
+            /// a value of AAAA. 			 				 Amazon API Gateway environment that has a regionalized subdomain: A 			
             /// 				 ELB load balancers: A | AAAA 			 				 Amazon S3 buckets: A 			 				 Amazon Virtual Private
             /// Cloud interface VPC endpoints A 			 				 Another resource record set in this hosted zone: Specify
             /// the type of the resource record set 					that you&#39;re creating the alias for. All values are
@@ -447,10 +446,10 @@ namespace Comformation.Route53.RecordSet
             /// 	
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: A | AAAA | CAA | CNAME | MX | NAPTR | NS | PTR | SOA | SPF | SRV | TXT
+            /// Allowed values: A | AAAA | CAA | CNAME | DS | MX | NAPTR | NS | PTR | SOA | SPF | SRV | TXT
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// Weight
@@ -479,7 +478,7 @@ namespace Comformation.Route53.RecordSet
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Weight { get; set; }
+            public Union<int, IntrinsicFunction> Weight { get; set; }
 
         }
 

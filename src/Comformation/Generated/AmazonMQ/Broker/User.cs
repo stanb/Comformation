@@ -7,9 +7,6 @@ namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
     /// AWS::AmazonMQ::Broker User
-    /// The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can contain
-    /// only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-    /// characters long.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html
     /// </summary>
     public class User
@@ -17,7 +14,7 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// Username
-        /// The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+        /// The username of the broker user. This value can contain only alphanumeric characters, dashes,
         /// periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
         /// Required: Yes
         /// Type: String
@@ -30,7 +27,7 @@ namespace Comformation.AmazonMQ.Broker
         /// Groups
         /// The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
         /// alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-        /// 2-100 characters long.
+        /// 2-100 characters long. Does not apply to RabbitMQ brokers.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
@@ -40,7 +37,8 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// ConsoleAccess
-        /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+        /// Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ
+        /// brokers.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -50,8 +48,8 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// Password
-        /// The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at
-        /// least 4 unique characters, and must not contain commas.
+        /// The password of the user. This value must be at least 12 characters long, must contain at least 4
+        /// unique characters, and must not contain commas.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

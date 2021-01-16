@@ -6,8 +6,6 @@ namespace Comformation.EC2.TransitGatewayRouteTableAssociation
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRouteTableAssociation
-    /// Associates the specified attachment with the specified transit gateway route table. You can associate only one
-    /// route table with an attachment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html
     /// </summary>
     public class TransitGatewayRouteTableAssociationResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.EC2.TransitGatewayRouteTableAssociation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayRouteTableId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayRouteTableId { get; set; }
 
             /// <summary>
             /// TransitGatewayAttachmentId
@@ -30,7 +28,7 @@ namespace Comformation.EC2.TransitGatewayRouteTableAssociation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayAttachmentId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayAttachmentId { get; set; }
 
         }
 

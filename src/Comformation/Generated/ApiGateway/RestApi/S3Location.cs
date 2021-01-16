@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.RestApi
 {
     /// <summary>
     /// AWS::ApiGateway::RestApi S3Location
-    /// S3Location is a property of the AWS::ApiGateway::RestApi resource that specifies the Amazon S3 location of a
-    /// OpenAPI (formerly Swagger) file that defines a set of RESTful APIs in JSON or YAML.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html
     /// </summary>
     public class S3Location

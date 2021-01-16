@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
     /// AWS::IoTAnalytics::Datastore DatastoreStorage
-    /// Where data store data is stored.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html
     /// </summary>
     public class DatastoreStorage

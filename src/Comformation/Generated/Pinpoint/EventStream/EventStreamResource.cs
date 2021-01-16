@@ -6,8 +6,6 @@ namespace Comformation.Pinpoint.EventStream
 {
     /// <summary>
     /// AWS::Pinpoint::EventStream
-    /// Creates a new event stream for an application or updates the settings of an existing event stream for an
-    /// application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html
     /// </summary>
     public class EventStreamResource : ResourceBase
@@ -16,12 +14,12 @@ namespace Comformation.Pinpoint.EventStream
         {
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app that you want to export data from.
+            /// The unique identifier for the Amazon Pinpoint application that you want to publish event data for.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// DestinationStreamArn
@@ -34,17 +32,17 @@ namespace Comformation.Pinpoint.EventStream
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationStreamArn { get; set; }
+            public Union<string, IntrinsicFunction> DestinationStreamArn { get; set; }
 
             /// <summary>
             /// RoleArn
-            /// The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event
-            /// data to the stream in your AWS account.
+            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
+            /// Amazon Pinpoint to publish event data to the stream in your AWS account.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
 

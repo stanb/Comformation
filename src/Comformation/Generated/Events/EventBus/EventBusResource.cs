@@ -6,9 +6,6 @@ namespace Comformation.Events.EventBus
 {
     /// <summary>
     /// AWS::Events::EventBus
-    /// The AWS::Events::EventBus resource creates or updates a partner event bus or custom event bus. Partner event
-    /// buses can receive events from applications and services created by AWS SaaS partners. You need to create a
-    /// partner event bus for each partner event source that you want to receive events from.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html
     /// </summary>
     public class EventBusResource : ResourceBase
@@ -23,7 +20,7 @@ namespace Comformation.Events.EventBus
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EventSourceName { get; set; }
+            public Union<string, IntrinsicFunction> EventSourceName { get; set; }
 
             /// <summary>
             /// Name
@@ -35,7 +32,7 @@ namespace Comformation.Events.EventBus
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -45,10 +42,10 @@ namespace Comformation.Events.EventBus
 
     }
 
-	public static class EventBusAttributes
-	{
+    public static class EventBusAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Policy = new ResourceAttribute<Union<string, IntrinsicFunction>>("Policy");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

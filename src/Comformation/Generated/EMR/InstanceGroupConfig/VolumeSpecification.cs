@@ -7,8 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig VolumeSpecification
-    /// VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines
-    /// the volume type, IOPS, and size (GiB) for EBS volumes attached to EC2 instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html
     /// </summary>
     public class VolumeSpecification

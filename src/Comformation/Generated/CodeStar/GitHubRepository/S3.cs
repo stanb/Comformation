@@ -7,8 +7,6 @@ namespace Comformation.CodeStar.GitHubRepository
 {
     /// <summary>
     /// AWS::CodeStar::GitHubRepository S3
-    /// The S3 property type specifies information about the Amazon S3 bucket that contains the code to be committed
-    /// to the new repository.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html
     /// </summary>
     public class S3

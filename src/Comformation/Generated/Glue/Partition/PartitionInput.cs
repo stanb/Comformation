@@ -7,7 +7,6 @@ namespace Comformation.Glue.Partition
 {
     /// <summary>
     /// AWS::Glue::Partition PartitionInput
-    /// The structure used to create and update a partition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
     /// </summary>
     public class PartitionInput

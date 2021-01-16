@@ -7,7 +7,6 @@ namespace Comformation.Glue.Job
 {
     /// <summary>
     /// AWS::Glue::Job JobCommand
-    /// Specifies code executed when a job is run.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html
     /// </summary>
     public class JobCommand

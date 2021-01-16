@@ -7,8 +7,6 @@ namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
     /// AWS::OpsWorks::Stack Source
-    /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see
-    /// Creating Apps or Custom Recipes and Cookbooks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html
     /// </summary>
     public class Source
@@ -61,7 +59,7 @@ namespace Comformation.OpsWorks.Stack
         /// The repository type.
         /// Required: No
         /// Type: String
-        /// Allowed Values: archive | git | s3 | svn
+        /// Allowed values: archive | git | s3 | svn
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

@@ -7,9 +7,7 @@ namespace Comformation.Route53.HostedZone
 {
     /// <summary>
     /// AWS::Route53::HostedZone HostedZoneTag
-    /// A complex type that contains information about a tag that you want to add or edit for the specified health
-    /// check or hosted zone.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetags.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetag.html
     /// </summary>
     public class HostedZoneTag
     {

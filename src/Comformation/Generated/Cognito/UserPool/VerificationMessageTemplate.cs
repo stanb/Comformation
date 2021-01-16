@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool VerificationMessageTemplate
-    /// VerificationMessageTemplate is a property of the AWS::Cognito::UserPool resource that defines the template for
-    /// verification messages.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html
     /// </summary>
     public class VerificationMessageTemplate
@@ -16,7 +14,8 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// EmailMessageByLink
-        /// The email message template for sending a confirmation link to the user.
+        /// The email message template for sending a confirmation link to the user. EmailMessageByLink is
+        /// allowed only if EmailSendingAccount is DEVELOPER.
         /// Required: No
         /// Type: String
         /// Minimum: 6
@@ -30,7 +29,7 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// EmailMessage
-        /// The email message template.
+        /// The email message template. EmailMessage is allowed only if EmailSendingAccount is DEVELOPER.
         /// Required: No
         /// Type: String
         /// Minimum: 6
@@ -56,7 +55,8 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// EmailSubject
-        /// The subject line for the email message template.
+        /// The subject line for the email message template. EmailSubject is allowed only if EmailSendingAccount
+        /// is DEVELOPER.
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -72,7 +72,7 @@ namespace Comformation.Cognito.UserPool
         /// The default email option.
         /// Required: No
         /// Type: String
-        /// Allowed Values: CONFIRM_WITH_CODE | CONFIRM_WITH_LINK
+        /// Allowed values: CONFIRM_WITH_CODE | CONFIRM_WITH_LINK
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DefaultEmailOption")]
@@ -81,6 +81,7 @@ namespace Comformation.Cognito.UserPool
         /// <summary>
         /// EmailSubjectByLink
         /// The subject line for the email message template for sending a confirmation link to the user.
+        /// EmailSubjectByLink is allowed only EmailSendingAccount is DEVELOPER.
         /// Required: No
         /// Type: String
         /// Minimum: 1

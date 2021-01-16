@@ -6,9 +6,6 @@ namespace Comformation.Logs.LogStream
 {
     /// <summary>
     /// AWS::Logs::LogStream
-    /// The AWS::Logs::LogStream resource specifies an Amazon CloudWatch Logs log stream in a specific log group. A
-    /// log stream represents the sequence of events coming from an application instance or resource that you are
-    /// monitoring.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html
     /// </summary>
     public class LogStreamResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.Logs.LogStream
             /// Pattern: [\. \-_/#A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
+            public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// LogStreamName
@@ -37,7 +34,7 @@ namespace Comformation.Logs.LogStream
             /// Pattern: [^:*]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LogStreamName { get; set; }
+            public Union<string, IntrinsicFunction> LogStreamName { get; set; }
 
         }
 

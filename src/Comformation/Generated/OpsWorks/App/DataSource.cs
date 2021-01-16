@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.App
 {
     /// <summary>
     /// AWS::OpsWorks::App DataSource
-    /// Describes an app&#39;s data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html
     /// </summary>
     public class DataSource

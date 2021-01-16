@@ -6,9 +6,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig
-    /// Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance
-    /// groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform
-    /// Instance Groups in the Amazon EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
     /// </summary>
     public class InstanceGroupConfigResource : ResourceBase
@@ -24,11 +21,11 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: AutoScalingPolicy
             /// Update requires: No interruption
             /// </summary>
-			public AutoScalingPolicy AutoScalingPolicy { get; set; }
+            public AutoScalingPolicy AutoScalingPolicy { get; set; }
 
             /// <summary>
             /// BidPrice
-            /// The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If
+            /// The bid price for each EC2 Spot Instance type as defined by InstanceType. Expressed in USD. If
             /// neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided,
             /// BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
             /// Required: No
@@ -38,7 +35,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> BidPrice { get; set; }
+            public Union<string, IntrinsicFunction> BidPrice { get; set; }
 
             /// <summary>
             /// Configurations
@@ -49,7 +46,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: List of Configuration
             /// Update requires: Replacement
             /// </summary>
-			public List<Configuration> Configurations { get; set; }
+            public List<Configuration> Configurations { get; set; }
 
             /// <summary>
             /// EbsConfiguration
@@ -58,7 +55,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: EbsConfiguration
             /// Update requires: Replacement
             /// </summary>
-			public EbsConfiguration EbsConfiguration { get; set; }
+            public EbsConfiguration EbsConfiguration { get; set; }
 
             /// <summary>
             /// InstanceCount
@@ -67,17 +64,17 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> InstanceCount { get; set; }
+            public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
             /// <summary>
             /// InstanceRole
             /// The role of the instance group in the cluster.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: CORE | MASTER | TASK
+            /// Allowed values: CORE | MASTER | TASK
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceRole { get; set; }
+            public Union<string, IntrinsicFunction> InstanceRole { get; set; }
 
             /// <summary>
             /// InstanceType
@@ -89,7 +86,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// JobFlowId
@@ -98,17 +95,17 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> JobFlowId { get; set; }
+            public Union<string, IntrinsicFunction> JobFlowId { get; set; }
 
             /// <summary>
             /// Market
             /// Market type of the EC2 instances used to create a cluster node.
             /// Required: No
             /// Type: String
-            /// Allowed Values: ON_DEMAND | SPOT
+            /// Allowed values: ON_DEMAND | SPOT
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Market { get; set; }
+            public Union<string, IntrinsicFunction> Market { get; set; }
 
             /// <summary>
             /// Name
@@ -120,7 +117,7 @@ namespace Comformation.EMR.InstanceGroupConfig
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

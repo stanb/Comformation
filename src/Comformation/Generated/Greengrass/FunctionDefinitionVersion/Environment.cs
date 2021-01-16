@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinitionVersion Environment
-    /// The environment configuration for a Lambda function on the AWS IoT Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html
     /// </summary>
     public class Environment

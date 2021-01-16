@@ -6,8 +6,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster
-    /// The AWS::MSK::Cluster resource creates an Amazon MSK cluster. For more information, see What Is Amazon MSK? in
-    /// the Amazon MSK Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.MSK.Cluster
             /// Type: BrokerNodeGroupInfo
             /// Update requires: Replacement
             /// </summary>
-			public BrokerNodeGroupInfo BrokerNodeGroupInfo { get; set; }
+            public BrokerNodeGroupInfo BrokerNodeGroupInfo { get; set; }
 
             /// <summary>
             /// EnhancedMonitoring
@@ -29,18 +27,19 @@ namespace Comformation.MSK.Cluster
             /// and PER_TOPIC_PER_BROKER.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EnhancedMonitoring { get; set; }
+            public Union<string, IntrinsicFunction> EnhancedMonitoring { get; set; }
 
             /// <summary>
             /// KafkaVersion
-            /// The version of Apache Kafka.
+            /// The version of Apache Kafka. You can use Amazon MSK to create clusters that use Apache Kafka
+            /// versions 1. 1. 1 and 2. 2. 1.
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> KafkaVersion { get; set; }
+            public Union<string, IntrinsicFunction> KafkaVersion { get; set; }
 
             /// <summary>
             /// NumberOfBrokerNodes
@@ -50,7 +49,7 @@ namespace Comformation.MSK.Cluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumberOfBrokerNodes { get; set; }
+            public Union<int, IntrinsicFunction> NumberOfBrokerNodes { get; set; }
 
             /// <summary>
             /// EncryptionInfo
@@ -59,7 +58,16 @@ namespace Comformation.MSK.Cluster
             /// Type: EncryptionInfo
             /// Update requires: Replacement
             /// </summary>
-			public EncryptionInfo EncryptionInfo { get; set; }
+            public EncryptionInfo EncryptionInfo { get; set; }
+
+            /// <summary>
+            /// OpenMonitoring
+            /// The settings for open monitoring.
+            /// Required: No
+            /// Type: OpenMonitoring
+            /// Update requires: No interruption
+            /// </summary>
+            public OpenMonitoring OpenMonitoring { get; set; }
 
             /// <summary>
             /// ClusterName
@@ -68,7 +76,7 @@ namespace Comformation.MSK.Cluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterName { get; set; }
+            public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
             /// <summary>
             /// ClientAuthentication
@@ -77,25 +85,35 @@ namespace Comformation.MSK.Cluster
             /// Type: ClientAuthentication
             /// Update requires: Replacement
             /// </summary>
-			public ClientAuthentication ClientAuthentication { get; set; }
+            public ClientAuthentication ClientAuthentication { get; set; }
+
+            /// <summary>
+            /// LoggingInfo
+            /// You can configure your MSK cluster to send broker logs to different destination types. This is a
+            /// container for the configuration details related to broker logs.
+            /// Required: No
+            /// Type: LoggingInfo
+            /// Update requires: No interruption
+            /// </summary>
+            public LoggingInfo LoggingInfo { get; set; }
 
             /// <summary>
             /// Tags
             /// A map of key:value pairs to apply to this resource. Both key and value are of type String.
             /// Required: No
-            /// Type: Map
+            /// Type: Json
             /// Update requires: Replacement
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// ConfigurationInfo
             /// The Amazon MSK configuration to use for the cluster.
             /// Required: No
             /// Type: ConfigurationInfo
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public ConfigurationInfo ConfigurationInfo { get; set; }
+            public ConfigurationInfo ConfigurationInfo { get; set; }
 
         }
 

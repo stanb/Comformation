@@ -7,8 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowLambdaParameters
-    /// The MaintenanceWindowLambdaParameters property type specifies the parameters for a LAMBDA task type for a
-    /// maintenance window task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html
     /// </summary>
     public class MaintenanceWindowLambdaParameters
@@ -45,6 +43,9 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// <summary>
         /// Payload
         /// JSON to provide to your Lambda function as input.
+        /// Important Although Type is listed as &quot;String&quot; for this property, the payload content must be
+        /// formatted as a Base64-encoded binary data object.
+        /// Length Constraint: 4096
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

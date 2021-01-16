@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket S3KeyFilter
-    /// A container for object key name prefix and suffix filtering rules.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html
     /// </summary>
     public class S3KeyFilter
@@ -15,7 +14,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Rules
-        /// A list of containers for the key value pair that defines the criteria for the filter rule.
+        /// A list of containers for the key-value pair that defines the criteria for the filter rule.
         /// Required: Yes
         /// Type: List of FilterRule
         /// Update requires: No interruption

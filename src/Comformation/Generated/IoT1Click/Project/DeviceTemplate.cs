@@ -7,8 +7,6 @@ namespace Comformation.IoT1Click.Project
 {
     /// <summary>
     /// AWS::IoT1Click::Project DeviceTemplate
-    /// In AWS CloudFormation, use the DeviceTemplate property type to define the template for an AWS IoT 1-Click
-    /// project.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html
     /// </summary>
     public class DeviceTemplate

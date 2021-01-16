@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.CoreDefinition
 {
     /// <summary>
     /// AWS::Greengrass::CoreDefinition Core
-    /// A core is an AWS IoT device that runs the AWS IoT Greengrass core software 		and manages local processes for a
-    /// Greengrass group. For more information, see What Is AWS IoT Greengrass? in the AWS IoT Greengrass Developer
-    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html
     /// </summary>
     public class Core

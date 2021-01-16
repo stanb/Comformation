@@ -6,8 +6,6 @@ namespace Comformation.Glue.DataCatalogEncryptionSettings
 {
     /// <summary>
     /// AWS::Glue::DataCatalogEncryptionSettings
-    /// Sets the security configuration for a specified catalog. After the configuration has been set, the specified
-    /// encryption is applied to every catalog write thereafter.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html
     /// </summary>
     public class DataCatalogEncryptionSettingsResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Glue.DataCatalogEncryptionSettings
             /// Type: DataCatalogEncryptionSettings
             /// Update requires: No interruption
             /// </summary>
-			public DataCatalogEncryptionSettings DataCatalogEncryptionSettings { get; set; }
+            public DataCatalogEncryptionSettings DataCatalogEncryptionSettings { get; set; }
 
             /// <summary>
             /// CatalogId
@@ -30,7 +28,7 @@ namespace Comformation.Glue.DataCatalogEncryptionSettings
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CatalogId { get; set; }
+            public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
         }
 

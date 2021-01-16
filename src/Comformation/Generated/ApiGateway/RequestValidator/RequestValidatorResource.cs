@@ -6,9 +6,6 @@ namespace Comformation.ApiGateway.RequestValidator
 {
     /// <summary>
     /// AWS::ApiGateway::RequestValidator
-    /// The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your
-    /// API. For more information, see Enable Basic Request Validation for an API in API Gateway in the API Gateway
-    /// Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
     /// </summary>
     public class RequestValidatorResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -31,7 +28,7 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// ValidateRequestBody
@@ -41,7 +38,7 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> ValidateRequestBody { get; set; }
+            public Union<bool, IntrinsicFunction> ValidateRequestBody { get; set; }
 
             /// <summary>
             /// ValidateRequestParameters
@@ -50,7 +47,7 @@ namespace Comformation.ApiGateway.RequestValidator
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> ValidateRequestParameters { get; set; }
+            public Union<bool, IntrinsicFunction> ValidateRequestParameters { get; set; }
 
         }
 

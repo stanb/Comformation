@@ -6,7 +6,6 @@ namespace Comformation.EC2.TransitGatewayRoute
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRoute
-    /// Specifies a static route for a transit gateway route table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html
     /// </summary>
     public class TransitGatewayRouteResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TransitGatewayRoute
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayRouteTableId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayRouteTableId { get; set; }
 
             /// <summary>
             /// DestinationCidrBlock
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TransitGatewayRoute
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> DestinationCidrBlock { get; set; }
 
             /// <summary>
             /// Blackhole
@@ -38,7 +37,7 @@ namespace Comformation.EC2.TransitGatewayRoute
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> Blackhole { get; set; }
+            public Union<bool, IntrinsicFunction> Blackhole { get; set; }
 
             /// <summary>
             /// TransitGatewayAttachmentId
@@ -47,7 +46,7 @@ namespace Comformation.EC2.TransitGatewayRoute
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayAttachmentId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayAttachmentId { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel ResetTimer
-    /// Information needed to reset the timer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html
     /// </summary>
     public class ResetTimer
@@ -15,9 +14,11 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// TimerName
-        /// The name of the timer.
+        /// The name of the timer to reset.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TimerName")]

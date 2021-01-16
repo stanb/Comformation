@@ -7,9 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig ScalingConstraints
-    /// ScalingConstraints is a subproperty of the AutoScalingPolicy property type. ScalingConstraints defines the
-    /// upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by
-    /// automatic scaling rules will not cause an instance group to grow above or shrink below these limits.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html
     /// </summary>
     public class ScalingConstraints

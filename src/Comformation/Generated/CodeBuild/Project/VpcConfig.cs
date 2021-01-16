@@ -7,9 +7,6 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS::CodeBuild::Project VpcConfig
-    /// VpcConfig is a property of the AWS::CodeBuild::Project resource that enable AWS CodeBuild to access resources
-    /// in an Amazon VPC. For more information, see Use AWS CodeBuild with Amazon Virtual Private Cloud in the AWS
-    /// CodeBuild User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html
     /// </summary>
     public class VpcConfig

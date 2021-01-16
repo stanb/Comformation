@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.ApplicationSettings
 {
     /// <summary>
     /// AWS::Pinpoint::ApplicationSettings CampaignHook
-    /// Specifies the AWS Lambda function to use as a code hook for a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-campaignhook.html
     /// </summary>
     public class CampaignHook
@@ -15,7 +14,11 @@ namespace Comformation.Pinpoint.ApplicationSettings
 
         /// <summary>
         /// Mode
-        /// Specifies which Lambda mode to use when invoking the AWS Lambda function.
+        /// The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
+        /// FILTER - Invoke the function to customize the segment that&#39;s used by a campaign. DELIVERY -
+        /// (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+        /// functionality is not supported anymore. To send a campaign through a custom channel, use the
+        /// CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,7 +39,7 @@ namespace Comformation.Pinpoint.ApplicationSettings
         /// <summary>
         /// LambdaFunctionName
         /// The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to
-        /// send messages for a campaign.
+        /// customize a segment for a campaign.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

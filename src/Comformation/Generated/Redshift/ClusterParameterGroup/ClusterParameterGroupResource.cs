@@ -6,7 +6,6 @@ namespace Comformation.Redshift.ClusterParameterGroup
 {
     /// <summary>
     /// AWS::Redshift::ClusterParameterGroup
-    /// Describes a parameter group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
     /// </summary>
     public class ClusterParameterGroupResource : ResourceBase
@@ -18,18 +17,20 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// The description of the parameter group.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ParameterGroupFamily
             /// The name of the cluster parameter group family that this cluster parameter group is compatible with.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ParameterGroupFamily { get; set; }
+            public Union<string, IntrinsicFunction> ParameterGroupFamily { get; set; }
 
             /// <summary>
             /// Parameters
@@ -43,7 +44,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Type: List of Parameter
             /// Update requires: No interruption
             /// </summary>
-			public List<Parameter> Parameters { get; set; }
+            public List<Parameter> Parameters { get; set; }
 
             /// <summary>
             /// Tags
@@ -52,7 +53,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

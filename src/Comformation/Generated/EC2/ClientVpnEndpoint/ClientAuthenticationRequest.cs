@@ -7,9 +7,6 @@ namespace Comformation.EC2.ClientVpnEndpoint
 {
     /// <summary>
     /// AWS::EC2::ClientVpnEndpoint ClientAuthenticationRequest
-    /// Describes the authentication method to be used by a Client VPN endpoint. Client VPN supports 			Active
-    /// Directory and mutual authentication. For more information, see Authentication 			in the AWS Client VPN
-    /// Administrator Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html
     /// </summary>
     public class ClientAuthenticationRequest
@@ -31,17 +28,26 @@ namespace Comformation.EC2.ClientVpnEndpoint
         /// <summary>
         /// Type
         /// 		
-        /// The type of client authentication to be used. Specify certificate-authentication to use
-        /// certificate-based authentication, or 			directory-service-authentication to use Active Directory
-        /// authentication.
+        /// The type of client authentication to be used.
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: certificate-authentication | directory-service-authentication
+        /// Allowed values: certificate-authentication | directory-service-authentication |
+        /// federated-authentication
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
         public Union<string, IntrinsicFunction> Type { get; set; }
+
+        /// <summary>
+        /// FederatedAuthentication
+        /// Information about the IAM SAML identity provider, if applicable.
+        /// Required: No
+        /// Type: FederatedAuthenticationRequest
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("FederatedAuthentication")]
+        public FederatedAuthenticationRequest FederatedAuthentication { get; set; }
 
         /// <summary>
         /// ActiveDirectory

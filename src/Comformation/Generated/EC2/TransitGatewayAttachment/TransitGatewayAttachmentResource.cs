@@ -6,7 +6,6 @@ namespace Comformation.EC2.TransitGatewayAttachment
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayAttachment
-    /// Attaches a VPC to a transit gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html
     /// </summary>
     public class TransitGatewayAttachmentResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TransitGatewayAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
 
             /// <summary>
             /// VpcId
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TransitGatewayAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -40,7 +39,7 @@ namespace Comformation.EC2.TransitGatewayAttachment
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -49,7 +48,7 @@ namespace Comformation.EC2.TransitGatewayAttachment
             /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

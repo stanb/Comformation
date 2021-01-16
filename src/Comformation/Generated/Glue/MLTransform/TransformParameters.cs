@@ -7,7 +7,6 @@ namespace Comformation.Glue.MLTransform
 {
     /// <summary>
     /// AWS::Glue::MLTransform TransformParameters
-    /// The algorithm-specific parameters that are associated with the machine learning transform.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html
     /// </summary>
     public class TransformParameters

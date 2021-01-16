@@ -7,7 +7,6 @@ namespace Comformation.DMS.Endpoint
 {
     /// <summary>
     /// AWS::DMS::Endpoint DynamoDbSettings
-    /// Syntax
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-dynamodbsettings.html
     /// </summary>
     public class DynamoDbSettings

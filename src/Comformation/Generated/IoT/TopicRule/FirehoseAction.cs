@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule FirehoseAction
-    /// Describes an action that writes data to an Amazon Kinesis Firehose stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html
     /// </summary>
     public class FirehoseAction

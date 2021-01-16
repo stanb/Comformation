@@ -6,7 +6,6 @@ namespace Comformation.Pinpoint.ApplicationSettings
 {
     /// <summary>
     /// AWS::Pinpoint::ApplicationSettings
-    /// Specifies the settings for an Amazon Pinpoint app.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html
     /// </summary>
     public class ApplicationSettingsResource : ResourceBase
@@ -15,52 +14,51 @@ namespace Comformation.Pinpoint.ApplicationSettings
         {
             /// <summary>
             /// QuietTime
-            /// The default quiet time for campaigns in the application. Quiet time is a specific time range when
-            /// campaigns don&#39;t send messages to endpoints, if all the following conditions are met:
-            /// - The EndpointDemographic. Timezone property of the endpoint is set to a valid value.
-            /// - The current time in the endpoint&#39;s time zone is later than or equal to the time specified by the
-            /// QuietTime. Start property for the application (or a campaign that has custom quiet time settings).
-            /// - The current time in the endpoint&#39;s time zone is earlier than or equal to the time specified by the
-            /// QuietTime. End property for the application (or a campaign that has custom quiet time settings).
-            /// If any of the preceding conditions isn&#39;t met, the endpoint will receive messages from a campaign,
-            /// even if quiet time is enabled.
-            /// To override the default quiet time settings for a specific campaign, use the Campaign resource to
-            /// define a custom quiet time for the campaign.
+            /// The default quiet time for campaigns and journeys in the application. Quiet time is a specific time
+            /// range when messages aren&#39;t sent to endpoints, if all the following conditions are met:
+            /// The EndpointDemographic. Timezone property of the endpoint is set to a valid value. The current time
+            /// in the endpoint&#39;s time zone is later than or equal to the time specified by the QuietTime. Start
+            /// property for the application (or a campaign or journey that has custom quiet time settings). The
+            /// current time in the endpoint&#39;s time zone is earlier than or equal to the time specified by the
+            /// QuietTime. End property for the application (or a campaign or journey that has custom quiet time
+            /// settings).
+            /// If any of the preceding conditions isn&#39;t met, the endpoint will receive messages from a campaign or
+            /// journey, even if quiet time is enabled.
+            /// You can override the default quiet time settings for a specific campaign or journey.
             /// Required: No
             /// Type: QuietTime
             /// Update requires: No interruption
             /// </summary>
-			public QuietTime QuietTime { get; set; }
+            public QuietTime QuietTime { get; set; }
 
             /// <summary>
             /// Limits
-            /// The default sending limits for campaigns in the application. To override these limits for a specific
-            /// campaign, use the Campaign resource to define custom limits for the campaign.
+            /// The default sending limits for campaigns in the application. You can override these limits for a
+            /// specific campaign.
             /// Required: No
             /// Type: Limits
             /// Update requires: No interruption
             /// </summary>
-			public Limits Limits { get; set; }
+            public Limits Limits { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app.
+            /// The unique identifier for the Amazon Pinpoint application.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// CampaignHook
             /// The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-            /// application. To override these settings for a specific campaign, use the Campaign resource to define
-            /// custom Lambda function settings for the campaign.
+            /// application. You can override these settings for a specific campaign.
             /// Required: No
             /// Type: CampaignHook
             /// Update requires: No interruption
             /// </summary>
-			public CampaignHook CampaignHook { get; set; }
+            public CampaignHook CampaignHook { get; set; }
 
             /// <summary>
             /// CloudWatchMetricsEnabled
@@ -69,7 +67,7 @@ namespace Comformation.Pinpoint.ApplicationSettings
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> CloudWatchMetricsEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> CloudWatchMetricsEnabled { get; set; }
 
         }
 

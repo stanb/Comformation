@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application RecordColumn
-    /// Describes the mapping of each data element in the streaming source to the corresponding column in the
-    /// in-application stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html
     /// </summary>
     public class RecordColumn

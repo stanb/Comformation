@@ -6,8 +6,6 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi
-    /// The AWS::AppSync::GraphQLApi resource creates a new AppSync GraphQL API. This is the top-level construct for
-    /// your application. For more information, see Quick Start in the AWS AppSync Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
     /// </summary>
     public class GraphQLApiResource : ResourceBase
@@ -21,7 +19,16 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: OpenIDConnectConfig
             /// Update requires: No interruption
             /// </summary>
-			public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
+            public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
+
+            /// <summary>
+            /// XrayEnabled
+            /// A flag representing whether X-Ray tracing is enabled for this GraphqlApi.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> XrayEnabled { get; set; }
 
             /// <summary>
             /// UserPoolConfig
@@ -30,7 +37,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: UserPoolConfig
             /// Update requires: No interruption
             /// </summary>
-			public UserPoolConfig UserPoolConfig { get; set; }
+            public UserPoolConfig UserPoolConfig { get; set; }
 
             /// <summary>
             /// Tags
@@ -39,7 +46,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: Tags
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -48,7 +55,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// AuthenticationType
@@ -58,7 +65,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
+            public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
 
             /// <summary>
             /// LogConfig
@@ -67,7 +74,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: LogConfig
             /// Update requires: No interruption
             /// </summary>
-			public LogConfig LogConfig { get; set; }
+            public LogConfig LogConfig { get; set; }
 
             /// <summary>
             /// AdditionalAuthenticationProviders
@@ -76,7 +83,7 @@ namespace Comformation.AppSync.GraphQLApi
             /// Type: AdditionalAuthenticationProviders
             /// Update requires: No interruption
             /// </summary>
-			public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders { get; set; }
+            public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders { get; set; }
 
         }
 
@@ -86,10 +93,10 @@ namespace Comformation.AppSync.GraphQLApi
 
     }
 
-	public static class GraphQLApiAttributes
-	{
+    public static class GraphQLApiAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> GraphQLUrl = new ResourceAttribute<Union<string, IntrinsicFunction>>("GraphQLUrl");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ApiId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ApiId");
-	}
+    }
 }

@@ -7,8 +7,6 @@ namespace Comformation.AppSync.DataSource
 {
     /// <summary>
     /// AWS::AppSync::DataSource RelationalDatabaseConfig
-    /// Use the RelationalDatabaseConfig property type to specify RelationalDatabaseConfig for an AWS AppSync data
-    /// source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html
     /// </summary>
     public class RelationalDatabaseConfig

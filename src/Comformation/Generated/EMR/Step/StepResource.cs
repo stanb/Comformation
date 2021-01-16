@@ -6,8 +6,6 @@ namespace Comformation.EMR.Step
 {
     /// <summary>
     /// AWS::EMR::Step
-    /// Use Step to specify a cluster (job flow) step, which runs only on the master node. Steps are used to submit
-    /// data processing jobs to a cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html
     /// </summary>
     public class StepResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.EMR.Step
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ActionOnFailure { get; set; }
+            public Union<string, IntrinsicFunction> ActionOnFailure { get; set; }
 
             /// <summary>
             /// HadoopJarStep
@@ -33,7 +31,7 @@ namespace Comformation.EMR.Step
             /// Type: HadoopJarStepConfig
             /// Update requires: Replacement
             /// </summary>
-			public HadoopJarStepConfig HadoopJarStep { get; set; }
+            public HadoopJarStepConfig HadoopJarStep { get; set; }
 
             /// <summary>
             /// JobFlowId
@@ -45,7 +43,7 @@ namespace Comformation.EMR.Step
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> JobFlowId { get; set; }
+            public Union<string, IntrinsicFunction> JobFlowId { get; set; }
 
             /// <summary>
             /// Name
@@ -54,7 +52,7 @@ namespace Comformation.EMR.Step
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.RestApi
 {
     /// <summary>
     /// AWS::ApiGateway::RestApi
-    /// The AWS::ApiGateway::RestApi resource creates a REST API. For more information, see restapi:create in the
-    /// Amazon API Gateway REST API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
     /// </summary>
     public class RestApiResource : ResourceBase
@@ -23,20 +21,19 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiKeySourceType { get; set; }
+            public Union<string, IntrinsicFunction> ApiKeySourceType { get; set; }
 
             /// <summary>
             /// BinaryMediaTypes
             /// The list of binary media types that are supported by the RestApi resource, such as image/png or
             /// application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. Duplicates
-            /// are not allowed. Slashes must be escaped with ~1. For example, image/png would be image~1png in the
-            /// BinaryMediaTypes list. For more information, see Enable Support for Binary Payloads in API Gateway
-            /// in the API Gateway Developer Guide.
+            /// are not allowed. For more information, see Enable Support for Binary Payloads in API Gateway in the
+            /// API Gateway Developer Guide.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> BinaryMediaTypes { get; set; }
+            public List<Union<string, IntrinsicFunction>> BinaryMediaTypes { get; set; }
 
             /// <summary>
             /// Body
@@ -46,7 +43,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Body { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Body { get; set; }
 
             /// <summary>
             /// BodyS3Location
@@ -56,7 +53,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: S3Location
             /// Update requires: No interruption
             /// </summary>
-			public S3Location BodyS3Location { get; set; }
+            public S3Location BodyS3Location { get; set; }
 
             /// <summary>
             /// CloneFrom
@@ -65,7 +62,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CloneFrom { get; set; }
+            public Union<string, IntrinsicFunction> CloneFrom { get; set; }
 
             /// <summary>
             /// Description
@@ -74,7 +71,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// EndpointConfiguration
@@ -84,7 +81,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: EndpointConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public EndpointConfiguration EndpointConfiguration { get; set; }
+            public EndpointConfiguration EndpointConfiguration { get; set; }
 
             /// <summary>
             /// FailOnWarnings
@@ -94,7 +91,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> FailOnWarnings { get; set; }
+            public Union<bool, IntrinsicFunction> FailOnWarnings { get; set; }
 
             /// <summary>
             /// MinimumCompressionSize
@@ -106,7 +103,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MinimumCompressionSize { get; set; }
+            public Union<int, IntrinsicFunction> MinimumCompressionSize { get; set; }
 
             /// <summary>
             /// Name
@@ -115,7 +112,7 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Parameters
@@ -124,18 +121,26 @@ namespace Comformation.ApiGateway.RestApi
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// Policy
-            /// A policy document that contains the permissions for the RestApi resource, in JSON format. To set the
-            /// ARN for the policy, use the !Join intrinsic function with &quot;&quot; as delimiter and values of
-            /// &quot;execute-api:/&quot; and &quot;*&quot;.
+            /// A policy document that contains the permissions for the RestApi resource. To set the ARN for the
+            /// policy, use the !Join intrinsic function with &quot;&quot; as delimiter and values of &quot;execute-api:/&quot; and &quot;*&quot;.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Policy { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Policy { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// An array of arbitrary tags (key-value pairs) to associate with the API.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -145,8 +150,8 @@ namespace Comformation.ApiGateway.RestApi
 
     }
 
-	public static class RestApiAttributes
-	{
+    public static class RestApiAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RootResourceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RootResourceId");
-	}
+    }
 }

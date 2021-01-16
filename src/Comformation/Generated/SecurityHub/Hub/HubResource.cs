@@ -6,8 +6,6 @@ namespace Comformation.SecurityHub.Hub
 {
     /// <summary>
     /// AWS::SecurityHub::Hub
-    /// The AWS::SecurityHub::Hub resource represents the implementation of the AWS Security Hub service in your
-    /// account. One hub resource is created for each Region in which you enable Security Hub.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html
     /// </summary>
     public class HubResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.SecurityHub.Hub
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
         }
 

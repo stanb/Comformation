@@ -6,8 +6,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule
-    /// The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more
-    /// targets for processing. For more information, see What Is Amazon Eventbridge?.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
@@ -22,7 +20,20 @@ namespace Comformation.Events.Rule
             /// Maximum: 512
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
+            /// EventBusName
+            /// The event bus name or ARN to associate with this rule. If you omit this, the default event bus is
+            /// used.
+            /// Required: No
+            /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: [/\. \-_A-Za-z0-9]+
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> EventBusName { get; set; }
 
             /// <summary>
             /// EventPattern
@@ -32,12 +43,13 @@ namespace Comformation.Events.Rule
             /// follows:
             /// &quot;EventPattern&quot;: { &quot;source&quot;: [ &quot;aws. ec2&quot; ], &quot;detail-type&quot;: [ &quot;EC2 Instance State-change
             /// Notification&quot; ] }
-            /// A rule must contain either EventPattern or ScheduleExpression.
+            /// To create a rule, you must include at least one EventPattern or ScheduleExpression. You can create a
+            /// rule that includes both.
             /// Required: Conditional
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> EventPattern { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> EventPattern { get; set; }
 
             /// <summary>
             /// Name
@@ -53,7 +65,7 @@ namespace Comformation.Events.Rule
             /// Pattern: [\. \-_A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -67,7 +79,7 @@ namespace Comformation.Events.Rule
             /// Maximum: 1600
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// ScheduleExpression
@@ -79,17 +91,17 @@ namespace Comformation.Events.Rule
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ScheduleExpression { get; set; }
+            public Union<string, IntrinsicFunction> ScheduleExpression { get; set; }
 
             /// <summary>
             /// State
             /// Indicates whether the rule is enabled.
             /// Required: No
             /// Type: String
-            /// Allowed Values: DISABLED | ENABLED
+            /// Allowed values: DISABLED | ENABLED
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> State { get; set; }
+            public Union<string, IntrinsicFunction> State { get; set; }
 
             /// <summary>
             /// Targets
@@ -99,11 +111,13 @@ namespace Comformation.Events.Rule
             /// to your account through an organization instead of directly by the account ID, you must specify a
             /// RoleArn with proper permissions in the Target structure. For more information, see Sending and
             /// Receiving Events Between AWS Accounts in the Amazon EventBridge User Guide.
+            /// To learn more using a dead-letter queue to send events that fail to be delivered to a target, see
+            /// Event retry policy and using dead-letter queues.
             /// Required: No
             /// Type: List of Target
             /// Update requires: No interruption
             /// </summary>
-			public List<Target> Targets { get; set; }
+            public List<Target> Targets { get; set; }
 
         }
 
@@ -113,8 +127,8 @@ namespace Comformation.Events.Rule
 
     }
 
-	public static class RuleAttributes
-	{
+    public static class RuleAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

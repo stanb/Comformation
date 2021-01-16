@@ -7,9 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket PublicAccessBlockConfiguration
-    /// The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the
-    /// configuration options in any combination. For more information about when Amazon S3 considers a bucket or
-    /// object public, see The Meaning of &quot;Public&quot; in the Amazon Simple Storage Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html
     /// </summary>
     public class PublicAccessBlockConfiguration
@@ -59,8 +56,8 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// RestrictPublicBuckets
         /// Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this
-        /// element to TRUE restricts access to this bucket to only AWS services and authorized users within
-        /// this account if the bucket has a public policy.
+        /// element to TRUE restricts access to this bucket to only AWS service principals and authorized users
+        /// within this account if the bucket has a public policy.
         /// Enabling this setting doesn&#39;t affect previously stored bucket policies, except that public and
         /// cross-account access within any public bucket policy, including non-public delegation to specific
         /// accounts, is blocked.

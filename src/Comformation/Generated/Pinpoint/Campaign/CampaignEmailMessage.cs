@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign CampaignEmailMessage
-    /// Specifies the content and &quot;From&quot; address for an email message that&#39;s sent to recipients of a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html
     /// </summary>
     public class CampaignEmailMessage
@@ -26,7 +25,7 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// HtmlBody
-        /// The body of the email, in HTML format, for recipients whose email clients support HTML content.
+        /// The body of the email, in HTML format, for recipients whose email clients render HTML content.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -46,7 +45,7 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// Body
-        /// The body of the email for recipients whose email clients don&#39;t support HTML content.
+        /// The body of the email for recipients whose email clients don&#39;t render HTML content.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

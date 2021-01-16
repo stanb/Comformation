@@ -7,8 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentConfig
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentConfig MinimumHealthyHosts
-    /// MinimumHealthyHosts is a property of the DeploymentConfig resource that defines how many instances must remain
-    /// healthy during an AWS CodeDeploy deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-minimumhealthyhosts.html
     /// </summary>
     public class MinimumHealthyHosts
@@ -34,7 +32,7 @@ namespace Comformation.CodeDeploy.DeploymentConfig
         /// For more information, see AWS CodeDeploy Instance Health in the AWS CodeDeploy User Guide.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: FLEET_PERCENT | HOST_COUNT
+        /// Allowed values: FLEET_PERCENT | HOST_COUNT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

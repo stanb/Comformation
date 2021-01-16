@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream RedshiftDestinationConfiguration
-    /// The RedshiftDestinationConfiguration property type specifies an Amazon Redshift cluster to which Amazon
-    /// Kinesis Data Firehose (Kinesis Data Firehose) delivers data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html
     /// </summary>
     public class RedshiftDestinationConfiguration
@@ -30,6 +28,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
+        /// Maximum: 512
         /// Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&amp;lt;!-)\. )+redshift\. ([a-zA-Z0-9\.
         /// ]+):\d{1,5}/[a-zA-Z0-9_$]+
         /// Update requires: No interruption
@@ -54,6 +53,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Required: Yes
         /// Type: String
         /// Minimum: 6
+        /// Maximum: 512
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Password")]
@@ -70,6 +71,17 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         public ProcessingConfiguration ProcessingConfiguration { get; set; }
 
         /// <summary>
+        /// RetryOptions
+        /// The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+        /// Default value is 3600 (60 minutes).
+        /// Required: No
+        /// Type: RedshiftRetryOptions
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RetryOptions")]
+        public RedshiftRetryOptions RetryOptions { get; set; }
+
+        /// <summary>
         /// RoleARN
         /// The ARN of the AWS Identity and Access Management (IAM) role that grants Kinesis Data Firehose
         /// access to your Amazon S3 bucket and AWS KMS (if you enable data encryption). For more information,
@@ -84,6 +96,28 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// </summary>
         [JsonProperty("RoleARN")]
         public Union<string, IntrinsicFunction> RoleARN { get; set; }
+
+        /// <summary>
+        /// S3BackupConfiguration
+        /// The configuration for backup in Amazon S3.
+        /// Required: No
+        /// Type: S3DestinationConfiguration
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("S3BackupConfiguration")]
+        public S3DestinationConfiguration S3BackupConfiguration { get; set; }
+
+        /// <summary>
+        /// S3BackupMode
+        /// The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+        /// backup if it is disabled. If backup is enabled, you can&#39;t update the delivery stream to disable it.
+        /// Required: No
+        /// Type: String
+        /// Allowed values: Disabled | Enabled
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("S3BackupMode")]
+        public Union<string, IntrinsicFunction> S3BackupMode { get; set; }
 
         /// <summary>
         /// S3Configuration
@@ -105,6 +139,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
+        /// Maximum: 512
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Username")]

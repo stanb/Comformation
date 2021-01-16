@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket StorageClassAnalysis
-    /// Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between
-    /// different storage classes for an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html
     /// </summary>
     public class StorageClassAnalysis

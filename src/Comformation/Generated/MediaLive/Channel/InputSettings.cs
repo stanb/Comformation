@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel InputSettings
-    /// Information about extracting content from the input and about handling the content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html
     /// </summary>
     public class InputSettings
@@ -64,6 +63,19 @@ namespace Comformation.MediaLive.Channel
         /// </summary>
         [JsonProperty("VideoSelector")]
         public VideoSelector VideoSelector { get; set; }
+
+        /// <summary>
+        /// Smpte2038DataPreference
+        /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input.
+        /// Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from
+        /// SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never
+        /// extract any ancillary data from SMPTE-2038.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Smpte2038DataPreference")]
+        public Union<string, IntrinsicFunction> Smpte2038DataPreference { get; set; }
 
         /// <summary>
         /// AudioSelectors

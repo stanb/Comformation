@@ -6,8 +6,6 @@ namespace Comformation.DocDB.DBInstance
 {
     /// <summary>
     /// AWS::DocDB::DBInstance
-    /// The AWS::DocDB::DBInstance Amazon DocumentDB (with MongoDB compatibility) resource describes a DBInstance. For
-    /// more information, see DBInstance in the Amazon DocumentDB Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html
     /// </summary>
     public class DBInstanceResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.DocDB.DBInstance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
+            public Union<string, IntrinsicFunction> DBInstanceClass { get; set; }
 
             /// <summary>
             /// DBClusterIdentifier
@@ -31,20 +29,18 @@ namespace Comformation.DocDB.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
             /// <summary>
             /// AvailabilityZone
             /// The Amazon EC2 Availability Zone that the instance is created in.
             /// Default: A random, system-chosen Availability Zone in the endpoint&#39;s AWS Region.
             /// Example: us-east-1d
-            /// Constraint: The AvailabilityZone parameter can&#39;t be specified if the MultiAZ parameter is set to
-            /// true. The specified Availability Zone must be in the same AWS Region as the current endpoint.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -59,7 +55,7 @@ namespace Comformation.DocDB.DBInstance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
@@ -70,7 +66,7 @@ namespace Comformation.DocDB.DBInstance
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             /// DBInstanceIdentifier
@@ -83,7 +79,7 @@ namespace Comformation.DocDB.DBInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBInstanceIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBInstanceIdentifier { get; set; }
 
             /// <summary>
             /// Tags
@@ -92,7 +88,7 @@ namespace Comformation.DocDB.DBInstance
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -102,9 +98,9 @@ namespace Comformation.DocDB.DBInstance
 
     }
 
-	public static class DBInstanceAttributes
-	{
+    public static class DBInstanceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Port");
-	}
+    }
 }

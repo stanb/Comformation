@@ -7,8 +7,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup MetricsCollection
-    /// MetricsCollection is a property of AutoScalingGroup that describes the group metrics that an Amazon EC2 Auto
-    /// Scaling group sends to Amazon CloudWatch. These metrics describe the group rather than any of its instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html
     /// </summary>
     public class MetricsCollection
@@ -27,11 +25,12 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Metrics
-        /// The list of Auto Scaling group metrics to collect. If you specify Granularity and don&#39;t specify any
-        /// metrics, all metrics are enabled.
+        /// Specifies which group-level metrics to start collecting.
         /// Allowed Values:
         /// GroupMinSize GroupMaxSize GroupDesiredCapacity GroupInServiceInstances GroupPendingInstances
-        /// GroupStandbyInstances GroupTerminatingInstances GroupTotalInstances
+        /// GroupStandbyInstances GroupTerminatingInstances GroupTotalInstances GroupInServiceCapacity
+        /// GroupPendingCapacity GroupStandbyCapacity GroupTerminatingCapacity GroupTotalCapacity
+        /// If you specify Granularity and don&#39;t specify any metrics, all metrics are enabled.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

@@ -6,8 +6,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application
-    /// The AWS::KinesisAnalytics::Application resource creates an Amazon Kinesis Data Analytics application. For more
-    /// information, see the Amazon Kinesis Data Analytics Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.KinesisAnalytics.Application
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// Inputs
@@ -43,7 +41,7 @@ namespace Comformation.KinesisAnalytics.Application
             /// Type: List of Input
             /// Update requires: No interruption
             /// </summary>
-			public List<Input> Inputs { get; set; }
+            public List<Input> Inputs { get; set; }
 
             /// <summary>
             /// ApplicationDescription
@@ -54,7 +52,7 @@ namespace Comformation.KinesisAnalytics.Application
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationDescription { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationDescription { get; set; }
 
             /// <summary>
             /// ApplicationCode
@@ -75,7 +73,7 @@ namespace Comformation.KinesisAnalytics.Application
             /// Maximum: 102400
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationCode { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationCode { get; set; }
 
         }
 

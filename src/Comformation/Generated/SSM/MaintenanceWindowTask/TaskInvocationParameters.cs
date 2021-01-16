@@ -7,8 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask TaskInvocationParameters
-    /// The TaskInvocationParameters property type specifies the task execution parameters for a maintenance window
-    /// task in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html
     /// </summary>
     public class TaskInvocationParameters

@@ -6,8 +6,6 @@ namespace Comformation.CloudFormation.CustomResource
 {
     /// <summary>
     /// AWS::CloudFormation::CustomResource
-    /// In a CloudFormation template, you use the AWS::CloudFormation::CustomResource or Custom::String resource type
-    /// to specify custom resources.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html
     /// </summary>
     public class CustomResourceResource : ResourceBase
@@ -26,7 +24,7 @@ namespace Comformation.CloudFormation.CustomResource
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceToken { get; set; }
+            public Union<string, IntrinsicFunction> ServiceToken { get; set; }
 
         }
 

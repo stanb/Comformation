@@ -7,7 +7,6 @@ namespace Comformation.RoboMaker.SimulationApplication
 {
     /// <summary>
     /// AWS::RoboMaker::SimulationApplication RenderingEngine
-    /// Information about a rendering engine.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html
     /// </summary>
     public class RenderingEngine
@@ -18,6 +17,8 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The version of the rendering engine.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 4
         /// Pattern: 1. x
         /// Update requires: No interruption
         /// </summary>
@@ -29,7 +30,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The name of the rendering engine.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: OGRE
+        /// Allowed values: OGRE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

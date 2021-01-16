@@ -6,9 +6,6 @@ namespace Comformation.CodePipeline.Webhook
 {
     /// <summary>
     /// AWS::CodePipeline::Webhook
-    /// The AWS::CodePipeline::Webhook resource creates and registers your webhook. After the webhook is created and
-    /// registered, it triggers your pipeline to start every time an external event occurs. For more information, see
-    /// Configure Your GitHub Pipelines to Use Webhooks for Change Detection in the AWS CodePipeline User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html
     /// </summary>
     public class WebhookResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Type: WebhookAuthConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public WebhookAuthConfiguration AuthenticationConfiguration { get; set; }
+            public WebhookAuthConfiguration AuthenticationConfiguration { get; set; }
 
             /// <summary>
             /// Filters
@@ -36,7 +33,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<WebhookFilterRule> Filters { get; set; }
+            public List<WebhookFilterRule> Filters { get; set; }
 
             /// <summary>
             /// Authentication
@@ -47,10 +44,10 @@ namespace Comformation.CodePipeline.Webhook
             /// accepts all webhook trigger requests regardless of origin.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: GITHUB_HMAC | IP | UNAUTHENTICATED
+            /// Allowed values: GITHUB_HMAC | IP | UNAUTHENTICATED
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Authentication { get; set; }
+            public Union<string, IntrinsicFunction> Authentication { get; set; }
 
             /// <summary>
             /// TargetPipeline
@@ -62,7 +59,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetPipeline { get; set; }
+            public Union<string, IntrinsicFunction> TargetPipeline { get; set; }
 
             /// <summary>
             /// TargetAction
@@ -75,7 +72,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TargetAction { get; set; }
+            public Union<string, IntrinsicFunction> TargetAction { get; set; }
 
             /// <summary>
             /// Name
@@ -87,7 +84,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// TargetPipelineVersion
@@ -99,7 +96,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> TargetPipelineVersion { get; set; }
+            public Union<int, IntrinsicFunction> TargetPipelineVersion { get; set; }
 
             /// <summary>
             /// RegisterWithThirdParty
@@ -109,7 +106,7 @@ namespace Comformation.CodePipeline.Webhook
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> RegisterWithThirdParty { get; set; }
+            public Union<bool, IntrinsicFunction> RegisterWithThirdParty { get; set; }
 
         }
 
@@ -119,8 +116,8 @@ namespace Comformation.CodePipeline.Webhook
 
     }
 
-	public static class WebhookAttributes
-	{
+    public static class WebhookAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Url = new ResourceAttribute<Union<string, IntrinsicFunction>>("Url");
-	}
+    }
 }

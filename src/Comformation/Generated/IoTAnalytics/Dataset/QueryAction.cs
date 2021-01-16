@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset QueryAction
-    /// An &quot;SqlQueryDatasetAction&quot; object that uses an SQL query to automatically create data set contents.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html
     /// </summary>
     public class QueryAction

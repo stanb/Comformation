@@ -7,7 +7,6 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi CognitoUserPoolConfig
-    /// Describes an Amazon Cognito user pool configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html
     /// </summary>
     public class CognitoUserPoolConfig

@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinitionVersion RunAs
-    /// The user and group permissions 		used to run the Lambda function. This setting overrides the default access
-    /// identity that&#39;s specified 		for the group (by default, ggc_user and ggc_group). You can override the user,
-    /// group, or both. 	For more information, 	see Run as in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html
     /// </summary>
     public class RunAs

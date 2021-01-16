@@ -6,11 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation
 {
     /// <summary>
-    /// Resource Tag
-    /// You can use the Resource Tags property to apply tags to resources, which can help you identify and categorize
-    /// those resources. You can tag only resources for which AWS CloudFormation supports tagging. For information
-    /// about which resources you can tag with AWS CloudFormation, see the individual resources in AWS Resource and
-    /// Property Types Reference.
+    /// Resource tag
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html
     /// </summary>
     public class Tag
@@ -18,7 +14,7 @@ namespace Comformation
 
         /// <summary>
         /// Key
-        /// The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and
+        /// The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and
         /// cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode
         /// letters, digits, whitespace, _, . , /, =, +, and -.
         /// Required: Yes
@@ -29,9 +25,7 @@ namespace Comformation
 
         /// <summary>
         /// Value
-        /// The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and
-        /// cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode
-        /// letters, digits, whitespace, _, . , /, =, +, and -.
+        /// The value for the tag. You can specify a value that is 0 to 256 characters in length.
         /// Required: Yes
         /// Type: String
         /// </summary>

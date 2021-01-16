@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
 {
     /// <summary>
     /// AWS::ServiceCatalog::StackSetConstraint
-    /// Specifies a StackSet constraint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html
     /// </summary>
     public class StackSetConstraintResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Maximum: 2000
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// StackInstanceControl
@@ -30,7 +29,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StackInstanceControl { get; set; }
+            public Union<string, IntrinsicFunction> StackInstanceControl { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -41,7 +40,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -53,7 +52,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
             /// ProductId
@@ -65,7 +64,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ProductId { get; set; }
+            public Union<string, IntrinsicFunction> ProductId { get; set; }
 
             /// <summary>
             /// RegionList
@@ -78,7 +77,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> RegionList { get; set; }
+            public List<Union<string, IntrinsicFunction>> RegionList { get; set; }
 
             /// <summary>
             /// AdminRole
@@ -87,7 +86,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AdminRole { get; set; }
+            public Union<string, IntrinsicFunction> AdminRole { get; set; }
 
             /// <summary>
             /// AccountList
@@ -96,7 +95,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AccountList { get; set; }
+            public List<Union<string, IntrinsicFunction>> AccountList { get; set; }
 
             /// <summary>
             /// ExecutionRole
@@ -105,7 +104,7 @@ namespace Comformation.ServiceCatalog.StackSetConstraint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ExecutionRole { get; set; }
+            public Union<string, IntrinsicFunction> ExecutionRole { get; set; }
 
         }
 

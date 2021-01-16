@@ -6,8 +6,6 @@ namespace Comformation.ApiGatewayV2.RouteResponse
 {
     /// <summary>
     /// AWS::ApiGatewayV2::RouteResponse
-    /// The AWS::ApiGatewayV2::RouteResponse resource creates a route response for a WebSocket API. For more
-    /// information, see Set up Route Responses for a WebSocket API in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html
     /// </summary>
     public class RouteResponseResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RouteResponseKey { get; set; }
+            public Union<string, IntrinsicFunction> RouteResponseKey { get; set; }
 
             /// <summary>
             /// ResponseParameters
@@ -30,7 +28,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseParameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseParameters { get; set; }
 
             /// <summary>
             /// RouteId
@@ -39,16 +37,16 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RouteId { get; set; }
+            public Union<string, IntrinsicFunction> RouteId { get; set; }
 
             /// <summary>
             /// ModelSelectionExpression
-            /// The model selection expression for the route response.
+            /// The model selection expression for the route response. Supported only for WebSocket APIs.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ModelSelectionExpression { get; set; }
+            public Union<string, IntrinsicFunction> ModelSelectionExpression { get; set; }
 
             /// <summary>
             /// ApiId
@@ -57,7 +55,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
             /// ResponseModels
@@ -66,7 +64,7 @@ namespace Comformation.ApiGatewayV2.RouteResponse
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseModels { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseModels { get; set; }
 
         }
 

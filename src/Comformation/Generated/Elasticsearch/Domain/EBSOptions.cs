@@ -7,9 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain EBSOptions
-    /// The configurations of Amazon Elastic Block Store (Amazon EBS) volumes that are attached to data nodes in the
-    /// Amazon ES domain. For more information, see Configuring EBS-based Storage in the Amazon Elasticsearch Service
-    /// Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html
     /// </summary>
     public class EBSOptions
@@ -50,8 +47,8 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// VolumeType
-        /// The EBS volume type to use with the Amazon ES domain, such as standard, gp2, io1, st1, or sc1. For
-        /// more information about each type, see Amazon EBS Volume Types in the Amazon EC2 User Guide for Linux
+        /// The EBS volume type to use with the Amazon ES domain, such as standard, gp2, or io1. For more
+        /// information about each type, see Amazon EBS Volume Types in the Amazon EC2 User Guide for Linux
         /// Instances.
         /// Required: No
         /// Type: String

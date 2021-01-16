@@ -6,10 +6,6 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline
-    /// The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement
-    /// and transformation of data. In each pipeline, you define pipeline objects, such as activities, schedules, data
-    /// nodes, and resources. For information about pipeline objects and components that you can use, see Pipeline
-    /// Object Reference in the AWS Data Pipeline Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
@@ -24,7 +20,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Activate { get; set; }
+            public Union<bool, IntrinsicFunction> Activate { get; set; }
 
             /// <summary>
             /// Description
@@ -36,7 +32,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Name
@@ -48,7 +44,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\n\t]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ParameterObjects
@@ -57,7 +53,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: List of ParameterObject
             /// Update requires: No interruption
             /// </summary>
-			public List<ParameterObject> ParameterObjects { get; set; }
+            public List<ParameterObject> ParameterObjects { get; set; }
 
             /// <summary>
             /// ParameterValues
@@ -66,7 +62,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: List of ParameterValue
             /// Update requires: No interruption
             /// </summary>
-			public List<ParameterValue> ParameterValues { get; set; }
+            public List<ParameterValue> ParameterValues { get; set; }
 
             /// <summary>
             /// PipelineObjects
@@ -77,7 +73,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: List of PipelineObject
             /// Update requires: No interruption
             /// </summary>
-			public List<PipelineObject> PipelineObjects { get; set; }
+            public List<PipelineObject> PipelineObjects { get; set; }
 
             /// <summary>
             /// PipelineTags
@@ -88,7 +84,7 @@ namespace Comformation.DataPipeline.Pipeline
             /// Type: List of PipelineTag
             /// Update requires: No interruption
             /// </summary>
-			public List<PipelineTag> PipelineTags { get; set; }
+            public List<PipelineTag> PipelineTags { get; set; }
 
         }
 

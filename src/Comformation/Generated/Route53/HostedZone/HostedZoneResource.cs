@@ -6,9 +6,6 @@ namespace Comformation.Route53.HostedZone
 {
     /// <summary>
     /// AWS::Route53::HostedZone
-    /// The AWS::Route53::HostedZone resource is a Route 53 resource type that contains information about 			how you
-    /// want to route traffic for a domain (example. com) and its subdomains (acme. example. com, zenith. example.
-    /// com):
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html
     /// </summary>
     public class HostedZoneResource : ResourceBase
@@ -26,7 +23,7 @@ namespace Comformation.Route53.HostedZone
             /// Type: HostedZoneConfig
             /// Update requires: No interruption
             /// </summary>
-			public HostedZoneConfig HostedZoneConfig { get; set; }
+            public HostedZoneConfig HostedZoneConfig { get; set; }
 
             /// <summary>
             /// HostedZoneTags
@@ -40,7 +37,7 @@ namespace Comformation.Route53.HostedZone
             /// Type: List of HostedZoneTag
             /// Update requires: No interruption
             /// </summary>
-			public List<HostedZoneTag> HostedZoneTags { get; set; }
+            public List<HostedZoneTag> HostedZoneTags { get; set; }
 
             /// <summary>
             /// Name
@@ -60,7 +57,7 @@ namespace Comformation.Route53.HostedZone
             /// Maximum: 1024
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// QueryLoggingConfig
@@ -124,7 +121,7 @@ namespace Comformation.Route53.HostedZone
             /// Type: QueryLoggingConfig
             /// Update requires: No interruption
             /// </summary>
-			public QueryLoggingConfig QueryLoggingConfig { get; set; }
+            public QueryLoggingConfig QueryLoggingConfig { get; set; }
 
             /// <summary>
             /// VPCs
@@ -136,9 +133,9 @@ namespace Comformation.Route53.HostedZone
             /// 	
             /// Required: No
             /// Type: List of VPC
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
-			public List<VPC> VPCs { get; set; }
+            public List<VPC> VPCs { get; set; }
 
         }
 
@@ -148,8 +145,9 @@ namespace Comformation.Route53.HostedZone
 
     }
 
-	public static class HostedZoneAttributes
-	{
+    public static class HostedZoneAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> NameServers = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("NameServers");
-	}
+    }
 }

@@ -7,8 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSet
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSet ReputationOptions
-    /// Enable or disable collection of reputation metrics for emails that you send using this configuration set in
-    /// the current AWS Region.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-reputationoptions.html
     /// </summary>
     public class ReputationOptions

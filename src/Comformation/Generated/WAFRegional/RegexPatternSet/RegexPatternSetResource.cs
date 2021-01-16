@@ -6,8 +6,6 @@ namespace Comformation.WAFRegional.RegexPatternSet
 {
     /// <summary>
     /// AWS::WAFRegional::RegexPatternSet
-    /// The RegexPatternSet specifies the regular expression (regex) pattern that you want AWS WAF to search for, such
-    /// as B[a@]dB[o0]t. You can then configure AWS WAF to reject those requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-regexpatternset.html
     /// </summary>
     public class RegexPatternSetResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.WAFRegional.RegexPatternSet
             /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> RegexPatternStrings { get; set; }
+            public List<Union<string, IntrinsicFunction>> RegexPatternStrings { get; set; }
 
             /// <summary>
             /// Name
@@ -33,9 +31,10 @@ namespace Comformation.WAFRegional.RegexPatternSet
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

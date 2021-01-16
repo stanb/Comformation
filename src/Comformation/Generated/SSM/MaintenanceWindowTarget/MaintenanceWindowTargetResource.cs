@@ -6,9 +6,6 @@ namespace Comformation.SSM.MaintenanceWindowTarget
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTarget
-    /// The AWS::SSM::MaintenanceWindowTarget resource registers a target with a maintenance window for AWS Systems
-    /// Manager. For more information, see RegisterTargetWithMaintenanceWindow in the AWS Systems Manager API
-    /// Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html
     /// </summary>
     public class MaintenanceWindowTargetResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.SSM.MaintenanceWindowTarget
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> OwnerInformation { get; set; }
+            public Union<string, IntrinsicFunction> OwnerInformation { get; set; }
 
             /// <summary>
             /// Description
@@ -36,7 +33,7 @@ namespace Comformation.SSM.MaintenanceWindowTarget
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// WindowId
@@ -48,17 +45,17 @@ namespace Comformation.SSM.MaintenanceWindowTarget
             /// Pattern: ^mw-[0-9a-f]{17}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> WindowId { get; set; }
+            public Union<string, IntrinsicFunction> WindowId { get; set; }
 
             /// <summary>
             /// ResourceType
             /// The type of target that is being registered with the maintenance window.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: INSTANCE | RESOURCE_GROUP
+            /// Allowed values: INSTANCE | RESOURCE_GROUP
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceType { get; set; }
+            public Union<string, IntrinsicFunction> ResourceType { get; set; }
 
             /// <summary>
             /// Targets
@@ -70,7 +67,7 @@ namespace Comformation.SSM.MaintenanceWindowTarget
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Targets> Targets { get; set; }
+            public List<Targets> Targets { get; set; }
 
             /// <summary>
             /// Name
@@ -82,7 +79,7 @@ namespace Comformation.SSM.MaintenanceWindowTarget
             /// Pattern: ^[a-zA-Z0-9_\-. ]{3,128}$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

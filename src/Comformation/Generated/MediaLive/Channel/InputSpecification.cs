@@ -7,8 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel InputSpecification
-    /// The input specification for this channel. It specifies the key characteristics of the inputs for this channel:
-    /// the maximum bitrate, the resolution, and the codec.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html
     /// </summary>
     public class InputSpecification

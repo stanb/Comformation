@@ -7,7 +7,6 @@ namespace Comformation.Glue.Trigger
 {
     /// <summary>
     /// AWS::Glue::Trigger Predicate
-    /// Defines the predicate of the trigger, which determines when it fires.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html
     /// </summary>
     public class Predicate

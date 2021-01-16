@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application Input
-    /// When you configure the application input, you specify the streaming source, the in-application stream name
-    /// that is created, and the mapping between the two. For more information, see Configuring Application Input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-input.html
     /// </summary>
     public class Input

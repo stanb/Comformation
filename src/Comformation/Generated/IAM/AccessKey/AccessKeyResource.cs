@@ -6,8 +6,6 @@ namespace Comformation.IAM.AccessKey
 {
     /// <summary>
     /// AWS::IAM::AccessKey
-    /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default
-    /// status for new keys is Active.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html
     /// </summary>
     public class AccessKeyResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.IAM.AccessKey
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> Serial { get; set; }
+            public Union<int, IntrinsicFunction> Serial { get; set; }
 
             /// <summary>
             /// Status
@@ -31,10 +29,10 @@ namespace Comformation.IAM.AccessKey
             /// it is not.
             /// Required: No
             /// Type: String
-            /// Allowed Values: Active | Inactive
+            /// Allowed values: Active | Inactive
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Status { get; set; }
+            public Union<string, IntrinsicFunction> Status { get; set; }
 
             /// <summary>
             /// UserName
@@ -49,7 +47,7 @@ namespace Comformation.IAM.AccessKey
             /// Pattern: [\w+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserName { get; set; }
+            public Union<string, IntrinsicFunction> UserName { get; set; }
 
         }
 
@@ -59,8 +57,8 @@ namespace Comformation.IAM.AccessKey
 
     }
 
-	public static class AccessKeyAttributes
-	{
+    public static class AccessKeyAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SecretAccessKey = new ResourceAttribute<Union<string, IntrinsicFunction>>("SecretAccessKey");
-	}
+    }
 }

@@ -7,7 +7,6 @@ namespace Comformation.Redshift.ClusterParameterGroup
 {
     /// <summary>
     /// AWS::Redshift::ClusterParameterGroup Parameter
-    /// Describes a parameter in a cluster parameter group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-property-redshift-clusterparametergroup-parameter.html
     /// </summary>
     public class Parameter
@@ -18,6 +17,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
         /// The name of the parameter.
         /// Required: Yes
         /// Type: String
+        /// Maximum: 2147483647
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ParameterName")]
@@ -28,6 +28,7 @@ namespace Comformation.Redshift.ClusterParameterGroup
         /// The value of the parameter.
         /// Required: Yes
         /// Type: String
+        /// Maximum: 2147483647
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ParameterValue")]

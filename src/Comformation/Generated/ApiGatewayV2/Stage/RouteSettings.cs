@@ -7,7 +7,6 @@ namespace Comformation.ApiGatewayV2.Stage
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Stage RouteSettings
-    /// Represents a collection of route settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html
     /// </summary>
     public class RouteSettings
@@ -16,7 +15,7 @@ namespace Comformation.ApiGatewayV2.Stage
         /// <summary>
         /// LoggingLevel
         /// Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log
-        /// entries pushed to Amazon CloudWatch Logs.
+        /// entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -27,7 +26,7 @@ namespace Comformation.ApiGatewayV2.Stage
         /// <summary>
         /// DataTraceEnabled
         /// Specifies whether (true) or not (false) data trace logging is enabled for this route. This property
-        /// affects the log entries pushed to Amazon CloudWatch Logs.
+        /// affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

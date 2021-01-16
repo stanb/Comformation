@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign Message
-    /// Specifies the content and settings for a push notification that&#39;s sent to recipients of a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html
     /// </summary>
     public class Message
@@ -129,8 +128,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// RawContent
-        /// The raw, JSON-formatted string to use as the payload for the notification message. This value
-        /// overrides other values for the message.
+        /// The raw, JSON-formatted string to use as the payload for the notification message. If specified,
+        /// this value overrides all other content for the message.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

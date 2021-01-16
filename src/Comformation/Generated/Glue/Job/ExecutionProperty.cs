@@ -7,7 +7,6 @@ namespace Comformation.Glue.Job
 {
     /// <summary>
     /// AWS::Glue::Job ExecutionProperty
-    /// An execution property of a job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html
     /// </summary>
     public class ExecutionProperty

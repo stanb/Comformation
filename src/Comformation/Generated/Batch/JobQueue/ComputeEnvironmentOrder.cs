@@ -7,9 +7,6 @@ namespace Comformation.Batch.JobQueue
 {
     /// <summary>
     /// AWS::Batch::JobQueue ComputeEnvironmentOrder
-    /// The order in which compute environments are tried for job placement within a queue. Compute environments are
-    /// tried in ascending order. For example, if two compute environments are associated with a job queue, the
-    /// compute environment with a lower order integer value is tried for job placement first.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html
     /// </summary>
     public class ComputeEnvironmentOrder
@@ -27,7 +24,9 @@ namespace Comformation.Batch.JobQueue
 
         /// <summary>
         /// Order
-        /// The order of the compute environment.
+        /// The order of the compute environment. Compute environments are tried in ascending order. For
+        /// example, if two compute environments are associated with a job queue, the compute environment with a
+        /// lower order integer value is tried for job placement first.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption

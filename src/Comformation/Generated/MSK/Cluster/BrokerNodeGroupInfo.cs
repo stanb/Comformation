@@ -7,7 +7,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster BrokerNodeGroupInfo
-    /// The setup to be used for brokers in the cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html
     /// </summary>
     public class BrokerNodeGroupInfo
@@ -31,7 +30,12 @@ namespace Comformation.MSK.Cluster
         /// ClientSubnets
         /// The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic
         /// network interfaces inside these subnets. Client applications use elastic network interfaces to
-        /// produce and consume data. Client subnets can&#39;t be in Availability Zone us-east-1e.
+        /// produce and consume data.
+        /// Specify exactly two subnets if you are using the US West (N. California) Region. For other Regions
+        /// where Amazon MSK is available, you can specify either two or three subnets. The subnets that you
+        /// specify must be in distinct Availability Zones. When you create a cluster, Amazon MSK distributes
+        /// the broker nodes evenly across the subnets that you specify.
+        /// Client subnets can&#39;t be in Availability Zone us-east-1e.
         /// Required: Yes
         /// Type: List of String
         /// Update requires: Replacement
@@ -56,6 +60,11 @@ namespace Comformation.MSK.Cluster
         /// to the value DEFAULT. No other values are currently allowed.
         /// Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the
         /// subnets that you provide when you create the cluster.
+        /// To create a cluster, specify exactly two subnets if you are using one of the following Regions:
+        /// South America (S&#227;o Paulo), Canada (Central), or US West (N. California). For other Regions where
+        /// Amazon MSK is available, you can specify either two or three subnets. The subnets that you specify
+        /// must be in distinct Availability Zones.
+        /// Client subnets can&#39;t be in Availability Zone us-east-1e.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -66,8 +75,8 @@ namespace Comformation.MSK.Cluster
         /// <summary>
         /// InstanceType
         /// The type of Amazon EC2 instances to use for brokers. The following instance types are allowed:
-        /// kafka. m5. large, kafka. m5. xlarge, kafka. m5. 2xlarge, kafka. m5. 4xlarge, kafka. m5. 12xlarge,
-        /// and kafka. m5. 24xlarge.
+        /// kafka. m5. large, kafka. m5. xlarge, kafka. m5. 2xlarge, kafka. m5. 4xlarge, kafka. m5. 8xlarge,
+        /// kafka. m5. 12xlarge, kafka. m5. 16xlarge, and kafka. m5. 24xlarge.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

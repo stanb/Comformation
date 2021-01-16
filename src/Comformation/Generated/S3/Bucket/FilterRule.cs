@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket FilterRule
-    /// Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key
-    /// name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html
     /// </summary>
     public class FilterRule
@@ -22,7 +20,7 @@ namespace Comformation.S3.Bucket
         /// Service Developer Guide.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: prefix | suffix
+        /// Allowed values: prefix | suffix
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

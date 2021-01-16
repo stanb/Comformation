@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign MessageConfiguration
-    /// Specifies the message configuration settings for a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html
     /// </summary>
     public class MessageConfiguration
@@ -15,8 +14,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// APNSMessage
-        /// The message that the campaign sends through the APNs (Apple Push Notification service) channel. This
-        /// message overrides the default message.
+        /// The message that the campaign sends through the APNs (Apple Push Notification service) channel. If
+        /// specified, this message overrides the default message.
         /// Required: No
         /// Type: Message
         /// Update requires: No interruption
@@ -26,8 +25,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// BaiduMessage
-        /// The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message
-        /// overrides the default message.
+        /// The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this
+        /// message overrides the default message.
         /// Required: No
         /// Type: Message
         /// Update requires: No interruption
@@ -48,7 +47,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// EmailMessage
-        /// The message that the campaign sends through the email channel.
+        /// The message that the campaign sends through the email channel. If specified, this message overrides
+        /// the default message.
         /// Required: No
         /// Type: CampaignEmailMessage
         /// Update requires: No interruption
@@ -60,7 +60,7 @@ namespace Comformation.Pinpoint.Campaign
         /// GCMMessage
         /// The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send
         /// push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging
-        /// (GCM), service. This message overrides the default message.
+        /// (GCM), service. If specified, this message overrides the default message.
         /// Required: No
         /// Type: Message
         /// Update requires: No interruption
@@ -70,7 +70,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// SMSMessage
-        /// The message that the campaign sends through the SMS channel.
+        /// The message that the campaign sends through the SMS channel. If specified, this message overrides
+        /// the default message.
         /// Required: No
         /// Type: CampaignSmsMessage
         /// Update requires: No interruption
@@ -80,8 +81,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// ADMMessage
-        /// The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message
-        /// overrides the default message.
+        /// The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified,
+        /// this message overrides the default message.
         /// Required: No
         /// Type: Message
         /// Update requires: No interruption

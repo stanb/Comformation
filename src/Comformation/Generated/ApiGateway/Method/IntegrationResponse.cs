@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.Method
 {
     /// <summary>
     /// AWS::ApiGateway::Method IntegrationResponse
-    /// IntegrationResponse is a property of the Amazon API Gateway Method Integration property type that specifies
-    /// the response that API Gateway sends after a method&#39;s backend finishes processing a request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html
     /// </summary>
     public class IntegrationResponse

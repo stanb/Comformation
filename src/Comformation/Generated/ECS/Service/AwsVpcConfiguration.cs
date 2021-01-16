@@ -7,8 +7,6 @@ namespace Comformation.ECS.Service
 {
     /// <summary>
     /// AWS::ECS::Service AwsVpcConfiguration
-    /// The AwsVpcConfiguration property specifies an object representing the networking details for a task or
-    /// service.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html
     /// </summary>
     public class AwsVpcConfiguration
@@ -16,11 +14,13 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// AssignPublicIp
-        /// Whether the task&#39;s elastic network interface receives a public IP address. The default value is
+        /// 		
+        /// Whether the task&#39;s elastic network interface receives a public IP address. The default 			value is
         /// DISABLED.
+        /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: DISABLED | ENABLED
+        /// Allowed values: DISABLED | ENABLED
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AssignPublicIp")]
@@ -28,10 +28,13 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// SecurityGroups
-        /// The security groups associated with the task or service. If you do not specify a security group, the
-        /// default security group for the VPC is used. There is a limit of 5 security groups that can be
-        /// specified per AwsVpcConfiguration.
+        /// 		
+        /// The IDs of the security groups associated with the task or service. If you do not 			specify a
+        /// security group, the default security group for the VPC is used. There is a 			limit of 5 security
+        /// groups that can be specified per 			AwsVpcConfiguration.
+        /// 		 		
         /// Note All specified security groups must be from the same VPC.
+        /// 	
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
@@ -41,10 +44,13 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// Subnets
-        /// The subnets associated with the task or service. There is a limit of 16 subnets that can be
-        /// specified per AwsVpcConfiguration.
+        /// 		
+        /// The IDs of the subnets associated with the task or service. There is a limit of 16 			subnets that
+        /// can be specified per AwsVpcConfiguration.
+        /// 		 		
         /// Note All specified subnets must be from the same VPC.
-        /// Required: Yes
+        /// 	
+        /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
         /// </summary>

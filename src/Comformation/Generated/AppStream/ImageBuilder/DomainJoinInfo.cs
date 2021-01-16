@@ -7,8 +7,6 @@ namespace Comformation.AppStream.ImageBuilder
 {
     /// <summary>
     /// AWS::AppStream::ImageBuilder DomainJoinInfo
-    /// The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
-    /// Directory domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html
     /// </summary>
     public class DomainJoinInfo

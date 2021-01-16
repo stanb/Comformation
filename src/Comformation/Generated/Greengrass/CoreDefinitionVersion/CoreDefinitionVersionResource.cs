@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.CoreDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::CoreDefinitionVersion
-    /// The AWS::Greengrass::CoreDefinitionVersion resource represents a core definition version for AWS IoT
-    /// Greengrass. A core definition version contains a Greengrass core.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html
     /// </summary>
     public class CoreDefinitionVersionResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Greengrass.CoreDefinitionVersion
             /// Type: List of Core
             /// Update requires: Replacement
             /// </summary>
-			public List<Core> Cores { get; set; }
+            public List<Core> Cores { get; set; }
 
             /// <summary>
             /// CoreDefinitionId
@@ -31,7 +29,7 @@ namespace Comformation.Greengrass.CoreDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CoreDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> CoreDefinitionId { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate BlockDeviceMapping
-    /// Information about a block device mapping for an Amazon EC2 launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html
     /// </summary>
     public class BlockDeviceMapping
@@ -25,7 +24,7 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// NoDevice
-        /// Suppresses the specified device included in the block device mapping of the AMI.
+        /// To omit the device from the block device mapping, specify an empty string.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

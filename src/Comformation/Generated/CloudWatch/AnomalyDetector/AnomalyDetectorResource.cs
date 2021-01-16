@@ -6,9 +6,6 @@ namespace Comformation.CloudWatch.AnomalyDetector
 {
     /// <summary>
     /// AWS::CloudWatch::AnomalyDetector
-    /// The AWS::CloudWatch::AnomalyDetector type specifies an anomaly detection band for a certain metric and
-    /// statistic. The band represents the expected &quot;normal&quot; range for the metric values. Anomaly detection bands can
-    /// be used for visualization of a metric&#39;s expected values, and for alarms.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html
     /// </summary>
     public class AnomalyDetectorResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.CloudWatch.AnomalyDetector
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MetricName { get; set; }
+            public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
             /// Stat
@@ -31,7 +28,7 @@ namespace Comformation.CloudWatch.AnomalyDetector
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Stat { get; set; }
+            public Union<string, IntrinsicFunction> Stat { get; set; }
 
             /// <summary>
             /// Configuration
@@ -42,7 +39,7 @@ namespace Comformation.CloudWatch.AnomalyDetector
             /// Type: Configuration
             /// Update requires: No interruption
             /// </summary>
-			public Configuration Configuration { get; set; }
+            public Configuration Configuration { get; set; }
 
             /// <summary>
             /// Dimensions
@@ -51,7 +48,7 @@ namespace Comformation.CloudWatch.AnomalyDetector
             /// Type: List of Dimension
             /// Update requires: Replacement
             /// </summary>
-			public List<Dimension> Dimensions { get; set; }
+            public List<Dimension> Dimensions { get; set; }
 
             /// <summary>
             /// Namespace
@@ -60,7 +57,7 @@ namespace Comformation.CloudWatch.AnomalyDetector
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Namespace { get; set; }
+            public Union<string, IntrinsicFunction> Namespace { get; set; }
 
         }
 

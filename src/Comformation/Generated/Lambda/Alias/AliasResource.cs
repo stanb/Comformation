@@ -6,8 +6,6 @@ namespace Comformation.Lambda.Alias
 {
     /// <summary>
     /// AWS::Lambda::Alias
-    /// The AWS::Lambda::Alias resource creates an alias for a Lambda function version. Use aliases to provide clients
-    /// with a function identifier that you can update to invoke a different version.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html
     /// </summary>
     public class AliasResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.Lambda.Alias
             /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// FunctionName
@@ -41,7 +39,7 @@ namespace Comformation.Lambda.Alias
             /// (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionName { get; set; }
+            public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
             /// FunctionVersion
@@ -53,7 +51,7 @@ namespace Comformation.Lambda.Alias
             /// Pattern: (\$LATEST|[0-9]+)
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionVersion { get; set; }
+            public Union<string, IntrinsicFunction> FunctionVersion { get; set; }
 
             /// <summary>
             /// Name
@@ -65,7 +63,16 @@ namespace Comformation.Lambda.Alias
             /// Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
+
+            /// <summary>
+            /// ProvisionedConcurrencyConfig
+            /// Specifies a provisioned concurrency configuration for a function&#39;s alias.
+            /// Required: No
+            /// Type: ProvisionedConcurrencyConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public ProvisionedConcurrencyConfiguration ProvisionedConcurrencyConfig { get; set; }
 
             /// <summary>
             /// RoutingConfig
@@ -74,7 +81,7 @@ namespace Comformation.Lambda.Alias
             /// Type: AliasRoutingConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public AliasRoutingConfiguration RoutingConfig { get; set; }
+            public AliasRoutingConfiguration RoutingConfig { get; set; }
 
         }
 
@@ -82,22 +89,22 @@ namespace Comformation.Lambda.Alias
 
         public AliasProperties Properties { get; } = new AliasProperties();
 
-		/// <summary>
-		/// Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup or AWS::Lambda::Alias 
-		/// resource.
-		/// For AWS::AutoScaling::AutoScalingGroup resources, AWS CloudFormation invokes one of three update policies depending on the type of change you make 
-		/// or whether a scheduled action is associated with the Auto Scaling group.
-		/// The AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies apply only when you do one or more of the following:
-		///   Change the Auto Scaling group's AWS::AutoScaling::LaunchConfiguration.
-		///   Change the Auto Scaling group's VPCZoneIdentifier property
-		///   Change the Auto Scaling group's LaunchTemplate property
-		///   Update an Auto Scaling group that contains instances that don't match the current LaunchConfiguration.
-		/// If both the AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies are specified, setting the WillReplace property to true gives 
-		/// AutoScalingReplacingUpdate precedence.
-		/// The AutoScalingScheduledAction policy applies when you update a stack that includes an Auto Scaling group with an associated scheduled action.
-		/// For AWS::Lambda::Alias resources, AWS CloudFormation performs an AWS CodeDeploy deployment when the version changes on the alias.
-		/// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
-		/// </summary>
+        /// <summary>
+        /// Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup or AWS::Lambda::Alias 
+        /// resource.
+        /// For AWS::AutoScaling::AutoScalingGroup resources, AWS CloudFormation invokes one of three update policies depending on the type of change you make 
+        /// or whether a scheduled action is associated with the Auto Scaling group.
+        /// The AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies apply only when you do one or more of the following:
+        ///   Change the Auto Scaling group's AWS::AutoScaling::LaunchConfiguration.
+        ///   Change the Auto Scaling group's VPCZoneIdentifier property
+        ///   Change the Auto Scaling group's LaunchTemplate property
+        ///   Update an Auto Scaling group that contains instances that don't match the current LaunchConfiguration.
+        /// If both the AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies are specified, setting the WillReplace property to true gives 
+        /// AutoScalingReplacingUpdate precedence.
+        /// The AutoScalingScheduledAction policy applies when you update a stack that includes an Auto Scaling group with an associated scheduled action.
+        /// For AWS::Lambda::Alias resources, AWS CloudFormation performs an AWS CodeDeploy deployment when the version changes on the alias.
+        /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
+        /// </summary>
         public UpdatePolicy UpdatePolicy { get; set; }
 
     }

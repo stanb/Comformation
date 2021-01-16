@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate CapacityReservationSpecification
-    /// Specifies an instance&#39;s Capacity Reservation targeting option. You can specify only one option at a time.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html
     /// </summary>
     public class CapacityReservationSpecification
@@ -23,8 +22,8 @@ namespace Comformation.EC2.LaunchTemplate
         /// Reservation even if one is available. The instance 				runs in On-Demand capacity.
         /// 	
         /// Required: No
-        /// Type: CapacityReservationPreference
-        /// Allowed Values: none | open
+        /// Type: String
+        /// Allowed values: none | open
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CapacityReservationPreference")]
@@ -33,7 +32,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// <summary>
         /// CapacityReservationTarget
         /// 		
-        /// Information about the target Capacity Reservation.
+        /// Information about the target Capacity Reservation or Capacity Reservation group.
         /// 	
         /// Required: No
         /// Type: CapacityReservationTarget

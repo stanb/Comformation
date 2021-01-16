@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket SseKmsEncryptedObjects
-    /// A container for filter information for the selection of S3 objects encrypted with AWS KMS.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html
     /// </summary>
     public class SseKmsEncryptedObjects
@@ -19,7 +18,7 @@ namespace Comformation.S3.Bucket
         /// master key (CMK) stored in AWS Key Management Service.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Disabled | Enabled
+        /// Allowed values: Disabled | Enabled
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Status")]

@@ -7,9 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain ElasticsearchClusterConfig
-    /// The cluster configuration for the Amazon ES domain. You can specify options such as the instance type and the
-    /// number of instances. For more information, see Configuring Amazon ES Domains in the Amazon Elasticsearch
-    /// Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html
     /// </summary>
     public class ElasticsearchClusterConfig
@@ -74,6 +71,36 @@ namespace Comformation.Elasticsearch.Domain
         public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         /// <summary>
+        /// WarmCount
+        /// The number of warm nodes in the cluster.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("WarmCount")]
+        public Union<int, IntrinsicFunction> WarmCount { get; set; }
+
+        /// <summary>
+        /// WarmEnabled
+        /// Whether to enable warm storage for the cluster.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("WarmEnabled")]
+        public Union<bool, IntrinsicFunction> WarmEnabled { get; set; }
+
+        /// <summary>
+        /// WarmType
+        /// The instance type for the cluster&#39;s warm nodes.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("WarmType")]
+        public Union<string, IntrinsicFunction> WarmType { get; set; }
+
+        /// <summary>
         /// ZoneAwarenessConfig
         /// Specifies zone awareness configuration options. Only use if ZoneAwarenessEnabled is true.
         /// Required: No
@@ -89,8 +116,8 @@ namespace Comformation.Elasticsearch.Domain
         /// Amazon ES allocates the nodes and replica index shards that belong to a cluster across two
         /// Availability Zones (AZs) in the same region to prevent data loss and minimize downtime in the event
         /// of node or data center failure. Don&#39;t enable zone awareness if your cluster has no replica index
-        /// shards or is a single-node cluster. For more information, see Enabling Zone Awareness in the Amazon
-        /// Elasticsearch Service Developer Guide.
+        /// shards or is a single-node cluster. For more information, see Configuring a Multi-AZ Domain in the
+        /// Amazon Elasticsearch Service Developer Guide.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

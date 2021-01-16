@@ -6,7 +6,6 @@ namespace Comformation.RAM.ResourceShare
 {
     /// <summary>
     /// AWS::RAM::ResourceShare
-    /// Specifies a resource share.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html
     /// </summary>
     public class ResourceShareResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.RAM.ResourceShare
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Principals { get; set; }
+            public List<Union<string, IntrinsicFunction>> Principals { get; set; }
 
             /// <summary>
             /// AllowExternalPrincipals
@@ -30,7 +29,7 @@ namespace Comformation.RAM.ResourceShare
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowExternalPrincipals { get; set; }
+            public Union<bool, IntrinsicFunction> AllowExternalPrincipals { get; set; }
 
             /// <summary>
             /// ResourceArns
@@ -39,7 +38,7 @@ namespace Comformation.RAM.ResourceShare
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ResourceArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> ResourceArns { get; set; }
 
             /// <summary>
             /// Tags
@@ -48,7 +47,7 @@ namespace Comformation.RAM.ResourceShare
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -57,7 +56,7 @@ namespace Comformation.RAM.ResourceShare
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -67,8 +66,8 @@ namespace Comformation.RAM.ResourceShare
 
     }
 
-	public static class ResourceShareAttributes
-	{
+    public static class ResourceShareAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

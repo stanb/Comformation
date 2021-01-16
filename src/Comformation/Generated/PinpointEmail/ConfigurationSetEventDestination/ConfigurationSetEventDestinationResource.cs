@@ -6,10 +6,6 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSetEventDestination
-    /// Create an event destination. In Amazon Pinpoint, events include message sends, deliveries, opens, clicks,
-    /// bounces, and complaints. Event destinations are places that you can send information about these events to.
-    /// For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or
-    /// complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html
     /// </summary>
     public class ConfigurationSetEventDestinationResource : ResourceBase
@@ -23,7 +19,7 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EventDestinationName { get; set; }
+            public Union<string, IntrinsicFunction> EventDestinationName { get; set; }
 
             /// <summary>
             /// ConfigurationSetName
@@ -32,7 +28,7 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConfigurationSetName { get; set; }
+            public Union<string, IntrinsicFunction> ConfigurationSetName { get; set; }
 
             /// <summary>
             /// EventDestination
@@ -41,7 +37,7 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
             /// Type: EventDestination
             /// Update requires: No interruption
             /// </summary>
-			public EventDestination EventDestination { get; set; }
+            public EventDestination EventDestination { get; set; }
 
         }
 

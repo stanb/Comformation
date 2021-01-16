@@ -7,7 +7,6 @@ namespace Comformation.AppStream.Stack
 {
     /// <summary>
     /// AWS::AppStream::Stack UserSetting
-    /// Specifies an action and whether the action is enabled or disabled for users during their streaming sessions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html
     /// </summary>
     public class UserSetting
@@ -18,7 +17,7 @@ namespace Comformation.AppStream.Stack
         /// The action that is enabled or disabled.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CLIPBOARD_COPY_FROM_LOCAL_DEVICE | CLIPBOARD_COPY_TO_LOCAL_DEVICE | FILE_DOWNLOAD |
+        /// Allowed values: CLIPBOARD_COPY_FROM_LOCAL_DEVICE | CLIPBOARD_COPY_TO_LOCAL_DEVICE | FILE_DOWNLOAD |
         /// FILE_UPLOAD | PRINTING_TO_LOCAL_DEVICE
         /// Update requires: No interruption
         /// </summary>
@@ -30,7 +29,7 @@ namespace Comformation.AppStream.Stack
         /// Indicates whether the action is enabled or disabled.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: DISABLED | ENABLED
+        /// Allowed values: DISABLED | ENABLED
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Permission")]

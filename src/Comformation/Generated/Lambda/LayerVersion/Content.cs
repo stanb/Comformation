@@ -7,7 +7,6 @@ namespace Comformation.Lambda.LayerVersion
 {
     /// <summary>
     /// AWS::Lambda::LayerVersion Content
-    /// A ZIP archive that contains the contents of an AWS Lambda layer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html
     /// </summary>
     public class Content

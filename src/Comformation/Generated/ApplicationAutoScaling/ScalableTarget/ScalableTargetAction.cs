@@ -7,8 +7,6 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 {
     /// <summary>
     /// AWS::ApplicationAutoScaling::ScalableTarget ScalableTargetAction
-    /// ScalableTargetAction is a subproperty of ScheduledAction that represents the minimum and maximum capacity for
-    /// a scheduled action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html
     /// </summary>
     public class ScalableTargetAction

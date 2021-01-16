@@ -7,9 +7,6 @@ namespace Comformation.WAFRegional.WebACL
 {
     /// <summary>
     /// AWS::WAFRegional::WebACL Rule
-    /// A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that
-    /// you want to allow, block, or count. For example, you might create a Rule that includes the following
-    /// predicates:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html
     /// </summary>
     public class Rule
@@ -46,6 +43,7 @@ namespace Comformation.WAFRegional.WebACL
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RuleId")]

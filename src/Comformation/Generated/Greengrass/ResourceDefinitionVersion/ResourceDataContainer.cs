@@ -7,10 +7,6 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinitionVersion ResourceDataContainer
-    /// A container for resource data, which 		defines the resource type. The container takes only one of the
-    /// following supported resource data types: 		LocalDeviceResourceData, LocalVolumeResourceData,
-    /// SageMakerMachineLearningModelResourceData, 		S3MachineLearningModelResourceData, or
-    /// SecretsManagerSecretResourceData.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html
     /// </summary>
     public class ResourceDataContainer
@@ -28,7 +24,7 @@ namespace Comformation.Greengrass.ResourceDefinitionVersion
 
         /// <summary>
         /// SageMakerMachineLearningModelResourceData
-        /// Settings for a machine learning resource saved as an Amazon SageMaker training job.
+        /// Settings for a machine learning resource saved as an SageMaker training job.
         /// Required: No
         /// Type: SageMakerMachineLearningModelResourceData
         /// Update requires: Replacement

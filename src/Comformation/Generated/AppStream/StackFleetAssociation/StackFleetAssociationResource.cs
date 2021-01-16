@@ -6,8 +6,6 @@ namespace Comformation.AppStream.StackFleetAssociation
 {
     /// <summary>
     /// AWS::AppStream::StackFleetAssociation
-    /// The AWS::AppStream::StackFleetAssociation resource associates the specified fleet with the specified stack for
-    /// Amazon AppStream 2. 0.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html
     /// </summary>
     public class StackFleetAssociationResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.AppStream.StackFleetAssociation
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FleetName { get; set; }
+            public Union<string, IntrinsicFunction> FleetName { get; set; }
 
             /// <summary>
             /// StackName
@@ -36,7 +34,7 @@ namespace Comformation.AppStream.StackFleetAssociation
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StackName { get; set; }
+            public Union<string, IntrinsicFunction> StackName { get; set; }
 
         }
 

@@ -6,8 +6,6 @@ namespace Comformation.Neptune.DBCluster
 {
     /// <summary>
     /// AWS::Neptune::DBCluster
-    /// The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster. Neptune is a fully managed graph
-    /// database.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
@@ -25,7 +23,25 @@ namespace Comformation.Neptune.DBCluster
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
+            public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
+
+            /// <summary>
+            /// RestoreToTime
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> RestoreToTime { get; set; }
+
+            /// <summary>
+            /// EngineVersion
+            /// Indicates the database engine version.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -34,7 +50,18 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
+            /// AssociatedRoles
+            /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
+            /// DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to
+            /// access other AWS services on your behalf.
+            /// Required: No
+            /// Type: List of DBClusterRole
+            /// Update requires: No interruption
+            /// </summary>
+            public List<DBClusterRole> AssociatedRoles { get; set; }
 
             /// <summary>
             /// AvailabilityZones
@@ -43,16 +70,25 @@ namespace Comformation.Neptune.DBCluster
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
+            public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// SnapshotIdentifier
-            /// Not supported by Neptune.
+            /// Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing
+            /// snapshot.
+            /// After you restore a DB cluster using a SnapshotIdentifier, you must specify the same
+            /// SnapshotIdentifier for any future updates to the DB cluster. When you specify this property for an
+            /// update, the DB cluster is not restored from the snapshot again, and the data in the database is not
+            /// changed.
+            /// However, if you don&#39;t specify the SnapshotIdentifier, an empty DB cluster is created, and the
+            /// original DB cluster is deleted. If you specify a property that is different from the previous
+            /// snapshot restore property, the DB cluster is restored from the snapshot specified by the
+            /// SnapshotIdentifier, and the original DB cluster is deleted.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
             /// <summary>
             /// Port
@@ -61,7 +97,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// DBClusterIdentifier
@@ -71,7 +107,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -81,7 +117,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// IamAuthEnabled
@@ -91,7 +127,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> IamAuthEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> IamAuthEnabled { get; set; }
 
             /// <summary>
             /// DBSubnetGroupName
@@ -101,7 +137,17 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+
+            /// <summary>
+            /// DeletionProtection
+            /// Indicates whether or not the DB cluster has deletion protection enabled. The database can&#39;t be
+            /// deleted when deletion protection is enabled.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
 
             /// <summary>
             /// PreferredBackupWindow
@@ -112,7 +158,16 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
+
+            /// <summary>
+            /// UseLatestRestorableTime
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<bool, IntrinsicFunction> UseLatestRestorableTime { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -121,7 +176,16 @@ namespace Comformation.Neptune.DBCluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+
+            /// <summary>
+            /// SourceDBClusterIdentifier
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> SourceDBClusterIdentifier { get; set; }
 
             /// <summary>
             /// DBClusterParameterGroupName
@@ -132,7 +196,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
 
             /// <summary>
             /// BackupRetentionPeriod
@@ -143,7 +207,16 @@ namespace Comformation.Neptune.DBCluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
+            public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
+
+            /// <summary>
+            /// RestoreType
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> RestoreType { get; set; }
 
             /// <summary>
             /// Tags
@@ -152,7 +225,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// EnableCloudwatchLogsExports
@@ -161,7 +234,7 @@ namespace Comformation.Neptune.DBCluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
+            public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
 
         }
 
@@ -171,11 +244,11 @@ namespace Comformation.Neptune.DBCluster
 
     }
 
-	public static class DBClusterAttributes
-	{
+    public static class DBClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterResourceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterResourceId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Port");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndpoint");
-	}
+    }
 }

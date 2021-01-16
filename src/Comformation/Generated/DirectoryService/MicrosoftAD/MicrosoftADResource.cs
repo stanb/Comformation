@@ -6,9 +6,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
 {
     /// <summary>
     /// AWS::DirectoryService::MicrosoftAD
-    /// The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your
-    /// directory users and groups can access the AWS Management Console and AWS applications using their existing
-    /// credentials. For more information, see AWS Managed Microsoft AD in the AWS Directory Service Admin Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
     /// </summary>
     public class MicrosoftADResource : ResourceBase
@@ -26,7 +23,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
+            public Union<bool, IntrinsicFunction> CreateAlias { get; set; }
 
             /// <summary>
             /// Edition
@@ -34,10 +31,10 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// default.
             /// Required: No
             /// Type: String
-            /// Allowed Values: Enterprise | Standard
+            /// Allowed values: Enterprise | Standard
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Edition { get; set; }
+            public Union<string, IntrinsicFunction> Edition { get; set; }
 
             /// <summary>
             /// EnableSso
@@ -49,7 +46,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableSso { get; set; }
+            public Union<bool, IntrinsicFunction> EnableSso { get; set; }
 
             /// <summary>
             /// Name
@@ -60,7 +57,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Pattern: ^([a-zA-Z0-9]+[\\. -])+([a-zA-Z0-9])+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Password
@@ -74,7 +71,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Password { get; set; }
+            public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
             /// ShortName
@@ -82,10 +79,10 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// to the first part of your directory DNS. For example, CORP for the directory DNS corp. example. com.
             /// Required: No
             /// Type: String
-            /// Pattern: ^[^\\/:*?\&quot;\&amp;lt;\&amp;gt;|. ]+[^\\/:*?\&quot;&amp;lt;&amp;gt;|]*$
+            /// Pattern: ^[^\\/:*?&quot;&amp;lt;&amp;gt;|. ]+[^\\/:*?&quot;&amp;lt;&amp;gt;|]*$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ShortName { get; set; }
+            public Union<string, IntrinsicFunction> ShortName { get; set; }
 
             /// <summary>
             /// VpcSettings
@@ -94,7 +91,7 @@ namespace Comformation.DirectoryService.MicrosoftAD
             /// Type: VpcSettings
             /// Update requires: Replacement
             /// </summary>
-			public VpcSettings VpcSettings { get; set; }
+            public VpcSettings VpcSettings { get; set; }
 
         }
 
@@ -104,9 +101,9 @@ namespace Comformation.DirectoryService.MicrosoftAD
 
     }
 
-	public static class MicrosoftADAttributes
-	{
+    public static class MicrosoftADAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Alias = new ResourceAttribute<Union<string, IntrinsicFunction>>("Alias");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> DnsIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("DnsIpAddresses");
-	}
+    }
 }

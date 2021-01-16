@@ -7,8 +7,6 @@ namespace Comformation.AppSync.GraphQLApi
 {
     /// <summary>
     /// AWS::AppSync::GraphQLApi OpenIDConnectConfig
-    /// The OpenIDConnectConfig property type specifies the optional authorization configuration for using an OpenID
-    /// Connect compliant service with your GraphQL endpoint for an AWS AppSync GraphQL API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html
     /// </summary>
     public class OpenIDConnectConfig

@@ -7,8 +7,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::ConfigurationTemplate ConfigurationOptionSetting
-    /// The ConfigurationOptionSetting property type specifies an option for an AWS Elastic Beanstalk configuration
-    /// template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-configurationoptionsetting.html
     /// </summary>
     public class ConfigurationOptionSetting

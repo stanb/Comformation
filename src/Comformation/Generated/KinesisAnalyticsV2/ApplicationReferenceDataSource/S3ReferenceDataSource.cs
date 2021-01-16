@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource S3ReferenceDataSource
-    /// For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that
-    /// contains the reference data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource.html
     /// </summary>
     public class S3ReferenceDataSource

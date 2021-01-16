@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline ActionDeclaration
-    /// Represents information about an action declaration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
     /// </summary>
     public class ActionDeclaration
@@ -44,6 +43,9 @@ namespace Comformation.CodePipeline.Pipeline
         /// <summary>
         /// InputArtifacts
         /// The name or ID of the artifact consumed by the action, such as a test or build artifact.
+        /// Note For a CodeBuild action with multiple input artifacts, one of your input sources must be
+        /// designated the PrimarySource. For more information, see the CodeBuild action reference page in the
+        /// AWS CodePipeline User Guide.
         /// Required: No
         /// Type: List of InputArtifact
         /// Update requires: No interruption
@@ -63,6 +65,20 @@ namespace Comformation.CodePipeline.Pipeline
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }
+
+        /// <summary>
+        /// Namespace
+        /// The variable namespace associated with the action. All variables produced as output by this action
+        /// fall under this namespace.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 100
+        /// Pattern: [A-Za-z0-9@\-_]+
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Namespace")]
+        public Union<string, IntrinsicFunction> Namespace { get; set; }
 
         /// <summary>
         /// OutputArtifacts

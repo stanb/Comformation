@@ -6,7 +6,6 @@ namespace Comformation.EC2.VPNGatewayRoutePropagation
 {
     /// <summary>
     /// AWS::EC2::VPNGatewayRoutePropagation
-    /// Enables a virtual private gateway (VGW) to propagate routes to the specified route table of a VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html
     /// </summary>
     public class VPNGatewayRoutePropagationResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.EC2.VPNGatewayRoutePropagation
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> RouteTableIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> RouteTableIds { get; set; }
 
             /// <summary>
             /// VpnGatewayId
@@ -31,7 +30,7 @@ namespace Comformation.EC2.VPNGatewayRoutePropagation
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 
         }
 
