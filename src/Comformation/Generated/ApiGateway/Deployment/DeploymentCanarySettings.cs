@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
     /// AWS::ApiGateway::Deployment DeploymentCanarySettings
-    /// The DeploymentCanarySettings property type specifies settings for the canary deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html
     /// </summary>
     public class DeploymentCanarySettings

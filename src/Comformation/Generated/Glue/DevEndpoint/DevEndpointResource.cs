@@ -6,8 +6,6 @@ namespace Comformation.Glue.DevEndpoint
 {
     /// <summary>
     /// AWS::Glue::DevEndpoint
-    /// The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL
-    /// scripts for AWS Glue. For more information, see DevEndpoint Structure in the AWS Glue Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html
     /// </summary>
     public class DevEndpointResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ExtraJarsS3Path { get; set; }
+            public Union<string, IntrinsicFunction> ExtraJarsS3Path { get; set; }
 
             /// <summary>
             /// PublicKey
@@ -32,7 +30,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PublicKey { get; set; }
+            public Union<string, IntrinsicFunction> PublicKey { get; set; }
 
             /// <summary>
             /// NumberOfNodes
@@ -41,7 +39,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
+            public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
             /// <summary>
             /// Arguments
@@ -60,7 +58,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Arguments { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Arguments { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -69,7 +67,21 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
+
+            /// <summary>
+            /// PublicKeys
+            /// A list of public keys to be used by the DevEndpoints for authentication. Using this attribute is
+            /// preferred over a single public key because the public keys allow you to have a different private key
+            /// per client.
+            /// Note If you previously created an endpoint with a public key, you must remove that key to be able to
+            /// set a list of public keys. Call the UpdateDevEndpoint API operation with the public key content in
+            /// the deletePublicKeys attribute, and the list of new keys in the addPublicKeys attribute.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> PublicKeys { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
@@ -78,7 +90,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -87,7 +99,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// WorkerType
@@ -109,7 +121,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> WorkerType { get; set; }
+            public Union<string, IntrinsicFunction> WorkerType { get; set; }
 
             /// <summary>
             /// EndpointName
@@ -118,7 +130,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EndpointName { get; set; }
+            public Union<string, IntrinsicFunction> EndpointName { get; set; }
 
             /// <summary>
             /// GlueVersion
@@ -139,7 +151,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> GlueVersion { get; set; }
+            public Union<string, IntrinsicFunction> GlueVersion { get; set; }
 
             /// <summary>
             /// ExtraPythonLibsS3Path
@@ -151,7 +163,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ExtraPythonLibsS3Path { get; set; }
+            public Union<string, IntrinsicFunction> ExtraPythonLibsS3Path { get; set; }
 
             /// <summary>
             /// SecurityConfiguration
@@ -160,7 +172,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> SecurityConfiguration { get; set; }
 
             /// <summary>
             /// NumberOfWorkers
@@ -173,7 +185,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumberOfWorkers { get; set; }
+            public Union<int, IntrinsicFunction> NumberOfWorkers { get; set; }
 
             /// <summary>
             /// Tags
@@ -182,7 +194,7 @@ namespace Comformation.Glue.DevEndpoint
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
         }
 

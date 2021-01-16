@@ -7,8 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline EncryptionKey
-    /// Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
-    /// Service (AWS KMS) key.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html
     /// </summary>
     public class EncryptionKey

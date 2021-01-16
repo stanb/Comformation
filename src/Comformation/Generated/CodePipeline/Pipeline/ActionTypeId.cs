@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline ActionTypeId
-    /// Represents information about an action type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html
     /// </summary>
     public class ActionTypeId
@@ -27,7 +26,9 @@ namespace Comformation.CodePipeline.Pipeline
 
         /// <summary>
         /// Owner
-        /// The creator of the action being called.
+        /// The creator of the action being called. There are three valid values for the Owner field in the
+        /// action category section within your pipeline structure: AWS, ThirdParty, and Custom. For more
+        /// information, see Valid Action Types and Providers in CodePipeline.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

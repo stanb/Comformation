@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.App
 {
     /// <summary>
     /// AWS::OpsWorks::App
-    /// Creates an app for a specified stack. For more information, see Creating Apps.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html
     /// </summary>
     public class AppResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.OpsWorks.App
             /// Type: Source
             /// Update requires: No interruption
             /// </summary>
-			public Source AppSource { get; set; }
+            public Source AppSource { get; set; }
 
             /// <summary>
             /// Attributes
@@ -29,7 +28,7 @@ namespace Comformation.OpsWorks.App
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Attributes { get; set; }
 
             /// <summary>
             /// DataSources
@@ -38,7 +37,7 @@ namespace Comformation.OpsWorks.App
             /// Type: List of DataSource
             /// Update requires: No interruption
             /// </summary>
-			public List<DataSource> DataSources { get; set; }
+            public List<DataSource> DataSources { get; set; }
 
             /// <summary>
             /// Description
@@ -47,7 +46,7 @@ namespace Comformation.OpsWorks.App
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Domains
@@ -57,7 +56,7 @@ namespace Comformation.OpsWorks.App
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Domains { get; set; }
+            public List<Union<string, IntrinsicFunction>> Domains { get; set; }
 
             /// <summary>
             /// EnableSsl
@@ -66,7 +65,7 @@ namespace Comformation.OpsWorks.App
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableSsl { get; set; }
+            public Union<bool, IntrinsicFunction> EnableSsl { get; set; }
 
             /// <summary>
             /// Environment
@@ -83,7 +82,7 @@ namespace Comformation.OpsWorks.App
             /// Type: List of EnvironmentVariable
             /// Update requires: No interruption
             /// </summary>
-			public List<EnvironmentVariable> Environment { get; set; }
+            public List<EnvironmentVariable> Environment { get; set; }
 
             /// <summary>
             /// Name
@@ -92,7 +91,7 @@ namespace Comformation.OpsWorks.App
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Shortname
@@ -101,7 +100,7 @@ namespace Comformation.OpsWorks.App
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Shortname { get; set; }
+            public Union<string, IntrinsicFunction> Shortname { get; set; }
 
             /// <summary>
             /// SslConfiguration
@@ -110,7 +109,7 @@ namespace Comformation.OpsWorks.App
             /// Type: SslConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public SslConfiguration SslConfiguration { get; set; }
+            public SslConfiguration SslConfiguration { get; set; }
 
             /// <summary>
             /// StackId
@@ -119,7 +118,7 @@ namespace Comformation.OpsWorks.App
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StackId { get; set; }
+            public Union<string, IntrinsicFunction> StackId { get; set; }
 
             /// <summary>
             /// Type
@@ -129,10 +128,10 @@ namespace Comformation.OpsWorks.App
             /// or you prefer to implement your own Deploy recipes, specify other.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: aws-flow-ruby | java | nodejs | other | php | rails | static
+            /// Allowed values: aws-flow-ruby | java | nodejs | other | php | rails | static
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
 

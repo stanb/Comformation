@@ -7,7 +7,6 @@ namespace Comformation.Glue.DataCatalogEncryptionSettings
 {
     /// <summary>
     /// AWS::Glue::DataCatalogEncryptionSettings EncryptionAtRest
-    /// Specifies the encryption-at-rest configuration for the Data Catalog.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html
     /// </summary>
     public class EncryptionAtRest

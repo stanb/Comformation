@@ -6,8 +6,6 @@ namespace Comformation.ApiGatewayV2.Stage
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Stage
-    /// The AWS::ApiGatewayV2::Stage resource updates a stage for a WebSocket API. For more information, see Deploy a
-    /// WebSocket API in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html
     /// </summary>
     public class StageResource : ResourceBase
@@ -16,21 +14,21 @@ namespace Comformation.ApiGatewayV2.Stage
         {
             /// <summary>
             /// ClientCertificateId
-            /// The identifier of a client certificate for a Stage.
+            /// The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ClientCertificateId { get; set; }
+            public Union<string, IntrinsicFunction> ClientCertificateId { get; set; }
 
             /// <summary>
             /// DeploymentId
-            /// The deployment identifier for the API stage.
-            /// Required: Yes
+            /// The deployment identifier for the API stage. Can&#39;t be updated if autoDeploy is enabled.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DeploymentId { get; set; }
+            public Union<string, IntrinsicFunction> DeploymentId { get; set; }
 
             /// <summary>
             /// Description
@@ -39,7 +37,7 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AccessLogSettings
@@ -48,7 +46,17 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: AccessLogSettings
             /// Update requires: No interruption
             /// </summary>
-			public AccessLogSettings AccessLogSettings { get; set; }
+            public AccessLogSettings AccessLogSettings { get; set; }
+
+            /// <summary>
+            /// AutoDeploy
+            /// Specifies whether updates to an API automatically trigger a new deployment. The default value is
+            /// false.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> AutoDeploy { get; set; }
 
             /// <summary>
             /// RouteSettings
@@ -57,17 +65,17 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RouteSettings { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RouteSettings { get; set; }
 
             /// <summary>
             /// StageName
-            /// The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores.
-            /// Maximum length is 128 characters.
+            /// The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or
+            /// be $default. Maximum length is 128 characters.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StageName { get; set; }
+            public Union<string, IntrinsicFunction> StageName { get; set; }
 
             /// <summary>
             /// StageVariables
@@ -77,7 +85,7 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> StageVariables { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> StageVariables { get; set; }
 
             /// <summary>
             /// ApiId
@@ -86,7 +94,7 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
             /// DefaultRouteSettings
@@ -95,7 +103,7 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: RouteSettings
             /// Update requires: No interruption
             /// </summary>
-			public RouteSettings DefaultRouteSettings { get; set; }
+            public RouteSettings DefaultRouteSettings { get; set; }
 
             /// <summary>
             /// Tags
@@ -104,7 +112,7 @@ namespace Comformation.ApiGatewayV2.Stage
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
         }
 

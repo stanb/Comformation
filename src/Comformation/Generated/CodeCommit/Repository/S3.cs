@@ -7,7 +7,6 @@ namespace Comformation.CodeCommit.Repository
 {
     /// <summary>
     /// AWS::CodeCommit::Repository S3
-    /// Information about the Amazon S3 bucket that contains the code that will be committed to the new repository.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html
     /// </summary>
     public class S3
@@ -26,7 +25,8 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// Bucket
         /// The name of the Amazon S3 bucket that contains the ZIP file with the content that will be committed
-        /// to the new repository.
+        /// to the new repository. This can be specified using an ARN or the name of the bucket in the AWS
+        /// account.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -36,7 +36,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// Key
-        /// The key to use for accessing the Amazon S3 bucket.
+        /// The key to use for accessing the Amazon S3 bucket. This is an Amazon S3 object key as defined in the
+        /// Amazon S3 Developer Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

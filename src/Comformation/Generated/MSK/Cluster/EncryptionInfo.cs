@@ -7,8 +7,6 @@ namespace Comformation.MSK.Cluster
 {
     /// <summary>
     /// AWS::MSK::Cluster EncryptionInfo
-    /// Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether
-    /// you want MSK to encrypt your data in transit.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html
     /// </summary>
     public class EncryptionInfo

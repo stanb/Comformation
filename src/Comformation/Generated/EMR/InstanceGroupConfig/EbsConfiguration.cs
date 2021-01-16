@@ -7,7 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig EbsConfiguration
-    /// The Amazon EBS configuration of a cluster instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html
     /// </summary>
     public class EbsConfiguration

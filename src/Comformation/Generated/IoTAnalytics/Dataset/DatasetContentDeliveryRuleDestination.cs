@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset DatasetContentDeliveryRuleDestination
-    /// The destination to which data set contents are delivered.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html
     /// </summary>
     public class DatasetContentDeliveryRuleDestination
@@ -15,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// IotEventsDestinationConfiguration
-        /// Configuration information for delivery of data set contents to AWS IoT Events.
+        /// Configuration information for delivery of dataset contents to AWS IoT Events.
         /// Required: No
         /// Type: IotEventsDestinationConfiguration
         /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// S3DestinationConfiguration
-        /// Configuration information for delivery of data set contents to Amazon S3.
+        /// Configuration information for delivery of dataset contents to Amazon S3.
         /// Required: No
         /// Type: S3DestinationConfiguration
         /// Update requires: No interruption

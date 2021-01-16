@@ -7,11 +7,20 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode VirtualServiceBackend
-    /// An object that represents a virtual service backend for a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html
     /// </summary>
     public class VirtualServiceBackend
     {
+
+        /// <summary>
+        /// ClientPolicy
+        /// A reference to an object that represents the client policy for a backend.
+        /// Required: No
+        /// Type: ClientPolicy
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ClientPolicy")]
+        public ClientPolicy ClientPolicy { get; set; }
 
         /// <summary>
         /// VirtualServiceName

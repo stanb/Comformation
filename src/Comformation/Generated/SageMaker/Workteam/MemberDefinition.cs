@@ -7,7 +7,6 @@ namespace Comformation.SageMaker.Workteam
 {
     /// <summary>
     /// AWS::SageMaker::Workteam MemberDefinition
-    /// Defines the Amazon Cognito user group that is part of a work team.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html
     /// </summary>
     public class MemberDefinition

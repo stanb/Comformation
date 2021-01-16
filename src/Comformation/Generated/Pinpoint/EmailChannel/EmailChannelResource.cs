@@ -6,8 +6,6 @@ namespace Comformation.Pinpoint.EmailChannel
 {
     /// <summary>
     /// AWS::Pinpoint::EmailChannel
-    /// Enables the email channel for an application or updates the status and settings of the email channel for an
-    /// application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html
     /// </summary>
     public class EmailChannelResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Pinpoint.EmailChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ConfigurationSet { get; set; }
+            public Union<string, IntrinsicFunction> ConfigurationSet { get; set; }
 
             /// <summary>
             /// FromAddress
@@ -31,7 +29,7 @@ namespace Comformation.Pinpoint.EmailChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FromAddress { get; set; }
+            public Union<string, IntrinsicFunction> FromAddress { get; set; }
 
             /// <summary>
             /// Enabled
@@ -40,16 +38,16 @@ namespace Comformation.Pinpoint.EmailChannel
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app that you&#39;re specifying the email channel for.
+            /// The unique identifier for the application that the email channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// Identity
@@ -59,7 +57,7 @@ namespace Comformation.Pinpoint.EmailChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Identity { get; set; }
+            public Union<string, IntrinsicFunction> Identity { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -69,7 +67,7 @@ namespace Comformation.Pinpoint.EmailChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
 

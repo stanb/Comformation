@@ -7,8 +7,6 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet FleetLaunchTemplateSpecificationRequest
-    /// Specifies the launch template to use for an EC2 Fleet. You must specify either the launch template ID or
-    /// launch template name in the request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html
     /// </summary>
     public class FleetLaunchTemplateSpecificationRequest
@@ -16,34 +14,37 @@ namespace Comformation.EC2.EC2Fleet
 
         /// <summary>
         /// LaunchTemplateName
-        /// The name of the launch template.
+        /// The name of the launch template. If you specify the template name, you can&#39;t specify the template
+        /// ID.
         /// Required: No
         /// Type: String
         /// Minimum: 3
         /// Maximum: 128
         /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateName")]
         public Union<string, IntrinsicFunction> LaunchTemplateName { get; set; }
 
         /// <summary>
         /// Version
-        /// The version number of the launch template. Note: This is a required parameter and will be updated
-        /// soon.
+        /// The launch template version number, $Latest, or $Default. You must specify a value, otherwise the
+        /// request fails.
+        /// If the value is $Latest, Amazon EC2 uses the latest version of the launch template.
+        /// If the value is $Default, Amazon EC2 uses the default version of the launch template.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Version")]
         public Union<string, IntrinsicFunction> Version { get; set; }
 
         /// <summary>
         /// LaunchTemplateId
-        /// The ID of the launch template.
+        /// The ID of the launch template. If you specify the template ID, you can&#39;t specify the template name.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateId")]
         public Union<string, IntrinsicFunction> LaunchTemplateId { get; set; }

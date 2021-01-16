@@ -6,7 +6,6 @@ namespace Comformation.EC2.NetworkInterface
 {
     /// <summary>
     /// AWS::EC2::NetworkInterface
-    /// Describes a network interface in an Elastic Compute Cloud (EC2) instance for AWS CloudFormation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html
     /// </summary>
     public class NetworkInterfaceResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// GroupSet
@@ -29,7 +28,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> GroupSet { get; set; }
+            public List<Union<string, IntrinsicFunction>> GroupSet { get; set; }
 
             /// <summary>
             /// InterfaceType
@@ -39,10 +38,10 @@ namespace Comformation.EC2.NetworkInterface
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: efa
+            /// Allowed values: efa
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InterfaceType { get; set; }
+            public Union<string, IntrinsicFunction> InterfaceType { get; set; }
 
             /// <summary>
             /// Ipv6AddressCount
@@ -53,7 +52,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
+            public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
 
             /// <summary>
             /// Ipv6Addresses
@@ -61,10 +60,10 @@ namespace Comformation.EC2.NetworkInterface
             /// the network interface. If you&#39;re specifying a number of IPv6 addresses, use the Ipv6AddressCount
             /// property and don&#39;t specify this property.
             /// Required: No
-            /// Type: InstanceIpv6Address
+            /// Type: List of InstanceIpv6Address
             /// Update requires: No interruption
             /// </summary>
-			public InstanceIpv6Address Ipv6Addresses { get; set; }
+            public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
 
             /// <summary>
             /// PrivateIpAddress
@@ -74,7 +73,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
+            public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 
             /// <summary>
             /// PrivateIpAddresses
@@ -86,7 +85,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: List of PrivateIpAddressSpecification
             /// Update requires: Some interruptions
             /// </summary>
-			public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
+            public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
 
             /// <summary>
             /// SecondaryPrivateIpAddressCount
@@ -101,7 +100,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
+            public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
 
             /// <summary>
             /// SourceDestCheck
@@ -110,7 +109,7 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
+            public Union<bool, IntrinsicFunction> SourceDestCheck { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -119,16 +118,16 @@ namespace Comformation.EC2.NetworkInterface
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this network interface.
+            /// An arbitrary set of tags (key-value pairs) for this network interface.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -138,9 +137,9 @@ namespace Comformation.EC2.NetworkInterface
 
     }
 
-	public static class NetworkInterfaceAttributes
-	{
+    public static class NetworkInterfaceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrimaryPrivateIpAddress = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrimaryPrivateIpAddress");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> SecondaryPrivateIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("SecondaryPrivateIpAddresses");
-	}
+    }
 }

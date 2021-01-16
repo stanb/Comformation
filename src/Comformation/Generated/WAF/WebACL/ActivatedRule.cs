@@ -7,9 +7,6 @@ namespace Comformation.WAF.WebACL
 {
     /// <summary>
     /// AWS::WAF::WebACL ActivatedRule
-    /// The ActivatedRule object in an UpdateWebACL request specifies a Rule that you want to insert or delete, 			the
-    /// priority of the Rule in the WebACL, and the action that you want AWS WAF to take when a web request matches
-    /// the Rule 			(ALLOW, BLOCK, or COUNT).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html
     /// </summary>
     public class ActivatedRule
@@ -63,6 +60,7 @@ namespace Comformation.WAF.WebACL
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RuleId")]

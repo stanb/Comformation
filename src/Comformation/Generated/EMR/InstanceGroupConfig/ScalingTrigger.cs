@@ -7,8 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig ScalingTrigger
-    /// ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions
-    /// that trigger an automatic scaling activity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html
     /// </summary>
     public class ScalingTrigger

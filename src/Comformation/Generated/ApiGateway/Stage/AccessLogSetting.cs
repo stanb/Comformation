@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
     /// AWS::ApiGateway::Stage AccessLogSetting
-    /// The AccessLogSetting property type specifies settings for logging access in this stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
     /// </summary>
     public class AccessLogSetting
@@ -17,8 +16,8 @@ namespace Comformation.ApiGateway.Stage
         /// DestinationArn
         /// The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery
         /// stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream
-        /// name must begin with amazon-apigateway-.
-        /// Required: No
+        /// name must begin with amazon-apigateway-. This parameter is required to enable access logging.
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -28,8 +27,9 @@ namespace Comformation.ApiGateway.Stage
         /// <summary>
         /// Format
         /// A single line format of the access logs of data, as specified by selected $context variables. The
-        /// format must include at least $context. requestId.
-        /// Required: No
+        /// format must include at least $context. requestId. This parameter is required to enable access
+        /// logging.
+        /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

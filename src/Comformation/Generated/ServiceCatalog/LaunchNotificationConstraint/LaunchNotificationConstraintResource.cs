@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
 {
     /// <summary>
     /// AWS::ServiceCatalog::LaunchNotificationConstraint
-    /// Specifies a notification constraint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html
     /// </summary>
     public class LaunchNotificationConstraintResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Maximum: 2000
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// NotificationArns
@@ -30,7 +29,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> NotificationArns { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -41,7 +40,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -53,7 +52,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
             /// ProductId
@@ -65,7 +64,7 @@ namespace Comformation.ServiceCatalog.LaunchNotificationConstraint
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ProductId { get; set; }
+            public Union<string, IntrinsicFunction> ProductId { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool NumberAttributeConstraints
-    /// The NumberAttributeConstraints property type defines the number attribute constraints of an Amazon Cognito
-    /// user pool. NumberAttributeConstraints is a subproperty of the SchemaAttribute property type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html
     /// </summary>
     public class NumberAttributeConstraints

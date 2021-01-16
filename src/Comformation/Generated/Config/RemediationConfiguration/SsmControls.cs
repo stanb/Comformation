@@ -7,7 +7,6 @@ namespace Comformation.Config.RemediationConfiguration
 {
     /// <summary>
     /// AWS::Config::RemediationConfiguration SsmControls
-    /// AWS Systems Manager (SSM) specific remediation controls.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html
     /// </summary>
     public class SsmControls

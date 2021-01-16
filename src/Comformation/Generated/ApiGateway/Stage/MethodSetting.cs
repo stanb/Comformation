@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
     /// AWS::ApiGateway::Stage MethodSetting
-    /// The MethodSetting property type configures settings for all methods in a stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html
     /// </summary>
     public class MethodSetting
@@ -57,8 +56,8 @@ namespace Comformation.ApiGateway.Stage
 
         /// <summary>
         /// HttpMethod
-        /// The HTTP method. You can use an asterisk (*) as a wildcard to apply method settings to multiple
-        /// methods.
+        /// The HTTP method. To apply settings to multiple resources and methods, specify an asterisk (*) in
+        /// both HttpMethod and ResourcePath.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -91,8 +90,8 @@ namespace Comformation.ApiGateway.Stage
         /// ResourcePath
         /// The resource path for this method. Forward slashes (/) are encoded as ~1 and the initial slash must
         /// include a forward slash. For example, the path value /resource/subresource must be encoded as
-        /// /~1resource~1subresource. To specify the root path, use only a slash (/). You can use an asterisk
-        /// (*) as a wildcard to apply method settings to multiple methods.
+        /// /~1resource~1subresource. To specify the root path, use only a slash (/). To apply settings to
+        /// multiple resources and methods, specify an asterisk (*) in both HttpMethod and ResourcePath.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

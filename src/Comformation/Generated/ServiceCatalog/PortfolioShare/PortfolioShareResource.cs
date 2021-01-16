@@ -6,9 +6,6 @@ namespace Comformation.ServiceCatalog.PortfolioShare
 {
     /// <summary>
     /// AWS::ServiceCatalog::PortfolioShare
-    /// Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-    /// can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order
-    /// to create a portfolio share to an organization node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html
     /// </summary>
     public class PortfolioShareResource : ResourceBase
@@ -23,7 +20,7 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// Pattern: ^[0-9]{12}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AccountId { get; set; }
+            public Union<string, IntrinsicFunction> AccountId { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -34,7 +31,7 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -46,7 +43,12 @@ namespace Comformation.ServiceCatalog.PortfolioShare
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+
+            /// <summary>
+            /// ShareTagOptions
+            /// </summary>
+            public Union<bool, IntrinsicFunction> ShareTagOptions { get; set; }
 
         }
 

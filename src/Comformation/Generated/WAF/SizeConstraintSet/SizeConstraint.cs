@@ -7,9 +7,6 @@ namespace Comformation.WAF.SizeConstraintSet
 {
     /// <summary>
     /// AWS::WAF::SizeConstraintSet SizeConstraint
-    /// Specifies a constraint on the size of a part of the web request. AWS WAF uses the Size, ComparisonOperator,
-    /// and FieldToMatch to build 			an expression in the form of &quot;Size ComparisonOperator size in bytes of
-    /// FieldToMatch&quot;. If that expression is true, the 			SizeConstraint is considered to match.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html
     /// </summary>
     public class SizeConstraint
@@ -37,7 +34,7 @@ namespace Comformation.WAF.SizeConstraintSet
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: EQ | GE | GT | LE | LT | NE
+        /// Allowed values: EQ | GE | GT | LE | LT | NE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComparisonOperator")]
@@ -63,8 +60,8 @@ namespace Comformation.WAF.SizeConstraintSet
         /// 		
         /// Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).
         /// 		
-        /// If you specify URI for the value of Type, the / in the URI counts as one character. 			For example,
-        /// the URI /logo. jpg is nine characters long.
+        /// If you specify URI for the value of Type, the / in the URI path that you specify counts as one
+        /// character. 			For example, the URI /logo. jpg is nine characters long.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption
@@ -77,7 +74,7 @@ namespace Comformation.WAF.SizeConstraintSet
         /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
         /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on FieldToMatch before inspecting a request for a match.
+        /// on FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// Note that if you choose BODY for the value of Type, you must choose NONE for TextTransformation
@@ -127,7 +124,7 @@ namespace Comformation.WAF.SizeConstraintSet
         /// 		 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CMD_LINE | COMPRESS_WHITE_SPACE | HTML_ENTITY_DECODE | LOWERCASE | NONE | URL_DECODE
+        /// Allowed values: CMD_LINE | COMPRESS_WHITE_SPACE | HTML_ENTITY_DECODE | LOWERCASE | NONE | URL_DECODE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TextTransformation")]

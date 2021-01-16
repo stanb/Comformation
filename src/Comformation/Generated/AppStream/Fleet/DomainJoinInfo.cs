@@ -7,8 +7,6 @@ namespace Comformation.AppStream.Fleet
 {
     /// <summary>
     /// AWS::AppStream::Fleet DomainJoinInfo
-    /// The name of the directory and organizational unit (OU) to use to join a fleet to a Microsoft Active Directory
-    /// domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html
     /// </summary>
     public class DomainJoinInfo

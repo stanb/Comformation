@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset DatasetContentDeliveryRule
-    /// When data set contents are created they are delivered to destination specified here.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html
     /// </summary>
     public class DatasetContentDeliveryRule
@@ -15,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// Destination
-        /// The destination to which data set contents are delivered.
+        /// The destination to which dataset contents are delivered.
         /// Required: Yes
         /// Type: DatasetContentDeliveryRuleDestination
         /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// EntryName
-        /// The name of the data set content delivery rules entry.
+        /// The name of the dataset content delivery rules entry.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

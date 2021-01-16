@@ -6,9 +6,6 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
 {
     /// <summary>
     /// AWS::EC2::SubnetRouteTableAssociation
-    /// Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association
-    /// causes traffic originating from the subnet to be routed according to the routes in the route table. A route
-    /// table can be associated with multiple subnets.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html
     /// </summary>
     public class SubnetRouteTableAssociationResource : ResourceBase
@@ -24,7 +21,7 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RouteTableId { get; set; }
+            public Union<string, IntrinsicFunction> RouteTableId { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -34,7 +31,7 @@ namespace Comformation.EC2.SubnetRouteTableAssociation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         }
 

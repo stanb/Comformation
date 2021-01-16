@@ -6,10 +6,6 @@ namespace Comformation.Lambda.Permission
 {
     /// <summary>
     /// AWS::Lambda::Permission
-    /// The AWS::Lambda::Permission resource grants an AWS service or another account permission to use a function.
-    /// You can apply the policy at the function level, or specify a qualifier to restrict access to a single version
-    /// or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or
-    /// alias to invoke the function.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
     /// </summary>
     public class PermissionResource : ResourceBase
@@ -25,7 +21,7 @@ namespace Comformation.Lambda.Permission
             /// Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Action { get; set; }
+            public Union<string, IntrinsicFunction> Action { get; set; }
 
             /// <summary>
             /// EventSourceToken
@@ -37,7 +33,7 @@ namespace Comformation.Lambda.Permission
             /// Pattern: [a-zA-Z0-9. _\-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EventSourceToken { get; set; }
+            public Union<string, IntrinsicFunction> EventSourceToken { get; set; }
 
             /// <summary>
             /// FunctionName
@@ -55,7 +51,7 @@ namespace Comformation.Lambda.Permission
             /// (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionName { get; set; }
+            public Union<string, IntrinsicFunction> FunctionName { get; set; }
 
             /// <summary>
             /// Principal
@@ -66,21 +62,19 @@ namespace Comformation.Lambda.Permission
             /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Principal { get; set; }
+            public Union<string, IntrinsicFunction> Principal { get; set; }
 
             /// <summary>
             /// SourceAccount
-            /// For AWS services, the ID of the account that owns the resource. Use this instead of SourceArn to
-            /// grant permission to resources that are owned by another account (for example, all of an account&#39;s
-            /// Amazon S3 buckets). Or use it together with SourceArn to ensure that the resource is owned by the
-            /// specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by
-            /// another account.
+            /// For Amazon S3, the ID of the account that owns the resource. Use this together with SourceArn to
+            /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket
+            /// to be deleted by its owner and recreated by another account.
             /// Required: No
             /// Type: String
             /// Pattern: \d{12}
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceAccount { get; set; }
+            public Union<string, IntrinsicFunction> SourceAccount { get; set; }
 
             /// <summary>
             /// SourceArn
@@ -91,7 +85,7 @@ namespace Comformation.Lambda.Permission
             /// Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(. *)
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceArn { get; set; }
+            public Union<string, IntrinsicFunction> SourceArn { get; set; }
 
         }
 

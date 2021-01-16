@@ -7,7 +7,6 @@ namespace Comformation.Glue.Partition
 {
     /// <summary>
     /// AWS::Glue::Partition Column
-    /// A column in a Table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html
     /// </summary>
     public class Column

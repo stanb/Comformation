@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet InstanceIpv6Address
-    /// Describes an IPv6 address.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instanceipv6address.html
     /// </summary>
     public class InstanceIpv6Address

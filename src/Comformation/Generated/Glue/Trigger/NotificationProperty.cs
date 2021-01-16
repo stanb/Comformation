@@ -7,7 +7,6 @@ namespace Comformation.Glue.Trigger
 {
     /// <summary>
     /// AWS::Glue::Trigger NotificationProperty
-    /// Specifies configuration properties of a job run notification.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html
     /// </summary>
     public class NotificationProperty

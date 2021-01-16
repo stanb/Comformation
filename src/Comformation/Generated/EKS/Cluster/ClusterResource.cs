@@ -6,7 +6,6 @@ namespace Comformation.EKS.Cluster
 {
     /// <summary>
     /// AWS::EKS::Cluster
-    /// Creates an Amazon EKS control plane.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -21,18 +20,28 @@ namespace Comformation.EKS.Cluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Version { get; set; }
+            public Union<string, IntrinsicFunction> Version { get; set; }
+
+            /// <summary>
+            /// EncryptionConfig
+            /// The encryption configuration for the cluster.
+            /// Required: No
+            /// Type: List of EncryptionConfig
+            /// Maximum: 1
+            /// Update requires: Replacement
+            /// </summary>
+            public List<EncryptionConfig> EncryptionConfig { get; set; }
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make
-            /// calls to other AWS API operations on your behalf. For more information, see Amazon EKS Service IAM
-            /// Role in the Amazon EKS User Guide .
+            /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
+            /// plane to make calls to AWS API operations on your behalf. For more information, see Amazon EKS
+            /// Service IAM Role in the Amazon EKS User Guide .
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// ResourcesVpcConfig
@@ -45,16 +54,28 @@ namespace Comformation.EKS.Cluster
             /// Type: ResourcesVpcConfig
             /// Update requires: Replacement
             /// </summary>
-			public ResourcesVpcConfig ResourcesVpcConfig { get; set; }
+            public ResourcesVpcConfig ResourcesVpcConfig { get; set; }
+
+            /// <summary>
+            /// KubernetesNetworkConfig
+            /// The Kubernetes network configuration for the cluster.
+            /// Required: No
+            /// Type: KubernetesNetworkConfig
+            /// Update requires: Replacement
+            /// </summary>
+            public KubernetesNetworkConfig KubernetesNetworkConfig { get; set; }
 
             /// <summary>
             /// Name
             /// The unique name to give to your cluster.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 100
+            /// Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -64,10 +85,12 @@ namespace Comformation.EKS.Cluster
 
     }
 
-	public static class ClusterAttributes
-	{
+    public static class ClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterSecurityGroupId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterSecurityGroupId");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> EncryptionConfigKeyArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("EncryptionConfigKeyArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CertificateAuthorityData = new ResourceAttribute<Union<string, IntrinsicFunction>>("CertificateAuthorityData");
-	}
+    }
 }

@@ -7,9 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig AutoScalingPolicy
-    /// AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to
-    /// the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR in the
-    /// Amazon EMR Management Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html
     /// </summary>
     public class AutoScalingPolicy

@@ -6,8 +6,6 @@ namespace Comformation.GuardDuty.Detector
 {
     /// <summary>
     /// AWS::GuardDuty::Detector
-    /// The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector. A detector is an object that
-    /// represents the Amazon GuardDuty service. A detector is required for Amazon GuardDuty to become operational.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html
     /// </summary>
     public class DetectorResource : ResourceBase
@@ -16,22 +14,31 @@ namespace Comformation.GuardDuty.Detector
         {
             /// <summary>
             /// FindingPublishingFrequency
-            /// A enumeration value that specifies how frequently finding updates are published. Valid values
-            /// include: FIFTEEN_MINUTES | ONE_HOUR | SIX_HOURS. The default value is SIX_HOURS.
+            /// Specifies how frequently updated findings are exported.
             /// Required: No
             /// Type: String
+            /// Allowed values: FIFTEEN_MINUTES | ONE_HOUR | SIX_HOURS
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FindingPublishingFrequency { get; set; }
+            public Union<string, IntrinsicFunction> FindingPublishingFrequency { get; set; }
+
+            /// <summary>
+            /// DataSources
+            /// Describes which data sources will be enabled for the detector.
+            /// Required: No
+            /// Type: CFNDataSourceConfigurations
+            /// Update requires: No interruption
+            /// </summary>
+            public CFNDataSourceConfigurations DataSources { get; set; }
 
             /// <summary>
             /// Enable
-            /// Specifies whether or not to enable the detector.
+            /// Specifies whether the detector is to be enabled on creation.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enable { get; set; }
+            public Union<bool, IntrinsicFunction> Enable { get; set; }
 
         }
 

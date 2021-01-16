@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationReferenceDataSource S3ReferenceDataSource
-    /// Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon
-    /// Kinesis Analytics can assume to read this object on your behalf.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html
     /// </summary>
     public class S3ReferenceDataSource
@@ -48,7 +46,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2048
-        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReferenceRoleARN")]

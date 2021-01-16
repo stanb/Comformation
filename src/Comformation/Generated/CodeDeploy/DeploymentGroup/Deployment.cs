@@ -7,9 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup Deployment
-    /// Deployment is a property of the DeploymentGroup resource that specifies an AWS CodeDeploy application revision
-    /// to be deployed to instances in the deployment group. If you specify an application revision, your target
-    /// revision is deployed as soon as the provisioning process is complete.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html
     /// </summary>
     public class Deployment

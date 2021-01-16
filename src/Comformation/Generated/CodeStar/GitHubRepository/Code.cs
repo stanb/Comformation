@@ -7,7 +7,6 @@ namespace Comformation.CodeStar.GitHubRepository
 {
     /// <summary>
     /// AWS::CodeStar::GitHubRepository Code
-    /// The Code property type specifies information about code to be committed.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-code.html
     /// </summary>
     public class Code

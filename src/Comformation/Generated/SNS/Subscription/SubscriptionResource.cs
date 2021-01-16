@@ -6,8 +6,6 @@ namespace Comformation.SNS.Subscription
 {
     /// <summary>
     /// AWS::SNS::Subscription
-    /// The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon
-    /// SNS) topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
     /// </summary>
     public class SubscriptionResource : ResourceBase
@@ -16,13 +14,15 @@ namespace Comformation.SNS.Subscription
         {
             /// <summary>
             /// DeliveryPolicy
-            /// The JSON serialization of the subscription&#39;s delivery policy. For more information, see
-            /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
+            /// The delivery policy JSON assigned to the subscription. Enables the subscriber to define the message
+            /// delivery retry strategy in the case of an HTTP/S endpoint subscribed to the topic. For more
+            /// information, see GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference
+            /// and Message Delivery Retries in the Amazon SNS Developer Guide.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DeliveryPolicy { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DeliveryPolicy { get; set; }
 
             /// <summary>
             /// Endpoint
@@ -33,17 +33,18 @@ namespace Comformation.SNS.Subscription
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Endpoint { get; set; }
+            public Union<string, IntrinsicFunction> Endpoint { get; set; }
 
             /// <summary>
             /// FilterPolicy
-            /// The filter policy JSON assigned to the subscription. For more information, see
-            /// GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference.
+            /// The filter policy JSON assigned to the subscription. Enables the subscriber to filter out unwanted
+            /// messages. For more information, see GetSubscriptionAttributes in the Amazon Simple Notification
+            /// Service API Reference and Message Filtering in the Amazon SNS Developer Guide.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> FilterPolicy { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> FilterPolicy { get; set; }
 
             /// <summary>
             /// Protocol
@@ -53,7 +54,7 @@ namespace Comformation.SNS.Subscription
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Protocol { get; set; }
+            public Union<string, IntrinsicFunction> Protocol { get; set; }
 
             /// <summary>
             /// RawMessageDelivery
@@ -64,7 +65,19 @@ namespace Comformation.SNS.Subscription
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> RawMessageDelivery { get; set; }
+            public Union<bool, IntrinsicFunction> RawMessageDelivery { get; set; }
+
+            /// <summary>
+            /// RedrivePolicy
+            /// When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages
+            /// that can&#39;t be delivered due to client errors (for example, when the subscribed endpoint is
+            /// unreachable) or server errors (for example, when the service that powers the subscribed endpoint
+            /// becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RedrivePolicy { get; set; }
 
             /// <summary>
             /// Region
@@ -78,7 +91,22 @@ namespace Comformation.SNS.Subscription
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Region { get; set; }
+            public Union<string, IntrinsicFunction> Region { get; set; }
+
+            /// <summary>
+            /// SubscriptionRoleArn
+            /// This property applies only to Amazon Kinesis Data Firehose delivery stream subscriptions. Specify
+            /// the ARN of the IAM role that has the following:
+            /// Permission to write to the Amazon Kinesis Data Firehose delivery stream Amazon SNS listed as a
+            /// trusted entity
+            /// Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream
+            /// subscriptions. For more information, see Fanout to Amazon Kinesis Data Firehose delivery streams in
+            /// the Amazon SNS Developer Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> SubscriptionRoleArn { get; set; }
 
             /// <summary>
             /// TopicArn
@@ -87,7 +115,7 @@ namespace Comformation.SNS.Subscription
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TopicArn { get; set; }
+            public Union<string, IntrinsicFunction> TopicArn { get; set; }
 
         }
 

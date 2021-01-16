@@ -7,7 +7,6 @@ namespace Comformation.AppSync.DataSource
 {
     /// <summary>
     /// AWS::AppSync::DataSource RdsHttpEndpointConfig
-    /// Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AWS AppSync relational database.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html
     /// </summary>
     public class RdsHttpEndpointConfig
@@ -45,7 +44,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// DbClusterIdentifier
-        /// Amazon RDS cluster identifier.
+        /// Amazon RDS cluster ARN.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

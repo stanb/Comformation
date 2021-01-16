@@ -7,7 +7,6 @@ namespace Comformation.Greengrass.DeviceDefinition
 {
     /// <summary>
     /// AWS::Greengrass::DeviceDefinition DeviceDefinitionVersion
-    /// A device definition version contains a list of devices.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html
     /// </summary>
     public class DeviceDefinitionVersion

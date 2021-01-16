@@ -7,23 +7,10 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::Listener RedirectConfig
-    /// Information about a redirect action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html
     /// </summary>
     public class RedirectConfig
     {
-
-        /// <summary>
-        /// Host
-        /// The hostname. This component is not percent-encoded. The hostname can contain #{host}.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 1
-        /// Maximum: 128
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Host")]
-        public Union<string, IntrinsicFunction> Host { get; set; }
 
         /// <summary>
         /// Path
@@ -39,6 +26,19 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         public Union<string, IntrinsicFunction> Path { get; set; }
 
         /// <summary>
+        /// Query
+        /// The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the
+        /// leading &quot;?&quot;, as it is automatically added. You can specify any of the reserved keywords.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 0
+        /// Maximum: 128
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Query")]
+        public Union<string, IntrinsicFunction> Query { get; set; }
+
+        /// <summary>
         /// Port
         /// The port. You can specify a value from 1 to 65535 or #{port}.
         /// Required: No
@@ -47,6 +47,18 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         /// </summary>
         [JsonProperty("Port")]
         public Union<string, IntrinsicFunction> Port { get; set; }
+
+        /// <summary>
+        /// Host
+        /// The hostname. This component is not percent-encoded. The hostname can contain #{host}.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Host")]
+        public Union<string, IntrinsicFunction> Host { get; set; }
 
         /// <summary>
         /// Protocol
@@ -61,24 +73,11 @@ namespace Comformation.ElasticLoadBalancingV2.Listener
         public Union<string, IntrinsicFunction> Protocol { get; set; }
 
         /// <summary>
-        /// Query
-        /// The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the
-        /// leading &quot;?&quot;, as it is automatically added. You can specify any of the reserved keywords.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 0
-        /// Maximum: 128
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Query")]
-        public Union<string, IntrinsicFunction> Query { get; set; }
-
-        /// <summary>
         /// StatusCode
         /// The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: HTTP_301 | HTTP_302
+        /// Allowed values: HTTP_301 | HTTP_302
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatusCode")]

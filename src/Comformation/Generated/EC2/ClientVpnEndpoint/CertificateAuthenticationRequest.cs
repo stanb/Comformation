@@ -7,7 +7,6 @@ namespace Comformation.EC2.ClientVpnEndpoint
 {
     /// <summary>
     /// AWS::EC2::ClientVpnEndpoint CertificateAuthenticationRequest
-    /// Information about the client certificate to be used for authentication.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html
     /// </summary>
     public class CertificateAuthenticationRequest

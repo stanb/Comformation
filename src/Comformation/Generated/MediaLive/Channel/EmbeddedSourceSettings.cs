@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel EmbeddedSourceSettings
-    /// Information about the embedded captions to extract from the input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html
     /// </summary>
     public class EmbeddedSourceSettings

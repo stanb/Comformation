@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel HlsInputSettings
-    /// Information about how to connect to the upstream system.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html
     /// </summary>
     public class HlsInputSettings

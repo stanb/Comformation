@@ -7,7 +7,6 @@ namespace Comformation.Lambda.Function
 {
     /// <summary>
     /// AWS::Lambda::Function Environment
-    /// A function&#39;s environment variable settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html
     /// </summary>
     public class Environment

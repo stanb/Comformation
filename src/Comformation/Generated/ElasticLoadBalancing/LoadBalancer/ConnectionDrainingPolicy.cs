@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer ConnectionDrainingPolicy
-    /// Specifies the connection draining settings for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html
     /// </summary>
     public class ConnectionDrainingPolicy

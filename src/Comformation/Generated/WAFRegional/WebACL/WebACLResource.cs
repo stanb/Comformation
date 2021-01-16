@@ -6,12 +6,6 @@ namespace Comformation.WAFRegional.WebACL
 {
     /// <summary>
     /// AWS::WAFRegional::WebACL
-    /// Contains the Rules that identify the requests that you want to allow, block, or count. In a WebACL, you also
-    /// specify a default action (ALLOW or BLOCK), and the action for each Rule that you add to a WebACL, for example,
-    /// block requests from specified IP addresses or block requests from specified referrers. You also associate the
-    /// WebACL with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add
-    /// more than one Rule to a WebACL, a request needs to match only one of the specifications to be allowed,
-    /// blocked, or counted.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html
     /// </summary>
     public class WebACLResource : ResourceBase
@@ -26,9 +20,12 @@ namespace Comformation.WAFRegional.WebACL
             /// can&#39;t change MetricName after you create the WebACL.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MetricName { get; set; }
+            public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
             /// DefaultAction
@@ -39,7 +36,7 @@ namespace Comformation.WAFRegional.WebACL
             /// Type: Action
             /// Update requires: No interruption
             /// </summary>
-			public Action DefaultAction { get; set; }
+            public Action DefaultAction { get; set; }
 
             /// <summary>
             /// Rules
@@ -51,7 +48,7 @@ namespace Comformation.WAFRegional.WebACL
             /// Type: List of Rule
             /// Update requires: No interruption
             /// </summary>
-			public List<Rule> Rules { get; set; }
+            public List<Rule> Rules { get; set; }
 
             /// <summary>
             /// Name
@@ -63,9 +60,10 @@ namespace Comformation.WAFRegional.WebACL
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

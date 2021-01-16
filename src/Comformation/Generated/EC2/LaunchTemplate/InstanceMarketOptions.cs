@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate InstanceMarketOptions
-    /// Specifies the market (purchasing) option for an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html
     /// </summary>
     public class InstanceMarketOptions
@@ -28,7 +27,7 @@ namespace Comformation.EC2.LaunchTemplate
         /// The market type.
         /// Required: Conditional
         /// Type: String
-        /// Allowed Values: spot
+        /// Allowed values: spot
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MarketType")]

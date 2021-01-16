@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool SchemaAttribute
-    /// SchemaAttribute is a property of the AWS::Cognito::UserPool resource that defines the schema attributes of an
-    /// Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html
     /// </summary>
     public class SchemaAttribute
@@ -16,7 +14,10 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// DeveloperOnlyAttribute
-        /// Specifies whether the attribute type is developer only.
+        /// Note We recommend that you use WriteAttributes in the user pool client to control how attributes can
+        /// be mutated for new use cases instead of using DeveloperOnlyAttribute.
+        /// Specifies whether the attribute type is developer only. This attribute can only be modified by an
+        /// administrator. Users will not be able to modify this attribute using their access token.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -44,7 +45,7 @@ namespace Comformation.Cognito.UserPool
         /// The attribute data type.
         /// Required: No
         /// Type: String
-        /// Allowed Values: Boolean | DateTime | Number | String
+        /// Allowed values: Boolean | DateTime | Number | String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttributeDataType")]

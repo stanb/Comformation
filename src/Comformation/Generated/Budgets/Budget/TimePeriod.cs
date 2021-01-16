@@ -7,8 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget TimePeriod
-    /// The period of time that is covered by a budget. The period has a start date and an end 			date. The start date
-    /// must come before the end date. There are no restrictions on the end date.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-timeperiod.html
     /// </summary>
     public class TimePeriod

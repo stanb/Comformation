@@ -6,9 +6,6 @@ namespace Comformation.EC2.VPC
 {
     /// <summary>
     /// AWS::EC2::VPC
-    /// Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create 			uses a /28 netmask (16
-    /// IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 			addresses). For more information about how
-    /// large to make your VPC, see Your VPC and 		 Subnets in the Amazon Virtual Private Cloud User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
     /// </summary>
     public class VPCResource : ResourceBase
@@ -23,7 +20,7 @@ namespace Comformation.EC2.VPC
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
             /// EnableDnsHostnames
@@ -35,7 +32,7 @@ namespace Comformation.EC2.VPC
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableDnsHostnames { get; set; }
+            public Union<bool, IntrinsicFunction> EnableDnsHostnames { get; set; }
 
             /// <summary>
             /// EnableDnsSupport
@@ -49,7 +46,7 @@ namespace Comformation.EC2.VPC
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableDnsSupport { get; set; }
+            public Union<bool, IntrinsicFunction> EnableDnsSupport { get; set; }
 
             /// <summary>
             /// InstanceTenancy
@@ -62,10 +59,10 @@ namespace Comformation.EC2.VPC
             /// to &quot;default&quot;. Updating InstanceTenancy from &quot;default&quot; to &quot;dedicated&quot; requires replacement.
             /// Required: No
             /// Type: String
-            /// Allowed Values: dedicated | default | host
+            /// Allowed values: dedicated | default | host
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceTenancy { get; set; }
+            public Union<string, IntrinsicFunction> InstanceTenancy { get; set; }
 
             /// <summary>
             /// Tags
@@ -75,7 +72,7 @@ namespace Comformation.EC2.VPC
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -85,12 +82,12 @@ namespace Comformation.EC2.VPC
 
     }
 
-	public static class VPCAttributes
-	{
+    public static class VPCAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CidrBlock = new ResourceAttribute<Union<string, IntrinsicFunction>>("CidrBlock");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> CidrBlockAssociations = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("CidrBlockAssociations");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultNetworkAcl = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultNetworkAcl");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultSecurityGroup = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultSecurityGroup");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> Ipv6CidrBlocks = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("Ipv6CidrBlocks");
-	}
+    }
 }

@@ -7,8 +7,6 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS::CodeBuild::Project WebhookFilter
-    /// WebhookFilter is a structure of the FilterGroups property on the AWS CodeBuild Project ProjectTriggers
-    /// property type that specifies which webhooks trigger an AWS CodeBuild build.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html
     /// </summary>
     public class WebhookFilter
@@ -31,24 +29,29 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Type
-        /// The type of webhook filter. There are five webhook filter types: EVENT, ACTOR_ACCOUNT_ID, HEAD_REF,
-        /// BASE_REF, and FILE_PATH.
-        /// EVENT A webhook event triggers a build when the provided pattern matches one of four event types:
-        /// PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, and PULL_REQUEST_REOPENED. The EVENT patterns are
-        /// specified as a comma-separated string. For example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED
-        /// filters all push, pull request created, and pull request updated events. Note The
-        /// PULL_REQUEST_REOPENED works with GitHub and GitHub Enterprise only. ACTOR_ACCOUNT_ID A webhook event
-        /// triggers a build when a GitHub, GitHub Enterprise, or Bitbucket account ID matches the regular
-        /// expression pattern. HEAD_REF A webhook event triggers a build when the head reference matches the
-        /// regular expression pattern. For example, refs/heads/branch-name and refs/tags/tag-name. Works with
-        /// GitHub and GitHub Enterprise push, GitHub and GitHub Enterprise pull request, Bitbucket push, and
-        /// Bitbucket pull request events. BASE_REF A webhook event triggers a build when the base reference
-        /// matches the regular expression pattern. For example, refs/heads/branch-name. Note Works with pull
-        /// request events only. FILE_PATH A webhook triggers a build when the path of a changed file matches
-        /// the regular expression pattern. Note Works with GitHub and GitHub Enterprise push events only.
+        /// The type of webhook filter. There are six webhook filter types: EVENT, ACTOR_ACCOUNT_ID, HEAD_REF,
+        /// BASE_REF, FILE_PATH, and COMMIT_MESSAGE.
+        /// EVENT A webhook event triggers a build when the provided pattern matches one of five event types:
+        /// PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED, and PULL_REQUEST_MERGED.
+        /// The EVENT patterns are specified as a comma-separated string. For example, PUSH,
+        /// PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED filters all push, pull request created, and pull request
+        /// updated events. Note The PULL_REQUEST_REOPENED works with GitHub and GitHub Enterprise only.
+        /// ACTOR_ACCOUNT_ID A webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
+        /// account ID matches the regular expression pattern. HEAD_REF A webhook event triggers a build when
+        /// the head reference matches the regular expression pattern. For example, refs/heads/branch-name and
+        /// refs/tags/tag-name. Works with GitHub and GitHub Enterprise push, GitHub and GitHub Enterprise pull
+        /// request, Bitbucket push, and Bitbucket pull request events. BASE_REF A webhook event triggers a
+        /// build when the base reference matches the regular expression pattern. For example,
+        /// refs/heads/branch-name. Note Works with pull request events only. FILE_PATH A webhook triggers a
+        /// build when the path of a changed file matches the regular expression pattern. Note Works with GitHub
+        /// and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events,
+        /// but does not work with GitHub Enterprise pull request events. COMMIT_MESSAGE A webhook triggers a
+        /// build when the head commit message matches the regular expression pattern. Note Works with GitHub
+        /// and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events,
+        /// but does not work with GitHub Enterprise pull request events.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ACTOR_ACCOUNT_ID | BASE_REF | EVENT | FILE_PATH | HEAD_REF
+        /// Allowed values: ACTOR_ACCOUNT_ID | BASE_REF | COMMIT_MESSAGE | EVENT | FILE_PATH | HEAD_REF
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

@@ -6,9 +6,6 @@ namespace Comformation.CloudFormation.WaitCondition
 {
     /// <summary>
     /// AWS::CloudFormation::WaitCondition
-    /// Important For Amazon EC2 and Auto Scaling resources, we recommend that you use a CreationPolicy attribute
-    /// instead of wait conditions. Add a CreationPolicy attribute to those resources, and use the cfn-signal helper
-    /// script to signal when an instance creation process has completed successfully.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
     /// </summary>
     public class WaitConditionResource : ResourceBase
@@ -27,7 +24,7 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Count { get; set; }
+            public Union<int, IntrinsicFunction> Count { get; set; }
 
             /// <summary>
             /// Handle
@@ -42,7 +39,7 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Handle { get; set; }
+            public Union<string, IntrinsicFunction> Handle { get; set; }
 
             /// <summary>
             /// Timeout
@@ -55,7 +52,7 @@ namespace Comformation.CloudFormation.WaitCondition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Timeout { get; set; }
+            public Union<string, IntrinsicFunction> Timeout { get; set; }
 
         }
 
@@ -79,8 +76,8 @@ namespace Comformation.CloudFormation.WaitCondition
 
     }
 
-	public static class WaitConditionAttributes
-	{
+    public static class WaitConditionAttributes
+    {
         public static readonly ResourceAttribute<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>> Data = new ResourceAttribute<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>>("Data");
-	}
+    }
 }

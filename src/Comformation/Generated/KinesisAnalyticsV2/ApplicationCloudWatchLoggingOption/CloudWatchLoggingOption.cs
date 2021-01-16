@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationCloudWatchLoggingOption
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption CloudWatchLoggingOption
-    /// Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name
-    /// (ARN).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption.html
     /// </summary>
     public class CloudWatchLoggingOption

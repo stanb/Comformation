@@ -7,7 +7,6 @@ namespace Comformation.Glue.Crawler
 {
     /// <summary>
     /// AWS::Glue::Crawler JdbcTarget
-    /// Specifies a JDBC data store to crawl.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html
     /// </summary>
     public class JdbcTarget

@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate CreditSpecification
-    /// Specifies the credit option for CPU usage of a T2 or T3 instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-creditspecification.html
     /// </summary>
     public class CreditSpecification
@@ -15,7 +14,8 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// CpuCredits
-        /// The credit option for CPU usage of a T2 or T3 instance. Valid values are standard and unlimited.
+        /// The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are standard and
+        /// unlimited.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

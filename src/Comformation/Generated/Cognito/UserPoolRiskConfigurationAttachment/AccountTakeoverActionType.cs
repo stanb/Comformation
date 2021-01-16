@@ -7,7 +7,6 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolRiskConfigurationAttachment AccountTakeoverActionType
-    /// Account takeover action type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype.html
     /// </summary>
     public class AccountTakeoverActionType
@@ -31,7 +30,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
         /// else block the request. NO_ACTION Allow the user sign-in.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: BLOCK | MFA_IF_CONFIGURED | MFA_REQUIRED | NO_ACTION
+        /// Allowed values: BLOCK | MFA_IF_CONFIGURED | MFA_REQUIRED | NO_ACTION
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EventAction")]

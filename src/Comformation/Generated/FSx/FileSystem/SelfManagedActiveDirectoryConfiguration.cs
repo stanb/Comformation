@@ -7,8 +7,6 @@ namespace Comformation.FSx.FileSystem
 {
     /// <summary>
     /// AWS::FSx::FileSystem SelfManagedActiveDirectoryConfiguration
-    /// The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed
-    /// (including on-premises) Microsoft Active Directory (AD) directory.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html
     /// </summary>
     public class SelfManagedActiveDirectoryConfiguration
@@ -17,13 +15,15 @@ namespace Comformation.FSx.FileSystem
         /// <summary>
         /// FileSystemAdministratorsGroup
         /// (Optional) The name of the domain group whose members are granted administrative privileges for the
-        /// file system. Administrative privileges include taking ownership of files and folders, and setting
-        /// audit controls (audit ACLs) on files and folders. The group that you specify must already exist in
-        /// your domain. If you don&#39;t provide one, your AD domain&#39;s Domain Admins group is used.
+        /// file system. Administrative privileges include taking ownership of files and folders, setting audit
+        /// controls (audit ACLs) on files and folders, and administering the file system remotely by using the
+        /// FSx Remote PowerShell. The group that you specify must already exist in your domain. If you don&#39;t
+        /// provide one, your AD domain&#39;s Domain Admins group is used.
         /// Required: No
         /// Type: String
         /// Minimum: 1
         /// Maximum: 256
+        /// Pattern: ^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("FileSystemAdministratorsGroup")]
@@ -39,6 +39,7 @@ namespace Comformation.FSx.FileSystem
         /// Type: String
         /// Minimum: 1
         /// Maximum: 256
+        /// Pattern: ^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("UserName")]
@@ -49,6 +50,9 @@ namespace Comformation.FSx.FileSystem
         /// The fully qualified domain name of the self-managed AD directory, such as corp. example. com.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Pattern: ^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("DomainName")]
@@ -67,6 +71,7 @@ namespace Comformation.FSx.FileSystem
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2000
+        /// Pattern: ^[^\u0000\u0085\u2028\u2029\r\n]{1,2000}$
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("OrganizationalUnitDistinguishedName")]
@@ -95,7 +100,7 @@ namespace Comformation.FSx.FileSystem
         /// your CFN templates.
         /// The recommended approach is to use AWS Secrets Manager to store your passwords. You can retrieve
         /// them for use in your templates using the secretsmanager dynamic reference. There are additional
-        /// costs associated with using AWS Secrets Manager. To learn more, see Secrets Manager Secrets in the
+        /// costs associated with using AWS Secrets Manager. To learn more, see Secrets Manager secrets in the
         /// AWS CloudFormation User Guide.
         /// Alternatively, you can use the NoEcho property to obfuscate the password parameter value. For more
         /// information, see Do Not Embed Credentials in Your Templates in the AWS CloudFormation User Guide.
@@ -103,6 +108,7 @@ namespace Comformation.FSx.FileSystem
         /// Type: String
         /// Minimum: 1
         /// Maximum: 256
+        /// Pattern: ^. {1,256}$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Password")]

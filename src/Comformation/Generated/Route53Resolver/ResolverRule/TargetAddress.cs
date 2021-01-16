@@ -7,7 +7,6 @@ namespace Comformation.Route53Resolver.ResolverRule
 {
     /// <summary>
     /// AWS::Route53Resolver::ResolverRule TargetAddress
-    /// In a 			CreateResolverRule 			request, an array of the IPs that you want to forward DNS queries to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html
     /// </summary>
     public class TargetAddress

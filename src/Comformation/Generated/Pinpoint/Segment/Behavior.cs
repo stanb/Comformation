@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment Behavior
-    /// The behavior-based criteria for the segment, such as how recently users have used your app.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html
     /// </summary>
     public class Behavior
@@ -15,7 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Recency
-        /// Specifies how recently segment members were active.
+        /// The dimension settings that are based on how recently an endpoint was active.
         /// Required: No
         /// Type: Recency
         /// Update requires: No interruption

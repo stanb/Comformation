@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.LoggerDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::LoggerDefinitionVersion
-    /// The AWS::Greengrass::LoggerDefinitionVersion resource represents a logger definition version for AWS IoT
-    /// Greengrass. A logger definition version contains a list of loggers.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html
     /// </summary>
     public class LoggerDefinitionVersionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Greengrass.LoggerDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LoggerDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> LoggerDefinitionId { get; set; }
 
             /// <summary>
             /// Loggers
@@ -30,7 +28,7 @@ namespace Comformation.Greengrass.LoggerDefinitionVersion
             /// Type: List of Logger
             /// Update requires: Replacement
             /// </summary>
-			public List<Logger> Loggers { get; set; }
+            public List<Logger> Loggers { get; set; }
 
         }
 

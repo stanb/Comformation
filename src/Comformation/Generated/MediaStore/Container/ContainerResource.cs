@@ -6,8 +6,6 @@ namespace Comformation.MediaStore.Container
 {
     /// <summary>
     /// AWS::MediaStore::Container
-    /// The AWS::MediaStore::Container resource specifies a storage container to hold objects. A container is similar
-    /// to a bucket in Amazon S3.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html
     /// </summary>
     public class ContainerResource : ResourceBase
@@ -25,7 +23,20 @@ namespace Comformation.MediaStore.Container
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Policy { get; set; }
+            public Union<string, IntrinsicFunction> Policy { get; set; }
+
+            /// <summary>
+            /// MetricPolicy
+            /// The metric policy that is associated with the container. A metric policy allows AWS Elemental
+            /// MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want
+            /// MediaStore to send container-level metrics. You can also include rules to define groups of objects
+            /// that you want MediaStore to send object-level metrics for.
+            /// To view examples of how to construct a metric policy for your use case, see Example Metric Policies.
+            /// Required: No
+            /// Type: MetricPolicy
+            /// Update requires: No interruption
+            /// </summary>
+            public MetricPolicy MetricPolicy { get; set; }
 
             /// <summary>
             /// ContainerName
@@ -39,7 +50,7 @@ namespace Comformation.MediaStore.Container
             /// Pattern: [\w-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ContainerName { get; set; }
+            public Union<string, IntrinsicFunction> ContainerName { get; set; }
 
             /// <summary>
             /// CorsPolicy
@@ -56,7 +67,7 @@ namespace Comformation.MediaStore.Container
             /// Type: List of CorsRule
             /// Update requires: No interruption
             /// </summary>
-			public List<CorsRule> CorsPolicy { get; set; }
+            public List<CorsRule> CorsPolicy { get; set; }
 
             /// <summary>
             /// LifecyclePolicy
@@ -69,7 +80,7 @@ namespace Comformation.MediaStore.Container
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> LifecyclePolicy { get; set; }
+            public Union<string, IntrinsicFunction> LifecyclePolicy { get; set; }
 
             /// <summary>
             /// AccessLoggingEnabled
@@ -81,7 +92,20 @@ namespace Comformation.MediaStore.Container
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AccessLoggingEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> AccessLoggingEnabled { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A collection of tags associated with a container. Each tag consists of a key:value pair, which can
+            /// be anything you define. Typically, the tag key represents a category (such as &quot;environment&quot;) and the
+            /// tag value represents a specific value within that category (such as &quot;test,&quot; &quot;development,&quot; or
+            /// &quot;production&quot;). You can add up to 50 tags to each container. For more information about tagging,
+            /// including naming and usage conventions, see Tagging Resources in MediaStore.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -91,8 +115,8 @@ namespace Comformation.MediaStore.Container
 
     }
 
-	public static class ContainerAttributes
-	{
+    public static class ContainerAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
-	}
+    }
 }

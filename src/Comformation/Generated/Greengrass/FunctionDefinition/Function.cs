@@ -7,9 +7,6 @@ namespace Comformation.Greengrass.FunctionDefinition
 {
     /// <summary>
     /// AWS::Greengrass::FunctionDefinition Function
-    /// A function is a Lambda function 		that&#39;s referenced from an AWS IoT Greengrass group. The function is deployed
-    /// to a Greengrass core where it runs locally. 	For more information, 	see Run Lambda Functions on the AWS IoT
-    /// Greengrass Core in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html
     /// </summary>
     public class Function

@@ -6,7 +6,6 @@ namespace Comformation.EC2.Volume
 {
     /// <summary>
     /// AWS::EC2::Volume
-    /// Specifies an Amazon Elastic Block Store (Amazon EBS) volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html
     /// </summary>
     public class VolumeResource : ResourceBase
@@ -24,87 +23,113 @@ namespace Comformation.EC2.Volume
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoEnableIO { get; set; }
+            public Union<bool, IntrinsicFunction> AutoEnableIO { get; set; }
 
             /// <summary>
             /// AvailabilityZone
             /// The Availability Zone in which to create the volume.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// Encrypted
-            /// Specifies whether the volume should be encrypted. The effect of setting the encryption state to true
+            /// Indicates whether the volume should be encrypted. The effect of setting the encryption state to true
             /// depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and
-            /// whether encryption by default is enabled. For more information, see Encryption by Default in the
+            /// whether encryption by default is enabled. For more information, see Encryption by default in the
             /// Amazon Elastic Compute Cloud User Guide.
             /// Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For
-            /// more information, see Supported Instance Types.
+            /// more information, see Supported instance types.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: Updates are not supported.
+            /// </summary>
+            public Union<bool, IntrinsicFunction> Encrypted { get; set; }
+
+            /// <summary>
+            /// Iops
+            /// The number of I/O operations per second (IOPS). For gp3, io1, and io2 volumes, this represents the
+            /// number of IOPS that are provisioned for the volume. For gp2 volumes, this represents the baseline
+            /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
+            /// The following are the supported values for each volume type:
+            /// gp3: 3,000-16,000 IOPS io1: 100-64,000 IOPS io2: 100-64,000 IOPS
+            /// For io1 and io2 volumes, we guarantee 64,000 IOPS only for Instances built on the Nitro System.
+            /// Other instance families guarantee performance up to 32,000 IOPS.
+            /// This parameter is required for io1 and io2 volumes. The default for gp3 volumes is 3,000 IOPS. This
+            /// parameter is not supported for gp2, st1, sc1, or standard volumes.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<int, IntrinsicFunction> Iops { get; set; }
+
+            /// <summary>
+            /// KmsKeyId
+            /// The identifier of the AWS Key Management Service (AWS KMS) customer master key 	(CMK) to use for
+            /// Amazon EBS encryption. If KmsKeyId is specified, the 	encrypted state must be true.
+            /// 	 	
+            /// If you omit this property and your account is enabled for encryption by default, 		or Encrypted is
+            /// set to true, 		then the volume is encrypted using the default CMK specified for your account. If
+            /// 		your account does not have a default CMK, then the volume is encrypted using the 		AWS managed
+            /// CMK.
+            /// 	
+            /// Alternatively, if you want to specify a different CMK, you can specify one of the 	following:
+            /// Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. Specify the alias for the CMK,
+            /// prefixed with alias/. For 	example, for a CMK with the alias my_cmk, use alias/my_cmk. 	Or to
+            /// specify the AWS managed CMK, use alias/aws/ebs. Key ARN. For example,
+            /// arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab. Alias ARN. For example,
+            /// arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Updates are not supported.
+            /// </summary>
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
+            /// MultiAttachEnabled
+            /// Indicates whether Amazon EBS Multi-Attach is enabled.
+            /// Note AWS CloudFormation does not currently support updating a single-attach volume to be
+            /// multi-attach enabled, updating a multi-attach enabled volume to be single-attach, or updating the
+            /// size or number of I/O operations per second (IOPS) of a multi-attach enabled volume.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
+            public Union<bool, IntrinsicFunction> MultiAttachEnabled { get; set; }
 
             /// <summary>
-            /// Iops
-            /// The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of
-            /// 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is
-            /// guaranteed only on Nitro-based instances. Other instance families guarantee performance up to 32,000
-            /// IOPS. For more information, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud User
-            /// Guide.
-            /// This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
-            /// Required: No
-            /// Type: Integer
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<int, IntrinsicFunction> Iops { get; set; }
-
-            /// <summary>
-            /// KmsKeyId
-            /// The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for
-            /// Amazon EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used. If
-            /// KmsKeyId is specified, the encrypted state must be true.
-            /// You can specify the CMK using any of the following:
-            /// Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. For example,
-            /// alias/ExampleAlias. Key ARN. For example,
-            /// arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. Alias ARN. For example,
-            /// arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
-            /// AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not
-            /// valid, the action can appear to complete, but eventually fails.
+            /// OutpostArn
+            /// The Amazon Resource Name (ARN) of the Outpost.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> OutpostArn { get; set; }
 
             /// <summary>
             /// Size
-            /// The size of the volume, in GiBs.
-            /// Constraints: 1-16,384 for gp2, 4-16,384 for io1, 500-16,384 for st1, 500-16,384 for sc1, and 1-1,024
-            /// for standard. If you specify a snapshot, the volume size must be equal to or larger than the
-            /// snapshot size.
-            /// Default: If you&#39;re creating the volume from a snapshot and don&#39;t specify a volume size, the default
-            /// is the snapshot size.
-            /// Note At least one of Size or SnapshotId is required.
+            /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you
+            /// specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to
+            /// or larger than the snapshot size.
+            /// The following are the supported volumes sizes for each volume type:
+            /// 	 gp2 and gp3: 1-16,384 io1 and io2: 4-16,384 st1 and sc1: 125-16,384 standard: 1-1,024
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Size { get; set; }
+            public Union<int, IntrinsicFunction> Size { get; set; }
 
             /// <summary>
             /// SnapshotId
-            /// The snapshot from which to create the volume.
-            /// Note At least one of Size or SnapshotId are required.
+            /// The snapshot from which to create the volume. You must specify either a snapshot ID or a volume
+            /// size.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotId { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotId { get; set; }
 
             /// <summary>
             /// Tags
@@ -113,19 +138,30 @@ namespace Comformation.EC2.Volume
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// Throughput
+            /// The throughput that the volume supports, in MiB/s.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<int, IntrinsicFunction> Throughput { get; set; }
 
             /// <summary>
             /// VolumeType
-            /// The volume type. This can be gp2 for General Purpose SSD, io1 for Provisioned IOPS SSD, st1 for
-            /// Throughput Optimized HDD, sc1 for Cold HDD, or standard for Magnetic volumes.
+            /// The volume type. This parameter can be one of the following values:
+            /// General Purpose SSD: gp2 | gp3 Provisioned IOPS SSD: io1 | io2 Throughput Optimized HDD: st1 Cold
+            /// HDD: sc1 Magnetic: standard
+            /// For more information, see Amazon EBS volume types in the Amazon Elastic Compute Cloud User Guide.
             /// Default: gp2
             /// Required: No
             /// Type: String
-            /// Allowed Values: gp2 | io1 | sc1 | st1 | standard
+            /// Allowed values: gp2 | gp3 | io1 | io2 | sc1 | st1 | standard
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VolumeType { get; set; }
+            public Union<string, IntrinsicFunction> VolumeType { get; set; }
 
         }
 

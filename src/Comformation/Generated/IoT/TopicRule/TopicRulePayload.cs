@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule TopicRulePayload
-    /// Describes a rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
     /// </summary>
     public class TopicRulePayload

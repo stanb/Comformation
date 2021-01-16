@@ -7,9 +7,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 {
     /// <summary>
     /// AWS::AutoScaling::AutoScalingGroup NotificationConfiguration
-    /// NotificationConfiguration specifies a list of notification configurations for the NotificationConfigurations
-    /// property of AutoScalingGroup. NotificationConfiguration specifies the events that the Amazon EC2 Auto Scaling
-    /// group sends notifications for.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html
     /// </summary>
     public class NotificationConfiguration
@@ -35,9 +32,6 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 1600
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TopicARN")]

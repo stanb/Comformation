@@ -7,7 +7,6 @@ namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceFleetConfig Configuration
-    /// Note Used only with Amazon EMR release 4. 0 and later.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html
     /// </summary>
     public class Configuration

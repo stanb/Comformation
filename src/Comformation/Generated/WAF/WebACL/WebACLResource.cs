@@ -6,12 +6,6 @@ namespace Comformation.WAF.WebACL
 {
     /// <summary>
     /// AWS::WAF::WebACL
-    /// Contains the Rules that identify the requests that you want to allow, block, or count. In a WebACL, you also
-    /// specify a 			default action (ALLOW or BLOCK), and the action for each Rule that you add to a 			WebACL, for
-    /// example, block requests from specified IP addresses or block requests from specified referrers. 			You also
-    /// associate the WebACL with a CloudFront distribution to identify the requests that you want AWS WAF to filter.
-    /// 			If you add more than one Rule to a WebACL, a request needs to match only one of the specifications 			to be
-    /// allowed, blocked, or counted.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html
     /// </summary>
     public class WebACLResource : ResourceBase
@@ -28,7 +22,7 @@ namespace Comformation.WAF.WebACL
             /// Type: WafAction
             /// Update requires: No interruption
             /// </summary>
-			public WafAction DefaultAction { get; set; }
+            public WafAction DefaultAction { get; set; }
 
             /// <summary>
             /// MetricName
@@ -38,9 +32,12 @@ namespace Comformation.WAF.WebACL
             /// can&#39;t change MetricName after you create the WebACL.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MetricName { get; set; }
+            public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
             /// Name
@@ -52,9 +49,10 @@ namespace Comformation.WAF.WebACL
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Rules
@@ -66,7 +64,7 @@ namespace Comformation.WAF.WebACL
             /// Type: List of ActivatedRule
             /// Update requires: No interruption
             /// </summary>
-			public List<ActivatedRule> Rules { get; set; }
+            public List<ActivatedRule> Rules { get; set; }
 
         }
 

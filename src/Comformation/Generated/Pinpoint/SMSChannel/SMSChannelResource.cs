@@ -6,9 +6,6 @@ namespace Comformation.Pinpoint.SMSChannel
 {
     /// <summary>
     /// AWS::Pinpoint::SMSChannel
-    /// A channel is a type of platform that you can deliver messages to. To send an SMS text message, you send the
-    /// message through the SMS channel. Before you use Amazon Pinpoint to send text messages, you have enable the SMS
-    /// channel for an Amazon Pinpoint application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html
     /// </summary>
     public class SMSChannelResource : ResourceBase
@@ -19,30 +16,30 @@ namespace Comformation.Pinpoint.SMSChannel
             /// ShortCode
             /// The registered short code that you want to use when you send messages through the SMS channel.
             /// Note For information about obtaining a dedicated short code for sending SMS messages, see Requesting
-            /// Dedicated Short Codes for SMS Messaging with Amazon Pinpoint in the Amazon Pinpoint User Guide.
+            /// Dedicated Short Codes for SMS Messaging in the Amazon Pinpoint User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ShortCode { get; set; }
+            public Union<string, IntrinsicFunction> ShortCode { get; set; }
 
             /// <summary>
             /// Enabled
-            /// Specifies whether to enable the SMS channel for the app.
+            /// Specifies whether to enable the SMS channel for the application.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the Amazon Pinpoint app that the SMS channel applies to.
+            /// The unique identifier for the application that the SMS channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// SenderId
@@ -54,7 +51,7 @@ namespace Comformation.Pinpoint.SMSChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SenderId { get; set; }
+            public Union<string, IntrinsicFunction> SenderId { get; set; }
 
         }
 

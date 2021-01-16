@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::SubscriptionDefinitionVersion
-    /// The AWS::Greengrass::SubscriptionDefinitionVersion resource represents a subscription definition version for
-    /// AWS IoT Greengrass. A subscription definition version contains a list of subscriptions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html
     /// </summary>
     public class SubscriptionDefinitionVersionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubscriptionDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> SubscriptionDefinitionId { get; set; }
 
             /// <summary>
             /// Subscriptions
@@ -30,7 +28,7 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
             /// Type: List of Subscription
             /// Update requires: Replacement
             /// </summary>
-			public List<Subscription> Subscriptions { get; set; }
+            public List<Subscription> Subscriptions { get; set; }
 
         }
 

@@ -7,11 +7,20 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel OutputDestination
-    /// Configuration information for an output.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html
     /// </summary>
     public class OutputDestination
     {
+
+        /// <summary>
+        /// MultiplexSettings
+        /// Destination settings for a Multiplex output; one destination for both encoders.
+        /// Required: No
+        /// Type: MultiplexProgramChannelDestinationSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("MultiplexSettings")]
+        public MultiplexProgramChannelDestinationSettings MultiplexSettings { get; set; }
 
         /// <summary>
         /// Id

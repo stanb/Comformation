@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket LambdaConfiguration
-    /// Describes the AWS Lambda functions to invoke and the events for which to invoke them.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html
     /// </summary>
     public class LambdaConfiguration

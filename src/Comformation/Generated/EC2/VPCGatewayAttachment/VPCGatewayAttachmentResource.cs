@@ -6,8 +6,6 @@ namespace Comformation.EC2.VPCGatewayAttachment
 {
     /// <summary>
     /// AWS::EC2::VPCGatewayAttachment
-    /// Attaches an internet gateway, or a virtual private gateway to a VPC, enabling connectivity between the
-    /// internet and 			the VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html
     /// </summary>
     public class VPCGatewayAttachmentResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.EC2.VPCGatewayAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InternetGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> InternetGatewayId { get; set; }
 
             /// <summary>
             /// VpcId
@@ -33,7 +31,7 @@ namespace Comformation.EC2.VPCGatewayAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
             /// <summary>
             /// VpnGatewayId
@@ -43,7 +41,7 @@ namespace Comformation.EC2.VPCGatewayAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> VpnGatewayId { get; set; }
 
         }
 

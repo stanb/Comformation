@@ -7,8 +7,6 @@ namespace Comformation.CloudWatch.Alarm
 {
     /// <summary>
     /// AWS::CloudWatch::Alarm MetricDataQuery
-    /// The MetricDataQuery property type specifies the metric data to return, and whether this call is just
-    /// retrieving a batch set of data for one metric, or is performing a math expression on metric data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html
     /// </summary>
     public class MetricDataQuery
@@ -84,11 +82,30 @@ namespace Comformation.CloudWatch.Alarm
         public MetricStat MetricStat { get; set; }
 
         /// <summary>
+        /// Period
+        /// 		
+        /// The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
+        /// 			period can be as short as one minute (60 seconds) and must be a multiple of 60. 			For
+        /// high-resolution metrics that are collected at intervals of less than one minute, 			the period can
+        /// be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics 			stored by a
+        /// PutMetricData operation that includes a StorageResolution of 1 second.
+        /// 		 	
+        /// Required: No
+        /// Type: Integer
+        /// Minimum: 1
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Period")]
+        public Union<int, IntrinsicFunction> Period { get; set; }
+
+        /// <summary>
         /// ReturnData
         /// 		
-        /// This option indicates whether to return the 			timestamps and raw data values of this metric. If you
-        /// are performing this call just to 			do math expressions and do not also need the raw data returned,
-        /// you can specify 				False. If you omit this, the default of True is 			used.
+        /// This option indicates whether to return the 			timestamps and raw data values of this metric.
+        /// When you create an alarm based on a metric math expression, specify True for this value for only the
+        /// one math expression that the alarm is based on. You must specify False for ReturnData for all the
+        /// other metrics and expressions used in the alarm.
+        /// This field is required.
         /// 		 		 	
         /// Required: No
         /// Type: Boolean

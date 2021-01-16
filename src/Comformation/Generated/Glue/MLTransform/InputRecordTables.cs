@@ -7,7 +7,6 @@ namespace Comformation.Glue.MLTransform
 {
     /// <summary>
     /// AWS::Glue::MLTransform InputRecordTables
-    /// A list of AWS Glue table definitions used by the transform.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html
     /// </summary>
     public class InputRecordTables

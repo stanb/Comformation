@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route Duration
-    /// An object that represents a duration of time.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html
     /// </summary>
     public class Duration

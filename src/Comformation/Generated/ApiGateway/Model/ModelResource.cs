@@ -6,7 +6,6 @@ namespace Comformation.ApiGateway.Model
 {
     /// <summary>
     /// AWS::ApiGateway::Model
-    /// The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html
     /// </summary>
     public class ModelResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.ApiGateway.Model
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ContentType { get; set; }
+            public Union<string, IntrinsicFunction> ContentType { get; set; }
 
             /// <summary>
             /// Description
@@ -29,7 +28,7 @@ namespace Comformation.ApiGateway.Model
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Name
@@ -42,7 +41,7 @@ namespace Comformation.ApiGateway.Model
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -51,7 +50,7 @@ namespace Comformation.ApiGateway.Model
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// Schema
@@ -61,7 +60,7 @@ namespace Comformation.ApiGateway.Model
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
 
         }
 

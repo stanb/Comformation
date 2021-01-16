@@ -6,7 +6,6 @@ namespace Comformation.DAX.Cluster
 {
     /// <summary>
     /// AWS::DAX::Cluster
-    /// Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.DAX.Cluster
             /// Type: SSESpecification
             /// Update requires: Replacement
             /// </summary>
-			public SSESpecification SSESpecification { get; set; }
+            public SSESpecification SSESpecification { get; set; }
 
             /// <summary>
             /// Description
@@ -29,7 +28,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ReplicationFactor
@@ -43,7 +42,7 @@ namespace Comformation.DAX.Cluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> ReplicationFactor { get; set; }
+            public Union<int, IntrinsicFunction> ReplicationFactor { get; set; }
 
             /// <summary>
             /// ParameterGroupName
@@ -52,7 +51,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> ParameterGroupName { get; set; }
 
             /// <summary>
             /// AvailabilityZones
@@ -64,7 +63,7 @@ namespace Comformation.DAX.Cluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
+            public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// IAMRoleARN
@@ -74,7 +73,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> IAMRoleARN { get; set; }
+            public Union<string, IntrinsicFunction> IAMRoleARN { get; set; }
 
             /// <summary>
             /// SubnetGroupName
@@ -85,7 +84,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> SubnetGroupName { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -96,7 +95,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// NotificationTopicARN
@@ -106,7 +105,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NotificationTopicARN { get; set; }
+            public Union<string, IntrinsicFunction> NotificationTopicARN { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
@@ -117,7 +116,7 @@ namespace Comformation.DAX.Cluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// NodeType
@@ -126,7 +125,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> NodeType { get; set; }
+            public Union<string, IntrinsicFunction> NodeType { get; set; }
 
             /// <summary>
             /// ClusterName
@@ -135,7 +134,7 @@ namespace Comformation.DAX.Cluster
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterName { get; set; }
+            public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
             /// <summary>
             /// Tags
@@ -144,7 +143,7 @@ namespace Comformation.DAX.Cluster
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
         }
 
@@ -154,9 +153,9 @@ namespace Comformation.DAX.Cluster
 
     }
 
-	public static class ClusterAttributes
-	{
+    public static class ClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterDiscoveryEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterDiscoveryEndpoint");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

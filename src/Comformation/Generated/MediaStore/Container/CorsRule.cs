@@ -7,8 +7,6 @@ namespace Comformation.MediaStore.Container
 {
     /// <summary>
     /// AWS::MediaStore::Container CorsRule
-    /// A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the
-    /// service uses the first applicable rule listed.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-corsrule.html
     /// </summary>
     public class CorsRule

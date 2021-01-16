@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Channel
 {
     /// <summary>
     /// AWS::IoTAnalytics::Channel ChannelStorage
-    /// Where channel data is stored.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
     /// </summary>
     public class ChannelStorage

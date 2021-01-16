@@ -6,7 +6,6 @@ namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
     /// AWS::SES::ReceiptRule
-    /// Specifies a receipt rule.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
     /// </summary>
     public class ReceiptRuleResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.SES.ReceiptRule
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> After { get; set; }
+            public Union<string, IntrinsicFunction> After { get; set; }
 
             /// <summary>
             /// Rule
@@ -31,7 +30,7 @@ namespace Comformation.SES.ReceiptRule
             /// Type: Rule
             /// Update requires: No interruption
             /// </summary>
-			public Rule Rule { get; set; }
+            public Rule Rule { get; set; }
 
             /// <summary>
             /// RuleSetName
@@ -40,7 +39,7 @@ namespace Comformation.SES.ReceiptRule
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RuleSetName { get; set; }
+            public Union<string, IntrinsicFunction> RuleSetName { get; set; }
 
         }
 

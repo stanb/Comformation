@@ -7,8 +7,6 @@ namespace Comformation.Route53.RecordSet
 {
     /// <summary>
     /// AWS::Route53::RecordSetGroup AliasTarget
-    /// Alias records only: Information about the AWS resource, such as a CloudFront distribution or 			an Amazon S3
-    /// bucket, that you want to route traffic to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
     /// </summary>
     public class AliasTarget
@@ -81,16 +79,16 @@ namespace Comformation.Route53.RecordSet
         /// API: To get the DNS name, use 							DescribeAccelerator. AWS CLI: To get the DNS name, use
         /// 							describe-accelerator. 				 			 				 Amazon S3 bucket that is configured as a static website
         /// 				 					 Specify the domain name of the Amazon S3 website endpoint that you created the bucket in,
-        /// for example, 					s3-website. us-east-2. amazonaws. com. For more information about valid values,
-        /// see the table 					Amazon Simple Storage Service (S3) Website Endpoints 					in the Amazon Web
-        /// Services General Reference. For more information about using S3 buckets for websites, 						see
-        /// Getting Started with Amazon Route 53 					in the Amazon Route 53 Developer Guide. 				 			 				
-        /// Another Route 53 record 				 					 Specify the value of the Name element for a record in the current
-        /// hosted zone. 					 Note If you&#39;re creating an alias record that has the same name as the hosted zone
-        /// (known as the zone apex), 							you can&#39;t specify the domain name for a record for which the value
-        /// of Type is CNAME. This is because 							the alias record must have the same type as the record that
-        /// you&#39;re routing traffic to, and creating a CNAME record for the 							zone apex isn&#39;t supported even
-        /// for an alias record. 				 			
+        /// for example, 						s3-website. us-east-2. amazonaws. com. For more information about valid values,
+        /// see the table 						Amazon S3 Website Endpoints 						in the Amazon Web Services General Reference.
+        /// For more information about using S3 buckets for websites, 						see Getting Started with Amazon
+        /// Route 53 						in the Amazon Route 53 Developer Guide. 				 			 				 Another Route 53 record 				
+        /// 					 Specify the value of the Name element for a record in the current hosted zone. 					 Note If
+        /// you&#39;re creating an alias record that has the same name as the hosted zone (known as the zone apex),
+        /// 							you can&#39;t specify the domain name for a record for which the value of Type is CNAME. This is
+        /// because 							the alias record must have the same type as the record that you&#39;re routing traffic
+        /// to, and creating a CNAME record for the 							zone apex isn&#39;t supported even for an alias record.
+        /// 				 			
         /// 		 	
         /// Required: Yes
         /// Type: String
@@ -164,17 +162,18 @@ namespace Comformation.Route53.RecordSet
         /// distributionHostedZoneId. 				 			 				 Amazon Virtual Private Cloud interface VPC endpoint 				
         /// Specify the hosted zone ID for your interface endpoint. You can get the value of HostedZoneId
         /// 					using the AWS CLI command 					describe-vpc-endpoints. 				 			 				 CloudFront distribution
-        /// 				 					 Specify Z2FDTNDATAQYW2. 					 Note Alias records for CloudFront can&#39;t be created in a
-        /// private zone. 				 			 				 Elastic Beanstalk environment 				 					 Specify the hosted zone ID for
-        /// the region that you created the environment in. The environment 						must have a regionalized
-        /// subdomain. For a list of regions and the corresponding hosted zone IDs, see 						AWS Elastic
-        /// Beanstalk in the 						&quot;AWS Regions and Endpoints&quot; chapter of the Amazon Web Services General
-        /// Reference. 				 			 				 ELB load balancer 				 					 Specify the value of the hosted zone ID for
-        /// the load balancer. Use the following methods to get the hosted zone ID: 					 						 						 						
-        /// 						 						 					 							 Elastic Load Balancing table 							in the &quot;AWS Regions and Endpoints&quot;
-        /// chapter of the Amazon Web Services General Reference: Use the value that corresponds with 							the
-        /// region that you created your load balancer in. Note that there are separate columns for Application
-        /// and Classic Load Balancers 							and for Network Load Balancers. 						 							 AWS Management
+        /// 				 					 Specify Z2FDTNDATAQYW2. This is always the hosted zone ID when you create an alias record
+        /// that 						routes traffic to a CloudFront distribution. 					 Note Alias records for CloudFront
+        /// can&#39;t be created in a private zone. 				 			 				 Elastic Beanstalk environment 				 					 Specify
+        /// the hosted zone ID for the region that you created the environment in. The environment 						must
+        /// have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see
+        /// 					 AWS Elastic Beanstalk endpoints and quotas in the Amazon Web Services General Reference. 				
+        /// 			 				 ELB load balancer 				 					 Specify the value of the hosted zone ID for the load balancer.
+        /// Use the following methods to get the hosted zone ID: 					 						 						 						 						 						 					
+        /// 							 Service Endpoints table 								in the &quot;Elastic Load Balancing endpoints and quotas&quot; topic
+        /// in the Amazon Web Services General Reference: Use the value that corresponds with 								the region
+        /// that you created your load balancer in. Note that there are separate columns for Application and
+        /// Classic Load Balancers 								and for Network Load Balancers. 						 							 AWS Management
         /// Console: Go to the Amazon EC2 page, choose 								Load Balancers in the navigation pane, select the
         /// load balancer, and get the value of the 								Hosted zone field on the Description tab. 						
         /// 							 Elastic Load Balancing API: Use DescribeLoadBalancers to get the 								applicable value.
@@ -193,11 +192,10 @@ namespace Comformation.Route53.RecordSet
         /// value of CanonicalHostedZoneId. 								 						 				 			 				 AWS Global Accelerator accelerator
         /// 				 					 Specify Z2BJ6XQ5FK7U4H. 				 			 				 An Amazon S3 bucket configured as a static website
         /// 				 					 Specify the hosted zone ID for the region that you created the bucket in. For more
-        /// information about 						valid values, see the 						Amazon Simple Storage Service Website Endpoints
-        /// table in the 						&quot;AWS Regions and Endpoints&quot; chapter of the Amazon Web Services General Reference.
-        /// 				 			 				 Another Route 53 record in your hosted zone 				 					 Specify the hosted zone ID of
-        /// your hosted zone. (An alias record 						can&#39;t reference a record in a different hosted zone. ) 				
-        /// 			
+        /// information about 						valid values, see the table 						Amazon S3 Website Endpoints 						in the
+        /// Amazon Web Services General Reference. 				 			 				 Another Route 53 record in your hosted zone
+        /// 				 					 Specify the hosted zone ID of your hosted zone. (An alias record can&#39;t reference a record
+        /// in a different hosted zone. ) 				 			
         /// 	
         /// Required: Yes
         /// Type: String

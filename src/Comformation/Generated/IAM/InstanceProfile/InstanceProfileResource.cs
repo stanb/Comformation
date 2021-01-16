@@ -6,7 +6,6 @@ namespace Comformation.IAM.InstanceProfile
 {
     /// <summary>
     /// AWS::IAM::InstanceProfile
-    /// Creates a new instance profile. For information about instance profiles, go to About Instance Profiles.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
     /// </summary>
     public class InstanceProfileResource : ResourceBase
@@ -26,7 +25,7 @@ namespace Comformation.IAM.InstanceProfile
             /// Pattern: [\w+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceProfileName { get; set; }
+            public Union<string, IntrinsicFunction> InstanceProfileName { get; set; }
 
             /// <summary>
             /// Path
@@ -44,16 +43,17 @@ namespace Comformation.IAM.InstanceProfile
             /// Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Path { get; set; }
+            public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// Roles
-            /// The role associated with the instance profile.
+            /// The name of the role to associate with the instance profile. Only one role can be assigned to an EC2
+            /// instance at a time, and all applications on the instance share the same role and permissions.
             /// Required: Yes
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
+            public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
         }
 
@@ -63,8 +63,8 @@ namespace Comformation.IAM.InstanceProfile
 
     }
 
-	public static class InstanceProfileAttributes
-	{
+    public static class InstanceProfileAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

@@ -7,8 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSetEventDestination SnsDestination
-    /// An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification
-    /// when certain email events occur.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-snsdestination.html
     /// </summary>
     public class SnsDestination

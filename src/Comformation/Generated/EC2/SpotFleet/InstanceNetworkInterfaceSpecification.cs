@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet InstanceNetworkInterfaceSpecification
-    /// Describes a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html
     /// </summary>
     public class InstanceNetworkInterfaceSpecification
@@ -99,6 +98,8 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// NetworkInterfaceId
         /// The ID of the network interface.
+        /// If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface
+        /// ID in a launch specification.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

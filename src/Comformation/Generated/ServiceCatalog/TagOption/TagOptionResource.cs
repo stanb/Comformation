@@ -6,8 +6,6 @@ namespace Comformation.ServiceCatalog.TagOption
 {
     /// <summary>
     /// AWS::ServiceCatalog::TagOption
-    /// Specifies a TagOption. A TagOption is a key-value pair managed by AWS Service Catalog that serves as a
-    /// template for creating an AWS tag.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html
     /// </summary>
     public class TagOptionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ServiceCatalog.TagOption
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Active { get; set; }
+            public Union<bool, IntrinsicFunction> Active { get; set; }
 
             /// <summary>
             /// Value
@@ -30,7 +28,7 @@ namespace Comformation.ServiceCatalog.TagOption
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Value { get; set; }
+            public Union<string, IntrinsicFunction> Value { get; set; }
 
             /// <summary>
             /// Key
@@ -39,7 +37,7 @@ namespace Comformation.ServiceCatalog.TagOption
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Key { get; set; }
+            public Union<string, IntrinsicFunction> Key { get; set; }
 
         }
 

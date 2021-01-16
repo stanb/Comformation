@@ -7,8 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain EncryptionAtRestOptions
-    /// Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service (KMS) key to use.
-    /// Can only be used to create a new domain, not update an existing one.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html
     /// </summary>
     public class EncryptionAtRestOptions

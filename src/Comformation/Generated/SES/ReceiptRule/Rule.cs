@@ -7,8 +7,6 @@ namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
     /// AWS::SES::ReceiptRule Rule
-    /// Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of
-    /// one or more email addresses or domains that you own.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html
     /// </summary>
     public class Rule

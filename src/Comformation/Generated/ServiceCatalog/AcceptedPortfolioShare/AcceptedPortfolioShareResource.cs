@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
 {
     /// <summary>
     /// AWS::ServiceCatalog::AcceptedPortfolioShare
-    /// Accepts an offer to share the specified portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html
     /// </summary>
     public class AcceptedPortfolioShareResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -34,7 +33,7 @@ namespace Comformation.ServiceCatalog.AcceptedPortfolioShare
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
         }
 

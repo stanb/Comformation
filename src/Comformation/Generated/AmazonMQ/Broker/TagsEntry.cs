@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
     /// AWS::AmazonMQ::Broker TagsEntry
-    /// A key-value pair to associate with the broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-tagsentry.html
     /// </summary>
     public class TagsEntry

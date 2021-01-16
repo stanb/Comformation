@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Webhook
 {
     /// <summary>
     /// AWS::CodePipeline::Webhook WebhookFilterRule
-    /// The event criteria that specify when a webhook notification is sent to your URL.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html
     /// </summary>
     public class WebhookFilterRule

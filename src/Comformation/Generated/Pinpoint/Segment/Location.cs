@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment Location
-    /// The location-based criteria, such as region or GPS coordinates, for the segment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html
     /// </summary>
     public class Location
@@ -15,7 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// GPSPoint
-        /// The GPS point dimension for the segment.
+        /// The GPS location and range for the segment.
         /// Required: No
         /// Type: GPSPoint
         /// Update requires: No interruption

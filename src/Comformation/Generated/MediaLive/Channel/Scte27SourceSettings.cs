@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel Scte27SourceSettings
-    /// Information about the SCTE-27 captions to extract from the input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html
     /// </summary>
     public class Scte27SourceSettings

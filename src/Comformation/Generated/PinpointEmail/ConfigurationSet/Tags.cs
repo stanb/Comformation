@@ -7,7 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSet
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSet Tags
-    /// An object that defines the tags (keys and values) that you want to associate with the configuration set.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html
     /// </summary>
     public class Tags

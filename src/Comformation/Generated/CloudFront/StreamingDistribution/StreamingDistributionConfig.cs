@@ -7,7 +7,6 @@ namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
     /// AWS::CloudFront::StreamingDistribution StreamingDistributionConfig
-    /// The RTMP distribution&#39;s configuration information.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html
     /// </summary>
     public class StreamingDistributionConfig
@@ -44,7 +43,7 @@ namespace Comformation.CloudFront.StreamingDistribution
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: PriceClass_100 | PriceClass_200 | PriceClass_All
+        /// Allowed values: PriceClass_100 | PriceClass_200 | PriceClass_All
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PriceClass")]

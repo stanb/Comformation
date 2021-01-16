@@ -7,9 +7,7 @@ namespace Comformation.EFS.FileSystem
 {
     /// <summary>
     /// AWS::EFS::FileSystem LifecyclePolicy
-    /// Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA) storage
-    /// class.
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticfilesystem-filesystem-lifecyclepolicy.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-lifecyclepolicy.html
     /// </summary>
     public class LifecyclePolicy
     {
@@ -21,7 +19,7 @@ namespace Comformation.EFS.FileSystem
         /// file access events.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: AFTER_14_DAYS | AFTER_30_DAYS | AFTER_60_DAYS | AFTER_90_DAYS
+        /// Allowed values: AFTER_14_DAYS | AFTER_30_DAYS | AFTER_60_DAYS | AFTER_7_DAYS | AFTER_90_DAYS
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TransitionToIA")]

@@ -7,7 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget CostTypes
-    /// The types of cost that are included in a COST budget, such as tax and subscriptions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html
     /// </summary>
     public class CostTypes

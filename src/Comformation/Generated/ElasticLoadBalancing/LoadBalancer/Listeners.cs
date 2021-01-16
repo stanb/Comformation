@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer Listeners
-    /// Specifies a listener for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html
     /// </summary>
     public class Listeners
@@ -29,12 +28,10 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
         /// InstanceProtocol
         /// 	
         /// The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
-        /// 	
-        /// If the front-end protocol is HTTP, HTTPS, TCP, or SSL, InstanceProtocol must be at the same
-        /// protocol.
-        /// 	
-        /// If there is another listener with the same InstancePort whose InstanceProtocol is secure, 	 (HTTPS
-        /// or SSL), the listener&#39;s InstanceProtocol must also be secure.
+        /// If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end
+        /// protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
+        /// If there is another listener with the same InstancePort whose InstanceProtocol is secure, (HTTPS or
+        /// SSL), the listener&#39;s InstanceProtocol must also be secure.
         /// If there is another listener with the same InstancePort whose InstanceProtocol is HTTP or TCP, the
         /// listener&#39;s InstanceProtocol must be HTTP or TCP.
         /// Required: No

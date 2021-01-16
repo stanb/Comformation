@@ -7,9 +7,6 @@ namespace Comformation.Config.OrganizationConfigRule
 {
     /// <summary>
     /// AWS::Config::OrganizationConfigRule OrganizationManagedRuleMetadata
-    /// An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along
-    /// with the rule identifier. 			It also provides the frequency with which you want AWS Config to run evaluations
-    /// for the rule if the trigger type is periodic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationmanagedrulemetadata.html
     /// </summary>
     public class OrganizationManagedRuleMetadata
@@ -113,7 +110,7 @@ namespace Comformation.Config.OrganizationConfigRule
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
+        /// Allowed values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaximumExecutionFrequency")]

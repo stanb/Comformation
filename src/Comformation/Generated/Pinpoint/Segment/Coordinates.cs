@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment Coordinates
-    /// The latitude and longitude of the location.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates.html
     /// </summary>
     public class Coordinates

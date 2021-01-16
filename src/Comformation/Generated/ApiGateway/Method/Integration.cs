@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.Method
 {
     /// <summary>
     /// AWS::ApiGateway::Method Integration
-    /// Integration is a property of the AWS::ApiGateway::Method resource that specifies information about the target
-    /// backend that a method calls.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html
     /// </summary>
     public class Integration

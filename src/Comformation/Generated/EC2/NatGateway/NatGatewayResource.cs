@@ -6,10 +6,6 @@ namespace Comformation.EC2.NatGateway
 {
     /// <summary>
     /// AWS::EC2::NatGateway
-    /// Specifies a network address translation (NAT) gateway in the specified public subnet. Use a NAT gateway to
-    /// allow instances in a private subnet to connect to the Internet or to other AWS services, but prevent the
-    /// Internet from initiating a connection with those instances. For more information and a sample architectural
-    /// diagram, see NAT Gateways in the Amazon VPC User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html
     /// </summary>
     public class NatGatewayResource : ResourceBase
@@ -24,7 +20,7 @@ namespace Comformation.EC2.NatGateway
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AllocationId { get; set; }
+            public Union<string, IntrinsicFunction> AllocationId { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -33,16 +29,16 @@ namespace Comformation.EC2.NatGateway
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
             /// <summary>
             /// Tags
-            /// The tags (key–value pairs) to associate with this resource.
+            /// The tags (key-value pairs) to associate with this resource.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

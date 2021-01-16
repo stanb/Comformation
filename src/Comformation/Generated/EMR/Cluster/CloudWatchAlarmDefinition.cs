@@ -7,8 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster CloudWatchAlarmDefinition
-    /// CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an
-    /// automatic scaling activity. Scaling activity begins when you satisfy the defined alarm conditions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html
     /// </summary>
     public class CloudWatchAlarmDefinition
@@ -19,7 +17,7 @@ namespace Comformation.EMR.Cluster
         /// Determines how the metric specified by MetricName is compared to the value specified by Threshold.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: GREATER_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN | LESS_THAN_OR_EQUAL
+        /// Allowed values: GREATER_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN | LESS_THAN_OR_EQUAL
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComparisonOperator")]
@@ -82,7 +80,7 @@ namespace Comformation.EMR.Cluster
         /// The statistic to apply to the metric associated with the alarm. The default is AVERAGE.
         /// Required: No
         /// Type: String
-        /// Allowed Values: AVERAGE | MAXIMUM | MINIMUM | SAMPLE_COUNT | SUM
+        /// Allowed values: AVERAGE | MAXIMUM | MINIMUM | SAMPLE_COUNT | SUM
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]
@@ -104,7 +102,7 @@ namespace Comformation.EMR.Cluster
         /// Unit must correspond to the units specified in the CloudWatch metric.
         /// Required: No
         /// Type: String
-        /// Allowed Values: BITS | BITS_PER_SECOND | BYTES | BYTES_PER_SECOND | COUNT | COUNT_PER_SECOND |
+        /// Allowed values: BITS | BITS_PER_SECOND | BYTES | BYTES_PER_SECOND | COUNT | COUNT_PER_SECOND |
         /// GIGA_BITS | GIGA_BITS_PER_SECOND | GIGA_BYTES | GIGA_BYTES_PER_SECOND | KILO_BITS |
         /// KILO_BITS_PER_SECOND | KILO_BYTES | KILO_BYTES_PER_SECOND | MEGA_BITS | MEGA_BITS_PER_SECOND |
         /// MEGA_BYTES | MEGA_BYTES_PER_SECOND | MICRO_SECONDS | MILLI_SECONDS | NONE | PERCENT | SECONDS |

@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel InputAttachment
-    /// An input to attach to this channel.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html
     /// </summary>
     public class InputAttachment
@@ -32,6 +31,17 @@ namespace Comformation.MediaLive.Channel
         /// </summary>
         [JsonProperty("InputId")]
         public Union<string, IntrinsicFunction> InputId { get; set; }
+
+        /// <summary>
+        /// AutomaticInputFailoverSettings
+        /// User-specified settings for defining what the conditions are for declaring the input unhealthy and
+        /// failing over to a different input.
+        /// Required: No
+        /// Type: AutomaticInputFailoverSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AutomaticInputFailoverSettings")]
+        public AutomaticInputFailoverSettings AutomaticInputFailoverSettings { get; set; }
 
         /// <summary>
         /// InputSettings

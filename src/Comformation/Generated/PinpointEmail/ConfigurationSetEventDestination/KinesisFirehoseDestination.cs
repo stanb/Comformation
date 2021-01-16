@@ -7,8 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSetEventDestination KinesisFirehoseDestination
-    /// An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon
-    /// Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html
     /// </summary>
     public class KinesisFirehoseDestination

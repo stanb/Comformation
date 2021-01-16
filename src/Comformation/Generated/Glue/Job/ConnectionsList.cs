@@ -7,7 +7,6 @@ namespace Comformation.Glue.Job
 {
     /// <summary>
     /// AWS::Glue::Job ConnectionsList
-    /// Specifies the connections used by a job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html
     /// </summary>
     public class ConnectionsList

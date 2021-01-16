@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationReferenceDataSource ReferenceSchema
-    /// The ReferenceSchema property type specifies the format of the data in the reference source for a SQL-based
-    /// Amazon Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html
     /// </summary>
     public class ReferenceSchema

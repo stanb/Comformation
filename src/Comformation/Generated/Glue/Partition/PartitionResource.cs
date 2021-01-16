@@ -6,8 +6,6 @@ namespace Comformation.Glue.Partition
 {
     /// <summary>
     /// AWS::Glue::Partition
-    /// The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data. For
-    /// more information, see CreatePartition Action and Partition Structure in the AWS Glue Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html
     /// </summary>
     public class PartitionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Glue.Partition
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TableName { get; set; }
+            public Union<string, IntrinsicFunction> TableName { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -30,7 +28,7 @@ namespace Comformation.Glue.Partition
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+            public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
             /// <summary>
             /// CatalogId
@@ -41,7 +39,7 @@ namespace Comformation.Glue.Partition
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CatalogId { get; set; }
+            public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
             /// <summary>
             /// PartitionInput
@@ -50,7 +48,7 @@ namespace Comformation.Glue.Partition
             /// Type: PartitionInput
             /// Update requires: No interruption
             /// </summary>
-			public PartitionInput PartitionInput { get; set; }
+            public PartitionInput PartitionInput { get; set; }
 
         }
 

@@ -7,9 +7,6 @@ namespace Comformation.Glue.DataCatalogEncryptionSettings
 {
     /// <summary>
     /// AWS::Glue::DataCatalogEncryptionSettings ConnectionPasswordEncryption
-    /// The data structure used by the Data Catalog to encrypt the password as part of CreateConnection or
-    /// UpdateConnection and store it in the ENCRYPTED_PASSWORD field in the connection properties. You can enable
-    /// catalog encryption or only password encryption.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html
     /// </summary>
     public class ConnectionPasswordEncryption

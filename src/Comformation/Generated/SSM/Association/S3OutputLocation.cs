@@ -7,16 +7,27 @@ namespace Comformation.SSM.Association
 {
     /// <summary>
     /// AWS::SSM::Association S3OutputLocation
-    /// S3OutputLocation is a property of the AWS::SSM::Association resource that specifies an Amazon S3 bucket where
-    /// you want to store the results of this association request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html
     /// </summary>
     public class S3OutputLocation
     {
 
         /// <summary>
+        /// OutputS3Region
+        /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems
+        /// Manager automatically determines the Region of the S3 bucket.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 3
+        /// Maximum: 20
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OutputS3Region")]
+        public Union<string, IntrinsicFunction> OutputS3Region { get; set; }
+
+        /// <summary>
         /// OutputS3BucketName
-        /// The name of the Amazon S3 bucket.
+        /// The name of the S3 bucket.
         /// Required: No
         /// Type: String
         /// Minimum: 3
@@ -28,7 +39,7 @@ namespace Comformation.SSM.Association
 
         /// <summary>
         /// OutputS3KeyPrefix
-        /// The Amazon S3 bucket subfolder.
+        /// The S3 bucket subfolder.
         /// Required: No
         /// Type: String
         /// Maximum: 500

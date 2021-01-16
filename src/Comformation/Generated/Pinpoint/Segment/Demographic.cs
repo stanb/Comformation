@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment Demographic
-    /// The demographic-based criteria, such as device platform, for the segment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html
     /// </summary>
     public class Demographic

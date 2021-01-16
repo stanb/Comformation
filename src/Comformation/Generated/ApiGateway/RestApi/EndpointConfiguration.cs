@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.RestApi
 {
     /// <summary>
     /// AWS::ApiGateway::RestApi EndpointConfiguration
-    /// The EndpointConfiguration property type specifies the endpoint types of a REST API.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html
     /// </summary>
     public class EndpointConfiguration
@@ -24,6 +23,17 @@ namespace Comformation.ApiGateway.RestApi
         /// </summary>
         [JsonProperty("Types")]
         public List<Union<string, IntrinsicFunction>> Types { get; set; }
+
+        /// <summary>
+        /// VpcEndpointIds
+        /// A list of VPC endpoint IDs of an API (AWS::ApiGateway::RestApi) against which to create Route53
+        /// ALIASes. It is only supported for PRIVATE endpoint type.
+        /// Required: No
+        /// Type: List of String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("VpcEndpointIds")]
+        public List<Union<string, IntrinsicFunction>> VpcEndpointIds { get; set; }
 
     }
 }

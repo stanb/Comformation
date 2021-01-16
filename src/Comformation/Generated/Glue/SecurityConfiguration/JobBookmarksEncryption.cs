@@ -7,7 +7,6 @@ namespace Comformation.Glue.SecurityConfiguration
 {
     /// <summary>
     /// AWS::Glue::SecurityConfiguration JobBookmarksEncryption
-    /// Specifies how job bookmark data should be encrypted.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html
     /// </summary>
     public class JobBookmarksEncryption

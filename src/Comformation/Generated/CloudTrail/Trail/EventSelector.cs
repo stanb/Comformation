@@ -7,11 +7,6 @@ namespace Comformation.CloudTrail.Trail
 {
     /// <summary>
     /// AWS::CloudTrail::Trail EventSelector
-    /// Use event selectors to further specify the management and data event settings for your trail. By default,
-    /// trails created without specific event selectors will be configured to log all read and write management
-    /// events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for
-    /// all trails. For each trail, if the event matches any event selector, the trail processes and logs the event.
-    /// If the event doesn&#39;t match any event selector, the trail doesn&#39;t log the event.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html
     /// </summary>
     public class EventSelector
@@ -24,7 +19,7 @@ namespace Comformation.CloudTrail.Trail
         /// cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure
         /// resource logging for all data events.
         /// For more information, see Data Events and Limits in AWS CloudTrail in the AWS CloudTrail User Guide.
-        /// Required: No
+        /// Required: Conditional
         /// Type: List of DataResource
         /// Update requires: No interruption
         /// </summary>
@@ -36,6 +31,9 @@ namespace Comformation.CloudTrail.Trail
         /// Specify if you want your event selector to include management events for your trail.
         /// For more information, see Management Events in the AWS CloudTrail User Guide.
         /// By default, the value is true.
+        /// The first copy of management events is free. You are charged for additional copies of management
+        /// events that you are logging on any subsequent trail in the same region. For more information about
+        /// CloudTrail pricing, see AWS CloudTrail Pricing.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -50,7 +48,7 @@ namespace Comformation.CloudTrail.Trail
         /// By default, the value is All.
         /// Required: No
         /// Type: String
-        /// Allowed Values: All | ReadOnly | WriteOnly
+        /// Allowed values: All | ReadOnly | WriteOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ReadWriteType")]

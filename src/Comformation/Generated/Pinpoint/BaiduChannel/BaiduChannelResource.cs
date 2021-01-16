@@ -6,9 +6,6 @@ namespace Comformation.Pinpoint.BaiduChannel
 {
     /// <summary>
     /// AWS::Pinpoint::BaiduChannel
-    /// A channel is a type of platform that you can deliver messages to. You can use the Baidu channel to send
-    /// notifications to the Baidu notification service. Before you use Amazon Pinpoint to send notifications to
-    /// Baidu, you have to enable the Baidu channel for an Amazon Pinpoint app.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html
     /// </summary>
     public class BaiduChannelResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.Pinpoint.BaiduChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SecretKey { get; set; }
+            public Union<string, IntrinsicFunction> SecretKey { get; set; }
 
             /// <summary>
             /// ApiKey
@@ -31,7 +28,7 @@ namespace Comformation.Pinpoint.BaiduChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiKey { get; set; }
+            public Union<string, IntrinsicFunction> ApiKey { get; set; }
 
             /// <summary>
             /// Enabled
@@ -40,16 +37,16 @@ namespace Comformation.Pinpoint.BaiduChannel
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app that you&#39;re configuring the Baidu channel for.
+            /// The unique identifier for the application that the Baidu channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
         }
 

@@ -6,7 +6,6 @@ namespace Comformation.IAM.Policy
 {
     /// <summary>
     /// AWS::IAM::Policy
-    /// Adds or updates an inline policy document that is embedded in the specified IAM user, group, or role.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
     /// </summary>
     public class PolicyResource : ResourceBase
@@ -26,7 +25,7 @@ namespace Comformation.IAM.Policy
             /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
+            public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// PolicyDocument
@@ -47,7 +46,7 @@ namespace Comformation.IAM.Policy
             /// Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// PolicyName
@@ -62,7 +61,7 @@ namespace Comformation.IAM.Policy
             /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PolicyName { get; set; }
+            public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
             /// <summary>
             /// Roles
@@ -80,7 +79,7 @@ namespace Comformation.IAM.Policy
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
+            public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
             /// <summary>
             /// Users
@@ -95,7 +94,7 @@ namespace Comformation.IAM.Policy
             /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Users { get; set; }
+            public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
 

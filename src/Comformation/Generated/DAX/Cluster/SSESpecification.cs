@@ -7,7 +7,6 @@ namespace Comformation.DAX.Cluster
 {
     /// <summary>
     /// AWS::DAX::Cluster SSESpecification
-    /// Represents the settings used to enable server-side encryption.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html
     /// </summary>
     public class SSESpecification

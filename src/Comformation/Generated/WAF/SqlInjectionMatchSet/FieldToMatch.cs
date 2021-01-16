@@ -7,7 +7,6 @@ namespace Comformation.WAF.SqlInjectionMatchSet
 {
     /// <summary>
     /// AWS::WAF::ByteMatchSet FieldToMatch
-    /// Specifies where in a web request to look for TargetString.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html
     /// </summary>
     public class FieldToMatch
@@ -26,6 +25,9 @@ namespace Comformation.WAF.SqlInjectionMatchSet
         /// 	
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Data")]
@@ -55,7 +57,7 @@ namespace Comformation.WAF.SqlInjectionMatchSet
         /// 		 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ALL_QUERY_ARGS | BODY | HEADER | METHOD | QUERY_STRING | SINGLE_QUERY_ARG | URI
+        /// Allowed values: ALL_QUERY_ARGS | BODY | HEADER | METHOD | QUERY_STRING | SINGLE_QUERY_ARG | URI
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

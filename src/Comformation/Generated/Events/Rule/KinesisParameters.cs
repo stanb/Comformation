@@ -7,8 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule KinesisParameters
-    /// The KinesisParameters property type specifies settings that control shard assignment for a Kinesis data stream
-    /// target.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html
     /// </summary>
     public class KinesisParameters

@@ -7,7 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster Configuration
-    /// Note Used only with Amazon EMR release 4. 0 and later.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html
     /// </summary>
     public class Configuration

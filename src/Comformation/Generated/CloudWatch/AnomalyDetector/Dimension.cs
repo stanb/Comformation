@@ -7,7 +7,6 @@ namespace Comformation.CloudWatch.AnomalyDetector
 {
     /// <summary>
     /// AWS::CloudWatch::AnomalyDetector Dimension
-    /// Expands the identity of a metric.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-dimension.html
     /// </summary>
     public class Dimension
@@ -16,7 +15,7 @@ namespace Comformation.CloudWatch.AnomalyDetector
         /// <summary>
         /// Value
         /// 		
-        /// The value representing the dimension measurement.
+        /// The value of the dimension. Dimension values cannot contain blank spaces 			or non-ASCII characters.
         /// 	
         /// Required: Yes
         /// Type: String

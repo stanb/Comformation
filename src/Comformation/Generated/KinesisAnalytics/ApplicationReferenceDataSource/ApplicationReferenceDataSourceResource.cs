@@ -6,7 +6,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationReferenceDataSource
-    /// Adds a reference data source to an existing application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html
     /// </summary>
     public class ApplicationReferenceDataSourceResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// ReferenceDataSource
@@ -36,7 +35,7 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
             /// Type: ReferenceDataSource
             /// Update requires: No interruption
             /// </summary>
-			public ReferenceDataSource ReferenceDataSource { get; set; }
+            public ReferenceDataSource ReferenceDataSource { get; set; }
 
         }
 

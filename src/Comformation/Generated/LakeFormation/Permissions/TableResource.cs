@@ -7,8 +7,6 @@ namespace Comformation.LakeFormation.Permissions
 {
     /// <summary>
     /// AWS::LakeFormation::Permissions TableResource
-    /// A structure for the table object. A table is a metadata definition that represents your data. You can Grant
-    /// and Revoke table privileges to a principal.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html
     /// </summary>
     public class TableResource
@@ -25,6 +23,26 @@ namespace Comformation.LakeFormation.Permissions
         /// </summary>
         [JsonProperty("DatabaseName")]
         public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+
+        /// <summary>
+        /// CatalogId
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CatalogId")]
+        public Union<string, IntrinsicFunction> CatalogId { get; set; }
+
+        /// <summary>
+        /// TableWildcard
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: TableWildcard
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TableWildcard")]
+        public TableWildcard TableWildcard { get; set; }
 
         /// <summary>
         /// Name

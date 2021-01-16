@@ -6,7 +6,6 @@ namespace Comformation.IAM.ManagedPolicy
 {
     /// <summary>
     /// AWS::IAM::ManagedPolicy
-    /// Creates a new managed policy for your AWS account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html
     /// </summary>
     public class ManagedPolicyResource : ResourceBase
@@ -24,7 +23,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Maximum: 1000
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Groups
@@ -39,7 +38,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Groups { get; set; }
+            public List<Union<string, IntrinsicFunction>> Groups { get; set; }
 
             /// <summary>
             /// ManagedPolicyName
@@ -58,7 +57,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ManagedPolicyName { get; set; }
+            public Union<string, IntrinsicFunction> ManagedPolicyName { get; set; }
 
             /// <summary>
             /// Path
@@ -76,7 +75,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Pattern: ((/[A-Za-z0-9\. ,\+@=_-]+)*)/
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Path { get; set; }
+            public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// PolicyDocument
@@ -97,7 +96,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// Roles
@@ -115,7 +114,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Roles { get; set; }
+            public List<Union<string, IntrinsicFunction>> Roles { get; set; }
 
             /// <summary>
             /// Users
@@ -130,7 +129,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// Pattern: [\w+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Users { get; set; }
+            public List<Union<string, IntrinsicFunction>> Users { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancing.LoadBalancer
 {
     /// <summary>
     /// AWS::ElasticLoadBalancing::LoadBalancer AccessLoggingPolicy
-    /// Specifies where and how access logs are stored for your Classic Load Balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html
     /// </summary>
     public class AccessLoggingPolicy

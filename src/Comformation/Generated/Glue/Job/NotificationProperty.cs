@@ -7,7 +7,6 @@ namespace Comformation.Glue.Job
 {
     /// <summary>
     /// AWS::Glue::Job NotificationProperty
-    /// Specifies configuration properties of a notification.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-notificationproperty.html
     /// </summary>
     public class NotificationProperty

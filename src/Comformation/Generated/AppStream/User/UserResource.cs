@@ -6,7 +6,6 @@ namespace Comformation.AppStream.User
 {
     /// <summary>
     /// AWS::AppStream::User
-    /// The AWS::AppStream::User resource creates a new user in the AppStream 2. 0 user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html
     /// </summary>
     public class UserResource : ResourceBase
@@ -26,7 +25,7 @@ namespace Comformation.AppStream.User
             /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserName { get; set; }
+            public Union<string, IntrinsicFunction> UserName { get; set; }
 
             /// <summary>
             /// FirstName
@@ -37,7 +36,7 @@ namespace Comformation.AppStream.User
             /// Pattern: ^[A-Za-z0-9_\-\s]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FirstName { get; set; }
+            public Union<string, IntrinsicFunction> FirstName { get; set; }
 
             /// <summary>
             /// MessageAction
@@ -48,10 +47,10 @@ namespace Comformation.AppStream.User
             /// passwords within 7 days, you must send them a new welcome email.
             /// Required: No
             /// Type: String
-            /// Allowed Values: RESEND | SUPPRESS
+            /// Allowed values: RESEND | SUPPRESS
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MessageAction { get; set; }
+            public Union<string, IntrinsicFunction> MessageAction { get; set; }
 
             /// <summary>
             /// LastName
@@ -62,17 +61,17 @@ namespace Comformation.AppStream.User
             /// Pattern: ^[A-Za-z0-9_\-\s]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LastName { get; set; }
+            public Union<string, IntrinsicFunction> LastName { get; set; }
 
             /// <summary>
             /// AuthenticationType
             /// The authentication type for the user. You must specify USERPOOL.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: API | SAML | USERPOOL
+            /// Allowed values: API | SAML | USERPOOL
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
+            public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
 
         }
 

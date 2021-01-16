@@ -7,9 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup EC2TagSetListObject
-    /// The EC2TagSet property type specifies information about groups of tags applied to EC2 instances. The
-    /// deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-    /// template as EC2TagFilters.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagsetlistobject.html
     /// </summary>
     public class EC2TagSetListObject

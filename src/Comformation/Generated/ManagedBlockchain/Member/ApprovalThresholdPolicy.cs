@@ -7,9 +7,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member ApprovalThresholdPolicy
-    /// A policy type that defines the voting rules for the network. The rules decide if a proposal is approved.
-    /// Approval may be based on criteria such as the percentage of YES votes and the duration of the proposal. The
-    /// policy applies to all proposals and is specified when the network is created.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html
     /// </summary>
     public class ApprovalThresholdPolicy
@@ -21,7 +18,7 @@ namespace Comformation.ManagedBlockchain.Member
         /// greater than or equal to the ThreholdPercentage to be approved.
         /// Required: No
         /// Type: String
-        /// Allowed Values: GREATER_THAN | GREATER_THAN_OR_EQUAL_TO
+        /// Allowed values: GREATER_THAN | GREATER_THAN_OR_EQUAL_TO
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ThresholdComparator")]

@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule ElasticsearchAction
-    /// Describes an action that writes data to an Amazon Elasticsearch Service domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html
     /// </summary>
     public class ElasticsearchAction

@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel VideoSelectorPid
-    /// Selects a specific PID from within a video source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html
     /// </summary>
     public class VideoSelectorPid

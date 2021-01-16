@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Segment
 {
     /// <summary>
     /// AWS::Pinpoint::Segment SegmentDimensions
-    /// Specifies the dimension settings for a segment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html
     /// </summary>
     public class SegmentDimensions

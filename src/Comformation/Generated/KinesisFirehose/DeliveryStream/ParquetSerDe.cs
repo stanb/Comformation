@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream ParquetSerDe
-    /// A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more
-    /// information, see Apache Parquet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html
     /// </summary>
     public class ParquetSerDe
@@ -34,7 +32,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// compression ratio is more important than speed.
         /// Required: No
         /// Type: String
-        /// Allowed Values: GZIP | SNAPPY | UNCOMPRESSED
+        /// Allowed values: GZIP | SNAPPY | UNCOMPRESSED
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Compression")]
@@ -79,7 +77,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Indicates the version of row format to output. The possible values are V1 and V2. The default is V1.
         /// Required: No
         /// Type: String
-        /// Allowed Values: V1 | V2
+        /// Allowed values: V1 | V2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("WriterVersion")]

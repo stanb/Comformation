@@ -7,8 +7,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member MemberFabricConfiguration
-    /// Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the
-    /// Hyperledger Fabric framework.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html
     /// </summary>
     public class MemberFabricConfiguration
@@ -31,8 +29,8 @@ namespace Comformation.ManagedBlockchain.Member
         /// AdminPassword
         /// The password for the member&#39;s initial administrative user. The AdminPassword must be at least eight
         /// characters long and no more than 32 characters. It must contain at least one uppercase letter, one
-        /// lowercase letter, and one digit. It cannot have a single quote(‘), double quote(“), forward
-        /// slash(/), backward slash(\), @, or a space.
+        /// lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation
+        /// marks (“), a forward slash(/), a backward slash(\), @, or a space.
         /// Required: Yes
         /// Type: String
         /// Minimum: 8

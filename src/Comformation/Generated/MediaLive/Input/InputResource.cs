@@ -6,7 +6,6 @@ namespace Comformation.MediaLive.Input
 {
     /// <summary>
     /// AWS::MediaLive::Input
-    /// The AWS::MediaLive::Input resource is a MediaLive resource type that creates an input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html
     /// </summary>
     public class InputResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.MediaLive.Input
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// Destinations
@@ -30,7 +29,7 @@ namespace Comformation.MediaLive.Input
             /// Type: List of InputDestinationRequest
             /// Update requires: No interruption
             /// </summary>
-			public List<InputDestinationRequest> Destinations { get; set; }
+            public List<InputDestinationRequest> Destinations { get; set; }
 
             /// <summary>
             /// Vpc
@@ -39,7 +38,7 @@ namespace Comformation.MediaLive.Input
             /// Type: InputVpcRequest
             /// Update requires: Replacement
             /// </summary>
-			public InputVpcRequest Vpc { get; set; }
+            public InputVpcRequest Vpc { get; set; }
 
             /// <summary>
             /// MediaConnectFlows
@@ -48,7 +47,7 @@ namespace Comformation.MediaLive.Input
             /// Type: List of MediaConnectFlowRequest
             /// Update requires: No interruption
             /// </summary>
-			public List<MediaConnectFlowRequest> MediaConnectFlows { get; set; }
+            public List<MediaConnectFlowRequest> MediaConnectFlows { get; set; }
 
             /// <summary>
             /// InputSecurityGroups
@@ -58,7 +57,16 @@ namespace Comformation.MediaLive.Input
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> InputSecurityGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> InputSecurityGroups { get; set; }
+
+            /// <summary>
+            /// InputDevices
+            /// Settings for the devices.
+            /// Required: No
+            /// Type: List of InputDeviceSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public List<InputDeviceSettings> InputDevices { get; set; }
 
             /// <summary>
             /// Sources
@@ -68,7 +76,7 @@ namespace Comformation.MediaLive.Input
             /// Type: List of InputSourceRequest
             /// Update requires: No interruption
             /// </summary>
-			public List<InputSourceRequest> Sources { get; set; }
+            public List<InputSourceRequest> Sources { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -78,7 +86,7 @@ namespace Comformation.MediaLive.Input
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// Tags
@@ -87,7 +95,7 @@ namespace Comformation.MediaLive.Input
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -96,7 +104,7 @@ namespace Comformation.MediaLive.Input
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -106,10 +114,10 @@ namespace Comformation.MediaLive.Input
 
     }
 
-	public static class InputAttributes
-	{
+    public static class InputAttributes
+    {
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> Destinations = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("Destinations");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> Sources = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("Sources");
-	}
+    }
 }

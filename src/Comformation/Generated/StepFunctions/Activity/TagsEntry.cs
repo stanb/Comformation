@@ -7,7 +7,6 @@ namespace Comformation.StepFunctions.Activity
 {
     /// <summary>
     /// AWS::StepFunctions::Activity TagsEntry
-    /// The TagsEntry property specifies tags to identify an activity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html
     /// </summary>
     public class TagsEntry

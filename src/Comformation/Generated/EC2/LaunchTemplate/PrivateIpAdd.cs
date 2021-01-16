@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate PrivateIpAdd
-    /// Specifies a secondary private IPv4 address for a network interface.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html
     /// </summary>
     public class PrivateIpAdd

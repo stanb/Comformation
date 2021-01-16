@@ -6,8 +6,6 @@ namespace Comformation.Config.DeliveryChannel
 {
     /// <summary>
     /// AWS::Config::DeliveryChannel
-    /// Specifies a delivery channel object to deliver configuration 			information to an Amazon S3 bucket and Amazon
-    /// SNS topic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html
     /// </summary>
     public class DeliveryChannelResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.Config.DeliveryChannel
             /// Type: ConfigSnapshotDeliveryProperties
             /// Update requires: No interruption
             /// </summary>
-			public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties { get; set; }
+            public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties { get; set; }
 
             /// <summary>
             /// Name
@@ -38,7 +36,7 @@ namespace Comformation.Config.DeliveryChannel
             /// Maximum: 256
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// S3BucketName
@@ -54,7 +52,7 @@ namespace Comformation.Config.DeliveryChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> S3BucketName { get; set; }
+            public Union<string, IntrinsicFunction> S3BucketName { get; set; }
 
             /// <summary>
             /// S3KeyPrefix
@@ -65,7 +63,7 @@ namespace Comformation.Config.DeliveryChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
+            public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
 
             /// <summary>
             /// SnsTopicARN
@@ -81,7 +79,7 @@ namespace Comformation.Config.DeliveryChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SnsTopicARN { get; set; }
+            public Union<string, IntrinsicFunction> SnsTopicARN { get; set; }
 
         }
 

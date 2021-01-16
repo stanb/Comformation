@@ -7,7 +7,6 @@ namespace Comformation.RDS.DBInstance
 {
     /// <summary>
     /// AWS::RDS::DBInstance ProcessorFeature
-    /// The ProcessorFeature property type specifies the processor features of a DB instance class status.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html
     /// </summary>
     public class ProcessorFeature

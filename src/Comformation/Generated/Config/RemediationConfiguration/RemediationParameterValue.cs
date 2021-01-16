@@ -7,8 +7,6 @@ namespace Comformation.Config.RemediationConfiguration
 {
     /// <summary>
     /// AWS::Config::RemediationConfiguration RemediationParameterValue
-    /// The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a
-    /// static value.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html
     /// </summary>
     public class RemediationParameterValue

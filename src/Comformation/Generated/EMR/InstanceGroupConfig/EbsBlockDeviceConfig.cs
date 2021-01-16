@@ -7,8 +7,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceGroupConfig EbsBlockDeviceConfig
-    /// Configuration of requested EBS block device associated with the instance group with count of volumes that will
-    /// be associated to every instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html
     /// </summary>
     public class EbsBlockDeviceConfig
@@ -27,7 +25,6 @@ namespace Comformation.EMR.InstanceGroupConfig
 
         /// <summary>
         /// VolumesPerInstance
-        /// 	
         /// Number of EBS volumes with a specific volume configuration that will be associated with every
         /// instance in the instance group
         /// Required: No

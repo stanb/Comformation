@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.ConnectorDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::ConnectorDefinitionVersion
-    /// The AWS::Greengrass::ConnectorDefinitionVersion resource represents a connector definition version for AWS IoT
-    /// Greengrass. A connector definition version contains a list of connectors.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html
     /// </summary>
     public class ConnectorDefinitionVersionResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.Greengrass.ConnectorDefinitionVersion
             /// Type: List of Connector
             /// Update requires: Replacement
             /// </summary>
-			public List<Connector> Connectors { get; set; }
+            public List<Connector> Connectors { get; set; }
 
             /// <summary>
             /// ConnectorDefinitionId
@@ -31,7 +29,7 @@ namespace Comformation.Greengrass.ConnectorDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConnectorDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> ConnectorDefinitionId { get; set; }
 
         }
 

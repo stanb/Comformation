@@ -6,9 +6,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline
-    /// The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes
-    /// go through a release process. For more information, see What Is CodePipeline? in the AWS CodePipeline User
-    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
     /// </summary>
     public class PipelineResource : ResourceBase
@@ -17,14 +14,14 @@ namespace Comformation.CodePipeline.Pipeline
         {
             /// <summary>
             /// ArtifactStore
-            /// The Amazon S3 bucket where artifacts for the pipeline are stored.
+            /// The S3 bucket where artifacts for the pipeline are stored.
             /// Note You must include either artifactStore or artifactStores in your pipeline, but you cannot use
             /// both. If you create a cross-region action in your pipeline, you must use artifactStores.
             /// Required: Conditional
             /// Type: ArtifactStore
             /// Update requires: No interruption
             /// </summary>
-			public ArtifactStore ArtifactStore { get; set; }
+            public ArtifactStore ArtifactStore { get; set; }
 
             /// <summary>
             /// ArtifactStores
@@ -36,7 +33,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: List of ArtifactStoreMap
             /// Update requires: No interruption
             /// </summary>
-			public List<ArtifactStoreMap> ArtifactStores { get; set; }
+            public List<ArtifactStoreMap> ArtifactStores { get; set; }
 
             /// <summary>
             /// DisableInboundStageTransitions
@@ -45,7 +42,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: List of StageTransition
             /// Update requires: No interruption
             /// </summary>
-			public List<StageTransition> DisableInboundStageTransitions { get; set; }
+            public List<StageTransition> DisableInboundStageTransitions { get; set; }
 
             /// <summary>
             /// Name
@@ -57,7 +54,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Pattern: [A-Za-z0-9. @\-_]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RestartExecutionOnUpdate
@@ -66,7 +63,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> RestartExecutionOnUpdate { get; set; }
+            public Union<bool, IntrinsicFunction> RestartExecutionOnUpdate { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -78,7 +75,7 @@ namespace Comformation.CodePipeline.Pipeline
             /// Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// Stages
@@ -87,7 +84,16 @@ namespace Comformation.CodePipeline.Pipeline
             /// Type: List of StageDeclaration
             /// Update requires: No interruption
             /// </summary>
-			public List<StageDeclaration> Stages { get; set; }
+            public List<StageDeclaration> Stages { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// Specifies the tags applied to the pipeline.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -97,8 +103,8 @@ namespace Comformation.CodePipeline.Pipeline
 
     }
 
-	public static class PipelineAttributes
-	{
+    public static class PipelineAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Version = new ResourceAttribute<Union<string, IntrinsicFunction>>("Version");
-	}
+    }
 }

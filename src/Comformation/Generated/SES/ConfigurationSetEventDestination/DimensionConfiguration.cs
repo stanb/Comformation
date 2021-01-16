@@ -7,7 +7,6 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::SES::ConfigurationSetEventDestination DimensionConfiguration
-    /// Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html
     /// </summary>
     public class DimensionConfiguration

@@ -6,8 +6,6 @@ namespace Comformation.CloudWatch.Alarm
 {
     /// <summary>
     /// AWS::CloudWatch::Alarm
-    /// The AWS::CloudWatch::Alarm type specifies an alarm and associates it with the specified metric or metric math
-    /// expression.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
     /// </summary>
     public class AlarmResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> ActionsEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> ActionsEnabled { get; set; }
 
             /// <summary>
             /// AlarmActions
@@ -39,7 +37,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AlarmActions { get; set; }
+            public List<Union<string, IntrinsicFunction>> AlarmActions { get; set; }
 
             /// <summary>
             /// AlarmDescription
@@ -52,7 +50,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AlarmDescription { get; set; }
+            public Union<string, IntrinsicFunction> AlarmDescription { get; set; }
 
             /// <summary>
             /// AlarmName
@@ -68,7 +66,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 255
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AlarmName { get; set; }
+            public Union<string, IntrinsicFunction> AlarmName { get; set; }
 
             /// <summary>
             /// ComparisonOperator
@@ -80,26 +78,29 @@ namespace Comformation.CloudWatch.Alarm
             /// 	
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: GreaterThanOrEqualToThreshold | GreaterThanThreshold | GreaterThanUpperThreshold |
+            /// Allowed values: GreaterThanOrEqualToThreshold | GreaterThanThreshold | GreaterThanUpperThreshold |
             /// LessThanLowerOrGreaterThanUpperThreshold | LessThanLowerThreshold | LessThanOrEqualToThreshold |
             /// LessThanThreshold
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ComparisonOperator { get; set; }
+            public Union<string, IntrinsicFunction> ComparisonOperator { get; set; }
 
             /// <summary>
             /// DatapointsToAlarm
             /// 		
             /// The number of datapoints that must be breaching to trigger the alarm. 		 This is used only if you
-            /// are setting an &quot;M out of N&quot; alarm. In that case, this value is the M. 		 For more information, see
-            /// Evaluating 		 an Alarm in the Amazon CloudWatch User Guide.
+            /// are setting an &quot;M out of N&quot; alarm. In that case, this value is the M, 		 and the value that you set
+            /// for EvaluationPeriods is the N value. 		 For more information, see Evaluating 		 an Alarm in the
+            /// Amazon CloudWatch User Guide.
+            /// If you omit this parameter, CloudWatch uses the same value here that you set for EvaluationPeriods,
+            /// and the alarm goes to alarm state if that many consecutive periods are breaching.
             /// 	
             /// Required: No
             /// Type: Integer
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> DatapointsToAlarm { get; set; }
+            public Union<int, IntrinsicFunction> DatapointsToAlarm { get; set; }
 
             /// <summary>
             /// Dimensions
@@ -111,7 +112,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 10
             /// Update requires: No interruption
             /// </summary>
-			public List<Dimension> Dimensions { get; set; }
+            public List<Dimension> Dimensions { get; set; }
 
             /// <summary>
             /// EvaluateLowSampleCountPercentile
@@ -127,25 +128,30 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EvaluateLowSampleCountPercentile { get; set; }
+            public Union<string, IntrinsicFunction> EvaluateLowSampleCountPercentile { get; set; }
 
             /// <summary>
             /// EvaluationPeriods
             /// 		
-            /// The number of periods over which data is compared to the specified threshold.
+            /// The number of periods over which data is compared to the specified threshold. 		 If you are setting
+            /// an alarm that requires that a number of consecutive data points be 		 breaching to trigger the
+            /// alarm, this value specifies that number. If you 		 are setting an &quot;M out of N&quot; alarm, this value is
+            /// the N, and DatapointsToAlarm 		 is the M.
+            /// For more information, see Evaluating an Alarm in the Amazon CloudWatch User Guide.
             /// 	
             /// Required: Yes
             /// Type: Integer
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> EvaluationPeriods { get; set; }
+            public Union<int, IntrinsicFunction> EvaluationPeriods { get; set; }
 
             /// <summary>
             /// ExtendedStatistic
             /// 		
             /// The percentile statistic for the metric associated with the alarm. Specify a value between 			p0. 0
             /// and p100.
+            /// For an alarm based on a metric, you must specify either Statistic or ExtendedStatistic but not both.
             /// For an alarm based on a math expression, you can&#39;t specify ExtendedStatistic. Instead, you use
             /// Metrics.
             /// 	
@@ -154,7 +160,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Pattern: p(\d{1,2}(\. \d{0,2})?|100)
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ExtendedStatistic { get; set; }
+            public Union<string, IntrinsicFunction> ExtendedStatistic { get; set; }
 
             /// <summary>
             /// InsufficientDataActions
@@ -167,7 +173,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> InsufficientDataActions { get; set; }
+            public List<Union<string, IntrinsicFunction>> InsufficientDataActions { get; set; }
 
             /// <summary>
             /// MetricName
@@ -182,26 +188,28 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MetricName { get; set; }
+            public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
             /// Metrics
             /// An array that enables you to create an alarm based on the result of a metric math expression. Each
             /// item in the array either retrieves a metric or performs a math expression.
             /// If you specify the Metrics parameter, you cannot specify MetricName, Dimensions, Period, Namespace,
-            /// Statistic, or ExtendedStatistic.
+            /// Statistic, ExtendedStatistic, or Unit.
             /// 	
             /// Required: No
             /// Type: List of MetricDataQuery
             /// Update requires: No interruption
             /// </summary>
-			public List<MetricDataQuery> Metrics { get; set; }
+            public List<MetricDataQuery> Metrics { get; set; }
 
             /// <summary>
             /// Namespace
             /// The namespace of the metric associated with the alarm. This is required for an alarm based on a
             /// metric. For an alarm based on a math expression, you can&#39;t specify Namespace and you use Metrics
             /// instead.
+            /// For a list of namespaces for metrics from AWS services, see AWS Services That Publish CloudWatch
+            /// Metrics.
             /// 	
             /// Required: No
             /// Type: String
@@ -210,7 +218,7 @@ namespace Comformation.CloudWatch.Alarm
             /// Pattern: [^:]. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Namespace { get; set; }
+            public Union<string, IntrinsicFunction> Namespace { get; set; }
 
             /// <summary>
             /// OKActions
@@ -223,34 +231,36 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> OKActions { get; set; }
+            public List<Union<string, IntrinsicFunction>> OKActions { get; set; }
 
             /// <summary>
             /// Period
             /// The period, in seconds, over which the statistic is applied. This is required for an alarm based on
-            /// a metric. For an alarm based on a math expression, you can&#39;t specify Period, and instead you use the
-            /// Metrics parameter.
+            /// a metric. Valid values are 10, 30, 60, and any multiple of 60.
+            /// For an alarm based on a math expression, you can&#39;t specify Period, and instead you use the Metrics
+            /// parameter.
+            /// Minimum: 10
             /// 	
             /// Required: No
             /// Type: Integer
-            /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Period { get; set; }
+            public Union<int, IntrinsicFunction> Period { get; set; }
 
             /// <summary>
             /// Statistic
             /// 		
             /// The statistic for the metric associated with the alarm, other than percentile. 		 For percentile
             /// statistics, use ExtendedStatistic.
+            /// For an alarm based on a metric, you must specify either Statistic or ExtendedStatistic but not both.
             /// For an alarm based on a math expression, you can&#39;t specify Statistic. Instead, you use Metrics.
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
+            /// Allowed values: Average | Maximum | Minimum | SampleCount | Sum
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Statistic { get; set; }
+            public Union<string, IntrinsicFunction> Statistic { get; set; }
 
             /// <summary>
             /// Threshold
@@ -261,19 +271,21 @@ namespace Comformation.CloudWatch.Alarm
             /// Type: Double
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> Threshold { get; set; }
+            public Union<double, IntrinsicFunction> Threshold { get; set; }
 
             /// <summary>
             /// ThresholdMetricId
-            /// In an alarm based on an anomaly detection model, this is the ID of the ANOMALY_DETECTION_BAND
-            /// function used as the threshold for the alarm.
+            /// 		
+            /// In an alarm based on an anomaly detection model, this is the ID of the 			ANOMALY_DETECTION_BAND
+            /// function 			used as the threshold for the alarm.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ThresholdMetricId { get; set; }
+            public Union<string, IntrinsicFunction> ThresholdMetricId { get; set; }
 
             /// <summary>
             /// TreatMissingData
@@ -288,26 +300,27 @@ namespace Comformation.CloudWatch.Alarm
             /// Maximum: 255
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TreatMissingData { get; set; }
+            public Union<string, IntrinsicFunction> TreatMissingData { get; set; }
 
             /// <summary>
             /// Unit
             /// 		
-            /// The unit of the metric associated with the alarm. 		 You can specify the following values: Seconds,
-            /// Microseconds, Milliseconds, Bytes, Kilobytes, 		 Megabytes, Gigabytes, Terabytes, Bits, Kilobits,
-            /// Megabits, Gigabits, Terabits, Percent, Count, 		 Bytes/Second, Kilobytes/Second, Megabytes/Second,
-            /// Gigabytes/Second, Terabytes/Second, Bits/Second, 		 Kilobits/Second, Megabits/Second,
-            /// Gigabits/Second, Terabits/Second, Count/Second, or None.
+            /// The unit of the metric associated with the alarm. Specify this only if you are creating an alarm 		
+            /// based on a single metric. Do not specify this if you are specifying a Metrics array.
+            /// 		 You can specify the following values: Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, 		
+            /// Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, 		
+            /// Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second,
+            /// 		 Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, or None.
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: Bits | Bits/Second | Bytes | Bytes/Second | Count | Count/Second | Gigabits |
+            /// Allowed values: Bits | Bits/Second | Bytes | Bytes/Second | Count | Count/Second | Gigabits |
             /// Gigabits/Second | Gigabytes | Gigabytes/Second | Kilobits | Kilobits/Second | Kilobytes |
             /// Kilobytes/Second | Megabits | Megabits/Second | Megabytes | Megabytes/Second | Microseconds |
             /// Milliseconds | None | Percent | Seconds | Terabits | Terabits/Second | Terabytes | Terabytes/Second
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Unit { get; set; }
+            public Union<string, IntrinsicFunction> Unit { get; set; }
 
         }
 
@@ -317,8 +330,8 @@ namespace Comformation.CloudWatch.Alarm
 
     }
 
-	public static class AlarmAttributes
-	{
+    public static class AlarmAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
 {
     /// <summary>
     /// AWS::ServiceCatalog::LaunchTemplateConstraint
-    /// Specifies a template constraint.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html
     /// </summary>
     public class LaunchTemplateConstraintResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Maximum: 2000
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -32,7 +31,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -44,7 +43,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
             /// ProductId
@@ -56,7 +55,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ProductId { get; set; }
+            public Union<string, IntrinsicFunction> ProductId { get; set; }
 
             /// <summary>
             /// Rules
@@ -65,7 +64,7 @@ namespace Comformation.ServiceCatalog.LaunchTemplateConstraint
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Rules { get; set; }
+            public Union<string, IntrinsicFunction> Rules { get; set; }
 
         }
 

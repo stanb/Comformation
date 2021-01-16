@@ -7,8 +7,6 @@ namespace Comformation.Logs.MetricFilter
 {
     /// <summary>
     /// AWS::Logs::MetricFilter MetricTransformation
-    /// MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log
-    /// streams into a CloudWatch metric.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html
     /// </summary>
     public class MetricTransformation
@@ -37,7 +35,8 @@ namespace Comformation.Logs.MetricFilter
 
         /// <summary>
         /// MetricNamespace
-        /// The namespace of the CloudWatch metric.
+        /// A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics
+        /// that are similar. For more information, see Namespaces.
         /// Required: Yes
         /// Type: String
         /// Maximum: 255

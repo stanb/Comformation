@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool UserPoolAddOns
-    /// UserPoolAddOns is a property of the AWS::Cognito::UserPool resource that enables advanced security risk
-    /// detection.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html
     /// </summary>
     public class UserPoolAddOns
@@ -19,7 +17,7 @@ namespace Comformation.Cognito.UserPool
         /// The advanced security mode.
         /// Required: No
         /// Type: String
-        /// Allowed Values: AUDIT | ENFORCED | OFF
+        /// Allowed values: AUDIT | ENFORCED | OFF
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AdvancedSecurityMode")]

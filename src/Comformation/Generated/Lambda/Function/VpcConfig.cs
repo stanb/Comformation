@@ -7,8 +7,6 @@ namespace Comformation.Lambda.Function
 {
     /// <summary>
     /// AWS::Lambda::Function VpcConfig
-    /// The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC
-    /// Settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html
     /// </summary>
     public class VpcConfig

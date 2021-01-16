@@ -7,7 +7,6 @@ namespace Comformation.RoboMaker.RobotApplication
 {
     /// <summary>
     /// AWS::RoboMaker::RobotApplication RobotSoftwareSuite
-    /// Information about a robot software suite.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html
     /// </summary>
     public class RobotSoftwareSuite
@@ -15,10 +14,10 @@ namespace Comformation.RoboMaker.RobotApplication
 
         /// <summary>
         /// Version
-        /// The version of the robot software suite.
+        /// The version of the robot software suite (ROS distribution).
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Dashing | Kinetic | Melodic
+        /// Allowed values: Dashing | Kinetic | Melodic
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]
@@ -26,10 +25,10 @@ namespace Comformation.RoboMaker.RobotApplication
 
         /// <summary>
         /// Name
-        /// The name of the robot software suite.
+        /// The name of the robot software suite (ROS distribution).
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ROS | ROS2
+        /// Allowed values: ROS | ROS2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

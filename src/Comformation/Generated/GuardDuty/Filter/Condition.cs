@@ -7,7 +7,6 @@ namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
     /// AWS::GuardDuty::Filter Condition
-    /// Specifies the condition to apply to a single field when filtering through GuardDuty findings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
     /// </summary>
     public class Condition

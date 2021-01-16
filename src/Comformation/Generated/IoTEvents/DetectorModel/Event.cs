@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel Event
-    /// Specifies the &quot;actions&quot; to be performed when the &quot;condition&quot; evaluates to TRUE.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html
     /// </summary>
     public class Event
@@ -15,9 +14,9 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// Condition
-        /// [Optional] The Boolean expression that when TRUE causes the &quot;actions&quot; to be performed. If not
-        /// present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the
-        /// actions are NOT performed (=FALSE).
+        /// Optional. The Boolean expression that, when TRUE, causes the actions to be performed. If not
+        /// present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the
+        /// actions are not performed (=FALSE).
         /// Required: No
         /// Type: String
         /// Maximum: 512

@@ -6,7 +6,6 @@ namespace Comformation.ApiGateway.Stage
 {
     /// <summary>
     /// AWS::ApiGateway::Stage
-    /// The AWS::ApiGateway::Stage resource creates a stage for a deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html
     /// </summary>
     public class StageResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: AccessLogSetting
             /// Update requires: No interruption
             /// </summary>
-			public AccessLogSetting AccessLogSetting { get; set; }
+            public AccessLogSetting AccessLogSetting { get; set; }
 
             /// <summary>
             /// CacheClusterEnabled
@@ -29,7 +28,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> CacheClusterEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> CacheClusterEnabled { get; set; }
 
             /// <summary>
             /// CacheClusterSize
@@ -38,7 +37,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheClusterSize { get; set; }
+            public Union<string, IntrinsicFunction> CacheClusterSize { get; set; }
 
             /// <summary>
             /// CanarySetting
@@ -47,7 +46,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: CanarySetting
             /// Update requires: No interruption
             /// </summary>
-			public CanarySetting CanarySetting { get; set; }
+            public CanarySetting CanarySetting { get; set; }
 
             /// <summary>
             /// ClientCertificateId
@@ -57,16 +56,17 @@ namespace Comformation.ApiGateway.Stage
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ClientCertificateId { get; set; }
+            public Union<string, IntrinsicFunction> ClientCertificateId { get; set; }
 
             /// <summary>
             /// DeploymentId
-            /// The ID of the deployment that the stage is associated with. This parameter is required.
-            /// Required: No
+            /// The ID of the deployment that the stage is associated with. This parameter is required to create a
+            /// stage.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DeploymentId { get; set; }
+            public Union<string, IntrinsicFunction> DeploymentId { get; set; }
 
             /// <summary>
             /// Description
@@ -75,7 +75,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DocumentationVersion
@@ -84,7 +84,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DocumentationVersion { get; set; }
+            public Union<string, IntrinsicFunction> DocumentationVersion { get; set; }
 
             /// <summary>
             /// MethodSettings
@@ -93,7 +93,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: List of MethodSetting
             /// Update requires: No interruption
             /// </summary>
-			public List<MethodSetting> MethodSettings { get; set; }
+            public List<MethodSetting> MethodSettings { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -102,7 +102,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// StageName
@@ -112,7 +112,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StageName { get; set; }
+            public Union<string, IntrinsicFunction> StageName { get; set; }
 
             /// <summary>
             /// Tags
@@ -121,7 +121,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TracingEnabled
@@ -132,7 +132,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> TracingEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> TracingEnabled { get; set; }
 
             /// <summary>
             /// Variables
@@ -143,7 +143,7 @@ namespace Comformation.ApiGateway.Stage
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> Variables { get; set; }
 
         }
 

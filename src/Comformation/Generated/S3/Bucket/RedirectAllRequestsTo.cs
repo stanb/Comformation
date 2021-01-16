@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket RedirectAllRequestsTo
-    /// Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html
     /// </summary>
     public class RedirectAllRequestsTo
@@ -29,7 +28,7 @@ namespace Comformation.S3.Bucket
         /// request.
         /// Required: No
         /// Type: String
-        /// Allowed Values: http | https
+        /// Allowed values: http | https
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Protocol")]

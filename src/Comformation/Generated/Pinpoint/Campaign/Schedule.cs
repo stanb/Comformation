@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign Schedule
-    /// Specifies the schedule settings for a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html
     /// </summary>
     public class Schedule
@@ -45,7 +44,7 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// EndTime
-        /// The scheduled time, in ISO 8601 format, for the campaign to end.
+        /// The scheduled time, in ISO 8601 format, when the campaign ended or will end.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -55,7 +54,8 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// StartTime
-        /// The scheduled time, in ISO 8601 format, for the campaign to begin.
+        /// The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the
+        /// campaign immediately; or, a specific time in ISO 8601 format.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

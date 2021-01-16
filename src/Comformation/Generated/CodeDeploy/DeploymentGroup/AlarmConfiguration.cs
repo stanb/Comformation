@@ -7,8 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup AlarmConfiguration
-    /// The AlarmConfiguration property type configuresCloudWatch alarms for an AWS CodeDeploy deployment group.
-    /// AlarmConfiguration is a property of the DeploymentGroup resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html
     /// </summary>
     public class AlarmConfiguration

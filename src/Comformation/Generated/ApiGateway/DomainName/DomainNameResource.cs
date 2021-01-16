@@ -6,13 +6,39 @@ namespace Comformation.ApiGateway.DomainName
 {
     /// <summary>
     /// AWS::ApiGateway::DomainName
-    /// The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in API Gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html
     /// </summary>
     public class DomainNameResource : ResourceBase
     {
         public class DomainNameProperties
         {
+            /// <summary>
+            /// DomainName
+            /// The custom domain name for your API. Uppercase letters are not supported.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> DomainName { get; set; }
+
+            /// <summary>
+            /// EndpointConfiguration
+            /// A list of the endpoint types of the domain name.
+            /// Required: No
+            /// Type: EndpointConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public EndpointConfiguration EndpointConfiguration { get; set; }
+
+            /// <summary>
+            /// MutualTlsAuthentication
+            /// The mutual TLS authentication configuration for a custom domain name.
+            /// Required: No
+            /// Type: MutualTlsAuthentication
+            /// Update requires: No interruption
+            /// </summary>
+            public MutualTlsAuthentication MutualTlsAuthentication { get; set; }
+
             /// <summary>
             /// CertificateArn
             /// The reference to an AWS-managed certificate for use by the edge-optimized endpoint for this domain
@@ -23,25 +49,7 @@ namespace Comformation.ApiGateway.DomainName
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CertificateArn { get; set; }
-
-            /// <summary>
-            /// DomainName
-            /// The custom domain name for your API. Uppercase letters are not supported.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-			public Union<string, IntrinsicFunction> DomainName { get; set; }
-
-            /// <summary>
-            /// EndpointConfiguration
-            /// A list of the endpoint types of the domain name.
-            /// Required: No
-            /// Type: EndpointConfiguration
-            /// Update requires: No interruption
-            /// </summary>
-			public EndpointConfiguration EndpointConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> CertificateArn { get; set; }
 
             /// <summary>
             /// RegionalCertificateArn
@@ -51,7 +59,26 @@ namespace Comformation.ApiGateway.DomainName
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RegionalCertificateArn { get; set; }
+            public Union<string, IntrinsicFunction> RegionalCertificateArn { get; set; }
+
+            /// <summary>
+            /// SecurityPolicy
+            /// The Transport Layer Security (TLS) version + cipher suite for this domain name.
+            /// Valid values include TLS_1_0 and TLS_1_2.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> SecurityPolicy { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// An array of arbitrary tags (key-value pairs) to associate with the domain name.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -61,11 +88,11 @@ namespace Comformation.ApiGateway.DomainName
 
     }
 
-	public static class DomainNameAttributes
-	{
+    public static class DomainNameAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DistributionDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DistributionDomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DistributionHostedZoneId = new ResourceAttribute<Union<string, IntrinsicFunction>>("DistributionHostedZoneId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RegionalDomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("RegionalDomainName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RegionalHostedZoneId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RegionalHostedZoneId");
-	}
+    }
 }

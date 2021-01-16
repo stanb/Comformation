@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket RedirectRule
-    /// Specifies how requests are redirected. In the event of an error, you can specify a different error code to
-    /// return.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html
     /// </summary>
     public class RedirectRule
@@ -40,7 +38,7 @@ namespace Comformation.S3.Bucket
         /// request.
         /// Required: No
         /// Type: String
-        /// Allowed Values: http | https
+        /// Allowed values: http | https
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Protocol")]

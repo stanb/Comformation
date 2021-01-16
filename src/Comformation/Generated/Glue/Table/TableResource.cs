@@ -6,8 +6,6 @@ namespace Comformation.Glue.Table
 {
     /// <summary>
     /// AWS::Glue::Table
-    /// The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog. For more information, see
-    /// Defining Tables in the AWS Glue Data Catalog and Table Structure in the AWS Glue Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html
     /// </summary>
     public class TableResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Glue.Table
             /// Type: TableInput
             /// Update requires: No interruption
             /// </summary>
-			public TableInput TableInput { get; set; }
+            public TableInput TableInput { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -31,7 +29,7 @@ namespace Comformation.Glue.Table
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+            public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
             /// <summary>
             /// CatalogId
@@ -41,7 +39,7 @@ namespace Comformation.Glue.Table
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CatalogId { get; set; }
+            public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
         }
 

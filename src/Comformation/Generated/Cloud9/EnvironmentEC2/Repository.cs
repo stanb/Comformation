@@ -7,8 +7,6 @@ namespace Comformation.Cloud9.EnvironmentEC2
 {
     /// <summary>
     /// AWS::Cloud9::EnvironmentEC2 Repository
-    /// The Repository property type specifies an AWS CodeCommit source code repository to be cloned into an AWS
-    /// Cloud9 development environment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html
     /// </summary>
     public class Repository

@@ -7,7 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table PointInTimeRecoverySpecification
-    /// The settings used to enable point in time recovery.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html
     /// </summary>
     public class PointInTimeRecoverySpecification

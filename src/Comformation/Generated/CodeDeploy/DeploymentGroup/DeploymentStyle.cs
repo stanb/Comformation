@@ -7,8 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup DeploymentStyle
-    /// Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
-    /// deployment traffic behind a load balancer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html
     /// </summary>
     public class DeploymentStyle
@@ -21,7 +19,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// deployment.
         /// Required: No
         /// Type: String
-        /// Allowed Values: WITH_TRAFFIC_CONTROL | WITHOUT_TRAFFIC_CONTROL
+        /// Allowed values: WITH_TRAFFIC_CONTROL | WITHOUT_TRAFFIC_CONTROL
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeploymentOption")]
@@ -30,12 +28,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// <summary>
         /// DeploymentType
         /// Indicates whether to run an in-place or blue/green deployment.
-        /// AWS CloudFormation supports blue/green deployments on AWS Lambda compute platforms only. For more
-        /// information about deploying on an AWS Lambda compute platform, see Deployments on an AWS Lambda
-        /// Compute Platform in the AWS CodeDeploy User Guide.
         /// Required: No
         /// Type: String
-        /// Allowed Values: BLUE_GREEN | IN_PLACE
+        /// Allowed values: BLUE_GREEN | IN_PLACE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DeploymentType")]

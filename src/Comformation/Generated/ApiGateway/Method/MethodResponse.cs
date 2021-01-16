@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.Method
 {
     /// <summary>
     /// AWS::ApiGateway::Method MethodResponse
-    /// MethodResponse is a property of the AWS::ApiGateway::Method resource that defines the responses that can be
-    /// sent to the client that calls a method.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html
     /// </summary>
     public class MethodResponse

@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Input
 {
     /// <summary>
     /// AWS::MediaLive::Input InputSourceRequest
-    /// The settings for a pull input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html
     /// </summary>
     public class InputSourceRequest

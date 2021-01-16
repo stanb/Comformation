@@ -7,7 +7,6 @@ namespace Comformation.CodePipeline.Pipeline
 {
     /// <summary>
     /// AWS::CodePipeline::Pipeline StageTransition
-    /// The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
     /// </summary>
     public class StageTransition

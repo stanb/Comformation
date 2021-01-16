@@ -6,10 +6,6 @@ namespace Comformation.PinpointEmail.Identity
 {
     /// <summary>
     /// AWS::PinpointEmail::Identity
-    /// Specifies an identity to use for sending email through Amazon Pinpoint. In Amazon Pinpoint, an identity is an
-    /// email address or domain that you use when you send email. Before you can use Amazon Pinpoint to send an email
-    /// from an identity, you first have to verify it. By verifying an identity, you demonstrate that you&#39;re the owner
-    /// of the address or domain, and that you&#39;ve given Amazon Pinpoint permission to send email from that identity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html
     /// </summary>
     public class IdentityResource : ResourceBase
@@ -32,7 +28,7 @@ namespace Comformation.PinpointEmail.Identity
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> FeedbackForwardingEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> FeedbackForwardingEnabled { get; set; }
 
             /// <summary>
             /// DkimSigningEnabled
@@ -45,7 +41,7 @@ namespace Comformation.PinpointEmail.Identity
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DkimSigningEnabled { get; set; }
+            public Union<bool, IntrinsicFunction> DkimSigningEnabled { get; set; }
 
             /// <summary>
             /// Tags
@@ -55,7 +51,7 @@ namespace Comformation.PinpointEmail.Identity
             /// Type: List of Tags
             /// Update requires: No interruption
             /// </summary>
-			public List<Tags> Tags { get; set; }
+            public List<Tags> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -64,7 +60,7 @@ namespace Comformation.PinpointEmail.Identity
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// MailFromAttributes
@@ -73,7 +69,7 @@ namespace Comformation.PinpointEmail.Identity
             /// Type: MailFromAttributes
             /// Update requires: No interruption
             /// </summary>
-			public MailFromAttributes MailFromAttributes { get; set; }
+            public MailFromAttributes MailFromAttributes { get; set; }
 
         }
 
@@ -83,13 +79,13 @@ namespace Comformation.PinpointEmail.Identity
 
     }
 
-	public static class IdentityAttributes
-	{
+    public static class IdentityAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IdentityDNSRecordName3 = new ResourceAttribute<Union<string, IntrinsicFunction>>("IdentityDNSRecordName3");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IdentityDNSRecordName1 = new ResourceAttribute<Union<string, IntrinsicFunction>>("IdentityDNSRecordName1");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IdentityDNSRecordName2 = new ResourceAttribute<Union<string, IntrinsicFunction>>("IdentityDNSRecordName2");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IdentityDNSRecordValue3 = new ResourceAttribute<Union<string, IntrinsicFunction>>("IdentityDNSRecordValue3");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IdentityDNSRecordValue2 = new ResourceAttribute<Union<string, IntrinsicFunction>>("IdentityDNSRecordValue2");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IdentityDNSRecordValue1 = new ResourceAttribute<Union<string, IntrinsicFunction>>("IdentityDNSRecordValue1");
-	}
+    }
 }

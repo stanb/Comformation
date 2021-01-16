@@ -6,8 +6,6 @@ namespace Comformation.Inspector.AssessmentTarget
 {
     /// <summary>
     /// AWS::Inspector::AssessmentTarget
-    /// The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which
-    /// specify the Amazon EC2 instances that will be analyzed during an assessment run.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html
     /// </summary>
     public class AssessmentTargetResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.Inspector.AssessmentTarget
             /// Maximum: 140
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AssessmentTargetName { get; set; }
+            public Union<string, IntrinsicFunction> AssessmentTargetName { get; set; }
 
             /// <summary>
             /// ResourceGroupArn
@@ -36,7 +34,7 @@ namespace Comformation.Inspector.AssessmentTarget
             /// Maximum: 300
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceGroupArn { get; set; }
+            public Union<string, IntrinsicFunction> ResourceGroupArn { get; set; }
 
         }
 
@@ -46,8 +44,8 @@ namespace Comformation.Inspector.AssessmentTarget
 
     }
 
-	public static class AssessmentTargetAttributes
-	{
+    public static class AssessmentTargetAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

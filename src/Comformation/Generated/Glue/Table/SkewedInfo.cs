@@ -7,7 +7,6 @@ namespace Comformation.Glue.Table
 {
     /// <summary>
     /// AWS::Glue::Table SkewedInfo
-    /// Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html
     /// </summary>
     public class SkewedInfo

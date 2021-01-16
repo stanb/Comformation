@@ -6,9 +6,6 @@ namespace Comformation.DocDB.DBSubnetGroup
 {
     /// <summary>
     /// AWS::DocDB::DBSubnetGroup
-    /// The AWS::DocDB::DBSubnetGroup Amazon DocumentDB (with MongoDB compatibility) resource describes a
-    /// DBSubnetGroup. subnet groups must contain at least one subnet in at least two Availability Zones in the AWS
-    /// Region. For more information, see DBSubnetGroup in the Amazon DocumentDB Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html
     /// </summary>
     public class DBSubnetGroupResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.DocDB.DBSubnetGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
             /// DBSubnetGroupDescription
@@ -34,7 +31,7 @@ namespace Comformation.DocDB.DBSubnetGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupDescription { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -43,7 +40,7 @@ namespace Comformation.DocDB.DBSubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -52,7 +49,7 @@ namespace Comformation.DocDB.DBSubnetGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

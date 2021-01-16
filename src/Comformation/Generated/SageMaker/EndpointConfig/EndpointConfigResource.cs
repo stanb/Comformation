@@ -6,14 +6,22 @@ namespace Comformation.SageMaker.EndpointConfig
 {
     /// <summary>
     /// AWS::SageMaker::EndpointConfig
-    /// The AWS::SageMaker::EndpointConfig resource creates a configuration for an Amazon SageMaker endpoint. For more
-    /// information, see CreateEndpointConfig in the SageMaker Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html
     /// </summary>
     public class EndpointConfigResource : ResourceBase
     {
         public class EndpointConfigProperties
         {
+            /// <summary>
+            /// DataCaptureConfig
+            /// Specifies how to capture endpoint data for model monitor. The data capture configuration applies to
+            /// all production variants hosted at the endpoint.
+            /// Required: No
+            /// Type: DataCaptureConfig
+            /// Update requires: Replacement
+            /// </summary>
+            public DataCaptureConfig DataCaptureConfig { get; set; }
+
             /// <summary>
             /// ProductionVariants
             /// A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
@@ -22,12 +30,18 @@ namespace Comformation.SageMaker.EndpointConfig
             /// Maximum: 10
             /// Update requires: Replacement
             /// </summary>
-			public List<ProductionVariant> ProductionVariants { get; set; }
+            public List<ProductionVariant> ProductionVariants { get; set; }
 
             /// <summary>
             /// KmsKeyId
             /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to
             /// encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+            /// Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab Key ARN:
+            /// arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab Alias name:
+            /// alias/ExampleAlias Alias name ARN: arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias
+            /// The KMS key policy must grant permission to the IAM role that you specify in your CreateEndpoint,
+            /// UpdateEndpoint requests. For more information, refer to the AWS Key Management Service section Using
+            /// Key Policies in AWS KMS
             /// Note Certain Nitro-based instances include local storage, dependent on the instance type. Local
             /// storage volumes are encrypted using a hardware module on the instance. You can&#39;t request a KmsKeyId
             /// when using an instance type with local storage. If any of the models that you specify in the
@@ -42,18 +56,18 @@ namespace Comformation.SageMaker.EndpointConfig
             /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// EndpointConfigName
-            /// The name of the endpoint configuration. You specify this name in a CreateEndpoint request.
+            /// The name of the endpoint configuration.
             /// Required: No
             /// Type: String
             /// Maximum: 63
-            /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
+            /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EndpointConfigName { get; set; }
+            public Union<string, IntrinsicFunction> EndpointConfigName { get; set; }
 
             /// <summary>
             /// Tags
@@ -64,7 +78,7 @@ namespace Comformation.SageMaker.EndpointConfig
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -74,8 +88,8 @@ namespace Comformation.SageMaker.EndpointConfig
 
     }
 
-	public static class EndpointConfigAttributes
-	{
+    public static class EndpointConfigAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> EndpointConfigName = new ResourceAttribute<Union<string, IntrinsicFunction>>("EndpointConfigName");
-	}
+    }
 }

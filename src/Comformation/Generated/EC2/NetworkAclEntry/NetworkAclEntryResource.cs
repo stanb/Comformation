@@ -6,8 +6,6 @@ namespace Comformation.EC2.NetworkAclEntry
 {
     /// <summary>
     /// AWS::EC2::NetworkAclEntry
-    /// Specifies an entry, known as a rule, in a network ACL with a rule number you specify. Each network ACL has a
-    /// set of numbered ingress rules and a separate set of numbered egress rules.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html
     /// </summary>
     public class NetworkAclEntryResource : ResourceBase
@@ -18,11 +16,11 @@ namespace Comformation.EC2.NetworkAclEntry
             /// CidrBlock
             /// The IPv4 CIDR range to allow or deny, in CIDR notation (for example, 172. 16. 0. 0/24). Requirement
             /// is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
             /// Egress
@@ -32,7 +30,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> Egress { get; set; }
+            public Union<bool, IntrinsicFunction> Egress { get; set; }
 
             /// <summary>
             /// Icmp
@@ -42,7 +40,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: Icmp
             /// Update requires: No interruption
             /// </summary>
-			public Icmp Icmp { get; set; }
+            public Icmp Icmp { get; set; }
 
             /// <summary>
             /// Ipv6CidrBlock
@@ -52,7 +50,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Ipv6CidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> Ipv6CidrBlock { get; set; }
 
             /// <summary>
             /// NetworkAclId
@@ -61,7 +59,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkAclId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkAclId { get; set; }
 
             /// <summary>
             /// PortRange
@@ -71,7 +69,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: PortRange
             /// Update requires: No interruption
             /// </summary>
-			public PortRange PortRange { get; set; }
+            public PortRange PortRange { get; set; }
 
             /// <summary>
             /// Protocol
@@ -82,17 +80,17 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Protocol { get; set; }
+            public Union<int, IntrinsicFunction> Protocol { get; set; }
 
             /// <summary>
             /// RuleAction
             /// Whether to allow or deny traffic that matches the rule; valid values are &quot;allow&quot; or &quot;deny&quot;.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: allow | deny
+            /// Allowed values: allow | deny
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RuleAction { get; set; }
+            public Union<string, IntrinsicFunction> RuleAction { get; set; }
 
             /// <summary>
             /// RuleNumber
@@ -103,7 +101,7 @@ namespace Comformation.EC2.NetworkAclEntry
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> RuleNumber { get; set; }
+            public Union<int, IntrinsicFunction> RuleNumber { get; set; }
 
         }
 

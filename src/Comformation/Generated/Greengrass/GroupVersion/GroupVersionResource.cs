@@ -6,11 +6,6 @@ namespace Comformation.Greengrass.GroupVersion
 {
     /// <summary>
     /// AWS::Greengrass::GroupVersion
-    /// The AWS::Greengrass::GroupVersion resource represents a group version in AWS IoT Greengrass. A group version
-    /// references a core definition version, device definition version, subscription definition version, and other
-    /// version types that contain the components you want to deploy to a Greengrass core device. The group version
-    /// must reference a core definition version that contains one core. Other version types are optionally included,
-    /// depending on your business need.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html
     /// </summary>
     public class GroupVersionResource : ResourceBase
@@ -25,7 +20,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LoggerDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> LoggerDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// DeviceDefinitionVersionArn
@@ -35,7 +30,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeviceDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> DeviceDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// FunctionDefinitionVersionArn
@@ -45,7 +40,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FunctionDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> FunctionDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// CoreDefinitionVersionArn
@@ -55,7 +50,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CoreDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> CoreDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// ResourceDefinitionVersionArn
@@ -65,7 +60,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> ResourceDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// ConnectorDefinitionVersionArn
@@ -75,7 +70,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConnectorDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> ConnectorDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// SubscriptionDefinitionVersionArn
@@ -85,7 +80,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubscriptionDefinitionVersionArn { get; set; }
+            public Union<string, IntrinsicFunction> SubscriptionDefinitionVersionArn { get; set; }
 
             /// <summary>
             /// GroupId
@@ -94,7 +89,7 @@ namespace Comformation.Greengrass.GroupVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupId { get; set; }
+            public Union<string, IntrinsicFunction> GroupId { get; set; }
 
         }
 

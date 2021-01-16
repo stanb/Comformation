@@ -7,7 +7,6 @@ namespace Comformation.LakeFormation.Permissions
 {
     /// <summary>
     /// AWS::LakeFormation::Permissions Resource
-    /// A structure for the resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html
     /// </summary>
     public class Resource
@@ -36,6 +35,26 @@ namespace Comformation.LakeFormation.Permissions
         /// </summary>
         [JsonProperty("DatabaseResource")]
         public DatabaseResource DatabaseResource { get; set; }
+
+        /// <summary>
+        /// DataLocationResource
+        /// Currently not supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: DataLocationResource
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DataLocationResource")]
+        public DataLocationResource DataLocationResource { get; set; }
+
+        /// <summary>
+        /// TableWithColumnsResource
+        /// Currently not supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: TableWithColumnsResource
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TableWithColumnsResource")]
+        public TableWithColumnsResource TableWithColumnsResource { get; set; }
 
     }
 }

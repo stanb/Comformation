@@ -6,8 +6,6 @@ namespace Comformation.Batch.ComputeEnvironment
 {
     /// <summary>
     /// AWS::Batch::ComputeEnvironment
-    /// The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment. For more information,
-    /// see Compute Environments in the AWS Batch User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
     /// </summary>
     public class ComputeEnvironmentResource : ResourceBase
@@ -16,30 +14,31 @@ namespace Comformation.Batch.ComputeEnvironment
         {
             /// <summary>
             /// Type
-            /// The type of the compute environment. For more information, see Compute Environments in the AWS Batch
-            /// User Guide.
+            /// The type of the compute environment: MANAGED or UNMANAGED. For more information, see Compute
+            /// Environments in the AWS Batch User Guide.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: MANAGED | UNMANAGED
+            /// Allowed values: MANAGED | UNMANAGED
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// ServiceRole
             /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-            /// services on your behalf.
+            /// services on your behalf. For more information, see AWS Batch service IAM role in the AWS Batch User
+            /// Guide.
             /// If your specified role has a path other than /, then you must either specify the full role ARN (this
             /// is recommended) or prefix the role name with the path.
-            /// Note Depending on how you created your AWS Batch service role, its ARN may contain the service-role
-            /// path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN
-            /// does not use the service-role path prefix. Because of this, we recommend that you specify the full
-            /// ARN of your service role when you create compute environments.
+            /// Note Depending on how you created your AWS Batch service role, its ARN might contain the
+            /// service-role path prefix. When you only specify the name of the service role, AWS Batch assumes that
+            /// your ARN doesn&#39;t use the service-role path prefix. Because of this, we recommend that you specify
+            /// the full ARN of your service role when you create compute environments.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRole { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRole { get; set; }
 
             /// <summary>
             /// ComputeEnvironmentName
@@ -49,7 +48,7 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ComputeEnvironmentName { get; set; }
+            public Union<string, IntrinsicFunction> ComputeEnvironmentName { get; set; }
 
             /// <summary>
             /// ComputeResources
@@ -60,18 +59,34 @@ namespace Comformation.Batch.ComputeEnvironment
             /// Type: ComputeResources
             /// Update requires: No interruption
             /// </summary>
-			public ComputeResources ComputeResources { get; set; }
+            public ComputeResources ComputeResources { get; set; }
 
             /// <summary>
             /// State
             /// The state of the compute environment. If the state is ENABLED, then the compute environment accepts
             /// jobs from a queue and can scale out automatically based on queues.
+            /// If the state is ENABLED, then the AWS Batch scheduler can attempt to place jobs from an associated
+            /// job queue on the compute resources within the environment. If the compute environment is managed,
+            /// then it can scale its instances out or in automatically, based on the job queue demand.
+            /// If the state is DISABLED, then the AWS Batch scheduler doesn&#39;t attempt to place jobs within the
+            /// environment. Jobs in a STARTING or RUNNING state continue to progress normally. Managed compute
+            /// environments in the DISABLED state don&#39;t scale out. However, they scale in to minvCpus value after
+            /// instances become idle.
             /// Required: No
             /// Type: String
-            /// Allowed Values: DISABLED | ENABLED
+            /// Allowed values: DISABLED | ENABLED
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> State { get; set; }
+            public Union<string, IntrinsicFunction> State { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// The tags applied to the compute environment.
+            /// Required: No
+            /// Type: Json
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
         }
 

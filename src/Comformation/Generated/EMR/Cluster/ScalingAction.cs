@@ -7,8 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster ScalingAction
-    /// ScalingAction is a subproperty of the ScalingRule property type. ScalingAction determines the type of
-    /// adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html
     /// </summary>
     public class ScalingAction
@@ -19,7 +17,7 @@ namespace Comformation.EMR.Cluster
         /// Not available for instance groups. Instance groups use the market type specified for the group.
         /// Required: No
         /// Type: String
-        /// Allowed Values: ON_DEMAND | SPOT
+        /// Allowed values: ON_DEMAND | SPOT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Market")]

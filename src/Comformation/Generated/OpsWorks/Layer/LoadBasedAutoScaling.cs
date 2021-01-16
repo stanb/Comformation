@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer LoadBasedAutoScaling
-    /// Describes a layer&#39;s load-based auto scaling configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html
     /// </summary>
     public class LoadBasedAutoScaling

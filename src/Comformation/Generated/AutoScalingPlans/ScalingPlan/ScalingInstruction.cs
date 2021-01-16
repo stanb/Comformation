@@ -7,8 +7,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan ScalingInstruction
-    /// ScalingInstruction is a property of ScalingPlan that specifies the scaling instruction for a scalable resource
-    /// in a scaling plan. Each scaling instruction applies to one resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html
     /// </summary>
     public class ScalingInstruction
@@ -32,7 +30,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// The namespace of the AWS service.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: autoscaling | dynamodb | ec2 | ecs | rds
+        /// Allowed values: autoscaling | dynamodb | ec2 | ecs | rds
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ServiceNamespace")]
@@ -52,7 +50,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Valid only when configuring predictive scaling.
         /// Required: No
         /// Type: String
-        /// Allowed Values: SetForecastCapacityToMaxCapacity | SetMaxCapacityAboveForecastCapacity |
+        /// Allowed values: SetForecastCapacityToMaxCapacity | SetMaxCapacityAboveForecastCapacity |
         /// SetMaxCapacityToForecastCapacity
         /// Update requires: No interruption
         /// </summary>
@@ -73,7 +71,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: autoscaling:autoScalingGroup:DesiredCapacity | dynamodb:index:ReadCapacityUnits |
+        /// Allowed values: autoscaling:autoScalingGroup:DesiredCapacity | dynamodb:index:ReadCapacityUnits |
         /// dynamodb:index:WriteCapacityUnits | dynamodb:table:ReadCapacityUnits |
         /// dynamodb:table:WriteCapacityUnits | ec2:spot-fleet-request:TargetCapacity | ecs:service:DesiredCount
         /// | rds:cluster:ReadReplicaCount
@@ -89,7 +87,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Valid only when configuring dynamic scaling.
         /// Required: No
         /// Type: String
-        /// Allowed Values: KeepExternalPolicies | ReplaceExternalPolicies
+        /// Allowed values: KeepExternalPolicies | ReplaceExternalPolicies
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ScalingPolicyUpdateBehavior")]
@@ -215,7 +213,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// forecasts capacity but does not apply any scheduled scaling actions based on the capacity forecast.
         /// Required: No
         /// Type: String
-        /// Allowed Values: ForecastAndScale | ForecastOnly
+        /// Allowed values: ForecastAndScale | ForecastOnly
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PredictiveScalingMode")]

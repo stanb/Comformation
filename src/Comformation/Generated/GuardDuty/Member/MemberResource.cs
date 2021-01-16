@@ -6,11 +6,6 @@ namespace Comformation.GuardDuty.Member
 {
     /// <summary>
     /// AWS::GuardDuty::Member
-    /// You can use the AWS::GuardDuty::Member resource to add an AWS account as a GuardDuty member account to the
-    /// current GuardDuty master account. If the value of the Status property is not provided or is set to Created, a
-    /// member account is created but not invited. If the value of the Status property is set to Invited, a member
-    /// account is created and invited. A AWS::GuardDuty::Member resource must be created with the Status property set
-    /// to Invited before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html
     /// </summary>
     public class MemberResource : ResourceBase
@@ -20,7 +15,7 @@ namespace Comformation.GuardDuty.Member
             /// <summary>
             /// Status
             /// You can use the Status property to update the status of the relationship between the member account
-            /// and its master account. Valid values are Created and Invited when using a AWS::GuardDuty::Member
+            /// and its master account. Valid values are Created and Invited when using an AWS::GuardDuty::Member
             /// resource. If the value for this property is not provided or set to Created, a member account is
             /// created but not invited. If the value of this property is set to Invited, a member account is
             /// created and invited.
@@ -28,7 +23,7 @@ namespace Comformation.GuardDuty.Member
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Status { get; set; }
+            public Union<string, IntrinsicFunction> Status { get; set; }
 
             /// <summary>
             /// MemberId
@@ -37,7 +32,7 @@ namespace Comformation.GuardDuty.Member
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MemberId { get; set; }
+            public Union<string, IntrinsicFunction> MemberId { get; set; }
 
             /// <summary>
             /// Email
@@ -46,16 +41,17 @@ namespace Comformation.GuardDuty.Member
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Email { get; set; }
+            public Union<string, IntrinsicFunction> Email { get; set; }
 
             /// <summary>
             /// Message
-            /// The message to include with the invitation sent to the member accounts.
+            /// The invitation message that you want to send to the accounts that you&#39;re inviting to GuardDuty as
+            /// members.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Message { get; set; }
+            public Union<string, IntrinsicFunction> Message { get; set; }
 
             /// <summary>
             /// DisableEmailNotification
@@ -64,7 +60,7 @@ namespace Comformation.GuardDuty.Member
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DisableEmailNotification { get; set; }
+            public Union<bool, IntrinsicFunction> DisableEmailNotification { get; set; }
 
             /// <summary>
             /// DetectorId
@@ -73,7 +69,7 @@ namespace Comformation.GuardDuty.Member
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DetectorId { get; set; }
+            public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
         }
 

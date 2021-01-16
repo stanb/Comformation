@@ -7,8 +7,6 @@ namespace Comformation.DataPipeline.Pipeline
 {
     /// <summary>
     /// AWS::DataPipeline::Pipeline ParameterAttribute
-    /// Attribute is a property of ParameterObject that defines the attributes of a parameter object as key-value
-    /// pairs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html
     /// </summary>
     public class ParameterAttribute

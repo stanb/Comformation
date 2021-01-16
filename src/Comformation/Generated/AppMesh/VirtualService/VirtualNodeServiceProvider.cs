@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.VirtualService
 {
     /// <summary>
     /// AWS::AppMesh::VirtualService VirtualNodeServiceProvider
-    /// An object that represents a virtual node service provider.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html
     /// </summary>
     public class VirtualNodeServiceProvider

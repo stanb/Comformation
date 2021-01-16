@@ -7,7 +7,6 @@ namespace Comformation.Glue.SecurityConfiguration
 {
     /// <summary>
     /// AWS::Glue::SecurityConfiguration CloudWatchEncryption
-    /// Specifies how Amazon CloudWatch data should be encrypted.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html
     /// </summary>
     public class CloudWatchEncryption

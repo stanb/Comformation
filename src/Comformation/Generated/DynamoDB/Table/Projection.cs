@@ -7,8 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table Projection
-    /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the
-    /// primary key attributes and index key attributes, which are automatically projected.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html
     /// </summary>
     public class Projection
@@ -30,9 +28,9 @@ namespace Comformation.DynamoDB.Table
         /// <summary>
         /// ProjectionType
         /// The set of attributes that are projected into the index:
-        /// KEYS_ONLY - Only the index and primary keys are projected into the index. INCLUDE - Only the
-        /// specified table attributes are projected into the index. The list of projected attributes is in
-        /// NonKeyAttributes. ALL - All of the table attributes are projected into the index.
+        /// KEYS_ONLY - Only the index and primary keys are projected into the index. INCLUDE - In addition to
+        /// the attributes described in KEYS_ONLY, the secondary index will include other non-key attributes
+        /// that you specify. ALL - All of the table attributes are projected into the index.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

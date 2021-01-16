@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream KinesisStreamSourceConfiguration
-    /// The KinesisStreamSourceConfiguration property type specifies the stream and role Amazon Resource Names (ARNs)
-    /// for a Kinesis stream used as the source for a delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html
     /// </summary>
     public class KinesisStreamSourceConfiguration
@@ -22,7 +20,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Minimum: 1
         /// Maximum: 512
         /// Pattern: arn:. *
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("KinesisStreamARN")]
         public Union<string, IntrinsicFunction> KinesisStreamARN { get; set; }
@@ -35,7 +33,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Minimum: 1
         /// Maximum: 512
         /// Pattern: arn:. *
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("RoleARN")]
         public Union<string, IntrinsicFunction> RoleARN { get; set; }

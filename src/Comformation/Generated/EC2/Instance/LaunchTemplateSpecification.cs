@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance LaunchTemplateSpecification
-    /// Specifies a launch template. You must specify either the launch template ID or launch template name.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html
     /// </summary>
     public class LaunchTemplateSpecification

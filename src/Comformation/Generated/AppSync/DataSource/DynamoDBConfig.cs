@@ -7,8 +7,6 @@ namespace Comformation.AppSync.DataSource
 {
     /// <summary>
     /// AWS::AppSync::DataSource DynamoDBConfig
-    /// The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your
-    /// account for an AWS AppSync data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
     /// </summary>
     public class DynamoDBConfig
@@ -33,6 +31,26 @@ namespace Comformation.AppSync.DataSource
         /// </summary>
         [JsonProperty("AwsRegion")]
         public Union<string, IntrinsicFunction> AwsRegion { get; set; }
+
+        /// <summary>
+        /// Versioned
+        /// Set to TRUE to use Conflict Detection and Resolution with this data source.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Versioned")]
+        public Union<bool, IntrinsicFunction> Versioned { get; set; }
+
+        /// <summary>
+        /// DeltaSyncConfig
+        /// The DeltaSyncConfig for a versioned datasource.
+        /// Required: No
+        /// Type: DeltaSyncConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DeltaSyncConfig")]
+        public DeltaSyncConfig DeltaSyncConfig { get; set; }
 
         /// <summary>
         /// UseCallerCredentials

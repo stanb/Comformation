@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
     /// AWS::AmazonMQ::Broker MaintenanceWindow
-    /// The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html
     /// </summary>
     public class MaintenanceWindow

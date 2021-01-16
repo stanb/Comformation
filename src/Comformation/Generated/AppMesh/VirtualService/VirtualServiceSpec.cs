@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.VirtualService
 {
     /// <summary>
     /// AWS::AppMesh::VirtualService VirtualServiceSpec
-    /// An object that represents the specification of a virtual service.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html
     /// </summary>
     public class VirtualServiceSpec

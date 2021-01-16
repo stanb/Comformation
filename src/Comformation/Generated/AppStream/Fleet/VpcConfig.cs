@@ -7,7 +7,6 @@ namespace Comformation.AppStream.Fleet
 {
     /// <summary>
     /// AWS::AppStream::Fleet VpcConfig
-    /// The VPC configuration information for the fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html
     /// </summary>
     public class VpcConfig

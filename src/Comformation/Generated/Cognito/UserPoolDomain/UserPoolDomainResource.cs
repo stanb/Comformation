@@ -6,7 +6,6 @@ namespace Comformation.Cognito.UserPoolDomain
 {
     /// <summary>
     /// AWS::Cognito::UserPoolDomain
-    /// The AWS::Cognito::UserPoolDomain resource creates a new domain for a user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html
     /// </summary>
     public class UserPoolDomainResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.Cognito.UserPoolDomain
             /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// CustomDomainConfig
@@ -33,7 +32,7 @@ namespace Comformation.Cognito.UserPoolDomain
             /// Type: CustomDomainConfigType
             /// Update requires: No interruption
             /// </summary>
-			public CustomDomainConfigType CustomDomainConfig { get; set; }
+            public CustomDomainConfigType CustomDomainConfig { get; set; }
 
             /// <summary>
             /// Domain
@@ -49,7 +48,7 @@ namespace Comformation.Cognito.UserPoolDomain
             /// Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,61}[a-z0-9])?$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Domain { get; set; }
+            public Union<string, IntrinsicFunction> Domain { get; set; }
 
         }
 

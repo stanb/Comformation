@@ -7,7 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table GlobalSecondaryIndex
-    /// Represents the properties of a global secondary index.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html
     /// </summary>
     public class GlobalSecondaryIndex
@@ -56,8 +55,8 @@ namespace Comformation.DynamoDB.Table
         /// <summary>
         /// ProvisionedThroughput
         /// Represents the provisioned throughput settings for the specified global secondary index.
-        /// For current minimum and maximum provisioned throughput values, see Limits in the Amazon DynamoDB
-        /// Developer Guide.
+        /// For current minimum and maximum provisioned throughput values, see Service, Account, and Table
+        /// Quotas in the Amazon DynamoDB Developer Guide.
         /// Required: No
         /// Type: ProvisionedThroughput
         /// Update requires: No interruption

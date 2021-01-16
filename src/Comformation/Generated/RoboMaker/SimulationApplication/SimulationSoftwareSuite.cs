@@ -7,7 +7,6 @@ namespace Comformation.RoboMaker.SimulationApplication
 {
     /// <summary>
     /// AWS::RoboMaker::SimulationApplication SimulationSoftwareSuite
-    /// Information about a simulation software suite.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html
     /// </summary>
     public class SimulationSoftwareSuite
@@ -18,6 +17,8 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The version of the simulation software suite.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
         /// Pattern: 7|9|Kinetic|Melodic|Dashing
         /// Update requires: No interruption
         /// </summary>
@@ -29,7 +30,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// The name of the simulation software suite.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Gazebo | RosbagPlay
+        /// Allowed values: Gazebo | RosbagPlay
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

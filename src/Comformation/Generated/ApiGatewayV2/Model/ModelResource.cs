@@ -6,8 +6,6 @@ namespace Comformation.ApiGatewayV2.Model
 {
     /// <summary>
     /// AWS::ApiGatewayV2::Model
-    /// The AWS::ApiGatewayV2::Model resource updates data model for a WebSocket API. For more information, see Model
-    /// Selection Expressions in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html
     /// </summary>
     public class ModelResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGatewayV2.Model
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ContentType
@@ -30,7 +28,7 @@ namespace Comformation.ApiGatewayV2.Model
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ContentType { get; set; }
+            public Union<string, IntrinsicFunction> ContentType { get; set; }
 
             /// <summary>
             /// Schema
@@ -39,7 +37,7 @@ namespace Comformation.ApiGatewayV2.Model
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Schema { get; set; }
 
             /// <summary>
             /// ApiId
@@ -48,7 +46,7 @@ namespace Comformation.ApiGatewayV2.Model
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
             /// Name
@@ -57,7 +55,7 @@ namespace Comformation.ApiGatewayV2.Model
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

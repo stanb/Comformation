@@ -7,10 +7,6 @@ namespace Comformation.Config.ConfigRule
 {
     /// <summary>
     /// AWS::Config::ConfigRule SourceDetail
-    /// Provides the source and the message types that trigger AWS 			Config to evaluate your AWS resources against a
-    /// rule. It also 			provides the frequency with which you want AWS Config to run 			evaluations for the rule if
-    /// the trigger type is periodic. You can 			specify the parameter values for SourceDetail only for 			custom
-    /// rules.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html
     /// </summary>
     public class SourceDetail
@@ -24,7 +20,7 @@ namespace Comformation.Config.ConfigRule
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: aws. config
+        /// Allowed values: aws. config
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EventSource")]
@@ -45,7 +41,7 @@ namespace Comformation.Config.ConfigRule
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
+        /// Allowed values: One_Hour | Six_Hours | Three_Hours | Twelve_Hours | TwentyFour_Hours
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaximumExecutionFrequency")]
@@ -72,7 +68,7 @@ namespace Comformation.Config.ConfigRule
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ConfigurationItemChangeNotification | ConfigurationSnapshotDeliveryCompleted |
+        /// Allowed values: ConfigurationItemChangeNotification | ConfigurationSnapshotDeliveryCompleted |
         /// OversizedConfigurationItemChangeNotification | ScheduledNotification
         /// Update requires: No interruption
         /// </summary>

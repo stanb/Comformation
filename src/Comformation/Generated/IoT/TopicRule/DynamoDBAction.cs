@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule DynamoDBAction
-    /// Describes an action to write to a DynamoDB table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html
     /// </summary>
     public class DynamoDBAction

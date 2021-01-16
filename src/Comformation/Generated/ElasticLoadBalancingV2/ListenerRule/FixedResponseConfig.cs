@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule FixedResponseConfig
-    /// Specifies information required when returning a custom HTTP response.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html
     /// </summary>
     public class FixedResponseConfig
@@ -27,6 +26,17 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public Union<string, IntrinsicFunction> ContentType { get; set; }
 
         /// <summary>
+        /// StatusCode
+        /// The HTTP response code (2XX, 4XX, or 5XX).
+        /// Required: Yes
+        /// Type: String
+        /// Pattern: ^(2|4|5)\d\d$
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("StatusCode")]
+        public Union<string, IntrinsicFunction> StatusCode { get; set; }
+
+        /// <summary>
         /// MessageBody
         /// The message.
         /// Required: No
@@ -37,17 +47,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// </summary>
         [JsonProperty("MessageBody")]
         public Union<string, IntrinsicFunction> MessageBody { get; set; }
-
-        /// <summary>
-        /// StatusCode
-        /// The HTTP response code (2XX, 4XX, or 5XX).
-        /// Required: Yes
-        /// Type: String
-        /// Pattern: ^(2|4|5)\d\d$
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("StatusCode")]
-        public Union<string, IntrinsicFunction> StatusCode { get; set; }
 
     }
 }

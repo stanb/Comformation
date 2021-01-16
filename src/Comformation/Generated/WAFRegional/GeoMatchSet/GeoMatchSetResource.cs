@@ -6,7 +6,6 @@ namespace Comformation.WAFRegional.GeoMatchSet
 {
     /// <summary>
     /// AWS::WAFRegional::GeoMatchSet
-    /// Contains one or more countries that AWS WAF will search for.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html
     /// </summary>
     public class GeoMatchSetResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.WAFRegional.GeoMatchSet
             /// Type: List of GeoMatchConstraint
             /// Update requires: No interruption
             /// </summary>
-			public List<GeoMatchConstraint> GeoMatchConstraints { get; set; }
+            public List<GeoMatchConstraint> GeoMatchConstraints { get; set; }
 
             /// <summary>
             /// Name
@@ -31,9 +30,10 @@ namespace Comformation.WAFRegional.GeoMatchSet
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

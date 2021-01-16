@@ -7,8 +7,6 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS::CodeBuild::Project ProjectTriggers
-    /// ProjectTriggers is a property of the AWS CodeBuild Project resource that specifies webhooks that trigger an
-    /// AWS CodeBuild build.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
     /// </summary>
     public class ProjectTriggers
@@ -24,6 +22,16 @@ namespace Comformation.CodeBuild.Project
         /// </summary>
         [JsonProperty("FilterGroups")]
         public List<WebhookFilter> FilterGroups { get; set; }
+
+        /// <summary>
+        /// BuildType
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BuildType")]
+        public Union<string, IntrinsicFunction> BuildType { get; set; }
 
         /// <summary>
         /// Webhook

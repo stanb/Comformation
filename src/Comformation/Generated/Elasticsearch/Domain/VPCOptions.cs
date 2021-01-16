@@ -7,8 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain VPCOptions
-    /// The virtual private cloud (VPC) configuration for the Amazon ES domain. For more information, see VPC Support
-    /// for Amazon Elasticsearch Service Domains in the Amazon Elasticsearch Service Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html
     /// </summary>
     public class VPCOptions

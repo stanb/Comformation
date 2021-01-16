@@ -7,11 +7,20 @@ namespace Comformation.LakeFormation.Permissions
 {
     /// <summary>
     /// AWS::LakeFormation::Permissions DatabaseResource
-    /// A structure for the database object.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html
     /// </summary>
     public class DatabaseResource
     {
+
+        /// <summary>
+        /// CatalogId
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CatalogId")]
+        public Union<string, IntrinsicFunction> CatalogId { get; set; }
 
         /// <summary>
         /// Name

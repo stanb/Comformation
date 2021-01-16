@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance AssociationParameter
-    /// Specifies input parameter values for an SSM document in AWS Systems Manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html
     /// </summary>
     public class AssociationParameter

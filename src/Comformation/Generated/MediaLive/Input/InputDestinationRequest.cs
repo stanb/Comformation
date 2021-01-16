@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Input
 {
     /// <summary>
     /// AWS::MediaLive::Input InputDestinationRequest
-    /// The settings for a push input, to set up the destination addresses on MediaLive.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html
     /// </summary>
     public class InputDestinationRequest

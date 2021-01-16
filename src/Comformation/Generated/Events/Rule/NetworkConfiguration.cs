@@ -7,7 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule NetworkConfiguration
-    /// This structure specifies the network configuration for an ECS task.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-networkconfiguration.html
     /// </summary>
     public class NetworkConfiguration
@@ -15,7 +14,7 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// AwsVpcConfiguration
-        /// Use this structure to specify the VPC subnets and security groups for the task and whether a public
+        /// Use this structure to specify the VPC subnets and security groups for the task, and whether a public
         /// IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network
         /// mode.
         /// Required: No

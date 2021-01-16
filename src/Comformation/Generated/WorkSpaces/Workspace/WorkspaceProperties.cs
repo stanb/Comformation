@@ -7,7 +7,6 @@ namespace Comformation.WorkSpaces.Workspace
 {
     /// <summary>
     /// AWS::WorkSpaces::Workspace WorkspaceProperties
-    /// Information about a WorkSpace.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html
     /// </summary>
     public class WorkspaceProperties
@@ -18,7 +17,7 @@ namespace Comformation.WorkSpaces.Workspace
         /// The compute type. For more information, see Amazon WorkSpaces Bundles.
         /// Required: No
         /// Type: String
-        /// Allowed Values: GRAPHICS | GRAPHICSPRO | PERFORMANCE | POWER | POWERPRO | STANDARD | VALUE
+        /// Allowed values: GRAPHICS | GRAPHICSPRO | PERFORMANCE | POWER | POWERPRO | STANDARD | VALUE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComputeTypeName")]
@@ -26,7 +25,8 @@ namespace Comformation.WorkSpaces.Workspace
 
         /// <summary>
         /// RootVolumeSizeGib
-        /// The size of the root volume.
+        /// The size of the root volume. For important information about how to modify the size of the root and
+        /// user volumes, see Modify a WorkSpace.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -39,7 +39,7 @@ namespace Comformation.WorkSpaces.Workspace
         /// The running mode. For more information, see Manage the WorkSpace Running Mode.
         /// Required: No
         /// Type: String
-        /// Allowed Values: ALWAYS_ON | AUTO_STOP
+        /// Allowed values: ALWAYS_ON | AUTO_STOP
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RunningMode")]
@@ -58,7 +58,8 @@ namespace Comformation.WorkSpaces.Workspace
 
         /// <summary>
         /// UserVolumeSizeGib
-        /// The size of the user storage.
+        /// The size of the user storage. For important information about how to modify the size of the root and
+        /// user volumes, see Modify a WorkSpace.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

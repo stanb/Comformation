@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlan ApiStage
-    /// ApiStage is a property of the AWS::ApiGateway::UsagePlan resource that specifies which stages and APIs to
-    /// associate with a usage plan.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
     /// </summary>
     public class ApiStage
@@ -37,7 +35,8 @@ namespace Comformation.ApiGateway.UsagePlan
 
         /// <summary>
         /// Throttle
-        /// Map containing method-level throttling information for API stage in a usage plan.
+        /// Map containing method-level throttling information for an API stage in a usage plan. The key for the
+        /// map is the path and method for which to configure custom throttling, for example, &quot;/pets/GET&quot;.
         /// Duplicates are not allowed.
         /// Required: No
         /// Type: Map of ThrottleSettings

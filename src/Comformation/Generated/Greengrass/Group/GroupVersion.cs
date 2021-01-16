@@ -7,10 +7,6 @@ namespace Comformation.Greengrass.Group
 {
     /// <summary>
     /// AWS::Greengrass::Group GroupVersion
-    /// A group version in AWS IoT Greengrass, 		 which references of a core definition version, device definition
-    /// version, subscription definition version, and other version types 				 that contain the components you want to
-    /// deploy to a Greengrass core device. 		The group version must reference a core definition version that contains
-    /// one core. 		Other version types are optionally included, depending on your business need.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html
     /// </summary>
     public class GroupVersion

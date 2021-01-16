@@ -7,7 +7,6 @@ namespace Comformation.IoTThingsGraph.FlowTemplate
 {
     /// <summary>
     /// AWS::IoTThingsGraph::FlowTemplate DefinitionDocument
-    /// A document that defines an entity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html
     /// </summary>
     public class DefinitionDocument

@@ -6,8 +6,6 @@ namespace Comformation.GuardDuty.IPSet
 {
     /// <summary>
     /// AWS::GuardDuty::IPSet
-    /// The AWS::GuardDuty::IPSet resource specifies a new IPSet. An IPSet is a list of trusted IP addresses from
-    /// which secure communication is allowed with AWS infrastructure and applications.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html
     /// </summary>
     public class IPSetResource : ResourceBase
@@ -19,46 +17,53 @@ namespace Comformation.GuardDuty.IPSet
             /// The format of the file that contains the IPSet.
             /// Required: Yes
             /// Type: String
+            /// Allowed values: ALIEN_VAULT | FIRE_EYE | OTX_CSV | PROOF_POINT | STIX | TXT
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Format { get; set; }
+            public Union<string, IntrinsicFunction> Format { get; set; }
 
             /// <summary>
             /// Activate
-            /// Indicated whether or not GuardDuty uses the IPSet.
+            /// Indicates whether or not GuardDuty uses the IPSet.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Activate { get; set; }
+            public Union<bool, IntrinsicFunction> Activate { get; set; }
 
             /// <summary>
             /// DetectorId
-            /// The unique ID of the detector for the GuardDuty service to associate the IPSet with.
+            /// The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 300
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DetectorId { get; set; }
+            public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
             /// <summary>
             /// Name
-            /// The name for the IPSet. This name is displayed in all findings that are triggered by activity
-            /// associated with the IP addresses included in this IPSet.
+            /// The user-friendly name to identify the IPSet.
+            /// Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 300
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Location
             /// The URI of the file that contains the IPSet.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 300
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Location { get; set; }
+            public Union<string, IntrinsicFunction> Location { get; set; }
 
         }
 

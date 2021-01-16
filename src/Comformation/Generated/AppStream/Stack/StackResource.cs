@@ -6,25 +6,12 @@ namespace Comformation.AppStream.Stack
 {
     /// <summary>
     /// AWS::AppStream::Stack
-    /// The AWS::AppStream::Stack resource creates a stack to start streaming applications to Amazon AppStream 2. 0
-    /// users. A stack consists of an associated fleet, user access policies, and storage configurations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html
     /// </summary>
     public class StackResource : ResourceBase
     {
         public class StackProperties
         {
-            /// <summary>
-            /// ApplicationSettings
-            /// The persistent application settings for users of the stack. When these settings are enabled, changes
-            /// that users make to applications and Windows settings are automatically saved after each session and
-            /// applied to the next session.
-            /// Required: No
-            /// Type: ApplicationSettings
-            /// Update requires: No interruption
-            /// </summary>
-			public ApplicationSettings ApplicationSettings { get; set; }
-
             /// <summary>
             /// Description
             /// The description to display.
@@ -33,7 +20,7 @@ namespace Comformation.AppStream.Stack
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// StorageConnectors
@@ -42,7 +29,7 @@ namespace Comformation.AppStream.Stack
             /// Type: List of StorageConnector
             /// Update requires: No interruption
             /// </summary>
-			public List<StorageConnector> StorageConnectors { get; set; }
+            public List<StorageConnector> StorageConnectors { get; set; }
 
             /// <summary>
             /// DeleteStorageConnectors
@@ -52,7 +39,18 @@ namespace Comformation.AppStream.Stack
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DeleteStorageConnectors { get; set; }
+            public Union<bool, IntrinsicFunction> DeleteStorageConnectors { get; set; }
+
+            /// <summary>
+            /// EmbedHostDomains
+            /// The domains where AppStream 2. 0 streaming sessions can be embedded in an iframe. You must approve
+            /// the domains that you want to host embedded AppStream 2. 0 streaming sessions.
+            /// Required: No
+            /// Type: List of String
+            /// Maximum: 20
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> EmbedHostDomains { get; set; }
 
             /// <summary>
             /// UserSettings
@@ -62,7 +60,7 @@ namespace Comformation.AppStream.Stack
             /// Type: List of UserSetting
             /// Update requires: No interruption
             /// </summary>
-			public List<UserSetting> UserSettings { get; set; }
+            public List<UserSetting> UserSettings { get; set; }
 
             /// <summary>
             /// AttributesToDelete
@@ -71,17 +69,7 @@ namespace Comformation.AppStream.Stack
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AttributesToDelete { get; set; }
-
-            /// <summary>
-            /// DisplayName
-            /// The stack name to display.
-            /// Required: No
-            /// Type: String
-            /// Maximum: 100
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<string, IntrinsicFunction> DisplayName { get; set; }
+            public List<Union<string, IntrinsicFunction>> AttributesToDelete { get; set; }
 
             /// <summary>
             /// RedirectURL
@@ -91,17 +79,7 @@ namespace Comformation.AppStream.Stack
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RedirectURL { get; set; }
-
-            /// <summary>
-            /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
-            /// Required: No
-            /// Type: List of Tag
-            /// Update requires: No interruption
-            /// </summary>
-			public List<Tag> Tags { get; set; }
+            public Union<string, IntrinsicFunction> RedirectURL { get; set; }
 
             /// <summary>
             /// Name
@@ -111,7 +89,7 @@ namespace Comformation.AppStream.Stack
             /// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,100}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// FeedbackURL
@@ -122,7 +100,49 @@ namespace Comformation.AppStream.Stack
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FeedbackURL { get; set; }
+            public Union<string, IntrinsicFunction> FeedbackURL { get; set; }
+
+            /// <summary>
+            /// ApplicationSettings
+            /// The persistent application settings for users of the stack. When these settings are enabled, changes
+            /// that users make to applications and Windows settings are automatically saved after each session and
+            /// applied to the next session.
+            /// Required: No
+            /// Type: ApplicationSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public ApplicationSettings ApplicationSettings { get; set; }
+
+            /// <summary>
+            /// DisplayName
+            /// The stack name to display.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 100
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> DisplayName { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
+            /// and Cost Management User Guide.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// AccessEndpoints
+            /// The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect
+            /// to AppStream 2. 0 only through the specified endpoints.
+            /// Required: No
+            /// Type: List of AccessEndpoint
+            /// Maximum: 4
+            /// Update requires: No interruption
+            /// </summary>
+            public List<AccessEndpoint> AccessEndpoints { get; set; }
 
         }
 

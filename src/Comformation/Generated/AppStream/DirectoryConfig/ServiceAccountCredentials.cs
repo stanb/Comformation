@@ -7,7 +7,6 @@ namespace Comformation.AppStream.DirectoryConfig
 {
     /// <summary>
     /// AWS::AppStream::DirectoryConfig ServiceAccountCredentials
-    /// The credentials for the service account used by the streaming instance to connect to the directory.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html
     /// </summary>
     public class ServiceAccountCredentials

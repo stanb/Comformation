@@ -6,8 +6,6 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
 {
     /// <summary>
     /// AWS::Cognito::IdentityPoolRoleAttachment
-    /// The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito
-    /// identity pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html
     /// </summary>
     public class IdentityPoolRoleAttachmentResource : ResourceBase
@@ -18,14 +16,15 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
             /// RoleMappings
             /// How users for a specific identity provider are mapped to roles. This is a string to the RoleMapping
             /// object map. The string identifies the identity provider. For example: &quot;graph. facebook. com&quot; or
-            /// &quot;cognito-idp-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id&quot;.
+            /// &quot;cognito-idp. us-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id&quot;.
             /// If the IdentityProvider field isn&#39;t provided in this object, the string is used as the identity
             /// provider name.
+            /// For more information, see the RoleMapping property.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RoleMappings { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RoleMappings { get; set; }
 
             /// <summary>
             /// IdentityPoolId
@@ -34,7 +33,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> IdentityPoolId { get; set; }
+            public Union<string, IntrinsicFunction> IdentityPoolId { get; set; }
 
             /// <summary>
             /// Roles
@@ -44,7 +43,7 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Roles { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Roles { get; set; }
 
         }
 

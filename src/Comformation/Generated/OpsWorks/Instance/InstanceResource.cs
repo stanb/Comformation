@@ -6,7 +6,6 @@ namespace Comformation.OpsWorks.Instance
 {
     /// <summary>
     /// AWS::OpsWorks::Instance
-    /// Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html
     /// </summary>
     public class InstanceResource : ResourceBase
@@ -27,7 +26,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AgentVersion { get; set; }
+            public Union<string, IntrinsicFunction> AgentVersion { get; set; }
 
             /// <summary>
             /// AmiId
@@ -38,7 +37,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AmiId { get; set; }
+            public Union<string, IntrinsicFunction> AmiId { get; set; }
 
             /// <summary>
             /// Architecture
@@ -47,20 +46,20 @@ namespace Comformation.OpsWorks.Instance
             /// types, see Instance Families and Types.
             /// Required: No
             /// Type: String
-            /// Allowed Values: i386 | x86_64
+            /// Allowed values: i386 | x86_64
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Architecture { get; set; }
+            public Union<string, IntrinsicFunction> Architecture { get; set; }
 
             /// <summary>
             /// AutoScalingType
             /// For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
             /// Required: No
             /// Type: String
-            /// Allowed Values: load | timer
+            /// Allowed values: load | timer
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AutoScalingType { get; set; }
+            public Union<string, IntrinsicFunction> AutoScalingType { get; set; }
 
             /// <summary>
             /// AvailabilityZone
@@ -69,7 +68,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// BlockDeviceMappings
@@ -80,7 +79,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of BlockDeviceMapping
             /// Update requires: Replacement
             /// </summary>
-			public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
+            public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
 
             /// <summary>
             /// EbsOptimized
@@ -89,7 +88,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
+            public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
             /// <summary>
             /// ElasticIps
@@ -98,7 +97,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ElasticIps { get; set; }
+            public List<Union<string, IntrinsicFunction>> ElasticIps { get; set; }
 
             /// <summary>
             /// Hostname
@@ -107,7 +106,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Hostname { get; set; }
+            public Union<string, IntrinsicFunction> Hostname { get; set; }
 
             /// <summary>
             /// InstallUpdatesOnBoot
@@ -121,7 +120,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
+            public Union<bool, IntrinsicFunction> InstallUpdatesOnBoot { get; set; }
 
             /// <summary>
             /// InstanceType
@@ -133,7 +132,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// LayerIds
@@ -142,7 +141,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> LayerIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> LayerIds { get; set; }
 
             /// <summary>
             /// Os
@@ -165,17 +164,17 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Os { get; set; }
+            public Union<string, IntrinsicFunction> Os { get; set; }
 
             /// <summary>
             /// RootDeviceType
             /// The instance root device type. For more information, see Storage for the Root Device.
             /// Required: No
             /// Type: String
-            /// Allowed Values: ebs | instance-store
+            /// Allowed values: ebs | instance-store
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RootDeviceType { get; set; }
+            public Union<string, IntrinsicFunction> RootDeviceType { get; set; }
 
             /// <summary>
             /// SshKeyName
@@ -184,7 +183,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SshKeyName { get; set; }
+            public Union<string, IntrinsicFunction> SshKeyName { get; set; }
 
             /// <summary>
             /// StackId
@@ -193,7 +192,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StackId { get; set; }
+            public Union<string, IntrinsicFunction> StackId { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -204,7 +203,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
             /// <summary>
             /// Tenancy
@@ -219,17 +218,17 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Tenancy { get; set; }
+            public Union<string, IntrinsicFunction> Tenancy { get; set; }
 
             /// <summary>
             /// TimeBasedAutoScaling
             /// The time-based scaling configuration for the instance.
             /// Required: No
             /// Type: TimeBasedAutoScaling
-            /// Allowed Values: load | timer
+            /// Allowed values: load | timer
             /// Update requires: Replacement
             /// </summary>
-			public TimeBasedAutoScaling TimeBasedAutoScaling { get; set; }
+            public TimeBasedAutoScaling TimeBasedAutoScaling { get; set; }
 
             /// <summary>
             /// VirtualizationType
@@ -238,7 +237,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VirtualizationType { get; set; }
+            public Union<string, IntrinsicFunction> VirtualizationType { get; set; }
 
             /// <summary>
             /// Volumes
@@ -248,7 +247,7 @@ namespace Comformation.OpsWorks.Instance
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Volumes { get; set; }
+            public List<Union<string, IntrinsicFunction>> Volumes { get; set; }
 
         }
 
@@ -258,12 +257,12 @@ namespace Comformation.OpsWorks.Instance
 
     }
 
-	public static class InstanceAttributes
-	{
+    public static class InstanceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AvailabilityZone = new ResourceAttribute<Union<string, IntrinsicFunction>>("AvailabilityZone");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrivateDnsName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrivateDnsName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PrivateIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("PrivateIp");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PublicDnsName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PublicDnsName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PublicIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("PublicIp");
-	}
+    }
 }

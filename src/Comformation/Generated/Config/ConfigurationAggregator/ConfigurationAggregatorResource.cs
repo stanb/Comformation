@@ -6,8 +6,6 @@ namespace Comformation.Config.ConfigurationAggregator
 {
     /// <summary>
     /// AWS::Config::ConfigurationAggregator
-    /// The details about the configuration aggregator, including 			information about source accounts, regions, and
-    /// metadata of the 			aggregator.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html
     /// </summary>
     public class ConfigurationAggregatorResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.Config.ConfigurationAggregator
             /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
-			public List<AccountAggregationSource> AccountAggregationSources { get; set; }
+            public List<AccountAggregationSource> AccountAggregationSources { get; set; }
 
             /// <summary>
             /// ConfigurationAggregatorName
@@ -38,7 +36,7 @@ namespace Comformation.Config.ConfigurationAggregator
             /// Pattern: [\w\-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ConfigurationAggregatorName { get; set; }
+            public Union<string, IntrinsicFunction> ConfigurationAggregatorName { get; set; }
 
             /// <summary>
             /// OrganizationAggregationSource
@@ -49,7 +47,19 @@ namespace Comformation.Config.ConfigurationAggregator
             /// Type: OrganizationAggregationSource
             /// Update requires: No interruption
             /// </summary>
-			public OrganizationAggregationSource OrganizationAggregationSource { get; set; }
+            public OrganizationAggregationSource OrganizationAggregationSource { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// 		
+            /// An array of tag object.
+            /// 	
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 

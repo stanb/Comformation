@@ -7,7 +7,6 @@ namespace Comformation.DirectoryService.MicrosoftAD
 {
     /// <summary>
     /// AWS::DirectoryService::MicrosoftAD VpcSettings
-    /// Contains VPC information for the CreateDirectory or CreateMicrosoftAD operation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html
     /// </summary>
     public class VpcSettings

@@ -7,7 +7,6 @@ namespace Comformation.PinpointEmail.DedicatedIpPool
 {
     /// <summary>
     /// AWS::PinpointEmail::DedicatedIpPool Tags
-    /// An object that defines the tags (keys and values) that you want to associate with the dedicated IP pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-dedicatedippool-tags.html
     /// </summary>
     public class Tags

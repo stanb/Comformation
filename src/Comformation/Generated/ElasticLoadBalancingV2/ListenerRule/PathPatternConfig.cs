@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule PathPatternConfig
-    /// Information about a path pattern condition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-pathpatternconfig.html
     /// </summary>
     public class PathPatternConfig

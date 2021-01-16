@@ -6,8 +6,6 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::ApplicationVersion
-    /// The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that
-    /// specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html
     /// </summary>
     public class ApplicationVersionResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// Description
@@ -33,7 +31,7 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Maximum: 200
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SourceBundle
@@ -43,7 +41,7 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
             /// Type: SourceBundle
             /// Update requires: Replacement
             /// </summary>
-			public SourceBundle SourceBundle { get; set; }
+            public SourceBundle SourceBundle { get; set; }
 
         }
 

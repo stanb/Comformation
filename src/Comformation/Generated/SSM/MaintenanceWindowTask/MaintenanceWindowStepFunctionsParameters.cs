@@ -7,8 +7,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask MaintenanceWindowStepFunctionsParameters
-    /// The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for the execution of a
-    /// STEP_FUNCTIONS task in a Systems Manager maintenance window.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html
     /// </summary>
     public class MaintenanceWindowStepFunctionsParameters

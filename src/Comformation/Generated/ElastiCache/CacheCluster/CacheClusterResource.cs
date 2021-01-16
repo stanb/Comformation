@@ -6,7 +6,6 @@ namespace Comformation.ElastiCache.CacheCluster
 {
     /// <summary>
     /// AWS::ElastiCache::CacheCluster
-    /// The AWS::ElastiCache::CacheCluster type creates an Amazon ElastiCache cache cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html
     /// </summary>
     public class CacheClusterResource : ResourceBase
@@ -21,10 +20,10 @@ namespace Comformation.ElastiCache.CacheCluster
             /// If the AZMode and PreferredAvailabilityZones are not specified, ElastiCache assumes single-az mode.
             /// Required: No
             /// Type: String
-            /// Allowed Values: cross-az | single-az
+            /// Allowed values: cross-az | single-az
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> AZMode { get; set; }
+            public Union<string, IntrinsicFunction> AZMode { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
@@ -33,27 +32,33 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             /// CacheNodeType
             /// The compute and memory capacity of the nodes in the node group (shard).
             /// The following node types are supported by ElastiCache. 			Generally speaking, the current generation
             /// types provide more memory and computational power 			at lower cost when compared to their equivalent
-            /// previous generation counterparts.
-            /// General purpose: Current generation: M5 node types: cache. m5. large, cache. m5. xlarge, cache. m5.
-            /// 2xlarge, cache. m5. 4xlarge, cache. m5. 12xlarge, cache. m5. 24xlarge 	 M4 node types: cache. m4.
-            /// large, cache. m4. xlarge, cache. m4. 2xlarge, cache. m4. 4xlarge, cache. m4. 10xlarge T2 node types:
-            /// cache. t2. micro, cache. t2. small, cache. t2. medium Previous generation: (not recommended) T1 node
-            /// types: cache. t1. micro M1 node types: cache. m1. small, cache. m1. medium, cache. m1. large, cache.
-            /// m1. xlarge M3 node types: cache. m3. medium, cache. m3. large, cache. m3. xlarge, cache. m3. 2xlarge
-            /// Compute optimized: Previous generation: (not recommended) C1 node types: cache. c1. xlarge Memory
-            /// optimized: Current generation: R5 node types: cache. r5. large, cache. r5. xlarge, cache. r5.
-            /// 2xlarge, cache. r5. 4xlarge, cache. r5. 12xlarge, cache. r5. 24xlarge R4 node types: cache. r4.
-            /// large, cache. r4. xlarge, cache. r4. 2xlarge, cache. r4. 4xlarge, cache. r4. 8xlarge, cache. r4.
-            /// 16xlarge Previous generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2.
-            /// 2xlarge, cache. m2. 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge,
-            /// cache. r3. 4xlarge, cache. r3. 8xlarge
+            /// previous generation counterparts. Changing the CacheNodeType of a Memcached instance is currently
+            /// not supported. If you need to scale using Memcached, we recommend forcing a replacement update by
+            /// changing the LogicalResourceId of the resource.
+            /// General purpose: Current generation: M6g node types: cache. m6g. large, cache. m6g. xlarge, cache.
+            /// m6g. 2xlarge, cache. m6g. 4xlarge, cache. m6g. 12xlarge, cache. m6g. 24xlarge 	 M5 node types:
+            /// cache. m5. large, cache. m5. xlarge, cache. m5. 2xlarge, cache. m5. 4xlarge, cache. m5. 12xlarge,
+            /// cache. m5. 24xlarge 	 M4 node types: cache. m4. large, cache. m4. xlarge, cache. m4. 2xlarge, cache.
+            /// m4. 4xlarge, cache. m4. 10xlarge T3 node types: cache. t3. micro, cache. t3. small, cache. t3.
+            /// medium T2 node types: cache. t2. micro, cache. t2. small, cache. t2. medium Previous generation:
+            /// (not recommended) T1 node types: cache. t1. micro M1 node types: cache. m1. small, cache. m1.
+            /// medium, cache. m1. large, cache. m1. xlarge M3 node types: cache. m3. medium, cache. m3. large,
+            /// cache. m3. xlarge, cache. m3. 2xlarge Compute optimized: Previous generation: (not recommended) C1
+            /// node types: cache. c1. xlarge Memory optimized: Current generation: R6g node types: cache. r6g.
+            /// large, cache. r6g. xlarge, cache. r6g. 2xlarge, cache. r6g. 4xlarge, cache. r6g. 12xlarge, cache.
+            /// r6g. 24xlarge R5 node types: cache. r5. large, cache. r5. xlarge, cache. r5. 2xlarge, cache. r5.
+            /// 4xlarge, cache. r5. 12xlarge, cache. r5. 24xlarge R4 node types: cache. r4. large, cache. r4.
+            /// xlarge, cache. r4. 2xlarge, cache. r4. 4xlarge, cache. r4. 8xlarge, cache. r4. 16xlarge Previous
+            /// generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2. 2xlarge, cache. m2.
+            /// 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge, cache. r3. 4xlarge,
+            /// cache. r3. 8xlarge
             /// Additional node type info
             /// All current generation instance types are created in Amazon VPC by default. Redis append-only files
             /// (AOF) are not supported for T1 or T2 instances. Redis Multi-AZ with automatic failover is not
@@ -63,7 +68,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
+            public Union<string, IntrinsicFunction> CacheNodeType { get; set; }
 
             /// <summary>
             /// CacheParameterGroupName
@@ -74,7 +79,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> CacheParameterGroupName { get; set; }
 
             /// <summary>
             /// CacheSecurityGroupNames
@@ -85,7 +90,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
+            public List<Union<string, IntrinsicFunction>> CacheSecurityGroupNames { get; set; }
 
             /// <summary>
             /// CacheSubnetGroupName
@@ -93,24 +98,24 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon
             /// VPC).
             /// Important If you&#39;re going to launch your cluster in an Amazon VPC, you need to create a subnet group
-            /// before you start creating a cluster. For more information, see Subnets and Subnet Groups.
+            /// before you start creating a cluster. For more information, see AWS::ElastiCache::SubnetGroup.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
 
             /// <summary>
             /// ClusterName
             /// A name for the cache cluster. If you don&#39;t specify a name, AWSCloudFormation generates a unique
             /// physical ID and uses that ID for the cache cluster. For more information, see Name Type.
-            /// The name must contain 1 to 20 alphanumeric characters or hyphens. The name must start with a letter
+            /// The name must contain 1 to 50 alphanumeric characters or hyphens. The name must start with a letter
             /// and cannot end with a hyphen or contain two consecutive hyphens.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterName { get; set; }
+            public Union<string, IntrinsicFunction> ClusterName { get; set; }
 
             /// <summary>
             /// Engine
@@ -120,7 +125,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Engine { get; set; }
+            public Union<string, IntrinsicFunction> Engine { get; set; }
 
             /// <summary>
             /// EngineVersion
@@ -134,7 +139,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// NotificationTopicArn
@@ -145,7 +150,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NotificationTopicArn { get; set; }
+            public Union<string, IntrinsicFunction> NotificationTopicArn { get; set; }
 
             /// <summary>
             /// NumCacheNodes
@@ -156,7 +161,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: Integer
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<int, IntrinsicFunction> NumCacheNodes { get; set; }
+            public Union<int, IntrinsicFunction> NumCacheNodes { get; set; }
 
             /// <summary>
             /// Port
@@ -165,19 +170,19 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// PreferredAvailabilityZone
             /// The EC2 Availability Zone in which the cluster is created.
-            /// All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you
-            /// want to create your nodes across multiple Availability Zones, use PreferredAvailabilityZones.
+            /// All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to
+            /// create your nodes across multiple Availability Zones, use PreferredAvailabilityZones.
             /// Default: System chosen Availability Zone.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredAvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> PreferredAvailabilityZone { get; set; }
 
             /// <summary>
             /// PreferredAvailabilityZones
@@ -194,7 +199,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String
             /// Update requires: Some interruptions
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> PreferredAvailabilityZones { get; set; }
+            public List<Union<string, IntrinsicFunction>> PreferredAvailabilityZones { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -211,7 +216,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// SnapshotArns
@@ -224,7 +229,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> SnapshotArns { get; set; }
 
             /// <summary>
             /// SnapshotName
@@ -235,7 +240,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotName { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotName { get; set; }
 
             /// <summary>
             /// SnapshotRetentionLimit
@@ -248,7 +253,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
+            public Union<int, IntrinsicFunction> SnapshotRetentionLimit { get; set; }
 
             /// <summary>
             /// SnapshotWindow
@@ -261,7 +266,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotWindow { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotWindow { get; set; }
 
             /// <summary>
             /// Tags
@@ -270,7 +275,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -281,7 +286,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
 
@@ -291,11 +296,11 @@ namespace Comformation.ElastiCache.CacheCluster
 
     }
 
-	public static class CacheClusterAttributes
-	{
+    public static class CacheClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndpoint", "Address");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationEndpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationEndpoint", "Port");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RedisEndpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("RedisEndpoint", "Address");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RedisEndpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("RedisEndpoint", "Port");
-	}
+    }
 }

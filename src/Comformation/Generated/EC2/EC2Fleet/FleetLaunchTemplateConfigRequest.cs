@@ -7,7 +7,6 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet FleetLaunchTemplateConfigRequest
-    /// Specifies a launch template and overrides for an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html
     /// </summary>
     public class FleetLaunchTemplateConfigRequest
@@ -19,7 +18,7 @@ namespace Comformation.EC2.EC2Fleet
         /// in the request.
         /// Required: No
         /// Type: FleetLaunchTemplateSpecificationRequest
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateSpecification")]
         public FleetLaunchTemplateSpecificationRequest LaunchTemplateSpecification { get; set; }
@@ -30,7 +29,7 @@ namespace Comformation.EC2.EC2Fleet
         /// Required: No
         /// Type: List of FleetLaunchTemplateOverridesRequest
         /// Maximum: 50
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Overrides")]
         public List<FleetLaunchTemplateOverridesRequest> Overrides { get; set; }

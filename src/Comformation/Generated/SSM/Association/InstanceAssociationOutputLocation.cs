@@ -7,8 +7,6 @@ namespace Comformation.SSM.Association
 {
     /// <summary>
     /// AWS::SSM::Association InstanceAssociationOutputLocation
-    /// InstanceAssociationOutputLocation is a property of the AWS::SSM::Association resource that specifies an Amazon
-    /// S3 bucket where you want to store the results of this association request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html
     /// </summary>
     public class InstanceAssociationOutputLocation

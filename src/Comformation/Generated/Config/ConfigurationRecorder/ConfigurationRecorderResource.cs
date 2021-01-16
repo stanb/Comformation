@@ -6,9 +6,6 @@ namespace Comformation.Config.ConfigurationRecorder
 {
     /// <summary>
     /// AWS::Config::ConfigurationRecorder
-    /// The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records
-    /// configuration changes. The configuration recorder stores the configurations of the supported resources in your
-    /// account as configuration items.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
     /// </summary>
     public class ConfigurationRecorderResource : ResourceBase
@@ -30,7 +27,7 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Maximum: 256
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RecordingGroup
@@ -41,7 +38,7 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Type: RecordingGroup
             /// Update requires: No interruption
             /// </summary>
-			public RecordingGroup RecordingGroup { get; set; }
+            public RecordingGroup RecordingGroup { get; set; }
 
             /// <summary>
             /// RoleARN
@@ -54,7 +51,7 @@ namespace Comformation.Config.ConfigurationRecorder
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleARN { get; set; }
+            public Union<string, IntrinsicFunction> RoleARN { get; set; }
 
         }
 

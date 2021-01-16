@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode VirtualNodeSpec
-    /// An object that represents the specification of a virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html
     /// </summary>
     public class VirtualNodeSpec
@@ -43,6 +42,16 @@ namespace Comformation.AppMesh.VirtualNode
         /// </summary>
         [JsonProperty("Listeners")]
         public List<Listener> Listeners { get; set; }
+
+        /// <summary>
+        /// BackendDefaults
+        /// A reference to an object that represents the defaults for backends.
+        /// Required: No
+        /// Type: BackendDefaults
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BackendDefaults")]
+        public BackendDefaults BackendDefaults { get; set; }
 
         /// <summary>
         /// ServiceDiscovery

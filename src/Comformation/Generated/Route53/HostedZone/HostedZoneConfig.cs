@@ -7,8 +7,6 @@ namespace Comformation.Route53.HostedZone
 {
     /// <summary>
     /// AWS::Route53::HostedZone HostedZoneConfig
-    /// A complex type that contains an optional comment about your hosted zone. If you don&#39;t want to specify a
-    /// comment, omit both the 			HostedZoneConfig and Comment elements.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html
     /// </summary>
     public class HostedZoneConfig

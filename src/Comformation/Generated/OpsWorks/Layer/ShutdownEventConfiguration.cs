@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer ShutdownEventConfiguration
-    /// The Shutdown event configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html
     /// </summary>
     public class ShutdownEventConfiguration

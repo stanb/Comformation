@@ -7,8 +7,6 @@ namespace Comformation.Greengrass.ResourceDefinition
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinition ResourceDefinitionVersion
-    /// A resource definition version contains a list of resources. 		(In AWS CloudFormation, resources are named
-    /// resource instances. )
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html
     /// </summary>
     public class ResourceDefinitionVersion

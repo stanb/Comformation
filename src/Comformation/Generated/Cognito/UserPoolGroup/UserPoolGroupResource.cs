@@ -6,7 +6,6 @@ namespace Comformation.Cognito.UserPoolGroup
 {
     /// <summary>
     /// AWS::Cognito::UserPoolGroup
-    /// The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
     /// </summary>
     public class UserPoolGroupResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupName { get; set; }
+            public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// Description
@@ -33,7 +32,7 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Maximum: 2048
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// UserPoolId
@@ -45,7 +44,7 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// Precedence
@@ -64,7 +63,7 @@ namespace Comformation.Cognito.UserPoolGroup
             /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> Precedence { get; set; }
+            public Union<double, IntrinsicFunction> Precedence { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -77,7 +76,7 @@ namespace Comformation.Cognito.UserPoolGroup
             /// @-]+)?(:[\w+=/,. @-]+)?
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
 

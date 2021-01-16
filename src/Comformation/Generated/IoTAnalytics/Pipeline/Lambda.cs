@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline Lambda
-    /// An activity that runs a Lambda function to modify the message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html
     /// </summary>
     public class Lambda

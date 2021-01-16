@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket WebsiteConfiguration
-    /// Specifies website configuration parameters for an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html
     /// </summary>
     public class WebsiteConfiguration

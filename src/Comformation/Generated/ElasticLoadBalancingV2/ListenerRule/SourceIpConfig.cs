@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule SourceIpConfig
-    /// Information about a source IP condition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-sourceipconfig.html
     /// </summary>
     public class SourceIpConfig

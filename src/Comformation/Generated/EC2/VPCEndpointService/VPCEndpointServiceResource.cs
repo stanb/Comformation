@@ -6,8 +6,6 @@ namespace Comformation.EC2.VPCEndpointService
 {
     /// <summary>
     /// AWS::EC2::VPCEndpointService
-    /// Specifies a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM
-    /// roles) can connect. Service consumers can create an interface VPC endpoint to connect to your service.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html
     /// </summary>
     public class VPCEndpointServiceResource : ResourceBase
@@ -19,11 +17,11 @@ namespace Comformation.EC2.VPCEndpointService
             /// 		
             /// The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
             /// 	
-            /// Required: Yes
+            /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> NetworkLoadBalancerArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> NetworkLoadBalancerArns { get; set; }
 
             /// <summary>
             /// AcceptanceRequired
@@ -35,7 +33,16 @@ namespace Comformation.EC2.VPCEndpointService
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AcceptanceRequired { get; set; }
+            public Union<bool, IntrinsicFunction> AcceptanceRequired { get; set; }
+
+            /// <summary>
+            /// GatewayLoadBalancerArns
+            /// The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> GatewayLoadBalancerArns { get; set; }
 
         }
 

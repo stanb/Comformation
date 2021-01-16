@@ -7,7 +7,6 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolRiskConfigurationAttachment CompromisedCredentialsActionsType
-    /// The compromised credentials actions type
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-compromisedcredentialsactionstype.html
     /// </summary>
     public class CompromisedCredentialsActionsType
@@ -18,7 +17,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
         /// The event action.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: BLOCK | NO_ACTION
+        /// Allowed values: BLOCK | NO_ACTION
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EventAction")]

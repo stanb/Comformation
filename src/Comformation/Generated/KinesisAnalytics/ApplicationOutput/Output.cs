@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationOutput Output
-    /// Describes application output configuration in which you identify an in-application stream and a destination
-    /// where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream
-    /// or an Amazon Kinesis Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html
     /// </summary>
     public class Output

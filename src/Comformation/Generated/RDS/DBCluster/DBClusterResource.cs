@@ -6,8 +6,6 @@ namespace Comformation.RDS.DBCluster
 {
     /// <summary>
     /// AWS::RDS::DBCluster
-    /// The AWS::RDS::DBCluster resource creates an Amazon Aurora DB cluster. For more information, see Managing an
-    /// Amazon Aurora DB Cluster in the Amazon Aurora User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: List of DBClusterRole
             /// Update requires: No interruption
             /// </summary>
-			public List<DBClusterRole> AssociatedRoles { get; set; }
+            public List<DBClusterRole> AssociatedRoles { get; set; }
 
             /// <summary>
             /// AvailabilityZones
@@ -34,11 +32,12 @@ namespace Comformation.RDS.DBCluster
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
+            public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// BacktrackWindow
             /// The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+            /// Note Currently, Backtrack is only supported for Aurora MySQL DB clusters.
             /// Default: 0
             /// Constraints:
             /// If specified, this value must be set to a number from 0 to 259,200 (72 hours).
@@ -46,7 +45,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: Long
             /// Update requires: No interruption
             /// </summary>
-			public Union<long, IntrinsicFunction> BacktrackWindow { get; set; }
+            public Union<long, IntrinsicFunction> BacktrackWindow { get; set; }
 
             /// <summary>
             /// BackupRetentionPeriod
@@ -58,7 +57,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
+            public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
             /// <summary>
             /// DBClusterIdentifier
@@ -71,20 +70,25 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
             /// <summary>
             /// DBClusterParameterGroupName
             /// The name of the DB cluster parameter group to associate with this DB cluster.
             /// Important If you apply a parameter group to an existing DB cluster, then its DB instances might need
-            /// to reboot. This can result in an outage while the DB instances are rebooting.
+            /// to reboot. This can result in an outage while the DB instances are rebooting. If you apply a change
+            /// to parameter group associated with a stopped DB cluster, then the update stack waits until the DB
+            /// cluster is started.
             /// Note If this argument is omitted, default. aurora5. 6 is used. If default. aurora5. 6 is used,
             /// specifying aurora-mysql or aurora-postgresql for the Engine property might result in an error.
+            /// To list all of the available DB cluster parameter group names, use the following command:
+            /// aws rds describe-db-cluster-parameter-groups --query &quot;DBClusterParameterGroups[].
+            /// DBClusterParameterGroupName&quot; --output text
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
 
             /// <summary>
             /// DBSubnetGroupName
@@ -93,7 +97,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -103,7 +107,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DatabaseName { get; set; }
+            public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
             /// <summary>
             /// DeletionProtection
@@ -113,18 +117,36 @@ namespace Comformation.RDS.DBCluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
+            public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
 
             /// <summary>
             /// EnableCloudwatchLogsExports
             /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the
             /// list depend on the DB engine being used. For more information, see Publishing Database Logs to
             /// Amazon CloudWatch Logs in the Amazon Aurora User Guide.
+            /// Aurora MySQL
+            /// Possible values are audit, error, general, and slowquery.
+            /// Aurora PostgreSQL
+            /// Possible values are postgresql and upgrade.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
+            public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
+
+            /// <summary>
+            /// EnableHttpEndpoint
+            /// A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+            /// default, the HTTP endpoint is disabled.
+            /// When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on
+            /// the Aurora Serverless DB cluster. You can also query your database from inside the RDS console with
+            /// the query editor.
+            /// For more information, see Using the Data API for Aurora Serverless in the Amazon Aurora User Guide.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> EnableHttpEndpoint { get; set; }
 
             /// <summary>
             /// EnableIAMDatabaseAuthentication
@@ -135,7 +157,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> EnableIAMDatabaseAuthentication { get; set; }
+            public Union<bool, IntrinsicFunction> EnableIAMDatabaseAuthentication { get; set; }
 
             /// <summary>
             /// Engine
@@ -144,19 +166,31 @@ namespace Comformation.RDS.DBCluster
             /// Aurora), and aurora-postgresql
             /// Required: Yes
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> Engine { get; set; }
+            public Union<string, IntrinsicFunction> Engine { get; set; }
 
             /// <summary>
             /// EngineMode
             /// The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, global, or
             /// multimaster.
+            /// The parallelquery engine mode isn&#39;t required for Aurora MySQL version 1. 23 and higher 1. x
+            /// versions, and version 2. 09 and higher 2. x versions.
+            /// The global engine mode isn&#39;t required for Aurora MySQL version 1. 22 and higher 1. x versions, and
+            /// global engine mode isn&#39;t required for any 2. x versions.
+            /// The multimaster engine mode only applies for DB clusters created with Aurora MySQL version 5. 6.
+            /// 10a.
+            /// For Aurora PostgreSQL, the global engine mode isn&#39;t required, and both the parallelquery and the
+            /// multimaster engine modes currently aren&#39;t supported.
+            /// Limitations and requirements apply to some DB engine modes. For more information, see the following
+            /// sections in the Amazon Aurora User Guide:
+            /// Limitations of Aurora Serverless Limitations of Parallel Query Limitations of Aurora Global
+            /// Databases Limitations of Multi-Master Clusters
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineMode { get; set; }
+            public Union<string, IntrinsicFunction> EngineMode { get; set; }
 
             /// <summary>
             /// EngineVersion
@@ -173,9 +207,24 @@ namespace Comformation.RDS.DBCluster
             /// EngineVersion&quot;
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+
+            /// <summary>
+            /// GlobalClusterIdentifier
+            /// If you are configuring an Aurora global database cluster and want your Aurora DB cluster to be a
+            /// member in the global database cluster, specify the global cluster ID of the global database cluster.
+            /// If you aren&#39;t configuring a global database cluster, don&#39;t specify this property.
+            /// Note To remove the DB cluster from a global database cluster, specify an empty value for the
+            /// GlobalClusterIdentifier property.
+            /// For information about Aurora global databases, see Working with Amazon Aurora Global Databases in
+            /// the Amazon Aurora User Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Some interruptions
+            /// </summary>
+            public Union<string, IntrinsicFunction> GlobalClusterIdentifier { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -188,39 +237,41 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// MasterUserPassword
             /// The master password for the DB instance.
-            /// Note If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don&#39;t specify
+            /// Note If you specify the SourceDBInstanceIdentifier or SnapshotIdentifier property, don&#39;t specify
             /// this property. The value is inherited from the source DB instance or snapshot.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
+            public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
 
             /// <summary>
             /// MasterUsername
             /// The name of the master user for the DB cluster.
-            /// Note You must specify MasterUsername, unless you specify SnapshotIdentifier. In that case, don&#39;t
-            /// specify MasterUsername.
+            /// Note If you specify the SourceDBInstanceIdentifier or SnapshotIdentifier property, don&#39;t specify
+            /// this property. The value is inherited from the source DB instance or snapshot.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
+            public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
             /// <summary>
             /// Port
-            /// The port number on which the instances in the DB cluster accept connections.
-            /// Default: 3306 if engine is set as aurora or 5432 if set to aurora-postgresql.
+            /// The port number on which the DB instances in the DB cluster accept connections.
+            /// Default:
+            /// When EngineMode is provisioned, 3306 (for both Aurora MySQL and Aurora PostgreSQL) When EngineMode
+            /// is serverless: 3306 when Engine is aurora or aurora-mysql 5432 when Engine is aurora-postgresql
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// PreferredBackupWindow
@@ -236,7 +287,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -252,17 +303,17 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// ReplicationSourceIdentifier
             /// The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created
-            /// as a Read Replica.
+            /// as a read replica.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationSourceIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationSourceIdentifier { get; set; }
 
             /// <summary>
             /// RestoreType
@@ -277,7 +328,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestoreType { get; set; }
+            public Union<string, IntrinsicFunction> RestoreType { get; set; }
 
             /// <summary>
             /// ScalingConfiguration
@@ -287,7 +338,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: ScalingConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ScalingConfiguration ScalingConfiguration { get; set; }
+            public ScalingConfiguration ScalingConfiguration { get; set; }
 
             /// <summary>
             /// SnapshotIdentifier
@@ -299,15 +350,20 @@ namespace Comformation.RDS.DBCluster
             /// for an update, the DB cluster is not restored from the snapshot again, and the data in the database
             /// is not changed. However, if you don&#39;t specify the SnapshotIdentifier property, an empty DB cluster
             /// is created, and the original DB cluster is deleted. If you specify a property that is different from
-            /// the previous snapshot restore property, the DB cluster is restored from the specified
+            /// the previous snapshot restore property, a new DB cluster is restored from the specified
             /// SnapshotIdentifier property, and the original DB cluster is deleted.
+            /// If you specify the SnapshotIdentifier property to restore a DB cluster (as opposed to specifying it
+            /// for DB cluster updates), then don&#39;t specify the following properties:
+            /// BackupRetentionPeriod EnableHttpEndpoint GlobalClusterIdentifier MasterUsername MasterUserPassword
+            /// PreferredBackupWindow PreferredMaintenanceWindow ReplicationSourceIdentifier RestoreType
+            /// SourceDBClusterIdentifier SourceRegion StorageEncrypted UseLatestRestorableTime
             /// Constraints:
             /// Must match the identifier of an existing Snapshot.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
             /// <summary>
             /// SourceDBClusterIdentifier
@@ -318,7 +374,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceDBClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SourceDBClusterIdentifier { get; set; }
 
             /// <summary>
             /// SourceRegion
@@ -328,20 +384,19 @@ namespace Comformation.RDS.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourceRegion { get; set; }
+            public Union<string, IntrinsicFunction> SourceRegion { get; set; }
 
             /// <summary>
             /// StorageEncrypted
-            /// Indicates whether the DB instance is encrypted.
-            /// If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier
-            /// property, don&#39;t specify this property. The value is inherited from the cluster, snapshot, or source
-            /// DB instance.
+            /// Indicates whether the DB cluster is encrypted.
+            /// If you specify the SnapshotIdentifier or SourceDBInstanceIdentifier property, don&#39;t specify this
+            /// property. The value is inherited from the snapshot or source DB instance.
             /// Important If you specify the KmsKeyId property, then you must enable encryption.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
+            public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
             /// Tags
@@ -350,7 +405,7 @@ namespace Comformation.RDS.DBCluster
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// UseLatestRestorableTime
@@ -360,16 +415,17 @@ namespace Comformation.RDS.DBCluster
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> UseLatestRestorableTime { get; set; }
+            public Union<bool, IntrinsicFunction> UseLatestRestorableTime { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
             /// A list of EC2 VPC security groups to associate with this DB cluster.
+            /// If you plan to update the resource, don&#39;t specify VPC security groups in a shared VPC.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
 
@@ -379,10 +435,10 @@ namespace Comformation.RDS.DBCluster
 
     }
 
-	public static class DBClusterAttributes
-	{
+    public static class DBClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Address");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Port");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndpoint", "Address");
-	}
+    }
 }

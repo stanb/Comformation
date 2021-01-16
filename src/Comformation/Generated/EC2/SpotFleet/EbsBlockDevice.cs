@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet EbsBlockDevice
-    /// Describes a block device for an EBS volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html
     /// </summary>
     public class EbsBlockDevice
@@ -16,8 +15,7 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// DeleteOnTermination
         /// Indicates whether the EBS volume is deleted on instance termination. For more information, see
-        /// Preserving Amazon EBS Volumes on Instance Termination in the Amazon Elastic Compute Cloud User
-        /// Guide.
+        /// Preserving Amazon EBS volumes on instance termination in the Amazon EC2 User Guide.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -35,6 +33,7 @@ namespace Comformation.EC2.SpotFleet
         /// In no case can you remove encryption from an encrypted volume.
         /// Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
         /// information, see Supported Instance Types.
+        /// This parameter is not returned by 	DescribeImageAttribute.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -44,17 +43,15 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// Iops
-        /// The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this
-        /// represents the number of IOPS that are provisioned for the volume. For gp2 volumes, this represents
-        /// the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-        /// bursting. For more information, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud User
-        /// Guide.
-        /// Constraints: Range is 100-16,000 IOPS for gp2 volumes and 100 to 64,000IOPS for io1 volumes in most
-        /// Regions. Maximum io1 IOPS of 64,000 is guaranteed only on Nitro-based instances. Other instance
-        /// families guarantee performance up to 32,000 IOPS. For more information, see Amazon EBS Volume Types
-        /// in the Amazon Elastic Compute Cloud User Guide.
-        /// Condition: This parameter is required for requests to create io1 volumes; it is not used in requests
-        /// to create gp2, st1, sc1, or standard volumes.
+        /// The number of I/O operations per second (IOPS). For gp3, io1, and io2 volumes, this represents the
+        /// number of IOPS that are provisioned for the volume. For gp2 volumes, this represents the baseline
+        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
+        /// The following are the supported values for each volume type:
+        /// gp3: 3,000-16,000 IOPS io1: 100-64,000 IOPS io2: 100-64,000 IOPS
+        /// For io1 and io2 volumes, we guarantee 64,000 IOPS only for Instances built on the Nitro System.
+        /// Other instance families guarantee performance up to 32,000 IOPS.
+        /// This parameter is required for io1 and io2 volumes. The default for gp3 volumes is 3,000 IOPS. This
+        /// parameter is not supported for gp2, st1, sc1, or standard volumes.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -74,13 +71,11 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// VolumeSize
-        /// The size of the volume, in GiB.
-        /// Default: If you&#39;re creating the volume from a snapshot and don&#39;t specify a volume size, the default
-        /// is the snapshot size.
-        /// Constraints: 1-16384 for General Purpose SSD (gp2), 4-16384 for Provisioned IOPS SSD (io1),
-        /// 500-16384 for Throughput Optimized HDD (st1), 500-16384 for Cold HDD (sc1), and 1-1024 for Magnetic
-        /// (standard) volumes. If you specify a snapshot, the volume size must be equal to or larger than the
-        /// snapshot size.
+        /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you
+        /// specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to
+        /// or larger than the snapshot size.
+        /// The following are the supported volumes sizes for each volume type:
+        /// 	 gp2 and gp3:1-16,384 io1 and io2: 4-16,384 st1 and sc1: 125-16,384 standard: 1-1,024
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -90,12 +85,11 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// VolumeType
-        /// The volume type. If you set the type to io1, you must also specify the IOPS that the volume
-        /// supports.
-        /// Default: gp2
+        /// The volume type. For more information, see Amazon EBS volume types in the Amazon EC2 User Guide. If
+        /// the volume type is io1 or io2, you must specify the IOPS that the volume supports.
         /// Required: No
         /// Type: String
-        /// Allowed Values: gp2 | io1 | sc1 | st1 | standard
+        /// Allowed values: gp2 | gp3 | io1 | io2 | sc1 | st1 | standard
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeType")]

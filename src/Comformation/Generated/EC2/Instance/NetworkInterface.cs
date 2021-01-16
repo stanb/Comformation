@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance NetworkInterface
-    /// Specifies a network interface that is to be attached to an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
     /// </summary>
     public class NetworkInterface
@@ -97,6 +96,8 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// NetworkInterfaceId
         /// The ID of the network interface.
+        /// If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface
+        /// ID in a launch specification.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

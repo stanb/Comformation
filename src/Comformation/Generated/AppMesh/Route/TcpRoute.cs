@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route TcpRoute
-    /// An object that represents a TCP route type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
     /// </summary>
     public class TcpRoute
@@ -22,6 +21,16 @@ namespace Comformation.AppMesh.Route
         /// </summary>
         [JsonProperty("Action")]
         public TcpRouteAction Action { get; set; }
+
+        /// <summary>
+        /// Timeout
+        /// An object that represents types of timeouts.
+        /// Required: No
+        /// Type: TcpTimeout
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Timeout")]
+        public TcpTimeout Timeout { get; set; }
 
     }
 }

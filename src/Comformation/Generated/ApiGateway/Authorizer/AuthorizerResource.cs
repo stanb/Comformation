@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.Authorizer
 {
     /// <summary>
     /// AWS::ApiGateway::Authorizer
-    /// The AWS::ApiGateway::Authorizer resource creates an authorization layer that API Gateway activates for methods
-    /// that have authorization enabled. API Gateway activates the authorizer when a client calls those methods.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html
     /// </summary>
     public class AuthorizerResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthType { get; set; }
+            public Union<string, IntrinsicFunction> AuthType { get; set; }
 
             /// <summary>
             /// AuthorizerCredentials
@@ -33,7 +31,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizerCredentials { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizerCredentials { get; set; }
 
             /// <summary>
             /// AuthorizerResultTtlInSeconds
@@ -44,7 +42,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
+            public Union<int, IntrinsicFunction> AuthorizerResultTtlInSeconds { get; set; }
 
             /// <summary>
             /// AuthorizerUri
@@ -56,7 +54,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizerUri { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizerUri { get; set; }
 
             /// <summary>
             /// IdentitySource
@@ -72,7 +70,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IdentitySource { get; set; }
+            public Union<string, IntrinsicFunction> IdentitySource { get; set; }
 
             /// <summary>
             /// IdentityValidationExpression
@@ -84,7 +82,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IdentityValidationExpression { get; set; }
+            public Union<string, IntrinsicFunction> IdentityValidationExpression { get; set; }
 
             /// <summary>
             /// Name
@@ -93,7 +91,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// ProviderARNs
@@ -104,7 +102,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ProviderARNs { get; set; }
+            public List<Union<string, IntrinsicFunction>> ProviderARNs { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -113,7 +111,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// Type
@@ -125,7 +123,7 @@ namespace Comformation.ApiGateway.Authorizer
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
 

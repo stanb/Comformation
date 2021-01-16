@@ -7,7 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup TriggerConfig
-    /// Information about notification triggers for the deployment group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html
     /// </summary>
     public class TriggerConfig
@@ -35,8 +34,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// TriggerTargetArn
-        /// The ARN of the Amazon Simple Notification Service topic through which notifications about deployment
-        /// or instance events are sent.
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which
+        /// notifications about deployment or instance events are sent.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

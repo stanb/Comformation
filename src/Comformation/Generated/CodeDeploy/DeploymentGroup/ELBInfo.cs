@@ -7,8 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup ELBInfo
-    /// The ELBInfo property type specifies information about the Elastic Load Balancing load balancer used for an AWS
-    /// CodeDelpoy deployment group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-elbinfo.html
     /// </summary>
     public class ELBInfo

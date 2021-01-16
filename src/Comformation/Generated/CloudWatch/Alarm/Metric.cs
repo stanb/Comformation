@@ -7,8 +7,6 @@ namespace Comformation.CloudWatch.Alarm
 {
     /// <summary>
     /// AWS::CloudWatch::Alarm Metric
-    /// The Metric property type represents a specific metric. Metric is a property of the 		 MetricStat property
-    /// type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html
     /// </summary>
     public class Metric
@@ -17,7 +15,7 @@ namespace Comformation.CloudWatch.Alarm
         /// <summary>
         /// Dimensions
         /// 		
-        /// The dimensions for the metric.
+        /// The metric dimensions that you want to be used for the metric that 		 the alarm will watch. .
         /// 	
         /// Required: No
         /// Type: List of Dimension
@@ -30,7 +28,7 @@ namespace Comformation.CloudWatch.Alarm
         /// <summary>
         /// MetricName
         /// 		
-        /// The name of the metric. This is a required field.
+        /// The name of the metric that you want the alarm to watch. This is a required field.
         /// 	
         /// Required: No
         /// Type: String
@@ -44,7 +42,7 @@ namespace Comformation.CloudWatch.Alarm
         /// <summary>
         /// Namespace
         /// 		
-        /// The namespace of the metric.
+        /// The namespace of the metric that the alarm will watch.
         /// 	
         /// Required: No
         /// Type: String

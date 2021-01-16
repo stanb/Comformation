@@ -6,10 +6,6 @@ namespace Comformation.CodeDeploy.DeploymentConfig
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentConfig
-    /// The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success
-    /// conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment
-    /// configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances
-    /// that must remain available at any time during a deployment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html
     /// </summary>
     public class DeploymentConfigResource : ResourceBase
@@ -30,7 +26,7 @@ namespace Comformation.CodeDeploy.DeploymentConfig
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
+            public Union<string, IntrinsicFunction> DeploymentConfigName { get; set; }
 
             /// <summary>
             /// MinimumHealthyHosts
@@ -51,7 +47,7 @@ namespace Comformation.CodeDeploy.DeploymentConfig
             /// Type: MinimumHealthyHosts
             /// Update requires: Replacement
             /// </summary>
-			public MinimumHealthyHosts MinimumHealthyHosts { get; set; }
+            public MinimumHealthyHosts MinimumHealthyHosts { get; set; }
 
         }
 

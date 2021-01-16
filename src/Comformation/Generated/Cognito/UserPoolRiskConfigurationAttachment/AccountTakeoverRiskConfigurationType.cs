@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolRiskConfigurationAttachment AccountTakeoverRiskConfigurationType
-    /// Configuration for mitigation actions and notification for different levels of risk detected for a potential
-    /// account takeover.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html
     /// </summary>
     public class AccountTakeoverRiskConfigurationType

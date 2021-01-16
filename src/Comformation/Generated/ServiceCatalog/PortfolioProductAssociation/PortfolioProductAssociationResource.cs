@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
 {
     /// <summary>
     /// AWS::ServiceCatalog::PortfolioProductAssociation
-    /// Associates the specified product with the specified portfolio.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html
     /// </summary>
     public class PortfolioProductAssociationResource : ResourceBase
@@ -23,7 +22,7 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SourcePortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> SourcePortfolioId { get; set; }
 
             /// <summary>
             /// AcceptLanguage
@@ -34,7 +33,7 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
+            public Union<string, IntrinsicFunction> AcceptLanguage { get; set; }
 
             /// <summary>
             /// PortfolioId
@@ -46,7 +45,7 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PortfolioId { get; set; }
+            public Union<string, IntrinsicFunction> PortfolioId { get; set; }
 
             /// <summary>
             /// ProductId
@@ -58,7 +57,7 @@ namespace Comformation.ServiceCatalog.PortfolioProductAssociation
             /// Pattern: ^[a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ProductId { get; set; }
+            public Union<string, IntrinsicFunction> ProductId { get; set; }
 
         }
 

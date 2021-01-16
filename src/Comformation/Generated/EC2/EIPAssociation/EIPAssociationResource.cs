@@ -6,8 +6,6 @@ namespace Comformation.EC2.EIPAssociation
 {
     /// <summary>
     /// AWS::EC2::EIPAssociation
-    /// Associates an Elastic IP address with an instance or a network interface. 		 Before you can use an Elastic IP
-    /// address, you must allocate it to your account.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html
     /// </summary>
     public class EIPAssociationResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> AllocationId { get; set; }
+            public Union<string, IntrinsicFunction> AllocationId { get; set; }
 
             /// <summary>
             /// EIP
@@ -30,7 +28,7 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> EIP { get; set; }
+            public Union<string, IntrinsicFunction> EIP { get; set; }
 
             /// <summary>
             /// InstanceId
@@ -41,7 +39,7 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceId { get; set; }
+            public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
             /// <summary>
             /// NetworkInterfaceId
@@ -53,7 +51,7 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
             /// <summary>
             /// PrivateIpAddress
@@ -64,7 +62,7 @@ namespace Comformation.EC2.EIPAssociation
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
+            public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }
 
         }
 

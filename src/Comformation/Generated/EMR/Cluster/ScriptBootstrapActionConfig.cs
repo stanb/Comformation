@@ -7,9 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster ScriptBootstrapActionConfig
-    /// ScriptBootstrapActionConfig is a subproperty of the BootstrapActionConfig property type.
-    /// ScriptBootstrapActionConfig specifies the arguments and location of the bootstrap script for EMR to run on all
-    /// cluster nodes before it installs open-source big data applications on them.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html
     /// </summary>
     public class ScriptBootstrapActionConfig

@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
     /// AWS::AmazonMQ::Broker ConfigurationId
-    /// A list of information about the configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html
     /// </summary>
     public class ConfigurationId

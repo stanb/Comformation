@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket TopicConfiguration
-    /// A container for specifying the configuration for publication of messages to an Amazon Simple Notification
-    /// Service (Amazon SNS) topic when Amazon S3 detects specified events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html
     /// </summary>
     public class TopicConfiguration

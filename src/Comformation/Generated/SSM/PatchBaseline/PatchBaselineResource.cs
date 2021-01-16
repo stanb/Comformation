@@ -6,8 +6,6 @@ namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
     /// AWS::SSM::PatchBaseline
-    /// The AWS::SSM::PatchBaseline resource defines the basic information for an AWS Systems Manager patch baseline.
-    /// A patch baseline defines which patches are approved for installation on your instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html
     /// </summary>
     public class PatchBaselineResource : ResourceBase
@@ -19,11 +17,11 @@ namespace Comformation.SSM.PatchBaseline
             /// Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
             /// Required: No
             /// Type: String
-            /// Allowed Values: AMAZON_LINUX | AMAZON_LINUX_2 | CENTOS | REDHAT_ENTERPRISE_LINUX | SUSE | UBUNTU |
-            /// WINDOWS
+            /// Allowed values: AMAZON_LINUX | AMAZON_LINUX_2 | CENTOS | DEBIAN | MACOS | ORACLE_LINUX |
+            /// REDHAT_ENTERPRISE_LINUX | SUSE | UBUNTU | WINDOWS
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> OperatingSystem { get; set; }
+            public Union<string, IntrinsicFunction> OperatingSystem { get; set; }
 
             /// <summary>
             /// Description
@@ -34,7 +32,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ApprovalRules
@@ -43,7 +41,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: RuleGroup
             /// Update requires: No interruption
             /// </summary>
-			public RuleGroup ApprovalRules { get; set; }
+            public RuleGroup ApprovalRules { get; set; }
 
             /// <summary>
             /// Sources
@@ -54,7 +52,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Maximum: 20
             /// Update requires: No interruption
             /// </summary>
-			public List<PatchSource> Sources { get; set; }
+            public List<PatchSource> Sources { get; set; }
 
             /// <summary>
             /// Name
@@ -66,31 +64,31 @@ namespace Comformation.SSM.PatchBaseline
             /// Pattern: ^[a-zA-Z0-9_\-. ]{3,128}$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RejectedPatches
             /// A list of explicitly rejected patches for the baseline.
-            /// For information about accepted formats for lists of approved patches and rejected patches, see
-            /// Package Name Formats for Approved and Rejected Patch Lists in the AWS Systems Manager User Guide.
+            /// For information about accepted formats for lists of approved patches and rejected patches, see About
+            /// package name formats for approved and rejected patch lists in the AWS Systems Manager User Guide.
             /// Required: No
             /// Type: List of String
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> RejectedPatches { get; set; }
+            public List<Union<string, IntrinsicFunction>> RejectedPatches { get; set; }
 
             /// <summary>
             /// ApprovedPatches
             /// A list of explicitly approved patches for the baseline.
-            /// For information about accepted formats for lists of approved patches and rejected patches, see
-            /// Package Name Formats for Approved and Rejected Patch Lists in the AWS Systems Manager User Guide.
+            /// For information about accepted formats for lists of approved patches and rejected patches, see About
+            /// package name formats for approved and rejected patch lists in the AWS Systems Manager User Guide.
             /// Required: No
             /// Type: List of String
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ApprovedPatches { get; set; }
+            public List<Union<string, IntrinsicFunction>> ApprovedPatches { get; set; }
 
             /// <summary>
             /// RejectedPatchesAction
@@ -103,10 +101,10 @@ namespace Comformation.SSM.PatchBaseline
             /// considered non-compliant with the patch baseline, and its status is reported as InstalledRejected.
             /// Required: No
             /// Type: String
-            /// Allowed Values: ALLOW_AS_DEPENDENCY | BLOCK
+            /// Allowed values: ALLOW_AS_DEPENDENCY | BLOCK
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RejectedPatchesAction { get; set; }
+            public Union<string, IntrinsicFunction> RejectedPatchesAction { get; set; }
 
             /// <summary>
             /// PatchGroups
@@ -118,7 +116,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Pattern: ^([\p{L}\p{Z}\p{N}_. :/=+\-@]*)$
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> PatchGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> PatchGroups { get; set; }
 
             /// <summary>
             /// ApprovedPatchesComplianceLevel
@@ -126,10 +124,10 @@ namespace Comformation.SSM.PatchBaseline
             /// as missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
             /// Required: No
             /// Type: String
-            /// Allowed Values: CRITICAL | HIGH | INFORMATIONAL | LOW | MEDIUM | UNSPECIFIED
+            /// Allowed values: CRITICAL | HIGH | INFORMATIONAL | LOW | MEDIUM | UNSPECIFIED
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApprovedPatchesComplianceLevel { get; set; }
+            public Union<string, IntrinsicFunction> ApprovedPatchesComplianceLevel { get; set; }
 
             /// <summary>
             /// ApprovedPatchesEnableNonSecurity
@@ -139,7 +137,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
+            public Union<bool, IntrinsicFunction> ApprovedPatchesEnableNonSecurity { get; set; }
 
             /// <summary>
             /// GlobalFilters
@@ -148,7 +146,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Type: PatchFilterGroup
             /// Update requires: No interruption
             /// </summary>
-			public PatchFilterGroup GlobalFilters { get; set; }
+            public PatchFilterGroup GlobalFilters { get; set; }
 
             /// <summary>
             /// Tags
@@ -161,7 +159,7 @@ namespace Comformation.SSM.PatchBaseline
             /// Maximum: 1000
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

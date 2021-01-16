@@ -7,8 +7,6 @@ namespace Comformation.Amplify.Branch
 {
     /// <summary>
     /// AWS::Amplify::Branch EnvironmentVariable
-    /// The EnvironmentVariable property type sets environment variables for a specific branch. Environment variables
-    /// are key-value pairs that are available at build time.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html
     /// </summary>
     public class EnvironmentVariable

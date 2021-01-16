@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket Transition
-    /// Specifies when an object transitions to a specified storage class.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html
     /// </summary>
     public class Transition
@@ -18,7 +17,7 @@ namespace Comformation.S3.Bucket
         /// The storage class to which you want the object to transition.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | STANDARD_IA
+        /// Allowed values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | STANDARD_IA
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageClass")]

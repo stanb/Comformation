@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application MonitoringConfiguration
-    /// Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics
-    /// application. For more information about CloudWatch logging, see Monitoring.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html
     /// </summary>
     public class MonitoringConfiguration
@@ -20,7 +18,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// set this property to CUSTOM in order to set the LogLevel or MetricsLevel parameters.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CUSTOM | DEFAULT
+        /// Allowed values: CUSTOM | DEFAULT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConfigurationType")]
@@ -28,10 +26,11 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// MetricsLevel
-        /// Describes the granularity of the CloudWatch Logs for an application.
+        /// Describes the granularity of the CloudWatch Logs for an application. The Parallelism level is not
+        /// recommended for applications with a Parallelism over 64 due to excessive costs.
         /// Required: No
         /// Type: String
-        /// Allowed Values: APPLICATION | OPERATOR | PARALLELISM | TASK
+        /// Allowed values: APPLICATION | OPERATOR | PARALLELISM | TASK
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MetricsLevel")]
@@ -42,7 +41,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Describes the verbosity of the CloudWatch Logs for an application.
         /// Required: No
         /// Type: String
-        /// Allowed Values: DEBUG | ERROR | INFO | WARN
+        /// Allowed values: DEBUG | ERROR | INFO | WARN
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LogLevel")]

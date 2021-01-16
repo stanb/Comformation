@@ -7,7 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule CloudwatchMetricAction
-    /// Describes an action that captures a CloudWatch metric.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html
     /// </summary>
     public class CloudwatchMetricAction

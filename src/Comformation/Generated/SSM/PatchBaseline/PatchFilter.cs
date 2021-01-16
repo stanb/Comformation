@@ -7,7 +7,6 @@ namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
     /// AWS::SSM::PatchBaseline PatchFilter
-    /// The PatchFilter property type defines a patch filter for an AWS Systems Manager patch baseline.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html
     /// </summary>
     public class PatchFilter
@@ -32,8 +31,9 @@ namespace Comformation.SSM.PatchBaseline
         /// For information about valid keys, see PatchFilter in the AWS Systems Manager API Reference.
         /// Required: No
         /// Type: String
-        /// Allowed Values: CLASSIFICATION | MSRC_SEVERITY | PATCH_ID | PATCH_SET | PRIORITY | PRODUCT |
-        /// PRODUCT_FAMILY | SECTION | SEVERITY
+        /// Allowed values: ADVISORY_ID | ARCH | BUGZILLA_ID | CLASSIFICATION | CVE_ID | EPOCH | MSRC_SEVERITY |
+        /// NAME | PATCH_ID | PATCH_SET | PRIORITY | PRODUCT | PRODUCT_FAMILY | RELEASE | REPOSITORY | SECTION |
+        /// SECURITY | SEVERITY | VERSION
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Key")]

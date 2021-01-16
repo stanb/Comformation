@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance InstanceIpv6Address
-    /// Specifies the IPv6 address for the instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html
     /// </summary>
     public class InstanceIpv6Address

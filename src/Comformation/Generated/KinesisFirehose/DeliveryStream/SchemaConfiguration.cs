@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream SchemaConfiguration
-    /// Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to
-    /// Amazon S3.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html
     /// </summary>
     public class SchemaConfiguration
@@ -18,8 +16,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// CatalogId
         /// The ID of the AWS Glue Data Catalog. If you don&#39;t supply this, the AWS account ID is used by
         /// default.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Pattern: ^\S+$
         /// Update requires: No interruption
         /// </summary>
@@ -29,8 +29,13 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// DatabaseName
         /// Specifies the name of the AWS Glue database that contains the schema for the output data.
-        /// Required: Yes
+        /// Important If the SchemaConfiguration request parameter is used as part of invoking the
+        /// CreateDeliveryStream API, then the DatabaseName property is required and its value must be
+        /// specified.
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Pattern: ^\S+$
         /// Update requires: No interruption
         /// </summary>
@@ -40,8 +45,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// Region
         /// If you don&#39;t specify an AWS Region, the default is the current Region.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Pattern: ^\S+$
         /// Update requires: No interruption
         /// </summary>
@@ -52,8 +59,12 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// RoleARN
         /// The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same
         /// account you use for Kinesis Data Firehose. Cross-account roles aren&#39;t allowed.
-        /// Required: Yes
+        /// Important If the SchemaConfiguration request parameter is used as part of invoking the
+        /// CreateDeliveryStream API, then the RoleARN property is required and its value must be specified.
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Pattern: ^\S+$
         /// Update requires: No interruption
         /// </summary>
@@ -63,8 +74,12 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// TableName
         /// Specifies the AWS Glue table that contains the column information that constitutes your data schema.
-        /// Required: Yes
+        /// Important If the SchemaConfiguration request parameter is used as part of invoking the
+        /// CreateDeliveryStream API, then the TableName property is required and its value must be specified.
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Pattern: ^\S+$
         /// Update requires: No interruption
         /// </summary>
@@ -76,8 +91,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Specifies the table version for the output data schema. If you don&#39;t specify this version ID, or if
         /// you set it to LATEST, Kinesis Data Firehose uses the most recent version. This means that any
         /// updates to the table are automatically picked up.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
         /// Pattern: ^\S+$
         /// Update requires: No interruption
         /// </summary>

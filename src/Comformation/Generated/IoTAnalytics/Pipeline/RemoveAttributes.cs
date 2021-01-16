@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline RemoveAttributes
-    /// An activity that removes attributes from a message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-removeattributes.html
     /// </summary>
     public class RemoveAttributes

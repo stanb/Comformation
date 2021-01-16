@@ -6,8 +6,6 @@ namespace Comformation.EC2.VPCCidrBlock
 {
     /// <summary>
     /// AWS::EC2::VPCCidrBlock
-    /// Associates a CIDR block with your VPC. You can only associate a single IPv6 CIDR block with your VPC. The IPv6
-    /// CIDR block size is fixed at /56.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
     /// </summary>
     public class VPCCidrBlockResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.EC2.VPCCidrBlock
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> AmazonProvidedIpv6CidrBlock { get; set; }
+            public Union<bool, IntrinsicFunction> AmazonProvidedIpv6CidrBlock { get; set; }
 
             /// <summary>
             /// CidrBlock
@@ -31,7 +29,7 @@ namespace Comformation.EC2.VPCCidrBlock
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrBlock { get; set; }
+            public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
             /// VpcId
@@ -40,7 +38,7 @@ namespace Comformation.EC2.VPCCidrBlock
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 

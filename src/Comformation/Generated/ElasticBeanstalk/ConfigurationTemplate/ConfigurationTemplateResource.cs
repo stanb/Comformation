@@ -6,10 +6,6 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::ConfigurationTemplate
-    /// The AWS::ElasticBeanstalk::ConfigurationTemplate resource is an AWS Elastic Beanstalk resource type that
-    /// specifies an Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk
-    /// application. You define application configuration settings in a configuration template. You can then use the
-    /// configuration template to deploy different versions of the application with the same configuration settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html
     /// </summary>
     public class ConfigurationTemplateResource : ResourceBase
@@ -25,7 +21,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// Description
@@ -35,7 +31,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Maximum: 200
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// EnvironmentId
@@ -46,7 +42,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EnvironmentId { get; set; }
+            public Union<string, IntrinsicFunction> EnvironmentId { get; set; }
 
             /// <summary>
             /// OptionSettings
@@ -58,7 +54,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: List of ConfigurationOptionSetting
             /// Update requires: No interruption
             /// </summary>
-			public List<ConfigurationOptionSetting> OptionSettings { get; set; }
+            public List<ConfigurationOptionSetting> OptionSettings { get; set; }
 
             /// <summary>
             /// PlatformArn
@@ -69,7 +65,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PlatformArn { get; set; }
+            public Union<string, IntrinsicFunction> PlatformArn { get; set; }
 
             /// <summary>
             /// SolutionStackName
@@ -85,7 +81,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
+            public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
 
             /// <summary>
             /// SourceConfiguration
@@ -101,7 +97,7 @@ namespace Comformation.ElasticBeanstalk.ConfigurationTemplate
             /// Type: SourceConfiguration
             /// Update requires: Replacement
             /// </summary>
-			public SourceConfiguration SourceConfiguration { get; set; }
+            public SourceConfiguration SourceConfiguration { get; set; }
 
         }
 

@@ -6,8 +6,6 @@ namespace Comformation.AppSync.ApiKey
 {
     /// <summary>
     /// AWS::AppSync::ApiKey
-    /// The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing
-    /// GraphQL operations with AWS AppSync that require an API key.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html
     /// </summary>
     public class ApiKeyResource : ResourceBase
@@ -21,17 +19,26 @@ namespace Comformation.AppSync.ApiKey
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
+            /// ApiKeyId
+            /// The API key ID.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> ApiKeyId { get; set; }
 
             /// <summary>
             /// Expires
-            /// Expiration time of the API key in seconds (using Unix Epoch time), with a minimum of 1 day and a
-            /// maximum of 365 days. The default value is 7 days.
+            /// The time after which the API key expires. The date is represented as seconds since the epoch,
+            /// rounded down to the nearest hour.
             /// Required: No
             /// Type: Double
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> Expires { get; set; }
+            public Union<double, IntrinsicFunction> Expires { get; set; }
 
             /// <summary>
             /// ApiId
@@ -40,7 +47,7 @@ namespace Comformation.AppSync.ApiKey
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         }
 
@@ -50,9 +57,9 @@ namespace Comformation.AppSync.ApiKey
 
     }
 
-	public static class ApiKeyAttributes
-	{
+    public static class ApiKeyAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ApiKey = new ResourceAttribute<Union<string, IntrinsicFunction>>("ApiKey");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

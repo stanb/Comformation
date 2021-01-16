@@ -6,10 +6,6 @@ namespace Comformation.EC2.VPCPeeringConnection
 {
     /// <summary>
     /// AWS::EC2::VPCPeeringConnection
-    /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and 			an accepter VPC with
-    /// which to create the connection. The accepter VPC can belong to 			another AWS account and can be in a
-    /// different Region to the requester VPC. The requester 			VPC and accepter VPC cannot have overlapping CIDR
-    /// blocks.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
     /// </summary>
     public class VPCPeeringConnectionResource : ResourceBase
@@ -24,7 +20,7 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PeerOwnerId { get; set; }
+            public Union<string, IntrinsicFunction> PeerOwnerId { get; set; }
 
             /// <summary>
             /// PeerRegion
@@ -36,7 +32,7 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PeerRegion { get; set; }
+            public Union<string, IntrinsicFunction> PeerRegion { get; set; }
 
             /// <summary>
             /// PeerRoleArn
@@ -47,7 +43,7 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PeerRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> PeerRoleArn { get; set; }
 
             /// <summary>
             /// PeerVpcId
@@ -57,7 +53,7 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PeerVpcId { get; set; }
+            public Union<string, IntrinsicFunction> PeerVpcId { get; set; }
 
             /// <summary>
             /// Tags
@@ -66,7 +62,7 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -75,7 +71,7 @@ namespace Comformation.EC2.VPCPeeringConnection
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 

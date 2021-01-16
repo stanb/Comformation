@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel TransitionEvent
-    /// Specifies the actions performed and the next state entered when a &quot;condition&quot; evaluates to TRUE.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html
     /// </summary>
     public class TransitionEvent
@@ -15,8 +14,8 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// Condition
-        /// [Required] A Boolean expression that when TRUE causes the actions to be performed and the
-        /// &quot;nextState&quot; to be entered.
+        /// Required. A Boolean expression that when TRUE causes the actions to be performed and the nextState
+        /// to be entered.
         /// Required: No
         /// Type: String
         /// Maximum: 512

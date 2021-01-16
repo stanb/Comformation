@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket CorsRule
-    /// Specifies a cross-origin access rule for an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html
     /// </summary>
     public class CorsRule
@@ -27,8 +26,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// AllowedMethods
-        /// An HTTP method that you allow the origin to execute. Valid values are GET, PUT, HEAD, POST, and
-        /// DELETE.
+        /// An HTTP method that you allow the origin to run. Valid values are GET, PUT, HEAD, POST, and DELETE.
         /// Required: Yes
         /// Type: List of String
         /// Update requires: No interruption

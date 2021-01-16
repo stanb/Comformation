@@ -7,8 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route HeaderMatchMethod
-    /// An object that represents the method and value to match with the header value sent in a request. Specify one
-    /// match method.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html
     /// </summary>
     public class HeaderMatchMethod

@@ -6,7 +6,6 @@ namespace Comformation.RoboMaker.RobotApplicationVersion
 {
     /// <summary>
     /// AWS::RoboMaker::RobotApplicationVersion
-    /// The AWS::RoboMaker::RobotApplicationVersion resource creates an AWS RoboMaker robot version.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html
     /// </summary>
     public class RobotApplicationVersionResource : ResourceBase
@@ -24,7 +23,7 @@ namespace Comformation.RoboMaker.RobotApplicationVersion
             /// Pattern: [a-zA-Z0-9_. \-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
+            public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
 
             /// <summary>
             /// Application
@@ -36,7 +35,7 @@ namespace Comformation.RoboMaker.RobotApplicationVersion
             /// Pattern: arn:. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Application { get; set; }
+            public Union<string, IntrinsicFunction> Application { get; set; }
 
         }
 

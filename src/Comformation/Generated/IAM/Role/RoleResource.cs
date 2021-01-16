@@ -6,9 +6,6 @@ namespace Comformation.IAM.Role
 {
     /// <summary>
     /// AWS::IAM::Role
-    /// Creates a new role for your AWS account. For more information about roles, go to IAM Roles. For information
-    /// about limitations on role names and the number of roles you can create, go to Limitations on IAM Entities in
-    /// the IAM User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
     /// </summary>
     public class RoleResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.IAM.Role
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssumeRolePolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssumeRolePolicyDocument { get; set; }
 
             /// <summary>
             /// Description
@@ -36,7 +33,7 @@ namespace Comformation.IAM.Role
             /// Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ManagedPolicyArns
@@ -48,7 +45,7 @@ namespace Comformation.IAM.Role
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// MaxSessionDuration
@@ -68,7 +65,7 @@ namespace Comformation.IAM.Role
             /// Maximum: 43200
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MaxSessionDuration { get; set; }
+            public Union<int, IntrinsicFunction> MaxSessionDuration { get; set; }
 
             /// <summary>
             /// Path
@@ -85,7 +82,7 @@ namespace Comformation.IAM.Role
             /// Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Path { get; set; }
+            public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// PermissionsBoundary
@@ -96,7 +93,7 @@ namespace Comformation.IAM.Role
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PermissionsBoundary { get; set; }
+            public Union<string, IntrinsicFunction> PermissionsBoundary { get; set; }
 
             /// <summary>
             /// Policies
@@ -119,7 +116,7 @@ namespace Comformation.IAM.Role
             /// Type: List of Policy
             /// Update requires: No interruption
             /// </summary>
-			public List<Policy> Policies { get; set; }
+            public List<Policy> Policies { get; set; }
 
             /// <summary>
             /// RoleName
@@ -142,7 +139,7 @@ namespace Comformation.IAM.Role
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleName { get; set; }
+            public Union<string, IntrinsicFunction> RoleName { get; set; }
 
             /// <summary>
             /// Tags
@@ -153,7 +150,7 @@ namespace Comformation.IAM.Role
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -163,9 +160,9 @@ namespace Comformation.IAM.Role
 
     }
 
-	public static class RoleAttributes
-	{
+    public static class RoleAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RoleId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RoleId");
-	}
+    }
 }

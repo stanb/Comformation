@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::DeviceDefinitionVersion
-    /// The AWS::Greengrass::DeviceDefinitionVersion resource represents a device definition version for AWS IoT
-    /// Greengrass. A device definition version contains a list of devices.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html
     /// </summary>
     public class DeviceDefinitionVersionResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeviceDefinitionId { get; set; }
+            public Union<string, IntrinsicFunction> DeviceDefinitionId { get; set; }
 
             /// <summary>
             /// Devices
@@ -30,7 +28,7 @@ namespace Comformation.Greengrass.DeviceDefinitionVersion
             /// Type: List of Device
             /// Update requires: Replacement
             /// </summary>
-			public List<Device> Devices { get; set; }
+            public List<Device> Devices { get; set; }
 
         }
 

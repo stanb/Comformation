@@ -6,8 +6,6 @@ namespace Comformation.ElastiCache.SubnetGroup
 {
     /// <summary>
     /// AWS::ElastiCache::SubnetGroup
-    /// Creates a cache subnet group. For more information about cache subnet groups, go to Cache Subnet Groups in the
-    /// Amazon ElastiCache User Guide or go to CreateCacheSubnetGroup in the Amazon ElastiCache API Reference Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html
     /// </summary>
     public class SubnetGroupResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> CacheSubnetGroupName { get; set; }
 
             /// <summary>
             /// Description
@@ -32,7 +30,7 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -41,7 +39,7 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         }
 

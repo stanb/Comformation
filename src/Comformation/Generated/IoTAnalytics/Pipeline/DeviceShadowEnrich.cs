@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline DeviceShadowEnrich
-    /// An activity that adds information from the AWS IoT Device Shadows service to a message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceshadowenrich.html
     /// </summary>
     public class DeviceShadowEnrich

@@ -7,7 +7,6 @@ namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
     /// AWS::SES::ReceiptRule AddHeaderAction
-    /// When included in a receipt rule, this action adds a header to the received email.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html
     /// </summary>
     public class AddHeaderAction

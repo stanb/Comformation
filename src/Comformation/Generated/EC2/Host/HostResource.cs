@@ -6,10 +6,6 @@ namespace Comformation.EC2.Host
 {
     /// <summary>
     /// AWS::EC2::Host
-    /// Allocates a fully dedicated physical server 			for launching EC2 instances. Because the host is fully
-    /// dedicated for your use, it can 			help you address compliance requirements and reduce costs by allowing you to
-    /// use your 			existing server-bound software licenses. For more information, see 				Dedicated Hosts in the
-    /// Amazon EC2 User Guide for Linux 					Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html
     /// </summary>
     public class HostResource : ResourceBase
@@ -21,15 +17,15 @@ namespace Comformation.EC2.Host
             /// 	
             /// Indicates whether the host accepts any untargeted instance launches that 		match its instance type
             /// configuration, or if it only accepts Host tenancy 		instance launches that specify its unique host
-            /// ID. For more information, 		see 	Understanding Instance Placement and Host Affinity in the 	Amazon
-            /// EC2 User Guide for Linux Instances.
+            /// ID. For more information, 		see 	Understanding auto-placement and affinity in the Amazon EC2 User
+            /// Guide.
             /// Default: on
             /// Required: No
             /// Type: String
-            /// Allowed Values: off | on
+            /// Allowed values: off | on
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AutoPlacement { get; set; }
+            public Union<string, IntrinsicFunction> AutoPlacement { get; set; }
 
             /// <summary>
             /// AvailabilityZone
@@ -38,33 +34,33 @@ namespace Comformation.EC2.Host
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// HostRecovery
             /// 		
             /// Indicates whether to enable or disable host recovery for the Dedicated Host. 			Host recovery is
-            /// disabled by default. For more information, see 			 				Host Recovery in the Amazon Elastic Compute
-            /// Cloud User Guide.
+            /// disabled by default. For more information, see 			 			Host recovery in the Amazon EC2 User Guide.
             /// 		
             /// Default: off
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: off | on
+            /// Allowed values: off | on
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HostRecovery { get; set; }
+            public Union<string, IntrinsicFunction> HostRecovery { get; set; }
 
             /// <summary>
             /// InstanceType
-            /// Specifies the instance type for which to configure your Dedicated Hosts. When you 			specify the
-            /// instance type, that is the only instance type that you can launch onto that 			host.
+            /// Specifies the instance type to be supported by the Dedicated Hosts. If you 		specify an instance
+            /// type, the Dedicated Hosts support instances of the 		specified instance type only.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
         }
 

@@ -6,7 +6,6 @@ namespace Comformation.EC2.CustomerGateway
 {
     /// <summary>
     /// AWS::EC2::CustomerGateway
-    /// Specifies a customer gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html
     /// </summary>
     public class CustomerGatewayResource : ResourceBase
@@ -21,7 +20,7 @@ namespace Comformation.EC2.CustomerGateway
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> BgpAsn { get; set; }
+            public Union<int, IntrinsicFunction> BgpAsn { get; set; }
 
             /// <summary>
             /// IpAddress
@@ -31,7 +30,7 @@ namespace Comformation.EC2.CustomerGateway
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> IpAddress { get; set; }
+            public Union<string, IntrinsicFunction> IpAddress { get; set; }
 
             /// <summary>
             /// Tags
@@ -40,17 +39,17 @@ namespace Comformation.EC2.CustomerGateway
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Type
             /// The type of VPN connection that this customer gateway supports (ipsec. 1).
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: ipsec. 1
+            /// Allowed values: ipsec. 1
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
         }
 

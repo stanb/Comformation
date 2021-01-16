@@ -7,7 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup EC2TagFilter
-    /// Information about an EC2 tag filter.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html
     /// </summary>
     public class EC2TagFilter
@@ -29,7 +28,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// KEY_ONLY: Key only. VALUE_ONLY: Value only. KEY_AND_VALUE: Key and value.
         /// Required: No
         /// Type: String
-        /// Allowed Values: KEY_AND_VALUE | KEY_ONLY | VALUE_ONLY
+        /// Allowed values: KEY_AND_VALUE | KEY_ONLY | VALUE_ONLY
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

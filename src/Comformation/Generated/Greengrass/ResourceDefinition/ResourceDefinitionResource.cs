@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.ResourceDefinition
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinition
-    /// The AWS::Greengrass::ResourceDefinition resource represents a resource definition for AWS IoT Greengrass.
-    /// Resource definitions are used to organize your resource definition versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html
     /// </summary>
     public class ResourceDefinitionResource : ResourceBase
@@ -26,7 +24,7 @@ namespace Comformation.Greengrass.ResourceDefinition
             /// Type: ResourceDefinitionVersion
             /// Update requires: Replacement
             /// </summary>
-			public ResourceDefinitionVersion InitialVersion { get; set; }
+            public ResourceDefinitionVersion InitialVersion { get; set; }
 
             /// <summary>
             /// Tags
@@ -42,7 +40,7 @@ namespace Comformation.Greengrass.ResourceDefinition
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -51,7 +49,7 @@ namespace Comformation.Greengrass.ResourceDefinition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -61,11 +59,11 @@ namespace Comformation.Greengrass.ResourceDefinition
 
     }
 
-	public static class ResourceDefinitionAttributes
-	{
+    public static class ResourceDefinitionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

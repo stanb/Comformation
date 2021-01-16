@@ -6,8 +6,6 @@ namespace Comformation.Cognito.UserPoolResourceServer
 {
     /// <summary>
     /// AWS::Cognito::UserPoolResourceServer
-    /// The AWS::Cognito::UserPoolResourceServer resource creates a new OAuth2. 0 resource server and defines custom
-    /// scopes in it.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html
     /// </summary>
     public class UserPoolResourceServerResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.Cognito.UserPoolResourceServer
             /// Pattern: [\w-]+_[0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserPoolId { get; set; }
+            public Union<string, IntrinsicFunction> UserPoolId { get; set; }
 
             /// <summary>
             /// Identifier
@@ -37,18 +35,18 @@ namespace Comformation.Cognito.UserPoolResourceServer
             /// Pattern: [\x21\x23-\x5B\x5D-\x7E]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Identifier { get; set; }
+            public Union<string, IntrinsicFunction> Identifier { get; set; }
 
             /// <summary>
             /// Scopes
-            /// A list of scopes. Each scope is a map, where the keys are name and the values are description for
-            /// the scope.
+            /// The scopes. Each scope is a map, where the keys are name and the values are description for the
+            /// scope.
             /// Required: No
             /// Type: List of ResourceServerScopeType
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public List<ResourceServerScopeType> Scopes { get; set; }
+            public List<ResourceServerScopeType> Scopes { get; set; }
 
             /// <summary>
             /// Name
@@ -60,7 +58,7 @@ namespace Comformation.Cognito.UserPoolResourceServer
             /// Pattern: [\w\s+=,. @-]+
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool PasswordPolicy
-    /// PasswordPolicy is a subproperty of the Policies property that defines the password policy of an Amazon Cognito
-    /// user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html
     /// </summary>
     public class PasswordPolicy

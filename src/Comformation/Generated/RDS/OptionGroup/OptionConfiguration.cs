@@ -7,8 +7,6 @@ namespace Comformation.RDS.OptionGroup
 {
     /// <summary>
     /// AWS::RDS::OptionGroup OptionConfiguration
-    /// The OptionConfiguration property type specifies an individual option, and its settings, within an
-    /// AWS::RDS::OptionGroup resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html
     /// </summary>
     public class OptionConfiguration

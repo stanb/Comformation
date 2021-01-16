@@ -6,13 +6,62 @@ namespace Comformation.Glue.MLTransform
 {
     /// <summary>
     /// AWS::Glue::MLTransform
-    /// The AWS::Glue::MLTransform is an AWS Glue resource type that manages machine learning transforms.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html
     /// </summary>
     public class MLTransformResource : ResourceBase
     {
         public class MLTransformProperties
         {
+            /// <summary>
+            /// MaxRetries
+            /// The maximum number of times to retry after an MLTaskRun of the machine learning transform fails.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<int, IntrinsicFunction> MaxRetries { get; set; }
+
+            /// <summary>
+            /// Description
+            /// A user-defined, long-form description text for the machine learning transform.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
+            /// TransformEncryption
+            /// The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning
+            /// transforms can access user data encrypted in Amazon S3 using KMS.
+            /// Required: No
+            /// Type: TransformEncryption
+            /// Update requires: No interruption
+            /// </summary>
+            public TransformEncryption TransformEncryption { get; set; }
+
+            /// <summary>
+            /// Timeout
+            /// The timeout in minutes of the machine learning transform.
+            /// Required: No
+            /// Type: Integer
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<int, IntrinsicFunction> Timeout { get; set; }
+
+            /// <summary>
+            /// Name
+            /// A user-defined name for the machine learning transform. Names are required to be unique. Name is
+            /// optional:
+            /// 		
+            /// 		 		 		 If you supply Name, the stack cannot be repeatedly created. If Name is not provided, a
+            /// randomly generated name will be used instead.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Name { get; set; }
+
             /// <summary>
             /// Role
             /// The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
@@ -28,16 +77,7 @@ namespace Comformation.Glue.MLTransform
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Role { get; set; }
-
-            /// <summary>
-            /// MaxRetries
-            /// The maximum number of times to retry after an MLTaskRun of the machine learning transform fails.
-            /// Required: No
-            /// Type: Integer
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<int, IntrinsicFunction> MaxRetries { get; set; }
+            public Union<string, IntrinsicFunction> Role { get; set; }
 
             /// <summary>
             /// WorkerType
@@ -59,25 +99,20 @@ namespace Comformation.Glue.MLTransform
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> WorkerType { get; set; }
+            public Union<string, IntrinsicFunction> WorkerType { get; set; }
 
             /// <summary>
-            /// Description
-            /// A user-defined, long-form description text for the machine learning transform.
+            /// GlueVersion
+            /// 		
+            /// This value determines which version of AWS Glue this machine learning transform is compatible with.
+            /// Glue 1. 0 is recommended for most customers. If the value is not set, the Glue compatibility
+            /// defaults to Glue 0. 9. For more information, see AWS Glue Versions in the developer guide.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
-
-            /// <summary>
-            /// Timeout
-            /// The timeout in minutes of the machine learning transform.
-            /// Required: No
-            /// Type: Integer
-            /// Update requires: No interruption
-            /// </summary>
-			public Union<int, IntrinsicFunction> Timeout { get; set; }
+            public Union<string, IntrinsicFunction> GlueVersion { get; set; }
 
             /// <summary>
             /// TransformParameters
@@ -87,7 +122,7 @@ namespace Comformation.Glue.MLTransform
             /// Type: TransformParameters
             /// Update requires: No interruption
             /// </summary>
-			public TransformParameters TransformParameters { get; set; }
+            public TransformParameters TransformParameters { get; set; }
 
             /// <summary>
             /// InputRecordTables
@@ -96,7 +131,7 @@ namespace Comformation.Glue.MLTransform
             /// Type: InputRecordTables
             /// Update requires: Replacement
             /// </summary>
-			public InputRecordTables InputRecordTables { get; set; }
+            public InputRecordTables InputRecordTables { get; set; }
 
             /// <summary>
             /// NumberOfWorkers
@@ -107,20 +142,20 @@ namespace Comformation.Glue.MLTransform
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumberOfWorkers { get; set; }
+            public Union<int, IntrinsicFunction> NumberOfWorkers { get; set; }
 
             /// <summary>
-            /// Name
-            /// A user-defined name for the machine learning transform. Names are required to be unique. Name is
-            /// optional:
-            /// 		
-            /// 		 		 		 If you supply Name, the stack cannot be repeatedly created. If Name is not provided, a
-            /// randomly generated name will be used instead.
+            /// Tags
+            /// 	 	
+            /// The tags to use with this machine learning transform. You may use tags to limit access to the
+            /// machine learning transform. For more information about tags in AWS Glue, see AWS Tags in AWS Glue in
+            /// the developer guide.
+            /// 	
             /// Required: No
-            /// Type: String
+            /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// MaxCapacity
@@ -143,7 +178,7 @@ namespace Comformation.Glue.MLTransform
             /// Type: Double
             /// Update requires: No interruption
             /// </summary>
-			public Union<double, IntrinsicFunction> MaxCapacity { get; set; }
+            public Union<double, IntrinsicFunction> MaxCapacity { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.Kinesis.Stream
 {
     /// <summary>
     /// AWS::Kinesis::Stream StreamEncryption
-    /// Enables or updates server-side encryption using an AWS KMS key for a specified stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html
     /// </summary>
     public class StreamEncryption
@@ -18,7 +17,6 @@ namespace Comformation.Kinesis.Stream
         /// The encryption type to use. The only valid value is KMS.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: KMS | NONE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EncryptionType")]

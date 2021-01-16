@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset Trigger
-    /// The &quot;DatasetTrigger&quot; that specifies when the data set is automatically updated.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html
     /// </summary>
     public class Trigger

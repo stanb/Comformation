@@ -6,11 +6,6 @@ namespace Comformation.IAM.ServiceLinkedRole
 {
     /// <summary>
     /// AWS::IAM::ServiceLinkedRole
-    /// Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and
-    /// when the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or
-    /// deleted role, which could put your AWS resources into an unknown state. Allowing the service to control the
-    /// role helps improve service stability and proper cleanup when a service and its role are no longer needed. For
-    /// more information, see Using Service-Linked Roles in the IAM User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html
     /// </summary>
     public class ServiceLinkedRoleResource : ResourceBase
@@ -32,7 +27,7 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// Pattern: [\w+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CustomSuffix { get; set; }
+            public Union<string, IntrinsicFunction> CustomSuffix { get; set; }
 
             /// <summary>
             /// Description
@@ -43,7 +38,7 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// AWSServiceName
@@ -60,7 +55,7 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// Pattern: [\w+=,. @-]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AWSServiceName { get; set; }
+            public Union<string, IntrinsicFunction> AWSServiceName { get; set; }
 
         }
 

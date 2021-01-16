@@ -7,8 +7,6 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
 {
     /// <summary>
     /// AWS::Cognito::IdentityPoolRoleAttachment RoleMapping
-    /// RoleMapping is a property of the AWS::Cognito::IdentityPoolRoleAttachment resource that defines the
-    /// role-mapping attributes of an Amazon Cognito identity pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html
     /// </summary>
     public class RoleMapping
@@ -54,9 +52,9 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
         /// <summary>
         /// IdentityProvider
         /// Identifier for the identity provider for which the role is mapped. For example: &quot;graph. facebook.
-        /// com&quot; or &quot;cognito-idp-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id
-        /// (http://cognito-idp-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id)&quot;. This is the identity
-        /// provider that is used by the user for authentication.
+        /// com&quot; or &quot;cognito-idp. us-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id
+        /// (http://cognito-idp. us-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id)&quot;. This is the
+        /// identity provider that is used by the user for authentication.
         /// If the identity provider property isn&#39;t provided, the key of the entry in the RoleMappings map is
         /// used as the identity provider.
         /// Required: No

@@ -7,7 +7,6 @@ namespace Comformation.SageMaker.Workteam
 {
     /// <summary>
     /// AWS::SageMaker::Workteam CognitoMemberDefinition
-    /// Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html
     /// </summary>
     public class CognitoMemberDefinition
@@ -15,13 +14,9 @@ namespace Comformation.SageMaker.Workteam
 
         /// <summary>
         /// CognitoUserPool
-        /// An identifier for a user pool. The user pool must be in the same region as the service that you are
-        /// calling.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 55
-        /// Pattern: [\w-]+_[0-9a-zA-Z]+
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("CognitoUserPool")]
@@ -29,12 +24,9 @@ namespace Comformation.SageMaker.Workteam
 
         /// <summary>
         /// CognitoClientId
-        /// An identifier for an application client. You must create the app client ID using Amazon Cognito.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 128
-        /// Pattern: [\w+]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CognitoClientId")]
@@ -42,12 +34,9 @@ namespace Comformation.SageMaker.Workteam
 
         /// <summary>
         /// CognitoUserGroup
-        /// An identifier for a user group.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: Yes
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 128
-        /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CognitoUserGroup")]

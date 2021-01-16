@@ -7,11 +7,24 @@ namespace Comformation.SSM.PatchBaseline
 {
     /// <summary>
     /// AWS::SSM::PatchBaseline Rule
-    /// The Rule property type specifies an approval rule for a Systems Manager patch baseline.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
     /// </summary>
     public class Rule
     {
+
+        /// <summary>
+        /// ApproveUntilDate
+        /// The cutoff date for auto approval of released patches. Any patches released on or before this date
+        /// are installed automatically. Not supported on Ubuntu Server.
+        /// Enter dates in the format YYYY-MM-DD. For example, 2020-12-31.
+        /// Required: No
+        /// Type: PatchStringDate
+        /// Minimum: 1
+        /// Maximum: 10
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ApproveUntilDate")]
+        public Union<string, IntrinsicFunction> ApproveUntilDate { get; set; }
 
         /// <summary>
         /// EnableNonSecurity
@@ -56,7 +69,7 @@ namespace Comformation.SSM.PatchBaseline
         /// levels include the following: UNSPECIFIED, CRITICAL, HIGH, MEDIUM, LOW, and INFORMATIONAL.
         /// Required: No
         /// Type: String
-        /// Allowed Values: CRITICAL | HIGH | INFORMATIONAL | LOW | MEDIUM | UNSPECIFIED
+        /// Allowed values: CRITICAL | HIGH | INFORMATIONAL | LOW | MEDIUM | UNSPECIFIED
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ComplianceLevel")]

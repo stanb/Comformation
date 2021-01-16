@@ -7,7 +7,6 @@ namespace Comformation.Glue.Classifier
 {
     /// <summary>
     /// AWS::Glue::Classifier JsonClassifier
-    /// A classifier for JSON content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
     /// </summary>
     public class JsonClassifier

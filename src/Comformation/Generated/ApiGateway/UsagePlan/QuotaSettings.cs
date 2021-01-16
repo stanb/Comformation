@@ -7,8 +7,6 @@ namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlan QuotaSettings
-    /// QuotaSettings is a property of the AWS::ApiGateway::UsagePlan resource that specifies the maximum number of
-    /// requests users can make to your REST APIs.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html
     /// </summary>
     public class QuotaSettings
@@ -26,9 +24,8 @@ namespace Comformation.ApiGateway.UsagePlan
 
         /// <summary>
         /// Offset
-        /// For the initial time period, the number of requests to subtract from the specified limit. When you
-        /// first implement a usage plan, the plan might start in the middle of the week or month. With this
-        /// property, you can decrease the limit for this initial time period.
+        /// The day that a time period starts. For example, with a time period of WEEK, an offset of 0 starts on
+        /// Sunday, and an offset of 1 starts on Monday.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

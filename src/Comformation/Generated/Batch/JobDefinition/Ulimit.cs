@@ -7,7 +7,6 @@ namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
     /// AWS::Batch::JobDefinition Ulimit
-    /// The ulimit settings to pass to the container.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html
     /// </summary>
     public class Ulimit

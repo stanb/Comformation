@@ -6,9 +6,6 @@ namespace Comformation.EFS.MountTarget
 {
     /// <summary>
     /// AWS::EFS::MountTarget
-    /// The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file
-    /// system. You can then mount the file system on Amazon EC2 instances or other resources by using the mount
-    /// target.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html
     /// </summary>
     public class MountTargetResource : ResourceBase
@@ -20,18 +17,24 @@ namespace Comformation.EFS.MountTarget
             /// The ID of the file system for which to create the mount target.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 128
+            /// Pattern:
+            /// ^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> FileSystemId { get; set; }
+            public Union<string, IntrinsicFunction> FileSystemId { get; set; }
 
             /// <summary>
             /// IpAddress
             /// Valid IPv4 address within the address range of the specified subnet.
             /// Required: No
             /// Type: String
+            /// Minimum: 7
+            /// Maximum: 15
+            /// Pattern: ^[0-9]{1,3}\. [0-9]{1,3}\. [0-9]{1,3}\. [0-9]{1,3}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> IpAddress { get; set; }
+            public Union<string, IntrinsicFunction> IpAddress { get; set; }
 
             /// <summary>
             /// SecurityGroups
@@ -42,16 +45,19 @@ namespace Comformation.EFS.MountTarget
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroups { get; set; }
 
             /// <summary>
             /// SubnetId
             /// The ID of the subnet to add the mount target in.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 15
+            /// Maximum: 47
+            /// Pattern: ^subnet-[0-9a-f]{8,40}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
         }
 
@@ -61,8 +67,8 @@ namespace Comformation.EFS.MountTarget
 
     }
 
-	public static class MountTargetAttributes
-	{
+    public static class MountTargetAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IpAddress = new ResourceAttribute<Union<string, IntrinsicFunction>>("IpAddress");
-	}
+    }
 }

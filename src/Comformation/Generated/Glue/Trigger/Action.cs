@@ -7,7 +7,6 @@ namespace Comformation.Glue.Trigger
 {
     /// <summary>
     /// AWS::Glue::Trigger Action
-    /// Defines an action to be initiated by a trigger.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html
     /// </summary>
     public class Action

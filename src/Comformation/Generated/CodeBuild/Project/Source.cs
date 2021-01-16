@@ -7,8 +7,6 @@ namespace Comformation.CodeBuild.Project
 {
     /// <summary>
     /// AWS::CodeBuild::Project Source
-    /// Source is a property of the AWS::CodeBuild::Project resource that specifies the source code settings for the
-    /// project, such as the source code&#39;s repository type and location.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html
     /// </summary>
     public class Source
@@ -19,12 +17,13 @@ namespace Comformation.CodeBuild.Project
         /// The type of repository that contains the source code to be built. Valid values include:
         /// BITBUCKET: The source code is in a Bitbucket repository. CODECOMMIT: The source code is in an AWS
         /// CodeCommit repository. CODEPIPELINE: The source code settings are specified in the source action of
-        /// a pipeline in AWS CodePipeline. GITHUB: The source code is in a GitHub repository. NO_SOURCE: The
-        /// project does not have input source code. S3: The source code is in an Amazon Simple Storage Service
-        /// (Amazon S3) input bucket.
+        /// a pipeline in AWS CodePipeline. GITHUB: The source code is in a GitHub or GitHub Enterprise Cloud
+        /// repository. GITHUB_ENTERPRISE: The source code is in a GitHub Enterprise Server repository.
+        /// NO_SOURCE: The project does not have input source code. S3: The source code is in an Amazon Simple
+        /// Storage Service (Amazon S3) input bucket.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: BITBUCKET | CODECOMMIT | CODEPIPELINE | GITHUB | GITHUB_ENTERPRISE | NO_SOURCE | S3
+        /// Allowed values: BITBUCKET | CODECOMMIT | CODEPIPELINE | GITHUB | GITHUB_ENTERPRISE | NO_SOURCE | S3
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
@@ -93,6 +92,18 @@ namespace Comformation.CodeBuild.Project
         /// </summary>
         [JsonProperty("GitCloneDepth")]
         public Union<int, IntrinsicFunction> GitCloneDepth { get; set; }
+
+        /// <summary>
+        /// BuildStatusConfig
+        /// Contains information that defines how the build project reports the build status to the source
+        /// provider. This option is only used when the source provider is GITHUB, GITHUB_ENTERPRISE, or
+        /// BITBUCKET.
+        /// Required: No
+        /// Type: BuildStatusConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BuildStatusConfig")]
+        public BuildStatusConfig BuildStatusConfig { get; set; }
 
         /// <summary>
         /// GitSubmodulesConfig

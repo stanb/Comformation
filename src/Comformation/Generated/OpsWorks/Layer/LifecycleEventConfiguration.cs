@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer LifecycleEventConfiguration
-    /// Specifies the lifecycle event configuration
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html
     /// </summary>
     public class LifecycleEventConfiguration

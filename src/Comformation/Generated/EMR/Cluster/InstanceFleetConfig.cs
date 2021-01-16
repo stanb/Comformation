@@ -7,9 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster InstanceFleetConfig
-    /// Use InstanceFleetConfig to define instance fleets for an EMR cluster. A cluster can not use both instance
-    /// fleets and instance groups. For more information, see Configure Instance Fleets in the Amazon EMR Management
-    /// Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html
     /// </summary>
     public class InstanceFleetConfig

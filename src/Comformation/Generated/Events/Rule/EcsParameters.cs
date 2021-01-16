@@ -7,7 +7,6 @@ namespace Comformation.Events.Rule
 {
     /// <summary>
     /// AWS::Events::Rule EcsParameters
-    /// The EcsParameters property type specifies custom parameters to be used when the target is an Amazon ECS task.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html
     /// </summary>
     public class EcsParameters
@@ -32,7 +31,7 @@ namespace Comformation.Events.Rule
         /// Fargate on Amazon ECS in the Amazon Elastic Container Service Developer Guide.
         /// Required: No
         /// Type: String
-        /// Allowed Values: EC2 | FARGATE
+        /// Allowed values: EC2 | FARGATE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LaunchType")]
@@ -41,10 +40,10 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// NetworkConfiguration
         /// Use this structure if the ECS task uses the awsvpc network mode. This structure specifies the VPC
-        /// subnets and security groups associated with the task and whether a public IP address is to be used.
+        /// subnets and security groups associated with the task, and whether a public IP address is to be used.
         /// This structure is required if LaunchType is FARGATE because the awsvpc mode is required for Fargate
         /// tasks.
-        /// If you specify NetworkConfiguration when the target ECS task doesn&#39;t use the awsvpc network mode,
+        /// If you specify NetworkConfiguration when the target ECS task does not use the awsvpc network mode,
         /// the task fails.
         /// Required: No
         /// Type: NetworkConfiguration

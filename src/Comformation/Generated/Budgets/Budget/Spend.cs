@@ -7,7 +7,6 @@ namespace Comformation.Budgets.Budget
 {
     /// <summary>
     /// AWS::Budgets::Budget Spend
-    /// The amount of cost or usage that is measured for a budget.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html
     /// </summary>
     public class Spend
@@ -30,7 +29,7 @@ namespace Comformation.Budgets.Budget
         /// Unit
         /// 		
         /// The unit of measurement that is used for the budget forecast, actual spend, or budget threshold,
-        /// such as dollars or GB.
+        /// such as USD or GB.
         /// 	
         /// Required: Yes
         /// Type: String

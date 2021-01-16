@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule HttpRequestMethodConfig
-    /// Information about an HTTP method condition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html
     /// </summary>
     public class HttpRequestMethodConfig

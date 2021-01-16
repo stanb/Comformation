@@ -6,9 +6,6 @@ namespace Comformation.WAFRegional.SizeConstraintSet
 {
     /// <summary>
     /// AWS::WAFRegional::SizeConstraintSet
-    /// A complex type that contains SizeConstraint objects, which specify the parts of web requests that you 			want
-    /// AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint 			object, a
-    /// request only needs to match one constraint to be considered a match.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html
     /// </summary>
     public class SizeConstraintSetResource : ResourceBase
@@ -23,7 +20,7 @@ namespace Comformation.WAFRegional.SizeConstraintSet
             /// Type: List of SizeConstraint
             /// Update requires: No interruption
             /// </summary>
-			public List<SizeConstraint> SizeConstraints { get; set; }
+            public List<SizeConstraint> SizeConstraints { get; set; }
 
             /// <summary>
             /// Name
@@ -34,9 +31,10 @@ namespace Comformation.WAFRegional.SizeConstraintSet
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

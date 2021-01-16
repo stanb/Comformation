@@ -7,8 +7,6 @@ namespace Comformation.ECR.Repository
 {
     /// <summary>
     /// AWS::ECR::Repository LifecyclePolicy
-    /// The LifecyclePolicy property type specifies a lifecycle policy. For information about lifecycle policy syntax,
-    /// see Lifecycle Policy Template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html
     /// </summary>
     public class LifecyclePolicy

@@ -7,7 +7,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member MemberConfiguration
-    /// Configuration properties of the member.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html
     /// </summary>
     public class MemberConfiguration
@@ -41,7 +40,7 @@ namespace Comformation.ManagedBlockchain.Member
         /// Type: String
         /// Minimum: 1
         /// Maximum: 64
-        /// Pattern: ^(?!-)^[^0-9](?!. *--)[A-Za-z0-9-]+[^- ]$
+        /// Pattern: ^(?!-|[0-9])(?!. *-$)(?!. *?--)[a-zA-Z0-9-]+$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Name")]

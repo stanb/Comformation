@@ -7,8 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel Lambda
-    /// Calls an AWS Lambda function, passing in information about the detector model instance and the event which
-    /// triggered the action.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html
     /// </summary>
     public class Lambda
@@ -16,13 +14,25 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// FunctionArn
-        /// The ARN of the AWS Lambda function which is executed.
+        /// The ARN of the Lambda function that is executed.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 2048
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FunctionArn")]
         public Union<string, IntrinsicFunction> FunctionArn { get; set; }
+
+        /// <summary>
+        /// Payload
+        /// You can configure the action payload when you send a message to a Lambda function.
+        /// Required: No
+        /// Type: Payload
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Payload")]
+        public Payload Payload { get; set; }
 
     }
 }

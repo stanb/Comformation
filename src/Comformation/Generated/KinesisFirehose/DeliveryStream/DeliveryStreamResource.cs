@@ -6,16 +6,22 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream
-    /// The AWS::KinesisFirehose::DeliveryStream resource creates an Amazon Kinesis Data Firehose (Kinesis Data
-    /// Firehose) delivery stream that delivers real-time streaming data to an Amazon Simple Storage Service (Amazon
-    /// S3), Amazon Redshift, or Amazon Elasticsearch Service (Amazon ES) destination. For more information, see
-    /// Creating an Amazon Kinesis Data Firehose Delivery Stream in the Amazon Kinesis Data Firehose Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html
     /// </summary>
     public class DeliveryStreamResource : ResourceBase
     {
         public class DeliveryStreamProperties
         {
+            /// <summary>
+            /// DeliveryStreamEncryptionConfigurationInput
+            /// Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption
+            /// (SSE).
+            /// Required: No
+            /// Type: DeliveryStreamEncryptionConfigurationInput
+            /// Update requires: No interruption
+            /// </summary>
+            public DeliveryStreamEncryptionConfigurationInput DeliveryStreamEncryptionConfigurationInput { get; set; }
+
             /// <summary>
             /// DeliveryStreamName
             /// The name of the delivery stream.
@@ -26,7 +32,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeliveryStreamName { get; set; }
+            public Union<string, IntrinsicFunction> DeliveryStreamName { get; set; }
 
             /// <summary>
             /// DeliveryStreamType
@@ -35,10 +41,10 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// delivery stream uses a Kinesis data stream as a source.
             /// Required: No
             /// Type: String
-            /// Allowed Values: DirectPut | KinesisStreamAsSource
+            /// Allowed values: DirectPut | KinesisStreamAsSource
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DeliveryStreamType { get; set; }
+            public Union<string, IntrinsicFunction> DeliveryStreamType { get; set; }
 
             /// <summary>
             /// ElasticsearchDestinationConfiguration
@@ -50,7 +56,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: ElasticsearchDestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ElasticsearchDestinationConfiguration ElasticsearchDestinationConfiguration { get; set; }
+            public ElasticsearchDestinationConfiguration ElasticsearchDestinationConfiguration { get; set; }
 
             /// <summary>
             /// ExtendedS3DestinationConfiguration
@@ -62,7 +68,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: ExtendedS3DestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ExtendedS3DestinationConfiguration ExtendedS3DestinationConfiguration { get; set; }
+            public ExtendedS3DestinationConfiguration ExtendedS3DestinationConfiguration { get; set; }
 
             /// <summary>
             /// KinesisStreamSourceConfiguration
@@ -71,9 +77,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// stream.
             /// Required: No
             /// Type: KinesisStreamSourceConfiguration
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
-			public KinesisStreamSourceConfiguration KinesisStreamSourceConfiguration { get; set; }
+            public KinesisStreamSourceConfiguration KinesisStreamSourceConfiguration { get; set; }
 
             /// <summary>
             /// RedshiftDestinationConfiguration
@@ -85,7 +91,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: RedshiftDestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public RedshiftDestinationConfiguration RedshiftDestinationConfiguration { get; set; }
+            public RedshiftDestinationConfiguration RedshiftDestinationConfiguration { get; set; }
 
             /// <summary>
             /// S3DestinationConfiguration
@@ -98,7 +104,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: S3DestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public S3DestinationConfiguration S3DestinationConfiguration { get; set; }
+            public S3DestinationConfiguration S3DestinationConfiguration { get; set; }
 
             /// <summary>
             /// SplunkDestinationConfiguration
@@ -107,7 +113,32 @@ namespace Comformation.KinesisFirehose.DeliveryStream
             /// Type: SplunkDestinationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public SplunkDestinationConfiguration SplunkDestinationConfiguration { get; set; }
+            public SplunkDestinationConfiguration SplunkDestinationConfiguration { get; set; }
+
+            /// <summary>
+            /// HttpEndpointDestinationConfiguration
+            /// Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can
+            /// specify only one destination.
+            /// Required: No
+            /// Type: HttpEndpointDestinationConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public HttpEndpointDestinationConfiguration HttpEndpointDestinationConfiguration { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and
+            /// assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions
+            /// or other types of information that can help you distinguish the delivery stream. For more
+            /// information about tags, see Using Cost Allocation Tags in the AWS Billing and Cost Management User
+            /// Guide.
+            /// You can specify up to 50 tags when creating a delivery stream.
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 50
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -117,8 +148,8 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
     }
 
-	public static class DeliveryStreamAttributes
-	{
+    public static class DeliveryStreamAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

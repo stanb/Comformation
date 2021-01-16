@@ -6,8 +6,6 @@ namespace Comformation.LakeFormation.DataLakeSettings
 {
     /// <summary>
     /// AWS::LakeFormation::DataLakeSettings
-    /// The AWS::LakeFormation::DataLakeSettings resource is an AWS Lake Formation resource type that manages data
-    /// lake settings.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html
     /// </summary>
     public class DataLakeSettingsResource : ResourceBase
@@ -22,7 +20,16 @@ namespace Comformation.LakeFormation.DataLakeSettings
             /// Type: Admins
             /// Update requires: No interruption
             /// </summary>
-			public List<DataLakePrincipal> Admins { get; set; }
+            public List<DataLakePrincipal> Admins { get; set; }
+
+            /// <summary>
+            /// TrustedResourceOwners
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> TrustedResourceOwners { get; set; }
 
         }
 

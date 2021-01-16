@@ -7,7 +7,6 @@ namespace Comformation.ApiGateway.Deployment
 {
     /// <summary>
     /// AWS::ApiGateway::Deployment StageDescription
-    /// StageDescription is a property of the AWS::ApiGateway::Deployment resource that configures a deployment stage.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html
     /// </summary>
     public class StageDescription

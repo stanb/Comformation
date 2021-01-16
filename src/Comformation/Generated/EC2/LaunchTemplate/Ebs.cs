@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate Ebs
-    /// Parameters for a block device for an EBS volume in an Amazon EC2 launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html
     /// </summary>
     public class Ebs
@@ -25,10 +24,11 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// VolumeType
-        /// The volume type.
+        /// The volume type. For more information, see Amazon EBS volume types in the Amazon Elastic Compute
+        /// Cloud User Guide.
         /// Required: No
         /// Type: String
-        /// Allowed Values: gp2 | io1 | sc1 | st1 | standard
+        /// Allowed values: gp2 | gp3 | io1 | io2 | sc1 | st1 | standard
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeType")]
@@ -36,7 +36,7 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// KmsKeyId
-        /// The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+        /// The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -57,15 +57,28 @@ namespace Comformation.EC2.LaunchTemplate
         public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
         /// <summary>
-        /// Iops
+        /// Throughput
+        /// The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s.
         /// 	
-        /// The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents
-        /// the number of IOPS that are provisioned for the volume. For gp2, this represents the baseline
-        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
-        /// more information about General Purpose SSD baseline performance, I/O credits, and bursting, see
-        /// Amazon EBS Volume Types in the Amazon Elastic Compute Cloud User Guide.
-        /// Condition: This parameter is required for requests to create io1 volumes; it is not used in requests
-        /// to create gp2, st1, sc1, or standard volumes.
+        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Throughput")]
+        public Union<int, IntrinsicFunction> Throughput { get; set; }
+
+        /// <summary>
+        /// Iops
+        /// The number of I/O operations per second (IOPS). For gp3, io1, and io2 volumes, this represents the
+        /// number of IOPS that are provisioned for the volume. For gp2 volumes, this represents the baseline
+        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
+        /// The following are the supported values for each volume type:
+        /// gp3: 3,000-16,000 IOPS io1: 100-64,000 IOPS io2: 100-64,000 IOPS
+        /// For io1 and io2 volumes, we guarantee 64,000 IOPS only for Instances built on the Nitro System.
+        /// Other instance families guarantee performance up to 32,000 IOPS.
+        /// This parameter is supported for io1, io2, and gp3 volumes only. This parameter is not supported for
+        /// gp2, st1, sc1, or standard volumes.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -75,9 +88,9 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// VolumeSize
-        /// The size of the volume, in GiB.
-        /// Default: If you&#39;re creating the volume from a snapshot and don&#39;t specify a volume size, the default
-        /// is the snapshot size.
+        /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The
+        /// following are the supported volumes sizes for each volume type:
+        /// 	 gp2 and gp3: 1-16,384 io1 and io2: 4-16,384 st1 and sc1: 125-16,384 standard: 1-1,024
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset OutputFileUriValue
-    /// The value of the variable as a structure that specifies an output file URI.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-outputfileurivalue.html
     /// </summary>
     public class OutputFileUriValue
@@ -15,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// FileName
-        /// The URI of the location where data set contents are stored, usually the URI of a file in an S3
+        /// The URI of the location where dataset contents are stored, usually the URI of a file in an S3
         /// bucket.
         /// Required: No
         /// Type: String

@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application InputSchema
-    /// Describes the format of the data in the streaming source, and how each data element maps to corresponding
-    /// columns in the in-application stream that is being created.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html
     /// </summary>
     public class InputSchema

@@ -6,8 +6,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate
-    /// Specifies a launch template for an Amazon EC2 instance. A launch template contains the parameters to launch an
-    /// instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html
     /// </summary>
     public class LaunchTemplateResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.EC2.LaunchTemplate
             /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LaunchTemplateName { get; set; }
+            public Union<string, IntrinsicFunction> LaunchTemplateName { get; set; }
 
             /// <summary>
             /// LaunchTemplateData
@@ -33,7 +31,7 @@ namespace Comformation.EC2.LaunchTemplate
             /// Type: LaunchTemplateData
             /// Update requires: No interruption
             /// </summary>
-			public LaunchTemplateData LaunchTemplateData { get; set; }
+            public LaunchTemplateData LaunchTemplateData { get; set; }
 
         }
 
@@ -43,9 +41,9 @@ namespace Comformation.EC2.LaunchTemplate
 
     }
 
-	public static class LaunchTemplateAttributes
-	{
+    public static class LaunchTemplateAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionNumber = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionNumber");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DefaultVersionNumber = new ResourceAttribute<Union<string, IntrinsicFunction>>("DefaultVersionNumber");
-	}
+    }
 }

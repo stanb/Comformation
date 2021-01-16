@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket ReplicationDestination
-    /// Specifies which Amazon S3 bucket to store replicated objects in and their storage class.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html
     /// </summary>
     public class ReplicationDestination
@@ -62,15 +61,37 @@ namespace Comformation.S3.Bucket
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
+        /// Metrics
+        /// A container specifying replication metrics-related settings enabling replication metrics and events.
+        /// Required: No
+        /// Type: Metrics
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Metrics")]
+        public Metrics Metrics { get; set; }
+
+        /// <summary>
+        /// ReplicationTime
+        /// A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and
+        /// the time when all objects and operations on objects must be replicated. Must be specified together
+        /// with a Metrics block.
+        /// Required: No
+        /// Type: ReplicationTime
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ReplicationTime")]
+        public ReplicationTime ReplicationTime { get; set; }
+
+        /// <summary>
         /// StorageClass
-        /// The storage class to use when replicating objects, such as standard or reduced redundancy. By
+        /// The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By
         /// default, Amazon S3 uses the storage class of the source object to create the object replica.
         /// For valid values, see the StorageClass element of the PUT Bucket replication action in the Amazon
         /// Simple Storage Service API Reference.
         /// Required: No
         /// Type: String
-        /// Allowed Values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | REDUCED_REDUNDANCY |
-        /// STANDARD | STANDARD_IA
+        /// Allowed values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | OUTPOSTS |
+        /// REDUCED_REDUNDANCY | STANDARD | STANDARD_IA
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StorageClass")]

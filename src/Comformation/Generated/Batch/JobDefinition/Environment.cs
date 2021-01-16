@@ -7,7 +7,6 @@ namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
     /// AWS::Batch::JobDefinition Environment
-    /// The Environment property type specifies environment variables to use in a job definition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html
     /// </summary>
     public class Environment

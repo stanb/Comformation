@@ -6,10 +6,6 @@ namespace Comformation.OpsWorksCM.Server
 {
     /// <summary>
     /// AWS::OpsWorksCM::Server
-    /// The AWS::OpsWorksCM::Server resource creates an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
-    /// Enterprise configuration management server. For more information, see Create a Chef Automate Server in AWS
-    /// CloudFormation or Create a Puppet Enterprise Master in AWS CloudFormation in the AWS OpsWorks User Guide, and
-    /// CreateServer in the AWS OpsWorks CM API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html
     /// </summary>
     public class ServerResource : ResourceBase
@@ -26,19 +22,19 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KeyPair { get; set; }
+            public Union<string, IntrinsicFunction> KeyPair { get; set; }
 
             /// <summary>
             /// EngineVersion
             /// The major release version of the engine that you want to use. For a Chef server, the valid value for
-            /// EngineVersion is currently 12. For a Puppet server, the valid value is 2017.
+            /// EngineVersion is currently 2. For a Puppet server, the valid value is 2017.
             /// Required: No
             /// Type: String
             /// Maximum: 10000
             /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -54,7 +50,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: arn:aws:iam::[0-9]{12}:role/. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
             /// DisableAutomatedBackup
@@ -63,7 +59,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DisableAutomatedBackup { get; set; }
+            public Union<bool, IntrinsicFunction> DisableAutomatedBackup { get; set; }
 
             /// <summary>
             /// BackupId
@@ -75,7 +71,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: [a-zA-Z][a-zA-Z0-9\-\. \:]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> BackupId { get; set; }
+            public Union<string, IntrinsicFunction> BackupId { get; set; }
 
             /// <summary>
             /// EngineModel
@@ -87,20 +83,21 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineModel { get; set; }
+            public Union<string, IntrinsicFunction> EngineModel { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
             /// The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on
-            /// the instance. Valid values must be specified in the following format: DDD:HH:MM. The specified time
-            /// is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-            /// Wednesday, or Friday. See TimeWindowDefinition for more information.
+            /// the instance. Valid values must be specified in the following format: DDD:HH:MM. MM must be
+            /// specified as 00. The specified time is in coordinated universal time (UTC). The default value is a
+            /// random one-hour period on Tuesday, Wednesday, or Friday. See TimeWindowDefinition for more
+            /// information.
             /// Example: Mon:08:00, which represents a start time of every Monday at 08:00 UTC. (8:00 a. m. )
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// AssociatePublicIpAddress
@@ -110,7 +107,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
+            public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
             /// <summary>
             /// InstanceProfileArn
@@ -121,7 +118,27 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: arn:aws:iam::[0-9]{12}:instance-profile/. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceProfileArn { get; set; }
+            public Union<string, IntrinsicFunction> InstanceProfileArn { get; set; }
+
+            /// <summary>
+            /// CustomCertificate
+            /// Supported on servers running Chef Automate 2. 0 only. A PEM-formatted HTTPS certificate. The value
+            /// can be be a single, self-signed certificate, or a certificate chain. If you specify a custom
+            /// certificate, you must also specify values for CustomDomain and CustomPrivateKey. The following are
+            /// requirements for the CustomCertificate value:
+            /// You can provide either a self-signed, custom certificate, or the full certificate chain. The
+            /// certificate must be a valid X509 certificate, or a certificate chain in PEM format. The certificate
+            /// must be valid at the time of upload. A certificate can&#39;t be used before its validity period begins
+            /// (the certificate&#39;s NotBefore date), or after it expires (the certificate&#39;s NotAfter date). The
+            /// certificate’s common name or subject alternative names (SANs), if present, must match the value of
+            /// CustomDomain. The certificate must match the value of CustomPrivateKey.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 2097152
+            /// Pattern: (?s)\s*-----BEGIN CERTIFICATE-----. +-----END CERTIFICATE-----\s*
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CustomCertificate { get; set; }
 
             /// <summary>
             /// PreferredBackupWindow
@@ -129,15 +146,15 @@ namespace Comformation.OpsWorksCM.Server
             /// your server if automated backups are enabled. Valid values must be specified in one of the following
             /// formats:
             /// HH:MM for daily backups DDD:HH:MM for weekly backups
-            /// The specified time is in coordinated universal time (UTC). The default value is a random, daily
-            /// start time.
+            /// MM must be specified as 00. The specified time is in coordinated universal time (UTC). The default
+            /// value is a random, daily start time.
             /// Example: 08:00, which represents a daily start time of 08:00 UTC.
             /// Example: Mon:08:00, which represents a start time of every Monday at 08:00 UTC. (8:00 a. m. )
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
@@ -149,7 +166,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -164,7 +181,37 @@ namespace Comformation.OpsWorksCM.Server
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+
+            /// <summary>
+            /// CustomDomain
+            /// Supported on servers running Chef Automate 2. 0 only. An optional public endpoint of a server, such
+            /// as https://aws. my-company. com. To access the server, create a CNAME DNS record in your preferred
+            /// DNS service that points the custom domain to the endpoint that is generated when the server is
+            /// created (the value of the CreateServer Endpoint attribute). You cannot access the server by using
+            /// the generated Endpoint value if the server is using a custom domain. If you specify a custom domain,
+            /// you must also specify values for CustomCertificate and CustomPrivateKey.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 253
+            /// Pattern: ^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\. )+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CustomDomain { get; set; }
+
+            /// <summary>
+            /// CustomPrivateKey
+            /// Supported on servers running Chef Automate 2. 0 only. A private key in PEM format for connecting to
+            /// the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a
+            /// password or passphrase. If you specify a custom private key, you must also specify values for
+            /// CustomDomain and CustomCertificate.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 4096
+            /// Pattern: (?ms)\s*^-----BEGIN (?-s:. *)PRIVATE KEY-----$. *?^-----END (?-s:. *)PRIVATE KEY-----$\s*
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> CustomPrivateKey { get; set; }
 
             /// <summary>
             /// ServerName
@@ -178,7 +225,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: [a-zA-Z][a-zA-Z0-9\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ServerName { get; set; }
+            public Union<string, IntrinsicFunction> ServerName { get; set; }
 
             /// <summary>
             /// EngineAttributes
@@ -203,7 +250,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Type: List of EngineAttribute
             /// Update requires: No interruption
             /// </summary>
-			public List<EngineAttribute> EngineAttributes { get; set; }
+            public List<EngineAttribute> EngineAttributes { get; set; }
 
             /// <summary>
             /// BackupRetentionCount
@@ -214,7 +261,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> BackupRetentionCount { get; set; }
+            public Union<int, IntrinsicFunction> BackupRetentionCount { get; set; }
 
             /// <summary>
             /// InstanceType
@@ -225,7 +272,23 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS
+            /// OpsWorks for Puppet Enterprise server.
+            /// The key cannot be empty. The key can be a maximum of 127 characters, and can contain only Unicode
+            /// letters, numbers, or separators, or the following special characters: + - = . _ : / @ The value can
+            /// be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
+            /// following special characters: + - = . _ : / @ Leading and trailing white spaces are trimmed from
+            /// both the key and value. A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.
+            /// Required: No
+            /// Type: List of Tag
+            /// Maximum: 200
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Engine
@@ -236,7 +299,7 @@ namespace Comformation.OpsWorksCM.Server
             /// Pattern: (?s). *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Engine { get; set; }
+            public Union<string, IntrinsicFunction> Engine { get; set; }
 
         }
 
@@ -246,9 +309,10 @@ namespace Comformation.OpsWorksCM.Server
 
     }
 
-	public static class ServerAttributes
-	{
+    public static class ServerAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

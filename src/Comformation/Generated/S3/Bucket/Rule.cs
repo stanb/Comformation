@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket Rule
-    /// Specifies lifecycle rules for an Amazon S3 bucket. For more information, see PUT Bucket lifecycle in the
-    /// Amazon Simple Storage Service API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
     /// </summary>
     public class Rule
@@ -16,7 +14,7 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// AbortIncompleteMultipartUpload
-        /// Specifies a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
+        /// Specifies a lifecycle rule that stops incomplete multipart uploads to an Amazon S3 bucket.
         /// You must specify at least one of the following properties: AbortIncompleteMultipartUpload,
         /// ExpirationDate, ExpirationInDays, NoncurrentVersionExpirationInDays, NoncurrentVersionTransition,
         /// NoncurrentVersionTransitions, Transition, or Transitions.
@@ -133,7 +131,7 @@ namespace Comformation.S3.Bucket
         /// applied.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Disabled | Enabled
+        /// Allowed values: Disabled | Enabled
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Status")]

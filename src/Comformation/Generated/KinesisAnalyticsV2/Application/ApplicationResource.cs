@@ -6,8 +6,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application
-    /// Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
-    /// application, see Creating an Application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html
     /// </summary>
     public class ApplicationResource : ResourceBase
@@ -24,17 +22,17 @@ namespace Comformation.KinesisAnalyticsV2.Application
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// RuntimeEnvironment
-            /// The runtime environment for the application (SQL-1. 0 or FLINK-1_6).
+            /// The runtime environment for the application (SQL-1_0, FLINK-1_6, FLINK-1_8, or FLINK-1_11).
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: FLINK-1_6 | SQL-1_0
+            /// Allowed values: FLINK-1_11 | FLINK-1_6 | FLINK-1_8 | SQL-1_0
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RuntimeEnvironment { get; set; }
+            public Union<string, IntrinsicFunction> RuntimeEnvironment { get; set; }
 
             /// <summary>
             /// ApplicationConfiguration
@@ -43,7 +41,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
             /// Type: ApplicationConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public ApplicationConfiguration ApplicationConfiguration { get; set; }
+            public ApplicationConfiguration ApplicationConfiguration { get; set; }
 
             /// <summary>
             /// ApplicationDescription
@@ -54,7 +52,18 @@ namespace Comformation.KinesisAnalyticsV2.Application
             /// Maximum: 1024
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationDescription { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationDescription { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A list of one or more tags to assign to the application. A tag is a key-value pair that identifies
+            /// an application. Note that the maximum number of application tags includes system tags. The maximum
+            /// number of user-defined application tags is 50.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// ServiceExecutionRole
@@ -63,10 +72,10 @@ namespace Comformation.KinesisAnalyticsV2.Application
             /// Type: String
             /// Minimum: 1
             /// Maximum: 2048
-            /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
+            /// Pattern: arn:. *
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceExecutionRole { get; set; }
+            public Union<string, IntrinsicFunction> ServiceExecutionRole { get; set; }
 
         }
 

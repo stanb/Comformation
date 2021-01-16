@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application RecordFormat
-    /// Describes the record format and relevant mapping information that should be applied to schematize the records
-    /// on the stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html
     /// </summary>
     public class RecordFormat
@@ -31,7 +29,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// The type of record format.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CSV | JSON
+        /// Allowed values: CSV | JSON
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RecordFormatType")]

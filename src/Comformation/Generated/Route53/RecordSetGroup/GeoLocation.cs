@@ -6,8 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.Route53.RecordSetGroup
 {
     /// <summary>
-    /// AWS::Route53::RecordSet GeoLocation
-    /// A complex type that contains information about a geographic location.
+    /// AWS::Route53::RecordSetGroup GeoLocation
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html
     /// </summary>
     public class GeoLocation

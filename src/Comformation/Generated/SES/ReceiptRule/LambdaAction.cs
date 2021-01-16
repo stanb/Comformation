@@ -7,8 +7,6 @@ namespace Comformation.SES.ReceiptRule
 {
     /// <summary>
     /// AWS::SES::ReceiptRule LambdaAction
-    /// When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a
-    /// notification to Amazon Simple Notification Service (Amazon SNS).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html
     /// </summary>
     public class LambdaAction
@@ -28,9 +26,9 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// TopicArn
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An
-        /// example of an Amazon SNS topic ARN is arn:aws:sns:us-west-2:123456789012:MyTopic. For more
-        /// information about Amazon SNS topics, see the Amazon SNS Developer Guide.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is executed.
+        /// You can find the ARN of a topic by using the ListTopics operation in the Amazon SNS API.
+        /// For more information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -49,7 +47,7 @@ namespace Comformation.SES.ReceiptRule
         /// as whether to stop the receipt rule or the receipt rule set.
         /// Required: No
         /// Type: String
-        /// Allowed Values: Event | RequestResponse
+        /// Allowed values: Event | RequestResponse
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InvocationType")]

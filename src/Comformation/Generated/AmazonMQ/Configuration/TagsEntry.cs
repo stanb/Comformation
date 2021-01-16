@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.Configuration
 {
     /// <summary>
     /// AWS::AmazonMQ::Configuration TagsEntry
-    /// A key-value pair to associate with the configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configuration-tagsentry.html
     /// </summary>
     public class TagsEntry

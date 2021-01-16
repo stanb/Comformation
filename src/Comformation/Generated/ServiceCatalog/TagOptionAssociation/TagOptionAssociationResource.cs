@@ -6,7 +6,6 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
 {
     /// <summary>
     /// AWS::ServiceCatalog::TagOptionAssociation
-    /// Associate the specified TagOption with the specified portfolio or product.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html
     /// </summary>
     public class TagOptionAssociationResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TagOptionId { get; set; }
+            public Union<string, IntrinsicFunction> TagOptionId { get; set; }
 
             /// <summary>
             /// ResourceId
@@ -29,7 +28,7 @@ namespace Comformation.ServiceCatalog.TagOptionAssociation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceId { get; set; }
+            public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
         }
 

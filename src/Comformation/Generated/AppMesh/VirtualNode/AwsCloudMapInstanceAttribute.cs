@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode AwsCloudMapInstanceAttribute
-    /// An object that represents the AWS Cloud Map attribute information for your virtual node.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html
     /// </summary>
     public class AwsCloudMapInstanceAttribute

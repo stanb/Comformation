@@ -7,8 +7,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member MemberFrameworkConfiguration
-    /// Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network
-    /// uses.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberframeworkconfiguration.html
     /// </summary>
     public class MemberFrameworkConfiguration

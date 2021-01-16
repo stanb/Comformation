@@ -7,7 +7,6 @@ namespace Comformation.Config.ConfigurationAggregator
 {
     /// <summary>
     /// AWS::Config::ConfigurationAggregator OrganizationAggregationSource
-    /// This object contains regions to set up the aggregator and an IAM 			role to retrieve organization details.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html
     /// </summary>
     public class OrganizationAggregationSource

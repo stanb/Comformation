@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationOutput KinesisFirehoseOutput
-    /// When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination.
-    /// You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-    /// write to the stream on your behalf.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisfirehoseoutput.html
     /// </summary>
     public class KinesisFirehoseOutput
@@ -36,7 +33,7 @@ namespace Comformation.KinesisAnalytics.ApplicationOutput
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2048
-        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

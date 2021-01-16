@@ -7,8 +7,6 @@ namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
     /// AWS::Cognito::IdentityPool PushSync
-    /// PushSync is a property of the AWS::Cognito::IdentityPool resource that defines the configuration options to be
-    /// applied to an Amazon Cognito identity pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
     /// </summary>
     public class PushSync
@@ -16,7 +14,7 @@ namespace Comformation.Cognito.IdentityPool
 
         /// <summary>
         /// ApplicationArns
-        /// A list of Amazon SNS platform application ARNs that could be used by clients.
+        /// The ARNs of the Amazon SNS platform applications that could be used by clients.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

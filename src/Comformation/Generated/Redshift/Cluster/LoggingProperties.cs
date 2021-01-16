@@ -7,8 +7,6 @@ namespace Comformation.Redshift.Cluster
 {
     /// <summary>
     /// AWS::Redshift::Cluster LoggingProperties
-    /// Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift
-    /// cluster.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html
     /// </summary>
     public class LoggingProperties
@@ -22,6 +20,7 @@ namespace Comformation.Redshift.Cluster
         /// permissions
         /// Required: Yes
         /// Type: String
+        /// Maximum: 2147483647
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BucketName")]
@@ -36,6 +35,7 @@ namespace Comformation.Redshift.Cluster
         /// x22 x27 x5c x7f or larger
         /// Required: No
         /// Type: String
+        /// Maximum: 2147483647
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3KeyPrefix")]

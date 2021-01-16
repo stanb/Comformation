@@ -6,7 +6,6 @@ namespace Comformation.Lambda.LayerVersion
 {
     /// <summary>
     /// AWS::Lambda::LayerVersion
-    /// The AWS::Lambda::LayerVersion resource creates an AWS Lambda layer from a ZIP archive.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html
     /// </summary>
     public class LayerVersionResource : ResourceBase
@@ -18,10 +17,10 @@ namespace Comformation.Lambda.LayerVersion
             /// A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
             /// Required: No
             /// Type: List of String
-            /// Maximum: 5
+            /// Maximum: 15
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> CompatibleRuntimes { get; set; }
+            public List<Union<string, IntrinsicFunction>> CompatibleRuntimes { get; set; }
 
             /// <summary>
             /// LicenseInfo
@@ -33,7 +32,7 @@ namespace Comformation.Lambda.LayerVersion
             /// Maximum: 512
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LicenseInfo { get; set; }
+            public Union<string, IntrinsicFunction> LicenseInfo { get; set; }
 
             /// <summary>
             /// Description
@@ -44,7 +43,7 @@ namespace Comformation.Lambda.LayerVersion
             /// Maximum: 256
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// LayerName
@@ -56,7 +55,7 @@ namespace Comformation.Lambda.LayerVersion
             /// Pattern: (arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LayerName { get; set; }
+            public Union<string, IntrinsicFunction> LayerName { get; set; }
 
             /// <summary>
             /// Content
@@ -65,7 +64,7 @@ namespace Comformation.Lambda.LayerVersion
             /// Type: Content
             /// Update requires: Replacement
             /// </summary>
-			public Content Content { get; set; }
+            public Content Content { get; set; }
 
         }
 

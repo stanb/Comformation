@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::ApplicationOutput Output
-    /// Describes an SQL-based Amazon Kinesis Data Analytics application&#39;s output configuration, in which you identify
-    /// an in-application stream and a destination where you want the in-application stream data to be written. The
-    /// destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-output.html
     /// </summary>
     public class Output
@@ -37,7 +34,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 
         /// <summary>
         /// KinesisFirehoseOutput
-        /// Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+        /// Identifies a Kinesis Data Firehose delivery stream as the destination.
         /// Required: No
         /// Type: KinesisFirehoseOutput
         /// Update requires: No interruption
@@ -47,7 +44,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 
         /// <summary>
         /// KinesisStreamsOutput
-        /// Identifies an Amazon Kinesis data stream as the destination.
+        /// Identifies a Kinesis data stream as the destination.
         /// Required: No
         /// Type: KinesisStreamsOutput
         /// Update requires: No interruption
@@ -62,6 +59,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
         /// Type: String
         /// Minimum: 1
         /// Maximum: 32
+        /// Pattern: [^-\s&amp;lt;&amp;gt;&amp;amp;]*
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Name")]

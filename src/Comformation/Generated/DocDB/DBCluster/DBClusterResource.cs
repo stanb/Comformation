@@ -6,9 +6,6 @@ namespace Comformation.DocDB.DBCluster
 {
     /// <summary>
     /// AWS::DocDB::DBCluster
-    /// The AWS::DocDB::DBCluster Amazon DocumentDB (with MongoDB compatibility) resource describes a DBCluster.
-    /// Amazon DocumentDB is a fully managed, MongoDB-compatible document database engine. For more information, see
-    /// DBCluster in the Amazon DocumentDB Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html
     /// </summary>
     public class DBClusterResource : ResourceBase
@@ -22,16 +19,18 @@ namespace Comformation.DocDB.DBCluster
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
+            public Union<bool, IntrinsicFunction> StorageEncrypted { get; set; }
 
             /// <summary>
             /// EngineVersion
-            /// The version number of the database engine to use.
+            /// The version number of the database engine to use. The --engine-version will default to the latest
+            /// major engine version. For production workloads, we recommend explicitly declaring this parameter
+            /// with the intended major engine version.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -41,20 +40,14 @@ namespace Comformation.DocDB.DBCluster
             /// to encrypt the new cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS
             /// encryption key.
             /// If an encryption key is not specified in KmsKeyId:
-            /// If ReplicationSourceIdentifier identifies an encrypted source, then Amazon DocumentDB uses the
-            /// encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
-            /// encryption key. If the StorageEncrypted parameter is true and ReplicationSourceIdentifier is not
-            /// specified, Amazon DocumentDB uses your default encryption key.
+            /// If the StorageEncrypted parameter is true, Amazon DocumentDB uses your default encryption key.
             /// AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
             /// default encryption key for each AWS Region.
-            /// If you create a replica of an encrypted cluster in another AWS Region, you must set KmsKeyId to a
-            /// KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-            /// that AWS Region.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// AvailabilityZones
@@ -63,7 +56,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: List of String
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
+            public List<Union<string, IntrinsicFunction>> AvailabilityZones { get; set; }
 
             /// <summary>
             /// SnapshotIdentifier
@@ -76,7 +69,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
             /// <summary>
             /// Port
@@ -85,7 +78,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// DBClusterIdentifier
@@ -98,7 +91,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterIdentifier { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -113,7 +106,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// DBSubnetGroupName
@@ -124,7 +117,17 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSubnetGroupName { get; set; }
+
+            /// <summary>
+            /// DeletionProtection
+            /// Protects clusters from being accidentally deleted. If enabled, the cluster cannot be deleted unless
+            /// it is modified and DeletionProtection is disabled.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> DeletionProtection { get; set; }
 
             /// <summary>
             /// PreferredBackupWindow
@@ -139,7 +142,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredBackupWindow { get; set; }
 
             /// <summary>
             /// MasterUserPassword
@@ -150,7 +153,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
+            public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -159,7 +162,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
             /// <summary>
             /// MasterUsername
@@ -171,7 +174,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
+            public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
             /// <summary>
             /// DBClusterParameterGroupName
@@ -180,7 +183,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBClusterParameterGroupName { get; set; }
 
             /// <summary>
             /// BackupRetentionPeriod
@@ -192,7 +195,7 @@ namespace Comformation.DocDB.DBCluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
+            public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
             /// <summary>
             /// Tags
@@ -201,16 +204,18 @@ namespace Comformation.DocDB.DBCluster
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// EnableCloudwatchLogsExports
-            /// A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+            /// The list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can
+            /// enable audit logs or profiler logs. For more information, see Auditing Amazon DocumentDB Events and
+            /// Profiling Amazon DocumentDB Operations.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
+            public List<Union<string, IntrinsicFunction>> EnableCloudwatchLogsExports { get; set; }
 
         }
 
@@ -220,11 +225,11 @@ namespace Comformation.DocDB.DBCluster
 
     }
 
-	public static class DBClusterAttributes
-	{
+    public static class DBClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterResourceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterResourceId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Port");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ReadEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("ReadEndpoint");
-	}
+    }
 }

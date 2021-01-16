@@ -7,7 +7,6 @@ namespace Comformation.Glue.Trigger
 {
     /// <summary>
     /// AWS::Glue::Trigger Condition
-    /// Defines a condition under which a trigger fires.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
     /// </summary>
     public class Condition

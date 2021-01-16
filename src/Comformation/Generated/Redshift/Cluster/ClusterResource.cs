@@ -6,7 +6,6 @@ namespace Comformation.Redshift.Cluster
 {
     /// <summary>
     /// AWS::Redshift::Cluster
-    /// Specifies a cluster. A cluster is a fully managed data warehouse that consists of a set of compute nodes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html
     /// </summary>
     public class ClusterResource : ResourceBase
@@ -25,7 +24,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AllowVersionUpgrade { get; set; }
 
             /// <summary>
             /// AutomatedSnapshotRetentionPeriod
@@ -38,7 +37,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> AutomatedSnapshotRetentionPeriod { get; set; }
+            public Union<int, IntrinsicFunction> AutomatedSnapshotRetentionPeriod { get; set; }
 
             /// <summary>
             /// AvailabilityZone
@@ -46,13 +45,14 @@ namespace Comformation.Redshift.Cluster
             /// example, if you have several EC2 instances running in a specific Availability Zone, then you might
             /// want the cluster to be provisioned in the same zone in order to decrease network latency.
             /// Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
-            /// Example: us-east-1d
+            /// Example: us-east-2d
             /// Constraint: The specified Availability Zone must be in the same region as the current endpoint.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// ClusterIdentifier
@@ -66,9 +66,10 @@ namespace Comformation.Redshift.Cluster
             /// Example: myexamplecluster
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> ClusterIdentifier { get; set; }
 
             /// <summary>
             /// ClusterParameterGroupName
@@ -80,9 +81,10 @@ namespace Comformation.Redshift.Cluster
             /// with a hyphen or contain two consecutive hyphens.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterParameterGroupName { get; set; }
+            public Union<string, IntrinsicFunction> ClusterParameterGroupName { get; set; }
 
             /// <summary>
             /// ClusterSecurityGroups
@@ -92,7 +94,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ClusterSecurityGroups { get; set; }
+            public List<Union<string, IntrinsicFunction>> ClusterSecurityGroups { get; set; }
 
             /// <summary>
             /// ClusterSubnetGroupName
@@ -101,9 +103,10 @@ namespace Comformation.Redshift.Cluster
             /// cloud (VPC).
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterSubnetGroupName { get; set; }
+            public Union<string, IntrinsicFunction> ClusterSubnetGroupName { get; set; }
 
             /// <summary>
             /// ClusterType
@@ -114,9 +117,10 @@ namespace Comformation.Redshift.Cluster
             /// Default: multi-node
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterType { get; set; }
+            public Union<string, IntrinsicFunction> ClusterType { get; set; }
 
             /// <summary>
             /// ClusterVersion
@@ -126,9 +130,10 @@ namespace Comformation.Redshift.Cluster
             /// Example: 1. 0
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ClusterVersion { get; set; }
+            public Union<string, IntrinsicFunction> ClusterVersion { get; set; }
 
             /// <summary>
             /// DBName
@@ -143,9 +148,10 @@ namespace Comformation.Redshift.Cluster
             /// Amazon Redshift Database Developer Guide.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DBName { get; set; }
+            public Union<string, IntrinsicFunction> DBName { get; set; }
 
             /// <summary>
             /// ElasticIp
@@ -155,9 +161,10 @@ namespace Comformation.Redshift.Cluster
             /// Launch Your Cluster in the Amazon Redshift Cluster Management Guide.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ElasticIp { get; set; }
+            public Union<string, IntrinsicFunction> ElasticIp { get; set; }
 
             /// <summary>
             /// Encrypted
@@ -167,7 +174,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> Encrypted { get; set; }
+            public Union<bool, IntrinsicFunction> Encrypted { get; set; }
 
             /// <summary>
             /// HsmClientCertificateIdentifier
@@ -175,9 +182,10 @@ namespace Comformation.Redshift.Cluster
             /// data encryption keys stored in an HSM.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HsmClientCertificateIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> HsmClientCertificateIdentifier { get; set; }
 
             /// <summary>
             /// HsmConfigurationIdentifier
@@ -185,9 +193,10 @@ namespace Comformation.Redshift.Cluster
             /// cluster can use to retrieve and store keys in an HSM.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HsmConfigurationIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> HsmConfigurationIdentifier { get; set; }
 
             /// <summary>
             /// IamRoles
@@ -199,7 +208,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> IamRoles { get; set; }
+            public List<Union<string, IntrinsicFunction>> IamRoles { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -207,9 +216,10 @@ namespace Comformation.Redshift.Cluster
             /// data in the cluster.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// LoggingProperties
@@ -219,7 +229,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: LoggingProperties
             /// Update requires: No interruption
             /// </summary>
-			public LoggingProperties LoggingProperties { get; set; }
+            public LoggingProperties LoggingProperties { get; set; }
 
             /// <summary>
             /// MasterUserPassword
@@ -230,9 +240,10 @@ namespace Comformation.Redshift.Cluster
             /// (ASCII code 33 to 126) except &#39; (single quote), &quot; (double quote), \, /, @, or space.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
+            public Union<string, IntrinsicFunction> MasterUserPassword { get; set; }
 
             /// <summary>
             /// MasterUsername
@@ -243,21 +254,23 @@ namespace Comformation.Redshift.Cluster
             /// Amazon Redshift Database Developer Guide.
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MasterUsername { get; set; }
+            public Union<string, IntrinsicFunction> MasterUsername { get; set; }
 
             /// <summary>
             /// NodeType
             /// The node type to be provisioned for the cluster. For information about node types, go to Working
             /// with Clusters in the Amazon Redshift Cluster Management Guide.
-            /// Valid Values: ds2. xlarge | ds2. 8xlarge | ds2. xlarge | ds2. 8xlarge | dc1. large | dc1. 8xlarge |
-            /// dc2. large | dc2. 8xlarge
+            /// Valid Values: ds2. xlarge | ds2. 8xlarge | dc1. large | dc1. 8xlarge | dc2. large | dc2. 8xlarge |
+            /// ra3. xlplus | ra3. 4xlarge | ra3. 16xlarge
             /// Required: Yes
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NodeType { get; set; }
+            public Union<string, IntrinsicFunction> NodeType { get; set; }
 
             /// <summary>
             /// NumberOfNodes
@@ -273,7 +286,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
+            public Union<int, IntrinsicFunction> NumberOfNodes { get; set; }
 
             /// <summary>
             /// OwnerAccount
@@ -281,9 +294,10 @@ namespace Comformation.Redshift.Cluster
             /// snapshot you do not own, optional if you own the snapshot.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> OwnerAccount { get; set; }
+            public Union<string, IntrinsicFunction> OwnerAccount { get; set; }
 
             /// <summary>
             /// Port
@@ -296,7 +310,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> Port { get; set; }
+            public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -309,9 +323,10 @@ namespace Comformation.Redshift.Cluster
             /// Constraints: Minimum 30-minute window.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// PubliclyAccessible
@@ -320,7 +335,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
+            public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
             /// <summary>
             /// SnapshotClusterIdentifier
@@ -329,9 +344,10 @@ namespace Comformation.Redshift.Cluster
             /// the cluster name.
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotClusterIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotClusterIdentifier { get; set; }
 
             /// <summary>
             /// SnapshotIdentifier
@@ -339,9 +355,10 @@ namespace Comformation.Redshift.Cluster
             /// Example: my-snapshot-id
             /// Required: No
             /// Type: String
+            /// Maximum: 2147483647
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> SnapshotIdentifier { get; set; }
 
             /// <summary>
             /// Tags
@@ -350,7 +367,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -360,7 +377,7 @@ namespace Comformation.Redshift.Cluster
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
         }
 
@@ -370,9 +387,9 @@ namespace Comformation.Redshift.Cluster
 
     }
 
-	public static class ClusterAttributes
-	{
+    public static class ClusterAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Address = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Address");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint_Port = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint", "Port");
-	}
+    }
 }

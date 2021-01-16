@@ -7,7 +7,6 @@ namespace Comformation.Batch.JobDefinition
 {
     /// <summary>
     /// AWS::Batch::JobDefinition NodeProperties
-    /// An object representing the node properties of a multi-node parallel job.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html
     /// </summary>
     public class NodeProperties

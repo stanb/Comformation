@@ -6,7 +6,6 @@ namespace Comformation.EC2.TransitGatewayRouteTable
 {
     /// <summary>
     /// AWS::EC2::TransitGatewayRouteTable
-    /// Specifies a route table for a transit gateway.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html
     /// </summary>
     public class TransitGatewayRouteTableResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TransitGatewayRouteTable
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
+            public Union<string, IntrinsicFunction> TransitGatewayId { get; set; }
 
             /// <summary>
             /// Tags
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TransitGatewayRouteTable
             /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

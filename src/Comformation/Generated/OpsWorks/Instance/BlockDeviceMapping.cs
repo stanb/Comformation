@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Instance
 {
     /// <summary>
     /// AWS::OpsWorks::Instance BlockDeviceMapping
-    /// Describes a block device mapping. This data type maps directly to the Amazon EC2 BlockDeviceMapping data type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html
     /// </summary>
     public class BlockDeviceMapping

@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream ExtendedS3DestinationConfiguration
-    /// The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis
-    /// Data Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html
     /// </summary>
     public class ExtendedS3DestinationConfiguration
@@ -31,7 +29,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// BufferingHints
         /// The buffering option.
-        /// Required: Yes
+        /// Required: No
         /// Type: BufferingHints
         /// Update requires: No interruption
         /// </summary>
@@ -51,9 +49,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// <summary>
         /// CompressionFormat
         /// The compression format. If no value is specified, the default is UNCOMPRESSED.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
-        /// Allowed Values: GZIP | Snappy | UNCOMPRESSED | ZIP
+        /// Allowed values: GZIP | HADOOP_SNAPPY | Snappy | UNCOMPRESSED | ZIP
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CompressionFormat")]
@@ -88,6 +86,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// prefix, see Custom Prefixes for Amazon S3 Objects.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ErrorOutputPrefix")]
@@ -100,6 +101,9 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Reference.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 1024
+        /// Pattern: . *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Prefix")]
@@ -141,10 +145,11 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 
         /// <summary>
         /// S3BackupMode
-        /// The Amazon S3 backup mode.
+        /// The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+        /// backup if it is disabled. If backup is enabled, you can&#39;t update the delivery stream to disable it.
         /// Required: No
         /// Type: String
-        /// Allowed Values: Disabled | Enabled
+        /// Allowed values: Disabled | Enabled
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("S3BackupMode")]

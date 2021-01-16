@@ -6,7 +6,6 @@ namespace Comformation.ManagedBlockchain.Node
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Node
-    /// Creates a peer node in a member.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html
     /// </summary>
     public class NodeResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.ManagedBlockchain.Node
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MemberId { get; set; }
+            public Union<string, IntrinsicFunction> MemberId { get; set; }
 
             /// <summary>
             /// NetworkId
@@ -29,7 +28,7 @@ namespace Comformation.ManagedBlockchain.Node
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkId { get; set; }
 
             /// <summary>
             /// NodeConfiguration
@@ -38,7 +37,7 @@ namespace Comformation.ManagedBlockchain.Node
             /// Type: NodeConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public NodeConfiguration NodeConfiguration { get; set; }
+            public NodeConfiguration NodeConfiguration { get; set; }
 
         }
 
@@ -48,11 +47,11 @@ namespace Comformation.ManagedBlockchain.Node
 
     }
 
-	public static class NodeAttributes
-	{
+    public static class NodeAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MemberId = new ResourceAttribute<Union<string, IntrinsicFunction>>("MemberId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NodeId = new ResourceAttribute<Union<string, IntrinsicFunction>>("NodeId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NetworkId = new ResourceAttribute<Union<string, IntrinsicFunction>>("NetworkId");
-	}
+    }
 }

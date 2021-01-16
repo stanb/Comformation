@@ -6,9 +6,6 @@ namespace Comformation.ApiGateway.ApiKey
 {
     /// <summary>
     /// AWS::ApiGateway::ApiKey
-    /// The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing
-    /// API Gateway Method resources that require an API key. To specify which API key clients must use, map the API
-    /// key with the RestApi and Stage resources that include the methods that require a key.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html
     /// </summary>
     public class ApiKeyResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CustomerId { get; set; }
+            public Union<string, IntrinsicFunction> CustomerId { get; set; }
 
             /// <summary>
             /// Description
@@ -31,7 +28,7 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Enabled
@@ -40,16 +37,17 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             /// GenerateDistinctId
-            /// Specifies whether the key identifier is distinct from the created API key value.
+            /// Specifies whether the key identifier is distinct from the created API key value. This parameter is
+            /// deprecated and should not be used.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> GenerateDistinctId { get; set; }
+            public Union<bool, IntrinsicFunction> GenerateDistinctId { get; set; }
 
             /// <summary>
             /// Name
@@ -62,7 +60,7 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// StageKeys
@@ -71,7 +69,16 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: List of StageKey
             /// Update requires: No interruption
             /// </summary>
-			public List<StageKey> StageKeys { get; set; }
+            public List<StageKey> StageKeys { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// An array of arbitrary tags (key-value pairs) to associate with the API key.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Value
@@ -80,7 +87,7 @@ namespace Comformation.ApiGateway.ApiKey
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Value { get; set; }
+            public Union<string, IntrinsicFunction> Value { get; set; }
 
         }
 

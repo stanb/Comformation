@@ -7,7 +7,6 @@ namespace Comformation.CloudFront.StreamingDistribution
 {
     /// <summary>
     /// AWS::CloudFront::StreamingDistribution Logging
-    /// A complex type that controls whether access logs are written for the streaming 			distribution.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html
     /// </summary>
     public class Logging

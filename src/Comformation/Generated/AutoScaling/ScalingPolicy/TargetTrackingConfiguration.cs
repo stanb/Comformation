@@ -7,8 +7,6 @@ namespace Comformation.AutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::AutoScaling::ScalingPolicy TargetTrackingConfiguration
-    /// TargetTrackingConfiguration is a subproperty of ScalingPolicy that specifies a target tracking scaling policy
-    /// to use with Amazon EC2 Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html
     /// </summary>
     public class TargetTrackingConfiguration

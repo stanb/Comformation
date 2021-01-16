@@ -6,9 +6,6 @@ namespace Comformation.AppSync.DataSource
 {
     /// <summary>
     /// AWS::AppSync::DataSource
-    /// The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as
-    /// Amazon DynamoDB, AWS Lambda, and Amazon Elasticsearch Service. Resolvers use these data sources to fetch data
-    /// when clients make GraphQL calls.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
     /// </summary>
     public class DataSourceResource : ResourceBase
@@ -28,7 +25,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Type { get; set; }
+            public Union<string, IntrinsicFunction> Type { get; set; }
 
             /// <summary>
             /// Description
@@ -37,7 +34,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -48,7 +45,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
             /// HttpConfig
@@ -57,7 +54,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: HttpConfig
             /// Update requires: No interruption
             /// </summary>
-			public HttpConfig HttpConfig { get; set; }
+            public HttpConfig HttpConfig { get; set; }
 
             /// <summary>
             /// RelationalDatabaseConfig
@@ -66,16 +63,17 @@ namespace Comformation.AppSync.DataSource
             /// Type: RelationalDatabaseConfig
             /// Update requires: No interruption
             /// </summary>
-			public RelationalDatabaseConfig RelationalDatabaseConfig { get; set; }
+            public RelationalDatabaseConfig RelationalDatabaseConfig { get; set; }
 
             /// <summary>
             /// LambdaConfig
-            /// A valid ARN of a Lambda function in your account.
+            /// An ARN of a Lambda function in valid ARN format. This can be the ARN of a Lambda function that
+            /// exists in the current account or in another account.
             /// Required: No
             /// Type: LambdaConfig
             /// Update requires: No interruption
             /// </summary>
-			public LambdaConfig LambdaConfig { get; set; }
+            public LambdaConfig LambdaConfig { get; set; }
 
             /// <summary>
             /// ApiId
@@ -84,7 +82,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
             /// <summary>
             /// Name
@@ -93,7 +91,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// DynamoDBConfig
@@ -102,7 +100,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: DynamoDBConfig
             /// Update requires: No interruption
             /// </summary>
-			public DynamoDBConfig DynamoDBConfig { get; set; }
+            public DynamoDBConfig DynamoDBConfig { get; set; }
 
             /// <summary>
             /// ElasticsearchConfig
@@ -111,7 +109,7 @@ namespace Comformation.AppSync.DataSource
             /// Type: ElasticsearchConfig
             /// Update requires: No interruption
             /// </summary>
-			public ElasticsearchConfig ElasticsearchConfig { get; set; }
+            public ElasticsearchConfig ElasticsearchConfig { get; set; }
 
         }
 
@@ -121,9 +119,9 @@ namespace Comformation.AppSync.DataSource
 
     }
 
-	public static class DataSourceAttributes
-	{
+    public static class DataSourceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DataSourceArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("DataSourceArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

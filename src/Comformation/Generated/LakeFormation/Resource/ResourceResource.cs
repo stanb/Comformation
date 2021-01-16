@@ -6,8 +6,6 @@ namespace Comformation.LakeFormation.Resource
 {
     /// <summary>
     /// AWS::LakeFormation::Resource
-    /// The AWS::LakeFormation::Resource is an AWS Lake Formation resource type that defines the resources to which
-    /// permissions are to be granted.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html
     /// </summary>
     public class ResourceResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.LakeFormation.Resource
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceArn { get; set; }
+            public Union<string, IntrinsicFunction> ResourceArn { get; set; }
 
             /// <summary>
             /// UseServiceLinkedRole
@@ -31,7 +29,7 @@ namespace Comformation.LakeFormation.Resource
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> UseServiceLinkedRole { get; set; }
+            public Union<bool, IntrinsicFunction> UseServiceLinkedRole { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -40,7 +38,7 @@ namespace Comformation.LakeFormation.Resource
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
         }
 

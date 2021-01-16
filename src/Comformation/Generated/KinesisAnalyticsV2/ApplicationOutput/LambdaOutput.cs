@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::ApplicationOutput LambdaOutput
-    /// When you configure an SQL-based Amazon Kinesis Data Analytics application&#39;s output, identifies an AWS Lambda
-    /// function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html
     /// </summary>
     public class LambdaOutput

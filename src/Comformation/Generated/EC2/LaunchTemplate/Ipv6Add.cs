@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate Ipv6Add
-    /// Specifies an IPv6 address in an Amazon EC2 launch template.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html
     /// </summary>
     public class Ipv6Add

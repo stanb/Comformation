@@ -6,8 +6,6 @@ namespace Comformation.EC2.CapacityReservation
 {
     /// <summary>
     /// AWS::EC2::CapacityReservation
-    /// Creates a new Capacity Reservation with the specified attributes. For more information, see 		 	Capacity 		
-    /// 		Reservations in the Amazon Elastic Compute Cloud User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html
     /// </summary>
     public class CapacityReservationResource : ResourceBase
@@ -26,10 +24,10 @@ namespace Comformation.EC2.CapacityReservation
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: dedicated | default
+            /// Allowed values: dedicated | default
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Tenancy { get; set; }
+            public Union<string, IntrinsicFunction> Tenancy { get; set; }
 
             /// <summary>
             /// EndDateType
@@ -44,10 +42,10 @@ namespace Comformation.EC2.CapacityReservation
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: limited | unlimited
+            /// Allowed values: limited | unlimited
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EndDateType { get; set; }
+            public Union<string, IntrinsicFunction> EndDateType { get; set; }
 
             /// <summary>
             /// InstanceCount
@@ -58,7 +56,7 @@ namespace Comformation.EC2.CapacityReservation
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> InstanceCount { get; set; }
+            public Union<int, IntrinsicFunction> InstanceCount { get; set; }
 
             /// <summary>
             /// TagSpecifications
@@ -69,7 +67,7 @@ namespace Comformation.EC2.CapacityReservation
             /// Type: List of TagSpecification
             /// Update requires: Replacement
             /// </summary>
-			public List<TagSpecification> TagSpecifications { get; set; }
+            public List<TagSpecification> TagSpecifications { get; set; }
 
             /// <summary>
             /// AvailabilityZone
@@ -80,7 +78,7 @@ namespace Comformation.EC2.CapacityReservation
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// InstancePlatform
@@ -89,25 +87,25 @@ namespace Comformation.EC2.CapacityReservation
             /// 	
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: Linux with SQL Server Enterprise | Linux with SQL Server Standard | Linux with SQL
+            /// Allowed values: Linux with SQL Server Enterprise | Linux with SQL Server Standard | Linux with SQL
             /// Server Web | Linux/UNIX | Red Hat Enterprise Linux | SUSE Linux | Windows | Windows with SQL Server
             /// | Windows with SQL Server Enterprise | Windows with SQL Server Standard | Windows with SQL Server
             /// Web
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstancePlatform { get; set; }
+            public Union<string, IntrinsicFunction> InstancePlatform { get; set; }
 
             /// <summary>
             /// InstanceType
             /// 		
-            /// The instance type for which to reserve capacity. For more information, see Instance 				Types in the
-            /// Amazon Elastic Compute Cloud User 			Guide.
+            /// The instance type for which to reserve capacity. For more information, see Instance types in the
+            /// Amazon EC2 User Guide.
             /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// EphemeralStorage
@@ -119,7 +117,7 @@ namespace Comformation.EC2.CapacityReservation
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> EphemeralStorage { get; set; }
+            public Union<bool, IntrinsicFunction> EphemeralStorage { get; set; }
 
             /// <summary>
             /// InstanceMatchCriteria
@@ -138,10 +136,10 @@ namespace Comformation.EC2.CapacityReservation
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed Values: open | targeted
+            /// Allowed values: open | targeted
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceMatchCriteria { get; set; }
+            public Union<string, IntrinsicFunction> InstanceMatchCriteria { get; set; }
 
             /// <summary>
             /// EndDate
@@ -161,7 +159,7 @@ namespace Comformation.EC2.CapacityReservation
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EndDate { get; set; }
+            public Union<string, IntrinsicFunction> EndDate { get; set; }
 
             /// <summary>
             /// EbsOptimized
@@ -175,7 +173,7 @@ namespace Comformation.EC2.CapacityReservation
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
+            public Union<bool, IntrinsicFunction> EbsOptimized { get; set; }
 
         }
 
@@ -185,12 +183,12 @@ namespace Comformation.EC2.CapacityReservation
 
     }
 
-	public static class CapacityReservationAttributes
-	{
+    public static class CapacityReservationAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Tenancy = new ResourceAttribute<Union<string, IntrinsicFunction>>("Tenancy");
         public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> AvailableInstanceCount = new ResourceAttribute<Union<int, IntrinsicFunction>>("AvailableInstanceCount");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AvailabilityZone = new ResourceAttribute<Union<string, IntrinsicFunction>>("AvailabilityZone");
         public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> TotalInstanceCount = new ResourceAttribute<Union<int, IntrinsicFunction>>("TotalInstanceCount");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> InstanceType = new ResourceAttribute<Union<string, IntrinsicFunction>>("InstanceType");
-	}
+    }
 }

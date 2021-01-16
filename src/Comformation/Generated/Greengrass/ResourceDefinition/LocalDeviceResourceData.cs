@@ -7,8 +7,6 @@ namespace Comformation.Greengrass.ResourceDefinition
 {
     /// <summary>
     /// AWS::Greengrass::ResourceDefinition LocalDeviceResourceData
-    /// Settings for a 		local device resource, which represents a file under /dev. 		 For more information, see
-    /// Access Local Resources with Lambda Functions in the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localdeviceresourcedata.html
     /// </summary>
     public class LocalDeviceResourceData

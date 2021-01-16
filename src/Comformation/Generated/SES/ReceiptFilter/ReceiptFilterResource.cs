@@ -6,8 +6,6 @@ namespace Comformation.SES.ReceiptFilter
 {
     /// <summary>
     /// AWS::SES::ReceiptFilter
-    /// Specify a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more
-    /// information, see the Amazon SES Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
     /// </summary>
     public class ReceiptFilterResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.SES.ReceiptFilter
             /// Type: Filter
             /// Update requires: Replacement
             /// </summary>
-			public Filter Filter { get; set; }
+            public Filter Filter { get; set; }
 
         }
 

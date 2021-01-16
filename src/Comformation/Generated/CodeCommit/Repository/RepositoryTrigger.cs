@@ -7,7 +7,6 @@ namespace Comformation.CodeCommit.Repository
 {
     /// <summary>
     /// AWS::CodeCommit::Repository RepositoryTrigger
-    /// Information about a trigger for a repository.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html
     /// </summary>
     public class RepositoryTrigger
@@ -15,8 +14,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// Events
-        /// The repository events that will cause the trigger to run actions in another service, such as sending
-        /// a notification through Amazon SNS.
+        /// The repository events that cause the trigger to run actions in another service, such as sending a
+        /// notification through Amazon SNS.
         /// Note The valid value &quot;all&quot; cannot be used with any other values.
         /// Required: Yes
         /// Type: List of String
@@ -27,8 +26,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// Branches
-        /// The branches that will be included in the trigger configuration. If you specify an empty array, the
-        /// trigger will apply to all branches.
+        /// The branches to be included in the trigger configuration. If you specify an empty array, the trigger
+        /// applies to all branches.
         /// Note Although no content is required in the array, you must include the array itself.
         /// Required: No
         /// Type: List of String
@@ -39,8 +38,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// CustomData
-        /// Any custom data associated with the trigger that will be included in the information sent to the
-        /// target of the trigger.
+        /// Any custom data associated with the trigger to be included in the information sent to the target of
+        /// the trigger.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -50,8 +49,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// DestinationArn
-        /// The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon
-        /// SNS.
+        /// The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon
+        /// SNS).
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

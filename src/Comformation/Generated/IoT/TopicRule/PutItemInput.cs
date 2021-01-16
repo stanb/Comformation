@@ -7,8 +7,6 @@ namespace Comformation.IoT.TopicRule
 {
     /// <summary>
     /// AWS::IoT::TopicRule PutItemInput
-    /// The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be
-    /// written.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html
     /// </summary>
     public class PutItemInput

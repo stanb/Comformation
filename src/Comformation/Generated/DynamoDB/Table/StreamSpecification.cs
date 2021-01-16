@@ -7,7 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table StreamSpecification
-    /// Represents the DynamoDB Streams configuration for a table in DynamoDB.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html
     /// </summary>
     public class StreamSpecification

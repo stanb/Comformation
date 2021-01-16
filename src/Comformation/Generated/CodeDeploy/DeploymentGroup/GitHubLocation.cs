@@ -7,8 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup GitHubLocation
-    /// GitHubLocation is a property of the CodeDeploy DeploymentGroup Revision property that specifies the location
-    /// of an application revision that is stored in GitHub.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html
     /// </summary>
     public class GitHubLocation

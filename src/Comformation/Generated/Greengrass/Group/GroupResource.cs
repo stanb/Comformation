@@ -6,11 +6,6 @@ namespace Comformation.Greengrass.Group
 {
     /// <summary>
     /// AWS::Greengrass::Group
-    /// AWS IoT Greengrass seamlessly extends AWS to edge devices so they can act locally on the data they generate,
-    /// while still using the cloud for management, analytics, and durable storage. With AWS IoT Greengrass, connected
-    /// devices can run AWS Lambda functions, execute predictions based on machine learning models, keep device data
-    /// in sync, and communicate with other devices securely – even when not connected to the internet. For more
-    /// information, see the AWS IoT Greengrass Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html
     /// </summary>
     public class GroupResource : ResourceBase
@@ -31,7 +26,7 @@ namespace Comformation.Greengrass.Group
             /// Type: GroupVersion
             /// Update requires: Replacement
             /// </summary>
-			public GroupVersion InitialVersion { get; set; }
+            public GroupVersion InitialVersion { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -41,7 +36,7 @@ namespace Comformation.Greengrass.Group
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// Tags
@@ -57,7 +52,7 @@ namespace Comformation.Greengrass.Group
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -66,7 +61,7 @@ namespace Comformation.Greengrass.Group
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -76,13 +71,13 @@ namespace Comformation.Greengrass.Group
 
     }
 
-	public static class GroupAttributes
-	{
+    public static class GroupAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RoleAttachedAt = new ResourceAttribute<Union<string, IntrinsicFunction>>("RoleAttachedAt");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RoleArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("RoleArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

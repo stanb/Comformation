@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application ParallelismConfiguration
-    /// Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks
-    /// simultaneously. For more information about parallelism, see Parallel Execution in the Apache Flink
-    /// Documentation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html
     /// </summary>
     public class ParallelismConfiguration
@@ -22,7 +19,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// AutoScalingEnabled, Parallelism, or ParallelismPerKPU properties.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CUSTOM | DEFAULT
+        /// Allowed values: CUSTOM | DEFAULT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ConfigurationType")]

@@ -6,9 +6,6 @@ namespace Comformation.WAF.Rule
 {
     /// <summary>
     /// AWS::WAF::Rule
-    /// A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that
-    /// you 			want to allow, block, or count. For example, you might create a Rule that includes the following
-    /// predicates:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html
     /// </summary>
     public class RuleResource : ResourceBase
@@ -23,9 +20,12 @@ namespace Comformation.WAF.Rule
             /// change MetricName after you create the Rule.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MetricName { get; set; }
+            public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
             /// Name
@@ -37,9 +37,10 @@ namespace Comformation.WAF.Rule
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Predicates
@@ -50,7 +51,7 @@ namespace Comformation.WAF.Rule
             /// Type: List of Predicate
             /// Update requires: No interruption
             /// </summary>
-			public List<Predicate> Predicates { get; set; }
+            public List<Predicate> Predicates { get; set; }
 
         }
 

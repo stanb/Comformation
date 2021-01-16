@@ -6,8 +6,6 @@ namespace Comformation.DMS.ReplicationSubnetGroup
 {
     /// <summary>
     /// AWS::DMS::ReplicationSubnetGroup
-    /// The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group. Subnet groups must
-    /// contain at least two subnets in two different Availability Zones in the same region.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html
     /// </summary>
     public class ReplicationSubnetGroupResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationSubnetGroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationSubnetGroupDescription { get; set; }
 
             /// <summary>
             /// ReplicationSubnetGroupIdentifier
@@ -31,7 +29,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationSubnetGroupIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationSubnetGroupIdentifier { get; set; }
 
             /// <summary>
             /// SubnetIds
@@ -40,7 +38,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
             /// <summary>
             /// Tags
@@ -49,7 +47,7 @@ namespace Comformation.DMS.ReplicationSubnetGroup
             /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

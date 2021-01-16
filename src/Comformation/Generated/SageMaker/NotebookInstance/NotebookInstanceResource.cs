@@ -6,9 +6,6 @@ namespace Comformation.SageMaker.NotebookInstance
 {
     /// <summary>
     /// AWS::SageMaker::NotebookInstance
-    /// The AWS::SageMaker::NotebookInstance resource creates an Amazon SageMaker notebook instance. A notebook
-    /// instance is a machine learning (ML) compute instance running on a Jupyter notebook. For more information, see
-    /// Use Notebook Instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html
     /// </summary>
     public class NotebookInstanceResource : ResourceBase
@@ -27,19 +24,21 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Pattern: . *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// VolumeSizeInGB
             /// The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5
             /// GB.
+            /// Note Expect some interruption of service if this parameter is changed as CloudFormation stops a
+            /// notebook instance and starts it up again to update it.
             /// Required: No
             /// Type: Integer
             /// Minimum: 5
             /// Maximum: 16384
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> VolumeSizeInGB { get; set; }
+            public Union<int, IntrinsicFunction> VolumeSizeInGB { get; set; }
 
             /// <summary>
             /// AdditionalCodeRepositories
@@ -53,7 +52,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Maximum: 3
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AdditionalCodeRepositories { get; set; }
+            public List<Union<string, IntrinsicFunction>> AdditionalCodeRepositories { get; set; }
 
             /// <summary>
             /// DefaultCodeRepository
@@ -69,7 +68,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Pattern: ^https://([^/]+)/?(. *)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultCodeRepository { get; set; }
+            public Union<string, IntrinsicFunction> DefaultCodeRepository { get; set; }
 
             /// <summary>
             /// DirectInternetAccess
@@ -81,21 +80,19 @@ namespace Comformation.SageMaker.NotebookInstance
             /// of this parameter to Disabled only if you set a value for the SubnetId parameter.
             /// Required: No
             /// Type: String
-            /// Allowed Values: Disabled | Enabled
+            /// Allowed values: Disabled | Enabled
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DirectInternetAccess { get; set; }
+            public Union<string, IntrinsicFunction> DirectInternetAccess { get; set; }
 
             /// <summary>
             /// AcceleratorTypes
-            /// A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently,
-            /// only one instance type can be associated with a notebook instance. For more information, see Using
-            /// Elastic Inference in Amazon SageMaker.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AcceleratorTypes { get; set; }
+            public List<Union<string, IntrinsicFunction>> AcceleratorTypes { get; set; }
 
             /// <summary>
             /// SubnetId
@@ -107,7 +104,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Pattern: [-0-9a-zA-Z]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SubnetId { get; set; }
+            public Union<string, IntrinsicFunction> SubnetId { get; set; }
 
             /// <summary>
             /// SecurityGroupIds
@@ -118,14 +115,14 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Maximum: 5
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
             /// <summary>
             /// RoleArn
             /// When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes
             /// this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon
             /// SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal
-            /// (sagemaker. amazonaws. com) permissionsto to assume this role. For more information, see Amazon
+            /// (sagemaker. amazonaws. com) permissions to assume this role. For more information, see Amazon
             /// SageMaker Roles.
             /// Note To be able to pass this role to Amazon SageMaker, the caller of this API must have the
             /// iam:PassRole permission.
@@ -136,7 +133,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Pattern: ^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// RootAccess
@@ -147,10 +144,10 @@ namespace Comformation.SageMaker.NotebookInstance
             /// if you disable root access for users.
             /// Required: No
             /// Type: String
-            /// Allowed Values: Disabled | Enabled
+            /// Allowed values: Disabled | Enabled
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RootAccess { get; set; }
+            public Union<string, IntrinsicFunction> RootAccess { get; set; }
 
             /// <summary>
             /// NotebookInstanceName
@@ -161,14 +158,16 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NotebookInstanceName { get; set; }
+            public Union<string, IntrinsicFunction> NotebookInstanceName { get; set; }
 
             /// <summary>
             /// InstanceType
             /// The type of ML compute instance to launch for the notebook instance.
+            /// Note Expect some interruption of service if this parameter is changed as CloudFormation stops a
+            /// notebook instance and starts it up again to update it.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: ml. c4. 2xlarge | ml. c4. 4xlarge | ml. c4. 8xlarge | ml. c4. xlarge | ml. c5.
+            /// Allowed values: ml. c4. 2xlarge | ml. c4. 4xlarge | ml. c4. 8xlarge | ml. c4. xlarge | ml. c5.
             /// 18xlarge | ml. c5. 2xlarge | ml. c5. 4xlarge | ml. c5. 9xlarge | ml. c5. xlarge | ml. c5d. 18xlarge
             /// | ml. c5d. 2xlarge | ml. c5d. 4xlarge | ml. c5d. 9xlarge | ml. c5d. xlarge | ml. m4. 10xlarge | ml.
             /// m4. 16xlarge | ml. m4. 2xlarge | ml. m4. 4xlarge | ml. m4. xlarge | ml. m5. 12xlarge | ml. m5.
@@ -178,19 +177,19 @@ namespace Comformation.SageMaker.NotebookInstance
             /// xlarge
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceType { get; set; }
+            public Union<string, IntrinsicFunction> InstanceType { get; set; }
 
             /// <summary>
             /// LifecycleConfigName
             /// The name of a lifecycle configuration to associate with the notebook instance. For information about
-            /// lifestyle configurations, see Customize a Notebook Instance in the Amazon SageMaker Developer Guide.
+            /// lifecycle configurations, see Customize a Notebook Instance in the Amazon SageMaker Developer Guide.
             /// Required: No
             /// Type: String
             /// Maximum: 63
             /// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9])*
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> LifecycleConfigName { get; set; }
+            public Union<string, IntrinsicFunction> LifecycleConfigName { get; set; }
 
             /// <summary>
             /// Tags
@@ -202,7 +201,7 @@ namespace Comformation.SageMaker.NotebookInstance
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -212,8 +211,8 @@ namespace Comformation.SageMaker.NotebookInstance
 
     }
 
-	public static class NotebookInstanceAttributes
-	{
+    public static class NotebookInstanceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NotebookInstanceName = new ResourceAttribute<Union<string, IntrinsicFunction>>("NotebookInstanceName");
-	}
+    }
 }

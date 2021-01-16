@@ -7,8 +7,6 @@ namespace Comformation.ElasticBeanstalk.ApplicationVersion
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::ApplicationVersion SourceBundle
-    /// The SourceBundle property is an embedded property of the AWS::ElasticBeanstalk::ApplicationVersion resource.
-    /// It specifies the Amazon S3 location of the source bundle for an AWS Elastic Beanstalk application version.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html
     /// </summary>
     public class SourceBundle

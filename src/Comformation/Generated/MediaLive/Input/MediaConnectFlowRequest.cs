@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Input
 {
     /// <summary>
     /// AWS::MediaLive::Input MediaConnectFlowRequest
-    /// The settings for a MediaConnect Flow.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html
     /// </summary>
     public class MediaConnectFlowRequest

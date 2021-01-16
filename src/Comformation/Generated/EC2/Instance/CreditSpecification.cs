@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance CreditSpecification
-    /// Specifies the credit option for CPU usage of a T2 or T3 instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
     /// </summary>
     public class CreditSpecification

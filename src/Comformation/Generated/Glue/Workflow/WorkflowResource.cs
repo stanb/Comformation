@@ -6,10 +6,6 @@ namespace Comformation.Glue.Workflow
 {
     /// <summary>
     /// AWS::Glue::Workflow
-    /// The AWS::Glue::Workflow is an AWS Glue resource type that manages AWS Glue workflows. A workflow is a
-    /// container for a set of related jobs, crawlers, and triggers in AWS Glue. Using a workflow, you can design a
-    /// complex multi-job extract, transform, and load (ETL) activity that AWS Glue can execute and track as single
-    /// entity
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html
     /// </summary>
     public class WorkflowResource : ResourceBase
@@ -23,7 +19,7 @@ namespace Comformation.Glue.Workflow
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DefaultRunProperties
@@ -32,7 +28,7 @@ namespace Comformation.Glue.Workflow
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DefaultRunProperties { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> DefaultRunProperties { get; set; }
 
             /// <summary>
             /// Tags
@@ -41,7 +37,7 @@ namespace Comformation.Glue.Workflow
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -50,7 +46,7 @@ namespace Comformation.Glue.Workflow
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

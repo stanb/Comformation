@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket QueueConfiguration
-    /// Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when
-    /// Amazon S3 detects specified events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html
     /// </summary>
     public class QueueConfiguration
@@ -40,7 +38,8 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Queue
         /// The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when
-        /// it detects events of the specified type.
+        /// it detects events of the specified type. FIFO queues are not allowed when enabling an SQS queue as
+        /// the event notification destination.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

@@ -6,8 +6,6 @@ namespace Comformation.AmazonMQ.Configuration
 {
     /// <summary>
     /// AWS::AmazonMQ::Configuration
-    /// Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
-    /// (the engine type and version).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html
     /// </summary>
     public class ConfigurationResource : ResourceBase
@@ -16,12 +14,13 @@ namespace Comformation.AmazonMQ.Configuration
         {
             /// <summary>
             /// EngineVersion
-            /// The version of the broker engine. For a list of supported engine versions, see Engine.
+            /// The version of the broker engine. For a list of supported engine versions, see https://docs. aws.
+            /// amazon. com/amazon-mq/latest/developer-guide/broker-engine. html
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// Description
@@ -30,16 +29,17 @@ namespace Comformation.AmazonMQ.Configuration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// EngineType
-            /// The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+            /// The type of broker engine. Note: Currently, Amazon MQ only supports ACTIVEMQ for creating and
+            /// editing broker configurations.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineType { get; set; }
+            public Union<string, IntrinsicFunction> EngineType { get; set; }
 
             /// <summary>
             /// Data
@@ -48,7 +48,7 @@ namespace Comformation.AmazonMQ.Configuration
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Data { get; set; }
+            public Union<string, IntrinsicFunction> Data { get; set; }
 
             /// <summary>
             /// Tags
@@ -57,7 +57,7 @@ namespace Comformation.AmazonMQ.Configuration
             /// Type: List of TagsEntry
             /// Update requires: No interruption
             /// </summary>
-			public List<TagsEntry> Tags { get; set; }
+            public List<TagsEntry> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -67,7 +67,7 @@ namespace Comformation.AmazonMQ.Configuration
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -77,10 +77,10 @@ namespace Comformation.AmazonMQ.Configuration
 
     }
 
-	public static class ConfigurationAttributes
-	{
+    public static class ConfigurationAttributes
+    {
         public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> Revision = new ResourceAttribute<Union<int, IntrinsicFunction>>("Revision");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

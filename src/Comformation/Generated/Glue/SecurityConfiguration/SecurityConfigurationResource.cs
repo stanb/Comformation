@@ -6,9 +6,6 @@ namespace Comformation.Glue.SecurityConfiguration
 {
     /// <summary>
     /// AWS::Glue::SecurityConfiguration
-    /// Creates a new security configuration. A security configuration is a set of security properties that can be
-    /// used by AWS Glue. You can use a security configuration to encrypt data at rest. For information about using
-    /// security configurations in AWS Glue, see Encrypting Data Written by Crawlers, Jobs, and Development Endpoints.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html
     /// </summary>
     public class SecurityConfigurationResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.Glue.SecurityConfiguration
             /// Type: EncryptionConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public EncryptionConfiguration EncryptionConfiguration { get; set; }
+            public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
             /// <summary>
             /// Name
@@ -31,7 +28,7 @@ namespace Comformation.Glue.SecurityConfiguration
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

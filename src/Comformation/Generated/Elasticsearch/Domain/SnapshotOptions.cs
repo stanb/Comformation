@@ -7,7 +7,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain SnapshotOptions
-    /// The automated snapshot configuration for the Amazon ES domain indices.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html
     /// </summary>
     public class SnapshotOptions

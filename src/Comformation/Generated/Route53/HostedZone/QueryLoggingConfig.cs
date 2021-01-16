@@ -7,7 +7,6 @@ namespace Comformation.Route53.HostedZone
 {
     /// <summary>
     /// AWS::Route53::HostedZone QueryLoggingConfig
-    /// A complex type that contains information about a configuration for DNS query logging.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html
     /// </summary>
     public class QueryLoggingConfig

@@ -7,8 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSetEventDestination CloudWatchDestination
-    /// An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
-    /// monitor and gain insights on your email sending metrics.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-cloudwatchdestination.html
     /// </summary>
     public class CloudWatchDestination

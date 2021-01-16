@@ -7,7 +7,6 @@ namespace Comformation.AppStream.ImageBuilder
 {
     /// <summary>
     /// AWS::AppStream::ImageBuilder VpcConfig
-    /// The VPC configuration for the image builder.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html
     /// </summary>
     public class VpcConfig

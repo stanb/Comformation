@@ -7,11 +7,6 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
 {
     /// <summary>
     /// AWS::Greengrass::SubscriptionDefinitionVersion Subscription
-    /// Subscriptions define how MQTT messages can be exchanged between devices, functions, and connectors in the
-    /// group, and with AWS IoT or the local shadow service. A subscription defines a message source, message target,
-    /// and a topic (or subject) that&#39;s used to route messages from the source to the target. A subscription defines
-    /// the message flow in one direction, from the source to the target. For two-way communication, you must set up
-    /// two subscriptions, one for each direction.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html
     /// </summary>
     public class Subscription
@@ -19,8 +14,9 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
 
         /// <summary>
         /// Target
-        /// The destination of the message. The value can be a thing ARN, a Lambda function ARN, a connector
-        /// ARN, cloud (which represents the AWS IoT cloud), or GGShadowService.
+        /// The destination of the message. The value can be a thing ARN, the ARN of a Lambda function alias
+        /// (recommended) or version, a connector ARN, cloud (which represents the AWS IoT cloud), or
+        /// GGShadowService.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement
@@ -41,8 +37,9 @@ namespace Comformation.Greengrass.SubscriptionDefinitionVersion
 
         /// <summary>
         /// Source
-        /// The originator of the message. The value can be a thing ARN, a Lambda function ARN, a connector ARN,
-        /// cloud (which represents the AWS IoT cloud), or GGShadowService.
+        /// The originator of the message. The value can be a thing ARN, the ARN of a Lambda function alias
+        /// (recommended) or version, a connector ARN, cloud (which represents the AWS IoT cloud), or
+        /// GGShadowService.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

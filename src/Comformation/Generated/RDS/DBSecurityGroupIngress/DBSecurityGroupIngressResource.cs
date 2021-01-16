@@ -6,10 +6,6 @@ namespace Comformation.RDS.DBSecurityGroupIngress
 {
     /// <summary>
     /// AWS::RDS::DBSecurityGroupIngress
-    /// The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of
-    /// authorization. First, you can add EC2 or VPC security groups to the DB security group if the application using
-    /// the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing
-    /// your database is running on the Internet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html
     /// </summary>
     public class DBSecurityGroupIngressResource : ResourceBase
@@ -23,7 +19,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CIDRIP { get; set; }
+            public Union<string, IntrinsicFunction> CIDRIP { get; set; }
 
             /// <summary>
             /// DBSecurityGroupName
@@ -32,7 +28,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DBSecurityGroupName { get; set; }
+            public Union<string, IntrinsicFunction> DBSecurityGroupName { get; set; }
 
             /// <summary>
             /// EC2SecurityGroupId
@@ -43,7 +39,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EC2SecurityGroupId { get; set; }
+            public Union<string, IntrinsicFunction> EC2SecurityGroupId { get; set; }
 
             /// <summary>
             /// EC2SecurityGroupName
@@ -54,7 +50,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
+            public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
             /// <summary>
             /// EC2SecurityGroupOwnerId
@@ -66,7 +62,7 @@ namespace Comformation.RDS.DBSecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
+            public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 
         }
 

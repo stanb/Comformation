@@ -6,8 +6,6 @@ namespace Comformation.EC2.PlacementGroup
 {
     /// <summary>
     /// AWS::EC2::PlacementGroup
-    /// Specifies a placement group in which to launch instances. The strategy of the placement group determines how
-    /// the instances are organized within the group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html
     /// </summary>
     public class PlacementGroupResource : ResourceBase
@@ -19,10 +17,10 @@ namespace Comformation.EC2.PlacementGroup
             /// The placement strategy.
             /// Required: No
             /// Type: String
-            /// Allowed Values: cluster | partition | spread
+            /// Allowed values: cluster | partition | spread
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Strategy { get; set; }
+            public Union<string, IntrinsicFunction> Strategy { get; set; }
 
         }
 

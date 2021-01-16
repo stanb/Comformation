@@ -7,7 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table LocalSecondaryIndex
-    /// Represents the properties of a local secondary index.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html
     /// </summary>
     public class LocalSecondaryIndex

@@ -7,8 +7,6 @@ namespace Comformation.Cognito.UserPool
 {
     /// <summary>
     /// AWS::Cognito::UserPool InviteMessageTemplate
-    /// InviteMessageTemplate is a subproperty of the AdminCreateUserConfig property that defines the email and SMS
-    /// invitation message structure of an Amazon Cognito user pool.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html
     /// </summary>
     public class InviteMessageTemplate
@@ -16,7 +14,8 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// EmailMessage
-        /// The message template for email messages.
+        /// The message template for email messages. EmailMessage is allowed only if EmailSendingAccount is
+        /// DEVELOPER.
         /// Required: No
         /// Type: String
         /// Minimum: 6
@@ -42,7 +41,8 @@ namespace Comformation.Cognito.UserPool
 
         /// <summary>
         /// EmailSubject
-        /// The subject line for email messages.
+        /// The subject line for email messages. EmailSubject is allowed only if EmailSendingAccount is
+        /// DEVELOPER.
         /// Required: No
         /// Type: String
         /// Minimum: 1

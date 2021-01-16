@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
     /// AWS::AmazonMQ::Broker EncryptionOptions
-    /// Encryption options for the broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html
     /// </summary>
     public class EncryptionOptions
@@ -26,7 +25,8 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// UseAwsOwnedKey
-        /// Enables the use of an AWS owned CMK using AWS Key Management Service (KMS).
+        /// Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default,
+        /// if no value is provided, for example, for RabbitMQ brokers.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption

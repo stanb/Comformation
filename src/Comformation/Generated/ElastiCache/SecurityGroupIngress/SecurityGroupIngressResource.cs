@@ -6,9 +6,6 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
 {
     /// <summary>
     /// AWS::ElastiCache::SecurityGroupIngress
-    /// The AWS::ElastiCache::SecurityGroupIngress type authorizes ingress to a cache security group from hosts in
-    /// specified Amazon EC2 security groups. For more information about ElastiCache security group ingress, go to
-    /// AuthorizeCacheSecurityGroupIngress in the Amazon ElastiCache API Reference Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html
     /// </summary>
     public class SecurityGroupIngressResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CacheSecurityGroupName { get; set; }
+            public Union<string, IntrinsicFunction> CacheSecurityGroupName { get; set; }
 
             /// <summary>
             /// EC2SecurityGroupName
@@ -31,7 +28,7 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
+            public Union<string, IntrinsicFunction> EC2SecurityGroupName { get; set; }
 
             /// <summary>
             /// EC2SecurityGroupOwnerId
@@ -41,7 +38,7 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
+            public Union<string, IntrinsicFunction> EC2SecurityGroupOwnerId { get; set; }
 
         }
 

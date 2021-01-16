@@ -7,7 +7,6 @@ namespace Comformation.DynamoDB.Table
 {
     /// <summary>
     /// AWS::DynamoDB::Table AttributeDefinition
-    /// Represents an attribute for describing the key schema for the table and indexes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html
     /// </summary>
     public class AttributeDefinition

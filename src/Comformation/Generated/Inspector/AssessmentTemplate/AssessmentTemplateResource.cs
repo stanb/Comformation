@@ -6,9 +6,6 @@ namespace Comformation.Inspector.AssessmentTemplate
 {
     /// <summary>
     /// AWS::Inspector::AssessmentTemplate
-    /// The AWS::Inspector::AssessmentTemplate resource creates an Amazon Inspector assessment template, which
-    /// specifies the Inspector assessment targets that will be evaluated by an assessment run and its related
-    /// configurations.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html
     /// </summary>
     public class AssessmentTemplateResource : ResourceBase
@@ -24,7 +21,7 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Maximum: 300
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AssessmentTargetArn { get; set; }
+            public Union<string, IntrinsicFunction> AssessmentTargetArn { get; set; }
 
             /// <summary>
             /// DurationInSeconds
@@ -35,7 +32,7 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Maximum: 86400
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> DurationInSeconds { get; set; }
+            public Union<int, IntrinsicFunction> DurationInSeconds { get; set; }
 
             /// <summary>
             /// AssessmentTemplateName
@@ -48,7 +45,7 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Maximum: 140
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AssessmentTemplateName { get; set; }
+            public Union<string, IntrinsicFunction> AssessmentTemplateName { get; set; }
 
             /// <summary>
             /// RulesPackageArns
@@ -58,7 +55,7 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Maximum: 50
             /// Update requires: Replacement
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> RulesPackageArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> RulesPackageArns { get; set; }
 
             /// <summary>
             /// UserAttributesForFindings
@@ -69,7 +66,7 @@ namespace Comformation.Inspector.AssessmentTemplate
             /// Maximum: 10
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> UserAttributesForFindings { get; set; }
+            public List<Tag> UserAttributesForFindings { get; set; }
 
         }
 
@@ -79,8 +76,8 @@ namespace Comformation.Inspector.AssessmentTemplate
 
     }
 
-	public static class AssessmentTemplateAttributes
-	{
+    public static class AssessmentTemplateAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

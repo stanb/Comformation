@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.Method
 {
     /// <summary>
     /// AWS::ApiGateway::Method
-    /// The AWS::ApiGateway::Method resource creates API Gateway methods that define the parameters and body that
-    /// clients must send in their requests.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
     /// </summary>
     public class MethodResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> ApiKeyRequired { get; set; }
+            public Union<bool, IntrinsicFunction> ApiKeyRequired { get; set; }
 
             /// <summary>
             /// AuthorizationScopes
@@ -35,28 +33,29 @@ namespace Comformation.ApiGateway.Method
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> AuthorizationScopes { get; set; }
+            public List<Union<string, IntrinsicFunction>> AuthorizationScopes { get; set; }
 
             /// <summary>
             /// AuthorizationType
             /// The method&#39;s authorization type. This parameter is required. For valid values, see Method in the API
             /// Gateway API Reference.
-            /// Note If you specify the AuthorizerId property, specify CUSTOM for this property.
+            /// Note If you specify the AuthorizerId property, specify CUSTOM or COGNITO_USER_POOLS for this
+            /// property.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizationType { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizationType { get; set; }
 
             /// <summary>
             /// AuthorizerId
             /// The identifier of the authorizer to use on this method. If you specify this property, specify CUSTOM
-            /// for the AuthorizationType property.
+            /// or COGNITO_USER_POOLS for the AuthorizationType property.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthorizerId { get; set; }
+            public Union<string, IntrinsicFunction> AuthorizerId { get; set; }
 
             /// <summary>
             /// HttpMethod
@@ -65,7 +64,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> HttpMethod { get; set; }
+            public Union<string, IntrinsicFunction> HttpMethod { get; set; }
 
             /// <summary>
             /// Integration
@@ -74,7 +73,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: Integration
             /// Update requires: No interruption
             /// </summary>
-			public Integration Integration { get; set; }
+            public Integration Integration { get; set; }
 
             /// <summary>
             /// MethodResponses
@@ -83,7 +82,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: List of MethodResponse
             /// Update requires: No interruption
             /// </summary>
-			public List<MethodResponse> MethodResponses { get; set; }
+            public List<MethodResponse> MethodResponses { get; set; }
 
             /// <summary>
             /// OperationName
@@ -93,7 +92,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> OperationName { get; set; }
+            public Union<string, IntrinsicFunction> OperationName { get; set; }
 
             /// <summary>
             /// RequestModels
@@ -104,20 +103,20 @@ namespace Comformation.ApiGateway.Method
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> RequestModels { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> RequestModels { get; set; }
 
             /// <summary>
             /// RequestParameters
             /// The request parameters that API Gateway accepts. Specify request parameters as key-value pairs
             /// (string-to-Boolean mapping), with a source as the key and a Boolean as the value. The Boolean
             /// specifies whether a parameter is required. A source must match the format method. request. location.
-            /// name, where the location is query string, path, or header, and name is a valid, unique parameter
+            /// name, where the location is querystring, path, or header, and name is a valid, unique parameter
             /// name.
             /// Required: No
             /// Type: Map of Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<bool, IntrinsicFunction>> RequestParameters { get; set; }
+            public Dictionary<string, Union<bool, IntrinsicFunction>> RequestParameters { get; set; }
 
             /// <summary>
             /// RequestValidatorId
@@ -126,7 +125,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RequestValidatorId { get; set; }
+            public Union<string, IntrinsicFunction> RequestValidatorId { get; set; }
 
             /// <summary>
             /// ResourceId
@@ -136,7 +135,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ResourceId { get; set; }
+            public Union<string, IntrinsicFunction> ResourceId { get; set; }
 
             /// <summary>
             /// RestApiId
@@ -145,7 +144,7 @@ namespace Comformation.ApiGateway.Method
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
         }
 

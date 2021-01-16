@@ -7,7 +7,6 @@ namespace Comformation.PinpointEmail.ConfigurationSetEventDestination
 {
     /// <summary>
     /// AWS::PinpointEmail::ConfigurationSetEventDestination DimensionConfiguration
-    /// An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html
     /// </summary>
     public class DimensionConfiguration

@@ -7,7 +7,6 @@ namespace Comformation.Glue.Classifier
 {
     /// <summary>
     /// AWS::Glue::Classifier GrokClassifier
-    /// A classifier that uses grok patterns.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html
     /// </summary>
     public class GrokClassifier

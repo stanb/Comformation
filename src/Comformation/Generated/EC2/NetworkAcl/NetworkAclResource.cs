@@ -6,7 +6,6 @@ namespace Comformation.EC2.NetworkAcl
 {
     /// <summary>
     /// AWS::EC2::NetworkAcl
-    /// Specifies a network ACL for your VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html
     /// </summary>
     public class NetworkAclResource : ResourceBase
@@ -15,12 +14,12 @@ namespace Comformation.EC2.NetworkAcl
         {
             /// <summary>
             /// Tags
-            /// An arbitrary set of tags (key–value pairs) for this ACL.
+            /// An arbitrary set of tags (key-value pairs) for this ACL.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -29,7 +28,7 @@ namespace Comformation.EC2.NetworkAcl
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 

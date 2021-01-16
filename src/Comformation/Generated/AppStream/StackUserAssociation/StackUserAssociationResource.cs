@@ -6,9 +6,6 @@ namespace Comformation.AppStream.StackUserAssociation
 {
     /// <summary>
     /// AWS::AppStream::StackUserAssociation
-    /// The AWS::AppStream::StackUserAssociation resource associates the specified users with the specified stacks for
-    /// Amazon AppStream 2. 0. Users in an AppStream 2. 0 user pool cannot be assigned to stacks with fleets that are
-    /// joined to an Active Directory domain.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html
     /// </summary>
     public class StackUserAssociationResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.AppStream.StackUserAssociation
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> SendEmailNotification { get; set; }
+            public Union<bool, IntrinsicFunction> SendEmailNotification { get; set; }
 
             /// <summary>
             /// UserName
@@ -35,7 +32,7 @@ namespace Comformation.AppStream.StackUserAssociation
             /// Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UserName { get; set; }
+            public Union<string, IntrinsicFunction> UserName { get; set; }
 
             /// <summary>
             /// StackName
@@ -45,17 +42,17 @@ namespace Comformation.AppStream.StackUserAssociation
             /// Minimum: 1
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> StackName { get; set; }
+            public Union<string, IntrinsicFunction> StackName { get; set; }
 
             /// <summary>
             /// AuthenticationType
             /// The authentication type for the user who is associated with the stack. You must specify USERPOOL.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: API | SAML | USERPOOL
+            /// Allowed values: API | SAML | USERPOOL
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
+            public Union<string, IntrinsicFunction> AuthenticationType { get; set; }
 
         }
 

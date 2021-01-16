@@ -7,7 +7,6 @@ namespace Comformation.Glue.Classifier
 {
     /// <summary>
     /// AWS::Glue::Classifier CsvClassifier
-    /// A classifier for custom CSV content.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html
     /// </summary>
     public class CsvClassifier

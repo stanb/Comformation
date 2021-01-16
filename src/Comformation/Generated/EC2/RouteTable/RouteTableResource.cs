@@ -6,8 +6,6 @@ namespace Comformation.EC2.RouteTable
 {
     /// <summary>
     /// AWS::EC2::RouteTable
-    /// Specifies a route table for a specified VPC. After you create a route table, you can add routes and associate
-    /// the table with a subnet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html
     /// </summary>
     public class RouteTableResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.EC2.RouteTable
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VpcId
@@ -32,7 +30,7 @@ namespace Comformation.EC2.RouteTable
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VpcId { get; set; }
+            public Union<string, IntrinsicFunction> VpcId { get; set; }
 
         }
 

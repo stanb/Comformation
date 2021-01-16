@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset TriggeringDataset
-    /// Information about the data set whose content generation triggers the new data set content generation.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-triggeringdataset.html
     /// </summary>
     public class TriggeringDataset

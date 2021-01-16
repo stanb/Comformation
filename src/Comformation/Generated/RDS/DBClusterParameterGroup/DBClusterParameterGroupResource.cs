@@ -6,8 +6,6 @@ namespace Comformation.RDS.DBClusterParameterGroup
 {
     /// <summary>
     /// AWS::RDS::DBClusterParameterGroup
-    /// The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group. For more
-    /// information, see Managing an Amazon Aurora DB Cluster in the Amazon Aurora User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html
     /// </summary>
     public class DBClusterParameterGroupResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Family
@@ -38,7 +36,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Family { get; set; }
+            public Union<string, IntrinsicFunction> Family { get; set; }
 
             /// <summary>
             /// Parameters
@@ -47,7 +45,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Parameters { get; set; }
 
             /// <summary>
             /// Tags
@@ -56,7 +54,7 @@ namespace Comformation.RDS.DBClusterParameterGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

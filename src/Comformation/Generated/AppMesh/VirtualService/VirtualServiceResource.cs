@@ -6,7 +6,6 @@ namespace Comformation.AppMesh.VirtualService
 {
     /// <summary>
     /// AWS::AppMesh::VirtualService
-    /// Creates a virtual service within a service mesh.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html
     /// </summary>
     public class VirtualServiceResource : ResourceBase
@@ -20,7 +19,18 @@ namespace Comformation.AppMesh.VirtualService
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MeshName { get; set; }
+            public Union<string, IntrinsicFunction> MeshName { get; set; }
+
+            /// <summary>
+            /// MeshOwner
+            /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the
+            /// account that you specify must share the mesh with your account before you can create the resource in
+            /// the service mesh. For more information about mesh sharing, see Working with shared meshes.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> MeshOwner { get; set; }
 
             /// <summary>
             /// VirtualServiceName
@@ -29,7 +39,7 @@ namespace Comformation.AppMesh.VirtualService
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> VirtualServiceName { get; set; }
+            public Union<string, IntrinsicFunction> VirtualServiceName { get; set; }
 
             /// <summary>
             /// Spec
@@ -38,7 +48,7 @@ namespace Comformation.AppMesh.VirtualService
             /// Type: VirtualServiceSpec
             /// Update requires: No interruption
             /// </summary>
-			public VirtualServiceSpec Spec { get; set; }
+            public VirtualServiceSpec Spec { get; set; }
 
             /// <summary>
             /// Tags
@@ -50,7 +60,7 @@ namespace Comformation.AppMesh.VirtualService
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -60,11 +70,13 @@ namespace Comformation.AppMesh.VirtualService
 
     }
 
-	public static class VirtualServiceAttributes
-	{
+    public static class VirtualServiceAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Uid = new ResourceAttribute<Union<string, IntrinsicFunction>>("Uid");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MeshName = new ResourceAttribute<Union<string, IntrinsicFunction>>("MeshName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MeshOwner = new ResourceAttribute<Union<string, IntrinsicFunction>>("MeshOwner");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ResourceOwner = new ResourceAttribute<Union<string, IntrinsicFunction>>("ResourceOwner");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> VirtualServiceName = new ResourceAttribute<Union<string, IntrinsicFunction>>("VirtualServiceName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

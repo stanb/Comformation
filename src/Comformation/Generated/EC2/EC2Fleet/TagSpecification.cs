@@ -7,7 +7,6 @@ namespace Comformation.EC2.EC2Fleet
 {
     /// <summary>
     /// AWS::EC2::EC2Fleet TagSpecification
-    /// Specifies the tags to apply to a resource when the resource is being created for an EC2 Fleet.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html
     /// </summary>
     public class TagSpecification
@@ -18,13 +17,16 @@ namespace Comformation.EC2.EC2Fleet
         /// The type of resource to tag. ResourceType must be fleet.
         /// Required: No
         /// Type: String
-        /// Allowed Values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options | elastic-ip
-        /// | fleet | fpga-image | host-reservation | image | instance | internet-gateway | launch-template |
-        /// natgateway | network-acl | network-interface | reserved-instances | route-table | security-group |
-        /// snapshot | spot-instances-request | subnet | traffic-mirror-filter | traffic-mirror-session |
-        /// traffic-mirror-target | transit-gateway | transit-gateway-attachment | transit-gateway-route-table |
-        /// volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
-        /// Update requires: No interruption
+        /// Allowed values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options |
+        /// egress-only-internet-gateway | elastic-gpu | elastic-ip | export-image-task | export-instance-task |
+        /// fleet | fpga-image | host-reservation | image | import-image-task | import-snapshot-task | instance
+        /// | internet-gateway | key-pair | launch-template | local-gateway-route-table-vpc-association |
+        /// natgateway | network-acl | network-interface | placement-group | reserved-instances | route-table |
+        /// security-group | snapshot | spot-fleet-request | spot-instances-request | subnet |
+        /// traffic-mirror-filter | traffic-mirror-session | traffic-mirror-target | transit-gateway |
+        /// transit-gateway-attachment | transit-gateway-multicast-domain | transit-gateway-route-table | volume
+        /// | vpc | vpc-flow-log | vpc-peering-connection | vpn-connection | vpn-gateway
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ResourceType")]
         public Union<string, IntrinsicFunction> ResourceType { get; set; }
@@ -33,11 +35,11 @@ namespace Comformation.EC2.EC2Fleet
         /// Tags
         /// The tags to apply to the resource.
         /// Required: No
-        /// Type: List of TagRequest
-        /// Update requires: No interruption
+        /// Type: List of Tag
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Tags")]
-        public List<TagRequest> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
 
     }
 }

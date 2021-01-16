@@ -7,7 +7,6 @@ namespace Comformation.SES.Template
 {
     /// <summary>
     /// AWS::SES::Template Template
-    /// The content of the email, composed of a subject line, an HTML part, and a text-only part.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html
     /// </summary>
     public class Template

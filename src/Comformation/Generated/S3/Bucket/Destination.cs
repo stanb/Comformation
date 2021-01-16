@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket Destination
-    /// Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html
     /// </summary>
     public class Destination
@@ -15,8 +14,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// BucketAccountId
-        /// The account ID that owns the destination bucket. If no account ID is provided, the owner will not be
-        /// validated prior to exporting data.
+        /// The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not
+        /// validated before exporting data.
+        /// Note Although this value is optional, we strongly recommend that you set it to help prevent problems
+        /// if the destination bucket ownership changes.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -37,9 +38,9 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Format
         /// Specifies the file format used when exporting data to Amazon S3.
+        /// Allowed values: CSV | ORC | Parquet
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: CSV
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Format")]

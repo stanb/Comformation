@@ -7,7 +7,6 @@ namespace Comformation.EC2.Instance
 {
     /// <summary>
     /// AWS::EC2::Instance SsmAssociation
-    /// Specifies the SSM document and parameter values in AWS Systems Manager to associate with an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
     /// </summary>
     public class SsmAssociation

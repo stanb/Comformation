@@ -6,8 +6,6 @@ namespace Comformation.AppMesh.Mesh
 {
     /// <summary>
     /// AWS::AppMesh::Mesh
-    /// Creates a service mesh. A service mesh is a logical boundary for network traffic between the services that
-    /// reside within it.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html
     /// </summary>
     public class MeshResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.AppMesh.Mesh
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MeshName { get; set; }
+            public Union<string, IntrinsicFunction> MeshName { get; set; }
 
             /// <summary>
             /// Spec
@@ -30,7 +28,7 @@ namespace Comformation.AppMesh.Mesh
             /// Type: MeshSpec
             /// Update requires: No interruption
             /// </summary>
-			public MeshSpec Spec { get; set; }
+            public MeshSpec Spec { get; set; }
 
             /// <summary>
             /// Tags
@@ -42,7 +40,7 @@ namespace Comformation.AppMesh.Mesh
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -52,10 +50,12 @@ namespace Comformation.AppMesh.Mesh
 
     }
 
-	public static class MeshAttributes
-	{
+    public static class MeshAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Uid = new ResourceAttribute<Union<string, IntrinsicFunction>>("Uid");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MeshName = new ResourceAttribute<Union<string, IntrinsicFunction>>("MeshName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MeshOwner = new ResourceAttribute<Union<string, IntrinsicFunction>>("MeshOwner");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ResourceOwner = new ResourceAttribute<Union<string, IntrinsicFunction>>("ResourceOwner");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

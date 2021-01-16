@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet SpotFleetTagSpecification
-    /// The tags for a Spot Fleet resource.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html
     /// </summary>
     public class SpotFleetTagSpecification
@@ -15,15 +14,19 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// ResourceType
-        /// The type of resource. Currently, the only resource type that is supported is instance.
+        /// The type of resource. Currently, the only resource type that is supported is instance. To tag the
+        /// Spot Fleet request on creation, use the TagSpecifications parameter in SpotFleetRequestConfigData .
         /// Required: No
         /// Type: String
-        /// Allowed Values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options | elastic-ip
-        /// | fleet | fpga-image | host-reservation | image | instance | internet-gateway | launch-template |
-        /// natgateway | network-acl | network-interface | reserved-instances | route-table | security-group |
-        /// snapshot | spot-instances-request | subnet | traffic-mirror-filter | traffic-mirror-session |
-        /// traffic-mirror-target | transit-gateway | transit-gateway-attachment | transit-gateway-route-table |
-        /// volume | vpc | vpc-peering-connection | vpn-connection | vpn-gateway
+        /// Allowed values: client-vpn-endpoint | customer-gateway | dedicated-host | dhcp-options |
+        /// egress-only-internet-gateway | elastic-gpu | elastic-ip | export-image-task | export-instance-task |
+        /// fleet | fpga-image | host-reservation | image | import-image-task | import-snapshot-task | instance
+        /// | internet-gateway | key-pair | launch-template | local-gateway-route-table-vpc-association |
+        /// natgateway | network-acl | network-interface | placement-group | reserved-instances | route-table |
+        /// security-group | snapshot | spot-fleet-request | spot-instances-request | subnet |
+        /// traffic-mirror-filter | traffic-mirror-session | traffic-mirror-target | transit-gateway |
+        /// transit-gateway-attachment | transit-gateway-multicast-domain | transit-gateway-route-table | volume
+        /// | vpc | vpc-flow-log | vpc-peering-connection | vpn-connection | vpn-gateway
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ResourceType")]

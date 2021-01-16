@@ -7,8 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel Firehose
-    /// Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
-    /// Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html
     /// </summary>
     public class Firehose
@@ -25,11 +23,23 @@ namespace Comformation.IoTEvents.DetectorModel
         public Union<string, IntrinsicFunction> DeliveryStreamName { get; set; }
 
         /// <summary>
+        /// Payload
+        /// You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose
+        /// delivery stream.
+        /// Required: No
+        /// Type: Payload
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Payload")]
+        public Payload Payload { get; set; }
+
+        /// <summary>
         /// Separator
         /// A character separator that is used to separate records written to the Kinesis Data Firehose delivery
         /// stream. Valid values are: &#39;\n&#39; (newline), &#39;\t&#39; (tab), &#39;\r\n&#39; (Windows newline), &#39;,&#39; (comma).
         /// Required: No
         /// Type: String
+        /// Pattern: ([\n\t])|(\r\n)|(,)
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Separator")]

@@ -7,7 +7,6 @@ namespace Comformation.Glue.MLTransform
 {
     /// <summary>
     /// AWS::Glue::MLTransform GlueTables
-    /// The database and table in the AWS Glue Data Catalog that is used for input or output data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html
     /// </summary>
     public class GlueTables

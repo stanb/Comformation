@@ -6,9 +6,6 @@ namespace Comformation.ApiGateway.UsagePlan
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlan
-    /// The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs. A usage plan enforces
-    /// throttling and quota limits on individual client API keys. For more information, see Creating and Using API
-    /// Usage Plans in Amazon API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
     /// </summary>
     public class UsagePlanResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: List of ApiStage
             /// Update requires: No interruption
             /// </summary>
-			public List<ApiStage> ApiStages { get; set; }
+            public List<ApiStage> ApiStages { get; set; }
 
             /// <summary>
             /// Description
@@ -31,7 +28,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// Quota
@@ -40,7 +37,16 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: QuotaSettings
             /// Update requires: No interruption
             /// </summary>
-			public QuotaSettings Quota { get; set; }
+            public QuotaSettings Quota { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// An array of arbitrary tags (key-value pairs) to associate with the usage plan.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// Throttle
@@ -49,7 +55,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: ThrottleSettings
             /// Update requires: No interruption
             /// </summary>
-			public ThrottleSettings Throttle { get; set; }
+            public ThrottleSettings Throttle { get; set; }
 
             /// <summary>
             /// UsagePlanName
@@ -58,7 +64,7 @@ namespace Comformation.ApiGateway.UsagePlan
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> UsagePlanName { get; set; }
+            public Union<string, IntrinsicFunction> UsagePlanName { get; set; }
 
         }
 

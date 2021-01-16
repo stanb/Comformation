@@ -6,9 +6,6 @@ namespace Comformation.Logs.MetricFilter
 {
     /// <summary>
     /// AWS::Logs::MetricFilter
-    /// The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts
-    /// information from logs and transforms it into Amazon CloudWatch metrics. If you have multiple metric filters
-    /// that are associated with a log group, all the filters are applied to the log streams in that group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html
     /// </summary>
     public class MetricFilterResource : ResourceBase
@@ -17,12 +14,13 @@ namespace Comformation.Logs.MetricFilter
         {
             /// <summary>
             /// FilterPattern
-            /// A filter pattern for extracting metric data out of ingested log events.
+            /// A filter pattern for extracting metric data out of ingested log events. For more information, see
+            /// Filter and Pattern Syntax.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> FilterPattern { get; set; }
+            public Union<string, IntrinsicFunction> FilterPattern { get; set; }
 
             /// <summary>
             /// LogGroupName
@@ -34,7 +32,7 @@ namespace Comformation.Logs.MetricFilter
             /// Pattern: [\. \-_/#A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> LogGroupName { get; set; }
+            public Union<string, IntrinsicFunction> LogGroupName { get; set; }
 
             /// <summary>
             /// MetricTransformations
@@ -44,7 +42,7 @@ namespace Comformation.Logs.MetricFilter
             /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
-			public List<MetricTransformation> MetricTransformations { get; set; }
+            public List<MetricTransformation> MetricTransformations { get; set; }
 
         }
 

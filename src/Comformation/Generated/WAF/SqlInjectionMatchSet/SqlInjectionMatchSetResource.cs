@@ -6,11 +6,6 @@ namespace Comformation.WAF.SqlInjectionMatchSet
 {
     /// <summary>
     /// AWS::WAF::SqlInjectionMatchSet
-    /// A complex type that contains SqlInjectionMatchTuple objects, which specify the parts of web requests that you
-    /// 			want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header,
-    /// the name of the header. If a 			SqlInjectionMatchSet contains more than one SqlInjectionMatchTuple object, a
-    /// request needs to 			include snippets of SQL code in only one of the specified parts of the request to be
-    /// considered a match.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html
     /// </summary>
     public class SqlInjectionMatchSetResource : ResourceBase
@@ -26,9 +21,10 @@ namespace Comformation.WAF.SqlInjectionMatchSet
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// SqlInjectionMatchTuples
@@ -39,7 +35,7 @@ namespace Comformation.WAF.SqlInjectionMatchSet
             /// Type: List of SqlInjectionMatchTuple
             /// Update requires: No interruption
             /// </summary>
-			public List<SqlInjectionMatchTuple> SqlInjectionMatchTuples { get; set; }
+            public List<SqlInjectionMatchTuple> SqlInjectionMatchTuples { get; set; }
 
         }
 

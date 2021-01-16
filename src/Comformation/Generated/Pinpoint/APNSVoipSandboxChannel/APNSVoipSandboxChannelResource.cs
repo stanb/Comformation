@@ -6,10 +6,6 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
 {
     /// <summary>
     /// AWS::Pinpoint::APNSVoipSandboxChannel
-    /// A channel is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to
-    /// send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs).
-    /// Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable
-    /// the APNs VoIP sandbox channel for an Amazon Pinpoint app.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html
     /// </summary>
     public class APNSVoipSandboxChannelResource : ResourceBase
@@ -23,7 +19,7 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> BundleId { get; set; }
+            public Union<string, IntrinsicFunction> BundleId { get; set; }
 
             /// <summary>
             /// PrivateKey
@@ -33,7 +29,7 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PrivateKey { get; set; }
+            public Union<string, IntrinsicFunction> PrivateKey { get; set; }
 
             /// <summary>
             /// Enabled
@@ -42,17 +38,17 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             /// DefaultAuthenticationMethod
-            /// The default authentication method that you want Amazon Pinpoint to use when authenticating with
-            /// APNs. Valid options are key or certificate.
+            /// The default authentication method that you want Amazon Pinpoint to use when authenticating with the
+            /// APNs sandbox environment for this channel, key or certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DefaultAuthenticationMethod { get; set; }
+            public Union<string, IntrinsicFunction> DefaultAuthenticationMethod { get; set; }
 
             /// <summary>
             /// TokenKey
@@ -61,7 +57,7 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TokenKey { get; set; }
+            public Union<string, IntrinsicFunction> TokenKey { get; set; }
 
             /// <summary>
             /// ApplicationId
@@ -70,7 +66,7 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// TeamId
@@ -80,27 +76,27 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TeamId { get; set; }
+            public Union<string, IntrinsicFunction> TeamId { get; set; }
 
             /// <summary>
             /// Certificate
-            /// The APNs client certificate that you received from Apple. Specify this value if you want Amazon
-            /// Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.
+            /// The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate
+            /// with the APNs sandbox environment by using an APNs certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Certificate { get; set; }
+            public Union<string, IntrinsicFunction> Certificate { get; set; }
 
             /// <summary>
             /// TokenKeyId
-            /// The key identifier that&#39;s assigned to your APNs signing key. Specify this value if you want Amazon
-            /// Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.
+            /// The key identifier that&#39;s assigned to your APNs signing key, if you want Amazon Pinpoint to
+            /// communicate with the APNs sandbox environment by using APNs tokens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TokenKeyId { get; set; }
+            public Union<string, IntrinsicFunction> TokenKeyId { get; set; }
 
         }
 

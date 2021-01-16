@@ -6,7 +6,6 @@ namespace Comformation.EC2.TrafficMirrorTarget
 {
     /// <summary>
     /// AWS::EC2::TrafficMirrorTarget
-    /// Specifies a target for your Traffic Mirror session.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html
     /// </summary>
     public class TrafficMirrorTargetResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.EC2.TrafficMirrorTarget
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkLoadBalancerArn { get; set; }
+            public Union<string, IntrinsicFunction> NetworkLoadBalancerArn { get; set; }
 
             /// <summary>
             /// Description
@@ -29,7 +28,7 @@ namespace Comformation.EC2.TrafficMirrorTarget
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// NetworkInterfaceId
@@ -38,16 +37,16 @@ namespace Comformation.EC2.TrafficMirrorTarget
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
             /// <summary>
             /// Tags
             /// The tags to assign to the Traffic Mirror target.
             /// Required: No
             /// Type: List of Tag
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

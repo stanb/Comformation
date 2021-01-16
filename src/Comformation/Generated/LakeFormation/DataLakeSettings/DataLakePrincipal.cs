@@ -7,7 +7,6 @@ namespace Comformation.LakeFormation.DataLakeSettings
 {
     /// <summary>
     /// AWS::LakeFormation::DataLakeSettings DataLakePrincipal
-    /// The AWS Lake Formation principal.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html
     /// </summary>
     public class DataLakePrincipal

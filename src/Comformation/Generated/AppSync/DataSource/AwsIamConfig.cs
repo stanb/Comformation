@@ -7,7 +7,6 @@ namespace Comformation.AppSync.DataSource
 {
     /// <summary>
     /// AWS::AppSync::DataSource AwsIamConfig
-    /// Use the AwsIamConfig property type to specify AwsIamConfig for a AWS AppSync authorizaton.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html
     /// </summary>
     public class AwsIamConfig

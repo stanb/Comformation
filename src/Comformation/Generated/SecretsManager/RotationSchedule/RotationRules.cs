@@ -7,8 +7,6 @@ namespace Comformation.SecretsManager.RotationSchedule
 {
     /// <summary>
     /// AWS::SecretsManager::RotationSchedule RotationRules
-    /// The RotationRules property is used as part of the AWS::SecretsManager::RotationSchedule resource type to
-    /// configure how and when Secrets Manager performs rotation for the associated secret.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html
     /// </summary>
     public class RotationRules

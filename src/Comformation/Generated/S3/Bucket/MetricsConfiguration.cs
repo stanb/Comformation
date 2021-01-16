@@ -7,10 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket MetricsConfiguration
-    /// Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration
-    /// ID) from an Amazon S3 bucket. If you&#39;re updating an existing metrics configuration, note that this is a full
-    /// replacement of the existing metrics configuration. If you don&#39;t include the elements you want to keep, they
-    /// are erased. For more information, see PUT Bucket metrics in the Amazon Simple Storage Service API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html
     /// </summary>
     public class MetricsConfiguration
@@ -18,7 +14,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Id
-        /// The ID used to identify the metrics configuration.
+        /// The ID used to identify the metrics configuration. This can be any value you choose that helps you
+        /// identify your metrics configuration.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

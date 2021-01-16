@@ -7,7 +7,6 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
 {
     /// <summary>
     /// AWS::Cognito::UserPoolRiskConfigurationAttachment CompromisedCredentialsRiskConfigurationType
-    /// The compromised credentials risk configuration type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfigurationtype.html
     /// </summary>
     public class CompromisedCredentialsRiskConfigurationType

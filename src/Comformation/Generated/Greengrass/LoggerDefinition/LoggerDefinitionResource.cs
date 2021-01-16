@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.LoggerDefinition
 {
     /// <summary>
     /// AWS::Greengrass::LoggerDefinition
-    /// The AWS::Greengrass::LoggerDefinition resource represents a logger definition for AWS IoT Greengrass. Logger
-    /// definitions are used to organize your logger definition versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html
     /// </summary>
     public class LoggerDefinitionResource : ResourceBase
@@ -25,7 +23,7 @@ namespace Comformation.Greengrass.LoggerDefinition
             /// Type: LoggerDefinitionVersion
             /// Update requires: Replacement
             /// </summary>
-			public LoggerDefinitionVersion InitialVersion { get; set; }
+            public LoggerDefinitionVersion InitialVersion { get; set; }
 
             /// <summary>
             /// Tags
@@ -41,7 +39,7 @@ namespace Comformation.Greengrass.LoggerDefinition
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -50,7 +48,7 @@ namespace Comformation.Greengrass.LoggerDefinition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -60,11 +58,11 @@ namespace Comformation.Greengrass.LoggerDefinition
 
     }
 
-	public static class LoggerDefinitionAttributes
-	{
+    public static class LoggerDefinitionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

@@ -7,8 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster ScalingTrigger
-    /// ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions
-    /// that trigger an automatic scaling activity.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html
     /// </summary>
     public class ScalingTrigger

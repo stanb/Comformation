@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign CampaignSmsMessage
-    /// Specifies the content and settings for an SMS message that&#39;s sent to recipients of a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html
     /// </summary>
     public class CampaignSmsMessage
@@ -35,9 +34,9 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// MessageType
-        /// The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive,
-        /// such as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message
-        /// isn&#39;t critical or time-sensitive, such as a marketing message.
+        /// The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or
+        /// time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren&#39;t critical or
+        /// time-sensitive, such as marketing messages).
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

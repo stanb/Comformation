@@ -7,10 +7,6 @@ namespace Comformation.WAF.WebACL
 {
     /// <summary>
     /// AWS::WAF::WebACL WafAction
-    /// For the action that is associated with a rule in a WebACL, specifies the action that you want AWS WAF to
-    /// perform when a 			web request matches all of the conditions in a rule. For the default action in a WebACL,
-    /// specifies the action that you want 			AWS WAF to take when a web request doesn&#39;t match all of the conditions
-    /// in any of the rules in a WebACL.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html
     /// </summary>
     public class WafAction
@@ -29,7 +25,7 @@ namespace Comformation.WAF.WebACL
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ALLOW | BLOCK | COUNT
+        /// Allowed values: ALLOW | BLOCK | COUNT
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]

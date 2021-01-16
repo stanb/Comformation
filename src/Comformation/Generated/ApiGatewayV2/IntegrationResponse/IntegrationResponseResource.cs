@@ -6,8 +6,6 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
 {
     /// <summary>
     /// AWS::ApiGatewayV2::IntegrationResponse
-    /// The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API. For more
-    /// information, see Set up WebSocket API Integration Responses in API Gateway in the API Gateway Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html
     /// </summary>
     public class IntegrationResponseResource : ResourceBase
@@ -23,16 +21,16 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseTemplates { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseTemplates { get; set; }
 
             /// <summary>
             /// TemplateSelectionExpression
-            /// The template selection expression for the integration response.
+            /// The template selection expression for the integration response. Supported only for WebSocket APIs.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TemplateSelectionExpression { get; set; }
+            public Union<string, IntrinsicFunction> TemplateSelectionExpression { get; set; }
 
             /// <summary>
             /// ResponseParameters
@@ -48,12 +46,13 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseParameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ResponseParameters { get; set; }
 
             /// <summary>
             /// ContentHandlingStrategy
-            /// Specifies how to handle response payload content type conversions. Supported values are
-            /// CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
+            /// Supported only for WebSocket APIs. Specifies how to handle response payload content type
+            /// conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following
+            /// behaviors:
             /// CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding
             /// binary blob.
             /// CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
@@ -63,7 +62,7 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ContentHandlingStrategy { get; set; }
+            public Union<string, IntrinsicFunction> ContentHandlingStrategy { get; set; }
 
             /// <summary>
             /// IntegrationId
@@ -72,7 +71,7 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IntegrationId { get; set; }
+            public Union<string, IntrinsicFunction> IntegrationId { get; set; }
 
             /// <summary>
             /// IntegrationResponseKey
@@ -81,7 +80,7 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> IntegrationResponseKey { get; set; }
+            public Union<string, IntrinsicFunction> IntegrationResponseKey { get; set; }
 
             /// <summary>
             /// ApiId
@@ -90,7 +89,7 @@ namespace Comformation.ApiGatewayV2.IntegrationResponse
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ApiId { get; set; }
+            public Union<string, IntrinsicFunction> ApiId { get; set; }
 
         }
 

@@ -6,9 +6,6 @@ namespace Comformation.WAFRegional.RateBasedRule
 {
     /// <summary>
     /// AWS::WAFRegional::RateBasedRule
-    /// A RateBasedRule is identical to a regular Rule, with one addition: a RateBasedRule counts the number of
-    /// requests that arrive from a specified IP address every five minutes. For example, based on recent requests
-    /// that you&#39;ve seen from an attacker, you might create a RateBasedRule that includes the following conditions:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html
     /// </summary>
     public class RateBasedRuleResource : ResourceBase
@@ -23,9 +20,12 @@ namespace Comformation.WAFRegional.RateBasedRule
             /// can&#39;t change the name of the metric after you create the RateBasedRule.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MetricName { get; set; }
+            public Union<string, IntrinsicFunction> MetricName { get; set; }
 
             /// <summary>
             /// RateLimit
@@ -37,7 +37,7 @@ namespace Comformation.WAFRegional.RateBasedRule
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> RateLimit { get; set; }
+            public Union<int, IntrinsicFunction> RateLimit { get; set; }
 
             /// <summary>
             /// MatchPredicates
@@ -47,7 +47,7 @@ namespace Comformation.WAFRegional.RateBasedRule
             /// Type: List of Predicate
             /// Update requires: No interruption
             /// </summary>
-			public List<Predicate> MatchPredicates { get; set; }
+            public List<Predicate> MatchPredicates { get; set; }
 
             /// <summary>
             /// RateKey
@@ -57,10 +57,10 @@ namespace Comformation.WAFRegional.RateBasedRule
             /// RateBasedRule.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: IP
+            /// Allowed values: IP
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> RateKey { get; set; }
+            public Union<string, IntrinsicFunction> RateKey { get; set; }
 
             /// <summary>
             /// Name
@@ -70,9 +70,10 @@ namespace Comformation.WAFRegional.RateBasedRule
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
+            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

@@ -7,8 +7,6 @@ namespace Comformation.Cognito.IdentityPool
 {
     /// <summary>
     /// AWS::Cognito::IdentityPool CognitoIdentityProvider
-    /// CognitoIdentityProvider is a property of the AWS::Cognito::IdentityPool resource that represents an Amazon
-    /// Cognito user pool and its client ID.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html
     /// </summary>
     public class CognitoIdentityProvider
@@ -17,10 +15,10 @@ namespace Comformation.Cognito.IdentityPool
         /// <summary>
         /// ServerSideTokenCheck
         /// TRUE if server-side token validation is enabled for the identity provider’s token.
-        /// After you set ServerSideTokenCheck to TRUE for an identity pool, that identity pool will check with
-        /// the integrated user pools to make sure that the user has not been globally signed out or deleted
-        /// before the identity pool provides an OIDC token or AWS credentials for the user.
-        /// If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
+        /// After you set the ServerSideTokenCheck to TRUE for an identity pool, that identity pool checks with
+        /// the integrated user pools to make sure the user has not been globally signed out or deleted before
+        /// the identity pool provides an OIDC token or AWS credentials for the user.
+        /// If the user is signed out or deleted, the identity pool returns a 400 Not Authorized error.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

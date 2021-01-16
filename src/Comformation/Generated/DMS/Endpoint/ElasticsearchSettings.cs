@@ -7,7 +7,6 @@ namespace Comformation.DMS.Endpoint
 {
     /// <summary>
     /// AWS::DMS::Endpoint ElasticsearchSettings
-    /// Syntax
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html
     /// </summary>
     public class ElasticsearchSettings
@@ -15,7 +14,8 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// EndpointUri
-        /// The endpoint for the Elasticsearch cluster.
+        /// The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https)
+        /// is not specified.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,6 +26,9 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// FullLoadErrorPercentage
         /// The maximum percentage of records that can fail to be written before a full load operation stops.
+        /// To avoid early failure, this counter is only effective after 1000 records are transferred.
+        /// Elasticsearch also has the concept of error monitoring during the last 10 minutes of an Observation
+        /// Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -35,7 +38,8 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ErrorRetryDuration
-        /// The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+        /// The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch
+        /// cluster.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

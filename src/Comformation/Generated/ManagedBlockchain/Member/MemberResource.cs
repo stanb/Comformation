@@ -6,7 +6,6 @@ namespace Comformation.ManagedBlockchain.Member
 {
     /// <summary>
     /// AWS::ManagedBlockchain::Member
-    /// Creates a member within a Managed Blockchain network.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html
     /// </summary>
     public class MemberResource : ResourceBase
@@ -20,7 +19,7 @@ namespace Comformation.ManagedBlockchain.Member
             /// Type: MemberConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public MemberConfiguration MemberConfiguration { get; set; }
+            public MemberConfiguration MemberConfiguration { get; set; }
 
             /// <summary>
             /// NetworkConfiguration
@@ -29,7 +28,7 @@ namespace Comformation.ManagedBlockchain.Member
             /// Type: NetworkConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public NetworkConfiguration NetworkConfiguration { get; set; }
+            public NetworkConfiguration NetworkConfiguration { get; set; }
 
             /// <summary>
             /// NetworkId
@@ -38,7 +37,7 @@ namespace Comformation.ManagedBlockchain.Member
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkId { get; set; }
 
             /// <summary>
             /// InvitationId
@@ -50,7 +49,7 @@ namespace Comformation.ManagedBlockchain.Member
             /// Maximum: 32
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InvitationId { get; set; }
+            public Union<string, IntrinsicFunction> InvitationId { get; set; }
 
         }
 
@@ -60,9 +59,9 @@ namespace Comformation.ManagedBlockchain.Member
 
     }
 
-	public static class MemberAttributes
-	{
+    public static class MemberAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> MemberId = new ResourceAttribute<Union<string, IntrinsicFunction>>("MemberId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NetworkId = new ResourceAttribute<Union<string, IntrinsicFunction>>("NetworkId");
-	}
+    }
 }

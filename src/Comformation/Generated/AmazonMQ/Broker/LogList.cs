@@ -7,7 +7,6 @@ namespace Comformation.AmazonMQ.Broker
 {
     /// <summary>
     /// AWS::AmazonMQ::Broker LogList
-    /// The list of information about logs to be enabled for the specified broker.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html
     /// </summary>
     public class LogList
@@ -16,7 +15,7 @@ namespace Comformation.AmazonMQ.Broker
         /// <summary>
         /// Audit
         /// Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is
-        /// logged.
+        /// logged. Does not apply to RabbitMQ brokers.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

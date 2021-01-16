@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream ProcessorParameter
-    /// The ProcessorParameter property specifies a processor parameter in a data processor for an Amazon Kinesis Data
-    /// Firehose delivery stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html
     /// </summary>
     public class ProcessorParameter
@@ -19,7 +17,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The name of the parameter.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: BufferIntervalInSeconds | BufferSizeInMBs | LambdaArn | NumberOfRetries | RoleArn
+        /// Allowed values: BufferIntervalInSeconds | BufferSizeInMBs | LambdaArn | NumberOfRetries | RoleArn
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ParameterName")]
@@ -32,6 +30,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Type: String
         /// Minimum: 1
         /// Maximum: 512
+        /// Pattern: ^(?!\s*$). +
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ParameterValue")]

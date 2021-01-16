@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
     /// AWS::OpsWorks::Stack StackConfigurationManager
-    /// Describes the configuration manager.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html
     /// </summary>
     public class StackConfigurationManager

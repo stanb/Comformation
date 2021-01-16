@@ -7,8 +7,6 @@ namespace Comformation.IoTAnalytics.Dataset
 {
     /// <summary>
     /// AWS::IoTAnalytics::Dataset Variable
-    /// An instance of a variable to be passed to the &quot;containerAction&quot; execution. Each variable must have a name and
-    /// a value given by one of &quot;stringValue&quot;, &quot;datasetContentVersionValue&quot;, or &quot;outputFileUriValue&quot;.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html
     /// </summary>
     public class Variable
@@ -16,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
         /// <summary>
         /// DatasetContentVersionValue
-        /// The value of the variable as a structure that specifies a data set content version.
+        /// The value of the variable as a structure that specifies a dataset content version.
         /// Required: No
         /// Type: DatasetContentVersionValue
         /// Update requires: No interruption

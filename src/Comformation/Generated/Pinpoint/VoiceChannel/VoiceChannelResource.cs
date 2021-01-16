@@ -6,8 +6,6 @@ namespace Comformation.Pinpoint.VoiceChannel
 {
     /// <summary>
     /// AWS::Pinpoint::VoiceChannel
-    /// Enables the voice channel for an application or updates the status and settings of the voice channel for an
-    /// application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html
     /// </summary>
     public class VoiceChannelResource : ResourceBase
@@ -21,16 +19,16 @@ namespace Comformation.Pinpoint.VoiceChannel
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> Enabled { get; set; }
+            public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app that you&#39;re setting up the voice channel for.
+            /// The unique identifier for the Amazon Pinpoint application that the voice channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
         }
 

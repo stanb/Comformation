@@ -6,7 +6,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign
-    /// Updates the settings for a campaign.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html
     /// </summary>
     public class CampaignResource : ResourceBase
@@ -15,12 +14,12 @@ namespace Comformation.Pinpoint.Campaign
         {
             /// <summary>
             /// Description
-            /// The custom description of the campaign.
+            /// A custom description of the campaign.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// SegmentId
@@ -29,17 +28,18 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> SegmentId { get; set; }
+            public Union<string, IntrinsicFunction> SegmentId { get; set; }
 
             /// <summary>
             /// IsPaused
             /// Specifies whether to pause the campaign. A paused campaign doesn&#39;t run unless you resume it by
-            /// setting this value to false.
+            /// changing this value to false. If you restart a campaign, the campaign restarts from the beginning
+            /// and not at the point you paused it.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> IsPaused { get; set; }
+            public Union<bool, IntrinsicFunction> IsPaused { get; set; }
 
             /// <summary>
             /// AdditionalTreatments
@@ -49,17 +49,16 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: List of WriteTreatmentResource
             /// Update requires: No interruption
             /// </summary>
-			public List<WriteTreatmentResource> AdditionalTreatments { get; set; }
+            public List<WriteTreatmentResource> AdditionalTreatments { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the message template to use for the message. If specified, this value must match the
-            /// name of an existing message template.
+            /// The name of the campaign.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// SegmentVersion
@@ -68,16 +67,16 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> SegmentVersion { get; set; }
+            public Union<int, IntrinsicFunction> SegmentVersion { get; set; }
 
             /// <summary>
             /// TreatmentDescription
-            /// The custom description of a variation of the campaign to use for A/B testing.
+            /// A custom description of the default treatment for the campaign.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TreatmentDescription { get; set; }
+            public Union<string, IntrinsicFunction> TreatmentDescription { get; set; }
 
             /// <summary>
             /// MessageConfiguration
@@ -86,7 +85,7 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: MessageConfiguration
             /// Update requires: No interruption
             /// </summary>
-			public MessageConfiguration MessageConfiguration { get; set; }
+            public MessageConfiguration MessageConfiguration { get; set; }
 
             /// <summary>
             /// Limits
@@ -95,7 +94,7 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: Limits
             /// Update requires: No interruption
             /// </summary>
-			public Limits Limits { get; set; }
+            public Limits Limits { get; set; }
 
             /// <summary>
             /// HoldoutPercent
@@ -105,7 +104,7 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> HoldoutPercent { get; set; }
+            public Union<int, IntrinsicFunction> HoldoutPercent { get; set; }
 
             /// <summary>
             /// Schedule
@@ -114,16 +113,16 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: Schedule
             /// Update requires: No interruption
             /// </summary>
-			public Schedule Schedule { get; set; }
+            public Schedule Schedule { get; set; }
 
             /// <summary>
             /// ApplicationId
-            /// The unique ID of the Amazon Pinpoint app that the campaign is associated with.
+            /// The unique identifier for the Amazon Pinpoint application that the campaign is associated with.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationId { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationId { get; set; }
 
             /// <summary>
             /// CampaignHook
@@ -132,7 +131,7 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: CampaignHook
             /// Update requires: No interruption
             /// </summary>
-			public CampaignHook CampaignHook { get; set; }
+            public CampaignHook CampaignHook { get; set; }
 
             /// <summary>
             /// Tags
@@ -142,16 +141,17 @@ namespace Comformation.Pinpoint.Campaign
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// TreatmentName
-            /// The custom name of a variation of the campaign to use for A/B testing.
+            /// A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+            /// treatment is a variation of a campaign that&#39;s used for A/B testing.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TreatmentName { get; set; }
+            public Union<string, IntrinsicFunction> TreatmentName { get; set; }
 
         }
 
@@ -161,9 +161,9 @@ namespace Comformation.Pinpoint.Campaign
 
     }
 
-	public static class CampaignAttributes
-	{
+    public static class CampaignAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CampaignId = new ResourceAttribute<Union<string, IntrinsicFunction>>("CampaignId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

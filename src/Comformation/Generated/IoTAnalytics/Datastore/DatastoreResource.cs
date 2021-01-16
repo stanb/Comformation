@@ -6,8 +6,6 @@ namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
     /// AWS::IoTAnalytics::Datastore
-    /// AWS::IoTAnalytics::Datastore resource is a repository for messages. For more information, see How to Use AWS
-    /// IoT Analytics in the AWS IoT Analytics User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html
     /// </summary>
     public class DatastoreResource : ResourceBase
@@ -21,7 +19,12 @@ namespace Comformation.IoTAnalytics.Datastore
             /// Type: DatastoreStorage
             /// Update requires: No interruption
             /// </summary>
-			public DatastoreStorage DatastoreStorage { get; set; }
+            public DatastoreStorage DatastoreStorage { get; set; }
+
+            /// <summary>
+            /// FileFormatConfiguration
+            /// </summary>
+            public FileFormatConfiguration FileFormatConfiguration { get; set; }
 
             /// <summary>
             /// DatastoreName
@@ -33,17 +36,17 @@ namespace Comformation.IoTAnalytics.Datastore
             /// Pattern: ^[a-zA-Z0-9_]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DatastoreName { get; set; }
+            public Union<string, IntrinsicFunction> DatastoreName { get; set; }
 
             /// <summary>
             /// RetentionPeriod
-            /// How long, in days, message data is kept for the data store. When &quot;customerManagedS3&quot; storage is
+            /// How long, in days, message data is kept for the data store. When customerManagedS3 storage is
             /// selected, this parameter is ignored.
             /// Required: No
             /// Type: RetentionPeriod
             /// Update requires: No interruption
             /// </summary>
-			public RetentionPeriod RetentionPeriod { get; set; }
+            public RetentionPeriod RetentionPeriod { get; set; }
 
             /// <summary>
             /// Tags
@@ -54,7 +57,7 @@ namespace Comformation.IoTAnalytics.Datastore
             /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

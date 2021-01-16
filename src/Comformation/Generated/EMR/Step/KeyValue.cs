@@ -7,8 +7,6 @@ namespace Comformation.EMR.Step
 {
     /// <summary>
     /// AWS::EMR::Step KeyValue
-    /// KeyValue is a subproperty of the HadoopJarStepConfig property type. KeyValue is used to pass parameters to a
-    /// step.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html
     /// </summary>
     public class KeyValue
@@ -16,7 +14,7 @@ namespace Comformation.EMR.Step
 
         /// <summary>
         /// Key
-        /// The unique identifier of a key value pair.
+        /// The unique identifier of a key-value pair.
         /// Required: No
         /// Type: String
         /// Minimum: 0

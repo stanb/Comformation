@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerRule HostHeaderConfig
-    /// Information about a host header condition.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-hostheaderconfig.html
     /// </summary>
     public class HostHeaderConfig

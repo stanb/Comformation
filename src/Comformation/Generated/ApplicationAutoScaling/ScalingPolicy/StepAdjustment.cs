@@ -7,8 +7,6 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 {
     /// <summary>
     /// AWS::ApplicationAutoScaling::ScalingPolicy StepAdjustment
-    /// StepAdjustment is a subproperty of StepScalingPolicyConfiguration that represents a step adjustment for a step
-    /// scaling policy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html
     /// </summary>
     public class StepAdjustment

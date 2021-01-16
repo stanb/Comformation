@@ -6,9 +6,6 @@ namespace Comformation.SSM.MaintenanceWindowTask
 {
     /// <summary>
     /// AWS::SSM::MaintenanceWindowTask
-    /// The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager
-    /// maintenance window. For more information, see RegisterTaskWithMaintenanceWindow in the AWS Systems Manager API
-    /// Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html
     /// </summary>
     public class MaintenanceWindowTaskResource : ResourceBase
@@ -25,7 +22,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MaxErrors { get; set; }
+            public Union<string, IntrinsicFunction> MaxErrors { get; set; }
 
             /// <summary>
             /// Description
@@ -36,7 +33,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// ServiceRoleArn
@@ -46,7 +43,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
+            public Union<string, IntrinsicFunction> ServiceRoleArn { get; set; }
 
             /// <summary>
             /// Priority
@@ -57,7 +54,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Priority { get; set; }
+            public Union<int, IntrinsicFunction> Priority { get; set; }
 
             /// <summary>
             /// MaxConcurrency
@@ -69,7 +66,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> MaxConcurrency { get; set; }
+            public Union<string, IntrinsicFunction> MaxConcurrency { get; set; }
 
             /// <summary>
             /// Targets
@@ -81,7 +78,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Maximum: 5
             /// Update requires: No interruption
             /// </summary>
-			public List<Target> Targets { get; set; }
+            public List<Target> Targets { get; set; }
 
             /// <summary>
             /// Name
@@ -93,7 +90,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Pattern: ^[a-zA-Z0-9_\-. ]{3,128}$
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// TaskArn
@@ -108,17 +105,24 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Maximum: 1600
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TaskArn { get; set; }
+            public Union<string, IntrinsicFunction> TaskArn { get; set; }
 
             /// <summary>
             /// TaskInvocationParameters
             /// The parameters to pass to the task when it runs. Populate only the fields that match the task type.
             /// All other fields should be empty.
+            /// Important When you update a maintenance window task that has options specified in
+            /// TaskInvocationParameters, you must provide again all the TaskInvocationParameters values that you
+            /// want to retain. The values you do not specify again are removed. For example, suppose that when you
+            /// registered a Run Command task, you specified TaskInvocationParameters values for Comment,
+            /// NotificationConfig, and OutputS3BucketName. If you update the maintenance window task and specify
+            /// only a different OutputS3BucketName value, the values for Comment and NotificationConfig are
+            /// removed.
             /// Required: No
             /// Type: TaskInvocationParameters
             /// Update requires: No interruption
             /// </summary>
-			public TaskInvocationParameters TaskInvocationParameters { get; set; }
+            public TaskInvocationParameters TaskInvocationParameters { get; set; }
 
             /// <summary>
             /// WindowId
@@ -130,7 +134,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Pattern: ^mw-[0-9a-f]{17}$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> WindowId { get; set; }
+            public Union<string, IntrinsicFunction> WindowId { get; set; }
 
             /// <summary>
             /// TaskParameters
@@ -143,17 +147,17 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> TaskParameters { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> TaskParameters { get; set; }
 
             /// <summary>
             /// TaskType
             /// The type of task. Valid values: RUN_COMMAND, AUTOMATION, LAMBDA, STEP_FUNCTIONS.
             /// Required: Yes
             /// Type: String
-            /// Allowed Values: AUTOMATION | LAMBDA | RUN_COMMAND | STEP_FUNCTIONS
-            /// Update requires: No interruption
+            /// Allowed values: AUTOMATION | LAMBDA | RUN_COMMAND | STEP_FUNCTIONS
+            /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> TaskType { get; set; }
+            public Union<string, IntrinsicFunction> TaskType { get; set; }
 
             /// <summary>
             /// LoggingInfo
@@ -166,7 +170,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// Type: LoggingInfo
             /// Update requires: No interruption
             /// </summary>
-			public LoggingInfo LoggingInfo { get; set; }
+            public LoggingInfo LoggingInfo { get; set; }
 
         }
 

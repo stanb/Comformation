@@ -7,8 +7,6 @@ namespace Comformation.WAFRegional.SizeConstraintSet
 {
     /// <summary>
     /// AWS::WAFRegional::SizeConstraintSet FieldToMatch
-    /// Specifies the part of a web request that you want AWS WAF to check for a size constraint, such as a specific
-    /// header or a query string.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html
     /// </summary>
     public class FieldToMatch
@@ -20,8 +18,7 @@ namespace Comformation.WAFRegional.SizeConstraintSet
         /// request that you can search include the following:
         /// HEADER: A specified request header, for example, the value of the User-Agent or Referer header. If
         /// you choose HEADER for the type, specify the name of the header in Data. METHOD: The HTTP method,
-        /// which indicated the type of operation that the request is asking the origin to perform. Amazon
-        /// CloudFront supports the following methods: DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT.
+        /// which indicates the type of operation that the request is asking the origin to perform.
         /// QUERY_STRING: A query string, which is the part of a URL that appears after a ? character, if any.
         /// URI: The part of a web request that identifies a resource, for example, /images/daily-ad. jpg. BODY:
         /// The part of a request that contains any additional data that you want to send to your web server as
@@ -35,7 +32,7 @@ namespace Comformation.WAFRegional.SizeConstraintSet
         /// 			 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ALL_QUERY_ARGS | BODY | HEADER | METHOD | QUERY_STRING | SINGLE_QUERY_ARG | URI
+        /// Allowed values: ALL_QUERY_ARGS | BODY | HEADER | METHOD | QUERY_STRING | SINGLE_QUERY_ARG | URI
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
@@ -54,6 +51,9 @@ namespace Comformation.WAFRegional.SizeConstraintSet
         /// 	
         /// Required: Conditional
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 128
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Data")]

@@ -7,7 +7,6 @@ namespace Comformation.IoTAnalytics.Pipeline
 {
     /// <summary>
     /// AWS::IoTAnalytics::Pipeline SelectAttributes
-    /// Creates a new message using only the specified attributes from the original message.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html
     /// </summary>
     public class SelectAttributes

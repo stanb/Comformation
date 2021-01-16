@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream OrcSerDe
-    /// A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more
-    /// information, see Apache ORC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html
     /// </summary>
     public class OrcSerDe
@@ -54,7 +52,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The compression code to use over data blocks. The default is SNAPPY.
         /// Required: No
         /// Type: String
-        /// Allowed Values: NONE | SNAPPY | ZLIB
+        /// Allowed values: NONE | SNAPPY | ZLIB
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Compression")]
@@ -89,7 +87,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// The version of the file to write. The possible values are V0_11 and V0_12. The default is V0_12.
         /// Required: No
         /// Type: String
-        /// Allowed Values: V0_11 | V0_12
+        /// Allowed values: V0_11 | V0_12
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FormatVersion")]

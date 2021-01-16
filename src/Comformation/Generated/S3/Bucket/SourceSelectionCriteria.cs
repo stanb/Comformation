@@ -7,20 +7,25 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket SourceSelectionCriteria
-    /// A container that describes additional filters for identifying the source objects that you want to replicate.
-    /// You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the
-    /// filter that you can specify for objects created with server-side encryption using a customer master key (CMK)
-    /// stored in AWS Key Management Service (SSE-KMS).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html
     /// </summary>
     public class SourceSelectionCriteria
     {
 
         /// <summary>
+        /// ReplicaModifications
+        /// A filter that you can specify for selection for modifications on replicas.
+        /// Required: No
+        /// Type: ReplicaModifications
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ReplicaModifications")]
+        public ReplicaModifications ReplicaModifications { get; set; }
+
+        /// <summary>
         /// SseKmsEncryptedObjects
-        /// A container for filter information for the selection of Amazon S3 objects encrypted with AWS KMS. If
-        /// you include SourceSelectionCriteria in the replication configuration, this element is required.
-        /// Required: Yes
+        /// A container for filter information for the selection of Amazon S3 objects encrypted with AWS KMS.
+        /// Required: No
         /// Type: SseKmsEncryptedObjects
         /// Update requires: No interruption
         /// </summary>

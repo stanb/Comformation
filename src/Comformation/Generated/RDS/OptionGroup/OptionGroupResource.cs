@@ -6,8 +6,6 @@ namespace Comformation.RDS.OptionGroup
 {
     /// <summary>
     /// AWS::RDS::OptionGroup
-    /// The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific
-    /// to a particular DB engine.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html
     /// </summary>
     public class OptionGroupResource : ResourceBase
@@ -17,11 +15,14 @@ namespace Comformation.RDS.OptionGroup
             /// <summary>
             /// EngineName
             /// Specifies the name of the engine that this option group should be associated with.
+            /// Valid Values:
+            /// mariadb mysql oracle-ee oracle-se2 oracle-se1 oracle-se postgres sqlserver-ee sqlserver-se
+            /// sqlserver-ex sqlserver-web
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineName { get; set; }
+            public Union<string, IntrinsicFunction> EngineName { get; set; }
 
             /// <summary>
             /// MajorEngineVersion
@@ -30,7 +31,7 @@ namespace Comformation.RDS.OptionGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> MajorEngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> MajorEngineVersion { get; set; }
 
             /// <summary>
             /// OptionConfigurations
@@ -39,7 +40,7 @@ namespace Comformation.RDS.OptionGroup
             /// Type: List of OptionConfiguration
             /// Update requires: Replacement
             /// </summary>
-			public List<OptionConfiguration> OptionConfigurations { get; set; }
+            public List<OptionConfiguration> OptionConfigurations { get; set; }
 
             /// <summary>
             /// OptionGroupDescription
@@ -48,7 +49,7 @@ namespace Comformation.RDS.OptionGroup
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> OptionGroupDescription { get; set; }
+            public Union<string, IntrinsicFunction> OptionGroupDescription { get; set; }
 
             /// <summary>
             /// Tags
@@ -57,7 +58,7 @@ namespace Comformation.RDS.OptionGroup
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

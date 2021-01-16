@@ -7,8 +7,6 @@ namespace Comformation.WAFRegional.IPSet
 {
     /// <summary>
     /// AWS::WAFRegional::IPSet IPSetDescriptor
-    /// Specifies the IP address type (IPV4 or IPV6) and the IP address range (in CIDR format) that web requests
-    /// originate from.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html
     /// </summary>
     public class IPSetDescriptor
@@ -21,7 +19,7 @@ namespace Comformation.WAFRegional.IPSet
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: IPV4 | IPV6
+        /// Allowed values: IPV4 | IPV6
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Type")]
@@ -49,6 +47,9 @@ namespace Comformation.WAFRegional.IPSet
         /// 	
         /// Required: Yes
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 50
+        /// Pattern: . *\S. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Value")]

@@ -6,8 +6,6 @@ namespace Comformation.AutoScaling.ScheduledAction
 {
     /// <summary>
     /// AWS::AutoScaling::ScheduledAction
-    /// Specifies a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers
-    /// available for your application in response to predictable load changes.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html
     /// </summary>
     public class ScheduledActionResource : ResourceBase
@@ -21,17 +19,19 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
+            public Union<string, IntrinsicFunction> AutoScalingGroupName { get; set; }
 
             /// <summary>
             /// DesiredCapacity
-            /// The number of Amazon EC2 instances that should be running in the Auto Scaling group.
+            /// The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action
+            /// runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more
+            /// scaling conditions.
             /// You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> DesiredCapacity { get; set; }
+            public Union<int, IntrinsicFunction> DesiredCapacity { get; set; }
 
             /// <summary>
             /// EndTime
@@ -40,27 +40,27 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EndTime { get; set; }
+            public Union<string, IntrinsicFunction> EndTime { get; set; }
 
             /// <summary>
             /// MaxSize
-            /// The maximum number of Amazon EC2 instances in the Auto Scaling group.
+            /// The maximum size of the Auto Scaling group.
             /// You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MaxSize { get; set; }
+            public Union<int, IntrinsicFunction> MaxSize { get; set; }
 
             /// <summary>
             /// MinSize
-            /// The minimum number of Amazon EC2 instances in the Auto Scaling group.
+            /// The minimum size of the Auto Scaling group.
             /// You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
             /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MinSize { get; set; }
+            public Union<int, IntrinsicFunction> MinSize { get; set; }
 
             /// <summary>
             /// Recurrence
@@ -72,7 +72,7 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Recurrence { get; set; }
+            public Union<string, IntrinsicFunction> Recurrence { get; set; }
 
             /// <summary>
             /// StartTime
@@ -81,7 +81,7 @@ namespace Comformation.AutoScaling.ScheduledAction
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> StartTime { get; set; }
+            public Union<string, IntrinsicFunction> StartTime { get; set; }
 
         }
 

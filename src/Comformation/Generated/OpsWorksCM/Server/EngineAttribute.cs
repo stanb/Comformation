@@ -7,9 +7,6 @@ namespace Comformation.OpsWorksCM.Server
 {
     /// <summary>
     /// AWS::OpsWorksCM::Server EngineAttribute
-    /// The EngineAttribute property type specifies administrator credentials for an AWS OpsWorks for Chef Automate or
-    /// OpsWorks for Puppet Enterprise server. EngineAttribute is a property of the AWS::OpsWorksCM::Server resource
-    /// type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworkscm-server-engineattribute.html
     /// </summary>
     public class EngineAttribute

@@ -7,7 +7,6 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 {
     /// <summary>
     /// AWS::CodeDeploy::DeploymentGroup RevisionLocation
-    /// RevisionLocation is a property that defines the location of the CodeDeploy application revision to deploy.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html
     /// </summary>
     public class RevisionLocation
@@ -28,10 +27,12 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// The type of application revision:
         /// S3: An application revision stored in Amazon S3. GitHub: An application revision stored in GitHub
         /// (EC2/On-premises deployments only). String: A YAML-formatted or JSON-formatted string (AWS Lambda
-        /// deployments only).
+        /// deployments only). AppSpecContent: An AppSpecContent object that contains the contents of an AppSpec
+        /// file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as
+        /// a RawString.
         /// Required: No
         /// Type: String
-        /// Allowed Values: AppSpecContent | GitHub | S3 | String
+        /// Allowed values: AppSpecContent | GitHub | S3 | String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RevisionType")]

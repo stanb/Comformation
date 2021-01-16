@@ -6,8 +6,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan
-    /// The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the
-    /// following application resources:
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html
     /// </summary>
     public class ScalingPlanResource : ResourceBase
@@ -16,12 +14,14 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         {
             /// <summary>
             /// ApplicationSource
-            /// A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
+            /// A CloudFormation stack or a set of tags. You can create one scaling plan per application source. The
+            /// ApplicationSource property must be present to ensure interoperability with the AWS Auto Scaling
+            /// console.
             /// Required: Yes
             /// Type: ApplicationSource
             /// Update requires: No interruption
             /// </summary>
-			public ApplicationSource ApplicationSource { get; set; }
+            public ApplicationSource ApplicationSource { get; set; }
 
             /// <summary>
             /// ScalingInstructions
@@ -30,7 +30,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
             /// Type: List of ScalingInstruction
             /// Update requires: No interruption
             /// </summary>
-			public List<ScalingInstruction> ScalingInstructions { get; set; }
+            public List<ScalingInstruction> ScalingInstructions { get; set; }
 
         }
 
@@ -40,9 +40,9 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
     }
 
-	public static class ScalingPlanAttributes
-	{
+    public static class ScalingPlanAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ScalingPlanName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ScalingPlanName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ScalingPlanVersion = new ResourceAttribute<Union<string, IntrinsicFunction>>("ScalingPlanVersion");
-	}
+    }
 }

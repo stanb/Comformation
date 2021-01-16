@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.UsagePlanKey
 {
     /// <summary>
     /// AWS::ApiGateway::UsagePlanKey
-    /// The AWS::ApiGateway::UsagePlanKey resource associates an API key with a usage plan. This association
-    /// determines which users the usage plan is applied to.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
     /// </summary>
     public class UsagePlanKeyResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.ApiGateway.UsagePlanKey
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KeyId { get; set; }
+            public Union<string, IntrinsicFunction> KeyId { get; set; }
 
             /// <summary>
             /// KeyType
@@ -30,16 +28,16 @@ namespace Comformation.ApiGateway.UsagePlanKey
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KeyType { get; set; }
+            public Union<string, IntrinsicFunction> KeyType { get; set; }
 
             /// <summary>
             /// UsagePlanId
-            /// The value of the usage plan key.
+            /// The ID of the usage plan.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> UsagePlanId { get; set; }
+            public Union<string, IntrinsicFunction> UsagePlanId { get; set; }
 
         }
 

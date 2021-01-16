@@ -7,7 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket DataExport
-    /// Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html
     /// </summary>
     public class DataExport
@@ -28,7 +27,7 @@ namespace Comformation.S3.Bucket
         /// The version of the output schema to use when exporting data. Must be V_1.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: V_1
+        /// Allowed values: V_1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OutputSchemaVersion")]

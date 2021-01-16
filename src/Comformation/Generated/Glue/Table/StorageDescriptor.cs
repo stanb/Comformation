@@ -7,7 +7,6 @@ namespace Comformation.Glue.Table
 {
     /// <summary>
     /// AWS::Glue::Table StorageDescriptor
-    /// Describes the physical storage of table data.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html
     /// </summary>
     public class StorageDescriptor
@@ -42,26 +41,6 @@ namespace Comformation.Glue.Table
         /// </summary>
         [JsonProperty("BucketColumns")]
         public List<Union<string, IntrinsicFunction>> BucketColumns { get; set; }
-
-        /// <summary>
-        /// SkewedInfo
-        /// The information about values that appear frequently in a column (skewed values).
-        /// Required: No
-        /// Type: SkewedInfo
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("SkewedInfo")]
-        public SkewedInfo SkewedInfo { get; set; }
-
-        /// <summary>
-        /// InputFormat
-        /// The input format: SequenceFileInputFormat (binary), or TextInputFormat, or a custom format.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("InputFormat")]
-        public Union<string, IntrinsicFunction> InputFormat { get; set; }
 
         /// <summary>
         /// NumberOfBuckets
@@ -123,6 +102,39 @@ namespace Comformation.Glue.Table
         /// </summary>
         [JsonProperty("Compressed")]
         public Union<bool, IntrinsicFunction> Compressed { get; set; }
+
+        /// <summary>
+        /// SchemaReference
+        /// An object that references a schema stored in the AWS Glue Schema Registry.
+        /// 	 	
+        /// When creating a table, you can pass an empty list of columns for the schema, and instead use a
+        /// schema reference.
+        /// Required: No
+        /// Type: SchemaReference
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SchemaReference")]
+        public SchemaReference SchemaReference { get; set; }
+
+        /// <summary>
+        /// SkewedInfo
+        /// The information about values that appear frequently in a column (skewed values).
+        /// Required: No
+        /// Type: SkewedInfo
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SkewedInfo")]
+        public SkewedInfo SkewedInfo { get; set; }
+
+        /// <summary>
+        /// InputFormat
+        /// The input format: SequenceFileInputFormat (binary), or TextInputFormat, or a custom format.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("InputFormat")]
+        public Union<string, IntrinsicFunction> InputFormat { get; set; }
 
         /// <summary>
         /// Location

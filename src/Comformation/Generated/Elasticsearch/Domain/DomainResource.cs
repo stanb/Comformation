@@ -6,8 +6,6 @@ namespace Comformation.Elasticsearch.Domain
 {
     /// <summary>
     /// AWS::Elasticsearch::Domain
-    /// The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES) domain that
-    /// encapsulates the Amazon ES engine instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html
     /// </summary>
     public class DomainResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AccessPolicies { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AccessPolicies { get; set; }
 
             /// <summary>
             /// AdvancedOptions
@@ -33,7 +31,35 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: Map of String
             /// Update requires: No interruption
             /// </summary>
-			public Dictionary<string, Union<string, IntrinsicFunction>> AdvancedOptions { get; set; }
+            public Dictionary<string, Union<string, IntrinsicFunction>> AdvancedOptions { get; set; }
+
+            /// <summary>
+            /// AdvancedSecurityOptions
+            /// Specifies options for fine-grained access control.
+            /// Required: No
+            /// Type: AdvancedSecurityOptionsInput
+            /// Update requires: Replacement
+            /// </summary>
+            public AdvancedSecurityOptionsInput AdvancedSecurityOptions { get; set; }
+
+            /// <summary>
+            /// CognitoOptions
+            /// Configures Amazon ES to use Amazon Cognito authentication for Kibana.
+            /// Required: No
+            /// Type: CognitoOptions
+            /// Update requires: No interruption
+            /// </summary>
+            public CognitoOptions CognitoOptions { get; set; }
+
+            /// <summary>
+            /// DomainEndpointOptions
+            /// Specifies additional options for the domain endpoint, such as whether to require HTTPS for all
+            /// traffic or whether to use a custom endpoint rather than the default endpoint.
+            /// Required: No
+            /// Type: DomainEndpointOptions
+            /// Update requires: No interruption
+            /// </summary>
+            public DomainEndpointOptions DomainEndpointOptions { get; set; }
 
             /// <summary>
             /// DomainName
@@ -47,7 +73,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DomainName { get; set; }
+            public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// EBSOptions
@@ -58,7 +84,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: EBSOptions
             /// Update requires: No interruption
             /// </summary>
-			public EBSOptions EBSOptions { get; set; }
+            public EBSOptions EBSOptions { get; set; }
 
             /// <summary>
             /// ElasticsearchClusterConfig
@@ -68,18 +94,21 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: ElasticsearchClusterConfig
             /// Update requires: No interruption
             /// </summary>
-			public ElasticsearchClusterConfig ElasticsearchClusterConfig { get; set; }
+            public ElasticsearchClusterConfig ElasticsearchClusterConfig { get; set; }
 
             /// <summary>
             /// ElasticsearchVersion
             /// The version of Elasticsearch to use, such as 2. 3. If not specified, 1. 5 is used as the default.
             /// For information about the versions that Amazon ES supports, see the Elasticsearch-Version parameter
             /// for the CreateElasticsearchDomain action in the Amazon Elasticsearch Service Developer Guide.
+            /// If you set the UpgradeElasticsearchVersion update policy to true, you can update
+            /// ElasticsearchVersion without interruption. When UpgradeElasticsearchVersion is set to false, or is
+            /// not specified, updating ElasticsearchVersion results in replacement.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
-			public Union<string, IntrinsicFunction> ElasticsearchVersion { get; set; }
+            public Union<string, IntrinsicFunction> ElasticsearchVersion { get; set; }
 
             /// <summary>
             /// EncryptionAtRestOptions
@@ -89,7 +118,18 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: EncryptionAtRestOptions
             /// Update requires: Replacement
             /// </summary>
-			public EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
+            public EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
+
+            /// <summary>
+            /// LogPublishingOptions
+            /// An object with one or more of the following keys: SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS,
+            /// INDEX_SLOW_LOGS, AUDIT_LOGS, depending on the types of logs you want to publish. Each key needs a
+            /// valid LogPublishingOption value. See here for the full syntax.
+            /// Required: No
+            /// Type: Map of LogPublishingOption
+            /// Update requires: No interruption
+            /// </summary>
+            public Dictionary<string, LogPublishingOption> LogPublishingOptions { get; set; }
 
             /// <summary>
             /// NodeToNodeEncryptionOptions
@@ -98,7 +138,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: NodeToNodeEncryptionOptions
             /// Update requires: Replacement
             /// </summary>
-			public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
+            public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
 
             /// <summary>
             /// SnapshotOptions
@@ -107,7 +147,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: SnapshotOptions
             /// Update requires: No interruption
             /// </summary>
-			public SnapshotOptions SnapshotOptions { get; set; }
+            public SnapshotOptions SnapshotOptions { get; set; }
 
             /// <summary>
             /// Tags
@@ -116,7 +156,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VPCOptions
@@ -127,7 +167,7 @@ namespace Comformation.Elasticsearch.Domain
             /// Type: VPCOptions
             /// Update requires: No interruption
             /// </summary>
-			public VPCOptions VPCOptions { get; set; }
+            public VPCOptions VPCOptions { get; set; }
 
         }
 
@@ -137,10 +177,10 @@ namespace Comformation.Elasticsearch.Domain
 
     }
 
-	public static class DomainAttributes
-	{
+    public static class DomainAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainEndpoint");
-	}
+    }
 }

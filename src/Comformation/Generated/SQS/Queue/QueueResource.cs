@@ -6,7 +6,6 @@ namespace Comformation.SQS.Queue
 {
     /// <summary>
     /// AWS::SQS::Queue
-    /// The AWS::SQS::Queue resource creates an Amazon Simple Queue Service (Amazon SQS) standard or FIFO queue.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html
     /// </summary>
     public class QueueResource : ResourceBase
@@ -24,7 +23,7 @@ namespace Comformation.SQS.Queue
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> ContentBasedDeduplication { get; set; }
+            public Union<bool, IntrinsicFunction> ContentBasedDeduplication { get; set; }
 
             /// <summary>
             /// DelaySeconds
@@ -34,7 +33,7 @@ namespace Comformation.SQS.Queue
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> DelaySeconds { get; set; }
+            public Union<int, IntrinsicFunction> DelaySeconds { get; set; }
 
             /// <summary>
             /// FifoQueue
@@ -45,7 +44,7 @@ namespace Comformation.SQS.Queue
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> FifoQueue { get; set; }
+            public Union<bool, IntrinsicFunction> FifoQueue { get; set; }
 
             /// <summary>
             /// KmsDataKeyReusePeriodSeconds
@@ -59,7 +58,7 @@ namespace Comformation.SQS.Queue
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> KmsDataKeyReusePeriodSeconds { get; set; }
+            public Union<int, IntrinsicFunction> KmsDataKeyReusePeriodSeconds { get; set; }
 
             /// <summary>
             /// KmsMasterKeyId
@@ -73,7 +72,7 @@ namespace Comformation.SQS.Queue
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsMasterKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsMasterKeyId { get; set; }
 
             /// <summary>
             /// MaximumMessageSize
@@ -84,7 +83,7 @@ namespace Comformation.SQS.Queue
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MaximumMessageSize { get; set; }
+            public Union<int, IntrinsicFunction> MaximumMessageSize { get; set; }
 
             /// <summary>
             /// MessageRetentionPeriod
@@ -94,7 +93,7 @@ namespace Comformation.SQS.Queue
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> MessageRetentionPeriod { get; set; }
+            public Union<int, IntrinsicFunction> MessageRetentionPeriod { get; set; }
 
             /// <summary>
             /// QueueName
@@ -110,7 +109,7 @@ namespace Comformation.SQS.Queue
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> QueueName { get; set; }
+            public Union<string, IntrinsicFunction> QueueName { get; set; }
 
             /// <summary>
             /// ReceiveMessageWaitTimeSeconds
@@ -122,7 +121,7 @@ namespace Comformation.SQS.Queue
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> ReceiveMessageWaitTimeSeconds { get; set; }
+            public Union<int, IntrinsicFunction> ReceiveMessageWaitTimeSeconds { get; set; }
 
             /// <summary>
             /// RedrivePolicy
@@ -143,7 +142,7 @@ namespace Comformation.SQS.Queue
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RedrivePolicy { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> RedrivePolicy { get; set; }
 
             /// <summary>
             /// Tags
@@ -153,7 +152,7 @@ namespace Comformation.SQS.Queue
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// VisibilityTimeout
@@ -168,7 +167,7 @@ namespace Comformation.SQS.Queue
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> VisibilityTimeout { get; set; }
+            public Union<int, IntrinsicFunction> VisibilityTimeout { get; set; }
 
         }
 
@@ -178,9 +177,9 @@ namespace Comformation.SQS.Queue
 
     }
 
-	public static class QueueAttributes
-	{
+    public static class QueueAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> QueueName = new ResourceAttribute<Union<string, IntrinsicFunction>>("QueueName");
-	}
+    }
 }

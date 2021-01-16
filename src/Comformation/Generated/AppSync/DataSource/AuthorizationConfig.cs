@@ -7,8 +7,6 @@ namespace Comformation.AppSync.DataSource
 {
     /// <summary>
     /// AWS::AppSync::DataSource AuthorizationConfig
-    /// The AuthorizationConfig property type specifies the authorization type and configuration for an AWS AppSync
-    /// http data source.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html
     /// </summary>
     public class AuthorizationConfig

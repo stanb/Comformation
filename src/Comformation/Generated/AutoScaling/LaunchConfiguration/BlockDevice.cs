@@ -7,7 +7,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 {
     /// <summary>
     /// AWS::AutoScaling::LaunchConfiguration BlockDevice
-    /// BlockDevice is a subproperty of BlockDeviceMapping that describes an Amazon EBS volume.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html
     /// </summary>
     public class BlockDevice
@@ -27,7 +26,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// <summary>
         /// Encrypted
         /// Specifies whether the EBS volume is encrypted. Encrypted EBS volumes can only be attached to
-        /// instances that support Amazon EBS encryption. For more information, see Supported Instance Types. If
+        /// instances that support Amazon EBS encryption. For more information, see Supported instance types. If
         /// your AMI uses encrypted volumes, you can also only launch it on supported instance types.
         /// Note If you are creating a volume from a snapshot, you cannot specify an encryption value. Volumes
         /// that are created from encrypted snapshots are automatically encrypted, and volumes that are created
@@ -48,7 +47,7 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// Iops
         /// The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of
         /// IOPS to volume size (in GiB) is 50:1, so for 5,000 provisioned IOPS, you need at least 100 GiB
-        /// storage on the volume. For more information, see Amazon EBS Volume Types in the Amazon EC2 User
+        /// storage on the volume. For more information, see Amazon EBS volume types in the Amazon EC2 User
         /// Guide for Linux Instances.
         /// If the volume type is io1, this property is required. (Not used with standard, gp2, st1, or sc1
         /// volumes. )
@@ -67,9 +66,6 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// You must specify either a VolumeSize or a SnapshotId.
         /// Required: Conditional
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
-        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SnapshotId")]
@@ -77,9 +73,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// VolumeSize
-        /// The volume size, in Gibibytes (GiB).
-        /// This can be a number from 1-1,024 for standard, 4-16,384 for io1, 1-16,384 for gp2, and 500-16,384
-        /// for st1 and sc1.
+        /// The volume size, in Gibibytes (GiB). This can be a number from 1-1,024 for standard, 4-16,384 for
+        /// io1, 1-16,384 for gp2, and 500-16,384 for st1 and sc1.
         /// If you create a volume from a snapshot and you don&#39;t specify a volume size, the default is the
         /// snapshot size.
         /// You must specify either a VolumeSize or a SnapshotId. If you specify both SnapshotId and VolumeSize,
@@ -97,12 +92,10 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         /// VolumeType
         /// The volume type, which can be standard for Magnetic, io1 for Provisioned IOPS SSD, gp2 for General
         /// Purpose SSD, st1 for Throughput Optimized HDD, or sc1 for Cold HDD. For more information, see Amazon
-        /// EBS Volume Types in the Amazon EC2 User Guide for Linux Instances.
+        /// EBS volume types in the Amazon EC2 User Guide for Linux Instances.
         /// Valid values: standard | io1 | gp2 | st1 | sc1
         /// Required: No
         /// Type: String
-        /// Minimum: 1
-        /// Maximum: 255
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("VolumeType")]

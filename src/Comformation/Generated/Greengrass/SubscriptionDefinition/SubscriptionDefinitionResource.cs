@@ -6,8 +6,6 @@ namespace Comformation.Greengrass.SubscriptionDefinition
 {
     /// <summary>
     /// AWS::Greengrass::SubscriptionDefinition
-    /// The AWS::Greengrass::SubscriptionDefinition resource represents a subscription definition for AWS IoT
-    /// Greengrass. Subscription definitions are used to organize your subscription definition versions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html
     /// </summary>
     public class SubscriptionDefinitionResource : ResourceBase
@@ -26,7 +24,7 @@ namespace Comformation.Greengrass.SubscriptionDefinition
             /// Type: SubscriptionDefinitionVersion
             /// Update requires: Replacement
             /// </summary>
-			public SubscriptionDefinitionVersion InitialVersion { get; set; }
+            public SubscriptionDefinitionVersion InitialVersion { get; set; }
 
             /// <summary>
             /// Tags
@@ -42,7 +40,7 @@ namespace Comformation.Greengrass.SubscriptionDefinition
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -51,7 +49,7 @@ namespace Comformation.Greengrass.SubscriptionDefinition
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -61,11 +59,11 @@ namespace Comformation.Greengrass.SubscriptionDefinition
 
     }
 
-	public static class SubscriptionDefinitionAttributes
-	{
+    public static class SubscriptionDefinitionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LatestVersionArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("LatestVersionArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
-	}
+    }
 }

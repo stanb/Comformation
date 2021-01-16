@@ -7,7 +7,6 @@ namespace Comformation.MediaLive.Channel
 {
     /// <summary>
     /// AWS::MediaLive::Channel AudioSelectorSettings
-    /// Information about the audio to extract from the input.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html
     /// </summary>
     public class AudioSelectorSettings
@@ -32,6 +31,16 @@ namespace Comformation.MediaLive.Channel
         /// </summary>
         [JsonProperty("AudioLanguageSelection")]
         public AudioLanguageSelection AudioLanguageSelection { get; set; }
+
+        /// <summary>
+        /// AudioTrackSelection
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: AudioTrackSelection
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AudioTrackSelection")]
+        public AudioTrackSelection AudioTrackSelection { get; set; }
 
     }
 }

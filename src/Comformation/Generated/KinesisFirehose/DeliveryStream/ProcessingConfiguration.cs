@@ -7,8 +7,6 @@ namespace Comformation.KinesisFirehose.DeliveryStream
 {
     /// <summary>
     /// AWS::KinesisFirehose::DeliveryStream ProcessingConfiguration
-    /// The ProcessingConfiguration property configures data processing for an Amazon Kinesis Data Firehose delivery
-    /// stream.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html
     /// </summary>
     public class ProcessingConfiguration

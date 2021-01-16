@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route HttpRoute
-    /// An object that represents an HTTP or HTTP/2 route type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
     /// </summary>
     public class HttpRoute
@@ -22,6 +21,16 @@ namespace Comformation.AppMesh.Route
         /// </summary>
         [JsonProperty("Action")]
         public HttpRouteAction Action { get; set; }
+
+        /// <summary>
+        /// Timeout
+        /// An object that represents types of timeouts.
+        /// Required: No
+        /// Type: HttpTimeout
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Timeout")]
+        public HttpTimeout Timeout { get; set; }
 
         /// <summary>
         /// RetryPolicy

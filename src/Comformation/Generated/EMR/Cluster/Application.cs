@@ -7,8 +7,6 @@ namespace Comformation.EMR.Cluster
 {
     /// <summary>
     /// AWS::EMR::Cluster Application
-    /// Application is a property of AWS::EMR::Cluster. The Application property type defines the open-source big data
-    /// applications for EMR to install and configure when a cluster is created.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html
     /// </summary>
     public class Application

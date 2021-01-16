@@ -6,8 +6,6 @@ namespace Comformation.ApiGateway.BasePathMapping
 {
     /// <summary>
     /// AWS::ApiGateway::BasePathMapping
-    /// The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in
-    /// the invocation URL.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html
     /// </summary>
     public class BasePathMappingResource : ResourceBase
@@ -16,13 +14,12 @@ namespace Comformation.ApiGateway.BasePathMapping
         {
             /// <summary>
             /// BasePath
-            /// The base path name that callers of the API must provide in the URL after the domain name. If you
-            /// specify this property, it can&#39;t be an empty string.
+            /// The base path name that callers of the API must provide in the URL after the domain name.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> BasePath { get; set; }
+            public Union<string, IntrinsicFunction> BasePath { get; set; }
 
             /// <summary>
             /// DomainName
@@ -31,16 +28,16 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DomainName { get; set; }
+            public Union<string, IntrinsicFunction> DomainName { get; set; }
 
             /// <summary>
             /// RestApiId
-            /// The name of the API.
+            /// The ID of the API.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RestApiId { get; set; }
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
 
             /// <summary>
             /// Stage
@@ -49,7 +46,7 @@ namespace Comformation.ApiGateway.BasePathMapping
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Stage { get; set; }
+            public Union<string, IntrinsicFunction> Stage { get; set; }
 
         }
 

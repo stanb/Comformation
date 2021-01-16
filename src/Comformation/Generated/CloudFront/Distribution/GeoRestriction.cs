@@ -7,8 +7,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution GeoRestriction
-    /// A complex type that controls the countries in which your content is distributed. CloudFront 			determines the
-    /// location of your users using MaxMind GeoIP databases.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html
     /// </summary>
     public class GeoRestriction
@@ -48,7 +46,7 @@ namespace Comformation.CloudFront.Distribution
         /// 	
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: blacklist | none | whitelist
+        /// Allowed values: blacklist | none | whitelist
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RestrictionType")]

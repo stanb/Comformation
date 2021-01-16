@@ -7,8 +7,6 @@ namespace Comformation.KinesisAnalytics.Application
 {
     /// <summary>
     /// AWS::KinesisAnalytics::Application KinesisStreamsInput
-    /// Identifies an Amazon Kinesis stream as the streaming source. You provide the stream&#39;s Amazon Resource Name
-    /// (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html
     /// </summary>
     public class KinesisStreamsInput
@@ -35,7 +33,7 @@ namespace Comformation.KinesisAnalytics.Application
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2048
-        /// Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+
+        /// Pattern: arn:. *
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleARN")]

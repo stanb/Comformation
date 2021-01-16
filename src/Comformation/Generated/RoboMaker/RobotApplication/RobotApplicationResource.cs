@@ -6,7 +6,6 @@ namespace Comformation.RoboMaker.RobotApplication
 {
     /// <summary>
     /// AWS::RoboMaker::RobotApplication
-    /// The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html
     /// </summary>
     public class RobotApplicationResource : ResourceBase
@@ -20,16 +19,16 @@ namespace Comformation.RoboMaker.RobotApplication
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
+            public Union<string, IntrinsicFunction> CurrentRevisionId { get; set; }
 
             /// <summary>
             /// RobotSoftwareSuite
-            /// The robot software suite used by the robot application.
+            /// The robot software suite (ROS distribuition) used by the robot application.
             /// Required: Yes
             /// Type: RobotSoftwareSuite
             /// Update requires: Replacement
             /// </summary>
-			public RobotSoftwareSuite RobotSoftwareSuite { get; set; }
+            public RobotSoftwareSuite RobotSoftwareSuite { get; set; }
 
             /// <summary>
             /// Sources
@@ -38,7 +37,7 @@ namespace Comformation.RoboMaker.RobotApplication
             /// Type: List of SourceConfig
             /// Update requires: No interruption
             /// </summary>
-			public List<SourceConfig> Sources { get; set; }
+            public List<SourceConfig> Sources { get; set; }
 
             /// <summary>
             /// Tags
@@ -47,7 +46,7 @@ namespace Comformation.RoboMaker.RobotApplication
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
 
             /// <summary>
             /// Name
@@ -59,7 +58,7 @@ namespace Comformation.RoboMaker.RobotApplication
             /// Pattern: [a-zA-Z0-9_\-]*
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 
@@ -69,9 +68,9 @@ namespace Comformation.RoboMaker.RobotApplication
 
     }
 
-	public static class RobotApplicationAttributes
-	{
+    public static class RobotApplicationAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CurrentRevisionId = new ResourceAttribute<Union<string, IntrinsicFunction>>("CurrentRevisionId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

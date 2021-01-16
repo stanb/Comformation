@@ -7,7 +7,6 @@ namespace Comformation.EC2.NetworkAclEntry
 {
     /// <summary>
     /// AWS::EC2::NetworkAclEntry PortRange
-    /// Describes a range of ports.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html
     /// </summary>
     public class PortRange

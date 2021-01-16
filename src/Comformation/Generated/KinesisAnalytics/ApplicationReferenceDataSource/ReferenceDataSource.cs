@@ -7,9 +7,6 @@ namespace Comformation.KinesisAnalytics.ApplicationReferenceDataSource
 {
     /// <summary>
     /// AWS::KinesisAnalytics::ApplicationReferenceDataSource ReferenceDataSource
-    /// Describes the reference data source by providing the source information (S3 bucket name and object key name),
-    /// the resulting in-application table name that is created, and the necessary schema to map the data elements in
-    /// the Amazon S3 object to the in-application table.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referencedatasource.html
     /// </summary>
     public class ReferenceDataSource

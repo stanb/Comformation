@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerCertificate
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::ListenerCertificate Certificate
-    /// Specifies an SSL server certificate.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html
     /// </summary>
     public class Certificate

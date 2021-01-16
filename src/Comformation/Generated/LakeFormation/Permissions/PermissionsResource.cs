@@ -6,8 +6,6 @@ namespace Comformation.LakeFormation.Permissions
 {
     /// <summary>
     /// AWS::LakeFormation::Permissions
-    /// The AWS::LakeFormation::Permissions resource is an AWS Lake Formation resource type that grants or revokes AWS
-    /// Lake Formation permissions.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html
     /// </summary>
     public class PermissionsResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.LakeFormation.Permissions
             /// Type: DataLakePrincipal
             /// Update requires: No interruption
             /// </summary>
-			public DataLakePrincipal DataLakePrincipal { get; set; }
+            public DataLakePrincipal DataLakePrincipal { get; set; }
 
             /// <summary>
             /// Resource
@@ -32,7 +30,7 @@ namespace Comformation.LakeFormation.Permissions
             /// Type: Resource
             /// Update requires: No interruption
             /// </summary>
-			public Resource Resource { get; set; }
+            public Resource Resource { get; set; }
 
             /// <summary>
             /// Permissions
@@ -43,7 +41,7 @@ namespace Comformation.LakeFormation.Permissions
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Permissions { get; set; }
+            public List<Union<string, IntrinsicFunction>> Permissions { get; set; }
 
             /// <summary>
             /// PermissionsWithGrantOption
@@ -53,7 +51,7 @@ namespace Comformation.LakeFormation.Permissions
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> PermissionsWithGrantOption { get; set; }
+            public List<Union<string, IntrinsicFunction>> PermissionsWithGrantOption { get; set; }
 
         }
 

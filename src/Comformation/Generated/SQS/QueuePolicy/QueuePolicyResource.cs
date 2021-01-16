@@ -6,8 +6,6 @@ namespace Comformation.SQS.QueuePolicy
 {
     /// <summary>
     /// AWS::SQS::QueuePolicy
-    /// The AWS::SQS::QueuePolicy type applies a policy to Amazon SQS queues. For an example snippet, see Declaring an
-    /// Amazon SQS Policy in the AWS CloudFormation User Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html
     /// </summary>
     public class QueuePolicyResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.SQS.QueuePolicy
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyDocument { get; set; }
 
             /// <summary>
             /// Queues
@@ -33,7 +31,7 @@ namespace Comformation.SQS.QueuePolicy
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> Queues { get; set; }
+            public List<Union<string, IntrinsicFunction>> Queues { get; set; }
 
         }
 

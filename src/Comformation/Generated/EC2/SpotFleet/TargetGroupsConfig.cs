@@ -7,8 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet TargetGroupsConfig
-    /// Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with
-    /// these target groups.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroupsconfig.html
     /// </summary>
     public class TargetGroupsConfig

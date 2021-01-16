@@ -6,8 +6,6 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
 {
     /// <summary>
     /// AWS::EC2::NetworkInterfaceAttachment
-    /// Attaches an elastic network interface (ENI) to an Amazon EC2 instance. You can use this resource type to
-    /// attach additional network interfaces to an instance without interruption.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html
     /// </summary>
     public class NetworkInterfaceAttachmentResource : ResourceBase
@@ -22,7 +20,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
+            public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
 
             /// <summary>
             /// DeviceIndex
@@ -32,7 +30,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DeviceIndex { get; set; }
+            public Union<string, IntrinsicFunction> DeviceIndex { get; set; }
 
             /// <summary>
             /// InstanceId
@@ -41,7 +39,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> InstanceId { get; set; }
+            public Union<string, IntrinsicFunction> InstanceId { get; set; }
 
             /// <summary>
             /// NetworkInterfaceId
@@ -50,7 +48,7 @@ namespace Comformation.EC2.NetworkInterfaceAttachment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
+            public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
 
         }
 

@@ -6,8 +6,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution
-    /// A distribution tells CloudFront where you want content to be delivered from, and the details about how to
-    /// 			track and manage content delivery.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
     /// </summary>
     public class DistributionResource : ResourceBase
@@ -24,7 +22,7 @@ namespace Comformation.CloudFront.Distribution
             /// Type: DistributionConfig
             /// Update requires: No interruption
             /// </summary>
-			public DistributionConfig DistributionConfig { get; set; }
+            public DistributionConfig DistributionConfig { get; set; }
 
             /// <summary>
             /// Tags
@@ -35,7 +33,7 @@ namespace Comformation.CloudFront.Distribution
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -45,8 +43,8 @@ namespace Comformation.CloudFront.Distribution
 
     }
 
-	public static class DistributionAttributes
-	{
+    public static class DistributionAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
-	}
+    }
 }

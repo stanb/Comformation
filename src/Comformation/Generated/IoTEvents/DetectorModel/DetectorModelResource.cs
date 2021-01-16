@@ -6,12 +6,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel
-    /// The AWS::IoTEvents::DetectorModel resource creates a detector model. You create a detector model (a model of
-    /// your equipment or process) using states. For each state, you define conditional (Boolean) logic that evaluates
-    /// the incoming inputs to detect significant events. When an event is detected, it can change the state or
-    /// trigger custom-built or predefined actions using other AWS services. You can define additional events that
-    /// trigger actions when entering or exiting a state and, optionally, when a condition is met. For more
-    /// information, see How to Use AWS IoT Events in the AWS IoT Events Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html
     /// </summary>
     public class DetectorModelResource : ResourceBase
@@ -25,7 +19,17 @@ namespace Comformation.IoTEvents.DetectorModel
             /// Type: DetectorModelDefinition
             /// Update requires: No interruption
             /// </summary>
-			public DetectorModelDefinition DetectorModelDefinition { get; set; }
+            public DetectorModelDefinition DetectorModelDefinition { get; set; }
+
+            /// <summary>
+            /// EvaluationMethod
+            /// Information about the order in which events are evaluated and how actions are executed.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: BATCH | SERIAL
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> EvaluationMethod { get; set; }
 
             /// <summary>
             /// DetectorModelName
@@ -37,7 +41,7 @@ namespace Comformation.IoTEvents.DetectorModel
             /// Pattern: ^[a-zA-Z0-9_-]+$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DetectorModelName { get; set; }
+            public Union<string, IntrinsicFunction> DetectorModelName { get; set; }
 
             /// <summary>
             /// DetectorModelDescription
@@ -47,14 +51,16 @@ namespace Comformation.IoTEvents.DetectorModel
             /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> DetectorModelDescription { get; set; }
+            public Union<string, IntrinsicFunction> DetectorModelDescription { get; set; }
 
             /// <summary>
             /// Key
-            /// The input attribute key used to identify a device or system to create a detector (an instance of the
-            /// detector model) and then to route each input received to the appropriate detector (instance). This
-            /// parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of
-            /// each input that is used to identify the device associated with the input.
+            /// The value used to identify a detector instance. When a device or system sends input, a new detector
+            /// instance with a unique key value is created. AWS IoT Events can continue to route input to its
+            /// corresponding detector instance based on this identifying information.
+            /// This parameter uses a JSON-path expression to select the attribute-value pair in the message payload
+            /// that is used for identification. To route the message to the correct detector instance, the device
+            /// must send a message payload that contains the same attribute-value.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -62,7 +68,7 @@ namespace Comformation.IoTEvents.DetectorModel
             /// Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\. ((`[\w- ]+`)|([\w\-]+)))*$
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Key { get; set; }
+            public Union<string, IntrinsicFunction> Key { get; set; }
 
             /// <summary>
             /// RoleArn
@@ -73,7 +79,7 @@ namespace Comformation.IoTEvents.DetectorModel
             /// Maximum: 2048
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> RoleArn { get; set; }
+            public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// Tags
@@ -83,7 +89,7 @@ namespace Comformation.IoTEvents.DetectorModel
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution ForwardedValues
-    /// A complex type that specifies how CloudFront handles query strings and cookies.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html
     /// </summary>
     public class ForwardedValues
@@ -16,9 +15,19 @@ namespace Comformation.CloudFront.Distribution
         /// <summary>
         /// Cookies
         /// 		
+        /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
+        /// instead of this field.
+        /// 		
+        /// If you want to include cookies in the cache key, use a cache policy. For more 			information, see
+        /// Creating cache policies in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// If you want to send cookies to the origin but not include them in the cache key, use an 			origin
+        /// request policy. For more information, see Creating origin request policies in the 			Amazon
+        /// CloudFront Developer Guide.
+        /// 		
         /// A complex type that specifies whether you want CloudFront to forward cookies to the origin 			and,
-        /// if so, which ones. For more information about forwarding cookies to the origin, see 				How
-        /// CloudFront Forwards, Caches, and Logs Cookies in 			the Amazon CloudFront Developer Guide.
+        /// if so, which ones. For more information about forwarding cookies to the origin, see 			How
+        /// CloudFront Forwards, Caches, and Logs Cookies in the 			Amazon CloudFront Developer Guide.
         /// 	
         /// Required: No
         /// Type: Cookies
@@ -29,6 +38,16 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// Headers
+        /// 		
+        /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
+        /// instead of this field.
+        /// 		
+        /// If you want to include headers in the cache key, use a cache policy. For more information, 			see
+        /// Creating cache policies in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// If you want to send headers to the origin but not include them in the cache key, use an 			origin
+        /// request policy. For more information, see Creating origin request policies in the 			Amazon
+        /// CloudFront Developer Guide.
         /// 		
         /// A complex type that specifies the Headers, if any, that you want CloudFront to forward to the
         /// 			origin for this cache behavior (whitelisted headers). For the headers that you specify,
@@ -47,6 +66,16 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// QueryString
+        /// 		
+        /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
+        /// instead of this field.
+        /// 		
+        /// If you want to include query strings in the cache key, use a cache policy. For more 			information,
+        /// see Creating cache policies in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// If you want to send query strings to the origin but not include them in the cache key, use 			an
+        /// origin request policy. For more information, see Creating origin request policies in the 			Amazon
+        /// CloudFront Developer Guide.
         /// 		
         /// Indicates whether you want CloudFront to forward query strings to the origin that is 			associated
         /// with this cache behavior and cache based on the query string parameters. CloudFront 			behavior
@@ -77,6 +106,16 @@ namespace Comformation.CloudFront.Distribution
 
         /// <summary>
         /// QueryStringCacheKeys
+        /// 		
+        /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
+        /// instead of this field.
+        /// 		
+        /// If you want to include query strings in the cache key, use a cache policy. For more 			information,
+        /// see Creating cache policies in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// If you want to send query strings to the origin but not include them in the cache key, use 			an
+        /// origin request policy. For more information, see Creating origin request policies in the 			Amazon
+        /// CloudFront Developer Guide.
         /// 		
         /// A complex type that contains information about the query string parameters that you 			want
         /// CloudFront to use for caching for this cache behavior.

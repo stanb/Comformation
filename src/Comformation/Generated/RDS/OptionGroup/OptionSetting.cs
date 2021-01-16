@@ -7,7 +7,6 @@ namespace Comformation.RDS.OptionGroup
 {
     /// <summary>
     /// AWS::RDS::OptionGroup OptionSetting
-    /// The OptionSetting property type specifies the value for an option within an OptionSetting property.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html
     /// </summary>
     public class OptionSetting

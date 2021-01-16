@@ -7,8 +7,6 @@ namespace Comformation.SES.ReceiptFilter
 {
     /// <summary>
     /// AWS::SES::ReceiptFilter IpFilter
-    /// Receipt IP address filters enable you to specifically accept or reject incoming email that originates from an
-    /// IP address or range of IP addresses.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html
     /// </summary>
     public class IpFilter

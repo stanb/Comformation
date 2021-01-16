@@ -7,7 +7,6 @@ namespace Comformation.Pinpoint.Campaign
 {
     /// <summary>
     /// AWS::Pinpoint::Campaign SetDimension
-    /// Specifies the dimension type and values for a segment dimension.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html
     /// </summary>
     public class SetDimension

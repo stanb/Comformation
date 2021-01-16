@@ -7,8 +7,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan TargetTrackingConfiguration
-    /// TargetTrackingConfiguration is a subproperty of ScalingInstruction that specifies a target tracking
-    /// configuration to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html
     /// </summary>
     public class TargetTrackingConfiguration
@@ -27,8 +25,9 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 
         /// <summary>
         /// TargetValue
-        /// The target value for the metric. The range is 8. 515920e-109 to 1. 174271e+108 (Base 10) or 2e-360
-        /// to 2e360 (Base 2).
+        /// The target value for the metric. Although this property accepts numbers of type Double, it won&#39;t
+        /// accept values that are either too small or too large. Values must be in the range of -2^360 to
+        /// 2^360.
         /// Required: Yes
         /// Type: Double
         /// Update requires: No interruption

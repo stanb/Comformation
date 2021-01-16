@@ -6,9 +6,6 @@ namespace Comformation.IoT1Click.Placement
 {
     /// <summary>
     /// AWS::IoT1Click::Placement
-    /// The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project. A
-    /// placement is an instance of a device in a location. For more information, see Projects, Templates, and
-    /// Placements in the AWS IoT 1-Click Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html
     /// </summary>
     public class PlacementResource : ResourceBase
@@ -22,7 +19,7 @@ namespace Comformation.IoT1Click.Placement
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PlacementName { get; set; }
+            public Union<string, IntrinsicFunction> PlacementName { get; set; }
 
             /// <summary>
             /// ProjectName
@@ -31,7 +28,7 @@ namespace Comformation.IoT1Click.Placement
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ProjectName { get; set; }
+            public Union<string, IntrinsicFunction> ProjectName { get; set; }
 
             /// <summary>
             /// AssociatedDevices
@@ -41,7 +38,7 @@ namespace Comformation.IoT1Click.Placement
             /// Type: Json
             /// Update requires: Replacement
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssociatedDevices { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> AssociatedDevices { get; set; }
 
             /// <summary>
             /// Attributes
@@ -50,7 +47,7 @@ namespace Comformation.IoT1Click.Placement
             /// Type: Json
             /// Update requires: No interruption
             /// </summary>
-			public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Attributes { get; set; }
+            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Attributes { get; set; }
 
         }
 
@@ -60,9 +57,9 @@ namespace Comformation.IoT1Click.Placement
 
     }
 
-	public static class PlacementAttributes
-	{
+    public static class PlacementAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> PlacementName = new ResourceAttribute<Union<string, IntrinsicFunction>>("PlacementName");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProjectName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProjectName");
-	}
+    }
 }

@@ -7,11 +7,24 @@ namespace Comformation.CloudFront.Distribution
 {
     /// <summary>
     /// AWS::CloudFront::Distribution LambdaFunctionAssociation
-    /// A complex type that contains a Lambda function association.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html
     /// </summary>
     public class LambdaFunctionAssociation
     {
+
+        /// <summary>
+        /// IncludeBody
+        /// 		
+        /// A flag that allows a Lambda function to have read access to the body content. For more information,
+        /// 			see Accessing the Request Body by Choosing the 				Include Body Option in the Amazon CloudFront
+        /// Developer Guide.
+        /// 	
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IncludeBody")]
+        public Union<bool, IntrinsicFunction> IncludeBody { get; set; }
 
         /// <summary>
         /// EventType
@@ -21,10 +34,10 @@ namespace Comformation.CloudFront.Distribution
         /// 		
         /// 			 			 			 			 		 viewer-request: The function executes when CloudFront receives a request from a
         /// viewer 				and before it checks to see whether the requested object is in the edge cache.
-        /// origin-request: The function executes only when CloudFront forwards a request to your origin.
-        /// 				When the requested object is in the edge cache, the function doesn&#39;t execute. origin-response:
-        /// The function executes after CloudFront receives a response from the origin and 				before it caches
-        /// the object in the response. When the requested object is in the edge cache, the function doesn&#39;t
+        /// origin-request: The function executes only when CloudFront sends a request to your 					origin. When
+        /// the requested object is in the edge cache, the function doesn&#39;t 					execute. origin-response: The
+        /// function executes after CloudFront receives a response from the origin and 				before it caches the
+        /// object in the response. When the requested object is in the edge cache, the function doesn&#39;t
         /// execute. 			 viewer-response: The function executes before CloudFront returns the requested object
         /// to the viewer. 				The function executes regardless of whether the object was already in the edge
         /// cache. 				 If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn&#39;t
@@ -32,7 +45,7 @@ namespace Comformation.CloudFront.Distribution
         /// 	
         /// Required: No
         /// Type: String
-        /// Allowed Values: origin-request | origin-response | viewer-request | viewer-response
+        /// Allowed values: origin-request | origin-response | viewer-request | viewer-response
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("EventType")]

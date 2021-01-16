@@ -6,7 +6,6 @@ namespace Comformation.DMS.ReplicationInstance
 {
     /// <summary>
     /// AWS::DMS::ReplicationInstance
-    /// The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html
     /// </summary>
     public class ReplicationInstanceResource : ResourceBase
@@ -17,23 +16,25 @@ namespace Comformation.DMS.ReplicationInstance
             /// ReplicationInstanceIdentifier
             /// The replication instance identifier. This parameter is stored as a lowercase string.
             /// Constraints:
-            /// Must contain from 1 to 63 alphanumeric characters or hyphens. First character must be a letter.
-            /// Cannot end with a hyphen or contain two consecutive hyphens.
+            /// Must contain 1-63 alphanumeric characters or hyphens. First character must be a letter. Can&#39;t end
+            /// with a hyphen or contain two consecutive hyphens.
             /// Example: myrepinstance
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationInstanceIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationInstanceIdentifier { get; set; }
 
             /// <summary>
             /// EngineVersion
             /// The engine version number of the replication instance.
+            /// If an engine version number is not specified when a replication instance is created, the default is
+            /// the latest engine version available.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+            public Union<string, IntrinsicFunction> EngineVersion { get; set; }
 
             /// <summary>
             /// KmsKeyId
@@ -46,7 +47,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// AvailabilityZone
@@ -55,9 +56,9 @@ namespace Comformation.DMS.ReplicationInstance
             /// example: us-east-1d
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
+            public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
 
             /// <summary>
             /// PreferredMaintenanceWindow
@@ -72,18 +73,18 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
+            public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates whether minor engine upgrades will be applied automatically to the replication instance
-            /// during the maintenance window. This parameter defaults to true.
+            /// A value that indicates whether minor engine upgrades are applied automatically to the replication
+            /// instance during the maintenance window. This parameter defaults to true.
             /// Default: true
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AutoMinorVersionUpgrade { get; set; }
 
             /// <summary>
             /// ReplicationSubnetGroupIdentifier
@@ -92,7 +93,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationSubnetGroupIdentifier { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationSubnetGroupIdentifier { get; set; }
 
             /// <summary>
             /// AllocatedStorage
@@ -101,7 +102,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> AllocatedStorage { get; set; }
+            public Union<int, IntrinsicFunction> AllocatedStorage { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds
@@ -111,7 +112,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
+            public List<Union<string, IntrinsicFunction>> VpcSecurityGroupIds { get; set; }
 
             /// <summary>
             /// AllowMajorVersionUpgrade
@@ -123,19 +124,20 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
+            public Union<bool, IntrinsicFunction> AllowMajorVersionUpgrade { get; set; }
 
             /// <summary>
             /// ReplicationInstanceClass
-            /// The compute and memory capacity of the replication instance as specified by the replication instance
-            /// class.
-            /// Valid Values: dms. t2. micro | dms. t2. small | dms. t2. medium | dms. t2. large | dms. c4. large |
-            /// dms. c4. xlarge | dms. c4. 2xlarge | dms. c4. 4xlarge
+            /// The compute and memory capacity of the replication instance as defined for the specified replication
+            /// instance class. For example to specify the instance class dms. c4. large, set this parameter to
+            /// &quot;dms. c4. large&quot;.
+            /// For more information on the settings and capacities for the available replication instance classes,
+            /// see Selecting the right AWS DMS replication instance for your migration.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> ReplicationInstanceClass { get; set; }
+            public Union<string, IntrinsicFunction> ReplicationInstanceClass { get; set; }
 
             /// <summary>
             /// PubliclyAccessible
@@ -146,17 +148,17 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: Boolean
             /// Update requires: Replacement
             /// </summary>
-			public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
+            public Union<bool, IntrinsicFunction> PubliclyAccessible { get; set; }
 
             /// <summary>
             /// MultiAZ
-            /// Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+            /// Specifies whether the replication instance is a Multi-AZ deployment. You can&#39;t set the
             /// AvailabilityZone parameter if the Multi-AZ parameter is set to true.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
-			public Union<bool, IntrinsicFunction> MultiAZ { get; set; }
+            public Union<bool, IntrinsicFunction> MultiAZ { get; set; }
 
             /// <summary>
             /// Tags
@@ -165,7 +167,7 @@ namespace Comformation.DMS.ReplicationInstance
             /// Type: List of Tag
             /// Update requires: Replacement
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -175,9 +177,9 @@ namespace Comformation.DMS.ReplicationInstance
 
     }
 
-	public static class ReplicationInstanceAttributes
-	{
+    public static class ReplicationInstanceAttributes
+    {
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReplicationInstancePublicIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReplicationInstancePublicIpAddresses");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> ReplicationInstancePrivateIpAddresses = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("ReplicationInstancePrivateIpAddresses");
-	}
+    }
 }

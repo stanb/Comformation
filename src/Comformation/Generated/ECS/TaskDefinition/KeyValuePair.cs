@@ -7,7 +7,6 @@ namespace Comformation.ECS.TaskDefinition
 {
     /// <summary>
     /// AWS::ECS::TaskDefinition KeyValuePair
-    /// The KeyValuePair property specifies a key-value pair object.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html
     /// </summary>
     public class KeyValuePair
@@ -15,8 +14,10 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Name
-        /// The name of the key-value pair. For environment variables, this is the name of the environment
+        /// 		
+        /// The name of the key-value pair. For environment variables, this is the name of the 			environment
         /// variable.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -26,8 +27,10 @@ namespace Comformation.ECS.TaskDefinition
 
         /// <summary>
         /// Value
-        /// The value of the key-value pair. For environment variables, this is the value of the environment
+        /// 		
+        /// The value of the key-value pair. For environment variables, this is the value of the 			environment
         /// variable.
+        /// 	
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

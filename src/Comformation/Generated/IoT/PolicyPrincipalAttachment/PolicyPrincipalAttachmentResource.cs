@@ -6,8 +6,6 @@ namespace Comformation.IoT.PolicyPrincipalAttachment
 {
     /// <summary>
     /// AWS::IoT::PolicyPrincipalAttachment
-    /// Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X. 509
-    /// certificate or other credential).
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html
     /// </summary>
     public class PolicyPrincipalAttachmentResource : ResourceBase
@@ -21,7 +19,7 @@ namespace Comformation.IoT.PolicyPrincipalAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> PolicyName { get; set; }
+            public Union<string, IntrinsicFunction> PolicyName { get; set; }
 
             /// <summary>
             /// Principal
@@ -31,7 +29,7 @@ namespace Comformation.IoT.PolicyPrincipalAttachment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Principal { get; set; }
+            public Union<string, IntrinsicFunction> Principal { get; set; }
 
         }
 

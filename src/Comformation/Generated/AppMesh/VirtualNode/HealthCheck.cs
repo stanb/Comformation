@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.VirtualNode
 {
     /// <summary>
     /// AWS::AppMesh::VirtualNode HealthCheck
-    /// An object that represents the health check policy for a virtual node&#39;s listener.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html
     /// </summary>
     public class HealthCheck
@@ -69,7 +68,8 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// Protocol
-        /// The protocol for the health check request.
+        /// The protocol for the health check request. If you specify grpc, then your service must conform to
+        /// the GRPC Health Checking Protocol.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

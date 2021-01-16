@@ -6,8 +6,6 @@ namespace Comformation.ElasticBeanstalk.Environment
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::Environment
-    /// The AWS::ElasticBeanstalk::Environment resource is an AWS Elastic Beanstalk resource type that specifies an
-    /// Elastic Beanstalk environment.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html
     /// </summary>
     public class EnvironmentResource : ResourceBase
@@ -23,7 +21,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Maximum: 100
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> ApplicationName { get; set; }
+            public Union<string, IntrinsicFunction> ApplicationName { get; set; }
 
             /// <summary>
             /// CNAMEPrefix
@@ -36,7 +34,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Maximum: 63
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CNAMEPrefix { get; set; }
+            public Union<string, IntrinsicFunction> CNAMEPrefix { get; set; }
 
             /// <summary>
             /// Description
@@ -46,7 +44,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Maximum: 200
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// EnvironmentName
@@ -67,7 +65,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Maximum: 40
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> EnvironmentName { get; set; }
+            public Union<string, IntrinsicFunction> EnvironmentName { get; set; }
 
             /// <summary>
             /// OptionSettings
@@ -75,12 +73,11 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// These options override the values that are defined in the solution stack or the configuration
             /// template. If you remove any options during a stack update, the removed options retain their current
             /// values.
-            /// Required: Yes. The IamInstanceProfile option is required.
             /// Required: No
             /// Type: List of OptionSetting
             /// Update requires: No interruption
             /// </summary>
-			public List<OptionSetting> OptionSettings { get; set; }
+            public List<OptionSetting> OptionSettings { get; set; }
 
             /// <summary>
             /// PlatformArn
@@ -91,7 +88,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> PlatformArn { get; set; }
+            public Union<string, IntrinsicFunction> PlatformArn { get; set; }
 
             /// <summary>
             /// SolutionStackName
@@ -104,7 +101,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
+            public Union<string, IntrinsicFunction> SolutionStackName { get; set; }
 
             /// <summary>
             /// Tags
@@ -113,7 +110,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
             /// <summary>
             /// TemplateName
@@ -125,7 +122,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> TemplateName { get; set; }
+            public Union<string, IntrinsicFunction> TemplateName { get; set; }
 
             /// <summary>
             /// Tier
@@ -136,7 +133,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Type: Tier
             /// Update requires: Some interruptions
             /// </summary>
-			public Tier Tier { get; set; }
+            public Tier Tier { get; set; }
 
             /// <summary>
             /// VersionLabel
@@ -148,7 +145,7 @@ namespace Comformation.ElasticBeanstalk.Environment
             /// Maximum: 100
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> VersionLabel { get; set; }
+            public Union<string, IntrinsicFunction> VersionLabel { get; set; }
 
         }
 
@@ -158,8 +155,8 @@ namespace Comformation.ElasticBeanstalk.Environment
 
     }
 
-	public static class EnvironmentAttributes
-	{
+    public static class EnvironmentAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> EndpointURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("EndpointURL");
-	}
+    }
 }

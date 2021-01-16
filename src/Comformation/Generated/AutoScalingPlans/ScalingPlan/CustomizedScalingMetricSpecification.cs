@@ -7,8 +7,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan CustomizedScalingMetricSpecification
-    /// CustomizedScalingMetricSpecification is a subproperty of TargetTrackingConfiguration that specifies a
-    /// customized scaling metric for a target tracking configuration to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html
     /// </summary>
     public class CustomizedScalingMetricSpecification
@@ -29,7 +27,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// The statistic of the metric.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: Average | Maximum | Minimum | SampleCount | Sum
+        /// Allowed values: Average | Maximum | Minimum | SampleCount | Sum
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statistic")]

@@ -7,7 +7,6 @@ namespace Comformation.SNS.Topic
 {
     /// <summary>
     /// AWS::SNS::Topic Subscription
-    /// Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
     /// </summary>
     public class Subscription

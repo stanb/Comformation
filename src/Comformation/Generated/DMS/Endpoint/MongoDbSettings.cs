@@ -7,7 +7,6 @@ namespace Comformation.DMS.Endpoint
 {
     /// <summary>
     /// AWS::DMS::Endpoint MongoDbSettings
-    /// Syntax
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html
     /// </summary>
     public class MongoDbSettings
@@ -15,8 +14,8 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// AuthSource
-        /// The MongoDB database name. This setting is not used when authType=NO.
-        /// The default is admin.
+        /// The MongoDB database name. This setting isn&#39;t used when AuthType is set to &quot;no&quot;.
+        /// The default is &quot;admin&quot;.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -27,12 +26,11 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// AuthMechanism
         /// The authentication mechanism you use to access the MongoDB source endpoint.
-        /// Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-        /// DEFAULT – For MongoDB version 2. x, use MONGODB_CR. For MongoDB version 3. x, use SCRAM_SHA_1. This
-        /// setting is not used when authType=No.
+        /// For the default value, in MongoDB version 2. x, &quot;default&quot; is &quot;mongodb_cr&quot;. For MongoDB version 3. x
+        /// or later, &quot;default&quot; is &quot;scram_sha_1&quot;. This setting isn&#39;t used when AuthType is set to &quot;no&quot;.
         /// Required: No
         /// Type: String
-        /// Allowed Values: default | mongodb_cr | scram_sha_1
+        /// Allowed values: default | mongodb_cr | scram_sha_1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AuthMechanism")]
@@ -51,7 +49,7 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// DocsToInvestigate
         /// Indicates the number of documents to preview to determine the document organization. Use this
-        /// setting when NestingLevel is set to ONE.
+        /// setting when NestingLevel is set to &quot;one&quot;.
         /// Must be a positive value greater than 0. Default value is 1000.
         /// Required: No
         /// Type: String
@@ -82,8 +80,8 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ExtractDocId
-        /// Specifies the document ID. Use this setting when NestingLevel is set to NONE.
-        /// Default value is false.
+        /// Specifies the document ID. Use this setting when NestingLevel is set to &quot;none&quot;.
+        /// Default value is &quot;false&quot;.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -104,11 +102,10 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// AuthType
         /// The authentication type you use to access the MongoDB source endpoint.
-        /// Valid values: NO, PASSWORD
-        /// When NO is selected, user name and password parameters are not used and can be empty.
+        /// When when set to &quot;no&quot;, user name and password parameters are not used and can be empty.
         /// Required: No
         /// Type: String
-        /// Allowed Values: no | password
+        /// Allowed values: no | password
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AuthType")]
@@ -127,11 +124,10 @@ namespace Comformation.DMS.Endpoint
         /// <summary>
         /// NestingLevel
         /// Specifies either document or table mode.
-        /// Valid values: NONE, ONE
-        /// Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+        /// Default value is &quot;none&quot;. Specify &quot;none&quot; to use document mode. Specify &quot;one&quot; to use table mode.
         /// Required: No
         /// Type: String
-        /// Allowed Values: none | one
+        /// Allowed values: none | one
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("NestingLevel")]

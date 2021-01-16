@@ -7,7 +7,6 @@ namespace Comformation.EC2.LaunchTemplate
 {
     /// <summary>
     /// AWS::EC2::LaunchTemplate Placement
-    /// Specifies the placement of an instance.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
     /// </summary>
     public class Placement
@@ -25,15 +24,36 @@ namespace Comformation.EC2.LaunchTemplate
 
         /// <summary>
         /// Tenancy
-        /// The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+        /// The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy 	of
         /// dedicated runs on single-tenant hardware.
         /// Required: No
         /// Type: String
-        /// Allowed Values: dedicated | default | host
+        /// Allowed values: dedicated | default | host
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Tenancy")]
         public Union<string, IntrinsicFunction> Tenancy { get; set; }
+
+        /// <summary>
+        /// SpreadDomain
+        /// Reserved for future use.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SpreadDomain")]
+        public Union<string, IntrinsicFunction> SpreadDomain { get; set; }
+
+        /// <summary>
+        /// PartitionNumber
+        /// The number of the partition the instance should launch in. Valid only if the placement group
+        /// strategy is set to partition.
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PartitionNumber")]
+        public Union<int, IntrinsicFunction> PartitionNumber { get; set; }
 
         /// <summary>
         /// AvailabilityZone
@@ -64,6 +84,18 @@ namespace Comformation.EC2.LaunchTemplate
         /// </summary>
         [JsonProperty("HostId")]
         public Union<string, IntrinsicFunction> HostId { get; set; }
+
+        /// <summary>
+        /// HostResourceGroupArn
+        /// 	
+        /// The ARN of the host resource group in which to launch the instances. If you specify a host
+        /// 		resource group ARN, omit the Tenancy parameter 		or set it to host.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HostResourceGroupArn")]
+        public Union<string, IntrinsicFunction> HostResourceGroupArn { get; set; }
 
     }
 }

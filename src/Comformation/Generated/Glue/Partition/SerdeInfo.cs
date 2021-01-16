@@ -7,7 +7,6 @@ namespace Comformation.Glue.Partition
 {
     /// <summary>
     /// AWS::Glue::Partition SerdeInfo
-    /// Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html
     /// </summary>
     public class SerdeInfo

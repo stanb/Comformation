@@ -7,7 +7,6 @@ namespace Comformation.EMR.InstanceFleetConfig
 {
     /// <summary>
     /// AWS::EMR::InstanceFleetConfig EbsConfiguration
-    /// EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html
     /// </summary>
     public class EbsConfiguration

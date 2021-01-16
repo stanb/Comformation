@@ -7,7 +7,6 @@ namespace Comformation.Glue.Partition
 {
     /// <summary>
     /// AWS::Glue::Partition Order
-    /// Specifies the sort order of a sorted column.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html
     /// </summary>
     public class Order

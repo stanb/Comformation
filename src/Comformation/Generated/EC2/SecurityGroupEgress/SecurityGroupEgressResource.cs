@@ -6,7 +6,6 @@ namespace Comformation.EC2.SecurityGroupEgress
 {
     /// <summary>
     /// AWS::EC2::SecurityGroupEgress
-    /// [EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
     /// </summary>
     public class SecurityGroupEgressResource : ResourceBase
@@ -22,7 +21,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrIp { get; set; }
+            public Union<string, IntrinsicFunction> CidrIp { get; set; }
 
             /// <summary>
             /// CidrIpv6
@@ -33,7 +32,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
+            public Union<string, IntrinsicFunction> CidrIpv6 { get; set; }
 
             /// <summary>
             /// Description
@@ -44,7 +43,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DestinationPrefixListId
@@ -56,7 +55,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationPrefixListId { get; set; }
+            public Union<string, IntrinsicFunction> DestinationPrefixListId { get; set; }
 
             /// <summary>
             /// DestinationSecurityGroupId
@@ -67,7 +66,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DestinationSecurityGroupId { get; set; }
+            public Union<string, IntrinsicFunction> DestinationSecurityGroupId { get; set; }
 
             /// <summary>
             /// FromPort
@@ -77,7 +76,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> FromPort { get; set; }
+            public Union<int, IntrinsicFunction> FromPort { get; set; }
 
             /// <summary>
             /// GroupId
@@ -90,7 +89,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupId { get; set; }
+            public Union<string, IntrinsicFunction> GroupId { get; set; }
 
             /// <summary>
             /// IpProtocol
@@ -103,7 +102,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> IpProtocol { get; set; }
+            public Union<string, IntrinsicFunction> IpProtocol { get; set; }
 
             /// <summary>
             /// ToPort
@@ -113,7 +112,7 @@ namespace Comformation.EC2.SecurityGroupEgress
             /// Type: Integer
             /// Update requires: Replacement
             /// </summary>
-			public Union<int, IntrinsicFunction> ToPort { get; set; }
+            public Union<int, IntrinsicFunction> ToPort { get; set; }
 
         }
 

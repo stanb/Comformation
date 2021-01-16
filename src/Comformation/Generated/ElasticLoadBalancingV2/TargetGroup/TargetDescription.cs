@@ -7,7 +7,6 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 {
     /// <summary>
     /// AWS::ElasticLoadBalancingV2::TargetGroup TargetDescription
-    /// Specifies a target to add to a target group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html
     /// </summary>
     public class TargetDescription
@@ -46,7 +45,8 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
 
         /// <summary>
         /// Port
-        /// The port on which the target is listening. Not used if the target is a Lambda function.
+        /// The port on which the target is listening. If the target group protocol is GENEVE, the supported
+        /// port is 6081. Not used if the target is a Lambda function.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1

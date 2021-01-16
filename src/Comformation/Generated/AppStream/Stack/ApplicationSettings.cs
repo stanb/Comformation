@@ -7,7 +7,6 @@ namespace Comformation.AppStream.Stack
 {
     /// <summary>
     /// AWS::AppStream::Stack ApplicationSettings
-    /// The persistent application settings for users of a stack.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html
     /// </summary>
     public class ApplicationSettings

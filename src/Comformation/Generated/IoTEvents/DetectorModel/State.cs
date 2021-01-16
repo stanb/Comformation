@@ -7,7 +7,6 @@ namespace Comformation.IoTEvents.DetectorModel
 {
     /// <summary>
     /// AWS::IoTEvents::DetectorModel State
-    /// Information that defines a state of a detector.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html
     /// </summary>
     public class State
@@ -15,7 +14,7 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// OnInput
-        /// When an input is received and the &quot;condition&quot; is TRUE, perform the specified &quot;actions&quot;.
+        /// When an input is received and the condition is TRUE, perform the specified actions.
         /// Required: No
         /// Type: OnInput
         /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// OnExit
-        /// When exiting this state, perform these &quot;actions&quot; if the specified &quot;condition&quot; is TRUE.
+        /// When exiting this state, perform these actions if the specified condition is TRUE.
         /// Required: No
         /// Type: OnExit
         /// Update requires: No interruption
@@ -47,7 +46,7 @@ namespace Comformation.IoTEvents.DetectorModel
 
         /// <summary>
         /// OnEnter
-        /// When entering this state, perform these &quot;actions&quot; if the &quot;condition&quot; is TRUE.
+        /// When entering this state, perform these actions if the condition is TRUE.
         /// Required: No
         /// Type: OnEnter
         /// Update requires: No interruption

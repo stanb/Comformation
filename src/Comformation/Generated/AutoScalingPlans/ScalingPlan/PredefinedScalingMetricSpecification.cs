@@ -7,8 +7,6 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
 {
     /// <summary>
     /// AWS::AutoScalingPlans::ScalingPlan PredefinedScalingMetricSpecification
-    /// PredefinedScalingMetricSpecification is a subproperty of TargetTrackingConfiguration that specifies a
-    /// customized scaling metric for a target tracking configuration to use with AWS Auto Scaling.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html
     /// </summary>
     public class PredefinedScalingMetricSpecification
@@ -19,12 +17,17 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Identifies the resource associated with the metric type. You can&#39;t specify a resource label unless
         /// the metric type is ALBRequestCountPerTarget and there is a target group for an Application Load
         /// Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.
-        /// The format is
+        /// You create the resource label by appending the final portion of the load balancer ARN and the final
+        /// portion of the target group ARN into a single value, separated by a forward slash (/). The format is
         /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt;/targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt;,
         /// where:
         /// app/&amp;lt;load-balancer-name&amp;gt;/&amp;lt;load-balancer-id&amp;gt; is the final portion of the load balancer
-        /// ARN. targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt; is the final portion of the
-        /// target group ARN.
+        /// ARN targetgroup/&amp;lt;target-group-name&amp;gt;/&amp;lt;target-group-id&amp;gt; is the final portion of the target
+        /// group ARN.
+        /// This is an example:
+        /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
+        /// To find the ARN for an Application Load Balancer, use the DescribeLoadBalancers API operation. To
+        /// find the ARN for the target group, use the DescribeTargetGroups API operation.
         /// Required: Conditional
         /// Type: String
         /// Minimum: 1
@@ -40,7 +43,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// Fleet requests, and ECS services.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: ALBRequestCountPerTarget | ASGAverageCPUUtilization | ASGAverageNetworkIn |
+        /// Allowed values: ALBRequestCountPerTarget | ASGAverageCPUUtilization | ASGAverageNetworkIn |
         /// ASGAverageNetworkOut | DynamoDBReadCapacityUtilization | DynamoDBWriteCapacityUtilization |
         /// EC2SpotFleetRequestAverageCPUUtilization | EC2SpotFleetRequestAverageNetworkIn |
         /// EC2SpotFleetRequestAverageNetworkOut | ECSServiceAverageCPUUtilization |

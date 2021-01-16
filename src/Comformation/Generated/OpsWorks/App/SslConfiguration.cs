@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.App
 {
     /// <summary>
     /// AWS::OpsWorks::App SslConfiguration
-    /// Describes an app&#39;s SSL configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html
     /// </summary>
     public class SslConfiguration

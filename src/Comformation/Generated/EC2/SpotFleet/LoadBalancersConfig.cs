@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet LoadBalancersConfig
-    /// Specifies the Classic Load Balancers and target groups to attach to a Spot Fleet request.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html
     /// </summary>
     public class LoadBalancersConfig

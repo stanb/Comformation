@@ -7,8 +7,6 @@ namespace Comformation.S3.Bucket
 {
     /// <summary>
     /// AWS::S3::Bucket ObjectLockConfiguration
-    /// Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock
-    /// configuration will be applied by default to every new object placed in the specified bucket.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html
     /// </summary>
     public class ObjectLockConfiguration
@@ -19,7 +17,7 @@ namespace Comformation.S3.Bucket
         /// Indicates whether this bucket has an Object Lock configuration enabled.
         /// Required: No
         /// Type: String
-        /// Allowed Values: Enabled
+        /// Allowed values: Enabled
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ObjectLockEnabled")]

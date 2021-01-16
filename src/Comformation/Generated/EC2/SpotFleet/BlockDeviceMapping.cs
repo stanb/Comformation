@@ -7,7 +7,6 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet BlockDeviceMapping
-    /// Specifies a block device mapping.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings.html
     /// </summary>
     public class BlockDeviceMapping
@@ -35,7 +34,7 @@ namespace Comformation.EC2.SpotFleet
 
         /// <summary>
         /// NoDevice
-        /// Suppresses the specified device included in the block device mapping of the AMI.
+        /// To omit the device from the block device mapping, specify an empty string.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

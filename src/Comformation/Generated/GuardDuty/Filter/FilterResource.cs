@@ -6,7 +6,6 @@ namespace Comformation.GuardDuty.Filter
 {
     /// <summary>
     /// AWS::GuardDuty::Filter
-    /// The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
     /// </summary>
     public class FilterResource : ResourceBase
@@ -18,27 +17,32 @@ namespace Comformation.GuardDuty.Filter
             /// Specifies the action that is to be applied to the findings that match the filter.
             /// Required: Yes
             /// Type: String
+            /// Allowed values: ARCHIVE | NOOP
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Action { get; set; }
+            public Union<string, IntrinsicFunction> Action { get; set; }
 
             /// <summary>
             /// Description
             /// The description of the filter.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 0
+            /// Maximum: 512
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Description { get; set; }
+            public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
             /// DetectorId
-            /// The ID of the detector to associate the Filter with.
+            /// The ID of the detector belonging to the GuardDuty account that you want to create a filter for.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 300
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> DetectorId { get; set; }
+            public Union<string, IntrinsicFunction> DetectorId { get; set; }
 
             /// <summary>
             /// FindingCriteria
@@ -47,26 +51,33 @@ namespace Comformation.GuardDuty.Filter
             /// Type: FindingCriteria
             /// Update requires: No interruption
             /// </summary>
-			public FindingCriteria FindingCriteria { get; set; }
+            public FindingCriteria FindingCriteria { get; set; }
 
             /// <summary>
             /// Rank
             /// Specifies the position of the filter in the list of current filters. Also specifies the order in
             /// which this filter is applied to the findings.
+            /// Important By default filters may not be created in the same order as they are ranked. To ensure
+            /// filters are created in the correct order you can use the optional DependsOn attribute with the
+            /// following syntax: &quot;DependsOn&quot;:[ &quot;ObjectName&quot; ]. You can find more information on using this
+            /// attribute here.
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> Rank { get; set; }
+            public Union<int, IntrinsicFunction> Rank { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the filter.
-            /// Required: No
+            /// The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include
+            /// alphanumeric characters, dot (. ), underscore (_), and dash (-). Spaces are not allowed.
+            /// Required: Yes
             /// Type: String
+            /// Minimum: 3
+            /// Maximum: 64
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

@@ -7,7 +7,6 @@ namespace Comformation.OpsWorks.Stack
 {
     /// <summary>
     /// AWS::OpsWorks::Stack ChefConfiguration
-    /// Describes the Chef configuration.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html
     /// </summary>
     public class ChefConfiguration

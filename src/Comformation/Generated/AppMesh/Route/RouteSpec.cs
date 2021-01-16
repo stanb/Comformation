@@ -7,7 +7,6 @@ namespace Comformation.AppMesh.Route
 {
     /// <summary>
     /// AWS::AppMesh::Route RouteSpec
-    /// An object that represents a route specification. Specify one route type.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html
     /// </summary>
     public class RouteSpec
@@ -33,6 +32,26 @@ namespace Comformation.AppMesh.Route
         /// </summary>
         [JsonProperty("Priority")]
         public Union<int, IntrinsicFunction> Priority { get; set; }
+
+        /// <summary>
+        /// Http2Route
+        /// An object that represents the specification of an HTTP/2 route.
+        /// Required: No
+        /// Type: HttpRoute
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Http2Route")]
+        public HttpRoute Http2Route { get; set; }
+
+        /// <summary>
+        /// GrpcRoute
+        /// An object that represents the specification of a gRPC route.
+        /// Required: No
+        /// Type: GrpcRoute
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("GrpcRoute")]
+        public GrpcRoute GrpcRoute { get; set; }
 
         /// <summary>
         /// TcpRoute

@@ -7,8 +7,6 @@ namespace Comformation.ElasticBeanstalk.Environment
 {
     /// <summary>
     /// AWS::ElasticBeanstalk::Environment Tier
-    /// Describes the environment tier for an AWS::ElasticBeanstalk::Environment resource. For more information, see
-    /// Environment Tiers in the AWS Elastic Beanstalk Developer Guide.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html
     /// </summary>
     public class Tier

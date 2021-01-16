@@ -6,7 +6,6 @@ namespace Comformation.IAM.Group
 {
     /// <summary>
     /// AWS::IAM::Group
-    /// Creates a new group.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html
     /// </summary>
     public class GroupResource : ResourceBase
@@ -33,7 +32,7 @@ namespace Comformation.IAM.Group
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> GroupName { get; set; }
+            public Union<string, IntrinsicFunction> GroupName { get; set; }
 
             /// <summary>
             /// ManagedPolicyArns
@@ -44,7 +43,7 @@ namespace Comformation.IAM.Group
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>
-			public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
+            public List<Union<string, IntrinsicFunction>> ManagedPolicyArns { get; set; }
 
             /// <summary>
             /// Path
@@ -61,7 +60,7 @@ namespace Comformation.IAM.Group
             /// Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
             /// Update requires: No interruption
             /// </summary>
-			public Union<string, IntrinsicFunction> Path { get; set; }
+            public Union<string, IntrinsicFunction> Path { get; set; }
 
             /// <summary>
             /// Policies
@@ -75,7 +74,7 @@ namespace Comformation.IAM.Group
             /// Type: List of Policy
             /// Update requires: No interruption
             /// </summary>
-			public List<Policy> Policies { get; set; }
+            public List<Policy> Policies { get; set; }
 
         }
 
@@ -85,8 +84,8 @@ namespace Comformation.IAM.Group
 
     }
 
-	public static class GroupAttributes
-	{
+    public static class GroupAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

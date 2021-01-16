@@ -6,8 +6,6 @@ namespace Comformation.Kinesis.Stream
 {
     /// <summary>
     /// AWS::Kinesis::Stream
-    /// Creates a Kinesis stream that captures and transports data records that are emitted from data sources. For
-    /// information about creating streams, see CreateStream in the Amazon Kinesis API Reference.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
     /// </summary>
     public class StreamResource : ResourceBase
@@ -28,7 +26,7 @@ namespace Comformation.Kinesis.Stream
             /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
-			public Union<string, IntrinsicFunction> Name { get; set; }
+            public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// RetentionPeriodHours
@@ -39,7 +37,7 @@ namespace Comformation.Kinesis.Stream
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> RetentionPeriodHours { get; set; }
+            public Union<int, IntrinsicFunction> RetentionPeriodHours { get; set; }
 
             /// <summary>
             /// ShardCount
@@ -50,16 +48,17 @@ namespace Comformation.Kinesis.Stream
             /// Minimum: 1
             /// Update requires: No interruption
             /// </summary>
-			public Union<int, IntrinsicFunction> ShardCount { get; set; }
+            public Union<int, IntrinsicFunction> ShardCount { get; set; }
 
             /// <summary>
             /// StreamEncryption
-            /// Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+            /// When specified, enables or updates server-side encryption using an AWS KMS key for a specified
+            /// stream. Removing this property from your stack template and updating your stack disables encryption.
             /// Required: No
             /// Type: StreamEncryption
             /// Update requires: No interruption
             /// </summary>
-			public StreamEncryption StreamEncryption { get; set; }
+            public StreamEncryption StreamEncryption { get; set; }
 
             /// <summary>
             /// Tags
@@ -69,7 +68,7 @@ namespace Comformation.Kinesis.Stream
             /// Type: List of Tag
             /// Update requires: No interruption
             /// </summary>
-			public List<Tag> Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 
@@ -79,8 +78,8 @@ namespace Comformation.Kinesis.Stream
 
     }
 
-	public static class StreamAttributes
-	{
+    public static class StreamAttributes
+    {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-	}
+    }
 }

@@ -7,11 +7,6 @@ namespace Comformation.OpsWorks.Layer
 {
     /// <summary>
     /// AWS::OpsWorks::Layer Recipes
-    /// AWS OpsWorks Stacks supports five lifecycle events: setup, configuration, deploy, undeploy, and shutdown. For
-    /// each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide
-    /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the
-    /// standard recipes. LayerCustomRecipes specifies the custom recipes for a particular layer to be run in response
-    /// to each of the five events.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html
     /// </summary>
     public class Recipes

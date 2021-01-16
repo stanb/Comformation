@@ -7,7 +7,6 @@ namespace Comformation.KinesisAnalyticsV2.Application
 {
     /// <summary>
     /// AWS::KinesisAnalyticsV2::Application ApplicationCodeConfiguration
-    /// Describes code configuration for a Java-based Kinesis Data Analytics application.
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html
     /// </summary>
     public class ApplicationCodeConfiguration
@@ -18,7 +17,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// Specifies whether the code content is in text or zip format.
         /// Required: Yes
         /// Type: String
-        /// Allowed Values: PLAINTEXT | ZIPFILE
+        /// Allowed values: PLAINTEXT | ZIPFILE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CodeContentType")]
