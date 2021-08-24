@@ -26,9 +26,9 @@ namespace Comformation.OpsWorks.App
 
         /// <summary>
         /// Secure
-        /// (Optional) Whether the variable&#39;s value will be returned by the DescribeApps action. To conceal an
-        /// environment variable&#39;s value, set Secure to true. DescribeApps then returns *****FILTERED*****
-        /// instead of the actual value. The default value for Secure is false.
+        /// (Optional) Whether the variable&#39;s value is returned by the DescribeApps action. To hide an
+        /// environment variable&#39;s value, set Secure to true. DescribeApps returns *****FILTERED***** instead of
+        /// the actual value. The default value for Secure is false.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

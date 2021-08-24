@@ -35,6 +35,16 @@ namespace Comformation.CodeDeploy.Application
             /// </summary>
             public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// The metadata that you apply to CodeDeploy applications to help you organize and categorize them.
+            /// Each tag consists of a key and an optional value, both of which you define.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::CodeDeploy::Application";

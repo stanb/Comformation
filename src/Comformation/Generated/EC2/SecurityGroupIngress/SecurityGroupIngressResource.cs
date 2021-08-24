@@ -14,7 +14,7 @@ namespace Comformation.EC2.SecurityGroupIngress
         {
             /// <summary>
             /// CidrIp
-            /// The IPv4 ranges.
+            /// The IPv4 address range, in CIDR format.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -23,7 +23,7 @@ namespace Comformation.EC2.SecurityGroupIngress
 
             /// <summary>
             /// CidrIpv6
-            /// [VPC only] The IPv6 ranges.
+            /// The IPv6 address range, in CIDR format.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

@@ -107,7 +107,8 @@ namespace Comformation.MediaConnect.Flow
 
         /// <summary>
         /// Protocol
-        /// The protocol that is used by the source.
+        /// The protocol that is used by the source. For a full list of available protocols, see: Source
+        /// protocols in the AWS Elemental MediaConnect API Reference.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

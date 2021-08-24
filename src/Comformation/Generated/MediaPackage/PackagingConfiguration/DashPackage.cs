@@ -72,5 +72,18 @@ namespace Comformation.MediaPackage.PackagingConfiguration
         [JsonProperty("SegmentTemplateFormat")]
         public Union<string, IntrinsicFunction> SegmentTemplateFormat { get; set; }
 
+        /// <summary>
+        /// IncludeEncoderConfigurationInSegments
+        /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder&#39;s
+        /// Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in
+        /// every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS
+        /// settings for your assets during content playback.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IncludeEncoderConfigurationInSegments")]
+        public Union<bool, IntrinsicFunction> IncludeEncoderConfigurationInSegments { get; set; }
+
     }
 }

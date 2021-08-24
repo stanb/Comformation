@@ -17,7 +17,7 @@ namespace Comformation.Elasticsearch.Domain
         /// Specifies whether node-to-node encryption is enabled, as a Boolean.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: Replacement
+        /// Update requires: Some interruptions
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }

@@ -7,7 +7,7 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet PrivateIpAddressSpecification
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces-privateipaddresses.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-privateipaddressspecification.html
     /// </summary>
     public class PrivateIpAddressSpecification
     {
@@ -18,7 +18,7 @@ namespace Comformation.EC2.SpotFleet
         /// address can be designated as primary.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Primary")]
         public Union<bool, IntrinsicFunction> Primary { get; set; }
@@ -28,7 +28,7 @@ namespace Comformation.EC2.SpotFleet
         /// The private IPv4 addresses.
         /// Required: Yes
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("PrivateIpAddress")]
         public Union<string, IntrinsicFunction> PrivateIpAddress { get; set; }

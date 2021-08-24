@@ -44,7 +44,7 @@ namespace Comformation.AppMesh.GatewayRoute
             /// <summary>
             /// GatewayRouteName
             /// The name of the gateway route.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

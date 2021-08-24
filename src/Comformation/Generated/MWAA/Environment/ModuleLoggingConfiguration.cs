@@ -14,7 +14,8 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// Enabled
-        /// Specifies whether to enable logging.
+        /// Indicates whether to enable the Apache Airflow log type (e. g. DagProcessingLogs) in CloudWatch
+        /// Logs.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -24,7 +25,8 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// LogLevel
-        /// Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+        /// Defines the Apache Airflow logs to send for the log type (e. g. DagProcessingLogs) to CloudWatch
+        /// Logs. Valid values: CRITICAL, ERROR, WARNING, INFO.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -34,7 +36,7 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// CloudWatchLogGroupArn
-        /// Provides the ARN for the CloudWatch group where the logs will be published.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

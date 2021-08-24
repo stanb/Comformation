@@ -51,8 +51,8 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// StepProperties
-        /// A list of Java properties that are set when the step runs. You can use these properties to pass key
-        /// value pairs to your main function.
+        /// A list of Java properties that are set when the step runs. You can use these properties to pass
+        /// key-value pairs to your main function.
         /// Required: No
         /// Type: List of KeyValue
         /// Update requires: No interruption

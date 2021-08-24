@@ -32,7 +32,7 @@ namespace Comformation.EC2.EC2Fleet
 
             /// <summary>
             /// Type
-            /// The type of request. The default value is maintain.
+            /// The fleet type. The default value is maintain.
             /// maintain - The EC2 Fleet places an asynchronous request for your desired capacity, and continues to
             /// maintain your desired Spot capacity by replenishing interrupted Spot Instances. request - The EC2
             /// Fleet places an asynchronous one-time request for your desired capacity, but does submit Spot
@@ -60,9 +60,13 @@ namespace Comformation.EC2.EC2Fleet
 
             /// <summary>
             /// TagSpecifications
-            /// The key-value pair for tagging the EC2 Fleet request on creation. The value for ResourceType must be
-            /// fleet, otherwise the fleet request fails. To tag instances at launch, specify the tags in the launch
-            /// template. For information about tagging after launch, see Tagging your resources.
+            /// The key-value pair for tagging the EC2 Fleet request on creation. For more information, see Tagging
+            /// your resources.
+            /// If the fleet type is instant, specify a resource type of fleet to tag the fleet or instance to tag
+            /// the instances at launch.
+            /// If the fleet type is maintain or request, specify a resource type of fleet to tag the fleet. You
+            /// cannot specify a resource type of instance. To tag instances at launch, specify the tags in a launch
+            /// template.
             /// Required: No
             /// Type: List of TagSpecification
             /// Update requires: Replacement
@@ -90,7 +94,8 @@ namespace Comformation.EC2.EC2Fleet
 
             /// <summary>
             /// ReplaceUnhealthyInstances
-            /// Indicates whether EC2 Fleet should replace unhealthy instances.
+            /// Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of
+            /// type maintain. For more information, see EC2 Fleet health checks in the Amazon EC2 User Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -127,11 +132,25 @@ namespace Comformation.EC2.EC2Fleet
             /// </summary>
             public Union<string, IntrinsicFunction> ValidUntil { get; set; }
 
+            /// <summary>
+            /// Context
+            /// Reserved.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Context { get; set; }
+
         }
 
         public string Type { get; } = "AWS::EC2::EC2Fleet";
 
         public EC2FleetProperties Properties { get; } = new EC2FleetProperties();
 
+    }
+
+    public static class EC2FleetAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FleetId = new ResourceAttribute<Union<string, IntrinsicFunction>>("FleetId");
     }
 }

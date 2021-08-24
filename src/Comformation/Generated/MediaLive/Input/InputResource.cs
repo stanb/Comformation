@@ -23,8 +23,7 @@ namespace Comformation.MediaLive.Input
 
             /// <summary>
             /// Destinations
-            /// The destination settings for push types of inputs. If the input is a pull type, these settings don&#39;t
-            /// apply.
+            /// Settings that apply only if the input is a push type of input.
             /// Required: No
             /// Type: List of InputDestinationRequest
             /// Update requires: No interruption
@@ -33,7 +32,7 @@ namespace Comformation.MediaLive.Input
 
             /// <summary>
             /// Vpc
-            /// Settings that apply only if the input is an Amazon VPC input.
+            /// Settings that apply only if the input is an push input where the source is on Amazon VPC.
             /// Required: No
             /// Type: InputVpcRequest
             /// Update requires: Replacement
@@ -61,7 +60,7 @@ namespace Comformation.MediaLive.Input
 
             /// <summary>
             /// InputDevices
-            /// Settings for the devices.
+            /// Settings that apply only if the input is an Elemental Link input.
             /// Required: No
             /// Type: List of InputDeviceSettings
             /// Update requires: No interruption
@@ -70,8 +69,7 @@ namespace Comformation.MediaLive.Input
 
             /// <summary>
             /// Sources
-            /// The source settings for a pull type of input. These settings don&#39;t apply if the input is a push
-            /// type.
+            /// Settings that apply only if the input is a pull type of input.
             /// Required: No
             /// Type: List of InputSourceRequest
             /// Update requires: No interruption

@@ -53,10 +53,11 @@ namespace Comformation.IVS.Channel
             /// The channel type, which determines the allowable resolution and bitrate. If you exceed the allowable
             /// resolution or bitrate, the stream probably will disconnect immediately. Valid values:
             /// STANDARD: Multiple qualities are generated from the original input, to automatically give viewers
-            /// the best experience for their devices and network conditions. Vertical resolution can be up to 1080
-            /// and bitrate can be up to 8. 5 Mbps. BASIC: delivers the original input to viewers. The viewer’s
-            /// video-quality choice is limited to the original input. Vertical resolution can be up to 480 and
-            /// bitrate can be up to 1. 5 Mbps.
+            /// the best experience for their devices and network conditions. Resolution can be up to 1080p and
+            /// bitrate can be up to 8. 5 Mbps. Audio is transcoded only for renditions 360p and below; above that,
+            /// audio is passed through. BASIC: delivers the original input to viewers. The viewer’s video-quality
+            /// choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1. 5
+            /// Mbps.
             /// Default: STANDARD
             /// Required: No
             /// Type: String
@@ -74,6 +75,22 @@ namespace Comformation.IVS.Channel
             /// Update requires: No interruption
             /// </summary>
             public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// RecordingConfigurationArn
+            /// The ARN of a RecordingConfiguration resource. An empty string indicates that recording is disabled
+            /// for the channel. A RecordingConfiguration ARN indicates that recording is enabled using the
+            /// specified recording configuration. See the RecordingConfiguration resource for more information and
+            /// an example.
+            /// Default: &quot;&quot; (empty string, recording is disabled)
+            /// Required: No
+            /// Type: String
+            /// Minimum: 0
+            /// Maximum: 128
+            /// Pattern: ^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> RecordingConfigurationArn { get; set; }
 
         }
 

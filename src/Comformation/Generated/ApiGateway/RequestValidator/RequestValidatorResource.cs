@@ -56,4 +56,9 @@ namespace Comformation.ApiGateway.RequestValidator
         public RequestValidatorProperties Properties { get; } = new RequestValidatorProperties();
 
     }
+
+    public static class RequestValidatorAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RequestValidatorId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RequestValidatorId");
+    }
 }

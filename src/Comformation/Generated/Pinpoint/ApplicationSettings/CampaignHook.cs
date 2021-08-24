@@ -14,7 +14,7 @@ namespace Comformation.Pinpoint.ApplicationSettings
 
         /// <summary>
         /// Mode
-        /// The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
+        /// The mode that Amazon Pinpoint uses to invoke the Lambda function. Possible values are:
         /// FILTER - Invoke the function to customize the segment that&#39;s used by a campaign. DELIVERY -
         /// (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
         /// functionality is not supported anymore. To send a campaign through a custom channel, use the
@@ -28,7 +28,7 @@ namespace Comformation.Pinpoint.ApplicationSettings
 
         /// <summary>
         /// WebUrl
-        /// The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.
+        /// The web URL that Amazon Pinpoint calls to invoke the Lambda function over HTTPS.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -38,8 +38,8 @@ namespace Comformation.Pinpoint.ApplicationSettings
 
         /// <summary>
         /// LambdaFunctionName
-        /// The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to
-        /// customize a segment for a campaign.
+        /// The name or Amazon Resource Name (ARN) of the Lambda function that Amazon Pinpoint invokes to send
+        /// messages for campaigns in the application.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

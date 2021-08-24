@@ -40,6 +40,8 @@ namespace Comformation.EFS.AccessPoint
         /// representing the file&#39;s mode bits.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 4
         /// Pattern: ^[0-7]{3,4}$
         /// Update requires: Replacement
         /// </summary>

@@ -14,7 +14,8 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ServiceAccessRoleArn
-        /// The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+        /// iam:PassRole action.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

@@ -23,9 +23,12 @@ namespace Comformation.IAM.User
 
             /// <summary>
             /// LoginProfile
-            /// Creates a password for the specified user, giving the user the ability to access AWS services
-            /// through the AWS Management Console. For more information about managing passwords, see Managing
-            /// Passwords in the IAM User Guide.
+            /// Creates a password for the specified IAM user. A password allows an IAM user to access AWS services
+            /// through the AWS Management Console.
+            /// You can use the AWS CLI, the AWS API, or the Users page in the IAM console to create a password for
+            /// any IAM user. Use ChangePassword to update your own existing password in the My Security Credentials
+            /// page in the AWS Management Console.
+            /// For more information about managing passwords, see Managing passwords in the IAM User Guide.
             /// Required: No
             /// Type: LoginProfile
             /// Update requires: No interruption
@@ -46,7 +49,7 @@ namespace Comformation.IAM.User
 
             /// <summary>
             /// Path
-            /// The path for the user name. For more information about paths, see IAM Identifiers in the IAM User
+            /// The path for the user name. For more information about paths, see IAM identifiers in the IAM User
             /// Guide.
             /// This parameter is optional. If it is not included, it defaults to a slash (/).
             /// This parameter allows (through its regex pattern) a string of characters consisting of either a
@@ -87,11 +90,11 @@ namespace Comformation.IAM.User
 
             /// <summary>
             /// Tags
-            /// A list of tags that you want to attach to the newly created user. Each tag consists of a key name
-            /// and an associated value. For more information about tagging, see Tagging IAM Identities in the IAM
-            /// User Guide.
-            /// Note If any one of the tags is invalid or if you exceed the allowed number of tags per user, then
-            /// the entire request fails and the user is not created.
+            /// A list of tags that you want to attach to the new user. Each tag consists of a key name and an
+            /// associated value. For more information about tagging, see Tagging IAM resources in the IAM User
+            /// Guide.
+            /// Note If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the
+            /// entire request fails and the resource is not created.
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 50

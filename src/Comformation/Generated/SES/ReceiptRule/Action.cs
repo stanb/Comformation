@@ -57,7 +57,7 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// WorkmailAction
-        /// Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+        /// Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
         /// Required: No
         /// Type: WorkmailAction
         /// Update requires: No interruption

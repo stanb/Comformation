@@ -13,16 +13,6 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// Auth
-        /// The authentication method to use when sending data to an HTTPS endpoint.
-        /// Required: No
-        /// Type: HttpAuthorization
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Auth")]
-        public HttpAuthorization Auth { get; set; }
-
-        /// <summary>
         /// ConfirmationUrl
         /// The URL to which AWS IoT sends a confirmation message. The value of the confirmation URL must be a
         /// prefix of the endpoint URL. If you do not specify a confirmation URL AWS IoT uses the endpoint URL
@@ -56,6 +46,16 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("Url")]
         public Union<string, IntrinsicFunction> Url { get; set; }
+
+        /// <summary>
+        /// Auth
+        /// The authentication method to use when sending data to an HTTPS endpoint.
+        /// Required: No
+        /// Type: HttpAuthorization
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Auth")]
+        public HttpAuthorization Auth { get; set; }
 
     }
 }

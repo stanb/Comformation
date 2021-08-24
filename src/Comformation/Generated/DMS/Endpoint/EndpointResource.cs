@@ -13,23 +13,34 @@ namespace Comformation.DMS.Endpoint
         public class EndpointProperties
         {
             /// <summary>
-            /// KmsKeyId
-            /// An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
-            /// If you don&#39;t specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption
-            /// key.
-            /// AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-            /// default encryption key for each AWS Region.
+            /// SybaseSettings
+            /// Settings in JSON format for the source and target SAP ASE endpoint. For information about other
+            /// available settings, see Extra connection attributes when using SAP ASE as a source for AWS DMS and
+            /// Extra connection attributes when using SAP ASE as a target for AWS DMS in the AWS Database Migration
+            /// Service User Guide.
             /// Required: No
-            /// Type: String
-            /// Update requires: Replacement
+            /// Type: SybaseSettings
+            /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+            public SybaseSettings SybaseSettings { get; set; }
+
+            /// <summary>
+            /// OracleSettings
+            /// Settings in JSON format for the source and target Oracle endpoint. For information about other
+            /// available settings, see Extra connection attributes when using Oracle as a source for AWS DMS and
+            /// Extra connection attributes when using Oracle as a target for AWS DMS in the AWS Database Migration
+            /// Service User Guide.
+            /// Required: No
+            /// Type: OracleSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public OracleSettings OracleSettings { get; set; }
 
             /// <summary>
             /// KafkaSettings
             /// Settings in JSON format for the target Apache Kafka endpoint. For more information about the
-            /// available settings, see Using Apache Kafka as a Target for AWS Database Migration Service in the AWS
-            /// Database Migration Service User Guide.
+            /// available settings, see Using object mapping to migrate data to a Kafka topic in the AWS Database
+            /// Migration Service User Guide.
             /// Required: No
             /// Type: KafkaSettings
             /// Update requires: No interruption
@@ -46,8 +57,127 @@ namespace Comformation.DMS.Endpoint
             public Union<int, IntrinsicFunction> Port { get; set; }
 
             /// <summary>
+            /// MySqlSettings
+            /// Settings in JSON format for the source and target MySQL endpoint. For information about other
+            /// available settings, see Extra connection attributes when using MySQL as a source for AWS DMS and
+            /// Extra connection attributes when using a MySQL-compatible database as a target for AWS DMS in the
+            /// AWS Database Migration Service User Guide.
+            /// Required: No
+            /// Type: MySqlSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public MySqlSettings MySqlSettings { get; set; }
+
+            /// <summary>
+            /// S3Settings
+            /// Settings in JSON format for the target Amazon S3 endpoint. For more information about the available
+            /// settings, see Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS in the AWS
+            /// Database Migration Service User Guide.
+            /// Required: No
+            /// Type: S3Settings
+            /// Update requires: No interruption
+            /// </summary>
+            public S3Settings S3Settings { get; set; }
+
+            /// <summary>
+            /// ResourceIdentifier
+            /// </summary>
+            public Union<string, IntrinsicFunction> ResourceIdentifier { get; set; }
+
+            /// <summary>
+            /// KinesisSettings
+            /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more
+            /// information about the available settings, see Using Amazon Kinesis Data Streams as a Target for AWS
+            /// Database Migration Service in the AWS Database Migration Service User Guide.
+            /// Required: No
+            /// Type: KinesisSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public KinesisSettings KinesisSettings { get; set; }
+
+            /// <summary>
+            /// SslMode
+            /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is none.
+            /// Note When engine_name is set to S3, then the only allowed value is none.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: none | require | verify-ca | verify-full
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> SslMode { get; set; }
+
+            /// <summary>
+            /// RedshiftSettings
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: RedshiftSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public RedshiftSettings RedshiftSettings { get; set; }
+
+            /// <summary>
+            /// EndpointType
+            /// The type of endpoint. Valid values are source and target.
+            /// Required: Yes
+            /// Type: String
+            /// Allowed values: source | target
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> EndpointType { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// One or more tags to be assigned to the endpoint.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: Replacement
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// Password
+            /// The password to be used to log in to the endpoint database.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Password { get; set; }
+
+            /// <summary>
+            /// MongoDbSettings
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: MongoDbSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public MongoDbSettings MongoDbSettings { get; set; }
+
+            /// <summary>
+            /// IbmDb2Settings
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: IbmDb2Settings
+            /// Update requires: No interruption
+            /// </summary>
+            public IbmDb2Settings IbmDb2Settings { get; set; }
+
+            /// <summary>
+            /// KmsKeyId
+            /// An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+            /// If you don&#39;t specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption
+            /// key.
+            /// AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
+            /// default encryption key for each AWS Region.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
             /// DatabaseName
-            /// The name of the endpoint database.
+            /// The name of the endpoint database. For a MySQL source or target endpoint, do not specify
+            /// DatabaseName.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -75,17 +205,6 @@ namespace Comformation.DMS.Endpoint
             public ElasticsearchSettings ElasticsearchSettings { get; set; }
 
             /// <summary>
-            /// S3Settings
-            /// Settings in JSON format for the target Amazon S3 endpoint. For more information about the available
-            /// settings, see Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS in the AWS
-            /// Database Migration Service User Guide.
-            /// Required: No
-            /// Type: S3Settings
-            /// Update requires: No interruption
-            /// </summary>
-            public S3Settings S3Settings { get; set; }
-
-            /// <summary>
             /// EngineName
             /// The type of engine for the endpoint. Valid values, depending on the EndpointType value, include
             /// &quot;mysql&quot;, &quot;oracle&quot;, &quot;postgres&quot;, &quot;mariadb&quot;, &quot;aurora&quot;, &quot;aurora-postgresql&quot;, &quot;redshift&quot;, &quot;s3&quot;, &quot;db2&quot;,
@@ -96,6 +215,17 @@ namespace Comformation.DMS.Endpoint
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> EngineName { get; set; }
+
+            /// <summary>
+            /// DocDbSettings
+            /// Settings in JSON format for the source DocumentDB endpoint. For more information about the available
+            /// settings, see the configuration properties section in Using DocumentDB as a Target for AWS Database
+            /// Migration Service in the AWS Database Migration Service User Guide.
+            /// Required: No
+            /// Type: DocDbSettings
+            /// Update requires: No interruption
+            /// </summary>
+            public DocDbSettings DocDbSettings { get; set; }
 
             /// <summary>
             /// DynamoDbSettings
@@ -109,17 +239,6 @@ namespace Comformation.DMS.Endpoint
             public DynamoDbSettings DynamoDbSettings { get; set; }
 
             /// <summary>
-            /// KinesisSettings
-            /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more
-            /// information about the available settings, see Using Amazon Kinesis Data Streams as a Target for AWS
-            /// Database Migration Service in the AWS Database Migration Service User Guide.
-            /// Required: No
-            /// Type: KinesisSettings
-            /// Update requires: No interruption
-            /// </summary>
-            public KinesisSettings KinesisSettings { get; set; }
-
-            /// <summary>
             /// Username
             /// The user name to be used to log in to the endpoint database.
             /// Required: No
@@ -129,15 +248,13 @@ namespace Comformation.DMS.Endpoint
             public Union<string, IntrinsicFunction> Username { get; set; }
 
             /// <summary>
-            /// SslMode
-            /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is none
-            /// Note When engine_name is set to S3 then the only alowed value is none
+            /// MicrosoftSqlServerSettings
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
-            /// Type: String
-            /// Allowed values: none | require | verify-ca | verify-full
+            /// Type: MicrosoftSqlServerSettings
             /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> SslMode { get; set; }
+            public MicrosoftSqlServerSettings MicrosoftSqlServerSettings { get; set; }
 
             /// <summary>
             /// ServerName
@@ -162,25 +279,6 @@ namespace Comformation.DMS.Endpoint
             public Union<string, IntrinsicFunction> ExtraConnectionAttributes { get; set; }
 
             /// <summary>
-            /// EndpointType
-            /// The type of endpoint. Valid values are source and target.
-            /// Required: Yes
-            /// Type: String
-            /// Allowed values: source | target
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> EndpointType { get; set; }
-
-            /// <summary>
-            /// Tags
-            /// One or more tags to be assigned to the endpoint.
-            /// Required: No
-            /// Type: List of Tag
-            /// Update requires: Replacement
-            /// </summary>
-            public List<Tag> Tags { get; set; }
-
-            /// <summary>
             /// EndpointIdentifier
             /// The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
             /// letters, digits, and hyphens. They can&#39;t end with a hyphen, or contain two consecutive hyphens.
@@ -189,15 +287,6 @@ namespace Comformation.DMS.Endpoint
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> EndpointIdentifier { get; set; }
-
-            /// <summary>
-            /// Password
-            /// The password to be used to log in to the endpoint database.
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> Password { get; set; }
 
             /// <summary>
             /// CertificateArn
@@ -209,15 +298,13 @@ namespace Comformation.DMS.Endpoint
             public Union<string, IntrinsicFunction> CertificateArn { get; set; }
 
             /// <summary>
-            /// MongoDbSettings
-            /// Settings in JSON format for the source MongoDB endpoint. For more information about the available
-            /// settings, see Using MongoDB as a Target for AWS Database Migration Service in the AWS Database
-            /// Migration Service User Guide.
+            /// PostgreSqlSettings
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
-            /// Type: MongoDbSettings
+            /// Type: PostgreSqlSettings
             /// Update requires: No interruption
             /// </summary>
-            public MongoDbSettings MongoDbSettings { get; set; }
+            public PostgreSqlSettings PostgreSqlSettings { get; set; }
 
         }
 

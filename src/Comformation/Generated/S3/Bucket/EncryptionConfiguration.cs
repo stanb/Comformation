@@ -14,10 +14,10 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ReplicaKmsKeyID
-        /// Specifies the ID (Key ARN or Alias ARN) of the customer managed customer master key (CMK) stored in
-        /// AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt
-        /// replica objects. Amazon S3 only supports symmetric customer managed CMKs. For more information, see
-        /// Using Symmetric and Asymmetric Keys in the AWS Key Management Service Developer Guide.
+        /// Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key
+        /// Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica
+        /// objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see
+        /// Using symmetric and asymmetric keys in the AWS Key Management Service Developer Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

@@ -48,11 +48,11 @@ namespace Comformation.AuditManager.Assessment
         /// <summary>
         /// CreatedBy
         /// The IAM user or role that created the delegation.
-        /// Required: No
-        /// Type: String
         /// Minimum: 1
         /// Maximum: 100
-        /// Pattern: ^[a-zA-Z0-9\s-_()\[\]]+$
+        /// Pattern: ^[a-zA-Z0-9-_()\\[\\]\\s]+$
+        /// Required: No
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CreatedBy")]
@@ -78,7 +78,7 @@ namespace Comformation.AuditManager.Assessment
         /// Type: String
         /// Minimum: 1
         /// Maximum: 300
-        /// Pattern: ^[\w\W\s\S]*$
+        /// Pattern: ^[^\\]*$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AssessmentName")]
@@ -112,7 +112,8 @@ namespace Comformation.AuditManager.Assessment
         /// <summary>
         /// RoleType
         /// The type of customer persona.
-        /// Note In CreateAssessment, RoleType can only be PROCESS_OWNER.
+        /// Note In CreateAssessment, roleType can only be PROCESS_OWNER. In UpdateSettings, roleType can only
+        /// be PROCESS_OWNER. In BatchCreateDelegationByAssessment, roleType can only be RESOURCE_OWNER.
         /// Required: No
         /// Type: String
         /// Allowed values: PROCESS_OWNER | RESOURCE_OWNER

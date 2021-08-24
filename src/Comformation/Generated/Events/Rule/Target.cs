@@ -38,8 +38,6 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// DeadLetterConfig
         /// The DeadLetterConfig that defines the target queue to send dead-letter queue events to.
-        /// To learn more using a dead-letter queue to send events that fail to be delivered to a target, see
-        /// Event retry policy and using dead-letter queues.
         /// Required: No
         /// Type: DeadLetterConfig
         /// Update requires: No interruption
@@ -61,9 +59,12 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// HttpParameters
-        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
-        /// If you specify an API Gateway REST API as a target, you can use this parameter to specify headers,
-        /// path parameter, query string keys/values as part of your target invoking request.
+        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+        /// ApiDestination.
+        /// If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+        /// parameter to specify headers, path parameters, and query string keys/values as part of your target
+        /// invoking request. If you&#39;re using ApiDestinations, the corresponding Connection can also have these
+        /// values configured. In case of any conflicting keys, values from the Connection take precedence.
         /// Required: No
         /// Type: HttpParameters
         /// Update requires: No interruption
@@ -73,9 +74,7 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// Id
-        /// A name for the target. Use a string that will help you identify the target. Each target associated
-        /// with a rule must have an Id unique for that rule.
-        /// The Id can include alphanumeric characters, periods (. ), hyphens (-), and underscores (_).
+        /// The ID of the target. We recommend using a memorable and unique string.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -88,8 +87,8 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// Input
-        /// Valid JSON text passed to the target. If you use this property, nothing from the event text itself
-        /// is passed to the target.
+        /// Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the
+        /// target. For more information, see The JavaScript Object Notation (JSON) Data Interchange Format.
         /// Required: No
         /// Type: String
         /// Maximum: 8192
@@ -100,8 +99,9 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// InputPath
-        /// When you don&#39;t want to pass the entire matched event, InputPath describes which part of the event to
-        /// pass to the target.
+        /// The value of the JSONPath that is used for extracting part of the matched event when passing it to
+        /// the target. You must use JSON dot notation, not bracket notation. For more information about JSON
+        /// paths, see JSONPath.
         /// Required: No
         /// Type: String
         /// Maximum: 256
@@ -136,9 +136,10 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// RedshiftDataParameters
-        /// Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
-        /// If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
-        /// Redshift Data API ExecuteStatement based on EventBridge events.
+        /// Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
+        /// cluster.
+        /// If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
+        /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.
         /// Required: No
         /// Type: RedshiftDataParameters
         /// Update requires: No interruption
@@ -148,9 +149,8 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// RetryPolicy
-        /// A RetryPolicy object that includes information about the retry policy settings.
-        /// To learn more using retry policy settings and using dead-letter queues, see Event retry policy and
-        /// using dead-letter queues.
+        /// The RetryPolicy object that contains the retry policy configuration to use for the dead-letter
+        /// queue.
         /// Required: No
         /// Type: RetryPolicy
         /// Update requires: No interruption
@@ -162,9 +162,6 @@ namespace Comformation.Events.Rule
         /// RoleArn
         /// The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
         /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.
-        /// If you&#39;re setting an event bus in another account as the target and that account granted permission
-        /// to your account through an organization instead of directly by the account ID, you must specify a
-        /// RoleArn with proper permissions here in this parameter.
         /// Required: No
         /// Type: String
         /// Minimum: 1

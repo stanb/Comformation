@@ -15,7 +15,7 @@ namespace Comformation.AppMesh.Mesh
             /// <summary>
             /// MeshName
             /// The name to use for the service mesh.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

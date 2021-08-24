@@ -14,8 +14,7 @@ namespace Comformation.ECS.Service
 
         /// <summary>
         /// Type
-        /// The deployment controller type to use.
-        /// There are three deployment controller types available:
+        /// The deployment controller type to use. There are three deployment controller types available:
         /// ECS The rolling update (ECS) deployment type involves replacing the current running version of the
         /// container with the latest version. The number of containers Amazon ECS adds or removes from the
         /// service during a rolling update is controlled by adjusting the minimum and maximum number of healthy
@@ -24,9 +23,9 @@ namespace Comformation.ECS.Service
         /// CodeDeploy, which allows you to verify a new deployment of a service before sending production
         /// traffic to it. EXTERNAL The external (EXTERNAL) deployment type enables you to use any third-party
         /// deployment controller for full control over the deployment process for an Amazon ECS service.
-        /// Allowed Values: ECS | EXTERNAL
         /// Required: No
         /// Type: String
+        /// Allowed values: CODE_DEPLOY | ECS | EXTERNAL
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Type")]

@@ -56,23 +56,23 @@ namespace Comformation.Kendra.DataSource
         /// An array of objects that map database column names to the corresponding fields in an index. You must
         /// first create the fields in the index using the UpdateIndex operation.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
         /// <summary>
         /// ChangeDetectingColumns
         /// One to five columns that indicate when a document in the database has changed.
         /// Required: Yes
-        /// Type: ChangeDetectingColumns
+        /// Type: List of String
         /// Maximum: 5
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ChangeDetectingColumns")]
-        public ChangeDetectingColumns ChangeDetectingColumns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ChangeDetectingColumns { get; set; }
 
     }
 }

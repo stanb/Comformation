@@ -38,7 +38,7 @@ namespace Comformation.IAM.Role
             /// <summary>
             /// ManagedPolicyArns
             /// A list of Amazon Resource Names (ARNs) of the IAM managed policies that you want to attach to the
-            /// user.
+            /// role.
             /// For more information about ARNs, see Amazon Resource Names (ARNs) and AWS Service Namespaces in the
             /// AWS General Reference.
             /// Required: No
@@ -52,13 +52,13 @@ namespace Comformation.IAM.Role
             /// The maximum session duration (in seconds) that you want to set for the specified role. If you do not
             /// specify a value for this setting, the default maximum of one hour is applied. This setting can have
             /// a value from 1 hour to 12 hours.
-            /// Anyone who assumes the role from the AWS CLI or API can use the DurationSeconds API parameter or the
+            /// Anyone who assumes the role from the or API can use the DurationSeconds API parameter or the
             /// duration-seconds CLI parameter to request a longer session. The MaxSessionDuration setting
             /// determines the maximum duration that can be requested using the DurationSeconds parameter. If users
             /// don&#39;t specify a value for the DurationSeconds parameter, their security credentials are valid for
             /// one hour by default. This applies when you use the AssumeRole* API operations or the assume-role*
             /// CLI operations but does not apply when you use those operations to create a console URL. For more
-            /// information, see Using IAM Roles in the IAM User Guide.
+            /// information, see Using IAM roles in the IAM User Guide.
             /// Required: No
             /// Type: Integer
             /// Minimum: 3600
@@ -87,7 +87,7 @@ namespace Comformation.IAM.Role
             /// <summary>
             /// PermissionsBoundary
             /// The ARN of the policy used to set the permissions boundary for the role.
-            /// For more information about permissions boundaries, see Permissions Boundaries for IAM Identities in
+            /// For more information about permissions boundaries, see Permissions boundaries for IAM identities in
             /// the IAM User Guide.
             /// Required: No
             /// Type: String
@@ -120,8 +120,8 @@ namespace Comformation.IAM.Role
 
             /// <summary>
             /// RoleName
-            /// A name for the IAM role. For valid values, see the RoleName parameter for the CreateRole action in
-            /// the IAM User Guide.
+            /// A name for the IAM role, up to 64 characters in length. For valid values, see the RoleName parameter
+            /// for the CreateRole action in the IAM User Guide.
             /// This parameter allows (per its regex pattern) a string of characters consisting of upper and
             /// lowercase alphanumeric characters with no spaces. You can also include any of the following
             /// characters: _+=,. @-. The role name must be unique within the account. Role names are not
@@ -143,8 +143,8 @@ namespace Comformation.IAM.Role
 
             /// <summary>
             /// Tags
-            /// A list of tags that are attached to the specified role. For more information about tagging, see
-            /// Tagging IAM Identities in the IAM User Guide.
+            /// A list of tags that are attached to the role. For more information about tagging, see Tagging IAM
+            /// resources in the IAM User Guide.
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 50

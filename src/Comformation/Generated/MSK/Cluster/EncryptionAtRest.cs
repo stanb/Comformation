@@ -14,8 +14,8 @@ namespace Comformation.MSK.Cluster
 
         /// <summary>
         /// DataVolumeKMSKeyId
-        /// The ARN of the AWS KMS key for encrypting data at rest. If you don&#39;t specify a KMS key, MSK creates
-        /// one for you and uses it on your behalf.
+        /// The ARN of the Amazon KMS key for encrypting data at rest. If you don&#39;t specify a KMS key, MSK
+        /// creates one for you and uses it on your behalf.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement

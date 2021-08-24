@@ -44,7 +44,7 @@ namespace Comformation.WAFv2.RuleGroup
 
         /// <summary>
         /// FieldToMatch
-        /// The part of a web request that you want AWS WAF to inspect. For more information, see FieldToMatch.
+        /// The part of a web request that you want AWS WAF to inspect.
         /// Required: Yes
         /// Type: FieldToMatch
         /// Update requires: No interruption

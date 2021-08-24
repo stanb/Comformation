@@ -29,7 +29,7 @@ namespace Comformation.EMR.InstanceFleetConfig
         /// BlockDurationMinutes
         /// The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the
         /// Spot Instance does not terminate before the defined duration expires, and defined duration pricing
-        /// for Spot instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period
+        /// for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period
         /// starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2
         /// marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives
         /// the instance a two-minute warning before it terminates.

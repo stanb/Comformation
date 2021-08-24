@@ -12,6 +12,15 @@ namespace Comformation.Detective.Graph
     {
         public class GraphProperties
         {
+            /// <summary>
+            /// Tags
+            /// The tag values to assign to the new behavior graph.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::Detective::Graph";

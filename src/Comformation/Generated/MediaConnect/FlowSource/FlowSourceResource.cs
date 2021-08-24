@@ -79,7 +79,7 @@ namespace Comformation.MediaConnect.FlowSource
 
             /// <summary>
             /// Name
-            /// The name of the source.
+            /// The name of the VPC interface.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

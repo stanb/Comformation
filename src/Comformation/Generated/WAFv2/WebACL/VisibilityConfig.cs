@@ -25,8 +25,8 @@ namespace Comformation.WAFv2.WebACL
 
         /// <summary>
         /// CloudWatchMetricsEnabled
-        /// A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of
-        /// available metrics, see AWS WAF Metrics.
+        /// A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the
+        /// list of available metrics, see AWS WAF Metrics.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption
@@ -36,10 +36,10 @@ namespace Comformation.WAFv2.WebACL
 
         /// <summary>
         /// MetricName
-        /// A friendly name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z,
-        /// a-z, 0-9), with length from one to 128 characters. It can&#39;t contain whitespace or metric names
-        /// reserved for AWS WAF, for example &quot;All&quot; and &quot;Default_Action. &quot; You can&#39;t change a MetricName after
-        /// you create a VisibilityConfig.
+        /// The descriptive name of the Amazon CloudWatch metric. The name can contain only alphanumeric
+        /// characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can&#39;t contain whitespace or
+        /// metric names reserved for AWS WAF, for example &quot;All&quot; and &quot;Default_Action. &quot; You can&#39;t change a
+        /// MetricName after you create a VisibilityConfig.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1

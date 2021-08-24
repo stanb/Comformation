@@ -15,8 +15,8 @@ namespace Comformation.SSM.PatchBaseline
         /// <summary>
         /// ApproveUntilDate
         /// The cutoff date for auto approval of released patches. Any patches released on or before this date
-        /// are installed automatically. Not supported on Ubuntu Server.
-        /// Enter dates in the format YYYY-MM-DD. For example, 2020-12-31.
+        /// are installed automatically. Not supported on Debian Server or Ubuntu Server.
+        /// Enter dates in the format YYYY-MM-DD. For example, 2021-12-31.
         /// Required: No
         /// Type: PatchStringDate
         /// Minimum: 1
@@ -29,7 +29,7 @@ namespace Comformation.SSM.PatchBaseline
         /// <summary>
         /// EnableNonSecurity
         /// For instances identified by the approval rule filters, enables a patch baseline to apply
-        /// non-security updates available in the specified repository. The default value is &#39;false&#39;. Applies to
+        /// non-security updates available in the specified repository. The default value is false. Applies to
         /// Linux instances only.
         /// Required: No
         /// Type: Boolean
@@ -54,10 +54,11 @@ namespace Comformation.SSM.PatchBaseline
         /// as approved in the patch baseline. For example, a value of 7 means that patches are approved seven
         /// days after they are released.
         /// You must specify a value for ApproveAfterDays.
+        /// Exception: Not supported on Debian Server or Ubuntu Server.
         /// Required: Conditional
         /// Type: Integer
         /// Minimum: 0
-        /// Maximum: 100
+        /// Maximum: 360
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ApproveAfterDays")]

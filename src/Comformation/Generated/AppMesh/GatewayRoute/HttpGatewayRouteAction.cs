@@ -23,5 +23,15 @@ namespace Comformation.AppMesh.GatewayRoute
         [JsonProperty("Target")]
         public GatewayRouteTarget Target { get; set; }
 
+        /// <summary>
+        /// Rewrite
+        /// The gateway route action to rewrite.
+        /// Required: No
+        /// Type: HttpGatewayRouteRewrite
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Rewrite")]
+        public HttpGatewayRouteRewrite Rewrite { get; set; }
+
     }
 }

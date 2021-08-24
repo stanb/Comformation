@@ -13,6 +13,22 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
+        /// Enabled
+        /// 		
+        /// A flag that specifies whether Origin Shield is enabled.
+        /// 		
+        /// When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your
+        /// origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple
+        /// edge locations or regional edge caches.
+        /// 	
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Enabled")]
+        public Union<bool, IntrinsicFunction> Enabled { get; set; }
+
+        /// <summary>
         /// OriginShieldRegion
         /// 		
         /// The AWS Region for Origin Shield.
@@ -32,22 +48,6 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("OriginShieldRegion")]
         public Union<string, IntrinsicFunction> OriginShieldRegion { get; set; }
-
-        /// <summary>
-        /// Enabled
-        /// 		
-        /// A flag that specifies whether Origin Shield is enabled.
-        /// 		
-        /// When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your
-        /// origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple
-        /// edge locations or regional edge caches.
-        /// 	
-        /// Required: Yes
-        /// Type: Boolean
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Enabled")]
-        public Union<bool, IntrinsicFunction> Enabled { get; set; }
 
     }
 }

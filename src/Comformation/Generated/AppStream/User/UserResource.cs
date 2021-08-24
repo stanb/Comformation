@@ -15,7 +15,7 @@ namespace Comformation.AppStream.User
             /// <summary>
             /// UserName
             /// The email address of the user.
-            /// Note Users&#39; email addresses are case-sensitive. During login, if they specify an email address that
+            /// Users&#39; email addresses are case-sensitive. During login, if they specify an email address that
             /// doesn&#39;t use the same capitalization as the email address specified when their user pool account was
             /// created, a &quot;user does not exist&quot; error message displays.
             /// Required: Yes

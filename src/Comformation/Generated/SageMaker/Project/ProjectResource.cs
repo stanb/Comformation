@@ -14,7 +14,9 @@ namespace Comformation.SageMaker.Project
         {
             /// <summary>
             /// Tags
-            /// Not currently supported by AWS CloudFormation.
+            /// A list of key-value pairs to apply to this resource.
+            /// For more information, see Resource Tag and Using Cost Allocation Tags in the AWS Billing and Cost
+            /// Management User Guide.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: Replacement
@@ -46,7 +48,8 @@ namespace Comformation.SageMaker.Project
 
             /// <summary>
             /// ServiceCatalogProvisioningDetails
-            /// Not currently supported by AWS CloudFormation.
+            /// The product ID and provisioning artifact ID to provision a service catalog. For information, see
+            /// What is AWS Service Catalog.
             /// Required: Yes
             /// Type: Json
             /// Update requires: Replacement
@@ -66,7 +69,6 @@ namespace Comformation.SageMaker.Project
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProjectArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProjectArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProjectId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProjectId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CreationTime = new ResourceAttribute<Union<string, IntrinsicFunction>>("CreationTime");
-        public static readonly ResourceAttribute<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>> ServiceCatalogProvisionedProductDetails = new ResourceAttribute<Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>>("ServiceCatalogProvisionedProductDetails");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProjectStatus = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProjectStatus");
     }
 }

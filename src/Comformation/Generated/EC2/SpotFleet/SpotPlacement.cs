@@ -7,7 +7,7 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet SpotPlacement
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotplacement.html
     /// </summary>
     public class SpotPlacement
     {
@@ -19,7 +19,7 @@ namespace Comformation.EC2.SpotFleet
         /// us-west-2b&quot;.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AvailabilityZone")]
         public Union<string, IntrinsicFunction> AvailabilityZone { get; set; }
@@ -29,7 +29,7 @@ namespace Comformation.EC2.SpotFleet
         /// The name of the placement group.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("GroupName")]
         public Union<string, IntrinsicFunction> GroupName { get; set; }
@@ -41,7 +41,7 @@ namespace Comformation.EC2.SpotFleet
         /// Required: No
         /// Type: String
         /// Allowed values: dedicated | default | host
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Tenancy")]
         public Union<string, IntrinsicFunction> Tenancy { get; set; }

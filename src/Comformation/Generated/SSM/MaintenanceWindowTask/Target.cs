@@ -18,7 +18,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
         /// i-1234567890abcdef0,i-9876543210abcdef0 to run a command on two EC2 instances. For more information
         /// about how to target instances within a maintenance window task, see About
         /// &#39;register-task-with-maintenance-window&#39; Options and Values in the AWS Systems Manager User Guide.
-        /// Required: No
+        /// Required: Yes
         /// Type: List of String
         /// Maximum: 50
         /// Update requires: No interruption

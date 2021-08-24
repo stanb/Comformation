@@ -20,8 +20,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// Required: Yes
         /// Type: String
         /// Minimum: 0
-        /// Maximum: 16
-        /// Pattern: ^[\\w:\\-\\/\\*]+$
+        /// Maximum: 2048
+        /// Pattern: ^[\w:\-\/\*]+$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Target")]
@@ -41,7 +41,9 @@ namespace Comformation.DLM.LifecyclePolicy
 
         /// <summary>
         /// RetainRule
-        /// Not currently supported by AWS CloudFormation.
+        /// 		
+        /// Specifies the retention rule for cross-Region snapshot copies.
+        /// 	
         /// Required: No
         /// Type: CrossRegionCopyRetainRule
         /// Update requires: No interruption

@@ -245,6 +245,17 @@ namespace Comformation.Cognito.UserPoolClient
             /// </summary>
             public Union<string, IntrinsicFunction> PreventUserExistenceErrors { get; set; }
 
+            /// <summary>
+            /// EnableTokenRevocation
+            /// Enables or disables token revocation. For more information about revoking tokens, see RevokeToken.
+            /// If you don&#39;t include this parameter, token revocation is automatically enabled for the new user pool
+            /// client.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> EnableTokenRevocation { get; set; }
+
         }
 
         public string Type { get; } = "AWS::Cognito::UserPoolClient";

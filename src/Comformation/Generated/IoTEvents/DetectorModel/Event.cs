@@ -13,6 +13,16 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
+        /// Actions
+        /// The actions to be performed.
+        /// Required: No
+        /// Type: List of Action
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Actions")]
+        public List<Action> Actions { get; set; }
+
+        /// <summary>
         /// Condition
         /// Optional. The Boolean expression that, when TRUE, causes the actions to be performed. If not
         /// present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the
@@ -26,19 +36,9 @@ namespace Comformation.IoTEvents.DetectorModel
         public Union<string, IntrinsicFunction> Condition { get; set; }
 
         /// <summary>
-        /// Actions
-        /// The actions to be performed.
-        /// Required: No
-        /// Type: List of Action
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Actions")]
-        public List<Action> Actions { get; set; }
-
-        /// <summary>
         /// EventName
         /// The name of the event.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Maximum: 128
         /// Update requires: No interruption

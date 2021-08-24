@@ -48,8 +48,8 @@ namespace Comformation.GreengrassV2.ComponentVersion
 
         /// <summary>
         /// MaxIdleTimeInSeconds
-        /// The maximum amount of time in seconds that a non-pinned Lambda function can idle before the AWS IoT
-        /// Greengrass Core software stops its process.
+        /// The maximum amount of time in seconds that a non-pinned Lambda function can idle before the software
+        /// stops its process.
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
@@ -81,10 +81,10 @@ namespace Comformation.GreengrassV2.ComponentVersion
         /// <summary>
         /// Pinned
         /// Whether or not the Lambda function is pinned, or long-lived.
-        /// A pinned Lambda function starts when the AWS IoT Greengrass Core starts and keeps running in its own
-        /// container. A non-pinned Lambda function starts only when it receives a work item and exists after it
-        /// idles for maxIdleTimeInSeconds. If the function has multiple work items, the AWS IoT Greengrass Core
-        /// software creates multiple instances of the function.
+        /// A pinned Lambda function starts when the starts and keeps running in its own container. A non-pinned
+        /// Lambda function starts only when it receives a work item and exists after it idles for
+        /// maxIdleTimeInSeconds. If the function has multiple work items, the software creates multiple
+        /// instances of the function.
         /// Default: true
         /// Required: No
         /// Type: Boolean

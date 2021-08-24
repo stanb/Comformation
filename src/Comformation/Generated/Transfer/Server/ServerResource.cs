@@ -14,8 +14,9 @@ namespace Comformation.Transfer.Server
         {
             /// <summary>
             /// LoggingRole
-            /// Allows the service to write your users&#39; activity to your Amazon CloudWatch logs for monitoring and
-            /// auditing purposes.
+            /// Specifies the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+            /// allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set,
+            /// user activity can be viewed in your CloudWatch logs.
             /// Required: No
             /// Type: String
             /// Minimum: 20
@@ -38,9 +39,10 @@ namespace Comformation.Transfer.Server
 
             /// <summary>
             /// IdentityProviderDetails
-            /// Required when IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the
-            /// information required to call a customer-supplied authentication API, including the API Gateway URL.
-            /// Not required when IdentityProviderType is set to SERVICE_MANAGED.
+            /// Required when IdentityProviderType is set to AWS_DIRECTORY_SERVICE or API_GATEWAY. Accepts an array
+            /// containing all of the information required to use a directory in AWS_DIRECTORY_SERVICE or invoke a
+            /// customer-supplied authentication API, including the API Gateway URL. Not required when
+            /// IdentityProviderType is set to SERVICE_MANAGED.
             /// Required: No
             /// Type: IdentityProviderDetails
             /// Update requires: No interruption
@@ -75,6 +77,16 @@ namespace Comformation.Transfer.Server
             public Union<string, IntrinsicFunction> SecurityPolicyName { get; set; }
 
             /// <summary>
+            /// ProtocolDetails
+            /// Protocol settings that are configured for your server.
+            /// Note Only valid in the UpdateServer API.
+            /// Required: No
+            /// Type: ProtocolDetails
+            /// Update requires: No interruption
+            /// </summary>
+            public ProtocolDetails ProtocolDetails { get; set; }
+
+            /// <summary>
             /// Domain
             /// Specifies the domain of the storage system that is used for file transfers.
             /// Required: No
@@ -99,13 +111,17 @@ namespace Comformation.Transfer.Server
             /// <summary>
             /// IdentityProviderType
             /// Specifies the mode of authentication for a server. The default value is SERVICE_MANAGED, which
-            /// allows you to store and access user credentials within the AWS Transfer Family service. Use the
-            /// API_GATEWAY value to integrate with an identity provider of your choosing. The API_GATEWAY setting
-            /// requires you to provide an API Gateway endpoint URL to call for authentication using the
+            /// allows you to store and access user credentials within the AWS Transfer Family service.
+            /// Use AWS_DIRECTORY_SERVICE to provide access to Active Directory groups in AWS Managed Active
+            /// Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+            /// Connectors. This option also requires you to provide a Directory ID using the
+            /// IdentityProviderDetails parameter.
+            /// Use the API_GATEWAY value to integrate with an identity provider of your choosing. The API_GATEWAY
+            /// setting requires you to provide an API Gateway endpoint URL to call for authentication using the
             /// IdentityProviderDetails parameter.
             /// Required: No
             /// Type: String
-            /// Allowed values: API_GATEWAY | SERVICE_MANAGED
+            /// Allowed values: API_GATEWAY | AWS_DIRECTORY_SERVICE | SERVICE_MANAGED
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> IdentityProviderType { get; set; }

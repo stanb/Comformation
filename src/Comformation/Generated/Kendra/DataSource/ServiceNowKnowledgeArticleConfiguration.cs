@@ -27,24 +27,24 @@ namespace Comformation.Kendra.DataSource
         /// List of regular expressions applied to knowledge articles. Items that don&#39;t match the inclusion
         /// pattern are not indexed. The regex is applied to the field specified in the PatternTargetField.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeAttachmentFilePatterns")]
-        public DataSourceInclusionsExclusionsStrings IncludeAttachmentFilePatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> IncludeAttachmentFilePatterns { get; set; }
 
         /// <summary>
         /// ExcludeAttachmentFilePatterns
         /// List of regular expressions applied to knowledge articles. Items that don&#39;t match the inclusion
         /// pattern are not indexed. The regex is applied to the field specified in the PatternTargetField
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcludeAttachmentFilePatterns")]
-        public DataSourceInclusionsExclusionsStrings ExcludeAttachmentFilePatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExcludeAttachmentFilePatterns { get; set; }
 
         /// <summary>
         /// DocumentDataFieldName
@@ -78,12 +78,12 @@ namespace Comformation.Kendra.DataSource
         /// Mapping between ServiceNow fields and Amazon Kendra index fields. You must create the index field
         /// before you map the field.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
     }
 }

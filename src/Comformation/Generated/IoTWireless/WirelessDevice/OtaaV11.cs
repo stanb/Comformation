@@ -14,7 +14,10 @@ namespace Comformation.IoTWireless.WirelessDevice
 
         /// <summary>
         /// AppKey
-        /// The AppKey value.
+        /// 		
+        /// The AppKey value, with pattern of [a-fA-F0-9]{32}. The AppKey is a secret key, which you should
+        /// handle in a similar way as you would an application password. 			You can protect the AppKey value by
+        /// storing it in the AWS Secrets Manager and use the secretsmanager 	 			to reference this value.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -24,7 +27,10 @@ namespace Comformation.IoTWireless.WirelessDevice
 
         /// <summary>
         /// NwkKey
-        /// The NwkKey value.
+        /// 		
+        /// The NwkKey value. The NwkKey is a secret key, which you should handle in a similar way as you would
+        /// an application password. 			You can protect the NwkKey value by storing it in the AWS Secrets
+        /// Manager and use the secretsmanager 	 			to reference this value.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -34,7 +40,8 @@ namespace Comformation.IoTWireless.WirelessDevice
 
         /// <summary>
         /// JoinEui
-        /// The JoinEUI value.
+        /// 		
+        /// The JoinEUI value , with pattern of [a-fA-F0-9]{16}.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

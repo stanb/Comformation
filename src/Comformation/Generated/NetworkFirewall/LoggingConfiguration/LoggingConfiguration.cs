@@ -17,7 +17,7 @@ namespace Comformation.NetworkFirewall.LoggingConfiguration
         /// Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for
         /// stateful rule groups.
         /// Required: Yes
-        /// Type: LogDestinationConfigs
+        /// Type: List of LogDestinationConfig
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("LogDestinationConfigs")]

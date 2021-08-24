@@ -13,8 +13,18 @@ namespace Comformation.AppMesh.Route
     {
 
         /// <summary>
+        /// Path
+        /// The client request path to match on.
+        /// Required: No
+        /// Type: HttpPathMatch
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Path")]
+        public HttpPathMatch Path { get; set; }
+
+        /// <summary>
         /// Scheme
-        /// The client request scheme to match on. Specify only one.
+        /// The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -24,7 +34,7 @@ namespace Comformation.AppMesh.Route
 
         /// <summary>
         /// Headers
-        /// An object that represents the client request headers to match on.
+        /// The client request headers to match on.
         /// Required: No
         /// Type: List of HttpRouteHeader
         /// Update requires: No interruption
@@ -38,7 +48,7 @@ namespace Comformation.AppMesh.Route
         /// matches all requests to the virtual service name. You can also match for path-based routing of
         /// requests. For example, if your virtual service name is my-service. local and you want the route to
         /// match requests to my-service. local/metrics, your prefix should be /metrics.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -54,6 +64,16 @@ namespace Comformation.AppMesh.Route
         /// </summary>
         [JsonProperty("Method")]
         public Union<string, IntrinsicFunction> Method { get; set; }
+
+        /// <summary>
+        /// QueryParameters
+        /// The client request query parameters to match on.
+        /// Required: No
+        /// Type: List of QueryParameter
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("QueryParameters")]
+        public List<QueryParameter> QueryParameters { get; set; }
 
     }
 }

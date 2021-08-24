@@ -41,8 +41,13 @@ namespace Comformation.Athena.DataCatalog
             /// the following sets of required parameters, but not both. When one Lambda function processes metadata
             /// and another Lambda function reads data, the following syntax is used. Both parameters are required.
             /// metadata-function=lambda_arn, record-function=lambda_arn A composite Lambda function that processes
-            /// both metadata and data uses the following syntax. function=lambda_arn The GLUE type has no
-            /// parameters.
+            /// both metadata and data uses the following syntax. function=lambda_arn The GLUE type takes a catalog
+            /// ID parameter and is required. The catalog_id is the account ID of the AWS account to which the Glue
+            /// catalog belongs. catalog-id=catalog_id The GLUE data catalog type also applies to the default
+            /// AwsDataCatalog that already exists in your account, of which you can have only one and cannot
+            /// modify. Queries that specify a GLUE data catalog other than the default AwsDataCatalog must be run
+            /// on Athena engine version 2. In Regions where Athena engine version 2 is not available, creating new
+            /// GLUE data catalogs results in an INVALID_INPUT error.
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption
@@ -51,8 +56,7 @@ namespace Comformation.Athena.DataCatalog
 
             /// <summary>
             /// Tags
-            /// An optional list of comma separated tags (key-value pairs) that are custom attributes for the data
-            /// catalog.
+            /// The tags (key-value pairs) to associate with this resource.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

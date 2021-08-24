@@ -92,5 +92,6 @@ namespace Comformation.EKS.Cluster
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> EncryptionConfigKeyArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("EncryptionConfigKeyArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CertificateAuthorityData = new ResourceAttribute<Union<string, IntrinsicFunction>>("CertificateAuthorityData");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> OpenIdConnectIssuerUrl = new ResourceAttribute<Union<string, IntrinsicFunction>>("OpenIdConnectIssuerUrl");
     }
 }

@@ -46,7 +46,7 @@ namespace Comformation.DataSync.LocationSMB
             /// Password
             /// The password of the user who can mount the share, has the permissions to access files and folders in
             /// the SMB share.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Maximum: 104
             /// Pattern: ^. {0,104}$
@@ -64,7 +64,7 @@ namespace Comformation.DataSync.LocationSMB
             /// Type: String
             /// Maximum: 255
             /// Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\. )*([A-Za-z0-9\-]*[A-Za-z0-9])$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ServerHostname { get; set; }
 
@@ -93,6 +93,8 @@ namespace Comformation.DataSync.LocationSMB
             /// <summary>
             /// User
             /// The user who can mount the share, has the permissions to access files and folders in the SMB share.
+            /// For information about choosing a user name that ensures sufficient permissions to files, folders,
+            /// and metadata, see user.
             /// Required: Yes
             /// Type: String
             /// Maximum: 104

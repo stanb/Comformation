@@ -35,7 +35,7 @@ namespace Comformation.Batch.JobQueue
             /// is determined in descending order. For example, a job queue with a priority value of 10 is given
             /// scheduling preference over a job queue with a priority value of 1. All of the compute environments
             /// must be either EC2 (EC2 or SPOT) or Fargate (FARGATE or FARGATE_SPOT); EC2 and Fargate compute
-            /// environments cannot be mixed.
+            /// environments can&#39;t be mixed.
             /// Required: Yes
             /// Type: Integer
             /// Update requires: No interruption

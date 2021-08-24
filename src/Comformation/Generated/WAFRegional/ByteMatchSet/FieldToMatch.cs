@@ -40,10 +40,8 @@ namespace Comformation.WAFRegional.ByteMatchSet
 
         /// <summary>
         /// Data
-        /// 		
         /// When the value of Type is HEADER, enter the name of the header that you want AWS WAF to search,
         /// 			for example, User-Agent or Referer. The name of the header is not case sensitive.
-        /// 	
         /// When the value of Type is SINGLE_QUERY_ARG, enter the name of the parameter that you want AWS WAF to
         /// search, 	 for example, UserName or SalesRegion. The parameter name is not case sensitive.
         /// 	

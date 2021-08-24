@@ -14,11 +14,10 @@ namespace Comformation.EKS.Nodegroup
 
         /// <summary>
         /// MinSize
-        /// The minimum number of nodes that the managed node group can scale in to. This number must be greater
-        /// than zero.
+        /// The minimum number of nodes that the managed node group can scale in to.
         /// Required: No
         /// Type: Double
-        /// Minimum: 1
+        /// Minimum: 0
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MinSize")]
@@ -29,7 +28,7 @@ namespace Comformation.EKS.Nodegroup
         /// The current number of nodes that the managed node group should maintain.
         /// Required: No
         /// Type: Double
-        /// Minimum: 1
+        /// Minimum: 0
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DesiredSize")]

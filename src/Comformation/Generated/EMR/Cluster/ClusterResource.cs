@@ -125,8 +125,8 @@ namespace Comformation.EMR.Cluster
 
             /// <summary>
             /// LogEncryptionKmsKeyId
-            /// The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only
-            /// available with EMR version 5. 30. 0 and later, excluding EMR 6. 0. 0.
+            /// The AWS KMS key used for encrypting log files. This attribute is only available with EMR version 5.
+            /// 30. 0 and later, excluding EMR 6. 0. 0.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

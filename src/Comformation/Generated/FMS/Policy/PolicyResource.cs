@@ -101,12 +101,15 @@ namespace Comformation.FMS.Policy
             /// <summary>
             /// ResourceType
             /// The type of resource protected by or in scope of the policy. This is in the format shown in the AWS
-            /// Resource Types Reference. For AWS WAF and Shield Advanced, examples include
+            /// Resource Types Reference. To apply this policy to multiple resource types, specify a resource type
+            /// of ResourceTypeList and then specify the resource types in a ResourceTypeList.
+            /// For AWS WAF and Shield Advanced, example resource types include
             /// AWS::ElasticLoadBalancingV2::LoadBalancer and AWS::CloudFront::Distribution. For a security group
             /// common policy, valid values are AWS::EC2::NetworkInterface and AWS::EC2::Instance. For a security
             /// group content audit policy, valid values are AWS::EC2::SecurityGroup, AWS::EC2::NetworkInterface,
             /// and AWS::EC2::Instance. For a security group usage audit policy, the value is
-            /// AWS::EC2::SecurityGroup. For an AWS Network Firewall policy, the value is AWS::EC2::VPC.
+            /// AWS::EC2::SecurityGroup. For an AWS Network Firewall policy or DNS Firewall policy, the value is
+            /// AWS::EC2::VPC.
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
@@ -118,7 +121,8 @@ namespace Comformation.FMS.Policy
 
             /// <summary>
             /// ResourceTypeList
-            /// An array of ResourceType.
+            /// An array of ResourceType objects. Use this only to specify multiple resource types. To specify a
+            /// single resource type, use ResourceType.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -133,17 +137,17 @@ namespace Comformation.FMS.Policy
             /// policies, Firewall Manager supports one security group for each common policy and for each content
             /// audit policy. This is an adjustable limit that you can increase by contacting AWS Support. Valid
             /// values: WAFV2 | WAF |SHIELD_ADVANCED | SECURITY_GROUPS_COMMON | SECURITY_GROUPS_CONTENT_AUDIT |
-            /// SECURITY_GROUPS_USAGE_AUDIT | NETWORK_FIREWALL. ManagedServiceData - Details about the service that
-            /// are specific to the service type, in JSON format. For SHIELD_ADVANCED, this is an empty string.
-            /// Example: WAFV2 &quot;ManagedServiceData&quot;:
+            /// SECURITY_GROUPS_USAGE_AUDIT | NETWORK_FIREWALL | DNS_FIREWALL. ManagedServiceData - Details about
+            /// the service that are specific to the service type, in JSON format. For SHIELD_ADVANCED, this is an
+            /// empty string. Example: WAFV2 &quot;ManagedServiceData&quot;:
             /// &quot;{\&quot;type\&quot;:\&quot;WAFV2\&quot;,\&quot;preProcessRuleGroups\&quot;:[{\&quot;ruleGroupArn\&quot;:null,\&quot;overrideAction\&quot;:{\&quot;type\&quot;:\&quot;NONE\&quot;},\&quot;managedRuleGroupIdentifier\&quot;:{\&quot;version\&quot;:null,\&quot;vendorName\&quot;:\&quot;AWS\&quot;,\&quot;managedRuleGroupName\&quot;:\&quot;AWSManagedRulesAmazonIpReputationList\&quot;},\&quot;ruleGroupType\&quot;:\&quot;ManagedRuleGroup\&quot;,\&quot;excludeRules\&quot;:[]}],\&quot;postProcessRuleGroups\&quot;:[],\&quot;defaultAction\&quot;:{\&quot;type\&quot;:\&quot;ALLOW\&quot;},\&quot;overrideCustomerWebACLAssociation\&quot;:false,\&quot;loggingConfiguration\&quot;:{\&quot;logDestinationConfigs\&quot;:[\&quot;arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\&quot;],\&quot;redactedFields\&quot;:[{\&quot;redactedFieldType\&quot;:\&quot;SingleHeader\&quot;,\&quot;redactedFieldValue\&quot;:\&quot;Cookies\&quot;},{\&quot;redactedFieldType\&quot;:\&quot;Method\&quot;}]}}&quot;
             /// In the loggingConfiguration, you can specify one logDestinationConfigs, you can optionally provide
             /// up to 20 redactedFields, and the RedactedFieldType must be one of URI, QUERY_STRING, HEADER, or
             /// METHOD. Example: WAF Classic &quot;ManagedServiceData&quot;: &quot;{\&quot;type\&quot;: \&quot;WAF\&quot;, \&quot;ruleGroups\&quot;:
             /// [{\&quot;id\&quot;:\&quot;12345678-1bcd-9012-efga-0987654321ab\&quot;, \&quot;overrideAction\&quot; : {\&quot;type\&quot;:
             /// \&quot;COUNT\&quot;}}],\&quot;defaultAction\&quot;: {\&quot;type\&quot;: \&quot;BLOCK\&quot;}} AWS WAF Classic doesn&#39;t support rule groups
-            /// in CloudFormation. To create a WAF Classic policy through CloudFormation, create your rule groups
-            /// outside of CloudFormation, then provide the rule group IDs in the WAF managed service data
+            /// in CloudFront. To create a WAF Classic policy through CloudFormation, create your rule groups
+            /// outside of CloudFront, then provide the rule group IDs in the WAF managed service data
             /// specification. Example: SECURITY_GROUPS_COMMON
             /// &quot;SecurityServicePolicyData&quot;:{&quot;Type&quot;:&quot;SECURITY_GROUPS_COMMON&quot;,&quot;ManagedServiceData&quot;:&quot;{\&quot;type\&quot;:\&quot;SECURITY_GROUPS_COMMON\&quot;,\&quot;revertManualSecurityGroupChanges\&quot;:false,\&quot;exclusiveResourceSecurityGroupManagement\&quot;:false,\&quot;securityGroups\&quot;:[{\&quot;id\&quot;:\&quot;
             /// sg-000e55995d61a06bd\&quot;}]}&quot;},&quot;RemediationEnabled&quot;:false,&quot;ResourceType&quot;:&quot;AWS::EC2::NetworkInterface&quot;}
@@ -158,6 +162,9 @@ namespace Comformation.FMS.Policy
             /// &quot;SecurityServicePolicyData&quot;:{&quot;Type&quot;:&quot;SECURITY_GROUPS_USAGE_AUDIT&quot;,&quot;ManagedServiceData&quot;:&quot;{\&quot;type\&quot;:\&quot;SECURITY_GROUPS_USAGE_AUDIT\&quot;,\&quot;deleteUnusedSecurityGroups\&quot;:true,\&quot;coalesceRedundantSecurityGroups\&quot;:true}&quot;},&quot;RemediationEnabled&quot;:false,&quot;Resou
             /// rceType&quot;:&quot;AWS::EC2::SecurityGroup&quot;} Example: NETWORK_FIREWALL
             /// &quot;ManagedServiceData&quot;:&quot;{\&quot;type\&quot;:\&quot;NETWORK_FIREWALL\&quot;,\&quot;networkFirewallStatelessRuleGroupReferences\&quot;:[{\&quot;resourceARN\&quot;:\&quot;arn:aws:network-firewall:us-east-1:000000000000:stateless-rulegroup\/example\&quot;,\&quot;priority\&quot;:1}],\&quot;networkFirewallStatelessDefaultActions\&quot;:[\&quot;aws:drop\&quot;,\&quot;example\&quot;],\&quot;networkFirewallStatelessFragmentDefaultActions\&quot;:[\&quot;aws:drop\&quot;,\&quot;example\&quot;],\&quot;networkFirewallStatelessCustomActions\&quot;:[{\&quot;actionName\&quot;:\&quot;example\&quot;,\&quot;actionDefinition\&quot;:{\&quot;publishMetricAction\&quot;:{\&quot;dimensions\&quot;:[{\&quot;value\&quot;:\&quot;example\&quot;}]}}}],\&quot;networkFirewallStatefulRuleGroupReferences\&quot;:[{\&quot;resourceARN\&quot;:\&quot;arn:aws:network-firewall:us-east-1:000000000000:stateful-rulegroup\/example\&quot;}],\&quot;networkFirewallOrchestrationConfig\&quot;:{\&quot;singleFirewallEndpointPerVPC\&quot;:false,\&quot;allowedIPV4CidrList\&quot;:[]}}&quot;
+            /// Example: DNS_FIREWALL &quot;ManagedServiceData&quot;: &quot;{ \&quot;type\&quot;: \&quot;DNS_FIREWALL\&quot;, \&quot;preProcessRuleGroups\&quot;:
+            /// [{\&quot;ruleGroupId\&quot;: \&quot;rslvr-frg-123456\&quot;, \&quot;priority\&quot;: 11}], \&quot;postProcessRuleGroups\&quot;:
+            /// [{\&quot;ruleGroupId\&quot;: \&quot;rslvr-frg-123456\&quot;, \&quot;priority\&quot;: 9902}]}&quot;
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption
@@ -169,8 +176,8 @@ namespace Comformation.FMS.Policy
             /// Used when deleting a policy. If true, Firewall Manager performs cleanup according to the policy
             /// type.
             /// For AWS WAF and Shield Advanced policies, Firewall Manager does the following:
-            /// Deletes rule groups created by AWS Firewall Manager Removes web ACLs from in-scope resources Deletes
-            /// web ACLs that contain no rules or rule groups
+            /// Deletes rule groups created by Firewall Manager Removes web ACLs from in-scope resources Deletes web
+            /// ACLs that contain no rules or rule groups
             /// For security group policies, Firewall Manager does the following for each security group in the
             /// policy:
             /// Disassociates the security group from in-scope resources Deletes the security group if it was

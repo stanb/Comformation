@@ -96,7 +96,7 @@ namespace Comformation.ApiGatewayV2.Authorizer
             /// For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound
             /// requests. Currently only header-based and query parameter-based selections are supported, for
             /// example $request. header. Authorization.
-            /// Required: Yes
+            /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
             /// </summary>

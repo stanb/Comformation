@@ -14,7 +14,8 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// HeaderParameters
-        /// The headers that need to be sent as part of request invoking the API Gateway REST API.
+        /// The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge
+        /// ApiDestination.
         /// Required: No
         /// Type: Map of String
         /// Update requires: No interruption
@@ -24,7 +25,8 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// PathParameterValues
-        /// The path parameter values to be used to populate API Gateway REST API path wildcards (&quot;*&quot;).
+        /// The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination
+        /// path wildcards (&quot;*&quot;).
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
@@ -35,7 +37,7 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// QueryStringParameters
         /// The query string keys/values that need to be sent as part of request invoking the API Gateway REST
-        /// API.
+        /// API or EventBridge ApiDestination.
         /// Required: No
         /// Type: Map of String
         /// Update requires: No interruption

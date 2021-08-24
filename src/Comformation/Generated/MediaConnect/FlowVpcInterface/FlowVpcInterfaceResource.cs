@@ -13,6 +13,24 @@ namespace Comformation.MediaConnect.FlowVpcInterface
         public class FlowVpcInterfaceProperties
         {
             /// <summary>
+            /// FlowArn
+            /// The Amazon Resource Name (ARN) of the flow.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> FlowArn { get; set; }
+
+            /// <summary>
+            /// Name
+            /// The name of the VPC Interface. This value must be unique within the current flow.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> Name { get; set; }
+
+            /// <summary>
             /// RoleArn
             /// The Amazon Resource Name (ARN) of the role that you created when you set up MediaConnect as a
             /// trusted service.
@@ -57,8 +75,6 @@ namespace Comformation.MediaConnect.FlowVpcInterface
 
     public static class FlowVpcInterfaceAttributes
     {
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FlowArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("FlowArn");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> NetworkInterfaceIds = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("NetworkInterfaceIds");
     }
 }

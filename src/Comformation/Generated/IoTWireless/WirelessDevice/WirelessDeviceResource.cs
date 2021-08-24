@@ -24,7 +24,7 @@ namespace Comformation.IoTWireless.WirelessDevice
 
             /// <summary>
             /// Name
-            /// The name of the new resource.
+            /// The name of the new resource. Maximum length is 256.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -33,7 +33,8 @@ namespace Comformation.IoTWireless.WirelessDevice
 
             /// <summary>
             /// Description
-            /// The description of the new resource.
+            /// 		
+            /// The description of the new resource. Maximum length is 2048.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -52,20 +53,21 @@ namespace Comformation.IoTWireless.WirelessDevice
             public Union<string, IntrinsicFunction> DestinationName { get; set; }
 
             /// <summary>
-            /// LoRaWANDevice
+            /// LoRaWAN
             /// 		
             /// The device configuration information to use to create the wireless device. Must be at least one of
-            /// OtaaV10X, OtaaV11, AbpV11, or AbpV10X.
+            /// OtaaV10x, OtaaV11, AbpV11, or AbpV10x.
             /// Required: No
             /// Type: LoRaWANDevice
             /// Update requires: No interruption
             /// </summary>
-            public LoRaWANDevice LoRaWANDevice { get; set; }
+            public LoRaWANDevice LoRaWAN { get; set; }
 
             /// <summary>
             /// Tags
             /// 		 		
-            /// An array of key-value pairs to apply to this resource.
+            /// An array of key-value pairs to apply to this resource. Tags can have a minimum of 0 and a maximum of
+            /// 50 items.
             /// 		
             /// For more information, see Tag.
             /// 	
@@ -76,15 +78,22 @@ namespace Comformation.IoTWireless.WirelessDevice
             public List<Tag> Tags { get; set; }
 
             /// <summary>
-            /// NextToken
-            /// 		
-            /// This parameter isn&#39;t needed to create this resource. Do not include it in your template.
-            /// 	
+            /// ThingArn
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> NextToken { get; set; }
+            public Union<string, IntrinsicFunction> ThingArn { get; set; }
+
+            /// <summary>
+            /// LastUplinkReceivedAt
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> LastUplinkReceivedAt { get; set; }
 
         }
 
@@ -98,7 +107,6 @@ namespace Comformation.IoTWireless.WirelessDevice
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ThingArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("ThingArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ThingName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ThingName");
     }
 }

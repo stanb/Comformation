@@ -14,7 +14,7 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// BucketName
-        /// The name of the Amazon S3 bucket that you want to send incoming mail to.
+        /// The name of the Amazon S3 bucket for incoming email.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -35,10 +35,10 @@ namespace Comformation.SES.ReceiptRule
         /// the key. To use a custom master key that you created in AWS KMS, provide the ARN of the master key
         /// and ensure that you add a statement to your key&#39;s policy to give Amazon SES permission to use it.
         /// For more information about giving permissions, see the Amazon SES Developer Guide.
-        /// For more information about key policies, see the AWS KMS Developer Guide. If you don&#39;t specify a
-        /// master key, Amazon SES doesn&#39;t encrypt your emails.
+        /// For more information about key policies, see the AWS KMS Developer Guide. If you do not specify a
+        /// master key, Amazon SES does not encrypt your emails.
         /// Important Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail
-        /// is submitted to Amazon S3 for storage. It isn&#39;t encrypted using Amazon S3 server-side encryption.
+        /// is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption.
         /// This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving
         /// it from Amazon S3, as the service has no access to use your AWS KMS keys for decryption. This
         /// encryption client is currently available with the AWS SDK for Java and AWS SDK for Ruby only. For
@@ -54,7 +54,7 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TopicArn
         /// The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. You can
-        /// find the ARN of a topic by using the ListTopics operation in the Amazon SNS API.
+        /// find the ARN of a topic by using the ListTopics operation in Amazon SNS.
         /// For more information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String

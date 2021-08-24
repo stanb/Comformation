@@ -27,7 +27,7 @@ namespace Comformation.S3.BucketPolicy
             /// policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or
             /// YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. For more
             /// information, see the AWS::IAM::Policy PolicyDocument resource description in this guide and Access
-            /// Policy Language Overview in the Amazon Simple Storage Service Developer Guide.
+            /// Policy Language Overview in the Amazon S3 User Guide.
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption

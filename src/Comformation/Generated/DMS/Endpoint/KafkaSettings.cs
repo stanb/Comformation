@@ -14,9 +14,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// Broker
-        /// The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker
-        /// in the form broker-hostname-or-ip:port . For example, &quot;ec2-12-345-678-901. compute-1. amazonaws.
-        /// com:2345&quot;.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,8 +24,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// Topic
-        /// The topic to which you migrate the data. If you don&#39;t specify a topic, AWS DMS specifies
-        /// &quot;kafka-default-topic&quot; as the migration topic.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

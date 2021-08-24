@@ -57,10 +57,26 @@ namespace Comformation.ECS.Cluster
             public List<ClusterSettings> ClusterSettings { get; set; }
 
             /// <summary>
-            /// CapacityProviders
+            /// Configuration
             /// 		
-            /// The capacity providers associated with the cluster.
+            /// The execute command configuration for the cluster.
             /// 	
+            /// Required: No
+            /// Type: ClusterConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public ClusterConfiguration Configuration { get; set; }
+
+            /// <summary>
+            /// CapacityProviders
+            /// The short name of one or more capacity providers to associate with the cluster. A capacity provider
+            /// must be associated with a cluster before it can be included as part of the default capacity provider
+            /// strategy of the cluster or used in a capacity provider strategy.
+            /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must
+            /// already be created and not already associated with another cluster.
+            /// To use an AWS Fargate capacity provider, specify either the FARGATE or FARGATE_SPOT capacity
+            /// providers. The AWS Fargate capacity providers are available to all accounts and only need to be
+            /// associated with a cluster to be used.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption

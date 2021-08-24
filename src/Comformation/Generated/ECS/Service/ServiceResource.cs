@@ -13,32 +13,20 @@ namespace Comformation.ECS.Service
         public class ServiceProperties
         {
             /// <summary>
-            /// ServiceArn
-            /// 		
-            /// The ARN that identifies the service. The ARN contains the arn:aws:ecs namespace, followed by the
-            /// Region of the service, the AWS account ID of the service owner, the service namespace, and then the
-            /// service name. For example, arn:aws:ecs:region:012345678910:service/my-service.
-            /// 	
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> ServiceArn { get; set; }
-
-            /// <summary>
             /// CapacityProviderStrategy
             /// The capacity provider strategy to use for the service.
             /// A capacity provider strategy consists of one or more capacity providers along with the base and
             /// weight to assign to them. A capacity provider must be associated with the cluster to be used in a
             /// capacity provider strategy. The PutClusterCapacityProviders API is used to associate a capacity
             /// provider with a cluster. Only capacity providers with an ACTIVE or UPDATING status can be used.
+            /// Review the Capacity provider considerations in the Amazon Elastic Container Service Developer Guide.
             /// If a capacityProviderStrategy is specified, the launchType parameter must be omitted. If no
             /// capacityProviderStrategy or launchType is specified, the defaultCapacityProviderStrategy for the
             /// cluster is used.
             /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must
             /// already be created. New capacity providers can be created with the CreateCapacityProvider API
             /// operation.
-            /// To use a AWS Fargate capacity provider, specify either the FARGATE or FARGATE_SPOT capacity
+            /// To use an AWS Fargate capacity provider, specify either the FARGATE or FARGATE_SPOT capacity
             /// providers. The AWS Fargate capacity providers are available to all accounts and only need to be
             /// associated with a cluster to be used.
             /// The PutClusterCapacityProviders API operation is used to update the list of available capacity
@@ -76,7 +64,8 @@ namespace Comformation.ECS.Service
             /// <summary>
             /// DeploymentController
             /// 		
-            /// The deployment controller to use for the service.
+            /// The deployment controller to use for the service. If no deployment controller is 			specified, the
+            /// default value of ECS is used.
             /// 	
             /// Required: No
             /// Type: DeploymentController
@@ -110,6 +99,18 @@ namespace Comformation.ECS.Service
             public Union<bool, IntrinsicFunction> EnableECSManagedTags { get; set; }
 
             /// <summary>
+            /// EnableExecuteCommand
+            /// 		
+            /// Whether or not the execute command functionality is enabled for the service. If 				true, the
+            /// execute command functionality is enabled for all containers 			in tasks as part of the service.
+            /// 	
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> EnableExecuteCommand { get; set; }
+
+            /// <summary>
             /// HealthCheckGracePeriodSeconds
             /// 		
             /// The period of time, in seconds, that the Amazon ECS service scheduler should ignore 			unhealthy
@@ -135,7 +136,7 @@ namespace Comformation.ECS.Service
             /// the Amazon Elastic Container Service Developer Guide.
             /// Required: No
             /// Type: String
-            /// Allowed values: EC2 | FARGATE
+            /// Allowed values: EC2 | EXTERNAL | FARGATE
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> LaunchType { get; set; }
@@ -198,7 +199,7 @@ namespace Comformation.ECS.Service
             /// 	
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> PlatformVersion { get; set; }
 
@@ -273,9 +274,9 @@ namespace Comformation.ECS.Service
             /// <summary>
             /// ServiceName
             /// 		
-            /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are
-            /// allowed. Service names must be unique within 			a cluster, but you can have similarly named services
-            /// in multiple clusters within a 			Region or across multiple Regions.
+            /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and
+            /// hyphens are allowed. Service names must be unique within 			a cluster, but you can have similarly
+            /// named services in multiple clusters within a 			Region or across multiple Regions.
             /// 	
             /// Required: No
             /// Type: String
@@ -286,11 +287,11 @@ namespace Comformation.ECS.Service
             /// <summary>
             /// ServiceRegistries
             /// 		
-            /// The details of the service discovery registries to assign to this service. For more 			information,
-            /// see Service 				discovery.
+            /// The details of the service discovery registry to associate with this service. For more
+            /// 			information, see Service 				discovery.
             /// 		
-            /// Note Service discovery is supported for Fargate tasks if you are using 				platform version v1. 1. 0
-            /// or later. For more information, see AWS Fargate platform 					versions.
+            /// Note Each service may be associated with one service registry. Multiple service 				registries per
+            /// service isn&#39;t supported.
             /// 	
             /// Required: No
             /// Type: List of ServiceRegistry
@@ -343,6 +344,7 @@ namespace Comformation.ECS.Service
 
     public static class ServiceAttributes
     {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ServiceArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("ServiceArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
     }
 }

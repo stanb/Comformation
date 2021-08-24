@@ -14,7 +14,7 @@ namespace Comformation.WAFv2.WebACL
 
         /// <summary>
         /// Arn
-        /// The Amazon Resource Name (ARN) of the RegexPatternSet that this statement references.
+        /// The Amazon Resource Name (ARN) of the regular expression pattern set that this statement references.
         /// Required: Yes
         /// Type: String
         /// Minimum: 20
@@ -27,7 +27,7 @@ namespace Comformation.WAFv2.WebACL
 
         /// <summary>
         /// FieldToMatch
-        /// The part of a web request that you want AWS WAF to inspect. For more information, see FieldToMatch.
+        /// The part of a web request that you want AWS WAF to inspect.
         /// Required: Yes
         /// Type: FieldToMatch
         /// Update requires: No interruption

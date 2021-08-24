@@ -17,11 +17,8 @@ namespace Comformation.AppConfig.Environment
         /// ARN of the Amazon CloudWatch alarm.
         /// Required: No
         /// Type: String
-        /// Minimum: 20
+        /// Minimum: 1
         /// Maximum: 2048
-        /// Pattern:
-        /// arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.
-        /// ]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AlarmArn")]

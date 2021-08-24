@@ -14,8 +14,7 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Enabled
-        /// 	
-        /// If this parameter is set to true, the instance is enabled for AWS Nitro Enclaves; 		otherwise, it is
+        /// If this parameter is set to true, the instance is enabled for AWS Nitro Enclaves; otherwise, it is
         /// not enabled for AWS Nitro Enclaves.
         /// Required: No
         /// Type: Boolean

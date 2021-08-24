@@ -29,13 +29,13 @@ namespace Comformation.DataSync.Agent
             /// ActivationKey
             /// Your agent activation key. You can get the activation key either by sending an HTTP GET request with
             /// redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from
-            /// the AWS DataSync console.
+            /// the DataSync console.
             /// The redirect URL returned in the response provides you the activation key for your agent in the
             /// query string parameter activationKey. It might also include other activation-related parameters;
             /// however, these are merely defaults. The arguments you pass to this API call determine the actual
             /// configuration of your agent.
-            /// For more information, see Activating an Agent in the AWS DataSync User Guide.
-            /// Required: No
+            /// For more information, see Creating and activating an agent in the AWS DataSync User Guide.
+            /// Required: Yes
             /// Type: String
             /// Maximum: 29
             /// Pattern: [A-Z0-9]{5}(-[A-Z0-9]{5}){4}
@@ -46,11 +46,11 @@ namespace Comformation.DataSync.Agent
             /// <summary>
             /// SecurityGroupArns
             /// The ARNs of the security groups used to protect your data transfer task subnets. See
-            /// CreateAgentRequest$SubnetArns.
+            /// SecurityGroupArns.
             /// Required: No
             /// Type: List of String
             /// Maximum: 1
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public List<Union<string, IntrinsicFunction>> SecurityGroupArns { get; set; }
 
@@ -65,7 +65,7 @@ namespace Comformation.DataSync.Agent
             /// Required: No
             /// Type: List of String
             /// Maximum: 1
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public List<Union<string, IntrinsicFunction>> SubnetArns { get; set; }
 
@@ -75,12 +75,12 @@ namespace Comformation.DataSync.Agent
             /// client-side VPC endpoint, also called a PrivateLink. If you don&#39;t have a PrivateLink VPC endpoint,
             /// see Creating a VPC Endpoint Service Configuration in the Amazon VPC User Guide.
             /// For more information about activating your agent in a private network based on Amazon VPC, see Using
-            /// AWS DataSync in a Virtual Private Cloudin the AWS DataSync User Guide.
+            /// AWS DataSync in a Virtual Private Cloud in the AWS DataSync User Guide.
             /// VPC endpoint ID looks like this: vpce-01234d5aff67890e1.
             /// Required: No
             /// Type: String
             /// Pattern: ^vpce-[0-9a-f]{17}$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> VpcEndpointId { get; set; }
 
@@ -93,7 +93,7 @@ namespace Comformation.DataSync.Agent
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 50
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public List<Tag> Tags { get; set; }
 

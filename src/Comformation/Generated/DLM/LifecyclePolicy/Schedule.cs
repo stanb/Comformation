@@ -26,6 +26,18 @@ namespace Comformation.DLM.LifecyclePolicy
         public List<ShareRule> ShareRules { get; set; }
 
         /// <summary>
+        /// DeprecateRule
+        /// 		
+        /// The AMI deprecation rule for the schedule.
+        /// 	
+        /// Required: No
+        /// Type: DeprecateRule
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DeprecateRule")]
+        public DeprecateRule DeprecateRule { get; set; }
+
+        /// <summary>
         /// TagsToAdd
         /// 		
         /// The tags to apply to policy-created resources. These user-defined tags are in addition 			to the
@@ -95,6 +107,11 @@ namespace Comformation.DLM.LifecyclePolicy
         /// CrossRegionCopyRules
         /// 		
         /// The rule for cross-Region snapshot copies.
+        /// 		
+        /// You can only specify cross-Region copy rules for policies that create snapshots in a Region. 			If
+        /// the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or 			to
+        /// an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
+        /// 			Regions or Outposts.
         /// 	
         /// Required: No
         /// Type: List of CrossRegionCopyRule

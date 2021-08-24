@@ -14,8 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Groups
-        /// An array that defines the set of segment criteria to evaluate when handling segment groups for the
-        /// segment.
+        /// Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
         /// Required: No
         /// Type: List of Groups
         /// Update requires: No interruption

@@ -18,9 +18,18 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
             /// Required: No
             /// Type: String
             /// Maximum: 1024
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }
+
+            /// <summary>
+            /// Properties
+            /// Properties for the public DNS namespace.
+            /// Required: No
+            /// Type: Properties
+            /// Update requires: No interruption
+            /// </summary>
+            public Properties Properties { get; set; }
 
             /// <summary>
             /// Tags
@@ -40,6 +49,8 @@ namespace Comformation.ServiceDiscovery.PublicDnsNamespace
             /// Required: Yes
             /// Type: String
             /// Maximum: 1024
+            /// Pattern: ^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.
+            /// )+[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }

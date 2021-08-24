@@ -50,7 +50,7 @@ namespace Comformation.DataBrew.Recipe
 
         /// <summary>
         /// TempDirectory
-        /// An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+        /// Represents an Amazon location where DataBrew can store intermediate results.
         /// Required: No
         /// Type: S3Location
         /// Update requires: No interruption

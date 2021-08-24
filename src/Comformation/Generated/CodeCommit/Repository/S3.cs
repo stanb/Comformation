@@ -14,7 +14,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// ObjectVersion
-        /// The object version of the ZIP file, if versioning is enabled for the Amazon S3 bucket.
+        /// The object version of the ZIP file, if versioning is enabled for the Amazon S3 bucket. Changes to
+        /// this property are ignored after initial resource creation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +27,7 @@ namespace Comformation.CodeCommit.Repository
         /// Bucket
         /// The name of the Amazon S3 bucket that contains the ZIP file with the content that will be committed
         /// to the new repository. This can be specified using an ARN or the name of the bucket in the AWS
-        /// account.
+        /// account. Changes to this property are ignored after initial resource creation.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -36,8 +37,8 @@ namespace Comformation.CodeCommit.Repository
 
         /// <summary>
         /// Key
-        /// The key to use for accessing the Amazon S3 bucket. This is an Amazon S3 object key as defined in the
-        /// Amazon S3 Developer Guide.
+        /// The key to use for accessing the Amazon S3 bucket. Changes to this property are ignored after
+        /// initial resource creation.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

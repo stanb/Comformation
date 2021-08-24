@@ -24,8 +24,7 @@ namespace Comformation.Pinpoint.App
 
             /// <summary>
             /// Name
-            /// The display name of the application. This name is displayed as the Project name on the Amazon
-            /// Pinpoint console.
+            /// The display name of the application.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

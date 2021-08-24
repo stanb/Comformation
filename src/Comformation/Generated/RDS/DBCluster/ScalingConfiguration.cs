@@ -54,6 +54,7 @@ namespace Comformation.RDS.DBCluster
         /// <summary>
         /// SecondsUntilAutoPause
         /// The time, in seconds, before an Aurora DB cluster in serverless mode is paused.
+        /// Specify a value between 300 and 86,400 seconds.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

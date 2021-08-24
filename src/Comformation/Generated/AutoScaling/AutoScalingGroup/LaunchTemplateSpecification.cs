@@ -36,10 +36,11 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// Version
-        /// The version number. AWS CloudFormation does not support specifying $Latest, or $Default for the
-        /// template version number. However, you can specify LatestVersionNumber or DefaultVersionNumber using
-        /// the Fn::GetAtt function. For more information, see Fn::GetAtt in the AWS::EC2::LaunchTemplate
-        /// documentation.
+        /// The version number. CloudFormation does not support specifying $Latest, or $Default for the template
+        /// version number. However, you can specify LatestVersionNumber or DefaultVersionNumber using the
+        /// Fn::GetAtt function.
+        /// Note For an example of using the Fn::GetAtt function, see the Examples section of the
+        /// AWS::AutoScaling::AutoScalingGroup documentation.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

@@ -14,13 +14,12 @@ namespace Comformation.Transfer.User
         {
             /// <summary>
             /// Policy
-            /// A scope-down policy for your user so you can use the same IAM role across multiple users. This
-            /// policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use
-            /// inside this policy include ${Transfer:UserName}, ${Transfer:HomeDirectory}, and
-            /// ${Transfer:HomeBucket}.
-            /// Note For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the
+            /// A session policy for your user so you can use the same IAM role across multiple users. This policy
+            /// restricts user access to portions of their Amazon S3 bucket. Variables that you can use inside this
+            /// policy include ${Transfer:UserName}, ${Transfer:HomeDirectory}, and ${Transfer:HomeBucket}.
+            /// Note For session policies, AWS Transfer Family stores the policy as a JSON blob, instead of the
             /// Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-            /// Policy argument. For an example of a scope-down policy, see Example scope-down policy. For more
+            /// Policy argument. For an example of a session policy, see Example session policy. For more
             /// information, see AssumeRole in the AWS Security Token Service API Reference.
             /// Required: No
             /// Type: String
@@ -31,11 +30,11 @@ namespace Comformation.Transfer.User
 
             /// <summary>
             /// Role
-            /// Specifies the IAM role that controls your users&#39; access to your Amazon S3 bucket or EFS file system.
-            /// The policies attached to this role will determine the level of access you want to provide your users
-            /// when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
-            /// should also contain a trust relationship that allows the server to access your resources when
-            /// servicing your users&#39; transfer requests.
+            /// Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users&#39; access to your
+            /// Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of
+            /// access that you want to provide your users when transferring files into and out of your Amazon S3
+            /// bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+            /// server to access your resources when servicing your users&#39; transfer requests.
             /// Required: Yes
             /// Type: String
             /// Minimum: 20
@@ -60,9 +59,9 @@ namespace Comformation.Transfer.User
             /// <summary>
             /// HomeDirectoryType
             /// The type of landing directory (folder) you want your users&#39; home directory to be when they log into
-            /// the server. If you set it to PATH, the user will see the absolute Amazon S3 bucket paths as is in
-            /// their file transfer protocol clients. If you set it LOGICAL, you will need to provide mappings in
-            /// the HomeDirectoryMappings for how you want to make Amazon S3 paths visible to your users.
+            /// the server. If you set it to PATH, the user will see the absolute Amazon S3 bucket or EFS paths as
+            /// is in their file transfer protocol clients. If you set it LOGICAL, you need to provide mappings in
+            /// the HomeDirectoryMappings for how you want to make Amazon S3 or EFS paths visible to your users.
             /// Required: No
             /// Type: String
             /// Allowed values: LOGICAL | PATH
@@ -105,15 +104,14 @@ namespace Comformation.Transfer.User
             /// Entry shows how the path is made visible and Target is the actual Amazon S3 path. If you only
             /// specify a target, it will be displayed as is. You will need to also make sure that your IAM role
             /// provides access to paths in Target. The following is an example.
-            /// &#39;[ { &quot;Entry&quot;: &quot;your-personal-report. pdf&quot;, &quot;Target&quot;:
-            /// &quot;/bucket3/customized-reports/${transfer:UserName}. pdf&quot; } ]&#39;
-            /// In most cases, you can use this value instead of the scope-down policy to lock your user down to the
+            /// &#39;[ { &quot;Entry&quot;: &quot;/&quot;, &quot;Target&quot;: &quot;/bucket3/customized-reports/&quot; } ]&#39;
+            /// In most cases, you can use this value instead of the session policy to lock your user down to the
             /// designated home directory (&quot;chroot&quot;). To do this, you can set Entry to &#39;/&#39; and set Target to the
             /// HomeDirectory parameter value.
             /// Note If the target of a logical directory entry does not exist in Amazon S3, the entry will be
             /// ignored. As a workaround, you can use the Amazon S3 API to create 0 byte objects as place holders
             /// for your directory. If using the CLI, use the s3api call instead of s3 so you can use the put-object
-            /// operation. For example, you use the following: aws s3api put-object --bucket bucketname --key
+            /// operation. For example, you use the following: AWS s3api put-object --bucket bucketname --key
             /// path/to/folder/. Make sure that the end of the key name ends in a &#39;/&#39; for it to be considered a
             /// folder.
             /// Required: No

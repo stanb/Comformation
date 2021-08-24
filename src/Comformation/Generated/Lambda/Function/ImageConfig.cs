@@ -13,17 +13,6 @@ namespace Comformation.Lambda.Function
     {
 
         /// <summary>
-        /// Command
-        /// Specifies parameters that you want to pass in with ENTRYPOINT.
-        /// Required: No
-        /// Type: List of String
-        /// Maximum: 1500
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Command")]
-        public List<Union<string, IntrinsicFunction>> Command { get; set; }
-
-        /// <summary>
         /// EntryPoint
         /// Specifies the entry point to their application, which is typically the location of the runtime
         /// executable.
@@ -34,6 +23,17 @@ namespace Comformation.Lambda.Function
         /// </summary>
         [JsonProperty("EntryPoint")]
         public List<Union<string, IntrinsicFunction>> EntryPoint { get; set; }
+
+        /// <summary>
+        /// Command
+        /// Specifies parameters that you want to pass in with ENTRYPOINT.
+        /// Required: No
+        /// Type: List of String
+        /// Maximum: 1500
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Command")]
+        public List<Union<string, IntrinsicFunction>> Command { get; set; }
 
         /// <summary>
         /// WorkingDirectory

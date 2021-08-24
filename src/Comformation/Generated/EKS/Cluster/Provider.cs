@@ -14,10 +14,10 @@ namespace Comformation.EKS.Cluster
 
         /// <summary>
         /// KeyArn
-        /// Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric,
-        /// created in the same region as the cluster, and if the CMK was created in a different account, the
-        /// user must have access to the CMK. For more information, see Allowing Users in Other Accounts to Use
-        /// a CMK in the AWS Key Management Service Developer Guide.
+        /// Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the
+        /// same region as the cluster, and if the KMS key was created in a different account, the user must
+        /// have access to the KMS key. For more information, see Allowing Users in Other Accounts to Use a KMS
+        /// key in the AWS Key Management Service Developer Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

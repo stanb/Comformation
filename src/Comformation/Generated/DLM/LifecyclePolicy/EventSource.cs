@@ -15,7 +15,7 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// Type
         /// 		
-        /// The source of the event. Currently only managed AWS CloudWatch Events rules are supported.
+        /// The source of the event. Currently only managed CloudWatch Events rules are supported.
         /// 	
         /// Required: Yes
         /// Type: String

@@ -18,7 +18,7 @@ namespace Comformation.EC2.SpotFleet
         /// Required: Yes
         /// Type: List of ClassicLoadBalancer
         /// Maximum: 5
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ClassicLoadBalancers")]
         public List<ClassicLoadBalancer> ClassicLoadBalancers { get; set; }

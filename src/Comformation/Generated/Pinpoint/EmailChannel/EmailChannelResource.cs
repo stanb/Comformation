@@ -14,8 +14,8 @@ namespace Comformation.Pinpoint.EmailChannel
         {
             /// <summary>
             /// ConfigurationSet
-            /// The configuration set that you want to apply to email that you send through the channel by using the
-            /// Amazon Pinpoint Email API.
+            /// The Amazon SES configuration set that you want to apply to messages that you send through the
+            /// channel.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -42,7 +42,8 @@ namespace Comformation.Pinpoint.EmailChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the email channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that you&#39;re specifying the email channel
+            /// for.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

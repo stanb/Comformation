@@ -24,7 +24,8 @@ namespace Comformation.Neptune.DBCluster
 
         /// <summary>
         /// FeatureName
-        /// Not currently supported by AWS CloudFormation.
+        /// The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For
+        /// the list of supported feature names, see DescribeDBEngineVersions.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

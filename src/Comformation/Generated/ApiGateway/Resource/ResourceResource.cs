@@ -13,6 +13,15 @@ namespace Comformation.ApiGateway.Resource
         public class ResourceProperties
         {
             /// <summary>
+            /// RestApiId
+            /// The ID of the RestApi resource in which you want to create this resource.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> RestApiId { get; set; }
+
+            /// <summary>
             /// ParentId
             /// If you want to create a child resource, the ID of the parent resource. For resources without a
             /// parent, specify the RestApi root resource ID, such as { &quot;Fn::GetAtt&quot;: [&quot;MyRestApi&quot;,
@@ -32,20 +41,16 @@ namespace Comformation.ApiGateway.Resource
             /// </summary>
             public Union<string, IntrinsicFunction> PathPart { get; set; }
 
-            /// <summary>
-            /// RestApiId
-            /// The ID of the RestApi resource in which you want to create this resource.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-            public Union<string, IntrinsicFunction> RestApiId { get; set; }
-
         }
 
         public string Type { get; } = "AWS::ApiGateway::Resource";
 
         public ResourceProperties Properties { get; } = new ResourceProperties();
 
+    }
+
+    public static class ResourceAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ResourceId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ResourceId");
     }
 }

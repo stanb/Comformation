@@ -125,8 +125,7 @@ namespace Comformation.AppStream.Stack
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// An array of key-value pairs.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

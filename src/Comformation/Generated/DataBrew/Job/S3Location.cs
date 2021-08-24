@@ -14,7 +14,7 @@ namespace Comformation.DataBrew.Job
 
         /// <summary>
         /// Bucket
-        /// The S3 bucket name.
+        /// The Amazon S3 bucket name.
         /// Required: Yes
         /// Type: String
         /// Minimum: 3

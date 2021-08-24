@@ -27,11 +27,7 @@ namespace Comformation.MediaStore.Container
 
             /// <summary>
             /// MetricPolicy
-            /// The metric policy that is associated with the container. A metric policy allows AWS Elemental
-            /// MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want
-            /// MediaStore to send container-level metrics. You can also include rules to define groups of objects
-            /// that you want MediaStore to send object-level metrics for.
-            /// To view examples of how to construct a metric policy for your use case, see Example Metric Policies.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: MetricPolicy
             /// Update requires: No interruption
@@ -96,11 +92,7 @@ namespace Comformation.MediaStore.Container
 
             /// <summary>
             /// Tags
-            /// A collection of tags associated with a container. Each tag consists of a key:value pair, which can
-            /// be anything you define. Typically, the tag key represents a category (such as &quot;environment&quot;) and the
-            /// tag value represents a specific value within that category (such as &quot;test,&quot; &quot;development,&quot; or
-            /// &quot;production&quot;). You can add up to 50 tags to each container. For more information about tagging,
-            /// including naming and usage conventions, see Tagging Resources in MediaStore.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

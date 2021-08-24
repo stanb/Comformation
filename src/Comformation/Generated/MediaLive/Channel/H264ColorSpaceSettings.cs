@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Rec601Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings to configure the handling of Rec601 color space.
         /// Required: No
         /// Type: Rec601Settings
         /// Update requires: No interruption
@@ -24,7 +24,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Rec709Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings to configure the handling of Rec709 color space.
         /// Required: No
         /// Type: Rec709Settings
         /// Update requires: No interruption

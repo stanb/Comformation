@@ -13,14 +13,14 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
-        /// OnInput
-        /// When an input is received and the condition is TRUE, perform the specified actions.
+        /// OnEnter
+        /// When entering this state, perform these actions if the condition is TRUE.
         /// Required: No
-        /// Type: OnInput
+        /// Type: OnEnter
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("OnInput")]
-        public OnInput OnInput { get; set; }
+        [JsonProperty("OnEnter")]
+        public OnEnter OnEnter { get; set; }
 
         /// <summary>
         /// OnExit
@@ -33,9 +33,19 @@ namespace Comformation.IoTEvents.DetectorModel
         public OnExit OnExit { get; set; }
 
         /// <summary>
+        /// OnInput
+        /// When an input is received and the condition is TRUE, perform the specified actions.
+        /// Required: No
+        /// Type: OnInput
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OnInput")]
+        public OnInput OnInput { get; set; }
+
+        /// <summary>
         /// StateName
         /// The name of the state.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
@@ -43,16 +53,6 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("StateName")]
         public Union<string, IntrinsicFunction> StateName { get; set; }
-
-        /// <summary>
-        /// OnEnter
-        /// When entering this state, perform these actions if the condition is TRUE.
-        /// Required: No
-        /// Type: OnEnter
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("OnEnter")]
-        public OnEnter OnEnter { get; set; }
 
     }
 }

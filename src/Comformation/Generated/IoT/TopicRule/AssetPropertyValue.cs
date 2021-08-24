@@ -13,15 +13,14 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// Quality
-        /// Optional. A string that describes the quality of the value. Accepts substitution templates. Must be
-        /// GOOD, BAD, or UNCERTAIN.
-        /// Required: No
-        /// Type: String
+        /// Value
+        /// The value of the asset property.
+        /// Required: Yes
+        /// Type: AssetPropertyVariant
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("Quality")]
-        public Union<string, IntrinsicFunction> Quality { get; set; }
+        [JsonProperty("Value")]
+        public AssetPropertyVariant Value { get; set; }
 
         /// <summary>
         /// Timestamp
@@ -34,14 +33,15 @@ namespace Comformation.IoT.TopicRule
         public AssetPropertyTimestamp Timestamp { get; set; }
 
         /// <summary>
-        /// Value
-        /// The value of the asset property.
-        /// Required: Yes
-        /// Type: AssetPropertyVariant
+        /// Quality
+        /// Optional. A string that describes the quality of the value. Accepts substitution templates. Must be
+        /// GOOD, BAD, or UNCERTAIN.
+        /// Required: No
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("Value")]
-        public AssetPropertyVariant Value { get; set; }
+        [JsonProperty("Quality")]
+        public Union<string, IntrinsicFunction> Quality { get; set; }
 
     }
 }

@@ -58,12 +58,12 @@ namespace Comformation.Kendra.DataSource
         /// inclusion pattern and an exclusion pattern, the document is not included in the index.
         /// The exclusion pattern is applied to the file name.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings InclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> InclusionPatterns { get; set; }
 
         /// <summary>
         /// ExclusionPatterns
@@ -72,24 +72,24 @@ namespace Comformation.Kendra.DataSource
         /// the exclusion pattern isn&#39;t indexed.
         /// The exclusion pattern is applied to the file name.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings ExclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExclusionPatterns { get; set; }
 
         /// <summary>
         /// FieldMappings
         /// A list of DataSourceToIndexFieldMapping objects that map Microsoft OneDrive fields to custom fields
         /// in the Amazon Kendra index. You must first create the index fields before you map OneDrive fields.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
         /// <summary>
         /// DisableLocalGroups

@@ -16,8 +16,8 @@ namespace Comformation.Cassandra.Table
         /// Mode
         /// The billing mode for the table:
         /// On-demand mode - ON_DEMAND Provisioned mode - PROVISIONED Note If you choose PROVISIONED mode, then
-        /// you&#39;ll also need to specify provisioned throughput (read and write capacity) for the table.
-        /// Valid Values: ON_DEMAND | PROVISIONED
+        /// you also need to specify provisioned throughput (read and write capacity) for the table.
+        /// Valid values: ON_DEMAND | PROVISIONED
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

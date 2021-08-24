@@ -49,7 +49,8 @@ namespace Comformation.EFS.MountTarget
 
             /// <summary>
             /// SubnetId
-            /// The ID of the subnet to add the mount target in.
+            /// The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes,
+            /// use the subnet that is associated with the file system&#39;s Availability Zone.
             /// Required: Yes
             /// Type: String
             /// Minimum: 15

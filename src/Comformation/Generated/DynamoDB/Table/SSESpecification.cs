@@ -41,8 +41,8 @@ namespace Comformation.DynamoDB.Table
         /// <summary>
         /// SSEType
         /// Server-side encryption type. The only supported value is:
-        /// 		 KMS - Server-side encryption that uses AWS Key Management Service. The key is stored in your
-        /// account and is managed by AWS KMS (AWS KMS charges apply).
+        /// KMS - Server-side encryption that uses AWS Key Management Service. The key is stored in your account
+        /// and is managed by AWS KMS (AWS KMS charges apply).
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

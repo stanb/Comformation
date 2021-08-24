@@ -14,8 +14,8 @@ namespace Comformation.ManagedBlockchain.Node
         {
             /// <summary>
             /// MemberId
-            /// The unique identifier of the member to which the node belongs.
-            /// Required: Yes
+            /// The unique identifier of the member to which the node belongs. Applies only to Hyperledger Fabric.
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

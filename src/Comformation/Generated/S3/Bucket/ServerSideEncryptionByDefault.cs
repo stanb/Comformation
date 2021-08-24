@@ -21,8 +21,9 @@ namespace Comformation.S3.Bucket
         /// For example:
         /// Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab Key ARN:
         /// arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
-        /// Important Amazon S3 only supports symmetric CMKs and not asymmetric CMKs. For more information, see
-        /// Using Symmetric and Asymmetric Keys in the AWS Key Management Service Developer Guide.
+        /// Important Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more
+        /// information, see Using Symmetric and Asymmetric Keys in the AWS Key Management Service Developer
+        /// Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

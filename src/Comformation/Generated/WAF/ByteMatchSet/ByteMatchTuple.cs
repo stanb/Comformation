@@ -27,7 +27,6 @@ namespace Comformation.WAF.ByteMatchSet
 
         /// <summary>
         /// PositionalConstraint
-        /// 		
         /// Within the portion of a web request that you want to search (for example, in the query string, if
         /// any), specify where you want AWS WAF to search. Valid values include the following:
         /// 		
@@ -83,19 +82,19 @@ namespace Comformation.WAF.ByteMatchSet
         /// 			 			 			 			 			 			 		 		 			 HEADER: The value that you want AWS WAF to search for in the
         /// request header that you specified in FieldToMatch, for example, the value of the User-Agent or
         /// Referer header. METHOD: The HTTP method, which indicates the type of operation specified in the
-        /// request. 				CloudFront supports the following methods: DELETE, GET, HEAD, OPTIONS, 				PATCH, POST,
-        /// and PUT. QUERY_STRING: The value that you want AWS WAF to search for in the query string, which is
-        /// the part 				of a URL that appears after a ? character. URI: The value that you want AWS WAF to
-        /// search for in the part of a URL that identifies a resource, 				for example, /images/daily-ad. jpg.
-        /// BODY: The part of a request that contains any additional data that you want to send to your web
-        /// server 				as the HTTP request body, such as data from a form. The request body immediately follows
-        /// the request headers. 				Note that only the first 8192 bytes of the request body are forwarded to
-        /// AWS WAF for inspection. 				To allow or block requests based on the length of the body, you can
-        /// create a size constraint set. 		 		 SINGLE_QUERY_ARG: The parameter in the query string that you
-        /// will inspect, such as UserName or SalesRegion. The maximum length for SINGLE_QUERY_ARG is 30
-        /// characters. 		 		 ALL_QUERY_ARGS: Similar to SINGLE_QUERY_ARG, but instead of inspecting a single
-        /// parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern
-        /// that you specify in TargetString. 		
+        /// request. Amazon CloudFront supports the following methods: DELETE, GET, HEAD, OPTIONS, 				PATCH,
+        /// POST, and PUT. QUERY_STRING: The value that you want AWS WAF to search for in the query string,
+        /// which is the part 				of a URL that appears after a ? character. URI: The value that you want AWS
+        /// WAF to search for in the part of a URL that identifies a resource, 				for example,
+        /// /images/daily-ad. jpg. BODY: The part of a request that contains any additional data that you want
+        /// to send to your web server 				as the HTTP request body, such as data from a form. The request body
+        /// immediately follows the request headers. 				Note that only the first 8192 bytes of the request body
+        /// are forwarded to AWS WAF for inspection. 				To allow or block requests based on the length of the
+        /// body, you can create a size constraint set. 		 		 SINGLE_QUERY_ARG: The parameter in the query
+        /// string that you will inspect, such as UserName or SalesRegion. The maximum length for
+        /// SINGLE_QUERY_ARG is 30 characters. 		 		 ALL_QUERY_ARGS: Similar to SINGLE_QUERY_ARG, but instead of
+        /// inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value
+        /// or regex pattern that you specify in TargetString. 		
         /// 		 		
         /// If TargetString includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
         /// 		 	
@@ -124,10 +123,9 @@ namespace Comformation.WAF.ByteMatchSet
 
         /// <summary>
         /// TextTransformation
-        /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
-        /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on FieldToMatch before inspecting it for a match.
+        /// an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+        /// FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// CMD_LINE

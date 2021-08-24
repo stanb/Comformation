@@ -14,7 +14,7 @@ namespace Comformation.OpsWorks.Stack
 
         /// <summary>
         /// Name
-        /// The name. This parameter must be set to &quot;Chef&quot;.
+        /// The name. This parameter must be set to Chef.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.OpsWorks.Stack
         /// <summary>
         /// Version
         /// The Chef version. This parameter must be set to 12, 11. 10, or 11. 4 for Linux stacks, and to 12. 2
-        /// for Windows stacks. The default value for Linux stacks is 11. 4.
+        /// for Windows stacks. The default value for Linux stacks is 12.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

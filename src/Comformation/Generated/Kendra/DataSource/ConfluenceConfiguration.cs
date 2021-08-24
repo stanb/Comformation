@@ -28,7 +28,7 @@ namespace Comformation.Kendra.DataSource
 
         /// <summary>
         /// SecretArn
-        /// The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs
+        /// The Amazon Resource Name (ARN) of an AWS Secrets Managersecret that contains the key/value pairs
         /// required to connect to your Confluence server. The secret must contain a JSON structure with the
         /// following keys:
         /// username - The user name or email address of a user with administrative privileges for the
@@ -114,12 +114,12 @@ namespace Comformation.Kendra.DataSource
         /// item matches both an inclusion pattern and an exclusion pattern, the item isn&#39;t included in the
         /// index.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings InclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> InclusionPatterns { get; set; }
 
         /// <summary>
         /// ExclusionPatterns
@@ -128,12 +128,12 @@ namespace Comformation.Kendra.DataSource
         /// are excluded from the index. Items that don&#39;t match the pattern are included in the index. If a item
         /// matches both an exclusion pattern and an inclusion pattern, the item isn&#39;t included in the index.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings ExclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExclusionPatterns { get; set; }
 
     }
 }

@@ -13,18 +13,6 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
-        /// Id
-        /// 		
-        /// The origin group&#39;s ID.
-        /// 	
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Id")]
-        public Union<string, IntrinsicFunction> Id { get; set; }
-
-        /// <summary>
         /// FailoverCriteria
         /// 		
         /// A complex type that contains information about the failover criteria for an origin group.
@@ -35,6 +23,18 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("FailoverCriteria")]
         public OriginGroupFailoverCriteria FailoverCriteria { get; set; }
+
+        /// <summary>
+        /// Id
+        /// 		
+        /// The origin group&#39;s ID.
+        /// 	
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Id")]
+        public Union<string, IntrinsicFunction> Id { get; set; }
 
         /// <summary>
         /// Members

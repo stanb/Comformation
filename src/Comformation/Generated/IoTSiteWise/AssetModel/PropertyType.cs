@@ -25,7 +25,7 @@ namespace Comformation.IoTSiteWise.AssetModel
         /// <summary>
         /// Attribute
         /// Specifies an asset attribute property. An attribute generally contains static information, such as
-        /// the serial number of an IIoT wind turbine.
+        /// the serial number of an industrial IoT wind turbine.
         /// This is required if the TypeName is Attribute and has a DefaultValue.
         /// Required: No
         /// Type: Attribute

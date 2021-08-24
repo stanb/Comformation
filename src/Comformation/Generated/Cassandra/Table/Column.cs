@@ -25,8 +25,8 @@ namespace Comformation.Cassandra.Table
 
         /// <summary>
         /// ColumnType
-        /// The data type of the column. For more information, see Data Types in the the Amazon Keyspaces
-        /// Developer Guide.
+        /// The data type of the column. For more information, see Data Types in the Amazon Keyspaces Developer
+        /// Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

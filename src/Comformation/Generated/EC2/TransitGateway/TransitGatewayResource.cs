@@ -19,7 +19,7 @@ namespace Comformation.EC2.TransitGateway
             /// Required: No
             /// Type: String
             /// Allowed values: disable | enable
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> DefaultRouteTablePropagation { get; set; }
 
@@ -28,7 +28,7 @@ namespace Comformation.EC2.TransitGateway
             /// The description of the transit gateway.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -38,7 +38,7 @@ namespace Comformation.EC2.TransitGateway
             /// Required: No
             /// Type: String
             /// Allowed values: disable | enable
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> AutoAcceptSharedAttachments { get; set; }
 
@@ -49,7 +49,7 @@ namespace Comformation.EC2.TransitGateway
             /// Required: No
             /// Type: String
             /// Allowed values: disable | enable
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> DefaultRouteTableAssociation { get; set; }
 
@@ -59,7 +59,7 @@ namespace Comformation.EC2.TransitGateway
             /// Required: No
             /// Type: String
             /// Allowed values: disable | enable
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> VpnEcmpSupport { get; set; }
 
@@ -69,7 +69,7 @@ namespace Comformation.EC2.TransitGateway
             /// Required: No
             /// Type: String
             /// Allowed values: disable | enable
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> DnsSupport { get; set; }
 
@@ -94,13 +94,40 @@ namespace Comformation.EC2.TransitGateway
             public Union<int, IntrinsicFunction> AmazonSideAsn { get; set; }
 
             /// <summary>
+            /// TransitGatewayCidrBlocks
+            /// The transit gateway CIDR blocks.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> TransitGatewayCidrBlocks { get; set; }
+
+            /// <summary>
             /// Tags
             /// The tags for the transit gateway.
             /// Required: No
             /// Type: List of Tag
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public List<Tag> Tags { get; set; }
+
+            /// <summary>
+            /// AssociationDefaultRouteTableId
+            /// The ID of the default association route table.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> AssociationDefaultRouteTableId { get; set; }
+
+            /// <summary>
+            /// PropagationDefaultRouteTableId
+            /// The ID of the default propagation route table.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> PropagationDefaultRouteTableId { get; set; }
 
         }
 
@@ -108,5 +135,10 @@ namespace Comformation.EC2.TransitGateway
 
         public TransitGatewayProperties Properties { get; } = new TransitGatewayProperties();
 
+    }
+
+    public static class TransitGatewayAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
     }
 }

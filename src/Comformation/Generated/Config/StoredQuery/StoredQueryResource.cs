@@ -48,7 +48,7 @@ namespace Comformation.Config.StoredQuery
 
             /// <summary>
             /// Tags
-            /// An array of tag object.
+            /// An array of key-value pairs to apply to this resource.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

@@ -26,7 +26,9 @@ namespace Comformation.ApiGatewayV2.Api
             /// <summary>
             /// BodyS3Location
             /// The S3 location of an OpenAPI definition. Supported only for HTTP APIs. To import an HTTP API, you
-            /// must specify a Body or BodyS3Location.
+            /// must specify a Body or BodyS3Location. If you specify a Body or BodyS3Location, don&#39;t specify
+            /// CloudFormation resources such as AWS::ApiGatewayV2::Authorizer or AWS::ApiGatewayV2::Route. API
+            /// Gateway doesn&#39;t support the combination of OpenAPI and CloudFormation resources.
             /// Required: Conditional
             /// Type: BodyS3Location
             /// Update requires: No interruption
@@ -162,7 +164,9 @@ namespace Comformation.ApiGatewayV2.Api
             /// <summary>
             /// Body
             /// The OpenAPI definition. Supported only for HTTP APIs. To import an HTTP API, you must specify a Body
-            /// or BodyS3Location.
+            /// or BodyS3Location. If you specify a Body or BodyS3Location, don&#39;t specify CloudFormation resources
+            /// such as AWS::ApiGatewayV2::Authorizer or AWS::ApiGatewayV2::Route. API Gateway doesn&#39;t support the
+            /// combination of OpenAPI and CloudFormation resources.
             /// Required: Conditional
             /// Type: Json
             /// Update requires: No interruption

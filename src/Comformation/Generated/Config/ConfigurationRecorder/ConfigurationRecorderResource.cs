@@ -14,9 +14,9 @@ namespace Comformation.Config.ConfigurationRecorder
         {
             /// <summary>
             /// Name
-            /// A name for the configuration recorder. If you don&#39;t specify a name, AWS CloudFormation generates a
-            /// unique physical ID and uses that ID for the configuration recorder name. For more information, see
-            /// Name Type.
+            /// A name for the configuration recorder. If you don&#39;t specify a name, AWS CloudFormation
+            /// CloudFormation generates a unique physical ID and uses that ID for the configuration recorder name.
+            /// For more information, see Name Type.
             /// Note After you create a configuration recorder, you cannot rename it. If you don&#39;t want a name that
             /// AWS CloudFormation generates, specify a value for this property.
             /// Updates are not supported.
@@ -42,10 +42,10 @@ namespace Comformation.Config.ConfigurationRecorder
 
             /// <summary>
             /// RoleARN
-            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to
-            /// make read or write requests to the delivery channel that you specify and to get configuration
-            /// details for supported AWS resources. For more information, see Permissions for the IAM Role Assigned
-            /// to AWS Config in the AWS Config Developer Guide.
+            /// The Amazon Resource Name (ARN) of the IAM (IAM) role that is used to make read or write requests to
+            /// the delivery channel that you specify and to get configuration details for supported AWS resources.
+            /// For more information, see Permissions for the IAM Role Assigned to AWS Config in the AWS Config
+            /// Developer Guide.
             /// 	
             /// Required: Yes
             /// Type: String

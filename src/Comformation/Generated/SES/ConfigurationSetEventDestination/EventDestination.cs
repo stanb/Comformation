@@ -38,6 +38,13 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// <summary>
         /// MatchingEventTypes
         /// The type of email sending events to publish to the event destination.
+        /// send - The call was successful and Amazon SES is attempting to deliver the email. reject - Amazon
+        /// SES determined that the email contained a virus and rejected it. bounce - The recipient&#39;s mail
+        /// server permanently rejected the email. This corresponds to a hard bounce. complaint - The recipient
+        /// marked the email as spam. delivery - Amazon SES successfully delivered the email to the recipient&#39;s
+        /// mail server. open - The recipient received the email and opened it in their email client. click -
+        /// The recipient clicked one or more links in the email. renderingFailure - Amazon SES did not send the
+        /// email because of a template rendering issue.
         /// Required: Yes
         /// Type: List of String
         /// Update requires: No interruption
@@ -47,9 +54,9 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// Name
-        /// The name of the event destination. The name must:
-        /// This value can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
-        /// Contain fewer than 64 characters.
+        /// The name of the event destination. The name must meet the following requirements:
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Contain 64
+        /// characters or fewer.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -60,7 +67,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         /// <summary>
         /// KinesisFirehoseDestination
         /// An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon
-        /// Kinesis Data Firehose event destination.
+        /// Kinesis Firehose event destination.
         /// Required: No
         /// Type: KinesisFirehoseDestination
         /// Update requires: No interruption

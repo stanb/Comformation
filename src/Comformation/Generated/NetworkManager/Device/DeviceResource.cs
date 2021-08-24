@@ -15,7 +15,7 @@ namespace Comformation.NetworkManager.Device
             /// <summary>
             /// Description
             /// A description of the device.
-            /// Length Constraints: Maximum length of 256 characters.
+            /// Constraints: Maximum length of 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -52,7 +52,7 @@ namespace Comformation.NetworkManager.Device
             /// <summary>
             /// Model
             /// The model of the device.
-            /// Length Constraints: Maximum length of 128 characters.
+            /// Constraints: Maximum length of 128 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -62,7 +62,7 @@ namespace Comformation.NetworkManager.Device
             /// <summary>
             /// SerialNumber
             /// The serial number of the device.
-            /// Length Constraints: Maximum length of 128 characters.
+            /// Constraints: Maximum length of 128 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -90,7 +90,7 @@ namespace Comformation.NetworkManager.Device
             /// <summary>
             /// Vendor
             /// The vendor of the device.
-            /// Length Constraints: Maximum length of 128 characters.
+            /// Constraints: Maximum length of 128 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

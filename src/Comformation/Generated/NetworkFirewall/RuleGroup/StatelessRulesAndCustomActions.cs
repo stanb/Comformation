@@ -16,7 +16,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// StatelessRules
         /// Defines the set of stateless rules for use in a stateless rule group.
         /// Required: Yes
-        /// Type: StatelessRules
+        /// Type: List of StatelessRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatelessRules")]
@@ -29,7 +29,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// define, and then you can use it by name in your stateless rule AWS::NetworkFirewall::RuleGroup
         /// RuleDefinition Actions specification.
         /// Required: No
-        /// Type: CustomActions
+        /// Type: List of CustomAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomActions")]

@@ -13,7 +13,19 @@ namespace Comformation.Glue.Partition
     {
 
         /// <summary>
+        /// SchemaVersionId
+        /// 	
+        /// The unique ID assigned to a version of the schema. Either this or the SchemaId has to be provided.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SchemaVersionId")]
+        public Union<string, IntrinsicFunction> SchemaVersionId { get; set; }
+
+        /// <summary>
         /// SchemaId
+        /// 	
         /// A structure that contains schema identity fields. Either this or the SchemaVersionId has to be
         /// provided.
         /// Required: No
@@ -25,6 +37,7 @@ namespace Comformation.Glue.Partition
 
         /// <summary>
         /// SchemaVersionNumber
+        /// 	
         /// The version number of the schema.
         /// Required: No
         /// Type: Integer
@@ -32,16 +45,6 @@ namespace Comformation.Glue.Partition
         /// </summary>
         [JsonProperty("SchemaVersionNumber")]
         public Union<int, IntrinsicFunction> SchemaVersionNumber { get; set; }
-
-        /// <summary>
-        /// SchameVersionId
-        /// Not currently supported by AWS CloudFormation.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("SchameVersionId")]
-        public Union<string, IntrinsicFunction> SchameVersionId { get; set; }
 
     }
 }

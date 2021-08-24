@@ -13,6 +13,16 @@ namespace Comformation.MediaLive.Channel
     {
 
         /// <summary>
+        /// FrameCaptureCdnSettings
+        /// Settings to configure the destination of a Frame Capture output.
+        /// Required: No
+        /// Type: FrameCaptureCdnSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("FrameCaptureCdnSettings")]
+        public FrameCaptureCdnSettings FrameCaptureCdnSettings { get; set; }
+
+        /// <summary>
         /// Destination
         /// The destination for the frame capture files. The destination is either the URI for an Amazon S3
         /// bucket and object, plus a file name prefix (for example,

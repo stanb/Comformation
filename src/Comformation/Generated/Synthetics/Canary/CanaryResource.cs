@@ -155,6 +155,17 @@ namespace Comformation.Synthetics.Canary
             /// </summary>
             public Union<bool, IntrinsicFunction> StartCanaryAfterCreation { get; set; }
 
+            /// <summary>
+            /// VisualReference
+            /// If this canary performs visual monitoring by comparing screenshots, this structure contains the ID
+            /// of the canary run to use as the baseline for screenshots, and the coordinates of any parts of the
+            /// screen to ignore during the visual monitoring comparison.
+            /// Required: No
+            /// Type: VisualReference
+            /// Update requires: No interruption
+            /// </summary>
+            public VisualReference VisualReference { get; set; }
+
         }
 
         public string Type { get; } = "AWS::Synthetics::Canary";

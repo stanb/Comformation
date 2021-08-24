@@ -15,7 +15,8 @@ namespace Comformation.Pinpoint.Campaign
         /// <summary>
         /// FilterType
         /// The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign
-        /// when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event occurs.
+        /// when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (Events
+        /// resource) occurs.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

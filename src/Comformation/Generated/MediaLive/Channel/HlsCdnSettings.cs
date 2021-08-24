@@ -24,6 +24,16 @@ namespace Comformation.MediaLive.Channel
         public HlsWebdavSettings HlsWebdavSettings { get; set; }
 
         /// <summary>
+        /// HlsS3Settings
+        /// Sets up Amazon S3 as the destination for this HLS output.
+        /// Required: No
+        /// Type: HlsS3Settings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HlsS3Settings")]
+        public HlsS3Settings HlsS3Settings { get; set; }
+
+        /// <summary>
         /// HlsAkamaiSettings
         /// Sets up Akamai as the downstream system for the HLS output group.
         /// Required: No

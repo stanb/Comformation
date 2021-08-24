@@ -31,7 +31,7 @@ namespace Comformation.S3.Bucket
         /// replica ownership to the AWS account that owns the destination bucket by specifying the
         /// AccessControlTranslation property, this is the account ID of the destination bucket owner. For more
         /// information, see Cross-Region Replication Additional Configuration: Change Replica Owner in the
-        /// Amazon Simple Storage Service Developer Guide.
+        /// Amazon S3 User Guide.
         /// If you specify the AccessControlTranslation property, the Account property is required.
         /// Required: Conditional
         /// Type: String
@@ -86,8 +86,8 @@ namespace Comformation.S3.Bucket
         /// StorageClass
         /// The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By
         /// default, Amazon S3 uses the storage class of the source object to create the object replica.
-        /// For valid values, see the StorageClass element of the PUT Bucket replication action in the Amazon
-        /// Simple Storage Service API Reference.
+        /// For valid values, see the StorageClass element of the PUT Bucket replication action in the Amazon S3
+        /// API Reference.
         /// Required: No
         /// Type: String
         /// Allowed values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | OUTPOSTS |

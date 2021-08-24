@@ -13,25 +13,12 @@ namespace Comformation.GameLift.Fleet
         public class FleetProperties
         {
             /// <summary>
-            /// BuildId
-            /// A unique identifier for a build to be deployed on the new fleet. If you are deploying the fleet with
-            /// a custom game build, you must specify this property. The build must have been successfully uploaded
-            /// to Amazon GameLift and be in a READY status. This fleet setting cannot be changed once the fleet is
-            /// created.
-            /// Required: Conditional
-            /// Type: String
-            /// Pattern: ^build-\S+|^arn:. *:build\/build-\S+
-            /// Update requires: Replacement
-            /// </summary>
-            public Union<string, IntrinsicFunction> BuildId { get; set; }
-
-            /// <summary>
             /// CertificateConfiguration
             /// Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for
             /// encrypting traffic between game clients and game servers running on GameLift. If this parameter is
             /// not set, certificate generation is disabled. This fleet setting cannot be changed once the fleet is
             /// created. Learn more at Securing Client/Server Communication.
-            /// Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS
+            /// Note: This feature requires the AWS Certificate Manager service, which is available in the AWS
             /// global partition but not in all other partitions. When working in a partition that does not support
             /// this feature, a request for a new fleet with certificate generation results fails with a 4xx
             /// unsupported region error.
@@ -43,7 +30,7 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// Description
-            /// A human-readable description of a fleet.
+            /// A human-readable description of the fleet.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -77,11 +64,11 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// EC2InstanceType
-            /// The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type
-            /// determines the computing resources of each instance in the fleet, including CPU, memory, storage,
-            /// and networking capacity. Amazon GameLift supports the following EC2 instance types. See Amazon EC2
-            /// Instance Types for detailed descriptions.
-            /// Required: Yes
+            /// The GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type
+            /// determines the computing resources that will be used to host your game servers, including CPU,
+            /// memory, storage, and networking capacity. See Amazon Elastic Compute Cloud Instance Types for
+            /// detailed descriptions of Amazon EC2 instance types.
+            /// Required: No
             /// Type: String
             /// Allowed values: c3. 2xlarge | c3. 4xlarge | c3. 8xlarge | c3. large | c3. xlarge | c4. 2xlarge | c4.
             /// 4xlarge | c4. 8xlarge | c4. large | c4. xlarge | c5. 12xlarge | c5. 18xlarge | c5. 24xlarge | c5.
@@ -101,9 +88,9 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// FleetType
-            /// Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default
-            /// is ON_DEMAND. Both categories of instances use identical hardware and configurations based on the
-            /// instance type selected for this fleet. Learn more about On-Demand versus Spot Instances.
+            /// Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is
+            /// set to ON_DEMAND. Learn more about when to use On-Demand versus Spot Instances. This property cannot
+            /// be changed after the fleet is created.
             /// Required: No
             /// Type: String
             /// Allowed values: ON_DEMAND | SPOT
@@ -113,11 +100,12 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// InstanceRoleARN
-            /// A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance
-            /// role ARN set, any application that runs on an instance in this fleet can assume the role, including
+            /// A unique identifier for an IAM role that manages access to your AWS services. With an instance role
+            /// ARN set, any application that runs on an instance in this fleet can assume the role, including
             /// install scripts, server processes, and daemons (background processes). Create a role or look up a
-            /// role&#39;s ARN from the IAM dashboard in the AWS Management Console. Learn more about using on-box
-            /// credentials for your game servers at Access external resources from a game server.
+            /// role&#39;s ARN by using the IAM dashboard in the AWS Management Console. Learn more about using on-box
+            /// credentials for your game servers at Access external resources from a game server. This property
+            /// cannot be changed after the fleet is created.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -126,15 +114,17 @@ namespace Comformation.GameLift.Fleet
             public Union<string, IntrinsicFunction> InstanceRoleARN { get; set; }
 
             /// <summary>
-            /// LogPaths
-            /// This parameter is no longer used. When hosting a custom game build, specify where Amazon GameLift
-            /// should store log files using the Amazon GameLift server API call ProcessReady(). See more
-            /// information in the Server API Reference.
+            /// Locations
+            /// A set of remote locations to deploy additional instances to and manage as part of the fleet. This
+            /// parameter can only be used when creating fleets in AWS Regions that support multiple locations. You
+            /// can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code
+            /// such as us-west-2. To create a fleet with instances in the home Region only, omit this parameter.
             /// Required: No
-            /// Type: List of String
-            /// Update requires: Replacement
+            /// Type: List of LocationConfiguration
+            /// Maximum: 100
+            /// Update requires: No interruption
             /// </summary>
-            public List<Union<string, IntrinsicFunction>> LogPaths { get; set; }
+            public List<LocationConfiguration> Locations { get; set; }
 
             /// <summary>
             /// MaxSize
@@ -173,7 +163,7 @@ namespace Comformation.GameLift.Fleet
             /// <summary>
             /// Name
             /// A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 1024
@@ -197,8 +187,8 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// PeerVpcAwsAccountId
-            /// A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift
-            /// fleet with. You can find your account ID in the AWS Management Console under account settings.
+            /// Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that
+            /// owns the VPC. You can find your account ID in the AWS Management Console under account settings.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -209,9 +199,9 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// PeerVpcId
-            /// A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC
-            /// must be in the same Region as your fleet. To look up a VPC ID, use the VPC Dashboard in the AWS
-            /// Management Console. Learn more about VPC peering in VPC Peering with Amazon GameLift Fleets.
+            /// A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be
+            /// in the same Region as your fleet. To look up a VPC ID, use the VPC Dashboard in the AWS Management
+            /// Console. Learn more about VPC peering in VPC Peering with GameLift Fleets.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -222,8 +212,8 @@ namespace Comformation.GameLift.Fleet
 
             /// <summary>
             /// ResourceCreationLimitPolicy
-            /// A policy that limits the number of game sessions an individual player can create over a span of time
-            /// for this fleet.
+            /// A policy that limits the number of game sessions that an individual player can create on instances
+            /// in this fleet within a specified span of time.
             /// Required: No
             /// Type: ResourceCreationLimitPolicy
             /// Update requires: No interruption
@@ -231,20 +221,17 @@ namespace Comformation.GameLift.Fleet
             public ResourceCreationLimitPolicy ResourceCreationLimitPolicy { get; set; }
 
             /// <summary>
-            /// RuntimeConfiguration
-            /// Instructions for launching server processes on each instance in the fleet. Server processes run
-            /// either a custom game build executable or a Realtime script. The runtime configuration defines the
-            /// server executables or launch script file, launch parameters, and the number of processes to run
-            /// concurrently on each instance. When creating a fleet, the runtime configuration must have at least
-            /// one server process configuration; otherwise the request fails with an invalid request exception.
-            /// This parameter is required unless the parameters ServerLaunchPath and ServerLaunchParameters are
-            /// defined. Runtime configuration has replaced these parameters, but fleets that use them will continue
-            /// to work.
+            /// BuildId
+            /// A unique identifier for a build to be deployed on the new fleet. If you are deploying the fleet with
+            /// a custom game build, you must specify this property. The build must have been successfully uploaded
+            /// to Amazon GameLift and be in a READY status. This fleet setting cannot be changed once the fleet is
+            /// created.
             /// Required: Conditional
-            /// Type: RuntimeConfiguration
-            /// Update requires: No interruption
+            /// Type: String
+            /// Pattern: ^build-\S+|^arn:. *:build\/build-\S+
+            /// Update requires: Replacement
             /// </summary>
-            public RuntimeConfiguration RuntimeConfiguration { get; set; }
+            public Union<string, IntrinsicFunction> BuildId { get; set; }
 
             /// <summary>
             /// ScriptId
@@ -263,30 +250,20 @@ namespace Comformation.GameLift.Fleet
             public Union<string, IntrinsicFunction> ScriptId { get; set; }
 
             /// <summary>
-            /// ServerLaunchParameters
-            /// This parameter is no longer used but is retained for backward compatibility. Instead, specify server
-            /// launch parameters in the RuntimeConfiguration parameter. A request must specify either a runtime
-            /// configuration or values for both ServerLaunchParameters and ServerLaunchPath.
+            /// RuntimeConfiguration
+            /// Instructions for launching server processes on each instance in the fleet. Server processes run
+            /// either a custom game build executable or a Realtime script. The runtime configuration defines the
+            /// server executables or launch script file, launch parameters, and the number of processes to run
+            /// concurrently on each instance. When creating a fleet, the runtime configuration must have at least
+            /// one server process configuration; otherwise the request fails with an invalid request exception.
+            /// This parameter is required unless the parameters ServerLaunchPath and ServerLaunchParameters are
+            /// defined. Runtime configuration has replaced these parameters, but fleets that use them will continue
+            /// to work.
             /// Required: Conditional
-            /// Type: String
-            /// Minimum: 1
-            /// Maximum: 1024
-            /// Update requires: Replacement
+            /// Type: RuntimeConfiguration
+            /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> ServerLaunchParameters { get; set; }
-
-            /// <summary>
-            /// ServerLaunchPath
-            /// This parameter is no longer used. Instead, specify a server launch path using the
-            /// RuntimeConfiguration parameter. Requests that specify a server launch path and launch parameters
-            /// instead of a runtime configuration will continue to work.
-            /// Required: Conditional
-            /// Type: String
-            /// Minimum: 1
-            /// Maximum: 1024
-            /// Update requires: Replacement
-            /// </summary>
-            public Union<string, IntrinsicFunction> ServerLaunchPath { get; set; }
+            public RuntimeConfiguration RuntimeConfiguration { get; set; }
 
         }
 
@@ -294,5 +271,10 @@ namespace Comformation.GameLift.Fleet
 
         public FleetProperties Properties { get; } = new FleetProperties();
 
+    }
+
+    public static class FleetAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FleetId = new ResourceAttribute<Union<string, IntrinsicFunction>>("FleetId");
     }
 }

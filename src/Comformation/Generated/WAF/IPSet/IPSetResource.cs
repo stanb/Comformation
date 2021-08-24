@@ -16,9 +16,9 @@ namespace Comformation.WAF.IPSet
             /// IPSetDescriptors
             /// 		
             /// The IP address type (IPV4 or IPV6) and the IP address range (in CIDR notation) that web requests
-            /// originate from. 			If the WebACL is associated with a CloudFront distribution and the viewer did not
-            /// use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
-            /// CloudFront access logs.
+            /// originate from. 			If the WebACL is associated with an Amazon CloudFront distribution and the viewer
+            /// did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip
+            /// field in the CloudFront access logs.
             /// 			 	
             /// Required: No
             /// Type: List of IPSetDescriptor

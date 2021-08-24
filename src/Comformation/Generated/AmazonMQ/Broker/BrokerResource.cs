@@ -45,7 +45,7 @@ namespace Comformation.AmazonMQ.Broker
             /// A list of information about the configuration. Does not apply to RabbitMQ brokers.
             /// Required: No
             /// Type: ConfigurationId
-            /// Update requires: No interruption
+            /// Update requires: Some interruptions
             /// </summary>
             public ConfigurationId Configuration { get; set; }
 
@@ -64,7 +64,7 @@ namespace Comformation.AmazonMQ.Broker
             /// patches to the broker.
             /// Required: No
             /// Type: MaintenanceWindow
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public MaintenanceWindow MaintenanceWindowStartTime { get; set; }
 
@@ -73,15 +73,15 @@ namespace Comformation.AmazonMQ.Broker
             /// The broker&#39;s instance type.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Some interruptions
             /// </summary>
             public Union<string, IntrinsicFunction> HostInstanceType { get; set; }
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Enables automatic upgrades to new minor versions for brokers, as new engine versions are released.
-            /// The automatic upgrades occur during the maintenance window of the broker or after a manual broker
-            /// reboot.
+            /// Enables automatic upgrades to new minor versions for brokers, as new broker engine versions are
+            /// released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance
+            /// window of the broker or after a manual broker reboot.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -188,8 +188,8 @@ namespace Comformation.AmazonMQ.Broker
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the Billing and
+            /// Cost Management User Guide.
             /// Required: No
             /// Type: List of TagsEntry
             /// Update requires: No interruption

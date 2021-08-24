@@ -14,8 +14,9 @@ namespace Comformation.KMS.Key
         {
             /// <summary>
             /// Description
-            /// A description of the CMK. Use a description that helps you to distinguish this CMK from others in
-            /// the account, such as its intended use.
+            /// A description of the CMK.
+            /// Use a description that helps you decide whether the CMK is appropriate for a task. The default value
+            /// is an empty string (no description).
             /// Required: No
             /// Type: String
             /// Minimum: 0
@@ -44,11 +45,12 @@ namespace Comformation.KMS.Key
             /// EnableKeyRotation
             /// Enables automatic rotation of the key material for the specified customer master key (CMK). By
             /// default, automation key rotation is not enabled.
+            /// AWS KMS does not support automatic key rotation on asymmetric CMKs. For asymmetric CMKs, omit the
+            /// EnableKeyRotation property or set it to false.
             /// When you enable automatic rotation, AWS KMS automatically creates new key material for the CMK 365
             /// days after the enable (or reenable) date and every 365 days thereafter. AWS KMS retains all key
-            /// material until you delete the CMK.
-            /// For detailed information about automatic key rotation, see Rotating customer master keys in the AWS
-            /// Key Management Service Developer Guide.
+            /// material until you delete the CMK. For detailed information about automatic key rotation, see
+            /// Rotating customer master keys in the AWS Key Management Service Developer Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -57,7 +59,7 @@ namespace Comformation.KMS.Key
 
             /// <summary>
             /// KeyPolicy
-            /// The key policy that authorizes use of the CMK. The key policy must observe the following rules.
+            /// The key policy that authorizes use of the CMK. The key policy must conform to the following rules.
             /// The key policy must allow the caller to make a subsequent PutKeyPolicy request on the CMK. This
             /// reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in
             /// the Default key policy section of the AWS Key Management Service Developer Guide . Each statement in
@@ -97,7 +99,7 @@ namespace Comformation.KMS.Key
             /// Required: No
             /// Type: String
             /// Allowed values: ENCRYPT_DECRYPT | SIGN_VERIFY
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> KeyUsage { get; set; }
 
@@ -128,9 +130,34 @@ namespace Comformation.KMS.Key
             /// ECC_SECG_P256K1 (secp256k1), commonly used for cryptocurrencies.
             /// Required: No
             /// Type: String
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> KeySpec { get; set; }
+
+            /// <summary>
+            /// MultiRegion
+            /// Creates a multi-Region primary CMK that you can replicate in other AWS Regions.
+            /// Important If you change the MultiRegion property of an existing CMK, the existing CMK is scheduled
+            /// for deletion and a new CMK is created with the specified Multi-Region value. While the scheduled
+            /// deletion is pending, you can&#39;t use the existing CMK. Unless you cancel the scheduled deletion of the
+            /// CMK outside of CloudFormation, all data encrypted under the existing CMK becomes unrecoverable when
+            /// the CMK is deleted.
+            /// For a multi-Region CMK, set to this property to true. For a single-Region CMK, omit this property or
+            /// set it to false. The default value is false.
+            /// Multi-Region keys are an AWS KMS feature that lets you create multiple interoperable CMKs in
+            /// different AWS Regions. Because these CMKs have the same key ID, key material, and other metadata,
+            /// you can use them to encrypt data in one AWS Region and decrypt it in a different AWS Region without
+            /// making a cross-Region call or exposing the plaintext data. For more information, see Using
+            /// multi-Region keys in the AWS Key Management Service Developer Guide.
+            /// You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK
+            /// with imported key material. However, you cannot create a multi-Region CMK in a custom key store.
+            /// To create a replica of this primary key in a different AWS Region , create an AWS::KMS::ReplicaKey
+            /// resource in a CloudFormation stack in the replica Region. Specify the key ARN of this primary key.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> MultiRegion { get; set; }
 
             /// <summary>
             /// PendingWindowInDays
@@ -139,17 +166,24 @@ namespace Comformation.KMS.Key
             /// days.
             /// When you remove a customer master key (CMK) from a CloudFormation stack, AWS KMS schedules the CMK
             /// for deletion and starts the mandatory waiting period. The PendingWindowInDays property determines
-            /// the length of waiting period. During the waiting period, the key state of CMK is Pending Deletion,
-            /// which prevents the CMK from being used in cryptographic operations. When the waiting period expires,
-            /// AWS KMS permanently deletes the CMK.
+            /// the length of waiting period. During the waiting period, the key state of CMK is Pending Deletion or
+            /// Pending Replica Deletion, which prevents the CMK from being used in cryptographic operations. When
+            /// the waiting period expires, AWS KMS permanently deletes the CMK.
+            /// AWS KMS will not delete a multi-Region primary key that has replica keys. If you remove a
+            /// multi-Region primary key from a CloudFormation stack, its key state changes to
+            /// PendingReplicaDeletion so it cannot be replicated or used in cryptographic operations. This state
+            /// can persist indefinitely. When the last of its replica keys is deleted, the key state of the primary
+            /// key changes to PendingDeletion and the waiting period specified by PendingWindowInDays begins. When
+            /// this waiting period expires, AWS KMS deletes the primary key. For details, see Deleting multi-Region
+            /// keys in the AWS Key Management Service Developer Guide.
             /// You cannot use a CloudFormation template to cancel deletion of the CMK after you remove it from the
             /// stack, regardless of the waiting period. If you specify a CMK in your template, even one with the
             /// same name, CloudFormation creates a new CMK. To cancel deletion of a CMK, use the AWS KMS console or
             /// the CancelKeyDeletion operation.
-            /// For information about the PendingDeletion key state, see Key state: Effect on your CMK in the AWS
-            /// Key Management Service Developer Guide. For more information about deleting CMKs, see the
-            /// ScheduleKeyDeletion operation in the AWS Key Management Service API Reference and Deleting customer
-            /// master keys in the AWS Key Management Service Developer Guide.
+            /// For information about the Pending Deletion and Pending Replica Deletion key states, see Key state:
+            /// Effect on your CMK in the AWS Key Management Service Developer Guide. For more information about
+            /// deleting CMKs, see the ScheduleKeyDeletion operation in the AWS Key Management Service API Reference
+            /// and Deleting customer master keys in the AWS Key Management Service Developer Guide.
             /// Minimum: 7
             /// Maximum: 30
             /// Required: No
@@ -160,7 +194,7 @@ namespace Comformation.KMS.Key
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs to apply to this resource.
+            /// Assigns one or more tags to the replica key.
             /// Note Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see Using ABAC
             /// in AWS KMS in the AWS Key Management Service Developer Guide.
             /// For information about tags in AWS KMS, see Tagging keys in the AWS Key Management Service Developer

@@ -14,7 +14,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// SigningRegion
-        /// The signing region for AWS IAM authorization.
+        /// The signing region for AWS Identity and Access Management authorization.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -24,7 +24,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// SigningServiceName
-        /// The signing service name for AWS IAM authorization.
+        /// The signing service name for AWS Identity and Access Management authorization.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

@@ -15,7 +15,7 @@ namespace Comformation.Cassandra.Table
         /// <summary>
         /// ReadCapacityUnits
         /// The amount of read capacity that&#39;s provisioned for the table. For more information, see Read/Write
-        /// Capacity Mode in the the Amazon Keyspaces Developer Guide.
+        /// Capacity Mode in the Amazon Keyspaces Developer Guide.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.Cassandra.Table
         /// <summary>
         /// WriteCapacityUnits
         /// The amount of write capacity that&#39;s provisioned for the table. For more information, see Read/Write
-        /// Capacity Mode in the the Amazon Keyspaces Developer Guide.
+        /// Capacity Mode in the Amazon Keyspaces Developer Guide.
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption

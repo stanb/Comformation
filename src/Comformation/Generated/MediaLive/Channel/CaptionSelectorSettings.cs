@@ -74,7 +74,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// AncillarySourceSettings
-        /// Not currently supported by AWS CloudFormation.
+        /// Information about the ancillary captions to extract from the input.
         /// Required: No
         /// Type: AncillarySourceSettings
         /// Update requires: No interruption

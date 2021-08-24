@@ -13,15 +13,14 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// BooleanValue
-        /// Optional. A string that contains the boolean value (true or false) of the value entry. Accepts
-        /// substitution templates.
+        /// StringValue
+        /// Optional. The string value of the value entry. Accepts substitution templates.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("BooleanValue")]
-        public Union<string, IntrinsicFunction> BooleanValue { get; set; }
+        [JsonProperty("StringValue")]
+        public Union<string, IntrinsicFunction> StringValue { get; set; }
 
         /// <summary>
         /// DoubleValue
@@ -35,6 +34,17 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> DoubleValue { get; set; }
 
         /// <summary>
+        /// BooleanValue
+        /// Optional. A string that contains the boolean value (true or false) of the value entry. Accepts
+        /// substitution templates.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BooleanValue")]
+        public Union<string, IntrinsicFunction> BooleanValue { get; set; }
+
+        /// <summary>
         /// IntegerValue
         /// Optional. A string that contains the integer value of the value entry. Accepts substitution
         /// templates.
@@ -44,16 +54,6 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("IntegerValue")]
         public Union<string, IntrinsicFunction> IntegerValue { get; set; }
-
-        /// <summary>
-        /// StringValue
-        /// Optional. The string value of the value entry. Accepts substitution templates.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("StringValue")]
-        public Union<string, IntrinsicFunction> StringValue { get; set; }
 
     }
 }

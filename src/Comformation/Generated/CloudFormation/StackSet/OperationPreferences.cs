@@ -85,5 +85,17 @@ namespace Comformation.CloudFormation.StackSet
         [JsonProperty("RegionOrder")]
         public List<Union<string, IntrinsicFunction>> RegionOrder { get; set; }
 
+        /// <summary>
+        /// RegionConcurrencyType
+        /// The concurrency type of deploying StackSets operations in regions, could be in parallel or one
+        /// region at a time
+        /// Allowed values: SEQUENTIAL | PARALLEL
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RegionConcurrencyType")]
+        public Union<string, IntrinsicFunction> RegionConcurrencyType { get; set; }
+
     }
 }

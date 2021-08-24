@@ -14,9 +14,10 @@ namespace Comformation.GameLift.Fleet
 
         /// <summary>
         /// GameSessionActivationTimeoutSeconds
-        /// The maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the
-        /// game session is not active before the timeout, activation is terminated and the game session status
-        /// is changed to TERMINATED.
+        /// The maximum amount of time (in seconds) allowed to launch a new game session and have it report
+        /// ready to host players. During this time, the game session is in status ACTIVATING. If the game
+        /// session does not become active before the timeout, it is ended and the game session status is
+        /// changed to TERMINATED.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1
@@ -28,9 +29,8 @@ namespace Comformation.GameLift.Fleet
 
         /// <summary>
         /// MaxConcurrentGameSessionActivations
-        /// The maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously.
-        /// This setting limits the amount of instance resources that can be used for new game activations at
-        /// any one time.
+        /// The number of game sessions in status ACTIVATING to allow on an instance. This setting limits the
+        /// instance resources that can be used for new game activations at any one time.
         /// Required: No
         /// Type: Integer
         /// Minimum: 1
@@ -42,7 +42,7 @@ namespace Comformation.GameLift.Fleet
 
         /// <summary>
         /// ServerProcesses
-        /// A collection of server process configurations that describe which server processes to run on each
+        /// A collection of server process configurations that identify what server processes to run on each
         /// instance in a fleet.
         /// Required: No
         /// Type: List of ServerProcess

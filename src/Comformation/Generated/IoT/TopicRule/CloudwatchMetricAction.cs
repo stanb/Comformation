@@ -23,6 +23,16 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> MetricName { get; set; }
 
         /// <summary>
+        /// MetricValue
+        /// The CloudWatch metric value.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("MetricValue")]
+        public Union<string, IntrinsicFunction> MetricValue { get; set; }
+
+        /// <summary>
         /// MetricNamespace
         /// The CloudWatch metric namespace name.
         /// Required: Yes
@@ -31,16 +41,6 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("MetricNamespace")]
         public Union<string, IntrinsicFunction> MetricNamespace { get; set; }
-
-        /// <summary>
-        /// MetricTimestamp
-        /// An optional Unix timestamp.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("MetricTimestamp")]
-        public Union<string, IntrinsicFunction> MetricTimestamp { get; set; }
 
         /// <summary>
         /// MetricUnit
@@ -53,16 +53,6 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> MetricUnit { get; set; }
 
         /// <summary>
-        /// MetricValue
-        /// The CloudWatch metric value.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("MetricValue")]
-        public Union<string, IntrinsicFunction> MetricValue { get; set; }
-
-        /// <summary>
         /// RoleArn
         /// The IAM role that allows access to the CloudWatch metric.
         /// Required: Yes
@@ -71,6 +61,16 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
+
+        /// <summary>
+        /// MetricTimestamp
+        /// An optional Unix timestamp.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("MetricTimestamp")]
+        public Union<string, IntrinsicFunction> MetricTimestamp { get; set; }
 
     }
 }

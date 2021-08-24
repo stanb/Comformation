@@ -52,7 +52,7 @@ namespace Comformation.ServiceDiscovery.Service
         /// <summary>
         /// TTL
         /// The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.
-        /// Note Alias records don&#39;t include a TTL because Route&#160;53 uses the TTL for the AWS resource that an
+        /// Note Alias records don&#39;t include a TTL because Route 53 uses the TTL for the AWS resource that an
         /// alias record routes traffic to. If you include the AWS_ALIAS_DNS_NAME attribute when you submit a
         /// RegisterInstance request, the TTL value is ignored. Always specify a TTL for the service; you can
         /// use a service to register instances that create either alias or non-alias records.

@@ -36,13 +36,15 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// Memory
-        /// This parameter is deprecated and not supported for jobs run on Fargate resources, use
-        /// ResourceRequirement. For jobs run on EC2 resources can specify the memory requirement using the
-        /// ResourceRequirement structure. The hard limit (in MiB) of memory to present to the container. If
-        /// your container attempts to exceed the memory specified here, the container is killed. This parameter
-        /// maps to Memory in the Create a container section of the Docker Remote API and the --memory option to
-        /// docker run. You must specify at least 4 MiB of memory for a job. This is required but can be
-        /// specified in several places; it must be specified for each node at least once.
+        /// This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts
+        /// to exceed the specified number, it&#39;s terminated. You must specify at least 4 MiB of memory for a job
+        /// using this parameter. The memory hard limit can be specified in several places. It must be specified
+        /// for each node at least once.
+        /// This parameter maps to Memory in the Create a container section of the Docker Remote API and the
+        /// --memory option to docker run.
+        /// This parameter is supported on EC2 resources but isn&#39;t supported on Fargate resources. For Fargate
+        /// resources, you should specify the memory requirement using resourceRequirement. You can also do this
+        /// for EC2 resources.
         /// Note If you&#39;re trying to maximize your resource utilization by providing your jobs as much memory as
         /// possible for a particular instance type, see Memory Management in the AWS Batch User Guide.
         /// Required: No
@@ -58,8 +60,8 @@ namespace Comformation.Batch.JobDefinition
         /// instance (similar to the root user). This parameter maps to Privileged in the Create a container
         /// section of the Docker Remote API and the --privileged option to docker run. The default value is
         /// false.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided,
-        /// or specified as false.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided, or specified as false.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -79,8 +81,8 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// FargatePlatformConfiguration
-        /// The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must
-        /// not specify this parameter.
+        /// The platform configuration for jobs that are running on Fargate resources. Jobs that are running on
+        /// EC2 resources must not specify this parameter.
         /// Required: No
         /// Type: FargatePlatformConfiguration
         /// Update requires: No interruption
@@ -114,16 +116,16 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// Vcpus
-        /// This parameter is deprecated and not supported for jobs run on Fargate resources, see
-        /// resourceRequirement. The number of vCPUs reserved for the container. Jobs running on EC2 resources
-        /// can specify the vCPU requirement for the job using resourceRequirements but the vCPU requirements
-        /// can&#39;t be specified both here and in the resourceRequirement structure. This parameter maps to
-        /// CpuShares in the Create a container section of the Docker Remote API and the --cpu-shares option to
-        /// docker run. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
-        /// required but can be specified in several places. It must be specified for each node at least once.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
-        /// Jobs running on Fargate resources must specify the vCPU requirement for the job using
-        /// resourceRequirements.
+        /// The number of vCPUs reserved for the job. Each vCPU is equivalent to 1,024 CPU shares. This
+        /// parameter maps to CpuShares in the Create a container section of the Docker Remote API and the
+        /// --cpu-shares option to docker run. The number of vCPUs must be specified but can be specified in
+        /// several places. You must specify it at least once for each node.
+        /// This parameter is supported on EC2 resources but isn&#39;t supported for jobs that run on Fargate
+        /// resources. For these resources, use resourceRequirement instead. You can use this parameter or
+        /// resourceRequirements structure but not both.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job
+        /// using resourceRequirements.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -207,9 +209,9 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// ExecutionRoleArn
-        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on
-        /// Fargate resources must provide an execution role. For more information, see AWS Batch execution IAM
-        /// role in the AWS Batch User Guide.
+        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on
+        /// Fargate resources, you must provide an execution role. For more information, see AWS Batch execution
+        /// IAM role in the AWS Batch User Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -258,7 +260,8 @@ namespace Comformation.Batch.JobDefinition
         /// Ulimits
         /// A list of ulimits to set in the container. This parameter maps to Ulimits in the Create a container
         /// section of the Docker Remote API and the --ulimit option to docker run.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: List of Ulimit
         /// Update requires: No interruption
@@ -268,8 +271,8 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// NetworkConfiguration
-        /// The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must
-        /// not specify this parameter.
+        /// The network configuration for jobs that are running on Fargate resources. Jobs that are running on
+        /// EC2 resources must not specify this parameter.
         /// Required: No
         /// Type: NetworkConfiguration
         /// Update requires: No interruption
@@ -281,8 +284,8 @@ namespace Comformation.Batch.JobDefinition
         /// InstanceType
         /// The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job
         /// must use the same instance type.
-        /// Note This parameter isn&#39;t applicable to single-node container jobs or for jobs running on Fargate
-        /// resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to single-node container jobs or jobs that run on Fargate
+        /// resources, and shouldn&#39;t be provided.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

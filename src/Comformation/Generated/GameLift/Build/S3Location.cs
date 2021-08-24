@@ -14,9 +14,9 @@ namespace Comformation.GameLift.Build
 
         /// <summary>
         /// Bucket
-        /// An S3 bucket identifier. This is the name of the S3 bucket.
-        /// Note GameLift currently does not support uploading from S3 buckets with names that contain a dot (.
-        /// ).
+        /// An Amazon S3 bucket identifier. This is the name of the S3 bucket.
+        /// Note GameLift currently does not support uploading from Amazon S3 buckets with names that contain a
+        /// dot (. ).
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -51,7 +51,8 @@ namespace Comformation.GameLift.Build
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) for an IAM role that allows Amazon GameLift to access the S3 bucket.
+        /// The Amazon Resource Name (ARN) for an IAM role that allows Amazon Web Services to access the S3
+        /// bucket.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1

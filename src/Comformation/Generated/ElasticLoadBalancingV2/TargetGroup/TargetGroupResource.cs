@@ -152,6 +152,15 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
             public Union<string, IntrinsicFunction> Protocol { get; set; }
 
             /// <summary>
+            /// ProtocolVersion
+            /// [HTTP/HTTPS protocol] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ProtocolVersion { get; set; }
+
+            /// <summary>
             /// Tags
             /// The tags.
             /// Required: No

@@ -32,6 +32,25 @@ namespace Comformation.EC2.VPCCidrBlock
             public Union<string, IntrinsicFunction> CidrBlock { get; set; }
 
             /// <summary>
+            /// Ipv6CidrBlock
+            /// An IPv6 CIDR block from the IPv6 address pool. You must also specify Ipv6Pool in the request.
+            /// To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> Ipv6CidrBlock { get; set; }
+
+            /// <summary>
+            /// Ipv6Pool
+            /// The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> Ipv6Pool { get; set; }
+
+            /// <summary>
             /// VpcId
             /// The ID of the VPC.
             /// Required: Yes

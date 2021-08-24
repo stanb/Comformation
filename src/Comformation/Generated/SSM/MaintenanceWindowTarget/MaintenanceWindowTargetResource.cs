@@ -14,8 +14,8 @@ namespace Comformation.SSM.MaintenanceWindowTarget
         {
             /// <summary>
             /// OwnerInformation
-            /// A user-provided value that will be included in any CloudWatch events that are raised while running
-            /// tasks for these targets in this maintenance window.
+            /// A user-provided value that will be included in any Amazon CloudWatch Events events that are raised
+            /// while running tasks for these targets in this maintenance window.
             /// Required: No
             /// Type: String
             /// Minimum: 1

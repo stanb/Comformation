@@ -15,7 +15,7 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TopicArn
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called.
-        /// You can find the ARN of a topic by using the ListTopics operation in the Amazon SNS API.
+        /// You can find the ARN of a topic by using the ListTopics operation in Amazon SNS.
         /// For more information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String
@@ -29,8 +29,8 @@ namespace Comformation.SES.ReceiptRule
         /// The Amazon Resource Name (ARN) of the Amazon WorkMail organization. Amazon WorkMail ARNs use the
         /// following format:
         /// arn:aws:workmail:&amp;lt;region&amp;gt;:&amp;lt;awsAccountId&amp;gt;:organization/&amp;lt;workmailOrganizationId&amp;gt;
-        /// You can find the ID of your organization by using the ListOrganizations operation in the Amazon
-        /// WorkMail API. Amazon WorkMail organization IDs begin with &quot;m-&quot;, followed by a string of alphanumeric
+        /// You can find the ID of your organization by using the ListOrganizations operation in Amazon
+        /// WorkMail. Amazon WorkMail organization IDs begin with &quot;m-&quot;, followed by a string of alphanumeric
         /// characters.
         /// For information about Amazon WorkMail organizations, see the Amazon WorkMail Administrator Guide.
         /// Required: Yes

@@ -17,7 +17,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// The MQTT topic of the message. You can use a string expression that includes variables ($variable.
         /// &amp;lt;variable-name&amp;gt;) and input values ($input. &amp;lt;input-name&amp;gt;. &amp;lt;path-to-datum&amp;gt;) as the
         /// topic string.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128

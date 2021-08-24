@@ -59,6 +59,9 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// OptionalFields
         /// Contains the optional fields that are included in the inventory results.
+        /// Valid values: Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded |
+        /// ReplicationStatus | EncryptionStatus | ObjectLockRetainUntilDate | ObjectLockMode |
+        /// ObjectLockLegalHoldStatus | IntelligentTieringAccessTier | BucketKeyStatus
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
@@ -78,7 +81,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ScheduleFrequency
-        /// Specifies the schedule for generating inventory results. Valid Values: Daily | Weekly.
+        /// Specifies the schedule for generating inventory results.
+        /// Allowed values: Daily | Weekly
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

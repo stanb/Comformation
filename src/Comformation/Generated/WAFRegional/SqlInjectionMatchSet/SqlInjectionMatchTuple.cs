@@ -14,10 +14,9 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
 
         /// <summary>
         /// TextTransformation
-        /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
-        /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on FieldToMatch before inspecting it for a match.
+        /// an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+        /// FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// CMD_LINE
@@ -72,7 +71,7 @@ namespace Comformation.WAFRegional.SqlInjectionMatchSet
 
         /// <summary>
         /// FieldToMatch
-        /// Specifies where in a web request to look for snippets of malicious SQL code.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: Yes
         /// Type: FieldToMatch
         /// Update requires: No interruption

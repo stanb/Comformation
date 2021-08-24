@@ -13,6 +13,28 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
+        /// PropertyAlias
+        /// The name of the property alias associated with your asset property. You must specify either a
+        /// propertyAlias or both an aliasId and a propertyId. Accepts substitution templates.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PropertyAlias")]
+        public Union<string, IntrinsicFunction> PropertyAlias { get; set; }
+
+        /// <summary>
+        /// PropertyValues
+        /// A list of property values to insert that each contain timestamp, quality, and value (TQV)
+        /// information.
+        /// Required: Yes
+        /// Type: List of AssetPropertyValue
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("PropertyValues")]
+        public List<AssetPropertyValue> PropertyValues { get; set; }
+
+        /// <summary>
         /// AssetId
         /// The ID of the AWS IoT SiteWise asset. You must specify either a propertyAlias or both an aliasId and
         /// a propertyId. Accepts substitution templates.
@@ -35,17 +57,6 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> EntryId { get; set; }
 
         /// <summary>
-        /// PropertyAlias
-        /// The name of the property alias associated with your asset property. You must specify either a
-        /// propertyAlias or both an aliasId and a propertyId. Accepts substitution templates.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("PropertyAlias")]
-        public Union<string, IntrinsicFunction> PropertyAlias { get; set; }
-
-        /// <summary>
         /// PropertyId
         /// The ID of the asset&#39;s property. You must specify either a propertyAlias or both an aliasId and a
         /// propertyId. Accepts substitution templates.
@@ -55,17 +66,6 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("PropertyId")]
         public Union<string, IntrinsicFunction> PropertyId { get; set; }
-
-        /// <summary>
-        /// PropertyValues
-        /// A list of property values to insert that each contain timestamp, quality, and value (TQV)
-        /// information.
-        /// Required: Yes
-        /// Type: List of AssetPropertyValue
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("PropertyValues")]
-        public List<AssetPropertyValue> PropertyValues { get; set; }
 
     }
 }

@@ -29,7 +29,7 @@ namespace Comformation.Config.ConfigurationAggregator
             /// 		
             /// The name of the aggregator.
             /// 	
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 256
@@ -67,5 +67,10 @@ namespace Comformation.Config.ConfigurationAggregator
 
         public ConfigurationAggregatorProperties Properties { get; } = new ConfigurationAggregatorProperties();
 
+    }
+
+    public static class ConfigurationAggregatorAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ConfigurationAggregatorArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("ConfigurationAggregatorArn");
     }
 }

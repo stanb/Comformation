@@ -26,7 +26,7 @@ namespace Comformation.SageMaker.Device
 
             /// <summary>
             /// Device
-            /// Not currently supported by AWS CloudFormation.
+            /// Edge device you want to create.
             /// Required: No
             /// Type: Device
             /// Update requires: No interruption
@@ -35,12 +35,14 @@ namespace Comformation.SageMaker.Device
 
             /// <summary>
             /// Tags
-            /// Not currently supported by AWS CloudFormation.
+            /// An array of key-value pairs that contain metadata to help you categorize and organize your devices.
+            /// Each tag consists of a key and a value, both of which you define.
             /// Required: No
-            /// Type: Tag of Json
+            /// Type: List of Tag
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-            public Tag Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

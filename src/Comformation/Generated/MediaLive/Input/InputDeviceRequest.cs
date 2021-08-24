@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Input
 
         /// <summary>
         /// Id
-        /// The unique ID for the device.
+        /// This property is not used. Ignore it.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

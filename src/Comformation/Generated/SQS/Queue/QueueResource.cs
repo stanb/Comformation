@@ -17,13 +17,27 @@ namespace Comformation.SQS.Queue
             /// For first-in-first-out (FIFO) queues, specifies whether to enable content-based deduplication.
             /// During the deduplication interval, Amazon SQS treats messages that are sent with identical content
             /// as duplicates and delivers only one copy of the message. For more information, see the
-            /// ContentBasedDeduplication attribute for the CreateQueue action in the Amazon Simple Queue Service
-            /// API Reference.
+            /// ContentBasedDeduplication attribute for the CreateQueue action in the Amazon SQS API Reference.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
             public Union<bool, IntrinsicFunction> ContentBasedDeduplication { get; set; }
+
+            /// <summary>
+            /// DeduplicationScope
+            /// For high throughput for FIFO queues, specifies whether message deduplication occurs at the message
+            /// group or queue level. Valid values are messageGroup and queue.
+            /// To enable high throughput for a FIFO queue, set this attribute to messageGroup and set the
+            /// FifoThroughputLimit attribute to perMessageGroupId. If you set these attributes to anything other
+            /// than these values, normal throughput is in effect and deduplication occurs as specified. For more
+            /// information, see High throughput for FIFO queues and Quotas related to messages in the Amazon SQS
+            /// Developer Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> DeduplicationScope { get; set; }
 
             /// <summary>
             /// DelaySeconds
@@ -38,8 +52,7 @@ namespace Comformation.SQS.Queue
             /// <summary>
             /// FifoQueue
             /// If set to true, creates a FIFO queue. If you don&#39;t specify this property, Amazon SQS creates a
-            /// standard queue. For more information, see FIFO (First-In-First-Out) Queues in the Amazon Simple
-            /// Queue Service Developer Guide.
+            /// standard queue. For more information, see FIFO queues in the Amazon SQS Developer Guide.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -47,13 +60,28 @@ namespace Comformation.SQS.Queue
             public Union<bool, IntrinsicFunction> FifoQueue { get; set; }
 
             /// <summary>
+            /// FifoThroughputLimit
+            /// For high throughput for FIFO queues, specifies whether the FIFO queue throughput quota applies to
+            /// the entire queue or per message group. Valid values are perQueue and perMessageGroupId.
+            /// To enable high throughput for a FIFO queue, set this attribute to perMessageGroupId and set the
+            /// DeduplicationScope attribute to messageGroup. If you set these attributes to anything other than
+            /// these values, normal throughput is in effect and deduplication occurs as specified. For more
+            /// information, see High throughput for FIFO queues and Quotas related to messages in the Amazon SQS
+            /// Developer Guide.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> FifoThroughputLimit { get; set; }
+
+            /// <summary>
             /// KmsDataKeyReusePeriodSeconds
             /// The length of time in seconds for which Amazon SQS can reuse a data key to encrypt or decrypt
             /// messages before calling AWS KMS again. The value must be an integer between 60 (1 minute) and 86,400
             /// (24 hours). The default is 300 (5 minutes).
             /// Note A shorter time period provides better security, but results in more calls to AWS KMS, which
-            /// might incur charges after Free Tier. For more information, see How Does the Data Key Reuse Period
-            /// Work? in the Amazon Simple Queue Service Developer Guide.
+            /// might incur charges after Free Tier. For more information, see Encryption at rest in the Amazon SQS
+            /// Developer Guide.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -65,9 +93,8 @@ namespace Comformation.SQS.Queue
             /// The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom CMK. To use the AWS
             /// managed CMK for Amazon SQS, specify the (default) alias alias/aws/sqs. For more information, see the
             /// following:
-            /// Protecting Data Using Server-Side Encryption (SSE) and AWS KMS in the Amazon Simple Queue Service
-            /// Developer Guide CreateQueue in the Amazon Simple Queue Service API Reference The Customer Master
-            /// Keys section of the AWS Key Management Service Best Practices whitepaper
+            /// Encryption at rest in the Amazon SQS Developer Guide CreateQueue in the Amazon SQS API Reference The
+            /// Customer Master Keys section of the AWS Key Management Service Best Practices whitepaper
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -98,10 +125,9 @@ namespace Comformation.SQS.Queue
             /// <summary>
             /// QueueName
             /// A name for the queue. To create a FIFO queue, the name of your FIFO queue must end with the . fifo
-            /// suffix. For more information, see FIFO (First-In-First-Out) Queues in the Amazon Simple Queue
-            /// Service Developer Guide.
+            /// suffix. For more information, see FIFO queues in the Amazon SQS Developer Guide.
             /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
-            /// the queue name. For more information, see Name Type in the AWS CloudFormation User Guide.
+            /// the queue name. For more information, see Name type in the AWS CloudFormation User Guide.
             /// Important If you specify a name, you can&#39;t perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.
@@ -116,7 +142,8 @@ namespace Comformation.SQS.Queue
             /// Specifies the duration, in seconds, that the ReceiveMessage action call waits until a message is in
             /// the queue in order to include it in the response, rather than returning an empty response if a
             /// message isn&#39;t yet available. You can specify an integer from 1 to 20. Short polling is used as the
-            /// default or when you specify 0 for this property. For more information, see Amazon SQS Long Poll.
+            /// default or when you specify 0 for this property. For more information, see Consuming messages using
+            /// long polling in the Amazon SQS Developer Guide.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -126,8 +153,8 @@ namespace Comformation.SQS.Queue
             /// <summary>
             /// RedrivePolicy
             /// A string that includes the parameters for the dead-letter queue functionality (redrive policy) of
-            /// the source queue. For more information about the redrive policy and dead-letter queues, see Using
-            /// Amazon SQS Dead-Letter Queues in the Amazon Simple Queue Service Developer Guide.
+            /// the source queue. For more information about the redrive policy and dead-letter queues, see Amazon
+            /// SQS dead-letter queues in the Amazon SQS Developer Guide.
             /// Note The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
             /// queue of a standard queue must also be a standard queue.
             /// JSON
@@ -146,7 +173,7 @@ namespace Comformation.SQS.Queue
 
             /// <summary>
             /// Tags
-            /// The tags that you attach to this queue. For more information, see Resource Tag in the AWS
+            /// The tags that you attach to this queue. For more information, see Resource tag in the AWS
             /// CloudFormation User Guide.
             /// Required: No
             /// Type: List of Tag
@@ -161,8 +188,8 @@ namespace Comformation.SQS.Queue
             /// time to process and delete the message from the queue.
             /// Values must be from 0 to 43,200 seconds (12 hours). If you don&#39;t specify a value, AWS CloudFormation
             /// uses the default value of 30 seconds.
-            /// For more information about Amazon SQS queue visibility timeouts, see Visibility Timeout in the
-            /// Amazon Simple Queue Service Developer Guide.
+            /// For more information about Amazon SQS queue visibility timeouts, see Visibility timeout in the
+            /// Amazon SQS Developer Guide.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption

@@ -15,8 +15,8 @@ namespace Comformation.Cognito.IdentityPoolRoleAttachment
             /// <summary>
             /// RoleMappings
             /// How users for a specific identity provider are mapped to roles. This is a string to the RoleMapping
-            /// object map. The string identifies the identity provider. For example: &quot;graph. facebook. com&quot; or
-            /// &quot;cognito-idp. us-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id&quot;.
+            /// object map. The string identifies the identity provider. For example: graph. facebook. com or
+            /// cognito-idp. us-east-1. amazonaws. com/us-east-1_abcdefghi:app_client_id.
             /// If the IdentityProvider field isn&#39;t provided in this object, the string is used as the identity
             /// provider name.
             /// For more information, see the RoleMapping property.

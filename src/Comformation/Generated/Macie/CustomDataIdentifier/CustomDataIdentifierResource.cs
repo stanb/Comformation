@@ -14,7 +14,7 @@ namespace Comformation.Macie.CustomDataIdentifier
         {
             /// <summary>
             /// Name
-            /// A custom name for the custom data identifier. The name can contain as many as 120 characters.
+            /// A custom name for the custom data identifier. The name can contain as many as 128 characters.
             /// We strongly recommend that you avoid including any sensitive data in the name of a custom data
             /// identifier. Other users of your account might be able to see the identifier&#39;s name, depending on the
             /// actions that they&#39;re allowed to perform in Amazon Macie.
@@ -26,7 +26,8 @@ namespace Comformation.Macie.CustomDataIdentifier
 
             /// <summary>
             /// Description
-            /// The description of the custom data identifier.
+            /// The description of the custom data identifier. The description can contain as many as 512
+            /// characters.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -36,7 +37,7 @@ namespace Comformation.Macie.CustomDataIdentifier
             /// <summary>
             /// Regex
             /// The regular expression (regex) that defines the pattern to match. The expression can contain as many
-            /// as 500 characters.
+            /// as 512 characters.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -47,8 +48,8 @@ namespace Comformation.Macie.CustomDataIdentifier
             /// MaximumMatchDistance
             /// The maximum number of characters that can exist between text that matches the regex pattern and the
             /// character sequences specified by the Keywords array. Amazon Macie includes or excludes a result
-            /// based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1 -
-            /// 300 characters. The default value is 50.
+            /// based on the proximity of a keyword to text that matches the regex pattern. The distance can be
+            /// 1-300 characters. The default value is 50.
             /// Required: No
             /// Type: Integer
             /// Update requires: Replacement
@@ -59,7 +60,7 @@ namespace Comformation.Macie.CustomDataIdentifier
             /// Keywords
             /// An array that lists specific character sequences (keywords), one of which must be within proximity
             /// (MaximumMatchDistance) of the regular expression to match. The array can contain as many as 50
-            /// keywords. Each keyword can contain 4 - 90 characters.
+            /// keywords. Each keyword can contain 3-90 characters. Keywords aren&#39;t case sensitive.
             /// Required: No
             /// Type: List of String
             /// Update requires: Replacement
@@ -70,8 +71,8 @@ namespace Comformation.Macie.CustomDataIdentifier
             /// IgnoreWords
             /// An array that lists specific character sequences (ignore words) to exclude from the results. If the
             /// text matched by the regular expression is the same as any string in this array, Amazon Macie ignores
-            /// it. The array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90
-            /// characters.
+            /// it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 characters.
+            /// Ignore words are case sensitive.
             /// Required: No
             /// Type: List of String
             /// Update requires: Replacement

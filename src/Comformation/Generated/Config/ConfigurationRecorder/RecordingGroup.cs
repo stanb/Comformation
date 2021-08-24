@@ -54,8 +54,7 @@ namespace Comformation.Config.ConfigurationRecorder
 
         /// <summary>
         /// ResourceTypes
-        /// 		
-        /// A comma-separated list that specifies the types of AWS 			resources for which AWS Config records
+        /// A comma-separated list that specifies the types of AWS resources for which AWS Config records
         /// configuration changes (for 			example, AWS::EC2::Instance or 				AWS::CloudTrail::Trail).
         /// 		
         /// To record all configuration changes, you must 			set the AllSupported option to 			false.

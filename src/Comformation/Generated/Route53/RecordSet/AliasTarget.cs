@@ -56,39 +56,38 @@ namespace Comformation.Route53.RecordSet
         /// API: Use the DescribeEnvironments action to get 								the value of the CNAME attribute. For more
         /// information, see 								DescribeEnvironments 								in the AWS Elastic Beanstalk API Reference.
         /// 						 							 AWS CLI: Use the describe-environments command to get the value of the 								CNAME
-        /// attribute. For more information, see 								describe-environments in the 								AWS Command Line
-        /// Interface Reference. 						 				 			 				 ELB load balancer 				 					 Specify the DNS name that is
-        /// associated with the load balancer. Get the DNS name by using the AWS Management Console, 						the
-        /// ELB API, or the AWS CLI. 					 						 						 						 						 					 							 AWS Management Console: Go
-        /// to the EC2 page, choose Load Balancers 								in the navigation pane, choose the load balancer,
-        /// choose the Description tab, and get the value 								of the DNS name field. 							 If you&#39;re
-        /// routing traffic to a Classic Load Balancer, get the value that begins with dualstack. 								If
-        /// you&#39;re routing traffic to another type of load balancer, get the value that applies to the record
-        /// type, A or AAAA. 						 							 Elastic Load Balancing API: Use DescribeLoadBalancers to get the
-        /// value 								of DNSName. For more information, see the applicable guide: 							 								 								
-        /// 							 Classic Load Balancers: 									DescribeLoadBalancers 								 Application and Network Load
-        /// Balancers: 									DescribeLoadBalancers 								 						 							 CloudFormation Fn::GetAtt
-        /// intrinsic function: Use the 								Fn::GetAtt 								intrinsic function to get the value of
-        /// DNSName: 							 								 								 							 									Classic Load Balancers. 								 								
-        /// 									Application and Network Load Balancers. 								 								 						 							 AWS CLI: Use
-        /// describe-load-balancers to get the value of DNSName. 								For more information, see the
-        /// applicable guide: 							 								 								 							 Classic Load Balancers:
-        /// 									describe-load-balancers 								 Application and Network Load Balancers:
-        /// 									describe-load-balancers 								 						 				 			 				 AWS Global Accelerator accelerator
-        /// 				 					 Specify the DNS name for your accelerator: 					 						 						 					 Global Accelerator
-        /// API: To get the DNS name, use 							DescribeAccelerator. AWS CLI: To get the DNS name, use
-        /// 							describe-accelerator. 				 			 				 Amazon S3 bucket that is configured as a static website
-        /// 				 					 Specify the domain name of the Amazon S3 website endpoint that you created the bucket in,
-        /// for example, 						s3-website. us-east-2. amazonaws. com. For more information about valid values,
-        /// see the table 						Amazon S3 Website Endpoints 						in the Amazon Web Services General Reference.
-        /// For more information about using S3 buckets for websites, 						see Getting Started with Amazon
-        /// Route 53 						in the Amazon Route 53 Developer Guide. 				 			 				 Another Route 53 record 				
-        /// 					 Specify the value of the Name element for a record in the current hosted zone. 					 Note If
-        /// you&#39;re creating an alias record that has the same name as the hosted zone (known as the zone apex),
-        /// 							you can&#39;t specify the domain name for a record for which the value of Type is CNAME. This is
-        /// because 							the alias record must have the same type as the record that you&#39;re routing traffic
-        /// to, and creating a CNAME record for the 							zone apex isn&#39;t supported even for an alias record.
-        /// 				 			
+        /// attribute. For more information, see 								describe-environments in the 								AWS CLI. 						
+        /// 				 			 				 ELB load balancer 				 					 Specify the DNS name that is associated with the load
+        /// balancer. Get the DNS name by using the AWS Management Console, 						the ELB API, or the AWS CLI.
+        /// 					 						 						 						 						 					 							 AWS Management Console: Go to the EC2 page, choose
+        /// Load Balancers 								in the navigation pane, choose the load balancer, choose the Description tab,
+        /// and get the value 								of the DNS name field. 							 If you&#39;re routing traffic to a Classic Load
+        /// Balancer, get the value that begins with dualstack. 								If you&#39;re routing traffic to another
+        /// type of load balancer, get the value that applies to the record type, A or AAAA. 						 							
+        /// Elastic Load Balancing API: Use DescribeLoadBalancers to get the value 								of DNSName. For more
+        /// information, see the applicable guide: 							 								 								 							 Classic Load Balancers:
+        /// 									DescribeLoadBalancers 								 Application and Network Load Balancers:
+        /// 									DescribeLoadBalancers 								 						 							 CloudFormation Fn::GetAtt intrinsic function:
+        /// Use the 								Fn::GetAtt 								intrinsic function to get the value of DNSName: 							 								
+        /// 								 							 									Classic Load Balancers. 								 								 									Application and Network
+        /// Load Balancers. 								 								 						 							 AWS CLI: Use describe-load-balancers to get the
+        /// value of DNSName. 								For more information, see the applicable guide: 							 								 								
+        /// 							 Classic Load Balancers: 									describe-load-balancers 								 Application and Network
+        /// Load Balancers: 									describe-load-balancers 								 						 				 			 				 Global Accelerator
+        /// accelerator 				 					 Specify the DNS name for your accelerator: 					 						 						 					 Global
+        /// Accelerator API: To get the DNS name, use 							DescribeAccelerator. AWS CLI: To get the DNS name,
+        /// use 							describe-accelerator. 				 			 				 Amazon S3 bucket that is configured as a static
+        /// website 				 					 Specify the domain name of the Amazon S3 website endpoint that you created the
+        /// bucket in, for example, 						s3-website. us-east-2. amazonaws. com. For more information about
+        /// valid values, see the table 						Amazon S3 Website Endpoints 						in the Amazon Web Services
+        /// General Reference. For more information about using S3 buckets for websites, 						see Getting
+        /// Started with Amazon Route 53 						in the Amazon Route 53 Developer Guide. 				 			 				 Another
+        /// Route 53 record 				 					 Specify the value of the Name element for a record in the current hosted
+        /// zone. 					 Note If you&#39;re creating an alias record that has the same name as the hosted zone (known
+        /// as the zone apex), 							you can&#39;t specify the domain name for a record for which the value of Type
+        /// is CNAME. This is because 							the alias record must have the same type as the record that you&#39;re
+        /// routing traffic to, and creating a CNAME record for the 							zone apex isn&#39;t supported even for an
+        /// alias record. 				 			
         /// 		 	
         /// Required: Yes
         /// Type: String
@@ -179,23 +178,23 @@ namespace Comformation.Route53.RecordSet
         /// 							 Elastic Load Balancing API: Use DescribeLoadBalancers to get the 								applicable value.
         /// For more information, see the applicable guide: 							 								 								 							 Classic Load
         /// Balancers: Use 									DescribeLoadBalancers 									to get the value of
-        /// CanonicalHostedZoneNameId. 								 Application and Network Load Balancers: Use
-        /// 									DescribeLoadBalancers 									to get the value of CanonicalHostedZoneId. 								 						
+        /// CanonicalHostedZoneNameID. 								 Application and Network Load Balancers: Use
+        /// 									DescribeLoadBalancers 									to get the value of CanonicalHostedZoneID. 								 						
         /// 							 CloudFormation Fn::GetAtt intrinsic function: Use the 								Fn::GetAtt 								intrinsic
         /// function to get the applicable value: 							 								 								 							 Classic Load Balancers: Get
         /// 									CanonicalHostedZoneNameID. 									 								 Application and Network Load Balancers: Get
         /// 									CanonicalHostedZoneID. 									 								 						 							 AWS CLI: Use
         /// describe-load-balancers to get the applicable value. 								For more information, see the
         /// applicable guide: 							 								 								 							 Classic Load Balancers: Use
-        /// 									describe-load-balancers 									to get the value of CanonicalHostedZoneNameId. 								
+        /// 									describe-load-balancers 									to get the value of CanonicalHostedZoneNameID. 								
         /// Application and Network Load Balancers: Use 									describe-load-balancers 									to get the
-        /// value of CanonicalHostedZoneId. 								 						 				 			 				 AWS Global Accelerator accelerator
-        /// 				 					 Specify Z2BJ6XQ5FK7U4H. 				 			 				 An Amazon S3 bucket configured as a static website
-        /// 				 					 Specify the hosted zone ID for the region that you created the bucket in. For more
-        /// information about 						valid values, see the table 						Amazon S3 Website Endpoints 						in the
-        /// Amazon Web Services General Reference. 				 			 				 Another Route 53 record in your hosted zone
-        /// 				 					 Specify the hosted zone ID of your hosted zone. (An alias record can&#39;t reference a record
-        /// in a different hosted zone. ) 				 			
+        /// value of CanonicalHostedZoneID. 								 						 				 			 				 Global Accelerator accelerator 				
+        /// 					 Specify Z2BJ6XQ5FK7U4H. 				 			 				 An Amazon S3 bucket configured as a static website 				
+        /// 					 Specify the hosted zone ID for the region that you created the bucket in. For more information
+        /// about 						valid values, see the table 						Amazon S3 Website Endpoints 						in the Amazon Web
+        /// Services General Reference. 				 			 				 Another Route 53 record in your hosted zone 				 					
+        /// Specify the hosted zone ID of your hosted zone. (An alias record can&#39;t reference a record in a
+        /// different hosted zone. ) 				 			
         /// 	
         /// Required: Yes
         /// Type: String

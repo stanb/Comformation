@@ -19,7 +19,7 @@ namespace Comformation.WAFv2.WebACLAssociation
             /// For an Application Load Balancer:
             /// arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/load-balancer-name/load-balancer-id
             /// For an Amazon API Gateway REST API: arn:aws:apigateway:region::/restapis/api-id/stages/stage-name
-            /// For an AppSync GraphQL API: arn:aws:appsync:region:account-id:apis/ GraphQLApiId
+            /// For an AWS AppSync GraphQL API: arn:aws:appsync:region:account-id:apis/ GraphQLApiId
             /// Required: Yes
             /// Type: String
             /// Minimum: 20
@@ -31,7 +31,7 @@ namespace Comformation.WAFv2.WebACLAssociation
 
             /// <summary>
             /// WebACLArn
-            /// The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+            /// The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
             /// Required: Yes
             /// Type: String
             /// Minimum: 20

@@ -16,31 +16,31 @@ namespace Comformation.WAFv2.WebACL
         /// Allow
         /// Instructs AWS WAF to allow the web request.
         /// Required: No
-        /// Type: Json
+        /// Type: AllowAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Allow")]
-        public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Allow { get; set; }
+        public AllowAction Allow { get; set; }
 
         /// <summary>
         /// Block
         /// Instructs AWS WAF to block the web request.
         /// Required: No
-        /// Type: Json
+        /// Type: BlockAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Block")]
-        public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Block { get; set; }
+        public BlockAction Block { get; set; }
 
         /// <summary>
         /// Count
         /// Instructs AWS WAF to count the web request and allow it.
         /// Required: No
-        /// Type: Json
+        /// Type: CountAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Count")]
-        public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Count { get; set; }
+        public CountAction Count { get; set; }
 
     }
 }

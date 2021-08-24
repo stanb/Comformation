@@ -7,7 +7,7 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet EbsBlockDevice
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-ebsblockdevice.html
     /// </summary>
     public class EbsBlockDevice
     {
@@ -18,7 +18,7 @@ namespace Comformation.EC2.SpotFleet
         /// Preserving Amazon EBS volumes on instance termination in the Amazon EC2 User Guide.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
         public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
@@ -36,7 +36,7 @@ namespace Comformation.EC2.SpotFleet
         /// This parameter is not returned by 	DescribeImageAttribute.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Encrypted")]
         public Union<bool, IntrinsicFunction> Encrypted { get; set; }
@@ -52,9 +52,9 @@ namespace Comformation.EC2.SpotFleet
         /// Other instance families guarantee performance up to 32,000 IOPS.
         /// This parameter is required for io1 and io2 volumes. The default for gp3 volumes is 3,000 IOPS. This
         /// parameter is not supported for gp2, st1, sc1, or standard volumes.
-        /// Required: No
+        /// Required: Conditional
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Iops")]
         public Union<int, IntrinsicFunction> Iops { get; set; }
@@ -62,9 +62,9 @@ namespace Comformation.EC2.SpotFleet
         /// <summary>
         /// SnapshotId
         /// The ID of the snapshot.
-        /// Required: No
+        /// Required: Conditional
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SnapshotId")]
         public Union<string, IntrinsicFunction> SnapshotId { get; set; }
@@ -76,9 +76,9 @@ namespace Comformation.EC2.SpotFleet
         /// or larger than the snapshot size.
         /// The following are the supported volumes sizes for each volume type:
         /// 	 gp2 and gp3:1-16,384 io1 and io2: 4-16,384 st1 and sc1: 125-16,384 standard: 1-1,024
-        /// Required: No
+        /// Required: Conditional
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("VolumeSize")]
         public Union<int, IntrinsicFunction> VolumeSize { get; set; }
@@ -90,7 +90,7 @@ namespace Comformation.EC2.SpotFleet
         /// Required: No
         /// Type: String
         /// Allowed values: gp2 | gp3 | io1 | io2 | sc1 | st1 | standard
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("VolumeType")]
         public Union<string, IntrinsicFunction> VolumeType { get; set; }

@@ -14,7 +14,7 @@ namespace Comformation.SageMaker.Workteam
 
         /// <summary>
         /// NotificationTopicArn
-        /// The ARN for the SNS topic to which notifications should be published.
+        /// The ARN for the Amazon SNS topic to which notifications should be published.
         /// Required: Yes
         /// Type: String
         /// Pattern: arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_. -]*

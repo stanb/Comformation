@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The launch template.
         /// Required: No
         /// Type: FleetLaunchTemplateSpecification
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateSpecification")]
         public FleetLaunchTemplateSpecification LaunchTemplateSpecification { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.EC2.SpotFleet
         /// Any parameters that you specify override the same parameters in the launch template.
         /// Required: No
         /// Type: List of LaunchTemplateOverrides
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Overrides")]
         public List<LaunchTemplateOverrides> Overrides { get; set; }

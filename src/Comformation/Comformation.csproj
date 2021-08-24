@@ -6,7 +6,7 @@
     <Authors>Stan Belkin</Authors>
     <Description>Compose AWS CloudFormation templates with .NET</Description>
     <PackageIconUrl>https://raw.githubusercontent.com/stanb/Comformation/master/logo.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/stanb/Comformation/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/stanb/Comformation</PackageProjectUrl>
     <RepositoryUrl>https://github.com/stanb/Comformation</RepositoryUrl>
     <Copyright>Stan Belkin</Copyright>
@@ -14,7 +14,7 @@
     <PackageId>Comformation</PackageId>
     <Product>Comformation.NET</Product>
     <PackageTags>cloudformation,aws-cloudformation,cloudformation-template,aws</PackageTags>
-    <Version>1.13.0</Version>
+    <Version>1.14.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\Comformation.xml</DocumentationFile>

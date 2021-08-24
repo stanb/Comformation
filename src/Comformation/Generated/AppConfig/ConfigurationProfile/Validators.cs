@@ -25,7 +25,7 @@ namespace Comformation.AppConfig.ConfigurationProfile
 
         /// <summary>
         /// Content
-        /// Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
+        /// Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.
         /// Required: No
         /// Type: String
         /// Minimum: 0

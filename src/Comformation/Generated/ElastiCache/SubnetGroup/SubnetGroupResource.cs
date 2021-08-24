@@ -41,6 +41,16 @@ namespace Comformation.ElastiCache.SubnetGroup
             /// </summary>
             public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// A tag that can be added to an ElastiCache subnet group. Tags are composed of a Key/Value pair. You
+            /// can use tags to categorize and track all your subnet groups. A tag with a null Value is permitted.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ElastiCache::SubnetGroup";

@@ -29,7 +29,7 @@ namespace Comformation.ECS.CapacityProvider
         /// 	
         /// Required: No
         /// Type: ManagedScaling
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ManagedScaling")]
         public ManagedScaling ManagedScaling { get; set; }
@@ -55,7 +55,7 @@ namespace Comformation.ECS.CapacityProvider
         /// Required: No
         /// Type: String
         /// Allowed values: DISABLED | ENABLED
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ManagedTerminationProtection")]
         public Union<string, IntrinsicFunction> ManagedTerminationProtection { get; set; }

@@ -15,8 +15,8 @@ namespace Comformation.SQS.QueuePolicy
             /// <summary>
             /// PolicyDocument
             /// A policy document that contains the permissions for the specified Amazon SQS queues. For more
-            /// information about Amazon SQS policies, see Creating Custom Policies Using the Access Policy Language
-            /// in the Amazon Simple Queue Service Developer Guide.
+            /// information about Amazon SQS policies, see Using custom policies with the Amazon SQS access policy
+            /// language in the Amazon SQS Developer Guide.
             /// Required: Yes
             /// Type: Json
             /// Update requires: No interruption

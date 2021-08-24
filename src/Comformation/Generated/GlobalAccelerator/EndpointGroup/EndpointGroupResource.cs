@@ -26,8 +26,8 @@ namespace Comformation.GlobalAccelerator.EndpointGroup
 
             /// <summary>
             /// EndpointGroupRegion
-            /// 		
-            /// The AWS Region where the endpoint group is located.
+            /// 	 	
+            /// The AWS Regions where the endpoint group is located.
             /// 	
             /// Required: Yes
             /// Type: String
@@ -51,7 +51,7 @@ namespace Comformation.GlobalAccelerator.EndpointGroup
             /// <summary>
             /// TrafficDialPercentage
             /// 		
-            /// The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other
+            /// The percentage of traffic to send to an AWS Regions. Additional traffic is distributed to other
             /// endpoint groups for 			this listener.
             /// 		
             /// Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The

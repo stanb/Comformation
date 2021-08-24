@@ -16,7 +16,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// Definition
         /// The list of IP addresses and address ranges, in CIDR notation.
         /// Required: No
-        /// Type: VariableDefinitionList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Definition")]

@@ -14,7 +14,8 @@ namespace Comformation.IoTWireless.ServiceProfile
         {
             /// <summary>
             /// Name
-            /// The name of the new resource.
+            /// 		
+            /// The name of the new resource. The maximum length is 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -22,27 +23,19 @@ namespace Comformation.IoTWireless.ServiceProfile
             public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            /// LoRaWANServiceProfile
+            /// LoRaWAN
             /// LoRaWANServiceProfile object.
             /// Required: No
             /// Type: LoRaWANServiceProfile
             /// Update requires: No interruption
             /// </summary>
-            public LoRaWANServiceProfile LoRaWANServiceProfile { get; set; }
-
-            /// <summary>
-            /// LoRaWANGetServiceProfileInfo
-            /// Not currently supported by AWS CloudFormation.
-            /// Required: No
-            /// Type: LoRaWANGetServiceProfileInfo
-            /// Update requires: No interruption
-            /// </summary>
-            public LoRaWANGetServiceProfileInfo LoRaWANGetServiceProfileInfo { get; set; }
+            public LoRaWANServiceProfile LoRaWAN { get; set; }
 
             /// <summary>
             /// Tags
             /// 		 		
-            /// An array of key-value pairs to apply to this resource.
+            /// An array of key-value pairs to apply to this resource. Tags can have a minimum of 0 and a maximum of
+            /// 50 items.
             /// 		
             /// For more information, see Tag.
             /// 	
@@ -51,17 +44,6 @@ namespace Comformation.IoTWireless.ServiceProfile
             /// Update requires: No interruption
             /// </summary>
             public List<Tag> Tags { get; set; }
-
-            /// <summary>
-            /// NextToken
-            /// 		
-            /// This parameter isn&#39;t needed to create this resource. Do not include it in your template.
-            /// 	
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> NextToken { get; set; }
 
         }
 
@@ -73,6 +55,24 @@ namespace Comformation.IoTWireless.ServiceProfile
 
     public static class ServiceProfileAttributes
     {
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_UlRate = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "UlRate");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_UlBucketSize = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "UlBucketSize");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoRaWAN_UlRatePolicy = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoRaWAN", "UlRatePolicy");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_DlRate = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "DlRate");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_DlBucketSize = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "DlBucketSize");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoRaWAN_DlRatePolicy = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoRaWAN", "DlRatePolicy");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_DevStatusReqFreq = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "DevStatusReqFreq");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> LoRaWAN_ReportDevStatusBattery = new ResourceAttribute<Union<bool, IntrinsicFunction>>("LoRaWAN", "ReportDevStatusBattery");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> LoRaWAN_ReportDevStatusMargin = new ResourceAttribute<Union<bool, IntrinsicFunction>>("LoRaWAN", "ReportDevStatusMargin");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_DrMin = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "DrMin");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_DrMax = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "DrMax");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> LoRaWAN_ChannelMask = new ResourceAttribute<Union<string, IntrinsicFunction>>("LoRaWAN", "ChannelMask");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> LoRaWAN_PrAllowed = new ResourceAttribute<Union<bool, IntrinsicFunction>>("LoRaWAN", "PrAllowed");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> LoRaWAN_HrAllowed = new ResourceAttribute<Union<bool, IntrinsicFunction>>("LoRaWAN", "HrAllowed");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> LoRaWAN_RaAllowed = new ResourceAttribute<Union<bool, IntrinsicFunction>>("LoRaWAN", "RaAllowed");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> LoRaWAN_NwkGeoLoc = new ResourceAttribute<Union<bool, IntrinsicFunction>>("LoRaWAN", "NwkGeoLoc");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_TargetPer = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "TargetPer");
+        public static readonly ResourceAttribute<Union<int, IntrinsicFunction>> LoRaWAN_MinGwDiversity = new ResourceAttribute<Union<int, IntrinsicFunction>>("LoRaWAN", "MinGwDiversity");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
     }

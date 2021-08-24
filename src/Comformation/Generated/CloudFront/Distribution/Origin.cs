@@ -13,6 +13,23 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
+        /// ConnectionAttempts
+        /// 		
+        /// The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
+        /// maximum is 3, and the default (if you don’t specify otherwise) is 3.
+        /// For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting),
+        /// this value also specifies the number of times that CloudFront attempts to get a response from the
+        /// origin, in the case of an Origin Response Timeout.
+        /// For more information, see Origin Connection Attempts in the 			Amazon CloudFront Developer Guide.
+        /// 	
+        /// Required: No
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ConnectionAttempts")]
+        public Union<int, IntrinsicFunction> ConnectionAttempts { get; set; }
+
+        /// <summary>
         /// ConnectionTimeout
         /// 		
         /// The number of seconds that CloudFront waits when trying to establish a connection to the origin.
@@ -27,6 +44,47 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("ConnectionTimeout")]
         public Union<int, IntrinsicFunction> ConnectionTimeout { get; set; }
+
+        /// <summary>
+        /// CustomOriginConfig
+        /// 		
+        /// Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the
+        /// 			Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3
+        /// bucket 			is not configured with static website hosting, use the S3OriginConfig type 			instead.
+        /// 	
+        /// Required: Conditional
+        /// Type: CustomOriginConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CustomOriginConfig")]
+        public CustomOriginConfig CustomOriginConfig { get; set; }
+
+        /// <summary>
+        /// DomainName
+        /// 		
+        /// The domain name for the origin.
+        /// 		
+        /// For more information, see Origin Domain Name in the Amazon CloudFront Developer Guide.
+        /// 	
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DomainName")]
+        public Union<string, IntrinsicFunction> DomainName { get; set; }
+
+        /// <summary>
+        /// Id
+        /// 		
+        /// A unique identifier for the origin. This value must be unique within the 			distribution.
+        /// Use this value to specify the TargetOriginId in a CacheBehavior or DefaultCacheBehavior.
+        /// 	
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Id")]
+        public Union<string, IntrinsicFunction> Id { get; set; }
 
         /// <summary>
         /// OriginCustomHeaders
@@ -45,35 +103,19 @@ namespace Comformation.CloudFront.Distribution
         public List<OriginCustomHeader> OriginCustomHeaders { get; set; }
 
         /// <summary>
-        /// ConnectionAttempts
+        /// OriginPath
         /// 		
-        /// The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
-        /// maximum is 3, and the default (if you don’t specify otherwise) is 3.
-        /// For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting),
-        /// this value also specifies the number of times that CloudFront attempts to get a response from the
-        /// origin, in the case of an Origin Response Timeout.
-        /// For more information, see Origin Connection Attempts in the 			Amazon CloudFront Developer Guide.
+        /// An optional path that CloudFront appends to the origin domain name when CloudFront requests content
+        /// from 			the origin.
+        /// 		
+        /// For more information, see Origin Path in the 			Amazon CloudFront Developer Guide.
         /// 	
         /// Required: No
-        /// Type: Integer
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("ConnectionAttempts")]
-        public Union<int, IntrinsicFunction> ConnectionAttempts { get; set; }
-
-        /// <summary>
-        /// DomainName
-        /// 		
-        /// The domain name for the origin.
-        /// 		
-        /// For more information, see Origin Domain Name in the Amazon CloudFront Developer Guide.
-        /// 	
-        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("DomainName")]
-        public Union<string, IntrinsicFunction> DomainName { get; set; }
+        [JsonProperty("OriginPath")]
+        public Union<string, IntrinsicFunction> OriginPath { get; set; }
 
         /// <summary>
         /// OriginShield
@@ -102,48 +144,6 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("S3OriginConfig")]
         public S3OriginConfig S3OriginConfig { get; set; }
-
-        /// <summary>
-        /// OriginPath
-        /// 		
-        /// An optional path that CloudFront appends to the origin domain name when CloudFront requests content
-        /// from 			the origin.
-        /// 		
-        /// For more information, see Origin Path in the 			Amazon CloudFront Developer Guide.
-        /// 	
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("OriginPath")]
-        public Union<string, IntrinsicFunction> OriginPath { get; set; }
-
-        /// <summary>
-        /// Id
-        /// 		
-        /// A unique identifier for the origin. This value must be unique within the 			distribution.
-        /// Use this value to specify the TargetOriginId in a CacheBehavior or DefaultCacheBehavior.
-        /// 	
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Id")]
-        public Union<string, IntrinsicFunction> Id { get; set; }
-
-        /// <summary>
-        /// CustomOriginConfig
-        /// 		
-        /// Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the
-        /// 			Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3
-        /// bucket 			is not configured with static website hosting, use the S3OriginConfig type 			instead.
-        /// 	
-        /// Required: Conditional
-        /// Type: CustomOriginConfig
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("CustomOriginConfig")]
-        public CustomOriginConfig CustomOriginConfig { get; set; }
 
     }
 }

@@ -15,7 +15,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// <summary>
         /// DeliveryStreamName
         /// The name of the Kinesis Data Firehose delivery stream where the data is written.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

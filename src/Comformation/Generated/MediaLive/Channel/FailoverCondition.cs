@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// FailoverConditionSettings
-        /// Failover condition type-specific settings.
+        /// Settings for a specific failover condition.
         /// Required: No
         /// Type: FailoverConditionSettings
         /// Update requires: No interruption

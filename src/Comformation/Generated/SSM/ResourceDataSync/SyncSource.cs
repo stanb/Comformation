@@ -13,30 +13,6 @@ namespace Comformation.SSM.ResourceDataSync
     {
 
         /// <summary>
-        /// SourceType
-        /// The type of data source for the resource data sync. SourceType is either AwsOrganizations (if an
-        /// organization is present in AWS Organizations) or singleAccountMultiRegions.
-        /// Required: Yes
-        /// Type: String
-        /// Minimum: 1
-        /// Maximum: 64
-        /// Update requires: Replacement
-        /// </summary>
-        [JsonProperty("SourceType")]
-        public Union<string, IntrinsicFunction> SourceType { get; set; }
-
-        /// <summary>
-        /// AwsOrganizationsSource
-        /// Information about the AwsOrganizationsSource resource data sync source. A sync source of this type
-        /// can synchronize data from AWS Organizations.
-        /// Required: No
-        /// Type: AwsOrganizationsSource
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("AwsOrganizationsSource")]
-        public AwsOrganizationsSource AwsOrganizationsSource { get; set; }
-
-        /// <summary>
         /// IncludeFutureRegions
         /// Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come
         /// online.
@@ -56,6 +32,30 @@ namespace Comformation.SSM.ResourceDataSync
         /// </summary>
         [JsonProperty("SourceRegions")]
         public List<Union<string, IntrinsicFunction>> SourceRegions { get; set; }
+
+        /// <summary>
+        /// SourceType
+        /// The type of data source for the resource data sync. SourceType is either AwsOrganizations (if an
+        /// organization is present in AWS Organizations) or SingleAccountMultiRegions.
+        /// Required: Yes
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 64
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SourceType")]
+        public Union<string, IntrinsicFunction> SourceType { get; set; }
+
+        /// <summary>
+        /// AwsOrganizationsSource
+        /// Information about the AwsOrganizationsSource resource data sync source. A sync source of this type
+        /// can synchronize data from AWS Organizations.
+        /// Required: No
+        /// Type: AwsOrganizationsSource
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AwsOrganizationsSource")]
+        public AwsOrganizationsSource AwsOrganizationsSource { get; set; }
 
     }
 }

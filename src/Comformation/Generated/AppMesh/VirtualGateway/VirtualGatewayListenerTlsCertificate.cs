@@ -13,8 +13,19 @@ namespace Comformation.AppMesh.VirtualGateway
     {
 
         /// <summary>
+        /// SDS
+        /// A reference to an object that represents a virtual gateway&#39;s listener&#39;s Secret Discovery Service
+        /// certificate.
+        /// Required: No
+        /// Type: VirtualGatewayListenerTlsSdsCertificate
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SDS")]
+        public VirtualGatewayListenerTlsSdsCertificate SDS { get; set; }
+
+        /// <summary>
         /// ACM
-        /// A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+        /// A reference to an object that represents an AWS Certificate Manager certificate.
         /// Required: No
         /// Type: VirtualGatewayListenerTlsAcmCertificate
         /// Update requires: No interruption

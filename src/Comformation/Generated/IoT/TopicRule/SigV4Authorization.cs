@@ -13,16 +13,6 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// RoleArn
-        /// The ARN of the signing role.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("RoleArn")]
-        public Union<string, IntrinsicFunction> RoleArn { get; set; }
-
-        /// <summary>
         /// ServiceName
         /// The service name to use while signing with Sig V4.
         /// Required: Yes
@@ -41,6 +31,16 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("SigningRegion")]
         public Union<string, IntrinsicFunction> SigningRegion { get; set; }
+
+        /// <summary>
+        /// RoleArn
+        /// The ARN of the signing role.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RoleArn")]
+        public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
     }
 }

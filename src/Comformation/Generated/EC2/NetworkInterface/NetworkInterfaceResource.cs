@@ -34,11 +34,13 @@ namespace Comformation.EC2.NetworkInterface
             /// InterfaceType
             /// 		
             /// Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify 			efa.
-            /// For more information, see 		 Elastic Fabric Adapter in the Amazon Elastic Compute Cloud User Guide.
+            /// For more information, see 			 Elastic Fabric Adapter in the Amazon Elastic Compute Cloud User Guide.
+            /// To create a trunk network interface, specify 		 efa. For more information, see 		 Network interface
+            /// trunking in the Amazon Elastic Compute Cloud User Guide.
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed values: efa
+            /// Allowed values: branch | efa | trunk
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> InterfaceType { get; set; }
@@ -104,7 +106,11 @@ namespace Comformation.EC2.NetworkInterface
 
             /// <summary>
             /// SourceDestCheck
-            /// Indicates whether traffic to or from the instance is validated.
+            /// Enable or disable source/destination checks, which ensure that the instance is either the source or
+            /// the destination of any traffic that it receives. If the value is true, source/destination checks are
+            /// enabled; otherwise, they are disabled. The default value is true. You must disable
+            /// source/destination checks if the instance runs services such as network address translation,
+            /// routing, or firewalls.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

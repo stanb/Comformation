@@ -13,16 +13,6 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
-        /// TimeInSeconds
-        /// The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("TimeInSeconds")]
-        public Union<string, IntrinsicFunction> TimeInSeconds { get; set; }
-
-        /// <summary>
         /// OffsetInNanos
         /// The nanosecond offset converted from timeInSeconds. The valid range is between 0-999999999.
         /// Required: No
@@ -31,6 +21,16 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("OffsetInNanos")]
         public Union<string, IntrinsicFunction> OffsetInNanos { get; set; }
+
+        /// <summary>
+        /// TimeInSeconds
+        /// The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TimeInSeconds")]
+        public Union<string, IntrinsicFunction> TimeInSeconds { get; set; }
 
     }
 }

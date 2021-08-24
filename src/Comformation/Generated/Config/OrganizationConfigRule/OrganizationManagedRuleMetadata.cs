@@ -74,8 +74,8 @@ namespace Comformation.Config.OrganizationConfigRule
         /// RuleIdentifier
         /// 		
         /// For organization config managed rules, a predefined identifier from a 			list. For example,
-        /// IAM_PASSWORD_POLICY is a managed 			rule. To reference a managed rule, see Using AWS Managed Config
-        /// Rules.
+        /// IAM_PASSWORD_POLICY is a managed 			rule. To reference a managed rule, see Using AWS Config managed
+        /// rules.
         /// 	
         /// Required: Yes
         /// Type: String
@@ -102,7 +102,7 @@ namespace Comformation.Config.OrganizationConfigRule
         /// <summary>
         /// MaximumExecutionFrequency
         /// 		
-        /// The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS
+        /// The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS Config
         /// managed rule that is triggered at a periodic frequency.
         /// 		
         /// Note By default, rules with a periodic trigger are evaluated every 24 hours. To change the

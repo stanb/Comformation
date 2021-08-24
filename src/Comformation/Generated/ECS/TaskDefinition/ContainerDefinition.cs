@@ -107,8 +107,7 @@ namespace Comformation.ECS.TaskDefinition
         /// 		
         /// When this parameter is true, networking is disabled within the container. This 			parameter maps to
         /// NetworkDisabled in the Create a container 			section of the Docker Remote API.
-        /// Note This parameter is not supported for Windows containers or tasks that use the awsvpc network
-        /// mode.
+        /// Note This parameter is not supported for Windows containers.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -122,8 +121,7 @@ namespace Comformation.ECS.TaskDefinition
         /// A list of DNS search domains that are presented to the container. This parameter maps 			to
         /// DnsSearch in the Create a container section of the 			Docker Remote API and the --dns-search option
         /// to docker run.
-        /// Note This parameter is not supported for Windows containers or tasks that use the awsvpc network
-        /// mode.
+        /// Note This parameter is not supported for Windows containers.
         /// Required: No
         /// Type: List of String
         /// Update requires: Replacement
@@ -136,8 +134,7 @@ namespace Comformation.ECS.TaskDefinition
         /// 		
         /// A list of DNS servers that are presented to the container. This parameter maps to 				Dns in the
         /// Create a container section of the 			Docker Remote API and the --dns option to docker run.
-        /// Note This parameter is not supported for Windows containers or tasks that use the awsvpc network
-        /// mode.
+        /// Note This parameter is not supported for Windows containers.
         /// Required: No
         /// Type: List of String
         /// Update requires: Replacement
@@ -367,12 +364,11 @@ namespace Comformation.ECS.TaskDefinition
         /// The links parameter allows containers to communicate with each other 			without the need for port
         /// mappings. This parameter is only supported if the network mode 			of a task definition is bridge.
         /// The name:internalName 			construct is analogous to name:alias in Docker links. 			Up to 255 letters
-        /// (uppercase and lowercase), numbers, and hyphens are allowed. For more information about linking
-        /// Docker containers, go to 				Legacy container links 			in the Docker documentation. This parameter
-        /// maps to Links in the 			Create a container section of the Docker Remote API and the 				--link
-        /// option to docker 			run.
-        /// Note This parameter is not supported for Windows containers or tasks that use the awsvpc network
-        /// mode.
+        /// (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about
+        /// linking Docker containers, go to 				Legacy container links 			in the Docker documentation. This
+        /// parameter maps to Links in the 			Create a container section of the Docker Remote API and the
+        /// 				--link option to docker 			run.
+        /// Note This parameter is not supported for Windows containers.
         /// Important Containers that are collocated on a single container instance may be able to
         /// 				communicate with each other without requiring links or host port mappings. Network 				isolation
         /// is achieved on the container instance using security groups and VPC 				settings.
@@ -508,9 +504,9 @@ namespace Comformation.ECS.TaskDefinition
         /// 		
         /// The name of a container. If you are linking multiple containers together in a task 			definition,
         /// the name of one container can be entered in the 				links of another container to connect the
-        /// containers. 			Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-        /// parameter maps to name in the 			Create a container section of the Docker Remote API and the
-        /// 				--name option to docker 			run.
+        /// containers. 			Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+        /// allowed. This parameter maps to name in the 			Create a container section of the Docker Remote API
+        /// and the 				--name option to docker 			run.
         /// 	
         /// Required: No
         /// Type: String
@@ -562,8 +558,7 @@ namespace Comformation.ECS.TaskDefinition
         /// When this parameter is true, the container is given read-only access to its root file 			system.
         /// This parameter maps to ReadonlyRootfs in the 			Create a container section of the Docker Remote API
         /// and the 				--read-only option to docker 				run.
-        /// Note This parameter is not supported for Windows containers or tasks that use the awsvpc network
-        /// mode.
+        /// Note This parameter is not supported for Windows containers.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -701,8 +696,7 @@ namespace Comformation.ECS.TaskDefinition
         /// 		
         /// 			 			 			 			 			 			 		 				 user 			 				 user:group 			 				 uid 			 				 uid:gid 			 				
         /// user:gid 			 				 uid:group 			
-        /// Note This parameter is not supported for Windows containers or tasks that use the awsvpc network
-        /// mode.
+        /// Note This parameter is not supported for Windows containers.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

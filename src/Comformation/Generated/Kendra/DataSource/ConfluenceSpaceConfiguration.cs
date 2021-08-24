@@ -42,11 +42,11 @@ namespace Comformation.Kendra.DataSource
         /// list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a
         /// space is in both the IncludeSpaces and the ExcludeSpaces list, the space is excluded.
         /// Required: No
-        /// Type: ConfluenceSpaceList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeSpaces")]
-        public ConfluenceSpaceList IncludeSpaces { get; set; }
+        public List<Union<string, IntrinsicFunction>> IncludeSpaces { get; set; }
 
         /// <summary>
         /// ExcludeSpaces
@@ -54,11 +54,11 @@ namespace Comformation.Kendra.DataSource
         /// attachments in the space are not indexed. If a space is in both the ExcludeSpaces and the
         /// IncludeSpaces list, the space is excluded.
         /// Required: No
-        /// Type: ConfluenceSpaceList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcludeSpaces")]
-        public ConfluenceSpaceList ExcludeSpaces { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExcludeSpaces { get; set; }
 
         /// <summary>
         /// SpaceFieldMappings
@@ -67,12 +67,12 @@ namespace Comformation.Kendra.DataSource
         /// operation.
         /// If you specify the SpaceFieldMappings parameter, you must specify at least one field mapping.
         /// Required: No
-        /// Type: ConfluenceSpaceFieldMappingsList
+        /// Type: List of ConfluenceSpaceToIndexFieldMapping
         /// Maximum: 4
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SpaceFieldMappings")]
-        public ConfluenceSpaceFieldMappingsList SpaceFieldMappings { get; set; }
+        public List<ConfluenceSpaceToIndexFieldMapping> SpaceFieldMappings { get; set; }
 
     }
 }

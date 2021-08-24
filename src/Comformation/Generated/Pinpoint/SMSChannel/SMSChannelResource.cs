@@ -16,7 +16,7 @@ namespace Comformation.Pinpoint.SMSChannel
             /// ShortCode
             /// The registered short code that you want to use when you send messages through the SMS channel.
             /// Note For information about obtaining a dedicated short code for sending SMS messages, see Requesting
-            /// Dedicated Short Codes for SMS Messaging in the Amazon Pinpoint User Guide.
+            /// Dedicated Short Codes for SMS Messaging with Amazon Pinpoint in the Amazon Pinpoint User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.Pinpoint.SMSChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the SMS channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that the SMS channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

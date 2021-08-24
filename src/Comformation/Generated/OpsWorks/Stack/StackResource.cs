@@ -18,8 +18,7 @@ namespace Comformation.OpsWorks.Stack
             /// Auto-update - Set this parameter to LATEST. AWS OpsWorks Stacks automatically installs new agent
             /// versions on the stack&#39;s instances as soon as they are available. Fixed version - Set this parameter
             /// to your preferred agent version. To update the agent version, you must edit the stack configuration
-            /// and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the
-            /// stack&#39;s instances.
+            /// and specify a new version. AWS OpsWorks Stacks installs that version on the stack&#39;s instances.
             /// The default setting is the most recent release of the agent. To specify an agent version, you must
             /// use the complete version number, not the abbreviated number shown on the console. For a list of
             /// available agent version numbers, call DescribeAgentVersions. AgentVersion cannot be set to Chef 12.
@@ -130,16 +129,18 @@ namespace Comformation.OpsWorks.Stack
             /// DefaultOs
             /// The stack&#39;s default operating system, which is installed on every instance unless you specify a
             /// different operating system when you create the instance. You can specify one of the following.
-            /// A supported Linux operating system: An Amazon Linux version, such as Amazon Linux 2018. 03, Amazon
-            /// Linux 2017. 09, Amazon Linux 2017. 03, Amazon Linux 2016. 09, Amazon Linux 2016. 03, Amazon Linux
-            /// 2015. 09, or Amazon Linux 2015. 03. A supported Ubuntu operating system, such as Ubuntu 16. 04 LTS,
-            /// Ubuntu 14. 04 LTS, or Ubuntu 12. 04 LTS. CentOS Linux 7 Red Hat Enterprise Linux 7 A supported
-            /// Windows operating system, such as Microsoft Windows Server 2012 R2 Base, Microsoft Windows Server
-            /// 2012 R2 with SQL Server Express, Microsoft Windows Server 2012 R2 with SQL Server Standard, or
-            /// Microsoft Windows Server 2012 R2 with SQL Server Web. A custom AMI: Custom. You specify the custom
-            /// AMI you want to use when you create instances. For more information, see Using Custom AMIs.
-            /// The default option is the current Amazon Linux version. For more information about supported
-            /// operating systems, see AWS OpsWorks Stacks Operating Systems.
+            /// A supported Linux operating system: An Amazon Linux version, such as Amazon Linux 2, Amazon Linux
+            /// 2018. 03, Amazon Linux 2017. 09, Amazon Linux 2017. 03, Amazon Linux 2016. 09, Amazon Linux 2016.
+            /// 03, Amazon Linux 2015. 09, or Amazon Linux 2015. 03. A supported Ubuntu operating system, such as
+            /// Ubuntu 18. 04 LTS, Ubuntu 16. 04 LTS, Ubuntu 14. 04 LTS, or Ubuntu 12. 04 LTS. CentOS Linux 7 Red
+            /// Hat Enterprise Linux 7 A supported Windows operating system, such as Microsoft Windows Server 2012
+            /// R2 Base, Microsoft Windows Server 2012 R2 with SQL Server Express, Microsoft Windows Server 2012 R2
+            /// with SQL Server Standard, or Microsoft Windows Server 2012 R2 with SQL Server Web. A custom AMI:
+            /// Custom. You specify the custom AMI you want to use when you create instances. For more information,
+            /// see Using Custom AMIs.
+            /// The default option is the current Amazon Linux version. Not all operating systems are supported with
+            /// all versions of Chef. For more information about supported operating systems, see AWS OpsWorks
+            /// Stacks Operating Systems.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -223,7 +224,7 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// Name
-            /// The stack name.
+            /// The stack name. Stack names can be a maximum of 64 characters.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -232,10 +233,10 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// RdsDbInstances
-            /// The Amazon Relational Database Service (Amazon RDS) DB instance to register with the AWS OpsWorks
-            /// stack.
-            /// Note If you specify a DB instance that&#39;s registered with another AWS OpsWorks stack, AWS
-            /// CloudFormation deregisters the existing association before registering the DB instance.
+            /// The Amazon Relational Database Service (Amazon RDS) database instance to register with the AWS
+            /// OpsWorks stack.
+            /// Note If you specify a database instance that&#39;s registered with another AWS OpsWorks stack, AWS
+            /// CloudFormation deregisters the existing association before registering the database instance.
             /// Required: No
             /// Type: List of RdsDbInstance
             /// Update requires: No interruption
@@ -244,9 +245,9 @@ namespace Comformation.OpsWorks.Stack
 
             /// <summary>
             /// ServiceRoleArn
-            /// The stack&#39;s AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work
-            /// with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for
-            /// an existing IAM role. For more information about IAM ARNs, see Using Identifiers.
+            /// The stack&#39;s IAM role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf.
+            /// You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more
+            /// information about IAM ARNs, see Using Identifiers.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

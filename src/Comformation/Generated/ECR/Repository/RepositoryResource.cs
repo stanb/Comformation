@@ -43,7 +43,7 @@ namespace Comformation.ECR.Repository
             /// <summary>
             /// RepositoryPolicyText
             /// The JSON repository policy text to apply to the repository. For more information, see Amazon ECR
-            /// Repository Policies in the Amazon Elastic Container Registry User Guide.
+            /// repository policies in the Amazon Elastic Container Registry User Guide.
             /// Required: No
             /// Type: Json
             /// Minimum: 0
@@ -78,10 +78,20 @@ namespace Comformation.ECR.Repository
             /// The image scanning configuration for the repository. This determines whether images are scanned for
             /// known vulnerabilities after being pushed to the repository.
             /// Required: No
-            /// Type: Json
+            /// Type: ImageScanningConfiguration
             /// Update requires: No interruption
             /// </summary>
-            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> ImageScanningConfiguration { get; set; }
+            public ImageScanningConfiguration ImageScanningConfiguration { get; set; }
+
+            /// <summary>
+            /// EncryptionConfiguration
+            /// The encryption configuration for the repository. This determines how the contents of your repository
+            /// are encrypted at rest.
+            /// Required: No
+            /// Type: EncryptionConfiguration
+            /// Update requires: Replacement
+            /// </summary>
+            public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
         }
 
@@ -94,5 +104,6 @@ namespace Comformation.ECR.Repository
     public static class RepositoryAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RepositoryUri = new ResourceAttribute<Union<string, IntrinsicFunction>>("RepositoryUri");
     }
 }

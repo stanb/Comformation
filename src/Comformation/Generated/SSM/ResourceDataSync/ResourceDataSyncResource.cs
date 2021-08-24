@@ -57,7 +57,7 @@ namespace Comformation.SSM.ResourceDataSync
 
             /// <summary>
             /// BucketRegion
-            /// The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+            /// The AWS Region with the S3 bucket targeted by the resource data sync.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -78,7 +78,7 @@ namespace Comformation.SSM.ResourceDataSync
 
             /// <summary>
             /// SyncName
-            /// A name for the Resource Data Sync.
+            /// A name for the resource data sync.
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
@@ -117,5 +117,10 @@ namespace Comformation.SSM.ResourceDataSync
 
         public ResourceDataSyncProperties Properties { get; } = new ResourceDataSyncProperties();
 
+    }
+
+    public static class ResourceDataSyncAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SyncName = new ResourceAttribute<Union<string, IntrinsicFunction>>("SyncName");
     }
 }

@@ -11,7 +11,7 @@ namespace Comformation.IntrinsicFunctions
     /// </summary>
     public class GetAZs : IntrinsicFunction
     {
-        private const string Name = "Fn::GetAtt";
+        private const string Name = "Fn::GetAZs";
 
         /// <summary>
         /// Constructor 

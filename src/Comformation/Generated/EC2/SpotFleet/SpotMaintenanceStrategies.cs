@@ -18,7 +18,7 @@ namespace Comformation.EC2.SpotFleet
         /// being interrupted.
         /// Required: No
         /// Type: SpotCapacityRebalance
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("CapacityRebalance")]
         public SpotCapacityRebalance CapacityRebalance { get; set; }

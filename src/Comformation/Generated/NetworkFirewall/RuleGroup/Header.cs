@@ -14,7 +14,8 @@ namespace Comformation.NetworkFirewall.RuleGroup
 
         /// <summary>
         /// Protocol
-        /// The protocol to inspect for. To match with any protocol, specify ANY.
+        /// The protocol to inspect for. To specify all, you can use IP, because all traffic on AWS and on the
+        /// internet is IP.
         /// Required: Yes
         /// Type: String
         /// Allowed values: DCERPC | DHCP | DNS | FTP | HTTP | ICMP | IKEV2 | IMAP | IP | KRB5 | MSN | NTP | SMB
@@ -48,7 +49,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// <summary>
         /// SourcePort
         /// The source port to inspect for. You can specify an individual port, for example 1994 and you can
-        /// specify a port range, for example 1990-1994. To match with any port, specify ANY.
+        /// specify a port range, for example 1990:1994. To match with any port, specify ANY.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -96,7 +97,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// <summary>
         /// DestinationPort
         /// The destination port to inspect for. You can specify an individual port, for example 1994 and you
-        /// can specify a port range, for example 1990-1994. To match with any port, specify ANY.
+        /// can specify a port range, for example 1990:1994. To match with any port, specify ANY.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1

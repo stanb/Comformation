@@ -14,7 +14,7 @@ namespace Comformation.LakeFormation.Permissions
 
         /// <summary>
         /// DataLakePrincipalIdentifier
-        /// An identifier for the AWS Lake Formation principal.
+        /// An identifier for the Lake Formation principal.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

@@ -37,7 +37,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Bandwidth
-        /// When specified, the HLS stream with the m3u8 BANDWIDTH that most closely matches this value is
+        /// When specified, the HLS stream with the m3u8 bandwidth that most closely matches this value is
         /// chosen. Otherwise, the highest bandwidth stream in the m3u8 is chosen. The bitrate is specified in
         /// bits per second, as in an HLS manifest.
         /// Required: No

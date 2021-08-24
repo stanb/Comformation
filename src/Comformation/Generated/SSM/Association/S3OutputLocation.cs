@@ -14,7 +14,7 @@ namespace Comformation.SSM.Association
 
         /// <summary>
         /// OutputS3Region
-        /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems
+        /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, AWS Systems
         /// Manager automatically determines the Region of the S3 bucket.
         /// Required: No
         /// Type: String

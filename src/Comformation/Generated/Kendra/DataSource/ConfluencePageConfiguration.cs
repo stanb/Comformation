@@ -19,12 +19,12 @@ namespace Comformation.Kendra.DataSource
         /// operation.
         /// If you specify the PageFieldMappings parameter, you must specify at least one field mapping.
         /// Required: No
-        /// Type: ConfluencePageFieldMappingsList
+        /// Type: List of ConfluencePageToIndexFieldMapping
         /// Maximum: 12
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("PageFieldMappings")]
-        public ConfluencePageFieldMappingsList PageFieldMappings { get; set; }
+        public List<ConfluencePageToIndexFieldMapping> PageFieldMappings { get; set; }
 
     }
 }

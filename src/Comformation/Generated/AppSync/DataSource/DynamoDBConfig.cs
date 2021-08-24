@@ -54,7 +54,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// UseCallerCredentials
-        /// Set to TRUE to use AWS IAM with this data source.
+        /// Set to TRUE to use AWS Identity and Access Management with this data source.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

@@ -63,6 +63,11 @@ namespace Comformation.CertificateManager.Certificate
             /// <summary>
             /// DomainValidationOptions
             /// Domain information that domain name registrars use to verify your identity.
+            /// Important In order for a AWS::CertificateManager::Certificate to provisioned and validated in
+            /// CloudFormation automatically, the `DomainName` property needs to be identical to one of the
+            /// `DomainName` property supplied in DomainValidationOptions, if the ValidationMethod is **DNS**.
+            /// Failing to keep them like-for-like will result in failure to create the domain validation records in
+            /// Route53.
             /// Required: No
             /// Type: List of DomainValidationOption
             /// Maximum: 100
@@ -97,6 +102,7 @@ namespace Comformation.CertificateManager.Certificate
             /// The method you want to use to validate that you own or control the domain associated with a public
             /// certificate. You can validate with DNS or validate with email. We recommend that you use DNS
             /// validation.
+            /// If not specified, this property defaults to email validation.
             /// Required: No
             /// Type: String
             /// Allowed values: DNS | EMAIL

@@ -49,7 +49,7 @@ namespace Comformation.Config.OrganizationConformancePack
             /// <summary>
             /// DeliveryS3Bucket
             /// 		
-            /// Amazon S3 bucket where AWS Config stores conformance pack templates.
+            /// The name of the Amazon S3 bucket where AWS Config stores conformance pack templates.
             /// 		
             /// Note This field is optional.
             /// 	

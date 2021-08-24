@@ -14,10 +14,10 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// AssignPublicIp
-        /// Indicates whether the job should have a public IP address. For a job running on Fargate resources in
-        /// a private subnet to send outbound traffic to the internet (for example, in order to pull container
-        /// images), the private subnet requires a NAT gateway be attached to route requests to the internet.
-        /// For more information, see Amazon ECS task networking. The default value is &quot;DISABLED&quot;.
+        /// Indicates whether the job should have a public IP address. For a job that is running on Fargate
+        /// resources in a private subnet to send outbound traffic to the internet (for example, to pull
+        /// container images), the private subnet requires a NAT gateway be attached to route requests to the
+        /// internet. For more information, see Amazon ECS task networking. The default value is &quot;DISABLED&quot;.
         /// Required: No
         /// Type: String
         /// Allowed values: DISABLED | ENABLED

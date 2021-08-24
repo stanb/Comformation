@@ -18,7 +18,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// (&#39;&amp;lt;string&amp;gt;&#39;), variables ($variable. &amp;lt;variable-name&amp;gt;), input values ($input.
         /// &amp;lt;input-name&amp;gt;. &amp;lt;path-to-datum&amp;gt;), string concatenations, and quoted strings that contain
         /// ${} as the content. The recommended maximum size of a content expression is 1 KB.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Update requires: No interruption
@@ -29,7 +29,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// <summary>
         /// Type
         /// The value of the payload type can be either STRING or JSON.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Allowed values: JSON | STRING
         /// Update requires: No interruption

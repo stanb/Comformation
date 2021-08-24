@@ -52,8 +52,8 @@ namespace Comformation.DMS.ReplicationInstance
             /// <summary>
             /// AvailabilityZone
             /// The Availability Zone that the replication instance will be created in.
-            /// The default value is a random, system-chosen Availability Zone in the endpoint&#39;s AWS Region, for
-            /// example: us-east-1d
+            /// The default value is a random, system-chosen Availability Zone in the endpoint&#39;s , for example:
+            /// us-east-1d
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -103,6 +103,21 @@ namespace Comformation.DMS.ReplicationInstance
             /// Update requires: No interruption
             /// </summary>
             public Union<int, IntrinsicFunction> AllocatedStorage { get; set; }
+
+            /// <summary>
+            /// ResourceIdentifier
+            /// A friendly name for the resource identifier at the end of the EndpointArn response parameter that is
+            /// returned in the created Endpoint object. The value for this parameter can have up to 31 characters.
+            /// It can contain only ASCII letters, digits, and hyphen (&#39;-&#39;). Also, it can&#39;t end with a hyphen or
+            /// contain two consecutive hyphens, and can only begin with a letter, such as Example-App-ARN1. For
+            /// example, this value might result in the EndpointArn value
+            /// arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1. If you don&#39;t specify a ResourceIdentifier
+            /// value, AWS DMS generates a default identifier value for the end of EndpointArn.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ResourceIdentifier { get; set; }
 
             /// <summary>
             /// VpcSecurityGroupIds

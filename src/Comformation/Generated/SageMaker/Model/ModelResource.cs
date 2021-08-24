@@ -77,10 +77,19 @@ namespace Comformation.SageMaker.Model
             /// Specifies the containers in the inference pipeline.
             /// Required: No
             /// Type: List of ContainerDefinition
-            /// Maximum: 5
+            /// Maximum: 15
             /// Update requires: Replacement
             /// </summary>
             public List<ContainerDefinition> Containers { get; set; }
+
+            /// <summary>
+            /// InferenceExecutionConfig
+            /// Specifies details of how containers in a multi-container endpoint are called.
+            /// Required: No
+            /// Type: InferenceExecutionConfig
+            /// Update requires: Replacement
+            /// </summary>
+            public InferenceExecutionConfig InferenceExecutionConfig { get; set; }
 
             /// <summary>
             /// Tags

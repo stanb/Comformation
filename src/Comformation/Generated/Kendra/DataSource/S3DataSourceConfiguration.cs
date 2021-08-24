@@ -29,39 +29,46 @@ namespace Comformation.Kendra.DataSource
         /// InclusionPrefixes
         /// A list of S3 prefixes for the documents that should be included in the index.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InclusionPrefixes")]
-        public DataSourceInclusionsExclusionsStrings InclusionPrefixes { get; set; }
+        public List<Union<string, IntrinsicFunction>> InclusionPrefixes { get; set; }
 
         /// <summary>
         /// InclusionPatterns
         /// A list of glob patterns for documents that should be indexed. If a document that matches an
         /// inclusion pattern also matches an exclusion pattern, the document is not indexed.
-        /// For more information about glob patterns, see glob (programming) in Wikipedia.
+        /// Some examples are:
+        /// *. txt will include all text files in a directory (files with the extension . txt). **/*. txt will
+        /// include all text files in a directory and its subdirectories. *tax* will include all files in a
+        /// directory that contain &#39;tax&#39; in the file name, such as &#39;tax&#39;, &#39;taxes&#39;, &#39;income_tax&#39;.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings InclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> InclusionPatterns { get; set; }
 
         /// <summary>
         /// ExclusionPatterns
         /// A list of glob patterns for documents that should not be indexed. If a document that matches an
         /// inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not
         /// indexed.
-        /// For more information about glob patterns, see glob (programming) in Wikipedia.
+        /// Some examples are:
+        /// *. png , *. jpg will exclude all PNG and JPEG image files in a directory (files with the extensions
+        /// . png and . jpg). *internal* will exclude all files in a directory that contain &#39;internal&#39; in the
+        /// file name, such as &#39;internal&#39;, &#39;internal_only&#39;, &#39;company_internal&#39;. **/*internal* will exclude all
+        /// internal-related files in a directory and its subdirectories.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings ExclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExclusionPatterns { get; set; }
 
         /// <summary>
         /// DocumentsMetadataConfiguration

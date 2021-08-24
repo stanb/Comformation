@@ -20,7 +20,7 @@ namespace Comformation.CloudFormation.ModuleVersion
             /// Minimum: 10
             /// Maximum: 204
             /// Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ModuleName { get; set; }
 
@@ -32,7 +32,7 @@ namespace Comformation.CloudFormation.ModuleVersion
             /// bucket. That is, the user needs to have GetObject permissions for the package. For more information,
             /// see Actions, Resources, and Condition Keys for Amazon S3 in the AWS Identity and Access Management
             /// User Guide.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Minimum: 1
             /// Maximum: 4096

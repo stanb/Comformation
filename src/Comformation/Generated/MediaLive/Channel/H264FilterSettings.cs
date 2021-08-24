@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// TemporalFilterSettings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings for applying the temporal filter to the video.
         /// Required: No
         /// Type: TemporalFilterSettings
         /// Update requires: No interruption

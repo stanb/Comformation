@@ -15,21 +15,21 @@ namespace Comformation.IoTEvents.DetectorModel
             /// <summary>
             /// DetectorModelDefinition
             /// Information that defines how a detector operates.
-            /// Required: No
+            /// Required: Yes
             /// Type: DetectorModelDefinition
             /// Update requires: No interruption
             /// </summary>
             public DetectorModelDefinition DetectorModelDefinition { get; set; }
 
             /// <summary>
-            /// EvaluationMethod
-            /// Information about the order in which events are evaluated and how actions are executed.
+            /// DetectorModelDescription
+            /// A brief description of the detector model.
             /// Required: No
             /// Type: String
-            /// Allowed values: BATCH | SERIAL
+            /// Maximum: 128
             /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> EvaluationMethod { get; set; }
+            public Union<string, IntrinsicFunction> DetectorModelDescription { get; set; }
 
             /// <summary>
             /// DetectorModelName
@@ -44,14 +44,14 @@ namespace Comformation.IoTEvents.DetectorModel
             public Union<string, IntrinsicFunction> DetectorModelName { get; set; }
 
             /// <summary>
-            /// DetectorModelDescription
-            /// A brief description of the detector model.
+            /// EvaluationMethod
+            /// Information about the order in which events are evaluated and how actions are executed.
             /// Required: No
             /// Type: String
-            /// Maximum: 128
+            /// Allowed values: BATCH | SERIAL
             /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> DetectorModelDescription { get; set; }
+            public Union<string, IntrinsicFunction> EvaluationMethod { get; set; }
 
             /// <summary>
             /// Key
@@ -73,7 +73,7 @@ namespace Comformation.IoTEvents.DetectorModel
             /// <summary>
             /// RoleArn
             /// The ARN of the role that grants permission to AWS IoT Events to perform its operations.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Minimum: 1
             /// Maximum: 2048

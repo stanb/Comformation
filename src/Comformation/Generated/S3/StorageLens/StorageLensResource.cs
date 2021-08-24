@@ -40,6 +40,6 @@ namespace Comformation.S3.StorageLens
 
     public static class StorageLensAttributes
     {
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StorageLensArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("StorageLensArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StorageLensConfiguration_StorageLensArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("StorageLensConfiguration", "StorageLensArn");
     }
 }

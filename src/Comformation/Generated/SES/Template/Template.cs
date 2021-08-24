@@ -24,7 +24,7 @@ namespace Comformation.SES.Template
 
         /// <summary>
         /// TextPart
-        /// The email body that is visible to recipients whose email clients don&#39;t display HTML content.
+        /// The email body that is visible to recipients whose email clients do not display HTML content.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -34,8 +34,7 @@ namespace Comformation.SES.Template
 
         /// <summary>
         /// TemplateName
-        /// The name of the template. You specify this name when you send email using the SendTemplatedEmail or
-        /// SendBulkTemplatedEmail operations.
+        /// The name of the template.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

@@ -14,7 +14,8 @@ namespace Comformation.Elasticsearch.Domain
 
         /// <summary>
         /// Enabled
-        /// True to enable fine-grained access control.
+        /// True to enable fine-grained access control. You must also enable encryption of data at rest and
+        /// node-to-node encryption.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement

@@ -14,8 +14,8 @@ namespace Comformation.SES.ReceiptRule
         {
             /// <summary>
             /// After
-            /// The name of the existing rule that you want to place the current rule after. If this parameter is
-            /// null, the new rule is added as the first entry in the receipt rule set.
+            /// The name of an existing rule after which the new rule is placed. If this parameter is null, the new
+            /// rule is inserted at the beginning of the rule list.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.SES.ReceiptRule
 
             /// <summary>
             /// RuleSetName
-            /// The name of the rule set that you want to add the receipt rule to.
+            /// The name of the rule set where the receipt rule is added.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

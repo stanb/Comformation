@@ -33,6 +33,17 @@ namespace Comformation.EC2.LaunchTemplate
             /// </summary>
             public LaunchTemplateData LaunchTemplateData { get; set; }
 
+            /// <summary>
+            /// TagSpecifications
+            /// 		
+            /// The tags to apply to the launch template during creation.
+            /// 	
+            /// Required: No
+            /// Type: List of LaunchTemplateTagSpecification
+            /// Update requires: No interruption
+            /// </summary>
+            public List<LaunchTemplateTagSpecification> TagSpecifications { get; set; }
+
         }
 
         public string Type { get; } = "AWS::EC2::LaunchTemplate";

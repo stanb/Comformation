@@ -27,7 +27,7 @@ namespace Comformation.CodeGuruReviewer.RepositoryAssociation
             /// <summary>
             /// Type
             /// The type of repository that contains the source code to be reviewed. The valid values are:
-            /// CodeCommit Bitbucket GitHubEnterpriseServer
+            /// CodeCommit Bitbucket GitHubEnterpriseServer S3Bucket
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -48,6 +48,16 @@ namespace Comformation.CodeGuruReviewer.RepositoryAssociation
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Owner { get; set; }
+
+            /// <summary>
+            /// BucketName
+            /// The name of the bucket. This is required for your S3Bucket repositoryThe name must start with the
+            /// prefix, codeguru-reviewer-*.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> BucketName { get; set; }
 
             /// <summary>
             /// ConnectionArn

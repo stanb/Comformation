@@ -14,9 +14,9 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Status
-        /// The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
-        /// ENABLED: Amazon CloudWatch Logs are enabled for this build project. DISABLED: Amazon CloudWatch Logs
-        /// are not enabled for this build project.
+        /// The current status of the logs in CloudWatch Logs for a build project. Valid values are:
+        /// ENABLED: CloudWatch Logs are enabled for this build project. DISABLED: CloudWatch Logs are not
+        /// enabled for this build project.
         /// Required: Yes
         /// Type: String
         /// Allowed values: DISABLED | ENABLED
@@ -27,8 +27,8 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// GroupName
-        /// The group name of the logs in Amazon CloudWatch Logs. For more information, see Working with Log
-        /// Groups and Log Streams.
+        /// The group name of the logs in CloudWatch Logs. For more information, see Working with Log Groups and
+        /// Log Streams.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -38,8 +38,8 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// StreamName
-        /// The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see Working with
-        /// Log Groups and Log Streams.
+        /// The prefix of the stream name of the CloudWatch Logs. For more information, see Working with Log
+        /// Groups and Log Streams.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

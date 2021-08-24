@@ -31,7 +31,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// TargetTypes
         /// The types of targets to inspect for. Valid values are TLS_SNI and HTTP_HOST.
         /// Required: Yes
-        /// Type: TargetTypes
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetTypes")]

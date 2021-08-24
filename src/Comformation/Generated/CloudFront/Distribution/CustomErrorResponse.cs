@@ -13,29 +13,6 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
-        /// ResponseCode
-        /// 		
-        /// The HTTP status code that you want CloudFront to return to the viewer along with the custom 			error
-        /// page. There are a variety of reasons that you might want CloudFront to return a status code
-        /// 			different from the status code that your origin returned to CloudFront, for example:
-        /// 		
-        /// 			 			 			 		 				 Some Internet devices (some firewalls and corporate proxies, for example)
-        /// intercept 					HTTP 4xx and 5xx and prevent the response from being returned to the viewer. If you
-        /// 					substitute 200, the response typically won&#39;t be intercepted. 			 				 If you don&#39;t care about
-        /// distinguishing among different client errors or server 					errors, you can specify 400 or 500 as
-        /// the 						ResponseCode for all 4xx or 5xx errors. 			 				 You might want to return a 200 status
-        /// code (OK) and static website so 					your customers don&#39;t know that your website is down. 			
-        /// 		
-        /// If you specify a value for ResponseCode, you must also specify a value for 			ResponsePagePath.
-        /// 	
-        /// Required: Conditional
-        /// Type: Integer
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("ResponseCode")]
-        public Union<int, IntrinsicFunction> ResponseCode { get; set; }
-
-        /// <summary>
         /// ErrorCachingMinTTL
         /// 		
         /// The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status 			code
@@ -63,6 +40,29 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("ErrorCode")]
         public Union<int, IntrinsicFunction> ErrorCode { get; set; }
+
+        /// <summary>
+        /// ResponseCode
+        /// 		
+        /// The HTTP status code that you want CloudFront to return to the viewer along with the custom 			error
+        /// page. There are a variety of reasons that you might want CloudFront to return a status code
+        /// 			different from the status code that your origin returned to CloudFront, for example:
+        /// 		
+        /// 			 			 			 		 				 Some Internet devices (some firewalls and corporate proxies, for example)
+        /// intercept 					HTTP 4xx and 5xx and prevent the response from being returned to the viewer. If you
+        /// 					substitute 200, the response typically won&#39;t be intercepted. 			 				 If you don&#39;t care about
+        /// distinguishing among different client errors or server 					errors, you can specify 400 or 500 as
+        /// the 						ResponseCode for all 4xx or 5xx errors. 			 				 You might want to return a 200 status
+        /// code (OK) and static website so 					your customers don&#39;t know that your website is down. 			
+        /// 		
+        /// If you specify a value for ResponseCode, you must also specify a value for 			ResponsePagePath.
+        /// 	
+        /// Required: Conditional
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ResponseCode")]
+        public Union<int, IntrinsicFunction> ResponseCode { get; set; }
 
         /// <summary>
         /// ResponsePagePath

@@ -43,11 +43,11 @@ namespace Comformation.RDS.DBInstance
             /// to 3072.
             /// SQL Server
             /// Constraints to the amount of storage for each storage type are the following:
-            /// General Purpose (SSD) storage (gp2): Enterprise and Standard editions: Must be an integer from 200
-            /// to 16384. Web and Express editions: Must be an integer from 20 to 16384. Provisioned IOPS storage
-            /// (io1): Enterprise and Standard editions: Must be an integer from 200 to 16384. Web and Express
-            /// editions: Must be an integer from 100 to 16384. Magnetic storage (standard): Enterprise and Standard
-            /// editions: Must be an integer from 200 to 1024. Web and Express editions: Must be an integer from 20
+            /// General Purpose (SSD) storage (gp2): Enterprise and Standard editions: Must be an integer from 20 to
+            /// 16384. Web and Express editions: Must be an integer from 20 to 16384. Provisioned IOPS storage
+            /// (io1): Enterprise and Standard editions: Must be an integer from 20 to 16384. Web and Express
+            /// editions: Must be an integer from 20 to 16384. Magnetic storage (standard): Enterprise and Standard
+            /// editions: Must be an integer from 20 to 1024. Web and Express editions: Must be an integer from 20
             /// to 1024.
             /// Required: Conditional
             /// Type: String
@@ -88,15 +88,11 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// AvailabilityZone
-            /// The Availability Zone (AZ) where the database will be created. For information on AWS Regions and
-            /// Availability Zones, see Regions and Availability Zones.
-            /// Default: A random, system-chosen Availability Zone in the endpoint&#39;s AWS Region.
+            /// The Availability Zone that the database instance will be created in.
+            /// Default: A random, system-chosen Availability Zone in the endpoint&#39;s region.
             /// Example: us-east-1d
-            /// Constraint: The AvailabilityZone parameter can&#39;t be specified if the DB instance is a Multi-AZ
-            /// deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
-            /// Note If you&#39;re creating a DB instance in an RDS on VMware environment, specify the identifier of the
-            /// custom Availability Zone to create the DB instance in. For more information about RDS on VMware, see
-            /// the RDS on VMware User Guide.
+            /// Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+            /// true. The specified Availability Zone must be in the same region as the current endpoint.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -111,7 +107,7 @@ namespace Comformation.RDS.DBInstance
             /// Not applicable. The retention period for automated backups is managed by the DB cluster.
             /// Default: 1
             /// Constraints:
-            /// Must be a value from 0 to 35 Can&#39;t be set to 0 if the DB instance is a source to Read Replicas
+            /// Must be a value from 0 to 35 Can&#39;t be set to 0 if the DB instance is a source to read replicas
             /// Required: No
             /// Type: Integer
             /// Update requires: Some interruptions
@@ -255,6 +251,8 @@ namespace Comformation.RDS.DBInstance
             /// Note If any of the data members of the referenced parameter group are changed during an update, the
             /// DB instance might need to be restarted, which causes some interruption. If the parameter group
             /// contains static parameters, whether they were changed or not, an update triggers a reboot.
+            /// If you don&#39;t specify a value for the DBParameterGroupName property, the default DB parameter group
+            /// for the specified engine and engine version is used.
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions
@@ -267,8 +265,8 @@ namespace Comformation.RDS.DBInstance
             /// existing DB security groups or references to AWS::RDS::DBSecurityGroup resources created in the
             /// template.
             /// If you set DBSecurityGroups, you must not set VPCSecurityGroups, and vice versa. Also, note that the
-            /// EC2VpcId property exists only for backwards compatibility with older regions and is no longer
-            /// recommended for providing security information to an RDS DB instance. Instead, use
+            /// DBSecurityGroups property exists only for backwards compatibility with older regions and is no
+            /// longer recommended for providing security information to an RDS DB instance. Instead, use
             /// VPCSecurityGroups.
             /// Important If you specify this property, AWS CloudFormation sends only the following properties (if
             /// specified) to Amazon RDS during create operations: AllocatedStorage AutoMinorVersionUpgrade
@@ -307,12 +305,10 @@ namespace Comformation.RDS.DBInstance
             /// the specified DBSnapshotIdentifier property, and the original DB instance is deleted.
             /// If you specify the DBSnapshotIdentifier property to restore a DB instance (as opposed to specifying
             /// it for DB instance updates), then don&#39;t specify the following properties:
-            /// AllocatedStorage BackupRetentionPeriod CharacterSetName DBClusterIdentifier DBName DBSecurityGroups
-            /// DeleteAutomatedBackups EnablePerformanceInsights EngineVersion KmsKeyId MasterUsername
-            /// MasterUserPassword MaxAllocatedStorage MonitoringInterval MonitoringRoleArn
-            /// PerformanceInsightsKMSKeyId PerformanceInsightsRetentionPeriod PreferredBackupWindow
-            /// PreferredMaintenanceWindow PromotionTier SourceDBInstanceIdentifier SourceRegion StorageEncrypted
-            /// Timezone
+            /// CharacterSetName DBClusterIdentifier DBName DeleteAutomatedBackups EnablePerformanceInsights
+            /// KmsKeyId MasterUsername MonitoringInterval MonitoringRoleArn PerformanceInsightsKMSKeyId
+            /// PerformanceInsightsRetentionPeriod PromotionTier SourceDBInstanceIdentifier SourceRegion
+            /// StorageEncrypted Timezone
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -406,10 +402,10 @@ namespace Comformation.RDS.DBInstance
             /// EnableIAMDatabaseAuthentication
             /// A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM)
             /// accounts to database accounts. By default, mapping is disabled.
-            /// This setting doesn&#39;t apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is
-            /// managed by the DB cluster.
             /// For more information, see IAM Database Authentication for MySQL and PostgreSQL in the Amazon RDS
             /// User Guide.
+            /// Amazon Aurora
+            /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -430,8 +426,7 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// Engine
             /// The name of the database engine that you want to use for this DB instance.
-            /// Note If you don&#39;t specify a value for the DBParameterGroupName property, the default
-            /// DBParameterGroup for the specified engine is used.
+            /// Note When you are creating a DB instance, the Engine property is required.
             /// Valid Values:
             /// aurora (for MySQL 5. 6-compatible Aurora) aurora-mysql (for MySQL 5. 7-compatible Aurora)
             /// aurora-postgresql mariadb mysql oracle-ee oracle-se2 oracle-se1 oracle-se postgres sqlserver-ee
@@ -491,8 +486,8 @@ namespace Comformation.RDS.DBInstance
             /// the default master key. If you specify this property, you must set the StorageEncrypted property to
             /// true.
             /// If you specify the SourceDBInstanceIdentifier property, the value is inherited from the source DB
-            /// instance if the Read Replica is created in the same region.
-            /// If you create an encrypted Read Replica in a different AWS Region, then you must specify a KMS key
+            /// instance if the read replica is created in the same region.
+            /// If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key
             /// for the destination AWS Region. KMS encryption keys are specific to the region that they&#39;re created
             /// in, and you can&#39;t use encryption keys from one region in another region.
             /// If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To specify both a
@@ -534,7 +529,7 @@ namespace Comformation.RDS.DBInstance
             /// Constraints: Must contain from 8 to 30 characters.
             /// PostgreSQL
             /// Constraints: Must contain from 8 to 128 characters.
-            /// Required: No
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -547,7 +542,7 @@ namespace Comformation.RDS.DBInstance
             /// this property. The value is inherited from the source DB instance or snapshot.
             /// Amazon Aurora
             /// Not applicable. The name for the master user is managed by the DB cluster.
-            /// Required: No
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -555,7 +550,8 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// MaxAllocatedStorage
-            /// The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+            /// The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB
+            /// instance.
             /// For more information about this setting, including limitations that apply to it, see Managing
             /// capacity automatically with Amazon RDS storage autoscaling in the Amazon RDS User Guide.
             /// Required: No
@@ -593,8 +589,10 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// MultiAZ
             /// Specifies whether the database instance is a multiple Availability Zone deployment. You can&#39;t set
-            /// the AvailabilityZone parameter if the MultiAZ parameter is set to true. Amazon Aurora storage is
-            /// replicated across all the Availability Zones and doesn&#39;t require the MultiAZ option to be set.
+            /// the AvailabilityZone parameter if the MultiAZ parameter is set to true.
+            /// Amazon Aurora
+            /// Not applicable. Amazon Aurora storage is replicated across all of the Availability Zones and doesn&#39;t
+            /// require the MultiAZ option to be set.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Some interruptions
@@ -621,9 +619,10 @@ namespace Comformation.RDS.DBInstance
             /// If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon RDS uses your default
             /// CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
             /// each AWS Region.
+            /// For information about enabling Performance Insights, see EnablePerformanceInsights.
             /// Required: No
             /// Type: String
-            /// Update requires: Some interruptions
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> PerformanceInsightsKMSKeyId { get; set; }
 
@@ -631,6 +630,7 @@ namespace Comformation.RDS.DBInstance
             /// PerformanceInsightsRetentionPeriod
             /// The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2
             /// years).
+            /// For information about enabling Performance Insights, see EnablePerformanceInsights.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -649,11 +649,8 @@ namespace Comformation.RDS.DBInstance
             /// <summary>
             /// PreferredBackupWindow
             /// The daily time range during which automated backups are created if automated backups are enabled,
-            /// using the BackupRetentionPeriod parameter. For more information, see The Backup Window in the Amazon
-            /// RDS User Guide.
-            /// The default is a 30-minute window selected at random from an 8-hour block of time for each AWS
-            /// Region. To see the time blocks available, see Adjusting the Preferred DB Instance Maintenance Window
-            /// in the Amazon RDS User Guide.
+            /// using the BackupRetentionPeriod parameter. For more information, see Backup Window in the Amazon RDS
+            /// User Guide.
             /// Constraints:
             /// Must be in the format hh24:mi-hh24:mi. Must be in Universal Coordinated Time (UTC). Must not
             /// conflict with the preferred maintenance window. Must be at least 30 minutes.
@@ -728,24 +725,24 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// SourceDBInstanceIdentifier
-            /// If you want to create a Read Replica DB instance, specify the ID of the source DB instance. Each DB
-            /// instance can have a limited number of Read Replicas. For more information, see Working with Read
+            /// If you want to create a read replica DB instance, specify the ID of the source DB instance. Each DB
+            /// instance can have a limited number of read replicas. For more information, see Working with Read
             /// Replicas in the Amazon Relational Database Service Developer Guide.
-            /// The SourceDBInstanceIdentifier property determines whether a DB instance is a Read Replica. If you
+            /// The SourceDBInstanceIdentifier property determines whether a DB instance is a read replica. If you
             /// remove the SourceDBInstanceIdentifier property from your template and then update your stack, AWS
-            /// CloudFormation deletes the Read Replica and creates a new DB instance (not a Read Replica).
+            /// CloudFormation deletes the Read Replica and creates a new DB instance (not a read replica).
             /// Important If you specify a source DB instance that uses VPC security groups, we recommend that you
-            /// specify the VPCSecurityGroups property. If you don&#39;t specify the property, the Read Replica inherits
+            /// specify the VPCSecurityGroups property. If you don&#39;t specify the property, the read replica inherits
             /// the value of the VPCSecurityGroups property from the source DB when you create the replica. However,
             /// if you update the stack, AWS CloudFormation reverts the replica&#39;s VPCSecurityGroups property to the
             /// default value because it&#39;s not defined in the stack&#39;s template. This change might cause unexpected
-            /// issues. Read Replicas don&#39;t support deletion policies. AWS CloudFormation ignores any deletion
-            /// policy that&#39;s associated with a Read Replica. If you specify SourceDBInstanceIdentifier, don&#39;t
-            /// specify the DBSnapshotIdentifier property. You can&#39;t create a Read Replica from a snapshot. Don&#39;t
+            /// issues. Read replicas don&#39;t support deletion policies. AWS CloudFormation ignores any deletion
+            /// policy that&#39;s associated with a read replica. If you specify SourceDBInstanceIdentifier, don&#39;t
+            /// specify the DBSnapshotIdentifier property. You can&#39;t create a read replica from a snapshot. Don&#39;t
             /// set the BackupRetentionPeriod, DBName, MasterUsername, MasterUserPassword, and PreferredBackupWindow
             /// properties. The database attributes are inherited from the source DB instance, and backups are
-            /// disabled for Read Replicas. If the source DB instance is in a different region than the Read
-            /// Replica, specify the source region in SourceRegion, and specify an ARN for a valid DB instance in
+            /// disabled for read replicas. If the source DB instance is in a different region than the read
+            /// replica, specify the source region in SourceRegion, and specify an ARN for a valid DB instance in
             /// SourceDBInstanceIdentifier. For more information, see Constructing a Amazon RDS Amazon Resource Name
             /// (ARN) in the Amazon RDS User Guide. For DB instances in Amazon Aurora clusters, don&#39;t specify this
             /// property. Amazon RDS automatically assigns writer and reader DB instances.
@@ -757,7 +754,7 @@ namespace Comformation.RDS.DBInstance
 
             /// <summary>
             /// SourceRegion
-            /// The ID of the region that contains the source DB instance for the Read Replica.
+            /// The ID of the region that contains the source DB instance for the read replica.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -783,7 +780,9 @@ namespace Comformation.RDS.DBInstance
             /// If you specify io1, you must also include a value for the Iops parameter.
             /// Default: io1 if the Iops parameter is specified, otherwise standard
             /// For more information, see Amazon RDS DB Instance Storage in the Amazon RDS User Guide.
-            /// Note This setting doesn&#39;t apply to Amazon Aurora.
+            /// Amazon Aurora
+            /// Not applicable. Aurora data is stored in the cluster volume, which is a single, virtual volume that
+            /// uses solid state drives (SSDs).
             /// Required: No
             /// Type: String
             /// Update requires: Some interruptions

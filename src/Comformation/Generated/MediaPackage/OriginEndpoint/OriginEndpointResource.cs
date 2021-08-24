@@ -18,7 +18,7 @@ namespace Comformation.MediaPackage.OriginEndpoint
             /// after the endpoint is created.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Id { get; set; }
 

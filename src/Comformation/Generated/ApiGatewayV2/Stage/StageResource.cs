@@ -88,6 +88,15 @@ namespace Comformation.ApiGatewayV2.Stage
             public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> StageVariables { get; set; }
 
             /// <summary>
+            /// AccessPolicyId
+            /// This parameter is not currently supported.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> AccessPolicyId { get; set; }
+
+            /// <summary>
             /// ApiId
             /// The API identifier.
             /// Required: Yes

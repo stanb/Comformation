@@ -73,6 +73,17 @@ namespace Comformation.ECS.TaskDefinition
             public Union<string, IntrinsicFunction> ExecutionRoleArn { get; set; }
 
             /// <summary>
+            /// EphemeralStorage
+            /// 		
+            /// The ephemeral storage settings to use for tasks run with the task definition.
+            /// 	
+            /// Required: No
+            /// Type: EphemeralStorage
+            /// Update requires: Replacement
+            /// </summary>
+            public EphemeralStorage EphemeralStorage { get; set; }
+
+            /// <summary>
             /// InferenceAccelerators
             /// 		
             /// The Elastic Inference accelerators to use for the containers in the task.
@@ -168,10 +179,8 @@ namespace Comformation.ECS.TaskDefinition
 
             /// <summary>
             /// RequiresCompatibilities
-            /// 		
-            /// The task launch types the task definition was validated against. To determine which 			task launch
+            /// The task launch types the task definition was validated against. To determine which task launch
             /// types the task definition is validated for, see the TaskDefinition$compatibilities parameter.
-            /// 	
             /// Required: No
             /// Type: List of String
             /// Update requires: Replacement
@@ -181,8 +190,8 @@ namespace Comformation.ECS.TaskDefinition
             /// <summary>
             /// TaskRoleArn
             /// 		
-            /// The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM)
-            /// role that grants containers in the 			task permission to call AWS APIs on your behalf. For more
+            /// The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management role
+            /// that grants containers in the 			task permission to call AWS APIs on your behalf. For more
             /// information, see Amazon ECS 				Task Role in the Amazon Elastic Container Service Developer Guide.
             /// 		
             /// IAM roles for tasks on Windows require that the -EnableTaskIAMRole option 			is set when you launch

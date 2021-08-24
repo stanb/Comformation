@@ -14,24 +14,26 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// SubnetIds
-        /// Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two
-        /// different availability zones.
+        /// A list of subnet IDs. Required to create an environment. Must be private subnets in two different
+        /// availability zones. A subnet must be attached to the same VPC as the security group. To learn more,
+        /// see About networking on Amazon MWAA.
         /// Required: No
-        /// Type: SubnetList
+        /// Type: List of String
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SubnetIds")]
-        public SubnetList SubnetIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SubnetIds { get; set; }
 
         /// <summary>
         /// SecurityGroupIds
-        /// A JSON list of 1 or more security group IDs, by name, that are in the same VPC as the subnets.
+        /// A list of one or more security group IDs. Accepts up to 5 security group IDs. A security group must
+        /// be attached to the same VPC as the subnets. To learn more, see Security in your VPC on Amazon MWAA.
         /// Required: No
-        /// Type: SecurityGroupList
-        /// Update requires: Replacement
+        /// Type: List of String
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SecurityGroupIds")]
-        public SecurityGroupList SecurityGroupIds { get; set; }
+        public List<Union<string, IntrinsicFunction>> SecurityGroupIds { get; set; }
 
     }
 }

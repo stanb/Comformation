@@ -25,7 +25,6 @@ namespace Comformation.EC2.Route
             /// DestinationCidrBlock
             /// 		
             /// The IPv4 CIDR block used for the destination match.
-            /// You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -35,7 +34,6 @@ namespace Comformation.EC2.Route
             /// <summary>
             /// DestinationIpv6CidrBlock
             /// The IPv6 CIDR block used for the destination match.
-            /// You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

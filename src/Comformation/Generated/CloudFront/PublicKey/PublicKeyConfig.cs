@@ -27,7 +27,7 @@ namespace Comformation.CloudFront.PublicKey
         /// <summary>
         /// Comment
         /// 		
-        /// A comment to describe the public key.
+        /// A comment to describe the public key. The comment cannot be longer than 128 			characters.
         /// 	
         /// Required: No
         /// Type: String

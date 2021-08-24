@@ -126,7 +126,7 @@ namespace Comformation.Pinpoint.Campaign
 
             /// <summary>
             /// CampaignHook
-            /// Specifies the AWS Lambda function to use as a code hook for a campaign.
+            /// Specifies the Lambda function to use as a code hook for a campaign.
             /// Required: No
             /// Type: CampaignHook
             /// Update requires: No interruption

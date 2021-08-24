@@ -14,8 +14,8 @@ namespace Comformation.RDS.EventSubscription
         {
             /// <summary>
             /// Enabled
-            /// A value that indicates whether to activate the subscription. If the event notification subscription
-            /// isn&#39;t activated, the subscription is created but not active.
+            /// A Boolean value; set to true to activate the subscription, set to false to create the subscription
+            /// but not active it.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -24,9 +24,9 @@ namespace Comformation.RDS.EventSubscription
 
             /// <summary>
             /// EventCategories
-            /// A list of event categories for a particular source type (SourceType) that you want to subscribe to.
-            /// You can see a list of the categories for a given source type in Events in the Amazon RDS User Guide
-            /// or by using the DescribeEventCategories operation.
+            /// A list of event categories for a SourceType that you want to subscribe to. You can see a list of the
+            /// categories for a given SourceType in the Events topic in the Amazon RDS User Guide or by using the
+            /// DescribeEventCategories action.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption

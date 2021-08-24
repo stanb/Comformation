@@ -34,6 +34,15 @@ namespace Comformation.SageMaker.CodeRepository
             /// </summary>
             public GitConfig GitConfig { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::SageMaker::CodeRepository";

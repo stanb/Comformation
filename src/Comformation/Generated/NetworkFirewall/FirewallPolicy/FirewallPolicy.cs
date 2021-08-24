@@ -21,7 +21,7 @@ namespace Comformation.NetworkFirewall.FirewallPolicy
         /// For example, you could specify [&quot;aws:pass&quot;] or you could specify [&quot;aws:pass&quot;, “customActionName”].
         /// For information about compatibility, see the custom action descriptions.
         /// Required: Yes
-        /// Type: StatelessActions
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatelessDefaultActions")]
@@ -37,7 +37,7 @@ namespace Comformation.NetworkFirewall.FirewallPolicy
         /// For example, you could specify [&quot;aws:pass&quot;] or you could specify [&quot;aws:pass&quot;, “customActionName”].
         /// For information about compatibility, see the custom action descriptions.
         /// Required: Yes
-        /// Type: StatelessActions
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatelessFragmentDefaultActions")]
@@ -49,7 +49,7 @@ namespace Comformation.NetworkFirewall.FirewallPolicy
         /// StatelessDefaultActions setting. You name each custom action that you define, and then you can use
         /// it by name in your default actions specifications.
         /// Required: No
-        /// Type: CustomActions
+        /// Type: List of CustomAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatelessCustomActions")]
@@ -60,7 +60,7 @@ namespace Comformation.NetworkFirewall.FirewallPolicy
         /// References to the stateless rule groups that are used in the policy. These define the matching
         /// criteria in stateless rules.
         /// Required: No
-        /// Type: StatelessRuleGroupReferences
+        /// Type: List of StatelessRuleGroupReference
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatelessRuleGroupReferences")]
@@ -68,10 +68,10 @@ namespace Comformation.NetworkFirewall.FirewallPolicy
 
         /// <summary>
         /// StatefulRuleGroupReferences
-        /// References to the stateless rule groups that are used in the policy. These define the inspection
+        /// References to the stateful rule groups that are used in the policy. These define the inspection
         /// criteria in stateful rules.
         /// Required: No
-        /// Type: StatefulRuleGroupReferences
+        /// Type: List of StatefulRuleGroupReference
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatefulRuleGroupReferences")]

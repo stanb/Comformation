@@ -37,8 +37,7 @@ namespace Comformation.IAM.Group
             /// <summary>
             /// ManagedPolicyArns
             /// The Amazon Resource Name (ARN) of the IAM policy you want to attach.
-            /// For more information about ARNs, see Amazon Resource Names (ARNs) and AWS Service Namespaces in the
-            /// AWS General Reference.
+            /// For more information about ARNs, see Amazon Resource Names (ARNs) in the AWS General Reference.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -47,7 +46,7 @@ namespace Comformation.IAM.Group
 
             /// <summary>
             /// Path
-            /// The path to the group. For more information about paths, see IAM Identifiers in the IAM User Guide.
+            /// The path to the group. For more information about paths, see IAM identifiers in the IAM User Guide.
             /// This parameter is optional. If it is not included, it defaults to a slash (/).
             /// This parameter allows (through its regex pattern) a string of characters consisting of either a
             /// forward slash (/) by itself or a string that must begin and end with forward slashes. In addition,

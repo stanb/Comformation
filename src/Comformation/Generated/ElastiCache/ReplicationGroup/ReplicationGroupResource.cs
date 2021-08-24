@@ -71,9 +71,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// The following node types are supported by ElastiCache. 			Generally speaking, the current generation
             /// types provide more memory and computational power 			at lower cost when compared to their equivalent
             /// previous generation counterparts.
-            /// Changing the CacheNodeType of a Memcached instance is currently not supported. If you need to scale
-            /// using Memcached, we recommend forcing a replacement update by changing the LogicalResourceId of the
-            /// resource.
             /// General purpose: Current generation: M6g node types: cache. m6g. large, cache. m6g. xlarge, cache.
             /// m6g. 2xlarge, cache. m6g. 4xlarge, cache. m6g. 12xlarge, cache. m6g. 24xlarge 	 M5 node types:
             /// cache. m5. large, cache. m5. xlarge, cache. m5. 2xlarge, cache. m5. 4xlarge, cache. m5. 12xlarge,
@@ -91,6 +88,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2. 2xlarge, cache. m2.
             /// 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge, cache. r3. 4xlarge,
             /// cache. r3. 8xlarge
+            /// For region availability, see Supported Node Types by Amazon Region
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -101,8 +99,6 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// CacheParameterGroupName
             /// The name of the parameter group to associate with this replication group. If this argument is
             /// omitted, the default cache parameter group for the specified engine is used.
-            /// Note If you are restoring to an engine version that is different than the original, you must specify
-            /// the default version of that version. For example, CacheParameterGroupName=default. redis4. 0.
             /// If you are running Redis version 3. 2. 4 or later, only one node group (shard), and want to use a
             /// default parameter group, we recommend that you specify the parameter group by name.
             /// To create a Redis (cluster mode disabled) replication group, use CacheParameterGroupName=default.
@@ -136,7 +132,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
             /// <summary>
             /// Engine
-            /// The name of the cache engine to be used for the clusters in this replication group.
+            /// The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -159,7 +155,7 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
             /// <summary>
             /// GlobalReplicationGroupId
-            /// The name of the Global Datastore
+            /// The name of the Global datastore
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -174,6 +170,15 @@ namespace Comformation.ElastiCache.ReplicationGroup
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
+            /// LogDeliveryConfigurations
+            /// Specifies the destination, format and type of the logs.
+            /// Required: No
+            /// Type: List of LogDeliveryConfigurationRequest
+            /// Update requires: No interruption
+            /// </summary>
+            public List<LogDeliveryConfigurationRequest> LogDeliveryConfigurations { get; set; }
 
             /// <summary>
             /// MultiAZEnabled
@@ -393,9 +398,10 @@ namespace Comformation.ElastiCache.ReplicationGroup
 
             /// <summary>
             /// Tags
-            /// A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value
-            /// pairs (e. g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following:
-            /// Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.
+            /// A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e. g.
+            /// Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey,
+            /// Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue. Tags on replication groups will be
+            /// replicated to all nodes.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

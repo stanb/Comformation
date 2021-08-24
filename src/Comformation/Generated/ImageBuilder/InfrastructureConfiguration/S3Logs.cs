@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
         /// <summary>
         /// S3BucketName
+        /// 		
         /// The Amazon S3 bucket in which to store the logs.
+        /// 	
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -26,7 +28,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
         /// <summary>
         /// S3KeyPrefix
+        /// 		
         /// The Amazon S3 path in which to store the logs.
+        /// 	
         /// Required: No
         /// Type: String
         /// Minimum: 1

@@ -13,6 +13,18 @@ namespace Comformation.ApiGatewayV2.DomainName
     {
 
         /// <summary>
+        /// OwnershipVerificationCertificateArn
+        /// The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only
+        /// required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the
+        /// RegionalCertificateArn.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OwnershipVerificationCertificateArn")]
+        public Union<string, IntrinsicFunction> OwnershipVerificationCertificateArn { get; set; }
+
+        /// <summary>
         /// SecurityPolicy
         /// The Transport Layer Security (TLS) version of the security policy for this domain name. The valid
         /// values are TLS_1_0 and TLS_1_2.

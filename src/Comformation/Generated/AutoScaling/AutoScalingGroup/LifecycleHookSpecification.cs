@@ -16,6 +16,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// DefaultResult
         /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
         /// failure occurs. The valid values are CONTINUE and ABANDON (default).
+        /// For more information, see Adding lifecycle hooks in the Amazon EC2 Auto Scaling User Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -88,7 +89,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// RoleARN
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
         /// target, for example, an Amazon SNS topic or an Amazon SQS queue. For information about creating this
-        /// role, see Preparing for notifications in the Amazon EC2 Auto Scaling User Guide.
+        /// role, see Configuring a notification target for a lifecycle hook in the Amazon EC2 Auto Scaling User
+        /// Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

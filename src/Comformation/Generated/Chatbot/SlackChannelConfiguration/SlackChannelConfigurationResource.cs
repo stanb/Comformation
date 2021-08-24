@@ -47,8 +47,8 @@ namespace Comformation.Chatbot.SlackChannelConfiguration
             /// <summary>
             /// IamRoleArn
             /// The ARN of the IAM role that defines the permissions for AWS Chatbot.
-            /// This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For
-            /// more information, see IAM Policies for AWS Chatbot.
+            /// This is a user-definworked role that AWS Chatbot will assume. This is not the service-linked role.
+            /// For more information, see IAM Policies for AWS Chatbot.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

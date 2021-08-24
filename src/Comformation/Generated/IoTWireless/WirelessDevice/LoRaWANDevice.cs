@@ -14,7 +14,8 @@ namespace Comformation.IoTWireless.WirelessDevice
 
         /// <summary>
         /// DevEui
-        /// The DevEUI value.
+        /// 		
+        /// The DevEUI value, with pattern of [a-f0-9]{16}.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -24,7 +25,7 @@ namespace Comformation.IoTWireless.WirelessDevice
 
         /// <summary>
         /// DeviceProfileId
-        /// The ID of the device profile for the new wireless device.
+        /// The ID of the device profile for the new wireless device. The maximum length is 256 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -34,7 +35,8 @@ namespace Comformation.IoTWireless.WirelessDevice
 
         /// <summary>
         /// ServiceProfileId
-        /// The ID of the service profile.
+        /// 		
+        /// The ID of the service profile. The maximum length is 256 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -53,18 +55,19 @@ namespace Comformation.IoTWireless.WirelessDevice
         public OtaaV11 OtaaV11 { get; set; }
 
         /// <summary>
-        /// OtaaV10X
+        /// OtaaV10x
         /// OTAA device object for create APIs for v1. 0. x
         /// Required: No
-        /// Type: OtaaV10X
+        /// Type: OtaaV10x
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("OtaaV10X")]
-        public OtaaV10X OtaaV10X { get; set; }
+        [JsonProperty("OtaaV10x")]
+        public OtaaV10x OtaaV10x { get; set; }
 
         /// <summary>
         /// AbpV11
-        /// ABP device object for create APIs for v1. 1
+        /// 		
+        /// ABP device object for create APIs for v1. 1, with pattern of [a-fA-F0-9]{8}.
         /// Required: No
         /// Type: AbpV11
         /// Update requires: No interruption
@@ -73,14 +76,15 @@ namespace Comformation.IoTWireless.WirelessDevice
         public AbpV11 AbpV11 { get; set; }
 
         /// <summary>
-        /// AbpV10X
-        /// LoRaWAN object for create APIs
+        /// AbpV10x
+        /// 		
+        /// LoRaWAN object for create APIs, with pattern of [a-fA-F0-9]{32}.
         /// Required: No
-        /// Type: AbpV10X
+        /// Type: AbpV10x
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("AbpV10X")]
-        public AbpV10X AbpV10X { get; set; }
+        [JsonProperty("AbpV10x")]
+        public AbpV10x AbpV10x { get; set; }
 
     }
 }

@@ -33,7 +33,7 @@ namespace Comformation.Pinpoint.APNSVoipChannel
 
             /// <summary>
             /// Enabled
-            /// Specifies whether to enable the APNs VoIP channel for the application.
+            /// Specifies whether to enable the APNs VoIP channel for the Amazon Pinpoint application.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -43,7 +43,7 @@ namespace Comformation.Pinpoint.APNSVoipChannel
             /// <summary>
             /// DefaultAuthenticationMethod
             /// The default authentication method that you want Amazon Pinpoint to use when authenticating with
-            /// APNs, key or certificate.
+            /// APNs. Valid options are key or certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -52,8 +52,7 @@ namespace Comformation.Pinpoint.APNSVoipChannel
 
             /// <summary>
             /// TokenKey
-            /// The key identifier that&#39;s assigned to your APNs signing key, if you want Amazon Pinpoint to
-            /// communicate with APNs by using APNs tokens.
+            /// The authentication key to use for APNs tokens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -62,7 +61,7 @@ namespace Comformation.Pinpoint.APNSVoipChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the APNs VoIP channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that the APNs VoIP channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -71,7 +70,7 @@ namespace Comformation.Pinpoint.APNSVoipChannel
 
             /// <summary>
             /// TeamId
-            /// The identifier that&#39;s assigned to your Apple developer account team. This identifier is used for
+            /// The identifier that&#39;s assigned to your Apple Developer Account team. This identifier is used for
             /// APNs tokens.
             /// Required: No
             /// Type: String
@@ -81,8 +80,8 @@ namespace Comformation.Pinpoint.APNSVoipChannel
 
             /// <summary>
             /// Certificate
-            /// The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate
-            /// with APNs by using an APNs certificate.
+            /// The APNs client certificate that you received from Apple. Specify this value if you want Amazon
+            /// Pinpoint to communicate with APNs by using an APNs certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -91,8 +90,8 @@ namespace Comformation.Pinpoint.APNSVoipChannel
 
             /// <summary>
             /// TokenKeyId
-            /// The key identifier that&#39;s assigned to your APNs signing key, if you want Amazon Pinpoint to
-            /// communicate with APNs by using APNs tokens.
+            /// The key identifier that&#39;s assigned to your APNs signing key. Specify this value if you want Amazon
+            /// Pinpoint to communicate with APNs by using APNs tokens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

@@ -17,12 +17,12 @@ namespace Comformation.Kendra.DataSource
         /// Specifies the document states that should be included when Amazon Kendra indexes knowledge articles.
         /// You must specify at least one state.
         /// Required: Yes
-        /// Type: SalesforceKnowledgeArticleStateList
+        /// Type: List of String
         /// Maximum: 3
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludedStates")]
-        public SalesforceKnowledgeArticleStateList IncludedStates { get; set; }
+        public List<Union<string, IntrinsicFunction>> IncludedStates { get; set; }
 
         /// <summary>
         /// StandardKnowledgeArticleTypeConfiguration
@@ -38,12 +38,12 @@ namespace Comformation.Kendra.DataSource
         /// CustomKnowledgeArticleTypeConfigurations
         /// Provides configuration information for custom Salesforce knowledge articles.
         /// Required: No
-        /// Type: SalesforceCustomKnowledgeArticleTypeConfigurationList
+        /// Type: List of SalesforceCustomKnowledgeArticleTypeConfiguration
         /// Maximum: 10
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("CustomKnowledgeArticleTypeConfigurations")]
-        public SalesforceCustomKnowledgeArticleTypeConfigurationList CustomKnowledgeArticleTypeConfigurations { get; set; }
+        public List<SalesforceCustomKnowledgeArticleTypeConfiguration> CustomKnowledgeArticleTypeConfigurations { get; set; }
 
     }
 }

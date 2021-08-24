@@ -27,9 +27,9 @@ namespace Comformation.AutoScaling.AutoScalingGroup
 
         /// <summary>
         /// PropagateAtLaunch
-        /// Set to true if you want AWS CloudFormation to copy the tag to EC2 instances that are launched as
-        /// part of the Auto Scaling group. Set to false if you want the tag attached only to the Auto Scaling
-        /// group and not copied to any instances launched as part of the Auto Scaling group.
+        /// Set to true if you want CloudFormation to copy the tag to EC2 instances that are launched as part of
+        /// the Auto Scaling group. Set to false if you want the tag attached only to the Auto Scaling group and
+        /// not copied to any instances launched as part of the Auto Scaling group.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption

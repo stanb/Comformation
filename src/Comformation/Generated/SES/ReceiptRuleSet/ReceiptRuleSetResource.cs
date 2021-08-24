@@ -14,7 +14,7 @@ namespace Comformation.SES.ReceiptRuleSet
         {
             /// <summary>
             /// RuleSetName
-            /// The name of the receipt rule set that you want to reorder.
+            /// The name of the receipt rule set to reorder.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

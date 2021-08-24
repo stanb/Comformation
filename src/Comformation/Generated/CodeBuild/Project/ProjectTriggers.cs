@@ -25,7 +25,8 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// BuildType
-        /// Not currently supported by AWS CloudFormation.
+        /// Specifies the type of build this webhook will trigger. Allowed values are:
+        /// BUILD A single build BUILD_BATCH A batch build
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

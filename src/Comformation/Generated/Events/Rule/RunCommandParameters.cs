@@ -14,9 +14,7 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// RunCommandTargets
-        /// The criteria (either InstanceIds or a tag) that specifies which EC2 instances the command is sent
-        /// to.
-        /// Note Currently, you can include only one RunCommandTarget block, which specifies a list of
+        /// Currently, we support including only one RunCommandTarget block, which specifies either an array of
         /// InstanceIds or a tag.
         /// Required: Yes
         /// Type: List of RunCommandTarget

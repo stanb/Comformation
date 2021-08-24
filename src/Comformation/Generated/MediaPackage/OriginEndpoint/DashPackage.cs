@@ -169,5 +169,26 @@ namespace Comformation.MediaPackage.OriginEndpoint
         [JsonProperty("StreamSelection")]
         public StreamSelection StreamSelection { get; set; }
 
+        /// <summary>
+        /// UtcTiming
+        /// Determines the type of UTC timing included in the DASH Media Presentation Description (MPD).
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("UtcTiming")]
+        public Union<string, IntrinsicFunction> UtcTiming { get; set; }
+
+        /// <summary>
+        /// UtcTimingUri
+        /// Specifies the value attribute of the UTC timing field when utcTiming is set to HTTP-ISO or
+        /// HTTP-HEAD.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("UtcTimingUri")]
+        public Union<string, IntrinsicFunction> UtcTimingUri { get; set; }
+
     }
 }

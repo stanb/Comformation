@@ -28,9 +28,9 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 
         /// <summary>
         /// StackSetFailureToleranceCount
-        /// The number of accounts, per region, for which this operation can fail before AWS Service Catalog
-        /// stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog
-        /// doesn&#39;t attempt the operation in any subsequent regions.
+        /// The number of accounts, per Region, for which this operation can fail before AWS Service Catalog
+        /// stops the operation in that Region. If the operation is stopped in a Region, AWS Service Catalog
+        /// doesn&#39;t attempt the operation in any subsequent Regions.
         /// Applicable only to a CFN_STACKSET provisioned product type.
         /// Conditional: You must specify either StackSetFailureToleranceCount or
         /// StackSetFailureTolerancePercentage, but not both.
@@ -45,9 +45,9 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 
         /// <summary>
         /// StackSetFailureTolerancePercentage
-        /// The percentage of accounts, per region, for which this stack operation can fail before AWS Service
-        /// Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service
-        /// Catalog doesn&#39;t attempt the operation in any subsequent regions.
+        /// The percentage of accounts, per Region, for which this stack operation can fail before AWS Service
+        /// Catalog stops the operation in that Region. If the operation is stopped in a Region, AWS Service
+        /// Catalog doesn&#39;t attempt the operation in any subsequent Regions.
         /// When calculating the number of accounts based on the specified percentage, AWS Service Catalog
         /// rounds down to the next whole number.
         /// Applicable only to a CFN_STACKSET provisioned product type.
@@ -108,7 +108,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         /// by the provisioned product. The default value is UPDATE if nothing is specified.
         /// Applicable only to a CFN_STACKSET provisioned product type.
         /// CREATE Creates a new stack instance in the stack set represented by the provisioned product. In this
-        /// case, only new stack instances are created based on accounts and regions; if new ProductId or
+        /// case, only new stack instances are created based on accounts and Regions; if new ProductId or
         /// ProvisioningArtifactID are passed, they will be ignored. UPDATE Updates the stack set represented by
         /// the provisioned product and also its stack instances. DELETE Deletes a stack instance in the stack
         /// set represented by the provisioned product.
@@ -124,9 +124,9 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         /// StackSetRegions
         /// One or more AWS Regions where the provisioned product will be available.
         /// Applicable only to a CFN_STACKSET provisioned product type.
-        /// The specified regions should be within the list of regions from the STACKSET constraint. To get the
-        /// list of regions in the STACKSET constraint, use the DescribeProvisioningParameters operation.
-        /// If no values are specified, the default value is all regions from the STACKSET constraint.
+        /// The specified Regions should be within the list of Regions from the STACKSET constraint. To get the
+        /// list of Regions in the STACKSET constraint, use the DescribeProvisioningParameters operation.
+        /// If no values are specified, the default value is all Regions from the STACKSET constraint.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

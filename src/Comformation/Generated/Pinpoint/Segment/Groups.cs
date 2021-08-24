@@ -38,7 +38,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Dimensions
-        /// An array that defines the dimensions for the segment.
+        /// An array that defines the dimensions to include or exclude from the segment.
         /// Required: No
         /// Type: List of SegmentDimensions
         /// Update requires: No interruption
@@ -48,10 +48,12 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// SourceSegments
-        /// The base segment to build the segment on. A base segment, also referred to as a source segment,
-        /// defines the initial population of endpoints for a segment. When you add dimensions to a segment,
-        /// Amazon Pinpoint filters the base segment by using the dimensions that you specify. You can specify
-        /// more than one dimensional segment or only one imported segment.
+        /// The base segment to build the segment on. A base segment, also called a source segment, defines the
+        /// initial population of endpoints for a segment. When you add dimensions to the segment, Amazon
+        /// Pinpoint filters the base segment by using the dimensions that you specify.
+        /// You can specify more than one dimensional segment or only one imported segment. If you specify an
+        /// imported segment, the segment size estimate that displays on the Amazon Pinpoint console indicates
+        /// the size of the imported segment without any filters applied to it.
         /// Required: No
         /// Type: List of SourceSegments
         /// Update requires: No interruption

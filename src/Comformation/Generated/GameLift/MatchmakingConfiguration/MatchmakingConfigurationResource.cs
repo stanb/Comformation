@@ -68,7 +68,7 @@ namespace Comformation.GameLift.MatchmakingConfiguration
             /// Type: String
             /// Minimum: 0
             /// Maximum: 300
-            /// Pattern: [a-zA-Z0-9:_/-]*
+            /// Pattern: [a-zA-Z0-9:_/-]*(. fifo)?
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> NotificationTarget { get; set; }
@@ -98,10 +98,10 @@ namespace Comformation.GameLift.MatchmakingConfiguration
 
             /// <summary>
             /// AdditionalPlayerCount
-            /// The number of player slots in a match to keep open for future players. For example, assume that the
-            /// configuration&#39;s rule set specifies a match for a single 12-person team. If the additional player
-            /// count is set to 2, only 10 players are initially selected for the match. This parameter is not used
-            /// if FlexMatchMode is set to STANDALONE.
+            /// The number of player slots in a match to keep open for future players. For example, if the
+            /// configuration&#39;s rule set specifies a match for a single 12-person team, and the additional player
+            /// count is set to 2, only 10 players are selected for the match. This parameter is not used if
+            /// FlexMatchMode is set to STANDALONE.
             /// Required: No
             /// Type: Integer
             /// Minimum: 0
@@ -140,8 +140,8 @@ namespace Comformation.GameLift.MatchmakingConfiguration
             /// AcceptanceRequired
             /// A flag that determines whether a match that was created with this configuration must be accepted by
             /// the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking
-            /// tickets use the status REQUIRES_ACCEPTANCE to indicate when a completed potential match is waitiing
-            /// for player accepance.
+            /// tickets use the status REQUIRES_ACCEPTANCE to indicate when a completed potential match is waiting
+            /// for player acceptance.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -164,7 +164,7 @@ namespace Comformation.GameLift.MatchmakingConfiguration
 
             /// <summary>
             /// RuleSetName
-            /// A unique identifier for a matchmaking rule set to use with this configuration. You can use either
+            /// A unique identifier for the matchmaking rule set to use with this configuration. You can use either
             /// the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined
             /// in the same Region.
             /// Required: Yes
@@ -178,10 +178,11 @@ namespace Comformation.GameLift.MatchmakingConfiguration
 
             /// <summary>
             /// GameSessionQueueArns
-            /// Amazon Resource Name (ARN) that is assigned to a GameLift game session queue resource and uniquely
-            /// identifies it. ARNs are unique across all Regions. Queues can be located in any Region. Queues are
-            /// used to start new GameLift-hosted game sessions for matches that are created with this matchmaking
-            /// configuration. If FlexMatchMode is set to STANDALONE, do not set this parameter.
+            /// The Amazon Resource Name (ARN) that is assigned to a GameLift game session queue resource and
+            /// uniquely identifies it. ARNs are unique across all Regions. Format is
+            /// arn:aws:gamelift:&amp;lt;region&amp;gt;::gamesessionqueue/&amp;lt;queue name&amp;gt;. Queues can be located in any
+            /// Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with
+            /// this matchmaking configuration. If FlexMatchMode is set to STANDALONE, do not set this parameter.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption

@@ -31,7 +31,7 @@ namespace Comformation.DataSync.Task
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 50
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public List<Tag> Tags { get; set; }
 
@@ -54,7 +54,7 @@ namespace Comformation.DataSync.Task
 
             /// <summary>
             /// DestinationLocationArn
-            /// Not currently supported by AWS CloudFormation.
+            /// The Amazon Resource Name (ARN) of an AWS storage resource&#39;s location.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -79,7 +79,7 @@ namespace Comformation.DataSync.Task
             /// occurs when you call StartTaskExecution. You can configure these options to preserve metadata such
             /// as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.
             /// For each individual task execution, you can override these options by specifying the OverrideOptions
-            /// before starting the task execution. For more information, see the API_StartTaskExecution operation.
+            /// before starting the task execution. For more information, see the StartTaskExecution operation.
             /// Required: No
             /// Type: Options
             /// Update requires: No interruption
@@ -89,7 +89,7 @@ namespace Comformation.DataSync.Task
             /// <summary>
             /// Schedule
             /// Specifies a schedule used to periodically transfer files from a source to a destination location.
-            /// The schedule should be specified in UTC time. For more information, see task-scheduling.
+            /// The schedule should be specified in UTC time. For more information, see Scheduling your task.
             /// Required: No
             /// Type: TaskSchedule
             /// Update requires: No interruption

@@ -19,12 +19,12 @@ namespace Comformation.Kendra.DataSource
         /// operation.
         /// If you specify the BlogFieldMappings parameter, you must specify at least one field mapping.
         /// Required: No
-        /// Type: ConfluenceBlogFieldMappingsList
+        /// Type: List of ConfluenceBlogToIndexFieldMapping
         /// Maximum: 9
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BlogFieldMappings")]
-        public ConfluenceBlogFieldMappingsList BlogFieldMappings { get; set; }
+        public List<ConfluenceBlogToIndexFieldMapping> BlogFieldMappings { get; set; }
 
     }
 }

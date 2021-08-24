@@ -13,20 +13,6 @@ namespace Comformation.SSM.ResourceDataSync
     {
 
         /// <summary>
-        /// OrganizationSourceType
-        /// If an AWS Organization is present, this is either OrganizationalUnits or EntireOrganization. For
-        /// OrganizationalUnits, the data is aggregated from a set of organization units. For
-        /// EntireOrganization, the data is aggregated from the entire AWS Organization.
-        /// Required: Yes
-        /// Type: String
-        /// Minimum: 1
-        /// Maximum: 64
-        /// Update requires: Replacement
-        /// </summary>
-        [JsonProperty("OrganizationSourceType")]
-        public Union<string, IntrinsicFunction> OrganizationSourceType { get; set; }
-
-        /// <summary>
         /// OrganizationalUnits
         /// The AWS Organizations organization units included in the sync.
         /// Required: No
@@ -36,6 +22,20 @@ namespace Comformation.SSM.ResourceDataSync
         /// </summary>
         [JsonProperty("OrganizationalUnits")]
         public List<Union<string, IntrinsicFunction>> OrganizationalUnits { get; set; }
+
+        /// <summary>
+        /// OrganizationSourceType
+        /// If an AWS organization is present, this is either OrganizationalUnits or EntireOrganization. For
+        /// OrganizationalUnits, the data is aggregated from a set of organization units. For
+        /// EntireOrganization, the data is aggregated from the entire AWS organization.
+        /// Required: Yes
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 64
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OrganizationSourceType")]
+        public Union<string, IntrinsicFunction> OrganizationSourceType { get; set; }
 
     }
 }

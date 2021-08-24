@@ -24,7 +24,7 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
             /// <summary>
             /// PrivateKey
             /// The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate
-            /// with the APNs sandbox environment.
+            /// with APNs.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -33,7 +33,7 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
 
             /// <summary>
             /// Enabled
-            /// Specifies whether to enable the APNs sandbox channel for the application.
+            /// Specifies whether to enable the APNs Sandbox channel for the Amazon Pinpoint application.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -42,8 +42,8 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
 
             /// <summary>
             /// DefaultAuthenticationMethod
-            /// The default authentication method that you want Amazon Pinpoint to use when authenticating with the
-            /// APNs sandbox environment, key or certificate.
+            /// The default authentication method that you want Amazon Pinpoint to use when authenticating with
+            /// APNs. Valid options are key or certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -61,7 +61,7 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the APNs sandbox channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that the APNs sandbox channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -70,7 +70,7 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
 
             /// <summary>
             /// TeamId
-            /// The identifier that&#39;s assigned to your Apple developer account team. This identifier is used for
+            /// The identifier that&#39;s assigned to your Apple Developer Account team. This identifier is used for
             /// APNs tokens.
             /// Required: No
             /// Type: String
@@ -80,8 +80,8 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
 
             /// <summary>
             /// Certificate
-            /// The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate
-            /// with the APNs sandbox environment by using an APNs certificate.
+            /// The APNs client certificate that you received from Apple. Specify this value if you want Amazon
+            /// Pinpoint to communicate with APNs by using an APNs certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -90,8 +90,8 @@ namespace Comformation.Pinpoint.APNSSandboxChannel
 
             /// <summary>
             /// TokenKeyId
-            /// The key identifier that&#39;s assigned to your APNs signing key, if you want Amazon Pinpoint to
-            /// communicate with the APNs sandbox environment by using APNs tokens.
+            /// The key identifier that&#39;s assigned to your APNs signing key. Specify this value if you want Amazon
+            /// Pinpoint to communicate with APNs by using APNs tokens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

@@ -13,18 +13,6 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
-        /// Quantity
-        /// 		
-        /// The number of origins in an origin group.
-        /// 	
-        /// Required: Yes
-        /// Type: Integer
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Quantity")]
-        public Union<int, IntrinsicFunction> Quantity { get; set; }
-
-        /// <summary>
         /// Items
         /// 		
         /// Items (origins) in an origin group.
@@ -36,6 +24,18 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("Items")]
         public List<OriginGroupMember> Items { get; set; }
+
+        /// <summary>
+        /// Quantity
+        /// 		
+        /// The number of origins in an origin group.
+        /// 	
+        /// Required: Yes
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Quantity")]
+        public Union<int, IntrinsicFunction> Quantity { get; set; }
 
     }
 }

@@ -135,8 +135,9 @@ namespace Comformation.Glue.DevEndpoint
             /// <summary>
             /// GlueVersion
             /// 	
-            /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python
-            /// version indicates the version supported for running your ETL scripts on development endpoints.
+            /// The AWS Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The
+            /// Python version indicates the version supported for running your ETL scripts on development
+            /// endpoints.
             /// 		
             /// For more information about the available AWS Glue versions and corresponding Spark and Python
             /// versions, see Glue version in the developer guide.

@@ -71,11 +71,11 @@ namespace Comformation.WAFv2.RuleGroup
         /// request that contains any additional data that you want to send to your web server as the HTTP
         /// request body, such as data from a form.
         /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for
-        /// inspection. If you don&#39;t need to inspect more than 8 KB, you can guarantee that you don&#39;t allow
-        /// additional bytes in by combining a statement that inspects the body of the web request, such as
-        /// ByteMatchStatement or RegexPatternSetReferenceStatement, with a SizeConstraintStatement that
-        /// enforces an 8 KB size limit on the body of the request. AWS WAF doesn&#39;t support inspecting the
-        /// entire contents of web requests whose bodies exceed the 8 KB limit.
+        /// inspection by the underlying host service. If you don&#39;t need to inspect more than 8 KB, you can
+        /// guarantee that you don&#39;t allow additional bytes in by combining a statement that inspects the body
+        /// of the web request, such as the ByteMatchStatement or RegexPatternSetReferenceStatement, with a
+        /// SizeConstraintStatement that enforces an 8 KB size limit on the body of the request. AWS WAF doesn&#39;t
+        /// support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -93,6 +93,24 @@ namespace Comformation.WAFv2.RuleGroup
         /// </summary>
         [JsonProperty("Method")]
         public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Method { get; set; }
+
+        /// <summary>
+        /// JsonBody
+        /// Inspect the request body as JSON. The request body immediately follows the request headers. This is
+        /// the part of a request that contains any additional data that you want to send to your web server as
+        /// the HTTP request body, such as data from a form.
+        /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for
+        /// inspection by the underlying host service. If you don&#39;t need to inspect more than 8 KB, you can
+        /// guarantee that you don&#39;t allow additional bytes in by combining a statement that inspects the body
+        /// of the web request, such as the ByteMatchStatement or RegexPatternSetReferenceStatement, with a
+        /// SizeConstraintStatement that enforces an 8 KB size limit on the body of the request. AWS WAF doesn&#39;t
+        /// support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+        /// Required: No
+        /// Type: JsonBody
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("JsonBody")]
+        public JsonBody JsonBody { get; set; }
 
     }
 }

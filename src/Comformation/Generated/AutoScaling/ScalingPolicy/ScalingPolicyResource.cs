@@ -26,8 +26,7 @@ namespace Comformation.AutoScaling.ScalingPolicy
 
             /// <summary>
             /// AutoScalingGroupName
-            /// The name or Amazon Resource Name (ARN) of the Auto Scaling group that you want to attach the policy
-            /// to.
+            /// The name of the Auto Scaling group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -89,14 +88,26 @@ namespace Comformation.AutoScaling.ScalingPolicy
             /// <summary>
             /// PolicyType
             /// One of the following policy types:
-            /// TargetTrackingScaling StepScaling SimpleScaling (default)
+            /// TargetTrackingScaling StepScaling SimpleScaling (default) PredictiveScaling
             /// For more information, see Target tracking scaling policies and Step and simple scaling policies in
             /// the Amazon EC2 Auto Scaling User Guide.
-            /// Required: Conditional
+            /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
+            /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> PolicyType { get; set; }
+
+            /// <summary>
+            /// PredictiveScalingConfiguration
+            /// A predictive scaling policy. Includes support for predefined metrics only.
+            /// Required: Conditional
+            /// Type: PredictiveScalingConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public PredictiveScalingConfiguration PredictiveScalingConfiguration { get; set; }
 
             /// <summary>
             /// ScalingAdjustment

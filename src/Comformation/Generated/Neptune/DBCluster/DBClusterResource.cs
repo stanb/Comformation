@@ -27,7 +27,12 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// RestoreToTime
-            /// Not currently supported by AWS CloudFormation.
+            /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+            /// If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a
+            /// default configuration and default security group.
+            /// If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster
+            /// restore point with the same configuration as the original source DB cluster, except that the new DB
+            /// cluster is created with the default security group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -45,7 +50,7 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// KmsKeyId
-            /// If StorageEncrypted is true, the AWS KMS key identifier for the encrypted DB cluster.
+            /// If StorageEncrypted is true, the Amazon KMS key identifier for the encrypted DB cluster.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -54,9 +59,9 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// AssociatedRoles
-            /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
-            /// DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to
-            /// access other AWS services on your behalf.
+            /// Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with
+            /// the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster
+            /// to access other Amazon services on your behalf.
             /// Required: No
             /// Type: List of DBClusterRole
             /// Update requires: No interruption
@@ -121,7 +126,7 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// IamAuthEnabled
-            /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is
+            /// True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is
             /// enabled, and otherwise false.
             /// Required: No
             /// Type: Boolean
@@ -162,7 +167,12 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// UseLatestRestorableTime
-            /// Not currently supported by AWS CloudFormation.
+            /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+            /// If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a
+            /// default configuration and default security group.
+            /// If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster
+            /// restore point with the same configuration as the original source DB cluster, except that the new DB
+            /// cluster is created with the default security group.
             /// Required: No
             /// Type: Boolean
             /// Update requires: Replacement
@@ -180,7 +190,12 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// SourceDBClusterIdentifier
-            /// Not currently supported by AWS CloudFormation.
+            /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+            /// If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a
+            /// default configuration and default security group.
+            /// If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster
+            /// restore point with the same configuration as the original source DB cluster, except that the new DB
+            /// cluster is created with the default security group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -211,7 +226,12 @@ namespace Comformation.Neptune.DBCluster
 
             /// <summary>
             /// RestoreType
-            /// Not currently supported by AWS CloudFormation.
+            /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+            /// If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a
+            /// default configuration and default security group.
+            /// If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster
+            /// restore point with the same configuration as the original source DB cluster, except that the new DB
+            /// cluster is created with the default security group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

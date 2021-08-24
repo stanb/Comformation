@@ -13,6 +13,17 @@ namespace Comformation.AppMesh.VirtualGateway
     {
 
         /// <summary>
+        /// Validation
+        /// A reference to an object that represents a virtual gateway&#39;s listener&#39;s Transport Layer Security
+        /// (TLS) validation context.
+        /// Required: No
+        /// Type: VirtualGatewayListenerTlsValidationContext
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Validation")]
+        public VirtualGatewayListenerTlsValidationContext Validation { get; set; }
+
+        /// <summary>
         /// Mode
         /// Specify one of the following modes.
         /// STRICT – Listener only accepts connections with TLS enabled. PERMISSIVE – Listener accepts

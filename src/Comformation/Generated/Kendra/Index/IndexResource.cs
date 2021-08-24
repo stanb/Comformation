@@ -99,7 +99,13 @@ namespace Comformation.Kendra.Index
 
             /// <summary>
             /// UserContextPolicy
-            /// Not currently supported by AWS CloudFormation.
+            /// The user context policy.
+            /// ATTRIBUTE_FILTER
+            /// All indexed content is searchable and displayable for all users. If there is an access control list,
+            /// it is ignored. You can filter on user and group attributes.
+            /// USER_TOKEN
+            /// Enables SSO and token-based user access control. All documents with no access control and all
+            /// documents accessible to the user will be searchable and displayable.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -108,7 +114,7 @@ namespace Comformation.Kendra.Index
 
             /// <summary>
             /// UserTokenConfigurations
-            /// Not currently supported by AWS CloudFormation.
+            /// Defines the type of user token used for the index.
             /// Required: No
             /// Type: List of UserTokenConfiguration
             /// Update requires: No interruption

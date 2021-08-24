@@ -25,8 +25,8 @@ namespace Comformation.SES.ReceiptFilter
 
         /// <summary>
         /// Name
-        /// The name of the IP address filter. The name must:
-        /// Only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-). Start and end
+        /// The name of the IP address filter. The name must meet the following requirements:
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Start and end
         /// with a letter or number. Contain 64 characters or fewer.
         /// Required: No
         /// Type: String

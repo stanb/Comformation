@@ -15,7 +15,7 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TopicArn
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can find the ARN of a topic by
-        /// using the ListTopics operation in the Amazon SNS API.
+        /// using the ListTopics operation in Amazon SNS.
         /// For more information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String

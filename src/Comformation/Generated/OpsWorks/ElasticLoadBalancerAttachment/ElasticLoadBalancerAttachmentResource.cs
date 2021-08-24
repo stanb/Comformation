@@ -14,7 +14,7 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
         {
             /// <summary>
             /// ElasticLoadBalancerName
-            /// The Elastic Load Balancing instance&#39;s name.
+            /// The Elastic Load Balancing instance name.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -23,7 +23,7 @@ namespace Comformation.OpsWorks.ElasticLoadBalancerAttachment
 
             /// <summary>
             /// LayerId
-            /// The AWS OpsWorks layer ID that the Elastic Load Balancing load balancer will be attached to.
+            /// The AWS OpsWorks layer ID to which the Elastic Load Balancing load balancer is attached.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

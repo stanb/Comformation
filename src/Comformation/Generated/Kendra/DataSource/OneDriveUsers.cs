@@ -18,12 +18,12 @@ namespace Comformation.Kendra.DataSource
         /// example, username@tenantdomain. If you need to index the documents of more than 100 users, use the
         /// OneDriveUserS3Path field to specify the location of a file containing a list of users.
         /// Required: No
-        /// Type: OneDriveUserList
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("OneDriveUserList")]
-        public OneDriveUserList OneDriveUserList { get; set; }
+        public List<Union<string, IntrinsicFunction>> OneDriveUserList { get; set; }
 
         /// <summary>
         /// OneDriveUserS3Path

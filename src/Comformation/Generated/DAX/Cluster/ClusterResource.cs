@@ -98,6 +98,19 @@ namespace Comformation.DAX.Cluster
             public Union<string, IntrinsicFunction> PreferredMaintenanceWindow { get; set; }
 
             /// <summary>
+            /// ClusterEndpointEncryptionType
+            /// The encryption type of the cluster&#39;s endpoint. Available values are:
+            /// NONE - The cluster&#39;s endpoint will be unencrypted. TLS - The cluster&#39;s endpoint will be encrypted
+            /// with Transport Layer Security, and will provide an x509 certificate for authentication.
+            /// The default value is NONE.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: NONE | TLS
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ClusterEndpointEncryptionType { get; set; }
+
+            /// <summary>
             /// NotificationTopicARN
             /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
             /// Note The Amazon SNS topic owner must be same as the DAX cluster owner.
@@ -123,7 +136,7 @@ namespace Comformation.DAX.Cluster
             /// The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type. )
             /// Required: Yes
             /// Type: String
-            /// Update requires: Updates are not supported.
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> NodeType { get; set; }
 
@@ -155,6 +168,7 @@ namespace Comformation.DAX.Cluster
 
     public static class ClusterAttributes
     {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterDiscoveryEndpointURL = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterDiscoveryEndpointURL");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ClusterDiscoveryEndpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("ClusterDiscoveryEndpoint");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
     }

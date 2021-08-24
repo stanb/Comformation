@@ -13,18 +13,6 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
-        /// Quantity
-        /// 		
-        /// The number of status codes.
-        /// 	
-        /// Required: Yes
-        /// Type: Integer
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Quantity")]
-        public Union<int, IntrinsicFunction> Quantity { get; set; }
-
-        /// <summary>
         /// Items
         /// 		
         /// The items (status codes) for an origin group.
@@ -35,6 +23,18 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("Items")]
         public List<Union<int, IntrinsicFunction>> Items { get; set; }
+
+        /// <summary>
+        /// Quantity
+        /// 		
+        /// The number of status codes.
+        /// 	
+        /// Required: Yes
+        /// Type: Integer
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Quantity")]
+        public Union<int, IntrinsicFunction> Quantity { get; set; }
 
     }
 }

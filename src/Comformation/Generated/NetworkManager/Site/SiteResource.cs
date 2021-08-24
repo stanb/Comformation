@@ -15,7 +15,7 @@ namespace Comformation.NetworkManager.Site
             /// <summary>
             /// Description
             /// A description of your site.
-            /// Length Constraints: Maximum length of 256 characters.
+            /// Constraints: Maximum length of 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

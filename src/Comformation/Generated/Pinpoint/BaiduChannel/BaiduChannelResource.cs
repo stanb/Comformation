@@ -41,7 +41,8 @@ namespace Comformation.Pinpoint.BaiduChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the Baidu channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that you&#39;re configuring the Baidu channel
+            /// for.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

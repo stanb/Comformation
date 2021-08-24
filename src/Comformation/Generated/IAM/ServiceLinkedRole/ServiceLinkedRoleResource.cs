@@ -45,7 +45,7 @@ namespace Comformation.IAM.ServiceLinkedRole
             /// The service principal for the AWS service to which this role is attached. You use a string similar
             /// to a URL but without the http:// in front. For example: elasticbeanstalk. amazonaws. com.
             /// Service principals are unique and case-sensitive. To find the exact service principal for your
-            /// service-linked role, see AWS Services That Work with IAM in the IAM User Guide. Look for the
+            /// service-linked role, see AWS services that work with IAM in the IAM User Guide. Look for the
             /// services that have Yes in the Service-Linked Role column. Choose the Yes link to view the
             /// service-linked role documentation for that service.
             /// Required: Yes

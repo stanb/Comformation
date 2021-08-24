@@ -127,8 +127,8 @@ namespace Comformation.EC2.ClientVpnEndpoint
             /// 		
             /// By default, split-tunnel on a VPN endpoint is disabled.
             /// 		
-            /// For information about split-tunnel VPN endpoints, see Split-Tunnel AWS Client VPN Endpoint in the
-            /// AWS 				Client VPN Administrator Guide.
+            /// For information about split-tunnel VPN endpoints, see Split-tunnel AWS Client VPN endpoint in the
+            /// 			 AWS Client VPN Administrator Guide.
             /// 	
             /// Required: No
             /// Type: Boolean

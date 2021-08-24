@@ -24,7 +24,7 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         /// Balancers:
         /// stickiness. enabled - Indicates whether sticky sessions are enabled. The value is true or false. The
         /// default is false. stickiness. type - The type of sticky sessions. The possible values are lb_cookie
-        /// for Application Load Balancers or source_ip for Network Load Balancers.
+        /// and app_cookie for Application Load Balancers or source_ip for Network Load Balancers.
         /// The following attributes are supported only if the load balancer is an Application Load Balancer and
         /// the target is an instance or an IP address:
         /// load_balancing. algorithm. type - The load balancing algorithm determines how the load balancer
@@ -32,10 +32,16 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         /// default is round_robin. slow_start. duration_seconds - The time period, in seconds, during which a
         /// newly registered target receives an increasing share of the traffic to the target group. After this
         /// time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15
-        /// minutes). The default is 0 seconds (disabled). stickiness. lb_cookie. duration_seconds - The time
-        /// period, in seconds, during which requests from a client should be routed to the same target. After
-        /// this time period expires, the load balancer-generated cookie is considered stale. The range is 1
-        /// second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
+        /// minutes). The default is 0 seconds (disabled). stickiness. app_cookie. cookie_name - Indicates the
+        /// name of the application-based cookie. Names that start with the following prefixes are not allowed:
+        /// AWSALB, AWSALBAPP, and AWSALBTG; they&#39;re reserved for use by the load balancer. stickiness.
+        /// app_cookie. duration_seconds - The time period, in seconds, during which requests from a client
+        /// should be routed to the same target. After this time period expires, the application-based cookie is
+        /// considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+        /// (86400 seconds). stickiness. lb_cookie. duration_seconds - The time period, in seconds, during which
+        /// requests from a client should be routed to the same target. After this time period expires, the load
+        /// balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The
+        /// default value is 1 day (86400 seconds).
         /// The following attribute is supported only if the load balancer is an Application Load Balancer and
         /// the target is a Lambda function:
         /// lambda. multi_value_headers. enabled - Indicates whether the request and response headers that are
@@ -46,8 +52,11 @@ namespace Comformation.ElasticLoadBalancingV2.TargetGroup
         /// The following attributes are supported only by Network Load Balancers:
         /// deregistration_delay. connection_termination. enabled - Indicates whether the load balancer
         /// terminates connections at the end of the deregistration timeout. The value is true or false. The
-        /// default is false. proxy_protocol_v2. enabled - Indicates whether Proxy Protocol version 2 is
-        /// enabled. The value is true or false. The default is false.
+        /// default is false. preserve_client_ip. enabled - Indicates whether client IP preservation is enabled.
+        /// The value is true or false. The default is disabled if the target group type is IP address and the
+        /// target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation
+        /// cannot be disabled for UDP and TCP_UDP target groups. proxy_protocol_v2. enabled - Indicates whether
+        /// Proxy Protocol version 2 is enabled. The value is true or false. The default is false.
         /// Required: No
         /// Type: String
         /// Maximum: 256

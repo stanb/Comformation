@@ -18,7 +18,7 @@ namespace Comformation.CloudFormation.CustomResource
             /// are defined by the service provider.
             /// The service token that was given to the template developer by the service provider to access the
             /// service, such as an Amazon SNS topic ARN or Lambda function ARN. The service token must be from the
-            /// same region in which you are creating the stack.
+            /// same Region in which you are creating the stack.
             /// Updates are not supported.
             /// Required: Yes
             /// Type: String

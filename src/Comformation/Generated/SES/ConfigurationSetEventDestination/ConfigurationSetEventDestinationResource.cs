@@ -14,7 +14,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
         {
             /// <summary>
             /// ConfigurationSetName
-            /// The name of the configuration set that contains the event destination that you want to update.
+            /// The name of the configuration set that contains the event destination.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -23,7 +23,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
             /// <summary>
             /// EventDestination
-            /// The event destination object that you want to apply to the specified configuration set.
+            /// The event destination object.
             /// Required: Yes
             /// Type: EventDestination
             /// Update requires: No interruption

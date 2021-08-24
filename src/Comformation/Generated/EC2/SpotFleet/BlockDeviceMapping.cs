@@ -7,7 +7,7 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet BlockDeviceMapping
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html
     /// </summary>
     public class BlockDeviceMapping
     {
@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The device name (for example, /dev/sdh or xvdh).
         /// Required: Yes
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("DeviceName")]
         public Union<string, IntrinsicFunction> DeviceName { get; set; }
@@ -27,17 +27,18 @@ namespace Comformation.EC2.SpotFleet
         /// Parameters used to automatically set up EBS volumes when the instance is launched.
         /// Required: Conditional
         /// Type: EbsBlockDevice
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Ebs")]
         public EbsBlockDevice Ebs { get; set; }
 
         /// <summary>
         /// NoDevice
-        /// To omit the device from the block device mapping, specify an empty string.
+        /// To omit the device from the block device mapping, specify an empty string. When this property is
+        /// specified, the device is removed from the block device mapping regardless of the assigned value.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("NoDevice")]
         public Union<string, IntrinsicFunction> NoDevice { get; set; }
@@ -55,7 +56,7 @@ namespace Comformation.EC2.SpotFleet
         /// the block device mapping for the AMI.
         /// Required: Conditional
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("VirtualName")]
         public Union<string, IntrinsicFunction> VirtualName { get; set; }

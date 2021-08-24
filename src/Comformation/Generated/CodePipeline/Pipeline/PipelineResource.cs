@@ -67,7 +67,7 @@ namespace Comformation.CodePipeline.Pipeline
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+            /// The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no
             /// actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
             /// Required: Yes
             /// Type: String

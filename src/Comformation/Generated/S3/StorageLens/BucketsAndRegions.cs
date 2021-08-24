@@ -16,7 +16,7 @@ namespace Comformation.S3.StorageLens
         /// Buckets
         /// This property contains the details of the buckets for the Amazon S3 Storage Lens configuration. This
         /// should be the bucket Amazon Resource Name(ARN). For valid values, see Buckets ARN format here in the
-        /// Amazon Simple Storage Service API Guide.
+        /// Amazon S3 API Reference.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

@@ -13,24 +13,14 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// Endpoint
-        /// The endpoint of your Elasticsearch domain.
+        /// Type
+        /// The type of document you are storing.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("Endpoint")]
-        public Union<string, IntrinsicFunction> Endpoint { get; set; }
-
-        /// <summary>
-        /// Id
-        /// The unique identifier for the document you are storing.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Id")]
-        public Union<string, IntrinsicFunction> Id { get; set; }
+        [JsonProperty("Type")]
+        public Union<string, IntrinsicFunction> Type { get; set; }
 
         /// <summary>
         /// Index
@@ -43,6 +33,26 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> Index { get; set; }
 
         /// <summary>
+        /// Id
+        /// The unique identifier for the document you are storing.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Id")]
+        public Union<string, IntrinsicFunction> Id { get; set; }
+
+        /// <summary>
+        /// Endpoint
+        /// The endpoint of your Elasticsearch domain.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Endpoint")]
+        public Union<string, IntrinsicFunction> Endpoint { get; set; }
+
+        /// <summary>
         /// RoleArn
         /// The IAM role ARN that has access to Elasticsearch.
         /// Required: Yes
@@ -51,16 +61,6 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
-
-        /// <summary>
-        /// Type
-        /// The type of document you are storing.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Type")]
-        public Union<string, IntrinsicFunction> Type { get; set; }
 
     }
 }

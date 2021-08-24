@@ -15,18 +15,16 @@ namespace Comformation.Timestream.Database
             /// <summary>
             /// DatabaseName
             /// The name of the Timestream database.
+            /// Length Constraints: Minimum length of 3 bytes. Maximum length of 256 bytes.
             /// Required: No
             /// Type: String
-            /// Minimum: 3
-            /// Maximum: 64
-            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> DatabaseName { get; set; }
 
             /// <summary>
             /// KmsKeyId
-            /// The identifier of the KMS key used to encrypt the data stored in the database.
+            /// The identifier of the AWS KMS key used to encrypt the data stored in the database.
             /// Required: No
             /// Type: String
             /// Minimum: 1

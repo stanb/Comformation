@@ -14,7 +14,7 @@ namespace Comformation.AppFlow.Flow
 
         /// <summary>
         /// PrefixType
-        /// Determines the level of granularity that&#39;s included in the prefix.
+        /// Determines the format of the prefix, and whether it applies to the file name, file path, or both.
         /// Required: No
         /// Type: String
         /// Allowed values: FILENAME | PATH | PATH_AND_FILENAME
@@ -25,7 +25,7 @@ namespace Comformation.AppFlow.Flow
 
         /// <summary>
         /// PrefixFormat
-        /// Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+        /// Determines the level of granularity that&#39;s included in the prefix.
         /// Required: No
         /// Type: String
         /// Allowed values: DAY | HOUR | MINUTE | MONTH | YEAR

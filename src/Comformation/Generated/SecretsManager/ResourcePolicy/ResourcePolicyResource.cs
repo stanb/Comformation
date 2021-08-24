@@ -14,7 +14,7 @@ namespace Comformation.SecretsManager.ResourcePolicy
         {
             /// <summary>
             /// BlockPublicPolicy
-            /// Specifies if you configuired a check for a resource policy that exposes information publicly.
+            /// Specifies if you configured a check for a resource policy that exposes information publicly.
             /// For more information on using this parameter, see Managing a resource-based policy for a secret.
             /// Required: No
             /// Type: Boolean

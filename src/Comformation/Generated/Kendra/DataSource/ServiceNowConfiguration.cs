@@ -28,7 +28,7 @@ namespace Comformation.Kendra.DataSource
 
         /// <summary>
         /// SecretArn
-        /// The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and
+        /// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the user name and
         /// password required to connect to the ServiceNow instance.
         /// Required: Yes
         /// Type: String

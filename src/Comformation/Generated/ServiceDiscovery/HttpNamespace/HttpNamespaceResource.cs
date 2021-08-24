@@ -18,7 +18,7 @@ namespace Comformation.ServiceDiscovery.HttpNamespace
             /// Required: No
             /// Type: String
             /// Maximum: 1024
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -40,6 +40,7 @@ namespace Comformation.ServiceDiscovery.HttpNamespace
             /// Required: Yes
             /// Type: String
             /// Maximum: 1024
+            /// Pattern: ^[!-~]{1,1024}$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }

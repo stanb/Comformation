@@ -25,7 +25,8 @@ namespace Comformation.Redshift.ClusterParameterGroup
 
         /// <summary>
         /// ParameterValue
-        /// The value of the parameter.
+        /// The value of the parameter. If ParameterName is wlm_json_configuration, then the maximum size of
+        /// ParameterValue is 8000 characters.
         /// Required: Yes
         /// Type: String
         /// Maximum: 2147483647

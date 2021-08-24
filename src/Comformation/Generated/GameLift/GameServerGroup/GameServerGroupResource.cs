@@ -81,8 +81,8 @@ namespace Comformation.GameLift.GameServerGroup
 
             /// <summary>
             /// InstanceDefinitions
-            /// The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling
-            /// instances in the corresponding Auto Scaling group.
+            /// The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing and automatically
+            /// scaling instances in the corresponding Auto Scaling group.
             /// Required: Yes
             /// Type: List of InstanceDefinition
             /// Maximum: 20
@@ -119,8 +119,8 @@ namespace Comformation.GameLift.GameServerGroup
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) for an IAM role that allows Amazon GameLift to access your EC2 Auto
-            /// Scaling groups.
+            /// The Amazon Resource Name (ARN) for an IAM role that allows Amazon Web Services to access your Amazon
+            /// EC2 Auto Scaling groups.
             /// Required: Yes
             /// Type: String
             /// Minimum: 1

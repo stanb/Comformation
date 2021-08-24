@@ -14,9 +14,9 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// PlatformVersion
-        /// The AWS Fargate platform version on which the jobs are running. A platform version is specified only
-        /// for jobs running on Fargate resources. If one isn&#39;t specified, the LATEST platform version is used
-        /// by default. This will use a recent, approved version of the AWS Fargate platform for compute
+        /// The AWS Fargate platform version where the jobs are running. A platform version is specified only
+        /// for jobs that are running on Fargate resources. If one isn&#39;t specified, the LATEST platform version
+        /// is used by default. This uses a recent, approved version of the AWS Fargate platform for compute
         /// resources. For more information, see AWS Fargate platform versions in the Amazon Elastic Container
         /// Service Developer Guide.
         /// Required: No

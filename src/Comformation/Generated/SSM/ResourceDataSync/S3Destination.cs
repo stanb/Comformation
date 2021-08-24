@@ -27,6 +27,18 @@ namespace Comformation.SSM.ResourceDataSync
         public Union<string, IntrinsicFunction> KMSKeyArn { get; set; }
 
         /// <summary>
+        /// BucketPrefix
+        /// An Amazon S3 prefix for the bucket.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 256
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("BucketPrefix")]
+        public Union<string, IntrinsicFunction> BucketPrefix { get; set; }
+
+        /// <summary>
         /// BucketName
         /// The name of the S3 bucket where the aggregated data is stored.
         /// Required: Yes
@@ -40,7 +52,7 @@ namespace Comformation.SSM.ResourceDataSync
 
         /// <summary>
         /// BucketRegion
-        /// The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+        /// The AWS Region with the S3 bucket targeted by the resource data sync.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -60,18 +72,6 @@ namespace Comformation.SSM.ResourceDataSync
         /// </summary>
         [JsonProperty("SyncFormat")]
         public Union<string, IntrinsicFunction> SyncFormat { get; set; }
-
-        /// <summary>
-        /// BucketPrefix
-        /// An Amazon S3 prefix for the bucket.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 1
-        /// Maximum: 256
-        /// Update requires: Replacement
-        /// </summary>
-        [JsonProperty("BucketPrefix")]
-        public Union<string, IntrinsicFunction> BucketPrefix { get; set; }
 
     }
 }

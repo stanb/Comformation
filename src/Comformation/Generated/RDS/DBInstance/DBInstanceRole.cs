@@ -16,8 +16,8 @@ namespace Comformation.RDS.DBInstance
         /// FeatureName
         /// The name of the feature associated with the AWS Identity and Access Management (IAM) role. IAM roles
         /// that are associated with a DB instance grant permission for the DB instance to access other AWS
-        /// services on your behalf. For the list of supported feature names, see DBEngineVersion in the Amazon
-        /// RDS API Reference.
+        /// services on your behalf. For the list of supported feature names, see the SupportedFeatureNames
+        /// description in DBEngineVersion in the Amazon RDS API Reference.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

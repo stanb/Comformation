@@ -13,9 +13,19 @@ namespace Comformation.MSK.Cluster
     {
 
         /// <summary>
+        /// Iam
+        /// Details for IAM access control.
+        /// Required: No
+        /// Type: Iam
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("Iam")]
+        public Iam Iam { get; set; }
+
+        /// <summary>
         /// Scram
         /// Details for SASL/SCRAM client authentication.
-        /// Required: Yes
+        /// Required: No
         /// Type: Scram
         /// Update requires: Replacement
         /// </summary>

@@ -37,9 +37,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// IgnorePollAlarmFailure
         /// Indicates whether a deployment should continue if information about the current state of alarms
         /// cannot be retrieved from Amazon CloudWatch. The default value is false.
-        /// true: The deployment proceeds even if alarm status information can&#39;t be retrieved from Amazon
-        /// CloudWatch. false: The deployment stops if alarm status information can&#39;t be retrieved from Amazon
-        /// CloudWatch.
+        /// true: The deployment proceeds even if alarm status information can&#39;t be retrieved from CloudWatch.
+        /// false: The deployment stops if alarm status information can&#39;t be retrieved from CloudWatch.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

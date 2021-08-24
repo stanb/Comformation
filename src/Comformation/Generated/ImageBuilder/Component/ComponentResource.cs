@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.Component
         {
             /// <summary>
             /// Name
+            /// 		
             /// The name of the component.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
@@ -24,7 +26,9 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// Version
+            /// 		
             /// The component version. For example, 1. 0. 0.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Pattern: ^[0-9]+\. [0-9]+\. [0-9]+$
@@ -34,7 +38,9 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// Description
+            /// 		
             /// The description of the component.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -45,7 +51,9 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// ChangeDescription
+            /// 		
             /// A change description of the component. For example initial version.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -56,7 +64,9 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// Platform
+            /// 		
             /// The platform of the component. For example, Windows.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Allowed values: Linux | Windows
@@ -70,6 +80,7 @@ namespace Comformation.ImageBuilder.Component
             /// world testing document. \nschemaVersion: 1. 0\n\nphases:\n - name: test\n steps:\n - name:
             /// HelloWorldStep\n action: ExecuteBash\n inputs:\n commands:\n - echo \&quot;Hello World! Test. \&quot;\n. See
             /// Examples below for the schema for creating a component using Data.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -78,7 +89,9 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// KmsKeyId
+            /// 		
             /// The KMS key identifier used to encrypt the component.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -89,7 +102,9 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// Tags
+            /// 		
             /// The tags associated with the component.
+            /// 	
             /// Required: No
             /// Type: Map of String
             /// Update requires: Replacement
@@ -98,7 +113,11 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// Uri
-            /// The URI of the component document.
+            /// 		
+            /// The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+            /// 			access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your
+            /// service 			quota. Either data or uri can be used to specify the data within the 			component.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -107,8 +126,10 @@ namespace Comformation.ImageBuilder.Component
 
             /// <summary>
             /// SupportedOsVersions
-            /// The operating system (OS) version supported by the component. If the OS information is available, a
-            /// prefix match is performed against the parent image OS version during image recipe creation.
+            /// 		
+            /// The operating system (OS) version supported by the component. If the OS information is 			available,
+            /// a prefix match is performed against the parent image OS version during image recipe 			creation.
+            /// 	
             /// Required: No
             /// Type: List of String
             /// Maximum: 25
@@ -127,6 +148,7 @@ namespace Comformation.ImageBuilder.Component
     public static class ComponentAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Type = new ResourceAttribute<Union<string, IntrinsicFunction>>("Type");
         public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> Encrypted = new ResourceAttribute<Union<bool, IntrinsicFunction>>("Encrypted");
     }

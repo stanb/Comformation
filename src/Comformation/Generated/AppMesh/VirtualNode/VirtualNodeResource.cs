@@ -44,7 +44,7 @@ namespace Comformation.AppMesh.VirtualNode
             /// <summary>
             /// VirtualNodeName
             /// The name to use for the virtual node.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

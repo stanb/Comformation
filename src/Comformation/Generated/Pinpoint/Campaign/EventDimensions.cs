@@ -25,9 +25,10 @@ namespace Comformation.Pinpoint.Campaign
 
         /// <summary>
         /// EventType
-        /// The name of the event that causes the campaign to be sent. This can be a standard type of event that
-        /// Amazon Pinpoint generates, such as _email. delivered, or a custom event that&#39;s specific to your
-        /// application.
+        /// The name of the event that causes the campaign to be sent or the journey activity to be performed.
+        /// This can be a standard event that Amazon Pinpoint generates, such as _email. delivered. For
+        /// campaigns, this can also be a custom event that&#39;s specific to your application. For information
+        /// about standard events, see Streaming Amazon Pinpoint Events in the Amazon Pinpoint Developer Guide.
         /// Required: No
         /// Type: SetDimension
         /// Update requires: No interruption

@@ -129,5 +129,6 @@ namespace Comformation.RDS.DBProxy
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DBProxyArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("DBProxyArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Endpoint = new ResourceAttribute<Union<string, IntrinsicFunction>>("Endpoint");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> VpcId = new ResourceAttribute<Union<string, IntrinsicFunction>>("VpcId");
     }
 }

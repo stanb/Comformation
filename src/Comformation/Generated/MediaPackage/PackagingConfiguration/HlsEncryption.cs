@@ -34,5 +34,15 @@ namespace Comformation.MediaPackage.PackagingConfiguration
         [JsonProperty("EncryptionMethod")]
         public Union<string, IntrinsicFunction> EncryptionMethod { get; set; }
 
+        /// <summary>
+        /// SpekeKeyProvider
+        /// Parameters for the SPEKE key provider.
+        /// Required: Yes
+        /// Type: SpekeKeyProvider
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SpekeKeyProvider")]
+        public SpekeKeyProvider SpekeKeyProvider { get; set; }
+
     }
 }

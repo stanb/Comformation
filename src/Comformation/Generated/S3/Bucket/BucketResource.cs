@@ -15,7 +15,7 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// AccelerateConfiguration
             /// Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see Amazon
-            /// S3 Transfer Acceleration in the Amazon Simple Storage Service Developer Guide.
+            /// S3 Transfer Acceleration in the Amazon S3 User Guide.
             /// Required: No
             /// Type: AccelerateConfiguration
             /// Update requires: No interruption
@@ -25,11 +25,11 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// AccessControl
             /// A canned access control list (ACL) that grants predefined permissions to the bucket. For more
-            /// information about canned ACLs, see Canned ACL in the Amazon Simple Storage Service Developer Guide.
-            /// Be aware that the syntax for this property differs from the information provided in the Amazon
-            /// Simple Storage Service Developer Guide. The AccessControl property is case-sensitive and must be one
-            /// of the following values: Private, PublicRead, PublicReadWrite, AuthenticatedRead, LogDeliveryWrite,
-            /// BucketOwnerRead, BucketOwnerFullControl, or AwsExecRead.
+            /// information about canned ACLs, see Canned ACL in the Amazon S3 User Guide.
+            /// Be aware that the syntax for this property differs from the information provided in the Amazon S3
+            /// User Guide. The AccessControl property is case-sensitive and must be one of the following values:
+            /// Private, PublicRead, PublicReadWrite, AuthenticatedRead, LogDeliveryWrite, BucketOwnerRead,
+            /// BucketOwnerFullControl, or AwsExecRead.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -49,8 +49,7 @@ namespace Comformation.S3.Bucket
             /// BucketEncryption
             /// Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys
             /// (SSE-S3) or AWS KMS-managed keys (SSE-KMS) bucket. For information about the Amazon S3 default
-            /// encryption feature, see Amazon S3 Default Encryption for S3 Buckets in the Amazon Simple Storage
-            /// Service Developer Guide.
+            /// encryption feature, see Amazon S3 Default Encryption for S3 Buckets in the Amazon S3 User Guide.
             /// Required: No
             /// Type: BucketEncryption
             /// Update requires: No interruption
@@ -62,8 +61,7 @@ namespace Comformation.S3.Bucket
             /// A name for the bucket. If you don&#39;t specify a name, AWS CloudFormation generates a unique ID and
             /// uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers,
             /// periods (. ), and dashes (-) and must follow Amazon S3 bucket restrictions and limitations. For more
-            /// information, see Rules for naming Amazon S3 buckets in the Amazon Simple Storage Service Developer
-            /// Guide.
+            /// information, see Rules for naming Amazon S3 buckets in the Amazon S3 User Guide.
             /// Important If you specify a name, you can&#39;t perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you need to replace the
             /// resource, specify a new name.
@@ -76,8 +74,7 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// CorsConfiguration
             /// Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-            /// information, see Enabling Cross-Origin Resource Sharing in the Amazon Simple Storage Service
-            /// Developer Guide.
+            /// information, see Enabling Cross-Origin Resource Sharing in the Amazon S3 User Guide.
             /// Required: No
             /// Type: CorsConfiguration
             /// Update requires: No interruption
@@ -96,7 +93,7 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// InventoryConfigurations
             /// Specifies the inventory configuration for an Amazon S3 bucket. For more information, see GET Bucket
-            /// inventory in the Amazon Simple Storage Service API Reference.
+            /// inventory in the Amazon S3 API Reference.
             /// Required: No
             /// Type: List of InventoryConfiguration
             /// Update requires: No interruption
@@ -106,7 +103,7 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// LifecycleConfiguration
             /// Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see
-            /// Object Lifecycle Management in the Amazon Simple Storage Service Developer Guide.
+            /// Object Lifecycle Management in the Amazon S3 User Guide.
             /// Required: No
             /// Type: LifecycleConfiguration
             /// Update requires: No interruption
@@ -128,7 +125,7 @@ namespace Comformation.S3.Bucket
             /// configuration ID) from an Amazon S3 bucket. If you&#39;re updating an existing metrics configuration,
             /// note that this is a full replacement of the existing metrics configuration. If you don&#39;t include the
             /// elements you want to keep, they are erased. For more information, see PUT Bucket metrics in the
-            /// Amazon Simple Storage Service API Reference.
+            /// Amazon S3 API Reference.
             /// Required: No
             /// Type: List of MetricsConfiguration
             /// Update requires: No interruption
@@ -147,9 +144,12 @@ namespace Comformation.S3.Bucket
             /// <summary>
             /// ObjectLockConfiguration
             /// Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock
-            /// configuration will be applied by default to every new object placed in the specified bucket.
-            /// Note DefaultRetention requires either Days or Years. You can&#39;t specify both at the same time.
-            /// Related Resources Locking Objects
+            /// configuration will be applied by default to every new object placed in the specified bucket. For
+            /// more information, see Locking Objects.
+            /// Note The DefaultRetention settings require both a mode and a period. The DefaultRetention period can
+            /// be either Days or Years but you must select one. You cannot specify Days and Years at the same time.
+            /// You can only enable Object Lock for new buckets. If you want to turn on Object Lock for an existing
+            /// bucket, contact AWS Support.
             /// Required: No
             /// Type: ObjectLockConfiguration
             /// Update requires: No interruption
@@ -158,9 +158,11 @@ namespace Comformation.S3.Bucket
 
             /// <summary>
             /// ObjectLockEnabled
-            /// Indicates whether this bucket has an Object Lock configuration enabled.
+            /// Indicates whether this bucket has an Object Lock configuration enabled. Enable ObjectLockEnabled
+            /// when you apply ObjectLockConfiguration to a bucket.
             /// Required: No
             /// Type: Boolean
+            /// Allowed values: Enabled
             /// Update requires: Replacement
             /// </summary>
             public Union<bool, IntrinsicFunction> ObjectLockEnabled { get; set; }
@@ -187,8 +189,8 @@ namespace Comformation.S3.Bucket
             /// ReplicationConfiguration
             /// Configuration for replicating objects in an S3 bucket. To enable replication, you must also enable
             /// versioning by using the VersioningConfiguration property.
-            /// Amazon S3 can store replicated objects in only one destination bucket. The destination bucket must
-            /// already exist.
+            /// Amazon S3 can store replicated objects in a single destination bucket or multiple destination
+            /// buckets. The destination bucket or buckets must already exist.
             /// Required: No
             /// Type: ReplicationConfiguration
             /// Update requires: No interruption

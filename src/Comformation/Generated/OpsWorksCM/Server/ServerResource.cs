@@ -27,7 +27,7 @@ namespace Comformation.OpsWorksCM.Server
             /// <summary>
             /// EngineVersion
             /// The major release version of the engine that you want to use. For a Chef server, the valid value for
-            /// EngineVersion is currently 2. For a Puppet server, the valid value is 2017.
+            /// EngineVersion is currently 2. For a Puppet server, valid values are 2019 or 2017.
             /// Required: No
             /// Type: String
             /// Maximum: 10000
@@ -276,13 +276,13 @@ namespace Comformation.OpsWorksCM.Server
 
             /// <summary>
             /// Tags
-            /// A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS
+            /// A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or
             /// OpsWorks for Puppet Enterprise server.
             /// The key cannot be empty. The key can be a maximum of 127 characters, and can contain only Unicode
             /// letters, numbers, or separators, or the following special characters: + - = . _ : / @ The value can
             /// be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
-            /// following special characters: + - = . _ : / @ Leading and trailing white spaces are trimmed from
-            /// both the key and value. A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.
+            /// following special characters: + - = . _ : / @ Leading and trailing spaces are trimmed from both the
+            /// key and value. A maximum of 50 user-applied tags is allowed for any AWS OpsWorks CM server.
             /// Required: No
             /// Type: List of Tag
             /// Maximum: 200

@@ -15,7 +15,7 @@ namespace Comformation.Greengrass.ConnectorDefinition
         /// <summary>
         /// ConnectorArn
         /// The Amazon Resource Name (ARN) of the connector.
-        /// For more information about AWS-provided connectors, see AWS-Provided Greengrass Connectors.
+        /// For more information about connectors provided by AWS, see Greengrass Connectors Provided by AWS.
         /// Required: Yes
         /// Type: String
         /// Update requires: Replacement
@@ -26,8 +26,8 @@ namespace Comformation.Greengrass.ConnectorDefinition
         /// <summary>
         /// Parameters
         /// The parameters or configuration used by the connector.
-        /// 				 				
-        /// For more information about AWS-provided connectors, see AWS-Provided Greengrass Connectors.
+        /// 				
+        /// For more information about connectors provided by AWS, see Greengrass Connectors Provided by AWS.
         /// Required: No
         /// Type: Json
         /// Update requires: Replacement

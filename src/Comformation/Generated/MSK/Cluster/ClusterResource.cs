@@ -17,7 +17,7 @@ namespace Comformation.MSK.Cluster
             /// The setup to be used for brokers in the cluster.
             /// Required: Yes
             /// Type: BrokerNodeGroupInfo
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public BrokerNodeGroupInfo BrokerNodeGroupInfo { get; set; }
 

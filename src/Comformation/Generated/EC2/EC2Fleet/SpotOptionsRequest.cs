@@ -33,7 +33,7 @@ namespace Comformation.EC2.EC2Fleet
         /// pools that you specify.
         /// If the allocation strategy is capacityOptimized, EC2 Fleet launches instances from Spot Instance
         /// pools that are optimally chosen based on the available Spot Instance capacity.
-        /// Allowed Values: lowestPrice | diversified | capacityOptimized
+        /// Allowed Values: lowestPrice | diversified | capacityOptimized | capacityOptimizedPrioritized
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -89,6 +89,12 @@ namespace Comformation.EC2.EC2Fleet
         /// The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
         /// AllocationStrategy is set to lowest-price. EC2 Fleet selects the cheapest Spot pools and evenly
         /// allocates your target Spot capacity across the number of Spot pools that you specify.
+        /// Note that EC2 Fleet attempts to draw Spot Instances from the number of pools that you specify on a
+        /// best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, EC2
+        /// Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+        /// your target capacity is met, you might receive Spot Instances from more than the number of pools
+        /// that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your
+        /// full target capacity from fewer than the number of pools that you specified.
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement

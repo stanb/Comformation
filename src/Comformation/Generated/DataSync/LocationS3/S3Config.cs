@@ -20,7 +20,7 @@ namespace Comformation.DataSync.LocationS3
         /// Type: String
         /// Maximum: 2048
         /// Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/. *$
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("BucketAccessRoleArn")]
         public Union<string, IntrinsicFunction> BucketAccessRoleArn { get; set; }

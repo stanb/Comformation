@@ -15,7 +15,7 @@ namespace Comformation.Kendra.DataSource
         /// <summary>
         /// DataSourceFieldName
         /// The name of the field in the data source.
-        /// You must first create the index field using the API_UpdateIndex operation.
+        /// You must first create the index field using the UpdateIndex operation.
         /// Required: Yes
         /// Type: String
         /// Allowed values: AUTHOR | CONTENT_TYPE | CREATED_DATE | DISPLAY_URL | FILE_SIZE | ITEM_TYPE |

@@ -14,8 +14,8 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// IAMRoleARN
-        /// The ARN of the IAM role that Amazon SES uses to publish email sending events to the Amazon Kinesis
-        /// Data Firehose stream.
+        /// The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis
+        /// Firehose stream.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -25,7 +25,7 @@ namespace Comformation.SES.ConfigurationSetEventDestination
 
         /// <summary>
         /// DeliveryStreamARN
-        /// The ARN of the Amazon Kinesis Data Firehose stream that email sending events should be published to.
+        /// The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

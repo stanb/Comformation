@@ -13,6 +13,33 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
+        /// Forward
+        /// 		
+        /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
+        /// instead of this field.
+        /// 		
+        /// If you want to include cookies in the cache key, use a cache policy. For more information, 			see
+        /// Creating cache policies in the Amazon CloudFront Developer Guide.
+        /// 		
+        /// If you want to send cookies to the origin but not include them in the cache key, use origin
+        /// 			request policy. For more information, see Creating origin request policies in the 			Amazon
+        /// CloudFront Developer Guide.
+        /// 		
+        /// Specifies which cookies to forward to the origin for this cache behavior: all, none, or 			the list
+        /// of cookies specified in the WhitelistedNames complex type.
+        /// 		
+        /// Amazon S3 doesn&#39;t process cookies. When the cache behavior is forwarding requests to an 			Amazon S3
+        /// origin, specify none for the Forward element.
+        /// 	
+        /// Required: Yes
+        /// Type: String
+        /// Allowed values: all | none | whitelist
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Forward")]
+        public Union<string, IntrinsicFunction> Forward { get; set; }
+
+        /// <summary>
         /// WhitelistedNames
         /// 		
         /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
@@ -42,33 +69,6 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("WhitelistedNames")]
         public List<Union<string, IntrinsicFunction>> WhitelistedNames { get; set; }
-
-        /// <summary>
-        /// Forward
-        /// 		
-        /// This field is deprecated. We recommend that you use a cache policy or an origin 			request policy
-        /// instead of this field.
-        /// 		
-        /// If you want to include cookies in the cache key, use a cache policy. For more information, 			see
-        /// Creating cache policies in the Amazon CloudFront Developer Guide.
-        /// 		
-        /// If you want to send cookies to the origin but not include them in the cache key, use origin
-        /// 			request policy. For more information, see Creating origin request policies in the 			Amazon
-        /// CloudFront Developer Guide.
-        /// 		
-        /// Specifies which cookies to forward to the origin for this cache behavior: all, none, or 			the list
-        /// of cookies specified in the WhitelistedNames complex type.
-        /// 		
-        /// Amazon S3 doesn&#39;t process cookies. When the cache behavior is forwarding requests to an 			Amazon S3
-        /// origin, specify none for the Forward element.
-        /// 	
-        /// Required: Yes
-        /// Type: String
-        /// Allowed values: all | none | whitelist
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Forward")]
-        public Union<string, IntrinsicFunction> Forward { get; set; }
 
     }
 }

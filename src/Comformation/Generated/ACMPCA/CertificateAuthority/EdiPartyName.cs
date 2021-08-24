@@ -15,7 +15,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// PartyName
         /// 		
-        /// Specifies 			the party name.
+        /// Specifies the party name.
         /// 	
         /// Required: Yes
         /// Type: String
@@ -28,9 +28,9 @@ namespace Comformation.ACMPCA.CertificateAuthority
 
         /// <summary>
         /// NameAssigner
-        /// 		 		
+        /// 		
         /// Specifies the name assigner.
-        /// 		 	
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Minimum: 0

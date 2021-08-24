@@ -18,7 +18,7 @@ namespace Comformation.Synthetics.Canary
         /// the frequency of the runs of this canary.
         /// If you omit this field, the frequency of the canary is used as this value, up to a maximum of 900
         /// seconds.
-        /// Required: Yes
+        /// Required: No
         /// Type: Integer
         /// Minimum: 3
         /// Maximum: 840
@@ -44,7 +44,7 @@ namespace Comformation.Synthetics.Canary
         /// ActiveTracing
         /// Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing
         /// enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary
-        /// does not hit an endpoint that has X-ray tracing enabled. Using X-Ray tracing incurs charges. For
+        /// does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For
         /// more information, see Canaries and X-Ray tracing.
         /// You can enable active tracing only for canaries that use version syn-nodejs-2. 0 or later for their
         /// canary runtime.

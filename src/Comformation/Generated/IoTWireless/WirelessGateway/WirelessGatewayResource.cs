@@ -14,7 +14,8 @@ namespace Comformation.IoTWireless.WirelessGateway
         {
             /// <summary>
             /// Name
-            /// The name of the new resource.
+            /// 		
+            /// The name of the new resource. The maximum length is 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -23,7 +24,7 @@ namespace Comformation.IoTWireless.WirelessGateway
 
             /// <summary>
             /// Description
-            /// The description of the new resource.
+            /// The description of the new resource. The maximum length is 2048 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -33,7 +34,8 @@ namespace Comformation.IoTWireless.WirelessGateway
             /// <summary>
             /// Tags
             /// 		 		
-            /// An array of key-value pairs to apply to this resource.
+            /// An array of key-value pairs to apply to this resource. Tags can have a minimum of 0 and a maximum of
+            /// 50 items.
             /// 		
             /// For more information, see Tag.
             /// 	
@@ -44,34 +46,31 @@ namespace Comformation.IoTWireless.WirelessGateway
             public List<Tag> Tags { get; set; }
 
             /// <summary>
-            /// LoRaWANGateway
+            /// LoRaWAN
             /// The gateway configuration information to use to create the wireless gateway.
             /// Required: Yes
             /// Type: LoRaWANGateway
             /// Update requires: No interruption
             /// </summary>
-            public LoRaWANGateway LoRaWANGateway { get; set; }
+            public LoRaWANGateway LoRaWAN { get; set; }
 
             /// <summary>
-            /// NextToken
-            /// 		
-            /// This parameter isn&#39;t needed to create this resource. Do not include it in your template.
-            /// 	
+            /// ThingArn
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> NextToken { get; set; }
+            public Union<string, IntrinsicFunction> ThingArn { get; set; }
 
             /// <summary>
-            /// ThingName
-            /// The name of the thing associated with the wireless gateway. The value is empty if a thing isn&#39;t
-            /// associated with the gateway.
+            /// LastUplinkReceivedAt
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
-            public Union<string, IntrinsicFunction> ThingName { get; set; }
+            public Union<string, IntrinsicFunction> LastUplinkReceivedAt { get; set; }
 
         }
 
@@ -85,6 +84,6 @@ namespace Comformation.IoTWireless.WirelessGateway
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ThingArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("ThingArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ThingName = new ResourceAttribute<Union<string, IntrinsicFunction>>("ThingName");
     }
 }

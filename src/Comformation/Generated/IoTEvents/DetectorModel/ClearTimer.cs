@@ -15,7 +15,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// <summary>
         /// TimerName
         /// The name of the timer to clear.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128

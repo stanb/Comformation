@@ -15,7 +15,8 @@ namespace Comformation.CloudFront.OriginRequestPolicy
         /// <summary>
         /// Comment
         /// 		
-        /// A comment to describe the origin request policy.
+        /// A comment to describe the origin request policy. The comment cannot be longer than 128
+        /// 			characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

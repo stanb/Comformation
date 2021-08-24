@@ -13,16 +13,6 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// QueueUrl
-        /// The URL of the Amazon SQS queue.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("QueueUrl")]
-        public Union<string, IntrinsicFunction> QueueUrl { get; set; }
-
-        /// <summary>
         /// RoleArn
         /// The ARN of the IAM role that grants access.
         /// Required: Yes
@@ -41,6 +31,16 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("UseBase64")]
         public Union<bool, IntrinsicFunction> UseBase64 { get; set; }
+
+        /// <summary>
+        /// QueueUrl
+        /// The URL of the Amazon SQS queue.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("QueueUrl")]
+        public Union<string, IntrinsicFunction> QueueUrl { get; set; }
 
     }
 }

@@ -13,6 +13,19 @@ namespace Comformation.SageMaker.Model
     {
 
         /// <summary>
+        /// RepositoryAuthConfig
+        /// (Optional) Specifies an authentication configuration for the private docker registry where your
+        /// model image is hosted. Specify a value for this property only if you specified Vpc as the value for
+        /// the RepositoryAccessMode field, and the private Docker registry where the model image is hosted
+        /// requires authentication.
+        /// Required: No
+        /// Type: RepositoryAuthConfig
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("RepositoryAuthConfig")]
+        public RepositoryAuthConfig RepositoryAuthConfig { get; set; }
+
+        /// <summary>
         /// RepositoryAccessMode
         /// Set this to one of the following values:
         /// Platform - The model image is hosted in Amazon ECR. Vpc - The model image is hosted in a private

@@ -15,6 +15,7 @@ namespace Comformation.ImageBuilder.ImagePipeline
         /// <summary>
         /// ImageTestsEnabled
         /// Defines if tests should be executed when building this image. For example, true or false.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -24,7 +25,9 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
         /// <summary>
         /// TimeoutMinutes
+        /// 		
         /// The maximum time in minutes that tests are permitted to run.
+        /// 	
         /// Required: No
         /// Type: Integer
         /// Minimum: 60

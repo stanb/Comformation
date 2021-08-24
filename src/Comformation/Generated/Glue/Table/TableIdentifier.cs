@@ -14,6 +14,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// DatabaseName
+        /// 	
         /// The name of the catalog database that contains the target table.
         /// Required: No
         /// Type: String
@@ -24,6 +25,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// CatalogId
+        /// 	
         /// The ID of the Data Catalog in which the table resides.
         /// Required: No
         /// Type: String
@@ -34,6 +36,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// Name
+        /// 	
         /// The name of the target table.
         /// Required: No
         /// Type: String

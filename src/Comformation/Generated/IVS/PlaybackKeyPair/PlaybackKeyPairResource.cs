@@ -14,8 +14,7 @@ namespace Comformation.IVS.PlaybackKeyPair
         {
             /// <summary>
             /// Name
-            /// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify
-            /// that resource. The value does not need to be unique.
+            /// Playback-key-pair name. The value does not need to be unique.
             /// Required: No
             /// Type: String
             /// Minimum: 0

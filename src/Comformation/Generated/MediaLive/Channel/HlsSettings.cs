@@ -34,13 +34,23 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Fmp4HlsSettings
-        /// Not currently supported by AWS CloudFormation.
+        /// The settings for an fMP4 container.
         /// Required: No
         /// Type: Fmp4HlsSettings
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Fmp4HlsSettings")]
         public Fmp4HlsSettings Fmp4HlsSettings { get; set; }
+
+        /// <summary>
+        /// FrameCaptureHlsSettings
+        /// Settings for a frame capture output in an HLS output group.
+        /// Required: No
+        /// Type: FrameCaptureHlsSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("FrameCaptureHlsSettings")]
+        public FrameCaptureHlsSettings FrameCaptureHlsSettings { get; set; }
 
     }
 }

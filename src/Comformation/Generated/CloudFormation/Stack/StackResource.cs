@@ -29,7 +29,7 @@ namespace Comformation.CloudFormation.Stack
             /// created. Each parameter has a name corresponding to a parameter defined in the embedded template and
             /// a value representing the value that you want to set for the parameter.
             /// Note If you use the Ref function to pass a parameter value to a nested stack, comma-delimited list
-            /// parameters must be of type String. In other words, you cannot pass values that are of type
+            /// parameters must be of type String. In other words, you can&#39;t pass values that are of type
             /// CommaDelimitedList to nested stacks.
             /// Conditional. Required if the nested stack requires input parameters.
             /// Whether an update causes interruptions depends on the resources that are being updated. An update
@@ -54,7 +54,7 @@ namespace Comformation.CloudFormation.Stack
             /// <summary>
             /// TemplateURL
             /// Location of file containing the template body. The URL must point to a template (max size: 460,800
-            /// bytes) that is located in an Amazon S3 bucket. For more information, see Template anatomy.
+            /// bytes) that&#39;s located in an Amazon S3 bucket. For more information, see Template anatomy.
             /// Whether an update causes interruptions depends on the resources that are being updated. An update
             /// never causes a nested stack to be replaced.
             /// Required: Yes

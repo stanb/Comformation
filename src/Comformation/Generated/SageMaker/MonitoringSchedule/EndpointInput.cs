@@ -38,7 +38,7 @@ namespace Comformation.SageMaker.MonitoringSchedule
 
         /// <summary>
         /// S3DataDistributionType
-        /// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to
+        /// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
         /// FullyReplicated
         /// Required: No
         /// Type: String

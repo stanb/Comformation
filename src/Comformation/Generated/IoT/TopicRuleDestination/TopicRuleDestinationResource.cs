@@ -20,7 +20,7 @@ namespace Comformation.IoT.TopicRuleDestination
             /// and traffic to this destination is allowed. You can set status to DISABLED by calling
             /// UpdateTopicRuleDestination. DISABLED Confirmation was completed, and traffic to this destination is
             /// not allowed. You can set status to ENABLED by calling UpdateTopicRuleDestination. ERROR Confirmation
-            /// could not be completed, for example if the confirmation timed out. You can call
+            /// could not be completed; for example, if the confirmation timed out. You can call
             /// GetTopicRuleDestination for details about the error. You can set status to IN_PROGRESS by calling
             /// UpdateTopicRuleDestination. Calling UpdateTopicRuleDestination causes a new confirmation challenge
             /// to be sent to your confirmation endpoint.
@@ -41,8 +41,7 @@ namespace Comformation.IoT.TopicRuleDestination
 
             /// <summary>
             /// VpcProperties
-            /// Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28
-            /// netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+            /// Properties of the virtual private cloud (VPC) connection.
             /// Required: No
             /// Type: VpcDestinationProperties
             /// Update requires: Replacement

@@ -28,7 +28,6 @@ namespace Comformation.NetworkFirewall.RuleGroup
             /// <summary>
             /// RuleGroup
             /// An object that defines the rule group rules.
-            /// Note You must provide either this rule group setting or a Rules setting, but not both.
             /// Required: No
             /// Type: RuleGroup
             /// Update requires: No interruption

@@ -6,13 +6,18 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.IoTAnalytics.Datastore
 {
     /// <summary>
-    /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html
+    /// AWS::IoTAnalytics::Datastore ParquetConfiguration
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html
     /// </summary>
     public class ParquetConfiguration
     {
 
         /// <summary>
         /// SchemaDefinition
+        /// Information needed to define a schema.
+        /// Required: No
+        /// Type: SchemaDefinition
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SchemaDefinition")]
         public SchemaDefinition SchemaDefinition { get; set; }

@@ -105,10 +105,8 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// SchemaReference
+        /// 	
         /// An object that references a schema stored in the AWS Glue Schema Registry.
-        /// 	 	
-        /// When creating a table, you can pass an empty list of columns for the schema, and instead use a
-        /// schema reference.
         /// Required: No
         /// Type: SchemaReference
         /// Update requires: No interruption

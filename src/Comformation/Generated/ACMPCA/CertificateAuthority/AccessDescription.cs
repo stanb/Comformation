@@ -14,9 +14,9 @@ namespace Comformation.ACMPCA.CertificateAuthority
 
         /// <summary>
         /// AccessMethod
-        /// 		 		
+        /// 		
         /// The type and format of AccessDescription information.
-        /// 		 	
+        /// 	
         /// Required: Yes
         /// Type: AccessMethod
         /// Update requires: Replacement
@@ -27,7 +27,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// AccessLocation
         /// 		
-        /// The 			location of AccessDescription information.
+        /// The location of AccessDescription information.
         /// 	
         /// Required: Yes
         /// Type: GeneralName

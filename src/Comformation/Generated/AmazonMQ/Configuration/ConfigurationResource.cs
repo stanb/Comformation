@@ -32,6 +32,15 @@ namespace Comformation.AmazonMQ.Configuration
             public Union<string, IntrinsicFunction> Description { get; set; }
 
             /// <summary>
+            /// AuthenticationStrategy
+            /// Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> AuthenticationStrategy { get; set; }
+
+            /// <summary>
             /// EngineType
             /// The type of broker engine. Note: Currently, Amazon MQ only supports ACTIVEMQ for creating and
             /// editing broker configurations.

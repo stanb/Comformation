@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// DeviceName
+        /// 		
         /// The device to which these mappings apply.
+        /// 	
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -38,7 +40,7 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// NoDevice
-        /// Removes a mapping from the parent image, formatted as an empty string.
+        /// Enter an empty string to remove a mapping from the parent image.
         /// The following is an example of an empty string value in the NoDevice field.
         /// NoDevice:&quot;&quot;
         /// Required: No
@@ -50,7 +52,9 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// Ebs
-        /// Manages the Amazon EBS-specific configuration for this mapping.
+        /// 		
+        /// Use to manage Amazon EBS-specific configuration for this mapping.
+        /// 	
         /// Required: No
         /// Type: EbsInstanceBlockDeviceSpecification
         /// Update requires: Replacement

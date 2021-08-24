@@ -15,7 +15,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// DigitalSignature
         /// 		
-        /// 			Key can be used for digital signing.
+        /// Key can be used for digital signing.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -27,7 +27,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// NonRepudiation
         /// 		
-        /// Key 			can be used for non-repudiation.
+        /// Key can be used for non-repudiation.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -39,7 +39,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// KeyEncipherment
         /// 		
-        /// Key 			can be used to encipher data.
+        /// Key can be used to encipher data.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -51,7 +51,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// DataEncipherment
         /// 		
-        /// Key 			can be used to decipher data.
+        /// Key can be used to decipher data.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -63,7 +63,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// KeyAgreement
         /// 		
-        /// Key 			can be used in a key-agreement protocol.
+        /// Key can be used in a key-agreement protocol.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -75,7 +75,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// KeyCertSign
         /// 		
-        /// Key 			can be used to sign certificates.
+        /// Key can be used to sign certificates.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -87,7 +87,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// CRLSign
         /// 		
-        /// Key 			can be used to sign CRLs.
+        /// Key can be used to sign CRLs.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -99,7 +99,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// EncipherOnly
         /// 		
-        /// Key 			can be used only to encipher data.
+        /// Key can be used only to encipher data.
         /// 	
         /// Required: No
         /// Type: Boolean
@@ -111,7 +111,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// DecipherOnly
         /// 		
-        /// Key 			can be used only to decipher data.
+        /// Key can be used only to decipher data.
         /// 	
         /// Required: No
         /// Type: Boolean

@@ -42,7 +42,8 @@ namespace Comformation.Batch.JobDefinition
         /// that the Amazon ECS container agent can communicate with by default.
         /// The supported log drivers are awslogs, fluentd, gelf, json-file, journald, logentries, syslog, and
         /// splunk.
-        /// Note Jobs running on Fargate resources are restricted to the awslogs and splunk log drivers.
+        /// Note Jobs that are running on Fargate resources are restricted to the awslogs and splunk log
+        /// drivers.
         /// awslogs Specifies the Amazon CloudWatch Logs logging driver. For more information, see Using the
         /// awslogs Log Driver in the AWS Batch User Guide and Amazon CloudWatch Logs logging driver in the
         /// Docker documentation. fluentd Specifies the Fluentd logging driver. For more information, including
@@ -56,7 +57,7 @@ namespace Comformation.Batch.JobDefinition
         /// Splunk logging driver in the Docker documentation. syslog Specifies the syslog logging driver. For
         /// more information, including usage and options, see Syslog logging driver in the Docker
         /// documentation.
-        /// Note If you have a custom driver that&#39;sn&#39;t listed earlier that you want to work with the Amazon ECS
+        /// Note If you have a custom driver that&#39;s not listed earlier that you want to work with the Amazon ECS
         /// container agent, you can fork the Amazon ECS container agent project that&#39;s available on GitHub and
         /// customize it to work with that driver. We encourage you to submit pull requests for changes that you
         /// want to have included. However, Amazon Web Services doesn&#39;t currently support running modified

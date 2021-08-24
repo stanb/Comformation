@@ -15,9 +15,13 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// TargetRegion
         /// 		
-        /// The target Region.
+        /// Avoid using this parameter when creating new policies. Instead, use Target 			to specify a target
+        /// Region or a target Outpost for snapshot copies.
+        /// 		
+        /// For policies created before the Target parameter 			was introduced, this parameter indicates the
+        /// target Region for snapshot copies.
         /// 	
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Minimum: 0
         /// Maximum: 16
@@ -26,6 +30,36 @@ namespace Comformation.DLM.LifecyclePolicy
         /// </summary>
         [JsonProperty("TargetRegion")]
         public Union<string, IntrinsicFunction> TargetRegion { get; set; }
+
+        /// <summary>
+        /// Target
+        /// 		
+        /// The target Region or the Amazon Resource Name (ARN) of the target Outpost for the 			snapshot
+        /// copies.
+        /// 		
+        /// Use this parameter instead of TargetRegion. Do not 			specify both.
+        /// 	
+        /// Required: No
+        /// Type: String
+        /// Minimum: 0
+        /// Maximum: 2048
+        /// Pattern: ^[\w:\-\/\*]+$
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Target")]
+        public Union<string, IntrinsicFunction> Target { get; set; }
+
+        /// <summary>
+        /// DeprecateRule
+        /// 		
+        /// The AMI deprecation rule for cross-Region AMI copies created by the rule.
+        /// 	
+        /// Required: No
+        /// Type: CrossRegionCopyDeprecateRule
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DeprecateRule")]
+        public CrossRegionCopyDeprecateRule DeprecateRule { get; set; }
 
         /// <summary>
         /// Encrypted
@@ -44,8 +78,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// CmkArn
         /// 		
-        /// The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS
-        /// 			encryption. If this parameter is not specified, your AWS managed CMK for EBS is 			used.
+        /// The Amazon Resource Name (ARN) of the AWS KMS key to use for EBS encryption. If this 			parameter is
+        /// not specified, the default KMS key for the account is used.
         /// 	
         /// Required: No
         /// Type: String
@@ -60,7 +94,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// RetainRule
         /// 		
-        /// The retention rule.
+        /// The retention rule that indicates how long snapshot copies are to be retained in the 			destination
+        /// Region.
         /// 	
         /// Required: No
         /// Type: CrossRegionCopyRetainRule
@@ -72,7 +107,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// CopyTags
         /// 		
-        /// Copy all user-defined tags from the source snapshot to the copied snapshot.
+        /// Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
+        /// 			snapshot copy.
         /// 	
         /// Required: No
         /// Type: Boolean

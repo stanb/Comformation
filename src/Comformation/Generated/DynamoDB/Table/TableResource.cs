@@ -38,6 +38,15 @@ namespace Comformation.DynamoDB.Table
             public Union<string, IntrinsicFunction> BillingMode { get; set; }
 
             /// <summary>
+            /// ContributorInsightsSpecification
+            /// The settings used to enable or disable CloudWatch Contributor Insights for the specified table.
+            /// Required: No
+            /// Type: ContributorInsightsSpecification
+            /// Update requires: No interruption
+            /// </summary>
+            public ContributorInsightsSpecification ContributorInsightsSpecification { get; set; }
+
+            /// <summary>
             /// GlobalSecondaryIndexes
             /// Global secondary indexes to be created on the table. You can create up to 20 global secondary
             /// indexes.
@@ -69,6 +78,15 @@ namespace Comformation.DynamoDB.Table
             public List<KeySchema> KeySchema { get; set; }
 
             /// <summary>
+            /// KinesisStreamSpecification
+            /// The Kinesis Data Streams configuration for the specified table.
+            /// Required: No
+            /// Type: KinesisStreamSpecification
+            /// Update requires: No interruption
+            /// </summary>
+            public KinesisStreamSpecification KinesisStreamSpecification { get; set; }
+
+            /// <summary>
             /// LocalSecondaryIndexes
             /// Local secondary indexes to be created on the table. You can create up to 5 local secondary indexes.
             /// Each index is scoped to a given hash key value. The size of each hash key can be up to 10 gigabytes.
@@ -80,7 +98,7 @@ namespace Comformation.DynamoDB.Table
 
             /// <summary>
             /// PointInTimeRecoverySpecification
-            /// The settings used to enable point in time recover.
+            /// The settings used to enable point in time recovery.
             /// Required: No
             /// Type: PointInTimeRecoverySpecification
             /// Update requires: No interruption

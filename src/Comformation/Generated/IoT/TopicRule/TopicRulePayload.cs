@@ -13,34 +13,14 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// Actions
-        /// The actions associated with the rule.
-        /// Required: Yes
-        /// Type: List of Action
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Actions")]
-        public List<Action> Actions { get; set; }
-
-        /// <summary>
-        /// AwsIotSqlVersion
-        /// The version of the SQL rules engine to use when evaluating the rule.
+        /// RuleDisabled
+        /// Specifies whether the rule is disabled.
         /// Required: No
-        /// Type: String
+        /// Type: Boolean
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("AwsIotSqlVersion")]
-        public Union<string, IntrinsicFunction> AwsIotSqlVersion { get; set; }
-
-        /// <summary>
-        /// Description
-        /// The description of the rule.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Description")]
-        public Union<string, IntrinsicFunction> Description { get; set; }
+        [JsonProperty("RuleDisabled")]
+        public Union<bool, IntrinsicFunction> RuleDisabled { get; set; }
 
         /// <summary>
         /// ErrorAction
@@ -53,14 +33,35 @@ namespace Comformation.IoT.TopicRule
         public Action ErrorAction { get; set; }
 
         /// <summary>
-        /// RuleDisabled
-        /// Specifies whether the rule is disabled.
-        /// Required: Yes
-        /// Type: Boolean
+        /// Description
+        /// The description of the rule.
+        /// Required: No
+        /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("RuleDisabled")]
-        public Union<bool, IntrinsicFunction> RuleDisabled { get; set; }
+        [JsonProperty("Description")]
+        public Union<string, IntrinsicFunction> Description { get; set; }
+
+        /// <summary>
+        /// AwsIotSqlVersion
+        /// The version of the SQL rules engine to use when evaluating the rule.
+        /// The default value is 2015-10-08.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AwsIotSqlVersion")]
+        public Union<string, IntrinsicFunction> AwsIotSqlVersion { get; set; }
+
+        /// <summary>
+        /// Actions
+        /// The actions associated with the rule.
+        /// Required: Yes
+        /// Type: List of Action
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Actions")]
+        public List<Action> Actions { get; set; }
 
         /// <summary>
         /// Sql

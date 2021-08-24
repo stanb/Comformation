@@ -14,7 +14,8 @@ namespace Comformation.Glue.MLTransform
 
         /// <summary>
         /// MLUserDataEncryption
-        /// An MLUserDataEncryption object containing the encryption mode and customer-provided KMS key ID.
+        /// 	
+        /// The encryption-at-rest settings of the transform that apply to accessing user data.
         /// Required: No
         /// Type: MLUserDataEncryption
         /// Update requires: No interruption
@@ -24,6 +25,7 @@ namespace Comformation.Glue.MLTransform
 
         /// <summary>
         /// TaskRunSecurityConfigurationName
+        /// 	
         /// The name of the security configuration.
         /// Required: No
         /// Type: String

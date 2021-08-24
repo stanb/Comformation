@@ -35,7 +35,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
 
         /// <summary>
         /// Header
-        /// The stateful 5-tuple inspection criteria for this rule, used to inspect traffic flows.
+        /// The stateful inspection criteria for this rule, used to inspect traffic flows.
         /// Required: Yes
         /// Type: Header
         /// Update requires: No interruption
@@ -47,7 +47,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// RuleOptions
         /// Additional settings for a stateful rule, provided as keywords and settings.
         /// Required: Yes
-        /// Type: RuleOptions
+        /// Type: List of RuleOption
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RuleOptions")]

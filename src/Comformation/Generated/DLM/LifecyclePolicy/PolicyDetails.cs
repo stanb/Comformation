@@ -129,5 +129,23 @@ namespace Comformation.DLM.LifecyclePolicy
         [JsonProperty("TargetTags")]
         public List<Tag> TargetTags { get; set; }
 
+        /// <summary>
+        /// ResourceLocations
+        /// 		
+        /// The location of the resources to backup. If the source resources are located in an AWS Region,
+        /// 			specify CLOUD. If the source resources are located on an Outpost 			in your account, specify
+        /// OUTPOST.
+        /// 			
+        /// If you specify OUTPOST, Amazon Data Lifecycle Manager backs up all resources 				of the specified
+        /// type with matching target tags across all of the Outposts in your account.
+        /// 	
+        /// Required: No
+        /// Type: List of String
+        /// Maximum: 1
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ResourceLocations")]
+        public List<Union<string, IntrinsicFunction>> ResourceLocations { get; set; }
+
     }
 }

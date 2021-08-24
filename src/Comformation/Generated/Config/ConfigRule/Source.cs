@@ -15,7 +15,7 @@ namespace Comformation.Config.ConfigRule
         /// <summary>
         /// Owner
         /// 		
-        /// Indicates whether AWS or the customer owns and manages the AWS 			Config rule.
+        /// Indicates whether AWS or the customer owns and manages the AWS Config rule.
         /// 	
         /// Required: Yes
         /// Type: String
@@ -28,7 +28,7 @@ namespace Comformation.Config.ConfigRule
         /// <summary>
         /// SourceDetails
         /// 		
-        /// Provides the source and type of the event that causes AWS 			Config to evaluate your AWS resources.
+        /// Provides the source and type of the event that causes AWS Config to evaluate your AWS resources.
         /// 	
         /// Required: No
         /// Type: List of SourceDetail
@@ -42,8 +42,8 @@ namespace Comformation.Config.ConfigRule
         /// SourceIdentifier
         /// 		
         /// For AWS Config managed rules, a predefined identifier from a 			list. For example,
-        /// IAM_PASSWORD_POLICY is a managed 			rule. To reference a managed rule, see Using AWS Managed Config
-        /// Rules.
+        /// IAM_PASSWORD_POLICY is a managed 			rule. To reference a managed rule, see Using AWS Config managed
+        /// rules.
         /// 		
         /// For custom rules, the identifier is the Amazon Resource Name 			(ARN) of the rule&#39;s AWS Lambda
         /// function, such as 				arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name.

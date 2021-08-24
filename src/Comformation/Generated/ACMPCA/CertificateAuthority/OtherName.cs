@@ -15,7 +15,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// TypeId
         /// 		
-        /// Specifies an OID. 			
+        /// Specifies an OID.
         /// 	
         /// Required: Yes
         /// Type: String
@@ -30,7 +30,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// Value
         /// 		
-        /// Specifies an OID 			value.
+        /// Specifies an OID value.
         /// 	
         /// Required: Yes
         /// Type: String

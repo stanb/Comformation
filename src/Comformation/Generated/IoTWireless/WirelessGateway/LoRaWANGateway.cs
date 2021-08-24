@@ -14,7 +14,9 @@ namespace Comformation.IoTWireless.WirelessGateway
 
         /// <summary>
         /// GatewayEui
-        /// The gateway&#39;s EUI value.
+        /// 		
+        /// The gateway&#39;s EUI value, with the pattern
+        /// ^(([0-9A-Fa-f]{2}-){7}|([0-9A-Fa-f]{2}:){7}|([0-9A-Fa-f]{2}\s){7}|([0-9A-Fa-f]{2}){7})([0-9A-Fa-f]{2})$
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -24,7 +26,8 @@ namespace Comformation.IoTWireless.WirelessGateway
 
         /// <summary>
         /// RfRegion
-        /// The frequency band (RFRegion) value.
+        /// 		
+        /// The frequency band (RFRegion) value. Maximum length is 64.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

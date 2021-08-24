@@ -14,7 +14,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// ObjectLockEnabled
-        /// Indicates whether this bucket has an Object Lock configuration enabled.
+        /// Indicates whether this bucket has an Object Lock configuration enabled. Enable ObjectLockEnabled
+        /// when you apply ObjectLockConfiguration to a bucket.
         /// Required: No
         /// Type: String
         /// Allowed values: Enabled
@@ -25,8 +26,11 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Rule
-        /// The Object Lock rule in place for the specified object.
-        /// Required: No
+        /// Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
+        /// ObjectLockConfiguration to a bucket. If Object Lock is turned on, bucket settings require both Mode
+        /// and a period of either Days or Years. You cannot specify Days and Years at the same time. For more
+        /// information, see ObjectLockRule and DefaultRetention.
+        /// Required: Conditional
         /// Type: ObjectLockRule
         /// Update requires: No interruption
         /// </summary>

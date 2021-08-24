@@ -14,7 +14,7 @@ namespace Comformation.RDS.DBParameterGroup
         {
             /// <summary>
             /// Description
-            /// Provides the customer-specified description for this DB parameter group.
+            /// Provides the customer-specified description for this DB Parameter Group.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -40,8 +40,7 @@ namespace Comformation.RDS.DBParameterGroup
             /// <summary>
             /// Parameters
             /// An array of parameter names and values for the parameter update. At least one parameter name and
-            /// value must be supplied. Subsequent arguments are optional. You can modify a maximum of 20 parameters
-            /// in a single request.
+            /// value must be supplied. Subsequent arguments are optional.
             /// For more information about DB parameters and DB parameter groups for Amazon RDS DB engines, see
             /// Working with DB Parameter Groups in the Amazon RDS User Guide.
             /// For more information about DB cluster and DB instance parameters and parameter groups for Amazon

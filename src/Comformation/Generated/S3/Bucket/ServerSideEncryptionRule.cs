@@ -18,7 +18,7 @@ namespace Comformation.S3.Bucket
         /// (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the
         /// BucketKeyEnabled element to true causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key
         /// is not enabled.
-        /// For more information, see Amazon S3 Bucket Keys in the Amazon S3 Developer Guide.
+        /// For more information, see Amazon S3 Bucket Keys in the Amazon S3 User Guide.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

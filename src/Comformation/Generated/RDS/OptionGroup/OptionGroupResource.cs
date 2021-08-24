@@ -35,8 +35,8 @@ namespace Comformation.RDS.OptionGroup
 
             /// <summary>
             /// OptionConfigurations
-            /// A list of all available options
-            /// Required: Yes
+            /// A list of options and the settings for each option.
+            /// Required: Conditional
             /// Type: List of OptionConfiguration
             /// Update requires: Replacement
             /// </summary>

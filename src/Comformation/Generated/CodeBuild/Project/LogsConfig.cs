@@ -14,8 +14,7 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// CloudWatchLogs
-        /// Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by
-        /// default.
+        /// Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
         /// Required: No
         /// Type: CloudWatchLogsConfig
         /// Update requires: No interruption

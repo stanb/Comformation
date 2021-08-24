@@ -44,7 +44,7 @@ namespace Comformation.DataSync.LocationNFS
             /// Type: String
             /// Maximum: 255
             /// Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\. )*([A-Za-z0-9\-]*[A-Za-z0-9])$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ServerHostname { get; set; }
 

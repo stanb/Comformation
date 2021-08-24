@@ -118,7 +118,7 @@ namespace Comformation.AppStream.Fleet
             /// IdleDisconnectTimeoutInSeconds elapses, they are disconnected.
             /// To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify
             /// a value between 60 and 3600.
-            /// Note If you enable this feature, we recommend that you specify a value that corresponds exactly to a
+            /// If you enable this feature, we recommend that you specify a value that corresponds exactly to a
             /// whole number of minutes (for example, 60, 120, and 180). If you don&#39;t do this, the value is rounded
             /// to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1
             /// minute of inactivity. If you specify a value that is at the midpoint between two different minutes,
@@ -169,7 +169,7 @@ namespace Comformation.AppStream.Fleet
             /// <summary>
             /// IamRoleArn
             /// The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the
-            /// AWS Security Token Service (STS) AssumeRole API operation and passes the ARN of the role to use. The
+            /// AWS Security Token Service AssumeRole API operation and passes the ARN of the role to use. The
             /// operation creates a new session with temporary credentials. AppStream 2. 0 retrieves the temporary
             /// credentials and creates the appstream_machine_role credential profile on the instance.
             /// For more information, see Using an IAM Role to Grant Permissions to Applications and Scripts Running
@@ -204,8 +204,7 @@ namespace Comformation.AppStream.Fleet
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// An array of key-value pairs.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

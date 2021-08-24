@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Username
-        /// The user name for accessing the downstream system. This applies only if the downstream system
+        /// The user name to connect to the downstream system. This applies only if the downstream system
         /// requires credentials.
         /// Required: No
         /// Type: String

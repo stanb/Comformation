@@ -41,8 +41,9 @@ namespace Comformation.Route53.RecordSetGroup
 
             /// <summary>
             /// HostedZoneName
-            /// 		
-            /// The name of the hosted zone that you want to create records in.
+            /// 	
+            /// The name of the hosted zone that you want to create records in. You must include a trailing dot (for
+            /// example, www. example. com. ) as part of the HostedZoneName.
             /// 		
             /// When you create a stack using an AWS::Route53::RecordSet that specifies HostedZoneName, 			AWS
             /// CloudFormation attempts to find a hosted zone whose name matches the HostedZoneName. If AWS

@@ -28,6 +28,8 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Prefix
         /// An object key name prefix that identifies the subset of objects to which the rule applies.
+        /// Important Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see XML related object key constraints.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

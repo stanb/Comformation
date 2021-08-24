@@ -19,7 +19,7 @@ namespace Comformation.AuditManager.Assessment
         /// Type: String
         /// Minimum: 1
         /// Maximum: 1024
-        /// Pattern: ^(S|s)3:\/\/[a-zA-Z0-9-_\/. ]+$
+        /// Pattern: ^(S|s)3:\/\/[a-zA-Z0-9\-\. \(\)\&#39;\*\_\!\/]+$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destination")]

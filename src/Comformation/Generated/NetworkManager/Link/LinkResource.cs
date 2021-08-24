@@ -42,8 +42,7 @@ namespace Comformation.NetworkManager.Link
             /// <summary>
             /// Provider
             /// The provider of the link.
-            /// Constraints: Cannot include the following characters: | \ ^
-            /// Length Constraints: Maximum length of 128 characters.
+            /// Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -53,7 +52,7 @@ namespace Comformation.NetworkManager.Link
             /// <summary>
             /// Description
             /// A description of the link.
-            /// Length Constraints: Maximum length of 256 characters.
+            /// Constraints: Maximum length of 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -72,8 +71,7 @@ namespace Comformation.NetworkManager.Link
             /// <summary>
             /// Type
             /// The type of the link.
-            /// Constraints: Cannot include the following characters: | \ ^
-            /// Length Constraints: Maximum length of 128 characters.
+            /// Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

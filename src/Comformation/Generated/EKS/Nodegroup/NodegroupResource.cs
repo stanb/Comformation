@@ -13,6 +13,15 @@ namespace Comformation.EKS.Nodegroup
         public class NodegroupProperties
         {
             /// <summary>
+            /// UpdateConfig
+            /// The node group update configuration.
+            /// Required: No
+            /// Type: UpdateConfig
+            /// Update requires: No interruption
+            /// </summary>
+            public UpdateConfig UpdateConfig { get; set; }
+
+            /// <summary>
             /// ScalingConfig
             /// The scaling configuration details for the Auto Scaling group that is created for your node group.
             /// Required: No
@@ -31,10 +40,21 @@ namespace Comformation.EKS.Nodegroup
             public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Labels { get; set; }
 
             /// <summary>
+            /// Taints
+            /// The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is
+            /// one of No_Schedule, Prefer_No_Schedule, or No_Execute. Kubernetes taints can be used together with
+            /// tolerations to control how workloads are scheduled to your nodes.
+            /// Required: No
+            /// Type: List of Taint
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Taint> Taints { get; set; }
+
+            /// <summary>
             /// ReleaseVersion
-            /// The AMI version of the Amazon EKS-optimized AMI to use with your node group (for example, 1. 14.
+            /// The AMI version of the Amazon EKS optimized AMI to use with your node group (for example, 1. 14.
             /// 7-YYYYMMDD). By default, the latest available AMI version for the node group&#39;s current Kubernetes
-            /// version is used. For more information, see Amazon EKS-Optimized Linux AMI Versions in the Amazon EKS
+            /// version is used. For more information, see Amazon EKS optimized Linux AMI Versions in the Amazon EKS
             /// User Guide.
             /// Note Changing this value triggers an update of the node group if one is available. However, only the
             /// latest available AMI release version is valid as an input. You cannot roll back to a previous AMI
@@ -66,11 +86,10 @@ namespace Comformation.EKS.Nodegroup
 
             /// <summary>
             /// Subnets
-            /// The subnets to use for the Auto Scaling group that is created for your node group. These subnets
-            /// must have the tag key kubernetes. io/cluster/CLUSTER_NAME with a value of shared, where CLUSTER_NAME
-            /// is replaced with the name of your cluster. If you specify launchTemplate, then don&#39;t specify
-            /// SubnetId in your launch template, or the node group deployment will fail. For more information about
-            /// using launch templates with Amazon EKS, see Launch template support in the Amazon EKS User Guide.
+            /// The subnets to use for the Auto Scaling group that is created for your node group. If you specify
+            /// launchTemplate, then don&#39;t specify SubnetId in your launch template, or the node group deployment
+            /// will fail. For more information about using launch templates with Amazon EKS, see Launch template
+            /// support in the Amazon EKS User Guide.
             /// Required: Yes
             /// Type: List of String
             /// Update requires: Replacement
@@ -103,7 +122,7 @@ namespace Comformation.EKS.Nodegroup
             /// in the Amazon EKS User Guide.
             /// Required: No
             /// Type: String
-            /// Allowed values: AL2_ARM_64 | AL2_x86_64 | AL2_x86_64_GPU
+            /// Allowed values: AL2_ARM_64 | AL2_x86_64 | AL2_x86_64_GPU | CUSTOM
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> AmiType { get; set; }

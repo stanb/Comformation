@@ -14,8 +14,9 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Days
-        /// The number of days that you want to specify for the default retention period.
-        /// Required: No
+        /// The number of days that you want to specify for the default retention period. If Object Lock is
+        /// turned on, you must specify Mode and specify either Days or Years.
+        /// Required: Conditional
         /// Type: Integer
         /// Update requires: No interruption
         /// </summary>
@@ -25,10 +26,8 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Mode
         /// The default Object Lock retention mode you want to apply to new objects placed in the specified
-        /// bucket. Bucket default settings require both a mode and a period. The period can be either Days or
-        /// Years. For more information, see S3 Object Lock overview in the Amazon Simple Storage Service
-        /// Developer Guide.
-        /// Required: No
+        /// bucket. If Object Lock is turned on, you must specify Mode and specify either Days or Years.
+        /// Required: Conditional
         /// Type: String
         /// Allowed values: COMPLIANCE | GOVERNANCE
         /// Update requires: No interruption
@@ -38,8 +37,9 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// Years
-        /// The number of years that you want to specify for the default retention period.
-        /// Required: No
+        /// The number of years that you want to specify for the default retention period. If Object Lock is
+        /// turned on, you must specify Mode and specify either Days or Years.
+        /// Required: Conditional
         /// Type: Integer
         /// Update requires: No interruption
         /// </summary>

@@ -47,6 +47,10 @@ namespace Comformation.ServiceCatalog.PortfolioShare
 
             /// <summary>
             /// ShareTagOptions
+            /// Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
             /// </summary>
             public Union<bool, IntrinsicFunction> ShareTagOptions { get; set; }
 

@@ -22,8 +22,6 @@ namespace Comformation.Config.RemediationConfiguration
             /// 		 	
             /// Required: No
             /// Type: String
-            /// Minimum: 1
-            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> TargetVersion { get; set; }
@@ -82,8 +80,6 @@ namespace Comformation.Config.RemediationConfiguration
             /// 	
             /// Required: No
             /// Type: String
-            /// Minimum: 1
-            /// Maximum: 256
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> ResourceType { get; set; }

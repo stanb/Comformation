@@ -46,4 +46,9 @@ namespace Comformation.ApiGateway.UsagePlanKey
         public UsagePlanKeyProperties Properties { get; } = new UsagePlanKeyProperties();
 
     }
+
+    public static class UsagePlanKeyAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
+    }
 }

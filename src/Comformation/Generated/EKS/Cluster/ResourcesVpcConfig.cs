@@ -15,7 +15,7 @@ namespace Comformation.EKS.Cluster
         /// <summary>
         /// SecurityGroupIds
         /// Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
-        /// creates to use to allow communication between your nodes and the Kubernetes control plane. If you
+        /// creates to use that allow communication between your nodes and the Kubernetes control plane. If you
         /// don&#39;t specify any security groups, then familiarize yourself with the difference between Amazon EKS
         /// defaults for clusters deployed with Kubernetes:
         /// 1. 14 Amazon EKS platform version eks. 2 and earlier 1. 14 Amazon EKS platform version eks. 3 and

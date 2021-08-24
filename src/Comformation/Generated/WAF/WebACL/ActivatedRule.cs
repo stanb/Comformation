@@ -14,9 +14,8 @@ namespace Comformation.WAF.WebACL
 
         /// <summary>
         /// Action
-        /// 		
-        /// Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in
-        /// the Rule. 			Valid values for Action include the following:
+        /// Specifies the action that Amazon CloudFront or AWS WAF takes when a web request matches the
+        /// conditions in the Rule. 			Valid values for Action include the following:
         /// 			
         /// 				 				 				 			 ALLOW: CloudFront responds with the requested object. BLOCK: CloudFront responds
         /// with an HTTP 403 (Forbidden) status code. COUNT: AWS WAF increments a counter of requests that match

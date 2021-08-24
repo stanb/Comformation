@@ -24,22 +24,41 @@ namespace Comformation.DataBrew.Dataset
             public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            /// FormatOptions
-            /// Options that define how DataBrew interprets the data in the dataset.
+            /// Format
+            /// The file format of a dataset that is created from an Amazon S3 file or folder.
             /// Required: No
-            /// Type: Json
+            /// Type: String
+            /// Allowed values: CSV | EXCEL | JSON | PARQUET
             /// Update requires: No interruption
             /// </summary>
-            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> FormatOptions { get; set; }
+            public Union<string, IntrinsicFunction> Format { get; set; }
+
+            /// <summary>
+            /// FormatOptions
+            /// A set of options that define how DataBrew interprets the data in the dataset.
+            /// Required: No
+            /// Type: FormatOptions
+            /// Update requires: No interruption
+            /// </summary>
+            public FormatOptions FormatOptions { get; set; }
 
             /// <summary>
             /// Input
             /// Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
             /// Required: Yes
-            /// Type: Json
+            /// Type: Input
             /// Update requires: No interruption
             /// </summary>
-            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Input { get; set; }
+            public Input Input { get; set; }
+
+            /// <summary>
+            /// PathOptions
+            /// A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
+            /// Required: No
+            /// Type: PathOptions
+            /// Update requires: No interruption
+            /// </summary>
+            public PathOptions PathOptions { get; set; }
 
             /// <summary>
             /// Tags

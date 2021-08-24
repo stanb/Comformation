@@ -30,7 +30,7 @@ namespace Comformation.AutoScalingPlans.ScalingPlan
         /// optional. Each scaling plan can include up to 50 keys, and each key can include up to 20 values.
         /// Tags are part of the syntax that you use to specify the resources you want returned when configuring
         /// a scaling plan from the AWS Auto Scaling console. You do not need to specify valid tag filter values
-        /// when you create a scaling plan with AWS CloudFormation. The Key and Values properties can accept any
+        /// when you create a scaling plan with CloudFormation. The Key and Values properties can accept any
         /// value as long as the combination of values is unique across scaling plans. However, if you also want
         /// to use the AWS Auto Scaling console to edit the scaling plan, then you must specify valid values.
         /// You must specify either a CloudFormationStackARN or TagFilters.

@@ -42,6 +42,7 @@ namespace Comformation.IoT.Authorizer
             /// <summary>
             /// Status
             /// The status of the authorizer.
+            /// Valid values: ACTIVE | INACTIVE
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

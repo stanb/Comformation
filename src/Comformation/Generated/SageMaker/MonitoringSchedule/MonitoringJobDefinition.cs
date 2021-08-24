@@ -38,12 +38,12 @@ namespace Comformation.SageMaker.MonitoringSchedule
         /// The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker
         /// Endpoint.
         /// Required: Yes
-        /// Type: MonitoringInputs
+        /// Type: List of MonitoringInput
         /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MonitoringInputs")]
-        public MonitoringInputs MonitoringInputs { get; set; }
+        public List<MonitoringInput> MonitoringInputs { get; set; }
 
         /// <summary>
         /// MonitoringOutputConfig

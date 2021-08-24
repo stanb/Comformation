@@ -24,7 +24,7 @@ namespace Comformation.EC2.SpotFleet
         /// Required: No
         /// Type: String
         /// Allowed values: launch
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ReplacementStrategy")]
         public Union<string, IntrinsicFunction> ReplacementStrategy { get; set; }

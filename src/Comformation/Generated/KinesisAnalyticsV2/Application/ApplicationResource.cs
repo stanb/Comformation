@@ -29,10 +29,21 @@ namespace Comformation.KinesisAnalyticsV2.Application
             /// The runtime environment for the application (SQL-1_0, FLINK-1_6, FLINK-1_8, or FLINK-1_11).
             /// Required: Yes
             /// Type: String
-            /// Allowed values: FLINK-1_11 | FLINK-1_6 | FLINK-1_8 | SQL-1_0
+            /// Allowed values: FLINK-1_11 | FLINK-1_6 | FLINK-1_8 | SQL-1_0 | ZEPPELIN-FLINK-1_0
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> RuntimeEnvironment { get; set; }
+
+            /// <summary>
+            /// ApplicationMode
+            /// To create a Kinesis Data Analytics Studio notebook, you must set the mode to INTERACTIVE. However,
+            /// for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: INTERACTIVE | STREAMING
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ApplicationMode { get; set; }
 
             /// <summary>
             /// ApplicationConfiguration

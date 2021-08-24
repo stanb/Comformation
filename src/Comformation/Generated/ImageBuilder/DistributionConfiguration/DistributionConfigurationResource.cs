@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
         {
             /// <summary>
             /// Name
+            /// 		
             /// The name of this distribution configuration.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
@@ -24,7 +26,9 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
             /// <summary>
             /// Description
+            /// 		
             /// The description of this distribution configuration.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -35,7 +39,10 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
             /// <summary>
             /// Distributions
-            /// The distributions of this distribution configuration formatted as an array of Distribution objects.
+            /// 		
+            /// The distributions of this distribution configuration formatted as an array of 			Distribution
+            /// objects.
+            /// 	
             /// Required: Yes
             /// Type: List of Distribution
             /// Update requires: No interruption
@@ -44,7 +51,9 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
             /// <summary>
             /// Tags
+            /// 		
             /// The tags of this distribution configuration.
+            /// 	
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption
@@ -62,5 +71,6 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
     public static class DistributionConfigurationAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
     }
 }

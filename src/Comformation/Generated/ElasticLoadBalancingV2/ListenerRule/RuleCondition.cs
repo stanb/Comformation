@@ -25,26 +25,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public Union<string, IntrinsicFunction> Field { get; set; }
 
         /// <summary>
-        /// HttpHeaderConfig
-        /// Information for an HTTP header condition. Specify only when Field is http-header.
-        /// Required: Conditional
-        /// Type: HttpHeaderConfig
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("HttpHeaderConfig")]
-        public HttpHeaderConfig HttpHeaderConfig { get; set; }
-
-        /// <summary>
-        /// QueryStringConfig
-        /// Information for a query string condition. Specify only when Field is query-string.
-        /// Required: Conditional
-        /// Type: QueryStringConfig
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("QueryStringConfig")]
-        public QueryStringConfig QueryStringConfig { get; set; }
-
-        /// <summary>
         /// Values
         /// The condition value. Specify only when Field is host-header or path-pattern. Alternatively, to
         /// specify multiple host names or multiple path patterns, use HostHeaderConfig or PathPatternConfig.
@@ -63,16 +43,6 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// </summary>
         [JsonProperty("Values")]
         public List<Union<string, IntrinsicFunction>> Values { get; set; }
-
-        /// <summary>
-        /// HostHeaderConfig
-        /// Information for a host header condition. Specify only when Field is host-header.
-        /// Required: No
-        /// Type: HostHeaderConfig
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("HostHeaderConfig")]
-        public HostHeaderConfig HostHeaderConfig { get; set; }
 
         /// <summary>
         /// HttpRequestMethodConfig
@@ -95,6 +65,16 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         public PathPatternConfig PathPatternConfig { get; set; }
 
         /// <summary>
+        /// HttpHeaderConfig
+        /// Information for an HTTP header condition. Specify only when Field is http-header.
+        /// Required: Conditional
+        /// Type: HttpHeaderConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HttpHeaderConfig")]
+        public HttpHeaderConfig HttpHeaderConfig { get; set; }
+
+        /// <summary>
         /// SourceIpConfig
         /// Information for a source IP condition. Specify only when Field is source-ip.
         /// Required: Conditional
@@ -103,6 +83,26 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
         /// </summary>
         [JsonProperty("SourceIpConfig")]
         public SourceIpConfig SourceIpConfig { get; set; }
+
+        /// <summary>
+        /// HostHeaderConfig
+        /// Information for a host header condition. Specify only when Field is host-header.
+        /// Required: No
+        /// Type: HostHeaderConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HostHeaderConfig")]
+        public HostHeaderConfig HostHeaderConfig { get; set; }
+
+        /// <summary>
+        /// QueryStringConfig
+        /// Information for a query string condition. Specify only when Field is query-string.
+        /// Required: Conditional
+        /// Type: QueryStringConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("QueryStringConfig")]
+        public QueryStringConfig QueryStringConfig { get; set; }
 
     }
 }

@@ -26,8 +26,6 @@ namespace Comformation.EC2.Instance
         /// Ebs
         /// 		
         /// Parameters used to automatically set up EBS volumes when the instance is 			launched.
-        /// 		
-        /// You can specify either VirtualName or Ebs, but 			not both.
         /// 	
         /// Required: Conditional
         /// Type: Ebs
@@ -39,7 +37,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// NoDevice
         /// To omit the device from the block device mapping, specify an empty string.
-        /// Required: No
+        /// Required: Conditional
         /// Type: NoDevice
         /// Update requires: No interruption
         /// </summary>
@@ -57,8 +55,6 @@ namespace Comformation.EC2.Instance
         /// 		
         /// NVMe instance store volumes are automatically enumerated and assigned a device name. 			Including
         /// them in your block device mapping has no effect.
-        /// 		
-        /// You can specify either VirtualName or Ebs, but not both.
         /// 		
         /// 			Constraints: For M3 instances, you must specify instance store volumes in the block 			device
         /// mapping for the instance. When you launch an M3 instance, we ignore any instance 			store volumes

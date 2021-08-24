@@ -13,9 +13,20 @@ namespace Comformation.AppMesh.VirtualNode
     {
 
         /// <summary>
+        /// SDS
+        /// A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service
+        /// validation context trust.
+        /// Required: No
+        /// Type: TlsValidationContextSdsTrust
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SDS")]
+        public TlsValidationContextSdsTrust SDS { get; set; }
+
+        /// <summary>
         /// ACM
-        /// A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager
-        /// (ACM) certificate.
+        /// A reference to an object that represents a Transport Layer Security (TLS) validation context trust
+        /// for an AWS Certificate Manager certificate.
         /// Required: No
         /// Type: TlsValidationContextAcmTrust
         /// Update requires: No interruption
@@ -25,7 +36,8 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// File
-        /// An object that represents a TLS validation context trust for a local file.
+        /// An object that represents a Transport Layer Security (TLS) validation context trust for a local
+        /// file.
         /// Required: No
         /// Type: TlsValidationContextFileTrust
         /// Update requires: No interruption

@@ -28,4 +28,9 @@ namespace Comformation.EC2.EgressOnlyInternetGateway
         public EgressOnlyInternetGatewayProperties Properties { get; } = new EgressOnlyInternetGatewayProperties();
 
     }
+
+    public static class EgressOnlyInternetGatewayAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
+    }
 }

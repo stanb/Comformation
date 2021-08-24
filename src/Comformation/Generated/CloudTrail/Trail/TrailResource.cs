@@ -15,7 +15,7 @@ namespace Comformation.CloudTrail.Trail
             /// <summary>
             /// CloudWatchLogsLogGroupArn
             /// Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents
-            /// the log group to which CloudTrail logs will be delivered. Not required unless you specify
+            /// the log group to which CloudTrail logs are delivered. Not required unless you specify
             /// CloudWatchLogsRoleArn.
             /// Required: Conditional
             /// Type: String
@@ -36,7 +36,7 @@ namespace Comformation.CloudTrail.Trail
             /// EnableLogFileValidation
             /// Specifies whether log file validation is enabled. The default is false.
             /// Note When you disable log file integrity validation, the chain of digest files is broken after one
-            /// hour. CloudTrail will not create digest files for log files that were delivered during a period in
+            /// hour. CloudTrail does not create digest files for log files that were delivered during a period in
             /// which log file integrity validation was disabled. For example, if you enable log file integrity
             /// validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on
             /// January 10, digest files will not be created for the log files delivered from noon on January 2 to
@@ -74,7 +74,7 @@ namespace Comformation.CloudTrail.Trail
 
             /// <summary>
             /// IsLogging
-            /// Whether the CloudTrail is currently logging AWS API calls.
+            /// Whether the CloudTrail trail is currently logging AWS API calls.
             /// Required: Yes
             /// Type: Boolean
             /// Update requires: No interruption
@@ -97,9 +97,11 @@ namespace Comformation.CloudTrail.Trail
 
             /// <summary>
             /// KMSKeyId
-            /// Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an
+            /// Specifies the AWS KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an
             /// alias name prefixed by &quot;alias/&quot;, a fully specified ARN to an alias, a fully specified ARN to a key,
             /// or a globally unique identifier.
+            /// CloudTrail also supports AWS KMS multi-Region keys. For more information about multi-Region keys,
+            /// see Using multi-Region keys in the AWS Key Management Service Developer Guide.
             /// Examples:
             /// alias/MyAliasName arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
             /// arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
@@ -155,8 +157,8 @@ namespace Comformation.CloudTrail.Trail
             /// Specifies the name of the trail. The name must meet the following requirements:
             /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (. ), underscores (_), or dashes (-)
             /// Start with a letter or number, and end with a letter or number Be between 3 and 128 characters Have
-            /// no adjacent periods, underscores or dashes. Names like my-_namespace and my--namespace are invalid.
-            /// Not be in IP address format (for example, 192. 168. 5. 4)
+            /// no adjacent periods, underscores or dashes. Names like my-_namespace and my--namespace are not
+            /// valid. Not be in IP address format (for example, 192. 168. 5. 4)
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

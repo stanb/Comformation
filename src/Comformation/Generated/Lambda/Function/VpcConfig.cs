@@ -15,7 +15,7 @@ namespace Comformation.Lambda.Function
         /// <summary>
         /// SecurityGroupIds
         /// A list of VPC security groups IDs.
-        /// Required: Yes
+        /// Required: No
         /// Type: List of String
         /// Maximum: 5
         /// Update requires: No interruption
@@ -26,7 +26,7 @@ namespace Comformation.Lambda.Function
         /// <summary>
         /// SubnetIds
         /// A list of VPC subnet IDs.
-        /// Required: Yes
+        /// Required: No
         /// Type: List of String
         /// Maximum: 16
         /// Update requires: No interruption

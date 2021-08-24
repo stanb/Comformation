@@ -51,6 +51,8 @@ namespace Comformation.EC2.CapacityReservation
             /// InstanceCount
             /// 		
             /// The number of instances for which to reserve capacity.
+            /// 	 	
+            /// Valid range: 1 - 1000
             /// 	
             /// Required: Yes
             /// Type: Integer

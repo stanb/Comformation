@@ -16,7 +16,7 @@ namespace Comformation.Greengrass.FunctionDefinition
         /// IsolationMode
         /// The containerization that the Lambda function runs in. Valid values are GreengrassContainer or
         /// NoContainer. Typically, this is GreengrassContainer. For more information, see Containerization in
-        /// the AWS IoT Greengrass Developer Guide.
+        /// the AWS IoT Greengrass Version 1 Developer Guide.
         /// When set on the DefaultConfig property of a function definition version, this setting is used as the
         /// default containerization for all Lambda functions in the function definition version. When set on
         /// the Environment property of a function, this setting applies to the individual function and
@@ -33,7 +33,7 @@ namespace Comformation.Greengrass.FunctionDefinition
         /// <summary>
         /// RunAs
         /// The user and group permissions used to run the Lambda function. Typically, this is the ggc_user and
-        /// ggc_group. For more information, see Run as in the AWS IoT Greengrass Developer Guide.
+        /// ggc_group. For more information, see Run as in the AWS IoT Greengrass Version 1 Developer Guide.
         /// When set on the DefaultConfig property of a function definition version, this setting is used as the
         /// default access identity for all Lambda functions in the function definition version. When set on the
         /// Environment property of a function, this setting applies to the individual function and overrides

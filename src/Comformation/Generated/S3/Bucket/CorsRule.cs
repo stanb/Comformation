@@ -26,7 +26,8 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// AllowedMethods
-        /// An HTTP method that you allow the origin to run. Valid values are GET, PUT, HEAD, POST, and DELETE.
+        /// An HTTP method that you allow the origin to run.
+        /// Allowed values: GET | PUT | HEAD | POST | DELETE
         /// Required: Yes
         /// Type: List of String
         /// Update requires: No interruption

@@ -13,6 +13,17 @@ namespace Comformation.AppMesh.VirtualNode
     {
 
         /// <summary>
+        /// Validation
+        /// A reference to an object that represents a listener&#39;s Transport Layer Security (TLS) validation
+        /// context.
+        /// Required: No
+        /// Type: ListenerTlsValidationContext
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Validation")]
+        public ListenerTlsValidationContext Validation { get; set; }
+
+        /// <summary>
         /// Mode
         /// Specify one of the following modes.
         /// STRICT – Listener only accepts connections with TLS enabled. PERMISSIVE – Listener accepts
@@ -26,7 +37,7 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// Certificate
-        /// A reference to an object that represents a listener&#39;s TLS certificate.
+        /// A reference to an object that represents a listener&#39;s Transport Layer Security (TLS) certificate.
         /// Required: Yes
         /// Type: ListenerTlsCertificate
         /// Update requires: No interruption

@@ -13,6 +13,16 @@ namespace Comformation.Cognito.UserPoolClient
     {
 
         /// <summary>
+        /// ApplicationArn
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ApplicationArn")]
+        public Union<string, IntrinsicFunction> ApplicationArn { get; set; }
+
+        /// <summary>
         /// UserDataShared
         /// If UserDataShared is true, Amazon Cognito will include user data in the events it publishes to
         /// Amazon Pinpoint analytics.

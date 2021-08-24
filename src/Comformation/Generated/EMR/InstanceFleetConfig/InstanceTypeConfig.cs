@@ -57,8 +57,8 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// EbsConfiguration
-        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined
-        /// by InstanceType.
+        /// The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by
+        /// InstanceType.
         /// Required: No
         /// Type: EbsConfiguration
         /// Update requires: Replacement

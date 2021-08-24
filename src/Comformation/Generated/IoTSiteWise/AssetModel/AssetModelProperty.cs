@@ -36,13 +36,25 @@ namespace Comformation.IoTSiteWise.AssetModel
 
         /// <summary>
         /// DataType
-        /// The data type of the asset model property, which can be one of BOOLEAN, INTEGER, DOUBLE, or STRING.
+        /// The data type of the asset model property. The value can be STRING, INTEGER, DOUBLE, BOOLEAN, or
+        /// STRUCT.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DataType")]
         public Union<string, IntrinsicFunction> DataType { get; set; }
+
+        /// <summary>
+        /// DataTypeSpec
+        /// The data type of the structure for this property. This parameter exists on properties that have the
+        /// STRUCT data type.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DataTypeSpec")]
+        public Union<string, IntrinsicFunction> DataTypeSpec { get; set; }
 
         /// <summary>
         /// Unit

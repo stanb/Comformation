@@ -16,21 +16,21 @@ namespace Comformation.WAFv2.WebACL
         /// Allow
         /// Specifies that AWS WAF should allow requests by default.
         /// Required: No
-        /// Type: Json
+        /// Type: AllowAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Allow")]
-        public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Allow { get; set; }
+        public AllowAction Allow { get; set; }
 
         /// <summary>
         /// Block
         /// Specifies that AWS WAF should block requests by default.
         /// Required: No
-        /// Type: Json
+        /// Type: BlockAction
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Block")]
-        public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Block { get; set; }
+        public BlockAction Block { get; set; }
 
     }
 }

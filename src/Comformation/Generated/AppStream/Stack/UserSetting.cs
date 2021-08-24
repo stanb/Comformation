@@ -17,8 +17,9 @@ namespace Comformation.AppStream.Stack
         /// The action that is enabled or disabled.
         /// Required: Yes
         /// Type: String
-        /// Allowed values: CLIPBOARD_COPY_FROM_LOCAL_DEVICE | CLIPBOARD_COPY_TO_LOCAL_DEVICE | FILE_DOWNLOAD |
-        /// FILE_UPLOAD | PRINTING_TO_LOCAL_DEVICE
+        /// Allowed values: CLIPBOARD_COPY_FROM_LOCAL_DEVICE | CLIPBOARD_COPY_TO_LOCAL_DEVICE |
+        /// DOMAIN_PASSWORD_SIGNIN | DOMAIN_SMART_CARD_SIGNIN | FILE_DOWNLOAD | FILE_UPLOAD |
+        /// PRINTING_TO_LOCAL_DEVICE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Action")]

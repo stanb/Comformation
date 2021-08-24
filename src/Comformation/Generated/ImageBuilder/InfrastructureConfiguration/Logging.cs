@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
         /// <summary>
         /// S3Logs
+        /// 		
         /// The Amazon S3 logging configuration.
+        /// 	
         /// Required: No
         /// Type: S3Logs
         /// Update requires: No interruption

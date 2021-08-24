@@ -14,8 +14,9 @@ namespace Comformation.IoTAnalytics.Channel
 
         /// <summary>
         /// CustomerManagedS3
-        /// Use this to store channel data in an S3 bucket that you manage. The choice of service-managed or
-        /// customer-managed S3 storage cannot be changed after creation of the channel.
+        /// Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected,
+        /// the retentionPeriod parameter is ignored. You can&#39;t change the choice of S3 storage after the data
+        /// store is created.
         /// Required: No
         /// Type: CustomerManagedS3
         /// Update requires: No interruption
@@ -25,8 +26,8 @@ namespace Comformation.IoTAnalytics.Channel
 
         /// <summary>
         /// ServiceManagedS3
-        /// Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice
-        /// of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+        /// Used to store channel data in an S3 bucket managed by AWS IoT Analytics. You can&#39;t change the choice
+        /// of S3 storage after the data store is created.
         /// Required: No
         /// Type: ServiceManagedS3
         /// Update requires: No interruption

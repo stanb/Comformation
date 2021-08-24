@@ -23,7 +23,7 @@ namespace Comformation.Config.ConformancePack
 
             /// <summary>
             /// DeliveryS3Bucket
-            /// AWS Config stores intermediate files while processing conformance pack template.
+            /// The name of the Amazon S3 bucket where AWS Config stores conformance pack templates.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

@@ -14,8 +14,8 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Sender
-        /// The email address of the sender of the bounced email. This is the address that the bounce message is
-        /// sent from.
+        /// The email address of the sender of the bounced email. This is the address from which the bounce
+        /// message is sent.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -46,7 +46,7 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TopicArn
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken.
-        /// You can find the ARN of a topic by using the ListTopics operation in the Amazon SNS API.
+        /// You can find the ARN of a topic by using the ListTopics operation in Amazon SNS.
         /// For more information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String

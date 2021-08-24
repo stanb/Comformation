@@ -18,24 +18,23 @@ namespace Comformation.ServiceDiscovery.Instance
             /// The attributes that apply to the records that are defined in the service. For each attribute, the
             /// applicable value.
             /// Supported attribute keys include the following:
-            /// AWS_ALIAS_DNS_NAME
-            /// If you want AWS Cloud Map to create a Route&#160;53 alias record that routes traffic to an Elastic Load
-            /// Balancing load balancer, specify the DNS name that is associated with the load balancer. For
-            /// information about how to get the DNS name, see &quot;DNSName&quot; in the topic AliasTarget.
-            /// Note the following:
-            /// The configuration for the service that is specified by ServiceId must include settings for an A
-            /// record, an AAAA record, or both. In the service that is specified by ServiceId, the value of
-            /// RoutingPolicy must be WEIGHTED. If the service that is specified by ServiceId includes
-            /// HealthCheckConfig settings, AWS Cloud Map will create the health check, but it won&#39;t associate the
-            /// health check with the alias record. Auto naming currently doesn&#39;t support creating alias records
-            /// that route traffic to AWS resources other than ELB load balancers. If you specify a value for
-            /// AWS_ALIAS_DNS_NAME, don&#39;t specify values for any of the AWS_INSTANCE attributes.
-            /// AWS_EC2_INSTANCE_ID HTTP namespaces only. The Amazon EC2 instance ID for the instance. When creating
-            /// resources with a type of AWS::ServiceDiscovery::Instance, if the AWS_EC2_INSTANCE_ID attribute is
-            /// specified, the only other attribute that can be specified is AWS_INIT_HEALTH_STATUS. After the
-            /// resource has been created, the AWS_INSTANCE_IPV4 attribute contains the primary private IPv4
-            /// address. AWS_INIT_HEALTH_STATUS If the service configuration includes HealthCheckCustomConfig, when
-            /// creating resources with a type of AWS::ServiceDiscovery::Instance you can optionally use
+            /// AWS_ALIAS_DNS_NAME If you want AWS Cloud Map to create a Route&#160;53 alias record that routes traffic
+            /// to an Elastic Load Balancing load balancer, specify the DNS name that is associated with the load
+            /// balancer. For information about how to get the DNS name, see AliasTarget-&amp;gt;DNSName in the Route 53
+            /// API Reference. Note the following: The configuration for the service that is specified by ServiceId
+            /// must include settings for an A record, an AAAA record, or both. In the service that is specified by
+            /// ServiceId, the value of RoutingPolicy must be WEIGHTED. If the service that is specified by
+            /// ServiceId includes HealthCheckConfig settings, AWS Cloud Map will create the health check, but it
+            /// won&#39;t associate the health check with the alias record. Auto naming currently doesn&#39;t support
+            /// creating alias records that route traffic to AWS resources other than ELB load balancers. If you
+            /// specify a value for AWS_ALIAS_DNS_NAME, don&#39;t specify values for any of the AWS_INSTANCE attributes.
+            /// AWS_EC2_INSTANCE_ID HTTP namespaces only. The Amazon EC2 instance ID for the instance. The
+            /// AWS_INSTANCE_IPV4 attribute contains the primary private IPv4 address. When creating resources with
+            /// a type of AWS::ServiceDiscovery::Instance, if the AWS_EC2_INSTANCE_ID attribute is specified, the
+            /// only other attribute that can be specified is AWS_INIT_HEALTH_STATUS. After the resource has been
+            /// created, the AWS_INSTANCE_IPV4 attribute contains the primary private IPv4 address.
+            /// AWS_INIT_HEALTH_STATUS If the service configuration includes HealthCheckCustomConfig, when creating
+            /// resources with a type of AWS::ServiceDiscovery::Instance you can optionally use
             /// AWS_INIT_HEALTH_STATUS to specify the initial status of the custom health check, HEALTHY or
             /// UNHEALTHY. If you don&#39;t specify a value for AWS_INIT_HEALTH_STATUS, the initial status is HEALTHY.
             /// This attribute can only be used when creating resources and will not be seen on existing resources.
@@ -64,17 +63,18 @@ namespace Comformation.ServiceDiscovery.Instance
             /// <summary>
             /// InstanceId
             /// An identifier that you want to associate with the instance. Note the following:
-            /// If the service that is specified by ServiceId includes settings for an SRV record, the value of
+            /// If the service that&#39;s specified by ServiceId includes settings for an SRV record, the value of
             /// InstanceId is automatically included as part of the value for the SRV record. For more information,
             /// see DnsRecord &amp;gt; Type. You can use this value to update an existing instance. To register a new
-            /// instance, you must specify a value that is unique among instances that you register by using the
-            /// same service. If you specify an existing InstanceId and ServiceId, AWS Cloud Map updates the
-            /// existing DNS records. If there&#39;s also an existing health check, AWS Cloud Map deletes the old health
+            /// instance, you must specify a value that&#39;s unique among instances that you register by using the same
+            /// service. If you specify an existing InstanceId and ServiceId, AWS Cloud Map updates the existing DNS
+            /// records, if any. If there&#39;s also an existing health check, AWS Cloud Map deletes the old health
             /// check and creates a new one. Note The health check isn&#39;t deleted immediately, so it will still
             /// appear for a while if you submit a ListHealthChecks request, for example.
             /// Required: No
             /// Type: String
             /// Maximum: 64
+            /// Pattern: ^[0-9a-zA-Z_/:. @-]+$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> InstanceId { get; set; }

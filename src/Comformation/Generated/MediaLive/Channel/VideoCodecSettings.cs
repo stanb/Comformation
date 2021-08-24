@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Mpeg2Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings for video encoded with the MPEG-2 codec.
         /// Required: No
         /// Type: Mpeg2Settings
         /// Update requires: No interruption
@@ -44,7 +44,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// H265Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings for video encoded with the H265 codec.
         /// Required: No
         /// Type: H265Settings
         /// Update requires: No interruption

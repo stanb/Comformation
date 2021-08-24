@@ -15,8 +15,9 @@ namespace Comformation.ResourceGroups.Group
         /// <summary>
         /// Key
         /// A string that defines a tag key. Only resources in the account that are tagged with a specified tag
-        /// key are members of the tag-based resource group. This field is required when the ResourceQuery. Type
-        /// property is TAG_FILTERS_1_0.
+        /// key are members of the tag-based resource group.
+        /// This field is required when the ResourceQuery structure&#39;s Type property is TAG_FILTERS_1_0. You must
+        /// specify at least one tag key.
         /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
@@ -26,7 +27,9 @@ namespace Comformation.ResourceGroups.Group
 
         /// <summary>
         /// Values
-        /// A list of tag values that can be included in the tag-based resource group.
+        /// A list of tag values that can be included in the tag-based resource group. This is optional. If you
+        /// don&#39;t specify a value or values for a key, then an AWS resource with any value for that key is a
+        /// member.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption

@@ -14,7 +14,7 @@ namespace Comformation.AppMesh.VirtualGateway
 
         /// <summary>
         /// Validation
-        /// A reference to an object that represents a TLS validation context.
+        /// A reference to an object that represents a Transport Layer Security (TLS) validation context.
         /// Required: Yes
         /// Type: VirtualGatewayTlsValidationContext
         /// Update requires: No interruption
@@ -41,6 +41,17 @@ namespace Comformation.AppMesh.VirtualGateway
         /// </summary>
         [JsonProperty("Ports")]
         public List<Union<int, IntrinsicFunction>> Ports { get; set; }
+
+        /// <summary>
+        /// Certificate
+        /// A reference to an object that represents a virtual gateway&#39;s client&#39;s Transport Layer Security (TLS)
+        /// certificate.
+        /// Required: No
+        /// Type: VirtualGatewayClientTlsCertificate
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Certificate")]
+        public VirtualGatewayClientTlsCertificate Certificate { get; set; }
 
     }
 }

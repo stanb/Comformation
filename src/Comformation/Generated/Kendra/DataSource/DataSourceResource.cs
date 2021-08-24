@@ -39,7 +39,7 @@ namespace Comformation.Kendra.DataSource
             /// Required: Yes
             /// Type: String
             /// Allowed values: CONFLUENCE | CUSTOM | DATABASE | GOOGLEDRIVE | ONEDRIVE | S3 | SALESFORCE |
-            /// SERVICENOW | SHAREPOINT
+            /// SERVICENOW | SHAREPOINT | WEBCRAWLER | WORKDOCS
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Type { get; set; }

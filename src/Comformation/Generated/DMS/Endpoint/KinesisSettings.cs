@@ -14,8 +14,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// MessageFormat
-        /// The output format for the records created on the endpoint. The message format is JSON (default) or
-        /// JSON_UNFORMATTED (a single line with no tab).
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Allowed values: json | json-unformatted
@@ -26,7 +25,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// StreamArn
-        /// The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -36,8 +35,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ServiceAccessRoleArn
-        /// The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS
-        /// uses to write to the Kinesis data stream.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

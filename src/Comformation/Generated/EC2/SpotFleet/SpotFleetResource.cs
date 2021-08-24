@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
             /// Describes the configuration of a Spot Fleet request.
             /// Required: Yes
             /// Type: SpotFleetRequestConfigData
-            /// Update requires: Some interruptions
+            /// Update requires: No interruption
             /// </summary>
             public SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
 
@@ -27,5 +27,10 @@ namespace Comformation.EC2.SpotFleet
 
         public SpotFleetProperties Properties { get; } = new SpotFleetProperties();
 
+    }
+
+    public static class SpotFleetAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
     }
 }

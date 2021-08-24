@@ -14,10 +14,11 @@ namespace Comformation.S3.AccessPoint
         {
             /// <summary>
             /// Name
-            /// The name of this access point.
+            /// The name of this access point. If you don&#39;t specify a name, AWS CloudFormation generates a unique ID
+            /// and uses that ID for the access point name.
             /// Required: No
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }
 
@@ -43,8 +44,7 @@ namespace Comformation.S3.AccessPoint
             /// PublicAccessBlockConfiguration
             /// The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable
             /// the configuration options in any combination. For more information about when Amazon S3 considers a
-            /// bucket or object public, see The Meaning of &quot;Public&quot; in the Amazon Simple Storage Service Developer
-            /// Guide.
+            /// bucket or object public, see The Meaning of &quot;Public&quot; in the Amazon S3 User Guide.
             /// Required: No
             /// Type: PublicAccessBlockConfiguration
             /// Update requires: Replacement
@@ -69,23 +69,19 @@ namespace Comformation.S3.AccessPoint
             /// </summary>
             public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> PolicyStatus { get; set; }
 
-            /// <summary>
-            /// NetworkOrigin
-            /// Indicates whether this access point allows access from the internet. If VpcConfiguration is
-            /// specified for this access point, then NetworkOrigin is VPC, and the access point doesn&#39;t allow
-            /// access from the internet. Otherwise, NetworkOrigin is Internet, and the access point allows access
-            /// from the internet, subject to the access point and bucket access policies.
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> NetworkOrigin { get; set; }
-
         }
 
         public string Type { get; } = "AWS::S3::AccessPoint";
 
         public AccessPointProperties Properties { get; } = new AccessPointProperties();
 
+    }
+
+    public static class AccessPointAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Alias = new ResourceAttribute<Union<string, IntrinsicFunction>>("Alias");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> NetworkOrigin = new ResourceAttribute<Union<string, IntrinsicFunction>>("NetworkOrigin");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
     }
 }
