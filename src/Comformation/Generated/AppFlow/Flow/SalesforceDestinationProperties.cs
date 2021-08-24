@@ -37,5 +37,29 @@ namespace Comformation.AppFlow.Flow
         [JsonProperty("ErrorHandlingConfig")]
         public ErrorHandlingConfig ErrorHandlingConfig { get; set; }
 
+        /// <summary>
+        /// IdFieldNames
+        /// The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as
+        /// update or delete.
+        /// Required: No
+        /// Type: List of String
+        /// Maximum: 1
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IdFieldNames")]
+        public List<Union<string, IntrinsicFunction>> IdFieldNames { get; set; }
+
+        /// <summary>
+        /// WriteOperationType
+        /// This specifies the type of write operation to be performed in Salesforce. When the value is UPSERT,
+        /// then idFieldNames is required.
+        /// Required: No
+        /// Type: String
+        /// Allowed values: INSERT | UPDATE | UPSERT
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("WriteOperationType")]
+        public Union<string, IntrinsicFunction> WriteOperationType { get; set; }
+
     }
 }

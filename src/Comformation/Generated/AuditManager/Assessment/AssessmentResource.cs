@@ -14,9 +14,12 @@ namespace Comformation.AuditManager.Assessment
         {
             /// <summary>
             /// FrameworkId
-            /// Not currently supported by AWS CloudFormation.
+            /// The unique identifier for the framework.
             /// Required: No
             /// Type: String
+            /// Minimum: 36
+            /// Maximum: 36
+            /// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> FrameworkId { get; set; }
@@ -83,7 +86,7 @@ namespace Comformation.AuditManager.Assessment
             /// Type: String
             /// Minimum: 1
             /// Maximum: 300
-            /// Pattern: ^[\w\W\s\S]*$
+            /// Pattern: ^[^\\]*$
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }
@@ -109,7 +112,6 @@ namespace Comformation.AuditManager.Assessment
 
     public static class AssessmentAttributes
     {
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FrameworkId = new ResourceAttribute<Union<string, IntrinsicFunction>>("FrameworkId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AssessmentId = new ResourceAttribute<Union<string, IntrinsicFunction>>("AssessmentId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<List<Delegation>> Delegations = new ResourceAttribute<List<Delegation>>("Delegations");

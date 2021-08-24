@@ -70,7 +70,7 @@ namespace Comformation.MediaConnect.FlowOutput
 
             /// <summary>
             /// Name
-            /// The name of the output. This value must be unique within the current flow.
+            /// The name of the VPC interface.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

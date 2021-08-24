@@ -21,6 +21,7 @@ namespace Comformation.EFS.AccessPoint
         /// Type: String
         /// Minimum: 1
         /// Maximum: 100
+        /// Pattern: ^(\/|(\/(?!\. )+[^$#&amp;lt;&amp;gt;;`|&amp;amp;?{}^*/\n]+){1,4})$
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Path")]

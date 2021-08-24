@@ -60,7 +60,6 @@ namespace Comformation.WAFRegional.ByteMatchSet
 
         /// <summary>
         /// PositionalConstraint
-        /// 		
         /// Within the portion of a web request that you want to search (for example, in the query string, if
         /// any), specify where you want AWS WAF to search. Valid values include the following:
         /// 		
@@ -106,10 +105,9 @@ namespace Comformation.WAFRegional.ByteMatchSet
 
         /// <summary>
         /// TextTransformation
-        /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
-        /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on FieldToMatch before inspecting it for a match.
+        /// an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+        /// FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// CMD_LINE
@@ -164,7 +162,6 @@ namespace Comformation.WAFRegional.ByteMatchSet
 
         /// <summary>
         /// FieldToMatch
-        /// 		
         /// The part of a web request that you want AWS WAF to search, such as a specified header or a query
         /// string.
         /// 	

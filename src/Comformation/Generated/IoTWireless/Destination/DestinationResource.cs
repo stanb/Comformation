@@ -15,17 +15,18 @@ namespace Comformation.IoTWireless.Destination
             /// <summary>
             /// Name
             /// 		
-            /// The name of the new resource. Can have only have alphanumeric, - (hyphen) and _ (underscore)
-            /// characters and it can&#39;t have any spaces.
+            /// The name of the new resource. The maximum length is 128 characters. It can have only have
+            /// alphanumeric, - (hyphen) and _ (underscore) characters and it can&#39;t have any spaces.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
             /// Expression
-            /// The rule name to send messages to.
+            /// 		
+            /// The rule name to send messages to. Maximum length is 2048.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -35,7 +36,7 @@ namespace Comformation.IoTWireless.Destination
             /// <summary>
             /// ExpressionType
             /// 		
-            /// The type of value in Expression. Must be RuleName or TopicPattern.
+            /// The type of value in Expression. Must be RuleName or MqttTopic.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -44,7 +45,8 @@ namespace Comformation.IoTWireless.Destination
 
             /// <summary>
             /// Description
-            /// The description of the new resource.
+            /// 		
+            /// The description of the new resource. Maximum length is 2048 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -54,7 +56,8 @@ namespace Comformation.IoTWireless.Destination
             /// <summary>
             /// Tags
             /// 		 		
-            /// An array of key-value pairs to apply to this resource.
+            /// An array of key-value pairs to apply to this resource. Tags can have a minimum of 0 and a maximum of
+            /// 50 items.
             /// 		
             /// For more information, see Tag.
             /// 	
@@ -66,23 +69,14 @@ namespace Comformation.IoTWireless.Destination
 
             /// <summary>
             /// RoleArn
-            /// The ARN of the IAM Role that authorizes the destination.
+            /// 		
+            /// The ARN of the IAM Role that authorizes the destination. Minimum length is 20 and maximum length is
+            /// 2048.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> RoleArn { get; set; }
-
-            /// <summary>
-            /// NextToken
-            /// 		
-            /// This parameter isn&#39;t needed to create this resource. Do not include it in your template.
-            /// 	
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> NextToken { get; set; }
 
         }
 

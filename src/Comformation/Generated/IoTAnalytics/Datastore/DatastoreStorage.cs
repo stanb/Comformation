@@ -35,5 +35,15 @@ namespace Comformation.IoTAnalytics.Datastore
         [JsonProperty("ServiceManagedS3")]
         public ServiceManagedS3 ServiceManagedS3 { get; set; }
 
+        /// <summary>
+        /// IotSiteWiseMultiLayerStorage
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: IotSiteWiseMultiLayerStorage
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IotSiteWiseMultiLayerStorage")]
+        public IotSiteWiseMultiLayerStorage IotSiteWiseMultiLayerStorage { get; set; }
+
     }
 }

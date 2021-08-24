@@ -13,34 +13,14 @@ namespace Comformation.IoT.TopicRule
     {
 
         /// <summary>
-        /// HashKeyField
-        /// The hash key name.
+        /// TableName
+        /// The name of the DynamoDB table.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("HashKeyField")]
-        public Union<string, IntrinsicFunction> HashKeyField { get; set; }
-
-        /// <summary>
-        /// HashKeyType
-        /// The hash key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("HashKeyType")]
-        public Union<string, IntrinsicFunction> HashKeyType { get; set; }
-
-        /// <summary>
-        /// HashKeyValue
-        /// The hash key value.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("HashKeyValue")]
-        public Union<string, IntrinsicFunction> HashKeyValue { get; set; }
+        [JsonProperty("TableName")]
+        public Union<string, IntrinsicFunction> TableName { get; set; }
 
         /// <summary>
         /// PayloadField
@@ -63,14 +43,14 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> RangeKeyField { get; set; }
 
         /// <summary>
-        /// RangeKeyType
-        /// The range key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;
-        /// Required: No
+        /// HashKeyField
+        /// The hash key name.
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("RangeKeyType")]
-        public Union<string, IntrinsicFunction> RangeKeyType { get; set; }
+        [JsonProperty("HashKeyField")]
+        public Union<string, IntrinsicFunction> HashKeyField { get; set; }
 
         /// <summary>
         /// RangeKeyValue
@@ -83,6 +63,36 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> RangeKeyValue { get; set; }
 
         /// <summary>
+        /// RangeKeyType
+        /// The range key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RangeKeyType")]
+        public Union<string, IntrinsicFunction> RangeKeyType { get; set; }
+
+        /// <summary>
+        /// HashKeyType
+        /// The hash key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HashKeyType")]
+        public Union<string, IntrinsicFunction> HashKeyType { get; set; }
+
+        /// <summary>
+        /// HashKeyValue
+        /// The hash key value.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HashKeyValue")]
+        public Union<string, IntrinsicFunction> HashKeyValue { get; set; }
+
+        /// <summary>
         /// RoleArn
         /// The ARN of the IAM role that grants access to the DynamoDB table.
         /// Required: Yes
@@ -91,16 +101,6 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
-
-        /// <summary>
-        /// TableName
-        /// The name of the DynamoDB table.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("TableName")]
-        public Union<string, IntrinsicFunction> TableName { get; set; }
 
     }
 }

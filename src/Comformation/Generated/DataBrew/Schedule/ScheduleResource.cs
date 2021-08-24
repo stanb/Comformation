@@ -24,7 +24,7 @@ namespace Comformation.DataBrew.Schedule
 
             /// <summary>
             /// CronExpression
-            /// The date(s) and time(s) when the job will run. For more information, see Cron expressions in the AWS
+            /// The dates and times when the job is to run. For more information, see Cron expressions in the AWS
             /// Glue DataBrew Developer Guide.
             /// Required: Yes
             /// Type: String

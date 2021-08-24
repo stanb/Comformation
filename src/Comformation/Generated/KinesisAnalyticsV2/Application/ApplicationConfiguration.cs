@@ -53,6 +53,16 @@ namespace Comformation.KinesisAnalyticsV2.Application
         public SqlApplicationConfiguration SqlApplicationConfiguration { get; set; }
 
         /// <summary>
+        /// ZeppelinApplicationConfiguration
+        /// The configuration parameters for a Kinesis Data Analytics Studio notebook.
+        /// Required: No
+        /// Type: ZeppelinApplicationConfiguration
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ZeppelinApplicationConfiguration")]
+        public ZeppelinApplicationConfiguration ZeppelinApplicationConfiguration { get; set; }
+
+        /// <summary>
         /// ApplicationSnapshotConfiguration
         /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// Required: No

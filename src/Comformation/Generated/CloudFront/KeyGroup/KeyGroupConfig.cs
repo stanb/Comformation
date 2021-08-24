@@ -15,7 +15,7 @@ namespace Comformation.CloudFront.KeyGroup
         /// <summary>
         /// Comment
         /// 		
-        /// A comment to describe the key group.
+        /// A comment to describe the key group. The comment cannot be longer than 128 			characters.
         /// 	
         /// Required: No
         /// Type: String

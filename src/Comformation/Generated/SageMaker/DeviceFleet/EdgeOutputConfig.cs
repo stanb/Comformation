@@ -14,7 +14,7 @@ namespace Comformation.SageMaker.DeviceFleet
 
         /// <summary>
         /// S3OutputLocation
-        /// The Amazon Simple Storage (S3) bucker URI.
+        /// The Amazon Simple Storage (S3) bucket URI.
         /// Required: Yes
         /// Type: String
         /// Maximum: 1024

@@ -20,7 +20,7 @@ namespace Comformation.DataSync.LocationS3
             /// DataSync User Guide.
             /// Required: Yes
             /// Type: S3Config
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public S3Config S3Config { get; set; }
 
@@ -31,7 +31,7 @@ namespace Comformation.DataSync.LocationS3
             /// Type: String
             /// Maximum: 156
             /// Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):(s3|s3-outposts):[a-z\-0-9]*:[0-9]*:. *$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> S3BucketArn { get; set; }
 
@@ -43,7 +43,7 @@ namespace Comformation.DataSync.LocationS3
             /// Type: String
             /// Maximum: 4096
             /// Pattern: ^[a-zA-Z0-9_\-\+\. /\(\)\p{Zs}]*$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Subdirectory { get; set; }
 
@@ -58,7 +58,7 @@ namespace Comformation.DataSync.LocationS3
             /// Type: String
             /// Allowed values: DEEP_ARCHIVE | GLACIER | INTELLIGENT_TIERING | ONEZONE_IA | OUTPOSTS | STANDARD |
             /// STANDARD_IA
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> S3StorageClass { get; set; }
 

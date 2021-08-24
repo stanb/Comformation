@@ -45,7 +45,7 @@ namespace Comformation.Config.DeliveryChannel
             /// configuration history files.
             /// 		
             /// If you specify a bucket that belongs to another AWS account, 			that bucket must have policies that
-            /// grant access permissions to AWS 			Config. For more information, see Permissions for the Amazon S3
+            /// grant access permissions to AWS Config. For more information, see Permissions for the Amazon S3
             /// Bucket in the AWS Config 			Developer Guide.
             /// 	
             /// Required: Yes
@@ -64,6 +64,19 @@ namespace Comformation.Config.DeliveryChannel
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> S3KeyPrefix { get; set; }
+
+            /// <summary>
+            /// S3KmsKeyArn
+            /// 		
+            /// The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed key (CMK)
+            /// used to encrypt objects delivered by AWS Config. 			Must belong to the same Region as the
+            /// destination S3 bucket.
+            /// 	
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> S3KmsKeyArn { get; set; }
 
             /// <summary>
             /// SnsTopicARN

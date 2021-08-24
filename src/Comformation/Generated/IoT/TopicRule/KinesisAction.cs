@@ -23,16 +23,6 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> PartitionKey { get; set; }
 
         /// <summary>
-        /// RoleArn
-        /// The ARN of the IAM role that grants access to the Amazon Kinesis stream.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("RoleArn")]
-        public Union<string, IntrinsicFunction> RoleArn { get; set; }
-
-        /// <summary>
         /// StreamName
         /// The name of the Amazon Kinesis stream.
         /// Required: Yes
@@ -41,6 +31,16 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("StreamName")]
         public Union<string, IntrinsicFunction> StreamName { get; set; }
+
+        /// <summary>
+        /// RoleArn
+        /// The ARN of the IAM role that grants access to the Amazon Kinesis stream.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RoleArn")]
+        public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
     }
 }

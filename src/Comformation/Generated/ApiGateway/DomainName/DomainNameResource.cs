@@ -62,6 +62,17 @@ namespace Comformation.ApiGateway.DomainName
             public Union<string, IntrinsicFunction> RegionalCertificateArn { get; set; }
 
             /// <summary>
+            /// OwnershipVerificationCertificateArn
+            /// The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only
+            /// required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the
+            /// RegionalCertificateArn.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> OwnershipVerificationCertificateArn { get; set; }
+
+            /// <summary>
             /// SecurityPolicy
             /// The Transport Layer Security (TLS) version + cipher suite for this domain name.
             /// Valid values include TLS_1_0 and TLS_1_2.

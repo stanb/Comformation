@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Input
 
         /// <summary>
         /// Username
-        /// The user name for accessing the upstream system. The user name applies only if the upstream system
+        /// The user name to connect to the upstream system. The user name applies only if the upstream system
         /// requires credentials.
         /// Required: No
         /// Type: String

@@ -69,7 +69,7 @@ namespace Comformation.Tests
             var target = Fn.GetAZs(Fn.Ref(PseudoParameter.Region));
 
             var actual = JToken.FromObject(target);
-            var expected = JToken.Parse("{\"Fn::GetAtt\": {\"Ref\": \"AWS::Region\"} }");
+            var expected = JToken.Parse("{\"Fn::GetAZs\": {\"Ref\": \"AWS::Region\"} }");
             
             Assert.True(JToken.DeepEquals(actual, expected));
         }
@@ -80,7 +80,7 @@ namespace Comformation.Tests
             var target = Fn.GetAZs("us-east-1");
 
             var actual = JToken.FromObject(target);
-            var expected = JToken.Parse("{\"Fn::GetAtt\": \"us-east-1\" }");
+            var expected = JToken.Parse("{\"Fn::GetAZs\": \"us-east-1\" }");
             
             Assert.True(JToken.DeepEquals(actual, expected));
         }
@@ -91,7 +91,7 @@ namespace Comformation.Tests
             var target = Fn.GetAZs(RegionEndpoint.USEast1);
 
             var actual = JToken.FromObject(target);
-            var expected = JToken.Parse("{\"Fn::GetAtt\": \"us-east-1\" }");
+            var expected = JToken.Parse("{\"Fn::GetAZs\": \"us-east-1\" }");
             
             Assert.True(JToken.DeepEquals(actual, expected));
         }
@@ -102,7 +102,7 @@ namespace Comformation.Tests
             var target = Fn.GetAZs();
 
             var actual = JToken.FromObject(target);
-            var expected = JToken.Parse("{\"Fn::GetAtt\": \"\" }");
+            var expected = JToken.Parse("{\"Fn::GetAZs\": \"\" }");
             
             Assert.True(JToken.DeepEquals(actual, expected));
         }

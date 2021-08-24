@@ -43,7 +43,7 @@ namespace Comformation.GameLift.Alias
         /// TERMINAL - The alias does not resolve to a fleet but instead can be used to display a message to the
         /// user. A terminal alias throws a TerminalRoutingStrategyException with the message that you specified
         /// in the Message property.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Allowed values: SIMPLE | TERMINAL
         /// Update requires: No interruption

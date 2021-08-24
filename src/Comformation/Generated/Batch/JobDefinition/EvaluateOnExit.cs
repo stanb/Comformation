@@ -15,7 +15,7 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// Action
         /// Specifies the action to take if all of the specified conditions (onStatusReason, onReason, and
-        /// onExitCode) are met. The values are not case sensitive.
+        /// onExitCode) are met. The values aren&#39;t case sensitive.
         /// Required: Yes
         /// Type: String
         /// Allowed values: EXIT | RETRY
@@ -27,8 +27,8 @@ namespace Comformation.Batch.JobDefinition
         /// <summary>
         /// OnExitCode
         /// Contains a glob pattern to match against the decimal representation of the ExitCode returned for a
-        /// job. The patten can be up to 512 characters long, can contain only numbers, and can optionally end
-        /// with an asterisk (*) so that only the start of the string needs to be an exact match.
+        /// job. The pattern can be up to 512 characters in length. It can contain only numbers, and can
+        /// optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -38,10 +38,10 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// OnReason
-        /// Contains a glob pattern to match against the Reason returned for a job. The patten can be up to 512
-        /// characters long, can contain letters, numbers, periods (. ), colons (:), and white space (spaces,
-        /// tabs), and can optionally end with an asterisk (*) so that only the start of the string needs to be
-        /// an exact match.
+        /// Contains a glob pattern to match against the Reason returned for a job. The pattern can be up to 512
+        /// characters in length. It can contain letters, numbers, periods (. ), colons (:), and white space
+        /// (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of
+        /// the string needs to be an exact match.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -51,10 +51,10 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// OnStatusReason
-        /// Contains a glob pattern to match against the StatusReason returned for a job. The patten can be up
-        /// to 512 characters long, can contain letters, numbers, periods (. ), colons (:), and white space
-        /// (spaces, tabs). and can optionally end with an asterisk (*) so that only the start of the string
-        /// needs to be an exact match.
+        /// Contains a glob pattern to match against the StatusReason returned for a job. The pattern can be up
+        /// to 512 characters in length. It can contain letters, numbers, periods (. ), colons (:), and white
+        /// space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start
+        /// of the string needs to be an exact match.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

@@ -30,7 +30,7 @@ namespace Comformation.KinesisFirehose.DeliveryStream
         /// Minimum: 1
         /// Maximum: 512
         /// Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&amp;lt;!-)\. )+redshift\. ([a-zA-Z0-9\.
-        /// ]+):\d{1,5}/[a-zA-Z0-9_$]+
+        /// ]+):\d{1,5}/[a-zA-Z0-9_$-]+
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ClusterJDBCURL")]

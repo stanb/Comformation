@@ -15,7 +15,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// <summary>
         /// FunctionArn
         /// The ARN of the Lambda function that is executed.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 2048

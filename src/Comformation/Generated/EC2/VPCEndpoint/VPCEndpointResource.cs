@@ -15,8 +15,11 @@ namespace Comformation.EC2.VPCEndpoint
             /// <summary>
             /// PolicyDocument
             /// (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the
-            /// service. The policy must be in valid JSON format. If this parameter is not specified, we attach a
-            /// default policy that allows full access to the service.
+            /// service. If this parameter is not specified, we attach a default policy that allows full access to
+            /// the service.
+            /// For CloudFormation templates in YAML, you can provide the policy in JSON or YAML format. AWS
+            /// CloudFormation converts YAML policies to JSON format before calling the API to create or modify the
+            /// VPC endpoint.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption

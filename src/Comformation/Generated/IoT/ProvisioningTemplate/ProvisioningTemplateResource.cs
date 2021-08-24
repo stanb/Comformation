@@ -51,7 +51,7 @@ namespace Comformation.IoT.ProvisioningTemplate
 
             /// <summary>
             /// TemplateBody
-            /// The name of the fleet provisioning template.
+            /// The JSON formatted contents of the fleet provisioning template version.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

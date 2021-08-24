@@ -76,7 +76,8 @@ namespace Comformation.DataSync.Task
         /// <summary>
         /// Mtime
         /// A value that indicates the last time that a file was modified (that is, a file was written to)
-        /// before the PREPARING phase.
+        /// before the PREPARING phase. This option is required for cases when you need to run the same task
+        /// more than one time.
         /// Default value: PRESERVE.
         /// PRESERVE: Preserve original Mtime (recommended)
         /// NONE: Ignore Mtime.
@@ -97,7 +98,8 @@ namespace Comformation.DataSync.Task
         /// destination file differs from the source file. If you modify files in the destination and you sync
         /// the files, you can use this value to protect against overwriting those changes.
         /// Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
-        /// information, see using-storage-classes in the AWS DataSync User Guide.
+        /// information, see Considerations when working with Amazon S3 storage classes in DataSync in the AWS
+        /// DataSync User Guide.
         /// Required: No
         /// Type: String
         /// Allowed values: ALWAYS | NEVER
@@ -109,7 +111,9 @@ namespace Comformation.DataSync.Task
         /// <summary>
         /// PosixPermissions
         /// A value that determines which users or groups can access a file for a specific purpose such as
-        /// reading, writing, or execution of the file.
+        /// reading, writing, or execution of the file. This option should only be set for NFS, EFS, and S3
+        /// locations. For more information about what metadata is copied by DataSync, see Metadata Copied by
+        /// DataSync.
         /// Default value: PRESERVE.
         /// PRESERVE: Preserve POSIX-style permissions (recommended).
         /// NONE: Ignore permissions.
@@ -127,7 +131,8 @@ namespace Comformation.DataSync.Task
         /// A value that specifies whether files in the destination that don&#39;t exist in the source file system
         /// should be preserved. This option can affect your storage cost. If your task deletes objects, you
         /// might incur minimum storage duration charges for certain storage classes. For detailed information,
-        /// see using-storage-classes in the AWS DataSync User Guide.
+        /// see Considerations when working with Amazon S3 storage classes in DataSync in the AWS DataSync User
+        /// Guide.
         /// Default value: PRESERVE.
         /// PRESERVE: Ignore such destination files (recommended).
         /// REMOVE: Delete destination files that aren’t present in the source.
@@ -142,8 +147,8 @@ namespace Comformation.DataSync.Task
         /// <summary>
         /// PreserveDevices
         /// A value that determines whether AWS DataSync should preserve the metadata of block and character
-        /// devices in the source file system, and recreate the files with that device name and metadata on the
-        /// destination.
+        /// devices in the source file system, and re-create the files with that device name and metadata on the
+        /// destination. DataSync does not copy the contents of such devices, only the name and metadata.
         /// Note AWS DataSync can&#39;t sync the actual contents of such devices, because they are nonterminal and
         /// don&#39;t return an end-of-file (EOF) marker.
         /// Default value: NONE.
@@ -159,11 +164,42 @@ namespace Comformation.DataSync.Task
         public Union<string, IntrinsicFunction> PreserveDevices { get; set; }
 
         /// <summary>
+        /// SecurityDescriptorCopyFlags
+        /// A value that determines which components of the SMB security descriptor are copied from source to
+        /// destination objects.
+        /// This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations,
+        /// or between two Amazon FSx for Windows File Server locations. For more information about how DataSync
+        /// handles metadata, see How DataSync Handles Metadata and Special Files.
+        /// Default value: OWNER_DACL.
+        /// OWNER_DACL: For each copied object, DataSync copies the following metadata:
+        /// Object owner. NTFS discretionary access control lists (DACLs), which determine whether to grant
+        /// access to an object.
+        /// When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs),
+        /// which are used by administrators to log attempts to access a secured object.
+        /// OWNER_DACL_SACL: For each copied object, DataSync copies the following metadata:
+        /// Object owner. NTFS discretionary access control lists (DACLs), which determine whether to grant
+        /// access to an object. NTFS system access control lists (SACLs), which are used by administrators to
+        /// log attempts to access a secured object.
+        /// Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to
+        /// access your SMB location. For information about choosing a user that ensures sufficient permissions
+        /// to files, folders, and metadata, see user.
+        /// NONE: None of the SMB security descriptor components are copied. Destination objects are owned by
+        /// the user that was provided for accessing the destination location. DACLs and SACLs are set based on
+        /// the destination server’s configuration.
+        /// Required: No
+        /// Type: String
+        /// Allowed values: NONE | OWNER_DACL | OWNER_DACL_SACL
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SecurityDescriptorCopyFlags")]
+        public Union<string, IntrinsicFunction> SecurityDescriptorCopyFlags { get; set; }
+
+        /// <summary>
         /// TaskQueueing
         /// A value that determines whether tasks should be queued before executing the tasks. If set to
         /// ENABLED, the tasks will be queued. The default is ENABLED.
         /// If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-        /// information, see queue-task-execution.
+        /// information, see Queueing task executions.
         /// Required: No
         /// Type: String
         /// Allowed values: DISABLED | ENABLED
@@ -208,7 +244,7 @@ namespace Comformation.DataSync.Task
         /// VerifyMode
         /// A value that determines whether a data integrity verification should be performed at the end of a
         /// task execution after all data and metadata have been transferred. For more information, see
-        /// create-task
+        /// Configure task settings.
         /// Default value: POINT_IN_TIME_CONSISTENT.
         /// ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
         /// POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer

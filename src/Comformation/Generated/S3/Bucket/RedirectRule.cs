@@ -50,6 +50,8 @@ namespace Comformation.S3.Bucket
         /// pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block
         /// with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not
         /// required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+        /// Important Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see XML related object key constraints.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -62,6 +64,8 @@ namespace Comformation.S3.Bucket
         /// The specific object key to use in the redirect request. For example, redirect request to error.
         /// html. Not required if one of the siblings is present. Can be present only if ReplaceKeyPrefixWith is
         /// not provided.
+        /// Important Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see XML related object key constraints.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

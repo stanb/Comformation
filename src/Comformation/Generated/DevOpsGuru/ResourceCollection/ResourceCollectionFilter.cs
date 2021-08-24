@@ -15,9 +15,9 @@ namespace Comformation.DevOpsGuru.ResourceCollection
         /// <summary>
         /// CloudFormation
         /// 		
-        /// 			Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in
-        /// your account to analyze. 			For more information, see Stacks 			in the AWS CloudFormation User
-        /// Guide. 		
+        /// 			Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS
+        /// resources in your account to analyze. 			For more information, see Stacks 			in the AWS
+        /// CloudFormation User Guide. 		
         /// 	
         /// Required: No
         /// Type: CloudFormationCollectionFilter

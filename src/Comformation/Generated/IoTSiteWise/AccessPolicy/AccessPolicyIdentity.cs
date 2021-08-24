@@ -22,5 +22,25 @@ namespace Comformation.IoTSiteWise.AccessPolicy
         [JsonProperty("User")]
         public User User { get; set; }
 
+        /// <summary>
+        /// IamUser
+        /// An IAM user identity.
+        /// Required: No
+        /// Type: IamUser
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IamUser")]
+        public IamUser IamUser { get; set; }
+
+        /// <summary>
+        /// IamRole
+        /// An IAM role identity.
+        /// Required: No
+        /// Type: IamRole
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IamRole")]
+        public IamRole IamRole { get; set; }
+
     }
 }

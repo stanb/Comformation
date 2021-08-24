@@ -27,6 +27,11 @@ namespace Comformation.Batch.ComputeEnvironment
         /// The version number of the launch template, $Latest, or $Default.
         /// If the value is $Latest, the latest version of the launch template is used. If the value is
         /// $Default, the default version of the launch template is used.
+        /// Important After the compute environment is created, the launch template version that&#39;s used isn&#39;t
+        /// changed, even if the $Default or $Latest version for the launch template is updated. To use a new
+        /// launch template version, create a new compute environment, add the new compute environment to the
+        /// existing job queue, remove the old compute environment from the job queue, and delete the old
+        /// compute environment.
         /// Default: $Default.
         /// Required: No
         /// Type: String

@@ -44,15 +44,13 @@ namespace Comformation.WAFRegional.RateBasedRule
 
         /// <summary>
         /// Negated
-        /// 		
         /// Set Negated to False if you want AWS WAF to allow, block, or count requests based on the settings in
         /// the 		 specified ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatchSet, GeoMatchSet,
-        /// or SizeConstraintSet. 			For example, if an IPSet includes the IP address 192. 0. 2. 44, AWS WAF
-        /// will allow or block requests based on that IP address.
-        /// 		
+        /// or SizeConstraintSet. For example, if an IPSet includes the IP address 192. 0. 2. 44, AWS WAF will
+        /// allow or block requests based on that IP address.
         /// Set Negated to True if you want AWS WAF to allow or block a request based on the negation 		 of the
         /// settings in the ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatchSet, GeoMatchSet,
-        /// or SizeConstraintSet&amp;gt;. 			For example, if an IPSet includes the IP address 192. 0. 2. 44, AWS WAF
+        /// or SizeConstraintSet&amp;gt;. For example, if an IPSet includes the IP address 192. 0. 2. 44, AWS WAF
         /// will allow, block, or count requests based on 			all IP addresses except 192. 0. 2. 44.
         /// 	
         /// Required: Yes

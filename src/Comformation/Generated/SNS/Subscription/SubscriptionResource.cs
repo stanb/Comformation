@@ -16,8 +16,8 @@ namespace Comformation.SNS.Subscription
             /// DeliveryPolicy
             /// The delivery policy JSON assigned to the subscription. Enables the subscriber to define the message
             /// delivery retry strategy in the case of an HTTP/S endpoint subscribed to the topic. For more
-            /// information, see GetSubscriptionAttributes in the Amazon Simple Notification Service API Reference
-            /// and Message Delivery Retries in the Amazon SNS Developer Guide.
+            /// information, see GetSubscriptionAttributes in the Amazon SNS API Reference and Message delivery
+            /// retries in the Amazon SNS Developer Guide.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
@@ -27,8 +27,7 @@ namespace Comformation.SNS.Subscription
             /// <summary>
             /// Endpoint
             /// The subscription&#39;s endpoint. The endpoint value depends on the protocol that you specify. For more
-            /// information, see the Endpoint parameter of the Subscribe action in the Amazon Simple Notification
-            /// Service API Reference.
+            /// information, see the Endpoint parameter of the Subscribe action in the Amazon SNS API Reference.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -38,8 +37,8 @@ namespace Comformation.SNS.Subscription
             /// <summary>
             /// FilterPolicy
             /// The filter policy JSON assigned to the subscription. Enables the subscriber to filter out unwanted
-            /// messages. For more information, see GetSubscriptionAttributes in the Amazon Simple Notification
-            /// Service API Reference and Message Filtering in the Amazon SNS Developer Guide.
+            /// messages. For more information, see GetSubscriptionAttributes in the Amazon SNS API Reference and
+            /// Message filtering in the Amazon SNS Developer Guide.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
@@ -49,7 +48,7 @@ namespace Comformation.SNS.Subscription
             /// <summary>
             /// Protocol
             /// The subscription&#39;s protocol. For more information, see the Protocol parameter of the Subscribe
-            /// action in the Amazon Simple Notification Service API Reference.
+            /// action in the Amazon SNS API Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -60,7 +59,7 @@ namespace Comformation.SNS.Subscription
             /// RawMessageDelivery
             /// When set to true, enables raw message delivery. Raw messages don&#39;t contain any JSON formatting and
             /// can be sent to Amazon SQS and HTTP/S endpoints. For more information, see GetSubscriptionAttributes
-            /// in the Amazon Simple Notification Service API Reference.
+            /// in the Amazon SNS API Reference.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -73,6 +72,8 @@ namespace Comformation.SNS.Subscription
             /// that can&#39;t be delivered due to client errors (for example, when the subscribed endpoint is
             /// unreachable) or server errors (for example, when the service that powers the subscribed endpoint
             /// becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+            /// For more information about the redrive policy and dead-letter queues, see Amazon SQS dead-letter
+            /// queues in the Amazon SQS Developer Guide.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption
@@ -82,7 +83,7 @@ namespace Comformation.SNS.Subscription
             /// <summary>
             /// Region
             /// For cross-region subscriptions, the region in which the topic resides.
-            /// If no region is specified, CloudFormation uses the region of the caller as the default.
+            /// If no region is specified, AWS CloudFormation uses the region of the caller as the default.
             /// If you perform an update operation that only updates the Region property of a AWS::SNS::Subscription
             /// resource, that operation will fail unless you are either:
             /// Updating the Region from NULL to the caller region. Updating the Region from the caller region to

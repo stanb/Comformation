@@ -14,22 +14,29 @@ namespace Comformation.Events.EventBus
         {
             /// <summary>
             /// EventSourceName
-            /// The name of the partner event source to associate with this event bus, if you are creating a partner
-            /// event bus.
-            /// Required: Conditional
+            /// If you are creating a partner event bus, this specifies the partner event source that the new event
+            /// bus will be matched with.
+            /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: aws\. partner(/[\. \-_A-Za-z0-9]+){2,}
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> EventSourceName { get; set; }
 
             /// <summary>
             /// Name
-            /// The name of the event bus you are creating. The names of custom event buses can&#39;t contain the /
-            /// character. You can&#39;t use the name default for a custom event bus.
-            /// If you are creating a partner event bus, this name must exactly match the name of the partner event
-            /// source that this bus is matched to.
+            /// The name of the new event bus.
+            /// Event bus names cannot contain the / character. You can&#39;t use the name default for a custom event
+            /// bus, as this name is already used for your account&#39;s default event bus.
+            /// If this is a partner event bus, the name must exactly match the name of the partner event source
+            /// that this event bus is matched to.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: [/\. \-_A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }

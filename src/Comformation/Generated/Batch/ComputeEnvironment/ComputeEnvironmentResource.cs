@@ -28,13 +28,19 @@ namespace Comformation.Batch.ComputeEnvironment
             /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
             /// services on your behalf. For more information, see AWS Batch service IAM role in the AWS Batch User
             /// Guide.
-            /// If your specified role has a path other than /, then you must either specify the full role ARN (this
-            /// is recommended) or prefix the role name with the path.
+            /// Important If your account already created the AWS Batch service-linked role, that role is used by
+            /// default for your compute environment unless you specify a different role here. If the AWS Batch
+            /// service-linked role doesn&#39;t exist in your account, and no role is specified here, the service
+            /// attempts to create the AWS Batch service-linked role in your account.
+            /// If your specified role has a path other than /, then you must specify either the full role ARN
+            /// (recommended) or prefix the role name with the path. For example, if a role with the name bar has a
+            /// path of /foo/ then you would specify /foo/bar as the role name. For more information, see Friendly
+            /// names and paths in the IAM User Guide.
             /// Note Depending on how you created your AWS Batch service role, its ARN might contain the
             /// service-role path prefix. When you only specify the name of the service role, AWS Batch assumes that
             /// your ARN doesn&#39;t use the service-role path prefix. Because of this, we recommend that you specify
             /// the full ARN of your service role when you create compute environments.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

@@ -38,8 +38,8 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// ServiceRoleArn
-            /// The AWS IAM service role ARN for the data source. The system assumes this role when accessing the
-            /// data source.
+            /// The AWS Identity and Access Management service role ARN for the data source. The system assumes this
+            /// role when accessing the data source.
             /// Required if Type is specified as AWS_LAMBDA, AMAZON_DYNAMODB, or AMAZON_ELASTICSEARCH.
             /// Required: Conditional
             /// Type: String
@@ -95,7 +95,7 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// DynamoDBConfig
-            /// AwsRegion and TableName for an Amazon DynamoDB table in your account.
+            /// AWS Region and TableName for an Amazon DynamoDB table in your account.
             /// Required: No
             /// Type: DynamoDBConfig
             /// Update requires: No interruption
@@ -104,7 +104,7 @@ namespace Comformation.AppSync.DataSource
 
             /// <summary>
             /// ElasticsearchConfig
-            /// AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account.
+            /// AWS Region and Endpoints for an Amazon Elasticsearch Service domain in your account.
             /// Required: No
             /// Type: ElasticsearchConfig
             /// Update requires: No interruption

@@ -42,13 +42,14 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// another alarm triggers a scale-out activity during the cooldown period after a scale-in activity,
         /// Application Auto Scaling scales out the target immediately. In this case, the cooldown period for
         /// the scale-in activity stops and doesn&#39;t complete.
-        /// Application Auto Scaling provides a default value of 300 for the following scalable targets:
+        /// Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:
         /// ECS services Spot Fleet requests EMR clusters AppStream 2. 0 fleets Aurora DB clusters Amazon
         /// SageMaker endpoint variants Custom resources
         /// For all other scalable targets, the default value is 0:
         /// DynamoDB tables DynamoDB global secondary indexes Amazon Comprehend document classification and
-        /// entity recognizer endpoints Lambda provisioned concurrency Amazon Keyspaces tables Amazon MSK
-        /// cluster storage
+        /// entity recognizer endpoints Lambda provisioned concurrency Amazon Keyspaces tables Amazon MSK broker
+        /// storage
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

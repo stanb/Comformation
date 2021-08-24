@@ -23,6 +23,17 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> InputName { get; set; }
 
         /// <summary>
+        /// RoleArn
+        /// The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT Events detector.
+        /// (&quot;Action&quot;:&quot;iotevents:BatchPutMessage&quot;).
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RoleArn")]
+        public Union<string, IntrinsicFunction> RoleArn { get; set; }
+
+        /// <summary>
         /// MessageId
         /// The ID of the message. The default messageId is a new UUID value.
         /// When batchMode is true, you can&#39;t specify a messageId--a new UUID value will be assigned.
@@ -36,15 +47,13 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> MessageId { get; set; }
 
         /// <summary>
-        /// RoleArn
-        /// The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT Events detector.
-        /// (&quot;Action&quot;:&quot;iotevents:BatchPutMessage&quot;).
-        /// Required: Yes
-        /// Type: String
+        /// BatchMode
+        /// Required: No
+        /// Type: Boolean
         /// Update requires: No interruption
         /// </summary>
-        [JsonProperty("RoleArn")]
-        public Union<string, IntrinsicFunction> RoleArn { get; set; }
+        [JsonProperty("BatchMode")]
+        public Union<bool, IntrinsicFunction> BatchMode { get; set; }
 
     }
 }

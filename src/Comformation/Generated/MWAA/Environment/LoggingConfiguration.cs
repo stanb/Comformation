@@ -14,7 +14,7 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// DagProcessingLogs
-        /// A JSON blob that provides configuration to use for logging DagProcessingLogs.
+        /// Defines the processing logs sent to CloudWatch Logs and the logging level to send.
         /// Required: No
         /// Type: ModuleLoggingConfiguration
         /// Update requires: No interruption
@@ -24,7 +24,7 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// SchedulerLogs
-        /// A JSON blob that provides configuration to use for logging SchedulerLogs.
+        /// Defines the scheduler logs sent to CloudWatch Logs and the logging level to send.
         /// Required: No
         /// Type: ModuleLoggingConfiguration
         /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// WebserverLogs
-        /// A JSON blob that provides configuration to use for logging WebserverLogs.
+        /// Defines the web server logs sent to CloudWatch Logs and the logging level to send.
         /// Required: No
         /// Type: ModuleLoggingConfiguration
         /// Update requires: No interruption
@@ -44,7 +44,7 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// WorkerLogs
-        /// A JSON blob that provides configuration to use for logging WorkerLogs.
+        /// Defines the worker logs sent to CloudWatch Logs and the logging level to send.
         /// Required: No
         /// Type: ModuleLoggingConfiguration
         /// Update requires: No interruption
@@ -54,7 +54,7 @@ namespace Comformation.MWAA.Environment
 
         /// <summary>
         /// TaskLogs
-        /// A JSON blob that provides configuration to use for logging TaskLogs.
+        /// Defines the task logs sent to CloudWatch Logs and the logging level to send.
         /// Required: No
         /// Type: ModuleLoggingConfiguration
         /// Update requires: No interruption

@@ -47,7 +47,7 @@ namespace Comformation.S3.StorageLens
         /// <summary>
         /// Arn
         /// This property contains the details of the ARN of the bucket destination of the S3 Storage Lens
-        /// export .
+        /// export.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

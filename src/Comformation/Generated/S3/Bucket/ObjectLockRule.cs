@@ -14,9 +14,11 @@ namespace Comformation.S3.Bucket
 
         /// <summary>
         /// DefaultRetention
-        /// The default retention period that you want to apply to new objects placed in the specified bucket.
-        /// Bucket default settings require both a mode and a period.
-        /// Required: No
+        /// The default Object Lock retention mode and period that you want to apply to new objects placed in
+        /// the specified bucket. If Object Lock is turned on, bucket settings require both Mode and a period of
+        /// either Days or Years. You cannot specify Days and Years at the same time. For more information about
+        /// allowable values for mode and period, see DefaultRetention.
+        /// Required: Conditional
         /// Type: DefaultRetention
         /// Update requires: No interruption
         /// </summary>

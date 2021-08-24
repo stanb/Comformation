@@ -103,7 +103,7 @@ namespace Comformation.ElasticLoadBalancingV2.LoadBalancer
             /// specify subnets for an existing Application Load Balancer, they replace the previously enabled
             /// subnets.
             /// [Network Load Balancers] You can specify subnets from one or more Availability Zones when you create
-            /// the load balancer. You can&#39;t change the subnets for an existing Network Load Balancer.
+            /// the load balancer.
             /// Required: Conditional
             /// Type: List of String
             /// Update requires: No interruption

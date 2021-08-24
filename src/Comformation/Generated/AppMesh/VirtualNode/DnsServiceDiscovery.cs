@@ -22,5 +22,15 @@ namespace Comformation.AppMesh.VirtualNode
         [JsonProperty("Hostname")]
         public Union<string, IntrinsicFunction> Hostname { get; set; }
 
+        /// <summary>
+        /// ResponseType
+        /// Specifies the DNS response type for the virtual node.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ResponseType")]
+        public Union<string, IntrinsicFunction> ResponseType { get; set; }
+
     }
 }

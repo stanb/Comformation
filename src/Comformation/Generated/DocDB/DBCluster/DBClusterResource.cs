@@ -42,7 +42,7 @@ namespace Comformation.DocDB.DBCluster
             /// If an encryption key is not specified in KmsKeyId:
             /// If the StorageEncrypted parameter is true, Amazon DocumentDB uses your default encryption key.
             /// AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-            /// default encryption key for each AWS Region.
+            /// default encryption key for each AWS Regions.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

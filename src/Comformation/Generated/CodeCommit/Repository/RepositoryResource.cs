@@ -17,7 +17,7 @@ namespace Comformation.CodeCommit.Repository
             /// The name of the new repository to be created.
             /// Note The repository name must be unique across the calling AWS account. Repository names are limited
             /// to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For
-            /// more information about the limits on repository names, see Limits in the AWS CodeCommit User Guide.
+            /// more information about the limits on repository names, see Quotas in the AWS CodeCommit User Guide.
             /// The suffix . git is prohibited.
             /// Required: Yes
             /// Type: String
@@ -40,8 +40,9 @@ namespace Comformation.CodeCommit.Repository
             /// <summary>
             /// Code
             /// Information about code to be committed to a repository after it is created in an AWS CloudFormation
-            /// stack.
-            /// Note You can only use this property to add code when creating a repository with a CloudFormation
+            /// stack. Information about code is only used in resource creation. Updates to a stack will not reflect
+            /// changes made to code properties after initial resource creation.
+            /// Note You can only use this property to add code when creating a repository with a AWS CloudFormation
             /// template at creation time. This property cannot be used for updating code to an existing repository.
             /// Required: No
             /// Type: Code

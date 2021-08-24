@@ -14,7 +14,7 @@ namespace Comformation.EC2.SecurityGroupEgress
         {
             /// <summary>
             /// CidrIp
-            /// The IPv4 ranges.
+            /// The IPv4 address range, in CIDR format.
             /// You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Required: No
@@ -25,7 +25,7 @@ namespace Comformation.EC2.SecurityGroupEgress
 
             /// <summary>
             /// CidrIpv6
-            /// The IPv6 ranges.
+            /// The IPv6 address range, in CIDR format.
             /// You must specify a destination security group (DestinationPrefixListId or
             /// DestinationSecurityGroupId) or a CIDR range (CidrIp or CidrIpv6).
             /// Required: No

@@ -39,6 +39,15 @@ namespace Comformation.MediaPackage.PackagingGroup
             /// </summary>
             public List<Tag> Tags { get; set; }
 
+            /// <summary>
+            /// EgressAccessLogs
+            /// The configuration parameters for egress access logging.
+            /// Required: No
+            /// Type: LogConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public LogConfiguration EgressAccessLogs { get; set; }
+
         }
 
         public string Type { get; } = "AWS::MediaPackage::PackagingGroup";

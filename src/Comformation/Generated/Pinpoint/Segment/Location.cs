@@ -14,7 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// GPSPoint
-        /// The GPS location and range for the segment.
+        /// The GPS point dimension for the segment.
         /// Required: No
         /// Type: GPSPoint
         /// Update requires: No interruption

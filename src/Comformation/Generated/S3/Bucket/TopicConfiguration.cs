@@ -15,7 +15,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Event
         /// The Amazon S3 bucket event about which to send notifications. For more information, see Supported
-        /// Event Types in the Amazon Simple Storage Service Developer Guide.
+        /// Event Types in the Amazon S3 User Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

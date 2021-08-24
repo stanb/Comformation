@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The IPv6 address.
         /// Required: Yes
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Ipv6Address")]
         public Union<string, IntrinsicFunction> Ipv6Address { get; set; }

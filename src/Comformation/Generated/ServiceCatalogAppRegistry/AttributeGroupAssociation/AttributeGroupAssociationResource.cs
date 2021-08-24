@@ -5,7 +5,8 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.ServiceCatalogAppRegistry.AttributeGroupAssociation
 {
     /// <summary>
-    /// Missing documentation http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroupassociation.html
+    /// AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroupassociation.html
     /// </summary>
     public class AttributeGroupAssociationResource : ResourceBase
     {
@@ -13,11 +14,20 @@ namespace Comformation.ServiceCatalogAppRegistry.AttributeGroupAssociation
         {
             /// <summary>
             /// Application
+            /// The name or ID of the application.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Application { get; set; }
 
             /// <summary>
             /// AttributeGroup
+            /// The name or ID of the attribute group that holds the attributes to describe the application.
+            /// For more information about using the Ref function, see Ref.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> AttributeGroup { get; set; }
 

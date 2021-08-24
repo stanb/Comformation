@@ -42,9 +42,9 @@ namespace Comformation.AppFlow.ConnectorProfile
             /// The type of connector, such as Salesforce, Amplitude, and so on.
             /// Required: Yes
             /// Type: String
-            /// Allowed values: Amplitude | Datadog | Dynatrace | EventBridge | Googleanalytics | Infornexus |
-            /// Marketo | Redshift | S3 | Salesforce | Servicenow | Singular | Slack | Snowflake | Trendmicro |
-            /// Upsolver | Veeva | Zendesk
+            /// Allowed values: Amplitude | CustomerProfiles | Datadog | Dynatrace | EventBridge | Googleanalytics |
+            /// Honeycode | Infornexus | LookoutMetrics | Marketo | Redshift | S3 | Salesforce | Servicenow |
+            /// Singular | Slack | Snowflake | Trendmicro | Upsolver | Veeva | Zendesk
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ConnectorType { get; set; }

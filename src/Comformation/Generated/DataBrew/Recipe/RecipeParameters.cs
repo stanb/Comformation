@@ -496,8 +496,8 @@ namespace Comformation.DataBrew.Recipe
 
         /// <summary>
         /// PatternOptions
-        /// For splitting by multiple delimiters: A JSON-encoded string that lists the patterns inte format. For
-        /// example: [{\&quot;pattern\&quot;:\&quot;1\&quot;,\&quot;includeInSplit\&quot;:true}]
+        /// For splitting by multiple delimiters: A JSON-encoded string that lists the patterns in the format.
+        /// For example: [{\&quot;pattern\&quot;:\&quot;1\&quot;,\&quot;includeInSplit\&quot;:true}]
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -1021,7 +1021,7 @@ namespace Comformation.DataBrew.Recipe
 
         /// <summary>
         /// Input
-        /// The input location to load the dataset from - Amazon S3 or Data Catalog.
+        /// The input location to load the dataset from - Amazon S3 or AWS Glue Data Catalog.
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption

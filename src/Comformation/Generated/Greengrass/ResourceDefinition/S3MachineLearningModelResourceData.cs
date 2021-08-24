@@ -15,7 +15,8 @@ namespace Comformation.Greengrass.ResourceDefinition
         /// <summary>
         /// OwnerSetting
         /// The owner setting for the downloaded machine learning resource. For more information, see 	 Access
-        /// Machine Learning Resources from Lambda 	 Functions in the AWS IoT Greengrass Developer Guide.
+        /// Machine Learning Resources from Lambda 	 Functions in the AWS IoT Greengrass Version 1 Developer
+        /// Guide.
         /// Required: No
         /// Type: ResourceDownloadOwnerSetting
         /// Update requires: Replacement

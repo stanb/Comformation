@@ -14,7 +14,8 @@ namespace Comformation.StepFunctions.StateMachine
         {
             /// <summary>
             /// DefinitionString
-            /// The Amazon States Language definition of the state machine. See Amazon States Language.
+            /// The Amazon States Language definition of the state machine. The state machine definition must be in
+            /// JSON. See Amazon States Language.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -80,7 +81,7 @@ namespace Comformation.StepFunctions.StateMachine
             /// <summary>
             /// DefinitionS3Location
             /// The name of the S3 bucket where the state machine definition is stored. The state machine definition
-            /// must be a JSON file.
+            /// must be a JSON or YAML file.
             /// Required: No
             /// Type: S3Location
             /// Update requires: No interruption

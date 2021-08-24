@@ -15,7 +15,7 @@ namespace Comformation.AppMesh.VirtualGateway
             /// <summary>
             /// VirtualGatewayName
             /// The name of the virtual gateway.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

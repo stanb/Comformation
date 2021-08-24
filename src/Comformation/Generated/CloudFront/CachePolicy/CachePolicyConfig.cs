@@ -14,7 +14,7 @@ namespace Comformation.CloudFront.CachePolicy
 
         /// <summary>
         /// Comment
-        /// A comment to describe the cache policy.
+        /// A comment to describe the cache policy. The comment cannot be longer than 128 			characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

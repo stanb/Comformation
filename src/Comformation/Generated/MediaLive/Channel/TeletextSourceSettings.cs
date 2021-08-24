@@ -13,6 +13,17 @@ namespace Comformation.MediaLive.Channel
     {
 
         /// <summary>
+        /// OutputRectangle
+        /// Settings to configure the caption rectangle for an output captions that will be created using this
+        /// Teletext source captions.
+        /// Required: No
+        /// Type: CaptionRectangle
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("OutputRectangle")]
+        public CaptionRectangle OutputRectangle { get; set; }
+
+        /// <summary>
         /// PageNumber
         /// Specifies the Teletext page number within the data stream from which to extract captions. The range
         /// is 0x100 (256) to 0x8FF (2303). This is unused for passthrough. It should be specified as a

@@ -67,6 +67,8 @@ namespace Comformation.S3.Bucket
         /// An object key name prefix that identifies the object or objects to which the rule applies. The
         /// maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty
         /// string.
+        /// Important Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see XML related object key constraints.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -80,7 +82,7 @@ namespace Comformation.S3.Bucket
         /// Amazon S3 will attempt to replicate objects according to all replication rules. However, if there
         /// are two or more rules with the same destination bucket, then objects will be replicated according to
         /// the rule with the highest priority. The higher the number, the higher the priority.
-        /// For more information, see Replication in the Amazon Simple Storage Service Developer Guide.
+        /// For more information, see Replication in the Amazon S3 User Guide.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

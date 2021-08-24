@@ -14,7 +14,7 @@ namespace Comformation.IoTAnalytics.Dataset
         {
             /// <summary>
             /// Actions
-            /// The DatasetAction objects that automatically create the data set contents.
+            /// The DatasetAction objects that automatically create the dataset contents.
             /// Required: Yes
             /// Type: List of Action
             /// Maximum: 1
@@ -23,13 +23,24 @@ namespace Comformation.IoTAnalytics.Dataset
             public List<Action> Actions { get; set; }
 
             /// <summary>
+            /// LateDataRules
+            /// A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
+            /// lateDataRules, the dataset must use a DeltaTimer filter.
+            /// Required: No
+            /// Type: List of LateDataRule
+            /// Maximum: 1
+            /// Update requires: No interruption
+            /// </summary>
+            public List<LateDataRule> LateDataRules { get; set; }
+
+            /// <summary>
             /// DatasetName
-            /// The name of the data set.
+            /// The name of the dataset.
             /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
-            /// Pattern: ^[a-zA-Z0-9_]+$
+            /// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> DatasetName { get; set; }
@@ -46,7 +57,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
             /// <summary>
             /// Triggers
-            /// The DatasetTrigger objects that specify when the data set is automatically updated.
+            /// The DatasetTrigger objects that specify when the dataset is automatically updated.
             /// Required: No
             /// Type: List of Trigger
             /// Maximum: 5
@@ -59,7 +70,7 @@ namespace Comformation.IoTAnalytics.Dataset
             /// Optional. How many versions of dataset contents are kept. If not specified or set to null, only the
             /// latest version plus the latest succeeded version (if they are different) are kept for the time
             /// period specified by the retentionPeriod parameter. For more information, see Keeping Multiple
-            /// Versions of AWS IoT Analytics Data Sets in the AWS IoT Analytics User Guide.
+            /// Versions of AWS IoT Analytics datasets in the AWS IoT Analytics User Guide.
             /// Required: No
             /// Type: VersioningConfiguration
             /// Update requires: No interruption
@@ -68,7 +79,7 @@ namespace Comformation.IoTAnalytics.Dataset
 
             /// <summary>
             /// RetentionPeriod
-            /// Optional. How long, in days, message data is kept for the data set.
+            /// Optional. How long, in days, message data is kept for the dataset.
             /// Required: No
             /// Type: RetentionPeriod
             /// Update requires: No interruption

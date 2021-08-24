@@ -39,8 +39,7 @@ namespace Comformation.Cognito.UserPoolResourceServer
 
             /// <summary>
             /// Scopes
-            /// The scopes. Each scope is a map, where the keys are name and the values are description for the
-            /// scope.
+            /// A list of scopes. Each scope is a map with keys ScopeName and ScopeDescription.
             /// Required: No
             /// Type: List of ResourceServerScopeType
             /// Maximum: 100

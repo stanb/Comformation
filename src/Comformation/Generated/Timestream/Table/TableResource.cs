@@ -15,11 +15,9 @@ namespace Comformation.Timestream.Table
             /// <summary>
             /// DatabaseName
             /// The name of the Timestream database that contains this table.
+            /// Length Constraints: Minimum length of 3 bytes. Maximum length of 256 bytes.
             /// Required: Yes
             /// Type: String
-            /// Minimum: 3
-            /// Maximum: 64
-            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> DatabaseName { get; set; }
@@ -27,11 +25,9 @@ namespace Comformation.Timestream.Table
             /// <summary>
             /// TableName
             /// The name of the Timestream table.
+            /// Length Constraints: Minimum length of 3 bytes. Maximum length of 256 bytes.
             /// Required: No
             /// Type: String
-            /// Minimum: 3
-            /// Maximum: 64
-            /// Pattern: [a-zA-Z0-9_. -]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> TableName { get; set; }
@@ -46,7 +42,7 @@ namespace Comformation.Timestream.Table
             /// specified.
             /// See the following examples:
             /// JSON
-            /// { &quot;Type&quot; : &quot;AWS::Timestream::Table&quot;, &quot;Properties&quot; : { &quot;DatabaseName&quot; : &quot;TestDatabase&quot;, &quot;TableName&quot; :
+            /// { &quot;Type&quot; : AWS::Timestream::Table&quot;, &quot;Properties&quot; : { &quot;DatabaseName&quot; : &quot;TestDatabase&quot;, &quot;TableName&quot; :
             /// &quot;TestTable&quot;, &quot;RetentionProperties&quot; : { &quot;MemoryStoreRetentionPeriodInHours&quot;: &quot;24&quot;,
             /// &quot;MagneticStoreRetentionPeriodInDays&quot;: &quot;7&quot; } } }
             /// YAML
@@ -79,5 +75,6 @@ namespace Comformation.Timestream.Table
     public static class TableAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
     }
 }

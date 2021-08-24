@@ -14,11 +14,11 @@ namespace Comformation.ACMPCA.CertificateAuthority
 
         /// <summary>
         /// CustomObjectIdentifier
-        /// 		 		
+        /// 		
         /// An object identifier (OID) specifying the AccessMethod. The OID must 			satisfy the regular
         /// expression shown below. For more information, see NIST&#39;s definition 			of Object Identifier
         /// 				(OID).
-        /// 		 	
+        /// 	
         /// Required: No
         /// Type: String
         /// Minimum: 0
@@ -32,7 +32,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// AccessMethodType
         /// 		
-        /// Specifies 			the AccessMethod.
+        /// Specifies the AccessMethod.
         /// 	
         /// Required: No
         /// Type: String

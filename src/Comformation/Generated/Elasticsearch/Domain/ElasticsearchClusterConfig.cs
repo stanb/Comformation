@@ -13,6 +13,16 @@ namespace Comformation.Elasticsearch.Domain
     {
 
         /// <summary>
+        /// ColdStorageOptions
+        /// Specifies cold storage options for the domain.
+        /// Required: No
+        /// Type: ColdStorageOptions
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ColdStorageOptions")]
+        public ColdStorageOptions ColdStorageOptions { get; set; }
+
+        /// <summary>
         /// DedicatedMasterCount
         /// The number of instances to use for the master node. If you specify this property, you must specify
         /// true for the DedicatedMasterEnabled property.

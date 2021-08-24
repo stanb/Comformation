@@ -14,8 +14,8 @@ namespace Comformation
 
         /// <summary>
         /// Key
-        /// The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and
-        /// cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode
+        /// The key name of the tag. You can specify a value that&#39;s 1 to 128 Unicode characters in length and
+        /// can&#39;t be prefixed with aws:. You can use any of the following characters: the set of Unicode
         /// letters, digits, whitespace, _, . , /, =, +, and -.
         /// Required: Yes
         /// Type: String
@@ -25,7 +25,7 @@ namespace Comformation
 
         /// <summary>
         /// Value
-        /// The value for the tag. You can specify a value that is 0 to 256 characters in length.
+        /// The value for the tag. You can specify a value that&#39;s 1 to 256 characters in length.
         /// Required: Yes
         /// Type: String
         /// </summary>

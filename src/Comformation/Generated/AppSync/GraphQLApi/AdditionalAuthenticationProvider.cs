@@ -23,6 +23,16 @@ namespace Comformation.AppSync.GraphQLApi
         public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
 
         /// <summary>
+        /// LambdaAuthorizerConfig
+        /// Configuration for AWS Lambda function authorization.
+        /// Required: No
+        /// Type: LambdaAuthorizerConfig
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("LambdaAuthorizerConfig")]
+        public LambdaAuthorizerConfig LambdaAuthorizerConfig { get; set; }
+
+        /// <summary>
         /// UserPoolConfig
         /// The Amazon Cognito user pool configuration.
         /// Required: No
@@ -34,8 +44,9 @@ namespace Comformation.AppSync.GraphQLApi
 
         /// <summary>
         /// AuthenticationType
-        /// The authentication type for API key, AWS IAM, OIDC, or Amazon Cognito user pools.
-        /// Valid Values: API_KEY | AWS_IAM | OPENID_CONNECT | AMAZON_COGNITO_USER_POOLS
+        /// The authentication type for API key, AWS Identity and Access Management, OIDC, Amazon Cognito user
+        /// pools, or AWS Lambda.
+        /// Valid Values: API_KEY | AWS_IAM | OPENID_CONNECT | AMAZON_COGNITO_USER_POOLS | AWS_LAMBDA
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

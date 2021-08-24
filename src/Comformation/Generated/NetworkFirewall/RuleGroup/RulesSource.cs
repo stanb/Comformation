@@ -40,10 +40,12 @@ namespace Comformation.NetworkFirewall.RuleGroup
 
         /// <summary>
         /// StatefulRules
-        /// The 5-tuple stateful inspection criteria. This contains an array of individual 5-tuple stateful
-        /// rules to be used together in a stateful rule group.
+        /// An array of individual stateful rules inspection criteria to be used together in a stateful rule
+        /// group. Use this option to specify simple Suricata rules with protocol, source and destination,
+        /// ports, direction, and rule options. For information about the Suricata Rules format, see Rules
+        /// Format.
         /// Required: No
-        /// Type: StatefulRules
+        /// Type: List of StatefulRule
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StatefulRules")]

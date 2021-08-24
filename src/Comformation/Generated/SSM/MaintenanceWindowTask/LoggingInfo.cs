@@ -26,7 +26,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// Region
-        /// The Region where the S3 bucket is located.
+        /// The AWS Region where the S3 bucket is located.
         /// Required: Yes
         /// Type: String
         /// Minimum: 3

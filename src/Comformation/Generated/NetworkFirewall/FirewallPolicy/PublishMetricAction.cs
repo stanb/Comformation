@@ -15,7 +15,7 @@ namespace Comformation.NetworkFirewall.FirewallPolicy
         /// <summary>
         /// Dimensions
         /// Required: Yes
-        /// Type: Dimensions
+        /// Type: List of Dimension
         /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>

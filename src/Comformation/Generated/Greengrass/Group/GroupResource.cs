@@ -31,7 +31,7 @@ namespace Comformation.Greengrass.Group
             /// <summary>
             /// RoleArn
             /// The Amazon Resource Name (ARN) of the IAM role attached to the group. This role contains the
-            /// permissions that 				Lambda functions and connectors use to interact with other AWS services.
+            /// permissions that Lambda functions and connectors use to interact with other AWS services.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -43,7 +43,7 @@ namespace Comformation.Greengrass.Group
             /// Application-specific metadata to attach to the group. 		 You can use tags in IAM policies to control
             /// access to AWS IoT Greengrass resources. 		 You can also use tags to categorize your resources. For
             /// more information, see 		 Tagging Your AWS IoT Greengrass 		 Resources in the AWS IoT Greengrass
-            /// Developer Guide.
+            /// Version 1 Developer Guide.
             /// 		
             /// This Json property type is processed as a map of key-value pairs. It uses the following format,
             /// which 		 is different from most Tags implementations in AWS CloudFormation templates.

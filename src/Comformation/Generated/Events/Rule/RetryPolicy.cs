@@ -14,11 +14,11 @@ namespace Comformation.Events.Rule
 
         /// <summary>
         /// MaximumEventAgeInSeconds
-        /// The maximum amount of time, in seconds, to continue to make retry attempts. Retry attempts continue
-        /// until either the MaximumRetryAttempts are tried or until the duration of the
-        /// MaximumEventAgeInSeconds is met.
+        /// The maximum amount of time, in seconds, to continue to make retry attempts.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 60
+        /// Maximum: 86400
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaximumEventAgeInSeconds")]
@@ -31,6 +31,8 @@ namespace Comformation.Events.Rule
         /// is met.
         /// Required: No
         /// Type: Integer
+        /// Minimum: 0
+        /// Maximum: 185
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaximumRetryAttempts")]

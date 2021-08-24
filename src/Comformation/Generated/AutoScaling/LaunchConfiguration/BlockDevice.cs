@@ -14,8 +14,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// DeleteOnTermination
-        /// Indicates whether to delete the volume when the instance is terminated. For Amazon EC2 Auto Scaling,
-        /// the default value is true.
+        /// Indicates whether the volume is deleted on instance termination. For Amazon EC2 Auto Scaling, the
+        /// default value is true.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -25,8 +25,8 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// Encrypted
-        /// Specifies whether the EBS volume is encrypted. Encrypted EBS volumes can only be attached to
-        /// instances that support Amazon EBS encryption. For more information, see Supported instance types. If
+        /// Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to
+        /// instances that support Amazon EBS encryption. For more information, see Supported Instance Types. If
         /// your AMI uses encrypted volumes, you can also only launch it on supported instance types.
         /// Note If you are creating a volume from a snapshot, you cannot specify an encryption value. Volumes
         /// that are created from encrypted snapshots are automatically encrypted, and volumes that are created
@@ -45,16 +45,18 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// Iops
-        /// The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of
-        /// IOPS to volume size (in GiB) is 50:1, so for 5,000 provisioned IOPS, you need at least 100 GiB
-        /// storage on the volume. For more information, see Amazon EBS volume types in the Amazon EC2 User
-        /// Guide for Linux Instances.
-        /// If the volume type is io1, this property is required. (Not used with standard, gp2, st1, or sc1
-        /// volumes. )
+        /// The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For gp3
+        /// and io1 volumes, this represents the number of IOPS that are provisioned for the volume. For gp2
+        /// volumes, this represents the baseline performance of the volume and the rate at which the volume
+        /// accumulates I/O credits for bursting.
+        /// The following are the supported values for each volume type:
+        /// gp3: 3,000-16,000 IOPS io1: 100-64,000 IOPS
+        /// For io1 volumes, we guarantee 64,000 IOPS only for Instances built on the Nitro System. Other
+        /// instance families guarantee performance up to 32,000 IOPS.
+        /// Iops is supported when the volume type is gp3 or io1 and required only when the volume type is io1.
+        /// (Not used with standard, gp2, st1, or sc1 volumes. )
         /// Required: Conditional
         /// Type: Integer
-        /// Minimum: 100
-        /// Maximum: 20000
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Iops")]
@@ -72,13 +74,23 @@ namespace Comformation.AutoScaling.LaunchConfiguration
         public Union<string, IntrinsicFunction> SnapshotId { get; set; }
 
         /// <summary>
+        /// Throughput
+        /// The throughput (MiBps) to provision for a gp3 volume.
+        /// Required: No
+        /// Type: Integer
+        /// Minimum: 125
+        /// Maximum: 1000
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Throughput")]
+        public Union<int, IntrinsicFunction> Throughput { get; set; }
+
+        /// <summary>
         /// VolumeSize
-        /// The volume size, in Gibibytes (GiB). This can be a number from 1-1,024 for standard, 4-16,384 for
-        /// io1, 1-16,384 for gp2, and 500-16,384 for st1 and sc1.
-        /// If you create a volume from a snapshot and you don&#39;t specify a volume size, the default is the
-        /// snapshot size.
-        /// You must specify either a VolumeSize or a SnapshotId. If you specify both SnapshotId and VolumeSize,
-        /// VolumeSize must be equal or greater than the size of the snapshot.
+        /// The volume size, in GiBs. The following are the supported volumes sizes for each volume type:
+        /// gp2 and gp3: 1-16,384 io1: 4-16,384 st1 and sc1: 125-16,384 standard: 1-1,024
+        /// You must specify either a SnapshotId or a VolumeSize. If you specify both SnapshotId and VolumeSize,
+        /// the volume size must be equal or greater than the size of the snapshot.
         /// Required: Conditional
         /// Type: Integer
         /// Minimum: 1
@@ -90,10 +102,9 @@ namespace Comformation.AutoScaling.LaunchConfiguration
 
         /// <summary>
         /// VolumeType
-        /// The volume type, which can be standard for Magnetic, io1 for Provisioned IOPS SSD, gp2 for General
-        /// Purpose SSD, st1 for Throughput Optimized HDD, or sc1 for Cold HDD. For more information, see Amazon
-        /// EBS volume types in the Amazon EC2 User Guide for Linux Instances.
-        /// Valid values: standard | io1 | gp2 | st1 | sc1
+        /// The volume type. For more information, see Amazon EBS Volume Types in the Amazon EC2 User Guide for
+        /// Linux Instances.
+        /// Valid Values: standard | io1 | gp2 | st1 | sc1 | gp3
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

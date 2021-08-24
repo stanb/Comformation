@@ -14,17 +14,27 @@ namespace Comformation.EC2.NatGateway
         {
             /// <summary>
             /// AllocationId
-            /// The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP
-            /// address is associated with another resource, you must first disassociate it.
-            /// Required: Yes
+            /// [Public NAT gateway only] The allocation ID of the Elastic IP address that&#39;s associated with the NAT
+            /// gateway.
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> AllocationId { get; set; }
 
             /// <summary>
+            /// ConnectivityType
+            /// Indicates whether the NAT gateway supports public or private connectivity.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: private | public
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ConnectivityType { get; set; }
+
+            /// <summary>
             /// SubnetId
-            /// The public subnet in which to create the NAT gateway.
+            /// The ID of the subnet in which the NAT gateway is located.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -33,7 +43,9 @@ namespace Comformation.EC2.NatGateway
 
             /// <summary>
             /// Tags
-            /// The tags (key-value pairs) to associate with this resource.
+            /// 		
+            /// The tags for the NAT gateway.
+            /// 	
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

@@ -47,8 +47,8 @@ namespace Comformation.SNS.Topic
 
             /// <summary>
             /// KmsMasterKeyId
-            /// The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
-            /// information, see Key Terms. For more examples, see KeyId in the AWS Key Management Service API
+            /// The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+            /// information, see Key terms. For more examples, see KeyId in the AWS Key Management Service API
             /// Reference.
             /// This property applies only to server-side-encryption.
             /// Required: No
@@ -59,7 +59,7 @@ namespace Comformation.SNS.Topic
 
             /// <summary>
             /// Subscription
-            /// The SNS subscriptions (endpoints) for this topic.
+            /// The Amazon SNS subscriptions (endpoints) for this topic.
             /// Required: No
             /// Type: List of Subscription
             /// Update requires: No interruption
@@ -83,7 +83,7 @@ namespace Comformation.SNS.Topic
             /// ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
             /// FIFO topic names must end with . fifo.
             /// If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for
-            /// the topic name. For more information, see Name Type.
+            /// the topic name. For more information, see Name type.
             /// Important If you specify a name, you can&#39;t perform updates that require replacement of this
             /// resource. You can perform updates that require no or some interruption. If you must replace the
             /// resource, specify a new name.

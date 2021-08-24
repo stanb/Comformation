@@ -21,6 +21,16 @@ namespace Comformation.ElastiCache.SecurityGroup
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }
 
+            /// <summary>
+            /// Tags
+            /// A tag that can be added to an ElastiCache security group. Tags are composed of a Key/Value pair. You
+            /// can use tags to categorize and track all your security groups. A tag with a null Value is permitted.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+
         }
 
         public string Type { get; } = "AWS::ElastiCache::SecurityGroup";

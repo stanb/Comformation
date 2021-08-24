@@ -47,6 +47,15 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             public Union<bool, IntrinsicFunction> CapacityRebalance { get; set; }
 
             /// <summary>
+            /// Context
+            /// Reserved.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Context { get; set; }
+
+            /// <summary>
             /// Cooldown
             /// The amount of time, in seconds, after a scaling activity completes before another scaling activity
             /// can start. The default value is 300. This setting applies when using simple scaling policies, but
@@ -311,7 +320,7 @@ namespace Comformation.AutoScaling.AutoScalingGroup
             /// template, you must use the DependsOn attribute to declare a dependency on the VPC-gateway
             /// attachment.
             /// Note When you update VPCZoneIdentifier, this retains the same Auto Scaling group and replaces old
-            /// instances with new ones, according to the specified subnets. You can optionally specify how AWS
+            /// instances with new ones, according to the specified subnets. You can optionally specify how
             /// CloudFormation handles these updates by using an UpdatePolicy attribute.
             /// Required: Conditional
             /// Type: List of String

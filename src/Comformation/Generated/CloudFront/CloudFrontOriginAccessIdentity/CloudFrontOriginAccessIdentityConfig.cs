@@ -15,7 +15,8 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
         /// <summary>
         /// Comment
         /// 		
-        /// Any comments you want to include about the origin access identity.
+        /// A comment to describe the origin access identity. The comment cannot be longer 			than 128
+        /// characters.
         /// 	
         /// Required: Yes
         /// Type: String

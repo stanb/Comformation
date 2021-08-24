@@ -24,7 +24,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// DocumentVersion
-        /// The version of an Automation document to use during task execution.
+        /// The version of an Automation runbook to use during task execution.
         /// Required: No
         /// Type: String
         /// Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)

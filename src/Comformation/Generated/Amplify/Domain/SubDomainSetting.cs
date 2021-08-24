@@ -15,6 +15,8 @@ namespace Comformation.Amplify.Domain
         /// <summary>
         /// Prefix
         /// The prefix setting for the subdomain.
+        /// Length Constraints: Maximum length of 255.
+        /// Pattern: (?s). *
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -25,6 +27,8 @@ namespace Comformation.Amplify.Domain
         /// <summary>
         /// BranchName
         /// The branch name setting for the subdomain.
+        /// Length Constraints: Minimum length of 1. Maximum length of 255.
+        /// Pattern: (?s). +
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

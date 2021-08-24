@@ -15,7 +15,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// KeyUsage
         /// 		
-        /// Indicates the purpose of 			the certificate and of the key contained in the certificate.
+        /// Indicates the purpose of the certificate and of the key contained in the 			certificate.
         /// 	
         /// Required: No
         /// Type: KeyUsage
@@ -27,15 +27,15 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// SubjectInformationAccess
         /// 		
-        /// For CA 			certificates, provides a path to additional information pertaining to the CA, such as
-        /// 			revocation and policy. For more information, see Subject Information 				Access in RFC 5280.
+        /// For CA certificates, provides a path to additional information pertaining to the CA, 			such as
+        /// revocation and policy. For more information, see Subject Information 				Access in RFC 5280.
         /// 	
         /// Required: No
-        /// Type: SubjectInformationAccess
+        /// Type: List of AccessDescription
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SubjectInformationAccess")]
-        public SubjectInformationAccess SubjectInformationAccess { get; set; }
+        public List<AccessDescription> SubjectInformationAccess { get; set; }
 
     }
 }

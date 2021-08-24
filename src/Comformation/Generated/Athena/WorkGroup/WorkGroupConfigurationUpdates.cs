@@ -15,6 +15,7 @@ namespace Comformation.Athena.WorkGroup
         /// <summary>
         /// BytesScannedCutoffPerQuery
         /// The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.
+        /// No default is defined.
         /// Note This property currently supports integer types. Support for long values is planned.
         /// Required: No
         /// Type: Integer
@@ -79,6 +80,19 @@ namespace Comformation.Athena.WorkGroup
         /// </summary>
         [JsonProperty("RemoveBytesScannedCutoffPerQuery")]
         public Union<bool, IntrinsicFunction> RemoveBytesScannedCutoffPerQuery { get; set; }
+
+        /// <summary>
+        /// EngineVersion
+        /// The engine version requested when a workgroup is updated. After the update, all queries on the
+        /// workgroup run on the requested engine version. If no value was previously set, the default is Auto.
+        /// Queries on the AmazonAthenaPreviewFunctionality workgroup run on the preview engine regardless of
+        /// this setting.
+        /// Required: No
+        /// Type: EngineVersion
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("EngineVersion")]
+        public EngineVersion EngineVersion { get; set; }
 
     }
 }

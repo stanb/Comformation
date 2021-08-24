@@ -14,7 +14,7 @@ namespace Comformation.IoT.TopicRuleDestination
 
         /// <summary>
         /// SubnetIds
-        /// The ID of the subnet.
+        /// The subnet IDs of the VPC destination.
         /// Required: No
         /// Type: List of String
         /// Update requires: Replacement
@@ -24,7 +24,7 @@ namespace Comformation.IoT.TopicRuleDestination
 
         /// <summary>
         /// SecurityGroups
-        /// The security groups associated with the VPC.
+        /// The security groups of the VPC destination.
         /// Required: No
         /// Type: List of String
         /// Update requires: Replacement
@@ -44,7 +44,7 @@ namespace Comformation.IoT.TopicRuleDestination
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) of the VPC.
+        /// The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).
         /// Required: No
         /// Type: String
         /// Update requires: Replacement

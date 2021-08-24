@@ -29,8 +29,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// CmkArn
         /// 		
-        /// The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS
-        /// 			encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.
+        /// The Amazon Resource Name (ARN) of the AWS KMS key to use for EBS encryption. If 			this parameter is
+        /// not specified, the default KMS key for the account is used.
         /// 	
         /// Required: No
         /// Type: String

@@ -41,7 +41,7 @@ namespace Comformation.Pinpoint.ADMChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the ADM channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that the ADM channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

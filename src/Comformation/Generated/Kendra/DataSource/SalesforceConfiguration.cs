@@ -27,7 +27,7 @@ namespace Comformation.Kendra.DataSource
 
         /// <summary>
         /// SecretArn
-        /// The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs
+        /// The Amazon Resource Name (ARN) of an AWS Secrets Managersecret that contains the key/value pairs
         /// required to connect to your Salesforce instance. The secret must contain a JSON structure with the
         /// following keys:
         /// authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token.
@@ -51,16 +51,16 @@ namespace Comformation.Kendra.DataSource
         /// StandardObjectConfigurations
         /// Specifies the Salesforce standard objects that Amazon Kendra indexes.
         /// Required: No
-        /// Type: SalesforceStandardObjectConfigurationList
+        /// Type: List of SalesforceStandardObjectConfiguration
         /// Maximum: 17
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StandardObjectConfigurations")]
-        public SalesforceStandardObjectConfigurationList StandardObjectConfigurations { get; set; }
+        public List<SalesforceStandardObjectConfiguration> StandardObjectConfigurations { get; set; }
 
         /// <summary>
         /// KnowledgeArticleConfiguration
-        /// Specifies configuration information for the knowlege article types that Amazon Kendra indexes.
+        /// Specifies configuration information for the knowledge article types that Amazon Kendra indexes.
         /// Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or
         /// the custom fields of custom knowledge articles, but not both.
         /// Required: No
@@ -107,12 +107,12 @@ namespace Comformation.Kendra.DataSource
         /// inclusion pattern and an exclusion pattern, the document is not included in the index.
         /// The regex is applied to the name of the attached file.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeAttachmentFilePatterns")]
-        public DataSourceInclusionsExclusionsStrings IncludeAttachmentFilePatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> IncludeAttachmentFilePatterns { get; set; }
 
         /// <summary>
         /// ExcludeAttachmentFilePatterns
@@ -121,12 +121,12 @@ namespace Comformation.Kendra.DataSource
         /// an exclusion pattern and an inclusion pattern, the document is not included in the index.
         /// The regex is applied to the name of the attached file.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcludeAttachmentFilePatterns")]
-        public DataSourceInclusionsExclusionsStrings ExcludeAttachmentFilePatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExcludeAttachmentFilePatterns { get; set; }
 
     }
 }

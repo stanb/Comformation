@@ -15,7 +15,7 @@ namespace Comformation.CodeDeploy.DeploymentGroup
         /// <summary>
         /// DeploymentOption
         /// Indicates whether to route deployment traffic behind a load balancer.
-        /// Note An EC2 Application Load Balancer or Network Load Balancer is required for an Amazon ECS
+        /// Note An Amazon EC2 Application Load Balancer or Network Load Balancer is required for an Amazon ECS
         /// deployment.
         /// Required: No
         /// Type: String

@@ -13,9 +13,22 @@ namespace Comformation.Transfer.Server
     {
 
         /// <summary>
+        /// DirectoryId
+        /// The identifier of the AWSDirectory Service directory that you want to stop sharing.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 12
+        /// Maximum: 12
+        /// Pattern: ^d-[0-9a-f]{10}$
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DirectoryId")]
+        public Union<string, IntrinsicFunction> DirectoryId { get; set; }
+
+        /// <summary>
         /// InvocationRole
         /// Provides the type of InvocationRole used to authenticate the user account.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Minimum: 20
         /// Maximum: 2048
@@ -28,7 +41,7 @@ namespace Comformation.Transfer.Server
         /// <summary>
         /// Url
         /// Provides the location of the service endpoint used to authenticate users.
-        /// Required: Yes
+        /// Required: No
         /// Type: String
         /// Maximum: 255
         /// Update requires: No interruption

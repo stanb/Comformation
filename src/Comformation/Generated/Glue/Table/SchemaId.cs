@@ -14,6 +14,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// RegistryName
+        /// 	
         /// The name of the schema registry that contains the schema.
         /// Required: No
         /// Type: String
@@ -24,6 +25,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// SchemaName
+        /// 	
         /// The name of the schema. One of SchemaArn or SchemaName has to be provided.
         /// Required: No
         /// Type: String
@@ -34,6 +36,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// SchemaArn
+        /// 	
         /// The Amazon Resource Name (ARN) of the schema. One of SchemaArn or SchemaName has to be provided.
         /// Required: No
         /// Type: String

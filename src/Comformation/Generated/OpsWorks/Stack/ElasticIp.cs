@@ -24,7 +24,7 @@ namespace Comformation.OpsWorks.Stack
 
         /// <summary>
         /// Name
-        /// The name.
+        /// The name, which can be a maximum of 32 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

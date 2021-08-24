@@ -28,8 +28,8 @@ namespace Comformation.DLM.LifecyclePolicy
         /// <summary>
         /// SnapshotOwner
         /// 		
-        /// The IDs of the AWS accounts that can trigger policy by sharing snapshots with your account. The
-        /// 			policy only runs if one of the specified AWS accounts shares a snapshot with your account.
+        /// The IDs of the AWS accounts that can trigger policy by sharing snapshots with your account. 			The
+        /// policy only runs if one of the specified AWS accounts shares a snapshot with your account.
         /// 	
         /// Required: Yes
         /// Type: List of String

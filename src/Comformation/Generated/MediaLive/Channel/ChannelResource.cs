@@ -60,8 +60,17 @@ namespace Comformation.MediaLive.Channel
             public List<OutputDestination> Destinations { get; set; }
 
             /// <summary>
+            /// Vpc
+            /// Settings to enable VPC mode in the channel, so that the endpoints for all outputs are in your VPC.
+            /// Required: No
+            /// Type: VpcOutputSettings
+            /// Update requires: Replacement
+            /// </summary>
+            public VpcOutputSettings Vpc { get; set; }
+
+            /// <summary>
             /// CdiInputSpecification
-            /// Specification of CDI inputs for this channel
+            /// Specification of CDI inputs for this channel.
             /// Required: No
             /// Type: CdiInputSpecification
             /// Update requires: No interruption

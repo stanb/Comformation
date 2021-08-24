@@ -14,9 +14,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// Ec2TagSetList
-        /// The EC2 tags that are already applied to EC2 instances that you want to include in the deployment
-        /// group. CodeDeploy includes all EC2 instances identified by any of the tags you specify in this
-        /// deployment group.
+        /// The Amazon EC2 tags that are already applied to Amazon EC2 instances that you want to include in the
+        /// deployment group. CodeDeploy includes all Amazon EC2 instances identified by any of the tags you
+        /// specify in this deployment group.
         /// Duplicates are not allowed.
         /// Required: No
         /// Type: List of EC2TagSetListObject

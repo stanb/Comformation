@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The ID of the launch template. If you specify the template ID, you can&#39;t specify the template name.
         /// Required: Conditional
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateId")]
         public Union<string, IntrinsicFunction> LaunchTemplateId { get; set; }
@@ -32,7 +32,7 @@ namespace Comformation.EC2.SpotFleet
         /// Minimum: 3
         /// Maximum: 128
         /// Pattern: [a-zA-Z0-9\(\)\. \-/_]+
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("LaunchTemplateName")]
         public Union<string, IntrinsicFunction> LaunchTemplateName { get; set; }
@@ -45,7 +45,7 @@ namespace Comformation.EC2.SpotFleet
         /// [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
         /// Required: Yes
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Version")]
         public Union<string, IntrinsicFunction> Version { get; set; }

@@ -19,15 +19,15 @@ namespace Comformation.ECS.CapacityProvider
             /// 	
             /// Required: Yes
             /// Type: AutoScalingGroupProvider
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public AutoScalingGroupProvider AutoScalingGroupProvider { get; set; }
 
             /// <summary>
             /// Name
-            /// 		
-            /// The name of the capacity provider.
-            /// 	
+            /// The name of the capacity provider. If a name is specified, it cannot start with aws, ecs, or
+            /// fargate. If no name is specified, a default name in the CFNStackName-CFNResourceName-RandomString
+            /// format is used.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

@@ -15,7 +15,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Event
         /// The Amazon S3 bucket event about which you want to publish messages to Amazon SQS. For more
-        /// information, see Supported Event Types in the Amazon Simple Storage Service Developer Guide.
+        /// information, see Supported Event Types in the Amazon S3 User Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

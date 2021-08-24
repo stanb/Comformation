@@ -13,15 +13,6 @@ namespace Comformation.MediaPackage.Asset
         public class AssetProperties
         {
             /// <summary>
-            /// EgressEndpoints
-            /// List of playback endpoints that are available for this asset.
-            /// Required: No
-            /// Type: List of EgressEndpoint
-            /// Update requires: No interruption
-            /// </summary>
-            public List<EgressEndpoint> EgressEndpoints { get; set; }
-
-            /// <summary>
             /// Id
             /// Unique identifier that you assign to the asset.
             /// Required: Yes
@@ -88,5 +79,6 @@ namespace Comformation.MediaPackage.Asset
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CreatedAt = new ResourceAttribute<Union<string, IntrinsicFunction>>("CreatedAt");
+        public static readonly ResourceAttribute<List<EgressEndpoint>> EgressEndpoints = new ResourceAttribute<List<EgressEndpoint>>("EgressEndpoints");
     }
 }

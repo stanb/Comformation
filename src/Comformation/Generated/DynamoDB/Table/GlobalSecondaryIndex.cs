@@ -13,6 +13,17 @@ namespace Comformation.DynamoDB.Table
     {
 
         /// <summary>
+        /// ContributorInsightsSpecification
+        /// The settings used to enable or disable CloudWatch Contributor Insights for the specified global
+        /// secondary index.
+        /// Required: No
+        /// Type: ContributorInsightsSpecification
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ContributorInsightsSpecification")]
+        public ContributorInsightsSpecification ContributorInsightsSpecification { get; set; }
+
+        /// <summary>
         /// IndexName
         /// The name of the global secondary index. The name must be unique among all other indexes on this
         /// table.

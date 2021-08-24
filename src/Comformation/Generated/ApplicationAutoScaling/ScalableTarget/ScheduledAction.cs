@@ -14,7 +14,7 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
         /// <summary>
         /// EndTime
-        /// The date and time for the recurring schedule to end.
+        /// The date and time that the action is scheduled to end, in UTC.
         /// Required: No
         /// Type: Timestamp
         /// Update requires: No interruption
@@ -40,11 +40,14 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
         /// The schedule for this action. The following formats are supported:
         /// At expressions - &quot;at(yyyy-mm-ddThh:mm:ss)&quot; Rate expressions - &quot;rate(value unit)&quot; Cron expressions -
         /// &quot;cron(fields)&quot;
-        /// At expressions are useful for one-time schedules. Specify the time in UTC.
+        /// At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions
+        /// that run periodically at a specified date and time, and rate expressions are useful for scheduled
+        /// actions that run at a regular interval.
+        /// At and cron expressions use Universal Coordinated Time (UTC) by default.
+        /// The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month]
+        /// [Month] [Day_of_Week] [Year].
         /// For rate expressions, value is a positive integer and unit is minute | minutes | hour | hours | day
         /// | days.
-        /// For more information about cron expressions, see Cron expressions in the Amazon CloudWatch Events
-        /// User Guide.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -71,13 +74,27 @@ namespace Comformation.ApplicationAutoScaling.ScalableTarget
 
         /// <summary>
         /// StartTime
-        /// The date and time that the action is scheduled to start.
+        /// The date and time that the action is scheduled to begin, in UTC.
         /// Required: No
         /// Type: Timestamp
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("StartTime")]
         public Union<string, IntrinsicFunction> StartTime { get; set; }
+
+        /// <summary>
+        /// Timezone
+        /// The time zone used when referring to the date and time of a scheduled action, when the scheduled
+        /// action uses an at or cron expression.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1600
+        /// Pattern: [\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Timezone")]
+        public Union<string, IntrinsicFunction> Timezone { get; set; }
 
     }
 }

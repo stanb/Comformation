@@ -14,9 +14,7 @@ namespace Comformation.SES.ConfigurationSet
         {
             /// <summary>
             /// Name
-            /// The name of the configuration set. The name must:
-            /// Only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-). Contain 64
-            /// characters or fewer.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement

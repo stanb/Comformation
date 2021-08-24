@@ -42,6 +42,15 @@ namespace Comformation.CE.CostCategory
             /// </summary>
             public Union<string, IntrinsicFunction> Rules { get; set; }
 
+            /// <summary>
+            /// DefaultValue
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> DefaultValue { get; set; }
+
         }
 
         public string Type { get; } = "AWS::CE::CostCategory";

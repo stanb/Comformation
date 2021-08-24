@@ -15,10 +15,10 @@ namespace Comformation.GuardDuty.Member
             /// <summary>
             /// Status
             /// You can use the Status property to update the status of the relationship between the member account
-            /// and its master account. Valid values are Created and Invited when using an AWS::GuardDuty::Member
-            /// resource. If the value for this property is not provided or set to Created, a member account is
-            /// created but not invited. If the value of this property is set to Invited, a member account is
-            /// created and invited.
+            /// and its administrator account. Valid values are Created and Invited when using an
+            /// AWS::GuardDuty::Member resource. If the value for this property is not provided or set to Created, a
+            /// member account is created but not invited. If the value of this property is set to Invited, a member
+            /// account is created and invited.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

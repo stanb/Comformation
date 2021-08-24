@@ -24,7 +24,7 @@ namespace Comformation.KinesisAnalyticsV2.ApplicationOutput
 
         /// <summary>
         /// LambdaOutput
-        /// Identifies an AWS Lambda function as the destination.
+        /// Identifies an Amazon Lambda function as the destination.
         /// Required: No
         /// Type: LambdaOutput
         /// Update requires: No interruption

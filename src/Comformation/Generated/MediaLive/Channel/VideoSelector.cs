@@ -13,6 +13,16 @@ namespace Comformation.MediaLive.Channel
     {
 
         /// <summary>
+        /// ColorSpaceSettings
+        /// Settings to configure color space settings in the incoming video.
+        /// Required: No
+        /// Type: VideoSelectorColorSpaceSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ColorSpaceSettings")]
+        public VideoSelectorColorSpaceSettings ColorSpaceSettings { get; set; }
+
+        /// <summary>
         /// SelectorSettings
         /// Information about the video to select from the content.
         /// Required: No

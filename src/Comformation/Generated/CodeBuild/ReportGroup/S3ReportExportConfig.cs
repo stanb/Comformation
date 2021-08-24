@@ -36,8 +36,8 @@ namespace Comformation.CodeBuild.ReportGroup
         /// <summary>
         /// Packaging
         /// The type of build output artifact to create. Valid values include:
-        /// NONE: AWS CodeBuild creates the raw data in the output bucket. This is the default if packaging is
-        /// not specified. ZIP: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+        /// NONE: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not
+        /// specified. ZIP: CodeBuild creates a ZIP file with the raw data in the output bucket.
         /// Required: No
         /// Type: String
         /// Allowed values: NONE | ZIP
@@ -56,6 +56,18 @@ namespace Comformation.CodeBuild.ReportGroup
         /// </summary>
         [JsonProperty("EncryptionKey")]
         public Union<string, IntrinsicFunction> EncryptionKey { get; set; }
+
+        /// <summary>
+        /// BucketOwner
+        /// The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be
+        /// exported to an Amazon S3 bucket that is owned by an account other than the account running the
+        /// build.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BucketOwner")]
+        public Union<string, IntrinsicFunction> BucketOwner { get; set; }
 
         /// <summary>
         /// EncryptionDisabled

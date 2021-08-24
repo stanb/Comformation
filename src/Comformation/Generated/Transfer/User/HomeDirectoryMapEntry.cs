@@ -14,7 +14,7 @@ namespace Comformation.Transfer.User
 
         /// <summary>
         /// Entry
-        /// Represents an entry and a target for HomeDirectoryMappings.
+        /// Represents an entry for HomeDirectoryMappings.
         /// Required: Yes
         /// Type: String
         /// Maximum: 1024

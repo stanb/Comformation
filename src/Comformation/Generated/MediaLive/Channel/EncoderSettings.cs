@@ -34,7 +34,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// FeatureActivations
-        /// Feature Activations
+        /// Settings to enable specific features.
         /// Required: No
         /// Type: FeatureActivations
         /// Update requires: No interruption
@@ -73,6 +73,16 @@ namespace Comformation.MediaLive.Channel
         public AvailConfiguration AvailConfiguration { get; set; }
 
         /// <summary>
+        /// MotionGraphicsConfiguration
+        /// Settings to enable and configure the motion graphics overlay feature in the channel.
+        /// Required: No
+        /// Type: MotionGraphicsConfiguration
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("MotionGraphicsConfiguration")]
+        public MotionGraphicsConfiguration MotionGraphicsConfiguration { get; set; }
+
+        /// <summary>
         /// OutputGroups
         /// The settings for the output groups in the channel.
         /// Required: No
@@ -94,7 +104,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// NielsenConfiguration
-        /// Nielsen configuration settings.
+        /// The settings to configure Nielsen watermarks.
         /// Required: No
         /// Type: NielsenConfiguration
         /// Update requires: No interruption

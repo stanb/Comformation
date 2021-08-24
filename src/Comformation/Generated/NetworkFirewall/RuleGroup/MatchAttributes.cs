@@ -17,7 +17,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this
         /// matches with any source address.
         /// Required: No
-        /// Type: Addresses
+        /// Type: List of Address
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Sources")]
@@ -28,7 +28,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified,
         /// this matches with any destination address.
         /// Required: No
-        /// Type: Addresses
+        /// Type: List of Address
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Destinations")]
@@ -39,9 +39,9 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The source ports to inspect for. If not specified, this matches with any source port. This setting
         /// is only used for protocols 6 (TCP) and 17 (UDP).
         /// You can specify individual ports, for example 1994 and you can specify port ranges, for example
-        /// 1990-1994.
+        /// 1990:1994.
         /// Required: No
-        /// Type: PortRanges
+        /// Type: List of PortRange
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SourcePorts")]
@@ -52,9 +52,9 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The destination ports to inspect for. If not specified, this matches with any destination port. This
         /// setting is only used for protocols 6 (TCP) and 17 (UDP).
         /// You can specify individual ports, for example 1994 and you can specify port ranges, for example
-        /// 1990-1994.
+        /// 1990:1994.
         /// Required: No
-        /// Type: PortRanges
+        /// Type: List of PortRange
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DestinationPorts")]
@@ -65,7 +65,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The protocols to inspect for, specified using each protocol&#39;s assigned internet protocol number
         /// (IANA). If not specified, this matches with any protocol.
         /// Required: No
-        /// Type: ProtocolNumbers
+        /// Type: List of Integer
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Protocols")]
@@ -76,7 +76,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The TCP flags and masks to inspect for. If not specified, this matches with any settings. This
         /// setting is only used for protocol 6 (TCP).
         /// Required: No
-        /// Type: TCPFlags
+        /// Type: List of TCPFlagField
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TCPFlags")]

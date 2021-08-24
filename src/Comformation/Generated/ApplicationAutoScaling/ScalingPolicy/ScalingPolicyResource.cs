@@ -29,8 +29,8 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// The Application Auto Scaling policy type.
             /// The following policy types are supported:
             /// TargetTrackingScaling—Not supported for Amazon EMR
-            /// StepScaling—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
-            /// Cassandra)
+            /// StepScaling—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces (for Apache
+            /// Cassandra), Amazon MSK, or Amazon ElastiCache for Redis.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -68,6 +68,8 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
             /// Example:
             /// arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5.
+            /// Amazon ElastiCache replication group - The resource type is replication-group and the unique
+            /// identifier is the replication group name. Example: replication-group/mycluster.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -82,8 +84,8 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// The scalable dimension. This string consists of the service namespace, resource type, and scaling
             /// property.
             /// ecs:service:DesiredCount - The desired task count of an ECS service.
-            /// ec2:spot-fleet-request:TargetCapacity - The target capacity of a Spot Fleet request.
             /// elasticmapreduce:instancegroup:InstanceCount - The instance count of an EMR Instance Group.
+            /// ec2:spot-fleet-request:TargetCapacity - The target capacity of a Spot Fleet request.
             /// appstream:fleet:DesiredCapacity - The desired capacity of an AppStream 2. 0 fleet.
             /// dynamodb:table:ReadCapacityUnits - The provisioned read capacity for a DynamoDB table.
             /// dynamodb:table:WriteCapacityUnits - The provisioned write capacity for a DynamoDB table.
@@ -101,7 +103,10 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// provisioned concurrency for a Lambda function. cassandra:table:ReadCapacityUnits - The provisioned
             /// read capacity for an Amazon Keyspaces table. cassandra:table:WriteCapacityUnits - The provisioned
             /// write capacity for an Amazon Keyspaces table. kafka:broker-storage:VolumeSize - The provisioned
-            /// volume size (in GiB) for brokers in an Amazon MSK cluster.
+            /// volume size (in GiB) for brokers in an Amazon MSK cluster. elasticache:replication-group:NodeGroups
+            /// - The number of node groups for an Amazon ElastiCache replication group.
+            /// elasticache:replication-group:Replicas - The number of replicas per node group for an Amazon
+            /// ElastiCache replication group.
             /// Required: No
             /// Type: String
             /// Allowed values: appstream:fleet:DesiredCapacity | cassandra:table:ReadCapacityUnits |
@@ -110,6 +115,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// | dynamodb:index:ReadCapacityUnits | dynamodb:index:WriteCapacityUnits |
             /// dynamodb:table:ReadCapacityUnits | dynamodb:table:WriteCapacityUnits |
             /// ec2:spot-fleet-request:TargetCapacity | ecs:service:DesiredCount |
+            /// elasticache:replication-group:NodeGroups | elasticache:replication-group:Replicas |
             /// elasticmapreduce:instancegroup:InstanceCount | kafka:broker-storage:VolumeSize |
             /// lambda:function:ProvisionedConcurrency | rds:cluster:ReadReplicaCount |
             /// sagemaker:variant:DesiredInstanceCount
@@ -119,9 +125,9 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 
             /// <summary>
             /// ScalingTargetId
-            /// The AWS CloudFormation-generated ID of an Application Auto Scaling scalable target. For more
-            /// information about the ID, see the Return Value section of the
-            /// AWS::ApplicationAutoScaling::ScalableTarget resource.
+            /// The CloudFormation-generated ID of an Application Auto Scaling scalable target. For more information
+            /// about the ID, see the Return Value section of the AWS::ApplicationAutoScaling::ScalableTarget
+            /// resource.
             /// Important You must specify either the ScalingTargetId property, or the ResourceId,
             /// ScalableDimension, and ServiceNamespace properties, but not both.
             /// Required: Conditional
@@ -136,7 +142,7 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
             /// Required: No
             /// Type: String
             /// Allowed values: appstream | cassandra | comprehend | custom-resource | dynamodb | ec2 | ecs |
-            /// elasticmapreduce | kafka | lambda | rds | sagemaker
+            /// elasticache | elasticmapreduce | kafka | lambda | rds | sagemaker
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ServiceNamespace { get; set; }

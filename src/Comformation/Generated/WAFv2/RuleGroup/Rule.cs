@@ -14,7 +14,7 @@ namespace Comformation.WAFv2.RuleGroup
 
         /// <summary>
         /// Name
-        /// A friendly name of the rule. You can&#39;t change the name of a Rule after you create it.
+        /// The descriptive name of the rule. You can&#39;t change the name of a Rule after you create it.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -43,11 +43,11 @@ namespace Comformation.WAFv2.RuleGroup
         /// The AWS WAF processing statement for the rule, for example ByteMatchStatement or
         /// SizeConstraintStatement.
         /// Required: Yes
-        /// Type: StatementOne
+        /// Type: Statement
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Statement")]
-        public StatementOne Statement { get; set; }
+        public Statement Statement { get; set; }
 
         /// <summary>
         /// Action
@@ -59,6 +59,26 @@ namespace Comformation.WAFv2.RuleGroup
         /// </summary>
         [JsonProperty("Action")]
         public RuleAction Action { get; set; }
+
+        /// <summary>
+        /// RuleLabels
+        /// Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
+        /// labels to matching web requests. A fully qualified label is the concatenation of a label namespace
+        /// and a rule label. The rule&#39;s rule group or web ACL defines the label namespace.
+        /// Rules that run after this rule in the web ACL can match against these labels using a
+        /// LabelMatchStatement.
+        /// For each label, provide a case-sensitive string containing optional namespaces and a label name,
+        /// according to the following guidelines:
+        /// Separate each component of the label with a colon. Each namespace or name can have up to 128
+        /// characters. You can specify up to 5 namespaces in a label. Don&#39;t use the following reserved words in
+        /// your label specification: aws, waf, managed, rulegroup, webacl, regexpatternset, or ipset.
+        /// For example, myLabelName or nameSpace1:nameSpace2:myLabelName.
+        /// Required: No
+        /// Type: List of Label
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("RuleLabels")]
+        public List<Label> RuleLabels { get; set; }
 
         /// <summary>
         /// VisibilityConfig

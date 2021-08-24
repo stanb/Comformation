@@ -6,7 +6,7 @@ namespace Comformation.EC2.DHCPOptions
 {
     /// <summary>
     /// AWS::EC2::DHCPOptions
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html
     /// </summary>
     public class DHCPOptionsResource : ResourceBase
     {
@@ -80,5 +80,10 @@ namespace Comformation.EC2.DHCPOptions
 
         public DHCPOptionsProperties Properties { get; } = new DHCPOptionsProperties();
 
+    }
+
+    public static class DHCPOptionsAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DhcpOptionsId = new ResourceAttribute<Union<string, IntrinsicFunction>>("DhcpOptionsId");
     }
 }

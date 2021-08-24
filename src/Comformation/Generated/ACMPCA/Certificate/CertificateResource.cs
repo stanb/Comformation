@@ -13,6 +13,16 @@ namespace Comformation.ACMPCA.Certificate
         public class CertificateProperties
         {
             /// <summary>
+            /// ApiPassthrough
+            /// Specifies X. 509 certificate information to be included in the issued certificate. An APIPassthrough
+            /// or APICSRPassthrough template variant must be selected, or else this parameter is ignored.
+            /// Required: No
+            /// Type: ApiPassthrough
+            /// Update requires: Replacement
+            /// </summary>
+            public ApiPassthrough ApiPassthrough { get; set; }
+
+            /// <summary>
             /// CertificateAuthorityArn
             /// The Amazon Resource Name (ARN) for the private CA used to issue the certificate.
             /// Required: Yes
@@ -35,7 +45,8 @@ namespace Comformation.ACMPCA.Certificate
             /// 		
             /// The name of the algorithm that will be used to sign the certificate to be issued.
             /// 		
-            /// This parameter should not be confused with the SigningAlgorithm parameter 			used to sign a CSR.
+            /// This parameter should not be confused with the SigningAlgorithm parameter 			used to sign a CSR in
+            /// the CreateCertificateAuthority action.
             /// 	
             /// Required: Yes
             /// Type: String
@@ -64,6 +75,22 @@ namespace Comformation.ACMPCA.Certificate
             /// Update requires: Replacement
             /// </summary>
             public Validity Validity { get; set; }
+
+            /// <summary>
+            /// ValidityNotBefore
+            /// Information describing the start of the validity period of the certificate. This parameter sets the
+            /// “Not Before&quot; date for the certificate.
+            /// By default, when issuing a certificate, ACM Private CA sets the &quot;Not Before&quot; date to the issuance
+            /// time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+            /// ValidityNotBefore parameter can be used to customize the “Not Before” value.
+            /// Unlike the Validity parameter, the ValidityNotBefore parameter is optional.
+            /// The ValidityNotBefore value is expressed as an explicit date and time, using the Validity type value
+            /// ABSOLUTE.
+            /// Required: No
+            /// Type: Validity
+            /// Update requires: Replacement
+            /// </summary>
+            public Validity ValidityNotBefore { get; set; }
 
         }
 

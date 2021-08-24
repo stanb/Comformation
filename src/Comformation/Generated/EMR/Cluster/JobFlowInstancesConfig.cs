@@ -99,7 +99,8 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// EmrManagedMasterSecurityGroup
-        /// The identifier of the Amazon EC2 security group for the master node.
+        /// The identifier of the Amazon EC2 security group for the master node. If you specify
+        /// EmrManagedMasterSecurityGroup, you must also specify EmrManagedSlaveSecurityGroup.
         /// Required: No
         /// Type: String
         /// Minimum: 0
@@ -112,7 +113,8 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// EmrManagedSlaveSecurityGroup
-        /// The identifier of the Amazon EC2 security group for the core and task nodes.
+        /// The identifier of the Amazon EC2 security group for the core and task nodes. If you specify
+        /// EmrManagedSlaveSecurityGroup, you must also specify EmrManagedMasterSecurityGroup.
         /// Required: No
         /// Type: String
         /// Minimum: 0
@@ -142,7 +144,9 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// KeepJobFlowAliveWhenNoSteps
-        /// Specifies whether the cluster should remain available after completing all steps.
+        /// Specifies whether the cluster should remain available after completing all steps. Defaults to true.
+        /// For more information about configuring cluster termination, see Control Cluster Termination in the
+        /// EMR Management Guide.
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement

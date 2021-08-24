@@ -13,16 +13,6 @@ namespace Comformation.Glue.Crawler
         public class CrawlerProperties
         {
             /// <summary>
-            /// Role
-            /// The Amazon Resource Name (ARN) of an IAM role that&#39;s used to access customer resources, such as
-            /// Amazon Simple Storage Service (Amazon S3) data.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> Role { get; set; }
-
-            /// <summary>
             /// Classifiers
             /// A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.
             /// Required: No
@@ -60,13 +50,14 @@ namespace Comformation.Glue.Crawler
             public Union<string, IntrinsicFunction> Configuration { get; set; }
 
             /// <summary>
-            /// Schedule
-            /// For scheduled crawlers, the schedule when the crawler runs.
+            /// RecrawlPolicy
+            /// A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that
+            /// were added since the last crawler run.
             /// Required: No
-            /// Type: Schedule
+            /// Type: RecrawlPolicy
             /// Update requires: No interruption
             /// </summary>
-            public Schedule Schedule { get; set; }
+            public RecrawlPolicy RecrawlPolicy { get; set; }
 
             /// <summary>
             /// DatabaseName
@@ -96,6 +87,34 @@ namespace Comformation.Glue.Crawler
             public Union<string, IntrinsicFunction> CrawlerSecurityConfiguration { get; set; }
 
             /// <summary>
+            /// Name
+            /// The name of the crawler.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> Name { get; set; }
+
+            /// <summary>
+            /// Role
+            /// The Amazon Resource Name (ARN) of an IAM role that&#39;s used to access customer resources, such as
+            /// Amazon Simple Storage Service (Amazon S3) data.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> Role { get; set; }
+
+            /// <summary>
+            /// Schedule
+            /// For scheduled crawlers, the schedule when the crawler runs.
+            /// Required: No
+            /// Type: Schedule
+            /// Update requires: No interruption
+            /// </summary>
+            public Schedule Schedule { get; set; }
+
+            /// <summary>
             /// TablePrefix
             /// The prefix added to the names of tables that are created.
             /// Required: No
@@ -112,15 +131,6 @@ namespace Comformation.Glue.Crawler
             /// Update requires: No interruption
             /// </summary>
             public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Tags { get; set; }
-
-            /// <summary>
-            /// Name
-            /// The name of the crawler.
-            /// Required: No
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-            public Union<string, IntrinsicFunction> Name { get; set; }
 
         }
 

@@ -66,9 +66,9 @@ namespace Comformation.ECS.TaskDefinition
         /// <summary>
         /// Name
         /// 		
-        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are
-        /// allowed. This name is referenced in the 				sourceVolume parameter of container definition
-        /// 			mountPoints.
+        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and
+        /// hyphens are allowed. This name is referenced in the 				sourceVolume parameter of container
+        /// definition 			mountPoints.
         /// 	
         /// Required: No
         /// Type: String

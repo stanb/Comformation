@@ -16,7 +16,6 @@ namespace Comformation.Signer.SigningProfile
             /// SignatureValidityPeriod
             /// The validity period override for any signature generated using this signing profile. If unspecified,
             /// the default is 135 months.
-            /// 	
             /// Required: No
             /// Type: SignatureValidityPeriod
             /// Update requires: Replacement

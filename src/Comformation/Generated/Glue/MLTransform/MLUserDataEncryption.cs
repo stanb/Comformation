@@ -14,10 +14,11 @@ namespace Comformation.Glue.MLTransform
 
         /// <summary>
         /// MLUserDataEncryptionMode
+        /// 	
         /// The encryption mode applied to user data. Valid values are:
-        /// 	 	
-        /// 	 	 	 DISABLED: encryption is disabled SSEKMS: use of server-side encryption with AWS Key Management
-        /// Service (SSE-KMS) for user data stored in Amazon S3.
+        /// 	
+        /// 	 		 	 DISABLED: encryption is disabled. SSEKMS: use of server-side encryption with AWS Key
+        /// Management Service (SSE-KMS) for user data stored in Amazon S3.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -27,6 +28,7 @@ namespace Comformation.Glue.MLTransform
 
         /// <summary>
         /// KmsKeyId
+        /// 	
         /// The ID for the customer-provided KMS key.
         /// Required: No
         /// Type: String

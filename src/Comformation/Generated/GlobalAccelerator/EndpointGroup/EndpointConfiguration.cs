@@ -33,11 +33,11 @@ namespace Comformation.GlobalAccelerator.EndpointGroup
         /// <summary>
         /// Weight
         /// 		
-        /// The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global
+        /// The weight associated with the endpoint. When you add weights to endpoints, you configure Global
         /// Accelerator to route traffic 			based on proportions that you specify. For example, you might
         /// specify endpoint weights of 4, 5, 5, and 6 (sum=20). The 			result is that 4/20 of your traffic, on
         /// average, is routed to the first endpoint, 5/20 is routed both to the second 			and third endpoints,
-        /// and 6/20 is routed to the last endpoint. For more information, see Endpoint Weights in the 				AWS
+        /// and 6/20 is routed to the last endpoint. For more information, see Endpoint Weights in the 		 	AWS
         /// Global Accelerator Developer Guide.
         /// 	
         /// Required: No
@@ -59,8 +59,8 @@ namespace Comformation.GlobalAccelerator.EndpointGroup
         /// header as 			traffic travels to applications on the Application Load Balancer endpoint fronted by
         /// the accelerator.
         /// 		
-        /// For more information, see 			Preserve Client IP Addresses in AWS Global Accelerator in the AWS
-        /// Global Accelerator Developer Guide.
+        /// For more information, see 			Preserve Client IP Addresses in the AWS Global Accelerator Developer
+        /// Guide.
         /// 	
         /// Required: No
         /// Type: Boolean

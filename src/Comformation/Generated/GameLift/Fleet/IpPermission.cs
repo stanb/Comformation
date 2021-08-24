@@ -7,7 +7,7 @@ namespace Comformation.GameLift.Fleet
 {
     /// <summary>
     /// AWS::GameLift::Fleet IpPermission
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html
     /// </summary>
     public class IpPermission
     {

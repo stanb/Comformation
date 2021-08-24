@@ -15,7 +15,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Minutes
         /// Contains an integer specifying time in minutes.
-        /// Valid values: 15 minutes.
+        /// Valid value: 15
         /// Required: Yes
         /// Type: Integer
         /// Update requires: No interruption

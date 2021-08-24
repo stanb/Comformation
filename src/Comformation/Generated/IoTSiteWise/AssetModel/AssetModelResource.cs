@@ -45,10 +45,26 @@ namespace Comformation.IoTSiteWise.AssetModel
             public List<AssetModelProperty> AssetModelProperties_ { get; set; }
 
             /// <summary>
+            /// AssetModelCompositeModels
+            /// The composite asset models that are part of this asset model. Composite asset models are asset
+            /// models that contain specific properties. Each composite model has a type that defines the properties
+            /// that the composite model supports. You can use composite asset models to define alarms on this asset
+            /// model.
+            /// Note The alarms feature is in preview release for AWS IoT SiteWise, AWS IoT Events, and SiteWise
+            /// Monitor, and is subject to change. We recommend that you use this feature only with test data, and
+            /// not in production environments. For more information, see Monitoring data with alarms in the AWS IoT
+            /// SiteWise User Guide.
+            /// Required: No
+            /// Type: List of AssetModelCompositeModel
+            /// Update requires: No interruption
+            /// </summary>
+            public List<AssetModelCompositeModel> AssetModelCompositeModels { get; set; }
+
+            /// <summary>
             /// AssetModelHierarchies
             /// The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets
             /// can be children of any other assets created from this asset model. For more information, see
-            /// Defining relationships between assets in the AWS IoT SiteWise User Guide.
+            /// Defining relationships between assets in the AWS IoT SiteWiseUser Guide.
             /// You can specify up to 10 hierarchies per asset model. For more information, see Quotas in the AWS
             /// IoT SiteWise User Guide.
             /// Required: No

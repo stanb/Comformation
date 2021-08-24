@@ -17,7 +17,7 @@ namespace Comformation.Batch.JobDefinition
         /// This allows you to tune a container&#39;s memory swappiness behavior. A swappiness value of 0 causes
         /// swapping not to happen unless absolutely necessary. A swappiness value of 100 causes pages to be
         /// swapped very aggressively. Accepted values are whole numbers between 0 and 100. If the swappiness
-        /// parameter isn&#39;t specified, a default value of 60 is used. If a value isn&#39;t specified for maxSwap
+        /// parameter isn&#39;t specified, a default value of 60 is used. If a value isn&#39;t specified for maxSwap,
         /// then this parameter is ignored. If maxSwap is set to 0, the container doesn&#39;t use swap. This
         /// parameter maps to the --memory-swappiness option to docker run.
         /// Consider the following when you use a per-container swap configuration.
@@ -27,9 +27,10 @@ namespace Comformation.Batch.JobDefinition
         /// EC2 User Guide for Linux Instances or How do I allocate memory to work as swap space in an Amazon
         /// EC2 instance by using a swap file? The swap space parameters are only supported for job definitions
         /// using EC2 resources. If the maxSwap and swappiness parameters are omitted from a job definition,
-        /// each container will have a default swappiness value of 60 and the total swap usage will be limited
+        /// each container will have a default swappiness value of 60, and the total swap usage will be limited
         /// to two times the memory reservation of the container.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -41,7 +42,8 @@ namespace Comformation.Batch.JobDefinition
         /// Tmpfs
         /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
         /// --tmpfs option to docker run.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: List of Tmpfs
         /// Update requires: No interruption
@@ -53,7 +55,8 @@ namespace Comformation.Batch.JobDefinition
         /// SharedMemorySize
         /// The value for the size (in MiB) of the /dev/shm volume. This parameter maps to the --shm-size option
         /// to docker run.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -65,7 +68,8 @@ namespace Comformation.Batch.JobDefinition
         /// Devices
         /// Any host devices to expose to the container. This parameter maps to Devices in the Create a
         /// container section of the Docker Remote API and the --device option to docker run.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: List of Device
         /// Update requires: No interruption
@@ -96,7 +100,8 @@ namespace Comformation.Batch.JobDefinition
         /// positive integer. If the maxSwap parameter is omitted, the container doesn&#39;t use the swap
         /// configuration for the container instance it is running on. A maxSwap value must be set for the
         /// swappiness parameter to be used.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that are running on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption

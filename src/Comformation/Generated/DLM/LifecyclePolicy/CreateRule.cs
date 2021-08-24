@@ -70,5 +70,26 @@ namespace Comformation.DLM.LifecyclePolicy
         [JsonProperty("Interval")]
         public Union<int, IntrinsicFunction> Interval { get; set; }
 
+        /// <summary>
+        /// Location
+        /// 		
+        /// Specifies the destination for snapshots created by the policy. To create snapshots in the same
+        /// 			Region as the source resource, specify CLOUD. To create snapshots on the same 			Outpost as the
+        /// source resource, specify OUTPOST_LOCAL. If you omit this 			parameter, CLOUD is used by default.
+        /// 		
+        /// If the policy targets resources in an AWS Region, then you must create snapshots in the same
+        /// 			Region as the source resource.
+        /// 		
+        /// If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
+        /// 			as the source resource, or in the Region of that Outpost.
+        /// 	
+        /// Required: No
+        /// Type: String
+        /// Allowed values: CLOUD | OUTPOST_LOCAL
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Location")]
+        public Union<string, IntrinsicFunction> Location { get; set; }
+
     }
 }

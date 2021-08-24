@@ -14,7 +14,7 @@ namespace Comformation.WAFv2.WebACL
 
         /// <summary>
         /// FieldToMatch
-        /// The part of a web request that you want AWS WAF to inspect. For more information, see FieldToMatch.
+        /// The part of a web request that you want AWS WAF to inspect.
         /// Required: Yes
         /// Type: FieldToMatch
         /// Update requires: No interruption
@@ -37,11 +37,11 @@ namespace Comformation.WAFv2.WebACL
         /// Size
         /// The size, in byte, to compare to the request part, after any transformations.
         /// Required: Yes
-        /// Type: Integer
+        /// Type: Double
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Size")]
-        public Union<int, IntrinsicFunction> Size { get; set; }
+        public Union<double, IntrinsicFunction> Size { get; set; }
 
         /// <summary>
         /// TextTransformations

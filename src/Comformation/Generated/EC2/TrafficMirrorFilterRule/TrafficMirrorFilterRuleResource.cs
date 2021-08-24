@@ -41,7 +41,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
 
             /// <summary>
             /// RuleAction
-            /// The action to take (accept | reject) on the filtered traffic.
+            /// The action to take on the filtered traffic.
             /// Required: Yes
             /// Type: String
             /// Allowed values: accept | reject
@@ -88,7 +88,7 @@ namespace Comformation.EC2.TrafficMirrorFilterRule
 
             /// <summary>
             /// TrafficDirection
-            /// The type of traffic (ingress | egress).
+            /// The type of traffic.
             /// Required: Yes
             /// Type: String
             /// Allowed values: egress | ingress

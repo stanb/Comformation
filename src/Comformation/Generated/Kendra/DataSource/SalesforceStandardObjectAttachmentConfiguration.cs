@@ -29,12 +29,12 @@ namespace Comformation.Kendra.DataSource
         /// FieldMappings
         /// One or more objects that map fields in attachments to Amazon Kendra index fields.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
     }
 }

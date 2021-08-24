@@ -37,7 +37,7 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// ConsoleAccess
-        /// Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ
+        /// Enables access to the ActiveMQ web console for the ActiveMQ user. Does not apply to RabbitMQ
         /// brokers.
         /// Required: No
         /// Type: Boolean
@@ -49,7 +49,7 @@ namespace Comformation.AmazonMQ.Broker
         /// <summary>
         /// Password
         /// The password of the user. This value must be at least 12 characters long, must contain at least 4
-        /// unique characters, and must not contain commas.
+        /// unique characters, and must not contain commas, colons, or equal signs (,:=).
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

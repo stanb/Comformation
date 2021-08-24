@@ -237,7 +237,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// ColorSpaceSettings
-        /// Color Space settings
+        /// Settings to configure the color space handling for the video.
         /// Required: No
         /// Type: H264ColorSpaceSettings
         /// Update requires: No interruption

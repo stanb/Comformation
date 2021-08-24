@@ -18,7 +18,7 @@ namespace Comformation.EC2.SpotFleet
         /// Required: Yes
         /// Type: List of TargetGroup
         /// Maximum: 5
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("TargetGroups")]
         public List<TargetGroup> TargetGroups { get; set; }

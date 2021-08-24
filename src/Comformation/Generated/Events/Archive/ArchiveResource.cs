@@ -14,18 +14,23 @@ namespace Comformation.Events.Archive
         {
             /// <summary>
             /// ArchiveName
-            /// The name of the archive.
+            /// The name for the archive to create.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 48
+            /// Pattern: [\. \-_A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ArchiveName { get; set; }
 
             /// <summary>
             /// SourceArn
-            /// The ARN of the event source associated with the archive.
+            /// The ARN of the event bus that sends events to the archive.
             /// Required: Yes
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 1600
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> SourceArn { get; set; }
@@ -35,6 +40,8 @@ namespace Comformation.Events.Archive
             /// A description for the archive.
             /// Required: No
             /// Type: String
+            /// Maximum: 512
+            /// Pattern: . *
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }
@@ -51,9 +58,10 @@ namespace Comformation.Events.Archive
             /// <summary>
             /// RetentionDays
             /// The number of days to retain events for. Default value is 0. If set to 0, events are retained
-            /// indefinitely.
+            /// indefinitely
             /// Required: No
             /// Type: Integer
+            /// Minimum: 0
             /// Update requires: No interruption
             /// </summary>
             public Union<int, IntrinsicFunction> RetentionDays { get; set; }

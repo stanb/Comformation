@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.Image
 
         /// <summary>
         /// ImageTestsEnabled
+        /// 		
         /// Defines if tests should be executed when building this image.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -24,7 +26,9 @@ namespace Comformation.ImageBuilder.Image
 
         /// <summary>
         /// TimeoutMinutes
+        /// 		
         /// The maximum time in minutes that tests are permitted to run.
+        /// 	
         /// Required: No
         /// Type: Integer
         /// Minimum: 60

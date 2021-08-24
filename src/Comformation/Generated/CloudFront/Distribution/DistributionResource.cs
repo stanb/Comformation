@@ -46,5 +46,6 @@ namespace Comformation.CloudFront.Distribution
     public static class DistributionAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
     }
 }

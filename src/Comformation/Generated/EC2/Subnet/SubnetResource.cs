@@ -39,7 +39,7 @@ namespace Comformation.EC2.Subnet
             /// CidrBlock
             /// 	
             /// The IPv4 CIDR block assigned to the subnet.
-            /// If you update this property, you must also update the AvailabilityZone property.
+            /// If you update this property, we create a new subnet, and then delete the existing one.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

@@ -7,7 +7,7 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet GroupIdentifier
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-securitygroups.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-groupidentifier.html
     /// </summary>
     public class GroupIdentifier
     {
@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The ID of the security group.
         /// Required: Yes
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("GroupId")]
         public Union<string, IntrinsicFunction> GroupId { get; set; }

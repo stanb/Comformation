@@ -62,7 +62,7 @@ namespace Comformation.Synthetics.Canary
         /// <summary>
         /// Handler
         /// The entry point to use for the source code when running the canary. This value must end with the
-        /// string . handler.
+        /// string . handler. The string is limited to 29 characters or fewer.
         /// Required: Conditional
         /// Type: String
         /// Minimum: 1

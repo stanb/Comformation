@@ -23,6 +23,16 @@ namespace Comformation.MediaLive.Channel
         public OutputLocationRef Destination { get; set; }
 
         /// <summary>
+        /// ArchiveCdnSettings
+        /// Settings to configure the destination of an Archive output.
+        /// Required: No
+        /// Type: ArchiveCdnSettings
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ArchiveCdnSettings")]
+        public ArchiveCdnSettings ArchiveCdnSettings { get; set; }
+
+        /// <summary>
         /// RolloverInterval
         /// The number of seconds to write to an archive file before closing and starting a new one.
         /// Required: No

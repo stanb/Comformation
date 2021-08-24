@@ -17,6 +17,8 @@ namespace Comformation.Events.Rule
         /// The ARN of the SQS queue specified as the target for the dead-letter queue.
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1600
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Arn")]

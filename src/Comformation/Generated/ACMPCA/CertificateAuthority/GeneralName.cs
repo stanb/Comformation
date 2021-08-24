@@ -15,7 +15,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// OtherName
         /// 		
-        /// Represents 				GeneralName using an OtherName 			object.
+        /// Represents GeneralName using an OtherName object.
         /// 	
         /// Required: No
         /// Type: OtherName
@@ -27,7 +27,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// Rfc822Name
         /// 		
-        /// Represents 				GeneralName as an RFC 				822 email address.
+        /// Represents GeneralName as an RFC 822 email address.
         /// 	
         /// Required: No
         /// Type: String
@@ -41,7 +41,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// DnsName
         /// 		
-        /// Represents 				GeneralName as a DNS name.
+        /// Represents GeneralName as a DNS name.
         /// 	
         /// Required: No
         /// Type: String
@@ -71,7 +71,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// EdiPartyName
         /// 		
-        /// Represents 				GeneralName as an EdiPartyName 			object.
+        /// Represents GeneralName as an EdiPartyName object.
         /// 	
         /// Required: No
         /// Type: EdiPartyName
@@ -83,7 +83,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// UniformResourceIdentifier
         /// 		
-        /// Represents 				GeneralName as a URI.
+        /// Represents GeneralName as a URI.
         /// 	
         /// Required: No
         /// Type: String
@@ -97,7 +97,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// IpAddress
         /// 		
-        /// Represents 				GeneralName as an IPv4 or IPv6 address.
+        /// Represents GeneralName as an IPv4 or IPv6 address.
         /// 	
         /// Required: No
         /// Type: String
@@ -111,7 +111,7 @@ namespace Comformation.ACMPCA.CertificateAuthority
         /// <summary>
         /// RegisteredId
         /// 		
-        /// 			Represents GeneralName as an object identifier 			(OID).
+        /// Represents GeneralName as an object identifier (OID).
         /// 	
         /// Required: No
         /// Type: String

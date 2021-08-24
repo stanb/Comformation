@@ -15,7 +15,8 @@ namespace Comformation.CloudWatch.AnomalyDetector
         /// <summary>
         /// Value
         /// 		
-        /// The value of the dimension. Dimension values cannot contain blank spaces 			or non-ASCII characters.
+        /// The value of the dimension. Dimension values must contain only ASCII characters and must include
+        /// 			at least one non-whitespace character.
         /// 	
         /// Required: Yes
         /// Type: String

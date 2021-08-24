@@ -25,7 +25,9 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// UserRoleName
-        /// Specifies the name of the LDAP attribute for the user group membership.
+        /// The name of the LDAP attribute in the user&#39;s directory entry for the user&#39;s group membership. In
+        /// some cases, user roles may be identified by the value of an attribute in the user&#39;s directory entry.
+        /// The UserRoleName option allows you to provide the name of this attribute.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -49,8 +51,9 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// RoleName
-        /// Specifies the LDAP attribute that identifies the group name attribute in the object returned from
-        /// the group membership query.
+        /// The group name attribute in a role entry whose value is the name of that role. For example, you can
+        /// specify cn for a group entry&#39;s common name. If authentication succeeds, then the user is assigned
+        /// the the value of the cn attribute for each role entry that they are a member of.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -99,7 +102,7 @@ namespace Comformation.AmazonMQ.Broker
         /// <summary>
         /// ServiceAccountUsername
         /// Service account username. A service account is an account in your LDAP server that has access to
-        /// initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+        /// initiate a connection. For example, cn=admin, ou=corp, dc=corp, dc=example, dc=com.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

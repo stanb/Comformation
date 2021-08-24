@@ -24,8 +24,7 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// Path
-        /// Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on
-        /// a local file system.
+        /// Location in Amazon S3 of the script to run during a bootstrap action.
         /// Required: Yes
         /// Type: String
         /// Minimum: 0

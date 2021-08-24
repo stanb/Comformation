@@ -26,7 +26,7 @@ namespace Comformation.CloudFormation.StackSet
         /// <summary>
         /// Regions
         /// The names of one or more Regions where you want to create stack instances using the specified AWS
-        /// account(s).
+        /// accounts.
         /// Required: Yes
         /// Type: List of String
         /// Update requires: No interruption

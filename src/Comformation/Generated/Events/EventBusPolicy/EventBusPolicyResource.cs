@@ -14,22 +14,24 @@ namespace Comformation.Events.EventBusPolicy
         {
             /// <summary>
             /// EventBusName
-            /// The name of the event bus to associate with this policy.
+            /// The name of the event bus associated with the rule. If you omit this, the default event bus is used.
             /// Required: No
             /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Pattern: [\. \-_A-Za-z0-9]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> EventBusName { get; set; }
 
             /// <summary>
             /// Condition
-            /// Condition is a JSON string that you can use to limit the event bus permissions that you&#39;re granting
-            /// only to accounts that fulfill the condition. Currently, the only supported condition is membership
-            /// in a certain AWS organization. For more information about AWS Organizations, see What Is AWS
-            /// Organizations? in the AWS Organizations User Guide.
-            /// Condition is a property of the AWS::Events::EventBusPolicy resource type.
-            /// If you specify Condition with an AWS organization ID and specify &quot;*&quot; as the value for Principal, you
-            /// grant permission to all the accounts in the named organization.
+            /// This parameter enables you to limit the permission to accounts that fulfill a certain condition,
+            /// such as being a member of a certain AWS organization. For more information about AWS Organizations,
+            /// see What Is AWS Organizations in the AWS Organizations User Guide.
+            /// If you specify Condition with an AWS organization ID, and specify &quot;*&quot; as the value for Principal,
+            /// you grant permission to all the accounts in the named organization.
+            /// The Condition is a JSON string which must contain Type, Key, and Value fields.
             /// Required: No
             /// Type: Condition
             /// Update requires: No interruption
@@ -38,8 +40,7 @@ namespace Comformation.Events.EventBusPolicy
 
             /// <summary>
             /// Action
-            /// The action that you are enabling the other account to perform. Currently, this must be
-            /// events:PutEvents.
+            /// The action that you are enabling the other account to perform.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -51,8 +52,10 @@ namespace Comformation.Events.EventBusPolicy
 
             /// <summary>
             /// StatementId
-            /// An identifier string for the external account that you&#39;re granting permissions to. If you later want
-            /// to revoke the permission for this external account, you must specify this StatementId.
+            /// An identifier string for the external account that you are granting permissions to. If you later
+            /// want to revoke the permission for this external account, specify this StatementId when you run
+            /// RemovePermission.
+            /// Note Each StatementId must be unique.
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
@@ -64,7 +67,8 @@ namespace Comformation.Events.EventBusPolicy
 
             /// <summary>
             /// Statement
-            /// A statement in the policy attached to the event bus to manage access to send events to it.
+            /// A JSON string that describes the permission policy statement. You can include a Policy parameter in
+            /// the request instead of using the StatementId, Action, Principal, or Condition parameters.
             /// Required: No
             /// Type: Json
             /// Update requires: No interruption

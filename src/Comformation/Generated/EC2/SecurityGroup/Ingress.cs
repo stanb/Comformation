@@ -14,7 +14,7 @@ namespace Comformation.EC2.SecurityGroup
 
         /// <summary>
         /// CidrIp
-        /// The destination IPv4 address range, in CIDR format.
+        /// The IPv4 address range, in CIDR format.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -24,9 +24,8 @@ namespace Comformation.EC2.SecurityGroup
 
         /// <summary>
         /// CidrIpv6
-        /// [EC2-VPC only] The IPv6 ranges.
         /// 	
-        /// The destination IPv6 address range, in CIDR format.
+        /// The IPv6 address range, in CIDR format.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

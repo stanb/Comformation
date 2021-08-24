@@ -13,6 +13,17 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
+        /// BooleanValue
+        /// The asset property value is a Boolean value that must be &#39;TRUE&#39; or &#39;FALSE&#39;. You must use an
+        /// expression, and the evaluated result should be a Boolean value.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BooleanValue")]
+        public Union<string, IntrinsicFunction> BooleanValue { get; set; }
+
+        /// <summary>
         /// DoubleValue
         /// The asset property value is a double. You must use an expression, and the evaluated result should be
         /// a double.
@@ -33,17 +44,6 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("IntegerValue")]
         public Union<string, IntrinsicFunction> IntegerValue { get; set; }
-
-        /// <summary>
-        /// BooleanValue
-        /// The asset property value is a Boolean value that must be &#39;TRUE&#39; or &#39;FALSE&#39;. You must use an
-        /// expression, and the evaluated result should be a Boolean value.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("BooleanValue")]
-        public Union<string, IntrinsicFunction> BooleanValue { get; set; }
 
         /// <summary>
         /// StringValue

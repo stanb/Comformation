@@ -14,7 +14,7 @@ namespace Comformation.AppSync.DataSource
 
         /// <summary>
         /// AwsIamConfig
-        /// The AWS IAM settings.
+        /// The AWS Identity and Access Management settings.
         /// Required: No
         /// Type: AwsIamConfig
         /// Update requires: No interruption

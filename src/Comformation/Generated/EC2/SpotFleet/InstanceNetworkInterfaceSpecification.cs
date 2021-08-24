@@ -7,7 +7,7 @@ namespace Comformation.EC2.SpotFleet
 {
     /// <summary>
     /// AWS::EC2::SpotFleet InstanceNetworkInterfaceSpecification
-    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html
+    /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html
     /// </summary>
     public class InstanceNetworkInterfaceSpecification
     {
@@ -20,18 +20,17 @@ namespace Comformation.EC2.SpotFleet
         /// request. If launching into a default subnet, the default value is true.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("AssociatePublicIpAddress")]
         public Union<bool, IntrinsicFunction> AssociatePublicIpAddress { get; set; }
 
         /// <summary>
         /// DeleteOnTermination
-        /// If set to true, the interface is deleted when the instance is terminated. You can specify true only
-        /// if creating a new network interface when launching an instance.
+        /// Indicates whether the network interface is deleted when the instance is terminated.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("DeleteOnTermination")]
         public Union<bool, IntrinsicFunction> DeleteOnTermination { get; set; }
@@ -42,7 +41,7 @@ namespace Comformation.EC2.SpotFleet
         /// launching an instance.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Description")]
         public Union<string, IntrinsicFunction> Description { get; set; }
@@ -54,7 +53,7 @@ namespace Comformation.EC2.SpotFleet
         /// If you specify a network interface when launching an instance, you must specify the device index.
         /// Required: Conditional
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("DeviceIndex")]
         public Union<int, IntrinsicFunction> DeviceIndex { get; set; }
@@ -65,7 +64,7 @@ namespace Comformation.EC2.SpotFleet
         /// interface when launching an instance.
         /// Required: No
         /// Type: List of String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Groups")]
         public List<Union<string, IntrinsicFunction>> Groups { get; set; }
@@ -78,7 +77,7 @@ namespace Comformation.EC2.SpotFleet
         /// instances to launch.
         /// Required: No
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Ipv6AddressCount")]
         public Union<int, IntrinsicFunction> Ipv6AddressCount { get; set; }
@@ -90,7 +89,7 @@ namespace Comformation.EC2.SpotFleet
         /// if you&#39;ve specified a minimum number of instances to launch.
         /// Required: No
         /// Type: List of InstanceIpv6Address
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Ipv6Addresses")]
         public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
@@ -102,7 +101,7 @@ namespace Comformation.EC2.SpotFleet
         /// ID in a launch specification.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("NetworkInterfaceId")]
         public Union<string, IntrinsicFunction> NetworkInterfaceId { get; set; }
@@ -114,7 +113,7 @@ namespace Comformation.EC2.SpotFleet
         /// instance in a RunInstances request.
         /// Required: No
         /// Type: List of PrivateIpAddressSpecification
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("PrivateIpAddresses")]
         public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
@@ -126,7 +125,7 @@ namespace Comformation.EC2.SpotFleet
         /// you&#39;re 	launching more than one instance in a RunInstances request.
         /// Required: No
         /// Type: Integer
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SecondaryPrivateIpAddressCount")]
         public Union<int, IntrinsicFunction> SecondaryPrivateIpAddressCount { get; set; }
@@ -137,7 +136,7 @@ namespace Comformation.EC2.SpotFleet
         /// interface when launching an instance.
         /// Required: No
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SubnetId")]
         public Union<string, IntrinsicFunction> SubnetId { get; set; }

@@ -20,7 +20,7 @@ namespace Comformation.IoTEvents.Input
         /// attribute (and its paired value) specified here are available for use in the condition expressions
         /// used by detectors.
         /// Syntax: &amp;lt;field-name&amp;gt;. &amp;lt;field-name&amp;gt;. . .
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128

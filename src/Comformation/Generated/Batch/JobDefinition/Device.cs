@@ -35,7 +35,8 @@ namespace Comformation.Batch.JobDefinition
 
         /// <summary>
         /// ContainerPath
-        /// The path inside the container used to expose the host device. By default the hostPath value is used.
+        /// The path inside the container that&#39;s used to expose the host device. By default, the hostPath value
+        /// is used.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

@@ -59,6 +59,7 @@ namespace Comformation.ElastiCache.CacheCluster
             /// generation: (not recommended) M2 node types:						 cache. m2. xlarge, cache. m2. 2xlarge, cache. m2.
             /// 4xlarge R3 node types: cache. r3. large, cache. r3. xlarge, cache. r3. 2xlarge, cache. r3. 4xlarge,
             /// cache. r3. 8xlarge
+            /// For region availability, see Supported Node Types by Amazon Region
             /// Additional node type info
             /// All current generation instance types are created in Amazon VPC by default. Redis append-only files
             /// (AOF) are not supported for T1 or T2 instances. Redis Multi-AZ with automatic failover is not
@@ -140,6 +141,15 @@ namespace Comformation.ElastiCache.CacheCluster
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> EngineVersion { get; set; }
+
+            /// <summary>
+            /// LogDeliveryConfigurations
+            /// Specifies the destination, format and type of the logs.
+            /// Required: No
+            /// Type: List of LogDeliveryConfigurationRequest
+            /// Update requires: No interruption
+            /// </summary>
+            public List<LogDeliveryConfigurationRequest> LogDeliveryConfigurations { get; set; }
 
             /// <summary>
             /// NotificationTopicArn
@@ -270,7 +280,7 @@ namespace Comformation.ElastiCache.CacheCluster
 
             /// <summary>
             /// Tags
-            /// A list of cost allocation tags to be added to this resource.
+            /// A list of tags to be added to this resource.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

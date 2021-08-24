@@ -32,7 +32,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
         /// CheckpointInterval
         /// Describes the interval in milliseconds between checkpoint operations.
         /// Note If CheckpointConfiguration. ConfigurationType is DEFAULT, the application will use a
-        /// CheckpointInterval vaue of 60000, even if this value is set to another value using this API or in
+        /// CheckpointInterval value of 60000, even if this value is set to another value using this API or in
         /// application code.
         /// Required: No
         /// Type: Integer

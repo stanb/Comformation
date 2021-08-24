@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
         {
             /// <summary>
             /// Name
+            /// 		
             /// The name of the infrastructure configuration.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
@@ -24,7 +26,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// Description
+            /// 		
             /// The description of the infrastructure configuration.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -35,7 +39,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// InstanceTypes
+            /// 		
             /// The instance types of the infrastructure configuration.
+            /// 	
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -44,7 +50,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// SecurityGroupIds
+            /// 		
             /// The security group IDs of the infrastructure configuration.
+            /// 	
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -53,7 +61,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// Logging
-            /// The logging configuration of the infrastructure configuration.
+            /// 		
+            /// The logging configuration defines where Image Builder uploads your logs.
+            /// 	
             /// Required: No
             /// Type: Logging
             /// Update requires: No interruption
@@ -62,7 +72,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// SubnetId
+            /// 		
             /// The subnet ID of the infrastructure configuration.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -73,7 +85,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// KeyPair
-            /// The EC2 key pair of the infrastructure configuration.
+            /// 		
+            /// The Amazon EC2 key pair of the infrastructure configuration.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -84,7 +98,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// TerminateInstanceOnFailure
-            /// The terminate instance on failure configuration of the infrastructure configuration.
+            /// 		
+            /// The terminate instance on failure configuration of the infrastructure 			configuration.
+            /// 	
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -93,18 +109,23 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// InstanceProfileName
+            /// 		
             /// The instance profile of the infrastructure configuration.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
-            /// Maximum: 1024
+            /// Maximum: 256
+            /// Pattern: ^[\w+=,. @-]+$
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> InstanceProfileName { get; set; }
 
             /// <summary>
             /// SnsTopicArn
-            /// The Amazon Resource Name (ARN) of the SNS topic for the infrastructure configuration.
+            /// 		
+            /// The Amazon Resource Name (ARN) of the SNS topic for the infrastructure 			configuration.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -115,7 +136,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// ResourceTags
+            /// 		
             /// The tags attached to the resource created by Image Builder.
+            /// 	
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption
@@ -124,7 +147,9 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
 
             /// <summary>
             /// Tags
+            /// 		
             /// The tags of the infrastructure configuration.
+            /// 	
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption
@@ -142,5 +167,6 @@ namespace Comformation.ImageBuilder.InfrastructureConfiguration
     public static class InfrastructureConfigurationAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
     }
 }

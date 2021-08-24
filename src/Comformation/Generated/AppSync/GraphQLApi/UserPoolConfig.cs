@@ -46,7 +46,7 @@ namespace Comformation.AppSync.GraphQLApi
         /// DefaultAction
         /// The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
         /// authentication doesn&#39;t match the Amazon Cognito user pool configuration.
-        /// When specifying Cognito user pools as the default authentication, you must set the value for
+        /// When specifying Amazon Cognito user pools as the default authentication, you must set the value for
         /// DefaultAction to ALLOW if specifying AdditionalAuthenticationProviders.
         /// Required: No
         /// Type: String

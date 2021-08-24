@@ -208,8 +208,8 @@ namespace Comformation.CloudWatch.Alarm
             /// The namespace of the metric associated with the alarm. This is required for an alarm based on a
             /// metric. For an alarm based on a math expression, you can&#39;t specify Namespace and you use Metrics
             /// instead.
-            /// For a list of namespaces for metrics from AWS services, see AWS Services That Publish CloudWatch
-            /// Metrics.
+            /// For a list of namespaces for metrics from AWS services, see AWS Services That Publish
+            /// CloudWatchMetrics.
             /// 	
             /// Required: No
             /// Type: String
@@ -290,8 +290,8 @@ namespace Comformation.CloudWatch.Alarm
             /// <summary>
             /// TreatMissingData
             /// Sets how this alarm is to handle missing data points. Valid values are breaching, notBreaching,
-            /// ignore, and missing. For more information, see Configuring How CloudWatch Alarms Treat Missing Data
-            /// in the Amazon CloudWatch User Guide.
+            /// ignore, and missing. For more information, see Configuring How CloudWatchAlarms Treat Missing Data
+            /// in the Amazon CloudWatchUser Guide.
             /// If you omit this parameter, the default behavior of missing is used.
             /// 	
             /// Required: No

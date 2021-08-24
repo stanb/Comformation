@@ -35,8 +35,7 @@ namespace Comformation.Athena.WorkGroup
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs to apply to this resource.
-            /// For more information, see Tag.
+            /// The tags (key-value pairs) to associate with this resource.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption
@@ -81,8 +80,8 @@ namespace Comformation.Athena.WorkGroup
 
             /// <summary>
             /// RecursiveDeleteOption
-            /// The option to delete the workgroup and its contents even if the workgroup contains any named queries
-            /// or query executions.
+            /// The option to delete a workgroup and its contents even if the workgroup contains any named queries.
+            /// The default is false.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -99,6 +98,8 @@ namespace Comformation.Athena.WorkGroup
 
     public static class WorkGroupAttributes
     {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> WorkGroupConfiguration_EngineVersion_EffectiveEngineVersion = new ResourceAttribute<Union<string, IntrinsicFunction>>("WorkGroupConfiguration", "EngineVersion", "EffectiveEngineVersion");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> WorkGroupConfigurationUpdates_EngineVersion_EffectiveEngineVersion = new ResourceAttribute<Union<string, IntrinsicFunction>>("WorkGroupConfigurationUpdates", "EngineVersion", "EffectiveEngineVersion");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CreationTime = new ResourceAttribute<Union<string, IntrinsicFunction>>("CreationTime");
     }
 }

@@ -98,7 +98,7 @@ namespace Comformation.ApiGateway.Method
             /// RequestModels
             /// The resources that are used for the request&#39;s content type. Specify request models as key-value
             /// pairs (string-to-string mapping), with a content type as the key and a Model resource name as the
-            /// value.
+            /// value. To use the same model regardless of the content type, specify $default as the key.
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption

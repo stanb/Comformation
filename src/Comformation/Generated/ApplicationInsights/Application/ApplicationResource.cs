@@ -52,7 +52,7 @@ namespace Comformation.ApplicationInsights.Application
             /// Type: String
             /// Minimum: 20
             /// Maximum: 300
-            /// Pattern: ^arn:aws(-\w+)?:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/]. +)*$
+            /// Pattern: ^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/]. +)*$
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> OpsItemSNSTopicArn { get; set; }

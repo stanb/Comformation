@@ -13,8 +13,18 @@ namespace Comformation.AppMesh.VirtualNode
     {
 
         /// <summary>
+        /// SDS
+        /// A reference to an object that represents a listener&#39;s Secret Discovery Service certificate.
+        /// Required: No
+        /// Type: ListenerTlsSdsCertificate
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("SDS")]
+        public ListenerTlsSdsCertificate SDS { get; set; }
+
+        /// <summary>
         /// ACM
-        /// A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+        /// A reference to an object that represents an AWS Certificate Manager certificate.
         /// Required: No
         /// Type: ListenerTlsAcmCertificate
         /// Update requires: No interruption

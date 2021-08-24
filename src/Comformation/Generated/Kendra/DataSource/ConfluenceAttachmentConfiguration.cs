@@ -30,12 +30,12 @@ namespace Comformation.Kendra.DataSource
         /// operation.
         /// If you specify the AttachentFieldMappings parameter, you must specify at least one field mapping.
         /// Required: No
-        /// Type: ConfluenceAttachmentFieldMappingsList
+        /// Type: List of ConfluenceAttachmentToIndexFieldMapping
         /// Maximum: 11
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("AttachmentFieldMappings")]
-        public ConfluenceAttachmentFieldMappingsList AttachmentFieldMappings { get; set; }
+        public List<ConfluenceAttachmentToIndexFieldMapping> AttachmentFieldMappings { get; set; }
 
     }
 }

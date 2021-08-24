@@ -14,7 +14,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// TimeoutSeconds
-        /// If this time is reached and the command has not already started running, it doesn&#39;t run.
+        /// If this time is reached and the command hasn&#39;t already started running, it doesn&#39;t run.
         /// Required: No
         /// Type: Integer
         /// Minimum: 30
@@ -71,8 +71,9 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// ServiceRoleArn
-        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-        /// notifications for maintenance window Run Command tasks.
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) service role to use
+        /// to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run
+        /// Command tasks.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -92,7 +93,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// OutputS3BucketName
-        /// The name of the S3 bucket.
+        /// The name of the Amazon Simple Storage Service (Amazon S3) bucket.
         /// Required: No
         /// Type: String
         /// Minimum: 3

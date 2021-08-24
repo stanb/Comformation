@@ -14,6 +14,21 @@ namespace Comformation.DataSync.LocationEFS
         {
             /// <summary>
             /// Ec2Config
+            /// The subnet and security group that the Amazon EFS file system uses. The security group that you
+            /// provide needs to be able to communicate with the security group on the mount target in the subnet
+            /// specified.
+            /// The exact relationship between security group M (of the mount target) and security group S (which
+            /// you provide for DataSync to use at this stage) is as follows:
+            /// Security group M (which you associate with the mount target) must allow inbound access for the
+            /// Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable
+            /// inbound connections either by IP address (CIDR range) or security group. Security group S (provided
+            /// to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on
+            /// one of the file system’s mount targets. You can enable outbound connections either by IP address
+            /// (CIDR range) or security group. For information about security groups and mount targets, see
+            /// Security Groups for Amazon EC2 Instances and Mount Targets in the Amazon EFS User Guide.
+            /// Required: Yes
+            /// Type: Ec2Config
+            /// Update requires: Replacement
             /// </summary>
             public Ec2Config Ec2Config { get; set; }
 
@@ -26,7 +41,7 @@ namespace Comformation.DataSync.LocationEFS
             /// Pattern:
             /// ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.
             /// *$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> EfsFilesystemArn { get; set; }
 
@@ -40,7 +55,7 @@ namespace Comformation.DataSync.LocationEFS
             /// Type: String
             /// Maximum: 4096
             /// Pattern: ^[a-zA-Z0-9_\-\+\. /\(\)\p{Zs}]*$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Subdirectory { get; set; }
 

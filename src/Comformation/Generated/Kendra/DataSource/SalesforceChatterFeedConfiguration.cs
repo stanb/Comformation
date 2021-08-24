@@ -29,7 +29,7 @@ namespace Comformation.Kendra.DataSource
         /// <summary>
         /// DocumentTitleFieldName
         /// The name of the column in the Salesforce FeedItem table that contains the title of the document.
-        /// This is typically the Title collumn.
+        /// This is typically the Title column.
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -44,12 +44,12 @@ namespace Comformation.Kendra.DataSource
         /// FieldMappings
         /// Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
         /// <summary>
         /// IncludeFilterTypes
@@ -57,12 +57,12 @@ namespace Comformation.Kendra.DataSource
         /// documents from users who have an active account are indexed. When you specify STANDARD_USER only
         /// documents for Salesforce standard users are documented. You can specify both.
         /// Required: No
-        /// Type: SalesforceChatterFeedIncludeFilterTypes
+        /// Type: List of String
         /// Maximum: 2
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeFilterTypes")]
-        public SalesforceChatterFeedIncludeFilterTypes IncludeFilterTypes { get; set; }
+        public List<Union<string, IntrinsicFunction>> IncludeFilterTypes { get; set; }
 
     }
 }

@@ -14,7 +14,8 @@ namespace Comformation.IoTWireless.DeviceProfile
         {
             /// <summary>
             /// Name
-            /// The name of the new resource.
+            /// 		
+            /// The name of the new resource. Maximum length is 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -22,18 +23,19 @@ namespace Comformation.IoTWireless.DeviceProfile
             public Union<string, IntrinsicFunction> Name { get; set; }
 
             /// <summary>
-            /// LoRaWANDeviceProfile
+            /// LoRaWAN
             /// LoRaWANDeviceProfile object.
             /// Required: No
             /// Type: LoRaWANDeviceProfile
             /// Update requires: No interruption
             /// </summary>
-            public LoRaWANDeviceProfile LoRaWANDeviceProfile { get; set; }
+            public LoRaWANDeviceProfile LoRaWAN { get; set; }
 
             /// <summary>
             /// Tags
             /// 		 		
-            /// An array of key-value pairs to apply to this resource.
+            /// An array of key-value pairs to apply to this resource. Tags can have a minimum of 0 and a maximum of
+            /// 50 items.
             /// 		
             /// For more information, see Tag.
             /// 	
@@ -42,17 +44,6 @@ namespace Comformation.IoTWireless.DeviceProfile
             /// Update requires: No interruption
             /// </summary>
             public List<Tag> Tags { get; set; }
-
-            /// <summary>
-            /// NextToken
-            /// 		
-            /// This parameter isn&#39;t needed to create this resource. Do not include it in your template.
-            /// 	
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> NextToken { get; set; }
 
         }
 

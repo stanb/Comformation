@@ -14,9 +14,9 @@ namespace Comformation.GameLift.Script
 
         /// <summary>
         /// ObjectVersion
-        /// The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this
-        /// information when retrieving files from an S3 bucket that you own. Use this parameter to specify a
-        /// specific version of the file. If not set, the latest version of the file is retrieved.
+        /// The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses
+        /// this information when retrieving files from an S3 bucket that you own. Use this parameter to specify
+        /// a specific version of the file. If not set, the latest version of the file is retrieved.
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -27,9 +27,9 @@ namespace Comformation.GameLift.Script
 
         /// <summary>
         /// Bucket
-        /// An S3 bucket identifier. This is the name of the S3 bucket.
-        /// Note GameLift currently does not support uploading from S3 buckets with names that contain a dot (.
-        /// ).
+        /// An Amazon S3 bucket identifier. This is the name of the S3 bucket.
+        /// Note GameLift currently does not support uploading from Amazon S3 buckets with names that contain a
+        /// dot (. ).
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -51,7 +51,8 @@ namespace Comformation.GameLift.Script
 
         /// <summary>
         /// RoleArn
-        /// The Amazon Resource Name (ARN) for an IAM role that allows Amazon GameLift to access the S3 bucket.
+        /// The Amazon Resource Name (ARN) for an IAM role that allows Amazon Web Services to access the S3
+        /// bucket.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1

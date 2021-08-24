@@ -54,7 +54,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// WavSettings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings for audio encoded with the WAV codec.
         /// Required: No
         /// Type: WavSettings
         /// Update requires: No interruption

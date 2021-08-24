@@ -19,6 +19,7 @@ namespace Comformation.EFS.AccessPoint
             /// Type: String
             /// Minimum: 1
             /// Maximum: 64
+            /// Pattern: . +
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ClientToken { get; set; }

@@ -34,7 +34,7 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Version
-        /// 		
+        /// 	
         /// The version number of the launch template. AWS CloudFormation does not support specifying
         /// 			$Latest, or $Default for the template version number.
         /// 	

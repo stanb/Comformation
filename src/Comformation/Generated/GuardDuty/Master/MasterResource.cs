@@ -25,7 +25,7 @@ namespace Comformation.GuardDuty.Master
 
             /// <summary>
             /// MasterId
-            /// The AWS account ID of the account designated as the GuardDuty master account.
+            /// The AWS account ID of the account designated as the GuardDuty administrator account.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

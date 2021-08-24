@@ -126,7 +126,8 @@ namespace Comformation.ElasticLoadBalancingV2.ListenerRule
 
         /// <summary>
         /// UseExistingClientSecret
-        /// Not currently supported by AWS CloudFormation.
+        /// Indicates whether to use the existing client secret when modifying a rule. If you are creating a
+        /// rule, you can omit this parameter or set it to false.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

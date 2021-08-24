@@ -45,7 +45,7 @@ namespace Comformation.DataSync.LocationObjectStorage
             /// Minimum: 3
             /// Maximum: 63
             /// Pattern: ^[a-zA-Z0-9_\-\+\. /\(\)\$\p{Zs}]+$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> BucketName { get; set; }
 
@@ -72,7 +72,7 @@ namespace Comformation.DataSync.LocationObjectStorage
             /// Type: String
             /// Maximum: 255
             /// Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\. )*([A-Za-z0-9\-]*[A-Za-z0-9])$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> ServerHostname { get; set; }
 

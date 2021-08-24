@@ -23,6 +23,16 @@ namespace Comformation.Glue.Database
         public Union<string, IntrinsicFunction> LocationUri { get; set; }
 
         /// <summary>
+        /// CreateTableDefaultPermissions
+        /// Creates a set of default permissions on the table for principals.
+        /// Required: No
+        /// Type: List of PrincipalPrivileges
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CreateTableDefaultPermissions")]
+        public List<PrincipalPrivileges> CreateTableDefaultPermissions { get; set; }
+
+        /// <summary>
         /// Description
         /// A description of the database.
         /// Required: No
@@ -44,6 +54,7 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// TargetDatabase
+        /// 	
         /// A DatabaseIdentifier structure that describes a target database for resource linking.
         /// Required: No
         /// Type: DatabaseIdentifier

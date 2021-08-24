@@ -19,7 +19,7 @@ namespace Comformation.IoTAnalytics.Dataset
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
-        /// Pattern: ^[a-zA-Z0-9_]+$
+        /// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DatasetName")]

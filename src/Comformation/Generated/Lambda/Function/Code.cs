@@ -13,16 +13,6 @@ namespace Comformation.Lambda.Function
     {
 
         /// <summary>
-        /// ImageUri
-        /// URI of a container image in the Amazon ECR registry.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("ImageUri")]
-        public Union<string, IntrinsicFunction> ImageUri { get; set; }
-
-        /// <summary>
         /// S3Bucket
         /// An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS
         /// account.
@@ -78,6 +68,16 @@ namespace Comformation.Lambda.Function
         /// </summary>
         [JsonProperty("ZipFile")]
         public Union<string, IntrinsicFunction> ZipFile { get; set; }
+
+        /// <summary>
+        /// ImageUri
+        /// URI of a container image in the Amazon ECR registry.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ImageUri")]
+        public Union<string, IntrinsicFunction> ImageUri { get; set; }
 
     }
 }

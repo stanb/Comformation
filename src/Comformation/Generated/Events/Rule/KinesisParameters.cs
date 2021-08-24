@@ -15,7 +15,7 @@ namespace Comformation.Events.Rule
         /// <summary>
         /// PartitionKeyPath
         /// The JSON path to be extracted from the event and used as the partition key. For more information,
-        /// see Partition Key in the Amazon Kinesis Data Streams Developer Guide.
+        /// see Amazon Kinesis Streams Key Concepts in the Amazon Kinesis Streams Developer Guide.
         /// Required: Yes
         /// Type: String
         /// Maximum: 256

@@ -80,8 +80,7 @@ namespace Comformation.GlobalAccelerator.Accelerator
             /// 		
             /// Create tags for an accelerator.
             /// 		
-            /// For more information, see Tagging 			in AWS Global Accelerator in the AWS Global Accelerator
-            /// Developer Guide.
+            /// For more information, see Tagging 				 in the AWS Global Accelerator Developer Guide.
             /// 	
             /// Required: No
             /// Type: List of Tag

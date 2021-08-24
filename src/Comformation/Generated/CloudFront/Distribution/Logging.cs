@@ -13,6 +13,19 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
+        /// Bucket
+        /// 		
+        /// The Amazon S3 bucket to store the access logs in, for example, 				myawslogbucket. s3. amazonaws.
+        /// com.
+        /// 	
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Bucket")]
+        public Union<string, IntrinsicFunction> Bucket { get; set; }
+
+        /// <summary>
         /// IncludeCookies
         /// 		
         /// Specifies whether you want CloudFront to include cookies in access logs, specify 				true for
@@ -27,19 +40,6 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("IncludeCookies")]
         public Union<bool, IntrinsicFunction> IncludeCookies { get; set; }
-
-        /// <summary>
-        /// Bucket
-        /// 		
-        /// The Amazon S3 bucket to store the access logs in, for example, 				myawslogbucket. s3. amazonaws.
-        /// com.
-        /// 	
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Bucket")]
-        public Union<string, IntrinsicFunction> Bucket { get; set; }
 
         /// <summary>
         /// Prefix

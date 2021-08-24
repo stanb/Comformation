@@ -168,6 +168,25 @@ namespace Comformation.CloudFormation.StackSet
             /// </summary>
             public Union<string, IntrinsicFunction> TemplateURL { get; set; }
 
+            /// <summary>
+            /// CallAs
+            /// [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+            /// organization&#39;s management account or as a delegated administrator in a member account.
+            /// By default, SELF is specified. Use SELF for stack sets with self-managed permissions.
+            /// To create a stack set with service-managed permissions while signed in to the management account,
+            /// specify SELF. To create a stack set with service-managed permissions while signed in to a delegated
+            /// administrator account, specify DELEGATED_ADMIN. Your AWS account must be registered as a delegated
+            /// admin in the management account. For more information, see Register a delegated administrator in the
+            /// AWS CloudFormation User Guide.
+            /// Stack sets with service-managed permissions are created in the management account, including stack
+            /// sets that are created by delegated administrators.
+            /// Valid Values: SELF | DELEGATED_ADMIN
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> CallAs { get; set; }
+
         }
 
         public string Type { get; } = "AWS::CloudFormation::StackSet";

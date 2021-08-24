@@ -59,7 +59,7 @@ namespace Comformation.Lambda.Permission
             /// SourceAccount to limit who can invoke the function through that service.
             /// Required: Yes
             /// Type: String
-            /// Pattern: . *
+            /// Pattern: [^\s]+
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Principal { get; set; }
@@ -71,6 +71,7 @@ namespace Comformation.Lambda.Permission
             /// to be deleted by its owner and recreated by another account.
             /// Required: No
             /// Type: String
+            /// Maximum: 12
             /// Pattern: \d{12}
             /// Update requires: Replacement
             /// </summary>
@@ -80,6 +81,7 @@ namespace Comformation.Lambda.Permission
             /// SourceArn
             /// For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3
             /// bucket or Amazon SNS topic.
+            /// Note that Lambda configures the comparison using the StringLike operator.
             /// Required: No
             /// Type: String
             /// Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(. *)

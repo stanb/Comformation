@@ -25,7 +25,7 @@ namespace Comformation.OpsWorks.Layer
 
         /// <summary>
         /// ExecutionTimeout
-        /// The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before
+        /// The time, in seconds, that AWS OpsWorks Stacks waits after triggering a Shutdown event before
         /// shutting down an instance.
         /// Required: No
         /// Type: Integer

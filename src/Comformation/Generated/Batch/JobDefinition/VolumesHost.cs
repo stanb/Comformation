@@ -17,10 +17,11 @@ namespace Comformation.Batch.JobDefinition
         /// The path on the host container instance that&#39;s presented to the container. If this parameter is
         /// empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file
         /// location, then the data volume persists at the specified location on the host container instance
-        /// until you delete it manually. If the source path location does not exist on the host container
+        /// until you delete it manually. If the source path location doesn&#39;t exist on the host container
         /// instance, the Docker daemon creates it. If the location does exist, the contents of the source path
         /// folder are exported.
-        /// Note This parameter isn&#39;t applicable to jobs running on Fargate resources and shouldn&#39;t be provided.
+        /// Note This parameter isn&#39;t applicable to jobs that run on Fargate resources and shouldn&#39;t be
+        /// provided.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

@@ -15,7 +15,11 @@ namespace Comformation.RDS.GlobalCluster
             /// <summary>
             /// Engine
             /// The name of the database engine to be used for this DB cluster.
-            /// Required: No
+            /// If this property isn&#39;t specified, the database engine is derived from the source DB cluster
+            /// specified by the SourceDBClusterIdentifier property.
+            /// Note If the SourceDBClusterIdentifier property isn&#39;t specified, this property is required. If the
+            /// SourceDBClusterIdentifier property is specified, make sure this property isn&#39;t specified.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -42,8 +46,8 @@ namespace Comformation.RDS.GlobalCluster
 
             /// <summary>
             /// GlobalClusterIdentifier
-            /// The cluster identifier of the new global database cluster.
-            /// Required: No
+            /// The cluster identifier of the global database cluster.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -53,7 +57,9 @@ namespace Comformation.RDS.GlobalCluster
             /// SourceDBClusterIdentifier
             /// The DB cluster identifier or Amazon Resource Name (ARN) to use as the primary cluster of the global
             /// database.
-            /// Required: No
+            /// Note If the Engine property isn&#39;t specified, this property is required. If the Engine property is
+            /// specified, make sure this property isn&#39;t specified.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

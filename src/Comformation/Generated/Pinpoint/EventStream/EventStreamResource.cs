@@ -14,7 +14,7 @@ namespace Comformation.Pinpoint.EventStream
         {
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the Amazon Pinpoint application that you want to publish event data for.
+            /// The unique identifier for the Amazon Pinpoint application that you want to export data from.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -36,8 +36,8 @@ namespace Comformation.Pinpoint.EventStream
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
-            /// Amazon Pinpoint to publish event data to the stream in your AWS account.
+            /// The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event
+            /// data to the stream in your AWS account.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

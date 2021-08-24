@@ -25,8 +25,8 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Recipients
-        /// Contains the recipient domains and email addresses that the receipt rule applies to. If this field
-        /// isn&#39;t specified, this rule matches all recipients on all verified domains.
+        /// The recipient domains and email addresses that the receipt rule applies to. If this field is not
+        /// specified, this rule matches all recipients on all verified domains.
         /// Required: No
         /// Type: List of String
         /// Update requires: No interruption
@@ -57,9 +57,9 @@ namespace Comformation.SES.ReceiptRule
 
         /// <summary>
         /// Name
-        /// The name of the receipt rule. The name must:
-        /// This value can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
-        /// Start and end with a letter or number. Contain fewer than 64 characters.
+        /// The name of the receipt rule. The name must meet the following requirements:
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). Start and end
+        /// with a letter or number. Contain 64 characters or fewer.
         /// Required: No
         /// Type: String
         /// Update requires: Replacement
@@ -74,6 +74,7 @@ namespace Comformation.SES.ReceiptRule
         /// bounces emails that are not received over TLS. The default is Optional.
         /// Required: No
         /// Type: String
+        /// Allowed values: Optional | Require
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TlsPolicy")]

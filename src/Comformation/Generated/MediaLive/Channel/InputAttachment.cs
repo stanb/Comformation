@@ -34,8 +34,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// AutomaticInputFailoverSettings
-        /// User-specified settings for defining what the conditions are for declaring the input unhealthy and
-        /// failing over to a different input.
+        /// Settings to implement automatic input failover in this input.
         /// Required: No
         /// Type: AutomaticInputFailoverSettings
         /// Update requires: No interruption

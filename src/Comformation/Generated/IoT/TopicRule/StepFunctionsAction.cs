@@ -25,6 +25,16 @@ namespace Comformation.IoT.TopicRule
         public Union<string, IntrinsicFunction> ExecutionNamePrefix { get; set; }
 
         /// <summary>
+        /// StateMachineName
+        /// The name of the Step Functions state machine whose execution will be started.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("StateMachineName")]
+        public Union<string, IntrinsicFunction> StateMachineName { get; set; }
+
+        /// <summary>
         /// RoleArn
         /// The ARN of the role that grants IoT permission to start execution of a state machine
         /// (&quot;Action&quot;:&quot;states:StartExecution&quot;).
@@ -34,16 +44,6 @@ namespace Comformation.IoT.TopicRule
         /// </summary>
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
-
-        /// <summary>
-        /// StateMachineName
-        /// The name of the Step Functions state machine whose execution will be started.
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("StateMachineName")]
-        public Union<string, IntrinsicFunction> StateMachineName { get; set; }
 
     }
 }

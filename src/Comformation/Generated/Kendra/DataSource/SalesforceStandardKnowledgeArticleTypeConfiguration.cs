@@ -43,12 +43,12 @@ namespace Comformation.Kendra.DataSource
         /// One or more objects that map fields in the knowledge article to Amazon Kendra index fields. The
         /// index field must exist before you can map a Salesforce field to it.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
     }
 }

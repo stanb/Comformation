@@ -83,11 +83,11 @@ namespace Comformation.Kendra.Index
         /// &quot;Legal&quot;,3 those departments are given special attention when they appear in the metadata of a
         /// document.
         /// Required: No
-        /// Type: ValueImportanceItems
+        /// Type: List of ValueImportanceItem
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ValueImportanceItems")]
-        public ValueImportanceItems ValueImportanceItems { get; set; }
+        public List<ValueImportanceItem> ValueImportanceItems { get; set; }
 
     }
 }

@@ -14,9 +14,12 @@ namespace Comformation.IoTAnalytics.Channel
 
         /// <summary>
         /// Bucket
-        /// The name of the Amazon S3 bucket in which channel data is stored.
+        /// The name of the S3 bucket in which channel data is stored.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 3
+        /// Maximum: 255
+        /// Pattern: ^[a-zA-Z0-9. \-_]*$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Bucket")]
@@ -24,10 +27,12 @@ namespace Comformation.IoTAnalytics.Channel
 
         /// <summary>
         /// RoleArn
-        /// The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3
+        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3
         /// resources.
         /// Required: Yes
         /// Type: String
+        /// Minimum: 20
+        /// Maximum: 2048
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("RoleArn")]
@@ -35,11 +40,14 @@ namespace Comformation.IoTAnalytics.Channel
 
         /// <summary>
         /// KeyPrefix
-        /// [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon
-        /// S3 bucket has a key that is its unique identifier within the bucket (each object in a bucket has
-        /// exactly one key). The prefix must end with a &#39;/&#39;.
+        /// (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3
+        /// bucket has a key that is its unique identifier within the bucket (each object in a bucket has
+        /// exactly one key). The prefix must end with a forward slash (/).
         /// Required: No
         /// Type: String
+        /// Minimum: 1
+        /// Maximum: 255
+        /// Pattern: ^[a-zA-Z0-9!_. *&#39;()/{}:-]*/$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("KeyPrefix")]

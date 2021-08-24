@@ -91,14 +91,34 @@ namespace Comformation.ACMPCA.CertificateAuthority
             /// <summary>
             /// CsrExtensions
             /// 		
-            /// Specifies information to 			be added to the extension section of the certificate signing request
-            /// 			(CSR).
+            /// Specifies information to be added to the extension section of the certificate signing 			request
+            /// (CSR).
             /// 	
             /// Required: No
             /// Type: CsrExtensions
             /// Update requires: Replacement
             /// </summary>
             public CsrExtensions CsrExtensions { get; set; }
+
+            /// <summary>
+            /// KeyStorageSecurityStandard
+            /// 		
+            /// Specifies a 			cryptographic key management compliance standard used for handling CA keys.
+            /// 		
+            /// Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+            /// 		
+            /// Note: FIPS_140_2_LEVEL_3_OR_HIGHER is not supported in Region 			ap-northeast-3. When creating a CA
+            /// in the ap-northeast-3, you must provide 				FIPS_140_2_LEVEL_2_OR_HIGHER as the argument for
+            /// 				KeyStorageSecurityStandard. Failure to do this results in an 				InvalidArgsException with the
+            /// message, &quot;A certificate authority cannot 			be created in this region with the specified security
+            /// standard. &quot;
+            /// 	
+            /// Required: No
+            /// Type: String
+            /// Allowed values: FIPS_140_2_LEVEL_2_OR_HIGHER | FIPS_140_2_LEVEL_3_OR_HIGHER
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> KeyStorageSecurityStandard { get; set; }
 
         }
 

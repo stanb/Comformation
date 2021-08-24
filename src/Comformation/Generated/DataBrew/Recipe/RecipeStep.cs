@@ -24,7 +24,7 @@ namespace Comformation.DataBrew.Recipe
 
         /// <summary>
         /// ConditionExpressions
-        /// One or more conditions that must be met, in order for the recipe step to succeed.
+        /// One or more conditions that must be met for the recipe step to succeed.
         /// Note All of the conditions in the array must be met. In other words, all of the conditions must be
         /// combined using a logical AND operation.
         /// Required: No

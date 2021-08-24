@@ -34,9 +34,12 @@ namespace Comformation.EC2.NetworkInsightsAnalysis
 
         /// <summary>
         /// Address
-        /// Not currently supported by AWS CloudFormation.
+        /// The IPv4 address, in CIDR notation.
         /// Required: No
         /// Type: String
+        /// Minimum: 0
+        /// Maximum: 15
+        /// Pattern: ^([0-9]{1,3}. ){3}[0-9]{1,3}$
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Address")]
@@ -453,7 +456,7 @@ namespace Comformation.EC2.NetworkInsightsAnalysis
 
         /// <summary>
         /// VpnConnection
-        /// Not currently supported by AWS CloudFormation.
+        /// The VPN connection.
         /// Required: No
         /// Type: AnalysisComponent
         /// Update requires: No interruption

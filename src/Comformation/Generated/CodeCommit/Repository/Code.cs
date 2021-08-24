@@ -15,7 +15,7 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// S3
         /// Information about the Amazon S3 bucket that contains a ZIP file of code to be committed to the
-        /// repository.
+        /// repository. Changes to this property are ignored after initial resource creation.
         /// Required: Yes
         /// Type: S3
         /// Update requires: No interruption
@@ -26,11 +26,13 @@ namespace Comformation.CodeCommit.Repository
         /// <summary>
         /// BranchName
         /// Optional. Specifies a branch name to be used as the default branch when importing code into a
-        /// repository. If this property is not set, the name master will be used for the default branch for the
-        /// repository.
+        /// repository on initial creation. If this property is not set, the name main will be used for the
+        /// default branch for the repository. Changes to this property are ignored after initial resource
+        /// creation. We recommend using this parameter to set the name to main to align with the default
+        /// behavior of CodeCommit unless another name is needed.
         /// Required: No
         /// Type: String
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BranchName")]
         public Union<string, IntrinsicFunction> BranchName { get; set; }

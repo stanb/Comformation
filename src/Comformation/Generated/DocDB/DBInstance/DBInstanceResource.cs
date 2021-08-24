@@ -59,9 +59,9 @@ namespace Comformation.DocDB.DBInstance
 
             /// <summary>
             /// AutoMinorVersionUpgrade
-            /// Indicates that minor engine upgrades are applied automatically to the instance during the
-            /// maintenance window.
-            /// Default: true
+            /// This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+            /// upgrades regardless of the value set.
+            /// Default: false
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption

@@ -16,12 +16,12 @@ namespace Comformation.SSO.InstanceAccessControlAttributeConfiguration
         /// Source
         /// The identity source to use when mapping a specified attribute to AWS SSO.
         /// Required: Yes
-        /// Type: AccessControlAttributeValueSourceList
+        /// Type: List of String
         /// Maximum: 1
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Source")]
-        public AccessControlAttributeValueSourceList Source { get; set; }
+        public List<Union<string, IntrinsicFunction>> Source { get; set; }
 
     }
 }

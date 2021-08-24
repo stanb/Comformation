@@ -59,12 +59,12 @@ namespace Comformation.DataBrew.Project
             /// <summary>
             /// Sample
             /// The sample size and sampling type to apply to the data. If this parameter isn&#39;t specified, then the
-            /// sample will consiste of the first 500 rows from the dataset.
+            /// sample consists of the first 500 rows from the dataset.
             /// Required: No
-            /// Type: Json
+            /// Type: Sample
             /// Update requires: No interruption
             /// </summary>
-            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Sample { get; set; }
+            public Sample Sample { get; set; }
 
             /// <summary>
             /// Tags

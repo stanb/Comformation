@@ -24,7 +24,7 @@ namespace Comformation.AppMesh.VirtualRouter
             /// <summary>
             /// VirtualRouterName
             /// The name to use for the virtual router.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

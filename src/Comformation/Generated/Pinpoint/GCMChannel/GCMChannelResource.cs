@@ -14,8 +14,8 @@ namespace Comformation.Pinpoint.GCMChannel
         {
             /// <summary>
             /// ApiKey
-            /// The Web API Key, also referred to as an API_KEY or server key, that you received from Google to
-            /// communicate with Google services.
+            /// The Web API key, also called the server key, that you received from Google to communicate with
+            /// Google services.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -24,7 +24,7 @@ namespace Comformation.Pinpoint.GCMChannel
 
             /// <summary>
             /// Enabled
-            /// Specifies whether to enable the GCM channel for the application.
+            /// Specifies whether to enable the GCM channel for the Amazon Pinpoint application.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -33,7 +33,7 @@ namespace Comformation.Pinpoint.GCMChannel
 
             /// <summary>
             /// ApplicationId
-            /// The unique identifier for the application that the GCM channel applies to.
+            /// The unique identifier for the Amazon Pinpoint application that the GCM channel applies to.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement

@@ -13,17 +13,10 @@ namespace Comformation.Amplify.Domain
         public class DomainProperties
         {
             /// <summary>
-            /// SubDomainSettings
-            /// The setting for the subdomain.
-            /// Required: Yes
-            /// Type: List of SubDomainSetting
-            /// Update requires: No interruption
-            /// </summary>
-            public List<SubDomainSetting> SubDomainSettings { get; set; }
-
-            /// <summary>
             /// AppId
             /// The unique ID for an Amplify app.
+            /// Length Constraints: Minimum length of 1. Maximum length of 20.
+            /// Pattern: d[a-z0-9]+
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -31,9 +24,20 @@ namespace Comformation.Amplify.Domain
             public Union<string, IntrinsicFunction> AppId { get; set; }
 
             /// <summary>
+            /// AutoSubDomainCreationPatterns
+            /// Sets the branch patterns for automatic subdomain creation.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> AutoSubDomainCreationPatterns { get; set; }
+
+            /// <summary>
             /// AutoSubDomainIAMRole
             /// The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name
             /// (ARN) for automatically creating subdomains.
+            /// Length Constraints: Maximum length of 1000.
+            /// Pattern: ^$|^arn:aws:iam::\d{12}:role. +
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -43,6 +47,8 @@ namespace Comformation.Amplify.Domain
             /// <summary>
             /// DomainName
             /// The domain name for the domain association.
+            /// Length Constraints: Maximum length of 255.
+            /// Pattern: ^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\. )+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\. )?$
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -59,13 +65,13 @@ namespace Comformation.Amplify.Domain
             public Union<bool, IntrinsicFunction> EnableAutoSubDomain { get; set; }
 
             /// <summary>
-            /// AutoSubDomainCreationPatterns
-            /// Sets the branch patterns for automatic subdomain creation.
-            /// Required: No
-            /// Type: List of String
+            /// SubDomainSettings
+            /// The setting for the subdomain.
+            /// Required: Yes
+            /// Type: List of SubDomainSetting
             /// Update requires: No interruption
             /// </summary>
-            public List<Union<string, IntrinsicFunction>> AutoSubDomainCreationPatterns { get; set; }
+            public List<SubDomainSetting> SubDomainSettings { get; set; }
 
         }
 
@@ -77,13 +83,13 @@ namespace Comformation.Amplify.Domain
 
     public static class DomainAttributes
     {
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AutoSubDomainIAMRole = new ResourceAttribute<Union<string, IntrinsicFunction>>("AutoSubDomainIAMRole");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StatusReason = new ResourceAttribute<Union<string, IntrinsicFunction>>("StatusReason");
-        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> EnableAutoSubDomain = new ResourceAttribute<Union<bool, IntrinsicFunction>>("EnableAutoSubDomain");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainStatus = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainStatus");
         public static readonly ResourceAttribute<List<Union<string, IntrinsicFunction>>> AutoSubDomainCreationPatterns = new ResourceAttribute<List<Union<string, IntrinsicFunction>>>("AutoSubDomainCreationPatterns");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> AutoSubDomainIAMRole = new ResourceAttribute<Union<string, IntrinsicFunction>>("AutoSubDomainIAMRole");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CertificateRecord = new ResourceAttribute<Union<string, IntrinsicFunction>>("CertificateRecord");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainName = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainName");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> DomainStatus = new ResourceAttribute<Union<string, IntrinsicFunction>>("DomainStatus");
+        public static readonly ResourceAttribute<Union<bool, IntrinsicFunction>> EnableAutoSubDomain = new ResourceAttribute<Union<bool, IntrinsicFunction>>("EnableAutoSubDomain");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> StatusReason = new ResourceAttribute<Union<string, IntrinsicFunction>>("StatusReason");
     }
 }

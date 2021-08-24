@@ -47,8 +47,8 @@ namespace Comformation.SSM.MaintenanceWindow
 
             /// <summary>
             /// Cutoff
-            /// The number of hours before the end of the maintenance window that Systems Manager stops scheduling
-            /// new tasks for execution.
+            /// The number of hours before the end of the maintenance window that AWS Systems Manager stops
+            /// scheduling new tasks for execution.
             /// Required: Yes
             /// Type: Integer
             /// Minimum: 0
@@ -81,7 +81,7 @@ namespace Comformation.SSM.MaintenanceWindow
 
             /// <summary>
             /// ScheduleOffset
-            /// The number of days to wait to run a maintenance window after the scheduled CRON expression date and
+            /// The number of days to wait to run a maintenance window after the scheduled cron expression date and
             /// time.
             /// Required: No
             /// Type: Integer

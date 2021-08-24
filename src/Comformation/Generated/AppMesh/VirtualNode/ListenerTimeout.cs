@@ -44,7 +44,7 @@ namespace Comformation.AppMesh.VirtualNode
 
         /// <summary>
         /// GRPC
-        /// Not currently supported by AWS CloudFormation.
+        /// An object that represents types of timeouts.
         /// Required: No
         /// Type: GrpcTimeout
         /// Update requires: No interruption

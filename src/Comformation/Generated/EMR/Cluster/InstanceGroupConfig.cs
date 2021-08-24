@@ -28,9 +28,9 @@ namespace Comformation.EMR.Cluster
 
         /// <summary>
         /// BidPrice
-        /// The bid price for each EC2 Spot Instance type as defined by InstanceType. Expressed in USD. If
-        /// neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided,
-        /// BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
+        /// If specified, indicates that the instance group uses Spot Instances. This is the maximum price you
+        /// are willing to pay for Spot Instances. Specify OnDemandPrice to set the amount equal to the
+        /// On-Demand price, or specify an amount in USD.
         /// Required: No
         /// Type: String
         /// Minimum: 0

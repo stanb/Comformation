@@ -47,7 +47,7 @@ namespace Comformation.ECS.TaskSet
             /// 	
             /// Required: No
             /// Type: String
-            /// Allowed values: EC2 | FARGATE
+            /// Allowed values: EC2 | EXTERNAL | FARGATE
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> LaunchType { get; set; }

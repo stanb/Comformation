@@ -14,7 +14,7 @@ namespace Comformation.CloudWatch.MetricStream
 
         /// <summary>
         /// Namespace
-        /// Not currently supported by AWS CloudFormation.
+        /// The name of the metric namespace in the filter.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

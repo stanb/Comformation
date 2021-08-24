@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The Classic Load Balancers.
         /// Required: No
         /// Type: ClassicLoadBalancersConfig
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("ClassicLoadBalancersConfig")]
         public ClassicLoadBalancersConfig ClassicLoadBalancersConfig { get; set; }
@@ -27,7 +27,7 @@ namespace Comformation.EC2.SpotFleet
         /// The target groups.
         /// Required: No
         /// Type: TargetGroupsConfig
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("TargetGroupsConfig")]
         public TargetGroupsConfig TargetGroupsConfig { get; set; }

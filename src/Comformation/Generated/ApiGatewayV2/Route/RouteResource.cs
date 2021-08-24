@@ -89,8 +89,8 @@ namespace Comformation.ApiGatewayV2.Route
             /// <summary>
             /// AuthorizationType
             /// The authorization type for the route. For WebSocket APIs, valid values are NONE for open access,
-            /// AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid
-            /// values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM
+            /// AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs,
+            /// valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM
             /// permissions, and CUSTOM for using a Lambda authorizer.
             /// Required: No
             /// Type: String

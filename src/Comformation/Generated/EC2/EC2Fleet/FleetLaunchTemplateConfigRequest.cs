@@ -26,9 +26,10 @@ namespace Comformation.EC2.EC2Fleet
         /// <summary>
         /// Overrides
         /// Any parameters that you specify override the same parameters in the launch template.
+        /// For fleets of type request and maintain, a maximum of 300 items is allowed across all launch
+        /// templates.
         /// Required: No
         /// Type: List of FleetLaunchTemplateOverridesRequest
-        /// Maximum: 50
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Overrides")]

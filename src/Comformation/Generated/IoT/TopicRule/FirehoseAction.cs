@@ -43,5 +43,14 @@ namespace Comformation.IoT.TopicRule
         [JsonProperty("Separator")]
         public Union<string, IntrinsicFunction> Separator { get; set; }
 
+        /// <summary>
+        /// BatchMode
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("BatchMode")]
+        public Union<bool, IntrinsicFunction> BatchMode { get; set; }
+
     }
 }

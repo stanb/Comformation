@@ -32,8 +32,8 @@ namespace Comformation.ElastiCache.SecurityGroupIngress
 
             /// <summary>
             /// EC2SecurityGroupOwnerId
-            /// Specifies the AWS Account ID of the owner of the EC2 security group specified in the
-            /// EC2SecurityGroupName property. The AWS access key ID is not an acceptable value.
+            /// Specifies the Amazon Account ID of the owner of the EC2 security group specified in the
+            /// EC2SecurityGroupName property. The Amazon access key ID is not an acceptable value.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

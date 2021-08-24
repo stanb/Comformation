@@ -39,6 +39,24 @@ namespace Comformation.MediaPackage.Channel
             /// </summary>
             public List<Tag> Tags { get; set; }
 
+            /// <summary>
+            /// EgressAccessLogs
+            /// Configures egress access logs.
+            /// Required: No
+            /// Type: LogConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public LogConfiguration EgressAccessLogs { get; set; }
+
+            /// <summary>
+            /// IngressAccessLogs
+            /// Configures ingress access logs.
+            /// Required: No
+            /// Type: LogConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public LogConfiguration IngressAccessLogs { get; set; }
+
         }
 
         public string Type { get; } = "AWS::MediaPackage::Channel";
@@ -50,6 +68,5 @@ namespace Comformation.MediaPackage.Channel
     public static class ChannelAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
-        public static readonly ResourceAttribute<HlsIngest> HlsIngest = new ResourceAttribute<HlsIngest>("HlsIngest");
     }
 }

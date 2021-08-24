@@ -24,8 +24,8 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// EventBusName
-            /// The event bus name or ARN to associate with this rule. If you omit this, the default event bus is
-            /// used.
+            /// The name or ARN of the event bus associated with the rule. If you omit this, the default event bus
+            /// is used.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -37,14 +37,8 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// EventPattern
-            /// Describes which events are routed to the specified target. For more information, see Events and
-            /// Event Patterns in EventBridge in the Amazon EventBridge User Guide.
-            /// When using CloudFormation, you must enclose each part of the event pattern in square brackets, as
-            /// follows:
-            /// &quot;EventPattern&quot;: { &quot;source&quot;: [ &quot;aws. ec2&quot; ], &quot;detail-type&quot;: [ &quot;EC2 Instance State-change
-            /// Notification&quot; ] }
-            /// To create a rule, you must include at least one EventPattern or ScheduleExpression. You can create a
-            /// rule that includes both.
+            /// The event pattern of the rule. For more information, see Events and Event Patterns in the Amazon
+            /// EventBridge User Guide.
             /// Required: Conditional
             /// Type: Json
             /// Update requires: No interruption
@@ -53,11 +47,7 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// Name
-            /// The name of the rule. If you don&#39;t specify a name, AWS CloudFormation generates a unique physical ID
-            /// and uses that ID for the rule name.
-            /// Important If you specify a name, you can&#39;t perform updates that require replacement of this
-            /// resource. You can perform updates that require no or some interruption. If you must replace the
-            /// resource, specify a new name.
+            /// The name of the rule.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -83,9 +73,8 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// ScheduleExpression
-            /// The scheduling expression that determines when and how often the rule runs. For more information,
-            /// see Schedule Expressions for Rules.
-            /// A rule must contain either ScheduleExpression or EventPattern.
+            /// The scheduling expression. For example, &quot;cron(0 20 * * ? *)&quot;, &quot;rate(5 minutes)&quot;. For more
+            /// information, see Creating an Amazon EventBridge rule that runs on a schedule.
             /// Required: Conditional
             /// Type: String
             /// Maximum: 256
@@ -95,7 +84,7 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// State
-            /// Indicates whether the rule is enabled.
+            /// The state of the rule.
             /// Required: No
             /// Type: String
             /// Allowed values: DISABLED | ENABLED
@@ -105,14 +94,7 @@ namespace Comformation.Events.Rule
 
             /// <summary>
             /// Targets
-            /// The AWS resources that are invoked when the rule is triggered. For information about valid targets,
-            /// see PutTargets.
-            /// If you&#39;re setting the event bus of another account as the target and that account granted permission
-            /// to your account through an organization instead of directly by the account ID, you must specify a
-            /// RoleArn with proper permissions in the Target structure. For more information, see Sending and
-            /// Receiving Events Between AWS Accounts in the Amazon EventBridge User Guide.
-            /// To learn more using a dead-letter queue to send events that fail to be delivered to a target, see
-            /// Event retry policy and using dead-letter queues.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: No
             /// Type: List of Target
             /// Update requires: No interruption

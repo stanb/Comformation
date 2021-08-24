@@ -72,7 +72,9 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// SyncConfig
-            /// Not currently supported by AWS CloudFormation.
+            /// Describes a Sync configuration for a resolver.
+            /// Contains information on which Conflict Detection as well as Resolution strategy should be performed
+            /// when the resolver is invoked.
             /// Required: No
             /// Type: SyncConfig
             /// Update requires: No interruption
@@ -81,8 +83,9 @@ namespace Comformation.AppSync.FunctionConfiguration
 
             /// <summary>
             /// RequestMappingTemplateS3Location
-            /// The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision
-            /// with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+            /// Describes a Sync configuration for a resolver.
+            /// Contains information on which Conflict Detection, as well as Resolution strategy, should be
+            /// performed when the resolver is invoked.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

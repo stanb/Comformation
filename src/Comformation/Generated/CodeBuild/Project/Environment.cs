@@ -25,6 +25,9 @@ namespace Comformation.CodeBuild.Project
         /// Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU
         /// (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific
         /// (Sydney) , China (Beijing), and China (Ningxia).
+        /// The environment types WINDOWS_CONTAINER and WINDOWS_SERVER_2019_CONTAINER are available only in
+        /// regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
+        /// For more information, see Build environment compute types in the AWS CodeBuild user guide.
         /// Required: Yes
         /// Type: String
         /// Allowed values: ARM_CONTAINER | LINUX_CONTAINER | LINUX_GPU_CONTAINER | WINDOWS_CONTAINER |
@@ -71,7 +74,7 @@ namespace Comformation.CodeBuild.Project
         /// ImagePullCredentialsType
         /// The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
         /// CODEBUILD specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
-        /// ECR repository policy to trust AWS CodeBuild&#39;s service principal. SERVICE_ROLE specifies that AWS
+        /// ECR repository policy to trust AWS CodeBuild service principal. SERVICE_ROLE specifies that AWS
         /// CodeBuild uses your build project&#39;s service role.
         /// When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When
         /// you use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
@@ -93,6 +96,7 @@ namespace Comformation.CodeBuild.Project
         /// an image with the digest &quot;sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,&quot;
         /// use
         /// &amp;lt;registry&amp;gt;/&amp;lt;repository&amp;gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf.
+        /// For more information, see Docker images provided by CodeBuild in the AWS CodeBuild user guide.
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -131,9 +135,9 @@ namespace Comformation.CodeBuild.Project
 
         /// <summary>
         /// Certificate
-        /// The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that
-        /// contains the PEM-encoded certificate for the build project. For more information, see certificate in
-        /// the AWS CodeBuild User Guide.
+        /// The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded
+        /// certificate for the build project. For more information, see certificate in the AWS CodeBuild User
+        /// Guide.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

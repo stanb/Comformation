@@ -14,7 +14,7 @@ namespace Comformation.SageMaker.DeviceFleet
         {
             /// <summary>
             /// Description
-            /// Not currently supported by AWS CloudFormation.
+            /// A description of the fleet.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -35,7 +35,7 @@ namespace Comformation.SageMaker.DeviceFleet
 
             /// <summary>
             /// OutputConfig
-            /// Not currently supported by AWS CloudFormation.
+            /// The output configuration for storing sample data collected by the fleet.
             /// Required: Yes
             /// Type: EdgeOutputConfig
             /// Update requires: No interruption
@@ -44,21 +44,26 @@ namespace Comformation.SageMaker.DeviceFleet
 
             /// <summary>
             /// RoleArn
-            /// Not currently supported by AWS CloudFormation.
+            /// The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
             /// Required: Yes
             /// Type: String
+            /// Minimum: 20
+            /// Maximum: 2048
+            /// Pattern: ^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,. @\-_/]+$
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
             /// <summary>
             /// Tags
-            /// Not currently supported by AWS CloudFormation.
+            /// An array of key-value pairs that contain metadata to help you categorize and organize your device
+            /// fleets. Each tag consists of a key and a value, both of which you define.
             /// Required: No
-            /// Type: Tag of Json
+            /// Type: List of Tag
+            /// Maximum: 50
             /// Update requires: No interruption
             /// </summary>
-            public Tag Tags { get; set; }
+            public List<Tag> Tags { get; set; }
 
         }
 

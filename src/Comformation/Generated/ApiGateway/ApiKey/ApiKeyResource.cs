@@ -96,4 +96,9 @@ namespace Comformation.ApiGateway.ApiKey
         public ApiKeyProperties Properties { get; } = new ApiKeyProperties();
 
     }
+
+    public static class ApiKeyAttributes
+    {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> APIKeyId = new ResourceAttribute<Union<string, IntrinsicFunction>>("APIKeyId");
+    }
 }

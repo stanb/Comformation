@@ -13,24 +13,10 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
-        /// IncludeBody
-        /// 		
-        /// A flag that allows a Lambda function to have read access to the body content. For more information,
-        /// 			see Accessing the Request Body by Choosing the 				Include Body Option in the Amazon CloudFront
-        /// Developer Guide.
-        /// 	
-        /// Required: No
-        /// Type: Boolean
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("IncludeBody")]
-        public Union<bool, IntrinsicFunction> IncludeBody { get; set; }
-
-        /// <summary>
         /// EventType
         /// 		
-        /// Specifies the event type that triggers a Lambda function invocation. You can specify the following
-        /// values:
+        /// Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the
+        /// following values:
         /// 		
         /// 			 			 			 			 		 viewer-request: The function executes when CloudFront receives a request from a
         /// viewer 				and before it checks to see whether the requested object is in the edge cache.
@@ -52,10 +38,24 @@ namespace Comformation.CloudFront.Distribution
         public Union<string, IntrinsicFunction> EventType { get; set; }
 
         /// <summary>
+        /// IncludeBody
+        /// 		
+        /// A flag that allows a Lambda@Edge function to have read access to the body content. For more
+        /// information, 			see Accessing the Request Body by Choosing the 				Include Body Option in the Amazon
+        /// CloudFront Developer Guide.
+        /// 	
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("IncludeBody")]
+        public Union<bool, IntrinsicFunction> IncludeBody { get; set; }
+
+        /// <summary>
         /// LambdaFunctionARN
         /// 		
-        /// The ARN of the Lambda function. You must specify the ARN of a function version; you can&#39;t specify a
-        /// Lambda alias 			or $LATEST.
+        /// The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can&#39;t
+        /// specify an alias 			or $LATEST.
         /// 	
         /// Required: No
         /// Type: String

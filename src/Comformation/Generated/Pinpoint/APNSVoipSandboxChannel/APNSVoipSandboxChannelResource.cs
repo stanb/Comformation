@@ -42,8 +42,8 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
 
             /// <summary>
             /// DefaultAuthenticationMethod
-            /// The default authentication method that you want Amazon Pinpoint to use when authenticating with the
-            /// APNs sandbox environment for this channel, key or certificate.
+            /// The default authentication method that you want Amazon Pinpoint to use when authenticating with
+            /// APNs. Valid options are key or certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -80,8 +80,8 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
 
             /// <summary>
             /// Certificate
-            /// The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate
-            /// with the APNs sandbox environment by using an APNs certificate.
+            /// The APNs client certificate that you received from Apple. Specify this value if you want Amazon
+            /// Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -90,8 +90,8 @@ namespace Comformation.Pinpoint.APNSVoipSandboxChannel
 
             /// <summary>
             /// TokenKeyId
-            /// The key identifier that&#39;s assigned to your APNs signing key, if you want Amazon Pinpoint to
-            /// communicate with the APNs sandbox environment by using APNs tokens.
+            /// The key identifier that&#39;s assigned to your APNs signing key. Specify this value if you want Amazon
+            /// Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

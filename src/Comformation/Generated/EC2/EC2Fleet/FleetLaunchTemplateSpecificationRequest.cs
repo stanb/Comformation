@@ -27,6 +27,16 @@ namespace Comformation.EC2.EC2Fleet
         public Union<string, IntrinsicFunction> LaunchTemplateName { get; set; }
 
         /// <summary>
+        /// LaunchTemplateId
+        /// The ID of the launch template. If you specify the template ID, you can&#39;t specify the template name.
+        /// Required: No
+        /// Type: String
+        /// Update requires: Replacement
+        /// </summary>
+        [JsonProperty("LaunchTemplateId")]
+        public Union<string, IntrinsicFunction> LaunchTemplateId { get; set; }
+
+        /// <summary>
         /// Version
         /// The launch template version number, $Latest, or $Default. You must specify a value, otherwise the
         /// request fails.
@@ -38,16 +48,6 @@ namespace Comformation.EC2.EC2Fleet
         /// </summary>
         [JsonProperty("Version")]
         public Union<string, IntrinsicFunction> Version { get; set; }
-
-        /// <summary>
-        /// LaunchTemplateId
-        /// The ID of the launch template. If you specify the template ID, you can&#39;t specify the template name.
-        /// Required: No
-        /// Type: String
-        /// Update requires: Replacement
-        /// </summary>
-        [JsonProperty("LaunchTemplateId")]
-        public Union<string, IntrinsicFunction> LaunchTemplateId { get; set; }
 
     }
 }

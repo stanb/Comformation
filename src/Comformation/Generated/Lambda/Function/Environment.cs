@@ -14,7 +14,7 @@ namespace Comformation.Lambda.Function
 
         /// <summary>
         /// Variables
-        /// Environment variable key-value pairs.
+        /// Environment variable key-value pairs. For more information, see Using Lambda environment variables.
         /// Required: No
         /// Type: Map of String
         /// Update requires: No interruption

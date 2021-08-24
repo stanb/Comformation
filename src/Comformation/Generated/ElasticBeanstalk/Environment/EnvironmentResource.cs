@@ -68,6 +68,22 @@ namespace Comformation.ElasticBeanstalk.Environment
             public Union<string, IntrinsicFunction> EnvironmentName { get; set; }
 
             /// <summary>
+            /// OperationsRole
+            /// Important The operations role feature of AWS Elastic Beanstalk is in beta release and is subject to
+            /// change.
+            /// The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment&#39;s operations
+            /// role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream
+            /// services during this call and during subsequent calls acting on this environment. To specify an
+            /// operations role, you must have the iam:PassRole permission for the role.
+            /// Required: No
+            /// Type: String
+            /// Minimum: 1
+            /// Maximum: 256
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> OperationsRole { get; set; }
+
+            /// <summary>
             /// OptionSettings
             /// Key-value pairs defining configuration options for this environment, such as the instance type.
             /// These options override the values that are defined in the solution stack or the configuration

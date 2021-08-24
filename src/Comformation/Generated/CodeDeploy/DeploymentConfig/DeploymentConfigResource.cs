@@ -13,6 +13,16 @@ namespace Comformation.CodeDeploy.DeploymentConfig
         public class DeploymentConfigProperties
         {
             /// <summary>
+            /// ComputePlatform
+            /// The destination platform type for the deployment (Lambda, Server, or ECS).
+            /// Required: No
+            /// Type: String
+            /// Allowed values: ECS | Lambda | Server
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ComputePlatform { get; set; }
+
+            /// <summary>
             /// DeploymentConfigName
             /// A name for the deployment configuration. If you don&#39;t specify a name, AWS CloudFormation generates a
             /// unique physical ID and uses that ID for the deployment configuration name. For more information, see
@@ -48,6 +58,15 @@ namespace Comformation.CodeDeploy.DeploymentConfig
             /// Update requires: Replacement
             /// </summary>
             public MinimumHealthyHosts MinimumHealthyHosts { get; set; }
+
+            /// <summary>
+            /// TrafficRoutingConfig
+            /// The configuration that specifies how the deployment traffic is routed.
+            /// Required: No
+            /// Type: TrafficRoutingConfig
+            /// Update requires: Replacement
+            /// </summary>
+            public TrafficRoutingConfig TrafficRoutingConfig { get; set; }
 
         }
 

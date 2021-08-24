@@ -25,6 +25,7 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// DefaultResult
             /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
             /// failure occurs. The valid values are CONTINUE and ABANDON (default).
+            /// For more information, see Adding lifecycle hooks in the Amazon EC2 Auto Scaling User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -33,9 +34,9 @@ namespace Comformation.AutoScaling.LifecycleHook
 
             /// <summary>
             /// HeartbeatTimeout
-            /// The amount of time, in seconds, that can elapse before the lifecycle hook times out. If the
-            /// lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-            /// DefaultResult property.
+            /// The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
+            /// 30 to 7200 seconds. The default value is 3600 seconds (1 hour). If the lifecycle hook times out,
+            /// Amazon EC2 Auto Scaling performs the action that you specified in the DefaultResult property.
             /// Required: No
             /// Type: Integer
             /// Update requires: No interruption
@@ -94,7 +95,8 @@ namespace Comformation.AutoScaling.LifecycleHook
             /// RoleARN
             /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
             /// target, for example, an Amazon SNS topic or an Amazon SQS queue. For information about creating this
-            /// role, see Preparing for notifications in the Amazon EC2 Auto Scaling User Guide.
+            /// role, see Configuring a notification target for a lifecycle hook in the Amazon EC2 Auto Scaling User
+            /// Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

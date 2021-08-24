@@ -69,14 +69,15 @@ namespace Comformation.SSM.Association
             /// Parameters
             /// The parameters for the runtime configuration of the document.
             /// Required: No
-            /// Type: Map of ParameterValues
+            /// Type: Map of Json
             /// Update requires: No interruption
             /// </summary>
-            public Dictionary<string, ParameterValues> Parameters { get; set; }
+            public Dictionary<string, Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction>> Parameters { get; set; }
 
             /// <summary>
             /// ScheduleExpression
-            /// A cron expression that specifies a schedule when the association runs.
+            /// A cron expression that specifies a schedule when the association runs. The schedule runs in
+            /// Coordinated Universal Time (UTC).
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -97,7 +98,8 @@ namespace Comformation.SSM.Association
 
             /// <summary>
             /// OutputLocation
-            /// An S3 bucket where you want to store the output details of the request.
+            /// An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of
+            /// the request.
             /// Required: No
             /// Type: InstanceAssociationOutputLocation
             /// Update requires: No interruption
@@ -107,7 +109,8 @@ namespace Comformation.SSM.Association
             /// <summary>
             /// AutomationTargetParameterName
             /// Specify the target for the association. This target is required for associations that use an
-            /// Automation document and target resources by using rate controls.
+            /// Automation runbook and target resources by using rate controls. Automation is a capability of AWS
+            /// Systems Manager.
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -195,14 +198,26 @@ namespace Comformation.SSM.Association
 
             /// <summary>
             /// ApplyOnlyAtCronInterval
-            /// By default, when you create a new associations, the system runs it immediately after it is created
+            /// By default, when you create a new association, the system runs it immediately after it is created
             /// and then according to the schedule you specified. Specify this option if you don&#39;t want an
-            /// association to run immediately after you create it.
+            /// association to run immediately after you create it. This parameter is not supported for rate
+            /// expressions.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
             /// </summary>
             public Union<bool, IntrinsicFunction> ApplyOnlyAtCronInterval { get; set; }
+
+            /// <summary>
+            /// CalendarNames
+            /// The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations
+            /// are gated under. The associations only run when that Change Calendar is open. For more information,
+            /// see AWS Systems Manager Change Calendar.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> CalendarNames { get; set; }
 
         }
 

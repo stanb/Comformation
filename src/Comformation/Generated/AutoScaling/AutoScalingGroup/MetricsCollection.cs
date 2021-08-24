@@ -30,6 +30,8 @@ namespace Comformation.AutoScaling.AutoScalingGroup
         /// GroupMinSize GroupMaxSize GroupDesiredCapacity GroupInServiceInstances GroupPendingInstances
         /// GroupStandbyInstances GroupTerminatingInstances GroupTotalInstances GroupInServiceCapacity
         /// GroupPendingCapacity GroupStandbyCapacity GroupTerminatingCapacity GroupTotalCapacity
+        /// WarmPoolDesiredCapacity WarmPoolWarmedCapacity WarmPoolPendingCapacity WarmPoolTerminatingCapacity
+        /// WarmPoolTotalCapacity GroupAndWarmPoolDesiredCapacity GroupAndWarmPoolTotalCapacity
         /// If you specify Granularity and don&#39;t specify any metrics, all metrics are enabled.
         /// Required: No
         /// Type: List of String

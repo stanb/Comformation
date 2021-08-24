@@ -15,22 +15,12 @@ namespace Comformation.DMS.ReplicationTask
             /// <summary>
             /// ReplicationTaskSettings
             /// Overall settings for the task, in JSON format. For more information, see Specifying Task Settings
-            /// for AWS Database Migration Service Tasks in the AWS Database Migration User Guide.
+            /// for AWS Database Migration Service Tasks in the AWS Database Migration Service User Guide.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> ReplicationTaskSettings { get; set; }
-
-            /// <summary>
-            /// TableMappings
-            /// The table mappings for the task, in JSON format. For more information, see Using Table Mapping to
-            /// Specify Task Settings in the AWS Database Migration Service User Guide.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> TableMappings { get; set; }
 
             /// <summary>
             /// CdcStartPosition
@@ -45,24 +35,12 @@ namespace Comformation.DMS.ReplicationTask
             /// Note When you use this task setting with a source PostgreSQL database, a logical replication slot
             /// should already be created and associated with the source endpoint. You can verify this by setting
             /// the slotName extra connection attribute to the name of this logical replication slot. For more
-            /// information, see Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS.
+            /// information, see Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS .
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> CdcStartPosition { get; set; }
-
-            /// <summary>
-            /// ReplicationTaskIdentifier
-            /// An identifier for the replication task.
-            /// Constraints:
-            /// Must contain 1-255 alphanumeric characters or hyphens. First character must be a letter. Cannot end
-            /// with a hyphen or contain two consecutive hyphens.
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> ReplicationTaskIdentifier { get; set; }
 
             /// <summary>
             /// CdcStopPosition
@@ -75,15 +53,6 @@ namespace Comformation.DMS.ReplicationTask
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> CdcStopPosition { get; set; }
-
-            /// <summary>
-            /// SourceEndpointArn
-            /// An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
-            /// Required: Yes
-            /// Type: String
-            /// Update requires: Replacement
-            /// </summary>
-            public Union<string, IntrinsicFunction> SourceEndpointArn { get; set; }
 
             /// <summary>
             /// MigrationType
@@ -114,15 +83,6 @@ namespace Comformation.DMS.ReplicationTask
             public Union<string, IntrinsicFunction> ReplicationInstanceArn { get; set; }
 
             /// <summary>
-            /// Tags
-            /// One or more tags to be assigned to the replication task.
-            /// Required: No
-            /// Type: List of Tag
-            /// Update requires: Replacement
-            /// </summary>
-            public List<Tag> Tags { get; set; }
-
-            /// <summary>
             /// TaskData
             /// Not currently supported by AWS CloudFormation.
             /// Required: No
@@ -139,6 +99,61 @@ namespace Comformation.DMS.ReplicationTask
             /// Update requires: No interruption
             /// </summary>
             public Union<double, IntrinsicFunction> CdcStartTime { get; set; }
+
+            /// <summary>
+            /// ResourceIdentifier
+            /// A friendly name for the resource identifier at the end of the EndpointArn response parameter that is
+            /// returned in the created Endpoint object. The value for this parameter can have up to 31 characters.
+            /// It can contain only ASCII letters, digits, and hyphen (&#39;-&#39;). Also, it can&#39;t end with a hyphen or
+            /// contain two consecutive hyphens, and can only begin with a letter, such as Example-App-ARN1. For
+            /// example, this value might result in the EndpointArn value
+            /// arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1. If you don&#39;t specify a ResourceIdentifier
+            /// value, AWS DMS generates a default identifier value for the end of EndpointArn.
+            /// Required: No
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ResourceIdentifier { get; set; }
+
+            /// <summary>
+            /// TableMappings
+            /// The table mappings for the task, in JSON format. For more information, see Using Table Mapping to
+            /// Specify Task Settings in the AWS Database Migration Service User Guide.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> TableMappings { get; set; }
+
+            /// <summary>
+            /// ReplicationTaskIdentifier
+            /// An identifier for the replication task.
+            /// Constraints:
+            /// Must contain 1-255 alphanumeric characters or hyphens. First character must be a letter. Cannot end
+            /// with a hyphen or contain two consecutive hyphens.
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> ReplicationTaskIdentifier { get; set; }
+
+            /// <summary>
+            /// SourceEndpointArn
+            /// An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
+            /// Required: Yes
+            /// Type: String
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> SourceEndpointArn { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// One or more tags to be assigned to the replication task.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: Replacement
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 

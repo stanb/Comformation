@@ -23,8 +23,24 @@ namespace Comformation.IoTAnalytics.Datastore
 
             /// <summary>
             /// FileFormatConfiguration
+            /// Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
+            /// and Parquet.
+            /// The default file format is JSON. You can specify only one format.
+            /// You can&#39;t change the file format after you create the data store.
+            /// Required: No
+            /// Type: FileFormatConfiguration
+            /// Update requires: No interruption
             /// </summary>
             public FileFormatConfiguration FileFormatConfiguration { get; set; }
+
+            /// <summary>
+            /// DatastorePartitions
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: DatastorePartitions
+            /// Update requires: No interruption
+            /// </summary>
+            public DatastorePartitions DatastorePartitions { get; set; }
 
             /// <summary>
             /// DatastoreName
@@ -33,7 +49,7 @@ namespace Comformation.IoTAnalytics.Datastore
             /// Type: String
             /// Minimum: 1
             /// Maximum: 128
-            /// Pattern: ^[a-zA-Z0-9_]+$
+            /// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> DatastoreName { get; set; }

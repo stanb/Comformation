@@ -14,9 +14,7 @@ namespace Comformation.Signer.SigningProfile
 
         /// <summary>
         /// Value
-        /// 		
         /// The numerical value of the time unit for signature validity.
-        /// 	
         /// Required: No
         /// Type: Integer
         /// Update requires: Replacement
@@ -26,7 +24,6 @@ namespace Comformation.Signer.SigningProfile
 
         /// <summary>
         /// Type
-        /// 		
         /// The time unit for signature validity: DAYS | MONTHS | YEARS.
         /// Required: No
         /// Type: String

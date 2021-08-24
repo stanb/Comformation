@@ -38,7 +38,7 @@ namespace Comformation.Config.ConfigurationAggregator
 
         /// <summary>
         /// RoleArn
-        /// ARN of the IAM role used to retrieve AWS Organization details 			associated with the aggregator
+        /// ARN of the IAM role used to retrieve AWS Organizations details 			associated with the aggregator
         /// account.
         /// 	
         /// Required: Yes

@@ -14,8 +14,8 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
         /// <summary>
         /// Ec2TagGroup
-        /// A list that contains other lists of EC2 instance tag groups. For an instance to be included in the
-        /// deployment group, it must be identified by all of the tag groups in the list.
+        /// A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included
+        /// in the deployment group, it must be identified by all of the tag groups in the list.
         /// Required: No
         /// Type: List of EC2TagFilter
         /// Update requires: No interruption

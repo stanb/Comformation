@@ -32,7 +32,7 @@ namespace Comformation.OpsWorks.Volume
 
             /// <summary>
             /// Name
-            /// The volume name.
+            /// The volume name. Volume names are a maximum of 128 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

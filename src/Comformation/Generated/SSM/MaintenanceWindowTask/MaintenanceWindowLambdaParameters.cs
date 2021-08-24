@@ -14,8 +14,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// ClientContext
-        /// Client-specific information to pass to the Lambda function that you&#39;re invoking. You can then use
-        /// the context variable to process the client information in your Lambda function.
+        /// Client-specific information to pass to the AWS Lambda function that you&#39;re invoking. You can then
+        /// use the context variable to process the client information in your AWS Lambda function.
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -27,7 +27,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// Qualifier
-        /// A Lambda function version or alias name. If you specify a function version, the action uses the
+        /// An AWS Lambda function version or alias name. If you specify a function version, the action uses the
         /// qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify
         /// an alias name, the action uses the alias ARN to invoke the Lambda function version that the alias
         /// points to.
@@ -42,7 +42,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
         /// <summary>
         /// Payload
-        /// JSON to provide to your Lambda function as input.
+        /// JSON to provide to your AWS Lambda function as input.
         /// Important Although Type is listed as &quot;String&quot; for this property, the payload content must be
         /// formatted as a Base64-encoded binary data object.
         /// Length Constraint: 4096

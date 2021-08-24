@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// Encrypted
+        /// 		
         /// Use to configure device encryption.
+        /// 	
         /// Required: No
         /// Type: Boolean
         /// Update requires: Replacement
@@ -34,7 +36,9 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// Iops
+        /// 		
         /// Use to configure device IOPS.
+        /// 	
         /// Required: No
         /// Type: Integer
         /// Minimum: 100
@@ -46,7 +50,9 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// KmsKeyId
+        /// 		
         /// Use to configure the KMS key to use when encrypting the device.
+        /// 	
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -58,7 +64,9 @@ namespace Comformation.ImageBuilder.ImageRecipe
 
         /// <summary>
         /// SnapshotId
+        /// 		
         /// The snapshot that defines the device contents.
+        /// 	
         /// Required: No
         /// Type: String
         /// Minimum: 1
@@ -85,7 +93,7 @@ namespace Comformation.ImageBuilder.ImageRecipe
         /// Overrides the volume type of the device.
         /// Required: No
         /// Type: String
-        /// Allowed values: gp2 | io1 | io2 | sc1 | st1 | standard
+        /// Allowed values: gp2 | gp3 | io1 | io2 | sc1 | st1 | standard
         /// Update requires: Replacement
         /// </summary>
         [JsonProperty("VolumeType")]

@@ -19,7 +19,7 @@ namespace Comformation.DataSync.LocationFSxWindows
             /// Type: String
             /// Maximum: 253
             /// Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-. ]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Domain { get; set; }
 
@@ -31,7 +31,7 @@ namespace Comformation.DataSync.LocationFSxWindows
             /// Maximum: 128
             /// Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.
             /// *$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> FsxFilesystemArn { get; set; }
 
@@ -39,11 +39,11 @@ namespace Comformation.DataSync.LocationFSxWindows
             /// Password
             /// The password of the user who has the permissions to access files and folders in the FSx for Windows
             /// File Server file system.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Maximum: 104
             /// Pattern: ^. {0,104}$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Password { get; set; }
 
@@ -51,10 +51,12 @@ namespace Comformation.DataSync.LocationFSxWindows
             /// SecurityGroupArns
             /// The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for
             /// Windows File Server file system.
+            /// Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.
+            /// *$
+            /// Length Constraints: Maximum length of 128.
             /// Required: Yes
             /// Type: List of String
-            /// Maximum: 5
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public List<Union<string, IntrinsicFunction>> SecurityGroupArns { get; set; }
 
@@ -67,7 +69,7 @@ namespace Comformation.DataSync.LocationFSxWindows
             /// Type: String
             /// Maximum: 4096
             /// Pattern: ^[a-zA-Z0-9_\-\+\. /\(\)\$\p{Zs}]+$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Subdirectory { get; set; }
 
@@ -75,11 +77,13 @@ namespace Comformation.DataSync.LocationFSxWindows
             /// User
             /// The user who has the permissions to access files and folders in the FSx for Windows File Server file
             /// system.
+            /// For information about choosing a user name that ensures sufficient permissions to files, folders,
+            /// and metadata, see user.
             /// Required: Yes
             /// Type: String
             /// Maximum: 104
             /// Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> User { get; set; }
 

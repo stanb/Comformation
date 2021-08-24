@@ -13,9 +13,21 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
+        /// Value
+        /// The new value of the variable.
+        /// Required: Yes
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Value")]
+        public Union<string, IntrinsicFunction> Value { get; set; }
+
+        /// <summary>
         /// VariableName
         /// The name of the variable.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
@@ -24,18 +36,6 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("VariableName")]
         public Union<string, IntrinsicFunction> VariableName { get; set; }
-
-        /// <summary>
-        /// Value
-        /// The new value of the variable.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 1
-        /// Maximum: 1024
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Value")]
-        public Union<string, IntrinsicFunction> Value { get; set; }
 
     }
 }

@@ -15,7 +15,7 @@ namespace Comformation.NetworkManager.GlobalNetwork
             /// <summary>
             /// Description
             /// A description of the global network.
-            /// Length Constraints: Maximum length of 256 characters.
+            /// Constraints: Maximum length of 256 characters.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption

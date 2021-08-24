@@ -95,8 +95,8 @@ namespace Comformation.AppStream.ImageBuilder
             /// <summary>
             /// IamRoleArn
             /// The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder
-            /// calls the AWS Security Token Service (STS) AssumeRole API operation and passes the ARN of the role
-            /// to use. The operation creates a new session with temporary credentials. AppStream 2. 0 retrieves the
+            /// calls the AWS Security Token Service AssumeRole API operation and passes the ARN of the role to use.
+            /// The operation creates a new session with temporary credentials. AppStream 2. 0 retrieves the
             /// temporary credentials and creates the appstream_machine_role credential profile on the instance.
             /// For more information, see Using an IAM Role to Grant Permissions to Applications and Scripts Running
             /// on AppStream 2. 0 Streaming Instances in the Amazon AppStream 2. 0 Administration Guide.
@@ -131,8 +131,7 @@ namespace Comformation.AppStream.ImageBuilder
 
             /// <summary>
             /// Tags
-            /// An array of key-value pairs. For more information, see Using Cost Allocation Tags in the AWS Billing
-            /// and Cost Management User Guide.
+            /// An array of key-value pairs.
             /// Required: No
             /// Type: List of Tag
             /// Update requires: No interruption

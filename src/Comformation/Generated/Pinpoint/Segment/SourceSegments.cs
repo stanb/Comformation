@@ -14,7 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Version
-        /// The version number of the segment.
+        /// The version number of the source segment.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -24,7 +24,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Id
-        /// The unique identifier for the segment.
+        /// The unique identifier for the source segment.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

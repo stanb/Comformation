@@ -6,7 +6,7 @@ using Comformation.IntrinsicFunctions;
 namespace Comformation.DataSync.LocationEFS
 {
     /// <summary>
-    /// AWS::DataSync::LocationEFS EC2Config
+    /// AWS::DataSync::LocationEFS Ec2Config
     /// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationefs-ec2config.html
     /// </summary>
     public class Ec2Config
@@ -19,7 +19,7 @@ namespace Comformation.DataSync.LocationEFS
         /// Required: Yes
         /// Type: List of String
         /// Maximum: 5
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SecurityGroupArns")]
         public List<Union<string, IntrinsicFunction>> SecurityGroupArns { get; set; }
@@ -31,7 +31,7 @@ namespace Comformation.DataSync.LocationEFS
         /// Type: String
         /// Maximum: 128
         /// Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):ec2:[a-z\-0-9]*:[0-9]{12}:subnet/. *$
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("SubnetArn")]
         public Union<string, IntrinsicFunction> SubnetArn { get; set; }

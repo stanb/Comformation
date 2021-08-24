@@ -15,11 +15,21 @@ namespace Comformation.IoTEvents.Input
             /// <summary>
             /// InputDefinition
             /// The definition of the input.
-            /// Required: No
+            /// Required: Yes
             /// Type: InputDefinition
             /// Update requires: No interruption
             /// </summary>
             public InputDefinition InputDefinition { get; set; }
+
+            /// <summary>
+            /// InputDescription
+            /// A brief description of the input.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 128
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> InputDescription { get; set; }
 
             /// <summary>
             /// InputName
@@ -32,16 +42,6 @@ namespace Comformation.IoTEvents.Input
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> InputName { get; set; }
-
-            /// <summary>
-            /// InputDescription
-            /// A brief description of the input.
-            /// Required: No
-            /// Type: String
-            /// Maximum: 128
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> InputDescription { get; set; }
 
             /// <summary>
             /// Tags

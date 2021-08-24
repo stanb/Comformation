@@ -15,7 +15,7 @@ namespace Comformation.RDS.DBProxy
         /// <summary>
         /// Key
         /// A key is the required name of the tag. The string value can be 1-128 Unicode characters in length
-        /// and can&#39;t be prefixed with &quot;aws:&quot;. The string can contain only the set of Unicode letters, digits,
+        /// and can&#39;t be prefixed with aws:. The string can contain only the set of Unicode letters, digits,
         /// white-space, &#39;_&#39;, &#39;. &#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39; (Java regex: &quot;^([\\p{L}\\p{Z}\\p{N}_. :/=+\\-]*)$&quot;).
         /// Required: No
         /// Type: String
@@ -27,7 +27,7 @@ namespace Comformation.RDS.DBProxy
         /// <summary>
         /// Value
         /// A value is the optional value of the tag. The string value can be 1-256 Unicode characters in length
-        /// and can&#39;t be prefixed with &quot;aws:&quot;. The string can contain only the set of Unicode letters, digits,
+        /// and can&#39;t be prefixed with aws:. The string can contain only the set of Unicode letters, digits,
         /// white-space, &#39;_&#39;, &#39;. &#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39; (Java regex: &quot;^([\\p{L}\\p{Z}\\p{N}_. :/=+\\-]*)$&quot;).
         /// Required: No
         /// Type: String

@@ -13,19 +13,9 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
-        /// States
-        /// Information about the states of the detector.
-        /// Required: No
-        /// Type: List of State
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("States")]
-        public List<State> States { get; set; }
-
-        /// <summary>
         /// InitialStateName
         /// The state that is entered at the creation of each detector (instance).
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
@@ -33,6 +23,16 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("InitialStateName")]
         public Union<string, IntrinsicFunction> InitialStateName { get; set; }
+
+        /// <summary>
+        /// States
+        /// Information about the states of the detector.
+        /// Required: Yes
+        /// Type: List of State
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("States")]
+        public List<State> States { get; set; }
 
     }
 }

@@ -13,9 +13,24 @@ namespace Comformation.RAM.ResourceShare
         public class ResourceShareProperties
         {
             /// <summary>
+            /// PermissionArns
+            /// The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do
+            /// not specify an ARN 			for the permission, AWS RAM automatically attaches the default version of the
+            /// permission 			for each resource type. Only one permission can be associated with each resource type
+            /// in a resource share.
+            /// Required: No
+            /// Type: List of String
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Union<string, IntrinsicFunction>> PermissionArns { get; set; }
+
+            /// <summary>
             /// Principals
-            /// The principals to associate with the resource share. The possible values are IDs of AWS accounts,
-            /// the ARN of an OU or organization from AWS Organizations.
+            /// The principals to associate with the resource share. The possible values are:
+            /// An AWS account ID An Amazon Resource Name (ARN) of an organization in AWS Organizations An ARN of an
+            /// organizational unit (OU) in AWS Organizations An ARN of an IAM role An ARN of an IAM user
+            /// Note Not all resource types can be shared with IAM roles and IAM users. For more information, see
+            /// Sharing with IAM roles and IAM users in the AWS Resource Access Manager User Guide.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption
@@ -24,7 +39,8 @@ namespace Comformation.RAM.ResourceShare
 
             /// <summary>
             /// AllowExternalPrincipals
-            /// Indicates whether principals outside your AWS organization can be associated with a resource share.
+            /// Indicates whether principals outside your organization in AWS Organizations can be associated with a
+            /// resource share.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -33,7 +49,7 @@ namespace Comformation.RAM.ResourceShare
 
             /// <summary>
             /// ResourceArns
-            /// The Amazon Resource Names (ARN) of the resources to associate with the resource share.
+            /// The Amazon Resource Names (ARNs) of the resources to associate with the resource share.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption

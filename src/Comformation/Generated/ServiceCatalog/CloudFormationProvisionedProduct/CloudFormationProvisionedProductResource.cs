@@ -25,7 +25,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
 
             /// <summary>
             /// NotificationArns
-            /// Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.
+            /// Passed to AWS CloudFormation. The SNS topic ARNs to which to publish stack-related events.
             /// Required: No
             /// Type: List of String
             /// Maximum: 5
@@ -79,7 +79,7 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
             /// A user-friendly name for the provisioned product. This value must be unique for the AWS account and
             /// cannot be updated after the product is provisioned.
             /// Each time a stack is created or updated, if ProductName is provided it will successfully resolve to
-            /// ProductId as long as only one product exists in the account/region with that ProductName.
+            /// ProductId as long as only one product exists in the account or Region with that ProductName.
             /// Note You must specify either the name or the ID of the product, but not both.
             /// Required: Conditional
             /// Type: String
@@ -173,6 +173,5 @@ namespace Comformation.ServiceCatalog.CloudFormationProvisionedProduct
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> ProvisionedProductId = new ResourceAttribute<Union<string, IntrinsicFunction>>("ProvisionedProductId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> RecordId = new ResourceAttribute<Union<string, IntrinsicFunction>>("RecordId");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> CloudformationStackArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("CloudformationStackArn");
-        public static readonly ResourceAttribute<Dictionary<string, Union<string, IntrinsicFunction>>> Outputs = new ResourceAttribute<Dictionary<string, Union<string, IntrinsicFunction>>>("Outputs");
     }
 }

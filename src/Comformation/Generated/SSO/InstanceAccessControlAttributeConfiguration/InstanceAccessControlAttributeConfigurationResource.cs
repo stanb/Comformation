@@ -25,17 +25,6 @@ namespace Comformation.SSO.InstanceAccessControlAttributeConfiguration
             public Union<string, IntrinsicFunction> InstanceArn { get; set; }
 
             /// <summary>
-            /// InstanceAccessControlAttributeConfiguration
-            /// The InstanceAccessControlAttributeConfiguration property has been deprecated but is still supported
-            /// for backwards compatibility purposes. We recommend that you use the AccessControlAttributes property
-            /// instead.
-            /// Required: No
-            /// Type: Json
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> InstanceAccessControlAttributeConfiguration { get; set; }
-
-            /// <summary>
             /// AccessControlAttributes
             /// Lists the attributes that are configured for ABAC in the specified AWS SSO instance.
             /// Required: No

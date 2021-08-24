@@ -13,6 +13,22 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
+        /// DurationExpression
+        /// The duration of the timer, in seconds. You can use a string expression that includes numbers,
+        /// variables ($variable. &amp;lt;variable-name&amp;gt;), and input values ($input. &amp;lt;input-name&amp;gt;.
+        /// &amp;lt;path-to-datum&amp;gt;) as the duration. The range of the duration is 1-31622400 seconds. To ensure
+        /// accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down
+        /// to the nearest whole number.
+        /// Required: No
+        /// Type: String
+        /// Minimum: 1
+        /// Maximum: 1024
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DurationExpression")]
+        public Union<string, IntrinsicFunction> DurationExpression { get; set; }
+
+        /// <summary>
         /// Seconds
         /// The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
         /// The maximum value is 31622400 seconds.
@@ -28,7 +44,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// <summary>
         /// TimerName
         /// The name of the timer.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
@@ -36,22 +52,6 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("TimerName")]
         public Union<string, IntrinsicFunction> TimerName { get; set; }
-
-        /// <summary>
-        /// DurationExpression
-        /// The duration of the timer, in seconds. You can use a string expression that includes numbers,
-        /// variables ($variable. &amp;lt;variable-name&amp;gt;), and input values ($input. &amp;lt;input-name&amp;gt;.
-        /// &amp;lt;path-to-datum&amp;gt;) as the duration. The range of the duration is 1-31622400 seconds. To ensure
-        /// accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down
-        /// to the nearest whole number.
-        /// Required: No
-        /// Type: String
-        /// Minimum: 1
-        /// Maximum: 1024
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("DurationExpression")]
-        public Union<string, IntrinsicFunction> DurationExpression { get; set; }
 
     }
 }

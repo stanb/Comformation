@@ -13,6 +13,17 @@ namespace Comformation.ServiceDiscovery.Service
         public class ServiceProperties
         {
             /// <summary>
+            /// Type
+            /// If present, specifies that the service instances are only discoverable using the DiscoverInstances
+            /// API operation. No DNS records is registered for the service instances. The only valid value is HTTP.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: HTTP
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> Type { get; set; }
+
+            /// <summary>
             /// Description
             /// The description of the service.
             /// Required: No
@@ -35,7 +46,7 @@ namespace Comformation.ServiceDiscovery.Service
 
             /// <summary>
             /// DnsConfig
-            /// A complex type that contains information about the Route&#160;53 DNS records that you want AWS Cloud Map
+            /// A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map
             /// to create when you register an instance.
             /// Required: No
             /// Type: DnsConfig
@@ -60,7 +71,7 @@ namespace Comformation.ServiceDiscovery.Service
             /// Public DNS and HTTP namespaces only. A complex type that contains settings for an optional health
             /// check. If you specify settings for a health check, AWS Cloud Map associates the health check with
             /// the records that you specify in DnsConfig.
-            /// For information about the charges for health checks, see Amazon Route&#160;53 Pricing.
+            /// For information about the charges for health checks, see Amazon Route 53 Pricing.
             /// Required: No
             /// Type: HealthCheckConfig
             /// Update requires: No interruption

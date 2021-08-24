@@ -36,7 +36,7 @@ namespace Comformation.ApplicationInsights.Application
         /// Tier
         /// The tier of the application component. Supported tiers include DOT_NET_WORKER, DOT_NET_WEB,
         /// DOT_NET_CORE, SQL_SERVER, and DEFAULT.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>
@@ -53,7 +53,7 @@ namespace Comformation.ApplicationInsights.Application
         /// monitoring settings of the selected Tier, and merged with customized overwrite settings that are
         /// specified in DefaultOverwriteComponentConfiguration. If used, DefaultOverwriteComponentConfiguration
         /// must be provided.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
         /// </summary>

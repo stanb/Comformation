@@ -14,8 +14,8 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// KmsKeyId
-        /// The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
-        /// encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+        /// The customer master key (CMK) to use for the A AWS KMS (KMS). This key is used to encrypt your data
+        /// at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -25,8 +25,8 @@ namespace Comformation.AmazonMQ.Broker
 
         /// <summary>
         /// UseAwsOwnedKey
-        /// Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default,
-        /// if no value is provided, for example, for RabbitMQ brokers.
+        /// Enables the use of an AWS owned CMK using AWS KMS (KMS). Set to true by default, if no value is
+        /// provided, for example, for RabbitMQ brokers.
         /// Required: Yes
         /// Type: Boolean
         /// Update requires: No interruption

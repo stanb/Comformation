@@ -54,13 +54,14 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown
         /// period, Application Auto Scaling scales out the target immediately. In this case, the scale-in
         /// cooldown period stops and doesn&#39;t complete.
-        /// Application Auto Scaling provides a default value of 300 for the following scalable targets:
+        /// Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:
         /// ECS services Spot Fleet requests EMR clusters AppStream 2. 0 fleets Aurora DB clusters Amazon
         /// SageMaker endpoint variants Custom resources
         /// For all other scalable targets, the default value is 0:
         /// DynamoDB tables DynamoDB global secondary indexes Amazon Comprehend document classification and
-        /// entity recognizer endpoints Lambda provisioned concurrency Amazon Keyspaces tables Amazon MSK
-        /// cluster storage
+        /// entity recognizer endpoints Lambda provisioned concurrency Amazon Keyspaces tables Amazon MSK broker
+        /// storage
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -77,13 +78,14 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
         /// again unless either a larger scale out is triggered or the cooldown period ends. While the cooldown
         /// period is in effect, the capacity added by the initiating scale-out activity is calculated as part
         /// of the desired capacity for the next scale-out activity.
-        /// Application Auto Scaling provides a default value of 300 for the following scalable targets:
+        /// Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:
         /// ECS services Spot Fleet requests EMR clusters AppStream 2. 0 fleets Aurora DB clusters Amazon
         /// SageMaker endpoint variants Custom resources
         /// For all other scalable targets, the default value is 0:
         /// DynamoDB tables DynamoDB global secondary indexes Amazon Comprehend document classification and
-        /// entity recognizer endpoints Lambda provisioned concurrency Amazon Keyspaces tables Amazon MSK
-        /// cluster storage
+        /// entity recognizer endpoints Lambda provisioned concurrency Amazon Keyspaces tables Amazon MSK broker
+        /// storage
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -93,7 +95,11 @@ namespace Comformation.ApplicationAutoScaling.ScalingPolicy
 
         /// <summary>
         /// TargetValue
-        /// The target value for the metric.
+        /// The target value for the metric. Although this property accepts numbers of type Double, it won&#39;t
+        /// accept values that are either too small or too large. Values must be in the range of -2^360 to
+        /// 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is
+        /// CPU utilization, then the target value is a percent value that represents how much of the CPU can be
+        /// used before scaling out.
         /// Required: Yes
         /// Type: Double
         /// Update requires: No interruption

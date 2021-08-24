@@ -14,7 +14,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Rec601Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings to configure the handling of Rec601 color space.
         /// Required: No
         /// Type: Rec601Settings
         /// Update requires: No interruption
@@ -24,7 +24,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Rec709Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings to configure the handling of Rec709 color space.
         /// Required: No
         /// Type: Rec709Settings
         /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// ColorSpacePassthroughSettings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings to pass through color space in the video.
         /// Required: No
         /// Type: ColorSpacePassthroughSettings
         /// Update requires: No interruption
@@ -44,7 +44,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// Hdr10Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings to configure the handling of HDR10 color space.
         /// Required: No
         /// Type: Hdr10Settings
         /// Update requires: No interruption

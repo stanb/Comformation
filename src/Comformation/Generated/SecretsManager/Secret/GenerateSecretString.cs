@@ -101,7 +101,7 @@ namespace Comformation.SecretsManager.Secret
 
         /// <summary>
         /// ExcludeLowercase
-        /// Specifies the generated password should not include lowercase letters. By default, SEcrets Manager
+        /// Specifies the generated password should not include lowercase letters. By default, ecrets Manager
         /// disables this parameter, and the generated password can include lowercase False, and the generated
         /// password can include lowercase letters.
         /// Required: No
@@ -113,11 +113,18 @@ namespace Comformation.SecretsManager.Secret
 
         /// <summary>
         /// SecretStringTemplate
-        /// A properly structured JSON string that the generated password can be added to. If you specify this
-        /// parameter, then you must also specify GenerateStringKey. Secrets Manager combines this with the
-        /// generated random string and inserts into the JSON structure specified by this parameter. The merged
-        /// JSON string returns as the completed SecretString of the secret. By default, Secrets Manager does
-        /// not return the generated random password string, and doesn&#39;t embed it in a JSON structure.
+        /// (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
+        /// Either GenerateSecretString or SecretString must have a value, but not both. They cannot both be
+        /// empty.
+        /// If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
+        /// secret text in only the SecretString parameter. The Secrets Manager console stores the information
+        /// as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.
+        /// For storing multiple values, we recommend that you use a JSON text string argument and specify
+        /// key/value pairs. For information on how to format a JSON parameter for the various command line tool
+        /// environments, see Using JSON for Parameters in the AWS CLI User Guide. For example:
+        /// {&quot;username&quot;:&quot;bob&quot;,&quot;password&quot;:&quot;abc123xyz456&quot;}
+        /// If your command-line tool or SDK requires quotation marks around the parameter, you should use
+        /// single quotes to avoid confusion with the double quotes required in the JSON text.
         /// Required: No
         /// Type: String
         /// Minimum: 0
@@ -129,8 +136,8 @@ namespace Comformation.SecretsManager.Secret
 
         /// <summary>
         /// ExcludeNumbers
-        /// Specifies that the generated password should exclude digits. By default, Secrets Manager does not
-        /// enable the parameter, False, and the generated password can include digits.
+        /// Specifies that the generated password should not include digits. The default if you do not include
+        /// this switch parameter is that digits can be included.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption

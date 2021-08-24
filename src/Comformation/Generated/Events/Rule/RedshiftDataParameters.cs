@@ -19,7 +19,6 @@ namespace Comformation.Events.Rule
         /// Type: String
         /// Minimum: 1
         /// Maximum: 64
-        /// Pattern: ([a-zA-Z0-9]+)|(\$(\. [\w_-]+(\[(\d+|\*)\])*)*)
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Database")]
@@ -32,7 +31,6 @@ namespace Comformation.Events.Rule
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128
-        /// Pattern: ([a-zA-Z0-9]+)|(\$(\. [\w_-]+(\[(\d+|\*)\])*)*)
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("DbUser")]

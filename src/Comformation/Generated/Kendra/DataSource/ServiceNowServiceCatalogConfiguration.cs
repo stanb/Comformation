@@ -24,25 +24,31 @@ namespace Comformation.Kendra.DataSource
 
         /// <summary>
         /// IncludeAttachmentFilePatterns
-        /// Determines the types of file attachments that are included in the index.
+        /// A list of regular expression patterns. Documents that match the patterns are included in the index.
+        /// Documents that don&#39;t match the patterns are excluded from the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not included in the index.
+        /// The regex is applied to the file name of the attachment.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("IncludeAttachmentFilePatterns")]
-        public DataSourceInclusionsExclusionsStrings IncludeAttachmentFilePatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> IncludeAttachmentFilePatterns { get; set; }
 
         /// <summary>
         /// ExcludeAttachmentFilePatterns
-        /// Determines the types of file attachments that are excluded from the index.
+        /// A list of regular expression patterns. Documents that match the patterns are excluded from the
+        /// index. Documents that don&#39;t match the patterns are included in the index. If a document matches both
+        /// an exclusion pattern and an inclusion pattern, the document is not included in the index.
+        /// The regex is applied to the file name of the attachment.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExcludeAttachmentFilePatterns")]
-        public DataSourceInclusionsExclusionsStrings ExcludeAttachmentFilePatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExcludeAttachmentFilePatterns { get; set; }
 
         /// <summary>
         /// DocumentDataFieldName
@@ -76,12 +82,12 @@ namespace Comformation.Kendra.DataSource
         /// Mapping between ServiceNow fields and Amazon Kendra index fields. You must create the index field
         /// before you map the field.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
     }
 }

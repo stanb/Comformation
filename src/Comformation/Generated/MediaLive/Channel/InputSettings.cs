@@ -80,6 +80,7 @@ namespace Comformation.MediaLive.Channel
         /// <summary>
         /// AudioSelectors
         /// Information about the specific audio to extract from the input.
+        /// The parent of this entity is InputSettings.
         /// Required: No
         /// Type: List of AudioSelector
         /// Update requires: No interruption

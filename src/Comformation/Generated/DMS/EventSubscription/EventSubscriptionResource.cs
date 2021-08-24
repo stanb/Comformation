@@ -28,7 +28,7 @@ namespace Comformation.DMS.EventSubscription
             /// EventCategories
             /// A list of event categories for a source type that you want to subscribe to. If you don&#39;t specify
             /// this property, you are notified about all event categories. For more information, see Working with
-            /// Events and Notifications in the AWS Database Migration Service User Guide.
+            /// Events and Notifications in the AWS DMS User Guide.
             /// Required: No
             /// Type: List of String
             /// Update requires: No interruption

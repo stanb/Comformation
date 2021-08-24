@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
         /// <summary>
         /// Region
-        /// The target Region for the Distribution Configuration. For example, eu-west-1.
+        /// 		
+        /// The target Region for the Distribution Configuration. For example, 			eu-west-1.
+        /// 	
         /// Required: Yes
         /// Type: String
         /// Minimum: 1
@@ -26,8 +28,10 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
         /// <summary>
         /// AmiDistributionConfiguration
-        /// The specific AMI settings, such as launch permissions and AMI tags. For details, see example schema
-        /// below.
+        /// 		
+        /// The specific AMI settings, such as launch permissions and AMI tags. For details, 			see example
+        /// schema below.
+        /// 	
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -37,7 +41,10 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
         /// <summary>
         /// ContainerDistributionConfiguration
-        /// Container distribution settings for encryption, licensing, and sharing in a specific Region.
+        /// 		
+        /// Container distribution settings for encryption, licensing, and sharing 			in a specific Region. For
+        /// details, see example schema below.
+        /// 	
         /// Required: No
         /// Type: Json
         /// Update requires: No interruption
@@ -47,8 +54,10 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
 
         /// <summary>
         /// LicenseConfigurationArns
-        /// The License Manager Configuration to associate with the AMI in the specified Region. For more
-        /// information, see the LicenseConfiguration API.
+        /// 		
+        /// The License Manager Configuration to associate with the AMI in the specified Region. 			For more
+        /// information, see the 				LicenseConfiguration API.
+        /// 	
         /// Required: No
         /// Type: List of String
         /// Maximum: 50
@@ -56,6 +65,20 @@ namespace Comformation.ImageBuilder.DistributionConfiguration
         /// </summary>
         [JsonProperty("LicenseConfigurationArns")]
         public List<Union<string, IntrinsicFunction>> LicenseConfigurationArns { get; set; }
+
+        /// <summary>
+        /// LaunchTemplateConfigurations
+        /// 		
+        /// A group of launchTemplateConfiguration settings that apply to image distribution 			for specified
+        /// accounts.
+        /// 	
+        /// Required: No
+        /// Type: List of LaunchTemplateConfiguration
+        /// Maximum: 100
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("LaunchTemplateConfigurations")]
+        public List<LaunchTemplateConfiguration> LaunchTemplateConfigurations { get; set; }
 
     }
 }

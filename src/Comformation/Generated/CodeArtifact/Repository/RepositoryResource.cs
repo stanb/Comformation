@@ -55,7 +55,7 @@ namespace Comformation.CodeArtifact.Repository
             /// Required: No
             /// Type: String
             /// Maximum: 1000
-            /// Pattern: \P{C}+
+            /// Pattern: \P{C}*
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }

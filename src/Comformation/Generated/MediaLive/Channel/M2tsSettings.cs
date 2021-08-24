@@ -15,7 +15,7 @@ namespace Comformation.MediaLive.Channel
         /// <summary>
         /// EtvPlatformPid
         /// The PID for the input source ETV Platform data to this output. You can enter it as a decimal or
-        /// hexadecimal value. Valid values are 32 (or 0x20). . 8182 (or 0x1ff6).
+        /// hexadecimal value. Valid values are 32 (or 0x20) to 8182 (or 0x1ff6).
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

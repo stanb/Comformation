@@ -13,16 +13,6 @@ namespace Comformation.IoTEvents.DetectorModel
     {
 
         /// <summary>
-        /// TableName
-        /// The name of the DynamoDB table.
-        /// Required: No
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("TableName")]
-        public Union<string, IntrinsicFunction> TableName { get; set; }
-
-        /// <summary>
         /// Payload
         /// Information needed to configure the payload.
         /// By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload
@@ -34,6 +24,16 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("Payload")]
         public Payload Payload { get; set; }
+
+        /// <summary>
+        /// TableName
+        /// The name of the DynamoDB table.
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("TableName")]
+        public Union<string, IntrinsicFunction> TableName { get; set; }
 
     }
 }

@@ -14,7 +14,7 @@ namespace Comformation.MediaConnect.Flow
         {
             /// <summary>
             /// Name
-            /// The name of the entitlement. This value must be unique within the current flow.
+            /// The name of the flow.
             /// Required: Yes
             /// Type: String
             /// Update requires: Replacement
@@ -61,7 +61,7 @@ namespace Comformation.MediaConnect.Flow
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FlowArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("FlowArn");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> FlowAvailabilityZone = new ResourceAttribute<Union<string, IntrinsicFunction>>("FlowAvailabilityZone");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> SourceArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("SourceArn");
-        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> IngestIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("IngestIp");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Source_SourceArn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Source", "SourceArn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Source_IngestIp = new ResourceAttribute<Union<string, IntrinsicFunction>>("Source", "IngestIp");
     }
 }

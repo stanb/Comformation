@@ -56,5 +56,17 @@ namespace Comformation.MediaLive.Channel
         [JsonProperty("StyleControl")]
         public Union<string, IntrinsicFunction> StyleControl { get; set; }
 
+        /// <summary>
+        /// CopyrightHolder
+        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete
+        /// this field if you want to include the name of the copyright holder in the copyright metadata tag in
+        /// the TTML
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CopyrightHolder")]
+        public Union<string, IntrinsicFunction> CopyrightHolder { get; set; }
+
     }
 }

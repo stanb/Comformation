@@ -17,7 +17,7 @@ namespace Comformation.Elasticsearch.Domain
         /// Specify true to enable encryption at rest.
         /// Required: No
         /// Type: Boolean
-        /// Update requires: Replacement
+        /// Update requires: Some interruptions
         /// </summary>
         [JsonProperty("Enabled")]
         public Union<bool, IntrinsicFunction> Enabled { get; set; }

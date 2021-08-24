@@ -15,9 +15,9 @@ namespace Comformation.EFS.FileSystem
             /// <summary>
             /// Encrypted
             /// A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file
-            /// system, you have the option of specifying a KmsKeyId for an existing AWS Key Management Service (AWS
-            /// KMS) customer master key (CMK). If you don&#39;t specify a CMK, then the default CMK for Amazon EFS,
-            /// /aws/elasticfilesystem, is used to protect the encrypted file system.
+            /// system, you have the option of specifying a KmsKeyId for an existing AWS KMS key. If you don&#39;t
+            /// specify a KMS key, then the default KMS key for Amazon EFS, /aws/elasticfilesystem, is used to
+            /// protect the encrypted file system.
             /// Required: Conditional
             /// Type: Boolean
             /// Update requires: Replacement
@@ -26,9 +26,10 @@ namespace Comformation.EFS.FileSystem
 
             /// <summary>
             /// FileSystemTags
-            /// A value that specifies to create one or more tags associated with the file system. Each tag is a
-            /// user-defined key-value pair. Name your file system on creation by including a
-            /// &quot;Key&quot;:&quot;Name&quot;,&quot;Value&quot;:&quot;{value}&quot; key-value pair.
+            /// Use to create one or more tags associated with the file system. Each tag is a user-defined key-value
+            /// pair. Name your file system on creation by including a &quot;Key&quot;:&quot;Name&quot;,&quot;Value&quot;:&quot;{value}&quot; key-value
+            /// pair. Each key must be unique. For more information, see Tagging AWS resources in the AWS General
+            /// Reference Guide.
             /// Required: No
             /// Type: List of ElasticFileSystemTag
             /// Update requires: No interruption
@@ -37,9 +38,9 @@ namespace Comformation.EFS.FileSystem
 
             /// <summary>
             /// KmsKeyId
-            /// The ID of the AWS KMS customer master key (CMK) to be used to protect the encrypted file system.
-            /// This parameter is only required if you want to use a nondefault CMK. If this parameter is not
-            /// specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:
+            /// The ID of the AWS KMS key to be used to protect the encrypted file system. This parameter is only
+            /// required if you want to use a nondefault KMS key. If this parameter is not specified, the default
+            /// KMS key for Amazon EFS is used. This ID can be in one of the following formats:
             /// Key ID - A unique identifier of the key, for example 1234abcd-12ab-34cd-56ef-1234567890ab. ARN - An
             /// Amazon Resource Name (ARN) for the key, for example
             /// arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab. Key alias - A
@@ -50,15 +51,15 @@ namespace Comformation.EFS.FileSystem
             /// Type: String
             /// Maximum: 2048
             /// Pattern:
-            /// ^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|alias/[a-zA-Z0-9/_-]+|(arn:aws[-a-z]*:kms:[a-z0-9-]+:\d{12}:((key/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})|(alias/[a-zA-Z0-9/_-]+))))$
+            /// ^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|mrk-[0-9a-f]{32}|alias/[a-zA-Z0-9/_-]+|(arn:aws[-a-z]*:kms:[a-z0-9-]+:\d{12}:((key/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})|(key/mrk-[0-9a-f]{32})|(alias/[a-zA-Z0-9/_-]+))))$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
 
             /// <summary>
             /// LifecyclePolicies
-            /// A list of policies used by EFS lifecycle management to transition files to the Infrequent Access
-            /// (IA) storage class.
+            /// A list of one LifecyclePolicy that tells EFS lifecycle management when to transition files to the
+            /// Infrequent Access (IA) storage classes.
             /// Required: No
             /// Type: List of LifecyclePolicy
             /// Update requires: No interruption
@@ -71,6 +72,7 @@ namespace Comformation.EFS.FileSystem
             /// systems. File systems using the maxIO performance mode can scale to higher levels of aggregate
             /// throughput and operations per second with a tradeoff of slightly higher latencies for most file
             /// operations. The performance mode can&#39;t be changed after the file system has been created.
+            /// Note The maxIO mode is not supported on file systems using One Zone storage classes.
             /// Required: No
             /// Type: String
             /// Allowed values: generalPurpose | maxIO
@@ -82,8 +84,8 @@ namespace Comformation.EFS.FileSystem
             /// ProvisionedThroughputInMibps
             /// The throughput, measured in MiB/s, that you want to provision for a file system that you&#39;re
             /// creating. Valid values are 1-1024. Required if ThroughputMode is set to provisioned. The upper limit
-            /// for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS Support. For more
-            /// information, see Amazon EFS Limits That You Can Increase in the Amazon EFS User Guide.
+            /// for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For more information, see
+            /// Amazon EFS quotas that you can increase in the Amazon EFS User Guide.
             /// Required: Conditional
             /// Type: Double
             /// Update requires: No interruption
@@ -92,12 +94,13 @@ namespace Comformation.EFS.FileSystem
 
             /// <summary>
             /// ThroughputMode
-            /// The throughput mode for the file system to be created. There are two throughput modes to choose from
-            /// for your file system: bursting and provisioned. If you set ThroughputMode to provisioned, you must
-            /// also set a value for ProvisionedThroughPutInMibps. You can decrease your file system&#39;s throughput in
-            /// Provisioned Throughput mode or change between the throughput modes as long as it’s been more than 24
-            /// hours since the last decrease or throughput mode change. For more, see Specifying Throughput with
-            /// Provisioned Mode in the Amazon EFS User Guide.
+            /// Specifies the throughput mode for the file system, either bursting or provisioned. If you set
+            /// ThroughputMode to provisioned, you must also set a value for ProvisionedThroughputInMibps. After you
+            /// create the file system, you can decrease your file system&#39;s throughput in Provisioned Throughput
+            /// mode or change between the throughput modes, as long as it’s been more than 24 hours since the last
+            /// decrease or throughput mode change. For more information, see Specifying throughput with provisioned
+            /// mode in the Amazon EFS User Guide.
+            /// Default is bursting.
             /// Required: No
             /// Type: String
             /// Allowed values: bursting | provisioned
@@ -108,13 +111,25 @@ namespace Comformation.EFS.FileSystem
             /// <summary>
             /// FileSystemPolicy
             /// The FileSystemPolicy for the EFS file system. A file system policy is an IAM resource policy used to
-            /// control NFS access to an EFS file system. For more information, see Using IAM to Control NFS Access
+            /// control NFS access to an EFS file system. For more information, see Using IAM to control NFS access
             /// to Amazon EFS in the Amazon EFS User Guide.
             /// Required: No
             /// Type: Json
+            /// Minimum: 1
+            /// Maximum: 20000
+            /// Pattern: [\s\S]+
             /// Update requires: No interruption
             /// </summary>
             public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> FileSystemPolicy { get; set; }
+
+            /// <summary>
+            /// BypassPolicyLockoutSafetyCheck
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> BypassPolicyLockoutSafetyCheck { get; set; }
 
             /// <summary>
             /// BackupPolicy
@@ -124,6 +139,23 @@ namespace Comformation.EFS.FileSystem
             /// Update requires: No interruption
             /// </summary>
             public BackupPolicy BackupPolicy { get; set; }
+
+            /// <summary>
+            /// AvailabilityZoneName
+            /// Used to create a file system that uses One Zone storage classes. It specifies the AWS Availability
+            /// Zone in which to create the file system. Use the format us-east-1a to specify the Availability Zone.
+            /// For more information about One Zone storage classes, see Using EFS storage classes in the Amazon EFS
+            /// User Guide.
+            /// Note One Zone storage classes are not available in all Availability Zones in AWS Regions where
+            /// Amazon EFS is available.
+            /// Required: No
+            /// Type: String
+            /// Minimum: 1
+            /// Maximum: 64
+            /// Pattern: . +
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> AvailabilityZoneName { get; set; }
 
         }
 

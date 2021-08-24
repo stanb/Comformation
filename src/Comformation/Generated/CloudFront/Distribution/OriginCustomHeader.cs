@@ -13,18 +13,6 @@ namespace Comformation.CloudFront.Distribution
     {
 
         /// <summary>
-        /// HeaderValue
-        /// 		
-        /// The value for the header that you specified in the HeaderName 			field.
-        /// 	
-        /// Required: Yes
-        /// Type: String
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("HeaderValue")]
-        public Union<string, IntrinsicFunction> HeaderValue { get; set; }
-
-        /// <summary>
         /// HeaderName
         /// 		
         /// The name of a header that you want CloudFront to send to your origin. For more information, see
@@ -36,6 +24,18 @@ namespace Comformation.CloudFront.Distribution
         /// </summary>
         [JsonProperty("HeaderName")]
         public Union<string, IntrinsicFunction> HeaderName { get; set; }
+
+        /// <summary>
+        /// HeaderValue
+        /// 		
+        /// The value for the header that you specified in the HeaderName 			field.
+        /// 	
+        /// Required: Yes
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("HeaderValue")]
+        public Union<string, IntrinsicFunction> HeaderValue { get; set; }
 
     }
 }

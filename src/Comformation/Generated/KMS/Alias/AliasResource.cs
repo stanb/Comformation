@@ -16,6 +16,10 @@ namespace Comformation.KMS.Alias
             /// AliasName
             /// Specifies the alias name. This value must begin with alias/ followed by a name, such as
             /// alias/ExampleAlias.
+            /// Note If you change the value of a Replacement property, such as AliasName, the existing alias is
+            /// deleted and a new alias is created for the specified CMK. This change can disrupt applications that
+            /// use the alias. It can also allow or deny access to a CMK affected by attribute-based access control
+            /// (ABAC).
             /// The alias must be string of 1-256 characters. It can contain only alphanumeric characters, forward
             /// slashes (/), underscores (_), and dashes (-). The alias name cannot begin with alias/aws/. The
             /// alias/aws/ prefix is reserved for AWS managed CMKs.
@@ -36,7 +40,7 @@ namespace Comformation.KMS.Alias
             /// error.
             /// For help finding the key ID and ARN, see Finding the key ID and ARN in the AWS Key Management
             /// Service Developer Guide.
-            /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+            /// Specify the key ID or the key ARN of the CMK.
             /// For example:
             /// Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab Key ARN:
             /// arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab

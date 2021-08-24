@@ -28,11 +28,21 @@ namespace Comformation.DataBrew.Job
         /// The data format of the output of the job.
         /// Required: No
         /// Type: String
-        /// Allowed values: AVRO | CSV | GLUEPARQUET | JSON | ORC | PARQUET | XML
+        /// Allowed values: AVRO | CSV | GLUEPARQUET | JSON | ORC | PARQUET | TABLEAUHYPER | XML
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Format")]
         public Union<string, IntrinsicFunction> Format { get; set; }
+
+        /// <summary>
+        /// FormatOptions
+        /// Represents options that define how DataBrew formats job output files.
+        /// Required: No
+        /// Type: OutputFormatOptions
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("FormatOptions")]
+        public OutputFormatOptions FormatOptions { get; set; }
 
         /// <summary>
         /// PartitionColumns

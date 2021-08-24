@@ -14,7 +14,7 @@ namespace Comformation.Kendra.Index
 
         /// <summary>
         /// KmsKeyId
-        /// The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn&#39;t support asymmetric
+        /// The identifier of the AWS KMScustomer master key (CMK). Amazon Kendra doesn&#39;t support asymmetric
         /// CMKs.
         /// Required: No
         /// Type: String

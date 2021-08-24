@@ -24,12 +24,12 @@ namespace Comformation.Cloud9.EnvironmentEC2
             /// <summary>
             /// OwnerArn
             /// The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS Identity
-            /// and Access Management (IAM) principal. If this value is not specified, the ARN defaults to this
+            /// and Access Management principal. If this value is not specified, the ARN defaults to this
             /// environment&#39;s creator.
             /// Required: No
             /// Type: String
-            /// Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,. @-]{1,64}|federated-user\/[\w+=/:,.
-            /// @-]{2,32}|assumed-role\/[\w+=:,. @-]{1,64}\/[\w+=,. @-]{1,64}))$
+            /// Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):(iam|sts)::\d+:(root|(user\/[\w+=/:,.
+            /// @-]{1,64}|federated-user\/[\w+=/:,. @-]{2,32}|assumed-role\/[\w+=:,. @-]{1,64}\/[\w+=,. @-]{1,64}))$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> OwnerArn { get; set; }
@@ -66,13 +66,33 @@ namespace Comformation.Cloud9.EnvironmentEC2
             public Union<int, IntrinsicFunction> AutomaticStopTimeMinutes { get; set; }
 
             /// <summary>
+            /// ImageId
+            /// The identifier for the Amazon Machine Image (AMI) that&#39;s used to create the EC2 instance. To choose
+            /// an AMI for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager path.
+            /// The default AMI is used if the parameter isn&#39;t explicitly assigned a value in the request.
+            /// AMI aliases
+            /// Amazon Linux (default): amazonlinux-1-x86_64 Amazon Linux 2: amazonlinux-2-x86_64 Ubuntu 18. 04:
+            /// ubuntu-18. 04-x86_64
+            /// SSM paths
+            /// Amazon Linux (default): resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64 Amazon Linux 2:
+            /// resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64 Ubuntu 18. 04:
+            /// resolve:ssm:/aws/service/cloud9/amis/ubuntu-18. 04-x86_64
+            /// Required: No
+            /// Type: String
+            /// Maximum: 512
+            /// Update requires: Replacement
+            /// </summary>
+            public Union<string, IntrinsicFunction> ImageId { get; set; }
+
+            /// <summary>
             /// SubnetId
             /// The ID of the subnet in Amazon Virtual Private Cloud (Amazon VPC) that AWS Cloud9 will use to
             /// communicate with the Amazon Elastic Compute Cloud (Amazon EC2) instance.
             /// Required: No
             /// Type: String
-            /// Minimum: 5
-            /// Maximum: 30
+            /// Minimum: 15
+            /// Maximum: 24
+            /// Pattern: ^(subnet-[0-9a-f]{8}|subnet-[0-9a-f]{17})$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> SubnetId { get; set; }

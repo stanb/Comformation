@@ -40,7 +40,7 @@ namespace Comformation.Budgets.Budget
         /// start date defaults to the start of the chosen time period (MONTHLY, QUARTERLY, or 			ANNUALLY). For
         /// example, if you create your budget on January 24, 2019, choose 			MONTHLY, and don&#39;t set a start
         /// date, the start date defaults to 			01/01/19 00:00 UTC. The defaults are the same for the AWS
-        /// Billing and Cost 			Management console and the API.
+        /// Billing and Cost Management console and the API.
         /// 		
         /// You can change your start date with the UpdateBudget operation.
         /// 		
@@ -112,9 +112,8 @@ namespace Comformation.Budgets.Budget
         /// 		
         /// AWS Budgets supports the following services as a filter for RI budgets:
         /// 		
-        /// 			 			 			 			 			 		 				 Amazon Elastic Compute Cloud - Compute 			 				 Amazon Redshift 			 				
-        /// Amazon Relational Database Service 			 				 Amazon ElastiCache 			 				 Amazon Elasticsearch Service
-        /// 			
+        /// 			 			 			 			 			 		 				 Amazon EC2 			 				 Amazon Redshift 			 				 Amazon Relational Database
+        /// Service 			 				 Amazon ElastiCache 			 				 Amazon Elasticsearch Service 			
         /// 	
         /// Required: No
         /// Type: Json

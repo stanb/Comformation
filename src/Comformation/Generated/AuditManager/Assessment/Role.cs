@@ -28,7 +28,8 @@ namespace Comformation.AuditManager.Assessment
         /// <summary>
         /// RoleType
         /// The type of customer persona.
-        /// Note In CreateAssessment, RoleType can only be PROCESS_OWNER.
+        /// Note In CreateAssessment, roleType can only be PROCESS_OWNER. In UpdateSettings, roleType can only
+        /// be PROCESS_OWNER. In BatchCreateDelegationByAssessment, roleType can only be RESOURCE_OWNER.
         /// Required: No
         /// Type: String
         /// Allowed values: PROCESS_OWNER | RESOURCE_OWNER

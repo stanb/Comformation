@@ -26,9 +26,9 @@ namespace Comformation.GameLift.MatchmakingRuleSet
 
             /// <summary>
             /// Name
-            /// A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set
-            /// it uses by this name value. Note that the rule set name is different from the optional name field in
-            /// the rule set body.
+            /// A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule
+            /// set it uses by this name value. Note that the rule set name is different from the optional name
+            /// field in the rule set body.
             /// Required: Yes
             /// Type: String
             /// Maximum: 128

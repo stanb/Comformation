@@ -14,9 +14,9 @@ namespace Comformation.SecretsManager.SecretTargetAttachment
         {
             /// <summary>
             /// SecretId
-            /// The Amazon Resource Name (ARN) or the friendly name of the secret that contains the credentials that
-            /// you want to use with the specified service or database. To reference a secret also created in this
-            /// template, use the see Ref function with the secret&#39;s logical ID.
+            /// The Amazon Resource Name (ARN) or the friendly name of the secret that contains the user name and
+            /// password that you want to use with the specified service or database. To reference a secret also
+            /// created in this template, use the see Ref function with the secret&#39;s logical ID.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -38,7 +38,7 @@ namespace Comformation.SecretsManager.SecretTargetAttachment
 
             /// <summary>
             /// TargetId
-            /// The ARN of the service or database credentials stored in the specified secret.
+            /// The ARN of the database or cluster.
             /// Required: Yes
             /// Type: String
             /// Minimum: 20

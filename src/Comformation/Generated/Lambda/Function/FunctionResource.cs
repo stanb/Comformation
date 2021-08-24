@@ -22,15 +22,6 @@ namespace Comformation.Lambda.Function
             public Code Code { get; set; }
 
             /// <summary>
-            /// CodeSigningConfigArn
-            /// Not currently supported by AWS CloudFormation.
-            /// Required: No
-            /// Type: String
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> CodeSigningConfigArn { get; set; }
-
-            /// <summary>
             /// DeadLetterConfig
             /// A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous
             /// events when they fail processing. For more information, see Dead Letter Queues.
@@ -101,15 +92,6 @@ namespace Comformation.Lambda.Function
             public Union<string, IntrinsicFunction> Handler { get; set; }
 
             /// <summary>
-            /// ImageConfig
-            /// Configuration values that override the container image Dockerfile settings. See Container settings.
-            /// Required: No
-            /// Type: ImageConfig
-            /// Update requires: No interruption
-            /// </summary>
-            public ImageConfig ImageConfig { get; set; }
-
-            /// <summary>
             /// KmsKeyArn
             /// The ARN of the AWS Key Management Service (AWS KMS) key that&#39;s used to encrypt your function&#39;s
             /// environment variables. If it&#39;s not provided, AWS Lambda uses a default service key.
@@ -132,7 +114,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// MemorySize
-            /// The amount of memory available to the function at runtime. Increasing the function&#39;s memory also
+            /// The amount of memory available to the function at runtime. Increasing the function memory also
             /// increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
             /// Required: No
             /// Type: Integer
@@ -141,16 +123,6 @@ namespace Comformation.Lambda.Function
             /// Update requires: No interruption
             /// </summary>
             public Union<int, IntrinsicFunction> MemorySize { get; set; }
-
-            /// <summary>
-            /// PackageType
-            /// The type of deployment package. Set to Image for container image and set Zip for . zip file archive.
-            /// Required: No
-            /// Type: String
-            /// Allowed values: Image | Zip
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<string, IntrinsicFunction> PackageType { get; set; }
 
             /// <summary>
             /// ReservedConcurrentExecutions
@@ -178,9 +150,9 @@ namespace Comformation.Lambda.Function
             /// Required: No
             /// Type: String
             /// Allowed values: dotnetcore1. 0 | dotnetcore2. 0 | dotnetcore2. 1 | dotnetcore3. 1 | go1. x | java11
-            /// | java8 | java8. al2 | nodejs | nodejs10. x | nodejs12. x | nodejs4. 3 | nodejs4. 3-edge | nodejs6.
-            /// 10 | nodejs8. 10 | provided | provided. al2 | python2. 7 | python3. 6 | python3. 7 | python3. 8 |
-            /// ruby2. 5 | ruby2. 7
+            /// | java8 | java8. al2 | nodejs | nodejs10. x | nodejs12. x | nodejs14. x | nodejs4. 3 | nodejs4.
+            /// 3-edge | nodejs6. 10 | nodejs8. 10 | provided | provided. al2 | python2. 7 | python3. 6 | python3. 7
+            /// | python3. 8 | python3. 9 | ruby2. 5 | ruby2. 7
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Runtime { get; set; }
@@ -197,7 +169,8 @@ namespace Comformation.Lambda.Function
             /// <summary>
             /// Timeout
             /// The amount of time that Lambda allows a function to run before stopping it. The default is 3
-            /// seconds. The maximum allowed value is 900 seconds.
+            /// seconds. The maximum allowed value is 900 seconds. For additional information, see Lambda execution
+            /// environment.
             /// Required: No
             /// Type: Integer
             /// Minimum: 1
@@ -207,7 +180,7 @@ namespace Comformation.Lambda.Function
 
             /// <summary>
             /// TracingConfig
-            /// Set Mode to Active to sample and trace a subset of incoming requests with AWS X-Ray.
+            /// Set Mode to Active to sample and trace a subset of incoming requests with X-Ray.
             /// Required: No
             /// Type: TracingConfig
             /// Update requires: No interruption
@@ -223,6 +196,39 @@ namespace Comformation.Lambda.Function
             /// Update requires: No interruption
             /// </summary>
             public VpcConfig VpcConfig { get; set; }
+
+            /// <summary>
+            /// CodeSigningConfigArn
+            /// To enable code signing for this function, specify the ARN of a code-signing configuration. A
+            /// code-signing configuration includes a set of signing profiles, which define the trusted publishers
+            /// for this function.
+            /// Required: No
+            /// Type: String
+            /// Maximum: 200
+            /// Pattern:
+            /// arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> CodeSigningConfigArn { get; set; }
+
+            /// <summary>
+            /// ImageConfig
+            /// Configuration values that override the container image Dockerfile settings. See Container settings.
+            /// Required: No
+            /// Type: ImageConfig
+            /// Update requires: No interruption
+            /// </summary>
+            public ImageConfig ImageConfig { get; set; }
+
+            /// <summary>
+            /// PackageType
+            /// The type of deployment package. Set to Image for container image and set Zip for . zip file archive.
+            /// Required: No
+            /// Type: String
+            /// Allowed values: Image | Zip
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> PackageType { get; set; }
 
         }
 

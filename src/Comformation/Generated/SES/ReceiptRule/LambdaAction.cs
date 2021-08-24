@@ -27,7 +27,7 @@ namespace Comformation.SES.ReceiptRule
         /// <summary>
         /// TopicArn
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is executed.
-        /// You can find the ARN of a topic by using the ListTopics operation in the Amazon SNS API.
+        /// You can find the ARN of a topic by using the ListTopics operation in Amazon SNS.
         /// For more information about Amazon SNS topics, see the Amazon SNS Developer Guide.
         /// Required: No
         /// Type: String
@@ -43,8 +43,8 @@ namespace Comformation.SES.ReceiptRule
         /// function is invoked asynchronously. The default value is Event. For information about AWS Lambda
         /// invocation types, see the AWS Lambda Developer Guide.
         /// Important There is a 30-second timeout on RequestResponse invocations. You should use Event
-        /// invocation in most cases. Use RequestResponse only when you want to make a mail flow decision, such
-        /// as whether to stop the receipt rule or the receipt rule set.
+        /// invocation in most cases. Use RequestResponse only to make a mail flow decision, such as whether to
+        /// stop the receipt rule or the receipt rule set.
         /// Required: No
         /// Type: String
         /// Allowed values: Event | RequestResponse

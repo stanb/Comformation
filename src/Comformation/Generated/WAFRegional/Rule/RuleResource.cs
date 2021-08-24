@@ -14,15 +14,9 @@ namespace Comformation.WAFRegional.Rule
         {
             /// <summary>
             /// MetricName
-            /// A friendly name or description for the metrics for this Rule. The name can contain only alphanumeric
-            /// characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can&#39;t contain
-            /// whitespace or metric names reserved for AWS WAF, including &quot;All&quot; and &quot;Default_Action. &quot; You can&#39;t
-            /// change MetricName after you create the Rule.
+            /// Not currently supported by AWS CloudFormation.
             /// Required: Yes
             /// Type: String
-            /// Minimum: 1
-            /// Maximum: 128
-            /// Pattern: . *\S. *
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> MetricName { get; set; }

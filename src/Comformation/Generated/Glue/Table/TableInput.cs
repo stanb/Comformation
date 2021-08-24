@@ -84,6 +84,7 @@ namespace Comformation.Glue.Table
 
         /// <summary>
         /// TargetTable
+        /// 	
         /// A TableIdentifier structure that describes a target table for resource linking.
         /// Required: No
         /// Type: TableIdentifier

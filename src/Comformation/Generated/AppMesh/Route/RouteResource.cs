@@ -45,7 +45,7 @@ namespace Comformation.AppMesh.Route
             /// <summary>
             /// RouteName
             /// The name to use for the route.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Update requires: Replacement
             /// </summary>

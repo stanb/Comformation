@@ -32,8 +32,11 @@ namespace Comformation.Glue.MLTransform
 
             /// <summary>
             /// TransformEncryption
+            /// 	
             /// The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning
             /// transforms can access user data encrypted in Amazon S3 using KMS.
+            /// Additionally, imported labels and trained transforms can now be encrypted using a customer provided
+            /// KMS key.
             /// Required: No
             /// Type: TransformEncryption
             /// Update requires: No interruption

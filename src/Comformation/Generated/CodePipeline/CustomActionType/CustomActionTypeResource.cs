@@ -55,11 +55,11 @@ namespace Comformation.CodePipeline.CustomActionType
 
             /// <summary>
             /// Provider
-            /// The provider of the service used in the custom action, such as AWS CodeDeploy.
+            /// The provider of the service used in the custom action, such as CodeDeploy.
             /// Required: Yes
             /// Type: String
             /// Minimum: 1
-            /// Maximum: 25
+            /// Maximum: 35
             /// Pattern: [0-9A-Za-z_-]+
             /// Update requires: Replacement
             /// </summary>

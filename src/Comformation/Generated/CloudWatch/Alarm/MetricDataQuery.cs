@@ -13,6 +13,16 @@ namespace Comformation.CloudWatch.Alarm
     {
 
         /// <summary>
+        /// AccountId
+        /// The ID of the account where the metrics are located, if this is a cross-account alarm.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("AccountId")]
+        public Union<string, IntrinsicFunction> AccountId { get; set; }
+
+        /// <summary>
         /// Expression
         /// 		
         /// The math expression to be performed on the returned data, if this object is performing a math

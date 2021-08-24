@@ -55,11 +55,11 @@ namespace Comformation.EC2.Volume
             /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
             /// The following are the supported values for each volume type:
             /// gp3: 3,000-16,000 IOPS io1: 100-64,000 IOPS io2: 100-64,000 IOPS
-            /// For io1 and io2 volumes, we guarantee 64,000 IOPS only for Instances built on the Nitro System.
-            /// Other instance families guarantee performance up to 32,000 IOPS.
+            /// io1 and io2 volumes support up to 64,000 IOPS only on Instances built on the Nitro System. Other
+            /// instance families support performance up to 32,000 IOPS.
             /// This parameter is required for io1 and io2 volumes. The default for gp3 volumes is 3,000 IOPS. This
             /// parameter is not supported for gp2, st1, sc1, or standard volumes.
-            /// Required: No
+            /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
@@ -67,18 +67,17 @@ namespace Comformation.EC2.Volume
 
             /// <summary>
             /// KmsKeyId
-            /// The identifier of the AWS Key Management Service (AWS KMS) customer master key 	(CMK) to use for
-            /// Amazon EBS encryption. If KmsKeyId is specified, the 	encrypted state must be true.
+            /// The identifier of the AWS KMS key to use for Amazon EBS encryption. If KmsKeyId is specified, the
+            /// encrypted state must be true.
             /// 	 	
             /// If you omit this property and your account is enabled for encryption by default, 		or Encrypted is
-            /// set to true, 		then the volume is encrypted using the default CMK specified for your account. If
-            /// 		your account does not have a default CMK, then the volume is encrypted using the 		AWS managed
-            /// CMK.
+            /// set to true, 	 then the volume is encrypted using the default key specified for your account. 		If
+            /// your account does not have a default key, then the volume is encrypted using the 	 AWS managed key.
             /// 	
-            /// Alternatively, if you want to specify a different CMK, you can specify one of the 	following:
-            /// Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. Specify the alias for the CMK,
-            /// prefixed with alias/. For 	example, for a CMK with the alias my_cmk, use alias/my_cmk. 	Or to
-            /// specify the AWS managed CMK, use alias/aws/ebs. Key ARN. For example,
+            /// Alternatively, if you want to specify a different key, you can specify one of the 	following:
+            /// Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. Specify the alias for the key,
+            /// prefixed with alias/. For 	example, for a key with the alias my_cmk, use alias/my_cmk. Or to specify
+            /// the AWS managed key, use alias/aws/ebs. Key ARN. For example,
             /// arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab. Alias ARN. For example,
             /// arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
             /// Required: No
@@ -90,9 +89,9 @@ namespace Comformation.EC2.Volume
             /// <summary>
             /// MultiAttachEnabled
             /// Indicates whether Amazon EBS Multi-Attach is enabled.
-            /// Note AWS CloudFormation does not currently support updating a single-attach volume to be
-            /// multi-attach enabled, updating a multi-attach enabled volume to be single-attach, or updating the
-            /// size or number of I/O operations per second (IOPS) of a multi-attach enabled volume.
+            /// AWS CloudFormation does not currently support updating a single-attach volume to be multi-attach
+            /// enabled, updating a multi-attach enabled volume to be single-attach, or updating the size or number
+            /// of I/O operations per second (IOPS) of a multi-attach enabled volume.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -115,7 +114,7 @@ namespace Comformation.EC2.Volume
             /// or larger than the snapshot size.
             /// The following are the supported volumes sizes for each volume type:
             /// 	 gp2 and gp3: 1-16,384 io1 and io2: 4-16,384 st1 and sc1: 125-16,384 standard: 1-1,024
-            /// Required: No
+            /// Required: Conditional
             /// Type: Integer
             /// Update requires: No interruption
             /// </summary>
@@ -125,7 +124,7 @@ namespace Comformation.EC2.Volume
             /// SnapshotId
             /// The snapshot from which to create the volume. You must specify either a snapshot ID or a volume
             /// size.
-            /// Required: No
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Updates are not supported.
             /// </summary>

@@ -15,7 +15,7 @@ namespace Comformation.IoTEvents.DetectorModel
         /// <summary>
         /// InputName
         /// The name of the AWS IoT Events input where the data is sent.
-        /// Required: No
+        /// Required: Yes
         /// Type: String
         /// Minimum: 1
         /// Maximum: 128

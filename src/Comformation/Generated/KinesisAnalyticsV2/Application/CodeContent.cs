@@ -24,7 +24,7 @@ namespace Comformation.KinesisAnalyticsV2.Application
 
         /// <summary>
         /// S3ContentLocation
-        /// Information about the Amazon S3 bucket containing the application code.
+        /// Information about the Amazon S3 bucket that contains the application code.
         /// Required: No
         /// Type: S3ContentLocation
         /// Update requires: No interruption

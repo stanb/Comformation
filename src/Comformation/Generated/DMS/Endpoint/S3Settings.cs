@@ -14,8 +14,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ExternalTableDefinition
-        /// The external table definition.
-        /// Conditional: If S3 is used as a source then ExternalTableDefinition is required.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
@@ -25,7 +24,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// BucketName
-        /// The name of the S3 bucket.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -35,9 +34,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// BucketFolder
-        /// An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the
-        /// path bucketFolder/schema_name/table_name/. If this parameter isn&#39;t specified, then the path used is
-        /// schema_name/table_name/.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -47,8 +44,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// CsvRowDelimiter
-        /// The delimiter used to separate rows in the . csv file for both source and target. The default is a
-        /// carriage return (\n).
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -58,8 +54,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// CsvDelimiter
-        /// The delimiter used to separate columns in the . csv file for both source and target. The default is
-        /// a comma.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -69,8 +64,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// ServiceAccessRoleArn
-        /// The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-        /// enables DMS to write and read objects from an 3S bucket.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -80,9 +74,7 @@ namespace Comformation.DMS.Endpoint
 
         /// <summary>
         /// CompressionType
-        /// An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target
-        /// files. Either set this parameter to NONE (the default) or don&#39;t use it to leave the files
-        /// uncompressed. This parameter applies to both . csv and . parquet file formats.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: No
         /// Type: String
         /// Allowed values: gzip | none

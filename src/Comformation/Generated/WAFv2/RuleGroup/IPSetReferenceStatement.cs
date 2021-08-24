@@ -14,7 +14,7 @@ namespace Comformation.WAFv2.RuleGroup
 
         /// <summary>
         /// Arn
-        /// The Amazon Resource Name (ARN) of the IPSet that this statement references.
+        /// The Amazon Resource Name (ARN) of the AWS::WAFv2::IPSet that this statement references.
         /// Required: Yes
         /// Type: String
         /// Minimum: 20

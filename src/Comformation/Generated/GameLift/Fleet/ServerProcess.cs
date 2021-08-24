@@ -14,7 +14,7 @@ namespace Comformation.GameLift.Fleet
 
         /// <summary>
         /// ConcurrentExecutions
-        /// The number of server processes that use this configuration to run concurrently on an instance.
+        /// The number of server processes using this configuration that run concurrently on each instance.
         /// Required: Yes
         /// Type: Integer
         /// Minimum: 1
@@ -25,10 +25,9 @@ namespace Comformation.GameLift.Fleet
 
         /// <summary>
         /// LaunchPath
-        /// The location of the server executable in a custom game build or the name of the Realtime script file
-        /// that contains the Init() function. Game builds and Realtime scripts are installed on instances at
-        /// the root:
-        /// Windows (for custom game builds only): C:\game. Example: &quot;C:\game\MyGame\server. exe&quot; Linux:
+        /// The location of a game build executable or the Realtime script file that contains the Init()
+        /// function. Game builds and Realtime scripts are installed on instances at the root:
+        /// Windows (custom game builds only): C:\game. Example: &quot;C:\game\MyGame\server. exe&quot; Linux:
         /// /local/game. Examples: &quot;/local/game/MyGame/server. exe&quot; or &quot;/local/game/MyRealtimeScript. js&quot;
         /// Required: Yes
         /// Type: String

@@ -19,7 +19,7 @@ namespace Comformation.RoboMaker.SimulationApplication
         /// Type: String
         /// Minimum: 0
         /// Maximum: 1024
-        /// Pattern: 7|9|Kinetic|Melodic|Dashing
+        /// Pattern: 7|9|11|Kinetic|Melodic|Dashing|Foxy
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Version")]

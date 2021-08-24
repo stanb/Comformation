@@ -53,6 +53,15 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             public List<Union<string, IntrinsicFunction>> AutoScalingGroups { get; set; }
 
             /// <summary>
+            /// BlueGreenDeploymentConfiguration
+            /// Information about blue/green deployment options for a deployment group.
+            /// Required: No
+            /// Type: BlueGreenDeploymentConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public BlueGreenDeploymentConfiguration BlueGreenDeploymentConfiguration { get; set; }
+
+            /// <summary>
             /// Deployment
             /// The application revision to deploy to this deployment group. If you specify this property, your
             /// target application revision is deployed as soon as the provisioning process is complete. If you
@@ -100,8 +109,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             /// If you specify this property with a blue/green deployment type, don&#39;t specify the AutoScalingGroups,
             /// LoadBalancerInfo, or Deployment properties.
             /// Note For blue/green deployments, AWS CloudFormation supports deployments on Lambda compute platforms
-            /// only. You can perform ECS blue/green deployments using AWS::CodeDeploy::BlueGreen hook. See Perform
-            /// ECS blue/green deployments through CodeDeploy using AWS CloudFormation for more information.
+            /// only. You can perform Amazon ECS blue/green deployments using AWS::CodeDeploy::BlueGreen hook. See
+            /// Perform Amazon ECS blue/green deployments through CodeDeploy using AWS CloudFormation for more
+            /// information.
             /// Required: No
             /// Type: DeploymentStyle
             /// Update requires: No interruption
@@ -109,10 +119,21 @@ namespace Comformation.CodeDeploy.DeploymentGroup
             public DeploymentStyle DeploymentStyle { get; set; }
 
             /// <summary>
+            /// ECSServices
+            /// The target Amazon ECS services in the deployment group. This applies only to deployment groups that
+            /// use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS
+            /// cluster and service name pair using the format &amp;lt;clustername&amp;gt;:&amp;lt;servicename&amp;gt;.
+            /// Required: No
+            /// Type: List of ECSService
+            /// Update requires: No interruption
+            /// </summary>
+            public List<ECSService> ECSServices { get; set; }
+
+            /// <summary>
             /// Ec2TagFilters
-            /// The EC2 tags that are already applied to EC2 instances that you want to include in the deployment
-            /// group. CodeDeploy includes all EC2 instances identified by any of the tags you specify in this
-            /// deployment group. Duplicates are not allowed.
+            /// The Amazon EC2 tags that are already applied to Amazon EC2 instances that you want to include in the
+            /// deployment group. CodeDeploy includes all Amazon EC2 instances identified by any of the tags you
+            /// specify in this deployment group. Duplicates are not allowed.
             /// You can specify EC2TagFilters or Ec2TagSet, but not both.
             /// Required: No
             /// Type: List of EC2TagFilter
@@ -122,8 +143,9 @@ namespace Comformation.CodeDeploy.DeploymentGroup
 
             /// <summary>
             /// Ec2TagSet
-            /// Information about groups of tags applied to EC2 instances. The deployment group includes only EC2
-            /// instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilter.
+            /// Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only
+            /// Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as
+            /// ec2TagFilter.
             /// Required: No
             /// Type: EC2TagSet
             /// Update requires: No interruption

@@ -33,7 +33,7 @@ namespace Comformation.LicenseManager.License
             /// <summary>
             /// LicenseName
             /// License name.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -42,7 +42,7 @@ namespace Comformation.LicenseManager.License
             /// <summary>
             /// ProductName
             /// Product name.
-            /// Required: No
+            /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
             /// </summary>

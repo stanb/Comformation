@@ -14,7 +14,9 @@ namespace Comformation.ImageBuilder.ImagePipeline
         {
             /// <summary>
             /// Name
+            /// 		
             /// The name of the image pipeline.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
@@ -24,7 +26,9 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// Description
+            /// 		
             /// The description of this image pipeline.
+            /// 	
             /// Required: No
             /// Type: String
             /// Minimum: 1
@@ -35,7 +39,10 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// ImageTestsConfiguration
-            /// The configuration of the image tests used when creating this image.
+            /// 		
+            /// The configuration of the image tests that run after image creation to ensure the 			quality of the
+            /// image that was created.
+            /// 	
             /// Required: No
             /// Type: ImageTestsConfiguration
             /// Update requires: No interruption
@@ -44,7 +51,9 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// Status
+            /// 		
             /// The status of the image pipeline.
+            /// 	
             /// Required: No
             /// Type: String
             /// Allowed values: DISABLED | ENABLED
@@ -54,8 +63,10 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// Schedule
-            /// The schedule of the image pipeline. A schedule configures how often and when a pipeline will
-            /// automatically create a new image.
+            /// 		
+            /// The schedule of the image pipeline. A schedule configures how often and when a pipeline
+            /// 			automatically creates a new image.
+            /// 	
             /// Required: No
             /// Type: Schedule
             /// Update requires: No interruption
@@ -64,17 +75,32 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// ImageRecipeArn
-            /// The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.
-            /// Required: Yes
+            /// 		
+            /// The Amazon Resource Name (ARN) of the image recipe associated with this image 			pipeline.
+            /// 	
+            /// Required: No
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> ImageRecipeArn { get; set; }
 
             /// <summary>
+            /// ContainerRecipeArn
+            /// 		
+            /// The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+            /// 	
+            /// Required: No
+            /// Type: String
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<string, IntrinsicFunction> ContainerRecipeArn { get; set; }
+
+            /// <summary>
             /// DistributionConfigurationArn
-            /// The Amazon Resource Name (ARN) of the distribution configuration associated with this image
+            /// 		
+            /// The Amazon Resource Name (ARN) of the distribution configuration associated with this 			image
             /// pipeline.
+            /// 	
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -83,8 +109,10 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// InfrastructureConfigurationArn
-            /// The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image
+            /// 		
+            /// The Amazon Resource Name (ARN) of the infrastructure configuration associated with this 			image
             /// pipeline.
+            /// 	
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -93,9 +121,11 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// EnhancedImageMetadataEnabled
-            /// Collects additional information about the image being created, including the operating system (OS)
-            /// version and package list. This information is used to enhance the overall experience of using EC2
-            /// Image Builder. Enabled by default.
+            /// 		
+            /// Collects additional information about the image being created, including the operating 			system
+            /// (OS) version and package list. This information is used to enhance the overall 			experience of
+            /// using EC2 Image Builder. Enabled by default.
+            /// 	
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -104,7 +134,9 @@ namespace Comformation.ImageBuilder.ImagePipeline
 
             /// <summary>
             /// Tags
+            /// 		
             /// The tags of this image pipeline.
+            /// 	
             /// Required: No
             /// Type: Map of String
             /// Update requires: No interruption
@@ -122,5 +154,6 @@ namespace Comformation.ImageBuilder.ImagePipeline
     public static class ImagePipelineAttributes
     {
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Arn = new ResourceAttribute<Union<string, IntrinsicFunction>>("Arn");
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Name = new ResourceAttribute<Union<string, IntrinsicFunction>>("Name");
     }
 }

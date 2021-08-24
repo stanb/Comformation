@@ -17,7 +17,7 @@ namespace Comformation.Kendra.DataSource
         /// The version of Microsoft SharePoint that you are using as a data source.
         /// Required: Yes
         /// Type: String
-        /// Allowed values: SHAREPOINT_ONLINE
+        /// Allowed values: SHAREPOINT_2013 | SHAREPOINT_2016 | SHAREPOINT_ONLINE
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SharePointVersion")]
@@ -37,8 +37,9 @@ namespace Comformation.Kendra.DataSource
         /// <summary>
         /// SecretArn
         /// The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should
-        /// be a user/password pair. For more information, see Using a Microsoft SharePoint Data Source. For
-        /// more information about AWS Secrets Manager, see What Is AWS Secrets Manager in the AWS Secrets
+        /// be a user/password pair. If you use SharePoint Server, you also need to provide the sever domain
+        /// name as part of the credentials. For more information, see Using a Microsoft SharePoint Data Source.
+        /// For more information about AWS Secrets Manager, see What Is AWS Secrets Manager in the AWS Secrets
         /// Manager user guide.
         /// Required: Yes
         /// Type: String
@@ -82,12 +83,12 @@ namespace Comformation.Kendra.DataSource
         /// inclusion pattern and an exclusion pattern, the document is not included in the index.
         /// The regex is applied to the display URL of the SharePoint document.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("InclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings InclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> InclusionPatterns { get; set; }
 
         /// <summary>
         /// ExclusionPatterns
@@ -96,12 +97,12 @@ namespace Comformation.Kendra.DataSource
         /// an exclusion pattern and an inclusion pattern, the document is not included in the index.
         /// The regex is applied to the display URL of the SharePoint document.
         /// Required: No
-        /// Type: DataSourceInclusionsExclusionsStrings
+        /// Type: List of String
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("ExclusionPatterns")]
-        public DataSourceInclusionsExclusionsStrings ExclusionPatterns { get; set; }
+        public List<Union<string, IntrinsicFunction>> ExclusionPatterns { get; set; }
 
         /// <summary>
         /// VpcConfiguration
@@ -120,12 +121,12 @@ namespace Comformation.Kendra.DataSource
         /// operation before you map SharePoint attributes. For more information, see Mapping Data Source
         /// Fields.
         /// Required: No
-        /// Type: DataSourceToIndexFieldMappingList
+        /// Type: List of DataSourceToIndexFieldMapping
         /// Maximum: 100
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("FieldMappings")]
-        public DataSourceToIndexFieldMappingList FieldMappings { get; set; }
+        public List<DataSourceToIndexFieldMapping> FieldMappings { get; set; }
 
         /// <summary>
         /// DocumentTitleFieldName

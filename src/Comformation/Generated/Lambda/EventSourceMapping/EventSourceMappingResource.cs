@@ -15,9 +15,10 @@ namespace Comformation.Lambda.EventSourceMapping
             /// <summary>
             /// BatchSize
             /// The maximum number of items to retrieve in a single batch.
-            /// 	 Amazon Kinesis - Default 100. Max 10,000. Amazon DynamoDB Streams - Default 100. Max 1,000. Amazon
-            /// Simple Queue Service - Default 10. For standard queues the max is 10,000. For FIFO queues the max is
-            /// 10. Amazon Managed Streaming for Apache Kafka - Default 100. Max 10,000.
+            /// 	 	 Amazon Kinesis - Default 100. Max 10,000. Amazon DynamoDB Streams - Default 100. Max 1,000.
+            /// Amazon Simple Queue Service - Default 10. For standard queues the max is 10,000. For FIFO queues the
+            /// max is 10. Amazon Managed Streaming for Apache Kafka - Default 100. Max 10,000. Self-Managed Apache
+            /// Kafka - Default 100. Max 10,000.
             /// Required: No
             /// Type: Integer
             /// Minimum: 1
@@ -28,8 +29,8 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// BisectBatchOnFunctionError
-            /// (Streams) If the function returns an error, split the batch in two and retry. The default value is
-            /// false.
+            /// (Streams only) If the function returns an error, split the batch in two and retry. The default value
+            /// is false.
             /// Required: No
             /// Type: Boolean
             /// Update requires: No interruption
@@ -38,7 +39,7 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// DestinationConfig
-            /// (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+            /// (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
             /// Required: No
             /// Type: DestinationConfig
             /// Update requires: No interruption
@@ -100,8 +101,8 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// MaximumRecordAgeInSeconds
-            /// (Streams) Discard records older than the specified age. The default value is infinite (-1). When set
-            /// to infinite (-1), failed records are retried until the record expires.
+            /// (Streams only) Discard records older than the specified age. The default value is -1, which sets the
+            /// maximum age to infinite. When the value is set to infinite, Lambda never discards old records.
             /// Required: No
             /// Type: Integer
             /// Minimum: -1
@@ -112,8 +113,9 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// MaximumRetryAttempts
-            /// (Streams) Discard records after the specified number of retries. The default value is infinite (-1).
-            /// When set to infinite (-1), failed records are retried until the record expires.
+            /// (Streams only) Discard records after the specified number of retries. The default value is -1, which
+            /// sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda
+            /// retries failed records until the record expires in the event source.
             /// Required: No
             /// Type: Integer
             /// Minimum: -1
@@ -124,7 +126,8 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// ParallelizationFactor
-            /// (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+            /// (Streams only) The number of batches to process concurrently from each shard. The default value is
+            /// 1.
             /// Required: No
             /// Type: Integer
             /// Minimum: 1
@@ -145,6 +148,16 @@ namespace Comformation.Lambda.EventSourceMapping
             public Union<string, IntrinsicFunction> StartingPosition { get; set; }
 
             /// <summary>
+            /// StartingPositionTimestamp
+            /// With StartingPosition set to AT_TIMESTAMP, the time from which to start reading, in Unix time
+            /// seconds.
+            /// Required: No
+            /// Type: Double
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<double, IntrinsicFunction> StartingPositionTimestamp { get; set; }
+
+            /// <summary>
             /// Topics
             /// The name of the Kafka topic.
             /// Required: No
@@ -156,37 +169,33 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// Queues
-            /// (MQ) The name of the Amazon MQ broker destination queue to consume.
+            /// (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.
             /// Required: No
             /// Type: List of String
+            /// Maximum: 1
             /// Update requires: No interruption
             /// </summary>
             public List<Union<string, IntrinsicFunction>> Queues { get; set; }
 
             /// <summary>
             /// SourceAccessConfigurations
-            /// (MQ) The Secrets Manager secret that stores your broker credentials.
+            /// An array of the authentication protocol, VPC components, or virtual host to secure and define your
+            /// event source.
             /// Required: No
             /// Type: List of SourceAccessConfiguration
+            /// Maximum: 22
             /// Update requires: No interruption
             /// </summary>
             public List<SourceAccessConfiguration> SourceAccessConfigurations { get; set; }
 
             /// <summary>
-            /// PartialBatchResponse
-            /// Not currently supported by AWS CloudFormation.
-            /// Required: No
-            /// Type: Boolean
-            /// Update requires: No interruption
-            /// </summary>
-            public Union<bool, IntrinsicFunction> PartialBatchResponse { get; set; }
-
-            /// <summary>
             /// TumblingWindowInSeconds
-            /// (Streams) The duration of a processing window in seconds. The range is between 1 second up to 15
-            /// minutes.
+            /// (Streams only) The duration in seconds of a processing window. The range is between 1 second up to
+            /// 900 seconds.
             /// Required: No
             /// Type: Integer
+            /// Minimum: 0
+            /// Maximum: 900
             /// Update requires: No interruption
             /// </summary>
             public Union<int, IntrinsicFunction> TumblingWindowInSeconds { get; set; }
@@ -204,7 +213,7 @@ namespace Comformation.Lambda.EventSourceMapping
 
             /// <summary>
             /// SelfManagedEventSource
-            /// The Self-Managed Apache Kafka cluster for your event source.
+            /// The self-managed Apache Kafka cluster for your event source.
             /// Required: No
             /// Type: SelfManagedEventSource
             /// Update requires: Replacement

@@ -38,7 +38,7 @@ namespace Comformation.DataBrew.Job
             /// <summary>
             /// EncryptionMode
             /// The encryption mode for the job, which can be one of the following:
-            /// SSE-KMS - Server-side encryption with AWS KMS-managed keys. SSE-S3 - Server-side encryption with
+            /// SSE-KMS - Server-side encryption with keys managed by AWS KMS. SSE-S3 - Server-side encryption with
             /// keys managed by Amazon S3.
             /// Required: No
             /// Type: String
@@ -109,13 +109,32 @@ namespace Comformation.DataBrew.Job
             public List<Output> Outputs { get; set; }
 
             /// <summary>
-            /// OutputLocation
-            /// The location in Amazon S3 where the job writes its output.
+            /// DataCatalogOutputs
+            /// One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
             /// Required: No
-            /// Type: Json
+            /// Type: List of DataCatalogOutput
             /// Update requires: No interruption
             /// </summary>
-            public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> OutputLocation { get; set; }
+            public List<DataCatalogOutput> DataCatalogOutputs { get; set; }
+
+            /// <summary>
+            /// DatabaseOutputs
+            /// Represents a list of JDBC database output objects which defines the output destination for a
+            /// DataBrew recipe job to write into.
+            /// Required: No
+            /// Type: List of DatabaseOutput
+            /// Update requires: No interruption
+            /// </summary>
+            public List<DatabaseOutput> DatabaseOutputs { get; set; }
+
+            /// <summary>
+            /// OutputLocation
+            /// The location in Amazon S3 or AWS Glue Data Catalog where the job writes its output.
+            /// Required: No
+            /// Type: OutputLocation
+            /// Update requires: No interruption
+            /// </summary>
+            public OutputLocation OutputLocation { get; set; }
 
             /// <summary>
             /// ProjectName
@@ -132,14 +151,14 @@ namespace Comformation.DataBrew.Job
             /// Recipe
             /// A series of data transformation steps that the job runs.
             /// Required: No
-            /// Type: Json
+            /// Type: Recipe
             /// Update requires: No interruption
             /// </summary>
             public Union<Newtonsoft.Json.Linq.JToken, IntrinsicFunction> Recipe { get; set; }
 
             /// <summary>
             /// RoleArn
-            /// The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+            /// The Amazon Resource Name (ARN) of the role to be assumed for this job.
             /// Required: Yes
             /// Type: String
             /// Minimum: 20
@@ -167,6 +186,26 @@ namespace Comformation.DataBrew.Job
             /// Update requires: No interruption
             /// </summary>
             public Union<int, IntrinsicFunction> Timeout { get; set; }
+
+            /// <summary>
+            /// JobSample
+            /// A sample configuration for profile jobs only, which determines the number of rows on which the
+            /// profile job is run. If a JobSample value isn&#39;t provided, the default value is used. The default
+            /// value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
+            /// Required: No
+            /// Type: JobSample
+            /// Update requires: No interruption
+            /// </summary>
+            public JobSample JobSample { get; set; }
+
+            /// <summary>
+            /// ProfileConfiguration
+            /// Not currently supported by AWS CloudFormation.
+            /// Required: No
+            /// Type: ProfileConfiguration
+            /// Update requires: No interruption
+            /// </summary>
+            public ProfileConfiguration ProfileConfiguration { get; set; }
 
         }
 

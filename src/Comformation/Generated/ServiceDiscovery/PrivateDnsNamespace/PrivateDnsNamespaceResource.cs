@@ -18,7 +18,7 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
             /// Required: No
             /// Type: String
             /// Maximum: 1024
-            /// Update requires: Replacement
+            /// Update requires: No interruption
             /// </summary>
             public Union<string, IntrinsicFunction> Description { get; set; }
 
@@ -31,6 +31,15 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Vpc { get; set; }
+
+            /// <summary>
+            /// Properties
+            /// Properties for the private DNS namespace.
+            /// Required: No
+            /// Type: Properties
+            /// Update requires: No interruption
+            /// </summary>
+            public Properties Properties { get; set; }
 
             /// <summary>
             /// Tags
@@ -47,11 +56,12 @@ namespace Comformation.ServiceDiscovery.PrivateDnsNamespace
             /// <summary>
             /// Name
             /// The name that you want to assign to this namespace. When you create a private DNS namespace, AWS
-            /// Cloud Map automatically creates an Amazon Route&#160;53 private hosted zone that has the same name as the
+            /// Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the
             /// namespace.
             /// Required: Yes
             /// Type: String
             /// Maximum: 1024
+            /// Pattern: ^[!-~]{1,1024}$
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Name { get; set; }

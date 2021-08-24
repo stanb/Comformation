@@ -36,7 +36,7 @@ namespace Comformation.CodeStarNotifications.NotificationRule
             /// <summary>
             /// DetailType
             /// The level of detail to include in the notifications for this resource. BASIC will include only the
-            /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental
+            /// contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental
             /// information provided by AWS CodeStar Notifications and/or the service for the resource for which the
             /// notification is created.
             /// Required: Yes
@@ -60,7 +60,7 @@ namespace Comformation.CodeStarNotifications.NotificationRule
 
             /// <summary>
             /// Targets
-            /// A list of Amazon Resource Names (ARNs) of Amazon SNS topics and AWS Chatbot clients to associate
+            /// A list of Amazon Resource Names (ARNs) of AWS Chatbot topics and AWS Chatbot clients to associate
             /// with the notification rule.
             /// Required: Yes
             /// Type: List of Target

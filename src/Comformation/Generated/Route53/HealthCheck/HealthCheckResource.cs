@@ -16,6 +16,8 @@ namespace Comformation.Route53.HealthCheck
             /// HealthCheckConfig
             /// 		
             /// A complex type that contains detailed information about one health check.
+            /// 		
+            /// For the values to enter for HealthCheckConfig, see 			HealthCheckConfig
             /// 	
             /// Required: Yes
             /// Type: Json

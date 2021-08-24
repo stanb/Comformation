@@ -14,10 +14,10 @@ namespace Comformation.AppConfig.ConfigurationProfile
         {
             /// <summary>
             /// LocationUri
-            /// A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems
-            /// Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted
-            /// configuration store, specify hosted. For an SSM document, specify either the document name in the
-            /// format ssm-document://&amp;lt;Document_name&amp;gt; or the Amazon Resource Name (ARN). For a parameter,
+            /// A URI to locate the configuration. You can specify the AWS AppConfig hosted configuration store,
+            /// Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+            /// hosted configuration store, specify hosted. For an SSM document, specify either the document name in
+            /// the format ssm-document://&amp;lt;Document_name&amp;gt; or the Amazon Resource Name (ARN). For a parameter,
             /// specify either the parameter name in the format ssm-parameter://&amp;lt;Parameter_name&amp;gt; or the ARN.
             /// For an Amazon S3 object, specify the URI in the following format:
             /// s3://&amp;lt;bucket&amp;gt;/&amp;lt;objectKey&amp;gt; . Here is an example:
@@ -54,7 +54,7 @@ namespace Comformation.AppConfig.ConfigurationProfile
             /// <summary>
             /// RetrievalRoleArn
             /// The ARN of an IAM role with permission to access the configuration at the specified LocationUri.
-            /// Important A retrieval role ARN is not required for configurations stored in the AppConfig hosted
+            /// Important A retrieval role ARN is not required for configurations stored in the AWS AppConfig hosted
             /// configuration store. It is required for all other sources that store your configuration.
             /// Required: No
             /// Type: String

@@ -34,7 +34,7 @@ namespace Comformation.SageMaker.EndpointConfig
 
             /// <summary>
             /// KmsKeyId
-            /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to
+            /// The Amazon Resource Name (ARN) of an AWS Key Management Service key that Amazon SageMaker uses to
             /// encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
             /// Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab Key ARN:
             /// arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab Alias name:
@@ -57,6 +57,16 @@ namespace Comformation.SageMaker.EndpointConfig
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> KmsKeyId { get; set; }
+
+            /// <summary>
+            /// AsyncInferenceConfig
+            /// 	
+            /// Specifies configuration for how an endpoint performs asynchronous inference.
+            /// Required: No
+            /// Type: AsyncInferenceConfig
+            /// Update requires: Replacement
+            /// </summary>
+            public AsyncInferenceConfig AsyncInferenceConfig { get; set; }
 
             /// <summary>
             /// EndpointConfigName

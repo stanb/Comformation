@@ -40,9 +40,12 @@ namespace Comformation.GameLift.Build
             /// <summary>
             /// StorageLocation
             /// Information indicating where your game build files are stored. Use this parameter only when creating
-            /// a build with files stored in an S3 bucket that you own. The storage location must specify an S3
-            /// bucket name and key. The location must also specify a role ARN that you set up to allow Amazon
-            /// GameLift to access your S3 bucket. The S3 bucket and your new build must be in the same Region.
+            /// a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an
+            /// Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow
+            /// Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the
+            /// same Region.
+            /// If a StorageLocation is specified, the size of your file can be found in your Amazon S3 bucket.
+            /// Amazon Web Services will report a SizeOnDisk of 0.
             /// Required: No
             /// Type: S3Location
             /// Update requires: Replacement

@@ -14,7 +14,8 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Duration
-        /// The duration to use when determining whether an endpoint is active or inactive.
+        /// The duration to use when determining which users have been active or inactive with your app.
+        /// Possible values: HR_24 | DAY_7 | DAY_14 | DAY_30.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption
@@ -24,9 +25,10 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// RecencyType
-        /// The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were
-        /// active within the specified duration are included in the segment; and, INACTIVE, endpoints that
-        /// weren&#39;t active within the specified duration are included in the segment.
+        /// The type of recency dimension to use for the segment. Valid values are: ACTIVE and INACTIVE. If the
+        /// value is ACTIVE, the segment includes users who have used your app within the specified duration are
+        /// included in the segment. If the value is INACTIVE, the segment includes users who haven&#39;t used your
+        /// app within the specified duration are included in the segment.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

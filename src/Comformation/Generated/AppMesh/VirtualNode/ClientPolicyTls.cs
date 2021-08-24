@@ -42,5 +42,15 @@ namespace Comformation.AppMesh.VirtualNode
         [JsonProperty("Ports")]
         public List<Union<int, IntrinsicFunction>> Ports { get; set; }
 
+        /// <summary>
+        /// Certificate
+        /// A reference to an object that represents a client&#39;s TLS certificate.
+        /// Required: No
+        /// Type: ClientTlsCertificate
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Certificate")]
+        public ClientTlsCertificate Certificate { get; set; }
+
     }
 }

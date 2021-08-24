@@ -17,7 +17,7 @@ namespace Comformation.EC2.SpotFleet
         /// The name of the load balancer.
         /// Required: Yes
         /// Type: String
-        /// Update requires: No interruption
+        /// Update requires: Replacement
         /// </summary>
         [JsonProperty("Name")]
         public Union<string, IntrinsicFunction> Name { get; set; }

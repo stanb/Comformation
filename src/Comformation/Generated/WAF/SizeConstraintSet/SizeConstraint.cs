@@ -14,7 +14,6 @@ namespace Comformation.WAF.SizeConstraintSet
 
         /// <summary>
         /// ComparisonOperator
-        /// 		
         /// The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the
         /// provided Size and FieldToMatch 			to build an expression in the form of &quot;Size ComparisonOperator
         /// size in bytes of FieldToMatch&quot;. If that expression 			is true, the SizeConstraint is considered to
@@ -42,7 +41,7 @@ namespace Comformation.WAF.SizeConstraintSet
 
         /// <summary>
         /// FieldToMatch
-        /// Specifies where in a web request to look for the size constraint.
+        /// Not currently supported by AWS CloudFormation.
         /// Required: Yes
         /// Type: FieldToMatch
         /// Update requires: No interruption
@@ -52,7 +51,6 @@ namespace Comformation.WAF.SizeConstraintSet
 
         /// <summary>
         /// Size
-        /// 		
         /// The size in bytes that you want AWS WAF to compare against the size of the specified FieldToMatch.
         /// AWS WAF uses this in combination 			with ComparisonOperator and FieldToMatch to build an expression
         /// in the form of &quot;Size ComparisonOperator size 			in bytes of FieldToMatch&quot;. If that expression is
@@ -71,14 +69,13 @@ namespace Comformation.WAF.SizeConstraintSet
 
         /// <summary>
         /// TextTransformation
-        /// 		
         /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in
-        /// an effort to bypass AWS WAF. 			If you specify a transformation, AWS WAF performs the transformation
-        /// on FieldToMatch before inspecting it for a match.
+        /// an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+        /// FieldToMatch before inspecting it for a match.
         /// You can only specify a single type of TextTransformation.
         /// 			 		
         /// Note that if you choose BODY for the value of Type, you must choose NONE for TextTransformation
-        /// 			because CloudFront forwards only the first 8192 bytes for inspection.
+        /// 			because Amazon CloudFront forwards only the first 8192 bytes for inspection.
         /// 		 		
         /// NONE
         /// 		

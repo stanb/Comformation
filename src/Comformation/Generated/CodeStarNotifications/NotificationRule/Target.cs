@@ -14,8 +14,9 @@ namespace Comformation.CodeStarNotifications.NotificationRule
 
         /// <summary>
         /// TargetType
-        /// The target type. Can be an Amazon SNS topic or AWS Chatbot client.
-        /// Amazon SNS topics are specified as SNS. AWS Chatbot clients are specified as AWSChatbotSlack.
+        /// The target type. Can be an Amazon Simple Notification Service topic or AWS Chatbot client.
+        /// Amazon Simple Notification Service topics are specified as SNS. AWS Chatbot clients are specified as
+        /// AWSChatbotSlack.
         /// Required: No
         /// Type: String
         /// Pattern: ^[A-Za-z]+$
@@ -26,7 +27,7 @@ namespace Comformation.CodeStarNotifications.NotificationRule
 
         /// <summary>
         /// TargetAddress
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic or AWS Chatbot client.
+        /// The Amazon Resource Name (ARN) of the AWS Chatbot topic or AWS Chatbot client.
         /// Required: No
         /// Type: String
         /// Minimum: 1

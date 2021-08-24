@@ -16,7 +16,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// Definition
         /// The set of port ranges.
         /// Required: No
-        /// Type: VariableDefinitionList
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Definition")]

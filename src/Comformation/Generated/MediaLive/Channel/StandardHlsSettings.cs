@@ -25,7 +25,7 @@ namespace Comformation.MediaLive.Channel
 
         /// <summary>
         /// M3u8Settings
-        /// Not currently supported by AWS CloudFormation.
+        /// Settings for the M3U8 container.
         /// Required: No
         /// Type: M3u8Settings
         /// Update requires: No interruption

@@ -59,7 +59,8 @@ namespace Comformation.AppFlow.Flow
 
         /// <summary>
         /// TimeZone
-        /// Specifies the time zone used when referring to the date and time of a scheduled-triggered flow.
+        /// Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such
+        /// as America/New_York.
         /// Required: No
         /// Type: String
         /// Maximum: 256

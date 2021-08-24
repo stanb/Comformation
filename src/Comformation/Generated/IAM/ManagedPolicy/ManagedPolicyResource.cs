@@ -62,7 +62,7 @@ namespace Comformation.IAM.ManagedPolicy
             /// <summary>
             /// Path
             /// The path for the policy.
-            /// For more information about paths, see IAM Identifiers in the IAM User Guide.
+            /// For more information about paths, see IAM identifiers in the IAM User Guide.
             /// This parameter is optional. If it is not included, it defaults to a slash (/).
             /// This parameter allows (through its regex pattern) a string of characters consisting of either a
             /// forward slash (/) by itself or a string that must begin and end with forward slashes. In addition,
@@ -83,6 +83,11 @@ namespace Comformation.IAM.ManagedPolicy
             /// You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted
             /// in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a
             /// YAML policy to JSON format before submitting it to IAM.
+            /// The maximum length of the policy document that you can pass in this operation, including whitespace,
+            /// is listed below. To view the maximum character counts of a managed policy with no whitespaces, see
+            /// IAM and AWS STS character quotas.
+            /// To learn more about JSON policy grammar, see Grammar of the IAM JSON policy language in the IAM User
+            /// Guide.
             /// The regex pattern used to validate this parameter is a string of characters consisting of the
             /// following:
             /// Any printable ASCII character ranging from the space character (\u0020) through the end of the ASCII

@@ -22,7 +22,7 @@ namespace Comformation.ECS.CapacityProvider
         /// Type: Integer
         /// Minimum: 1
         /// Maximum: 10000
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MinimumScalingStepSize")]
         public Union<int, IntrinsicFunction> MinimumScalingStepSize { get; set; }
@@ -37,7 +37,7 @@ namespace Comformation.ECS.CapacityProvider
         /// Type: Integer
         /// Minimum: 1
         /// Maximum: 10000
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("MaximumScalingStepSize")]
         public Union<int, IntrinsicFunction> MaximumScalingStepSize { get; set; }
@@ -50,7 +50,7 @@ namespace Comformation.ECS.CapacityProvider
         /// Required: No
         /// Type: String
         /// Allowed values: DISABLED | ENABLED
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Status")]
         public Union<string, IntrinsicFunction> Status { get; set; }
@@ -66,10 +66,26 @@ namespace Comformation.ECS.CapacityProvider
         /// Type: Integer
         /// Minimum: 1
         /// Maximum: 100
-        /// Update requires: Replacement
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("TargetCapacity")]
         public Union<int, IntrinsicFunction> TargetCapacity { get; set; }
+
+        /// <summary>
+        /// InstanceWarmupPeriod
+        /// 		
+        /// The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute 			to
+        /// CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value 			of 300
+        /// seconds is used.
+        /// 	
+        /// Required: No
+        /// Type: Integer
+        /// Minimum: 0
+        /// Maximum: 10000
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("InstanceWarmupPeriod")]
+        public Union<int, IntrinsicFunction> InstanceWarmupPeriod { get; set; }
 
     }
 }

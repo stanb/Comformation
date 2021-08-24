@@ -18,7 +18,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
         /// notation: a compact representation of an IP address and its associated routing prefix.
         /// Required: No
         /// Type: List of String
-        /// Maximum: 20
+        /// Maximum: 200
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("BlockedIPRangeList")]
@@ -30,7 +30,7 @@ namespace Comformation.Cognito.UserPoolRiskConfigurationAttachment
         /// notation.
         /// Required: No
         /// Type: List of String
-        /// Maximum: 20
+        /// Maximum: 200
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("SkippedIPRangeList")]

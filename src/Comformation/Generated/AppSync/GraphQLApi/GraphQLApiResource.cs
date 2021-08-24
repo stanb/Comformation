@@ -22,6 +22,17 @@ namespace Comformation.AppSync.GraphQLApi
             public OpenIDConnectConfig OpenIDConnectConfig { get; set; }
 
             /// <summary>
+            /// LambdaAuthorizerConfig
+            /// A LambdaAuthorizerConfig holds configuration on how to authorize AWS AppSync API access when using
+            /// the AWS_LAMBDA authorizer mode. Be aware that an AWS AppSync API may have only one Lambda authorizer
+            /// configured at a time.
+            /// Required: No
+            /// Type: LambdaAuthorizerConfig
+            /// Update requires: No interruption
+            /// </summary>
+            public LambdaAuthorizerConfig LambdaAuthorizerConfig { get; set; }
+
+            /// <summary>
             /// XrayEnabled
             /// A flag representing whether X-Ray tracing is enabled for this GraphqlApi.
             /// Required: No
@@ -59,8 +70,9 @@ namespace Comformation.AppSync.GraphQLApi
 
             /// <summary>
             /// AuthenticationType
-            /// Security configuration for your GraphQL API. For allowed values (such as API_KEY, AWS_IAM, or
-            /// AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT), see Security in the AWS AppSync Developer Guide.
+            /// Security configuration for your GraphQL API. For allowed values (such as API_KEY, AWS_IAM,
+            /// AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT, or AWS_LAMBDA), see Security in the AWS AppSync Developer
+            /// Guide.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

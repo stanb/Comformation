@@ -14,7 +14,7 @@ namespace Comformation.Pinpoint.Segment
 
         /// <summary>
         /// Recency
-        /// The dimension settings that are based on how recently an endpoint was active.
+        /// Specifies how recently segment members were active.
         /// Required: No
         /// Type: Recency
         /// Update requires: No interruption

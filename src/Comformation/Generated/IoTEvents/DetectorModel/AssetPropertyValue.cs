@@ -23,16 +23,6 @@ namespace Comformation.IoTEvents.DetectorModel
         public Union<string, IntrinsicFunction> Quality { get; set; }
 
         /// <summary>
-        /// Value
-        /// The value to send to an asset property.
-        /// Required: No
-        /// Type: AssetPropertyVariant
-        /// Update requires: No interruption
-        /// </summary>
-        [JsonProperty("Value")]
-        public AssetPropertyVariant Value { get; set; }
-
-        /// <summary>
         /// Timestamp
         /// The timestamp associated with the asset property value. The default is the current event time.
         /// Required: No
@@ -41,6 +31,16 @@ namespace Comformation.IoTEvents.DetectorModel
         /// </summary>
         [JsonProperty("Timestamp")]
         public AssetPropertyTimestamp Timestamp { get; set; }
+
+        /// <summary>
+        /// Value
+        /// The value to send to an asset property.
+        /// Required: Yes
+        /// Type: AssetPropertyVariant
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Value")]
+        public AssetPropertyVariant Value { get; set; }
 
     }
 }

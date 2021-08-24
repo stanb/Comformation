@@ -14,8 +14,7 @@ namespace Comformation.ManagedBlockchain.Node
 
         /// <summary>
         /// AvailabilityZone
-        /// The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum on Managed
-        /// Blockchain is in preview release and is subject to change.
+        /// The Availability Zone in which the node exists. Required for Ethereum nodes.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

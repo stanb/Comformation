@@ -85,6 +85,10 @@ namespace Comformation.Kendra.DataSource
 
         /// <summary>
         /// GoogleDriveConfiguration
+        /// Provides configuration for data sources that connect to Google Drive.
+        /// Required: No
+        /// Type: GoogleDriveConfiguration
+        /// Update requires: No interruption
         /// </summary>
         [JsonProperty("GoogleDriveConfiguration")]
         public GoogleDriveConfiguration GoogleDriveConfiguration { get; set; }

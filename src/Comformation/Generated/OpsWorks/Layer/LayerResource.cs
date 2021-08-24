@@ -125,7 +125,7 @@ namespace Comformation.OpsWorks.Layer
 
             /// <summary>
             /// Name
-            /// The layer name, which is used by the console.
+            /// The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption
@@ -145,10 +145,10 @@ namespace Comformation.OpsWorks.Layer
             /// Shortname
             /// For custom layers only, use this parameter to specify the layer&#39;s short name, which is used
             /// internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for
-            /// the directory where your app files are installed. It can have a maximum of 200 characters, which are
+            /// the directory where your app files are installed. It can have a maximum of 32 characters, which are
             /// limited to the alphanumeric characters, &#39;-&#39;, &#39;_&#39;, and &#39;. &#39;.
-            /// The built-in layers&#39; short names are defined by AWS OpsWorks Stacks. For more information, see the
-            /// Layer Reference.
+            /// Built-in layer short names are defined by AWS OpsWorks Stacks. For more information, see the Layer
+            /// Reference.
             /// Required: Yes
             /// Type: String
             /// Update requires: No interruption

@@ -14,6 +14,7 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// DatabaseName
+        /// 	
         /// The name of the catalog database.
         /// Required: No
         /// Type: String
@@ -24,6 +25,7 @@ namespace Comformation.Glue.Database
 
         /// <summary>
         /// CatalogId
+        /// 	
         /// The ID of the Data Catalog in which the database resides.
         /// Required: No
         /// Type: String

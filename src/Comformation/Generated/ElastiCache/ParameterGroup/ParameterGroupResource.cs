@@ -19,7 +19,7 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// | redis4. 0 | redis5. 0 | redis6. x
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> CacheParameterGroupFamily { get; set; }
 
@@ -43,6 +43,17 @@ namespace Comformation.ElastiCache.ParameterGroup
             /// Update requires: No interruption
             /// </summary>
             public Dictionary<string, Union<string, IntrinsicFunction>> Properties { get; set; }
+
+            /// <summary>
+            /// Tags
+            /// A tag that can be added to an ElastiCache parameter group. Tags are composed of a Key/Value pair.
+            /// You can use tags to categorize and track all your parameter groups. A tag with a null Value is
+            /// permitted.
+            /// Required: No
+            /// Type: List of Tag
+            /// Update requires: No interruption
+            /// </summary>
+            public List<Tag> Tags { get; set; }
 
         }
 

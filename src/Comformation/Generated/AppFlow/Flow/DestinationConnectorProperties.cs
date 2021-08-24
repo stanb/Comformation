@@ -72,5 +72,25 @@ namespace Comformation.AppFlow.Flow
         [JsonProperty("Upsolver")]
         public UpsolverDestinationProperties Upsolver { get; set; }
 
+        /// <summary>
+        /// LookoutMetrics
+        /// The properties required to query Amazon Lookout for Metrics.
+        /// Required: No
+        /// Type: LookoutMetricsDestinationProperties
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("LookoutMetrics")]
+        public LookoutMetricsDestinationProperties LookoutMetrics { get; set; }
+
+        /// <summary>
+        /// Zendesk
+        /// Not currently supported by AWS CloudFormation.
+        /// Required: No
+        /// Type: ZendeskDestinationProperties
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("Zendesk")]
+        public ZendeskDestinationProperties Zendesk { get; set; }
+
     }
 }

@@ -58,6 +58,18 @@ namespace Comformation.S3.Bucket
         public Union<int, IntrinsicFunction> ExpirationInDays { get; set; }
 
         /// <summary>
+        /// ExpiredObjectDeleteMarker
+        /// Indicates whether Amazon S3 will remove a delete marker without any noncurrent versions. If set to
+        /// true, the delete marker will be removed if there are no noncurrent versions. This cannot be
+        /// specified with ExpirationInDays, ExpirationDate, or TagFilters.
+        /// Required: No
+        /// Type: Boolean
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("ExpiredObjectDeleteMarker")]
+        public Union<bool, IntrinsicFunction> ExpiredObjectDeleteMarker { get; set; }
+
+        /// <summary>
         /// Id
         /// Unique identifier for the rule. The value can&#39;t be longer than 255 characters.
         /// Required: No
@@ -118,6 +130,8 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Prefix
         /// Object key prefix that identifies one or more objects to which this rule applies.
+        /// Important Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see XML related object key constraints.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

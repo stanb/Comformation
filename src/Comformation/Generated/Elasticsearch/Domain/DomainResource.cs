@@ -112,11 +112,11 @@ namespace Comformation.Elasticsearch.Domain
 
             /// <summary>
             /// EncryptionAtRestOptions
-            /// Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service (KMS) key
-            /// to use. Can only be used to create a new domain, not update an existing one.
+            /// Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service key to
+            /// use.
             /// Required: No
             /// Type: EncryptionAtRestOptions
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
             public EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
 
@@ -136,13 +136,13 @@ namespace Comformation.Elasticsearch.Domain
             /// Specifies whether node-to-node encryption is enabled.
             /// Required: No
             /// Type: NodeToNodeEncryptionOptions
-            /// Update requires: Replacement
+            /// Update requires: Some interruptions
             /// </summary>
             public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
 
             /// <summary>
             /// SnapshotOptions
-            /// The automated snapshot configuration for the Amazon ES domain indices.
+            /// DEPRECATED. The automated snapshot configuration for the Amazon ES domain indices.
             /// Required: No
             /// Type: SnapshotOptions
             /// Update requires: No interruption

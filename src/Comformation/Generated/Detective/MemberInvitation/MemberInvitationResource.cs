@@ -41,6 +41,16 @@ namespace Comformation.Detective.MemberInvitation
             public Union<string, IntrinsicFunction> MemberEmailAddress { get; set; }
 
             /// <summary>
+            /// DisableEmailNotification
+            /// Whether to send an invitation email to the member account. If set to true, the member account does
+            /// not receive an invitation email.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> DisableEmailNotification { get; set; }
+
+            /// <summary>
             /// Message
             /// Customized text to include in the invitation email message.
             /// Required: No

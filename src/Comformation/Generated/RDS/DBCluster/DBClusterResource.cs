@@ -16,7 +16,7 @@ namespace Comformation.RDS.DBCluster
             /// AssociatedRoles
             /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
             /// DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to
-            /// access other AWS services on your behalf.
+            /// access other Amazon Web Services on your behalf.
             /// Required: No
             /// Type: List of DBClusterRole
             /// Update requires: No interruption
@@ -60,6 +60,16 @@ namespace Comformation.RDS.DBCluster
             public Union<int, IntrinsicFunction> BackupRetentionPeriod { get; set; }
 
             /// <summary>
+            /// CopyTagsToSnapshot
+            /// A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
+            /// The default is not to copy them.
+            /// Required: No
+            /// Type: Boolean
+            /// Update requires: No interruption
+            /// </summary>
+            public Union<bool, IntrinsicFunction> CopyTagsToSnapshot { get; set; }
+
+            /// <summary>
             /// DBClusterIdentifier
             /// The DB cluster identifier. This parameter is stored as a lowercase string.
             /// Constraints:
@@ -79,8 +89,6 @@ namespace Comformation.RDS.DBCluster
             /// to reboot. This can result in an outage while the DB instances are rebooting. If you apply a change
             /// to parameter group associated with a stopped DB cluster, then the update stack waits until the DB
             /// cluster is started.
-            /// Note If this argument is omitted, default. aurora5. 6 is used. If default. aurora5. 6 is used,
-            /// specifying aurora-mysql or aurora-postgresql for the Engine property might result in an error.
             /// To list all of the available DB cluster parameter group names, use the following command:
             /// aws rds describe-db-cluster-parameter-groups --query &quot;DBClusterParameterGroups[].
             /// DBClusterParameterGroupName&quot; --output text
@@ -93,6 +101,9 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// DBSubnetGroupName
             /// A DB subnet group that you want to associate with this DB cluster.
+            /// If you are restoring a DB cluster to a point in time with RestoreType set to copy-on-write, and
+            /// don&#39;t specify a DB subnet group name, then the DB cluster is restored with a default DB subnet
+            /// group.
             /// Required: No
             /// Type: String
             /// Update requires: Replacement
@@ -214,7 +225,9 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// GlobalClusterIdentifier
             /// If you are configuring an Aurora global database cluster and want your Aurora DB cluster to be a
-            /// member in the global database cluster, specify the global cluster ID of the global database cluster.
+            /// secondary member in the global database cluster, specify the global cluster ID of the global
+            /// database cluster. To define the primary database cluster of the global cluster, use the
+            /// AWS::RDS::GlobalCluster resource.
             /// If you aren&#39;t configuring a global database cluster, don&#39;t specify this property.
             /// Note To remove the DB cluster from a global database cluster, specify an empty value for the
             /// GlobalClusterIdentifier property.
@@ -242,9 +255,9 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// MasterUserPassword
             /// The master password for the DB instance.
-            /// Note If you specify the SourceDBInstanceIdentifier or SnapshotIdentifier property, don&#39;t specify
-            /// this property. The value is inherited from the source DB instance or snapshot.
-            /// Required: No
+            /// Note If you specify the SourceDBClusterIdentifier or SnapshotIdentifier property, don&#39;t specify this
+            /// property. The value is inherited from the source DB instance or snapshot.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: No interruption
             /// </summary>
@@ -253,9 +266,9 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// MasterUsername
             /// The name of the master user for the DB cluster.
-            /// Note If you specify the SourceDBInstanceIdentifier or SnapshotIdentifier property, don&#39;t specify
-            /// this property. The value is inherited from the source DB instance or snapshot.
-            /// Required: No
+            /// Note If you specify the SourceDBClusterIdentifier or SnapshotIdentifier property, don&#39;t specify this
+            /// property. The value is inherited from the source DB instance or snapshot.
+            /// Required: Conditional
             /// Type: String
             /// Update requires: Replacement
             /// </summary>
@@ -275,11 +288,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// PreferredBackupWindow
-            /// The daily time range during which automated backups are created if automated backups are enabled
-            /// using the BackupRetentionPeriod parameter.
-            /// The default is a 30-minute window selected at random from an 8-hour block of time for each AWS
-            /// Region. To see the time blocks available, see Adjusting the Preferred DB Cluster Maintenance Window
-            /// in the Amazon Aurora User Guide.
+            /// The daily time range during which automated backups are created. For more information, see Backup
+            /// Window in the Amazon Aurora User Guide.
             /// Constraints:
             /// Must be in the format hh24:mi-hh24:mi. Must be in Universal Coordinated Time (UTC). Must not
             /// conflict with the preferred maintenance window. Must be at least 30 minutes.
@@ -354,8 +364,7 @@ namespace Comformation.RDS.DBCluster
             /// SnapshotIdentifier property, and the original DB cluster is deleted.
             /// If you specify the SnapshotIdentifier property to restore a DB cluster (as opposed to specifying it
             /// for DB cluster updates), then don&#39;t specify the following properties:
-            /// BackupRetentionPeriod EnableHttpEndpoint GlobalClusterIdentifier MasterUsername MasterUserPassword
-            /// PreferredBackupWindow PreferredMaintenanceWindow ReplicationSourceIdentifier RestoreType
+            /// GlobalClusterIdentifier MasterUsername ReplicationSourceIdentifier RestoreType
             /// SourceDBClusterIdentifier SourceRegion StorageEncrypted UseLatestRestorableTime
             /// Constraints:
             /// Must match the identifier of an existing Snapshot.
@@ -367,7 +376,8 @@ namespace Comformation.RDS.DBCluster
 
             /// <summary>
             /// SourceDBClusterIdentifier
-            /// The identifier of the source DB cluster from which to restore.
+            /// When restoring a DB cluster to a point in time, the identifier of the source DB cluster from which
+            /// to restore.
             /// Constraints:
             /// Must match the identifier of an existing DBCluster.
             /// Required: No
@@ -389,7 +399,7 @@ namespace Comformation.RDS.DBCluster
             /// <summary>
             /// StorageEncrypted
             /// Indicates whether the DB cluster is encrypted.
-            /// If you specify the SnapshotIdentifier or SourceDBInstanceIdentifier property, don&#39;t specify this
+            /// If you specify the SnapshotIdentifier or SourceDBClusterIdentifier property, don&#39;t specify this
             /// property. The value is inherited from the snapshot or source DB instance.
             /// Important If you specify the KmsKeyId property, then you must enable encryption.
             /// Required: No

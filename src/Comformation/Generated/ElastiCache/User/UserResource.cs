@@ -35,7 +35,7 @@ namespace Comformation.ElastiCache.User
 
             /// <summary>
             /// Engine
-            /// The current supported value is Redis.
+            /// The current supported value is redis.
             /// Required: Yes
             /// Type: String
             /// Pattern: [a-zA-Z]*

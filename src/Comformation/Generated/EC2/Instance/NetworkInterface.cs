@@ -14,10 +14,9 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// AssociatePublicIpAddress
-        /// Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP
-        /// address can only be assigned to a network interface for eth0, and can only be assigned to a new
-        /// network interface, not an existing one. You cannot specify more than one network interface in the
-        /// request. If launching into a default subnet, the default value is true.
+        /// Indicates whether to assign a public IPv4 address to an instance. Applies only if creating a network
+        /// interface when launching an instance. The network interface must be the primary network interface.
+        /// If launching into a default subnet, the default value is true.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -27,8 +26,8 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// DeleteOnTermination
-        /// If set to true, the interface is deleted when the instance is terminated. You can specify true only
-        /// if creating a new network interface when launching an instance.
+        /// Indicates whether the network interface is deleted when the instance is terminated. Applies only if
+        /// creating a network interface when launching an instance.
         /// Required: No
         /// Type: Boolean
         /// Update requires: No interruption
@@ -51,7 +50,7 @@ namespace Comformation.EC2.Instance
         /// DeviceIndex
         /// The position of the network interface in the attachment order. A primary network interface has a
         /// device index of 0.
-        /// If you specify a network interface when launching an instance, you must specify the device index.
+        /// If you create a network interface when launching an instance, you must specify the device index.
         /// Required: Conditional
         /// Type: String
         /// Update requires: No interruption
@@ -85,7 +84,9 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// Ipv6Addresses
-        /// The IPv6 addresses associated with the network interface.
+        /// One or more IPv6 addresses to assign to the network interface. You cannot specify this option and
+        /// the option to assign a number of IPv6 addresses in the same request. You cannot specify this option
+        /// if you&#39;ve specified a minimum number of instances to launch.
         /// Required: No
         /// Type: List of InstanceIpv6Address
         /// Update requires: No interruption
@@ -95,9 +96,7 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// NetworkInterfaceId
-        /// The ID of the network interface.
-        /// If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface
-        /// ID in a launch specification.
+        /// The ID of the network interface, when attaching an existing network interface.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -108,8 +107,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// PrivateIpAddress
         /// The private IPv4 address of the network interface. Applies only if creating a network interface when
-        /// launching an instance. You cannot specify this option if you&#39;re launching 	more than one instance in
-        /// a RunInstances request.
+        /// launching an instance.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -120,8 +118,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// PrivateIpAddresses
         /// One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address
-        /// can be designated as primary. You cannot specify this option if you&#39;re 	launching more than one
-        /// instance in a RunInstances request.
+        /// can be designated as primary.
         /// Required: No
         /// Type: List of PrivateIpAddressSpecification
         /// Update requires: No interruption
@@ -132,8 +129,7 @@ namespace Comformation.EC2.Instance
         /// <summary>
         /// SecondaryPrivateIpAddressCount
         /// The number of secondary private IPv4 addresses. You can&#39;t specify this option and specify more than
-        /// one private IP address using the private IP addresses option. You cannot specify this option if
-        /// you&#39;re 	launching more than one instance in a RunInstances request.
+        /// one private IP address using the private IP addresses option.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -143,7 +139,8 @@ namespace Comformation.EC2.Instance
 
         /// <summary>
         /// SubnetId
-        /// The ID of the subnet.
+        /// The ID of the subnet associated with the network interface. Applies only if creating a network
+        /// interface when launching an instance.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

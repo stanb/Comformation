@@ -33,6 +33,7 @@ namespace Comformation.CloudFront.CloudFrontOriginAccessIdentity
 
     public static class CloudFrontOriginAccessIdentityAttributes
     {
+        public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> Id = new ResourceAttribute<Union<string, IntrinsicFunction>>("Id");
         public static readonly ResourceAttribute<Union<string, IntrinsicFunction>> S3CanonicalUserId = new ResourceAttribute<Union<string, IntrinsicFunction>>("S3CanonicalUserId");
     }
 }

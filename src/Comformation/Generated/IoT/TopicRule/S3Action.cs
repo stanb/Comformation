@@ -42,5 +42,16 @@ namespace Comformation.IoT.TopicRule
         [JsonProperty("RoleArn")]
         public Union<string, IntrinsicFunction> RoleArn { get; set; }
 
+        /// <summary>
+        /// CannedAcl
+        /// The Amazon S3 canned ACL that controls access to the object identified by the object key. For more
+        /// information, see S3 canned ACLs.
+        /// Required: No
+        /// Type: String
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("CannedAcl")]
+        public Union<string, IntrinsicFunction> CannedAcl { get; set; }
+
     }
 }

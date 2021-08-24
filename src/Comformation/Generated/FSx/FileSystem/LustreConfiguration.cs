@@ -13,6 +13,21 @@ namespace Comformation.FSx.FileSystem
     {
 
         /// <summary>
+        /// DataCompressionType
+        /// Sets the data compression configuration for the file system. DataCompressionType can have the
+        /// following values:
+        /// NONE - (Default) Data compression is turned off when the file system is created. LZ4 - Data
+        /// compression is turned on with the LZ4 algorithm.
+        /// For more information, see Lustre data compression.
+        /// Required: No
+        /// Type: String
+        /// Allowed values: LZ4 | NONE
+        /// Update requires: No interruption
+        /// </summary>
+        [JsonProperty("DataCompressionType")]
+        public Union<string, IntrinsicFunction> DataCompressionType { get; set; }
+
+        /// <summary>
         /// DriveCacheType
         /// The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage
         /// devices. This parameter is required when storage type is HDD. Set to READ, improve the performance

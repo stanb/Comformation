@@ -24,7 +24,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// ClassBTimeout
-        /// The ClassBTimeout value.
+        /// The ClassBTimeout value. This has a minimum of 0 and maximum of 1000.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -34,7 +34,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// PingSlotPeriod
-        /// The PingSlotPeriod value.
+        /// The PingSlotPeriod value. This has a minimum of 128 and maximum of 4096.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -44,7 +44,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// PingSlotDr
-        /// The PingSlotDR value.
+        /// The PingSlotDR value. This has a minimum of 0 and maximum of 15.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -54,7 +54,8 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// PingSlotFreq
-        /// The PingSlotFreq value.
+        /// 		
+        /// The PingSlotFreq value. This has a minimum of 1000000 and a maximum of 16700000.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -74,7 +75,8 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// ClassCTimeout
-        /// The ClassCTimeout value.
+        /// 		
+        /// The ClassCTimeout value. This has a minimum of 0 and maximum of 1000.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -84,7 +86,9 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// MacVersion
-        /// The MAC version (such as OTAA 1. 1 or OTAA 1. 0. 3) to use with this device profile.
+        /// 		
+        /// The MAC version (such as OTAA 1. 1 or OTAA 1. 0. 3) to use with this device profile. This has a
+        /// maximum length of 64 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -94,7 +98,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// RegParamsRevision
-        /// The version of regional parameters.
+        /// The version of regional parameters. This has a maximum of 64 characters.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption
@@ -104,7 +108,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// MaxEirp
-        /// The MaxEIRP value.
+        /// The MaxEIRP value. This has a minimum of 0 and a maximum of 15.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -114,7 +118,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// MaxDutyCycle
-        /// The MaxDutyCycle value.
+        /// The MaxDutyCycle value. This has a minimum of 0 and a maximum of 100.
         /// Required: No
         /// Type: Integer
         /// Update requires: No interruption
@@ -134,7 +138,7 @@ namespace Comformation.IoTWireless.DeviceProfile
 
         /// <summary>
         /// RfRegion
-        /// The frequency band (RFRegion) value.
+        /// The frequency band (RFRegion) value. The maximum length is 64.
         /// Required: No
         /// Type: String
         /// Update requires: No interruption

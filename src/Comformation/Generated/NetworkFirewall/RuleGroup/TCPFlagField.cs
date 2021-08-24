@@ -22,7 +22,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The ones that are set in this flags setting must be set in the packet. The ones that are not set in
         /// this flags setting must also not be set in the packet.
         /// Required: Yes
-        /// Type: Flags
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Flags")]
@@ -33,7 +33,7 @@ namespace Comformation.NetworkFirewall.RuleGroup
         /// The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave
         /// this with no setting.
         /// Required: No
-        /// Type: Flags
+        /// Type: List of String
         /// Update requires: No interruption
         /// </summary>
         [JsonProperty("Masks")]

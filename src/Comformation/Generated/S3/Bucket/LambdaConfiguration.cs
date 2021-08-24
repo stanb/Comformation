@@ -15,7 +15,7 @@ namespace Comformation.S3.Bucket
         /// <summary>
         /// Event
         /// The Amazon S3 bucket event for which to invoke the AWS Lambda function. For more information, see
-        /// Supported Event Types in the Amazon Simple Storage Service Developer Guide.
+        /// Supported Event Types in the Amazon S3 User Guide.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

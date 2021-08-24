@@ -14,7 +14,7 @@ namespace Comformation.StepFunctions.StateMachine
 
         /// <summary>
         /// Bucket
-        /// The name of the S3 bucket where the state machine definition JSON file is stored.
+        /// The name of the S3 bucket where the state machine definition JSON or YAML file is stored.
         /// Required: Yes
         /// Type: String
         /// Update requires: No interruption

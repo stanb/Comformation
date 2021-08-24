@@ -15,7 +15,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// <summary>
             /// MaxErrors
             /// The maximum number of errors allowed before this task stops being scheduled.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 7
@@ -37,8 +37,9 @@ namespace Comformation.SSM.MaintenanceWindowTask
 
             /// <summary>
             /// ServiceRoleArn
-            /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-            /// notifications for maintenance window Run Command tasks.
+            /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) service role to use
+            /// to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run
+            /// Command tasks.
             /// Required: No
             /// Type: String
             /// Update requires: No interruption
@@ -59,7 +60,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// <summary>
             /// MaxConcurrency
             /// The maximum number of targets this task can be run for, in parallel.
-            /// Required: Yes
+            /// Required: No
             /// Type: String
             /// Minimum: 1
             /// Maximum: 7
@@ -73,7 +74,7 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// The targets, either instances or window target IDs.
             /// Specify instances using Key=InstanceIds,Values=instanceid1,instanceid2 . Specify window target IDs
             /// using Key=WindowTargetIds,Values=window-target-id-1,window-target-id-2.
-            /// Required: Yes
+            /// Required: No
             /// Type: List of Target
             /// Maximum: 5
             /// Update requires: No interruption
@@ -162,8 +163,8 @@ namespace Comformation.SSM.MaintenanceWindowTask
             /// <summary>
             /// LoggingInfo
             /// Information about an Amazon S3 bucket to write task-level logs to.
-            /// Note LoggingInfo has been deprecated. To specify an S3 bucket to contain logs, instead use the
-            /// OutputS3BucketName and OutputS3KeyPrefix options in the TaskInvocationParameters structure. For
+            /// Note LoggingInfo has been deprecated. To specify an Amazon S3 bucket to contain logs, instead use
+            /// the OutputS3BucketName and OutputS3KeyPrefix options in the TaskInvocationParameters structure. For
             /// information about how Systems Manager handles these options for the supported maintenance window
             /// task types, see AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters.
             /// Required: No

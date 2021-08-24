@@ -23,10 +23,10 @@ namespace Comformation.EMR.InstanceFleetConfig
 
             /// <summary>
             /// InstanceFleetType
-            /// The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+            /// The node type that the instance fleet hosts.
+            /// Allowed Values: TASK
             /// Required: Yes
             /// Type: String
-            /// Allowed values: CORE | MASTER | TASK
             /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> InstanceFleetType { get; set; }
@@ -34,8 +34,7 @@ namespace Comformation.EMR.InstanceFleetConfig
             /// <summary>
             /// InstanceTypeConfigs
             /// InstanceTypeConfigs determine the EC2 instances that Amazon EMR attempts to provision to fulfill
-            /// On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a
-            /// fleet, each one specified using an InstanceTypeConfig.
+            /// On-Demand and Spot target capacities.
             /// Note The instance fleet configuration is available only in Amazon EMR versions 4. 8. 0 and later,
             /// excluding 5. 0. x versions.
             /// Required: No

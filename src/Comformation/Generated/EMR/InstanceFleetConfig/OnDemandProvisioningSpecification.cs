@@ -14,7 +14,7 @@ namespace Comformation.EMR.InstanceFleetConfig
 
         /// <summary>
         /// AllocationStrategy
-        /// Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is
+        /// Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
         /// lowest-price (the default), which launches the lowest price first.
         /// Required: Yes
         /// Type: String

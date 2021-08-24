@@ -17,7 +17,7 @@ namespace Comformation.MediaPackage.PackagingConfiguration
             /// Unique identifier that you assign to the packaging configuration.
             /// Required: Yes
             /// Type: String
-            /// Update requires: No interruption
+            /// Update requires: Replacement
             /// </summary>
             public Union<string, IntrinsicFunction> Id { get; set; }
 
